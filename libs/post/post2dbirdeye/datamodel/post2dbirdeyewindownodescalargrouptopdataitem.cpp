@@ -10,7 +10,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <postbase/postsolutionselectdialog.h>
+#include <misc/valueselectdialog.h>
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* p) :
 	Post2dBirdEyeWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -58,8 +58,9 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		solutions.insert({sol, gType->solutionCaption(sol)});
 	}
 
-	auto dialog = new PostSolutionSelectDialog(p);
-	dialog->setSolutions(solutions);
+	auto dialog = new ValueSelectDialog(p);
+	dialog->setValues(solutions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
 }
@@ -71,10 +72,8 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDia
 		return;
 	}
 
-	auto gType = zoneData->gridType();
-
-	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
-	auto sol = dialog->selectedSolution();
+	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dBirdEyeWindowNodeScalarGroupDataItem(sol, this);
 	newItem->updateZScale(m_zScale);

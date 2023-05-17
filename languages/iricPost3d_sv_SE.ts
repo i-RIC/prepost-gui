@@ -385,7 +385,7 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Aktiverad</translation>
+        <translation type="vanished">Aktiverad</translation>
     </message>
 </context>
 <context>
@@ -662,6 +662,10 @@
         <source>Face%1</source>
         <translation>Ansikte %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legenden om längden</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -790,7 +794,65 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Uppdatera partikelinställning</translation>
+        <translation type="vanished">Uppdatera partikelinställning</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Visningsinställning för partiklar</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Startposition</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lägg till (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Avlägsna (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Ansikte</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation>Ange ansiktet för att starta partiklar</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation>Ange ytan för att starta partiklar, efter rutnätsindexintervall (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Generationsutrymmesintervall</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>Punktstorlek</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -805,6 +867,71 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Effektivisera visningsinställning</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fysiskt värde:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Startposition</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Lägg till (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Avlägsna (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Ansikte</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation>Ange ansiktet för att starta effektiviseringar</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation>Ange ansiktet för att starta strömlinjerna, efter rutnätsindexintervall (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Generationsutrymmesintervall</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Bredd:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -815,108 +942,95 @@
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Partikelinställning</translation>
+        <translation type="vanished">Partikelinställning</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Vanliga inställningar</translation>
+        <translation type="vanished">Vanliga inställningar</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysiskt värde:</translation>
+        <translation type="vanished">Fysiskt värde:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Generera regelbundet</translation>
+        <translation type="vanished">Generera regelbundet</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Generationstidsintervall</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Generationstidsintervall</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Generera vid godtycklig tid</translation>
+        <translation type="vanished">Generera vid godtycklig tid</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Redigera...</translation>
+        <translation type="vanished">Redigera...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Startposition</translation>
+        <translation type="vanished">Startposition</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Räckvidd</translation>
+        <translation type="vanished">Räckvidd</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Ange området för att generera partiklar.</translation>
+        <translation type="vanished">Ange området för att generera partiklar.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Ange området för att generera partiklar, efter rutnätsindexintervall (I, J, K).</translation>
+        <translation type="vanished">Ange området för att generera partiklar, efter rutnätsindexintervall (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jag är i</translation>
+        <translation type="vanished">Jag är i</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generationsutrymmeintervall</translation>
+        <translation type="vanished">Generationsutrymmeintervall</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -928,15 +1042,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Om du anger 1 genereras partiklar vid nätnoder. &lt;/p&gt; &lt;p&gt; Om du anger 2 genereras partiklar vid rutnoder och mittpunkter i rutnoder. &lt;/p&gt; &lt;p&gt; Om du ange 1/2, genereras partiklar för alla andra nätnoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Om du anger 1 genereras partiklar vid nätnoder. &lt;/p&gt; &lt;p&gt; Om du anger 2 genereras partiklar vid rutnoder och mittpunkter i rutnoder. &lt;/p&gt; &lt;p&gt; Om du ange 1/2, genereras partiklar för alla andra nätnoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Storlek:</translation>
+        <translation type="vanished">Storlek:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -944,15 +1058,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ange ett antal pixlar som visas. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ange ett antal pixlar som visas. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1002,6 +1116,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Färg:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Punktstorlek:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -1045,55 +1174,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Effektivisera inställningen</translation>
+        <translation type="vanished">Effektivisera inställningen</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysiskt värde:</translation>
+        <translation type="vanished">Fysiskt värde:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Startposition</translation>
+        <translation type="vanished">Startposition</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Räckvidd</translation>
+        <translation type="vanished">Räckvidd</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Ange området för att starta strömlinjer.</translation>
+        <translation type="vanished">Ange området för att starta strömlinjer.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Ange området för att starta strömlinjeformat, efter intervall för nätindex (I, J, K).</translation>
+        <translation type="vanished">Ange området för att starta strömlinjeformat, efter intervall för nätindex (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jag är i</translation>
+        <translation type="vanished">Jag är i</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generationsutrymmeintervall</translation>
+        <translation type="vanished">Generationsutrymmeintervall</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1103,35 +1232,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -topp: 3px; marginal-botten: 3px; marginal-vänster: 0px; marginal-höger: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Om du anger 1 startar strömlinjeformade linjer vid nätnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Om du anger 2 börjar strömlinjeformningar vid rutnoder och mellanpunkter för rutnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Om du anger 1/2 startar strömlinjer vid alla andra rutnoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -topp: 3px; marginal-botten: 3px; marginal-vänster: 0px; marginal-höger: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Om du anger 1 startar strömlinjeformade linjer vid nätnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Om du anger 2 börjar strömlinjeformningar vid rutnoder och mellanpunkter för rutnoder. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Om du anger 1/2 startar strömlinjer vid alla andra rutnoder. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Färg:</translation>
+        <translation type="vanished">Färg:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Bredd:</translation>
+        <translation type="vanished">Bredd:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1139,15 +1268,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ange ett antal pixlar som visas. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ange ett antal pixlar som visas. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Lägg till (&amp;A)</translation>
+        <translation type="vanished">Lägg till (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Avlägsna (&amp;R)</translation>
+        <translation type="vanished">Avlägsna (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1174,7 +1303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Uppdatera strömlinjeformad inställning</translation>
+        <translation type="vanished">Uppdatera strömlinjeformad inställning</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

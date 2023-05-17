@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Nhập khẩu (&amp;I)...</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Xuất khẩu (&amp;E)...</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Màu sắc</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>bản đồ màu</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Hiển thị</translation>
+        <translation type="vanished">Hiển thị</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Khi được chọn</translation>
+        <translation type="vanished">Khi được chọn</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Luôn luôn</translation>
+        <translation type="vanished">Luôn luôn</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Không bao giờ</translation>
+        <translation type="vanished">Không bao giờ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Kích thước và Vị trí</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Dễ thấy</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Màu sắc</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>bản đồ màu</translation>
+        <translation type="vanished">bản đồ màu</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Truyền thuyết về chiều dài</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Tự phối màu)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Hình thức</translation>
+        <translation type="vanished">Hình thức</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Thanh màu</translation>
+        <translation type="vanished">Thanh màu</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Nằm ngang</translation>
+        <translation type="vanished">Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Thẳng đứng</translation>
+        <translation type="vanished">Thẳng đứng</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Khoảng cách từ đáy</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">Tôi Min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">Tôi tối đa:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">Tối đa:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>Tôi Min:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>hướng K</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Hình thức</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>tối thiểu</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>tối đa</translation>
     </message>
 </context>
 <context>

@@ -92,6 +92,7 @@ public:
 	bool IBCExists(iRICLib::H5CgnsZone::SolutionPosition position) const;
 
 	QString elevationName() const;
+	QString cellElevationName() const;
 
 	void applyOffset(double x, double y);
 

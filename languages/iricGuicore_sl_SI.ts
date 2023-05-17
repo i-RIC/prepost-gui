@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Uvozi (&amp;I)...</translation>
+        <translation type="vanished">Uvozi (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Izvozi (&amp;E)...</translation>
+        <translation type="vanished">Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Barvni zemljevid</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Vidnost</translation>
+        <translation type="vanished">Vidnost</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Ko je izbrano</translation>
+        <translation type="vanished">Ko je izbrano</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Nenehno</translation>
+        <translation type="vanished">Nenehno</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nikoli</translation>
+        <translation type="vanished">Nikoli</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Velikost in položaj</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Vidno</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">barva</translation>
+        <translation>barva</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legenda o dolžini</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Barva po meri)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barvna vrstica</translation>
+        <translation type="vanished">Barvna vrstica</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vodoravno</translation>
+        <translation type="vanished">Vodoravno</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Navpično</translation>
+        <translation type="vanished">Navpično</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Razdalja od dna</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">jaz min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">Jaz Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J Max:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>jaz min:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-smer</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>maks</translation>
     </message>
 </context>
 <context>

@@ -57,4 +57,11 @@
         <translation>打開文件 %1 失敗的。</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>選擇值</translation>
+    </message>
+</context>
 </TS>

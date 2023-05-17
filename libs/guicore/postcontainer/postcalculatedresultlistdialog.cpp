@@ -55,7 +55,7 @@ void PostCalculatedResultListDialog::add()
 	m_zoneDataContainer->calculatedResults().push_back(newResult);
 
 	updateTable();
-	int newRow = m_zoneDataContainer->calculatedResults().size() - 1;
+	int newRow = static_cast<int> (m_zoneDataContainer->calculatedResults().size()) - 1;
 	ui->tableWidget->setCurrentCell(newRow, 0);
 }
 
@@ -137,7 +137,7 @@ void PostCalculatedResultListDialog::updateTable()
 	ui->tableWidget->clearContents();
 
 	auto& results = m_zoneDataContainer->calculatedResults();
-	ui->tableWidget->setRowCount(results.size());
+	ui->tableWidget->setRowCount(static_cast<int> (results.size()));
 	for (int i = 0; i < results.size(); ++i) {
 		auto result = results.at(i);
 		QTableWidgetItem* item = new QTableWidgetItem(result->name().c_str());

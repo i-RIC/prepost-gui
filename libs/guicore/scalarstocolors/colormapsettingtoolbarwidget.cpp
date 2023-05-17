@@ -3,7 +3,7 @@
 #include "ui_colormapsettingtoolbarwidget.h"
 
 ColorMapSettingToolBarWidget::ColorMapSettingToolBarWidget(QWidget *parent) :
-	ColorMapSettingToolBarWidgetI(parent),
+	QWidget(parent),
 	ui(new Ui::ColorMapSettingToolBarWidget)
 {
 	ui->setupUi(this);
@@ -18,26 +18,33 @@ ColorMapSettingToolBarWidget::~ColorMapSettingToolBarWidget()
 	delete ui;
 }
 
+void ColorMapSettingToolBarWidget::setSetting(ColorMapSettingContainerI* setting)
+{
+	m_setting = setting;
+	connect(m_setting, &ColorMapSettingContainerI::updated, this, &ColorMapSettingToolBarWidget::applySetting);
+
+	applySetting();
+}
+
 ColorMapSettingContainerI* ColorMapSettingToolBarWidget::modifiedSetting()
 {
-	auto setting = new ColorMapSettingContainer();
-	*setting = *(dynamic_cast<ColorMapSettingContainer*> (m_setting));
+	auto setting = m_setting->copy();
 
-	setting->legend.visible = ui->visibleCheckBox->isChecked();
+	setting->legendSetting()->setVisible(ui->visibleCheckBox->isChecked());
 
-	int width = setting->legend.imageSetting.width;
-	int height = setting->legend.imageSetting.height;
+	int width = setting->legendSetting()->imgSetting()->width;
+	int height = setting->legendSetting()->imgSetting()->height;
 	if (ui->horizontalRadioButton->isChecked()) {
-		setting->legend.direction = ColorMapLegendSettingContainer::Direction::Horizontal;
+		setting->legendSetting()->setDirection(ColorMapLegendSettingContainerI::Direction::Horizontal);
 		if (height > width) {
-			setting->legend.imageSetting.width = height;
-			setting->legend.imageSetting.height = width;
+			setting->legendSetting()->imgSetting()->width = height;
+			setting->legendSetting()->imgSetting()->height = width;
 		}
 	} else if (ui->verticalRadioButton->isChecked()) {
-		setting->legend.direction = ColorMapLegendSettingContainer::Direction::Vertical;
+		setting->legendSetting()->setDirection(ColorMapLegendSettingContainerI::Direction::Vertical);
 		if (width > height) {
-			setting->legend.imageSetting.width = height;
-			setting->legend.imageSetting.height = width;
+			setting->legendSetting()->imgSetting()->width = height;
+			setting->legendSetting()->imgSetting()->height = width;
 		}
 	}
 
@@ -49,32 +56,31 @@ bool ColorMapSettingToolBarWidget::visible() const
 	return ui->visibleCheckBox->isChecked();
 }
 
-ColorMapLegendSettingContainer::Direction ColorMapSettingToolBarWidget::direction() const
+ColorMapLegendSettingContainerI::Direction ColorMapSettingToolBarWidget::direction() const
 {
 	if (ui->horizontalRadioButton->isChecked()) {
-		return ColorMapLegendSettingContainer::Direction::Horizontal;
+		return ColorMapLegendSettingContainerI::Direction::Horizontal;
 	} else if (ui->verticalRadioButton->isChecked()) {
-		return ColorMapLegendSettingContainer::Direction::Vertical;
+		return ColorMapLegendSettingContainerI::Direction::Vertical;
 	}
 
-	return ColorMapLegendSettingContainer::Direction::Horizontal;
+	return ColorMapLegendSettingContainerI::Direction::Horizontal;
 }
 
 void ColorMapSettingToolBarWidget::applySetting()
 {
 	if (m_setting == nullptr) {return;}
-	auto s = dynamic_cast<ColorMapSettingContainer*> (m_setting);
 
 	ui->visibleCheckBox->blockSignals(true);
 	ui->horizontalRadioButton->blockSignals(true);
 	ui->verticalRadioButton->blockSignals(true);
 
-	ui->visibleCheckBox->setChecked(s->legend.visible);
-	ui->horizontalRadioButton->setEnabled(s->legend.visible);
-	ui->verticalRadioButton->setEnabled(s->legend.visible);
-	if (s->legend.direction == ColorMapLegendSettingContainer::Direction::Horizontal) {
+	ui->visibleCheckBox->setChecked(m_setting->legendSetting()->getVisible());
+	ui->horizontalRadioButton->setEnabled(m_setting->legendSetting()->getVisible());
+	ui->verticalRadioButton->setEnabled(m_setting->legendSetting()->getVisible());
+	if (m_setting->legendSetting()->getDirection() == ColorMapLegendSettingContainerI::Direction::Horizontal) {
 		ui->horizontalRadioButton->setChecked(true);
-	}	else if (s->legend.direction == ColorMapLegendSettingContainer::Direction::Vertical) {
+	}	else if (m_setting->legendSetting()->getDirection() == ColorMapLegendSettingContainerI::Direction::Vertical) {
 		ui->verticalRadioButton->setChecked(true);
 	}
 

@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Kenali hasil:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gunakan huruf berikut untuk menentukan pola:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -kanan: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;Tahun: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;Bulan: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hari: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- kanan:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jam: jj&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Menit: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kedua: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gunakan huruf berikut untuk menentukan pola:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -kanan: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;Tahun: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;Bulan: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;Hari: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- kanan:0px; -qt-block-indent:0; text-indent:0px;"&gt;Jam: jj&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Menit: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kedua: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Data ini tidak dapat diekspor. Tampaknya itu tidak diimpor dari *.tif atau *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Data ini tidak dapat diekspor. Data dengan dimensi &quot;Waktu&quot; tidak dapat diekspor ke *.tif atau *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Data ini tidak dapat diekspor. Data dengan dimensi "Waktu" tidak dapat diekspor ke *.tif atau *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Data ini tidak dapat diekspor. Tampaknya itu tidak diimpor dari *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Data ini tidak dapat diekspor. Data dengan dimensi &quot;Waktu&quot; tidak dapat diekspor ke *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Data ini tidak dapat diekspor. Data dengan dimensi "Waktu" tidak dapat diekspor ke *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>Data radar X band MP dapat diimpor untuk kondisi grid dengan dimensi &quot;Waktu&quot;.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>Data radar X band MP dapat diimpor untuk kondisi grid dengan dimensi "Waktu".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris header. Header harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya &quot;%2&quot;, tetapi &quot;%3&quot; diberikan.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya "%2", tetapi "%3" diberikan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris %1. Data harus memiliki setidaknya 4 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;x&quot; di baris %1. &quot;x&quot; harus berupa nilai sebenarnya tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "x" di baris %1. "x" harus berupa nilai sebenarnya tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;y&quot; di baris %1. &quot;y&quot; seharusnya bernilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "y" di baris %1. "y" seharusnya bernilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;nilai&quot; di baris %1. &quot;nilai&quot; harus berupa nilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
     </message>
 </context>
 <context>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Menggabungkan...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Tidak ada data lain untuk digabungkan dalam &quot;%1&quot;kelompok.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Tidak ada data lain untuk digabungkan dalam "%1"kelompok.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Tidak ada pembatas yang ditentukan</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Nilai tidak cukup untuk dibaca &quot;%1&quot;.&quot;%1&quot; kolom adalah %2 tetapi %3 masukan nilai.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Nilai tidak cukup untuk dibaca "%1"."%1" kolom adalah %2 tetapi %3 masukan nilai.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Terjadi kesalahan saat membaca &quot;%1&quot; nilai. &quot;%1&quot; nilainya harus bilangan real, tapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Terjadi kesalahan saat membaca "%1" nilai. "%1" nilainya harus bilangan real, tapi "%2" ditentukan.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3766,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Karakter kutipan:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Permukaan</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Eksponen Pembobotan k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; digunakan sebagai bobot saat menghitung rata-rata tertimbang dari nilai. r adalah jarak dari titik ke simpul atau pusat sel, tempat nilai dipetakan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; digunakan sebagai bobot saat menghitung rata-rata tertimbang dari nilai. r adalah jarak dari titik ke simpul atau pusat sel, tempat nilai dipetakan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Permukaan</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Saat dalam &amp;quot;Points Edit Modequot;, setelan ini diabaikan dan data TIN selalu ditampilkan sebagai poin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,8 +4392,8 @@ p, li { white-space: pre-wrap; }
         <translation>Batas panjang tepi:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan&lt;/span&gt;: Saat Anda mengklik tombol terapkan, segitiga yang akan dihapus akan dicat dengan warna gelap abu-abu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Saat Anda mengklik tombol terapkan, segitiga yang akan dihapus akan dicat dengan warna gelap abu-abu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdPoint_id_ID.ts -->
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Titik</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file gambar</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua gambar (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Poin</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran Poin:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Gambar Ikon</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor gambar (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Jernih (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran maks:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ketika lebar atau tinggi gambar yang diimpor lebih besar dari ukuran Maks, gambar secara otomatis menyusut sehingga lebar atau tinggi menjadi sama dengan ukuran maks.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna Kustom</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_id_ID.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Apakah Anda yakin ingin menghapus yang dipilih? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Tidak ada data lain untuk digabungkan dalam &quot;%1&quot;kelompok.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Tidak ada data lain untuk digabungkan dalam "%1"kelompok.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris header. Header harus memiliki setidaknya 6 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya &quot;%2&quot;, tetapi &quot;%3&quot; diberikan.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya "%2", tetapi "%3" diberikan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris %1. Data harus memiliki setidaknya 6 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;pid&quot; di baris %1. &quot;pid&quot; harus berupa nilai integer tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "pid" di baris %1. "pid" harus berupa nilai integer tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;vid&quot; di baris %1. &quot;vid&quot; harus berupa nilai integer tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "vid" di baris %1. "vid" harus berupa nilai integer tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;x&quot; di baris %1. &quot;x&quot; harus berupa nilai sebenarnya tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "x" di baris %1. "x" harus berupa nilai sebenarnya tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;y&quot; di baris %1. &quot;y&quot; seharusnya bernilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "y" di baris %1. "y" seharusnya bernilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;nilai&quot; di baris %1. &quot;nilai&quot; harus berupa nilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Terjadi kesalahan saat membaca baris %1. &quot;name&quot; harus sama untuk baris di mana nilai &quot;pid&quot; sama.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Terjadi kesalahan saat membaca baris %1. "name" harus sama untuk baris di mana nilai "pid" sama.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Terjadi kesalahan saat membaca baris %1. &quot;nilai&quot; harus sama untuk baris di mana nilai &quot;pid&quot; sama.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Terjadi kesalahan saat membaca baris %1. "nilai" harus sama untuk baris di mana nilai "pid" sama.</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Poligon</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Poligon</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Warnai berdasarkan nilai</translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Warna Kustom</translation>
+        <translation>Warna Kustom</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Peta warna</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Garis:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_id_ID.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris header. Header harus memiliki setidaknya 6 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya &quot;%2&quot;, tetapi &quot;%3&quot; diberikan.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Terjadi kesalahan saat membaca baris header. Kolom %1 seharusnya "%2", tetapi "%3" diberikan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Terjadi kesalahan saat membaca baris %1. Data harus memiliki setidaknya 6 kolom.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;tutup&quot; di baris %1. &quot;tutup&quot; harus berupa nilai integer tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "tutup" di baris %1. "tutup" harus berupa nilai integer tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;vid&quot; di baris %1. &quot;vid&quot; harus berupa nilai integer tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "vid" di baris %1. "vid" harus berupa nilai integer tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;x&quot; di baris %1. &quot;x&quot; harus berupa nilai sebenarnya tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "x" di baris %1. "x" harus berupa nilai sebenarnya tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;y&quot; di baris %1. &quot;y&quot; seharusnya bernilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "y" di baris %1. "y" seharusnya bernilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Terjadi kesalahan saat membaca nilai &quot;nilai&quot; di baris %1. &quot;nilai&quot; harus berupa nilai nyata tetapi &quot;%2&quot; ditentukan.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Terjadi kesalahan saat membaca nilai "nilai" di baris %1. "nilai" harus berupa nilai nyata tetapi "%2" ditentukan.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Terjadi kesalahan saat membaca baris %1. &quot;nama&quot; harus sama untuk baris dengan nilai &quot;tutup&quot; yang sama.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Terjadi kesalahan saat membaca baris %1. "nama" harus sama untuk baris dengan nilai "tutup" yang sama.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Terjadi kesalahan saat membaca baris %1. &quot;nilai&quot; harus sama untuk baris di mana nilai &quot;tutup&quot; sama.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Terjadi kesalahan saat membaca baris %1. "nilai" harus sama untuk baris di mana nilai "tutup" sama.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Garis</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Garis</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gunakan Pengaturan Jendela Pra-Pemrosesan</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Warna Kustom</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Peta warna</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Garis:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_id_ID.ts -->
@@ -6277,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data awan titik peta, Anda dapat menggunakan &quot;Data awan titik peta&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data awan titik peta, Anda dapat menggunakan "Data awan titik peta"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6290,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan &quot;Data cloud titik peta&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Data penampang dihasilkan menggunakan data point cloud. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan "Data cloud titik peta"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Data penampang dihasilkan menggunakan data point cloud. Di beberapa wilayah, data tidak ada dalam data cloud titik, dan nilai 0 dipetakan untuk titik-titik tersebut. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan &quot;Data cloud titik peta&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Data penampang dihasilkan menggunakan data point cloud. Di beberapa wilayah, data tidak ada dalam data cloud titik, dan nilai 0 dipetakan untuk titik-titik tersebut. Jika Anda ingin menyesuaikan kembali posisi penampang dan data cloud titik peta, Anda dapat menggunakan "Data cloud titik peta"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Pengaturan elevasi dan gradien tidak valid.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Ketika Anda menentukan ketinggian titik akhir, itu tidak bisa sama dengan titik awal. Jika Anda ingin menggambar garis horizontal, silakan pilih &quot;Specify horizontal distance&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Ketika Anda menentukan ketinggian titik akhir, itu tidak bisa sama dengan titik awal. Jika Anda ingin menggambar garis horizontal, silakan pilih "Specify horizontal distance".</translation>
     </message>
 </context>
 <context>
@@ -6746,8 +6746,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Edit penampang dengan mengklik mouse. Selesaikan pengeditan dengan mengklik dua kali, atau menekan tombol kembali. Anda dapat secara tepat mengedit penampang dengan memasukkan nilai dari dialog. Silakan masuk ke mode edit dialog dari &quot;Edit dari Dialog&quot; di menu klik kanan.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Edit penampang dengan mengklik mouse. Selesaikan pengeditan dengan mengklik dua kali, atau menekan tombol kembali. Anda dapat secara tepat mengedit penampang dengan memasukkan nilai dari dialog. Silakan masuk ke mode edit dialog dari "Edit dari Dialog" di menu klik kanan.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Kesalahan</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai LX tidak valid</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai LX tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai LY tidak valid</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai LY tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai RX tidak valid</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai RX tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai RY tidak valid</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai RY tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Jumlah poin tidak valid</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 garis %2 "%3": Jumlah poin tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai indeks tidak valid</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 garis %2 "%3": Nilai indeks tidak valid</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 garis %2 : data penampang untuk %3 tidak cukup</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai jarak tidak valid</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai jarak tidak valid</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 garis %2 &quot;%3&quot;: Nilai elevasi tidak valid</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 garis %2 "%3": Nilai elevasi tidak valid</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Garis %2 : Kesalahan membaca. Membutuhkan setidaknya dua nilai.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Garis %2 : Kesalahan membaca. Bukan nilai bilangan real&quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Garis %2 : Kesalahan membaca. Bukan nilai bilangan real"%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Garis %2 : KP tidak masuk</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Garis %2 &quot;%3&quot;: Nilai LX tidak valid</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Garis %2 "%3": Nilai LX tidak valid</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Garis %2 &quot;%3&quot;: Nilai LY tidak valid</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Garis %2 "%3": Nilai LY tidak valid</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Garis %2 &quot;%3&quot;: Nilai RX tidak valid</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Garis %2 "%3": Nilai RX tidak valid</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Garis %2 &quot;%3&quot;: Nilai RY tidak valid</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Garis %2 "%3": Nilai RY tidak valid</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Data penanda jarak tidak ditemukan. Akan diabaikan.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 garis %2 : &quot;%3&quot;: Data bendera tidak valid.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 garis %2 : "%3": Data bendera tidak valid.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 garis %2 : &quot;%3&quot;: Data jarak tidak valid.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 garis %2 : "%3": Data jarak tidak valid.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 garis %2 : &quot;%3&quot;: Data ketinggian tidak valid.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 garis %2 : "%3": Data ketinggian tidak valid.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Bisa dilihat</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan:&lt;/span&gt; Anda dapat menyesuaikan warna menggunakan tab Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Anda dapat menyesuaikan warna menggunakan tab Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Kotak Centang</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai lebih kecil dari %1 di tidak diperbolehkan.</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai lebih besar dari %1 tidak diizinkan.</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>Transparan</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Warna</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Peta warna</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitas</translation>
+        <translation type="vanished">Visibilitas</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Saat dipilih</translation>
+        <translation type="vanished">Saat dipilih</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Selalu</translation>
+        <translation type="vanished">Selalu</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Tidak pernah</translation>
+        <translation type="vanished">Tidak pernah</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>Ukuran dan Posisi</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Bisa dilihat</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Peta warna</translation>
+        <translation type="vanished">Peta warna</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legenda Panjang</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Warna Kustom)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisa dilihat</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Arah:</translation>
+        <translation>Arah:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horisontal</translation>
+        <translation>Horisontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Vertikal</translation>
+        <translation>Vertikal</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Batang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Mobil</translation>
+        <translation>Mobil</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Penyelarasan</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiri</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Tengah</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Benar</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Menghitung pengaturan peta warna (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Publik (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pribadi (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih dari standar</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Standar</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Mengajukan</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut untuk Impor</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Arah</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Judul</translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Font</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Tampilan Label</translation>
+        <translation>Tampilan Label</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Latar belakang</translation>
+        <translation>Latar belakang</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Ukuran dan Posisi</translation>
+        <translation>Ukuran dan Posisi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posisi</translation>
+        <translation>Posisi</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Batang</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Penyelarasan</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Pratinjau</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Diskriminasi rasial</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horisontal</translation>
+        <translation type="vanished">Horisontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Vertikal</translation>
+        <translation type="vanished">Vertikal</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisa dilihat</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Batang</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Penyelarasan</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiri</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Tengah</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Benar</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Membalikkan warna (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>Pembagian yang setara (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">Pengaturan peta warna (*.cmsetting)</translation>
+        <translation>Pengaturan peta warna (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjadi kesalahan saat mengimpor setelan dari %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Publik (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pribadi (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impor Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih dari standar</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilih file</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Standar</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Mengajukan</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut untuk Impor</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Arah</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Judul</translation>
+        <translation>Judul</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Font</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Tampilan Label</translation>
+        <translation>Tampilan Label</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Format</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Jumlah label</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Label</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Latar belakang</translation>
+        <translation>Latar belakang</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Ukuran dan Posisi</translation>
+        <translation>Ukuran dan Posisi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posisi</translation>
+        <translation>Posisi</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar Batang</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Penyelarasan</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Pratinjau</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilihan</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nilai tempat desimal:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala log:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">Diaktifkan</translation>
+        <translation>Diaktifkan</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Membentuk</translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Diskriminasi rasial</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horisontal</translation>
+        <translation>Horisontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Vertikal</translation>
+        <translation>Vertikal</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Jarak dari bawah</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>saya Min:</translation>
+        <translation type="vanished">saya Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>saya maks:</translation>
+        <translation type="vanished">saya maks:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J Min:</translation>
+        <translation type="vanished">J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Maks:</translation>
+        <translation type="vanished">J Maks:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">saya Min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">saya maks:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">J Maks:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-arah</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13530,8 +13630,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pilih Pemecah</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol "OK".</translation>
     </message>
 </context>
 <context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder &quot;%1&quot;. Pemecah ini diabaikan. %2</translation>
+        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder "%1". Pemecah ini diabaikan. %2</translation>
     </message>
 </context>
 <context>
@@ -14518,7 +14618,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Proyek ini tampaknya dibuka oleh jendela GUI iRIC lainnya. Anda tidak dapat membuka folder proyek dari beberapa jendela GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proyek yang dibuka tidak disalin ke direktori kerja, dan Anda akan dipaksa untuk menyimpan modifikasi yang Anda buat pada proyek ini. Jika Anda ingin menyimpan proyek saat ini, harap simpan ke proyek lain terlebih dahulu.</translation>
     </message>
     <message>
@@ -14686,8 +14786,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-jendela aktif saat ini tidak mendukung pengeksporan gambar kontur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Untuk mengekspor file bentuk, alihkan &quot;Pengaturan tampilan&quot; ke &quot;Gambar Kontur&quot;, bukan &quot;Pinggiran Warna&quot; atau &quot;Isolin&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -14823,8 +14923,8 @@ Option -&gt; Preferences</source>
         <translation>File pengaturan (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Untuk mengekspor file bentuk, alihkan mode Warna ke &quot;Mode Diskrit&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Untuk mengekspor file bentuk, alihkan mode Warna ke "Mode Diskrit".</translation>
     </message>
 </context>
 <context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,8 +15298,8 @@ Option -&gt; Preferences</source>
         <translation>Buka Jendela Pasca Pemrosesan 2D baru</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Buka Jendela Pasca Pemrosesan 2D Bird&apos;s-Eye baru</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Buka Jendela Pasca Pemrosesan 2D Bird's-Eye baru</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>Membuka file %1 gagal.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_id_ID.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">skalar</translation>
+        <translation>skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Perbarui Pengaturan Kontur</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">Pengaturan skalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Warna kustom</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>Bentuk kotak</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Pengaturan Tampilan Bentuk Grid</translation>
+        <translation type="vanished">Pengaturan Tampilan Bentuk Grid</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Nilai skalar untuk Ketinggian</translation>
+        <translation type="vanished">Nilai skalar untuk Ketinggian</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">Nilai skalar untuk Ketinggian</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Warna kustom</translation>
+        <translation type="vanished">Warna kustom</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Dengan nilai skalar</translation>
+        <translation type="vanished">Dengan nilai skalar</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Warna kustom</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Maksimal empat kontur dapat ditentukan.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Untuk mengekspor file bentuk, alihkan &quot;Pengaturan tampilan&quot; ke &quot;Gambar Kontur&quot;, bukan &quot;Pinggiran Warna&quot; atau &quot;Isolin&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>Skalar (tepi I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Skalar (tepiJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>Untuk mengekspor file bentuk, alihkan pengaturan warna ke &quot;Mode Diskrit&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Perbarui Pengaturan Partikel</translation>
+        <translation type="vanished">Perbarui Pengaturan Partikel</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Wilayah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Interval ruang generasi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Perbarui Pengaturan Partikel</translation>
+        <translation type="vanished">Perbarui Pengaturan Partikel</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Wilayah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Seret Tikus</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Nilai Koordinat</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Poin 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Poin 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Jumlah poin:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Nilai Fisik:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Wilayah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Jangkauan</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">Tentukan area untuk memulai streamline</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">Tentukan area untuk memulai streamline, menurut rentang indeks grid (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Interval ruang generasi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Lebar:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Perbarui Pengaturan Perampingan</translation>
+        <translation type="vanished">Perbarui Pengaturan Perampingan</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Nilai Fisik:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Wilayah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Seret Tikus</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Nilai Koordinat</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Poin 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Poin 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Jumlah poin:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Lebar:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Pengaturan Partikel</translation>
+        <translation type="vanished">Pengaturan Partikel</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Pengaturan umum</translation>
+        <translation type="vanished">Pengaturan umum</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Hasilkan secara berkala</translation>
+        <translation type="vanished">Hasilkan secara berkala</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Interval waktu generasi</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Interval waktu generasi</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maksimal</translation>
+        <translation type="vanished">maksimal</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Hasilkan pada waktu yang sewenang-wenang</translation>
+        <translation type="vanished">Hasilkan pada waktu yang sewenang-wenang</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Sunting...</translation>
+        <translation type="vanished">Sunting...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posisi awal</translation>
+        <translation type="vanished">Posisi awal</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Tentukan area untuk menghasilkan partikel.</translation>
+        <translation type="vanished">Tentukan area untuk menghasilkan partikel.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Tentukan area untuk menghasilkan partikel, dengan rentang indeks grid (I, J).</translation>
+        <translation type="vanished">Tentukan area untuk menghasilkan partikel, dengan rentang indeks grid (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation type="vanished">saya min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation type="vanished">saya maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval ruang generasi</translation>
+        <translation type="vanished">Interval ruang generasi</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margin-atas: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Jika Anda menentukan 1, partikel dihasilkan pada node grid.&lt;/p&gt; &lt;p&gt;Jika Anda menentukan 2, partikel dihasilkan pada node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p&gt;Jika Anda tentukan 1/2, partikel dihasilkan untuk setiap node grid lainnya.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margin-atas: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Jika Anda menentukan 1, partikel dihasilkan pada node grid.&lt;/p&gt; &lt;p&gt;Jika Anda menentukan 2, partikel dihasilkan pada node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p&gt;Jika Anda tentukan 1/2, partikel dihasilkan untuk setiap node grid lainnya.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Ukuran:</translation>
+        <translation type="vanished">Ukuran:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Pengaturan Partikel</translation>
+        <translation type="vanished">Pengaturan Partikel</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Pengaturan umum</translation>
+        <translation type="vanished">Pengaturan umum</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Hasilkan secara berkala</translation>
+        <translation type="vanished">Hasilkan secara berkala</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>Interval generasi</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Interval generasi</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maksimal</translation>
+        <translation type="vanished">maksimal</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Hasilkan pada waktu yang sewenang-wenang</translation>
+        <translation type="vanished">Hasilkan pada waktu yang sewenang-wenang</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Sunting...</translation>
+        <translation type="vanished">Sunting...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Poin Awal</translation>
+        <translation type="vanished">Poin Awal</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
+        <translation type="vanished">Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Seret Tikus</translation>
+        <translation type="vanished">Seret Tikus</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Nilai Koordinat</translation>
+        <translation type="vanished">Nilai Koordinat</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Poin 1:</translation>
+        <translation type="vanished">Poin 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Poin 2:</translation>
+        <translation type="vanished">Poin 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Jumlah poin:</translation>
+        <translation type="vanished">Jumlah poin:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Ukuran:</translation>
+        <translation type="vanished">Ukuran:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation type="vanished">Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Peta warna</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Titik:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Merampingkan Pengaturan</translation>
+        <translation type="vanished">Merampingkan Pengaturan</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posisi awal</translation>
+        <translation type="vanished">Posisi awal</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Tentukan area untuk memulai streamline</translation>
+        <translation type="vanished">Tentukan area untuk memulai streamline</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Tentukan area untuk memulai streamline, menurut rentang indeks grid (I, J).</translation>
+        <translation type="vanished">Tentukan area untuk memulai streamline, menurut rentang indeks grid (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation type="vanished">saya min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation type="vanished">saya maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval ruang generasi</translation>
+        <translation type="vanished">Interval ruang generasi</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1, streamline dimulai dari node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Jika Anda menentukan 2, streamline dimulai dari node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1/2, streamline dimulai dari setiap node grid lainnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1, streamline dimulai dari node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Jika Anda menentukan 2, streamline dimulai dari node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1/2, streamline dimulai dari setiap node grid lainnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maksimal</translation>
+        <translation type="vanished">maksimal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation type="vanished">Lebar:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Merampingkan Pengaturan</translation>
+        <translation type="vanished">Merampingkan Pengaturan</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Poin Awal</translation>
+        <translation type="vanished">Poin Awal</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
+        <translation type="vanished">Tentukan dua titik. Partikel mulai dari titik-titik yang dihasilkan sama-sama terpisah antara kedua titik tersebut.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Seret Tikus</translation>
+        <translation type="vanished">Seret Tikus</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Nilai Koordinat</translation>
+        <translation type="vanished">Nilai Koordinat</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Poin 1:</translation>
+        <translation type="vanished">Poin 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Poin 2:</translation>
+        <translation type="vanished">Poin 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Jumlah poin:</translation>
+        <translation type="vanished">Jumlah poin:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation type="vanished">Lebar:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Pengaturan Wilayah (&amp;R)</translation>
+        <translation type="vanished">Pengaturan Wilayah (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17393,7 +17907,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Perbarui Pengaturan Perampingan</translation>
+        <translation type="vanished">Perbarui Pengaturan Perampingan</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Diaktifkan</translation>
+        <translation type="vanished">Diaktifkan</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>Menghadapi %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legenda Panjang</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Perbarui Pengaturan Partikel</translation>
+        <translation type="vanished">Perbarui Pengaturan Partikel</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Interval ruang generasi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Nilai Fisik:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Posisi awal</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Menambahkan (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Menghapus (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Interval ruang generasi</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Warna:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Lebar:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Pengaturan Partikel</translation>
+        <translation type="vanished">Pengaturan Partikel</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Pengaturan umum</translation>
+        <translation type="vanished">Pengaturan umum</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Hasilkan secara berkala</translation>
+        <translation type="vanished">Hasilkan secara berkala</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Interval waktu generasi</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Interval waktu generasi</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maksimal</translation>
+        <translation type="vanished">maksimal</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Hasilkan pada waktu yang sewenang-wenang</translation>
+        <translation type="vanished">Hasilkan pada waktu yang sewenang-wenang</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Sunting...</translation>
+        <translation type="vanished">Sunting...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posisi awal</translation>
+        <translation type="vanished">Posisi awal</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Tentukan area untuk menghasilkan partikel.</translation>
+        <translation type="vanished">Tentukan area untuk menghasilkan partikel.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Tentukan area untuk menghasilkan partikel, dengan rentang indeks grid (I, J, K).</translation>
+        <translation type="vanished">Tentukan area untuk menghasilkan partikel, dengan rentang indeks grid (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation type="vanished">saya min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation type="vanished">saya maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval ruang generasi</translation>
+        <translation type="vanished">Interval ruang generasi</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margin-atas: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Jika Anda menentukan 1, partikel dihasilkan pada node grid.&lt;/p&gt; &lt;p&gt;Jika Anda menentukan 2, partikel dihasilkan pada node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p&gt;Jika Anda tentukan 1/2, partikel dihasilkan untuk setiap node grid lainnya.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margin-atas: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Jika Anda menentukan 1, partikel dihasilkan pada node grid.&lt;/p&gt; &lt;p&gt;Jika Anda menentukan 2, partikel dihasilkan pada node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p&gt;Jika Anda tentukan 1/2, partikel dihasilkan untuk setiap node grid lainnya.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Ukuran:</translation>
+        <translation type="vanished">Ukuran:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Membentuk</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Warna:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Ukuran Poin:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Merampingkan Pengaturan</translation>
+        <translation type="vanished">Merampingkan Pengaturan</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Nilai Fisik:</translation>
+        <translation type="vanished">Nilai Fisik:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posisi awal</translation>
+        <translation type="vanished">Posisi awal</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Jangkauan</translation>
+        <translation type="vanished">Jangkauan</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Tentukan area untuk memulai streamline.</translation>
+        <translation type="vanished">Tentukan area untuk memulai streamline.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Tentukan area untuk memulai streamline, menurut rentang indeks grid (I, J, K).</translation>
+        <translation type="vanished">Tentukan area untuk memulai streamline, menurut rentang indeks grid (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>saya min</translation>
+        <translation type="vanished">saya min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>saya maks</translation>
+        <translation type="vanished">saya maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval ruang generasi</translation>
+        <translation type="vanished">Interval ruang generasi</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1, streamline dimulai dari node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Jika Anda menentukan 2, streamline dimulai dari node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1/2, streamline dimulai dari setiap node grid lainnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1, streamline dimulai dari node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Jika Anda menentukan 2, streamline dimulai dari node grid, dan titik tengah node grid.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Jika Anda menentukan 1/2, streamline dimulai dari setiap node grid lainnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maksimal</translation>
+        <translation type="vanished">maksimal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Warna:</translation>
+        <translation type="vanished">Warna:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Lebar:</translation>
+        <translation type="vanished">Lebar:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tentukan jumlah piksel yang ditampilkan.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Menambahkan (&amp;A)</translation>
+        <translation type="vanished">Menambahkan (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Menghapus (&amp;R)</translation>
+        <translation type="vanished">Menghapus (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18572,7 +19215,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Perbarui Pengaturan Perampingan</translation>
+        <translation type="vanished">Perbarui Pengaturan Perampingan</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>Pilih Langkah waktu untuk ditambahkan</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">Waktu</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">Sunting...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">Peramban Objek</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Warna:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Skala arah Z</translation>
+        <translation>Skala arah Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Masukkan skala arah-Z baru.</translation>
+        <translation>Masukkan skala arah-Z baru.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Skala arah-Z:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">Bentuk kotak</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Membentuk</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>Hasilkan data cloud titik</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20283,6 +21121,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Hasilkan data cloud titik</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20563,7 +21405,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Jarak (m) dari %1</translation>
     </message>
 </context>
 <context>

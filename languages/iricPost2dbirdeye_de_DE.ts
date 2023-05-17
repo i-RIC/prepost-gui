@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalar</translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Kontureinstellung aktualisieren</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalare Einstellung (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Nach Knotenskalarwert</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Nach Zellenskalarwert</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Freiwählbare Farbe</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es können maximal vier Konturen definiert werden.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalar (Zelle)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Gitterform</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Einstellung der Gitterform</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Gitterform-Anzeigeeinstellung</translation>
+        <translation type="vanished">Gitterform-Anzeigeeinstellung</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalarwert für Höhe</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Farbe</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Freiwählbare Farbe</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Nach Skalarwert</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importieren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Bereich</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Farbe</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Nach Knotenskalarwert</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Nach Zellenskalarwert</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Freiwählbare Farbe</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Nach Skalarwert</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importieren (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es können maximal vier Konturen definiert werden.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>

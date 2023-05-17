@@ -3,13 +3,7 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
-#include <guicore/region/region2dsettingcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/opacitycontainer.h>
-
-#include <unordered_map>
-
+class ColorMapSettingContainer;
 class Post2dBirdEyeWindowNodeScalarDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 
@@ -21,28 +15,6 @@ class Post2dBirdEyeWindowNodeScalarGroupDataItem : public Post2dBirdEyeWindowDat
 	Q_OBJECT
 
 public:
-	class Setting : public CompositeContainer {
-	public:
-		enum class ColorMode {
-			Custom,
-			ByScalar
-		};
-
-		Setting();
-		Setting(const Setting& setting);
-
-		Setting& operator=(const Setting& setting);
-		XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
-
-		Region2dSettingContainer regionSetting;
-
-		EnumContainerT<ColorMode> colorMode;
-		ColorContainer customColor;
-		StringContainer colorTarget;
-
-		OpacityContainer opacity;
-	};
-
 	Post2dBirdEyeWindowNodeScalarGroupDataItem(const std::string& elevationTarget, Post2dBirdEyeWindowDataItem* parent);
 	~Post2dBirdEyeWindowNodeScalarGroupDataItem();
 
@@ -59,12 +31,14 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
 private:
 	void innerUpdateZScale(double scale) override;
 
 private:
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -74,15 +48,12 @@ private:
 	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
 	ColorMapSettingContainer* activeColorMapSetting() const;
 
-	std::string m_elevationTarget;
-	Setting m_setting;
+	class Impl;
+	Impl* impl;
 
-	vtkActor* m_actor;
-	vtkActor2D* m_legendActor;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
-
-	class PropertyDialog;
-	class UpdateActorSettingsCommand;
+	class Setting;
+	class SettingEditWidget;
+	class UpdateSettingCommand;
 };
 
 #endif // POST2DBIRDEYEWINDOWNODESCALARGROUPDATAITEM_H

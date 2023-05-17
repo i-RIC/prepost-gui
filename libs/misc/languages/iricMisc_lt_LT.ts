@@ -57,4 +57,11 @@
         <translation>Atidaromas failas %1 nepavyko.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Pasirinkite Vertė</translation>
+    </message>
+</context>
 </TS>

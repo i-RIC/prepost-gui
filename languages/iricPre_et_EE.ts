@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>Objektibrauser</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Värv:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalaar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaari seadistus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Sõlme skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Lahtri skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Vahemik</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalaar (lahter)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Valige Ruudustiku atribuut</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z-suuna skaala</translation>
+        <translation>Z-suuna skaala</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Sisestage uus Z-suuna skaala.</translation>
+        <translation>Sisestage uus Z-suuna skaala.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z-suuna skaala:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>Võre kuju</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Võre kuju seadistus</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Kõrguse skalaarväärtus</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Skalaar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalaari seadistus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Sõlme skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Lahtri skalaarväärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Vahemik</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>Skalaar (sõlm)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Valige Ruudustiku atribuut</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>Punktpilve andmete genereerimine</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>Võrgustiku lahtri atribuudi kuvaseade (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Punktpilve andmete genereerimine</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>Võrgusõlme atribuudi kuvaseade (%1)</translation>
     </message>
 </context>
 <context>

@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Aitortu emaitza:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Erabili letra hauek eredua definitzeko: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -eskuina: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- koska: 0; testu-koska: 0px; &quot;&gt; Urtea: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-koska: 0; text-koska: 0px; &quot;&gt; Hilabetea: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Eguna: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- eskuina: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ordua: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px; &quot;&gt; Minutu: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Bigarrena: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Erabili letra hauek eredua definitzeko: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -eskuina: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- koska: 0; testu-koska: 0px; "&gt; Urtea: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-koska: 0; text-koska: 0px; "&gt; Hilabetea: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Eguna: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- eskuina: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ordua: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px; "&gt; Minutu: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Bigarrena: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Datu hauek ezin dira esportatu. Badirudi ez zela *.tif edo *.asc-etik inportatu.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Datu hauek ezin dira esportatu. &quot;Denbora&quot; dimentsioa duten datuak ezin dira esportatu *.tif edo *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Datu hauek ezin dira esportatu. "Denbora" dimentsioa duten datuak ezin dira esportatu *.tif edo *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Datu hauek ezin dira esportatu. Badirudi ez zela *.png-tik inportatu.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Datu hauek ezin dira esportatu. &quot;Denbora&quot; dimentsioa duten datuak ezin dira esportatu *.png-ra</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Datu hauek ezin dira esportatu. "Denbora" dimentsioa duten datuak ezin dira esportatu *.png-ra</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>X bandako MP rader datuak inporta daitezke &quot;Denbora&quot; dimentsioko sarearen baldintzetarako.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X bandako MP rader datuak inporta daitezke "Denbora" dimentsioko sarearen baldintzetarako.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak gutxienez 4 zutabe izan behar ditu.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 4 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
 </context>
 <context>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Batu...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Ez dago batzeko beste daturik &quot;%1&quot;taldea.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Ez dago batzeko beste daturik "%1"taldea.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Ez da zehaztu mugatzailerik</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Ez dago irakurtzeko adina balio &quot;%1&quot;.&quot;%1&quot;zutabea da %2 baina %3 balioen sarrera.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Ez dago irakurtzeko adina balio "%1"."%1"zutabea da %2 baina %3 balioen sarrera.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Errore bat gertatu da irakurtzean &quot;%1&quot;balioa&quot;. %1 &quot;balioa benetako zenbakia izan behar da, baina&quot;%2&quot;zehaztu da.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Errore bat gertatu da irakurtzean "%1"balioa". %1 "balioa benetako zenbakia izan behar da, baina"%2"zehaztu da.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3766,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Aipatu pertsonaia:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Azalera</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra:&lt;/span&gt; &amp;quot;Puntoak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntoak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>k haztatzeko berretzailea:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; balioen batez besteko haztatua kalkulatzeko pisu gisa erabiltzen da. r puntutik nodo edo gelaxka-zentrora dagoen distantzia da, zeinari balioa mapatzen zaion.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; balioen batez besteko haztatua kalkulatzeko pisu gisa erabiltzen da. r puntutik nodo edo gelaxka-zentrora dagoen distantzia da, zeinari balioa mapatzen zaion.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Azalera</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra:&lt;/span&gt; &amp;quot;Puntuak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; &amp;quot;Puntuak editatzeko moduanquot; dagoenean, ezarpen hau ez da aintzat hartzen eta TIN datuak beti izaten dira. puntu gisa agertzen dira.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,8 +4392,8 @@ p, li { white-space: pre-wrap; }
         <translation>Ertzaren luzera mugatu:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Oharra &lt;/span&gt;: Aplikatu botoian klik egiten duzunean, kenduko diren triangeluak ilunez margotuko dira grisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: Aplikatu botoian klik egiten duzunean, kenduko diren triangeluak ilunez margotuko dira grisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdPoint_eu_ES.ts -->
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuen bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu irudi fitxategia</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Irudi guztiak (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuen tamaina:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikonoen Irudiak</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu irudia (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Garbi (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Gehienezko tamaina:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatutako irudiaren zabalera edo altuera Gehienezko tamaina baino handiagoa denean, irudia automatikoki txikitzen da, zabalera edo altuera gehienezko tamainaren berdina izan dadin.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_eu_ES.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Ziur zaude hautatutakoa ezabatu nahi duzula %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Ez dago batzeko beste daturik &quot;%1&quot;taldea.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Ez dago batzeko beste daturik "%1"taldea.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak 6 zutabe izan behar ditu gutxienez.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 6 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;pid&quot; balioa irakurtzean %1. &quot;pid&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "pid" balioa irakurtzean %1. "pid" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;vid&quot; balioa irakurtzean %1. &quot;vid&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "vid" balioa irakurtzean %1. "vid" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;izena&quot; berdina izan behar da &quot;pid&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "izena" berdina izan behar da "pid" balioak berdinak diren lerroetan.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;balioa&quot; berdina izan behar da &quot;pid&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "balioa" berdina izan behar da "pid" balioak berdinak diren lerroetan.</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligonoa bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Poligonoa bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Kolorea balioaren arabera</translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kolore pertsonalizatua</translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore-mapa</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_eu_ES.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak 6 zutabe izan behar ditu gutxienez.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 6 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;tapa&quot; balioa irakurtzean %1. &quot;tapak&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "tapa" balioa irakurtzean %1. "tapak" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;vid&quot; balioa irakurtzean %1. &quot;vid&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "vid" balioa irakurtzean %1. "vid" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;izena&quot; berdina izan behar da &quot;tapa&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "izena" berdina izan behar da "tapa" balioak berdinak diren lerroetan.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;balioa&quot; berdina izan behar da &quot;tapa&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "balioa" berdina izan behar da "tapa" balioak berdinak diren lerroetan.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerro bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Erabili aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore-mapa</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroaren zabalera:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_eu_ES.ts -->
@@ -6277,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Zeharkako datuak puntuen hodeiko datuak erabiliz sortzen dira. Zeharkako sekzioaren posizioa eta mapako puntuen datuak berriro egokitu nahi badituzu, &quot;Mapa puntuen hodeiko datuak&quot; erabil dezakezu</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Zeharkako datuak puntuen hodeiko datuak erabiliz sortzen dira. Zeharkako sekzioaren posizioa eta mapako puntuen datuak berriro egokitu nahi badituzu, "Mapa puntuen hodeiko datuak" erabil dezakezu</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6290,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Zeharkako datuak puntu-hodei datuak erabiliz sortzen dira. Zeharkako posizioa eta maparen puntu-hodeiaren datuak berriro doitu nahi badituzu, &quot;Maparen puntu-hodeiaren datuak&quot; erabil dezakezu</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Zeharkako datuak puntu-hodei datuak erabiliz sortzen dira. Zeharkako posizioa eta maparen puntu-hodeiaren datuak berriro doitu nahi badituzu, "Maparen puntu-hodeiaren datuak" erabil dezakezu</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Zeharkako datuak puntu-hodei datuak erabiliz sortzen dira. Eskualde batzuetan, datuak ez zeuden puntu-hodeiko datuetan, eta puntu horietarako 0 balioa mapatu zen. Zeharkako posizioa eta maparen puntu-hodeiaren datuak berriro doitu nahi badituzu, &quot;Maparen puntu-hodeiaren datuak&quot; erabil dezakezu</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Zeharkako datuak puntu-hodei datuak erabiliz sortzen dira. Eskualde batzuetan, datuak ez zeuden puntu-hodeiko datuetan, eta puntu horietarako 0 balioa mapatu zen. Zeharkako posizioa eta maparen puntu-hodeiaren datuak berriro doitu nahi badituzu, "Maparen puntu-hodeiaren datuak" erabil dezakezu</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Kota eta desnibelaren ezarpenak baliogabeak dira.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Amaierako puntuaren kota zehazten duzunean, ezin da hasierako puntuarekin berdina izan. Lerro horizontala marraztu nahi baduzu, hautatu &quot;Zehaztu distantzia horizontala&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Amaierako puntuaren kota zehazten duzunean, ezin da hasierako puntuarekin berdina izan. Lerro horizontala marraztu nahi baduzu, hautatu "Zehaztu distantzia horizontala".</translation>
     </message>
 </context>
 <context>
@@ -6750,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Editatu sekzio gurutzatua saguarekin klik eginez. Amaitu edizioa klik bikoitza eginez edo itzultzeko tekla sakatuta. Zeharkako sekzioa editatu ahal izango duzu elkarrizketa-koadroko balioak sartuz. Mesedez sartu elkarrizketa-koadroaren modua &quot;Editatu elkarrizketa-koadrotik&quot; eskuineko botoiarekin klik egiten duen menuan.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Editatu sekzio gurutzatua saguarekin klik eginez. Amaitu edizioa klik bikoitza eginez edo itzultzeko tekla sakatuta. Zeharkako sekzioa editatu ahal izango duzu elkarrizketa-koadroko balioak sartuz. Mesedez sartu elkarrizketa-koadroaren modua "Editatu elkarrizketa-koadrotik" eskuineko botoiarekin klik egiten duen menuan.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Errorea</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: LX balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 lerroa %2 "%3": LX balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: LY balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 lerroa %2 "%3": LY balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: RX balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 lerroa %2 "%3": RX balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: RY balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 lerroa %2 "%3": RY balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: Puntu kopurua baliogabea da</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 lerroa %2 "%3": Puntu kopurua baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: Indizearen balio baliogabea</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 lerroa %2 "%3": Indizearen balio baliogabea</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 lerroa %2 : ataleko datuak %3 ez da nahikoa</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: Distantziaren balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 lerroa %2 "%3": Distantziaren balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 lerroa %2 &quot;%3&quot;: Kota balioa baliogabea da</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 lerroa %2 "%3": Kota balioa baliogabea da</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lerroa %2 : Irakurri errorea. Bi balio behar ditu gutxienez.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Lerroa %2 : Irakurri errorea. Ez da zenbaki errealaren balioa &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Lerroa %2 : Irakurri errorea. Ez da zenbaki errealaren balioa "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lerroa %2 : KP ez da sarrera</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Lerroa %2 &quot;%3&quot;: LX balioa baliogabea da</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Lerroa %2 "%3": LX balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Lerroa %2 &quot;%3&quot;: LY balioa baliogabea da</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Lerroa %2 "%3": LY balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Lerroa %2 &quot;%3&quot;: RX balioa baliogabea da</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Lerroa %2 "%3": RX balioa baliogabea da</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Lerroa %2 &quot;%3&quot;: RY balioa baliogabea da</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Lerroa %2 "%3": RY balioa baliogabea da</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Distantzia markatzailearen datuak ez dira aurkitu. Ez zaie jaramonik egingo.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 lerroa %2 : &quot;%3&quot;: Banderaren datuak baliogabeak dira.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 lerroa %2 : "%3": Banderaren datuak baliogabeak dira.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 lerroa %2 : &quot;%3&quot;: Distantzia datuak baliogabeak dira.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 lerroa %2 : "%3": Distantzia datuak baliogabeak dira.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 lerroa %2 : &quot;%3&quot;: Kota datuak baliogabeak dira.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 lerroa %2 : "%3": Kota datuak baliogabeak dira.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ikusgai</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra:&lt;/span&gt; Kolorea pertsonaliza dezakezu Kolore-mapa fitxa erabiliz.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; Kolorea pertsonaliza dezakezu Kolore-mapa fitxa erabiliz.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>CheckBox</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>baino balio txikiagoa %1 ez da onartzen.</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Balioa baino handiagoa %1 ez da onartzen.</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>Gardena</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kolore</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Ikusgarritasuna</translation>
+        <translation type="vanished">Ikusgarritasuna</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Hautatzen denean</translation>
+        <translation type="vanished">Hautatzen denean</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Beti</translation>
+        <translation type="vanished">Beti</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Inoiz ez</translation>
+        <translation type="vanished">Inoiz ez</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>Tamaina eta posizioa</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Ikusgai</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kolore-mapa</translation>
+        <translation type="vanished">Kolore-mapa</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Luzeraren kondaira</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Kolore pertsonalizatua)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikusgai</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Norabidea:</translation>
+        <translation>Norabidea:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontala</translation>
+        <translation>Horizontala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Bertikala</translation>
+        <translation>Bertikala</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Barraren zabalera</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Autoa</translation>
+        <translation>Autoa</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerrokatzea</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerra</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Zentroa</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuin</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zenbaki kolore-maparen ezarpena (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zenbaki kolore-maparen ezarpena (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errorea</translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore bat gertatu da hemen ezarpena inportatzean %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Publiko (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pribatua (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu kolore-mapa ezarpena</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Era</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu estandarren artean</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu fitxategia</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Arauak</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatzeko atributuak</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Norabidea</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Izenburua</translation>
+        <translation>Izenburua</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Letra-tipoaren ezarpena</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Etiketa bistaratzea</translation>
+        <translation>Etiketa bistaratzea</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Aurrekariak</translation>
+        <translation>Aurrekariak</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Tamaina eta posizioa</translation>
+        <translation>Tamaina eta posizioa</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizioa</translation>
+        <translation>Posizioa</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaina</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Barraren zabalera</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerrokatzea</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Aurrebista</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Kolore Barra</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontala</translation>
+        <translation type="vanished">Horizontala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Bertikala</translation>
+        <translation type="vanished">Bertikala</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikusgai</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Barraren zabalera</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerrokatzea</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezkerra</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Zentroa</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskuin</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Alderantzizko koloreak (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatiketa berdina (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">Kolore maparen ezarpena (*.cmsetting)</translation>
+        <translation>Kolore maparen ezarpena (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errorea</translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore bat gertatu da hemen ezarpena inportatzean %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Publiko (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pribatua (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatu kolore-mapa ezarpena</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Era</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukeratu estandarren artean</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu fitxategia</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Arauak</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxategia</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Inportatzeko atributuak</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Norabidea</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Izenburua</translation>
+        <translation>Izenburua</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Letra-tipoaren ezarpena</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Etiketa bistaratzea</translation>
+        <translation>Etiketa bistaratzea</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formatua</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa kopurua</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketa</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Aurrekariak</translation>
+        <translation>Aurrekariak</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Tamaina eta posizioa</translation>
+        <translation>Tamaina eta posizioa</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizioa</translation>
+        <translation>Posizioa</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamaina</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Barraren zabalera</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerrokatzea</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Aurrebista</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukerak</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Balio hamartarrak:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Erregistro-eskala:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">Gaituta</translation>
+        <translation>Gaituta</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore Barra</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontala</translation>
+        <translation>Horizontala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Bertikala</translation>
+        <translation>Bertikala</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Behetik distantzia</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>I Min:</translation>
+        <translation type="vanished">I Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Max:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J Min:</translation>
+        <translation type="vanished">J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Max:</translation>
+        <translation type="vanished">J Max:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">I Min:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">I Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">J Max:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K norabidea</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13530,8 +13630,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Aukeratu ebazlea</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu &quot;Ados&quot; botoia.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu "Ados" botoia.</translation>
     </message>
 </context>
 <context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean &quot;%1&quot;. Konpondu honi ez zaio jaramonik egiten. %2</translation>
+        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean "%1". Konpondu honi ez zaio jaramonik egiten. %2</translation>
     </message>
 </context>
 <context>
@@ -14522,7 +14622,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Badirudi proiektu hau iRIC GUI beste leiho batek ireki duela. Ezin duzu proiektuaren karpeta ireki GUI leiho anitzetatik.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Ireki den proiektua ez da laneko direktorioan kopiatzen, eta proiektu honetan egindako aldaketak gordetzera behartuko duzu. Uneko proiektua mantendu nahi baduzu, gorde lehenago beste proiektu batean.</translation>
     </message>
     <message>
@@ -14682,8 +14782,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Une azpiatiloi aktiboak ez du onartzen sestra irudia esportatzea.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Forma fitxategia esportatzeko, aldatu &quot;Pantaila ezarpena&quot; &quot;Sestra irudia&quot; eta ez &quot;Kolore marjina&quot; edo &quot;Isolinak&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14823,8 +14923,8 @@ Option -&gt; Preferences</source>
         <translation>Ezarpen fitxategia (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Forma fitxategia esportatzeko, aldatu Kolore modua &quot;Modu diskretua&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Forma fitxategia esportatzeko, aldatu Kolore modua "Modu diskretua".</translation>
     </message>
 </context>
 <context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,8 +15298,8 @@ Option -&gt; Preferences</source>
         <translation>Ireki 2D prozesatzeko ondorengo leiho berria</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Ireki 2D Bird&apos;s Eye Post-Processing Leiho berria</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Ireki 2D Bird's Eye Post-Processing Leiho berria</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>Fitxategia irekitzen %1 huts egin du.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_eu_ES.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Eskalarra</translation>
+        <translation>Eskalarra</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Eguneratu Sestra Ezarpena</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">Ezarpen eskalarra (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>Sareta forma</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Sarearen forma bistaratzeko ezarpena</translation>
+        <translation type="vanished">Sarearen forma bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Kota-balio eskalarra</translation>
+        <translation type="vanished">Kota-balio eskalarra</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">Kota-balio eskalarra</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Balio eskalarren arabera</translation>
+        <translation type="vanished">Balio eskalarren arabera</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Gehienez lau sestra defini daitezke.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Forma fitxategia esportatzeko, aldatu &quot;Pantaila ezarpena&quot; &quot;Sestra irudia&quot; eta ez &quot;Kolore marjina&quot; edo &quot;Isolinak&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>Eskala (ertzaI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Eskalar (ertzaJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Elkarrizketa</translation>
+        <translation type="vanished">Elkarrizketa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>Forma fitxategia esportatzeko, aldatu kolore ezarpena &quot;Modu diskretua&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Eguneratu partikulen ezarpena</translation>
+        <translation type="vanished">Eguneratu partikulen ezarpena</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Eskualdea</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Sorkuntza espazio tartea</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Eguneratu partikulen ezarpena</translation>
+        <translation type="vanished">Eguneratu partikulen ezarpena</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Eskualdea</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Saguaren arrastatzea</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Balioak koordinatu</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">1. puntua:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">2. puntua:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Balio fisikoa:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Eskualdea</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Barrutia</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">Zehaztu eremua arintzea hasteko</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">Zehaztu korronteak hasteko eremua, saretaren indizeen arabera (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Sorkuntza espazio tartea</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Zabalera:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Eguneratu Streamline ezarpena</translation>
+        <translation type="vanished">Eguneratu Streamline ezarpena</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Balio fisikoa:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Eskualdea</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Saguaren arrastatzea</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Balioak koordinatu</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">1. puntua:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">2. puntua:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Puntu kopurua:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Zabalera:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Partikulen ezarpena</translation>
+        <translation type="vanished">Partikulen ezarpena</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Ezarpen arruntak</translation>
+        <translation type="vanished">Ezarpen arruntak</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Aldian-aldian sortu</translation>
+        <translation type="vanished">Aldian-aldian sortu</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Belaunaldiaren denbora tartea</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Belaunaldiaren denbora tartea</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>gehienez</translation>
+        <translation type="vanished">gehienez</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Sortu denbora arbitrarioan</translation>
+        <translation type="vanished">Sortu denbora arbitrarioan</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editatu...</translation>
+        <translation type="vanished">Editatu...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Hasierako posizioa</translation>
+        <translation type="vanished">Hasierako posizioa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Zehaztu partikula sortzeko eremua.</translation>
+        <translation type="vanished">Zehaztu partikula sortzeko eremua.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Zehaztu partikula sortzeko eremua, saretaren indizeen arabera (I, J).</translation>
+        <translation type="vanished">Zehaztu partikula sortzeko eremua, saretaren indizeen arabera (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Sorkuntza espazio tartea</translation>
+        <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Neurria:</translation>
+        <translation type="vanished">Neurria:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Partikulen ezarpena</translation>
+        <translation type="vanished">Partikulen ezarpena</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Ezarpen arruntak</translation>
+        <translation type="vanished">Ezarpen arruntak</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Aldian-aldian sortu</translation>
+        <translation type="vanished">Aldian-aldian sortu</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>Belaunaldi tartea</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Belaunaldi tartea</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>gehienez</translation>
+        <translation type="vanished">gehienez</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Sortu denbora arbitrarioan</translation>
+        <translation type="vanished">Sortu denbora arbitrarioan</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editatu...</translation>
+        <translation type="vanished">Editatu...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Hasiera puntuak</translation>
+        <translation type="vanished">Hasiera puntuak</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
+        <translation type="vanished">Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Saguaren arrastatzea</translation>
+        <translation type="vanished">Saguaren arrastatzea</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Balioak koordinatu</translation>
+        <translation type="vanished">Balioak koordinatu</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>1. puntua:</translation>
+        <translation type="vanished">1. puntua:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>2. puntua:</translation>
+        <translation type="vanished">2. puntua:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Puntu kopurua:</translation>
+        <translation type="vanished">Puntu kopurua:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Neurria:</translation>
+        <translation type="vanished">Neurria:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Kolore maparen ezarpena</translation>
+        <translation type="vanished">Kolore maparen ezarpena</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kolore-mapa</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Ezarpena arintzea</translation>
+        <translation type="vanished">Ezarpena arintzea</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Hasierako posizioa</translation>
+        <translation type="vanished">Hasierako posizioa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Zehaztu eremua arintzea hasteko</translation>
+        <translation type="vanished">Zehaztu eremua arintzea hasteko</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Zehaztu korronteak hasteko eremua, saretaren indizeen arabera (I, J).</translation>
+        <translation type="vanished">Zehaztu korronteak hasteko eremua, saretaren indizeen arabera (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Sorkuntza espazio tartea</translation>
+        <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;&quot; &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;&quot; &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>gehienez</translation>
+        <translation type="vanished">gehienez</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Zabalera:</translation>
+        <translation type="vanished">Zabalera:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Ezarpena arintzea</translation>
+        <translation type="vanished">Ezarpena arintzea</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Hasiera puntuak</translation>
+        <translation type="vanished">Hasiera puntuak</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
+        <translation type="vanished">Zehaztu bi puntu. Partikulak bi puntu horien artean berdin banatutako sortutako puntuetatik abiatzen dira.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Saguaren arrastatzea</translation>
+        <translation type="vanished">Saguaren arrastatzea</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Balioak koordinatu</translation>
+        <translation type="vanished">Balioak koordinatu</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>1. puntua:</translation>
+        <translation type="vanished">1. puntua:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>2. puntua:</translation>
+        <translation type="vanished">2. puntua:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Puntu kopurua:</translation>
+        <translation type="vanished">Puntu kopurua:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Zabalera:</translation>
+        <translation type="vanished">Zabalera:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Eskualdeen Ezarpena (&amp;R)</translation>
+        <translation type="vanished">Eskualdeen Ezarpena (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17397,7 +17911,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Eguneratu Streamline ezarpena</translation>
+        <translation type="vanished">Eguneratu Streamline ezarpena</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Gaituta</translation>
+        <translation type="vanished">Gaituta</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>Aurpegia %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Luzeraren kondaira</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Eguneratu partikulen ezarpena</translation>
+        <translation type="vanished">Eguneratu partikulen ezarpena</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Aurpegia</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Sorkuntza espazio tartea</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Balio fisikoa:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Hasierako posizioa</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Gehitu (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Kendu (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Aurpegia</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Sorkuntza espazio tartea</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kolore:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Zabalera:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Partikulen ezarpena</translation>
+        <translation type="vanished">Partikulen ezarpena</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Ezarpen arruntak</translation>
+        <translation type="vanished">Ezarpen arruntak</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Aldian-aldian sortu</translation>
+        <translation type="vanished">Aldian-aldian sortu</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Belaunaldiaren denbora tartea</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Belaunaldiaren denbora tartea</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>gehienez</translation>
+        <translation type="vanished">gehienez</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Sortu denbora arbitrarioan</translation>
+        <translation type="vanished">Sortu denbora arbitrarioan</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Editatu...</translation>
+        <translation type="vanished">Editatu...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Hasierako posizioa</translation>
+        <translation type="vanished">Hasierako posizioa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Zehaztu partikula sortzeko eremua.</translation>
+        <translation type="vanished">Zehaztu partikula sortzeko eremua.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Zehaztu partikula sortzeko eremua, sarearen indizeen arabera (I, J, K).</translation>
+        <translation type="vanished">Zehaztu partikula sortzeko eremua, sarearen indizeen arabera (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Geh</translation>
+        <translation type="vanished">K Geh</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Sorkuntza espazio tartea</translation>
+        <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Neurria:</translation>
+        <translation type="vanished">Neurria:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kolore:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntuen tamaina:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Ezarpena arintzea</translation>
+        <translation type="vanished">Ezarpena arintzea</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Balio fisikoa:</translation>
+        <translation type="vanished">Balio fisikoa:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Hasierako posizioa</translation>
+        <translation type="vanished">Hasierako posizioa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Barrutia</translation>
+        <translation type="vanished">Barrutia</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Zehaztu eremua arintzea hasteko.</translation>
+        <translation type="vanished">Zehaztu eremua arintzea hasteko.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Zehaztu korronteak hasteko eremua, saretaren indizeen arabera (I, J, K).</translation>
+        <translation type="vanished">Zehaztu korronteak hasteko eremua, saretaren indizeen arabera (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Geh</translation>
+        <translation type="vanished">K Geh</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Sorkuntza espazio tartea</translation>
+        <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;&quot; &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;&quot; &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>gehienez</translation>
+        <translation type="vanished">gehienez</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Zabalera:</translation>
+        <translation type="vanished">Zabalera:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Gehitu (&amp;A)</translation>
+        <translation type="vanished">Gehitu (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Kendu (&amp;R)</translation>
+        <translation type="vanished">Kendu (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18588,7 +19231,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Eguneratu Streamline ezarpena</translation>
+        <translation type="vanished">Eguneratu Streamline ezarpena</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>Aukeratu Denbora urratsa gehitzeko</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">Denbora</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">Editatu...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">Objektu arakatzailea</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Kolore:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z norabidearen eskala</translation>
+        <translation>Z norabidearen eskala</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Sartu Z norabidearen eskala berria.</translation>
+        <translation>Sartu Z norabidearen eskala berria.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z norabideko eskala:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">Sareta forma</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>Sortu puntu hodeiko datuak</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20283,6 +21121,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Sortu puntu hodeiko datuak</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20563,7 +21405,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Distantzia(m)-tik %1</translation>
     </message>
 </context>
 <context>

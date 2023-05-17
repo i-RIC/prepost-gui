@@ -57,4 +57,11 @@
         <translation>Fitxategia irekitzen %1 huts egin du.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Hautatu Balioa</translation>
+    </message>
+</context>
 </TS>

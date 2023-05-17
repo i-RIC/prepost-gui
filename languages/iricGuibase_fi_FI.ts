@@ -22,6 +22,17 @@
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Lomake</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Valintaruutu</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -697,6 +708,10 @@
     <message>
         <source>Transparent</source>
         <translation>Läpinäkyvä</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
     </message>
 </context>
 <context>

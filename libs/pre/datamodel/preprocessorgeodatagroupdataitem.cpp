@@ -32,7 +32,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
-#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>

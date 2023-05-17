@@ -147,6 +147,7 @@ HEADERS += colortool.h \
            timeformat/timeformatutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtkarrowlegendactors.h \
+           vtktool/vtkcelldatawarp.h \
            vtktool/vtklabel2dactor.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
@@ -295,6 +296,7 @@ SOURCES += colortool.cpp \
            timeformat/timeformatutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtkarrowlegendactors.cpp \
+           vtktool/vtkcelldatawarp.cpp \
            vtktool/vtklabel2dactor.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \

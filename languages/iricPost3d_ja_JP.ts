@@ -495,7 +495,7 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation>有効</translation>
+        <translation type="vanished">有効</translation>
     </message>
 </context>
 <context>
@@ -776,6 +776,10 @@
         <source>Face%1</source>
         <translation>面%1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>長さの凡例</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -908,7 +912,65 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>パーティクル設定</translation>
+        <translation type="vanished">パーティクル設定</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>パーティクル表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>発生位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>削除(&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>面</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation>パーティクルを発生させる面を指定します。</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation>パーティクルを発生させる面を、格子のインデックス (I, J, K) の範囲で指定してください。</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>生成間隔</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>点のサイズ</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>ピクセル</translation>
     </message>
 </context>
 <context>
@@ -923,6 +985,71 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>流線表示設定</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>物理量:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>開始位置</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>追加(&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>削除(&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>面</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation>流線の開始面を指定します。</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation>流線の開始面を、格子のインデックス (I, J, K) の範囲で指定します。</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>生成間隔</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>線の太さ:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>ピクセル</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -933,23 +1060,23 @@
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>パーティクル設定</translation>
+        <translation type="vanished">パーティクル設定</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>共通設定</translation>
+        <translation type="vanished">共通設定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>一定時間おきに生成</translation>
+        <translation type="vanished">一定時間おきに生成</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>発生する時間間隔</translation>
+        <translation type="vanished">発生する時間間隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -962,7 +1089,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -974,75 +1101,75 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>-</source>
-        <translation>減らす</translation>
+        <translation type="vanished">減らす</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>増やす</translation>
+        <translation type="vanished">増やす</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>任意のタイミングで生成</translation>
+        <translation type="vanished">任意のタイミングで生成</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>編集...</translation>
+        <translation type="vanished">編集...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>発生位置</translation>
+        <translation type="vanished">発生位置</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>範囲</translation>
+        <translation type="vanished">範囲</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>パーティクルを発生させる位置を指定します。</translation>
+        <translation type="vanished">パーティクルを発生させる位置を指定します。</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>パーティクルを発生させる位置を、格子のインデックス (I, J, K) の範囲で指定してください。</translation>
+        <translation type="vanished">パーティクルを発生させる位置を、格子のインデックス (I, J, K) の範囲で指定してください。</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I 最小</translation>
+        <translation type="vanished">I 最小</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I 最大</translation>
+        <translation type="vanished">I 最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J 最小</translation>
+        <translation type="vanished">J 最小</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J 最大</translation>
+        <translation type="vanished">J 最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K 最小</translation>
+        <translation type="vanished">K 最小</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K 最大</translation>
+        <translation type="vanished">K 最大</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>生成間隔</translation>
+        <translation type="vanished">生成間隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1054,7 +1181,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -1066,11 +1193,11 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大きさ:</translation>
+        <translation type="vanished">大きさ:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1078,7 +1205,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1086,11 +1213,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <translation type="vanished">追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>削除(&amp;R)</translation>
+        <translation type="vanished">削除(&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1141,6 +1268,21 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
     </message>
 </context>
 <context>
@@ -1221,55 +1363,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>流線設定</translation>
+        <translation type="vanished">流線設定</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>物理量:</translation>
+        <translation type="vanished">物理量:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>開始位置</translation>
+        <translation type="vanished">開始位置</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>範囲</translation>
+        <translation type="vanished">範囲</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>流線の開始位置を指定します。</translation>
+        <translation type="vanished">流線の開始位置を指定します。</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>流線の開始位置を、格子のインデックス (I, J, K) の範囲で指定します。</translation>
+        <translation type="vanished">流線の開始位置を、格子のインデックス (I, J, K) の範囲で指定します。</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I 最小</translation>
+        <translation type="vanished">I 最小</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I 最大</translation>
+        <translation type="vanished">I 最大</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J 最小</translation>
+        <translation type="vanished">J 最小</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J 最大</translation>
+        <translation type="vanished">J 最大</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K 最小</translation>
+        <translation type="vanished">K 最小</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K 最大</translation>
+        <translation type="vanished">K 最大</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>生成間隔</translation>
+        <translation type="vanished">生成間隔</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1279,7 +1421,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
@@ -1291,31 +1433,31 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>-</source>
-        <translation>減らす</translation>
+        <translation type="vanished">減らす</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>増やす</translation>
+        <translation type="vanished">増やす</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>線の太さ:</translation>
+        <translation type="vanished">線の太さ:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1323,7 +1465,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
@@ -1331,11 +1473,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>追加(&amp;A)</translation>
+        <translation type="vanished">追加(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>削除(&amp;R)</translation>
+        <translation type="vanished">削除(&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1366,7 +1508,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>流線の設定変更</translation>
+        <translation type="vanished">流線の設定変更</translation>
     </message>
     <message>
         <source>Edit Background Color</source>

@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>インポート(&amp;I)...</translation>
+        <translation type="vanished">インポート(&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>エクスポート(&amp;E)...</translation>
+        <translation type="vanished">エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
 </context>
 <context>
@@ -80,19 +88,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選択されている時のみ</translation>
+        <translation type="vanished">選択されている時のみ</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>常に</translation>
+        <translation type="vanished">常に</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>表示しない</translation>
+        <translation type="vanished">表示しない</translation>
     </message>
     <message>
         <source>Title</source>
@@ -133,6 +141,10 @@
     <message>
         <source>Size and Position</source>
         <translation>サイズと位置</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>表示する</translation>
     </message>
 </context>
 <context>
@@ -222,7 +234,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">表示色</translation>
+        <translation>表示色</translation>
     </message>
     <message>
         <source>Custom color</source>
@@ -250,7 +262,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>長さの凡例</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(色を指定)</translation>
     </message>
 </context>
 <context>
@@ -846,19 +873,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>カラーバー</translation>
+        <translation type="vanished">カラーバー</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>横</translation>
+        <translation type="vanished">横</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>縦</translation>
+        <translation type="vanished">縦</translation>
     </message>
 </context>
 <context>
@@ -1962,6 +1989,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>下端からの距離</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>ピクセル</translation>
     </message>
 </context>
 <context>
@@ -3809,6 +3844,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">I 最小:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">I 最大:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J 最小:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J 最大:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>I 最小:</translation>
     </message>
     <message>
@@ -3960,6 +4018,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K 方向</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>減らす</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>増やす</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>max</translation>
     </message>
 </context>
 <context>

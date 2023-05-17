@@ -133,9 +133,7 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowparticlesbasevectordataitem.h \
            datamodel/post3dwindowparticlesbasevectorgroupdataitem.h \
            datamodel/post3dwindowparticlestopdataitem.h \
-           datamodel/post3dwindowparticlestructuredsettingdialog.h \
            datamodel/post3dwindowrootdataitem.h \
-           datamodel/post3dwindowstreamlinestructuredsettingdialog.h \
            datamodel/post3dwindowsurfacedataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
            datamodel/post3dwindowzonedataitem.h \
@@ -151,7 +149,14 @@ HEADERS += post3d_global.h \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.h \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.h \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h \
-           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.h \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_impl.h \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setting.h \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget_startpositioneditwidget.h \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_impl.h \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_setting.h \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget.h \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget_startpositioneditwidget.h \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.h \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidget.h \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h \
@@ -164,12 +169,14 @@ FORMS += post3dwindowcellrangelistsettingeditwidget.ui \
          post3dwindowfacesettingeditwidget.ui \
          datamodel/post3dwindowfacesettingwidget.ui \
          datamodel/post3dwindowisosurfacesettingdialog.ui \
-         datamodel/post3dwindowparticlestructuredsettingdialog.ui \
-         datamodel/post3dwindowstreamlinestructuredsettingdialog.ui \
          datamodel/private/post3dwindowcellcontourgroupdataitem_propertydialog.ui \
          datamodel/private/post3dwindowcontourgroupdataitem_propertydialog.ui \
          datamodel/private/post3dwindowgridshapedataitem_propertydialog.ui \
          datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.ui \
+         datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.ui \
+         datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget_startpositioneditwidget.ui \
+         datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget.ui \
+         datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget_startpositioneditwidget.ui \
          datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.ui \
          datamodel/private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidget.ui \
          datamodel/private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.ui
@@ -218,9 +225,7 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowparticlesbasevectordataitem.cpp \
            datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp \
            datamodel/post3dwindowparticlestopdataitem.cpp \
-           datamodel/post3dwindowparticlestructuredsettingdialog.cpp \
            datamodel/post3dwindowrootdataitem.cpp \
-           datamodel/post3dwindowstreamlinestructuredsettingdialog.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \
            datamodel/post3dwindowsurfacegroupdataitem.cpp \
            datamodel/post3dwindowzonedataitem.cpp \
@@ -236,7 +241,14 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_propertydialog.cpp \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.cpp \
            datamodel/private/post3dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.cpp \
-           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setsettingcommand.cpp \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_impl.cpp \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_setting.cpp \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.cpp \
+           datamodel/private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget_startpositioneditwidget.cpp \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_impl.cpp \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_setting.cpp \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget.cpp \
+           datamodel/private/post3dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget_startpositioneditwidget.cpp \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.cpp \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidget.cpp \
            datamodel/private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.cpp \

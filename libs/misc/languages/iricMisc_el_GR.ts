@@ -57,4 +57,11 @@
         <translation>Άνοιγμα αρχείου %1 απέτυχε.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Επιλέξτε Τιμή</translation>
+    </message>
+</context>
 </TS>

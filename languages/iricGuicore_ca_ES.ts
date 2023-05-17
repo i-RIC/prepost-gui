@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporta (&amp;E)...</translation>
+        <translation type="vanished">Exporta (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Mapa de colors</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Visibilitat</translation>
+        <translation type="vanished">Visibilitat</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Quan es selecciona</translation>
+        <translation type="vanished">Quan es selecciona</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Sempre</translation>
+        <translation type="vanished">Sempre</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mai</translation>
+        <translation type="vanished">Mai</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Mida i posició</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Llegenda de la longitud</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Color personalitzat)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Barra de colors</translation>
+        <translation type="vanished">Barra de colors</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horitzontal</translation>
+        <translation type="vanished">Horitzontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Distància des de baix</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">M'hi apunto:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">I Màxim:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J Max:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>M'hi apunto:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>direcció K</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>màx</translation>
     </message>
 </context>
 <context>

@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>進口 (&amp;I)...</translation>
+        <translation type="vanished">進口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
+        <translation type="vanished">出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>顏色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>色圖</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>能見度</translation>
+        <translation type="vanished">能見度</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>選擇時</translation>
+        <translation type="vanished">選擇時</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>總是</translation>
+        <translation type="vanished">總是</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>絕不</translation>
+        <translation type="vanished">絕不</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>大小和位置</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>可見的</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">顏色</translation>
+        <translation>顏色</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>色圖</translation>
+        <translation type="vanished">色圖</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>長度的傳說</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(自定義顏色)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>彩條</translation>
+        <translation type="vanished">彩條</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>水平的</translation>
+        <translation type="vanished">水平的</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>垂直的</translation>
+        <translation type="vanished">垂直的</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>離底部的距離</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">算我一個：</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">我最大：</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J敏：</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J 馬克斯：</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>算我一個：</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K向</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>分鐘</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1個</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>最大限度</translation>
     </message>
 </context>
 <context>

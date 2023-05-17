@@ -20,16 +20,6 @@ class ColorMapSettingContainer;
 class GUICOREDLL_EXPORT ColorMapLegendSettingContainer : public CompositeContainer, public ColorMapLegendSettingContainerI
 {
 public:
-	enum class Direction {
-		Horizontal,
-		Vertical
-	};
-	enum class BarAlign {
-		Left,
-		Center,
-		Right
-	};
-
 	ColorMapLegendSettingContainer();
 	ColorMapLegendSettingContainer(const ColorMapLegendSettingContainer& c);
 	~ColorMapLegendSettingContainer();
@@ -41,7 +31,12 @@ public:
 	void setDelegateMode(bool delegateMode) override;
 
 	void copy(const ColorMapLegendSettingContainerI& setting) override;
+	void copyOtherThanTitle(const ColorMapLegendSettingContainerI& setting) override;
+	bool getVisible() const override;
 	void setVisible(bool visible) override;
+	Direction getDirection() override;
+	void setDirection(Direction direction) override;
+	QString getTitle() const override;
 	void setTitle(const QString& title) override;
 	ColorMapSettingContainerI* setting() const override;
 	void setSetting(ColorMapSettingContainerI* setting) override;

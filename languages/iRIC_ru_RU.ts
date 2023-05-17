@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Узнай результат:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Используйте следующие буквы для определения шаблона: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; &quot;&gt; Год: ГГГГ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Месяц: ММ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; День: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Час: чч &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Минута: мм &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Используйте следующие буквы для определения шаблона: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; Год: ГГГГ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Месяц: ММ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; День: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Час: чч &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Минута: мм &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Эти данные нельзя экспортировать. Похоже, он не был импортирован из *.tif или *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Эти данные нельзя экспортировать. Данные с размером &quot;Время&quot; нельзя экспортировать в *.tif или *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Эти данные нельзя экспортировать. Данные с размером "Время" нельзя экспортировать в *.tif или *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Эти данные нельзя экспортировать. Вроде не из *.png импортировано.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Эти данные нельзя экспортировать. Данные с размером &quot;Время&quot; нельзя экспортировать в *.png.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Эти данные нельзя экспортировать. Данные с размером "Время" нельзя экспортировать в *.png.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,7 +2709,7 @@ p, li { white-space: pre-wrap; }
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
         <translation>Данные MP rader диапазона X могут быть импортированы для условий сетки с размерностью «Время».</translation>
     </message>
     <message>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 4 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 4 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
     </message>
 </context>
 <context>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Объединить...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Других данных для объединения нет &quot;%1&quot; группа.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Других данных для объединения нет "%1" группа.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Разделитель не указан</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Недостаточно значений для чтения &quot;%1&quot;.&quot;%1&quot;столбец %2 но %3 ввод значений.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Недостаточно значений для чтения "%1"."%1"столбец %2 но %3 ввод значений.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Произошла ошибка при чтении &quot;%1&quot; ценить. &quot;%1&quot;значение должно быть действительным числом, но&quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Произошла ошибка при чтении "%1" ценить. "%1"значение должно быть действительным числом, но"%2"указано.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3766,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>Цитата персонаж:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Поверхность</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Коэффициент взвешивания k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; используется в качестве веса при вычислении средневзвешенного значения. r — расстояние от точки до узла или центра ячейки, с которым сопоставляется значение.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; используется в качестве веса при вычислении средневзвешенного значения. r — расстояние от точки до узла или центра ячейки, с которым сопоставляется значение.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Поверхность</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; В &amp;quot;Режиме редактирования точекquot; этот параметр игнорируется, а данные TIN всегда отображается точками.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,8 +4392,8 @@ p, li { white-space: pre-wrap; }
         <translation>Предельная длина кромки:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Примечание &lt;/span&gt;: когда вы нажимаете кнопку &quot;Применить&quot;, треугольники, которые будут удалены, будут окрашены в темный цвет. серый. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примечание &lt;/span&gt;: когда вы нажимаете кнопку "Применить", треугольники, которые будут удалены, будут окрашены в темный цвет. серый. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdPoint_ru_RU.ts -->
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка отображения точки</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите файл изображения</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Все изображения (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Точки</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер точки:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Изображения значков</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать изображение (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Прозрачный (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальный размер:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Когда ширина или высота импортируемого изображения больше максимального размера, изображение автоматически сжимается, так что ширина или высота становятся равными максимальному размеру.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский цвет</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_ru_RU.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Вы уверены, что хотите удалить выбранные %1 с?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Других данных для объединения нет &quot;%1&quot; группа.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Других данных для объединения нет "%1" группа.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;pid&quot; в строке %1. &quot;pid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "pid" в строке %1. "pid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения vid в строке %1. &quot;vid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения vid в строке %1. "vid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Произошла ошибка при чтении строки %1. &quot;name&quot; должно быть одинаковым для строк, в которых одинаковы значения &quot;pid&quot;.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. "name" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Произошла ошибка при чтении строки %1. &quot;value&quot; должно быть одинаковым для строк, в которых одинаковы значения &quot;pid&quot;.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Произошла ошибка при чтении строки %1. "value" должно быть одинаковым для строк, в которых одинаковы значения "pid".</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка отображения многоугольника</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка отображения многоугольника</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Цвет</translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Цвет по значению</translation>
+        <translation>Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Пользовательский цвет</translation>
+        <translation>Пользовательский цвет</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветовая карта</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина линии:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_ru_RU.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,31 +5572,31 @@ p, li { white-space: pre-wrap; }
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;крышки&quot; в строке %1. &quot;крышка&quot; должна быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "крышки" в строке %1. "крышка" должна быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения vid в строке %1. &quot;vid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения vid в строке %1. "vid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
         <translation>Произошла ошибка при чтении строки %1. «name» должно быть одинаковым для строк, в которых значения «lid» совпадают.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
         <translation>Произошла ошибка при чтении строки %1. «value» должно быть одинаковым для строк, где значения «lid» совпадают.</translation>
     </message>
     <message>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка линейного дисплея</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка линейного дисплея</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать настройку окна предварительной обработки</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский цвет</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветовая карта</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина линии:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_ru_RU.ts -->
@@ -6277,7 +6277,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Данные поперечного сечения генерируются с использованием данных облака точек. Если вы хотите снова настроить положение поперечного сечения и данные облака точек на карте, вы можете использовать «Данные облака точек карты»</translation>
     </message>
     <message>
@@ -6290,13 +6290,13 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Данные поперечного сечения генерируются с использованием данных облака точек. Если вы хотите снова отрегулировать положение поперечного сечения и сопоставить данные облака точек, вы можете использовать «Сопоставление данных облака точек».</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation>Данные поперечного сечения генерируются с использованием данных облака точек. В некоторых регионах данные не существовали в данных облака точек, и для этих точек было сопоставлено значение 0. Если вы хотите снова отрегулировать положение поперечного сечения и сопоставить данные облака точек, вы можете использовать «Сопоставление данных облака точек».</translation>
     </message>
     <message>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,7 +6519,7 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Настройки высоты и уклона недействительны.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
         <translation>Когда вы указываете отметку конечной точки, она не может совпадать с начальной точкой. Если вы хотите нарисовать горизонтальную линию, выберите «Указать расстояние по горизонтали».</translation>
     </message>
 </context>
@@ -6746,7 +6746,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Отредактируйте поперечное сечение, щелкнув мышью. Завершите редактирование двойным щелчком или нажатием клавиши возврата. Вы можете точно редактировать поперечное сечение, вводя значения из диалогового окна. Пожалуйста, войдите в режим редактирования диалога из «Редактировать из диалога» в контекстном меню.</translation>
     </message>
     <message>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ошибка</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение LX недействительно</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение LX недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение LY недействительно</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение LY недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение RX недействительно</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение RX недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение RY недействительно</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение RY недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Количество очков недействительно</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 линия %2 "%3": Количество очков недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Недопустимое значение индекса</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 линия %2 "%3": Недопустимое значение индекса</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 линия %2 : данные сечения для %3 недостаточно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение расстояния недействительно</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение расстояния недействительно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Значение отметки недействительно.</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 линия %2 "%3": Значение отметки недействительно.</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Линия %2 : Ошибка чтения. Требуется как минимум два значения.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Линия %2 : Ошибка чтения. Не действительное числовое значение &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Линия %2 : Ошибка чтения. Не действительное числовое значение "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Линия %2 : КП не вводится</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Значение LX недействительно</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Линия %2 "%3": Значение LX недействительно</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Значение LY недействительно</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Линия %2 "%3": Значение LY недействительно</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Значение RX недействительно</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Линия %2 "%3": Значение RX недействительно</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Значение RY недействительно</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Линия %2 "%3": Значение RY недействительно</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Данные маркера расстояния не найдены. Будет проигнорировано.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 линия %2 : &quot;%3&quot;: Данные флага недействительны.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 линия %2 : "%3": Данные флага недействительны.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 линия %2 : &quot;%3&quot;: Данные о расстоянии недействительны.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 линия %2 : "%3": Данные о расстоянии недействительны.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 линия %2 : &quot;%3&quot;: Данные о высоте недействительны.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 линия %2 : "%3": Данные о высоте недействительны.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Видимый</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание.&lt;/span&gt; Цвет можно настроить на вкладке &quot;Карта цветов&quot;.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; Цвет можно настроить на вкладке "Карта цветов".&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>Флажок</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значение меньше, чем %1 в не допускается.</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Валур больше, чем %1 не допускается.</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>Прозрачный</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Видимость</translation>
+        <translation type="vanished">Видимость</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>При выборе</translation>
+        <translation type="vanished">При выборе</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Всегда</translation>
+        <translation type="vanished">Всегда</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Никогда</translation>
+        <translation type="vanished">Никогда</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>Размер и положение</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видимый</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Цвет</translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Цветовая карта</translation>
+        <translation type="vanished">Цветовая карта</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Легенда о длине</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Пользовательский цвет)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видимый</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Направление:</translation>
+        <translation>Направление:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Горизонтальный</translation>
+        <translation>Горизонтальный</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Вертикальный</translation>
+        <translation>Вертикальный</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина полосы</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Авто</translation>
+        <translation>Авто</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>пикс.</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Выравнивание</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Левый</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Верно</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Перечислить настройку цветовой карты (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Перечислить настройку цветовой карты (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при импорте настроек из %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Общественный (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Частный (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт настроек цветовой карты</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите из стандартов</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите файл</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандарты</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибуты для импорта</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Заголовок</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка шрифта</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Отображение этикетки</translation>
+        <translation>Отображение этикетки</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Цвет</translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Этикетка</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Фон</translation>
+        <translation>Фон</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Размер и положение</translation>
+        <translation>Размер и положение</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиция</translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина полосы</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Выравнивание</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Предварительный просмотр</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Цветная полоса</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Горизонтальный</translation>
+        <translation type="vanished">Горизонтальный</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Вертикальный</translation>
+        <translation type="vanished">Вертикальный</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Видимый</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина полосы</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>пикс.</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Выравнивание</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Левый</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Верно</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Обратные цвета (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>Равное деление (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">Настройка цветовой карты (*.cmsetting)</translation>
+        <translation>Настройка цветовой карты (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Произошла ошибка при импорте настроек из %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Общественный (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Частный (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт настроек цветовой карты</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите из стандартов</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите файл</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Стандарты</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Атрибуты для импорта</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Направление</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Заголовок</translation>
+        <translation>Заголовок</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка шрифта</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Отображение этикетки</translation>
+        <translation>Отображение этикетки</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Формат</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество этикеток</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Цвет</translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Этикетка</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Фон</translation>
+        <translation>Фон</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Размер и положение</translation>
+        <translation>Размер и положение</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиция</translation>
+        <translation>Позиция</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина полосы</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Выравнивание</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Предварительный просмотр</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Параметры</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Десятичные разряды значения:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Лог масштаб:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">Включено</translation>
+        <translation>Включено</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветная полоса</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Горизонтальный</translation>
+        <translation>Горизонтальный</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Вертикальный</translation>
+        <translation>Вертикальный</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание. В имени можно использовать только символы ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Расстояние от дна</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>пикс.</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>я мин:</translation>
+        <translation type="vanished">я мин:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Я Макс:</translation>
+        <translation type="vanished">Я Макс:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>Дж Мин.:</translation>
+        <translation type="vanished">Дж Мин.:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J Макс.:</translation>
+        <translation type="vanished">J Макс.:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">я мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">Я Макс:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">Дж Мин.:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">J Макс.:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-направление</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13530,7 +13630,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Выберите решатель</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Когда вы создаете новый проект, вы должны выбрать решатель, который будет использоваться для расчета. Пожалуйста, выберите решатель и нажмите кнопку «ОК».</translation>
     </message>
 </context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ошибка при загрузке файла определения решателя в папку &quot;%1&quot;. Этот решатель игнорируется. %2</translation>
+        <translation>Ошибка при загрузке файла определения решателя в папку "%1". Этот решатель игнорируется. %2</translation>
     </message>
 </context>
 <context>
@@ -14518,7 +14618,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Кажется, этот проект открывается другим окном iRIC GUI. Вы не можете открыть папку проекта из нескольких окон графического интерфейса.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Открытый проект не копируется в рабочий каталог, и вы будете вынуждены сохранить изменения, внесенные в этот проект. Если вы хотите сохранить текущий проект, сначала сохраните его в другом проекте.</translation>
     </message>
     <message>
@@ -14751,7 +14851,7 @@ Option -&gt; Preferences</source>
         <translation>В настоящее время активное подокно не поддерживает экспорт фигур контура.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Чтобы экспортировать файл формы, переключите «Настройка отображения» на «Контурная фигура», а не «Цвет бахромы» или «Изолинии».</translation>
     </message>
     <message>
@@ -14823,7 +14923,7 @@ Option -&gt; Preferences</source>
         <translation>Файл настроек (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation>Чтобы экспортировать файл формы, переключите цветовой режим на «Дискретный режим».</translation>
     </message>
 </context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,7 +15298,7 @@ Option -&gt; Preferences</source>
         <translation>Открыть новое окно постобработки 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Откройте новое окно постобработки 2D с высоты птичьего полета</translation>
     </message>
     <message>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>Открытие файла %1 не смогли.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_ru_RU.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Скалярный</translation>
+        <translation>Скалярный</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Обновить настройку контура</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">Скалярная настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можно определить максимум четыре контура.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>Форма сетки</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Настройка отображения формы сетки</translation>
+        <translation type="vanished">Настройка отображения формы сетки</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Скалярное значение для высоты</translation>
+        <translation type="vanished">Скалярное значение для высоты</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">Скалярное значение для высоты</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>По скалярному значению</translation>
+        <translation type="vanished">По скалярному значению</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можно определить максимум четыре контура.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Чтобы экспортировать файл формы, переключите «Настройка отображения» на «Контурная фигура», а не «Цвет бахромы» или «Изолинии».</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>Скалярный (edgeI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Скалярный (edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>Чтобы экспортировать файл формы, переключите настройку цвета на «Дискретный режим».</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Обновить настройки частиц</translation>
+        <translation type="vanished">Обновить настройки частиц</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Область</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Интервал пространства генерации</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Обновить настройки частиц</translation>
+        <translation type="vanished">Обновить настройки частиц</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Область</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Перетаскивание мышью</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Координатные значения</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Пункт 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Пункт 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Количество баллов:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Физическая ценность:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Область</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Диапазон</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">Укажите область для начала линий обтекания</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">Укажите область начала линий тока по диапазону индексов сетки (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Интервал пространства генерации</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Ширина:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Обновить настройку Streamline</translation>
+        <translation type="vanished">Обновить настройку Streamline</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Физическая ценность:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Область</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Перетаскивание мышью</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Координатные значения</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Пункт 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Пункт 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Количество баллов:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Ширина:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Настройка частиц</translation>
+        <translation type="vanished">Настройка частиц</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Общие настройки</translation>
+        <translation type="vanished">Общие настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Периодически генерировать</translation>
+        <translation type="vanished">Периодически генерировать</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Временной интервал генерации</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Временной интервал генерации</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Максимум</translation>
+        <translation type="vanished">Максимум</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Создавать в произвольное время</translation>
+        <translation type="vanished">Создавать в произвольное время</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактировать...</translation>
+        <translation type="vanished">Редактировать...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начальная позиция</translation>
+        <translation type="vanished">Начальная позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Укажите область для генерации частиц.</translation>
+        <translation type="vanished">Укажите область для генерации частиц.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Укажите область для генерации частиц по диапазону индексов сетки (I, J).</translation>
+        <translation type="vanished">Укажите область для генерации частиц по диапазону индексов сетки (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Интервал пространства генерации</translation>
+        <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка региона (&amp;R)</translation>
+        <translation type="vanished">Настройка региона (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Настройка частиц</translation>
+        <translation type="vanished">Настройка частиц</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Общие настройки</translation>
+        <translation type="vanished">Общие настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Периодически генерировать</translation>
+        <translation type="vanished">Периодически генерировать</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>Интервал генерации</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Интервал генерации</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Максимум</translation>
+        <translation type="vanished">Максимум</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Создавать в произвольное время</translation>
+        <translation type="vanished">Создавать в произвольное время</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактировать...</translation>
+        <translation type="vanished">Редактировать...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Начальные точки</translation>
+        <translation type="vanished">Начальные точки</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
+        <translation type="vanished">Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Перетаскивание мышью</translation>
+        <translation type="vanished">Перетаскивание мышью</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Координатные значения</translation>
+        <translation type="vanished">Координатные значения</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Пункт 1:</translation>
+        <translation type="vanished">Пункт 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Пункт 2:</translation>
+        <translation type="vanished">Пункт 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Количество баллов:</translation>
+        <translation type="vanished">Количество баллов:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка региона (&amp;R)</translation>
+        <translation type="vanished">Настройка региона (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Настройка цветовой карты</translation>
+        <translation type="vanished">Настройка цветовой карты</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Цветовая карта</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Цвет:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер точки:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Оптимизация настройки</translation>
+        <translation type="vanished">Оптимизация настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начальная позиция</translation>
+        <translation type="vanished">Начальная позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Укажите область для начала линий обтекания</translation>
+        <translation type="vanished">Укажите область для начала линий обтекания</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Укажите область начала линий тока по диапазону индексов сетки (I, J).</translation>
+        <translation type="vanished">Укажите область начала линий тока по диапазону индексов сетки (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Интервал пространства генерации</translation>
+        <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Максимум</translation>
+        <translation type="vanished">Максимум</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка региона (&amp;R)</translation>
+        <translation type="vanished">Настройка региона (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Оптимизация настройки</translation>
+        <translation type="vanished">Оптимизация настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Начальные точки</translation>
+        <translation type="vanished">Начальные точки</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
+        <translation type="vanished">Укажите две точки. Частицы начинаются из точек, созданных на равном расстоянии между этими двумя точками.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Перетаскивание мышью</translation>
+        <translation type="vanished">Перетаскивание мышью</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Координатные значения</translation>
+        <translation type="vanished">Координатные значения</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Пункт 1:</translation>
+        <translation type="vanished">Пункт 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Пункт 2:</translation>
+        <translation type="vanished">Пункт 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Количество баллов:</translation>
+        <translation type="vanished">Количество баллов:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Настройка региона (&amp;R)</translation>
+        <translation type="vanished">Настройка региона (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17393,7 +17907,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Обновить настройку Streamline</translation>
+        <translation type="vanished">Обновить настройку Streamline</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Включено</translation>
+        <translation type="vanished">Включено</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>Лицо %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Легенда о длине</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Обновить настройки частиц</translation>
+        <translation type="vanished">Обновить настройки частиц</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Лицо</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Интервал пространства генерации</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Физическая ценность:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Начальная позиция</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Добавлять (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Удалять (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Лицо</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Интервал пространства генерации</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Цвет:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Ширина:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Настройка частиц</translation>
+        <translation type="vanished">Настройка частиц</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Общие настройки</translation>
+        <translation type="vanished">Общие настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Периодически генерировать</translation>
+        <translation type="vanished">Периодически генерировать</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Временной интервал генерации</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Временной интервал генерации</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Максимум</translation>
+        <translation type="vanished">Максимум</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Создавать в произвольное время</translation>
+        <translation type="vanished">Создавать в произвольное время</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Редактировать...</translation>
+        <translation type="vanished">Редактировать...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начальная позиция</translation>
+        <translation type="vanished">Начальная позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Укажите область для генерации частиц.</translation>
+        <translation type="vanished">Укажите область для генерации частиц.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Укажите область для генерации частиц по диапазону индексов сетки (I, J, K).</translation>
+        <translation type="vanished">Укажите область для генерации частиц по диапазону индексов сетки (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>К Макс</translation>
+        <translation type="vanished">К Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Интервал пространства генерации</translation>
+        <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {маржа сверху: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Если вы укажете 1, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки и в средних точках узлов сетки. &lt;/p&gt; &lt;p&gt; Если вы укажете 2, частицы будут генерироваться в узлах сетки. &lt;/p&gt; &lt;p&gt; укажите 1/2, частицы генерируются для всех остальных узлов сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Цвет:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Размер точки:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Оптимизация настройки</translation>
+        <translation type="vanished">Оптимизация настройки</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физическая ценность:</translation>
+        <translation type="vanished">Физическая ценность:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Начальная позиция</translation>
+        <translation type="vanished">Начальная позиция</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Укажите область начала линий обтекания.</translation>
+        <translation type="vanished">Укажите область начала линий обтекания.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Укажите область начала линий тока по диапазону индексов сетки (I, J, K).</translation>
+        <translation type="vanished">Укажите область начала линий тока по диапазону индексов сетки (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Я мин</translation>
+        <translation type="vanished">Я мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Я Макс</translation>
+        <translation type="vanished">Я Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>Дж Мин</translation>
+        <translation type="vanished">Дж Мин</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>Дж Макс</translation>
+        <translation type="vanished">Дж Макс</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Мин</translation>
+        <translation type="vanished">K Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>К Макс</translation>
+        <translation type="vanished">К Макс</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Интервал пространства генерации</translation>
+        <translation type="vanished">Интервал пространства генерации</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; »&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; »&gt; Если вы укажете 1, линии обтекания начинаются с узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;» &gt; Если указать 2, линии обтекания начинаются с узлов сетки и средних точек узлов сетки. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Если вы укажете 1/2, линии обтекания начинаются на всех остальных узлах сетки. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мин</translation>
+        <translation type="vanished">мин</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>Максимум</translation>
+        <translation type="vanished">Максимум</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Ширина:</translation>
+        <translation type="vanished">Ширина:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Укажите количество отображаемых пикселей. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Добавлять (&amp;A)</translation>
+        <translation type="vanished">Добавлять (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Удалять (&amp;R)</translation>
+        <translation type="vanished">Удалять (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18572,7 +19215,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Обновить настройку Streamline</translation>
+        <translation type="vanished">Обновить настройку Streamline</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>Выберите временной шаг, чтобы добавить</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">Время</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">Редактировать...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">Обозреватель объектов</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Цвет:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Масштаб в направлении Z</translation>
+        <translation>Масштаб в направлении Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Введите новую шкалу Z-направления.</translation>
+        <translation>Введите новую шкалу Z-направления.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Шкала Z-направления:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">Форма сетки</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>Создание данных облака точек</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20283,6 +21121,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Создание данных облака точек</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20563,7 +21405,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Расстояние (м) от %1</translation>
     </message>
 </context>
 <context>

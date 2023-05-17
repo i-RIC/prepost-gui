@@ -18,7 +18,6 @@ public:
 	~Post2dWindowNodeScalarGroupTopDataItem();
 
 	void updateZDepthRangeItemCount() override;
-	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
 	Post2dWindowZoneDataItem* zoneDataItem() const override;
 	bool hasTransparentPart() override;

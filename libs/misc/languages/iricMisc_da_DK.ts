@@ -57,4 +57,11 @@
         <translation>Åbning af fil %1 mislykkedes.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Vælg Værdi</translation>
+    </message>
+</context>
 </TS>

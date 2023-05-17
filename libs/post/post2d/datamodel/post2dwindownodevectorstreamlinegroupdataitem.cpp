@@ -1,4 +1,3 @@
-#include "../post2dwindowdatamodel.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindownodevectorstreamlinedataitem.h"
 #include "post2dwindownodevectorstreamlinegroupdataitem.h"
@@ -15,22 +14,14 @@
 
 #include <QMenu>
 #include <QMouseEvent>
-#include <QSettings>
-#include <QStandardItem>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
 
-#include <vtkLookupTable.h>
 #include <vtkPointData.h>
-#include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkRungeKutta4.h>
-#include <vtkStructuredGridGeometryFilter.h>
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting() :
-	CompositeContainer ({&target, &regionMode}),
-	target {"solution"},
-	regionMode {"regionMode", StructuredGridRegion::rmFull}
+	CompositeContainer ({&target}),
+	target {"solution"}
 {}
 
 Post2dWindowNodeVectorStreamlineGroupDataItem::Setting::Setting(const Setting& s) :
@@ -50,8 +41,6 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	m_zScale {1}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
-
-	setupClipper();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
@@ -76,31 +65,28 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::handleNamedItemChange(NamedG
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informGridUpdate()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSettings()
+void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 {
+	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
+
 	clearActors();
 
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr) {return;}
+
 	vtkPointSet* ps = cont->data()->data();
 	if (ps == nullptr) {return;}
 	if (m_setting.target == "") {return;}
+
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
 	setupActors();
 	updateVisibilityWithoutRendering();
 	assignActorZValues(m_zDepthRange);
-}
-
-void Post2dWindowNodeVectorStreamlineGroupDataItem::setupClipper()
-{
-	m_IBCClipper = vtkSmartPointer<vtkClipPolyData>::New();
-	m_IBCClipper->SetValue(PostZoneDataContainer::IBCLimit);
-	m_IBCClipper->InsideOutOff();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::updateZDepthRangeItemCount()
@@ -115,7 +101,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::assignActorZValues(const ZDe
 		m_streamlineActors[0]->SetPosition(0, 0, range.max());
 		return;
 	}
-	for (int i = 0; i < m_streamlineActors.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_streamlineActors.size()); ++i) {
 		double depth = range.min() + static_cast<double>(i) / (m_streamlineActors.size() - 1) * (range.max() - range.min());
 		m_streamlineActors[i]->SetPosition(0, 0, depth);
 	}
@@ -135,28 +121,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setTarget(const std::string&
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_setting.target = target.c_str();
-	updateActorSettings();
-}
-
-vtkPointSet* Post2dWindowNodeVectorStreamlineGroupDataItem::getRegion()
-{
-	vtkPointSet* ps = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer()->data()->data();
-	if (m_setting.regionMode == StructuredGridRegion::rmFull) {
-		return ps;
-	} else if (m_setting.regionMode == StructuredGridRegion::rmActive) {
-		vtkSmartPointer<vtkStructuredGridGeometryFilter> geoFilter = vtkSmartPointer<vtkStructuredGridGeometryFilter>::New();
-		geoFilter->SetInputData(ps);
-		geoFilter->Update();
-		ps->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
-		m_IBCClipper->SetInputConnection(geoFilter->GetOutputPort());
-		m_IBCClipper->Update();
-		m_regionClippedPolyData = vtkSmartPointer<vtkPolyData>::New();
-		m_regionClippedPolyData->DeepCopy(m_IBCClipper->GetOutput());
-		m_regionClippedPolyData->GetPointData()->SetActiveScalars("");
-		return m_regionClippedPolyData;
-	}
-	// only to avoid warning.
-	return nullptr;
+	updateActorSetting();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamTracer* tracer)
@@ -201,7 +166,6 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(co
 {
 	m_setting.load(node);
 	setTarget(m_setting.target);
-	// updateActorSettings() is called inside setTarget
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -213,7 +177,7 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::innerUpdateZScale(double sca
 {
 	m_zScale = scale;
 
-	for (vtkActor* actor : m_streamlineActors) {
+	for (auto actor : m_streamlineActors) {
 		actor->SetScale(1, scale, 1);
 	}
 }

@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>Herken resultaat:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gebruik de volgende letters om het patroon te definiëren:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;Jaar: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;Maand: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;Dag: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Uur: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minuut: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Tweede: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gebruik de volgende letters om het patroon te definiëren:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;Jaar: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;Maand: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;Dag: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Uur: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minuut: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Tweede: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>Deze gegevens kunnen niet worden geëxporteerd. Het lijkt erop dat het niet is geïmporteerd uit *.tif of *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie &quot;Tijd&quot; kunnen niet worden geëxporteerd naar *.tif of *.asc.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie "Tijd" kunnen niet worden geëxporteerd naar *.tif of *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>Deze gegevens kunnen niet worden geëxporteerd. Het lijkt erop dat het niet is geïmporteerd uit *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie &quot;Tijd&quot; kunnen niet worden geëxporteerd naar *.png</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>Deze gegevens kunnen niet worden geëxporteerd. Gegevens met de dimensie "Tijd" kunnen niet worden geëxporteerd naar *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>X-band MP-radergegevens kunnen worden geïmporteerd voor netcondities met de dimensie &quot;Tijd&quot;.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X-band MP-radergegevens kunnen worden geïmporteerd voor netcondities met de dimensie "Tijd".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden bij het lezen van de kopregel. Header moet minimaal 4 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn &quot;%2&quot;, maar &quot;%3&quot; is gegeven.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn "%2", maar "%3" is gegeven.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Gegevens moeten minimaal 4 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;x&quot;-waarde in de regel %1. &quot;x&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "x"-waarde in de regel %1. "x" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;y&quot;-waarde in de regel %1. &quot;y&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "y"-waarde in de regel %1. "y" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de waarde &quot;waarde&quot; in de regel %1. &quot;waarde&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
 </context>
 <context>
@@ -3120,7 +3120,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>TIN&apos;s verwisselen...</translation>
+        <translation>TIN's verwisselen...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3128,7 +3128,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN&apos;s opnieuw invoeren. Wil je nu remesh?</translation>
+        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN's opnieuw invoeren. Wil je nu remesh?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -3172,7 +3172,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>Remesh FIN&apos;s (&amp;T)</translation>
+        <translation>Remesh FIN's (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -3200,7 +3200,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Het verwijderen van FIN&apos;s is voltooid.</translation>
+        <translation>Het verwijderen van FIN's is voltooid.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Samenvoegen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Er zijn geen andere gegevens om in te voegen &quot;%1&quot; groep.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Er zijn geen andere gegevens om in te voegen "%1" groep.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>Geen scheidingsteken opgegeven</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Niet genoeg waarden om te lezen &quot;%1&quot;.&quot;%1&quot; kolom is %2 maar %3 waarden ingevoerd.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Niet genoeg waarden om te lezen "%1"."%1" kolom is %2 maar %3 waarden ingevoerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen &quot;%1&quot; waarde. &quot;%1&quot; waarde moet een reëel getal zijn, maar &quot;%2&quot; opgegeven.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen "%1" waarde. "%1" waarde moet een reëel getal zijn, maar "%2" opgegeven.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3727,7 +3727,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation>CSV (door komma&apos;s gescheiden waarden)</translation>
+        <translation>CSV (door komma's gescheiden waarden)</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -3766,12 +3766,12 @@ p, li { white-space: pre-wrap; }
         <translation>Citaat karakter:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma&apos;s.</translation>
+        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma's.</translation>
     </message>
     <message>
         <source>Escape character:</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>Oppervlak</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>Weging Exponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; wordt gebruikt als het gewicht bij het berekenen van het gewogen gemiddelde van de waarden. r is de afstand van het punt tot het knooppunt of celcentrum, waaraan de waarde is toegewezen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; wordt gebruikt als het gewicht bij het berekenen van het gewogen gemiddelde van de waarden. r is de afstand van het punt tot het knooppunt of celcentrum, waaraan de waarde is toegewezen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Oppervlak</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,8 +4392,8 @@ p, li { white-space: pre-wrap; }
         <translation>Randlengte beperken:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdPoint_nl_NL.ts -->
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling puntweergave</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer afbeeldingsbestand</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle afbeeldingen (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Punten</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntgrootte:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>Pictogram afbeeldingen</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>Afbeelding importeren (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Duidelijk (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale maat:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wanneer de breedte of hoogte van de geïmporteerde afbeelding groter is dan de maximale grootte, wordt de afbeelding automatisch verkleind zodat de breedte of hoogte gelijk wordt aan de maximale grootte.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepaste kleur</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_nl_NL.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>Weet je zeker dat je de geselecteerde wilt verwijderen? %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Er zijn geen andere gegevens om in te voegen &quot;%1&quot; groep.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Er zijn geen andere gegevens om in te voegen "%1" groep.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden bij het lezen van de kopregel. Header moet minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn &quot;%2&quot;, maar &quot;%3&quot; is gegeven.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn "%2", maar "%3" is gegeven.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Gegevens moeten minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;pid&quot;-waarde in de regel %1. &quot;pid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "pid"-waarde in de regel %1. "pid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;vid&quot;-waarde in de regel %1. &quot;vid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "vid"-waarde in de regel %1. "vid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;x&quot;-waarde in de regel %1. &quot;x&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "x"-waarde in de regel %1. "x" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;y&quot;-waarde in de regel %1. &quot;y&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "y"-waarde in de regel %1. "y" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de waarde &quot;waarde&quot; in de regel %1. &quot;waarde&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;name&quot; moet hetzelfde zijn voor regels waar de &quot;pid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "name" moet hetzelfde zijn voor regels waar de "pid"-waarden hetzelfde zijn.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;value&quot; moet hetzelfde zijn voor regels waar de &quot;pid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "value" moet hetzelfde zijn voor regels waar de "pid"-waarden hetzelfde zijn.</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling veelhoekweergave</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling veelhoekweergave</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kleur</translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Kleur op waarde</translation>
+        <translation>Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Aangepaste kleur</translation>
+        <translation>Aangepaste kleur</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnbreedte:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_nl_NL.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden bij het lezen van de kopregel. Header moet minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn &quot;%2&quot;, maar &quot;%3&quot; is gegeven.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn "%2", maar "%3" is gegeven.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Gegevens moeten minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;deksel&quot;-waarde in de regel %1. &quot;lid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "deksel"-waarde in de regel %1. "lid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;vid&quot;-waarde in de regel %1. &quot;vid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "vid"-waarde in de regel %1. "vid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;x&quot;-waarde in de regel %1. &quot;x&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "x"-waarde in de regel %1. "x" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;y&quot;-waarde in de regel %1. &quot;y&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "y"-waarde in de regel %1. "y" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de waarde &quot;waarde&quot; in de regel %1. &quot;waarde&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;name&quot; moet hetzelfde zijn voor regels waar de &quot;lid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "name" moet hetzelfde zijn voor regels waar de "lid"-waarden hetzelfde zijn.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;value&quot; moet hetzelfde zijn voor regels waar de &quot;lid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "value" moet hetzelfde zijn voor regels waar de "lid"-waarden hetzelfde zijn.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling lijnweergave</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling lijnweergave</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik Instelling van Pre-Processing Window</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepaste kleur</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnbreedte:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_nl_NL.ts -->
@@ -6277,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Dwarsdoorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de dwarsdoorsnede en de puntwolkgegevens op de kaart opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6290,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio&apos;s bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u &quot;Kaartpuntenwolkgegevens&quot; gebruiken</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Doorsnedegegevens worden gegenereerd met behulp van puntenwolkgegevens. In sommige regio's bestonden geen gegevens in puntenwolkgegevens en werd waarde 0 toegewezen voor die punten. Als u de positie van de doorsnede en de puntenwolkgegevens opnieuw wilt aanpassen, kunt u "Kaartpuntenwolkgegevens" gebruiken</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>De instellingen voor hoogte en helling zijn ongeldig.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u &quot;Specificeer horizontale afstand&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Wanneer u de hoogte van het eindpunt opgeeft, kan deze niet hetzelfde zijn als het beginpunt. Als u een horizontale lijn wilt tekenen, selecteert u "Specificeer horizontale afstand".</translation>
     </message>
 </context>
 <context>
@@ -6750,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via &quot;Bewerken vanuit dialoogvenster&quot; in het rechtsklikmenu.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Bewerk de doorsnede door met de muis te klikken. Beëindig het bewerken door te dubbelklikken of op de Return-toets te drukken. U kunt de doorsnede nauwkeurig bewerken door waarden in te voeren vanuit het dialoogvenster. Ga naar de dialoogbewerkingsmodus via "Bewerken vanuit dialoogvenster" in het rechtsklikmenu.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Fout</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Puntentelling is ongeldig</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 lijn %2 "%3": Puntentelling is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Ongeldige indexwaarde</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 lijn %2 "%3": Ongeldige indexwaarde</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 lijn %2 : doorsnedegegevens voor %3 niet genoeg</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Afstandswaarde is ongeldig</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 lijn %2 "%3": Afstandswaarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 lijn %2 &quot;%3&quot;: Hoogtewaarde is ongeldig</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 lijn %2 "%3": Hoogtewaarde is ongeldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : Leesfout. Heeft minimaal twee waarden nodig.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Lijn %2 : Leesfout. Geen echte getalwaarde "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Lijn %2 : KP wordt niet ingevoerd</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: LX-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: LY-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": LY-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: RX-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RX-waarde is ongeldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Lijn %2 &quot;%3&quot;: RY-waarde is ongeldig</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Lijn %2 "%3": RY-waarde is ongeldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Afstandsmarkeringsgegevens zijn niet gevonden. Wordt genegeerd.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 lijn %2 : &quot;%3&quot;: Vlaggegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 lijn %2 : "%3": Vlaggegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 lijn %2 : &quot;%3&quot;: Afstandsgegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Afstandsgegevens zijn ongeldig.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 lijn %2 : &quot;%3&quot;: Hoogtegegevens zijn ongeldig.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 lijn %2 : "%3": Hoogtegegevens zijn ongeldig.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Zichtbaar</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; U kunt de kleur aanpassen via het tabblad Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>CheckBox</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde kleiner dan %1 niet toegestaan.</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde groter dan %1 is niet toegestaan.</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>Transparant</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Zichtbaarheid</translation>
+        <translation type="vanished">Zichtbaarheid</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Wanneer geselecteerd</translation>
+        <translation type="vanished">Wanneer geselecteerd</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Altijd</translation>
+        <translation type="vanished">Altijd</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Nooit</translation>
+        <translation type="vanished">Nooit</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>Grootte en positie</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Zichtbaar</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Kleur</translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kleurenkaart</translation>
+        <translation type="vanished">Kleurenkaart</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legende van lengte</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Aangepaste kleur)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Zichtbaar</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Richting:</translation>
+        <translation>Richting:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontaal</translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Verticaal</translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte van de balk</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlijning</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Links</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centrum</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling kleurenkaart opsommen (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling kleurenkaart opsommen (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het importeren van instellingen uit %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Openbaar (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Privaat (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurkaartinstelling importeren</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>modus</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies uit standaarden</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Normen</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributen om te importeren</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Richting</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Titel</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype instelling</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Labelweergave</translation>
+        <translation>Labelweergave</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kleur</translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Achtergrond</translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Grootte en positie</translation>
+        <translation>Grootte en positie</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Positie</translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Maat</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte van de balk</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlijning</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Kleuren balk</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontaal</translation>
+        <translation type="vanished">Horizontaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Verticaal</translation>
+        <translation type="vanished">Verticaal</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>Zichtbaar</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte van de balk</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlijning</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Links</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>Centrum</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechts</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Omgekeerde kleuren (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>Gelijke verdeling (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">Instelling kleurenkaart (*.cmsetting)</translation>
+        <translation>Kleurenkaart instelling (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het importeren van instellingen uit %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Openbaar (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Privaat (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurkaartinstelling importeren</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>modus</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies uit standaarden</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer bestand</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>Normen</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Attributen om te importeren</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Richting</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">Titel</translation>
+        <translation>Titel</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype instelling</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">Labelweergave</translation>
+        <translation>Labelweergave</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>Formaat</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Aantal etiketten</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kleur</translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiket</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Achtergrond</translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">Grootte en positie</translation>
+        <translation>Grootte en positie</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Positie</translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Maat</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte van de balk</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitlijning</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Opties</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarde decimalen:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>Logschaal:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">Ingeschakeld</translation>
+        <translation>Ingeschakeld</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulier</translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleuren balk</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontaal</translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Verticaal</translation>
+        <translation>Verticaal</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking: u kunt alleen ASCII-tekens gebruiken voor Naam.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Afstand vanaf de bodem</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Ik doe mee:</translation>
+        <translation type="vanished">Ik doe mee:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>ik maximaal:</translation>
+        <translation type="vanished">ik maximaal:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J Min:</translation>
+        <translation type="vanished">J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J maximaal:</translation>
+        <translation type="vanished">J maximaal:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">Ik doe mee:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">ik maximaal:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">J maximaal:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-richting</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13513,7 +13613,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma&apos;s voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
+        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma's voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
     </message>
 </context>
 <context>
@@ -13530,8 +13630,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecteer Oplosser</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop "OK".</translation>
     </message>
 </context>
 <context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map &quot;%1&quot;. Deze oplosser wordt genegeerd. %2</translation>
+        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map "%1". Deze oplosser wordt genegeerd. %2</translation>
     </message>
 </context>
 <context>
@@ -14522,7 +14622,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dit project lijkt te worden geopend door een ander iRIC GUI-venster. U kunt een projectmap niet openen vanuit meerdere GUI-vensters.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Het geopende project wordt niet naar de werkmap gekopieerd en u zult de wijzigingen die u in dit project aanbrengt, moeten opslaan. Als u het huidige project wilt behouden, sla het dan eerst op in een ander project.</translation>
     </message>
     <message>
@@ -14682,8 +14782,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Het momenteel actieve subvenster ondersteunt het exporteren van contourfiguren niet.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Om vormbestand te exporteren, schakelt u &quot;Weergave-instelling&quot; naar &quot;Contourfiguur&quot;, niet &quot;Kleurrand&quot; of &quot;Isolijnen&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14823,8 +14923,8 @@ Option -&gt; Preferences</source>
         <translation>Instellingsbestand (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Om een vormbestand te exporteren, schakelt u de kleurmodus naar &quot;Discrete modus&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Om een vormbestand te exporteren, schakelt u de kleurmodus naar "Discrete modus".</translation>
     </message>
 </context>
 <context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,8 +15298,8 @@ Option -&gt; Preferences</source>
         <translation>Nieuw venster voor 2D-nabewerking openen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Nieuw 2D Bird&apos;s-Eye Post-Processing-venster openen</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Nieuw 2D Bird's-Eye Post-Processing-venster openen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>Bestand openen %1 mislukt.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_nl_NL.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">scalair</translation>
+        <translation>scalair</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Contourinstelling bijwerken</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">scalaire instelling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>Rastervorm</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Instelling rastervormweergave</translation>
+        <translation type="vanished">Instelling rastervormweergave</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Scalaire waarde voor Hoogte</translation>
+        <translation type="vanished">Scalaire waarde voor Hoogte</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">Scalaire waarde voor Hoogte</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
+        <translation type="vanished">Op scalaire waarde</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Om vormbestand te exporteren, schakelt u &quot;Weergave-instelling&quot; naar &quot;Contourfiguur&quot;, niet &quot;Kleurrand&quot; of &quot;Isolijnen&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>Scalair (edgeI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Scalair (edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>Om een vormbestand te exporteren, schakelt u de kleurinstelling naar &quot;Discrete modus&quot;.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Deeltjesinstelling updaten</translation>
+        <translation type="vanished">Deeltjesinstelling updaten</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regio</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Generatie ruimte-interval</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Deeltjesinstelling updaten</translation>
+        <translation type="vanished">Deeltjesinstelling updaten</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regio</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Muis slepen</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Coördinaten Waarden</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Punt 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Punt 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Aantal punten:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Fysieke waarde:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regio</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">Bereik</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">Specificeer het gebied om te beginnen met stroomlijnen</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">Specificeer het gebied om te beginnen met stroomlijnen, per rasterindexbereik (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Generatie ruimte-interval</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Breedte:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Stroomlijn-instelling updaten</translation>
+        <translation type="vanished">Stroomlijn-instelling updaten</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Fysieke waarde:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">Regio</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">Muis slepen</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">Coördinaten Waarden</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">Punt 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">Punt 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">Aantal punten:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Breedte:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Deeltjesinstelling</translation>
+        <translation type="vanished">Deeltjesinstelling</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Veelvoorkomende instellingen</translation>
+        <translation type="vanished">Veelvoorkomende instellingen</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Genereer periodiek</translation>
+        <translation type="vanished">Genereer periodiek</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Generatie tijdsinterval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Generatie tijdsinterval</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Genereer op een willekeurig tijdstip</translation>
+        <translation type="vanished">Genereer op een willekeurig tijdstip</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bewerking...</translation>
+        <translation type="vanished">Bewerking...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Begin positie</translation>
+        <translation type="vanished">Begin positie</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Specificeer het gebied om deeltjes te genereren.</translation>
+        <translation type="vanished">Specificeer het gebied om deeltjes te genereren.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Specificeer het gebied om deeltjes te genereren, per rasterindexbereik (I, J).</translation>
+        <translation type="vanished">Specificeer het gebied om deeltjes te genereren, per rasterindexbereik (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ik doe mee</translation>
+        <translation type="vanished">Ik doe mee</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>ik Max</translation>
+        <translation type="vanished">ik Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generatie ruimte-interval</translation>
+        <translation type="vanished">Generatie ruimte-interval</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } p {marge-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Als u 1 opgeeft, worden deeltjes gegenereerd op rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u 2 opgeeft, worden deeltjes gegenereerd op rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u specificeer 1/2, deeltjes worden gegenereerd voor elke andere rasterknooppunten.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } p {marge-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Als u 1 opgeeft, worden deeltjes gegenereerd op rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u 2 opgeeft, worden deeltjes gegenereerd op rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u specificeer 1/2, deeltjes worden gegenereerd voor elke andere rasterknooppunten.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Maat:</translation>
+        <translation type="vanished">Maat:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Deeltjesinstelling</translation>
+        <translation type="vanished">Deeltjesinstelling</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Veelvoorkomende instellingen</translation>
+        <translation type="vanished">Veelvoorkomende instellingen</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Genereer periodiek</translation>
+        <translation type="vanished">Genereer periodiek</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>Generatie-interval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Generatie-interval</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Genereer op een willekeurig tijdstip</translation>
+        <translation type="vanished">Genereer op een willekeurig tijdstip</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bewerking...</translation>
+        <translation type="vanished">Bewerking...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Startpunten</translation>
+        <translation type="vanished">Startpunten</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
+        <translation type="vanished">Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Muis slepen</translation>
+        <translation type="vanished">Muis slepen</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Coördinaten Waarden</translation>
+        <translation type="vanished">Coördinaten Waarden</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Punt 1:</translation>
+        <translation type="vanished">Punt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Punt 2:</translation>
+        <translation type="vanished">Punt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Aantal punten:</translation>
+        <translation type="vanished">Aantal punten:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Maat:</translation>
+        <translation type="vanished">Maat:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Colormap-instelling</translation>
+        <translation type="vanished">Colormap-instelling</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Kleurenkaart</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kleur:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Stroomlijn instelling</translation>
+        <translation type="vanished">Stroomlijn instelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Begin positie</translation>
+        <translation type="vanished">Begin positie</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Specificeer het gebied om te beginnen met stroomlijnen</translation>
+        <translation type="vanished">Specificeer het gebied om te beginnen met stroomlijnen</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Specificeer het gebied om te beginnen met stroomlijnen, per rasterindexbereik (I, J).</translation>
+        <translation type="vanished">Specificeer het gebied om te beginnen met stroomlijnen, per rasterindexbereik (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ik doe mee</translation>
+        <translation type="vanished">Ik doe mee</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>ik Max</translation>
+        <translation type="vanished">ik Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generatie ruimte-interval</translation>
+        <translation type="vanished">Generatie ruimte-interval</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1 specificeert, begint stroomlijnen bij rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Als u er 2 opgeeft, beginnen stroomlijnen bij rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1/2 opgeeft, begint de stroomlijning bij elke andere rasterknooppunten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1 specificeert, begint stroomlijnen bij rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Als u er 2 opgeeft, beginnen stroomlijnen bij rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1/2 opgeeft, begint de stroomlijning bij elke andere rasterknooppunten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Breedte:</translation>
+        <translation type="vanished">Breedte:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Stroomlijn instelling</translation>
+        <translation type="vanished">Stroomlijn instelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Startpunten</translation>
+        <translation type="vanished">Startpunten</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
+        <translation type="vanished">Geef twee punten op. Deeltjes beginnen bij punten die gelijkelijk tussen deze twee punten zijn gegenereerd.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Muis slepen</translation>
+        <translation type="vanished">Muis slepen</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Coördinaten Waarden</translation>
+        <translation type="vanished">Coördinaten Waarden</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Punt 1:</translation>
+        <translation type="vanished">Punt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Punt 2:</translation>
+        <translation type="vanished">Punt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Aantal punten:</translation>
+        <translation type="vanished">Aantal punten:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Breedte:</translation>
+        <translation type="vanished">Breedte:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regio-instelling (&amp;R)</translation>
+        <translation type="vanished">Regio-instelling (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17397,7 +17911,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Stroomlijn-instelling updaten</translation>
+        <translation type="vanished">Stroomlijn-instelling updaten</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Ingeschakeld</translation>
+        <translation type="vanished">Ingeschakeld</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>Gezicht %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legende van lengte</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Deeltjesinstelling updaten</translation>
+        <translation type="vanished">Deeltjesinstelling updaten</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Gezicht</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Generatie ruimte-interval</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">Fysieke waarde:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">Begin positie</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">Toevoegen (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">Verwijderen (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">Gezicht</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">Generatie ruimte-interval</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Breedte:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Deeltjesinstelling</translation>
+        <translation type="vanished">Deeltjesinstelling</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Veelvoorkomende instellingen</translation>
+        <translation type="vanished">Veelvoorkomende instellingen</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Genereer periodiek</translation>
+        <translation type="vanished">Genereer periodiek</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Generatie tijdsinterval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Generatie tijdsinterval</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Genereer op een willekeurig tijdstip</translation>
+        <translation type="vanished">Genereer op een willekeurig tijdstip</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Bewerking...</translation>
+        <translation type="vanished">Bewerking...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Begin positie</translation>
+        <translation type="vanished">Begin positie</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Specificeer het gebied om deeltjes te genereren.</translation>
+        <translation type="vanished">Specificeer het gebied om deeltjes te genereren.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Specificeer het gebied om deeltjes te genereren, per rasterindexbereik (I, J, K).</translation>
+        <translation type="vanished">Specificeer het gebied om deeltjes te genereren, per rasterindexbereik (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ik doe mee</translation>
+        <translation type="vanished">Ik doe mee</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>ik Max</translation>
+        <translation type="vanished">ik Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generatie ruimte-interval</translation>
+        <translation type="vanished">Generatie ruimte-interval</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } p {marge-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Als u 1 opgeeft, worden deeltjes gegenereerd op rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u 2 opgeeft, worden deeltjes gegenereerd op rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u specificeer 1/2, deeltjes worden gegenereerd voor elke andere rasterknooppunten.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } p {marge-top: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Als u 1 opgeeft, worden deeltjes gegenereerd op rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u 2 opgeeft, worden deeltjes gegenereerd op rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p&gt;Als u specificeer 1/2, deeltjes worden gegenereerd voor elke andere rasterknooppunten.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Maat:</translation>
+        <translation type="vanished">Maat:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Kleur:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Puntgrootte:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Stroomlijn instelling</translation>
+        <translation type="vanished">Stroomlijn instelling</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fysieke waarde:</translation>
+        <translation type="vanished">Fysieke waarde:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Begin positie</translation>
+        <translation type="vanished">Begin positie</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Bereik</translation>
+        <translation type="vanished">Bereik</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Specificeer het gebied om te beginnen met stroomlijnen.</translation>
+        <translation type="vanished">Specificeer het gebied om te beginnen met stroomlijnen.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Specificeer het gebied dat moet worden gestroomlijnd, volgens het bereik van de rasterindexen (I, J, K).</translation>
+        <translation type="vanished">Specificeer het gebied dat moet worden gestroomlijnd, volgens het bereik van de rasterindexen (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Ik doe mee</translation>
+        <translation type="vanished">Ik doe mee</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>ik Max</translation>
+        <translation type="vanished">ik Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K Min</translation>
+        <translation type="vanished">K Min</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generatie ruimte-interval</translation>
+        <translation type="vanished">Generatie ruimte-interval</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1 specificeert, begint stroomlijnen bij rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Als u er 2 opgeeft, beginnen stroomlijnen bij rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1/2 opgeeft, begint de stroomlijning bij elke andere rasterknooppunten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1 specificeert, begint stroomlijnen bij rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Als u er 2 opgeeft, beginnen stroomlijnen bij rasterknooppunten en middelpunten van rasterknooppunten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Als u 1/2 opgeeft, begint de stroomlijning bij elke andere rasterknooppunten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Breedte:</translation>
+        <translation type="vanished">Breedte:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Geef een aantal pixels op dat wordt weergegeven.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Toevoegen (&amp;A)</translation>
+        <translation type="vanished">Toevoegen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Verwijderen (&amp;R)</translation>
+        <translation type="vanished">Verwijderen (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18588,7 +19231,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Stroomlijn-instelling updaten</translation>
+        <translation type="vanished">Stroomlijn-instelling updaten</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>Selecteer Tijdstap om toe te voegen</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">Tijd</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">Bewerking...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">Objectbrowser</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Kleur:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z-richting schaal</translation>
+        <translation>Z-richting schaal</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Voer nieuwe Z-richting schaal in.</translation>
+        <translation>Voer nieuwe Z-richting schaal in.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z-richting schaal:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">Rastervorm</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>Puntenwolkgegevens genereren</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20284,6 +21122,10 @@ This algorithm can be used only for structured grids.</source>
         <source>Generate point cloud data</source>
         <translation>Puntenwolkgegevens genereren</translation>
     </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
@@ -20479,403 +21321,403 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Rasterdoorsnedevenster</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Bekijk de instellingenwerkbalk</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Geef de instellingenwerkbalk weer</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er is een fout opgetreden tijdens het maken %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished">Instelling</translation>
+        <translation>Instelling</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhoudsopgave</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstand (m) van %1</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisch opnieuw schalen</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding corrigeren</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation type="unfinished"></translation>
+        <translation>Regio repareren</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished">Rooster</translation>
+        <translation>Rooster</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker-/rechteroevermarkeringen</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Beeldscherm instelling</translation>
+        <translation>Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished"></translation>
+        <translation>controleur</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation type="unfinished">Linkeroeverzijde</translation>
+        <translation>Linkeroever</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation type="unfinished">Rechteroever:</translation>
+        <translation>Rechteroever</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomopwaartse zijde</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomafwaartse kant</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Rechter zijde</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkerkant</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-bestanden exporteren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Zichtbaar</translation>
+        <translation>Zichtbaar</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation type="unfinished">Instelling</translation>
+        <translation>Instelling</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster Attribuut Weergave Instelling (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation type="unfinished"></translation>
+        <translation>Sla momentopnamen op</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulier</translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>Richting</translation>
     </message>
     <message>
         <source>I</source>
-        <translation type="unfinished"></translation>
+        <translation>I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation type="unfinished"></translation>
+        <translation>J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Positie</translation>
+        <translation>Positie</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel Waarden</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomopwaartse kant</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroomafwaartse kant</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation type="unfinished"></translation>
+        <translation>Momentopname (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation type="unfinished"></translation>
+        <translation>CSV-export (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster Doorsnede Venster Weergave Instelling</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Achtergrondraster</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnen</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation type="unfinished"></translation>
+        <translation>Stippen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Horizontaal</translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaal</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Sub schaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Verticaal</translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Kleur:</translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation type="unfinished"></translation>
+        <translation>Schubben</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation type="unfinished"></translation>
+        <translation>Linker-/rechteroevermarkeringen</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation type="unfinished"></translation>
+        <translation>Beeldverhouding</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen exporteren</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation type="unfinished"></translation>
+        <translation>Map &amp; voorvoegsel (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Map:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorvoegsel:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation type="unfinished"></translation>
+        <translation>Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation type="unfinished"></translation>
+        <translation>Alleen actueel</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangepast</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ik doe mee:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished"></translation>
+        <translation>ik maximaal:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Overslaanpercentage:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid Attribuut Weergave Instelling</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished">Zichtbaar</translation>
+        <translation>Zichtbaar</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation type="unfinished"></translation>
+        <translation>Eenvoudig</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>modus</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogte grafiek</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation type="unfinished"></translation>
+        <translation>Onafhankelijke grafiek</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoogtegrafiek Instelling</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnkleur:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Lijnbreedte:</translation>
+        <translation>Lijnbreedte:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon punten</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntgrootte</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon indexen</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Letterkleur:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lettertype:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Overslaanpercentage:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Onafhankelijke kaartinstelling</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafiek Hoogte:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation type="unfinished"></translation>
+        <translation>[pixels]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation type="unfinished"></translation>
+        <translation>Laat de titel zien</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel lettertype:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Askleur:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation type="unfinished"></translation>
+        <translation>As lettertype:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation type="unfinished">Colormap-instelling</translation>
+        <translation>Colormap-instelling</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Titel kleur</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; Gebruik het tabblad Colormap om de kleurinstelling te bewerken&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik de instelling van het voorverwerkingsvenster</translation>
     </message>
 </context>
 <context>

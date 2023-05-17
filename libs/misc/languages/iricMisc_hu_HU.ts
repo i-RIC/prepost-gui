@@ -57,4 +57,11 @@
         <translation>Fájl megnyitása %1 nem sikerült.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Válassza az Érték lehetőséget</translation>
+    </message>
+</context>
 </TS>

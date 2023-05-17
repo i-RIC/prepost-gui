@@ -34,12 +34,6 @@ public:
 signals:
 	void modeChanged();
 
-private slots:
-	void handleIMinChange(int value);
-	void handleIMaxChange(int value);
-	void handleJMinChange(int value);
-	void handleJMaxChange(int value);
-
 private:
 	Region2dSettingContainer* m_setting;
 

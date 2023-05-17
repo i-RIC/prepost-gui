@@ -57,4 +57,11 @@
         <translation>Arxiu d'obertura %1 fracassat.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Seleccioneu Valor</translation>
+    </message>
+</context>
 </TS>

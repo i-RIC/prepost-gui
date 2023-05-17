@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalārs</translation>
+        <translation>Skalārs</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Atjauniniet kontūras iestatījumu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalāra iestatījums (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Krāsa</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Pēc mezgla skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Pēc šūnas skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalārs (šūna)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Režģa forma</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Režģa formas iestatījums</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Režģa formas displeja iestatījums</translation>
+        <translation type="vanished">Režģa formas displeja iestatījums</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Paaugstinājuma skalārā vērtība</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogs</translation>
+        <translation type="vanished">Dialogs</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Krāsa</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Pielāgota krāsa</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Pēc skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importēt (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Eksportēt (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Diapazons</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Krāsa</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Pēc mezgla skalārās vērtības</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Pēc šūnas skalārās vērtības</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Pielāgota krāsa</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Pēc skalārās vērtības</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importēt (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Eksportēt (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>

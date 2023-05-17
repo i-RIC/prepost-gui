@@ -54,7 +54,7 @@ Post3dWindowFaceSettingContainer Post3dWindowFaceSettingEditWidget::setting() co
 
 	setting.direction = direction();
 
-	setting.enabled = ui->enabledCheckBox->isChecked();
+	setting.enabled = true;
 	setting.iMin = ui->iMinSlider->value() - 1;
 	setting.iMax = ui->iMaxSlider->value() - 1;
 	setting.jMin = ui->jMinSlider->value() - 1;
@@ -74,8 +74,6 @@ void Post3dWindowFaceSettingEditWidget::setSetting(const Post3dWindowFaceSetting
 	} else if (setting.direction == Post3dWindowFaceSettingContainer::Direction::dirK) {
 		ui->kRadioButton->setChecked(true);
 	}
-
-	ui->enabledCheckBox->setChecked(setting.enabled);
 
 	ui->iMinSlider->blockSignals(true);
 	ui->iMaxSlider->blockSignals(true);

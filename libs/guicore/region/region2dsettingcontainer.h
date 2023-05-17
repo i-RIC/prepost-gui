@@ -3,6 +3,8 @@
 
 #include "../guicore_global.h"
 
+#include "regionrange2dsettingcontainer.h"
+
 #include <misc/compositecontainer.h>
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
@@ -27,10 +29,7 @@ public:
 
 	EnumContainerT<Mode> mode;
 
-	IntContainer iMin;
-	IntContainer iMax;
-	IntContainer jMin;
-	IntContainer jMax;
+	RegionRange2dSettingContainer range;
 };
 
 #endif // REGION2DSETTINGCONTAINER_H

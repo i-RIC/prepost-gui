@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">scalair</translation>
+        <translation>scalair</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Contourinstelling bijwerken</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>scalaire instelling (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Per knooppunt scalaire waarde</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Door cel scalaire waarde</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Bereik</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>scalair (cel)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecteer Berekeningsresultaat</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Rastervorm</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Instelling rastervorm</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Instelling rastervormweergave</translation>
+        <translation type="vanished">Instelling rastervormweergave</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Scalaire waarde voor Hoogte</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Kleur</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Op scalaire waarde</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Bereik</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Kleur</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Per knooppunt scalaire waarde</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Door cel scalaire waarde</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Aangepaste kleur</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Op scalaire waarde</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Er kunnen maximaal vier contouren worden gedefinieerd.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Selecteer Berekeningsresultaat</translation>
     </message>
 </context>
 <context>

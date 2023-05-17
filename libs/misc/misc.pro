@@ -78,6 +78,7 @@ HEADERS += anms.h \
            valuechangert.h \
            valuemodifycommandt.h \
            valuerestorert.h \
+           valueselectdialog.h \
            versionnumber.h \
            windowgeometrycontainer.h \
            xmlattributecontainer.h \
@@ -106,7 +107,8 @@ FORMS += informationdialog.ui \
          modifycommanddialog.ui \
          primitiveview.ui \
          qfonteditwidget.ui \
-         slowmotionspeededitdialog.ui
+         slowmotionspeededitdialog.ui \
+         valueselectdialog.ui
 SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
@@ -157,6 +159,7 @@ SOURCES += anms.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
            tpoexporter.cpp \
+           valueselectdialog.cpp \
            versionnumber.cpp \
            windowgeometrycontainer.cpp \
            xmlattributecontainer.cpp \

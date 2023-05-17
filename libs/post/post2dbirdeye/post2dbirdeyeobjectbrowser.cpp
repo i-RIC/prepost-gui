@@ -1,10 +1,29 @@
 #include "post2dbirdeyeobjectbrowser.h"
 #include "post2dbirdeyeobjectbrowserview.h"
 
-#include <QItemSelection>
-#include <QItemSelectionRange>
-#include <QtGui/QIcon>
-#include <QtGui/QStandardItemModel>
+Post2dBirdEyeObjectBrowser::Post2dBirdEyeObjectBrowser(QWidget* parent) :
+	ObjectBrowser(parent)
+{
+	init();
+}
+
+Post2dBirdEyeObjectBrowser::~Post2dBirdEyeObjectBrowser()
+{}
+
+void Post2dBirdEyeObjectBrowser::setModel(QStandardItemModel* model)
+{
+	m_view->setModel(model);
+}
+
+Post2dBirdEyeObjectBrowserView* Post2dBirdEyeObjectBrowser::view() const
+{
+	return m_view;
+}
+
+void Post2dBirdEyeObjectBrowser::expandAll()
+{
+	m_view->expandAll();
+}
 
 void Post2dBirdEyeObjectBrowser::init()
 {
@@ -18,15 +37,5 @@ void Post2dBirdEyeObjectBrowser::init()
 	m_view->setHeaderHidden(true);
 
 	setWidget(m_view);
-}
-
-void Post2dBirdEyeObjectBrowser::setModel(QStandardItemModel* model)
-{
-	m_view->setModel(model);
-}
-
-void Post2dBirdEyeObjectBrowser::expandAll()
-{
-	m_view->expandAll();
 }
 

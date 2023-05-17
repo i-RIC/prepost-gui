@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Βαθμωτό μέγεθος</translation>
+        <translation>Βαθμωτό μέγεθος</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Ενημέρωση ρύθμισης περιγράμματος</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Ρύθμιση Scalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Χρώμα</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Scalar (κελί)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Σχήμα πλέγματος</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Ρύθμιση σχήματος πλέγματος</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης σχήματος πλέγματος</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης σχήματος πλέγματος</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Κλιμακωτή τιμή για υψόμετρο</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Διάλογος</translation>
+        <translation type="vanished">Διάλογος</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Χρώμα</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Με κλιμακωτή τιμή</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Εξαγωγή (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Εύρος</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Χρώμα</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Προσαρμοσμένο χρώμα</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Με κλιμακωτή τιμή</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Εισαγωγή (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Εξαγωγή (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>

@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">스칼라</translation>
+        <translation>스칼라</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">윤곽 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>스칼라 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>노드 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>셀 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>범위</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>스칼라(셀)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>계산 결과 선택</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>격자 모양</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>그리드 모양 설정</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>그리드 모양 표시 설정</translation>
+        <translation type="vanished">그리드 모양 표시 설정</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">표고에 대한 스칼라 값</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">색상</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">맞춤 색상</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">범위</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>색상</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>노드 스칼라 값 기준</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>셀 스칼라 값 기준</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>맞춤 색상</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>스칼라 값 기준</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>계산 결과 선택</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,6 @@
 #include "colormapenumeratelegendsettingcontainer.h"
 #include "colormapenumeratesettingcontainer.h"
+#include "colormaplegendsettingcontainer.h"
 #include "private/colormapenumeratelegendsettingcontainer_imagebuilder.h"
 
 ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer() :
@@ -70,13 +71,57 @@ void ColorMapEnumerateLegendSettingContainer::setDelegateMode(bool delegateMode)
 
 void ColorMapEnumerateLegendSettingContainer::copy(const ColorMapLegendSettingContainerI& setting)
 {
-	copyValue(dynamic_cast<const ColorMapEnumerateLegendSettingContainer&> (setting));
+	try {
+		copyValue(dynamic_cast<const ColorMapEnumerateLegendSettingContainer&> (setting));
+	} catch (std::bad_cast&) {
+		const auto& setting2 = dynamic_cast<const ColorMapLegendSettingContainer&> (setting);
+		visible = setting2.visible;
+		direction = static_cast<Direction> (setting2.direction.value());
+		barAutoWidth = setting2.barAutoWidth;
+		barWidth = setting2.barWidth;
+		barAlign = static_cast<BarAlign> (setting2.barAlign.value());
+		title = setting2.title;
+		titleFont = setting2.titleFont;
+		labelFont = setting2.labelFont;
+		titleColor = setting2.titleColor;
+		labelColor = setting2.labelColor;
+		backgroundColor = setting2.backgroundColor;
+		backgroundOpacity = setting2.backgroundOpacity;
+		imageSetting = setting2.imageSetting;
+	}
+}
+
+void ColorMapEnumerateLegendSettingContainer::copyOtherThanTitle(const ColorMapLegendSettingContainerI& setting)
+{
+	auto origTitle = title.value();
+	copy(setting);
+	title.setValue(origTitle);
+}
+
+bool ColorMapEnumerateLegendSettingContainer::getVisible() const
+{
+	return visible;
 }
 
 void ColorMapEnumerateLegendSettingContainer::setVisible(bool visible)
 {
 	this->visible = visible;
 	this->visible.setDefaultValue(visible);
+}
+
+ColorMapEnumerateLegendSettingContainer::Direction ColorMapEnumerateLegendSettingContainer::getDirection()
+{
+	return direction;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setDirection(Direction dir)
+{
+	direction = dir;
+}
+
+QString ColorMapEnumerateLegendSettingContainer::getTitle() const
+{
+	return title;
 }
 
 void ColorMapEnumerateLegendSettingContainer::setTitle(const QString& t)

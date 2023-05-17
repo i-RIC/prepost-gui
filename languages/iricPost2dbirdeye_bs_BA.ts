@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalarno</translation>
+        <translation>Skalarno</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Ažurirajte postavku konture</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Postavka skalara (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Boja</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Po skalarnoj vrijednosti čvora</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Po skalarnoj vrijednosti ćelije</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Prilagođena boja</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Domet</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Mogu se definirati najviše četiri konture.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>skalar (ćelija)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Odaberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Oblik mreže</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Podešavanje oblika mreže</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Postavka prikaza oblika mreže</translation>
+        <translation type="vanished">Postavka prikaza oblika mreže</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalarna vrijednost za elevaciju</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dijalog</translation>
+        <translation type="vanished">Dijalog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Boja</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Prilagođena boja</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Po skalarnoj vrijednosti</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Uvoz (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Izvoz (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Domet</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Boja</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Po skalarnoj vrijednosti čvora</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Po skalarnoj vrijednosti ćelije</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Prilagođena boja</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Po skalarnoj vrijednosti</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Uvoz (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Izvoz (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Mogu se definirati najviše četiri konture.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Odaberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>

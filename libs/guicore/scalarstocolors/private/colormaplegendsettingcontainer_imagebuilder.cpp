@@ -382,7 +382,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildContinuousHorizontal(QPa
 			auto rect = metrics.boundingRect(val);
 			double left = barLeftStart - maxLabelWidth / 2 + labelWidth * i;
 
-			QRectF textRect(left, top, maxLabelWidth, rect.height());
+			QRectF textRect(left, top, maxLabelWidth, rect.height() + 2);
 			painter->drawText(textRect, Qt::AlignCenter | Qt::AlignVCenter, val);
 		}
 	}

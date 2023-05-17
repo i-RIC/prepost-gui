@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импорттоо (&amp;I)...</translation>
+        <translation type="vanished">Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Түс картасы</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Көрүнүү</translation>
+        <translation type="vanished">Көрүнүү</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Тандалганда</translation>
+        <translation type="vanished">Тандалганда</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Ар дайым</translation>
+        <translation type="vanished">Ар дайым</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Эч качан</translation>
+        <translation type="vanished">Эч качан</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Өлчөмү жана абалы</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Көрүнүүчү</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Түс картасы</translation>
+        <translation type="vanished">Түс картасы</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legend of Length</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Ыңгайлаштырылган түс)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Түс тилкеси</translation>
+        <translation type="vanished">Түс тилкеси</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонталдуу</translation>
+        <translation type="vanished">Горизонталдуу</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикалдуу</translation>
+        <translation type="vanished">Вертикалдуу</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Төмөндөн аралык</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">Мен Мин:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">Мен Макс:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Мин:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J Макс:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>Мен Мин:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-багыты</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>мин</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>макс</translation>
     </message>
 </context>
 <context>

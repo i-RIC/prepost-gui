@@ -2,14 +2,15 @@
 #define COLORMAPSETTINGTOOLBARWIDGET_H
 
 #include "../guicore_global.h"
-#include "colormaplegendsettingcontainer.h"
-#include "colormapsettingtoolbarwidgeti.h"
+#include "colormaplegendsettingcontaineri.h"
+
+#include <QWidget>
 
 namespace Ui {
 class ColorMapSettingToolBarWidget;
 }
 
-class GUICOREDLL_EXPORT ColorMapSettingToolBarWidget : public ColorMapSettingToolBarWidgetI
+class GUICOREDLL_EXPORT ColorMapSettingToolBarWidget : public QWidget
 {
 	Q_OBJECT
 
@@ -17,15 +18,20 @@ public:
 	explicit ColorMapSettingToolBarWidget(QWidget *parent);
 	~ColorMapSettingToolBarWidget();
 
-	ColorMapSettingContainerI* modifiedSetting() override;
+	void setSetting(ColorMapSettingContainerI* setting);
+	ColorMapSettingContainerI* modifiedSetting();
 
 	bool visible() const;
-	ColorMapLegendSettingContainer::Direction direction() const;
+	ColorMapLegendSettingContainerI::Direction direction() const;
+
+signals:
+	void updated();
 
 private slots:
-	void applySetting() override;
+	void applySetting();
 
 private:
+	ColorMapSettingContainerI* m_setting;
 	Ui::ColorMapSettingToolBarWidget *ui;
 };
 

@@ -912,6 +912,17 @@ QString PostZoneDataContainer::elevationName() const
 	return "";
 }
 
+QString PostZoneDataContainer::cellElevationName() const
+{
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
+		QString tmpName = name.c_str();
+		if (tmpName.toLower().left(9) == "elevation") {
+			return tmpName;
+		}
+	}
+	return "";
+}
+
 vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
 {
 	auto structured = vtkStructuredGrid::SafeDownCast(m_origData);

@@ -4,7 +4,6 @@
 #include <guicore/datamodel/graphicswindowrootdataitem.h>
 #include "../post2dbirdeyewindowdatamodel.h"
 #include <QList>
-#include <QMap>
 
 class Axis3dDataItem;
 class Post2dBirdEyeWindow;
@@ -34,9 +33,6 @@ public:
 private slots:
 	void updateZoneList();
 	void update();
-
-signals:
-	void standardModelSetuped();
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

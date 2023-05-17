@@ -3,12 +3,15 @@
 #include "post2dwindownodescalargroupdataitem.h"
 #include "post2dwindowpointscalargrouptopdataitemi.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindownodescalargroupdataitem_propertydialog.h"
+#include "private/post2dwindownodescalargroupdataitem_impl.h"
+#include "private/post2dwindownodescalargroupdataitem_settingeditwidget.h"
 #include "private/post2dwindownodescalargroupdataitem_shapeexporter.h"
 
 #include <cs/coordinatesystem.h>
+#include <guibase/objectbrowserview.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/widget/opacitycontainerwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -17,57 +20,29 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
 
-Post2dWindowNodeScalarGroupDataItem::Setting::Setting() :
-	CompositeContainer {&regionSetting, &opacity, &colorMapSetting},
-	colorMapSetting {},
-	regionSetting {},
-	opacity {"opacity", 50}
-{}
-
-Post2dWindowNodeScalarGroupDataItem::Setting::Setting(const Setting& setting) :
-	Setting {}
-{
-	copyValue(setting);
-}
-
-Post2dWindowNodeScalarGroupDataItem::Setting& Post2dWindowNodeScalarGroupDataItem::Setting::operator=(const Setting& setting)
-{
-	copyValue(setting);
-	return *this;
-}
-
-XmlAttributeContainer& Post2dWindowNodeScalarGroupDataItem::Setting::operator=(const XmlAttributeContainer& c)
-{
-	return operator=(dynamic_cast<const Setting&>(c));
-}
-
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const std::string& target, iRICLib::H5CgnsZone::SolutionPosition position, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
-	m_target {target},
-	m_solutionPosition {position},
-	m_setting {},
-	m_actor {vtkActor::New()},
-	m_legendActor {vtkActor2D::New()},
-	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())},
-	m_opacityToolBarWidget {new OpacityContainerWidget(mainWindow())},
-	m_shapeExporter {new ShapeExporter(this)}
+	impl {new Impl {this}}
 {
-	setupStandardItem(Checked, NotReorderable, Deletable);
+	setupStandardItem(Checked, Reorderable, Deletable);
+
+	impl->m_target = target;
+	impl->m_solutionPosition = position;
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	standardItem()->setText(gType->output(target)->caption());
 
-	m_colorMapToolBarWidget->hide();
-	m_colorMapToolBarWidget->setSetting(&m_setting.colorMapSetting);
-	connect(m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
-		auto com = new ColorMapSettingModifyCommand(m_colorMapToolBarWidget->modifiedSetting(), &m_setting.colorMapSetting);
+	impl->m_colorMapToolBarWidget->hide();
+	impl->m_colorMapToolBarWidget->setSetting(&impl->m_setting.colorMapSetting);
+	connect(impl->m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
+		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), &impl->m_setting.colorMapSetting);
 		pushUpdateActorSettingCommand(com, this);
 	});
 
-	m_opacityToolBarWidget->hide();
-	m_opacityToolBarWidget->setContainer(&m_setting.opacity);
-	connect(m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
-		auto com = m_opacityToolBarWidget->createModifyCommand();
+	impl->m_opacityToolBarWidget->hide();
+	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.opacity);
+	connect(impl->m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
+		auto com = impl->m_opacityToolBarWidget->createModifyCommand();
 		pushUpdateActorSettingCommand(com, this, false);
 	});
 
@@ -77,72 +52,75 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 Post2dWindowNodeScalarGroupDataItem::~Post2dWindowNodeScalarGroupDataItem()
 {
 	auto r = renderer();
-	r->RemoveActor(m_actor);
-	r->RemoveActor2D(m_legendActor);
+	r->RemoveActor(impl->m_actor);
+	r->RemoveActor2D(impl->m_legendActor);
 
-	m_actor->Delete();
-	m_legendActor->Delete();
-
-	delete m_shapeExporter;
+	delete impl;
 }
 
 const std::string& Post2dWindowNodeScalarGroupDataItem::target() const
 {
-	return m_target;
+	return impl->m_target;
 }
 
 const ColorMapSettingContainer& Post2dWindowNodeScalarGroupDataItem::colorMapSetting() const
 {
-	return m_setting.colorMapSetting;
+	return impl->m_setting.colorMapSetting;
 }
 
 void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data(m_solutionPosition) == nullptr) {
+	if (cont == nullptr || cont->data(impl->m_solutionPosition) == nullptr) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOffWithEmptyPolyData();
-		m_actor->SetMapper(mapper);
+		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 		return;
 	}
+	auto v = dataModel()->graphicsView();
 
-	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->nodeValueRange(m_target);
-	m_setting.colorMapSetting.setAutoValueRange(range);
+	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->nodeValueRange(impl->m_target);
+	impl->m_setting.colorMapSetting.setAutoValueRange(range);
 
-	auto filtered = m_setting.regionSetting.buildNodeFilteredData(cont->data(m_solutionPosition)->data());
-	filtered->GetPointData()->SetActiveScalars(m_target.c_str());
-	auto mapper = m_setting.colorMapSetting.buildPointDataMapper(filtered);
-	m_actor->SetMapper(mapper);
+	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->data(impl->m_solutionPosition)->data());
+	filtered->GetPointData()->SetActiveScalars(impl->m_target.c_str());
 
+	auto filtered2 = impl->m_setting.contourSetting.buildFilteredData(filtered);
 	filtered->Delete();
+
+	auto mapper = impl->m_setting.colorMapSetting.buildPointDataMapper(filtered2);
+	filtered2->Delete();
+
+	impl->m_actor->SetMapper(mapper);
 	mapper->Delete();
 
-	m_setting.colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
-	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
+	impl->m_setting.colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+	impl->m_actor->GetProperty()->SetLineWidth(v->devicePixelRatioF() * impl->m_setting.contourSetting.contourLineWidth);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_setting.load(node);
+	impl->m_setting.load(node);
 	updateActorSetting();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.save(writer);
+	impl->m_setting.save(writer);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::setupActors()
 {
 	auto r = renderer();
-	r->AddActor(m_actor);
-	r->AddActor2D(m_legendActor);
+	r->AddActor(impl->m_actor);
+	r->AddActor2D(impl->m_legendActor);
 
-	m_actorCollection->AddItem(m_actor);
+	m_actorCollection->AddItem(impl->m_actor);
 
-	m_setting.colorMapSetting.legend.imageSetting.setActor(m_legendActor);
-	m_setting.colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	m_setting.colorMapSetting.legend.title = topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(target())->caption();
+	impl->m_setting.colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->setItem(this);
+	impl->m_setting.colorMapSetting.legend.title = topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(target())->caption();
 
 	updateActorSetting();
 }
@@ -154,7 +132,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowNodeScalarGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_actor->SetPosition(0, 0, range.min());
+	impl->m_actor->SetPosition(0, 0, range.min());
 }
 
 void Post2dWindowNodeScalarGroupDataItem::update()
@@ -164,7 +142,7 @@ void Post2dWindowNodeScalarGroupDataItem::update()
 
 void Post2dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 {
-	m_actor->SetScale(1, scale, 1);
+	impl->m_actor->SetScale(1, scale, 1);
 }
 
 Post2dWindowPointScalarGroupTopDataItemI *Post2dWindowNodeScalarGroupDataItem::topDataItem() const
@@ -179,37 +157,41 @@ void Post2dWindowNodeScalarGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	auto dialog = new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Scalar Setting (%1)").arg(standardItem()->text()));
+	dialog->resize(900, 700);
+
 	return dialog;
 }
 
 bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
-	if (m_setting.opacity == 100) {return false;}
+	if (impl->m_setting.opacity == 100) {return false;}
 
 	return true;
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
 	topDataItem()->zoneDataItem()->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
 	topDataItem()->zoneDataItem()->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
 
 	auto zItem = topDataItem()->zoneDataItem();
-	switch (m_solutionPosition) {
+	switch (impl->m_solutionPosition) {
 	case iRICLib::H5CgnsZone::SolutionPosition::Node:
 		zItem->updateNodeResultAttributeBrowser(event->pos(), v);
 		break;
@@ -224,15 +206,15 @@ void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTK
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
 	if (event->button() == Qt::LeftButton) {
 		auto zItem = topDataItem()->zoneDataItem();
-		switch (m_solutionPosition) {
+		switch (impl->m_solutionPosition) {
 		case iRICLib::H5CgnsZone::SolutionPosition::Node:
 			zItem->fixNodeResultAttributeBrowser(event->pos(), v);
 			break;
@@ -250,7 +232,7 @@ void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 {
 	// check the condition.
-	if (m_setting.colorMapSetting.transitionMode != ColorMapSettingContainer::TransitionMode::Discrete) {
+	if (impl->m_setting.colorMapSetting.transitionMode != ColorMapSettingContainer::TransitionMode::Discrete) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, Colormode needs to be \"Discrete Mode\""));
 		return false;
 	}
@@ -270,7 +252,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 	writer.writeTextElement("open", "1");
 
 	// output styles.
-	const auto& cm = m_setting.colorMapSetting;
+	const auto& cm = impl->m_setting.colorMapSetting;
 	auto colors = cm.getColors();
 	for (int i = 0; i < colors.size(); ++i) {
 		QColor col = colors.at(i).color;
@@ -305,7 +287,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time, bool oneShot)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	const auto& cm = m_setting.colorMapSetting;
+	const auto& cm = impl->m_setting.colorMapSetting;
 
 	// Folder start
 	writer.writeStartElement("Folder");
@@ -329,7 +311,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	// output each cell data.
 	PostZoneDataContainer* cont = topDataItem()->zoneDataItem()->dataContainer();
 	auto ps = cont->data()->data();
-	auto da = ps->GetPointData()->GetArray(m_target.c_str());
+	auto da = ps->GetPointData()->GetArray(impl->m_target.c_str());
 
 	double minValue = cm.getMinValue();
 	auto colors = cm.getColors();
@@ -363,7 +345,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 		double averageDepth = sum / points.size();
 
-		int colorIndex = colors.size() - 1;
+		int colorIndex = static_cast<int> (colors.size()) - 1;
 		for (int i = 0; i < colors.size() - 1; ++i) {
 			if (averageDepth < colors.at(i + 1).value) {
 				colorIndex = i;
@@ -416,13 +398,12 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
 {
-	return m_shapeExporter->exportContourFigure(filename, time);
+	return impl->m_shapeExporter->exportContourFigure(filename, time);
 }
-
 
 void Post2dWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
+	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
@@ -433,16 +414,25 @@ void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
 
 bool Post2dWindowNodeScalarGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	m_colorMapToolBarWidget->setParent(toolBar);
-	m_colorMapToolBarWidget->show();
+	impl->m_colorMapToolBarWidget->setParent(toolBar);
+	impl->m_colorMapToolBarWidget->show();
 
-	toolBar->addWidget(m_colorMapToolBarWidget);
+	toolBar->addWidget(impl->m_colorMapToolBarWidget);
 	toolBar->addSeparator();
 
-	m_opacityToolBarWidget->setParent(toolBar);
-	m_opacityToolBarWidget->show();
+	impl->m_opacityToolBarWidget->setParent(toolBar);
+	impl->m_opacityToolBarWidget->show();
 
-	toolBar->addWidget(m_opacityToolBarWidget);
+	toolBar->addWidget(impl->m_opacityToolBarWidget);
 
 	return true;
+}
+
+void Post2dWindowNodeScalarGroupDataItem::updateMoveUpDownActions(ObjectBrowserView* view)
+{
+	auto parentItem = dynamic_cast<GraphicsWindowDataItem*>(parent())->standardItem();
+	bool isFirst = (m_standardItem->index().row() == 0);
+	bool isLast = (m_standardItem->index().row() == parentItem->rowCount() - 1);
+	view->moveUpAction()->setDisabled(isFirst);
+	view->moveDownAction()->setDisabled(isLast);
 }

@@ -385,7 +385,7 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Иштетилди</translation>
+        <translation type="vanished">Иштетилди</translation>
     </message>
 </context>
 <context>
@@ -662,6 +662,10 @@
         <source>Face%1</source>
         <translation>Жүз %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legend of Length</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -790,7 +794,65 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Бөлүкчөлөрдүн жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Бөлүкчөлөрдүн жөндөөсүн жаңыртуу</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Бөлүкчөлөрдү көрсөтүү жөндөөлөрү</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Баштоо орду</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Жүз</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation>Бөлүкчөлөрдү баштоо үчүн бетти көрсөтүңүз</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation>Тор индекстеринин диапазону боюнча бөлүкчөлөрдү баштоо үчүн бетти көрсөтүңүз (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Муундардын мейкиндик аралыгы</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>Почта өлчөмү</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -805,6 +867,71 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Дисплейди жөндөө</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Физикалык баалуулугу:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Баштоо орду</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>кошуу (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Алып салуу (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Жүз</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation>Тартууларды баштоо үчүн жүздү көрсөтүңүз</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation>Тор индекстеринин диапазону (I, J, K) боюнча түзүмдөрдү баштоо үчүн бетти көрсөтүңүз.</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Муундардын мейкиндик аралыгы</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Туурасы:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -815,108 +942,95 @@
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Бөлүкчөлөрдү жөндөө</translation>
+        <translation type="vanished">Бөлүкчөлөрдү жөндөө</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Жалпы Орнотуулар</translation>
+        <translation type="vanished">Жалпы Орнотуулар</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Мезгил -мезгили менен түзүү</translation>
+        <translation type="vanished">Мезгил -мезгили менен түзүү</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Убакыт аралыгы</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Убакыт аралыгы</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мүн</translation>
+        <translation type="vanished">мүн</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>макс</translation>
+        <translation type="vanished">макс</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Каалаган убакта жаратуу</translation>
+        <translation type="vanished">Каалаган убакта жаратуу</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Түзөтүү...</translation>
+        <translation type="vanished">Түзөтүү...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Позицияны баштоо</translation>
+        <translation type="vanished">Позицияны баштоо</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Бөлүкчөлөрдү жаратуучу аймакты көрсөтүңүз.</translation>
+        <translation type="vanished">Бөлүкчөлөрдү жаратуучу аймакты көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Тор индекстер диапазону боюнча (I, J, K) бөлүкчөлөрдү жаратуучу аймакты көрсөтүңүз.</translation>
+        <translation type="vanished">Тор индекстер диапазону боюнча (I, J, K) бөлүкчөлөрдү жаратуучу аймакты көрсөтүңүз.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Мен Мин</translation>
+        <translation type="vanished">Мен Мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Мен Макс</translation>
+        <translation type="vanished">Мен Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>К Мин</translation>
+        <translation type="vanished">К Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generation мейкиндик аралыгы</translation>
+        <translation type="vanished">Generation мейкиндик аралыгы</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -928,15 +1042,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; 1ди көрсөтсөңүз, бөлүкчөлөр тор түйүндөрүндө түзүлөт. &lt;/p&gt; &lt;p&gt; Эгер 2ни көрсөтсөңүз, бөлүкчөлөр тор түйүндөрүндө жана тор түйүндөрүнүн ортоңку чекиттеринде түзүлөт. &lt;/p&gt; &lt;p&gt; Эгерде сиз 1/2 көрсөтүңүз, бөлүкчөлөр башка тор түйүндөрү үчүн түзүлөт. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; 1ди көрсөтсөңүз, бөлүкчөлөр тор түйүндөрүндө түзүлөт. &lt;/p&gt; &lt;p&gt; Эгер 2ни көрсөтсөңүз, бөлүкчөлөр тор түйүндөрүндө жана тор түйүндөрүнүн ортоңку чекиттеринде түзүлөт. &lt;/p&gt; &lt;p&gt; Эгерде сиз 1/2 көрсөтүңүз, бөлүкчөлөр башка тор түйүндөрү үчүн түзүлөт. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Көлөм:</translation>
+        <translation type="vanished">Көлөм:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -944,15 +1058,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Дисплейде бир катар пикселдерди көрсөтүңүз. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Дисплейде бир катар пикселдерди көрсөтүңүз. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1002,6 +1116,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Түс:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Упайдын өлчөмү:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -1045,55 +1174,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Ыкчам жөндөө</translation>
+        <translation type="vanished">Ыкчам жөндөө</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Физикалык баалуулук:</translation>
+        <translation type="vanished">Физикалык баалуулук:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Позицияны баштоо</translation>
+        <translation type="vanished">Позицияны баштоо</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Диапазон</translation>
+        <translation type="vanished">Диапазон</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Агымдарды баштоо үчүн аймакты көрсөтүңүз.</translation>
+        <translation type="vanished">Агымдарды баштоо үчүн аймакты көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Тор индекстеринин диапазону боюнча агымдарды баштоо үчүн аймакты көрсөтүңүз (I, J, K).</translation>
+        <translation type="vanished">Тор индекстеринин диапазону боюнча агымдарды баштоо үчүн аймакты көрсөтүңүз (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Мен Мин</translation>
+        <translation type="vanished">Мен Мин</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Мен Макс</translation>
+        <translation type="vanished">Мен Макс</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>К Мин</translation>
+        <translation type="vanished">К Мин</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K Max</translation>
+        <translation type="vanished">K Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generation мейкиндик аралыгы</translation>
+        <translation type="vanished">Generation мейкиндик аралыгы</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1103,35 +1232,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; 1ди көрсөтсөңүз, агым сызыктары тор түйүндөрүнөн башталат. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Эгер 2 көрсөтсөңүз, агым сызыктары түйүн түйүндөрүнөн жана торчо түйүндөрүнүн ортоңку чекиттеринен башталат. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right:" 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Эгерде сиз 1/2 көрсөтсөңүз, агымдар башка тор түйүндөрүнөн башталат. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; 1ди көрсөтсөңүз, агым сызыктары тор түйүндөрүнөн башталат. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Эгер 2 көрсөтсөңүз, агым сызыктары түйүн түйүндөрүнөн жана торчо түйүндөрүнүн ортоңку чекиттеринен башталат. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right:" 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Эгерде сиз 1/2 көрсөтсөңүз, агымдар башка тор түйүндөрүнөн башталат. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мүн</translation>
+        <translation type="vanished">мүн</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>макс</translation>
+        <translation type="vanished">макс</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Түс:</translation>
+        <translation type="vanished">Түс:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Туурасы:</translation>
+        <translation type="vanished">Туурасы:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1139,15 +1268,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Дисплейде бир катар пикселдерди көрсөтүңүз. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Дисплейде бир катар пикселдерди көрсөтүңүз. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Кошуу (&amp;A)</translation>
+        <translation type="vanished">Кошуу (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Алып салуу (&amp;R)</translation>
+        <translation type="vanished">Алып салуу (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1174,7 +1303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Агымдын жөндөөсүн жаңыртуу</translation>
+        <translation type="vanished">Агымдын жөндөөсүн жаңыртуу</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

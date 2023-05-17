@@ -3,6 +3,9 @@
 
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
+class Post2dWindowNodeVectorStreamlineGroupDataItem;
+class Post2dWindowZoneDataItem;
+
 class Post2dWindowNodeVectorStreamlineDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
@@ -16,6 +19,15 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
+
+public slots:
+	void showPropertyDialog() override;
+
+private:
+	QDialog* propertyDialog(QWidget* parent) override;
+
+	Post2dWindowZoneDataItem* zoneDataItem() const;
+	Post2dWindowNodeVectorStreamlineGroupDataItem* groupDataItem() const;
 };
 
 #endif // POST2DWINDOWNODEVECTORSTREAMLINEDATAITEM_H

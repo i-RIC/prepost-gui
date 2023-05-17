@@ -18,11 +18,9 @@ class Post2dBirdEyeWindowDataModel : public Graphics3DWindowDataModel
 	Q_OBJECT
 
 public:
-	static const int MOVEWIDTH = 1;
-	/// Constructor
 	Post2dBirdEyeWindowDataModel(Post2dBirdEyeWindow* w, ProjectDataItem* parent);
 	~Post2dBirdEyeWindowDataModel();
-	/// The view to display 2d post-processor main region
+
 	Post2dBirdEyeWindowGraphicsView* graphicsView() const;
 	PostSolutionInfo* postSolutionInfo();
 	void editZScale();

@@ -8,7 +8,7 @@
 class Post3dWindowParticlesBaseScalarGroupDataItem::ToolBarWidgetController : public ColorMapSettingToolBarWidgetController
 {
 public:
-	ToolBarWidgetController(ColorMapSettingToolBarWidgetI* widget, Post3dWindowParticlesBaseScalarGroupDataItem* item);
+	ToolBarWidgetController(ColorMapSettingToolBarWidget* widget, Post3dWindowParticlesBaseScalarGroupDataItem* item);
 
 private slots:
 	void handleWidgetUpdate() override;

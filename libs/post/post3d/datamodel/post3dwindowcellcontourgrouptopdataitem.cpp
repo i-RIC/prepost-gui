@@ -9,7 +9,7 @@
 #include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <postbase/postsolutionselectdialog.h>
+#include <misc/valueselectdialog.h>
 
 Post3dWindowCellContourGroupTopDataItem::Post3dWindowCellContourGroupTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Contours (cell center)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -77,14 +77,14 @@ QDialog* Post3dWindowCellContourGroupTopDataItem::addDialog(QWidget* p)
 
 	auto gType = zoneData->gridType();
 
-	auto dialog = new PostSolutionSelectDialog(p);
+	auto dialog = new ValueSelectDialog(p);
 	std::unordered_map<std::string, QString> solutions;
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zoneData->data()->data()->GetCellData())) {
 		solutions.insert({sol, gType->output(sol)->caption()});
 	}
-	dialog->setSolutions(solutions);
-
+	dialog->setValues(solutions);
+	dialog->setWindowTitle(tr("Select Calculation Result"));
 	return dialog;
 }
 
@@ -97,8 +97,8 @@ void Post3dWindowCellContourGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 
 	auto gType = zoneData->gridType();
 
-	auto dialog = dynamic_cast<PostSolutionSelectDialog*> (propDialog);
-	auto sol = dialog->selectedSolution();
+	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post3dWindowCellContourGroupDataItem(sol, this);
 	newItem->updateZScale(m_zScale);

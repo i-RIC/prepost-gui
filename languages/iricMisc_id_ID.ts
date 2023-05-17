@@ -57,4 +57,11 @@
         <translation>Membuka file %1 gagal.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Pilih Nilai</translation>
+    </message>
+</context>
 </TS>

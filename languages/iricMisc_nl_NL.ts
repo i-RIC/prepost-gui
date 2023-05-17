@@ -57,4 +57,11 @@
         <translation>Bestand openen %1 mislukt.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Selecteer waarde</translation>
+    </message>
+</context>
 </TS>

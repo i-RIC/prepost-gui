@@ -57,4 +57,11 @@
         <translation>Opnun skrá %1 mistókst.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Veldu Gildi</translation>
+    </message>
+</context>
 </TS>

@@ -2,11 +2,6 @@
 #define POST2DWINDOWZONEDATAITEM_H
 
 #include "../post2dbirdeyewindowdataitem.h"
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkMapper.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkDataSetMapper.h>
 
 class QSignalMapper;
 
@@ -28,8 +23,6 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 
-	void updateZDepthRangeItemCount() override;
-
 	PostZoneDataContainer* dataContainer();
 	int zoneNumber() const;
 	std::string zoneName() const;
@@ -39,18 +32,16 @@ public:
 	Post2dBirdEyeWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dBirdEyeWindowGridShapeDataItem* gridShapeDataItem() const;
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
-	// Post2dBirdEyeWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;
+	Post2dBirdEyeWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;
 
-protected:
-	void assignActorZValues(const ZDepthRange& range) override;
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dBirdEyeWindowGridShapeDataItem* m_shapeDataItem;
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* m_scalarGroupTopDataItem;
-	// Post2dBirdEyeWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
+	Post2dBirdEyeWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
 
-private:
 	std::string m_zoneName;
 	int m_zoneNumber;
 };

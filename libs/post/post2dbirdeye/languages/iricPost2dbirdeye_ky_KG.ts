@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Скаляр</translation>
+        <translation>Скаляр</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Контурдун жөндөөсүн жаңыртуу</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярдык жөндөө (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Түс</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Түйүндүн скалярдык мааниси боюнча</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Клетканын скалярдык мааниси боюнча</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Скалярдык (уяча)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Эсептөө натыйжасын тандаңыз</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Тор формасы</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Тор формасын орнотуу</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Тор формасынын дисплей жөндөөлөрү</translation>
+        <translation type="vanished">Тор формасынын дисплей жөндөөлөрү</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Elevation үчүн скалярдык маани</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Түс</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Скалярдык маани боюнча</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Импорттоо (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Диапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Түс</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Түйүндүн скалярдык мааниси боюнча</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Клетканын скалярдык мааниси боюнча</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Ыңгайлаштырылган түс</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Скалярдык маани боюнча</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Импорттоо (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Максимум төрт контур аныкталышы мүмкүн.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Эсептөө натыйжасын тандаңыз</translation>
     </message>
 </context>
 <context>

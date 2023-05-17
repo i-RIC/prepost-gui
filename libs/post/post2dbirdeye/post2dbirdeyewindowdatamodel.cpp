@@ -30,8 +30,8 @@
 
 #define _USE_MATH_DEFINES
 
-Post2dBirdEyeWindowDataModel::Post2dBirdEyeWindowDataModel(Post2dBirdEyeWindow* w, ProjectDataItem* parent)
-	: Graphics3DWindowDataModel(w, parent)
+Post2dBirdEyeWindowDataModel::Post2dBirdEyeWindowDataModel(Post2dBirdEyeWindow* w, ProjectDataItem* parent) :
+	Graphics3DWindowDataModel(w, parent)
 {
 	init();
 }
@@ -51,13 +51,12 @@ void Post2dBirdEyeWindowDataModel::init()
 	// if (m_rootDataItem != nullptr){delete m_rootDataItem;}
 	// build new data.
 	m_graphicsView = new Post2dBirdEyeWindowGraphicsView(dynamic_cast<QWidget*>(parent()));
-	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
 	// setup the basic itemModel structure.
-	Post2dBirdEyeWindowRootDataItem* root = new Post2dBirdEyeWindowRootDataItem(dynamic_cast<Post2dBirdEyeWindow*>(mainWindow()), this);
+	auto root = new Post2dBirdEyeWindowRootDataItem(dynamic_cast<Post2dBirdEyeWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
 	root->setupStandardModel(m_itemModel);
-	connect(m_itemModel, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(handleObjectBrowserChange(QStandardItem*)));
+	connect(m_itemModel, &QStandardItemModel::itemChanged, this, &Post2dBirdEyeWindowDataModel::handleObjectBrowserChange);
 
 	m_graphicsView->setActiveDataItem(root);
 	m_graphicsView->setModel(this);

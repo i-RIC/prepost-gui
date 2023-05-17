@@ -5,17 +5,13 @@
 #include <misc/stringtool.h>
 
 #include <vtkClipPolyData.h>
-#include <vtkExtractGrid.h>
 #include <vtkGeometryFilter.h>
 #include <vtkSmartPointer.h>
 
 Region2dSettingContainer::Region2dSettingContainer() :
-	CompositeContainer {&mode, &iMin, &iMax, &jMin, &jMax},
+	CompositeContainer {&mode, &range},
 	mode {"mode"},
-	iMin {"iMin"},
-	iMax {"iMax"},
-	jMin {"jMin"},
-	jMax {"jMax"}
+	range {}
 {}
 
 Region2dSettingContainer::Region2dSettingContainer(const Region2dSettingContainer& s) :
@@ -53,13 +49,7 @@ vtkPointSet* Region2dSettingContainer::buildNodeFilteredData(vtkPointSet* data)
 		clipped->Register(nullptr);
 		return clipped;
 	} else if (mode == Mode::Custom) {
-		auto filter = vtkSmartPointer<vtkExtractGrid>::New();
-		filter->SetInputData(data);
-		filter->SetVOI(iMin, iMax, jMin, jMax, 0, 0);
-		filter->Update();
-		auto clipped = filter->GetOutput();
-		clipped->Register(nullptr);
-		return clipped;
+		return range.buildNodeFilteredData(vtkStructuredGrid::SafeDownCast(data));
 	}
 	return nullptr;
 }
@@ -80,13 +70,7 @@ vtkPointSet* Region2dSettingContainer::buildCellFilteredData(vtkPointSet* data)
 		activeData->Register(nullptr);
 		return activeData;
 	} else if (mode == Mode::Custom) {
-		auto filter = vtkSmartPointer<vtkExtractGrid>::New();
-		filter->SetInputData(data);
-		filter->SetVOI(iMin, iMax + 1, jMin, jMax + 1, 0, 0);
-		filter->Update();
-		auto clipped = filter->GetOutput();
-		clipped->Register(nullptr);
-		return clipped;
+		return range.buildCellFilteredData(vtkStructuredGrid::SafeDownCast(data));
 	}
 	return nullptr;
 }

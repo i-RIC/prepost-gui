@@ -3,10 +3,10 @@
 
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
-#include <guicore/scalarstocolors/colormapsettingtoolbarwidgeti.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 
-Post2dWindowGridTypeDataItem::ToolBarWidgetController::ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidgetI* widget, Post2dWindowGridTypeDataItem* item) :
+Post2dWindowGridTypeDataItem::ToolBarWidgetController::ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidget* widget, Post2dWindowGridTypeDataItem* item) :
 	ColorMapSettingToolBarWidgetController {widget},
 	m_name {name},
 	m_item {item}

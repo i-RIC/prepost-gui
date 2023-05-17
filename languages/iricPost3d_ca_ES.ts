@@ -385,7 +385,7 @@
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Habilitat</translation>
+        <translation type="vanished">Habilitat</translation>
     </message>
 </context>
 <context>
@@ -662,6 +662,10 @@
         <source>Face%1</source>
         <translation>Cara %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Llegenda de la longitud</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -790,7 +794,65 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Actualitza la configuració de partícules</translation>
+        <translation type="vanished">Actualitza la configuració de partícules</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Configuració de visualització de partícules</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posició inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Afegeix (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Cara</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation>Especifiqueu la cara per començar les partícules</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation>Especifiqueu la cara per iniciar les partícules, per rang d'índexs de quadrícula (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Interval d'espai generacional</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation>Mida del punt</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -805,6 +867,71 @@
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Optimitza la configuració de la pantalla</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Valor físic:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Posició inicial</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Afegeix (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Eliminar (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation>Cara</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation>Especifiqueu la cara per iniciar les línies de corrent</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation>Especifiqueu la cara per iniciar les línies aerodinàmiques, per rang d'índexs de quadrícula (I, J, K).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Interval d'espai generacional</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Amplada:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -815,108 +942,95 @@
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>Configuració de partícules</translation>
+        <translation type="vanished">Configuració de partícules</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>Configuració comuna</translation>
+        <translation type="vanished">Configuració comuna</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>Generar periòdicament</translation>
+        <translation type="vanished">Generar periòdicament</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>Interval de temps de generació</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="vanished">Interval de temps de generació</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>mín</translation>
+        <translation type="vanished">mín</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>màx</translation>
+        <translation type="vanished">màx</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>Generar en un moment arbitrari</translation>
+        <translation type="vanished">Generar en un moment arbitrari</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>Edita...</translation>
+        <translation type="vanished">Edita...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posició inicial</translation>
+        <translation type="vanished">Posició inicial</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Rang</translation>
+        <translation type="vanished">Rang</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>Especifiqueu l'àrea per generar partícules.</translation>
+        <translation type="vanished">Especifiqueu l'àrea per generar partícules.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>Especifiqueu l'àrea per generar partícules, per rang d'índexs de quadrícula (I, J, K).</translation>
+        <translation type="vanished">Especifiqueu l'àrea per generar partícules, per rang d'índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation type="vanished">M'hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Màx</translation>
+        <translation type="vanished">J Màx</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K mín</translation>
+        <translation type="vanished">K mín</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K màx</translation>
+        <translation type="vanished">K màx</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation type="vanished">Interval d'espai de generació</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -928,15 +1042,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Color:</translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Mida:</translation>
+        <translation type="vanished">Mida:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -944,15 +1058,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Afegeix (&amp;A)</translation>
+        <translation type="vanished">Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1002,6 +1116,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Color:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>Mida del punt:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -1045,55 +1174,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Optimització de la configuració</translation>
+        <translation type="vanished">Optimització de la configuració</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valor físic:</translation>
+        <translation type="vanished">Valor físic:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Posició inicial</translation>
+        <translation type="vanished">Posició inicial</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Rang</translation>
+        <translation type="vanished">Rang</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions.</translation>
+        <translation type="vanished">Especifiqueu l'àrea per iniciar les racionalitzacions.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Especifiqueu l'àrea per iniciar les racionalitzacions, per rang d'índexs de quadrícula (I, J, K).</translation>
+        <translation type="vanished">Especifiqueu l'àrea per iniciar les racionalitzacions, per rang d'índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation type="vanished">M'hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Màx</translation>
+        <translation type="vanished">J Màx</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>K mín</translation>
+        <translation type="vanished">K mín</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>K màx</translation>
+        <translation type="vanished">K màx</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval d'espai de generació</translation>
+        <translation type="vanished">Interval d'espai de generació</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1103,35 +1232,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si n'especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si n'especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>mín</translation>
+        <translation type="vanished">mín</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>màx</translation>
+        <translation type="vanished">màx</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Color:</translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Amplada:</translation>
+        <translation type="vanished">Amplada:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1139,15 +1268,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Afegeix (&amp;A)</translation>
+        <translation type="vanished">Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Elimina (&amp;R)</translation>
+        <translation type="vanished">Elimina (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1174,7 +1303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Actualitza la configuració de Streamline</translation>
+        <translation type="vanished">Actualitza la configuració de Streamline</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>

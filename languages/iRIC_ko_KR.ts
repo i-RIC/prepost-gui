@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>결과 인식:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;패턴을 정의하려면 다음 문자를 사용하십시오.&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -오른쪽: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;&quot;&gt;연도: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;&quot;&gt;월: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;&quot;&gt;요일: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;시: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;분: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin- 왼쪽:0px; 여백-오른쪽:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;두 번째: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;패턴을 정의하려면 다음 문자를 사용하십시오.&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -오른쪽: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block- indent:0; text-indent:0px;"&gt;연도: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt -block-indent:0; text-indent:0px;"&gt;월: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px ; -qt-block-indent:0; text-indent:0px;"&gt;요일: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin- right:0px; -qt-block-indent:0; text-indent:0px;"&gt;시: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px ; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;분: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin- 왼쪽:0px; 여백-오른쪽:0px; -qt-block-indent:0; text-indent:0px;"&gt;두 번째: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>이 데이터는 내보낼 수 없습니다. *.tif 또는 *.asc에서 가져오지 않은 것 같습니다.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>이 데이터는 내보낼 수 없습니다. &quot;시간&quot; 차원이 있는 데이터는 *.tif 또는 *.asc로 내보낼 수 없습니다.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>이 데이터는 내보낼 수 없습니다. "시간" 차원이 있는 데이터는 *.tif 또는 *.asc로 내보낼 수 없습니다.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>이 데이터는 내보낼 수 없습니다. *.png에서 가져오지 않은 것 같습니다.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>이 데이터는 내보낼 수 없습니다. &quot;시간&quot; 차원이 있는 데이터는 *.png로 내보낼 수 없습니다.</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>이 데이터는 내보낼 수 없습니다. "시간" 차원이 있는 데이터는 *.png로 내보낼 수 없습니다.</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>경고</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>X 밴드 MP 레이더 데이터는 &quot;시간&quot; 차원이 있는 그리드 조건에 대해 가져올 수 있습니다.</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>X 밴드 MP 레이더 데이터는 "시간" 차원이 있는 그리드 조건에 대해 가져올 수 있습니다.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 헤더에는 최소한 4개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 &quot;%2&quot;, 하지만 &quot;%3&quot;가 주어진다.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 "%2", 하지만 "%3"가 주어진다.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>줄을 읽는 동안 오류가 발생했습니다. %1. 데이터에는 최소한 4개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;x&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;x&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "x" 값을 읽는 동안 오류가 발생했습니다. %1. "x"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;y&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;y&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "y" 값을 읽는 동안 오류가 발생했습니다. %1. "y"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;값&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "값" 값을 읽는 동안 오류가 발생했습니다. %1. "값"은 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">병합...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>&quot;에 병합할 다른 데이터가 없습니다. %1 &quot; 그룹.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>"에 병합할 다른 데이터가 없습니다. %1 " 그룹.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>구분 기호가 지정되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>&quot;를 읽을 값이 충분하지 않습니다. %1 &quot;.&quot;%1&quot; 열은 %2 하지만 %3 값 입력.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>"를 읽을 값이 충분하지 않습니다. %1 "."%1" 열은 %2 하지만 %3 값 입력.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>&quot;를 읽는 동안 오류가 발생했습니다. %1 &quot; 값. &quot;%1&quot; 값은 실수여야 하지만 &quot;%2&quot;를 지정했습니다.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>"를 읽는 동안 오류가 발생했습니다. %1 " 값. "%1" 값은 실수여야 하지만 "%2"를 지정했습니다.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3766,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>인용 문자:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>표면</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>가중 지수 k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt;는 값의 가중 평균을 계산할 때 가중치로 사용됩니다. r은 점에서 값이 매핑되는 노드 또는 셀 중심까지의 거리입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt;는 값의 가중 평균을 계산할 때 가중치로 사용됩니다. r은 점에서 값이 매핑되는 노드 또는 셀 중심까지의 거리입니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">표면</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; &amp;quot;포인트 편집 모드quot;에서는 이 설정이 무시되고 TIN 데이터는 항상 점으로 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,8 +4392,8 @@ p, li { white-space: pre-wrap; }
         <translation>가장자리 길이 제한:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 적용 버튼을 클릭하면 제거될 삼각형이 어두운 색으로 칠해집니다. 회색.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <!-- iricGdPoint_ko_KR.ts -->
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 표시 설정</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지 파일 선택</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 이미지 (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>모양</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트들</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 크기:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>아이콘 이미지</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지 가져오기 (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>분명한 (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>최대 크기:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>가져온 이미지의 너비나 높이가 최대 크기보다 크면 너비나 높이가 최대 크기와 같아지도록 이미지가 자동으로 축소됩니다.</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>맞춤 색상</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_ko_KR.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>선택 항목을 삭제하시겠습니까? %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>&quot;에 병합할 다른 데이터가 없습니다. %1 &quot; 그룹.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>"에 병합할 다른 데이터가 없습니다. %1 " 그룹.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 헤더에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 &quot;%2&quot;, 하지만 &quot;%3&quot;가 주어진다.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 "%2", 하지만 "%3"가 주어진다.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>줄을 읽는 동안 오류가 발생했습니다. %1. 데이터에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;pid&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;pid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>줄에서 "pid" 값을 읽는 동안 오류가 발생했습니다. %1. "pid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;vid&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;vid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>줄에서 "vid" 값을 읽는 동안 오류가 발생했습니다. %1. "vid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;x&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;x&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "x" 값을 읽는 동안 오류가 발생했습니다. %1. "x"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;y&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;y&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "y" 값을 읽는 동안 오류가 발생했습니다. %1. "y"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;값&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "값" 값을 읽는 동안 오류가 발생했습니다. %1. "값"은 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;이름&quot;은 &quot;pid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "이름"은 "pid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 &quot;pid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "값"은 "pid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>다각형 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>다각형 표시 설정</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">값에 따라 색상 지정</translation>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">사용자 정의 색상</translation>
+        <translation>맞춤 색상</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>선의 폭:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_ko_KR.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 헤더에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 &quot;%2&quot;, 하지만 &quot;%3&quot;가 주어진다.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>헤더 행을 읽는 동안 오류가 발생했습니다. 열 %1 해야한다 "%2", 하지만 "%3"가 주어진다.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>줄을 읽는 동안 오류가 발생했습니다. %1. 데이터에는 최소한 6개의 열이 있어야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;뚜껑&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;lid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>줄에서 "뚜껑" 값을 읽는 동안 오류가 발생했습니다. %1. "lid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;vid&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;vid&quot;는 정수 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>줄에서 "vid" 값을 읽는 동안 오류가 발생했습니다. %1. "vid"는 정수 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;x&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;x&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "x" 값을 읽는 동안 오류가 발생했습니다. %1. "x"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;y&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;y&quot;는 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "y" 값을 읽는 동안 오류가 발생했습니다. %1. "y"는 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>줄에서 &quot;값&quot; 값을 읽는 동안 오류가 발생했습니다. %1. &quot;값&quot;은 실제 값이어야 하지만 &quot;%2&quot;가 지정되어 있습니다.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>줄에서 "값" 값을 읽는 동안 오류가 발생했습니다. %1. "값"은 실제 값이어야 하지만 "%2"가 지정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;name&quot;은 &quot;lid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "name"은 "lid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. &quot;value&quot;는 &quot;lid&quot; 값이 동일한 행에 대해 동일해야 합니다.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>줄을 읽는 동안 오류가 발생했습니다. %1. "value"는 "lid" 값이 동일한 행에 대해 동일해야 합니다.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>라인 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>라인 표시 설정</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>전처리 창 설정 사용</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>맞춤 색상</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>선의 폭:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_ko_KR.ts -->
@@ -6277,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6290,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>고도 및 기울기 설정이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>끝점의 표고를 지정할 때 시작점과 같을 수 없습니다. 수평선을 그리려면 &quot;수평 거리 지정&quot;을 선택하십시오.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>끝점의 표고를 지정할 때 시작점과 같을 수 없습니다. 수평선을 그리려면 "수평 거리 지정"을 선택하십시오.</translation>
     </message>
 </context>
 <context>
@@ -6746,8 +6746,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>마우스 클릭으로 단면을 편집합니다. 더블 클릭하거나 Return 키를 눌러 편집을 마칩니다. 대화 상자에서 값을 입력하여 단면을 정확하게 편집할 수 있습니다. 오른쪽 클릭 메뉴의 &quot;대화 상자에서 편집&quot;에서 대화 상자 편집 모드로 들어갑니다.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>마우스 클릭으로 단면을 편집합니다. 더블 클릭하거나 Return 키를 눌러 편집을 마칩니다. 대화 상자에서 값을 입력하여 단면을 정확하게 편집할 수 있습니다. 오른쪽 클릭 메뉴의 "대화 상자에서 편집"에서 대화 상자 편집 모드로 들어갑니다.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>오류</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LX 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 선 %2 "%3": LX 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LY 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 선 %2 "%3": LY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 수신 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 선 %2 "%3": 수신 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: RY 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 선 %2 "%3": RY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 포인트 수가 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 선 %2 "%3": 포인트 수가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 잘못된 인덱스 값</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 선 %2 "%3": 잘못된 인덱스 값</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 선 %2 : 단면 데이터 %3 충분하지 않은</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 거리 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 선 %2 "%3": 거리 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 표고 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 선 %2 "%3": 표고 값이 잘못되었습니다.</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 선 %2 : 읽기 오류입니다. 두 개 이상의 값이 필요합니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 선 %2 : 읽기 오류입니다. 실수 값이 아닙니다 &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 선 %2 : 읽기 오류입니다. 실수 값이 아닙니다 "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 선 %2 : KP가 입력되지 않음</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LX 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 선 %2 "%3": LX 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LY 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 선 %2 "%3": LY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 수신 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 선 %2 "%3": 수신 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: RY 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 선 %2 "%3": RY 값이 잘못되었습니다.</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>거리 마커 데이터를 찾을 수 없습니다. 무시됩니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 선 %2 : &quot;%3&quot;: 플래그 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 선 %2 : "%3": 플래그 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 선 %2 : &quot;%3&quot;: 거리 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 선 %2 : "%3": 거리 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 선 %2 : &quot;%3&quot;: 고도 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 선 %2 : "%3": 고도 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>보이는</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고:&lt;/span&gt; 색상표 탭을 사용하여 색상을 사용자 지정할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; 색상표 탭을 사용하여 색상을 사용자 지정할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>체크박스</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>보다 작은 값 %1 허용되지 않습니다.</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>보다 큰 Valur %1 허용되지 않습니다.</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>투명한</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>시계</translation>
+        <translation type="vanished">시계</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>선택 시</translation>
+        <translation type="vanished">선택 시</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>언제나</translation>
+        <translation type="vanished">언제나</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>절대</translation>
+        <translation type="vanished">절대</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>크기와 위치</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>컬러맵</translation>
+        <translation type="vanished">컬러맵</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>길이의 전설</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(맞춤 색상)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>보이는</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">방향:</translation>
+        <translation>방향:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">수평의</translation>
+        <translation>수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">수직의</translation>
+        <translation>수직의</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>막대 너비</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">자동</translation>
+        <translation>자동</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>픽셀</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>조정</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>왼쪽</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>센터</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>오른쪽</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵 설정 열거 (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵 설정 열거 (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>에서 설정을 가져오는 동안 오류가 발생했습니다. %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>공공의 (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>사적인 (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵 설정 가져오기</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>방법</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>표준에서 선택</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 선택</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>표준</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>파일</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>가져올 속성</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>방향</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">제목</translation>
+        <translation>제목</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>글꼴 설정</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">라벨 표시</translation>
+        <translation>라벨 표시</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>상표</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">배경</translation>
+        <translation>배경</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">크기와 위치</translation>
+        <translation>크기와 위치</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">위치</translation>
+        <translation>위치</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>크기</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>막대 너비</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>조정</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>시사</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">컬러 바</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">수평의</translation>
+        <translation type="vanished">수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">수직의</translation>
+        <translation type="vanished">수직의</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>보이는</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>막대 너비</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>픽셀</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>조정</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>왼쪽</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>센터</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>오른쪽</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>색상 반전 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>균등분할 (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">컬러맵 설정 (*.cmsetting)</translation>
+        <translation>컬러맵 설정 (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>에서 설정을 가져오는 동안 오류가 발생했습니다. %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>공공의 (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>사적인 (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵 설정 가져오기</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>방법</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>표준에서 선택</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 선택</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>표준</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>파일</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>가져올 속성</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>방향</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">제목</translation>
+        <translation>제목</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>글꼴 설정</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">라벨 표시</translation>
+        <translation>라벨 표시</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>체재</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>레이블 수</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>상표</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">배경</translation>
+        <translation>배경</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">크기와 위치</translation>
+        <translation>크기와 위치</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">위치</translation>
+        <translation>위치</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>크기</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>막대 너비</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>조정</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>시사</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>옵션</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>값 소수 자릿수:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>로그 스케일:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">활성화됨</translation>
+        <translation>사용</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러 바</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">수평의</translation>
+        <translation>수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">수직의</translation>
+        <translation>수직의</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>바닥으로부터의 거리</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>픽셀</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>나는 ~ 안에있다:</translation>
+        <translation type="vanished">나는 ~ 안에있다:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>나는 최대:</translation>
+        <translation type="vanished">나는 최대:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>제이민:</translation>
+        <translation type="vanished">제이민:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>J 맥스:</translation>
+        <translation type="vanished">J 맥스:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">나는 ~ 안에있다:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">나는 최대:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">제이민:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">J 맥스:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K 방향</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13530,8 +13630,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>솔버 선택</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 &quot;확인&quot; 버튼을 누르십시오.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 "확인" 버튼을 누르십시오.</translation>
     </message>
 </context>
 <context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>경고</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>&quot; 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 &quot;. 이 솔버는 무시됩니다. %2</translation>
+        <translation>" 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 ". 이 솔버는 무시됩니다. %2</translation>
     </message>
 </context>
 <context>
@@ -14518,7 +14618,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>이 프로젝트는 다른 iRIC GUI 창에서 열려 있는 것 같습니다. 여러 GUI 창에서 프로젝트 폴더를 열 수 없습니다.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>열려 있는 프로젝트는 작업 디렉터리에 복사되지 않으며 이 프로젝트에 대한 수정 사항을 강제로 저장해야 합니다. 현재 프로젝트를 유지하려면 먼저 다른 프로젝트에 저장하십시오.</translation>
     </message>
     <message>
@@ -14686,8 +14786,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>현재 활성화된 하위 창은 윤곽 도형 내보내기를 지원하지 않습니다.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -14823,8 +14923,8 @@ Option -&gt; Preferences</source>
         <translation>설정 파일 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>모양 파일을 내보내려면 색상 모드를 &quot;불연속 모드&quot;로 전환하십시오.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>모양 파일을 내보내려면 색상 모드를 "불연속 모드"로 전환하십시오.</translation>
     </message>
 </context>
 <context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,8 +15298,8 @@ Option -&gt; Preferences</source>
         <translation>새 2D 후처리 창 열기</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>새 2D Bird&apos;s-Eye 후처리 창 열기</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>새 2D Bird's-Eye 후처리 창 열기</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>파일 열기 %1 실패한.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_ko_KR.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">스칼라</translation>
+        <translation>스칼라</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">윤곽 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">스칼라 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>격자 모양</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>그리드 모양 표시 설정</translation>
+        <translation type="vanished">그리드 모양 표시 설정</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>표고에 대한 스칼라 값</translation>
+        <translation type="vanished">표고에 대한 스칼라 값</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">표고에 대한 스칼라 값</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>맞춤 색상</translation>
+        <translation type="vanished">맞춤 색상</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>스칼라 값 기준</translation>
+        <translation type="vanished">스칼라 값 기준</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">최대 4개의 윤곽을 정의할 수 있습니다.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>스칼라(edgeI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>스칼라(edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>모양 파일을 내보내려면 색상 설정을 &quot;불연속 모드&quot;로 전환하십시오.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>입자 설정 업데이트</translation>
+        <translation type="vanished">입자 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">생성 공간 간격</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>입자 설정 업데이트</translation>
+        <translation type="vanished">입자 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">마우스 드래그</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">좌표 값</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">포인트 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">포인트 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">포인트 수:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">물리적 가치:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">범위</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">유선형 시작 영역 지정</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">그리드 인덱스 범위(I, J)로 유선을 시작할 영역을 지정합니다.</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">생성 공간 간격</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">너비:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>약식 설정 업데이트</translation>
+        <translation type="vanished">약식 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">물리적 가치:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">지역</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">마우스 드래그</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">좌표 값</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">포인트 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">포인트 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">포인트 수:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">너비:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>입자 설정</translation>
+        <translation type="vanished">입자 설정</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>공통 설정</translation>
+        <translation type="vanished">공통 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>주기적으로 생성</translation>
+        <translation type="vanished">주기적으로 생성</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>생성 시간 간격</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">생성 시간 간격</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>분</translation>
+        <translation type="vanished">분</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>최대</translation>
+        <translation type="vanished">최대</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>임의의 시간에 생성</translation>
+        <translation type="vanished">임의의 시간에 생성</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>시작 위치</translation>
+        <translation type="vanished">시작 위치</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>입자를 생성할 영역을 지정합니다.</translation>
+        <translation type="vanished">입자를 생성할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>그리드 인덱스 범위(I, J)별로 파티클을 생성할 영역을 지정합니다.</translation>
+        <translation type="vanished">그리드 인덱스 범위(I, J)별로 파티클을 생성할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>나는 ~ 안에있다</translation>
+        <translation type="vanished">나는 ~ 안에있다</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>아이맥스</translation>
+        <translation type="vanished">아이맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>제이민</translation>
+        <translation type="vanished">제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>제이맥스</translation>
+        <translation type="vanished">제이맥스</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>생성 공간 간격</translation>
+        <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>크기:</translation>
+        <translation type="vanished">크기:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>입자 설정</translation>
+        <translation type="vanished">입자 설정</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>공통 설정</translation>
+        <translation type="vanished">공통 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>주기적으로 생성</translation>
+        <translation type="vanished">주기적으로 생성</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>생성 간격</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">생성 간격</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>분</translation>
+        <translation type="vanished">분</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>최대</translation>
+        <translation type="vanished">최대</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>임의의 시간에 생성</translation>
+        <translation type="vanished">임의의 시간에 생성</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>시작점</translation>
+        <translation type="vanished">시작점</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
+        <translation type="vanished">두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>마우스 드래그</translation>
+        <translation type="vanished">마우스 드래그</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>좌표 값</translation>
+        <translation type="vanished">좌표 값</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>포인트 1:</translation>
+        <translation type="vanished">포인트 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>포인트 2:</translation>
+        <translation type="vanished">포인트 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>포인트 수:</translation>
+        <translation type="vanished">포인트 수:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>크기:</translation>
+        <translation type="vanished">크기:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>컬러맵 설정</translation>
+        <translation type="vanished">컬러맵 설정</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>간소화 설정</translation>
+        <translation type="vanished">간소화 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>시작 위치</translation>
+        <translation type="vanished">시작 위치</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>유선형 시작 영역 지정</translation>
+        <translation type="vanished">유선형 시작 영역 지정</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>그리드 인덱스 범위(I, J)로 유선을 시작할 영역을 지정합니다.</translation>
+        <translation type="vanished">그리드 인덱스 범위(I, J)로 유선을 시작할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>나는 ~ 안에있다</translation>
+        <translation type="vanished">나는 ~ 안에있다</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>아이맥스</translation>
+        <translation type="vanished">아이맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>제이민</translation>
+        <translation type="vanished">제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>제이맥스</translation>
+        <translation type="vanished">제이맥스</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>생성 공간 간격</translation>
+        <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>분</translation>
+        <translation type="vanished">분</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>최대</translation>
+        <translation type="vanished">최대</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>너비:</translation>
+        <translation type="vanished">너비:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>간소화 설정</translation>
+        <translation type="vanished">간소화 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>시작점</translation>
+        <translation type="vanished">시작점</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
+        <translation type="vanished">두 점을 지정합니다. 입자는 이 두 점 사이에서 동등하게 분리되어 생성된 점에서 시작합니다.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>마우스 드래그</translation>
+        <translation type="vanished">마우스 드래그</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>좌표 값</translation>
+        <translation type="vanished">좌표 값</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>포인트 1:</translation>
+        <translation type="vanished">포인트 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>포인트 2:</translation>
+        <translation type="vanished">포인트 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>포인트 수:</translation>
+        <translation type="vanished">포인트 수:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>너비:</translation>
+        <translation type="vanished">너비:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>지역 설정 (&amp;R)</translation>
+        <translation type="vanished">지역 설정 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17393,7 +17907,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>약식 설정 업데이트</translation>
+        <translation type="vanished">약식 설정 업데이트</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>사용</translation>
+        <translation type="vanished">사용</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>얼굴 %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>길이의 전설</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>입자 설정 업데이트</translation>
+        <translation type="vanished">입자 설정 업데이트</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">얼굴</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">생성 공간 간격</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">물리적 가치:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">시작 위치</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">추가하다 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">제거하다 (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">얼굴</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">생성 공간 간격</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">색상:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">너비:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>입자 설정</translation>
+        <translation type="vanished">입자 설정</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>공통 설정</translation>
+        <translation type="vanished">공통 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>주기적으로 생성</translation>
+        <translation type="vanished">주기적으로 생성</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>생성 시간 간격</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">생성 시간 간격</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>분</translation>
+        <translation type="vanished">분</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>최대</translation>
+        <translation type="vanished">최대</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>임의의 시간에 생성</translation>
+        <translation type="vanished">임의의 시간에 생성</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>편집하다...</translation>
+        <translation type="vanished">편집하다...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>시작 위치</translation>
+        <translation type="vanished">시작 위치</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>입자를 생성할 영역을 지정합니다.</translation>
+        <translation type="vanished">입자를 생성할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>그리드 인덱스 범위(I, J, K)별로 파티클을 생성할 영역을 지정합니다.</translation>
+        <translation type="vanished">그리드 인덱스 범위(I, J, K)별로 파티클을 생성할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>나는 ~ 안에있다</translation>
+        <translation type="vanished">나는 ~ 안에있다</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>아이맥스</translation>
+        <translation type="vanished">아이맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>제이민</translation>
+        <translation type="vanished">제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>제이맥스</translation>
+        <translation type="vanished">제이맥스</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>케이 민</translation>
+        <translation type="vanished">케이 민</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>케이맥스</translation>
+        <translation type="vanished">케이맥스</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>생성 공간 간격</translation>
+        <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } p {여백 상단: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1을 지정하면 그리드 노드에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt;2를 지정하면 그리드 노드와 그리드 노드의 중간 지점에 파티클이 생성됩니다.&lt;/p&gt; &lt;p&gt; 1/2를 지정하면 다른 모든 그리드 노드에 대해 입자가 생성됩니다.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>크기:</translation>
+        <translation type="vanished">크기:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>색상:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>포인트 크기:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>간소화 설정</translation>
+        <translation type="vanished">간소화 설정</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>물리적 가치:</translation>
+        <translation type="vanished">물리적 가치:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>시작 위치</translation>
+        <translation type="vanished">시작 위치</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>범위</translation>
+        <translation type="vanished">범위</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>유선형을 시작할 영역을 지정합니다.</translation>
+        <translation type="vanished">유선형을 시작할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>그리드 인덱스 범위(I, J, K)별로 유선을 시작할 영역을 지정합니다.</translation>
+        <translation type="vanished">그리드 인덱스 범위(I, J, K)별로 유선을 시작할 영역을 지정합니다.</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>나는 ~ 안에있다</translation>
+        <translation type="vanished">나는 ~ 안에있다</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>아이맥스</translation>
+        <translation type="vanished">아이맥스</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>제이민</translation>
+        <translation type="vanished">제이민</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>제이맥스</translation>
+        <translation type="vanished">제이맥스</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>케이 민</translation>
+        <translation type="vanished">케이 민</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>케이맥스</translation>
+        <translation type="vanished">케이맥스</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>생성 공간 간격</translation>
+        <translation type="vanished">생성 공간 간격</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1을 지정하면 유선이 그리드 노드에서 시작됩니다..&lt;/p&gt; &lt;p 스타일=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2를 지정하면 유선이 그리드 노드에서 시작하고 그리드 노드의 중간 지점에서 시작됩니다.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2를 지정하면 유선이 다른 모든 그리드 노드에서 시작됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>분</translation>
+        <translation type="vanished">분</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>최대</translation>
+        <translation type="vanished">최대</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>색상:</translation>
+        <translation type="vanished">색상:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>너비:</translation>
+        <translation type="vanished">너비:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;표시할 픽셀 수를 지정합니다.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>추가하다 (&amp;A)</translation>
+        <translation type="vanished">추가하다 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>제거하다 (&amp;R)</translation>
+        <translation type="vanished">제거하다 (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18572,7 +19215,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>약식 설정 업데이트</translation>
+        <translation type="vanished">약식 설정 업데이트</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>추가할 시간 단계 선택</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">시간</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">편집하다...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">개체 브라우저</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">색상:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z 방향 스케일</translation>
+        <translation>Z 방향 스케일</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">새로운 Z 방향 스케일을 입력합니다.</translation>
+        <translation>새로운 Z 방향 스케일을 입력합니다.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z 방향 눈금:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">격자 모양</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">형태</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20283,6 +21121,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>포인트 클라우드 데이터 생성</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20563,7 +21405,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>거리(m) %1</translation>
     </message>
 </context>
 <context>

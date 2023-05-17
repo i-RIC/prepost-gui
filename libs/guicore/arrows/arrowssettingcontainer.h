@@ -49,7 +49,6 @@ public:
 
 	ArrowsSettingContainer();
 	ArrowsSettingContainer(const ArrowsSettingContainer& c);
-	virtual ~ArrowsSettingContainer();
 
 	ArrowsSettingContainer& operator=(const ArrowsSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;

@@ -15,9 +15,10 @@ OpacityContainer::OpacityContainer(const QString& name, int defaultVal) :
 OpacityContainer::~OpacityContainer()
 {}
 
-OpacityContainer& OpacityContainer::operator=(const OpacityContainer& c)
+XmlAttributeContainer& OpacityContainer::operator=(const XmlAttributeContainer& c)
 {
-	m_value = c.m_value;
+	const auto& c2 = dynamic_cast<const OpacityContainer&> (c);
+	m_value = c2.m_value;
 	emit updated();
 
 	return *this;

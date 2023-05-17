@@ -400,11 +400,11 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -413,6 +413,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">diapazonas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -440,6 +455,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
 </context>
 <context>
@@ -514,12 +533,20 @@
         <source>Scalar (edgeI)</source>
         <translation>Skalaras (kraštas I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Skalaras (kraštas J)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
 </context>
 <context>
@@ -764,11 +791,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -777,6 +804,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Eksportuoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">diapazonas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Spalva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -804,6 +846,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>Norėdami eksportuoti formos failą, perjunkite spalvų nustatymą į „Diskretus režimas“.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Pasirinkite Skaičiavimo rezultatas</translation>
     </message>
 </context>
 <context>
@@ -882,167 +928,22 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Atnaujinkite dalelių nustatymą</translation>
+        <translation type="vanished">Atnaujinkite dalelių nustatymą</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Dalelių rodymo nustatymas</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
-        <source>Update Particle Setting</source>
-        <translation>Atnaujinkite dalelių nustatymą</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
-    <message>
-        <source>Streamlines</source>
-        <translation>Srautinės linijos</translation>
-    </message>
-    <message>
-        <source>Streamline Physical Value Change</source>
-        <translation>Supaprastinkite fizinės vertės keitimą</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
-    <message>
-        <source>Update Streamline Setting</source>
-        <translation>Atnaujinkite „Streamline“ nustatymą</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleGroupRootDataItem</name>
-    <message>
-        <source>Particles</source>
-        <translation>Dalelės</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleStructuredSettingDialog</name>
-    <message>
-        <source>Particle Setting</source>
-        <translation>Dalelių nustatymas</translation>
-    </message>
-    <message>
-        <source>Common Settings</source>
-        <translation>Bendrieji nustatymai</translation>
-    </message>
-    <message>
-        <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
-    </message>
-    <message>
-        <source>Generate periodically</source>
-        <translation>Periodiškai generuokite</translation>
-    </message>
-    <message>
-        <source>Generation time interval</source>
-        <translation>Kartos laiko intervalas</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <translation>maks</translation>
-    </message>
-    <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Sukurkite savavališku laiku</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation>Redaguoti...</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Start Position</source>
         <translation>Pradinė padėtis</translation>
-    </message>
-    <message>
-        <source>Range</source>
-        <translation>diapazonas</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles.</source>
-        <translation>Nurodykite sritį dalelėms generuoti.</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Nurodykite dalelių susidarymo plotą pagal tinklelio indeksų diapazoną (I, J).</translation>
-    </message>
-    <message>
-        <source>I Min</source>
-        <translation>Aš už</translation>
-    </message>
-    <message>
-        <source>I Max</source>
-        <translation>Aš Maks</translation>
-    </message>
-    <message>
-        <source>J Min</source>
-        <translation>J Min</translation>
-    </message>
-    <message>
-        <source>J Max</source>
-        <translation>J Maks</translation>
-    </message>
-    <message>
-        <source>Generation space interval</source>
-        <translation>Erdvės generavimo intervalas</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Jei nurodysite 1, dalelės generuojamos tinklelio mazguose. &lt;/p&gt; &lt;p&gt; Jei nurodysite 2, dalelės generuojamos tinklelio mazguose ir tinklelio mazgų viduriniuose taškuose. &lt;/p&gt; &lt;p&gt; Jei nurodykite 1/2, dalelės generuojamos visiems kitiems tinklelio mazgams. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Spalva:</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Dydis:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1053,80 +954,88 @@ p, li { white-space: pre-wrap; }
         <translation>Pašalinti (&amp;R)</translation>
     </message>
     <message>
-        <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <source>Region</source>
+        <translation>Regionas</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Particle Setting</source>
-        <translation>Dalelių nustatymas</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>Common Settings</source>
-        <translation>Bendrieji nustatymai</translation>
+        <source>Range</source>
+        <translation>diapazonas</translation>
     </message>
     <message>
-        <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <source>Specify the area to start particles</source>
+        <translation>Nurodykite sritį, kurioje pradėsite daleles</translation>
     </message>
     <message>
-        <source>Generate periodically</source>
-        <translation>Periodiškai generuokite</translation>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>Nurodykite sritį, kurioje dalelės pradedamos, pagal tinklelio indeksų diapazoną (I, J).</translation>
     </message>
     <message>
-        <source>Generation interval</source>
-        <translation>Kartos intervalas</translation>
+        <source>Generation space interval</source>
+        <translation>Kartų erdvės intervalas</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <source>Color:</source>
+        <translation>Spalva:</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
+        <source>Point Size</source>
+        <translation>Taško dydis</translation>
     </message>
     <message>
-        <source>+</source>
-        <translation>+</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Particle Setting</source>
+        <translation type="vanished">Atnaujinkite dalelių nustatymą</translation>
     </message>
     <message>
-        <source>min</source>
-        <translation>min</translation>
+        <source>Particles Display Setting</source>
+        <translation>Dalelių rodymo nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
-        <source>1</source>
-        <translation>1</translation>
+        <source>Start Position</source>
+        <translation>Pradinė padėtis</translation>
     </message>
     <message>
-        <source>max</source>
-        <translation>maks</translation>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
     </message>
     <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Sukurkite savavališku laiku</translation>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
     </message>
     <message>
-        <source>Edit...</source>
-        <translation>Redaguoti...</translation>
+        <source>Region</source>
+        <translation>Regionas</translation>
     </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Start Points</source>
-        <translation>Pradžios taškai</translation>
+        <source>Form</source>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Nurodykite du taškus. Dalelės prasideda nuo taškų, kurie yra vienodai atskirti tarp šių dviejų taškų.</translation>
+        <translation>Nurodykite du taškus. Dalelės prasideda nuo taškų, sukurtų vienodai tarp šių dviejų taškų.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
@@ -1134,7 +1043,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Koordinuoti vertybes</translation>
+        <translation>Koordinatės reikšmės</translation>
     </message>
     <message>
         <source>Point 1:</source>
@@ -1157,16 +1066,45 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Spalva:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation>Dydis:</translation>
+        <source>Point size</source>
+        <translation>Taško dydis</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
+    <message>
+        <source>Streamlines</source>
+        <translation>Srautinės linijos</translation>
+    </message>
+    <message>
+        <source>Streamline Physical Value Change</source>
+        <translation>Supaprastinkite fizinės vertės keitimą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Supaprastinkite ekrano nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fizinė vertė:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Pradinė padėtis</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1177,8 +1115,373 @@ p, li { white-space: pre-wrap; }
         <translation>Pašalinti (&amp;R)</translation>
     </message>
     <message>
+        <source>Region</source>
+        <translation>Regionas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>diapazonas</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>Nurodykite sritį, kurią norite pradėti supaprastinti</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>Pagal tinklelio indeksų diapazoną (I, J) nurodykite sritį, kurioje bus pradėtos supaprastintos linijos.</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Kartų erdvės intervalas</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Plotis:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Streamline Setting</source>
+        <translation type="vanished">Atnaujinkite „Streamline“ nustatymą</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Supaprastinkite ekrano nustatymą</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fizinė vertė:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Pradinė padėtis</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regionas</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Forma</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>Nurodykite du taškus. Dalelės prasideda nuo taškų, sukurtų vienodai tarp šių dviejų taškų.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>Pelės vilkimas</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>Koordinatės reikšmės</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>1 punktas:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>2 punktas:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Taškų skaičius:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Spalva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Plotis:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <source>Particles</source>
+        <translation>Dalelės</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleStructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Dalelių nustatymas</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Bendrieji nustatymai</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fizinė vertė:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Periodiškai generuokite</translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="vanished">Kartos laiko intervalas</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">maks</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Sukurkite savavališku laiku</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Redaguoti...</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="vanished">Pradinė padėtis</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">diapazonas</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles.</source>
+        <translation type="vanished">Nurodykite sritį dalelėms generuoti.</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
+        <translation type="vanished">Nurodykite dalelių susidarymo plotą pagal tinklelio indeksų diapazoną (I, J).</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="vanished">Aš už</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="vanished">Aš Maks</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="vanished">J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="vanished">J Maks</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="vanished">Erdvės generavimo intervalas</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Jei nurodysite 1, dalelės generuojamos tinklelio mazguose. &lt;/p&gt; &lt;p&gt; Jei nurodysite 2, dalelės generuojamos tinklelio mazguose ir tinklelio mazgų viduriniuose taškuose. &lt;/p&gt; &lt;p&gt; Jei nurodykite 1/2, dalelės generuojamos visiems kitiems tinklelio mazgams. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Spalva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Dydis:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Dalelių nustatymas</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Bendrieji nustatymai</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fizinė vertė:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Periodiškai generuokite</translation>
+    </message>
+    <message>
+        <source>Generation interval</source>
+        <translation type="vanished">Kartos intervalas</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">maks</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Sukurkite savavališku laiku</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Redaguoti...</translation>
+    </message>
+    <message>
+        <source>Start Points</source>
+        <translation type="vanished">Pradžios taškai</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="vanished">Nurodykite du taškus. Dalelės prasideda nuo taškų, kurie yra vienodai atskirti tarp šių dviejų taškų.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="vanished">Pelės vilkimas</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="vanished">Koordinuoti vertybes</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="vanished">1 punktas:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="vanished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="vanished">2 punktas:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="vanished">Taškų skaičius:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Spalva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Dydis:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1358,47 +1661,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Racionalus nustatymas</translation>
+        <translation type="vanished">Racionalus nustatymas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Pradinė padėtis</translation>
+        <translation type="vanished">Pradinė padėtis</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>diapazonas</translation>
+        <translation type="vanished">diapazonas</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Nurodykite sritį, kurioje norite pradėti supaprastinti</translation>
+        <translation type="vanished">Nurodykite sritį, kurioje norite pradėti supaprastinti</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Nurodykite sritį, kurioje norite pradėti supaprastinti, pagal tinklelio indeksų diapazoną (I, J).</translation>
+        <translation type="vanished">Nurodykite sritį, kurioje norite pradėti supaprastinti, pagal tinklelio indeksų diapazoną (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Aš už</translation>
+        <translation type="vanished">Aš už</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Aš Maks</translation>
+        <translation type="vanished">Aš Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Maks</translation>
+        <translation type="vanished">J Maks</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Erdvės generavimo intervalas</translation>
+        <translation type="vanished">Erdvės generavimo intervalas</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1408,35 +1711,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1, supaprastinimas prasideda nuo tinklelio mazgų. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Jei nurodote 2, supaprastinimai prasideda tinklelio mazgais ir tinklelio mazgų viduriniais taškais. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1/2, supaprastinimai prasideda nuo visų kitų tinklelio mazgų. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1, supaprastinimas prasideda nuo tinklelio mazgų. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Jei nurodote 2, supaprastinimai prasideda tinklelio mazgais ir tinklelio mazgų viduriniais taškais. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Jei nurodysite 1/2, supaprastinimai prasideda nuo visų kitų tinklelio mazgų. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maks</translation>
+        <translation type="vanished">maks</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Plotis:</translation>
+        <translation type="vanished">Plotis:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1444,70 +1747,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Racionalus nustatymas</translation>
+        <translation type="vanished">Racionalus nustatymas</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizinė vertė:</translation>
+        <translation type="vanished">Fizinė vertė:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Pradžios taškai</translation>
+        <translation type="vanished">Pradžios taškai</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Nurodykite du taškus. Dalelės prasideda nuo taškų, kurie yra vienodai atskirti tarp šių dviejų taškų.</translation>
+        <translation type="vanished">Nurodykite du taškus. Dalelės prasideda nuo taškų, kurie yra vienodai atskirti tarp šių dviejų taškų.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Pelės vilkimas</translation>
+        <translation type="vanished">Pelės vilkimas</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Koordinuoti vertybes</translation>
+        <translation type="vanished">Koordinuoti vertybes</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>1 punktas:</translation>
+        <translation type="vanished">1 punktas:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>2 punktas:</translation>
+        <translation type="vanished">2 punktas:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Taškų skaičius:</translation>
+        <translation type="vanished">Taškų skaičius:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Spalva:</translation>
+        <translation type="vanished">Spalva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Plotis:</translation>
+        <translation type="vanished">Plotis:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1515,19 +1818,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Nurodykite rodomų pikselių skaičių. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Papildyti (&amp;A)</translation>
+        <translation type="vanished">Papildyti (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Pašalinti (&amp;R)</translation>
+        <translation type="vanished">Pašalinti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Regiono nustatymas (&amp;R)</translation>
+        <translation type="vanished">Regiono nustatymas (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1549,7 +1852,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Atnaujinkite „Streamline“ nustatymą</translation>
+        <translation type="vanished">Atnaujinkite „Streamline“ nustatymą</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>

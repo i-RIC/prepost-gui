@@ -61,11 +61,12 @@ HEADERS += autoparticlewindowi.h \
            particleexportwindowi.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
-           postsolutionselectdialog.h \
            svkmlexportwindowi.h \
            particle/particlearbitrarytimeeditdialog.h \
            particle/particledatasetting.h \
            particle/particledatavectorsetting.h \
+           particle/particlesettingcontainer.h \
+           particle/particlesettingeditwidget.h \
            polydata/polydatasetting.h \
            string/poststringresultdataitem.h \
            string/poststringresultsettingdialog.h \
@@ -81,7 +82,7 @@ HEADERS += autoparticlewindowi.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
-         postsolutionselectdialog.ui \
+         particle/particlesettingeditwidget.ui \
          string/poststringresultsettingdialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
@@ -89,8 +90,9 @@ SOURCES += postallzoneselectingdialog.cpp \
            particle/particlearbitrarytimeeditdialog.cpp \
            particle/particledatasetting.cpp \
            particle/particledatavectorsetting.cpp \
+           particle/particlesettingcontainer.cpp \
+           particle/particlesettingeditwidget.cpp \
            polydata/polydatasetting.cpp \
-           postsolutionselectdialog.cpp \
            string/poststringresultdataitem.cpp \
            string/poststringresultsettingdialog.cpp \
            time/posttimedataitem.cpp \

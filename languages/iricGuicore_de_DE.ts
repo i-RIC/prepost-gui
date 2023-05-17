@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importieren (&amp;I)...</translation>
+        <translation type="vanished">Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Farbkarte</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Sichtweite</translation>
+        <translation type="vanished">Sichtweite</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Wenn ausgewählt</translation>
+        <translation type="vanished">Wenn ausgewählt</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Stets</translation>
+        <translation type="vanished">Stets</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Niemals</translation>
+        <translation type="vanished">Niemals</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Größe und Position</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Farbkarte</translation>
+        <translation type="vanished">Farbkarte</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legende der Länge</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Freiwählbare Farbe)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Farbbalken</translation>
+        <translation type="vanished">Farbbalken</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontal</translation>
+        <translation type="vanished">Horizontal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikal</translation>
+        <translation type="vanished">Vertikal</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Abstand von unten</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">Ich bin dabei:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">Ich Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J Min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">Jmax:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>Ich bin dabei:</translation>
     </message>
     <message>
@@ -2902,7 +2960,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>Jmax:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-Richtung</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>Mindest</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>max</translation>
     </message>
 </context>
 <context>

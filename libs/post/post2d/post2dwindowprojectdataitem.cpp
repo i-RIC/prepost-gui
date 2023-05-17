@@ -39,6 +39,8 @@ Post2dWindowProjectDataItem::Post2dWindowProjectDataItem(ProjectDataItem* parent
 	w->m_actionManager->connectWithDataModel();
 
 	connect(w->m_objectBrowser->view(), SIGNAL(requestDeleteItem(QModelIndex)), w->m_dataModel, SLOT(deleteItem(QModelIndex)));
+	connect(w->m_objectBrowser->view(), SIGNAL(requestMoveUpItem(QModelIndex)), w->m_dataModel, SLOT(moveUpItem(QModelIndex)));
+	connect(w->m_objectBrowser->view(), SIGNAL(requestMoveDownItem(QModelIndex)), w->m_dataModel, SLOT(moveDownItem(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowAddDialog(QModelIndex)), w->m_dataModel, SLOT(showAddDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowPropertyDialog(QModelIndex)), w->m_dataModel, SLOT(showPropertyDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(pressed(QModelIndex,QPoint)), w->m_dataModel, SLOT(handleObjectBrowserPress(QModelIndex,QPoint)));

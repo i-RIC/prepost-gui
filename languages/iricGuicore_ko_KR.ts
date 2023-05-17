@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>컬러맵</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>시계</translation>
+        <translation type="vanished">시계</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>선택 시</translation>
+        <translation type="vanished">선택 시</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>언제나</translation>
+        <translation type="vanished">언제나</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>절대</translation>
+        <translation type="vanished">절대</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>크기와 위치</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>보이는</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>컬러맵</translation>
+        <translation type="vanished">컬러맵</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>길이의 전설</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(맞춤 색상)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>컬러 바</translation>
+        <translation type="vanished">컬러 바</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>수평의</translation>
+        <translation type="vanished">수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>수직의</translation>
+        <translation type="vanished">수직의</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>바닥으로부터의 거리</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>픽셀</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">나는 ~ 안에있다:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">나는 최대:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">제이민:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J 맥스:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>나는 ~ 안에있다:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K 방향</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>형태</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>분</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>최대</translation>
     </message>
 </context>
 <context>

@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Skalární</translation>
+        <translation>Skalární</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Aktualizujte nastavení obrysu</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Skalární nastavení (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Podle skalární hodnoty uzlu</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Podle skalární hodnoty buňky</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Skalární (buňka)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Tvar mřížky</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Nastavení tvaru mřížky</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Nastavení zobrazení tvaru mřížky</translation>
+        <translation type="vanished">Nastavení zobrazení tvaru mřížky</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Skalární hodnota pro Elevation</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Barva</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Vlastní barva</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">Podle skalární hodnoty</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Rozsah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Barva</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>Podle skalární hodnoty uzlu</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Podle skalární hodnoty buňky</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Vlastní barva</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>Podle skalární hodnoty</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Lze definovat maximálně čtyři obrysy.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
 </context>
 <context>

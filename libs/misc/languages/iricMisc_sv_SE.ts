@@ -57,4 +57,11 @@
         <translation>Öppnar filen %1 misslyckades.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Välj Värde</translation>
+    </message>
+</context>
 </TS>

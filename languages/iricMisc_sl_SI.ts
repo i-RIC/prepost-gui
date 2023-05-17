@@ -57,4 +57,11 @@
         <translation>Odpiranje datoteke %1 ni uspelo.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Izberite vrednost</translation>
+    </message>
+</context>
 </TS>

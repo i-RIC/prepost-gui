@@ -10,7 +10,7 @@ class PreProcessorGridTypeDataItem::ToolBarWidgetController : public ColorMapSet
 	Q_OBJECT
 
 public:
-	ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidgetI* widget, PreProcessorGridTypeDataItem* item);
+	ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidget* widget, PreProcessorGridTypeDataItem* item);
 
 private slots:
 	void handleWidgetUpdate() override;

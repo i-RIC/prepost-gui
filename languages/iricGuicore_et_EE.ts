@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspordi (&amp;E)...</translation>
+        <translation type="vanished">Ekspordi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>Värvikaart</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>Nähtavus</translation>
+        <translation type="vanished">Nähtavus</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>Kui valitud</translation>
+        <translation type="vanished">Kui valitud</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>Alati</translation>
+        <translation type="vanished">Alati</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>Mitte kunagi</translation>
+        <translation type="vanished">Mitte kunagi</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>Suurus ja asend</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Nähtav</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Värvikaart</translation>
+        <translation type="vanished">Värvikaart</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>Legend pikkusest</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(Kohandatud värv)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>Vorm</translation>
+        <translation type="vanished">Vorm</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>Värviriba</translation>
+        <translation type="vanished">Värviriba</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horisontaalne</translation>
+        <translation type="vanished">Horisontaalne</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikaalne</translation>
+        <translation type="vanished">Vertikaalne</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>Kaugus põhjast</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">Ma olen sees:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">Ma Max:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">J min:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">J Max:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>Ma olen sees:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>K-suund</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>max</translation>
     </message>
 </context>
 <context>

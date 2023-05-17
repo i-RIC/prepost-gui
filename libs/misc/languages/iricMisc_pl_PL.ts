@@ -57,4 +57,11 @@
         <translation>Otwieram plik %1 przegrany.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Wybierz wartość</translation>
+    </message>
+</context>
 </TS>

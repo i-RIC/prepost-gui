@@ -57,4 +57,11 @@
         <translation>Otvaranje datoteke %1 nije uspjelo.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Odaberite Vrijednost</translation>
+    </message>
+</context>
 </TS>

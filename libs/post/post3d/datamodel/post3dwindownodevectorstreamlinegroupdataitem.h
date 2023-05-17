@@ -2,36 +2,38 @@
 #define POST3DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H
 
 #include "../post3dwindowdataitem.h"
-#include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <misc/compositecontainer.h>
+#include <misc/stringcontainer.h>
 
-#include <QMap>
-#include <QColor>
-#include <QList>
-
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkDataSetMapper.h>
-#include <vtkStreamTracer.h>
-#include <vtkClipPolyData.h>
-#include <vtkPolyData.h>
+#include <vector>
 
 class NamedGraphicWindowDataItem;
 class Post3dWindowNodeVectorStreamlineDataItem;
 class Post3dWindowStreamlineStructuredSetProperty;
+
+class vtkActor;
+class vtkStreamTracer;
 
 class Post3dWindowNodeVectorStreamlineGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
 {
 	Q_OBJECT
 
 public:
-	/// Constructor
+	struct Setting : public CompositeContainer
+	{
+		Setting();
+		Setting(const Setting& s);
+
+		Setting& operator=(const Setting& s);
+
+		StringContainer target;
+	};
+
 	Post3dWindowNodeVectorStreamlineGroupDataItem(Post3dWindowDataItem* parent);
-	virtual ~Post3dWindowNodeVectorStreamlineGroupDataItem();
-	void updateActorSettings();
-	void setupClipper();
-	void updateZDepthRangeItemCount() override;
-	virtual void assignActorZValues(const ZDepthRange& range) override;
+	~Post3dWindowNodeVectorStreamlineGroupDataItem() override;
+
+	void updateActorSetting() override;
 	void update();
 
 public slots:
@@ -43,28 +45,23 @@ protected:
 
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
-	vtkPointSet* getRegion();
+	void clearActors();
+
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();
-	void setupStreamTracer(vtkStreamTracer* tracer);
+
+	static void setupStreamTracer(vtkStreamTracer* tracer);
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 protected:
-	std::string m_target;
-	StructuredGridRegion::RegionMode m_regionMode;
-	vtkSmartPointer<vtkClipPolyData> m_IBCClipper;
+	Setting m_setting;
 
-	QList<vtkActor*> m_streamlineActors;
-	QList<vtkDataSetMapper*> m_streamlineMappers;
-	QList<vtkStreamTracer*> m_streamTracers;
-	vtkSmartPointer<vtkPolyData> m_regionClippedPolyData;
+	std::vector<vtkActor*> m_streamlineActors;
 
 private:
 	double m_zScale;
-
-public:
-	friend class Post3dWindowStreamlineStructuredSetProperty;
 };
 
 #endif // POST3DWINDOWNODEVECTORSTREAMLINEGROUPDATAITEM_H

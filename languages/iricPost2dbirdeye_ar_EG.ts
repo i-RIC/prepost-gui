@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">العددية</translation>
+        <translation>العددية</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">تحديث إعداد الكونتور</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>الإعداد العددي (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>لون</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>حسب القيمة العددية للعقدة</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>حسب القيمة العددية للخلية</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>لون مخصص</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>عددي (خلية)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>شكل الشبكة</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>إعداد شكل الشبكة</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>إعداد عرض شكل الشبكة</translation>
+        <translation type="vanished">إعداد عرض شكل الشبكة</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">القيمة العددية للارتفاع</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>حوار</translation>
+        <translation type="vanished">حوار</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">لون</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">لون مخصص</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">حسب القيمة العددية</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">يستورد (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">يصدّر (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">يتراوح</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>لون</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>حسب القيمة العددية للعقدة</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>حسب القيمة العددية للخلية</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>لون مخصص</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>حسب القيمة العددية</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>يستورد (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>يصدّر (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>

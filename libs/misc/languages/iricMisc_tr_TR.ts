@@ -57,4 +57,11 @@
         <translation>açılış dosyası %1 arızalı.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Değeri seç</translation>
+    </message>
+</context>
 </TS>

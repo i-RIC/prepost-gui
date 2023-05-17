@@ -57,4 +57,11 @@
         <translation>फ़ाइल खोलना %1 अनुत्तीर्ण होना।</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>मूल्य का चयन करें</translation>
+    </message>
+</context>
 </TS>

@@ -8,7 +8,7 @@
 class Post2dWindowGridTypeDataItem::ToolBarWidgetController : public ColorMapSettingToolBarWidgetController
 {
 public:
-	ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidgetI* widget, Post2dWindowGridTypeDataItem* item);
+	ToolBarWidgetController(const std::string& name, ColorMapSettingToolBarWidget* widget, Post2dWindowGridTypeDataItem* item);
 
 private slots:
 	void handleWidgetUpdate() override;

@@ -398,3 +398,25 @@ SolverDefinitionOutput* SolverDefinitionGridType::output(const std::string& name
 	impl->m_outputs.insert({name, output});
 	return output;
 }
+
+QString SolverDefinitionGridType::gridAttributeCaption(const std::string& name) const
+{
+	auto att1 = gridAttribute(name);
+	if (att1 != nullptr) {return att1->caption();}
+
+	auto att2 = gridComplexAttribute(name);
+	if (att2 != nullptr) {return att2->caption();}
+
+	return "";
+}
+
+ColorMapSettingEditWidgetI* SolverDefinitionGridType::createGridAttributeColorMapSettingEditWidget(const std::string& name, QWidget* parent)
+{
+	auto att1 = gridAttribute(name);
+	if (att1 != nullptr) {return att1->createColorMapSettingEditWidget(parent);}
+
+	auto att2 = gridComplexAttribute(name);
+	if (att2 != nullptr) {return att2->createColorMapSettingEditWidget(parent);}
+
+	return nullptr;
+}

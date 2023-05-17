@@ -10,7 +10,7 @@ public:
 	ColorMapSettingContainerI* createSettingContainer() override;
 	ColorMapLegendSettingContainerI* createLegendSettingContainer() override;
 	ColorMapSettingEditWidgetI* createSettingEditWidget(QWidget* parent) override;
-	ColorMapSettingToolBarWidgetI* createToolbarWidget(QWidget* parent) override;
+	ColorMapSettingToolBarWidget* createToolbarWidget(QWidget* parent) override;
 };
 
 #endif // COLORMAPENUMERATEFACTORY_H

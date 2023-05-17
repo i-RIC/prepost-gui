@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">สเกลาร์</translation>
+        <translation>สเกลาร์</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">อัปเดตการตั้งค่าคอนทัวร์</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>สี</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>สเกลาร์ (เซลล์)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>รูปร่างกริด</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>การตั้งค่ารูปร่างกริด</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>การตั้งค่าการแสดงรูปร่างตาราง</translation>
+        <translation type="vanished">การตั้งค่าการแสดงรูปร่างตาราง</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">ค่าสเกลาร์สำหรับระดับความสูง</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ไดอะล็อก</translation>
+        <translation type="vanished">ไดอะล็อก</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">สี</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">สีที่กำหนดเอง</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">โดยค่าสเกลาร์</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">นำเข้า (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">ส่งออก (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">พิสัย</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>สี</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>สีที่กำหนดเอง</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>โดยค่าสเกลาร์</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>นำเข้า (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>ส่งออก (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>

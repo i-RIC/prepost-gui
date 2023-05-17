@@ -57,4 +57,11 @@
         <translation>فتح ملف %1 باءت بالفشل.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>اختار القيمة</translation>
+    </message>
+</context>
 </TS>

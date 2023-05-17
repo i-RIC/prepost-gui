@@ -400,11 +400,11 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -413,6 +413,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Rozsah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -440,6 +455,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
 </context>
 <context>
@@ -514,12 +533,20 @@
         <source>Scalar (edgeI)</source>
         <translation>Skalární (edgeI)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Skalární (edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
 </context>
 <context>
@@ -764,11 +791,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -777,6 +804,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Vývozní (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Rozsah</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -804,6 +846,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>Chcete-li exportovat soubor tvaru, přepněte nastavení barev na "Diskrétní režim".</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Vyberte možnost Výsledek výpočtu</translation>
     </message>
 </context>
 <context>
@@ -882,167 +928,22 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Aktualizujte nastavení částic</translation>
+        <translation type="vanished">Aktualizujte nastavení částic</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Nastavení zobrazení částic</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
-        <source>Update Particle Setting</source>
-        <translation>Aktualizujte nastavení částic</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
-    <message>
-        <source>Streamlines</source>
-        <translation>Zefektivňuje</translation>
-    </message>
-    <message>
-        <source>Streamline Physical Value Change</source>
-        <translation>Zefektivněte změnu fyzické hodnoty</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
-    <message>
-        <source>Update Streamline Setting</source>
-        <translation>Aktualizujte nastavení Streamline</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleGroupRootDataItem</name>
-    <message>
-        <source>Particles</source>
-        <translation>Částice</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleStructuredSettingDialog</name>
-    <message>
-        <source>Particle Setting</source>
-        <translation>Nastavení částic</translation>
-    </message>
-    <message>
-        <source>Common Settings</source>
-        <translation>Společná nastavení</translation>
-    </message>
-    <message>
-        <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
-    </message>
-    <message>
-        <source>Generate periodically</source>
-        <translation>Generujte pravidelně</translation>
-    </message>
-    <message>
-        <source>Generation time interval</source>
-        <translation>Generační časový interval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <translation>max</translation>
-    </message>
-    <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Generovat v libovolném čase</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation>Upravit...</translation>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Start Position</source>
         <translation>Počáteční pozice</translation>
-    </message>
-    <message>
-        <source>Range</source>
-        <translation>Rozsah</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles.</source>
-        <translation>Určete oblast pro generování částic.</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Určete oblast pro generování částic podle rozsahu indexů mřížky (I, J).</translation>
-    </message>
-    <message>
-        <source>I Min</source>
-        <translation>Jdu do toho</translation>
-    </message>
-    <message>
-        <source>I Max</source>
-        <translation>I Max</translation>
-    </message>
-    <message>
-        <source>J Min</source>
-        <translation>J Min</translation>
-    </message>
-    <message>
-        <source>J Max</source>
-        <translation>J Max</translation>
-    </message>
-    <message>
-        <source>Generation space interval</source>
-        <translation>Interval generování prostoru</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Pokud zadáte 1, částice se generují v uzlech mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadáte 2, částice se generují v uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadejte 1/2, částice se generují pro všechny ostatní uzly mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Barva:</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Velikost:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1053,84 +954,92 @@ p, li { white-space: pre-wrap; }
         <translation>Odstranit (&amp;R)</translation>
     </message>
     <message>
-        <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <source>Region</source>
+        <translation>Kraj</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Particle Setting</source>
-        <translation>Nastavení částic</translation>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
-        <source>Common Settings</source>
-        <translation>Společná nastavení</translation>
+        <source>Range</source>
+        <translation>Rozsah</translation>
     </message>
     <message>
-        <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <source>Specify the area to start particles</source>
+        <translation>Určete oblast pro počáteční částice</translation>
     </message>
     <message>
-        <source>Generate periodically</source>
-        <translation>Generujte pravidelně</translation>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>Určete oblast pro počáteční částice pomocí rozsahu indexů mřížky (I, J).</translation>
     </message>
     <message>
-        <source>Generation interval</source>
-        <translation>Generační interval</translation>
+        <source>Generation space interval</source>
+        <translation>Interval generačního prostoru</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <source>Color:</source>
+        <translation>Barva:</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
+        <source>Point Size</source>
+        <translation>Velikost bodu</translation>
     </message>
     <message>
-        <source>+</source>
-        <translation>+</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Particle Setting</source>
+        <translation type="vanished">Aktualizujte nastavení částic</translation>
     </message>
     <message>
-        <source>min</source>
-        <translation>min</translation>
+        <source>Particles Display Setting</source>
+        <translation>Nastavení zobrazení částic</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
-        <source>1</source>
-        <translation>1</translation>
+        <source>Start Position</source>
+        <translation>Počáteční pozice</translation>
     </message>
     <message>
-        <source>max</source>
-        <translation>max</translation>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
     </message>
     <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Generovat v libovolném čase</translation>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
     </message>
     <message>
-        <source>Edit...</source>
-        <translation>Upravit...</translation>
+        <source>Region</source>
+        <translation>Kraj</translation>
     </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Start Points</source>
-        <translation>Počáteční body</translation>
+        <source>Form</source>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Zadejte dva body. Částice začínají od bodů generovaných stejně odděleně mezi těmito dvěma body.</translation>
+        <translation>Určete dva body. Částice vycházejí z bodů vytvořených rovnoměrně oddělených mezi těmito dvěma body.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Myš přetáhněte</translation>
+        <translation>Přetažení myší</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
@@ -1157,16 +1066,45 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation>Barva:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation>Velikost:</translation>
+        <source>Point size</source>
+        <translation>Velikost bodu</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
+    <message>
+        <source>Streamlines</source>
+        <translation>Zefektivňuje</translation>
+    </message>
+    <message>
+        <source>Streamline Physical Value Change</source>
+        <translation>Zefektivněte změnu fyzické hodnoty</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Nastavení zjednodušeného zobrazení</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fyzická hodnota:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Počáteční pozice</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1177,8 +1115,373 @@ p, li { white-space: pre-wrap; }
         <translation>Odstranit (&amp;R)</translation>
     </message>
     <message>
+        <source>Region</source>
+        <translation>Kraj</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Rozsah</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>Určete oblast pro zahájení proudnic</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>Určete oblast pro zahájení proudnic podle rozsahu indexů mřížky (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Interval generačního prostoru</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Šířka:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Streamline Setting</source>
+        <translation type="vanished">Aktualizujte nastavení Streamline</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Nastavení zjednodušeného zobrazení</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fyzická hodnota:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Počáteční pozice</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstranit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Kraj</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulář</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>Určete dva body. Částice vycházejí z bodů vytvořených rovnoměrně oddělených mezi těmito dvěma body.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>Přetažení myší</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>Hodnoty souřadnic</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>Bod 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>Bod 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>Barva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Šířka:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <source>Particles</source>
+        <translation>Částice</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleStructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Nastavení částic</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Společná nastavení</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fyzická hodnota:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Generujte pravidelně</translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="vanished">Generační časový interval</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">max</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Generovat v libovolném čase</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Upravit...</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="vanished">Počáteční pozice</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Rozsah</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles.</source>
+        <translation type="vanished">Určete oblast pro generování částic.</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
+        <translation type="vanished">Určete oblast pro generování částic podle rozsahu indexů mřížky (I, J).</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="vanished">Jdu do toho</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="vanished">I Max</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="vanished">J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="vanished">J Max</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="vanished">Interval generování prostoru</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Pokud zadáte 1, částice se generují v uzlech mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadáte 2, částice se generují v uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadejte 1/2, částice se generují pro všechny ostatní uzly mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Barva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Velikost:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
+    </message>
+    <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Nastavení částic</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Společná nastavení</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fyzická hodnota:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Generujte pravidelně</translation>
+    </message>
+    <message>
+        <source>Generation interval</source>
+        <translation type="vanished">Generační interval</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">max</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Generovat v libovolném čase</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Upravit...</translation>
+    </message>
+    <message>
+        <source>Start Points</source>
+        <translation type="vanished">Počáteční body</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="vanished">Zadejte dva body. Částice začínají od bodů generovaných stejně odděleně mezi těmito dvěma body.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="vanished">Myš přetáhněte</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="vanished">Hodnoty souřadnic</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="vanished">Bod 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="vanished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="vanished">Bod 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="vanished">Počet bodů:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Barva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Velikost:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Přidat (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1358,47 +1661,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Zefektivnění nastavení</translation>
+        <translation type="vanished">Zefektivnění nastavení</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Počáteční pozice</translation>
+        <translation type="vanished">Počáteční pozice</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Rozsah</translation>
+        <translation type="vanished">Rozsah</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Určete oblast pro zahájení zjednodušení</translation>
+        <translation type="vanished">Určete oblast pro zahájení zjednodušení</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Určete oblast, ze které se začnou zefektivňovat, podle rozsahu indexů mřížky (I, J).</translation>
+        <translation type="vanished">Určete oblast, ze které se začnou zefektivňovat, podle rozsahu indexů mřížky (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>Jdu do toho</translation>
+        <translation type="vanished">Jdu do toho</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>I Max</translation>
+        <translation type="vanished">I Max</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Interval generování prostoru</translation>
+        <translation type="vanished">Interval generování prostoru</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1408,35 +1711,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; If you specify 1, streamlines start at grid nodes. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Pokud zadáte 2, zjednodušené čáry začínají na uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Pokud zadáte 1/2, zjednodušení začne na všech ostatních uzlech mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; If you specify 1, streamlines start at grid nodes. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Pokud zadáte 2, zjednodušené čáry začínají na uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Pokud zadáte 1/2, zjednodušení začne na všech ostatních uzlech mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Šířka:</translation>
+        <translation type="vanished">Šířka:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1444,70 +1747,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Zefektivnění nastavení</translation>
+        <translation type="vanished">Zefektivnění nastavení</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fyzická hodnota:</translation>
+        <translation type="vanished">Fyzická hodnota:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Počáteční body</translation>
+        <translation type="vanished">Počáteční body</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Zadejte dva body. Částice začínají od bodů generovaných stejně odděleně mezi těmito dvěma body.</translation>
+        <translation type="vanished">Zadejte dva body. Částice začínají od bodů generovaných stejně odděleně mezi těmito dvěma body.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Myš přetáhněte</translation>
+        <translation type="vanished">Myš přetáhněte</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Hodnoty souřadnic</translation>
+        <translation type="vanished">Hodnoty souřadnic</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>Bod 1:</translation>
+        <translation type="vanished">Bod 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>Bod 2:</translation>
+        <translation type="vanished">Bod 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Počet bodů:</translation>
+        <translation type="vanished">Počet bodů:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Šířka:</translation>
+        <translation type="vanished">Šířka:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1515,19 +1818,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Přidat (&amp;A)</translation>
+        <translation type="vanished">Přidat (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstranit (&amp;R)</translation>
+        <translation type="vanished">Odstranit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavení regionu (&amp;R)</translation>
+        <translation type="vanished">Nastavení regionu (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1549,7 +1852,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Aktualizujte nastavení Streamline</translation>
+        <translation type="vanished">Aktualizujte nastavení Streamline</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>

@@ -67,11 +67,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">スカラー</translation>
+        <translation>スカラー</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">コンターの設定変更</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>格子点のスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>セルのスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
     </message>
 </context>
 <context>
@@ -87,6 +118,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>スカラー (セル中心)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>計算結果の選択</translation>
     </message>
 </context>
 <context>
@@ -165,12 +204,27 @@
         <source>Grid shape</source>
         <translation>格子形状</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>格子形状設定</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>格子形状表示設定</translation>
+        <translation type="vanished">格子形状表示設定</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">標高に使用するスカラー値</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -204,27 +258,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">色</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">インポート(&amp;)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">エクスポート(E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">範囲</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation />
     </message>
     <message>
         <source>Color</source>
         <translation>色</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>格子点のスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>セルのスカラー値により設定</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>色を指定</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>スカラー値により設定</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>インポート(&amp;)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>エクスポート(E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -252,6 +333,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">コンターは最大で4つまでしか描画できません。</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>計算結果の選択</translation>
     </message>
 </context>
 <context>

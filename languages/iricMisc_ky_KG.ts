@@ -57,4 +57,11 @@
         <translation>Файл ачылууда %1 ишке ашкан жок</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Наркы тандаңыз</translation>
+    </message>
+</context>
 </TS>

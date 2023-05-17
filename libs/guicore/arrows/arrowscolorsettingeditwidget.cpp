@@ -103,6 +103,7 @@ void ArrowsColorSettingEditWidget::handleColorScalarChange(int index)
 {
 	auto name = m_colorMapNames.at(index);
 	auto colorSetting = m_colorMapSettings.find(name)->second;
+	colorSetting->legend.copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
 
 	m_colorMapWidget->setSetting(colorSetting);
 }

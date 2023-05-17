@@ -2397,8 +2397,8 @@ p, li { white-space: pre-wrap; }
         <translation>परिणाम को पहचानें:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पैटर्न को परिभाषित करने के लिए कृपया निम्नलिखित अक्षरों का प्रयोग करें:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; मार्जिन-नीचे: 0px; मार्जिन-बाएं: 0px; मार्जिन -राइट: 0 पीएक्स; -क्यूटी-लिस्ट-इंडेंट: 1;&quot;&gt;&lt;li स्टाइल=&quot; मार्जिन-टॉप: 12 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक- इंडेंट:0; टेक्स्ट-इंडेंट:0px;&quot;&gt;वर्ष: YYYY&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt) -ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0px;&quot;&gt;महीना: MM&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px) ; -qt-block-indent:0; text-indent:0px;&quot;&gt;दिन: DD&lt;/li&gt;&lt;li style=&quot; मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन- दाएं: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; घंटा: एचएच&lt;/li&gt;&lt;li शैली = &quot;मार्जिन-टॉप: 0 पीएक्स; मार्जिन-नीचे: 0 पीएक्स; मार्जिन-बाएं: 0 पीएक्स&quot; ; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt;मिनट: मिमी&lt;/li&gt;&lt;li स्टाइल=&quot; मार्जिन-टॉप: 0 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन- बाएँ:0px; मार्जिन-दाएँ:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;दूसरा: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;पैटर्न को परिभाषित करने के लिए कृपया निम्नलिखित अक्षरों का प्रयोग करें:&lt;/p&gt;&lt;ul style="margin-top: 0px; मार्जिन-नीचे: 0px; मार्जिन-बाएं: 0px; मार्जिन -राइट: 0 पीएक्स; -क्यूटी-लिस्ट-इंडेंट: 1;"&gt;&lt;li स्टाइल=" मार्जिन-टॉप: 12 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक- इंडेंट:0; टेक्स्ट-इंडेंट:0px;"&gt;वर्ष: YYYY&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px; -qt) -ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0px;"&gt;महीना: MM&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन-राइट: 0px) ; -qt-block-indent:0; text-indent:0px;"&gt;दिन: DD&lt;/li&gt;&lt;li style=" मार्जिन-टॉप: 0px; मार्जिन-बॉटम: 0px; मार्जिन-लेफ्ट: 0px; मार्जिन- दाएं: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; घंटा: एचएच&lt;/li&gt;&lt;li शैली = "मार्जिन-टॉप: 0 पीएक्स; मार्जिन-नीचे: 0 पीएक्स; मार्जिन-बाएं: 0 पीएक्स" ; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt;मिनट: मिमी&lt;/li&gt;&lt;li स्टाइल=" मार्जिन-टॉप: 0 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन- बाएँ:0px; मार्जिन-दाएँ:0px; -qt-block-indent:0; text-indent:0px;"&gt;दूसरा: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -2424,8 +2424,8 @@ p, li { white-space: pre-wrap; }
         <translation>यह डेटा निर्यात नहीं किया जा सकता है। ऐसा लगता है कि इसे *.tif या *.asc से आयात नहीं किया गया था।</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>यह डेटा निर्यात नहीं किया जा सकता है। &quot;समय&quot; आयाम वाले डेटा को *.tif या *.asc में निर्यात नहीं किया जा सकता है।</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>यह डेटा निर्यात नहीं किया जा सकता है। "समय" आयाम वाले डेटा को *.tif या *.asc में निर्यात नहीं किया जा सकता है।</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -2498,8 +2498,8 @@ p, li { white-space: pre-wrap; }
         <translation>यह डेटा निर्यात नहीं किया जा सकता है। ऐसा लगता है कि इसे *.png से आयात नहीं किया गया था।</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
-        <translation>यह डेटा निर्यात नहीं किया जा सकता है। &quot;समय&quot; आयाम वाले डेटा को *.png. में निर्यात नहीं किया जा सकता</translation>
+        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <translation>यह डेटा निर्यात नहीं किया जा सकता है। "समय" आयाम वाले डेटा को *.png. में निर्यात नहीं किया जा सकता</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -2709,8 +2709,8 @@ p, li { white-space: pre-wrap; }
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
-        <translation>एक्स बैंड एमपी रेडर डेटा &quot;समय&quot; आयाम के साथ ग्रिड स्थितियों के लिए आयात किया जा सकता है।</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <translation>एक्स बैंड एमपी रेडर डेटा "समय" आयाम के साथ ग्रिड स्थितियों के लिए आयात किया जा सकता है।</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2906,8 +2906,8 @@ p, li { white-space: pre-wrap; }
         <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए &quot;%2&quot;, लेकिन &quot;%3&quot; दिया हुआ है।</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -2922,16 +2922,16 @@ p, li { white-space: pre-wrap; }
         <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;x&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;x&quot; वास्तविक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;y&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;y&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;मान&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;मूल्य&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
 </context>
 <context>
@@ -3311,8 +3311,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">मर्ज करें...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -3691,12 +3691,12 @@ p, li { white-space: pre-wrap; }
         <translation>कोई सीमांकक निर्दिष्ट नहीं</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं&quot;%1&quot;।&quot;%1&quot;स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं"%1"।"%1"स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>पढ़ते समय त्रुटि हुई &quot;%1&quot; मूल्य। &quot;%1&quot;मान वास्तविक संख्या होना चाहिए, लेकिन&quot;%2&quot;निर्दिष्ट।</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>पढ़ते समय त्रुटि हुई "%1" मूल्य। "%1"मान वास्तविक संख्या होना चाहिए, लेकिन"%2"निर्दिष्ट।</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -3766,8 +3766,8 @@ p, li { white-space: pre-wrap; }
         <translation>उद्धरण चरित्र:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -4080,8 +4080,8 @@ p, li { white-space: pre-wrap; }
         <translation>सतह</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4298,8 +4298,8 @@ p, li { white-space: pre-wrap; }
         <translation>वेटिंग एक्सपोनेंट k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; का उपयोग वजन के रूप में किया जाता है जब मूल्यों के भारित औसत की गणना की जाती है। आर बिंदु से नोड या सेल केंद्र की दूरी है, जिसके लिए मान मैप किया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; का उपयोग वजन के रूप में किया जाता है जब मूल्यों के भारित औसत की गणना की जाती है। आर बिंदु से नोड या सेल केंद्र की दूरी है, जिसके लिए मान मैप किया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -4349,8 +4349,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">सतह</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -4392,7 +4392,7 @@ p, li { white-space: pre-wrap; }
         <translation>सीमा किनारे की लंबाई:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt; &lt;head/&gt;&lt;body&gt;&lt;p&gt; ग्रे.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
@@ -4445,18 +4445,18 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>प्वाइंट डिस्प्ले सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation type="unfinished"></translation>
+        <translation>छवि फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
-        <translation type="unfinished"></translation>
+        <translation>सभी चित्र (*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</translation>
     </message>
 </context>
 <context>
@@ -4485,62 +4485,62 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPointProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPoint_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Shape</source>
-        <translation type="unfinished"></translation>
+        <translation>आकार</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished"></translation>
+        <translation>अंक</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>बिंदु का आकार:</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="unfinished"></translation>
+        <translation>चिह्न छवियां</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
-        <translation type="unfinished"></translation>
+        <translation>छवि आयात करें (&amp;I)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>साफ़ (&amp;C)</translation>
     </message>
     <message>
         <source>Max size:</source>
-        <translation type="unfinished"></translation>
+        <translation>अधिकतम आकार:</translation>
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="unfinished"></translation>
+        <translation>जब आयातित छवि की चौड़ाई या ऊँचाई अधिकतम आकार से बड़ी होती है, तो छवि स्वचालित रूप से सिकुड़ जाती है ताकि चौड़ाई या ऊँचाई अधिकतम आकार के बराबर हो जाए।</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>मूल्य से रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>कस्टम रंग</translation>
     </message>
 </context>
 <!-- iricGdPolydataGroup_hi_IN.ts -->
@@ -4575,8 +4575,8 @@ p, li { white-space: pre-wrap; }
         <translation>क्या आप वाकई चयनित को हटाना चाहते हैं %1 एस?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -5007,8 +5007,8 @@ p, li { white-space: pre-wrap; }
         <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए &quot;%2&quot;, लेकिन &quot;%3&quot; दिया हुआ है।</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5031,32 +5031,32 @@ p, li { white-space: pre-wrap; }
         <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>लाइन में &quot;पिड&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;पिड&quot; पूर्णांक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>लाइन में "पिड" मान पढ़ते समय त्रुटि हुई %1. "पिड" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;vid&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;vid&quot; पूर्णांक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "vid" मान पढ़ते समय त्रुटि हुई %1. "vid" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;x&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;x&quot; वास्तविक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;y&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;y&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;मान&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;मूल्य&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>लाइन पढ़ते समय त्रुटि हुई %1. &quot;नाम&quot; उन पंक्तियों के लिए समान होना चाहिए जहां &quot;पिड&quot; मान समान हों।</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "नाम" उन पंक्तियों के लिए समान होना चाहिए जहां "पिड" मान समान हों।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>लाइन पढ़ते समय त्रुटि हुई %1. &quot;मान&quot; उन पंक्तियों के लिए समान होना चाहिए जहां &quot;पिड&quot; मान समान हों।</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "मान" उन पंक्तियों के लिए समान होना चाहिए जहां "पिड" मान समान हों।</translation>
     </message>
 </context>
 <context>
@@ -5260,7 +5260,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -5376,18 +5376,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>बहुभुज प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -5405,27 +5405,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolygon_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">रंग</translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">मूल्य के अनुसार रंग</translation>
+        <translation>मूल्य से रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">कस्टम रंग</translation>
+        <translation>कस्टम रंग</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग मैप</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा की चौडाई:</translation>
     </message>
 </context>
 <!-- iricGdPolyLineGroup_hi_IN.ts -->
@@ -5548,8 +5548,8 @@ p, li { white-space: pre-wrap; }
         <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए &quot;%2&quot;, लेकिन &quot;%3&quot; दिया हुआ है।</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -5572,32 +5572,32 @@ p, li { white-space: pre-wrap; }
         <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 6 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;ढक्कन&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;ढक्कन&quot; पूर्णांक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "ढक्कन" मान पढ़ते समय त्रुटि हुई %1. "ढक्कन" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;vid&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;vid&quot; पूर्णांक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>पंक्ति में "vid" मान पढ़ते समय त्रुटि हुई %1. "vid" पूर्णांक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;x&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;x&quot; वास्तविक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;y&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;y&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;मान&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;मूल्य&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>लाइन पढ़ते समय त्रुटि हुई %1. &quot;नाम&quot; उन पंक्तियों के लिए समान होना चाहिए जहां &quot;ढक्कन&quot; मान समान हों।</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "नाम" उन पंक्तियों के लिए समान होना चाहिए जहां "ढक्कन" मान समान हों।</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>लाइन पढ़ते समय त्रुटि हुई %1. &quot;मान&quot; उन पंक्तियों के लिए समान होना चाहिए जहाँ &quot;ढक्कन&quot; मान समान हों।</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>लाइन पढ़ते समय त्रुटि हुई %1. "मान" उन पंक्तियों के लिए समान होना चाहिए जहाँ "ढक्कन" मान समान हों।</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -5760,7 +5760,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -5844,18 +5844,18 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा प्रदर्शन सेटिंग</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyLineProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation type="unfinished"></translation>
+        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
 </context>
 <context>
@@ -5873,27 +5873,27 @@ p, li { white-space: pre-wrap; }
     <name>GeoDataPolyLine_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>मूल्य से रंग</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished"></translation>
+        <translation>कस्टम रंग</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग मैप</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>रेखा की चौडाई:</translation>
     </message>
 </context>
 <!-- iricGdRiversurvey_hi_IN.ts -->
@@ -6277,8 +6277,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -6290,14 +6290,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -6309,7 +6309,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -6519,8 +6519,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>एलिवेशन और ग्रेडिएंट की सेटिंग अमान्य हैं।</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया &quot;क्षैतिज दूरी निर्दिष्ट करें&quot; चुनें।</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया "क्षैतिज दूरी निर्दिष्ट करें" चुनें।</translation>
     </message>
 </context>
 <context>
@@ -6750,8 +6750,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में &quot;संवाद से संपादित करें&quot; से संवाद संपादन मोड दर्ज करें।</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में "संवाद से संपादित करें" से संवाद संपादन मोड दर्ज करें।</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -6943,40 +6943,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: पॉइंट काउंट अमान्य है</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 रेखा %2 "%3": पॉइंट काउंट अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: अमान्य अनुक्रमणिका मान</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 रेखा %2 "%3": अमान्य अनुक्रमणिका मान</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 रेखा %2 : के लिए क्रॉस सेक्शन डेटा %3 पर्याप्त नहीं</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: दूरी मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 रेखा %2 "%3": दूरी मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: ऊंचाई मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 रेखा %2 "%3": ऊंचाई मान अमान्य है</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -7015,8 +7015,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : त्रुटि पढ़ें। कम से कम दो मान चाहिए।</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -7142,36 +7142,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : केपी इनपुट नहीं है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>दूरी मार्कर डेटा नहीं मिला। नजरअंदाज किया जाएगा।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 रेखा %2 : &quot;%3&quot;: ध्वज डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 रेखा %2 : "%3": ध्वज डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: दूरी डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": दूरी डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: ऊंचाई डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": ऊंचाई डेटा अमान्य है।</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -7281,8 +7281,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>दृश्यमान</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -9132,6 +9132,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>BoolContainerWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>CheckBox</source>
+        <translation>चेक बॉक्स</translation>
+    </message>
+</context>
+<context>
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
@@ -9578,11 +9589,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Value smaller than %1 in not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>मान इससे छोटा है %1 में अनुमति नहीं है।</translation>
     </message>
     <message>
         <source>Valur larger than %1 is not allowed.</source>
-        <translation type="unfinished"></translation>
+        <translation>वेलूर से बड़ा %1 अनुमति नहीं है।</translation>
     </message>
 </context>
 <context>
@@ -9808,6 +9819,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Transparent</source>
         <translation>पारदर्शी</translation>
     </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
 </context>
 <context>
     <name>WaitDialog</name>
@@ -10015,11 +10030,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -10037,19 +10060,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visibility</source>
-        <translation>दृश्यता</translation>
+        <translation type="vanished">दृश्यता</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>जब चुना गया</translation>
+        <translation type="vanished">जब चुना गया</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>हमेशा</translation>
+        <translation type="vanished">हमेशा</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>कभी नहीँ</translation>
+        <translation type="vanished">कभी नहीँ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -10090,6 +10113,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Size and Position</source>
         <translation>आकार और स्थिति</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
     </message>
 </context>
 <context>
@@ -10139,7 +10166,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">रंग</translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -10151,7 +10178,22 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap</source>
-        <translation>रंग मैप</translation>
+        <translation type="vanished">रंग मैप</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>लंबाई की किंवदंती</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(कस्टम रंग)</translation>
     </message>
 </context>
 <context>
@@ -10337,47 +10379,47 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>दृश्यमान</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">दिशा:</translation>
+        <translation>दिशा:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">क्षैतिज</translation>
+        <translation>क्षैतिज</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">खड़ा</translation>
+        <translation>खड़ा</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>बार की चौड़ाई</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">ऑटो</translation>
+        <translation>ऑटो</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>पिक्सल</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>संरेखण</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>सही</translation>
     </message>
 </context>
 <context>
@@ -10437,132 +10479,132 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>कॉलोरमैप सेटिंग की गणना करें (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation type="unfinished"></translation>
+        <translation>कॉलोरमैप सेटिंग की गणना करें (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>से सेटिंग आयात करते समय गड़बड़ी हुई %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>जनता (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>निजी (%1)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap सेटिंग आयात करें</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>तरीका</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>मानकों में से चुनें</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>मानकों</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>आयात के गुण</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>दिशा</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">शीर्षक</translation>
+        <translation>शीर्षक</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ॉन्ट सेटिंग</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">लेबल प्रदर्शन</translation>
+        <translation>लेबल प्रदर्शन</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">रंग</translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>लेबल</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">पृष्ठभूमि</translation>
+        <translation>पृष्ठभूमि</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">आकार और स्थिति</translation>
+        <translation>आकार और स्थिति</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">पद</translation>
+        <translation>पद</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>आकार</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>बार की चौड़ाई</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>संरेखण</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्व दर्शन</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">रंग रेखा</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">क्षैतिज</translation>
+        <translation type="vanished">क्षैतिज</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">खड़ा</translation>
+        <translation type="vanished">खड़ा</translation>
     </message>
 </context>
 <context>
@@ -10649,31 +10691,31 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Visible</source>
-        <translation type="unfinished"></translation>
+        <translation>दृश्यमान</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>बार की चौड़ाई</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>पिक्सल</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>संरेखण</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>बाएं</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished"></translation>
+        <translation>केंद्र</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>सही</translation>
     </message>
 </context>
 <context>
@@ -10832,34 +10874,34 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation type="unfinished"></translation>
+        <translation>उल्टे रंग (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation type="unfinished"></translation>
+        <translation>समान विभाजन (&amp;E)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingEditWidget::ImportDialog</name>
     <message>
         <source>Colormap setting (*.cmsetting)</source>
-        <translation type="unfinished">कलरमैप सेटिंग (*.cmsetting)</translation>
+        <translation>कलरमैप सेटिंग (*.cmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>से सेटिंग आयात करते समय गड़बड़ी हुई %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>जनता (%1)</translation>
     </message>
     <message>
         <source>Private (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>निजी (%1)</translation>
     </message>
 </context>
 <context>
@@ -10881,91 +10923,91 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ImportDialog</name>
     <message>
         <source>Import Colormap Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap सेटिंग आयात करें</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>तरीका</translation>
     </message>
     <message>
         <source>Select from standards</source>
-        <translation type="unfinished"></translation>
+        <translation>मानकों में से चुनें</translation>
     </message>
     <message>
         <source>Select file</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल का चयन करें</translation>
     </message>
     <message>
         <source>Standards</source>
-        <translation type="unfinished"></translation>
+        <translation>मानकों</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ाइल</translation>
     </message>
     <message>
         <source>Attributes to Import</source>
-        <translation type="unfinished"></translation>
+        <translation>आयात के गुण</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation type="unfinished"></translation>
+        <translation>दिशा</translation>
     </message>
     <message>
         <source>Title</source>
-        <translation type="unfinished">शीर्षक</translation>
+        <translation>शीर्षक</translation>
     </message>
     <message>
         <source>Font Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ॉन्ट सेटिंग</translation>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="unfinished">लेबल प्रदर्शन</translation>
+        <translation>लेबल प्रदर्शन</translation>
     </message>
     <message>
         <source>Format</source>
-        <translation type="unfinished"></translation>
+        <translation>प्रारूप</translation>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation type="unfinished"></translation>
+        <translation>लेबल की संख्या</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">रंग</translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Label</source>
-        <translation type="unfinished"></translation>
+        <translation>लेबल</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">पृष्ठभूमि</translation>
+        <translation>पृष्ठभूमि</translation>
     </message>
     <message>
         <source>Size and Position</source>
-        <translation type="unfinished">आकार और स्थिति</translation>
+        <translation>आकार और स्थिति</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">पद</translation>
+        <translation>पद</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>आकार</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished"></translation>
+        <translation>बार की चौड़ाई</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>संरेखण</translation>
     </message>
     <message>
         <source>Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>पूर्व दर्शन</translation>
     </message>
 </context>
 <context>
@@ -10996,38 +11038,38 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>विकल्प</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished"></translation>
+        <translation>मान दशमलव स्थान:</translation>
     </message>
     <message>
         <source>Log scale:</source>
-        <translation type="unfinished"></translation>
+        <translation>लॉग स्केल:</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation type="unfinished">सक्रिय</translation>
+        <translation>सक्रिय</translation>
     </message>
 </context>
 <context>
     <name>ColorMapSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">प्रपत्र</translation>
+        <translation>प्रपत्र</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग रेखा</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">क्षैतिज</translation>
+        <translation>क्षैतिज</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">खड़ा</translation>
+        <translation>खड़ा</translation>
     </message>
 </context>
 <context>
@@ -11384,7 +11426,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
 </context>
 <context>
@@ -11446,6 +11488,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>नीचे से दूरी</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
     </message>
 </context>
 <context>
@@ -12863,19 +12913,42 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>मैं भी शामिल:</translation>
+        <translation type="vanished">मैं भी शामिल:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>मैं मैक्स:</translation>
+        <translation type="vanished">मैं मैक्स:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>जे मिन:</translation>
+        <translation type="vanished">जे मिन:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation>जे मैक्स:</translation>
+        <translation type="vanished">जे मैक्स:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
+        <translation type="unfinished">मैं भी शामिल:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="unfinished">मैं मैक्स:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="unfinished">जे मिन:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="unfinished">जे मैक्स:</translation>
     </message>
 </context>
 <context>
@@ -13007,6 +13080,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>के-दिशा</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13530,8 +13630,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>सॉल्वर का चयन करें</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और &quot;ओके&quot; बटन दबाएं।</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और "ओके" बटन दबाएं।</translation>
     </message>
 </context>
 <context>
@@ -14401,9 +14501,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई &quot;%1&quot;। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
+        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई "%1"। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
     </message>
 </context>
 <context>
@@ -14522,7 +14622,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ऐसा लगता है कि यह प्रोजेक्ट किसी अन्य iRIC GUI विंडो द्वारा खोला गया है। आप एकाधिक GUI विंडो से प्रोजेक्ट फ़ोल्डर नहीं खोल सकते हैं।</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>खोले गए प्रोजेक्ट को कार्य निर्देशिका में कॉपी नहीं किया गया है, और आप इस प्रोजेक्ट में किए गए संशोधनों को सहेजने के लिए बाध्य होंगे। यदि आप वर्तमान प्रोजेक्ट को रखना चाहते हैं, तो कृपया इसे पहले किसी अन्य प्रोजेक्ट में सहेजें।</translation>
     </message>
     <message>
@@ -14682,8 +14782,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>वर्तमान में सक्रिय उप-विंडो निर्यात समोच्च आकृति का समर्थन नहीं करती है।</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -14823,8 +14923,8 @@ Option -&gt; Preferences</source>
         <translation>फ़ाइल सेट करना (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को &quot;असतत मोड&quot; पर स्विच करें।</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को "असतत मोड" पर स्विच करें।</translation>
     </message>
 </context>
 <context>
@@ -15171,7 +15271,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -15198,7 +15298,7 @@ Option -&gt; Preferences</source>
         <translation>नई 2D पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>नई 2डी बर्ड्स-आई पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
@@ -15614,6 +15714,13 @@ Option -&gt; Preferences</source>
         <translation>फ़ाइल खोलना %1 अनुत्तीर्ण होना।</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 <!-- iricPost2dbirdeye_hi_IN.ts -->
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -15679,11 +15786,42 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">अदिश</translation>
+        <translation>अदिश</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">कंटूर सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished">अदिश सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -15699,6 +15837,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15777,16 +15923,31 @@ Option -&gt; Preferences</source>
         <source>Grid shape</source>
         <translation>ग्रिड आकार</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>ग्रिड आकार प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">ग्रिड आकार प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>ऊंचाई के लिए अदिश मान</translation>
+        <translation type="vanished">ऊंचाई के लिए अदिश मान</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished">ऊंचाई के लिए अदिश मान</translation>
     </message>
 </context>
 <context>
@@ -15808,31 +15969,58 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
     </message>
     <message>
         <source>By scalar value</source>
-        <translation>स्केलर मान द्वारा</translation>
+        <translation type="vanished">स्केलर मान द्वारा</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -15848,6 +16036,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">अधिकतम चार आकृतियाँ परिभाषित की जा सकती हैं।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16267,23 +16459,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -16307,6 +16514,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16381,12 +16592,20 @@ Option -&gt; Preferences</source>
         <source>Scalar (edgeI)</source>
         <translation>अदिश (धार I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>स्केलर (एजजे)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16631,23 +16850,38 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>संवाद</translation>
+        <translation type="vanished">संवाद</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
     </message>
 </context>
 <context>
@@ -16671,6 +16905,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
         <translation>आकार फ़ाइल निर्यात करने के लिए, रंग सेटिंग को &quot;असतत मोड&quot; पर स्विच करें।</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16749,14 +16987,150 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>कण सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कण सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">हटाना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Point Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>कण सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कण सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">हटाना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">माउस ड्रैग</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">समन्वय मान</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">बिंदु 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">बिंदु 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16771,10 +17145,157 @@ Option -&gt; Preferences</source>
     </message>
 </context>
 <context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">हटाना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished">श्रेणी</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation type="unfinished">स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation type="unfinished">ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished">जोड़ें (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished">हटाना (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation type="unfinished">क्षेत्र</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="unfinished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="unfinished">माउस ड्रैग</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="unfinished">समन्वय मान</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="unfinished">बिंदु 1:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="unfinished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="unfinished">बिंदु 2:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="unfinished">बिंदुओं की संख्या:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16788,100 +17309,87 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>कण सेटिंग</translation>
+        <translation type="vanished">कण सेटिंग</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>सामान्य सेटिंग</translation>
+        <translation type="vanished">सामान्य सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>समय-समय पर उत्पन्न करें</translation>
+        <translation type="vanished">समय-समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>पीढ़ी समय अंतराल</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">पीढ़ी समय अंतराल</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>मनमाना समय पर उत्पन्न करें</translation>
+        <translation type="vanished">मनमाना समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <translation type="vanished">संपादित करें...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>शुरुआत की स्थिति</translation>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>ग्रिड इंडेक्स रेंज (आई, जे) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (आई, जे) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>जनरेशन स्पेस अंतराल</translation>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16893,15 +17401,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -16909,123 +17417,110 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowParticleUnstructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>कण सेटिंग</translation>
+        <translation type="vanished">कण सेटिंग</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>सामान्य सेटिंग</translation>
+        <translation type="vanished">सामान्य सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>समय-समय पर उत्पन्न करें</translation>
+        <translation type="vanished">समय-समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Generation interval</source>
-        <translation>पीढ़ी अंतराल</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">पीढ़ी अंतराल</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>मनमाना समय पर उत्पन्न करें</translation>
+        <translation type="vanished">मनमाना समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <translation type="vanished">संपादित करें...</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>प्रारंभ बिंदु</translation>
+        <translation type="vanished">प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+        <translation type="vanished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>माउस ड्रैग</translation>
+        <translation type="vanished">माउस ड्रैग</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>समन्वय मान</translation>
+        <translation type="vanished">समन्वय मान</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>बिंदु 1:</translation>
+        <translation type="vanished">बिंदु 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>बिंदु 2:</translation>
+        <translation type="vanished">बिंदु 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17033,19 +17528,19 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17075,15 +17570,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>कलरमैप सेटिंग</translation>
+        <translation type="vanished">कलरमैप सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -17092,6 +17587,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Custom Color</source>
         <translation>कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
     </message>
 </context>
 <context>
@@ -17206,47 +17720,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>सुव्यवस्थित सेटिंग</translation>
+        <translation type="vanished">सुव्यवस्थित सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>शुरुआत की स्थिति</translation>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (I, J) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>जनरेशन स्पेस अंतराल</translation>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17256,35 +17770,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot; &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 0 पीएक्स; मार्जिन-बॉटम: 0 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot; &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>चौड़ाई:</translation>
+        <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17292,70 +17806,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>सुव्यवस्थित सेटिंग</translation>
+        <translation type="vanished">सुव्यवस्थित सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>प्रारंभ बिंदु</translation>
+        <translation type="vanished">प्रारंभ बिंदु</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
+        <translation type="vanished">दो बिंदु निर्दिष्ट करें। कण इन दो बिंदुओं के बीच समान रूप से अलग किए गए बिंदुओं से शुरू होते हैं।</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>माउस ड्रैग</translation>
+        <translation type="vanished">माउस ड्रैग</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>समन्वय मान</translation>
+        <translation type="vanished">समन्वय मान</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>बिंदु 1:</translation>
+        <translation type="vanished">बिंदु 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>बिंदु 2:</translation>
+        <translation type="vanished">बिंदु 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>बिंदुओं की संख्या:</translation>
+        <translation type="vanished">बिंदुओं की संख्या:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>चौड़ाई:</translation>
+        <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -17363,19 +17877,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>क्षेत्र सेटिंग (&amp;R)</translation>
+        <translation type="vanished">क्षेत्र सेटिंग (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -17397,7 +17911,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
@@ -17799,7 +18313,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Enabled</source>
-        <translation>सक्रिय</translation>
+        <translation type="vanished">सक्रिय</translation>
     </message>
 </context>
 <context>
@@ -18076,6 +18590,10 @@ p, li { white-space: pre-wrap; }
         <source>Face%1</source>
         <translation>चेहरा %1</translation>
     </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>लंबाई की किंवदंती</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog</name>
@@ -18204,7 +18722,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>कण सेटिंग अपडेट करें</translation>
+        <translation type="vanished">कण सेटिंग अपडेट करें</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">चेहरा</translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Point size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18219,6 +18795,71 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished">भौतिक मूल्य:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="unfinished">शुरुआत की स्थिति</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Face</source>
+        <translation type="unfinished">चेहरा</translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="unfinished">जनरेशन स्पेस अंतराल</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">रंग:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticleGroupRootDataItem</name>
     <message>
         <source>Particles</source>
@@ -18229,108 +18870,95 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowParticleStructuredSettingDialog</name>
     <message>
         <source>Particle Setting</source>
-        <translation>कण सेटिंग</translation>
+        <translation type="vanished">कण सेटिंग</translation>
     </message>
     <message>
         <source>Common Settings</source>
-        <translation>सामान्य सेटिंग</translation>
+        <translation type="vanished">सामान्य सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation>समय-समय पर उत्पन्न करें</translation>
+        <translation type="vanished">समय-समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation>पीढ़ी समय अंतराल</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">पीढ़ी समय अंतराल</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation>मनमाना समय पर उत्पन्न करें</translation>
+        <translation type="vanished">मनमाना समय पर उत्पन्न करें</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation>संपादित करें...</translation>
+        <translation type="vanished">संपादित करें...</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>शुरुआत की स्थिति</translation>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation>कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation>ग्रिड इंडेक्स रेंज (आई, जे, के) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (आई, जे, के) द्वारा कण उत्पन्न करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>के मिनो</translation>
+        <translation type="vanished">के मिनो</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>के मैक्स</translation>
+        <translation type="vanished">के मैक्स</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>जनरेशन स्पेस अंतराल</translation>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18342,15 +18970,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } पी {मार्जिन-टॉप: 3px; मार्जिन-बॉटम: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p&gt;यदि आप 1 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 2 निर्दिष्ट करते हैं, तो कण ग्रिड नोड्स और ग्रिड नोड्स के मध्य बिंदुओं पर उत्पन्न होते हैं।&lt;/p&gt; &lt;p&gt;यदि आप 1/2 निर्दिष्ट करें, कण हर दूसरे ग्रिड नोड्स के लिए उत्पन्न होते हैं।&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18358,15 +18986,15 @@ p {margin-top: 3px; margin-bottom: 3px;}
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18416,6 +19044,21 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>रंग:</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>बिंदु का आकार:</translation>
+    </message>
+</context>
+<context>
     <name>Post3dWindowParticlesBaseTopDataItem</name>
     <message>
         <source>Edit Particle Setting</source>
@@ -18459,55 +19102,55 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>सुव्यवस्थित सेटिंग</translation>
+        <translation type="vanished">सुव्यवस्थित सेटिंग</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>भौतिक मूल्य:</translation>
+        <translation type="vanished">भौतिक मूल्य:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>शुरुआत की स्थिति</translation>
+        <translation type="vanished">शुरुआत की स्थिति</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>श्रेणी</translation>
+        <translation type="vanished">श्रेणी</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation>स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>ग्रिड इंडेक्स रेंज (I, J, K) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
+        <translation type="vanished">ग्रिड इंडेक्स रेंज (I, J, K) द्वारा स्ट्रीमलाइन शुरू करने के लिए क्षेत्र निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>मैं भी शामिल</translation>
+        <translation type="vanished">मैं भी शामिल</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>मैं मैक्स</translation>
+        <translation type="vanished">मैं मैक्स</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>जे मिनो</translation>
+        <translation type="vanished">जे मिनो</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>जे मैक्स</translation>
+        <translation type="vanished">जे मैक्स</translation>
     </message>
     <message>
         <source>K Min</source>
-        <translation>के मिनो</translation>
+        <translation type="vanished">के मिनो</translation>
     </message>
     <message>
         <source>K Max</source>
-        <translation>के मैक्स</translation>
+        <translation type="vanished">के मैक्स</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>जनरेशन स्पेस अंतराल</translation>
+        <translation type="vanished">जनरेशन स्पेस अंतराल</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18517,35 +19160,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot; &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; यदि आप 1 निर्दिष्ट करते हैं, तो ग्रिड नोड्स पर स्ट्रीमलाइन शुरू होती है.&lt;/p&gt; &lt;p स्टाइल=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot; &gt;यदि आप 2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन ग्रिड नोड्स से शुरू होती है, और ग्रिड नोड्स के मध्य बिंदु।&lt;/p&gt; &lt;p style=&quot; मार्जिन-टॉप: 3 पीएक्स; मार्जिन-बॉटम: 3 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;यदि आप 1/2 निर्दिष्ट करते हैं, तो स्ट्रीमलाइन हर दूसरे ग्रिड नोड्स पर शुरू होती है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation type="vanished">मिनट</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>मैक्स</translation>
+        <translation type="vanished">मैक्स</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>चौड़ाई:</translation>
+        <translation type="vanished">चौड़ाई:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -18553,15 +19196,15 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप:3पीएक्स; मार्जिन-बॉटम:3पीएक्स; मार्जिन-लेफ्ट:0पीएक्स; मार्जिन-राइट:0पीएक्स; -क्यूटी-ब्लॉक-इंडेंट:0; टेक्स्ट-इंडेंट:0पीएक्स;&quot;&gt;डिस्प्ले पर कई पिक्सल निर्दिष्ट करें।&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>जोड़ें (&amp;A)</translation>
+        <translation type="vanished">जोड़ें (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>हटाना (&amp;R)</translation>
+        <translation type="vanished">हटाना (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -18588,7 +19231,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
+        <translation type="vanished">स्ट्रीमलाइन सेटिंग अपडेट करें</translation>
     </message>
     <message>
         <source>Update Particles Scalar Setting</source>
@@ -18617,6 +19260,70 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select Time step to add</source>
         <translation>जोड़ने के लिए समय चरण चुनें</translation>
+    </message>
+</context>
+<context>
+    <name>ParticleSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished">समय</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap;}
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="unfinished">संपादित करें...</translation>
     </message>
 </context>
 <context>
@@ -19074,6 +19781,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation type="unfinished">ऑब्जेक्ट ब्राउज़र</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird&apos;s-Eye View Window</source>
@@ -19112,6 +19826,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">रंग:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19157,11 +19920,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">जेड-दिशा स्केल</translation>
+        <translation>जेड-दिशा स्केल</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">इनपुट नया Z-दिशा पैमाना।</translation>
+        <translation>इनपुट नया Z-दिशा पैमाना।</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -19232,6 +19995,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>जेड-दिशा स्केल:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation type="unfinished">ग्रिड आकार</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20021,6 +20855,10 @@ The grid attribute data created from the variation that you select with &quot;Va
         <source>Generate point cloud data</source>
         <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -20283,6 +21121,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -20563,7 +21405,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>दूरी (एम) से %1</translation>
     </message>
 </context>
 <context>

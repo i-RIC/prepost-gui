@@ -57,4 +57,11 @@
         <translation>Mở tệp %1 thất bại.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>Chọn giá trị</translation>
+    </message>
+</context>
 </TS>

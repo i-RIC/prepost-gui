@@ -42,11 +42,19 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -64,19 +72,19 @@
     </message>
     <message>
         <source>Visibility</source>
-        <translation>दृश्यता</translation>
+        <translation type="vanished">दृश्यता</translation>
     </message>
     <message>
         <source>When selected</source>
-        <translation>जब चुना गया</translation>
+        <translation type="vanished">जब चुना गया</translation>
     </message>
     <message>
         <source>Always</source>
-        <translation>हमेशा</translation>
+        <translation type="vanished">हमेशा</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>कभी नहीँ</translation>
+        <translation type="vanished">कभी नहीँ</translation>
     </message>
     <message>
         <source>Title</source>
@@ -117,6 +125,10 @@
     <message>
         <source>Size and Position</source>
         <translation>आकार और स्थिति</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>दृश्यमान</translation>
     </message>
 </context>
 <context>
@@ -166,7 +178,7 @@
     </message>
     <message>
         <source>Color</source>
-        <translation type="vanished">रंग</translation>
+        <translation>रंग</translation>
     </message>
     <message>
         <source>Length Legend</source>
@@ -178,7 +190,22 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>रंग मैप</translation>
+        <translation type="vanished">रंग मैप</translation>
+    </message>
+</context>
+<context>
+    <name>ArrowsSettingToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Legend of Length</source>
+        <translation>लंबाई की किंवदंती</translation>
+    </message>
+    <message>
+        <source>(Custom Color)</source>
+        <translation>(कस्टम रंग)</translation>
     </message>
 </context>
 <context>
@@ -577,19 +604,19 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapEnumerateSettingToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Color Bar</source>
-        <translation>रंग रेखा</translation>
+        <translation type="vanished">रंग रेखा</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>क्षैतिज</translation>
+        <translation type="vanished">क्षैतिज</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>खड़ा</translation>
+        <translation type="vanished">खड़ा</translation>
     </message>
 </context>
 <context>
@@ -1473,6 +1500,14 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Distance from bottom</source>
         <translation>नीचे से दूरी</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>पिक्सल</translation>
     </message>
 </context>
 <context>
@@ -2890,6 +2925,29 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
+        <translation type="vanished">मैं भी शामिल:</translation>
+    </message>
+    <message>
+        <source>I Max:</source>
+        <translation type="vanished">मैं मैक्स:</translation>
+    </message>
+    <message>
+        <source>J Min:</source>
+        <translation type="vanished">जे मिन:</translation>
+    </message>
+    <message>
+        <source>J Max:</source>
+        <translation type="vanished">जे मैक्स:</translation>
+    </message>
+</context>
+<context>
+    <name>RegionRange2dSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>I Min:</source>
         <translation>मैं भी शामिल:</translation>
     </message>
     <message>
@@ -3034,6 +3092,33 @@ Do you really want to import this file?</source>
     <message>
         <source>K-direction</source>
         <translation>के-दिशा</translation>
+    </message>
+</context>
+<context>
+    <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>प्रपत्र</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation>मिन</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation>1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation>अधिकतम</translation>
     </message>
 </context>
 <context>

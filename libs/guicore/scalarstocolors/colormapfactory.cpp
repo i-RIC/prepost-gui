@@ -19,7 +19,7 @@ ColorMapSettingEditWidgetI* ColorMapFactory::createSettingEditWidget(QWidget* pa
 	return new ColorMapSettingEditWidget(parent);
 }
 
-ColorMapSettingToolBarWidgetI* ColorMapFactory::createToolbarWidget(QWidget* parent)
+ColorMapSettingToolBarWidget* ColorMapFactory::createToolbarWidget(QWidget* parent)
 {
 	return new ColorMapSettingToolBarWidget(parent);
 }

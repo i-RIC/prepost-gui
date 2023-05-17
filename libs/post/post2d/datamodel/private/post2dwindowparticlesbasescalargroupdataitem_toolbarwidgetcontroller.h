@@ -8,7 +8,7 @@
 class Post2dWindowParticlesBaseScalarGroupDataItem::ToolBarWidgetController : public ColorMapSettingToolBarWidgetController
 {
 public:
-	ToolBarWidgetController(ColorMapSettingToolBarWidgetI* widget, Post2dWindowParticlesBaseScalarGroupDataItem* item);
+	ToolBarWidgetController(ColorMapSettingToolBarWidget* widget, Post2dWindowParticlesBaseScalarGroupDataItem* item);
 
 private slots:
 	void handleWidgetUpdate() override;

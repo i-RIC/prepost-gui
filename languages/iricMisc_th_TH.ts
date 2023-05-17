@@ -57,4 +57,11 @@
         <translation>กำลังเปิดไฟล์ %1 ล้มเหลว.</translation>
     </message>
 </context>
+<context>
+    <name>ValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>เลือกค่า</translation>
+    </message>
+</context>
 </TS>

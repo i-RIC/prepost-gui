@@ -120,6 +120,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>オブジェクトブラウザー</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -165,6 +172,55 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>スカラー</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>格子点のスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>セルのスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>スカラー (セル)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>格子属性の選択</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindowColorSettingDialog</name>
     <message>
         <source>Display Setting</source>
@@ -207,11 +263,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Z方向の倍率</translation>
+        <translation>Z方向の倍率</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Z方向の倍率を入力してください。</translation>
+        <translation>Z方向の倍率を入力してください。</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -282,6 +338,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Z方向の倍率:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>格子形状</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>格子形状設定</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>標高に使用するスカラー値</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>スカラー</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>スカラー設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>格子点のスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>セルのスカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>範囲</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>スカラー (格子点)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>格子属性の選択</translation>
     </message>
 </context>
 <context>
@@ -1184,6 +1311,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>このデータから点群データを生成</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>格子セル属性の表示設定 (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1496,6 +1627,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>格子点属性の表示設定 (%1)</translation>
     </message>
 </context>
 <context>

@@ -8,13 +8,16 @@
 #include <string>
 #include <vector>
 
+class ColorMapSettingEditWidgetI;
+class Grid;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionBoundaryCondition;
 class SolverDefinitionTranslator;
 class SolverDefinitionOutput;
-class Grid;
+
 class QStringList;
+class QWidget;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridType : public SolverDefinitionNode
 {
@@ -74,6 +77,9 @@ public:
 	QString solutionCaption(const std::string& name) const;
 	QStringList solutionCaptions(const std::vector<std::string>& names) const;
 	SolverDefinitionOutput* output(const std::string& name);
+
+	QString gridAttributeCaption(const std::string& name) const;
+	ColorMapSettingEditWidgetI* createGridAttributeColorMapSettingEditWidget(const std::string& name, QWidget* parent);
 
 private:
 	class Impl;

@@ -110,6 +110,13 @@ Do you really want to import grid from this file?</source>
     </message>
 </context>
 <context>
+    <name>GridBirdEyeObjectBrowser</name>
+    <message>
+        <source>Object Browser</source>
+        <translation>Navegador d'objectes</translation>
+    </message>
+</context>
+<context>
     <name>GridBirdEyeWindow</name>
     <message>
         <source>Grid Bird's-Eye View Window</source>
@@ -148,6 +155,55 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Color:</source>
         <translation type="vanished">Color:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Escalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuració escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Per valor escalar de node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valor escalar de cel·la</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Interval</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Escalar (cel·la)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Seleccioneu l'atribut de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -193,11 +249,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Z-direction Scale</source>
-        <translation type="vanished">Escala de direcció Z</translation>
+        <translation>Escala de direcció Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
-        <translation type="vanished">Introduïu una nova escala de direcció Z.</translation>
+        <translation>Introduïu una nova escala de direcció Z.</translation>
     </message>
     <message>
         <source>Edit Color Setting</source>
@@ -268,6 +324,77 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Z-direction scale:</source>
         <translation>Escala de direcció Z:</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem</name>
+    <message>
+        <source>Grid shape</source>
+        <translation>Forma de quadrícula</translation>
+    </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Configuració de la forma de la quadrícula</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation>Valor escalar per a l'elevació</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
+    <message>
+        <source>Scalar</source>
+        <translation>Escalar</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Configuració escalar (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>Per valor escalar de node</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>Per valor escalar de cel·la</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Color personalitzat</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Interval</translation>
+    </message>
+</context>
+<context>
+    <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
+    <message>
+        <source>Scalar (node)</source>
+        <translation>Escalar (node)</translation>
+    </message>
+    <message>
+        <source>Select Grid Attribute</source>
+        <translation>Seleccioneu l'atribut de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -1057,6 +1184,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Generate point cloud data</source>
         <translation>Generar dades del núvol de punts</translation>
     </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation>Configuració de visualització d'atributs de cel·la de quadrícula (%1)</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
@@ -1319,6 +1450,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate point cloud data</source>
         <translation>Generar dades del núvol de punts</translation>
+    </message>
+    <message>
+        <source>Grid Node Attribute Display Setting (%1)</source>
+        <translation>Configuració de visualització d'atributs del node de quadrícula (%1)</translation>
     </message>
 </context>
 <context>

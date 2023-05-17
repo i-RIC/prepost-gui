@@ -400,11 +400,11 @@
     <name>Post2dWindowCellScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>barva</translation>
+        <translation type="vanished">barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -413,6 +413,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Razpon</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -440,6 +455,10 @@
     <message>
         <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Če želite izvoziti obliko oblike, preklopite »Nastavitev zaslona« na »Slika konture«, ne pa »Barvne obrobe« ali »Izoline«.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Izberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>
@@ -514,12 +533,20 @@
         <source>Scalar (edgeI)</source>
         <translation>Skalarno (rob I)</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Izberite Rezultat izračuna</translation>
+    </message>
 </context>
 <context>
     <name>Post2dWindowEdgeJScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (edgeJ)</source>
         <translation>Skalarno (edgeJ)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Izberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>
@@ -764,11 +791,11 @@
     <name>Post2dWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>barva</translation>
+        <translation type="vanished">barva</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -777,6 +804,21 @@
     <message>
         <source>&amp;Export...</source>
         <translation type="vanished">Izvozi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Razpon</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>barva</translation>
     </message>
     <message>
         <source>Range</source>
@@ -804,6 +846,10 @@
     <message>
         <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>Če želite izvoziti datoteko oblike, preklopite barvno nastavitev na "Diskretni način".</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Izberite Rezultat izračuna</translation>
     </message>
 </context>
 <context>
@@ -882,167 +928,22 @@
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation>Posodobi nastavitev delcev</translation>
+        <translation type="vanished">Posodobi nastavitev delcev</translation>
+    </message>
+    <message>
+        <source>Particles Display Setting</source>
+        <translation>Nastavitev prikaza delcev</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
-        <source>Update Particle Setting</source>
-        <translation>Posodobi nastavitev delcev</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
-    <message>
-        <source>Streamlines</source>
-        <translation>Poenostavitev</translation>
-    </message>
-    <message>
-        <source>Streamline Physical Value Change</source>
-        <translation>Poenostavite spremembo fizične vrednosti</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
-    <message>
-        <source>Update Streamline Setting</source>
-        <translation>Posodobi nastavitev Streamline</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleGroupRootDataItem</name>
-    <message>
-        <source>Particles</source>
-        <translation>Delci</translation>
-    </message>
-</context>
-<context>
-    <name>Post2dWindowParticleStructuredSettingDialog</name>
-    <message>
-        <source>Particle Setting</source>
-        <translation>Nastavitev delcev</translation>
-    </message>
-    <message>
-        <source>Common Settings</source>
-        <translation>Skupne nastavitve</translation>
-    </message>
-    <message>
-        <source>Physical Value:</source>
-        <translation>Fizična vrednost:</translation>
-    </message>
-    <message>
-        <source>Generate periodically</source>
-        <translation>Občasno ustvarjajte</translation>
-    </message>
-    <message>
-        <source>Generation time interval</source>
-        <translation>Generacijski časovni interval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>+</source>
-        <translation>+</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>1</source>
-        <translation>1</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <translation>maks</translation>
-    </message>
-    <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Ustvari v poljubnem času</translation>
-    </message>
-    <message>
-        <source>Edit...</source>
-        <translation>Uredi...</translation>
+        <source>Form</source>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Start Position</source>
         <translation>Začetni položaj</translation>
-    </message>
-    <message>
-        <source>Range</source>
-        <translation>Domet</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles.</source>
-        <translation>Določite območje za nastanek delcev.</translation>
-    </message>
-    <message>
-        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation>Določite območje za ustvarjanje delcev po razponu indeksov mreže (I, J).</translation>
-    </message>
-    <message>
-        <source>I Min</source>
-        <translation>I Min</translation>
-    </message>
-    <message>
-        <source>I Max</source>
-        <translation>Jaz Maks</translation>
-    </message>
-    <message>
-        <source>J Min</source>
-        <translation>J Min</translation>
-    </message>
-    <message>
-        <source>J Max</source>
-        <translation>J Max</translation>
-    </message>
-    <message>
-        <source>Generation space interval</source>
-        <translation>Generacijski vesoljski interval</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Če določite 1, se delci generirajo na vozliščih mreže. &lt;/p&gt; &lt;p&gt; Če določite 2, se delci ustvarijo na vozliščih mreže in srednjih točkah vozlišč mreže. &lt;/p&gt; &lt;p&gt; Če določite 1/2, delci se ustvarijo za vsa druga vozlišča mreže. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation>Barva:</translation>
-    </message>
-    <message>
-        <source>Size:</source>
-        <translation>Velikost:</translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1053,84 +954,92 @@ p, li { white-space: pre-wrap; }
         <translation>Odstrani (&amp;R)</translation>
     </message>
     <message>
-        <source>&amp;Region Setting</source>
-        <translation>Nastavitev regije (&amp;R)</translation>
+        <source>Region</source>
+        <translation>Regija</translation>
     </message>
 </context>
 <context>
-    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Particle Setting</source>
-        <translation>Nastavitev delcev</translation>
+        <source>Form</source>
+        <translation>Oblika</translation>
     </message>
     <message>
-        <source>Common Settings</source>
-        <translation>Skupne nastavitve</translation>
+        <source>Range</source>
+        <translation>Razpon</translation>
     </message>
     <message>
-        <source>Physical Value:</source>
-        <translation>Fizična vrednost:</translation>
+        <source>Specify the area to start particles</source>
+        <translation>Določite območje za začetek delcev</translation>
     </message>
     <message>
-        <source>Generate periodically</source>
-        <translation>Občasno ustvarjajte</translation>
+        <source>Specify the area to start particles, by grid indices range (I, J).</source>
+        <translation>Določite območje za začetek delcev z obsegom mrežnih indeksov (I, J).</translation>
     </message>
     <message>
-        <source>Generation interval</source>
-        <translation>Generacijski interval</translation>
+        <source>Generation space interval</source>
+        <translation>Generacijski prostorski interval</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap;}
-p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
-&lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
-&lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
-&lt;/body&gt;&lt;/html&gt;</source>
-        <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <source>Color:</source>
+        <translation>barva:</translation>
     </message>
     <message>
-        <source>-</source>
-        <translation>-</translation>
+        <source>Point Size</source>
+        <translation>Velikost točke</translation>
     </message>
     <message>
-        <source>+</source>
-        <translation>+</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Particle Setting</source>
+        <translation type="vanished">Posodobi nastavitev delcev</translation>
     </message>
     <message>
-        <source>min</source>
-        <translation>min</translation>
+        <source>Particles Display Setting</source>
+        <translation>Nastavitev prikaza delcev</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
     </message>
     <message>
-        <source>1</source>
-        <translation>1</translation>
+        <source>Start Position</source>
+        <translation>Začetni položaj</translation>
     </message>
     <message>
-        <source>max</source>
-        <translation>maks</translation>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
     </message>
     <message>
-        <source>Generate at arbitrary time</source>
-        <translation>Ustvari v poljubnem času</translation>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
     </message>
     <message>
-        <source>Edit...</source>
-        <translation>Uredi...</translation>
+        <source>Region</source>
+        <translation>Regija</translation>
     </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
-        <source>Start Points</source>
-        <translation>Začetne točke</translation>
+        <source>Form</source>
+        <translation>Oblika</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Določite dve točki. Delci se začnejo iz točk, ki so med tema dvema točkama enako ločene.</translation>
+        <translation>Določite dve točki. Delci se začnejo iz točk, ki so enakomerno ločene med tema dvema točkama.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Povlecite miško</translation>
+        <translation>Povlecite z miško</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
@@ -1154,19 +1063,48 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation>barva:</translation>
     </message>
     <message>
-        <source>Size:</source>
-        <translation>Velikost:</translation>
+        <source>Point size</source>
+        <translation>Velikost točke</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupDataItem</name>
+    <message>
+        <source>Streamlines</source>
+        <translation>Poenostavitev</translation>
+    </message>
+    <message>
+        <source>Streamline Physical Value Change</source>
+        <translation>Poenostavite spremembo fizične vrednosti</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Poenostavite nastavitev zaslona</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fizična vrednost:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Začetni položaj</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1177,8 +1115,373 @@ p, li { white-space: pre-wrap; }
         <translation>Odstrani (&amp;R)</translation>
     </message>
     <message>
+        <source>Region</source>
+        <translation>Regija</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Razpon</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines</source>
+        <translation>Določite območje za začetek potokov</translation>
+    </message>
+    <message>
+        <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
+        <translation>Določite območje za začetek pretočnih linij z obsegom mrežnih indeksov (I, J).</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation>Generacijski prostorski interval</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>barva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Premer:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem</name>
+    <message>
+        <source>Update Streamline Setting</source>
+        <translation type="vanished">Posodobi nastavitev Streamline</translation>
+    </message>
+    <message>
+        <source>Streamline Display Setting</source>
+        <translation>Poenostavite nastavitev zaslona</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation>Fizična vrednost:</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation>Začetni položaj</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation>Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation>Odstrani (&amp;R)</translation>
+    </message>
+    <message>
+        <source>Region</source>
+        <translation>Regija</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Oblika</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation>Določite dve točki. Delci se začnejo iz točk, ki so enakomerno ločene med tema dvema točkama.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation>Povlecite z miško</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation>Koordinatne vrednosti</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation>1. točka:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation>,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation>2. točka:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation>Število točk:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>barva:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Premer:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleGroupRootDataItem</name>
+    <message>
+        <source>Particles</source>
+        <translation>Delci</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleStructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Nastavitev delcev</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Skupne nastavitve</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fizična vrednost:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Občasno ustvarjajte</translation>
+    </message>
+    <message>
+        <source>Generation time interval</source>
+        <translation type="vanished">Generacijski časovni interval</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">maks</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Ustvari v poljubnem času</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Uredi...</translation>
+    </message>
+    <message>
+        <source>Start Position</source>
+        <translation type="vanished">Začetni položaj</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Domet</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles.</source>
+        <translation type="vanished">Določite območje za nastanek delcev.</translation>
+    </message>
+    <message>
+        <source>Specify the area to generate particles, by grid indices range (I, J).</source>
+        <translation type="vanished">Določite območje za ustvarjanje delcev po razponu indeksov mreže (I, J).</translation>
+    </message>
+    <message>
+        <source>I Min</source>
+        <translation type="vanished">I Min</translation>
+    </message>
+    <message>
+        <source>I Max</source>
+        <translation type="vanished">Jaz Maks</translation>
+    </message>
+    <message>
+        <source>J Min</source>
+        <translation type="vanished">J Min</translation>
+    </message>
+    <message>
+        <source>J Max</source>
+        <translation type="vanished">J Max</translation>
+    </message>
+    <message>
+        <source>Generation space interval</source>
+        <translation type="vanished">Generacijski vesoljski interval</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+p {margin-top: 3px; margin-bottom: 3px;}
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Če določite 1, se delci generirajo na vozliščih mreže. &lt;/p&gt; &lt;p&gt; Če določite 2, se delci ustvarijo na vozliščih mreže in srednjih točkah vozlišč mreže. &lt;/p&gt; &lt;p&gt; Če določite 1/2, delci se ustvarijo za vsa druga vozlišča mreže. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Barva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Velikost:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
+    </message>
+    <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavitev regije (&amp;R)</translation>
+        <translation type="vanished">Nastavitev regije (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dWindowParticleUnstructuredSettingDialog</name>
+    <message>
+        <source>Particle Setting</source>
+        <translation type="vanished">Nastavitev delcev</translation>
+    </message>
+    <message>
+        <source>Common Settings</source>
+        <translation type="vanished">Skupne nastavitve</translation>
+    </message>
+    <message>
+        <source>Physical Value:</source>
+        <translation type="vanished">Fizična vrednost:</translation>
+    </message>
+    <message>
+        <source>Generate periodically</source>
+        <translation type="vanished">Občasno ustvarjajte</translation>
+    </message>
+    <message>
+        <source>Generation interval</source>
+        <translation type="vanished">Generacijski interval</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="vanished">+</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <translation type="vanished">min</translation>
+    </message>
+    <message>
+        <source>1</source>
+        <translation type="vanished">1</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <translation type="vanished">maks</translation>
+    </message>
+    <message>
+        <source>Generate at arbitrary time</source>
+        <translation type="vanished">Ustvari v poljubnem času</translation>
+    </message>
+    <message>
+        <source>Edit...</source>
+        <translation type="vanished">Uredi...</translation>
+    </message>
+    <message>
+        <source>Start Points</source>
+        <translation type="vanished">Začetne točke</translation>
+    </message>
+    <message>
+        <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
+        <translation type="vanished">Določite dve točki. Delci se začnejo iz točk, ki so med tema dvema točkama enako ločene.</translation>
+    </message>
+    <message>
+        <source>Mouse Drag</source>
+        <translation type="vanished">Povlecite miško</translation>
+    </message>
+    <message>
+        <source>Coordinate Values</source>
+        <translation type="vanished">Koordinatne vrednosti</translation>
+    </message>
+    <message>
+        <source>Point 1:</source>
+        <translation type="vanished">1. točka:</translation>
+    </message>
+    <message>
+        <source>,</source>
+        <translation type="vanished">,</translation>
+    </message>
+    <message>
+        <source>Point 2:</source>
+        <translation type="vanished">2. točka:</translation>
+    </message>
+    <message>
+        <source>Number of points:</source>
+        <translation type="vanished">Število točk:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="vanished">Barva:</translation>
+    </message>
+    <message>
+        <source>Size:</source>
+        <translation type="vanished">Velikost:</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add</source>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Remove</source>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
+    </message>
+    <message>
+        <source>&amp;Region Setting</source>
+        <translation type="vanished">Nastavitev regije (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1358,47 +1661,47 @@ p, li { white-space: pre-wrap; }
     <name>Post2dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Poenostavitev nastavitev</translation>
+        <translation type="vanished">Poenostavitev nastavitev</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizična vrednost:</translation>
+        <translation type="vanished">Fizična vrednost:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation>Začetni položaj</translation>
+        <translation type="vanished">Začetni položaj</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation>Domet</translation>
+        <translation type="vanished">Domet</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation>Določite območje za začetek racionalizacije</translation>
+        <translation type="vanished">Določite območje za začetek racionalizacije</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation>Določite območje za začetek poenostavitve po razponu indeksov mreže (I, J).</translation>
+        <translation type="vanished">Določite območje za začetek poenostavitve po razponu indeksov mreže (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation>I Min</translation>
+        <translation type="vanished">I Min</translation>
     </message>
     <message>
         <source>I Max</source>
-        <translation>Jaz Maks</translation>
+        <translation type="vanished">Jaz Maks</translation>
     </message>
     <message>
         <source>J Min</source>
-        <translation>J Min</translation>
+        <translation type="vanished">J Min</translation>
     </message>
     <message>
         <source>J Max</source>
-        <translation>J Max</translation>
+        <translation type="vanished">J Max</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation>Generacijski vesoljski interval</translation>
+        <translation type="vanished">Generacijski vesoljski interval</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1408,35 +1711,35 @@ p, li { white-space: pre-wrap; }
 &lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Če določite 1, se poenostavitve začnejo pri vozliščih mreže. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Če določite 2, se tokovi začnejo pri vozliščih mreže in srednjih točkah vozlišč mreže. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Če določite 1/2, se poenostavitve začnejo na vseh drugih vozliščih mreže. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Če določite 1, se poenostavitve začnejo pri vozliščih mreže. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Če določite 2, se tokovi začnejo pri vozliščih mreže in srednjih točkah vozlišč mreže. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Če določite 1/2, se poenostavitve začnejo na vseh drugih vozliščih mreže. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation>+</translation>
+        <translation type="vanished">+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation>1</translation>
+        <translation type="vanished">1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation>maks</translation>
+        <translation type="vanished">maks</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Premer:</translation>
+        <translation type="vanished">Premer:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1444,70 +1747,70 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavitev regije (&amp;R)</translation>
+        <translation type="vanished">Nastavitev regije (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowStreamlineUnstructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation>Poenostavitev nastavitev</translation>
+        <translation type="vanished">Poenostavitev nastavitev</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Fizična vrednost:</translation>
+        <translation type="vanished">Fizična vrednost:</translation>
     </message>
     <message>
         <source>Start Points</source>
-        <translation>Začetne točke</translation>
+        <translation type="vanished">Začetne točke</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation>Določite dve točki. Delci se začnejo iz točk, ki so med tema dvema točkama enako ločene.</translation>
+        <translation type="vanished">Določite dve točki. Delci se začnejo iz točk, ki so med tema dvema točkama enako ločene.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation>Povlecite miško</translation>
+        <translation type="vanished">Povlecite miško</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation>Koordinatne vrednosti</translation>
+        <translation type="vanished">Koordinatne vrednosti</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation>1. točka:</translation>
+        <translation type="vanished">1. točka:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation>,</translation>
+        <translation type="vanished">,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation>2. točka:</translation>
+        <translation type="vanished">2. točka:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation>Število točk:</translation>
+        <translation type="vanished">Število točk:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation>Premer:</translation>
+        <translation type="vanished">Premer:</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1515,19 +1818,19 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Določite število slikovnih pik na zaslonu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation>Dodaj (&amp;A)</translation>
+        <translation type="vanished">Dodaj (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation>Odstrani (&amp;R)</translation>
+        <translation type="vanished">Odstrani (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Region Setting</source>
-        <translation>Nastavitev regije (&amp;R)</translation>
+        <translation type="vanished">Nastavitev regije (&amp;R)</translation>
     </message>
 </context>
 <context>
@@ -1549,7 +1852,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Streamline Setting</source>
-        <translation>Posodobi nastavitev Streamline</translation>
+        <translation type="vanished">Posodobi nastavitev Streamline</translation>
     </message>
     <message>
         <source>Update Grid Shape Setting</source>

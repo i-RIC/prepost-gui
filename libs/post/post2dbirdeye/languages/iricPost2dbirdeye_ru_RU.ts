@@ -63,11 +63,42 @@
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="vanished">Скалярный</translation>
+        <translation>Скалярный</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
         <translation type="vanished">Обновить настройку контура</translation>
+    </message>
+    <message>
+        <source>Scalar Setting (%1)</source>
+        <translation>Скалярная настройка (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
+    <message>
+        <source>By node scalar value</source>
+        <translation>По скалярному значению узла</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>По скалярному значению ячейки</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation>Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation>Диапазон</translation>
     </message>
 </context>
 <context>
@@ -83,6 +114,14 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можно определить максимум четыре контура.</translation>
+    </message>
+    <message>
+        <source>Scalar (cell)</source>
+        <translation>Скаляр (ячейка)</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Выберите результат расчета</translation>
     </message>
 </context>
 <context>
@@ -161,12 +200,27 @@
         <source>Grid shape</source>
         <translation>Форма сетки</translation>
     </message>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>Настройка формы сетки</translation>
+    </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Настройка отображения формы сетки</translation>
+        <translation type="vanished">Настройка отображения формы сетки</translation>
+    </message>
+    <message>
+        <source>Scalar value for Elevation</source>
+        <translation type="vanished">Скалярное значение для высоты</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
@@ -192,27 +246,54 @@
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">Цвет</translation>
+    </message>
+    <message>
+        <source>Custom color</source>
+        <translation type="vanished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>By scalar value</source>
+        <translation type="vanished">По скалярному значению</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Range</source>
+        <translation type="vanished">Диапазон</translation>
+    </message>
+</context>
+<context>
+    <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
         <translation>Цвет</translation>
     </message>
     <message>
+        <source>By node scalar value</source>
+        <translation>По скалярному значению узла</translation>
+    </message>
+    <message>
+        <source>By cell scalar value</source>
+        <translation>По скалярному значению ячейки</translation>
+    </message>
+    <message>
         <source>Custom color</source>
         <translation>Пользовательский цвет</translation>
-    </message>
-    <message>
-        <source>By scalar value</source>
-        <translation>По скалярному значению</translation>
-    </message>
-    <message>
-        <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Range</source>
@@ -232,6 +313,10 @@
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Можно определить максимум четыре контура.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation>Выберите результат расчета</translation>
     </message>
 </context>
 <context>
