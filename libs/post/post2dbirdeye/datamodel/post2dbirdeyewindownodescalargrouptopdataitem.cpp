@@ -60,7 +60,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 
 	auto dialog = new ValueSelectDialog(p);
 	dialog->setValues(solutions);
-	dialog->setWindowTitle(tr("Select Calculation Result"));
+	dialog->setWindowTitle(tr("Select calculation result to use as Elevation"));
 
 	return dialog;
 }

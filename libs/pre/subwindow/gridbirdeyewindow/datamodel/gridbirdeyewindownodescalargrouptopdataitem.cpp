@@ -64,7 +64,7 @@ QDialog* GridBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 
 	auto dialog = new ValueSelectDialog(p);
 	dialog->setValues(attributes);
-	dialog->setWindowTitle(tr("Select Grid Attribute"));
+	dialog->setWindowTitle(tr("Select grid attribute to use as Elevation"));
 
 	return dialog;
 }

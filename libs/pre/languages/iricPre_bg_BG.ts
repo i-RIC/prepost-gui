@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Прозорец за изглед на птичи очи с мрежа</translation>
     </message>
 </context>
@@ -203,7 +205,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation>Изберете атрибут на мрежата</translation>
+        <translation type="vanished">Изберете атрибут на мрежата</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -394,7 +400,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation>Изберете атрибут на мрежата</translation>
+        <translation type="vanished">Изберете атрибут на мрежата</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -788,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не са картографирани след последното им редактиране. Искате ли да изпълните картографиране сега?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Настройка на гранични условия "%1"не е картографиран след последното редактиране. Искате ли да извършите картографиране сега?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Настройка на гранични условия &quot;%1&quot;не е картографиран след последното редактиране. Искате ли да извършите картографиране сега?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1038,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Забележка: Когато вариантът е активиран, се създава вариант с име „По подразбиране“ и всички географски данни се преместват към него. Можете да добавяте, преименувате, премахвате варианти от "Object Browser". Можете да местите, копирате географски данни между вариантите. Данните за атрибутите на мрежата, създадени от варианта, който сте избрали с „Вариация за предаване на решаващия инструмент“, се предават на решаващия инструмент. Можете да подготвите множество варианти, да превключите кои да предадете на решаващия инструмент и да се уверите в ефекта от разликата.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Забележка: Когато вариантът е активиран, се създава вариант с име „По подразбиране“ и всички географски данни се преместват към него. Можете да добавяте, преименувате, премахвате варианти от &quot;Object Browser&quot;. Можете да местите, копирате географски данни между вариантите. Данните за атрибутите на мрежата, създадени от варианта, който сте избрали с „Вариация за предаване на решаващия инструмент“, се предават на решаващия инструмент. Можете да подготвите множество варианти, да превключите кои да предадете на решаващия инструмент и да се уверите в ефекта от разликата.</translation>
     </message>
 </context>
 <context>
@@ -1264,9 +1274,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Изпълни (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Следните атрибути не са картографирани, защото изходните стойности на генератора на мрежата за тях. Ако искате да картографирате географски данни за тях принудително, моля, съпоставете ръчно с меню "Решетка" -&gt; "Съпоставяне на атрибути" -&gt; "Изпълнение".</translation>
+        <translation>Следните атрибути не са картографирани, защото изходните стойности на генератора на мрежата за тях. Ако искате да картографирате географски данни за тях принудително, моля, съпоставете ръчно с меню &quot;Решетка&quot; -&gt; &quot;Съпоставяне на атрибути&quot; -&gt; &quot;Изпълнение&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1285,12 +1295,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картографирането на географски данни приключи</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибутът на мрежата "%1"се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибутът на мрежата &quot;%1&quot;се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Граничното условие "%1"се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Граничното условие &quot;%1&quot;се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
     </message>
 </context>
 <context>
@@ -1308,20 +1318,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Автоматичен</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Когато мрежата е създадена, ще бъдете попитани дали за да изпълнявате картографиране на атрибути всеки път. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Когато мрежата е създадена, ще бъдете попитани дали за да изпълнявате картографиране на атрибути всеки път. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Ръководство</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Съпоставянето на атрибутите се изпълнява само когато ръчно изберете менюто "Изпълнение".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Съпоставянето на атрибутите се изпълнява само когато ръчно изберете менюто &quot;Изпълнение&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2037,8 +2047,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Настройка на цветна карта</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Използвайте раздела Colormap, за да редактирате цветовата настройка&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Забележка:&lt;/span&gt; Използвайте раздела Colormap, за да редактирате цветовата настройка&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2151,7 +2161,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Настройка на скаларна лента (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Отворете прозореца за изглед на птичи поглед (&amp;B)</translation>
     </message>
     <message>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,7 +11,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
         <translation>Fugla-auga eftirvinnsla (2D): %1</translation>
     </message>
     <message>
@@ -121,7 +123,11 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation>Veldu Niðurstaða útreiknings</translation>
+        <translation type="vanished">Veldu Niðurstaða útreiknings</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -316,7 +322,11 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation>Veldu Niðurstaða útreiknings</translation>
+        <translation type="vanished">Veldu Niðurstaða útreiknings</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,8 +11,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
-        <translation>Xử lý hậu kỳ Bird's-Eye (2D): %1</translation>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <translation>Xử lý hậu kỳ Bird&apos;s-Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -121,7 +123,11 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation>Chọn kết quả tính toán</translation>
+        <translation type="vanished">Chọn kết quả tính toán</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -316,7 +322,11 @@
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation>Chọn kết quả tính toán</translation>
+        <translation type="vanished">Chọn kết quả tính toán</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
