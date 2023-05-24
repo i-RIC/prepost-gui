@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Канаттуулардын көзүн кайра иштетүү (2D): %1</translation>
     </message>
     <message>
@@ -127,7 +125,7 @@
     </message>
     <message>
         <source>Select calculation result to use as Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Бийиктик катары колдонуу үчүн эсептөө натыйжасын тандаңыз</translation>
     </message>
 </context>
 <context>
@@ -326,7 +324,7 @@
     </message>
     <message>
         <source>Select calculation result to use as Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Бийиктик катары колдонуу үчүн эсептөө натыйжасын тандаңыз</translation>
     </message>
 </context>
 <context>

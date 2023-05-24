@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>조감도 후처리(2D): %1</translation>
     </message>
     <message>
@@ -127,7 +125,7 @@
     </message>
     <message>
         <source>Select calculation result to use as Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>표고로 사용할 계산 결과 선택</translation>
     </message>
 </context>
 <context>
@@ -326,7 +324,7 @@
     </message>
     <message>
         <source>Select calculation result to use as Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>표고로 사용할 계산 결과 선택</translation>
     </message>
 </context>
 <context>
