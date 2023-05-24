@@ -50,21 +50,13 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::Post2dBirdEyeWindowCellScalarGroupDa
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
 		const auto& name = pair.first;
-		auto cs = new ColorMapSettingContainer();
 		auto caption = gType->output(name)->caption();
-		cs->valueCaption = caption;
-		cs->legend.title = caption;
-		cs->setAutoValueRange(pair.second);
-		impl->m_colorMapSettings.insert({name, cs});
+		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
 	}
 	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
 		const auto& name = pair.first;
-		auto cs = new ColorMapSettingContainer();
 		auto caption = gType->output(name)->caption();
-		cs->valueCaption = caption;
-		cs->legend.title = caption;
-		cs->setAutoValueRange(pair.second);
-		impl->m_colorMapSettings.insert({name, cs});
+		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
 	}
 
 	impl->m_colorMapToolBarWidget->hide();
@@ -182,11 +174,16 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::setupActors()
 void Post2dBirdEyeWindowCellScalarGroupDataItem::update()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
-		impl->m_colorMapSettings.at(pair.first)->setAutoValueRange(pair.second);
+		const auto& name = pair.first;
+		auto caption = gType->output(name)->caption();
+		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
 	}
 	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
-		impl->m_colorMapSettings.at(pair.first)->setAutoValueRange(pair.second);
+		const auto& name = pair.first;
+		auto caption = gType->output(name)->caption();
+		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
 	}
 
 	updateActorSetting();

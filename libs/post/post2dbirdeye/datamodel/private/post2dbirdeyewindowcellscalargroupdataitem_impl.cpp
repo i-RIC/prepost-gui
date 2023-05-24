@@ -22,3 +22,18 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::Impl::~Impl()
 	m_actor->Delete();
 	m_legendActor->Delete();
 }
+
+void Post2dBirdEyeWindowCellScalarGroupDataItem::Impl::createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range)
+{
+	ColorMapSettingContainer* setting = nullptr;
+	auto it = m_colorMapSettings.find(name);
+	if (it == m_colorMapSettings.end()) {
+		setting = new ColorMapSettingContainer();
+		setting->valueCaption = caption;
+		setting->legend.title = caption;
+		m_colorMapSettings.insert({name, setting});
+	} else {
+		setting = it->second;
+	}
+	setting->setAutoValueRange(range);
+}

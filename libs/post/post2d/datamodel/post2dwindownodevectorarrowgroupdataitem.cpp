@@ -40,12 +40,8 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	}
 
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
-		auto cs = new ColorMapSettingContainer();
 		auto caption = gt->output(pair.first)->caption();
-		cs->valueCaption = caption;
-		cs->legend.title = caption;
-		cs->setAutoValueRange(pair.second);
-		m_colorMapSettings.insert({pair.first, cs});
+		createOrUpdateColorMapsSetting(pair.first, caption, pair.second);
 	}
 
 	m_arrowsToolBarWidget->hide();
@@ -194,6 +190,21 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateCheckState()
 Post2dWindowZoneDataItem* Post2dWindowNodeVectorArrowGroupDataItem::zoneDataItem() const
 {
 	return dynamic_cast<Post2dWindowZoneDataItem*> (parent());
+}
+
+void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range)
+{
+	ColorMapSettingContainer* setting = nullptr;
+	auto it = m_colorMapSettings.find(name);
+	if (it == m_colorMapSettings.end()) {
+		setting = new ColorMapSettingContainer();
+		setting->valueCaption = caption;
+		setting->legend.title = caption;
+		m_colorMapSettings.insert({name, setting});
+	} else {
+		setting = it->second;
+	}
+	setting->setAutoValueRange(range);
 }
 
 ColorMapSettingContainer* Post2dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const

@@ -12,6 +12,7 @@ class ArrowsSettingToolBarWidget;
 class ColorMapSettingContainer;
 class NamedGraphicWindowDataItem;
 class Post2dWindowZoneDataItem;
+class ValueRangeContainer;
 
 class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -43,6 +44,7 @@ protected:
 	void updateActorSetting() override;
 	void updateCheckState();
 	Post2dWindowZoneDataItem* zoneDataItem() const;
+	void createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range);
 
 	ArrowsSettingContainer m_setting;
 
