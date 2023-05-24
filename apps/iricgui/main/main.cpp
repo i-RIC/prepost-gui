@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 
 	QApplication a(argc, argv);
 	// show splash screen.
-	QPixmap pixmap(":/images/splashscreen.gif");
+	QPixmap pixmap(":/images/splashscreen.svg");
 	QSplashScreen splash(pixmap);
 	splash.show();
 	a.processEvents();

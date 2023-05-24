@@ -34,7 +34,6 @@
         <file>images/iconViewZoomOutX.svg</file>
         <file>images/iconViewZoomOutY.svg</file>
         <file>images/iconViewZoomInX.svg</file>
-        <file>images/splashscreen.gif</file>
         <file>images/ja_JP/imgMouseHelp.png</file>
         <file>images/imgMouseHelp.png</file>
         <file>images/iconGoogleEarth.svg</file>
@@ -53,5 +52,6 @@
         <file>images/iconVisGraphScattered.svg</file>
         <file>data/unknownsolver/definition.xml</file>
         <file>images/iconShortcut.svg</file>
+        <file>images/splashscreen.svg</file>
     </qresource>
 </RCC>
