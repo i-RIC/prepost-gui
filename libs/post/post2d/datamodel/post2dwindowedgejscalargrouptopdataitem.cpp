@@ -130,6 +130,8 @@ void Post2dWindowEdgeJScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 	updateItemMap();
 	iRICUndoStack::instance().clear();
 
+	setZDepthRange(zDepthRange());
+
 	newItem->showPropertyDialog();
 }
 

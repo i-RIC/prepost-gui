@@ -125,6 +125,8 @@ void Post2dWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 	updateItemMap();
 	iRICUndoStack::instance().clear();
 
+	setZDepthRange(zDepthRange());
+
 	newItem->showPropertyDialog();
 }
 

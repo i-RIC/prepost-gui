@@ -115,6 +115,8 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 	updateItemMap();
 	iRICUndoStack::instance().clear();
 
+	setZDepthRange(zDepthRange());
+
 	dataModel()->objectBrowserView()->select(newItem->standardItem()->index());
 	newItem->showPropertyDialog();
 }
