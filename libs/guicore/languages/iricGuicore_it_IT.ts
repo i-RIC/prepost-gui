@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -134,7 +132,7 @@
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished"></translation>
+        <translation>Disegna il bordo</translation>
     </message>
 </context>
 <context>
@@ -244,7 +242,7 @@
     <name>BackgroundImageInfo</name>
     <message>
         <source>Unable to read image %1</source>
-        <translation>Impossibile leggere l&apos;immagine %1</translation>
+        <translation>Impossibile leggere l'immagine %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -252,7 +250,7 @@
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">In file %1, Mancata corrispondenza dell&apos;incremento della coordinata x per pixel e dell&apos;incremento della coordinata y per pixel. È accettabile, ma potrebbe essere sbagliato.</translation>
+        <translation type="vanished">In file %1, Mancata corrispondenza dell'incremento della coordinata x per pixel e dell'incremento della coordinata y per pixel. È accettabile, ma potrebbe essere sbagliato.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -264,14 +262,14 @@
     </message>
     <message>
         <source>Fix Image position</source>
-        <translation>Correggi la posizione dell&apos;immagine</translation>
+        <translation>Correggi la posizione dell'immagine</translation>
     </message>
 </context>
 <context>
     <name>BackgroundImageInfoDialog</name>
     <message>
         <source>Background Image Position</source>
-        <translation>Posizione dell&apos;immagine di sfondo</translation>
+        <translation>Posizione dell'immagine di sfondo</translation>
     </message>
     <message>
         <source>Method of designation</source>
@@ -279,7 +277,7 @@
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Specifica la posizione, la scala e l&apos;angolo di rotazione del vertice in basso a sinistra</translation>
+        <translation>Specifica la posizione, la scala e l'angolo di rotazione del vertice in basso a sinistra</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
@@ -311,11 +309,11 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specificare la distanza in metri che corrisponde alla larghezza di un pixel dell&apos;immagine.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specificare la distanza in metri che corrisponde alla larghezza di un pixel dell'immagine.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specificare l&apos;angolo del bordo inferiore dell&apos;immagine rispetto all&apos;asse X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specificare l'angolo del bordo inferiore dell'immagine rispetto all'asse X.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -441,7 +439,7 @@
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished"></translation>
+        <translation>Disegna il bordo</translation>
     </message>
 </context>
 <context>
@@ -452,7 +450,7 @@
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Ignora l&apos;impostazione della barra dei colori durante l&apos;importazione</translation>
+        <translation type="vanished">Ignora l'impostazione della barra dei colori durante l'importazione</translation>
     </message>
     <message>
         <source>Colors</source>
@@ -485,7 +483,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Value</source>
@@ -501,14 +499,14 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Enumera l&apos;impostazione della mappa dei colori (*.ecmsetting)</translation>
+        <translation>Enumera l'impostazione della mappa dei colori (*.ecmsetting)</translation>
     </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget::ImportDialog</name>
     <message>
         <source>Enumerate colormap setting (*.ecmsetting)</source>
-        <translation>Enumera l&apos;impostazione della mappa dei colori (*.ecmsetting)</translation>
+        <translation>Enumera l'impostazione della mappa dei colori (*.ecmsetting)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -516,7 +514,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Si è verificato un errore durante l&apos;importazione delle impostazioni da %1.</translation>
+        <translation>Si è verificato un errore durante l'importazione delle impostazioni da %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
@@ -741,7 +739,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished"></translation>
+        <translation>Disegna il bordo</translation>
     </message>
 </context>
 <context>
@@ -775,7 +773,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Ignore Color bar setting when importing</source>
-        <translation type="vanished">Ignora l&apos;impostazione della barra dei colori durante l&apos;importazione</translation>
+        <translation type="vanished">Ignora l'impostazione della barra dei colori durante l'importazione</translation>
     </message>
     <message>
         <source>Relationship between values and colors</source>
@@ -783,7 +781,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Automatically adjust based on value range</source>
-        <translation>Regola automaticamente in base all&apos;intervallo di valori</translation>
+        <translation>Regola automaticamente in base all'intervallo di valori</translation>
     </message>
     <message>
         <source>Setup Manually</source>
@@ -819,11 +817,11 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation>Riempi l&apos;area inferiore</translation>
+        <translation>Riempi l'area inferiore</translation>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation>Riempi l&apos;area superiore</translation>
+        <translation>Riempi l'area superiore</translation>
     </message>
     <message>
         <source>Switch</source>
@@ -847,7 +845,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
+        <translation>Si è verificato un errore durante l'apertura %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -860,7 +858,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="vanished">(Si prega di selezionare l&apos;articolo da applicare)</translation>
+        <translation type="vanished">(Si prega di selezionare l'articolo da applicare)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -919,7 +917,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>Si è verificato un errore durante l&apos;importazione delle impostazioni da %1.</translation>
+        <translation>Si è verificato un errore durante l'importazione delle impostazioni da %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
@@ -1148,7 +1146,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Use Setting of Pre-processing Window</source>
-        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1325,7 +1323,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Go to &amp;Last Step</source>
-        <translation>Vai all&apos;ultimo passaggio (&amp;L)</translation>
+        <translation>Vai all'ultimo passaggio (&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Start/Stop Animation</source>
@@ -1478,8 +1476,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Colore:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota: puoi utilizzare solo caratteri ASCII per il nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota: puoi utilizzare solo caratteri ASCII per il nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1536,7 +1534,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Distance from top</source>
-        <translation>Distanza dall&apos;alto</translation>
+        <translation>Distanza dall'alto</translation>
     </message>
     <message>
         <source>Distance from bottom</source>
@@ -1585,12 +1583,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Il nodo di definizione non è memorizzato</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Valore erratoTipo &quot;%1&quot; è impostato.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Valore erratoTipo "%1" è impostato.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Condizione errataTipo &quot;%1&quot;è impostato.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Condizione errataTipo "%1"è impostato.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1658,7 +1656,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>L&apos;apertura del file CGNS non è riuscita.</translation>
+        <translation>L'apertura del file CGNS non è riuscita.</translation>
     </message>
 </context>
 <context>
@@ -1727,7 +1725,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>(There is no result)</source>
-        <translation>(Non c&apos;è risultato)</translation>
+        <translation>(Non c'è risultato)</translation>
     </message>
 </context>
 <context>
@@ -1818,7 +1816,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file.</translation>
+        <translation>Si è verificato un errore durante l'apertura del file.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -1830,7 +1828,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 sono valori per span. Ad esempio, il valore immesso nella 2a riga è per l&apos;intervallo tra la 1a riga e la 2a riga.</translation>
+        <translation>%1 sono valori per span. Ad esempio, il valore immesso nella 2a riga è per l'intervallo tra la 1a riga e la 2a riga.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
@@ -1858,11 +1856,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>File %1 viene aggiornato dopo l&apos;importazione nella condizione di calcolo %2. Vuoi importare il file aggiornato?</translation>
+        <translation>File %1 viene aggiornato dopo l'importazione nella condizione di calcolo %2. Vuoi importare il file aggiornato?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Puoi copiare e incollare i valori, con la scorciatoia &quot;Ctrl + C&quot; e &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Puoi copiare e incollare i valori, con la scorciatoia "Ctrl + C" e "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1891,7 +1889,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Data d&apos;inizio:</translation>
+        <translation>Data d'inizio:</translation>
     </message>
     <message>
         <source>End Date:</source>
@@ -1938,7 +1936,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>Il contenuto nell&apos;area di testo viene sovrascritto con il modello</translation>
+        <translation>Il contenuto nell'area di testo viene sovrascritto con il modello</translation>
     </message>
 </context>
 <context>
@@ -1957,7 +1955,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Fill upper area</source>
-        <translation type="vanished">Riempi l&apos;area superiore</translation>
+        <translation type="vanished">Riempi l'area superiore</translation>
     </message>
     <message>
         <source>Min:</source>
@@ -1965,7 +1963,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Fill lower area</source>
-        <translation type="vanished">Riempi l&apos;area inferiore</translation>
+        <translation type="vanished">Riempi l'area inferiore</translation>
     </message>
     <message>
         <source>Division Number:</source>
@@ -1988,11 +1986,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file.</translation>
+        <translation>Si è verificato un errore durante l'apertura del file.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Le prime due colonne devono essere &quot;X&quot; e &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Le prime due colonne devono essere "X" e "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2084,7 +2082,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>C&apos;è stato un&apos;errore: %1</translation>
+        <translation>C'è stato un'errore: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
@@ -2138,7 +2136,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Risultati del calcolo per l&apos;input</translation>
+        <translation>Risultati del calcolo per l'input</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2153,8 +2151,8 @@ Do you really want to import this file?</source>
         <translation>Definizione di variabile</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi definire la variabile con il linguaggio JavaScript. Consulta il testo &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; -decorazione: sottolineatura; colore:#0000ff;&quot;&gt;qui&lt;/span&gt;&lt;/a&gt; per i dettagli.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi definire la variabile con il linguaggio JavaScript. Consulta il testo &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -decorazione: sottolineatura; colore:#0000ff;"&gt;qui&lt;/span&gt;&lt;/a&gt; per i dettagli.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2162,7 +2160,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi testare la definizione facendo clic qui. Se si verifica un errore durante l&apos;analisi della definizione, viene visualizzato il messaggio di errore. Quando la definizione viene analizzata correttamente, il valore calcolato utilizzando il &amp;quot;Valore per il testquot; per ogni input viene mostrato.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi testare la definizione facendo clic qui. Se si verifica un errore durante l'analisi della definizione, viene visualizzato il messaggio di errore. Quando la definizione viene analizzata correttamente, il valore calcolato utilizzando il &amp;quot;Valore per il testquot; per ogni input viene mostrato.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2232,8 +2230,8 @@ Do you really want to import this file?</source>
         <translation>Fuori uso (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota&lt;/span&gt;: l&apos;ordine nell&apos;elenco è importante. Nella definizione, è possibile utilizzare come variabile il valore di calcoli di operazioni semplici, che appare prima nell&apos;elenco.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: l'ordine nell'elenco è importante. Nella definizione, è possibile utilizzare come variabile il valore di calcoli di operazioni semplici, che appare prima nell'elenco.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2461,7 +2459,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>C&apos;è stato un&apos;errore: %1</translation>
+        <translation>C'è stato un'errore: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2469,7 +2467,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, l&apos;indice per l&apos;etichetta viene reimpostato perché la dimensione della griglia è cambiata.</translation>
+        <translation>I, J, K, l'indice per l'etichetta viene reimpostato perché la dimensione della griglia è cambiata.</translation>
     </message>
 </context>
 <context>
@@ -2547,7 +2545,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Risultati del calcolo per l&apos;input</translation>
+        <translation>Risultati del calcolo per l'input</translation>
     </message>
     <message>
         <source>Type</source>
@@ -2586,8 +2584,8 @@ Do you really want to import this file?</source>
         <translation>Definizione di output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi definire la variabile con il linguaggio JavaScript. Consulta il testo &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; -decorazione: sottolineatura; colore:#0000ff;&quot;&gt;qui&lt;/span&gt;&lt;/a&gt; per i dettagli.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi definire la variabile con il linguaggio JavaScript. Consulta il testo &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -decorazione: sottolineatura; colore:#0000ff;"&gt;qui&lt;/span&gt;&lt;/a&gt; per i dettagli.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2698,7 +2696,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">L&apos;attributo della griglia di elevazione non è definito per il tipo di griglia %1. Funzioni di I/O della griglia, le funzioni di creazione della griglia potrebbero non funzionare correttamente per questi tipi di griglia.</translation>
+        <translation type="vanished">L'attributo della griglia di elevazione non è definito per il tipo di griglia %1. Funzioni di I/O della griglia, le funzioni di creazione della griglia potrebbero non funzionare correttamente per questi tipi di griglia.</translation>
     </message>
 </context>
 <context>
@@ -2729,7 +2727,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file CGNS nel file di progetto: %1</translation>
+        <translation>Si è verificato un errore durante l'apertura del file CGNS nel file di progetto: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2749,11 +2747,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>A background image with the same name already exists.</source>
-        <translation>Esiste già un&apos;immagine di sfondo con lo stesso nome.</translation>
+        <translation>Esiste già un'immagine di sfondo con lo stesso nome.</translation>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>L&apos;immagine di sfondo non è stata aggiunta. Per favore riprova.</translation>
+        <translation>L'immagine di sfondo non è stata aggiunta. Per favore riprova.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
@@ -2781,7 +2779,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">Questo file è per il risolutore %1 %2. Non è compatibile con il risolutore che stai utilizzando, quindi forse l&apos;importazione di questo file avrà esito negativo. Vuoi davvero importare questo file?</translation>
+        <translation type="vanished">Questo file è per il risolutore %1 %2. Non è compatibile con il risolutore che stai utilizzando, quindi forse l'importazione di questo file avrà esito negativo. Vuoi davvero importare questo file?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -2797,11 +2795,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>Si è verificato un errore durante l&apos;apertura del file CGNS nel file di progetto: Case1.cgn</translation>
+        <translation>Si è verificato un errore durante l'apertura del file CGNS nel file di progetto: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
-        <translation>Copia dell&apos;immagine %1 a %2 fallito.</translation>
+        <translation>Copia dell'immagine %1 a %2 fallito.</translation>
     </message>
 </context>
 <context>
@@ -2831,7 +2829,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Time display format</source>
-        <translation>Formato di visualizzazione dell&apos;ora</translation>
+        <translation>Formato di visualizzazione dell'ora</translation>
     </message>
     <message>
         <source>Time Zone:</source>
@@ -2841,8 +2839,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Spazio di lavoro&quot;%1&quot; ha %2 cartelle di progetto che sembrano non essere più utilizzate. Vuoi rimuoverli?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Spazio di lavoro"%1" ha %2 cartelle di progetto che sembrano non essere più utilizzate. Vuoi rimuoverli?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2919,11 +2917,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Sposta in basso l&apos;elemento</translation>
+        <translation>Sposta in basso l'elemento</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation>Sposta in alto l&apos;elemento</translation>
+        <translation>Sposta in alto l'elemento</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
@@ -3022,7 +3020,7 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Una linea di bordo si interseca con quella di un&apos;altra cella in questa griglia.</translation>
+        <translation>Una linea di bordo si interseca con quella di un'altra cella in questa griglia.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
@@ -3034,7 +3032,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>L&apos;angolo del bordo della cella della griglia scende al di sotto del valore limite %1 in più di una cella.</translation>
+        <translation>L'angolo del bordo della cella della griglia scende al di sotto del valore limite %1 in più di una cella.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
@@ -3058,7 +3056,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Celle in cui l&apos;angolo del vertice della cella è inferiore %1</translation>
+        <translation>* Celle in cui l'angolo del vertice della cella è inferiore %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
@@ -3175,7 +3173,7 @@ Do you really want to import this file?</source>
     <message>
         <source>To get background image from internet, please specify the coordiyate system of the project, from the following menu.
  File -&gt; Property</source>
-        <translation>Per ottenere l&apos;immagine di sfondo da internet, specificare il sistema di coordinamento del progetto, dal seguente menu. File -&gt; Proprietà</translation>
+        <translation>Per ottenere l'immagine di sfondo da internet, specificare il sistema di coordinamento del progetto, dal seguente menu. File -&gt; Proprietà</translation>
     </message>
     <message>
         <source>Background Image change</source>
