@@ -4,11 +4,9 @@
 #include "../post3dwindowfacesettingcontainer.h"
 #include "../post3dwindowdataitem.h"
 
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
-
 #include <string>
 
-class ColorMapSettingToolBarWidget;
+class ColorMapSettingContainer;
 class Post3dWindowZoneDataItem;
 class PostZoneDataContainer;
 class ValueRangeContainer;
@@ -51,12 +49,11 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
 
-	std::string m_target;
+	class Impl;
+	Impl* impl;
 
-	ColorMapSettingContainer m_colorMapSetting;
-	vtkActor2D* m_legendActor;
-
-	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
+	class Setting;
+	class SettingEditWidget;
 
 	class PropertyDialog;
 	class SetFacesCommand;

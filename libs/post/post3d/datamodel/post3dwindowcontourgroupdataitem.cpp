@@ -4,9 +4,12 @@
 #include "post3dwindowcontourgrouptopdataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowcontourgroupdataitem_propertydialog.h"
+#include "private/post3dwindowcontourgroupdataitem_impl.h"
+#include "private/post3dwindowcontourgroupdataitem_settingeditwidget.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/widget/opacitycontainerwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -18,27 +21,33 @@
 
 Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
-	m_target {target},
-	m_colorMapSetting {},
-	m_legendActor {vtkActor2D::New()},
-	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(mainWindow())}
+	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	renderer()->AddActor2D(m_legendActor);
-	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
-	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
-	m_colorMapSetting.setAutoValueRange(valueRange());
+	impl->m_target = target;
+
+	renderer()->AddActor2D(impl->m_legendActor);
+	impl->m_colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
+	impl->m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
+	impl->m_colorMapSetting.setAutoValueRange(valueRange());
 
 	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();
-	m_standardItem->setText(gType->solutionCaption(m_target));
+	m_standardItem->setText(gType->solutionCaption(target));
 
-	m_colorMapToolBarWidget->hide();
-	m_colorMapToolBarWidget->setSetting(&m_colorMapSetting);
-	connect(m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
-		auto com = new ColorMapSettingModifyCommand(m_colorMapToolBarWidget->modifiedSetting(), &m_colorMapSetting);
+	impl->m_colorMapToolBarWidget->hide();
+	impl->m_colorMapToolBarWidget->setSetting(&impl->m_colorMapSetting);
+	connect(impl->m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
+		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), &impl->m_colorMapSetting);
 		pushUpdateActorSettingCommand(com, this);
+	});
+
+	impl->m_opacityToolBarWidget->hide();
+	impl->m_opacityToolBarWidget->setContainer(&impl->m_setting.opacity);
+	connect(impl->m_opacityToolBarWidget, &OpacityContainerWidget::updated, [=](){
+		auto com = impl->m_opacityToolBarWidget->createModifyCommand();
+		pushUpdateActorSettingCommand(com, this, false);
 	});
 
 	informSelection(dataModel()->graphicsView());
@@ -46,8 +55,9 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 
 Post3dWindowContourGroupDataItem::~Post3dWindowContourGroupDataItem()
 {
-	renderer()->RemoveActor2D(m_legendActor);
-	m_legendActor->Delete();
+	renderer()->RemoveActor2D(impl->m_legendActor);
+
+	delete impl;
 }
 
 void Post3dWindowContourGroupDataItem::update()
@@ -57,7 +67,7 @@ void Post3dWindowContourGroupDataItem::update()
 
 const std::string& Post3dWindowContourGroupDataItem::target() const
 {
-	return m_target;
+	return impl->m_target;
 }
 
 void Post3dWindowContourGroupDataItem::showPropertyDialog()
@@ -67,7 +77,8 @@ void Post3dWindowContourGroupDataItem::showPropertyDialog()
 
 void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_colorMapSetting.load(node);
+	impl->m_setting.load(node);
+	impl->m_colorMapSetting.load(node);
 
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
@@ -85,7 +96,8 @@ void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void Post3dWindowContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_colorMapSetting.save(writer);
+	impl->m_setting.save(writer);
+	impl->m_colorMapSetting.save(writer);
 
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		auto fitem = dynamic_cast<Post3dWindowContourDataItem*>(m_childItems.at(i));
@@ -97,15 +109,19 @@ void Post3dWindowContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 
 QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 {
-	auto dialog = new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+
+	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Contour Setting (%1)").arg(standardItem()->text()));
+	dialog->resize(900, 700);
 	return dialog;
 }
 
 void Post3dWindowContourGroupDataItem::updateActorSetting()
 {
-	m_colorMapSetting.setAutoValueRange(valueRange());
-	m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+	impl->m_colorMapSetting.setAutoValueRange(valueRange());
+	impl->m_colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
 
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowContourDataItem*> (child);
@@ -117,7 +133,7 @@ void Post3dWindowContourGroupDataItem::updateActorSetting()
 const ValueRangeContainer& Post3dWindowContourGroupDataItem::valueRange() const
 {
 	auto gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
-	return gtItem->nodeValueRange(m_target);
+	return gtItem->nodeValueRange(impl->m_target);
 }
 
 Post3dWindowZoneDataItem* Post3dWindowContourGroupDataItem::zoneDataItem() const
@@ -167,39 +183,46 @@ void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFa
 
 void Post3dWindowContourGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
 }
 
 void Post3dWindowContourGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
 }
 
 void Post3dWindowContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
 }
 
 void Post3dWindowContourGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
 }
 
 void Post3dWindowContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
 }
 
 void Post3dWindowContourGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
 }
 
 bool Post3dWindowContourGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	m_colorMapToolBarWidget->setParent(toolBar);
-	m_colorMapToolBarWidget->show();
+	impl->m_colorMapToolBarWidget->setParent(toolBar);
+	impl->m_colorMapToolBarWidget->show();
 
-	toolBar->addWidget(m_colorMapToolBarWidget);
+	toolBar->addWidget(impl->m_colorMapToolBarWidget);
+	toolBar->addSeparator();
+
+	impl->m_opacityToolBarWidget->setParent(toolBar);
+	impl->m_opacityToolBarWidget->show();
+
+	toolBar->addWidget(impl->m_opacityToolBarWidget);
+
 	return true;
 }

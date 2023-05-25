@@ -21,9 +21,12 @@ public:
 
 	void update();
 
+public slots:
+	void showPropertyDialog() override;
+
 private:
 	Post3dWindowContourGroupDataItem* groupDataItem() const;
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -36,6 +39,7 @@ private:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	QDialog* propertyDialog(QWidget* p) override;
 
 	vtkActor* m_actor;
 

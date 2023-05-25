@@ -1,5 +1,6 @@
 #include "post3dwindowcontourdataitem.h"
 #include "post3dwindowcontourgroupdataitem.h"
+#include "private/post3dwindowcontourgroupdataitem_impl.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
@@ -43,12 +44,17 @@ void Post3dWindowContourDataItem::setSetting(const Post3dWindowFaceSettingContai
 	m_isCommandExecuting = true;
 	standardItem()->setCheckState(Qt::Checked);
 	m_isCommandExecuting = false;
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowContourDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
+}
+
+void Post3dWindowContourDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
 }
 
 Post3dWindowContourGroupDataItem* Post3dWindowContourDataItem::groupDataItem() const
@@ -63,7 +69,7 @@ void Post3dWindowContourDataItem::doLoadFromProjectMainFile(const QDomNode& node
 
 	m_setting.load(node);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowContourDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -77,7 +83,7 @@ void Post3dWindowContourDataItem::innerUpdateZScale(double scale)
 	m_actor->SetScale(1, 1, scale);
 }
 
-void Post3dWindowContourDataItem::updateActorSettings()
+void Post3dWindowContourDataItem::updateActorSetting()
 {
 	auto data = groupDataItem()->data();
 	if (data == nullptr) {return;}
@@ -85,9 +91,21 @@ void Post3dWindowContourDataItem::updateActorSettings()
 	auto face = m_setting.extractFace(grid);
 
 	face->GetPointData()->SetActiveScalars(groupDataItem()->target().c_str());
-	auto mapper = groupDataItem()->m_colorMapSetting.buildPointDataMapper(face);
+
+	auto impl = groupDataItem()->impl;
+
+	impl->m_setting.contourSetting.setColorMapSetting(&impl->m_colorMapSetting);
+	auto face2 = impl->m_setting.contourSetting.buildFilteredData(face);
+	face->Delete();
+
+	auto mapper = impl->m_colorMapSetting.buildPointDataMapper(face2);
+	face2->Delete();
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
+
+	m_actor->GetProperty()->SetLighting(impl->m_setting.lighting);
+	m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+	m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth);
 
 	updateVisibilityWithoutRendering();
 }
@@ -120,4 +138,9 @@ void Post3dWindowContourDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraph
 bool Post3dWindowContourDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
+QDialog* Post3dWindowContourDataItem::propertyDialog(QWidget* p)
+{
+	return groupDataItem()->propertyDialog(p);
 }

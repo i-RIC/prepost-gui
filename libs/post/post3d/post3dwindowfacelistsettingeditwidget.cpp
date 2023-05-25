@@ -16,7 +16,7 @@ Post3dWindowFaceListSettingEditWidget::Post3dWindowFaceListSettingEditWidget(QWi
 	connect(ui->faceListWidget, &QListWidget::currentRowChanged, this, &Post3dWindowFaceListSettingEditWidget::setCurrentFace);
 
 	QList<int> sizes;
-	sizes.append(50);
+	sizes.append(30);
 	sizes.append(200);
 	ui->splitter->setSizes(sizes);
 }
