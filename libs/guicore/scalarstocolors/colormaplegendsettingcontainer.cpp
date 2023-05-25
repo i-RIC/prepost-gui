@@ -8,7 +8,7 @@
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	CompositeContainer({&visible, &direction, &barAutoWidth, &barWidth, &barAlign,
 										 &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
-										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &imageSetting}),
+										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &showBorder, &imageSetting}),
 	visible {"visible", true},
 	direction {"direction", Direction::Vertical},
 	barAutoWidth {"barAutoWidth", false},
@@ -24,6 +24,7 @@ ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	labelColor {"labelColor", Qt::black},
 	backgroundColor {"backgroundColor", Qt::white},
 	backgroundOpacity {"backgroundOpacity", 20},
+	showBorder {"showBorder", true},
 	imageSetting {},
 	m_colorMapSetting {nullptr},
 	m_delegateMode {false},

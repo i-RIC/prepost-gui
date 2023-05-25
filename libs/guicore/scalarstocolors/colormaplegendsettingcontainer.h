@@ -67,6 +67,7 @@ public:
 	ColorContainer labelColor;
 	ColorContainer backgroundColor;
 	OpacityContainer backgroundOpacity;
+	BoolContainer showBorder;
 
 	ImageSettingContainer imageSetting;
 

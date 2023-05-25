@@ -30,7 +30,12 @@ bool ColorMapEnumerateLegendSettingContainer::ImageBuilder::build(QImage* image)
 	QPainter painter(image);
 
 	auto bgCol = s.backgroundColor.value();
-	QPen pen(bgCol);
+	QPen pen;
+	if (s.showBorder) {
+		pen = QPen(bgCol);
+	} else {
+		pen = QPen(Qt::transparent);
+	}
 	double opacity = s.backgroundOpacity.value() / 100.0;
 	QBrush brush(QColor(bgCol.red(), bgCol.green(), bgCol.blue(), static_cast<int>(255 * opacity)));
 	painter.setPen(pen);

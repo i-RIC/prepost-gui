@@ -39,6 +39,7 @@ public:
 	ColorContainer lengthColor;
 	ColorContainer backgroundColor;
 	OpacityContainer backgroundOpacity;
+	BoolContainer showBorder;
 
 	ImageSettingContainer imageSetting;
 

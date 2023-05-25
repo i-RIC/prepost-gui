@@ -43,6 +43,7 @@ ColorMapEnumerateLegendSettingContainer ColorMapEnumerateLegendSettingEditWidget
 	ret.labelColor = ui->labelColorWidget->color();
 	ret.backgroundColor = ui->backgroundColorWidget->color();
 	ret.backgroundOpacity = ui->backgroundOpacitySlider->opacityPercent();
+	ret.showBorder = ui->showBorderCheckBox->isChecked();
 	ret.imageSetting = ui->imageSettingWidget->setting();
 
 	ret.setDelegateMode(m_delegateMode);
@@ -84,6 +85,7 @@ void ColorMapEnumerateLegendSettingEditWidget::setSetting(const ColorMapEnumerat
 	ui->labelColorWidget->setColor(s.labelColor);
 	ui->backgroundColorWidget->setColor(s.backgroundColor);
 	ui->backgroundOpacitySlider->setOpacityPercent(s.backgroundOpacity);
+	ui->showBorderCheckBox->setChecked(s.showBorder);
 
 	ui->imageSettingWidget->setSetting(s.imageSetting);
 }

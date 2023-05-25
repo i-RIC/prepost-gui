@@ -5,7 +5,7 @@ ArrowsLegendSettingContainer::ArrowsLegendSettingContainer():
 	CompositeContainer({&visible,
 										 &title, &titleFont,
 										 &lengthFormat, &lengthFont,
-										 &titleColor, &lengthColor, &backgroundColor, &backgroundOpacity,
+										 &titleColor, &lengthColor, &backgroundColor, &backgroundOpacity, &showBorder,
 										 &imageSetting}),
 	visible {"visible", true},
 	title {"title"},
@@ -16,6 +16,7 @@ ArrowsLegendSettingContainer::ArrowsLegendSettingContainer():
 	lengthColor {"lengthColor", Qt::black},
 	backgroundColor {"backgroundColor", Qt::white},
 	backgroundOpacity {"backgroundOpacity", 20},
+	showBorder {"showBorder", true},
 	imageSetting {},
 	m_arrowsSetting {nullptr},
 	m_imageBuilder {new ImageBuilder {this}}

@@ -6,7 +6,7 @@
 ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer() :
 	CompositeContainer({&visible, &direction, &barAutoWidth, &barWidth, &barAlign,
 										 &title, &titleFont, &labelFont,
-										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &imageSetting}),
+										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &showBorder, &imageSetting}),
 	visible {"visible", true},
 	direction {"direction", Direction::Vertical},
 	barAutoWidth {"barAutoWidth", false},
@@ -19,6 +19,7 @@ ColorMapEnumerateLegendSettingContainer::ColorMapEnumerateLegendSettingContainer
 	labelColor {"labelColor", Qt::black},
 	backgroundColor {"backgroundColor", Qt::white},
 	backgroundOpacity {"backgroundOpacity", 20},
+	showBorder {"showBorder", true},
 	imageSetting {},
 	m_colorMapSetting {nullptr},
 	m_delegateMode {false},

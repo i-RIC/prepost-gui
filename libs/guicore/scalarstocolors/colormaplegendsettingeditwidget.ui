@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>449</width>
-    <height>599</height>
+    <height>602</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,10 +37,10 @@
         <x>0</x>
         <y>0</y>
         <width>447</width>
-        <height>597</height>
+        <height>600</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,0,0,0,0,0,1">
+      <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0,0,0,0,0,0,0,1">
        <item>
         <widget class="QCheckBox" name="visibleCheckBox">
          <property name="text">
@@ -256,36 +256,67 @@
            </layout>
           </item>
           <item row="2" column="0">
-           <widget class="QLabel" name="backgroundColorLabel">
-            <property name="text">
-             <string>Background:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
-             <widget class="ColorEditWidget" name="backgroundColorWidget">
+             <widget class="QLabel" name="backgroundColorLabel">
               <property name="text">
-               <string/>
+               <string>Background:</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="TransparencyWidget" name="backgroundOpacitySlider" native="true"/>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_6">
+             <spacer name="verticalSpacer_2">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Minimum</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
-                <height>20</height>
+                <width>20</width>
+                <height>18</height>
                </size>
               </property>
              </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="1">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="ColorEditWidget" name="backgroundColorWidget">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="TransparencyWidget" name="backgroundOpacitySlider" native="true"/>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="showBorderCheckBox">
+              <property name="text">
+               <string>Draw border</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
