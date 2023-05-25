@@ -10169,11 +10169,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
         <translation>. 以printf格式指定数字格式。例如:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10646,6 +10646,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>可见的</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10949,6 +10953,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>正确的</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -11244,6 +11252,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>正确的</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11609,6 +11621,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">颜色</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形式</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>绘制轮廓线</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>行宽：</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>像素</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>使用颜色图的值</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>指定分区号</translation>
     </message>
 </context>
 <context>
@@ -13499,23 +13538,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">算我一个：</translation>
+        <translation>算我一个：</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">我最大：</translation>
+        <translation>我最大：</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J敏：</translation>
+        <translation>J敏：</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J 马克斯：</translation>
+        <translation>J 马克斯：</translation>
     </message>
 </context>
 <context>
@@ -13653,27 +13692,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>分钟</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1个</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>最大限度</translation>
     </message>
 </context>
 <context>
@@ -16462,7 +16501,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>选择值</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_zh_CN.ts -->
@@ -16476,7 +16515,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>鸟瞰处理（2D）:%1</translation>
     </message>
     <message>
@@ -16538,34 +16577,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">标量设置 (%1)</translation>
+        <translation>标量设置 (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按节点标量值</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按像元标量值</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">自定义颜色</translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">范围</translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
@@ -16584,11 +16623,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>标量（细胞）</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">选择计算结果</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>选择计算结果用作高程</translation>
     </message>
 </context>
 <context>
@@ -16669,7 +16712,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>网格形状设置</translation>
     </message>
 </context>
 <context>
@@ -16687,11 +16730,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">高程的标量值</translation>
+        <translation>高程的标量值</translation>
     </message>
 </context>
 <context>
@@ -16744,27 +16787,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按节点标量值</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按像元标量值</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">自定义颜色</translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">范围</translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
@@ -16783,7 +16826,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">选择计算结果</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>选择计算结果用作高程</translation>
     </message>
 </context>
 <context>
@@ -17230,15 +17277,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
@@ -17260,12 +17307,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">错误</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">如果导出形状文件, 切换 &quot;显示设置&quot; 到 &quot;轮廓图形&quot;, 不是 &quot;颜色条纹&quot; 或者 &quot;等值线&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">如果导出形状文件, 切换 "显示设置" 到 "轮廓图形", 不是 "颜色条纹" 或者 "等值线".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -17342,7 +17389,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -17353,7 +17400,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -17594,7 +17641,7 @@ Option -&gt; Preferences</source>
         <translation>标量设置 (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
         <translation>要为街景导出 KML，Colormode 需要为“离散模式”</translation>
     </message>
 </context>
@@ -17625,15 +17672,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
@@ -17655,20 +17702,20 @@ Option -&gt; Preferences</source>
         <translation>错误</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">如果导出形状文件, 切换 &quot;显示设置&quot; 到 &quot;轮廓图形&quot;, 不是 &quot;颜色条纹&quot; 或者 &quot;等值线&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">如果导出形状文件, 切换 "显示设置" 到 "轮廓图形", 不是 "颜色条纹" 或者 "等值线".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>标量</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>要导出形状文件，请将颜色设置切换为“离散模式”。</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>选择计算结果</translation>
     </message>
 </context>
 <context>
@@ -17751,65 +17798,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">起始位置</translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>地区</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>指定开始粒子的区域</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>通过网格索引范围 (I, J) 指定开始粒子的区域。</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">生成空间间隔</translation>
+        <translation>生成空间间隔</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>磅值</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -17820,77 +17867,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">起始位置</translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>地区</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
+        <translation>指定两点。粒子从这两点之间等距生成的点开始。</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">鼠标拖动</translation>
+        <translation>鼠标拖动</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">坐标值</translation>
+        <translation>坐标值</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">点1:</translation>
+        <translation>第 1 点：</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">点2:</translation>
+        <translation>第 2 点：</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">点个数:</translation>
+        <translation>点数：</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>磅值</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -17908,69 +17955,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>简化显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">物理值:</translation>
+        <translation>物理价值：</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">起始位置</translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>地区</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">指明开始流线的区域</translation>
+        <translation>指定开始流线的区域</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">通过网格索引范围（I，J）指定开始精简线的区域。</translation>
+        <translation>通过网格索引范围 (I, J) 指定开始流线的区域。</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">生成空间间隔</translation>
+        <translation>生成空间间隔</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>宽度：</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -17981,81 +18028,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>简化显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">物理值:</translation>
+        <translation>物理价值：</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">起始位置</translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">&amp;添加</translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">&amp;移除</translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>地区</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">指定两点。 粒子从这两个点之间均等分离的点开始。</translation>
+        <translation>指定两点。粒子从这两点之间等距生成的点开始。</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">鼠标拖动</translation>
+        <translation>鼠标拖动</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">坐标值</translation>
+        <translation>坐标值</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">点1:</translation>
+        <translation>第 1 点：</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">点2:</translation>
+        <translation>第 2 点：</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">点个数:</translation>
+        <translation>点数：</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>宽度：</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -18088,21 +18135,21 @@ Option -&gt; Preferences</source>
         <translation type="vanished">生成时间间隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;如果为1, 每个时间步都会生成粒子&lt;/p&gt;
 &lt;p&gt;如果为2, 每半时间步都会生成1个粒子&lt;/p&gt;
 &lt;p&gt;如果为1/2, 每2个时间步都会生成1个粒子&lt;/p&gt;
@@ -18173,20 +18220,20 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">生成空间间隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;如果为1, 粒子在网格节点处生成.&lt;/p&gt;
 &lt;p&gt;如果为2, 粒子在网格中间点和节点生成.&lt;/p&gt;
 &lt;p&gt;如果为1/2, 粒子在每两个网格节点生成.&lt;/p&gt;
@@ -18201,16 +18248,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">大小:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指明显示像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指明显示像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18252,21 +18299,21 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">指定生成粒子的时间间隔。</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;如果为1, 每1个时间步生成1个粒子&lt;/p&gt;
 &lt;p&gt;如果为2, 每半个时间步生成1个粒子,&lt;/p&gt;
 &lt;p&gt;如果为1/2, 每2个时间步生成1个粒子.&lt;/p&gt;
@@ -18341,16 +18388,16 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">大小:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指明显示像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指明显示像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18589,20 +18636,20 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">生成空间间隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为1, 流线在网格节点处开始.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为2, 流线在网格中间点和节点处开始&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;如果为1/2, 流线在每两个网格节点处开始.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为1, 流线在网格节点处开始.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为2, 流线在网格中间点和节点处开始&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;如果为1/2, 流线在每两个网格节点处开始.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -18633,16 +18680,16 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">宽度</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;请指明显示的像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;请指明显示的像素数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18708,16 +18755,16 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">宽度:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;指明显示像素个数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;指明显示像素个数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -19004,6 +19051,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">最多可以定义四个轮廓。</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -19093,7 +19144,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>轮廓设置</translation>
+        <translation type="vanished">轮廓设置</translation>
     </message>
     <message>
         <source>Color</source>
@@ -19101,19 +19152,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>进口 (&amp;I)...</translation>
+        <translation type="vanished">进口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
+        <translation type="vanished">出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>面孔</translation>
+        <translation type="vanished">面孔</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>色图</translation>
+        <translation type="vanished">色图</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">色图</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19160,6 +19234,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">最多可定义四个轮廓</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19644,6 +19722,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">最多可以定义四个箭头。</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -19664,61 +19746,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>粒子显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">脸</translation>
+        <translation>脸</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>指定开始粒子的面</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>按网格索引范围 (I、J、K) 指定开始粒子的面。</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>生成空间间隔</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色：</translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>磅值</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -19736,65 +19818,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>简化显示设置</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>物理价值：</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished"></translation>
+        <translation>起始位置</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>消除 (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">脸</translation>
+        <translation>脸</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>指定开始流线的面</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>按网格索引范围 (I、J、K) 指定开始流线的面。</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished"></translation>
+        <translation>生成空间间隔</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色：</translation>
+        <translation>颜色：</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">宽度：</translation>
+        <translation>宽度：</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>像素</translation>
     </message>
 </context>
 <context>
@@ -20255,64 +20337,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>物理价值：</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">时间</translation>
+        <translation>时间</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>定期生成</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>生成时间间隔</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>分钟</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1个</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>最大限度</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>在任意时间生成</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">编辑...</translation>
+        <translation>编辑...</translation>
     </message>
 </context>
 <context>
@@ -20775,13 +20857,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">对象浏览器</translation>
+        <translation>对象浏览器</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>网格鸟瞰窗口</translation>
     </message>
 </context>
@@ -20823,49 +20905,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>标量</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>标量设置 (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按节点标量值</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按像元标量值</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>标量（细胞）</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">选择网格属性</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>选择要用作高程的网格属性</translation>
     </message>
 </context>
 <context>
@@ -20992,71 +21078,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">网格形状</translation>
+        <translation>网格形状</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>网格形状设置</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>高程的标量值</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>标量</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>标量设置 (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">颜色</translation>
+        <translation>颜色</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按节点标量值</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>按像元标量值</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义颜色</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>范围</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>标量（节点）</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">选择网格属性</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>选择要用作高程的网格属性</translation>
     </message>
 </context>
 <context>
@@ -21466,8 +21556,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1上次编辑后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>上次编辑边界条件设置&quot;%1&quot;后未制图。 您是否要立即执行制图？</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>上次编辑边界条件设置"%1"后未制图。 您是否要立即执行制图？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -21721,13 +21811,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>注意：启用变体后，将创建名为“默认”的变体，并且所有地理数据都将移至该变体。您可以从“对象浏览器”中添加、重命名、删除变体。您可以在变体之间移动、复制地理数据。从您使用“传递给求解器的变化”选择的变化创建的网格属性数据被传递给求解器。您可以准备多个变体，切换将哪个传递给求解器，并确保差异的效果。</translation>
     </message>
 </context>
@@ -21881,7 +21971,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>网格单元格属性显示设置（ %1 )</translation>
     </message>
 </context>
 <context>
@@ -21959,7 +22049,7 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>&amp;执行...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
         <translation>以下属性未映射，因为网格生成器为它们输出值。如果要强制为其映射地理数据，请通过菜单“网格”-&gt;“属性映射”-&gt;“执行”手动映射。</translation>
     </message>
@@ -21968,12 +22058,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>警告</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">手工编辑网格属性&quot;%1&quot;。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">手工编辑网格属性"%1"。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">边界条件&quot;%1&quot;是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">边界条件"%1"是手工编辑的。 当您执行映射时，将撤消您所做的所有修改。 您真的要执行映射吗</translation>
     </message>
     <message>
         <source>Information</source>
@@ -21988,11 +22078,11 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>地理数据映射完成。</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>网格属性“ %1 ”是手工编辑的。执行映射时，所做的所有修改都将被丢弃。您真的要执行映射吗？</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>边界条件“ %1 ”是手工编辑的。执行映射时，所做的所有修改都将被丢弃。您真的要执行映射吗？</translation>
     </message>
 </context>
@@ -22011,20 +22101,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>自动</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;创建网格时，询问是否每次都执行属性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;创建网格时，询问是否每次都执行属性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手动</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>仅当您手动选择执行菜单时才执行属性&quot;映射&quot;</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>仅当您手动选择执行菜单时才执行属性"映射"</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -22169,7 +22259,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>网格节点属性显示设置（ %1 )</translation>
     </message>
 </context>
 <context>
@@ -22753,8 +22843,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>颜色映射设置</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;使用Colormap选项卡编辑颜色设置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;使用Colormap选项卡编辑颜色设置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -22871,7 +22961,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>&amp;设置标量栏</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>&amp;打开鸟瞰窗口</translation>
     </message>
     <message>

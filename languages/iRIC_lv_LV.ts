@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Norādiet ciparu formātu printf formātā. Piemēram: &quot; %5.2f &quot;par 3.141592 -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1,23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Norādiet ciparu formātu printf formātā. Piemēram: " %5.2f "par 3.141592 -&gt; 3.14" %4.2e "12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>Redzams</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>Pa labi</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>Pa labi</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Krāsa</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Veidlapa</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>Zīmējiet kontūrlīnijas</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Līnijas platums:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>Izmantojiet krāsu kartes vērtības</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>Norādiet nodaļas numuru</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">ES piedalos:</translation>
+        <translation>ES piedalos:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">Es Max:</translation>
+        <translation>Es Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J&#xa0;min:</translation>
+        <translation>J&#xa0;min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J Max:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>maks</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet Vērtība</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_lv_LV.ts -->
@@ -15732,7 +15771,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Putnu lidojuma pēcapstrāde (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">Skalāra iestatījums (%1)</translation>
+        <translation>Skalāra iestatījums (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc mezgla skalārās vērtības</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc šūnas skalārās vērtības</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Pielāgota krāsa</translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārs (šūna)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atlasiet Aprēķina rezultāts</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Atlasiet aprēķina rezultātu, ko izmantot kā pacēlumu</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa formas iestatījums</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">Paaugstinājuma skalārā vērtība</translation>
+        <translation>Paaugstinājuma skalārā vērtība</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc mezgla skalārās vērtības</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc šūnas skalārās vērtības</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Pielāgota krāsa</translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atlasiet Aprēķina rezultāts</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Atlasiet aprēķina rezultātu, ko izmantot kā pacēlumu</translation>
     </message>
 </context>
 <context>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Kļūda</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet &quot;Displeja iestatījums&quot; uz &quot;Kontūras attēls&quot;, nevis &quot;Krāsu maliņa&quot; vai &quot;Izolīnas&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>
@@ -16842,7 +16889,7 @@ Option -&gt; Preferences</source>
         <translation>Skalāra iestatījums (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
         <translation>Lai eksportētu KML ielas attēlam, krāsu režīmam ir jābūt “Diskrētajam režīmam”</translation>
     </message>
 </context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>Kļūda</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet &quot;Displeja iestatījums&quot; uz &quot;Kontūras attēls&quot;, nevis &quot;Krāsu maliņa&quot; vai &quot;Izolīnas&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalārs</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>Lai eksportētu formas failu, pārslēdziet krāsu iestatījumu uz &quot;Diskrēts režīms&quot;.</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Lai eksportētu formas failu, pārslēdziet krāsu iestatījumu uz "Diskrēts režīms".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet Aprēķina rezultāts</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Daļiņu displeja iestatījums</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Novads</translation>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet apgabalu, lai sāktu daļiņas</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet apgabalu, kurā sākt daļiņas, pēc režģa indeksu diapazona (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Ģenerācijas telpas intervāls</translation>
+        <translation>Paaudžu telpas intervāls</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkta lielums</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Daļiņu displeja iestatījums</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Novads</translation>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Norādiet divus punktus. Daļiņas sākas no punktiem, kas izveidoti vienādi atdalīti starp šiem diviem punktiem.</translation>
+        <translation>Norādiet divus punktus. Daļiņas sākas no punktiem, kas ir vienādi atdalīti starp šiem diviem punktiem.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Peles vilkšana</translation>
+        <translation>Peles vilkšana</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinēt vērtības</translation>
+        <translation>Koordinātu vērtības</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">1. punkts:</translation>
+        <translation>1. punkts:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">2. punkts:</translation>
+        <translation>2. punkts:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Punktu skaits:</translation>
+        <translation>Punktu skaits:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkta lielums</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Racionalizēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziskā vērtība:</translation>
+        <translation>Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Novads</translation>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Diapazons</translation>
+        <translation>Diapazons</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">Norādiet apgabalu, lai sāktu pilnveidošanu</translation>
+        <translation>Norādiet apgabalu, lai sāktu racionalizāciju</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">Pēc režģa indeksu diapazona (I, J) norādiet apgabalu, lai sāktu pilnveidošanu.</translation>
+        <translation>Norādiet apgabalu, lai sāktu racionalizāciju, pēc režģa indeksu diapazona (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Ģenerācijas telpas intervāls</translation>
+        <translation>Paaudžu telpas intervāls</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Platums:</translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Racionalizēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziskā vērtība:</translation>
+        <translation>Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Novads</translation>
+        <translation>Novads</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Norādiet divus punktus. Daļiņas sākas no punktiem, kas izveidoti vienādi atdalīti starp šiem diviem punktiem.</translation>
+        <translation>Norādiet divus punktus. Daļiņas sākas no punktiem, kas ir vienādi atdalīti starp šiem diviem punktiem.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Peles vilkšana</translation>
+        <translation>Peles vilkšana</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinēt vērtības</translation>
+        <translation>Koordinātu vērtības</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">1. punkts:</translation>
+        <translation>1. punkts:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">2. punkts:</translation>
+        <translation>2. punkts:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Punktu skaits:</translation>
+        <translation>Punktu skaits:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Platums:</translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Ģenerācijas telpas intervāls</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Ja norādāt 1, daļiņas tiek ģenerētas režģa mezglos. &lt;/p&gt; &lt;p&gt; Ja norādāt 2, daļiņas tiek ģenerētas režģa mezglos un režģa mezglu viduspunktos. &lt;/p&gt; &lt;p&gt; Ja jūs norādot 1/2, daļiņas tiek ģenerētas visiem pārējiem režģa mezgliem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Ja norādāt 1, daļiņas tiek ģenerētas režģa mezglos. &lt;/p&gt; &lt;p&gt; Ja norādāt 2, daļiņas tiek ģenerētas režģa mezglos un režģa mezglu viduspunktos. &lt;/p&gt; &lt;p&gt; Ja jūs norādot 1/2, daļiņas tiek ģenerētas visiem pārējiem režģa mezgliem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Izmērs:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Izmērs:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ģenerācijas telpas intervāls</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ja norādāt 1, racionalizācija sākas no režģa mezgliem. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Ja norādāt 2, racionalizācija sākas ar režģa mezgliem un režģa mezglu viduspunktiem. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ja norādāt 1/2, pilnveidošana sākas no visiem citiem režģa mezgliem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ja norādāt 1, racionalizācija sākas no režģa mezgliem. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Ja norādāt 2, racionalizācija sākas ar režģa mezgliem un režģa mezglu viduspunktiem. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ja norādāt 1/2, pilnveidošana sākas no visiem citiem režģa mezgliem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Platums:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Platums:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Norādiet parādāmo pikseļu skaitu. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontūras iestatīšana</translation>
+        <translation type="vanished">Kontūras iestatīšana</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importēt (&amp;I)...</translation>
+        <translation type="vanished">Importēt (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksportēt (&amp;E)...</translation>
+        <translation type="vanished">Eksportēt (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Sejas</translation>
+        <translation type="vanished">Sejas</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Krāsu karte</translation>
+        <translation type="vanished">Krāsu karte</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Veidlapa</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">Sejas</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Krāsu karte</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Var definēt ne vairāk kā četras kontūras.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">Var definēt ne vairāk kā četras bultiņas.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Daļiņu displeja iestatījums</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Seja</translation>
+        <translation>Seja</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet seju, lai sāktu daļiņas</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet seju, lai sāktu daļiņas, pēc režģa indeksu diapazona (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Ģenerācijas telpas intervāls</translation>
+        <translation>Paaudžu telpas intervāls</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkta lielums</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Racionalizēt displeja iestatījumu</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziskā vērtība:</translation>
+        <translation>Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Sākuma pozīcija</translation>
+        <translation>Sākuma pozīcija</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Pievienot (&amp;A)</translation>
+        <translation>Pievienot (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Noņemt (&amp;R)</translation>
+        <translation>Noņemt (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Seja</translation>
+        <translation>Seja</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet seju, lai sāktu racionalizāciju</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Norādiet seju, lai sāktu racionalizāciju, pēc režģa indeksu diapazona (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Ģenerācijas telpas intervāls</translation>
+        <translation>Paaudžu telpas intervāls</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Krāsa:</translation>
+        <translation>Krāsa:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Platums:</translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiziskā vērtība:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">Laiks</translation>
+        <translation>Laiks</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Periodiski ģenerējiet</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Paaudzes laika intervāls</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>maks</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Ģenerēt patvaļīgā laikā</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">Rediģēt...</translation>
+        <translation>Rediģēt...</translation>
     </message>
 </context>
 <context>
@@ -19784,13 +19866,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">Objektu pārlūks</translation>
+        <translation>Objektu pārlūks</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Režģis-putna lidojuma logs</translation>
     </message>
 </context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārs</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalāra iestatījums (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc mezgla skalārās vērtības</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc šūnas skalārās vērtības</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārs (šūna)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atlasiet Režģa atribūts</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Atlasiet režģa atribūtu, ko izmantot kā pacēlumu</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">Režģa forma</translation>
+        <translation>Režģa forma</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa formas iestatījums</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Paaugstinājuma skalārā vērtība</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārs</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalāra iestatījums (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Krāsa</translation>
+        <translation>Krāsa</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc mezgla skalārās vērtības</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc šūnas skalārās vērtības</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Pielāgota krāsa</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Diapazons</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalārs (mezgls)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Atlasiet Režģa atribūts</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Atlasiet režģa atribūtu, ko izmantot kā pacēlumu</translation>
     </message>
 </context>
 <context>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 netiek kartēti pēc pēdējās rediģēšanas reizes. Vai vēlaties veikt kartēšanu tagad?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Robežnosacījumu iestatīšana &quot;%1&quot;nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Robežnosacījumu iestatīšana "%1"nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no &quot;Objektu pārlūka&quot;. Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no "Objektu pārlūka". Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa šūnas atribūtu attēlojuma iestatījums (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Izpildīt (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni &quot;Režģis&quot; -&gt; &quot;Atribūtu kartēšana&quot; -&gt; &quot;Izpildīt&quot;.</translation>
+        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni "Režģis" -&gt; "Atribūtu kartēšana" -&gt; "Izpildīt".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Ģeogrāfisko datu kartēšana ir pabeigta</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Režģa atribūts &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Režģa atribūts "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Robežas nosacījums &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Robežas nosacījums "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automātiski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rokasgrāmata</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni &quot;Izpildīt&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni "Izpildīt".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģa mezgla atribūtu displeja iestatījums (%1)</translation>
     </message>
 </context>
 <context>
@@ -21708,8 +21798,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Krāsu kartes iestatījums</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21822,7 +21912,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Iestatiet Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Atveriet putna lidojuma logu (&amp;B)</translation>
     </message>
     <message>

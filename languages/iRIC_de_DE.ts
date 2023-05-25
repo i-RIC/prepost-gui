@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: &quot; %5.2f&quot; für 3.141592 --&gt; 3.14&quot; %4.2e&quot; für 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Geben Sie das Zahlenformat im printf-Format an. Zum Beispiel: " %5.2f" für 3.141592 --&gt; 3.14" %4.2e" für 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>Sichtbar</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>Rechts</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>Rechts</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Farbe</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>Konturlinien zeichnen</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Linienbreite:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>Verwenden Sie Werte der Farbkarte</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>Geben Sie die Abteilungsnummer an</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">Ich bin dabei:</translation>
+        <translation>Ich bin dabei:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">Ich Max:</translation>
+        <translation>Ich Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J Min:</translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">Jmax:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindest</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Wähle Wert</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_de_DE.ts -->
@@ -15732,7 +15771,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Nachbearbeitung aus der Vogelperspektive (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">Skalare Einstellung (%1)</translation>
+        <translation>Skalare Einstellung (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Knotenskalarwert</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Zellenskalarwert</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Freiwählbare Farbe</translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (Zelle)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Wählen Sie Berechnungsergebnis</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Wählen Sie das Berechnungsergebnis aus, das als Höhe verwendet werden soll</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Gitterform</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">Skalarwert für Höhe</translation>
+        <translation>Skalarwert für Höhe</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Knotenskalarwert</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Zellenskalarwert</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Freiwählbare Farbe</translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Wählen Sie Berechnungsergebnis</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Wählen Sie das Berechnungsergebnis aus, das als Höhe verwendet werden soll</translation>
     </message>
 </context>
 <context>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Fehler</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>
@@ -16842,8 +16889,8 @@ Option -&gt; Preferences</source>
         <translation>Skalare Einstellung (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>Um KML für Street View zu exportieren, muss der Farbmodus &quot;Discrete Mode&quot; sein.</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Um KML für Street View zu exportieren, muss der Farbmodus "Discrete Mode" sein.</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Skalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
         <translation>Um die Shape-Datei zu exportieren, schalten Sie die Farbeinstellung auf „Discrete Mode“ um.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie Berechnungsergebnis</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Partikelanzeige</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Region</translation>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den Bereich an, in dem die Partikel beginnen sollen</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den Bereich an, in dem die Partikel beginnen sollen, anhand des Rasterindexbereichs (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Generationsraumintervall</translation>
+        <translation>Generationsraumintervall</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktgröße</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Partikelanzeige</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Region</translation>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Geben Sie zwei Punkte an. Partikel beginnen von Punkten, die zwischen diesen beiden Punkten gleichmäßig voneinander getrennt sind.</translation>
+        <translation>Geben Sie zwei Punkte an. Partikel beginnen an Punkten, die gleichmäßig zwischen diesen beiden Punkten liegen.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Maus ziehen</translation>
+        <translation>Maus ziehen</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinatenwerte</translation>
+        <translation>Koordinatenwerte</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Punkt 1:</translation>
+        <translation>Punkt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Punkt 2:</translation>
+        <translation>Punkt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Anzahl der Punkte:</translation>
+        <translation>Anzahl der Punkte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktgröße</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimierte Anzeigeeinstellungen</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Physischer Wert:</translation>
+        <translation>Physischer Wert:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Region</translation>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Bereich</translation>
+        <translation>Bereich</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">Geben Sie den Bereich an, um Stromlinien zu starten</translation>
+        <translation>Geben Sie den Bereich an, in dem Stromlinien beginnen sollen</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">Geben Sie den Bereich an, in dem Stromlinien beginnen sollen, nach Rasterindexbereich (I, J).</translation>
+        <translation>Geben Sie den Bereich an, in dem Stromlinien beginnen sollen, anhand des Rasterindexbereichs (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Generationsraumintervall</translation>
+        <translation>Generationsraumintervall</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Breite:</translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimierte Anzeigeeinstellungen</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Physischer Wert:</translation>
+        <translation>Physischer Wert:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Region</translation>
+        <translation>Region</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Geben Sie zwei Punkte an. Partikel beginnen von Punkten, die zwischen diesen beiden Punkten gleichmäßig voneinander getrennt sind.</translation>
+        <translation>Geben Sie zwei Punkte an. Partikel beginnen an Punkten, die gleichmäßig zwischen diesen beiden Punkten liegen.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Maus ziehen</translation>
+        <translation>Maus ziehen</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinatenwerte</translation>
+        <translation>Koordinatenwerte</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Punkt 1:</translation>
+        <translation>Punkt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Punkt 2:</translation>
+        <translation>Punkt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Anzahl der Punkte:</translation>
+        <translation>Anzahl der Punkte:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Breite:</translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {Rand oben: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Wenn Sie 1 angeben, werden Partikel an Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie 2 angeben, werden Partikel an Gitterknoten und Mittelpunkten von Gitterknoten erzeugt.&lt;/p&gt; &lt;p&gt;Wenn Sie geben Sie 1/2 an, Partikel werden für alle anderen Gitterknoten generiert.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Größe:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Größe:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generationsraumintervall</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1 angeben, beginnen Stromlinien an Rasterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Wenn Sie 2 angeben, beginnen Stromlinien an Gitterknoten und Mittelpunkten von Gitterknoten.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Wenn Sie 1/2 angeben, beginnen Stromlinien an jedem anderen Rasterknoten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Breite:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Breite:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Anzahl der Pixel auf dem Display angeben.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es können maximal vier Konturen definiert werden.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontureinstellung</translation>
+        <translation type="vanished">Kontureinstellung</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importieren (&amp;I)...</translation>
+        <translation type="vanished">Importieren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Gesichter</translation>
+        <translation type="vanished">Gesichter</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Farbkarte</translation>
+        <translation type="vanished">Farbkarte</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Form</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">Gesichter</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Farbkarte</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es können maximal vier Konturen definiert werden.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">Es können maximal vier Pfeile definiert werden.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Partikelanzeige</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Gesicht</translation>
+        <translation>Gesicht</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die Fläche an, auf der die Partikel beginnen sollen</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die Fläche an, auf der die Partikel beginnen sollen, anhand des Rasterindexbereichs (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Generationsraumintervall</translation>
+        <translation>Generationsraumintervall</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktgröße</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimierte Anzeigeeinstellungen</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Physischer Wert:</translation>
+        <translation>Physischer Wert:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Startposition</translation>
+        <translation>Startposition</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Hinzufügen (&amp;A)</translation>
+        <translation>Hinzufügen (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Entfernen (&amp;R)</translation>
+        <translation>Entfernen (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Gesicht</translation>
+        <translation>Gesicht</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die Fläche an, mit der Stromlinien beginnen sollen</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie die Fläche an, auf der Stromlinien beginnen sollen, anhand des Rasterindexbereichs (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Generationsraumintervall</translation>
+        <translation>Generationsraumintervall</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Farbe:</translation>
+        <translation>Farbe:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Breite:</translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Physischer Wert:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">Zeit</translation>
+        <translation>Zeit</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Regelmäßig generieren</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeitintervall der Generierung</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>Mindest</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu beliebiger Zeit generieren</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">Bearbeiten...</translation>
+        <translation>Bearbeiten...</translation>
     </message>
 </context>
 <context>
@@ -19784,13 +19866,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">Objektbrowser</translation>
+        <translation>Objektbrowser</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Gitter aus der Vogelperspektive</translation>
     </message>
 </context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalare Einstellung (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Knotenskalarwert</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Zellenskalarwert</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (Zelle)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Wählen Sie Rasterattribut aus</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Wählen Sie das Rasterattribut aus, das als Höhe verwendet werden soll</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">Gitterform</translation>
+        <translation>Gitterform</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Gitterform</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalarwert für Höhe</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalare Einstellung (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Knotenskalarwert</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Zellenskalarwert</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Bereich</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalar (Knoten)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Wählen Sie Rasterattribut aus</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Wählen Sie das Rasterattribut aus, das als Höhe verwendet werden soll</translation>
     </message>
 </context>
 <context>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 werden nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie das Mapping jetzt ausführen?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Einstellung der Randbedingung &quot;%1&quot; wird nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie die Zuordnung jetzt ausführen?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Einstellung der Randbedingung "%1" wird nach der letzten Bearbeitung nicht zugeordnet. Möchten Sie die Zuordnung jetzt ausführen?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Hinweis: Wenn die Variante aktiviert ist, wird die Variante mit dem Namen „Standard“ erstellt und alle geografischen Daten dorthin verschoben. Sie können Variationen aus dem &quot;Objektbrowser&quot; hinzufügen, umbenennen und entfernen. Sie können geografische Daten zwischen Variationen verschieben und kopieren. Die Gitterattributdaten, die aus der Variation erstellt wurden, die Sie mit &quot;Variation zur Übergabe an Solver&quot; auswählen, werden an Solver übergeben. Sie können mehrere Variationen vorbereiten, wechseln, welche an den Solver übergeben werden, und den Effekt der Differenz sicherstellen.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Hinweis: Wenn die Variante aktiviert ist, wird die Variante mit dem Namen „Standard“ erstellt und alle geografischen Daten dorthin verschoben. Sie können Variationen aus dem "Objektbrowser" hinzufügen, umbenennen und entfernen. Sie können geografische Daten zwischen Variationen verschieben und kopieren. Die Gitterattributdaten, die aus der Variation erstellt wurden, die Sie mit "Variation zur Übergabe an Solver" auswählen, werden an Solver übergeben. Sie können mehrere Variationen vorbereiten, wechseln, welche an den Solver übergeben werden, und den Effekt der Differenz sicherstellen.</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzeigeeinstellung für Rasterzellenattribute (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Ausführen (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Die folgenden Attribute wurden nicht zugeordnet, weil sie die Ausgabewerte des Gittergenerators haben. Wenn Sie für diese geografische Daten zwangsweise kartieren möchten, kartieren Sie bitte manuell mit dem Menü &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Die folgenden Attribute wurden nicht zugeordnet, weil sie die Ausgabewerte des Gittergenerators haben. Wenn Sie für diese geografische Daten zwangsweise kartieren möchten, kartieren Sie bitte manuell mit dem Menü "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Kartierung der geografischen Daten abgeschlossen</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Das Rasterattribut &quot;%1&quot; wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Das Rasterattribut "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Die Randbedingung &quot;%1&quot; wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Die Randbedingung "%1" wird von Hand bearbeitet. Wenn Sie das Mapping ausführen, werden alle vorgenommenen Änderungen verworfen. Möchten Sie das Mapping wirklich ausführen?</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Beim Erstellen des Rasters werden Sie gefragt, ob um die Attributzuordnung jedes Mal auszuführen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Beim Erstellen des Rasters werden Sie gefragt, ob um die Attributzuordnung jedes Mal auszuführen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handbuch</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Die Attributzuordnung wird nur ausgeführt, wenn Sie das Menü &quot;Ausführen&quot; manuell auswählen.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Die Attributzuordnung wird nur ausgeführt, wenn Sie das Menü "Ausführen" manuell auswählen.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzeigeeinstellung für Rasterknotenattribute (%1)</translation>
     </message>
 </context>
 <context>
@@ -21708,8 +21798,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Colormap-Einstellung</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Verwenden Sie die Registerkarte &quot;Colormap&quot;, um die Farbeinstellung zu bearbeiten&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Verwenden Sie die Registerkarte "Colormap", um die Farbeinstellung zu bearbeiten&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21822,7 +21912,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skalarleiste einrichten (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Vogelperspektive-Fenster öffnen (&amp;B)</translation>
     </message>
     <message>

@@ -9233,7 +9233,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation type="vanished">Dossier %1 no s&apos;ha pogut obrir.</translation>
+        <translation type="vanished">Dossier %1 no s'ha pogut obrir.</translation>
     </message>
     <message>
         <source>Export Colormap Setting</source>
@@ -9252,7 +9252,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Setting...</source>
-        <translation type="vanished">S&apos;està configurant...</translation>
+        <translation type="vanished">S'està configurant...</translation>
     </message>
 </context>
 <context>
@@ -9489,7 +9489,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>PointSetCommand</name>
     <message>
         <source>Set Point</source>
-        <translation>Punt d&apos;ajust</translation>
+        <translation>Punt d'ajust</translation>
     </message>
 </context>
 <context>
@@ -9631,11 +9631,11 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d&apos;etiquetes</translation>
+        <translation>Visualització d'etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation>Nombre d&apos;etiquetes:</translation>
+        <translation>Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Especifiqueu el format numèric en format printf. Per exemple: &quot; %5.2f &quot;per a 3.141592 -&gt; 3,14&quot; %4.2e &quot;per a 12300 -&gt; 1,23e + 004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Especifiqueu el format numèric en format printf. Per exemple: " %5.2f "per a 3.141592 -&gt; 3,14" %4.2e "per a 12300 -&gt; 1,23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -9673,7 +9673,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation>Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -9681,7 +9681,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
+        <translation>Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -9716,7 +9716,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M&apos;hi apunto:</translation>
+        <translation>M'hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -9747,7 +9747,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Show actual time</source>
-        <translation>Mostra l&apos;hora real</translation>
+        <translation>Mostra l'hora real</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
@@ -9771,7 +9771,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Actual time format</source>
-        <translation>Format d&apos;hora real</translation>
+        <translation>Format d'hora real</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
@@ -9799,7 +9799,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d&apos;hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu utilitzar els símbols següents per definir el format d'hora personalitzat: &lt;/p&gt; &lt;ul&gt; &lt;li&gt; Any: AAAA, AA &lt;/li&gt; &lt;li&gt; Mes: M, MM, MMM, MMMM (MMM per al gener, etc., MMMM per al gener, etc.) &lt;/li&gt; &lt;li&gt; Dia: d, dd, ddd, dddd (ddd per dilluns, dddd per dilluns, etc.) &lt;/ li &gt; &lt;li&gt; Hora: H, HH, h, hh (h, hh per a la visualització AM / PM) &lt;/li&gt; &lt;li&gt; Minut: m, mm &lt;/li&gt; &lt;li&gt; Segon: s, ss &lt;/ li &gt; &lt;li&gt; AM / PM: A, a &lt;/li&gt; &lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show Time Zone</source>
@@ -9846,7 +9846,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation>Configuració de la pantalla de l&apos;eix</translation>
+        <translation>Configuració de la pantalla de l'eix</translation>
     </message>
     <message>
         <source>X-Axis</source>
@@ -9866,7 +9866,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d&apos;etiquetes:</translation>
+        <translation>Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>min</source>
@@ -10117,6 +10117,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Visible</source>
         <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>Dret</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>Dret</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Color</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Formulari</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>Dibuixa línies de contorn</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Amplada de línia:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>Utilitzeu els valors del mapa de colors</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>Especifiqueu el número de divisió</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">M&apos;hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">I Màxim:</translation>
+        <translation>I Màxim:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J Min:</translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J Max:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>màx</translation>
     </message>
 </context>
 <context>
@@ -15704,21 +15743,21 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Interval d&apos;animació en segons:</translation>
+        <translation>Interval d'animació en segons:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation>Arxiu d&apos;obertura %1 fracassat.</translation>
+        <translation>Arxiu d'obertura %1 fracassat.</translation>
     </message>
 </context>
 <context>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Valor</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_ca_ES.ts -->
@@ -15726,13 +15765,13 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Postprocessament ocular (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">Configuració escalar (%1)</translation>
+        <translation>Configuració escalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de node</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de cel·la</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Color personalitzat</translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Interval</translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (cel·la)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Seleccioneu Resultat del càlcul</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Seleccioneu el resultat del càlcul per utilitzar-lo com a cota</translation>
     </message>
 </context>
 <context>
@@ -15855,7 +15898,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar value for elevation</source>
-        <translation type="vanished">Valor escalar d&apos;elevació</translation>
+        <translation type="vanished">Valor escalar d'elevació</translation>
     </message>
     <message>
         <source>Color Setting</source>
@@ -15891,7 +15934,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és més petit que el valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és més petit que el valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la forma de la quadrícula</translation>
     </message>
 </context>
 <context>
@@ -15936,18 +15979,18 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="vanished">Valor escalar per a l&apos;elevació</translation>
+        <translation type="vanished">Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">Valor escalar per a l&apos;elevació</translation>
+        <translation>Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de node</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de cel·la</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Color personalitzat</translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Interval</translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Seleccioneu Resultat del càlcul</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Seleccioneu el resultat del càlcul per utilitzar-lo com a cota</translation>
     </message>
 </context>
 <context>
@@ -16081,7 +16128,7 @@ Option -&gt; Preferences</source>
     <name>Post2dObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
@@ -16444,7 +16491,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per exportar KML per a Street View, l&apos;interval de valors s&apos;ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>
@@ -16548,7 +16595,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>
@@ -16831,7 +16878,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Per exportar KML per a Street View, l&apos;interval de valors s&apos;ha de configurar manualment.</translation>
+        <translation type="vanished">Per exportar KML per a Street View, l'interval de valors s'ha de configurar manualment.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
@@ -16842,8 +16889,8 @@ Option -&gt; Preferences</source>
         <translation>Configuració escalar (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>Per exportar KML per a Street View, el mode de color ha de ser &quot;Mode discret&quot;.</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Per exportar KML per a Street View, el mode de color ha de ser "Mode discret".</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>Error</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Per exportar el fitxer de forma, canvieu &quot;Configuració de pantalla&quot; a &quot;Figura de contorn&quot;, no a &quot;Fringe de color&quot; o &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Per exportar el fitxer de forma, canvieu "Configuració de pantalla" a "Figura de contorn", no a "Fringe de color" o "Isolines".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Escalar</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>Per exportar el fitxer de forma, canvieu la configuració del color a &quot;Mode discret&quot;.</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Per exportar el fitxer de forma, canvieu la configuració del color a "Mode discret".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu Resultat del càlcul</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de partícules</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Elimina (&amp;R)</translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Regió</translation>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu l'àrea per començar les partícules</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu l'àrea per iniciar les partícules, per rang d'índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Interval d&apos;espai de generació</translation>
+        <translation>Interval d'espai generacional</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida del punt</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de partícules</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Elimina (&amp;R)</translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Regió</translation>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Especifiqueu dos punts. Les partícules parteixen de punts generats igualment separats entre aquests dos punts.</translation>
+        <translation>Especifiqueu dos punts. Les partícules parteixen de punts generats igualment separats entre aquests dos punts.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Arrossegament del ratolí</translation>
+        <translation>Arrossegament del ratolí</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Valors de coordenades</translation>
+        <translation>Valors de coordenades</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Punt 1:</translation>
+        <translation>Punt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Punt 2:</translation>
+        <translation>Punt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Nombre de punts:</translation>
+        <translation>Nombre de punts:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida del punt</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimitza la configuració de la pantalla</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Valor físic:</translation>
+        <translation>Valor físic:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Elimina (&amp;R)</translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Regió</translation>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">Especifiqueu l&apos;àrea per iniciar les racionalitzacions</translation>
+        <translation>Especifiqueu l'àrea per iniciar les línies de racionalització</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">Especifiqueu l&apos;àrea per iniciar les racionalitzacions, per rang d&apos;índexs de quadrícula (I, J).</translation>
+        <translation>Especifiqueu l'àrea per iniciar les línies de racionalització, per rang d'índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Interval d&apos;espai de generació</translation>
+        <translation>Interval d'espai generacional</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Amplada:</translation>
+        <translation>Amplada:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimitza la configuració de la pantalla</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Valor físic:</translation>
+        <translation>Valor físic:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Elimina (&amp;R)</translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Regió</translation>
+        <translation>Regió</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Especifiqueu dos punts. Les partícules parteixen de punts generats igualment separats entre aquests dos punts.</translation>
+        <translation>Especifiqueu dos punts. Les partícules parteixen de punts generats igualment separats entre aquests dos punts.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Arrossegament del ratolí</translation>
+        <translation>Arrossegament del ratolí</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Valors de coordenades</translation>
+        <translation>Valors de coordenades</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Punt 1:</translation>
+        <translation>Punt 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Punt 2:</translation>
+        <translation>Punt 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Nombre de punts:</translation>
+        <translation>Nombre de punts:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Amplada:</translation>
+        <translation>Amplada:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17365,15 +17412,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation type="vanished">Especifiqueu l&apos;àrea per generar partícules.</translation>
+        <translation type="vanished">Especifiqueu l'àrea per generar partícules.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J).</source>
-        <translation type="vanished">Especifiqueu l&apos;àrea per generar partícules, per rang d&apos;índexs de quadrícula (I, J).</translation>
+        <translation type="vanished">Especifiqueu l'àrea per generar partícules, per rang d'índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="vanished">M&apos;hi apunto</translation>
+        <translation type="vanished">M'hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17389,19 +17436,19 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="vanished">Interval d&apos;espai de generació</translation>
+        <translation type="vanished">Interval d'espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Si especifiqueu 1, les partícules es generen als nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 2, les partícules es generen als nodes de la quadrícula i els punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p&gt; Si especifiqueu 1/2, es generen partícules per a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Mida:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17484,7 +17531,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="vanished">Punts d&apos;inici</translation>
+        <translation type="vanished">Punts d'inici</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Mida:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17616,7 +17663,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Mostra el navegador d&apos;atributs</translation>
+        <translation>Mostra el navegador d'atributs</translation>
     </message>
 </context>
 <context>
@@ -17736,15 +17783,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="vanished">Especifiqueu l&apos;àrea per iniciar les racionalitzacions</translation>
+        <translation type="vanished">Especifiqueu l'àrea per iniciar les racionalitzacions</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="vanished">Especifiqueu l&apos;àrea per iniciar les racionalitzacions, per rang d&apos;índexs de quadrícula (I, J).</translation>
+        <translation type="vanished">Especifiqueu l'àrea per iniciar les racionalitzacions, per rang d'índexs de quadrícula (I, J).</translation>
     </message>
     <message>
         <source>I Min</source>
-        <translation type="vanished">M&apos;hi apunto</translation>
+        <translation type="vanished">M'hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -17760,17 +17807,17 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="vanished">Interval d&apos;espai de generació</translation>
+        <translation type="vanished">Interval d'espai de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Si n&apos;especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1, les racionalitzacions comencen als nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Si n'especifiqueu 2, les racionalitzacions comencen als nodes de la quadrícula i als punts mitjans dels nodes de la quadrícula. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Si especifiqueu 1/2, les racionalitzacions comencen a la resta de nodes de la quadrícula. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Amplada:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17833,7 +17880,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Start Points</source>
-        <translation type="vanished">Punts d&apos;inici</translation>
+        <translation type="vanished">Punts d'inici</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Amplada:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Especifiqueu un nombre de píxels a la pantalla. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es poden definir un màxim de quatre contorns.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Configuració del contorn</translation>
+        <translation type="vanished">Configuració del contorn</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporta (&amp;E)...</translation>
+        <translation type="vanished">Exporta (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Cares</translation>
+        <translation type="vanished">Cares</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">Cares</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Mapa de colors</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Es poden definir un màxim de quatre contorns.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">Es poden definir un màxim de quatre fletxes.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de partícules</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Cara</translation>
+        <translation>Cara</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la cara per començar les partícules</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la cara per iniciar les partícules, per rang d&apos;índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Interval d&apos;espai de generació</translation>
+        <translation>Interval d&apos;espai generacional</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Mida del punt</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Optimitza la configuració de la pantalla</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Valor físic:</translation>
+        <translation>Valor físic:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Posició inicial</translation>
+        <translation>Posició inicial</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Afegeix (&amp;A)</translation>
+        <translation>Afegeix (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Cara</translation>
+        <translation>Cara</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la cara per iniciar les línies de corrent</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Especifiqueu la cara per iniciar les línies aerodinàmiques, per rang d&apos;índexs de quadrícula (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Interval d&apos;espai de generació</translation>
+        <translation>Interval d&apos;espai generacional</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Color:</translation>
+        <translation>Color:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Amplada:</translation>
+        <translation>Amplada:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor físic:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">Temps</translation>
+        <translation>Temps</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar periòdicament</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de temps de generació</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>màx</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar en un moment arbitrari</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">Edita...</translation>
+        <translation>Edita...</translation>
     </message>
 </context>
 <context>
@@ -19384,7 +19466,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d&apos;atribut</translation>
+        <translation type="vanished">Color per valor d'atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -19407,7 +19489,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valor de l&apos;atribut:</translation>
+        <translation type="vanished">Valor de l'atribut:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -19505,7 +19587,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Color per valor d&apos;atribut</translation>
+        <translation type="vanished">Color per valor d'atribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -19539,18 +19621,18 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Canvieu la mida de l&apos;etiqueta</translation>
+        <translation>Canvieu la mida de l'etiqueta</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Edita la configuració de l&apos;etiqueta</translation>
+        <translation>Edita la configuració de l'etiqueta</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Configuració d&apos;etiquetes</translation>
+        <translation>Configuració d'etiquetes</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -19629,7 +19711,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Editeu la configuració de l&apos;hora</translation>
+        <translation>Editeu la configuració de l'hora</translation>
     </message>
 </context>
 <context>
@@ -19740,7 +19822,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>S&apos;ha produït un error en importar la quadrícula.</translation>
+        <translation>S'ha produït un error en importar la quadrícula.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -19784,14 +19866,14 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Finestra de visualització d&apos;ulls de quadrícula</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Finestra de visualització d'ulls de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració escalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de node</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de cel·la</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (cel·la)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
@@ -19916,7 +20002,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="vanished">Edita l&apos;escala de direcció Z</translation>
+        <translation type="vanished">Edita l'escala de direcció Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -19935,7 +20021,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Edita l&apos;escala de direcció Z</translation>
+        <translation>Edita l'escala de direcció Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
@@ -20001,78 +20087,82 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">Forma de quadrícula</translation>
+        <translation>Forma de quadrícula</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de la forma de la quadrícula</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor escalar per a l'elevació</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració escalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulari</translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de node</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Per valor escalar de cel·la</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar (node)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d&apos;objectes</translation>
+        <translation>Navegador d'objectes</translation>
     </message>
 </context>
 <context>
@@ -20312,11 +20402,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation>La condició de càlcul s&apos;ha importat amb èxit des del fitxer especificat.</translation>
+        <translation>La condició de càlcul s'ha importat amb èxit des del fitxer especificat.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation>La condició de càlcul s&apos;ha importat correctament des de %1.</translation>
+        <translation>La condició de càlcul s'ha importat correctament des de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -20324,7 +20414,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation>No s&apos;ha pogut importar la condició de càlcul.</translation>
+        <translation>No s'ha pogut importar la condició de càlcul.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
@@ -20336,15 +20426,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation>S&apos;està exportant la condició de càlcul...</translation>
+        <translation>S'està exportant la condició de càlcul...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation>La condició de càlcul s&apos;exporta correctament a %1.</translation>
+        <translation>La condició de càlcul s'exporta correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation>No s&apos;ha pogut exportar la condició de càlcul.</translation>
+        <translation>No s'ha pogut exportar la condició de càlcul.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
@@ -20444,7 +20534,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation>(Encara no s&apos;ha seleccionat cap algorisme)</translation>
+        <translation>(Encara no s'ha seleccionat cap algorisme)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -20456,11 +20546,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation>%1 no es mapen després d&apos;editar-se l&apos;última vegada. Voleu executar el mapatge ara?</translation>
+        <translation>%1 no es mapen després d'editar-se l'última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuració de la condició límit &quot;%1&quot;no es mapeja després que s&apos;hagi editat l&apos;última vegada. Voleu executar el mapatge ara?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuració de la condició límit "%1"no es mapeja després que s'hagi editat l'última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20468,7 +20558,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation>Assignació de dades geogràfiques, la condició del límit s&apos;ha acabat correctament.</translation>
+        <translation>Assignació de dades geogràfiques, la condició del límit s'ha acabat correctament.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -20565,11 +20655,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation>Seleccioneu l&apos;algorisme</translation>
+        <translation>Seleccioneu l'algorisme</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation>Seleccioneu l&apos;algorisme per importar dades</translation>
+        <translation>Seleccioneu l'algorisme per importar dades</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -20577,7 +20667,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -20593,7 +20683,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation>S&apos;estan important dades...</translation>
+        <translation>S'estan important dades...</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -20601,7 +20691,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation>S&apos;ha cancel·lat la importació.</translation>
+        <translation>S'ha cancel·lat la importació.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20662,7 +20752,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Importa l&apos;elevació del web (&amp;I)...</translation>
+        <translation>Importa l'elevació del web (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: quan la variació està activada, es crea una variació anomenada &quot;Per defecte&quot; i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del &quot;Navegador d&apos;objectes&quot;. Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l&apos;atribut de la graella creades a partir de la variació que seleccioneu amb &quot;Variació per passar al solucionador&quot; es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l&apos;efecte de la diferència.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: quan la variació està activada, es crea una variació anomenada "Per defecte" i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del "Navegador d'objectes". Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l'atribut de la graella creades a partir de la variació que seleccioneu amb "Variació per passar al solucionador" es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l'efecte de la diferència.</translation>
     </message>
 </context>
 <context>
@@ -20758,7 +20848,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation>No s&apos;ha pogut importar la quadrícula.</translation>
+        <translation>No s'ha pogut importar la quadrícula.</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -20777,7 +20867,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -20833,11 +20923,11 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
+        <translation>S'ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -20857,14 +20947,14 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització d'atributs de cel·la de quadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
+        <translation>Configuració de visualització d'atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú &quot;Quadrícula&quot; -&gt; &quot;Assignació d&apos;atributs&quot; -&gt; &quot;Executa&quot;.</translation>
+        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú "Quadrícula" -&gt; "Assignació d'atributs" -&gt; "Executa".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20953,22 +21043,22 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation>S&apos;han acabat les assignacions de dades geogràfiques</translation>
+        <translation>S'han acabat les assignacions de dades geogràfiques</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>L&apos;atribut de la quadrícula &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>L'atribut de la quadrícula "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condició límit &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condició límit "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation>Configuració de mapatge d&apos;atributs de quadrícula</translation>
+        <translation>Configuració de mapatge d'atributs de quadrícula</translation>
     </message>
     <message>
         <source>Execute mapping</source>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automàtic</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d&apos;atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d'atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>El mapatge d&apos;atributs només s&apos;executa quan seleccioneu manualment el menú &quot;Executa&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>El mapatge d'atributs només s'executa quan seleccioneu manualment el menú "Executa".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21080,11 +21170,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
+        <translation>S'ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -21124,14 +21214,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització d'atributs del node de quadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Configuració de visualització d&apos;atributs del node de quadrícula</translation>
+        <translation>Configuració de visualització d'atributs del node de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -21185,7 +21275,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d&apos;expansions de plantilla:</translation>
+        <translation>Nombre d'expansions de plantilla:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -21251,11 +21341,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation>Esteu segur que voleu restablir l&apos;estat predeterminat de la condició de creació de quadrícula?</translation>
+        <translation>Esteu segur que voleu restablir l'estat predeterminat de la condició de creació de quadrícula?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation>Quan canvieu l&apos;algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
+        <translation>Quan canvieu l'algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -21325,11 +21415,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Veure la barra d&apos;eines de configuració</translation>
+        <translation>Veure la barra d'eines de configuració</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barra d&apos;eines de configuració de la pantalla</translation>
+        <translation>Barra d'eines de configuració de la pantalla</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -21341,11 +21431,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relació d&apos;aspecte (V/H): 1/</translation>
+        <translation>Relació d'aspecte (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Corregir la relació d&apos;aspecte</translation>
+        <translation>Corregir la relació d'aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
@@ -21365,7 +21455,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d&apos;aspecte</translation>
+        <translation>Relació d'aspecte</translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -21385,7 +21475,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d&apos;aspecte (V/H): 1/ %1</translation>
+        <translation>Relació d'aspecte (V/H): 1/ %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -21393,7 +21483,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>S&apos;ha produït un error en fer-ho %1.</translation>
+        <translation>S'ha produït un error en fer-ho %1.</translation>
     </message>
     <message>
         <source>Index</source>
@@ -21450,7 +21540,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Configuració de visualització de l&apos;atribut de la quadrícula (%1)</translation>
+        <translation>Configuració de visualització de l'atribut de la quadrícula (%1)</translation>
     </message>
 </context>
 <context>
@@ -21563,14 +21653,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d&apos;aspecte</translation>
+        <translation>Relació d'aspecte</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Configuració d&apos;exportació</translation>
+        <translation>Configuració d'exportació</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
@@ -21602,7 +21692,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M&apos;hi apunto:</translation>
+        <translation>M'hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -21617,7 +21707,7 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Configuració de visualització d&apos;atributs de quadrícula</translation>
+        <translation>Configuració de visualització d'atributs de quadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
@@ -21645,7 +21735,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Configuració de la carta d&apos;elevació</translation>
+        <translation>Configuració de la carta d'elevació</translation>
     </message>
     <message>
         <source>Line Color:</source>
@@ -21697,19 +21787,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Color de l&apos;eix:</translation>
+        <translation>Color de l'eix:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Font de l&apos;eix:</translation>
+        <translation>Font de l'eix:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
         <translation>Configuració del mapa de colors</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21767,7 +21857,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation>S&apos;està exportant la quadrícula...</translation>
+        <translation>S'està exportant la quadrícula...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -21775,7 +21865,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation>La quadrícula s&apos;ha exportat correctament a %1.</translation>
+        <translation>La quadrícula s'ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
@@ -21822,7 +21912,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configureu la barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Obriu la finestra de vista d’ocell (&amp;B)</translation>
     </message>
     <message>
@@ -21958,7 +22048,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -22094,7 +22184,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation>Canvia la configuració de mapatge d&apos;atributs</translation>
+        <translation>Canvia la configuració de mapatge d'atributs</translation>
     </message>
 </context>
 <context>
@@ -22161,7 +22251,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation>La quadrícula encara no s&apos;ha creat ni importat.</translation>
+        <translation>La quadrícula encara no s'ha creat ni importat.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
@@ -22223,11 +22313,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="vanished">Visualització d&apos;etiquetes</translation>
+        <translation type="vanished">Visualització d'etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="vanished">Nombre d&apos;etiquetes:</translation>
+        <translation type="vanished">Nombre d'etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -22259,7 +22349,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="vanished">Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -22267,7 +22357,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="vanished">Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -22352,7 +22442,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation>Mou els punts d&apos;elevació</translation>
+        <translation>Mou els punts d'elevació</translation>
     </message>
 </context>
 <context>
@@ -22387,7 +22477,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation>Edita el punt d&apos;elevació</translation>
+        <translation>Edita el punt d'elevació</translation>
     </message>
 </context>
 <context>

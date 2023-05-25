@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>حدد تنسيق الأرقام بتنسيق printf. على سبيل المثال: &quot; %5.2f &quot;لـ 3.141592 -&gt; 3.14&quot; %4.2e &quot;لـ 12300 -&gt; 1.23e + 004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>حدد تنسيق الأرقام بتنسيق printf. على سبيل المثال: " %5.2f "لـ 3.141592 -&gt; 3.14" %4.2e "لـ 12300 -&gt; 1.23e + 004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>مرئي</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>يمين</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>يمين</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">اللون</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>استمارة</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>ارسم خطوط الكنتور</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>عرض الخط:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>مقصف</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>استخدم قيم مخطط الألوان</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>حدد رقم القسمة</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">موافق:</translation>
+        <translation>موافق:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">أنا ماكس:</translation>
+        <translation>أنا ماكس:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J مين:</translation>
+        <translation>J مين:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J ماكس:</translation>
+        <translation>J ماكس:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>دقيقة</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>الأعلى</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>اختار القيمة</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_ar_EG.ts -->
@@ -15732,7 +15771,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>معالجة ما بعد عين الطائر (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">الإعداد العددي (%1)</translation>
+        <translation>الإعداد العددي (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">لون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للعقدة</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للخلية</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">لون مخصص</translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">يتراوح</translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>عددي (خلية)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">حدد نتيجة الحساب</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>حدد نتيجة الحساب لاستخدامها على أنها ارتفاع</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد شكل الشبكة</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">القيمة العددية للارتفاع</translation>
+        <translation>القيمة العددية للارتفاع</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">لون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للعقدة</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للخلية</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">لون مخصص</translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">يتراوح</translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">حدد نتيجة الحساب</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>حدد نتيجة الحساب لاستخدامها على أنها ارتفاع</translation>
     </message>
 </context>
 <context>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">خطأ</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>
@@ -16842,8 +16889,8 @@ Option -&gt; Preferences</source>
         <translation>الإعداد العددي (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن يكون Colormode هو &quot;الوضع المنفصل&quot;</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>لتصدير KML للتجوّل الافتراضي ، يجب أن يكون Colormode هو "الوضع المنفصل"</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>خطأ</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>العددية</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>لتصدير ملف الشكل ، قم بتبديل إعداد اللون إلى &quot;وضع منفصل&quot;.</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>لتصدير ملف الشكل ، قم بتبديل إعداد اللون إلى "وضع منفصل".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد نتيجة الحساب</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض الجسيمات</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">منطقة</translation>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد المنطقة لبدء الجسيمات</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد منطقة بدء الجسيمات ، حسب نطاق مؤشرات الشبكة (I ، J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">فاصل مساحة الجيل</translation>
+        <translation>الفاصل الزمني للجيل</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>حجم النقطة</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض الجسيمات</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">منطقة</translation>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">حدد نقطتين. تبدأ الجسيمات من النقاط المتولدة بشكل متساوٍ بين هاتين النقطتين.</translation>
+        <translation>حدد نقطتين. تبدأ الجسيمات من النقاط المتولدة بشكل متساوٍ بين هاتين النقطتين.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">سحب الماوس</translation>
+        <translation>سحب الماوس</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">تنسيق القيم</translation>
+        <translation>تنسيق القيم</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">النقطة 1:</translation>
+        <translation>النقطة 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">و</translation>
+        <translation>و</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">النقطة 2:</translation>
+        <translation>النقطة 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">عدد النقاط:</translation>
+        <translation>عدد النقاط:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>حجم النقطة</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>تبسيط إعداد العرض</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">القيمة المادية:</translation>
+        <translation>القيمة المادية:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">منطقة</translation>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">حدد المنطقة لبدء عمليات الانسيابية</translation>
+        <translation>حدد المنطقة لبدء عمليات الانسيابية</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">حدد المنطقة لبدء التبسيط ، حسب نطاق مؤشرات الشبكة (I ، J).</translation>
+        <translation>حدد المنطقة لبدء التبسيط ، حسب نطاق مؤشرات الشبكة (I ، J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">فاصل مساحة الجيل</translation>
+        <translation>الفاصل الزمني للجيل</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">عرض:</translation>
+        <translation>عرض:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>تبسيط إعداد العرض</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">القيمة المادية:</translation>
+        <translation>القيمة المادية:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">منطقة</translation>
+        <translation>منطقة</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">حدد نقطتين. تبدأ الجسيمات من النقاط المتولدة بشكل متساوٍ بين هاتين النقطتين.</translation>
+        <translation>حدد نقطتين. تبدأ الجسيمات من النقاط المتولدة بشكل متساوٍ بين هاتين النقطتين.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">سحب الماوس</translation>
+        <translation>سحب الماوس</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">تنسيق القيم</translation>
+        <translation>تنسيق القيم</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">النقطة 1:</translation>
+        <translation>النقطة 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">و</translation>
+        <translation>و</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">النقطة 2:</translation>
+        <translation>النقطة 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">عدد النقاط:</translation>
+        <translation>عدد النقاط:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">عرض:</translation>
+        <translation>عرض:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">فاصل مساحة الجيل</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } ص {margin-top: 3px؛ margin-bottom: 3px؛} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p&gt; إذا حددت 1 ، يتم إنشاء الجسيمات في عقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا حددت 2 ، يتم إنشاء الجسيمات في العقد الشبكية والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا قمت بتحديد حدد 1/2 ، يتم إنشاء الجسيمات لكل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } ص {margin-top: 3px؛ margin-bottom: 3px؛} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p&gt; إذا حددت 1 ، يتم إنشاء الجسيمات في عقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا حددت 2 ، يتم إنشاء الجسيمات في العقد الشبكية والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p&gt; إذا قمت بتحديد حدد 1/2 ، يتم إنشاء الجسيمات لكل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">مقاس:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">مقاس:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">فاصل مساحة الجيل</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; إذا حددت 1 ، تبدأ التبسيط عند عقد الشبكة. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛&quot; &gt; إذا حددت 2 ، تبدأ التبسيط عند عقد الشبكة ، والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p style = &quot;margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; إذا حددت 1/2 ، يبدأ التبسيط من كل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 0px؛ margin-bottom: 0px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; إذا حددت 1 ، تبدأ التبسيط عند عقد الشبكة. &lt;/p&gt; &lt;p style = "margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛" &gt; إذا حددت 2 ، تبدأ التبسيط عند عقد الشبكة ، والنقاط الوسطى لعقد الشبكة. &lt;/ p&gt; &lt;p style = "margin-top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; إذا حددت 1/2 ، يبدأ التبسيط من كل عقد شبكة أخرى. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">عرض:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">عرض:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 3px؛ margin-bottom: 3px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; تحديد عدد وحدات البكسل المعروضة. &lt;/ ص&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>إعداد الكونتور</translation>
+        <translation type="vanished">إعداد الكونتور</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>يستورد (&amp;I)...</translation>
+        <translation type="vanished">يستورد (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>يصدّر (&amp;E)...</translation>
+        <translation type="vanished">يصدّر (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>وجوه</translation>
+        <translation type="vanished">وجوه</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>خريطة ملونة</translation>
+        <translation type="vanished">خريطة ملونة</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">استمارة</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">وجوه</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">خريطة ملونة</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">يمكن تحديد أربعة ملامح كحد أقصى.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">يمكن تحديد أربعة أسهم كحد أقصى.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض الجسيمات</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">وجه</translation>
+        <translation>وجه</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد الوجه لبدء الجسيمات</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد الوجه لبدء الجسيمات ، حسب نطاق مؤشرات الشبكة (I ، J ، K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">فاصل مساحة الجيل</translation>
+        <translation>الفاصل الزمني للجيل</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>حجم النقطة</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>تبسيط إعداد العرض</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">القيمة المادية:</translation>
+        <translation>القيمة المادية:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">يبدأ فى مكان</translation>
+        <translation>يبدأ فى مكان</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">يضيف (&amp;A)</translation>
+        <translation>يضيف (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">يزيل (&amp;R)</translation>
+        <translation>يزيل (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">وجه</translation>
+        <translation>وجه</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد الوجه لبدء التبسيط</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد الوجه لبدء التبسيط ، حسب نطاق مؤشرات الشبكة (I ، J ، K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">فاصل مساحة الجيل</translation>
+        <translation>الفاصل الزمني للجيل</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>لون:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">عرض:</translation>
+        <translation>عرض:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>مقصف</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>القيمة المادية:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">زمن</translation>
+        <translation>وقت</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>توليد بشكل دوري</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>الفاصل الزمني للإنشاء</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>دقيقة</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>الأعلى</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>تولد في وقت تعسفي</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">يحرر...</translation>
+        <translation>يحرر...</translation>
     </message>
 </context>
 <context>
@@ -19784,13 +19866,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">مستعرض الكائنات</translation>
+        <translation>مستعرض الكائنات</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>نافذة عرض عين الطائر الشبكي</translation>
     </message>
 </context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>العددية</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>الإعداد العددي (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">اللون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للعقدة</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للخلية</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>عددي (خلية)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">حدد سمة الشبكة</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>حدد سمة الشبكة لاستخدامها على أنها ارتفاع</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">شكل الشبكة</translation>
+        <translation>شكل الشبكة</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد شكل الشبكة</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>القيمة العددية للارتفاع</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>العددية</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>الإعداد العددي (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">استمارة</translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">اللون</translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للعقدة</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>حسب القيمة العددية للخلية</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>عددي (عقدة)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">حدد سمة الشبكة</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>حدد سمة الشبكة لاستخدامها على أنها ارتفاع</translation>
     </message>
 </context>
 <context>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 لم يتم تعيينها بعد تعديلها في المرة الأخيرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>إعداد حالة الحدود &quot;%1&quot;لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>إعداد حالة الحدود "%1"لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى &quot;افتراضي&quot; ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من &quot;Object Browser&quot;. يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام &quot;التباين للتمرير إلى الحل&quot; إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى "افتراضي" ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من "Object Browser". يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام "التباين للتمرير إلى الحل" إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض سمة خلية الشبكة (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>ينفذ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة &quot;الشبكة&quot; -&gt; &quot;تعيين السمات&quot; -&gt; &quot;تنفيذ&quot;.</translation>
+        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة "الشبكة" -&gt; "تعيين السمات" -&gt; "تنفيذ".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>تم الانتهاء من تعيين البيانات الجغرافية</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>سمة الشبكة &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>سمة الشبكة "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>شرط الحدود &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>شرط الحدود "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>آلي</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>كتيب</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة &quot;تنفيذ&quot; يدويًا.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة "تنفيذ" يدويًا.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض سمة عقدة الشبكة (%1)</translation>
     </message>
 </context>
 <context>
@@ -21708,8 +21798,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>إعداد خريطة الألوان</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21822,7 +21912,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>إعداد Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>افتح نافذة عرض عين الطائر (&amp;B)</translation>
     </message>
     <message>

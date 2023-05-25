@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: &quot; %5.2f&quot; สำหรับ 3.141592 --&gt; 3.14&quot; %4.2e&quot; สำหรับ 12300 --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>ระบุรูปแบบตัวเลขในรูปแบบ printf ตัวอย่างเช่น: " %5.2f" สำหรับ 3.141592 --&gt; 3.14" %4.2e" สำหรับ 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>มองเห็นได้</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>ขวา</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>ขวา</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">สี</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>วาดเส้นชั้นความสูง</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>ความกว้างของเส้น:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>พิกเซล</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>ใช้ค่าของ colormap</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>ระบุหมายเลขแผนก</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">ไอมิน:</translation>
+        <translation>ไอมิน:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">ฉันแม็กซ์:</translation>
+        <translation>ฉันแม็กซ์:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">จีมิน:</translation>
+        <translation>จีมิน:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">เจ แม็กซ์:</translation>
+        <translation>เจ แม็กซ์:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>นาที</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>สูงสุด</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกค่า</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_th_TH.ts -->
@@ -15732,7 +15771,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>การประมวลผลหลังภาพเบิร์ดอาย (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">การตั้งค่าสเกลาร์ (%1)</translation>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">สีที่กำหนดเอง</translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์ (เซลล์)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">เลือกผลการคำนวณ</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>เลือกผลการคำนวณเพื่อใช้เป็นระดับความสูง</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่ารูปร่างกริด</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">ค่าสเกลาร์สำหรับระดับความสูง</translation>
+        <translation>ค่าสเกลาร์สำหรับระดับความสูง</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">สีที่กำหนดเอง</translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">เลือกผลการคำนวณ</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>เลือกผลการคำนวณเพื่อใช้เป็นระดับความสูง</translation>
     </message>
 </context>
 <context>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -16842,8 +16889,8 @@ Option -&gt; Preferences</source>
         <translation>การตั้งค่าสเกลาร์ (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>หากต้องการส่งออก KML สำหรับสตรีทวิว โหมดสีจะต้องเป็น "โหมดแยก"</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>สเกลาร์</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนการตั้งค่าสีเป็น &quot;โหมดแยก&quot;</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนการตั้งค่าสีเป็น "โหมดแยก"</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกผลการคำนวณ</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงอนุภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุพื้นที่ที่จะเริ่มต้นอนุภาค</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุพื้นที่ที่จะเริ่มต้นอนุภาคตามช่วงดัชนีกริด (I, J)</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">ช่วงพื้นที่การสร้าง</translation>
+        <translation>ช่วงเวลาการสร้างพื้นที่</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>ขนาดจุด</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงอนุภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">ระบุสองจุด อนุภาคเริ่มต้นจากจุดที่สร้างขึ้นโดยแยกจากกันระหว่างจุดทั้งสองนี้เท่าๆ กัน</translation>
+        <translation>ระบุสองจุด อนุภาคเริ่มต้นจากจุดที่สร้างขึ้นโดยแยกจากกันระหว่างสองจุดนี้เท่าๆ กัน</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">ลากเมาส์</translation>
+        <translation>การลากเมาส์</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">ค่าพิกัด</translation>
+        <translation>ค่าพิกัด</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">จุดที่ 1:</translation>
+        <translation>จุดที่ 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">จุดที่ 2:</translation>
+        <translation>จุดที่ 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">จำนวนคะแนน:</translation>
+        <translation>จำนวนคะแนน:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>ขนาดจุด</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ปรับปรุงการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">มูลค่าทางกายภาพ:</translation>
+        <translation>มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">พิสัย</translation>
+        <translation>พิสัย</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">ระบุพื้นที่เพื่อเริ่มคล่องตัว</translation>
+        <translation>ระบุพื้นที่ที่จะเริ่มปรับปรุง</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">ระบุพื้นที่ที่จะเริ่มต้นการปรับปรุงตามช่วงดัชนีกริด (I, J)</translation>
+        <translation>ระบุพื้นที่เพื่อเริ่มปรับปรุงตามช่วงดัชนีตาราง (I, J)</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">ช่วงพื้นที่การสร้าง</translation>
+        <translation>ช่วงเวลาการสร้างพื้นที่</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">ความกว้าง:</translation>
+        <translation>ความกว้าง:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ปรับปรุงการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">มูลค่าทางกายภาพ:</translation>
+        <translation>มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished"></translation>
+        <translation>ภูมิภาค</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">ระบุสองจุด อนุภาคเริ่มต้นจากจุดที่สร้างขึ้นโดยแยกจากกันระหว่างจุดทั้งสองนี้เท่าๆ กัน</translation>
+        <translation>ระบุสองจุด อนุภาคเริ่มต้นจากจุดที่สร้างขึ้นโดยแยกจากกันระหว่างสองจุดนี้เท่าๆ กัน</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">ลากเมาส์</translation>
+        <translation>การลากเมาส์</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">ค่าพิกัด</translation>
+        <translation>ค่าพิกัด</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">จุดที่ 1:</translation>
+        <translation>จุดที่ 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">จุดที่ 2:</translation>
+        <translation>จุดที่ 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">จำนวนคะแนน:</translation>
+        <translation>จำนวนคะแนน:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">ความกว้าง:</translation>
+        <translation>ความกว้าง:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {ขอบบน: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;หากคุณระบุ 1 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณระบุ 2 อนุภาคจะถูกสร้างขึ้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p&gt;หากคุณ ระบุ 1/2 อนุภาคจะถูกสร้างขึ้นสำหรับโหนดกริดอื่น ๆ ทุกโหนด&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ช่วงพื้นที่การสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1 ความคล่องตัวจะเริ่มต้นที่โหนดกริด.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;หากคุณระบุ 2 การปรับปรุงจะเริ่มต้นที่โหนดกริด และจุดกึ่งกลางของโหนดกริด&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;หากคุณระบุ 1/2 ความคล่องตัวจะเริ่มต้นที่โหนดกริดอื่นๆ ทุกโหนด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ความกว้าง:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ความกว้าง:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;ระบุจำนวนพิกเซลที่แสดง&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>การตั้งค่ารูปร่าง</translation>
+        <translation type="vanished">การตั้งค่ารูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>นำเข้า (&amp;I)...</translation>
+        <translation type="vanished">นำเข้า (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>ส่งออก (&amp;E)...</translation>
+        <translation type="vanished">ส่งออก (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>ใบหน้า</translation>
+        <translation type="vanished">ใบหน้า</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>แผนที่สี</translation>
+        <translation type="vanished">แผนที่สี</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">ใบหน้า</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">แผนที่สี</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">สามารถกำหนดรูปทรงได้สูงสุดสี่เส้น</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">สามารถกำหนดลูกศรได้สูงสุดสี่ลูกศร</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงอนุภาค</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">ใบหน้า</translation>
+        <translation>ใบหน้า</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุใบหน้าที่จะเริ่มต้นอนุภาค</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุใบหน้าที่จะเริ่มต้นอนุภาคตามช่วงดัชนีตาราง (I, J, K)</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">ช่วงพื้นที่การสร้าง</translation>
+        <translation>ช่วงเวลาการสร้างพื้นที่</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>ขนาดจุด</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ปรับปรุงการตั้งค่าการแสดงผล</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">มูลค่าทางกายภาพ:</translation>
+        <translation>มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">ตำแหน่งเริ่มต้น</translation>
+        <translation>ตำแหน่งเริ่มต้น</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)</translation>
+        <translation>เพิ่ม (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">ลบ (&amp;R)</translation>
+        <translation>ลบ (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">ใบหน้า</translation>
+        <translation>ใบหน้า</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุใบหน้าเพื่อเริ่มเพรียวลม</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>ระบุใบหน้าเพื่อเริ่มการปรับปรุงตามช่วงดัชนีตาราง (I, J, K)</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">ช่วงพื้นที่การสร้าง</translation>
+        <translation>ช่วงเวลาการสร้างพื้นที่</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">สี:</translation>
+        <translation>สี:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">ความกว้าง:</translation>
+        <translation>ความกว้าง:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>พิกเซล</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>มูลค่าทางกายภาพ:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">เวลา</translation>
+        <translation>เวลา</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>สร้างเป็นระยะ</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>ช่วงเวลาการสร้าง</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>นาที</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>สูงสุด</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>สร้างตามเวลาที่กำหนด</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">แก้ไข...</translation>
+        <translation>แก้ไข...</translation>
     </message>
 </context>
 <context>
@@ -19784,13 +19866,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">เบราว์เซอร์วัตถุ</translation>
+        <translation>เบราว์เซอร์วัตถุ</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>หน้าต่างมุมมองตานกแบบกริด</translation>
     </message>
 </context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์ (เซลล์)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">เลือกแอตทริบิวต์กริด</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>เลือกแอตทริบิวต์กริดเพื่อใช้เป็นระดับความสูง</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">รูปร่างกริด</translation>
+        <translation>รูปร่างกริด</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่ารูปร่างกริด</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>ค่าสเกลาร์สำหรับระดับความสูง</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าสเกลาร์ (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์ของโหนด</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>โดยค่าสเกลาร์เซลล์</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>พิสัย</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>สเกลาร์ (โหนด)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">เลือกแอตทริบิวต์กริด</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>เลือกแอตทริบิวต์กริดเพื่อใช้เป็นระดับความสูง</translation>
     </message>
 </context>
 <context>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 จะไม่ถูกแมปหลังจากแก้ไขครั้งล่าสุด คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>การตั้งค่าเงื่อนไขขอบเขต &quot;%1&quot; ไม่ถูกแมปหลังจากแก้ไขครั้งที่แล้ว คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>การตั้งค่าเงื่อนไขขอบเขต "%1" ไม่ถูกแมปหลังจากแก้ไขครั้งที่แล้ว คุณต้องการทำแผนที่ตอนนี้หรือไม่?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>หมายเหตุ: เมื่อเปิดใช้งานรูปแบบ รูปแบบที่ชื่อ &quot;ค่าเริ่มต้น&quot; จะถูกสร้างขึ้น และข้อมูลทางภูมิศาสตร์ทั้งหมดจะถูกย้ายไปที่รูปแบบนั้น คุณสามารถเพิ่ม เปลี่ยนชื่อ ลบรูปแบบต่างๆ จาก &quot;Object Browser&quot; คุณสามารถย้าย คัดลอกข้อมูลทางภูมิศาสตร์ระหว่างรูปแบบต่างๆ ข้อมูลแอตทริบิวต์กริดที่สร้างขึ้นจากรูปแบบที่คุณเลือกด้วย &quot;รูปแบบต่างๆ เพื่อส่งผ่านไปยังตัวแก้ปัญหา&quot; จะถูกส่งผ่านไปยังตัวแก้ปัญหา คุณสามารถเตรียมรูปแบบต่างๆ สลับรูปแบบที่จะส่งต่อไปยังตัวแก้ปัญหา และตรวจสอบให้แน่ใจว่าผลของความแตกต่างนั้นเป็นอย่างไร</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>หมายเหตุ: เมื่อเปิดใช้งานรูปแบบ รูปแบบที่ชื่อ "ค่าเริ่มต้น" จะถูกสร้างขึ้น และข้อมูลทางภูมิศาสตร์ทั้งหมดจะถูกย้ายไปที่รูปแบบนั้น คุณสามารถเพิ่ม เปลี่ยนชื่อ ลบรูปแบบต่างๆ จาก "Object Browser" คุณสามารถย้าย คัดลอกข้อมูลทางภูมิศาสตร์ระหว่างรูปแบบต่างๆ ข้อมูลแอตทริบิวต์กริดที่สร้างขึ้นจากรูปแบบที่คุณเลือกด้วย "รูปแบบต่างๆ เพื่อส่งผ่านไปยังตัวแก้ปัญหา" จะถูกส่งผ่านไปยังตัวแก้ปัญหา คุณสามารถเตรียมรูปแบบต่างๆ สลับรูปแบบที่จะส่งต่อไปยังตัวแก้ปัญหา และตรวจสอบให้แน่ใจว่าผลของความแตกต่างนั้นเป็นอย่างไร</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์เซลล์กริด (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>ดำเนินการ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>แอตทริบิวต์ต่อไปนี้ไม่ได้ถูกแมป เนื่องจากค่าเอาต์พุตของตัวสร้างกริดสำหรับแอตทริบิวต์เหล่านี้ หากคุณต้องการบังคับแมปข้อมูลทางภูมิศาสตร์สำหรับพวกเขา โปรดทำแผนที่ด้วยตนเองด้วยเมนู &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;</translation>
+        <translation>แอตทริบิวต์ต่อไปนี้ไม่ได้ถูกแมป เนื่องจากค่าเอาต์พุตของตัวสร้างกริดสำหรับแอตทริบิวต์เหล่านี้ หากคุณต้องการบังคับแมปข้อมูลทางภูมิศาสตร์สำหรับพวกเขา โปรดทำแผนที่ด้วยตนเองด้วยเมนู "Grid" -&gt; "Attributes Mapping" -&gt; "Execute"</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>การทำแผนที่ข้อมูลทางภูมิศาสตร์เสร็จสิ้น</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>แอตทริบิวต์กริด &quot;%1&quot; ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>แอตทริบิวต์กริด "%1" ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>เงื่อนไขขอบเขต &quot;%1&quot; ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>เงื่อนไขขอบเขต "%1" ถูกแก้ไขด้วยมือ เมื่อคุณดำเนินการแมป การแก้ไขทั้งหมดที่คุณทำจะถูกยกเลิก คุณต้องการทำแผนที่จริงหรือไม่?</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>รถยนต์</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;เมื่อสร้างตารางแล้ว ระบบจะถามคุณว่า เพื่อดำเนินการแมปแอตทริบิวต์ทุกครั้ง&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;เมื่อสร้างตารางแล้ว ระบบจะถามคุณว่า เพื่อดำเนินการแมปแอตทริบิวต์ทุกครั้ง&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>คู่มือ</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>การแมปแอตทริบิวต์จะดำเนินการเฉพาะเมื่อคุณเลือกเมนู &quot;ดำเนินการ&quot; ด้วยตนเอง</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>การแมปแอตทริบิวต์จะดำเนินการเฉพาะเมื่อคุณเลือกเมนู "ดำเนินการ" ด้วยตนเอง</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงแอตทริบิวต์โหนดตาราง (%1)</translation>
     </message>
 </context>
 <context>
@@ -21708,8 +21798,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>การตั้งค่าแผนที่สี</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; ใช้แท็บ Colormap เพื่อแก้ไขการตั้งค่าสี&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21826,7 +21916,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>ตั้งค่าสเกลาร์บาร์ (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>เปิดหน้าต่างมุมมองเบิร์ดอาย (&amp;B)</translation>
     </message>
     <message>

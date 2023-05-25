@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Καθορίστε τη μορφή αριθμού σε μορφή printf. Για παράδειγμα: &quot; %5.2f &quot;για 3.141592 -&gt; 3.14&quot; %4.2e &quot;για 12300 -&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Καθορίστε τη μορφή αριθμού σε μορφή printf. Για παράδειγμα: " %5.2f "για 3.141592 -&gt; 3.14" %4.2e "για 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>Ορατός</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>σωστά</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>σωστά</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Χρώμα</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Μορφή</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>Σχεδιάστε γραμμές περιγράμματος</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>px</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>Χρησιμοποιήστε τις τιμές του χρωματικού χάρτη</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>Καθορίστε τον αριθμό διαίρεσης</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">Είμαι μέσα:</translation>
+        <translation>Είμαι μέσα:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">I Max:</translation>
+        <translation>I Max:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J Min:</translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J Max:</translation>
+        <translation>J Max:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>ελάχ</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγιστη</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Τιμή</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_el_GR.ts -->
@@ -15732,8 +15771,8 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
-        <translation>Bird&apos;s-Eye Post-processing (2D): %1</translation>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
+        <translation>Bird's-Eye Post-processing (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">Ρύθμιση Scalar (%1)</translation>
+        <translation>Ρύθμιση Scalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Προσαρμοσμένο χρώμα</translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (κελί)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Επιλέξτε το αποτέλεσμα υπολογισμού για χρήση ως Υψόμετρο</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση σχήματος πλέγματος</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">Κλιμακωτή τιμή για υψόμετρο</translation>
+        <translation>Κλιμακωτή τιμή για υψόμετρο</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Προσαρμοσμένο χρώμα</translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Επιλέξτε το αποτέλεσμα υπολογισμού για χρήση ως Υψόμετρο</translation>
     </message>
 </context>
 <context>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Λάθος</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε &quot;Ρύθμιση οθόνης&quot; σε &quot;Σχήμα περιγράμματος&quot; και όχι &quot;Χρώμα περιθωρίου&quot; ή &quot;Ισολίνες&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>
@@ -16842,8 +16889,8 @@ Option -&gt; Preferences</source>
         <translation>Ρύθμιση Scalar (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>Για να εξαγάγετε KML για προβολή δρόμου, το Colormode πρέπει να είναι &quot;Discrete Mode&quot;</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Για να εξαγάγετε KML για προβολή δρόμου, το Colormode πρέπει να είναι "Discrete Mode"</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>Λάθος</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε &quot;Ρύθμιση οθόνης&quot; σε &quot;Σχήμα περιγράμματος&quot; και όχι &quot;Χρώμα περιθωρίου&quot; ή &quot;Ισολίνες&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>Βαθμωτό μέγεθος</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε τη ρύθμιση χρώματος σε &quot;Διακριτή λειτουργία&quot;.</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε τη ρύθμιση χρώματος σε "Διακριτή λειτουργία".</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε Αποτέλεσμα Υπολογισμού</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης σωματιδίων</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Περιοχή</translation>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε την περιοχή για την έναρξη των σωματιδίων</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε την περιοχή για την έναρξη των σωματιδίων, με βάση το εύρος δεικτών πλέγματος (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Διάστημα διαστήματος παραγωγής</translation>
+        <translation>Διάστημα χώρου παραγωγής</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος σημείου</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης σωματιδίων</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Περιοχή</translation>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Καθορίστε δύο σημεία. Τα σωματίδια ξεκινούν από σημεία που δημιουργούνται εξίσου χωρισμένα μεταξύ αυτών των δύο σημείων.</translation>
+        <translation>Προσδιορίστε δύο σημεία. Τα σωματίδια ξεκινούν από σημεία που δημιουργούνται εξίσου διαχωρισμένα μεταξύ αυτών των δύο σημείων.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Σύρετε το ποντίκι</translation>
+        <translation>Μεταφορά ποντικιού</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Αξίες Συντεταγμένων</translation>
+        <translation>Συντεταγμένες Αξίες</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Σημείο 1:</translation>
+        <translation>Σημείο 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Σημείο 2:</translation>
+        <translation>Σημείο 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Αριθμός πόντων:</translation>
+        <translation>Αριθμός πόντων:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος πόντων</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Βελτιστοποίηση της ρύθμισης εμφάνισης</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Φυσική αξία:</translation>
+        <translation>Φυσική αξία:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Περιοχή</translation>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Εύρος</translation>
+        <translation>Εύρος</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">Καθορίστε την περιοχή για την εκκίνηση βελτιστοποιήσεων</translation>
+        <translation>Καθορίστε την περιοχή για να ξεκινήσετε τις γραμμές</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">Καθορίστε την περιοχή για την έναρξη των γραμμών ροής, ανά εύρος δεικτών πλέγματος (I, J).</translation>
+        <translation>Καθορίστε την περιοχή για την έναρξη των γραμμών, με βάση το εύρος δεικτών πλέγματος (I, J).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Διάστημα διαστήματος παραγωγής</translation>
+        <translation>Διάστημα χώρου παραγωγής</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Πλάτος:</translation>
+        <translation>Πλάτος:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Βελτιστοποίηση της ρύθμισης εμφάνισης</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Φυσική αξία:</translation>
+        <translation>Φυσική αξία:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Περιοχή</translation>
+        <translation>Περιοχή</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">Καθορίστε δύο σημεία. Τα σωματίδια ξεκινούν από σημεία που δημιουργούνται εξίσου χωρισμένα μεταξύ αυτών των δύο σημείων.</translation>
+        <translation>Προσδιορίστε δύο σημεία. Τα σωματίδια ξεκινούν από σημεία που δημιουργούνται εξίσου διαχωρισμένα μεταξύ αυτών των δύο σημείων.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Σύρετε το ποντίκι</translation>
+        <translation>Μεταφορά ποντικιού</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Αξίες Συντεταγμένων</translation>
+        <translation>Συντεταγμένες Αξίες</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">Σημείο 1:</translation>
+        <translation>Σημείο 1:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">Σημείο 2:</translation>
+        <translation>Σημείο 2:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Αριθμός πόντων:</translation>
+        <translation>Αριθμός πόντων:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Πλάτος:</translation>
+        <translation>Πλάτος:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Διάστημα διαστήματος παραγωγής</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Εάν καθορίσετε 1, τα σωματίδια δημιουργούνται στους κόμβους πλέγματος. &lt;/p&gt; &lt;p&gt; Εάν καθορίσετε 2, τα σωματίδια δημιουργούνται στους κόμβους πλέγματος και τα μεσαία σημεία των κόμβων πλέγματος. &lt;/p&gt; &lt;p&gt; Εάν καθορίστε το 1/2, δημιουργούνται σωματίδια για κάθε άλλο κόμβο πλέγματος. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Εάν καθορίσετε 1, τα σωματίδια δημιουργούνται στους κόμβους πλέγματος. &lt;/p&gt; &lt;p&gt; Εάν καθορίσετε 2, τα σωματίδια δημιουργούνται στους κόμβους πλέγματος και τα μεσαία σημεία των κόμβων πλέγματος. &lt;/p&gt; &lt;p&gt; Εάν καθορίστε το 1/2, δημιουργούνται σωματίδια για κάθε άλλο κόμβο πλέγματος. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Μέγεθος:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Μέγεθος:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Διάστημα διαστήματος παραγωγής</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Εάν ορίσετε 1, οι γραμμές ροής ξεκινούν από τους κόμβους πλέγματος. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Εάν ορίσετε 2, οι γραμμές ροής ξεκινούν από κόμβους πλέγματος και μεσαία σημεία κόμβων πλέγματος. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Εάν καθορίσετε το 1/2, οι γραμμές εκκίνησης ξεκινούν σε κάθε άλλο κόμβο πλέγματος. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Εάν ορίσετε 1, οι γραμμές ροής ξεκινούν από τους κόμβους πλέγματος. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Εάν ορίσετε 2, οι γραμμές ροής ξεκινούν από κόμβους πλέγματος και μεσαία σημεία κόμβων πλέγματος. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Εάν καθορίσετε το 1/2, οι γραμμές εκκίνησης ξεκινούν σε κάθε άλλο κόμβο πλέγματος. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Πλάτος:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Πλάτος:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Καθορίστε έναν αριθμό εικονοστοιχείων στην οθόνη. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Ρύθμιση περιγράμματος</translation>
+        <translation type="vanished">Ρύθμιση περιγράμματος</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Εισαγωγή (&amp;I)...</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Εξαγωγή (&amp;E)...</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Πρόσωπα</translation>
+        <translation type="vanished">Πρόσωπα</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Χάρτης χρώματος</translation>
+        <translation type="vanished">Χάρτης χρώματος</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Μορφή</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished">Πρόσωπα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Χάρτης χρώματος</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">Μπορούν να οριστούν το πολύ τέσσερα περιγράμματα.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">Μπορούν να οριστούν έως τέσσερα βέλη.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης σωματιδίων</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Πρόσωπο</translation>
+        <translation>Πρόσωπο</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε το πρόσωπο για να ξεκινήσετε τα σωματίδια</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε την όψη για να ξεκινήσετε τα σωματίδια, ανά εύρος δεικτών πλέγματος (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Διάστημα διαστήματος παραγωγής</translation>
+        <translation>Διάστημα χώρου παραγωγής</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος πόντων</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Βελτιστοποίηση της ρύθμισης εμφάνισης</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Φυσική αξία:</translation>
+        <translation>Φυσική αξία:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Θέση έναρξης</translation>
+        <translation>Θέση εκκίνησης</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Προσθήκη (&amp;A)</translation>
+        <translation>Προσθήκη (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Αφαιρώ (&amp;R)</translation>
+        <translation>Αφαιρώ (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Πρόσωπο</translation>
+        <translation>Πρόσωπο</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε το πρόσωπο για να ξεκινήσετε τη βελτιστοποίηση</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Καθορίστε το πρόσωπο για να ξεκινήσετε τις βελτιστοποιημένες γραμμές, κατά εύρος δεικτών πλέγματος (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Διάστημα διαστήματος παραγωγής</translation>
+        <translation>Διάστημα χώρου παραγωγής</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Χρώμα:</translation>
+        <translation>Χρώμα:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Πλάτος:</translation>
+        <translation>Πλάτος:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>px</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Φυσική αξία:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">χρόνος</translation>
+        <translation>χρόνος</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργήστε περιοδικά</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρονικό διάστημα δημιουργίας</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>ελάχ</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγιστη</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>Δημιουργία σε αυθαίρετο χρόνο</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">Επεξεργασία...</translation>
+        <translation>Επεξεργασία...</translation>
     </message>
 </context>
 <context>
@@ -19784,14 +19866,14 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">Πρόγραμμα περιήγησης αντικειμένων</translation>
+        <translation>Πρόγραμμα περιήγησης αντικειμένων</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Παράθυρο Grid Bird&apos;s-Eye View</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Παράθυρο Grid Bird's-Eye View</translation>
     </message>
 </context>
 <context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Βαθμωτό μέγεθος</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση Scalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (κελί)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Επιλέξτε Χαρακτηριστικό Πλέγματος</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Επιλέξτε το χαρακτηριστικό grid για χρήση ως Elevation</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">Σχήμα πλέγματος</translation>
+        <translation>Σχήμα πλέγματος</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση σχήματος πλέγματος</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Κλιμακωτή τιμή για υψόμετρο</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>Βαθμωτό μέγεθος</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση Scalar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κόμβου</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Με βαθμωτή τιμή κελιού</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Εύρος</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scalar (κόμβος)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Επιλέξτε Χαρακτηριστικό Πλέγματος</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Επιλέξτε το χαρακτηριστικό grid για χρήση ως Elevation</translation>
     </message>
 </context>
 <context>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 δεν αντιστοιχίζονται μετά την τελευταία επεξεργασία τους. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Ορισμός συνθήκης ορίων &quot;%1&quot;δεν αντιστοιχίζεται μετά την τελευταία επεξεργασία. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Ορισμός συνθήκης ορίων "%1"δεν αντιστοιχίζεται μετά την τελευταία επεξεργασία. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Σημείωση: Όταν είναι ενεργοποιημένη η παραλλαγή, δημιουργείται η παραλλαγή με το όνομα &quot;Προεπιλογή&quot; και όλα τα γεωγραφικά δεδομένα μετακινούνται σε αυτήν. Μπορείτε να προσθέσετε, να μετονομάσετε, να αφαιρέσετε παραλλαγές από το &quot;Object Browser&quot;. Μπορείτε να μετακινήσετε, να αντιγράψετε γεωγραφικά δεδομένα μεταξύ των παραλλαγών. Τα δεδομένα χαρακτηριστικού πλέγματος που δημιουργήθηκαν από την παραλλαγή που επιλέγετε με &quot;Παραλλαγή για μετάβαση στον λύτη&quot; μεταβιβάζονται στον λύτη. Μπορείτε να προετοιμάσετε πολλές παραλλαγές, να αλλάξετε τις οποίες θα μεταβιβάσετε στον λύτη και να βεβαιωθείτε για το αποτέλεσμα της διαφοράς.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Σημείωση: Όταν είναι ενεργοποιημένη η παραλλαγή, δημιουργείται η παραλλαγή με το όνομα "Προεπιλογή" και όλα τα γεωγραφικά δεδομένα μετακινούνται σε αυτήν. Μπορείτε να προσθέσετε, να μετονομάσετε, να αφαιρέσετε παραλλαγές από το "Object Browser". Μπορείτε να μετακινήσετε, να αντιγράψετε γεωγραφικά δεδομένα μεταξύ των παραλλαγών. Τα δεδομένα χαρακτηριστικού πλέγματος που δημιουργήθηκαν από την παραλλαγή που επιλέγετε με "Παραλλαγή για μετάβαση στον λύτη" μεταβιβάζονται στον λύτη. Μπορείτε να προετοιμάσετε πολλές παραλλαγές, να αλλάξετε τις οποίες θα μεταβιβάσετε στον λύτη και να βεβαιωθείτε για το αποτέλεσμα της διαφοράς.</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κυψελών πλέγματος (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Εκτέλεση (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Τα ακόλουθα χαρακτηριστικά δεν αντιστοιχίστηκαν, επειδή οι τιμές εξόδου γεννήτριας πλέγματος γι &apos;αυτές. Εάν θέλετε να αντιστοιχίσετε τα γεωγραφικά δεδομένα με τη βία, παρακαλούμε χαρτογραφήστε με το μενού &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Τα ακόλουθα χαρακτηριστικά δεν αντιστοιχίστηκαν, επειδή οι τιμές εξόδου γεννήτριας πλέγματος γι 'αυτές. Εάν θέλετε να αντιστοιχίσετε τα γεωγραφικά δεδομένα με τη βία, παρακαλούμε χαρτογραφήστε με το μενού "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Η αντιστοίχιση γεωγραφικών δεδομένων ολοκληρώθηκε</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Το χαρακτηριστικό πλέγματος &quot;%1&quot;επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Το χαρακτηριστικό πλέγματος "%1"επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Η οριακή κατάσταση &quot;%1&quot;επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Η οριακή κατάσταση "%1"επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Αυτο</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Όταν δημιουργηθεί το πλέγμα, θα ερωτηθείτε αν για εκτέλεση αντιστοίχισης χαρακτηριστικών κάθε φορά. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Όταν δημιουργηθεί το πλέγμα, θα ερωτηθείτε αν για εκτέλεση αντιστοίχισης χαρακτηριστικών κάθε φορά. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Εγχειρίδιο</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Η αντιστοίχιση χαρακτηριστικών εκτελείται μόνο όταν επιλέγετε μη αυτόματα το μενού &quot;Εκτέλεση&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Η αντιστοίχιση χαρακτηριστικών εκτελείται μόνο όταν επιλέγετε μη αυτόματα το μενού "Εκτέλεση".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κόμβου πλέγματος (%1)</translation>
     </message>
 </context>
 <context>
@@ -21708,8 +21798,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Ρύθμιση χρωματικού χάρτη</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση:&lt;/span&gt; Χρησιμοποιήστε την καρτέλα Χάρτης χρώματος για να επεξεργαστείτε τη ρύθμιση χρώματος&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Χρησιμοποιήστε την καρτέλα Χάρτης χρώματος για να επεξεργαστείτε τη ρύθμιση χρώματος&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21822,8 +21912,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Ρύθμιση Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
-        <translation>Ανοίξτε το παράθυρο Bird&apos;s-Eye View (&amp;B)</translation>
+        <source>Open &amp;Bird's-Eye View Window</source>
+        <translation>Ανοίξτε το παράθυρο Bird's-Eye View (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>

@@ -9643,9 +9643,9 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
-   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
-        <translation>Sayı biçimini printf biçiminde belirtin. Örneğin: &quot; %5.2f&quot; için 3.141592 --&gt; 3.14 &quot; %4 12300 için.2e&quot; --&gt; 1.23e+004</translation>
+   "%5.2f" for 3.141592 --&gt; 3.14
+   "%4.2e" for 12300  --&gt; 1.23e+004</source>
+        <translation>Sayı biçimini printf biçiminde belirtin. Örneğin: " %5.2f" için 3.141592 --&gt; 3.14 " %4 12300 için.2e" --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -10118,6 +10118,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Visible</source>
         <translation>Görünür</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ArrowsLengthSettingEditWidget</name>
@@ -10421,6 +10425,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Right</source>
         <translation>Sağ</translation>
     </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapEnumerateSettingEditWidget</name>
@@ -10716,6 +10724,10 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Right</source>
         <translation>Sağ</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11097,33 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Color</source>
         <translation type="vanished">Renk</translation>
+    </message>
+</context>
+<context>
+    <name>ContourSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>Biçim</translation>
+    </message>
+    <message>
+        <source>Draw contour lines</source>
+        <translation>Kontur çizgileri çizin</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation>Hat genişliği:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>piksel</translation>
+    </message>
+    <message>
+        <source>Use values of colormap</source>
+        <translation>Renk haritasının değerlerini kullanın</translation>
+    </message>
+    <message>
+        <source>Specify division number</source>
+        <translation>Bölüm numarasını belirtin</translation>
     </message>
 </context>
 <context>
@@ -12932,23 +12971,23 @@ Do you really want to import this file?</source>
     <name>RegionRange2dSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="unfinished">Varım:</translation>
+        <translation>Varım:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation type="unfinished">Maks:</translation>
+        <translation>Maks:</translation>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="unfinished">J Min:</translation>
+        <translation>J Min:</translation>
     </message>
     <message>
         <source>J Max:</source>
-        <translation type="unfinished">J Maks:</translation>
+        <translation>J Maks:</translation>
     </message>
 </context>
 <context>
@@ -13086,27 +13125,27 @@ Do you really want to import this file?</source>
     <name>StructuredGridSkipOrSubdivideSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>dakika</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished">1</translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>maks.</translation>
     </message>
 </context>
 <context>
@@ -15718,7 +15757,7 @@ Option -&gt; Preferences</source>
     <name>ValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Değeri seç</translation>
     </message>
 </context>
 <!-- iricPost2dbirdeye_tr_TR.ts -->
@@ -15732,7 +15771,7 @@ Option -&gt; Preferences</source>
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>Kuş Bakışı İşleme Sonrası (2D): %1</translation>
     </message>
     <message>
@@ -15794,34 +15833,34 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished">Skaler Ayar (%1)</translation>
+        <translation>Skaler Ayar (%1)</translation>
     </message>
 </context>
 <context>
     <name>Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm skaler değerine göre</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre skaler değerine göre</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Özel renk</translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
@@ -15840,11 +15879,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler (hücre)</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Hesaplama Sonucunu Seçin</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Yükseklik olarak kullanılacak hesaplama sonucunu seçin</translation>
     </message>
 </context>
 <context>
@@ -15925,7 +15968,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Şekli Ayarı</translation>
     </message>
 </context>
 <context>
@@ -15943,11 +15986,11 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished">Yükseklik için skaler değer</translation>
+        <translation>Yükseklik için skaler değer</translation>
     </message>
 </context>
 <context>
@@ -16000,27 +16043,27 @@ Option -&gt; Preferences</source>
     <name>Post2dBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm skaler değerine göre</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre skaler değerine göre</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished">Özel renk</translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
@@ -16039,7 +16082,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Hesaplama Sonucunu Seçin</translation>
+    </message>
+    <message>
+        <source>Select calculation result to use as Elevation</source>
+        <translation>Yükseklik olarak kullanılacak hesaplama sonucunu seçin</translation>
     </message>
 </context>
 <context>
@@ -16440,15 +16487,15 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="vanished">Sokak görünümü için KML&apos;yi dışa aktarmak için Contour Figure ile görüntüleyin.</translation>
+        <translation type="vanished">Sokak görünümü için KML'yi dışa aktarmak için Contour Figure ile görüntüleyin.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Sokak görünümü için KML&apos;yi dışa aktarmak için değer aralığı manuel olarak ayarlanmalıdır.</translation>
+        <translation type="vanished">Sokak görünümü için KML'yi dışa aktarmak için değer aralığı manuel olarak ayarlanmalıdır.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation type="vanished">Sokak görünümü için KML&apos;yi dışa aktarmak için koordinat sistemi belirtilmelidir.</translation>
+        <translation type="vanished">Sokak görünümü için KML'yi dışa aktarmak için koordinat sistemi belirtilmelidir.</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
@@ -16482,15 +16529,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
@@ -16512,12 +16559,12 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Hata</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Şekil dosyasını dışa aktarmak için, &quot;Renk Fringe&quot; veya &quot;Isolines&quot; yerine &quot;Görüntü ayarı&quot;nı &quot;Kontur Figürü&quot; olarak değiştirin.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Şekil dosyasını dışa aktarmak için, "Renk Fringe" veya "Isolines" yerine "Görüntü ayarı"nı "Kontur Figürü" olarak değiştirin.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>
@@ -16594,7 +16641,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>
@@ -16605,7 +16652,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>
@@ -16827,23 +16874,23 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>To export KML for street view, display with Contour Figure.</source>
-        <translation type="vanished">Sokak görünümü için KML&apos;yi dışa aktarmak için Contour Figure ile görüntüleyin.</translation>
+        <translation type="vanished">Sokak görünümü için KML'yi dışa aktarmak için Contour Figure ile görüntüleyin.</translation>
     </message>
     <message>
         <source>To export KML for street view, value range should be set up manually.</source>
-        <translation type="vanished">Sokak görünümü için KML&apos;yi dışa aktarmak için değer aralığı manuel olarak ayarlanmalıdır.</translation>
+        <translation type="vanished">Sokak görünümü için KML'yi dışa aktarmak için değer aralığı manuel olarak ayarlanmalıdır.</translation>
     </message>
     <message>
         <source>To export KML for street view, coordinate system should be specified.</source>
-        <translation>Sokak görünümü için KML&apos;yi dışa aktarmak için koordinat sistemi belirtilmelidir.</translation>
+        <translation>Sokak görünümü için KML'yi dışa aktarmak için koordinat sistemi belirtilmelidir.</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
         <translation>Skaler Ayar (%1)</translation>
     </message>
     <message>
-        <source>To export KML for street view, Colormode needs to be &quot;Discrete Mode&quot;</source>
-        <translation>Sokak görünümü için KML&apos;yi dışa aktarmak üzere Colormode&apos;un &quot;Ayrık Mod&quot; olması gerekir</translation>
+        <source>To export KML for street view, Colormode needs to be "Discrete Mode"</source>
+        <translation>Sokak görünümü için KML'yi dışa aktarmak üzere Colormode'un "Ayrık Mod" olması gerekir</translation>
     </message>
 </context>
 <context>
@@ -16873,15 +16920,15 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
@@ -16895,20 +16942,20 @@ Option -&gt; Preferences</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Şekil dosyasını dışa aktarmak için, &quot;Renk Fringe&quot; veya &quot;Isolines&quot; yerine &quot;Görüntü ayarı&quot;nı &quot;Kontur Figürü&quot; olarak değiştirin.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Şekil dosyasını dışa aktarmak için, "Renk Fringe" veya "Isolines" yerine "Görüntü ayarı"nı "Kontur Figürü" olarak değiştirin.</translation>
     </message>
     <message>
         <source>Scalar</source>
         <translation>skaler</translation>
     </message>
     <message>
-        <source>To export shape file, switch color setting to &quot;Discrete Mode&quot;.</source>
-        <translation>Şekil dosyasını dışa aktarmak için renk ayarını &quot;Ayrık Mod&quot; olarak değiştirin.</translation>
+        <source>To export shape file, switch color setting to "Discrete Mode".</source>
+        <translation>Şekil dosyasını dışa aktarmak için renk ayarını "Ayrık Mod" olarak değiştirin.</translation>
     </message>
     <message>
         <source>Select Calculation Result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hesaplama Sonucunu Seçin</translation>
     </message>
 </context>
 <context>
@@ -16991,65 +17038,65 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacık Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Ekle (&amp;A)</translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Bölge</translation>
+        <translation>Bölge</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
     <message>
         <source>Specify the area to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacıkların başlatılacağı alanı belirtin</translation>
     </message>
     <message>
         <source>Specify the area to start particles, by grid indices range (I, J).</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara indeksleri aralığı (I, J) ile parçacıkların başlatılacağı alanı belirtin.</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Nesil uzay aralığı</translation>
+        <translation>Üretim alanı aralığı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Nokta Büyüklüğü</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -17060,77 +17107,77 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacık Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Ekle (&amp;A)</translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Bölge</translation>
+        <translation>Bölge</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorParticleGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">İki nokta belirtin. Parçacıklar, bu iki nokta arasında eşit olarak ayrılmış noktalardan başlar.</translation>
+        <translation>İki nokta belirtin. Parçacıklar, bu iki nokta arasında eşit olarak ayrılmış noktalardan başlar.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Fare Sürükleme</translation>
+        <translation>Fare Sürükle</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinat Değerleri</translation>
+        <translation>Koordinat Değerleri</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">1. Nokta:</translation>
+        <translation>1. Nokta:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">2. Nokta:</translation>
+        <translation>2. nokta:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Puan sayısı:</translation>
+        <translation>Puan sayısı:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>punto boyutu</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -17148,69 +17195,69 @@ Option -&gt; Preferences</source>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü Ayarını Kolaylaştırın</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziksel Değer:</translation>
+        <translation>Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Ekle (&amp;A)</translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Bölge</translation>
+        <translation>Bölge</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished">Menzil</translation>
+        <translation>Menzil</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines</source>
-        <translation type="unfinished">Akış çizgilerinin başlatılacağı alanı belirtin</translation>
+        <translation>Akış çizgilerini başlatmak için alanı belirtin</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J).</source>
-        <translation type="unfinished">Akış çizgilerinin başlatılacağı alanı ızgara indeks aralığına (I, J) göre belirtin.</translation>
+        <translation>Akış çizgilerinin başlatılacağı alanı ızgara indeksleri aralığına (I, J) göre belirleyin.</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Nesil uzay aralığı</translation>
+        <translation>Üretim alanı aralığı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Genişlik:</translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -17221,81 +17268,81 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü Ayarını Kolaylaştırın</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziksel Değer:</translation>
+        <translation>Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished">Ekle (&amp;A)</translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
     <message>
         <source>Region</source>
-        <translation type="unfinished">Bölge</translation>
+        <translation>Bölge</translation>
     </message>
 </context>
 <context>
     <name>Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Specify two points. Particles start from points generated equally separated between these two points.</source>
-        <translation type="unfinished">İki nokta belirtin. Parçacıklar, bu iki nokta arasında eşit olarak ayrılmış noktalardan başlar.</translation>
+        <translation>İki nokta belirtin. Parçacıklar, bu iki nokta arasında eşit olarak ayrılmış noktalardan başlar.</translation>
     </message>
     <message>
         <source>Mouse Drag</source>
-        <translation type="unfinished">Fare Sürükleme</translation>
+        <translation>Fare Sürükle</translation>
     </message>
     <message>
         <source>Coordinate Values</source>
-        <translation type="unfinished">Koordinat Değerleri</translation>
+        <translation>Koordinat Değerleri</translation>
     </message>
     <message>
         <source>Point 1:</source>
-        <translation type="unfinished">1. Nokta:</translation>
+        <translation>1. Nokta:</translation>
     </message>
     <message>
         <source>,</source>
-        <translation type="unfinished">,</translation>
+        <translation>,</translation>
     </message>
     <message>
         <source>Point 2:</source>
-        <translation type="unfinished">2. Nokta:</translation>
+        <translation>2. nokta:</translation>
     </message>
     <message>
         <source>Number of points:</source>
-        <translation type="unfinished">Puan sayısı:</translation>
+        <translation>Puan sayısı:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Genişlik:</translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -17392,16 +17439,16 @@ Option -&gt; Preferences</source>
         <translation type="vanished">Nesil uzay aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } p {kenar boşluğu: 3 piksel; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;1 belirtirseniz, ızgara düğümlerinde parçacıklar oluşturulur.&lt;/p&gt; &lt;p&gt;2 belirtirseniz parçacıklar ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında oluşturulur.&lt;/p&gt; &lt;p&gt;Eğer 1/2 belirtin, diğer her ızgara düğümü için parçacıklar oluşturulur.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } p {kenar boşluğu: 3 piksel; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;1 belirtirseniz, ızgara düğümlerinde parçacıklar oluşturulur.&lt;/p&gt; &lt;p&gt;2 belirtirseniz parçacıklar ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında oluşturulur.&lt;/p&gt; &lt;p&gt;Eğer 1/2 belirtin, diğer her ızgara düğümü için parçacıklar oluşturulur.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -17412,12 +17459,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Boy:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17523,12 +17570,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Boy:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17763,14 +17810,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Nesil uzay aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1 belirtirseniz, akış çizgileri ızgara düğümlerinde başlar.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;2 belirtirseniz, akış çizgileri ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında başlar.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;1/2 belirtirseniz, akış çizgileri diğer tüm ızgara düğümlerinde başlar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;1 belirtirseniz, akış çizgileri ızgara düğümlerinde başlar.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;2 belirtirseniz, akış çizgileri ızgara düğümlerinde ve ızgara düğümlerinin orta noktalarında başlar.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;1/2 belirtirseniz, akış çizgileri diğer tüm ızgara düğümlerinde başlar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -17801,12 +17848,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Genişlik:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -17872,12 +17919,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Genişlik:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Ekranda bir piksel sayısı belirtin.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -18066,6 +18113,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowCellRangeListSettingEditWidget</name>
@@ -18155,7 +18206,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowContourGroupDataItem_PropertyDialog</name>
     <message>
         <source>Contour Setting</source>
-        <translation>Kontur Ayarı</translation>
+        <translation type="vanished">Kontur Ayarı</translation>
     </message>
     <message>
         <source>Color</source>
@@ -18163,19 +18214,42 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>İçe aktarmak (&amp;I)...</translation>
+        <translation type="vanished">İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>İhracat (&amp;E)...</translation>
+        <translation type="vanished">İhracat (&amp;E)...</translation>
     </message>
     <message>
         <source>Faces</source>
-        <translation>Yüzler</translation>
+        <translation type="vanished">Yüzler</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>renk haritası</translation>
+        <translation type="vanished">renk haritası</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowContourGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Biçim</translation>
+    </message>
+    <message>
+        <source>Faces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">renk haritası</translation>
+    </message>
+    <message>
+        <source>Lighting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18222,6 +18296,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>A maximum of four contours may be defined.</source>
         <translation type="vanished">En fazla dört kontur tanımlanabilir.</translation>
+    </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18706,6 +18784,10 @@ p, li { white-space: pre-wrap; }
         <source>A maximum of four arrows may be defined.</source>
         <translation type="vanished">En fazla dört ok tanımlanabilir.</translation>
     </message>
+    <message>
+        <source>Select Calculation Result</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupDataItem</name>
@@ -18726,61 +18808,61 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Particles Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacık Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Yüz</translation>
+        <translation>Yüz</translation>
     </message>
     <message>
         <source>Specify the face to start particles</source>
-        <translation type="unfinished"></translation>
+        <translation>Parçacıkları başlatmak için yüzü belirtin</translation>
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara indeksleri aralığına (I, J, K) göre parçacıkları başlatmak için yüzü belirtin.</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Nesil uzay aralığı</translation>
+        <translation>Üretim alanı aralığı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Point size</source>
-        <translation type="unfinished"></translation>
+        <translation>punto boyutu</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -18798,65 +18880,65 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem</name>
     <message>
         <source>Streamline Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü Ayarını Kolaylaştırın</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished">Fiziksel Değer:</translation>
+        <translation>Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Start Position</source>
-        <translation type="unfinished">Başlangıç konumu</translation>
+        <translation>Başlangıç konumu</translation>
     </message>
     <message>
         <source>&amp;Add</source>
-        <translation type="unfinished"></translation>
+        <translation>Eklemek (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
-        <translation type="unfinished">Kaldırmak (&amp;R)</translation>
+        <translation>Kaldırmak (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>Post3dWindowNodeVectorStreamlineGroupStructuredDataItem_SettingEditWidget_StartPositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Face</source>
-        <translation type="unfinished">Yüz</translation>
+        <translation>Yüz</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Akış çizgilerini başlatmak için yüzü belirtin</translation>
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara indeksleri aralığına (I, J, K) göre akış çizgilerini başlatmak için yüzü belirtin.</translation>
     </message>
     <message>
         <source>Generation space interval</source>
-        <translation type="unfinished">Nesil uzay aralığı</translation>
+        <translation>Üretim alanı aralığı</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Renk:</translation>
+        <translation>Renk:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Genişlik:</translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation>piksel</translation>
     </message>
 </context>
 <context>
@@ -19266,64 +19348,64 @@ p, li { white-space: pre-wrap; }
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiziksel Değer:</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished">Zaman</translation>
+        <translation>Zaman</translation>
     </message>
     <message>
         <source>Generate periodically</source>
-        <translation type="unfinished"></translation>
+        <translation>Periyodik olarak oluştur</translation>
     </message>
     <message>
         <source>Generation time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Nesil zaman aralığı</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished"></translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished"></translation>
+        <translation>dakika</translation>
     </message>
     <message>
         <source>1</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
     <message>
         <source>max</source>
-        <translation type="unfinished"></translation>
+        <translation>maks.</translation>
     </message>
     <message>
         <source>Generate at arbitrary time</source>
-        <translation type="unfinished"></translation>
+        <translation>İsteğe bağlı zamanda oluştur</translation>
     </message>
     <message>
         <source>Edit...</source>
-        <translation type="unfinished">Düzenlemek...</translation>
+        <translation>Düzenlemek...</translation>
     </message>
 </context>
 <context>
@@ -19784,13 +19866,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation type="unfinished">Nesne Tarayıcı</translation>
+        <translation>Nesne Tarayıcı</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Izgara Kuş Bakışı Penceresi</translation>
     </message>
 </context>
@@ -19832,49 +19914,53 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowCellScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaler Ayar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm skaler değerine göre</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre skaler değerine göre</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowCellScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (cell)</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler (hücre)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Izgara Özelliğini Seçin</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Yükseklik olarak kullanılacak ızgara özniteliğini seçin</translation>
     </message>
 </context>
 <context>
@@ -20001,71 +20087,75 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridShapeDataItem</name>
     <message>
         <source>Grid shape</source>
-        <translation type="unfinished">ızgara şekli</translation>
+        <translation>ızgara şekli</translation>
     </message>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Şekli Ayarı</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowGridShapeDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation type="unfinished"></translation>
+        <translation>Yükseklik için skaler değer</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem</name>
     <message>
         <source>Scalar</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler</translation>
     </message>
     <message>
         <source>Scalar Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaler Ayar (%1)</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>By node scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Düğüm skaler değerine göre</translation>
     </message>
     <message>
         <source>By cell scalar value</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre skaler değerine göre</translation>
     </message>
     <message>
         <source>Custom color</source>
-        <translation type="unfinished"></translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Menzil</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindowNodeScalarGroupTopDataItem</name>
     <message>
         <source>Scalar (node)</source>
-        <translation type="unfinished"></translation>
+        <translation>skaler (düğüm)</translation>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Izgara Özelliğini Seçin</translation>
+    </message>
+    <message>
+        <source>Select grid attribute to use as Elevation</source>
+        <translation>Yükseklik olarak kullanılacak ızgara özniteliğini seçin</translation>
     </message>
 </context>
 <context>
@@ -20376,7 +20466,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Skalarbar&apos;ı Ayarla...</translation>
+        <translation>Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Import</source>
@@ -20459,8 +20549,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 son kez düzenlendikten sonra eşlenmezler. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Sınır Koşul Ayarı &quot;%1&quot; son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Sınır Koşul Ayarı "%1" son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20529,7 +20619,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="vanished">Web&apos;den içe aktar (&amp;I)...</translation>
+        <translation type="vanished">Web'den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -20545,7 +20635,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="vanished">Skalarbar&apos;ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -20662,7 +20752,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Web&apos;den Yüksekliği İçe Aktar (&amp;I)...</translation>
+        <translation>Web'den Yüksekliği İçe Aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -20709,14 +20799,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Not: Varyasyon etkinleştirildiğinde, &quot;Varsayılan&quot; adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. &quot;Nesne Tarayıcı&quot;dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. &quot;Çözücüye geçmek için varyasyon&quot; ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Not: Varyasyon etkinleştirildiğinde, "Varsayılan" adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. "Nesne Tarayıcı"dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. "Çözücüye geçmek için varyasyon" ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -20857,7 +20947,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Hücresi Özniteliği Görüntüleme Ayarı (%1)</translation>
     </message>
 </context>
 <context>
@@ -20935,9 +21025,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Uygulamak (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen &quot;Izgara&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; menüsü ile manuel olarak haritalayın.</translation>
+        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen "Izgara" -&gt; "Attributes Mapping" -&gt; "Execute" menüsü ile manuel olarak haritalayın.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -20956,12 +21046,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Coğrafi verilerin eşlenmesi tamamlandı</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ızgara özelliği &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ızgara özelliği "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sınır koşulu &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sınır koşulu "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -20979,20 +21069,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Oto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuel</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Nitelik eşleme, yalnızca &quot;Yürüt&quot; menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Nitelik eşleme, yalnızca "Yürüt" menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -21000,11 +21090,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">TIN&apos;lerle Eşleme</translation>
+        <translation type="vanished">TIN'lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN&apos;ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
+        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -21124,7 +21214,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Düğümü Özniteliği Görüntüleme Ayarı (%1)</translation>
     </message>
 </context>
 <context>
@@ -21712,8 +21802,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Başlık Rengi</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -21818,7 +21908,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Skalar Çubuğu Ayarla (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Kuşbakışı Görünüm Penceresini Aç (&amp;B)</translation>
     </message>
     <message>
