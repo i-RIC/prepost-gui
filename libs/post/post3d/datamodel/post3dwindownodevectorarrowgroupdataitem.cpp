@@ -264,6 +264,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
 		auto grid = item->faceGrid();
+		if (grid == nullptr) {continue;}
+
 		auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
 		filter->SetInputData(grid);
 		filter->Update();

@@ -80,10 +80,13 @@ Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
 
 vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
 {
-	auto data = groupDataItem()->data()->data();
+	auto data = groupDataItem()->data();
 	if (data == nullptr) {return nullptr;}
 
-	return m_setting.face.extractFace(vtkStructuredGrid::SafeDownCast(data->data()));
+	auto data2 = data->data();
+	if (data2 == nullptr) {return nullptr;}
+
+	return m_setting.face.extractFace(vtkStructuredGrid::SafeDownCast(data2->data()));
 }
 
 const Post3dWindowNodeVectorArrowDataItem::Setting& Post3dWindowNodeVectorArrowDataItem::setting() const
@@ -182,10 +185,13 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto data = groupDataItem()->data()->data();
+	auto data = groupDataItem()->data();
 	if (data == nullptr) {return;}
+	
+	auto data2 = data->data();
+	if (data2 == nullptr) {return;}
 
-	auto grid = vtkStructuredGrid::SafeDownCast(data->data());
+	auto grid = vtkStructuredGrid::SafeDownCast(data2->data());
 
 	auto grid2 = m_setting.face.extractFace(grid);
 
