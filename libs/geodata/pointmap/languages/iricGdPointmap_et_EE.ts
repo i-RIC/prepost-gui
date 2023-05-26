@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -144,7 +142,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Kui soovite eemaldada pikkade servadega kolmnurgad, peate kuvamismeetodi valima Wireframe või Surface. Kui vajutate nuppu OK, lülitatakse kuvamismeetod Wireframe&apos;i</translation>
+        <translation type="vanished">Kui soovite eemaldada pikkade servadega kolmnurgad, peate kuvamismeetodi valima Wireframe või Surface. Kui vajutate nuppu OK, lülitatakse kuvamismeetod Wireframe'i</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -231,8 +229,8 @@
         <translation type="vanished">Ühenda...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Teisi andmeid ei saa ühendada &quot;%1&quot; Grupp.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Teisi andmeid ei saa ühendada "%1" Grupp.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -308,15 +306,15 @@
     </message>
     <message>
         <source>&amp;Points Edit Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide redigeerimise režiim (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;TIN Edit Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>TIN-i redigeerimisrežiim (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Polygons Edit Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Hulknurkade redigeerimisrežiim (&amp;P)</translation>
     </message>
 </context>
 <context>
@@ -623,12 +621,12 @@
         <translation>Eraldajat pole täpsustatud</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Lugemiseks pole piisavalt väärtusi &quot;%1&quot;&quot;. %1 &quot;veerg on %2 aga %3 sisendväärtused.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Lugemiseks pole piisavalt väärtusi "%1"". %1 "veerg on %2 aga %3 sisendväärtused.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Lugemisel ilmnes viga &quot;%1&quot;väärtus&quot;. %1 &quot;väärtus peaks olema reaalarv, kuid&quot;%2&quot;täpsustatud.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Lugemisel ilmnes viga "%1"väärtus". %1 "väärtus peaks olema reaalarv, kuid"%2"täpsustatud.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -698,8 +696,8 @@
         <translation>Tsitaadi tegelane:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1012,8 +1010,8 @@
         <translation>Pind</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1230,8 +1228,8 @@
         <translation>Kaalueksponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Väärtuste kaalutud keskmise arvutamisel kasutatakse kaaluna &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt;. r on kaugus punktist sõlme või lahtri keskpunktini, millele väärtus on vastendatud.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>Väärtuste kaalutud keskmise arvutamisel kasutatakse kaaluna &lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt;. r on kaugus punktist sõlme või lahtri keskpunktini, millele väärtus on vastendatud.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1281,8 +1279,8 @@
         <translation type="vanished">Pind</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Punktide redigeerimisrežiimis eiratakse seda seadet ja TIN-andmed on alati kuvatakse punktidena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1324,8 +1322,8 @@
         <translation>Piira serva pikkust:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Märkus &lt;/span&gt;: Kui klõpsate nupul Rakenda, värvitakse eemaldatavad kolmnurgad tumedaga hall. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: Kui klõpsate nupul Rakenda, värvitakse eemaldatavad kolmnurgad tumedaga hall. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
