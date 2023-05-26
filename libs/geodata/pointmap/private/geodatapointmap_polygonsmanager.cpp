@@ -141,6 +141,11 @@ bool GeoDataPointmap::PolygonsManager::map(double x, double y, double* value)
 	return m_parent->getTinValueAt(x, y, value);
 }
 
+GeoDataPolygonGroup* GeoDataPointmap::PolygonsManager::polygonGroup() const
+{
+	return m_polygonGroup;
+}
+
 void GeoDataPointmap::PolygonsManager::addActionsToMenu(QMenu* menu)
 {
 	menu->addAction(m_polygonGroup->addAction());

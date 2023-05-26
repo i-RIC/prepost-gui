@@ -19,6 +19,7 @@ public:
 
 	void updatePolygonOrder();
 	bool map(double x, double y, double* value);
+	GeoDataPolygonGroup* polygonGroup() const;
 
 	void addActionsToMenu(QMenu* menu) override;
 

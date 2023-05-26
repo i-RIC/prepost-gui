@@ -12,6 +12,7 @@
 #include "private/geodatapointmap_tinmanager_breakline.h"
 #include "public/geodatapointmap_displaysettingwidget.h"
 
+#include <geodata/polygongroup/geodatapolygongroup.h>
 #include <guibase/polygon/polygonpushvertexcommand.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessordataitem.h>
@@ -478,12 +479,17 @@ void GeoDataPointmap::assignActorZValues(const ZDepthRange& range)
 	double selectionPolygonDepth = range.max();
 	double breakLineDepth = range.max() * 0.9 + range.min() * 0.1;
 	double pointsDepth = range.max() * 0.5 + range.min() * 0.5;
+	double polygonsDepthMax = range.max() * 0.3 + range.min() * 0.7;
+	double polygonsDepthMin = range.max() * 0.2 + range.min() * 0.8;
 	double selectedPointsDepth = range.min();
 	double tinDepth = range.min();
 
 	impl->m_pointsManager.setSelectionPolygonZDepth(selectionPolygonDepth);
 	impl->m_tinManager.setZDepthToBreakLines(breakLineDepth);
 	impl->m_pointsManager.pointsActor()->SetPosition(0, 0, pointsDepth);
+	ZDepthRange polygonsRange;
+	polygonsRange.setRange(polygonsDepthMin, polygonsDepthMax);
+	impl->m_polygonsManager.polygonGroup()->assignActorZValues(polygonsRange);
 	impl->m_pointsManager.selectedPointsActor()->SetPosition(0, 0, selectedPointsDepth);
 	impl->m_tinManager.tinActor()->SetPosition(0, 0, tinDepth);
 }
