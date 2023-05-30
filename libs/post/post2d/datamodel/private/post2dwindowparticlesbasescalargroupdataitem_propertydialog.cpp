@@ -140,6 +140,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::PropertyDialog::setupColorTar
 		ui->customColorRadioButton->setChecked(true);
 		ui->customColorRadioButton->setDisabled(true);
 		ui->valueRadioButton->setDisabled(true);
+		ui->colorMapGroupBox->setDisabled(true);
 	}
 }
 
