@@ -480,12 +480,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>61</x>
-     <y>74</y>
+     <x>74</x>
+     <y>68</y>
     </hint>
     <hint type="destinationlabel">
-     <x>123</x>
-     <y>98</y>
+     <x>142</x>
+     <y>96</y>
     </hint>
    </hints>
   </connection>
@@ -496,12 +496,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>52</x>
-     <y>121</y>
+     <x>65</x>
+     <y>120</y>
     </hint>
     <hint type="destinationlabel">
-     <x>129</x>
-     <y>149</y>
+     <x>144</x>
+     <y>148</y>
     </hint>
    </hints>
   </connection>
@@ -544,12 +544,28 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>322</x>
-     <y>184</y>
+     <x>538</x>
+     <y>182</y>
     </hint>
     <hint type="destinationlabel">
-     <x>468</x>
-     <y>212</y>
+     <x>417</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showPolygonsCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>polygonOpacityWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>429</x>
+     <y>218</y>
     </hint>
    </hints>
   </connection>
