@@ -2,7 +2,6 @@
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectordataitem.h"
 #include "measureddatavectorgroupdataitem.h"
-#include "measureddatavectorsetting.h"
 #include "private/measureddatavectorgroupdataitem_impl.h"
 #include "private/measureddatavectorgroupdataitem_setting.h"
 
