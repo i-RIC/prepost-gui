@@ -11,6 +11,8 @@ class ModifyCommandDialog;
 
 class ModifyCommandWidget;
 
+class QAbstractButton;
+
 class MISCDLL_EXPORT ModifyCommandDialog : public QDialog
 {
 	Q_OBJECT

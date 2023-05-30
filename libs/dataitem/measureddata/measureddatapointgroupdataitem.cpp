@@ -2,12 +2,13 @@
 #include "measureddatapointdataitem.h"
 #include "measureddatapointgroupdataitem.h"
 #include "private/measureddatapointgroupdataitem_impl.h"
-#include "private/measureddatapointgroupdataitem_propertydialog.h"
+#include "private/measureddatapointgroupdataitem_settingeditwidget.h"
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/scalarbarsetting.h>
 #include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
@@ -54,62 +55,15 @@ void MeasuredDataPointGroupDataItem::Impl::setupActors()
 	r->AddActor(m_actor);
 	r->AddActor2D(m_legendActor);
 
-	updateActorSettings();
+	m_item->updateActorSetting();
 }
 
 void MeasuredDataPointGroupDataItem::Impl::updateCheckState()
 {
-	if (m_setting.mappingMode == MeasuredDataPointSetting::MappingMode::Arbitrary) {
+	if (m_setting.mappingMode == Setting::MappingMode::Arbitrary) {
 		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_item->m_childItems, true);
 	} else {
 		NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.value), m_item->m_childItems, true);
-	}
-}
-
-void MeasuredDataPointGroupDataItem::Impl::updateActorSettings()
-{
-	// make all the items invisible
-	m_actor->VisibilityOff();
-	m_item->m_actorCollection->RemoveAllItems();
-
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
-	vtkPolyData* polyData = nullptr;
-	if (m_setting.shapeMode == MeasuredDataPointSetting::ShapeMode::Points) {
-		polyData = md->pointData();
-	} else if (m_setting.shapeMode == MeasuredDataPointSetting::ShapeMode::Surface) {
-		polyData = md->polyData();
-	}
-
-	if (m_setting.mappingMode == MeasuredDataPointSetting::MappingMode::Arbitrary) {
-		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		mapper->SetInputData(polyData);
-		m_actor->SetMapper(mapper);
-		mapper->Delete();
-
-		m_actor->GetProperty()->SetColor(m_setting.color);
-	} else {
-		auto value = iRIC::toStr(m_setting.value);
-		auto cs = m_colorMapSettings.at(value);
-		auto mapper = cs->buildPointDataMapper(polyData);
-		m_actor->SetMapper(mapper);
-		mapper->Delete();
-	}
-
-	auto prop = m_actor->GetProperty();
-	prop->SetOpacity(m_setting.opacity);
-	prop->SetPointSize(m_setting.pointSize);
-
-	m_item->m_actorCollection->AddItem(m_actor);
-
-	m_item->assignActorZValues(m_item->m_zDepthRange);
-	m_item->updateVisibilityWithoutRendering();
-
-	auto as = m_item->activeSetting();
-	if (as != nullptr) {
-		auto v = m_item->dataModel()->graphicsView();
-		as->legend.imageSetting.controller()->handleSelection(v);
-	} else {
-		m_legendActor->VisibilityOff();
 	}
 }
 
@@ -145,7 +99,7 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 
 	if (md->scalarNames().size() > 0) {
 		auto name = md->scalarNames().at(0);
-		impl->m_setting.mappingMode = MeasuredDataPointSetting::MappingMode::Value;
+		impl->m_setting.mappingMode = Setting::MappingMode::Value;
 		setTarget(name);
 	}
 }
@@ -171,7 +125,7 @@ void MeasuredDataPointGroupDataItem::doLoadFromProjectMainFile(const QDomNode& n
 		}
 	}
 
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
 void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -190,7 +144,7 @@ void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 
 ColorMapSettingContainer* MeasuredDataPointGroupDataItem::activeSetting() const
 {
-	if (impl->m_setting.mappingMode == MeasuredDataPointSetting::MappingMode::Arbitrary) {return nullptr;}
+	if (impl->m_setting.mappingMode == Setting::MappingMode::Arbitrary) {return nullptr;}
 
 	auto v = iRIC::toStr(impl->m_setting.value);
 	auto it = impl->m_colorMapSettings.find(v);
@@ -211,7 +165,7 @@ void MeasuredDataPointGroupDataItem::assignActorZValues(const ZDepthRange& range
 
 void MeasuredDataPointGroupDataItem::update()
 {
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
 QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
@@ -221,13 +175,18 @@ QDialog* MeasuredDataPointGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Points Display Setting"));
+	dialog->resize(900, 700);
+
+	return dialog;
 }
 
-void MeasuredDataPointGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
+void MeasuredDataPointGroupDataItem::showPropertyDialog()
 {
-	auto dialog = dynamic_cast<PropertyDialog*> (propDialog);
-	pushRenderCommand(dialog->createModifyCommand(), this, true);
+	showPropertyDialogModeless();
 }
 
 void MeasuredDataPointGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -249,12 +208,12 @@ void MeasuredDataPointGroupDataItem::setTarget(const std::string &target)
 	impl->m_setting.value = target.c_str();
 
 	if (target == "") {
-		impl->m_setting.mappingMode = MeasuredDataPointSetting::MappingMode::Arbitrary;
+		impl->m_setting.mappingMode = Setting::MappingMode::Arbitrary;
 	} else {
-		impl->m_setting.mappingMode = MeasuredDataPointSetting::MappingMode::Value;
+		impl->m_setting.mappingMode = Setting::MappingMode::Value;
 	}
 
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
 bool MeasuredDataPointGroupDataItem::hasTransparentPart()
@@ -302,6 +261,53 @@ void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGrap
 	s->legend.imageSetting.controller()->handleResize(event, v);
 }
 
+void MeasuredDataPointGroupDataItem::updateActorSetting()
+{
+	// make all the items invisible
+	impl->m_actor->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
+
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	vtkPolyData* polyData = nullptr;
+	if (impl->m_setting.shapeMode == Setting::ShapeMode::Points) {
+		polyData = md->pointData();
+	} else if (impl->m_setting.shapeMode == Setting::ShapeMode::Surface) {
+		polyData = md->polyData();
+	}
+
+	if (impl->m_setting.mappingMode == Setting::MappingMode::Arbitrary) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		mapper->SetInputData(polyData);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+
+		impl->m_actor->GetProperty()->SetColor(impl->m_setting.color);
+	} else {
+		auto value = iRIC::toStr(impl->m_setting.value);
+		auto cs = impl->m_colorMapSettings.at(value);
+		auto mapper = cs->buildPointDataMapper(polyData);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+
+	auto prop = impl->m_actor->GetProperty();
+	prop->SetOpacity(impl->m_setting.opacity);
+	prop->SetPointSize(impl->m_setting.pointSize);
+
+	m_actorCollection->AddItem(impl->m_actor);
+
+	assignActorZValues(m_zDepthRange);
+	updateVisibilityWithoutRendering();
+
+	auto as = activeSetting();
+	if (as != nullptr) {
+		auto v = dataModel()->graphicsView();
+		as->legend.imageSetting.controller()->handleSelection(v);
+	} else {
+		impl->m_legendActor->VisibilityOff();
+	}
+}
+
 void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
@@ -328,5 +334,5 @@ void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 
 void MeasuredDataPointGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	impl->updateActorSettings();
+	updateActorSetting();
 }

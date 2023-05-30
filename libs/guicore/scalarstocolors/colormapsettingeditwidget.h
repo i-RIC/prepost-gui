@@ -9,6 +9,7 @@ namespace Ui {
 class ColorMapSettingEditWidget;
 }
 
+class QPushButton;
 class QTableView;
 
 class GUICOREDLL_EXPORT ColorMapSettingEditWidget : public ColorMapSettingEditWidgetI

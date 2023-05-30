@@ -2,7 +2,7 @@
 #define MEASUREDDATAPOINTGROUPDATAITEM_IMPL_H
 
 #include "../measureddatapointgroupdataitem.h"
-#include "../measureddatapointsetting.h"
+#include "measureddatapointgroupdataitem_setting.h"
 
 #include <unordered_map>
 
@@ -18,9 +18,8 @@ public:
 
 	void setupActors();
 	void updateCheckState();
-	void updateActorSettings();
 
-	MeasuredDataPointSetting m_setting;
+	Setting m_setting;
 
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;

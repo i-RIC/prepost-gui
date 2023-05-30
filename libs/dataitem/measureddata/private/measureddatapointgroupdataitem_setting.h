@@ -1,5 +1,7 @@
-#ifndef MEASUREDDATAPOINTSETTING_H
-#define MEASUREDDATAPOINTSETTING_H
+#ifndef MEASUREDDATAPOINTGROUPDATAITEM_SETTING_H
+#define MEASUREDDATAPOINTGROUPDATAITEM_SETTING_H
+
+#include "../measureddatapointgroupdataitem.h"
 
 #include <misc/colorcontainer.h>
 #include <misc/compositecontainer.h>
@@ -8,16 +10,16 @@
 #include <misc/opacitycontainer.h>
 #include <misc/stringcontainer.h>
 
-class MeasuredDataPointSetting : public CompositeContainer
+class MeasuredDataPointGroupDataItem::Setting : public CompositeContainer
 {
 public:
 	enum class ShapeMode {Points, Surface};
 	enum class MappingMode {Value, Arbitrary};
 
-	MeasuredDataPointSetting();
-	MeasuredDataPointSetting(const MeasuredDataPointSetting& setting);
+	Setting();
+	Setting(const Setting& setting);
 
-	MeasuredDataPointSetting& operator=(const MeasuredDataPointSetting& setting);
+	Setting& operator=(const Setting& setting);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
 	EnumContainerT<ShapeMode> shapeMode;
@@ -28,4 +30,4 @@ public:
 	IntContainer pointSize;
 };
 
-#endif // MEASUREDDATAPOINTSETTING_H
+#endif // MEASUREDDATAPOINTGROUPDATAITEM_SETTING_H

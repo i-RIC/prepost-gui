@@ -10,15 +10,19 @@ class MeasuredDataPointSetting;
 class MeasuredDataPointGroupDataItem::UpdateSettingCommand : public QUndoCommand
 {
 public:
-	UpdateSettingCommand(const MeasuredDataPointSetting& s, ColorMapSettingContainer* cs, MeasuredDataPointGroupDataItem* item);
+	UpdateSettingCommand(bool allowMerge, const Setting& s, ColorMapSettingContainer* cs, MeasuredDataPointGroupDataItem* item);
 
 	void redo() override;
 	void undo() override;
+
+	int id() const override;
+	bool mergeWith(const QUndoCommand* other) override;
 
 private:
 	QUndoCommand* m_settingCommand;
 	QUndoCommand* m_colormapCommand;
 
+	bool m_allowMerge;
 	MeasuredDataPointGroupDataItem* m_item;
 };
 

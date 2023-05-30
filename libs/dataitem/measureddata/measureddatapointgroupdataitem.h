@@ -28,7 +28,6 @@ public:
 	void setTarget(const std::string& target) override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	bool hasTransparentPart() override;
 	ColorMapSettingContainer* colorMapSetting(const std::string& target) const;
@@ -43,6 +42,7 @@ public:
 	ColorMapSettingContainer* activeSetting() const;
 
 public slots:
+	void showPropertyDialog() override;
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private:
@@ -50,16 +50,16 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
+	void updateActorSetting() override;
+
 	class Impl;
 	Impl* impl;
 
+	class Setting;
+	class SettingEditWidget;
+
 	class PropertyDialog;
-	class SetSettingCommand;
 	class UpdateSettingCommand;
 };
-
-#ifdef _DEBUG
-	#include "private/measureddatapointgroupdataitem_impl.h"
-#endif // _DEBUG
 
 #endif // MEASUREDDATAPOINTGROUPDATAITEM_H
