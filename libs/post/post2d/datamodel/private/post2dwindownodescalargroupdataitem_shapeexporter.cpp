@@ -256,8 +256,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	geom->Update();
 	filtered->Delete();
 
-	auto polyData = vtkSmartPointer<vtkPolyData>::New();
-	polyData->CopyStructure(geom->GetOutput());
+	vtkSmartPointer<vtkPolyData> polyData = geom->GetOutput();
 
 	if (! cm.fillLower) {
 		auto lowerClip = vtkSmartPointer<vtkClipPolyData>::New();
