@@ -1,8 +1,9 @@
 #include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindownodevectorarrowgroupunstructureddataitem_propertydialog.h"
+#include "private/post2dwindownodevectorarrowgroupunstructureddataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowNodeVectorArrowGroupDataItem(p)
@@ -15,7 +16,13 @@ void Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::showPropertyDialog()
 
 QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Arrows Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 vtkPointSet* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::buildFilteredData()

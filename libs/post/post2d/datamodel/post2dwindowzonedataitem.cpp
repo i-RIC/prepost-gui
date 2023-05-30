@@ -1249,7 +1249,7 @@ void Post2dWindowZoneDataItem::updateParticleResultAttributeBrowser(vtkIdType pi
 	pb->view()->setParticleAttributes(pid, x, y, atts);
 }
 
-void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* v)
+void Post2dWindowZoneDataItem::updatePolyDataResultAttributeBrowser(const std::string& name, int cellid, VTKGraphicsView* /*v*/)
 {
 	PostZoneDataContainer* cont = dataContainer();
 	QList<PropertyBrowserAttribute> atts;

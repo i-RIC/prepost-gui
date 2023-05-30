@@ -13,8 +13,10 @@ class Post2dWindowNodeVectorArrowGroupStructuredDataItem : public Post2dWindowNo
 public:
 	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
 
+public slots:
+	void showPropertyDialog() override;
+
 private:
-	void showPropertyDialog();
 	QDialog* propertyDialog(QWidget* p) override;
 
 	vtkPointSet* buildFilteredData() override;
@@ -25,7 +27,7 @@ private:
 	Region2dSettingContainer m_regionSetting;
 	Structured2dFilteringSettingContainer m_filteringSetting;
 
-	class PropertyDialog;
+	class SettingEditWidget;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPSTRUCTUREDDATAITEM_H

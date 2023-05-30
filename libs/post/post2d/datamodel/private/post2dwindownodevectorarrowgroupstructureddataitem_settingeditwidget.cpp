@@ -1,30 +1,26 @@
 #include "../post2dwindowgridtypedataitem.h"
 #include "../post2dwindowzonedataitem.h"
-#include "post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.h"
-#include "post2dwindownodevectorarrowgroupstructureddataitem_propertydialog_additionalwidgets.h"
+#include "post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget.h"
+#include "post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget_additionalwidgets.h"
 #include "post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
-#include "ui_post2dwindownodevectorarrowgroupstructureddataitem_propertydialog.h"
+#include "ui_post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/filter/structured2dfilteringsettingeditwidget.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/region/region2dsettingeditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::PropertyDialog(Post2dWindowNodeVectorArrowGroupStructuredDataItem* item, QWidget *parent) :
-	QDialog(parent),
-	m_applied {false},
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowNodeVectorArrowGroupStructuredDataItem* item, QWidget *parent) :
+	ModifyCommandWidget {parent},
 	m_item {item},
 	m_additionalWidgets {new AdditionalWidgets(this)},
-	ui(new Ui::Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog)
+	ui(new Ui::Post2dWindowNodeVectorArrowGroupStructuredDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_additionalWidgets);
-
-	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PropertyDialog::handleButtonClick);
 
 	auto dataContainer = item->zoneDataItem()->dataContainer();
 	auto data = dataContainer->data()->data();
@@ -51,45 +47,17 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::PropertyDial
 	m_additionalWidgets->regionWidget()->setSetting(&item->m_regionSetting);
 }
 
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::~PropertyDialog()
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::~SettingEditWidget()
 {
 	delete ui;
 }
 
-QUndoCommand* Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::createModifyCommand(bool apply)
+QUndoCommand* Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::createModifyCommand(bool apply)
 {
-	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowNodeVectorArrowGroupStructuredDataItem::Property"), apply);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget"), apply);
 	command->addCommand(ui->arrowsSettingWidget->createModifyCommand());
 	command->addCommand(m_additionalWidgets->samplingWidget()->createModifyCommand());
 	command->addCommand(m_additionalWidgets->regionWidget()->createModifyCommand());
 
 	return new UpdateActorSettingCommand(apply, command, m_item);
-}
-
-void Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::accept()
-{
-	m_item->pushRenderCommand(createModifyCommand(false), m_item, true);
-
-	QDialog::accept();
-}
-
-void Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::reject()
-{
-	if (m_applied) {
-		iRICUndoStack::instance().undo();
-	}
-
-	QDialog::reject();
-}
-
-void Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::handleButtonClick(QAbstractButton* button)
-{
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
-		apply();
-	}
-}
-
-void Post2dWindowNodeVectorArrowGroupStructuredDataItem::PropertyDialog::apply()
-{
-	m_item->pushRenderCommand(createModifyCommand(true), m_item, true);
 }

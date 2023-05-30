@@ -12,11 +12,12 @@ class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem : public Post2dWindow
 
 public:
 	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
-
-private:
-	void showPropertyDialog();
 	QDialog* propertyDialog(QWidget* p) override;
 
+public slots:
+	void showPropertyDialog() override;
+
+private:
 	vtkPointSet* buildFilteredData() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -26,6 +27,7 @@ private:
 	GeneralFilteringSettingContainer m_filteringSetting;
 
 	class PropertyDialog;
+	class SettingEditWidget;
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPUNSTRUCTUREDDATAITEM_H

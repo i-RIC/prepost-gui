@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets</class>
- <widget class="QWidget" name="Post2dWindowNodeVectorArrowGroupStructuredDataItem_PropertyDialog_AdditionalWidgets">
+ <class>Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_SettingEditWidget_AdditionalWidgets</class>
+ <widget class="QWidget" name="Post2dWindowNodeVectorArrowGroupUnstructuredDataItem_SettingEditWidget_AdditionalWidgets">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>369</width>
-    <height>220</height>
+    <width>383</width>
+    <height>226</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="Structured2dFilteringSettingEditWidget" name="samplingWidget" native="true"/>
+    <widget class="GeneralFilteringSettingEditWidget" name="samplingWidget" native="true"/>
    </item>
    <item>
     <widget class="QGroupBox" name="regionGroupBox">
@@ -51,9 +51,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>Structured2dFilteringSettingEditWidget</class>
+   <class>GeneralFilteringSettingEditWidget</class>
    <extends>QWidget</extends>
-   <header>guicore/filter/structured2dfilteringsettingeditwidget.h</header>
+   <header>guicore/filter/generalfilteringsettingeditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
