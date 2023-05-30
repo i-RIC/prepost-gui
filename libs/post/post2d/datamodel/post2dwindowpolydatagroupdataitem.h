@@ -30,7 +30,7 @@ public:
 
 	void setupActors();
 	void update();
-	void updateActorSettings();
+	void updateActorSetting() override;
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
@@ -65,8 +65,7 @@ private:
 	PolyDataSetting m_setting;
 	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
 
-	class UpdateActorSettingsCommand;
-	class PropertyDialog;
+	class SettingEditWidget;
 
 public:
 	friend class Post2dWindowPolyDataValueDataItem;

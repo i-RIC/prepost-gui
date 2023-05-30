@@ -3,10 +3,11 @@
 #include "post2dwindowpolydatagroupdataitem.h"
 #include "post2dwindowpolydatavaluedataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindowpolydatagroupdataitem_propertydialog.h"
+#include "private/post2dwindowpolydatagroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -47,7 +48,7 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	}
 
 	setupActors();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 Post2dWindowPolyDataGroupDataItem::~Post2dWindowPolyDataGroupDataItem()
@@ -84,7 +85,7 @@ void Post2dWindowPolyDataGroupDataItem::setTarget(const std::string& target)
 		m_setting.mapping = PolyDataSetting::Mapping::Value;
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowPolyDataGroupDataItem::setupActors()
@@ -93,7 +94,7 @@ void Post2dWindowPolyDataGroupDataItem::setupActors()
 	r->AddActor(m_actor);
 	r->AddActor2D(m_legendActor);
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowPolyDataGroupDataItem::update()
@@ -104,10 +105,10 @@ void Post2dWindowPolyDataGroupDataItem::update()
 		pair.second->setAutoValueRange(range);
 	}
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void Post2dWindowPolyDataGroupDataItem::updateActorSettings()
+void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_legendActor->VisibilityOff();
@@ -154,7 +155,13 @@ void Post2dWindowPolyDataGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dWindowPolyDataGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Polygon Data Display Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 void Post2dWindowPolyDataGroupDataItem::updateZDepthRangeItemCount()
@@ -254,7 +261,7 @@ void Post2dWindowPolyDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 	}
 
 	updateCheckState();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post2dWindowPolyDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

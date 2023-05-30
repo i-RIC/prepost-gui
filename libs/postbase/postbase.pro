@@ -58,18 +58,18 @@ win32 {
 # Input
 HEADERS += autoparticlewindowi.h \
            cfshapeexportwindowi.h \
-           particle/particledatasettingeditwidget.h \
-           particle/private/particledatasettingeditwidget_modifycommand.h \
            particleexportwindowi.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
            svkmlexportwindowi.h \
            particle/particlearbitrarytimeeditdialog.h \
            particle/particledatasetting.h \
+           particle/particledatasettingeditwidget.h \
            particle/particledatavectorsetting.h \
            particle/particlesettingcontainer.h \
            particle/particlesettingeditwidget.h \
            polydata/polydatasetting.h \
+           polydata/polydatasettingeditwidget.h \
            string/poststringresultdataitem.h \
            string/poststringresultsettingdialog.h \
            time/posttimedataitem.h \
@@ -77,6 +77,8 @@ HEADERS += autoparticlewindowi.h \
            title/posttitledataitem.h \
            title/posttitleeditdialog.h \
            title/posttitlesetting.h \
+           particle/private/particledatasettingeditwidget_modifycommand.h \
+           polydata/private/polydatasettingeditwidget_modifycommand.h \
            string/private/poststringresultdataitem_movecommand.h \
            string/private/poststringresultdataitem_resizecommand.h \
            string/private/poststringresultdataitem_setsettingcommand.h \
@@ -86,6 +88,7 @@ FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
          particle/particledatasettingeditwidget.ui \
          particle/particlesettingeditwidget.ui \
+         polydata/polydatasettingeditwidget.ui \
          string/poststringresultsettingdialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
@@ -96,8 +99,8 @@ SOURCES += postallzoneselectingdialog.cpp \
            particle/particledatavectorsetting.cpp \
            particle/particlesettingcontainer.cpp \
            particle/particlesettingeditwidget.cpp \
-           particle/private/particledatasettingeditwidget_modifycommand.cpp \
            polydata/polydatasetting.cpp \
+           polydata/polydatasettingeditwidget.cpp \
            string/poststringresultdataitem.cpp \
            string/poststringresultsettingdialog.cpp \
            time/posttimedataitem.cpp \
@@ -105,6 +108,8 @@ SOURCES += postallzoneselectingdialog.cpp \
            title/posttitledataitem.cpp \
            title/posttitleeditdialog.cpp \
            title/posttitlesetting.cpp \
+           particle/private/particledatasettingeditwidget_modifycommand.cpp \
+           polydata/private/polydatasettingeditwidget_modifycommand.cpp \
            string/private/poststringresultdataitem_movecommand.cpp \
            string/private/poststringresultdataitem_resizecommand.cpp \
            string/private/poststringresultdataitem_setsettingcommand.cpp \

@@ -1,11 +1,9 @@
-#ifndef PARTICLEDATASETTINGEDITWIDGET_MODIFYCOMMAND_H
-#define PARTICLEDATASETTINGEDITWIDGET_MODIFYCOMMAND_H
+#ifndef POLYDATASETTINGEDITWIDGET_MODIFYCOMMAND_H
+#define POLYDATASETTINGEDITWIDGET_MODIFYCOMMAND_H
 
-#include "../particledatasettingeditwidget.h"
+#include "../polydatasettingeditwidget.h"
 
-#include <QUndoCommand>
-
-class ParticleDataSettingEditWidget::ModifyCommand : public QUndoCommand
+class PolyDataSettingEditWidget::ModifyCommand : public QUndoCommand
 {
 public:
 	ModifyCommand(bool allowMerge, QUndoCommand* settingCommand, QUndoCommand* colorMapCommand);
@@ -24,4 +22,4 @@ private:
 	QUndoCommand* m_colorMapCommand;
 };
 
-#endif // PARTICLEDATASETTINGEDITWIDGET_MODIFYCOMMAND_H
+#endif // POLYDATASETTINGEDITWIDGET_MODIFYCOMMAND_H

@@ -1,8 +1,8 @@
-#include "particledatasettingeditwidget_modifycommand.h"
+#include "polydatasettingeditwidget_modifycommand.h"
 
 #include <misc/qundocommandhelper.h>
 
-ParticleDataSettingEditWidget::ModifyCommand::ModifyCommand(bool allowMerge, QUndoCommand* settingCommand, QUndoCommand* colorMapCommand) :
+PolyDataSettingEditWidget::ModifyCommand::ModifyCommand(bool allowMerge, QUndoCommand* settingCommand, QUndoCommand* colorMapCommand) :
 	QUndoCommand (),
 	m_allowMerge {allowMerge},
 	m_settingCommand {settingCommand},
@@ -10,13 +10,13 @@ ParticleDataSettingEditWidget::ModifyCommand::ModifyCommand(bool allowMerge, QUn
 {}
 
 
-ParticleDataSettingEditWidget::ModifyCommand::~ModifyCommand()
+PolyDataSettingEditWidget::ModifyCommand::~ModifyCommand()
 {
 	delete m_settingCommand;
 	delete m_colorMapCommand;
 }
 
-void ParticleDataSettingEditWidget::ModifyCommand::redo()
+void PolyDataSettingEditWidget::ModifyCommand::redo()
 {
 	m_settingCommand->redo();
 	if (m_colorMapCommand != nullptr) {
@@ -24,7 +24,7 @@ void ParticleDataSettingEditWidget::ModifyCommand::redo()
 	}
 }
 
-void ParticleDataSettingEditWidget::ModifyCommand::undo()
+void PolyDataSettingEditWidget::ModifyCommand::undo()
 {
 	m_settingCommand->undo();
 	if (m_colorMapCommand != nullptr) {
@@ -32,12 +32,12 @@ void ParticleDataSettingEditWidget::ModifyCommand::undo()
 	}
 }
 
-int ParticleDataSettingEditWidget::ModifyCommand::id() const
+int PolyDataSettingEditWidget::ModifyCommand::id() const
 {
-	return iRIC::generateCommandId("ParticleDataSettingEditWidget::ModifyCommand");
+	return iRIC::generateCommandId("PolyDataSettingEditWidget::ModifyCommand");
 }
 
-bool ParticleDataSettingEditWidget::ModifyCommand::mergeWith(const QUndoCommand* other)
+bool PolyDataSettingEditWidget::ModifyCommand::mergeWith(const QUndoCommand* other)
 {
 	if (! m_allowMerge) {return false;}
 

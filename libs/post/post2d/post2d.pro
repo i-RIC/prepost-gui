@@ -231,8 +231,7 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h \
-           datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.h \
-           datamodel/private/post2dwindowpolydatagroupdataitem_updateactorsettingscommand.h
+           datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.h
 FORMS += post2dgridregionselectdialog.ui \
          datamodel/post2dwindowcellflagsettingdialog.ui \
          datamodel/post2dwindowgraphsettingdialog.ui \
@@ -256,7 +255,7 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindowparticlesbasescalargroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.ui \
-         datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.ui
+         datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.ui
 SOURCES += post2dgridregionselectdialog.cpp \
            post2dobjectbrowser.cpp \
            post2dobjectbrowserview.cpp \
@@ -356,8 +355,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.cpp \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.cpp \
            datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.cpp \
-           datamodel/private/post2dwindowpolydatagroupdataitem_propertydialog.cpp \
-           datamodel/private/post2dwindowpolydatagroupdataitem_updateactorsettingscommand.cpp
+           datamodel/private/post2dwindowpolydatagroupdataitem_settingeditwidget.cpp
 RESOURCES += post2d.qrc
 TRANSLATIONS += languages/iricPost2d_ar_EG.ts \
                 languages/iricPost2d_bg_BG.ts \
