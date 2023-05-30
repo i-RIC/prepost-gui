@@ -5,10 +5,11 @@
 #include "post3dwindowparticlesbasevectorgroupdataitem.h"
 #include "post3dwindowparticlesbasevectordataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
+#include "private/post3dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -121,7 +122,13 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Particles Vector Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -58,6 +58,8 @@ win32 {
 # Input
 HEADERS += autoparticlewindowi.h \
            cfshapeexportwindowi.h \
+           particle/particledatasettingeditwidget.h \
+           particle/private/particledatasettingeditwidget_modifycommand.h \
            particleexportwindowi.h \
            postallzoneselectingdialog.h \
            postbase_global.h \
@@ -82,6 +84,7 @@ HEADERS += autoparticlewindowi.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
          particle/particlearbitrarytimeeditdialog.ui \
+         particle/particledatasettingeditwidget.ui \
          particle/particlesettingeditwidget.ui \
          string/poststringresultsettingdialog.ui \
          time/posttimeeditdialog.ui \
@@ -89,9 +92,11 @@ FORMS += postallzoneselectingdialog.ui \
 SOURCES += postallzoneselectingdialog.cpp \
            particle/particlearbitrarytimeeditdialog.cpp \
            particle/particledatasetting.cpp \
+           particle/particledatasettingeditwidget.cpp \
            particle/particledatavectorsetting.cpp \
            particle/particlesettingcontainer.cpp \
            particle/particlesettingeditwidget.cpp \
+           particle/private/particledatasettingeditwidget_modifycommand.cpp \
            polydata/polydatasetting.cpp \
            string/poststringresultdataitem.cpp \
            string/poststringresultsettingdialog.cpp \

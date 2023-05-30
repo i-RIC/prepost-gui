@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -480,12 +482,23 @@
         <source>Grid shape</source>
         <translation>Tvar mřížky</translation>
     </message>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished">Nastavení zobrazení tvaru mřížky</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Nastavení zobrazení tvaru mřížky</translation>
+        <translation type="vanished">Nastavení zobrazení tvaru mřížky</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulář</translation>
     </message>
 </context>
 <context>
@@ -1068,16 +1081,16 @@
         <translation type="vanished">Interval generování prostoru</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; Pokud zadáte 1, částice se generují v uzlech mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadáte 2, částice se generují v uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadejte 1/2, částice se generují pro všechny ostatní uzly mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; Pokud zadáte 1, částice se generují v uzlech mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadáte 2, částice se generují v uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p&gt; Pokud zadejte 1/2, částice se generují pro všechny ostatní uzly mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1088,12 +1101,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Velikost:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; &quot;&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1114,20 +1127,24 @@ p, li { white-space: pre-wrap; }
         <source>Particle Scalar value change</source>
         <translation>Změna skalární hodnoty částic</translation>
     </message>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished">Nastavení skalárních částic</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Scalar Setting</source>
-        <translation>Nastavení skalárních částic</translation>
+        <translation type="vanished">Nastavení skalárních částic</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva podle hodnoty</translation>
+        <translation type="vanished">Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -1135,23 +1152,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Vývozní (&amp;E)...</translation>
+        <translation type="vanished">Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Velikost bodu:</translation>
+        <translation type="vanished">Velikost bodu:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barevná mapa</translation>
+        <translation type="vanished">Barevná mapa</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulář</translation>
     </message>
 </context>
 <context>
@@ -1194,12 +1218,23 @@ p, li { white-space: pre-wrap; }
         <source>Arrow Physical Value Change</source>
         <translation>Šipka Změna fyzické hodnoty</translation>
     </message>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished">Nastavení vektoru částic</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Vector Setting</source>
-        <translation>Nastavení vektoru částic</translation>
+        <translation type="vanished">Nastavení vektoru částic</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulář</translation>
     </message>
 </context>
 <context>
@@ -1264,14 +1299,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Interval generování prostoru</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; If you specify 1, streamlines start at grid nodes. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;" &gt; Pokud zadáte 2, zjednodušené čáry začínají na uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Pokud zadáte 1/2, zjednodušení začne na všech ostatních uzlech mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; If you specify 1, streamlines start at grid nodes. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px;&quot; &gt; Pokud zadáte 2, zjednodušené čáry začínají na uzlech mřížky a středních bodech uzlů mřížky. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Pokud zadáte 1/2, zjednodušení začne na všech ostatních uzlech mřížky. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1302,12 +1337,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Šířka:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; "&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; okraj-dole: 3px; okraj-vlevo: 0px; okraj-vpravo: 0px; -qt-blok-odsazení: 0; text-odsazení: 0px; &quot;&gt; Zadejte počet pixelů na displeji. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

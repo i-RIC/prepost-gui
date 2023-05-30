@@ -26,7 +26,7 @@ public:
 	void setSetting(GridShapeSettingContainer* setting);
 	void setSetting(const GridShapeSettingContainer& setting);
 
-	QUndoCommand* createModifyCommand() const;
+	QUndoCommand* createModifyCommand(bool allowMerge) const;
 
 private slots:
 	void handleOutlineOnlyClick();

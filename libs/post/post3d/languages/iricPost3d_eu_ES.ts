@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -480,12 +482,23 @@
         <source>Grid shape</source>
         <translation>Sareta forma</translation>
     </message>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished">Sarearen forma bistaratzeko ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Sarearen forma bistaratzeko ezarpena</translation>
+        <translation type="vanished">Sarearen forma bistaratzeko ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 <context>
@@ -1068,16 +1081,16 @@
         <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } p {margin-top: 3px; margin-bottom: 3px;} &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p&gt; 1 zehazten baduzu, partikulak sareko nodoetan sortzen dira. &lt;/p&gt; &lt;p&gt; 2 zehazten baduzu, partikulak sareko nodoetan eta sareko nodoen erdiko puntuak sortzen dira. &lt;/p&gt; &lt;p&gt; zehaztu 1/2, partikulak sortzen dira beste sareta-nodo guztietarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1088,12 +1101,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Neurria:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1114,20 +1127,24 @@ p, li { white-space: pre-wrap; }
         <source>Particle Scalar value change</source>
         <translation>Partikula eskalarraren balio aldaketa</translation>
     </message>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished">Partikulen ezarpen eskalarra</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Scalar Setting</source>
-        <translation>Partikulen ezarpen eskalarra</translation>
+        <translation type="vanished">Partikulen ezarpen eskalarra</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Koloreztatu balioaren arabera</translation>
+        <translation type="vanished">Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -1135,23 +1152,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntuen tamaina:</translation>
+        <translation type="vanished">Puntuen tamaina:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kolore-mapa</translation>
+        <translation type="vanished">Kolore-mapa</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 <context>
@@ -1194,12 +1218,23 @@ p, li { white-space: pre-wrap; }
         <source>Arrow Physical Value Change</source>
         <translation>Arrow Balio fisikoaren aldaketa</translation>
     </message>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished">Partikulen Bektore Ezarpena</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Vector Setting</source>
-        <translation>Partikulen Bektore Ezarpena</translation>
+        <translation type="vanished">Partikulen Bektore Ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
     </message>
 </context>
 <context>
@@ -1264,14 +1299,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Sorkuntza espazio tartea</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;" &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = "margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1 zehazten baduzu, korronteak sareko nodoetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-koska: 0px;&quot; &gt; 2 zehazten badituzu, korronteak sareta-nodoetan eta sare-nodoen erdiko puntuetan hasten dira. &lt;/p&gt; &lt;p style = &quot;margin-top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; 1/2 zehazten baduzu, korronteak beste sareta-nodo guztietan hasten dira. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1302,12 +1337,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Zabalera:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 3px; margin-bottom: 3px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Zehaztu bistaratuko diren pixel kopurua. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>

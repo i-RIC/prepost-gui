@@ -21,6 +21,10 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	QDialog* propertyDialog(QWidget* p) override;
+
+public slots:
+	void showPropertyDialog() override;
 
 private:
 	Post3dWindowParticlesBaseVectorGroupDataItem* groupDataItem() const;

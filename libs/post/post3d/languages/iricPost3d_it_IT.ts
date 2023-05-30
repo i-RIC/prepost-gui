@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Post3dObjectBrowser</name>
@@ -274,7 +276,7 @@
     </message>
     <message>
         <source>When lighting is enabled, The color of the contour changes depending of the angle against the camera.</source>
-        <translation>Quando l'illuminazione è abilitata, il colore del contorno cambia a seconda dell'angolazione rispetto alla telecamera.</translation>
+        <translation>Quando l&apos;illuminazione è abilitata, il colore del contorno cambia a seconda dell&apos;angolazione rispetto alla telecamera.</translation>
     </message>
 </context>
 <context>
@@ -480,12 +482,23 @@
         <source>Grid shape</source>
         <translation>Forma della griglia</translation>
     </message>
+    <message>
+        <source>Grid Shape Display Setting</source>
+        <translation type="unfinished">Impostazione della visualizzazione della forma della griglia</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowGridShapeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Shape Display Setting</source>
-        <translation>Impostazione della visualizzazione della forma della griglia</translation>
+        <translation type="vanished">Impostazione della visualizzazione della forma della griglia</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowGridShapeDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Modulo</translation>
     </message>
 </context>
 <context>
@@ -666,7 +679,7 @@
     </message>
     <message>
         <source>Isosurface physical value change</source>
-        <translation>Modifica del valore fisico dell'isosuperficie</translation>
+        <translation>Modifica del valore fisico dell&apos;isosuperficie</translation>
     </message>
     <message>
         <source>Update Contour Setting</source>
@@ -829,7 +842,7 @@
     <name>Post3dWindowNodeVectorParticleGroupStructuredDataItem</name>
     <message>
         <source>Update Particle Setting</source>
-        <translation type="vanished">Aggiorna l'impostazione delle particelle</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione delle particelle</translation>
     </message>
     <message>
         <source>Particles Display Setting</source>
@@ -871,7 +884,7 @@
     </message>
     <message>
         <source>Specify the face to start particles, by grid indices range (I, J, K).</source>
-        <translation>Specificare la faccia da cui iniziare le particelle, in base all'intervallo degli indici della griglia (I, J, K).</translation>
+        <translation>Specificare la faccia da cui iniziare le particelle, in base all&apos;intervallo degli indici della griglia (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
@@ -947,7 +960,7 @@
     </message>
     <message>
         <source>Specify the face to start streamlines, by grid indices range (I, J, K).</source>
-        <translation>Specificare la faccia da cui iniziare le linee di flusso, in base all'intervallo degli indici della griglia (I, J, K).</translation>
+        <translation>Specificare la faccia da cui iniziare le linee di flusso, in base all&apos;intervallo degli indici della griglia (I, J, K).</translation>
     </message>
     <message>
         <source>Generation space interval</source>
@@ -1033,11 +1046,11 @@
     </message>
     <message>
         <source>Specify the area to generate particles.</source>
-        <translation type="vanished">Specificare l'area per generare le particelle.</translation>
+        <translation type="vanished">Specificare l&apos;area per generare le particelle.</translation>
     </message>
     <message>
         <source>Specify the area to generate particles, by grid indices range (I, J, K).</source>
-        <translation type="vanished">Specificare l'area per generare le particelle, in base all'intervallo degli indici della griglia (I, J, K).</translation>
+        <translation type="vanished">Specificare l&apos;area per generare le particelle, in base all&apos;intervallo degli indici della griglia (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
@@ -1068,16 +1081,16 @@
         <translation type="vanished">Intervallo di spazio di generazione</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated at grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated at grid nodes, and middle points of grid nodes.&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other grid nodes.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } p {margine in alto: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p&gt;Se specifichi 1, le particelle vengono generate nei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifichi 2, le particelle vengono generate nei nodi della griglia e nei punti intermedi dei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifica 1/2, le particelle vengono generate per ogni altro nodo della griglia.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } p {margine in alto: 3px; margin-bottom: 3px;} &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p&gt;Se specifichi 1, le particelle vengono generate nei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifichi 2, le particelle vengono generate nei nodi della griglia e nei punti intermedi dei nodi della griglia.&lt;/p&gt; &lt;p&gt;Se specifica 1/2, le particelle vengono generate per ogni altro nodo della griglia.&lt;/p&gt; &lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1088,12 +1101,12 @@ p {margin-top: 3px; margin-bottom: 3px;}
         <translation type="vanished">Taglia:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1114,20 +1127,24 @@ p, li { white-space: pre-wrap; }
         <source>Particle Scalar value change</source>
         <translation>Modifica del valore scalare delle particelle</translation>
     </message>
+    <message>
+        <source>Particles Scalar Setting</source>
+        <translation type="unfinished">Impostazione scalare delle particelle</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseScalarGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Scalar Setting</source>
-        <translation>Impostazione scalare delle particelle</translation>
+        <translation type="vanished">Impostazione scalare delle particelle</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colore per valore</translation>
+        <translation type="vanished">Colore per valore</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
@@ -1135,23 +1152,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importare (&amp;I)...</translation>
+        <translation type="vanished">Importare (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportare (&amp;E)...</translation>
+        <translation type="vanished">Esportare (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensione punto:</translation>
+        <translation type="vanished">Dimensione punto:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mappa dei colori</translation>
+        <translation type="vanished">Mappa dei colori</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseScalarGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Modulo</translation>
     </message>
 </context>
 <context>
@@ -1194,12 +1218,23 @@ p, li { white-space: pre-wrap; }
         <source>Arrow Physical Value Change</source>
         <translation>Cambiamento del valore fisico della freccia</translation>
     </message>
+    <message>
+        <source>Particles Vector Setting</source>
+        <translation type="unfinished">Impostazione del vettore di particelle</translation>
+    </message>
 </context>
 <context>
     <name>Post3dWindowParticlesBaseVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Particles Vector Setting</source>
-        <translation>Impostazione del vettore di particelle</translation>
+        <translation type="vanished">Impostazione del vettore di particelle</translation>
+    </message>
+</context>
+<context>
+    <name>Post3dWindowParticlesBaseVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Modulo</translation>
     </message>
 </context>
 <context>
@@ -1213,7 +1248,7 @@ p, li { white-space: pre-wrap; }
     <name>Post3dWindowStreamlineStructuredSettingDialog</name>
     <message>
         <source>Streamline Setting</source>
-        <translation type="vanished">Semplifica l'impostazione</translation>
+        <translation type="vanished">Semplifica l&apos;impostazione</translation>
     </message>
     <message>
         <source>Physical Value:</source>
@@ -1229,11 +1264,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify the area to start streamlines.</source>
-        <translation type="vanished">Specificare l'area per avviare le linee di flusso.</translation>
+        <translation type="vanished">Specificare l&apos;area per avviare le linee di flusso.</translation>
     </message>
     <message>
         <source>Specify the area to start streamlines, by grid indices range (I, J, K).</source>
-        <translation type="vanished">Specificare l'area per iniziare le linee di flusso, per intervallo di indici di griglia (I, J, K).</translation>
+        <translation type="vanished">Specificare l&apos;area per iniziare le linee di flusso, per intervallo di indici di griglia (I, J, K).</translation>
     </message>
     <message>
         <source>I Min</source>
@@ -1264,14 +1299,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Intervallo di spazio di generazione</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Se specifichi 1, le linee di flusso iniziano dai nodi della griglia.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;" &gt;Se specifichi 2, le linee di flusso iniziano dai nodi della griglia e dai punti medi dei nodi della griglia.&lt;/p&gt; &lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;"&gt;Se specifichi 1/2, le linee di flusso iniziano da ogni altro nodo della griglia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1, streamlines start at grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 2, streamlines start at grid nodes, and middle points of grid nodes.&lt;/p&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;If you specify 1/2, streamlines start at every other grid nodes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se specifichi 1, le linee di flusso iniziano dai nodi della griglia.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot; &gt;Se specifichi 2, le linee di flusso iniziano dai nodi della griglia e dai punti medi dei nodi della griglia.&lt;/p&gt; &lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right: 0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Se specifichi 1/2, le linee di flusso iniziano da ogni altro nodo della griglia.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>-</source>
@@ -1302,12 +1337,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Larghezza:</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specify a number of pixels on display.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:3px; margin-bottom:3px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Specifica un numero di pixel sul display.&lt;/ p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add</source>
@@ -1330,7 +1365,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Update Grid Shape Setting</source>
-        <translation type="vanished">Aggiorna l'impostazione della forma della griglia</translation>
+        <translation type="vanished">Aggiorna l&apos;impostazione della forma della griglia</translation>
     </message>
     <message>
         <source>Create Isosurface</source>

@@ -19,6 +19,9 @@ public:
 	void update();
 	ColorMapSettingContainer& colorMapSetting();
 
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;

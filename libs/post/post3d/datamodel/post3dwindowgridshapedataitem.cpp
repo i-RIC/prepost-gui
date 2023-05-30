@@ -1,8 +1,9 @@
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowgridshapedataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowgridshapedataitem_propertydialog.h"
+#include "private/post3dwindowgridshapedataitem_settingeditwidget.h"
 
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <misc/stringtool.h>
 
@@ -32,15 +33,15 @@ void Post3dWindowGridShapeDataItem::setupActors()
 	auto v = dataModel()->graphicsView();
 	m_setting.outlineActor()->GetProperty()->SetLineWidth(GridShapeSettingContainer::normalOutlineWidth * v->devicePixelRatioF());
 
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowGridShapeDataItem::update()
 {
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void Post3dWindowGridShapeDataItem::updateActorSettings()
+void Post3dWindowGridShapeDataItem::updateActorSetting()
 {
 	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
@@ -59,7 +60,7 @@ Post3dWindowZoneDataItem* Post3dWindowGridShapeDataItem::zoneDataItem() const
 void Post3dWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
-	updateActorSettings();
+	updateActorSetting();
 }
 
 void Post3dWindowGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -84,7 +85,12 @@ void Post3dWindowGridShapeDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Grid Shape Display Setting"));
+
+	return dialog;
 }
 
 void Post3dWindowGridShapeDataItem::informSelection(VTKGraphicsView* v)

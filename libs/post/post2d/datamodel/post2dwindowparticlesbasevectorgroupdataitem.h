@@ -32,14 +32,15 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	QDialog* propertyDialog(QWidget* p) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
+	void showPropertyDialog() override;
 
 private:
-	void showPropertyDialog() override;
-	QDialog* propertyDialog(QWidget* p) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
@@ -62,7 +63,7 @@ private:
 
 	ArrowsSettingToolBarWidget* m_arrowsToolBarWidget;
 
-	class PropertyDialog;
+	class SettingEditWidget;
 	class UpdateSettingCommand;
 };
 

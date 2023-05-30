@@ -20,6 +20,10 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	QDialog* propertyDialog(QWidget* p) override;
+
+public slots:
+	void showPropertyDialog() override;
 
 private:
 	Post2dWindowParticlesBaseVectorGroupDataItem* groupDataItem() const;

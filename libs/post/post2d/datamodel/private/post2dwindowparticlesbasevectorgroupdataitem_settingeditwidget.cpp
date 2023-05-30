@@ -1,24 +1,21 @@
 #include "../post2dwindowgridtypedataitem.h"
 #include "../post2dwindowparticlesbasetopdataitem.h"
 #include "../post2dwindowparticlesbasescalargroupdataitem.h"
-#include "post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
+#include "post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h"
 #include "post2dwindowparticlesbasevectorgroupdataitem_updatesettingcommand.h"
-#include "ui_post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
+#include "ui_post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/filter/generalfilteringsettingeditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <misc/iricundostack.h>
 
-Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::PropertyDialog(Post2dWindowParticlesBaseVectorGroupDataItem* item, QWidget *parent) :
-	QDialog(parent),
-	m_applied {false},
+Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowParticlesBaseVectorGroupDataItem* item, QWidget *parent) :
+	ModifyCommandWidget {parent},
 	m_filteringEditWidget {new GeneralFilteringSettingEditWidget(this)},
 	m_item {item},
-	ui(new Ui::Post2dWindowParticlesBaseVectorGroupDataItem_PropertyDialog)
+	ui(new Ui::Post2dWindowParticlesBaseVectorGroupDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
-	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PropertyDialog::handleButtonClick);
 
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_filteringEditWidget);
 
@@ -40,43 +37,15 @@ Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::PropertyDialog(Pos
 	m_filteringEditWidget->setSetting(&m_item->m_setting.filteringSetting);
 }
 
-Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::~PropertyDialog()
+Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::~SettingEditWidget()
 {
 	delete ui;
 }
 
-QUndoCommand* Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::createModifyCommand(bool apply)
+QUndoCommand* Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::createModifyCommand(bool apply)
 {
 	return new UpdateSettingCommand(apply,
 				ui->arrowsSettingWidget->createModifyCommand(),
 				m_filteringEditWidget->createModifyCommand(),
 				m_item);
-}
-
-void Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::accept()
-{
-	m_item->pushRenderCommand(createModifyCommand(false), m_item, true);
-	QDialog::accept();
-}
-
-void Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::reject()
-{
-	if (m_applied) {
-		iRICUndoStack::instance().undo();
-	}
-
-	QDialog::reject();
-}
-
-void Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::handleButtonClick(QAbstractButton* button)
-{
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
-		apply();
-	}
-}
-
-void Post2dWindowParticlesBaseVectorGroupDataItem::PropertyDialog::apply()
-{
-	m_item->pushRenderCommand(createModifyCommand(true), m_item, true);
-	m_applied = true;
 }

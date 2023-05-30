@@ -67,11 +67,11 @@ void GridShapeSettingEditWidget::setSetting(const GridShapeSettingContainer& s)
 	}
 }
 
-QUndoCommand* GridShapeSettingEditWidget::createModifyCommand() const
+QUndoCommand* GridShapeSettingEditWidget::createModifyCommand(bool allowMerge) const
 {
 	return new ValueModifyCommmand<GridShapeSettingContainer>(
 				iRIC::generateCommandId("GridShapeSettingEditWidget::Modify"),
-				true, setting(), m_setting);
+				allowMerge, setting(), m_setting);
 }
 
 void GridShapeSettingEditWidget::handleOutlineOnlyClick()

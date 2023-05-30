@@ -41,6 +41,16 @@ bool Post3dWindowParticlesBaseVectorDataItem::addToolBarButtons(QToolBar* toolBa
 	return groupDataItem()->addToolBarButtons(toolBar);
 }
 
+QDialog* Post3dWindowParticlesBaseVectorDataItem::propertyDialog(QWidget* p)
+{
+	return groupDataItem()->propertyDialog(p);
+}
+
+void Post3dWindowParticlesBaseVectorDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
 Post3dWindowParticlesBaseVectorGroupDataItem* Post3dWindowParticlesBaseVectorDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post3dWindowParticlesBaseVectorGroupDataItem*> (parent());

@@ -5,10 +5,11 @@
 #include "post2dwindowparticlesbasevectorgroupdataitem.h"
 #include "post2dwindowparticlesbasevectordataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindowparticlesbasevectorgroupdataitem_propertydialog.h"
+#include "private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -125,7 +126,13 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Particles Vector Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -233,6 +240,11 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+}
+
+void Post2dWindowParticlesBaseVectorGroupDataItem::addCustomMenuItems(QMenu* menu)
+{
+	menu->addAction(topDataItem()->showAttributeBrowserAction());
 }
 
 bool Post2dWindowParticlesBaseVectorGroupDataItem::addToolBarButtons(QToolBar* toolBar)

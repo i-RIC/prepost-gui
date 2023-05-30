@@ -1,4 +1,3 @@
-#include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowparticlesbasevectordataitem.h"
 #include "post2dwindowparticlesbasevectorgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
@@ -42,13 +41,22 @@ void Post2dWindowParticlesBaseVectorDataItem::mouseReleaseEvent(QMouseEvent* eve
 
 void Post2dWindowParticlesBaseVectorDataItem::addCustomMenuItems(QMenu* menu)
 {
-	auto topItem = dynamic_cast<Post2dWindowParticlesBaseTopDataItem*> (parent()->parent());
-	menu->addAction(topItem->showAttributeBrowserAction());
+	return groupDataItem()->addCustomMenuItems(menu);
 }
 
 bool Post2dWindowParticlesBaseVectorDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	return groupDataItem()->addToolBarButtons(toolBar);
+}
+
+void Post2dWindowParticlesBaseVectorDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post2dWindowParticlesBaseVectorDataItem::propertyDialog(QWidget* p)
+{
+	return groupDataItem()->propertyDialog(p);
 }
 
 Post2dWindowParticlesBaseVectorGroupDataItem* Post2dWindowParticlesBaseVectorDataItem::groupDataItem() const

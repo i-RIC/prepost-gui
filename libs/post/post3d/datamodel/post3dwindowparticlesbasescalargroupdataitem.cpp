@@ -4,12 +4,13 @@
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowparticlesbasescalargroupdataitem_propertydialog.h"
+#include "private/post3dwindowparticlesbasescalargroupdataitem_settingeditwidget.h"
 #include "private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidget.h"
 #include "private/post3dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -68,7 +69,13 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowParticlesBaseScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Particles Scalar Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 std::string Post3dWindowParticlesBaseScalarGroupDataItem::target() const
@@ -189,6 +196,8 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::setupActors()
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 {
+	updateCheckState();
+
 	m_colorMapToolBarWidget->setDisabled(true);
 	m_actor->VisibilityOff();
 

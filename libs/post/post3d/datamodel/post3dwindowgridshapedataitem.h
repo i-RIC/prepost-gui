@@ -30,14 +30,13 @@ private:
 	void innerUpdateZScale(double scale) override;
 
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 	Post3dWindowZoneDataItem* zoneDataItem() const;
 
 	GridShapeSettingContainer m_setting;
 
 private:
-	class PropertyDialog;
-	class UpdateActorSettingsCommand;
+	class SettingEditWidget;
 };
 
 #endif // POST3DWINDOWGRIDSHAPEDATAITEM_H

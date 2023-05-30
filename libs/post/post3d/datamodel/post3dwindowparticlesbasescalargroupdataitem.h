@@ -81,8 +81,7 @@ private:
 	class ToolBarWidgetController;
 	ToolBarWidgetController* m_toolBarWidgetController;
 
-	class UpdateActorSettingCommand;
-	class PropertyDialog;
+	class SettingEditWidget;
 
 public:
 	friend class Post3dWindowParticlesBaseScalarDataItem;

@@ -31,14 +31,13 @@ private:
 	void assignActorZValues(const ZDepthRange& range) override;
 
 	void setupActors();
-	void updateActorSettings();
+	void updateActorSetting() override;
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 
 	GridShapeSettingContainer m_setting;
 
 private:
-	class PropertyDialog;
-	class UpdateActorSettingsCommand;
+	class SettingEditWidget;
 };
 
 #endif // POST2DWINDOWGRIDSHAPEDATAITEM_H

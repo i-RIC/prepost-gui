@@ -42,6 +42,16 @@ ColorMapSettingContainer& Post3dWindowParticlesBaseScalarDataItem::colorMapSetti
 	return m_colorMapSetting;
 }
 
+void Post3dWindowParticlesBaseScalarDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post3dWindowParticlesBaseScalarDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
 void Post3dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);

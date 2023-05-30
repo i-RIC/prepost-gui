@@ -29,8 +29,14 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::ToolBarWidget::applySetting()
 	const auto& s = m_item->m_setting;
 	ui->colorWidget->setEnabled(s.mapping == ParticleDataSetting::Mapping::Arbitrary);
 	ui->colorWidget->setColor(s.color);
+
+	ui->pointSizeSpinBox->blockSignals(true);
 	ui->pointSizeSpinBox->setValue(s.particleSize);
+	ui->pointSizeSpinBox->blockSignals(false);
+
+	ui->transparencyWidget->blockSignals(true);
 	ui->transparencyWidget->setOpacityPercent(s.opacity);
+	ui->transparencyWidget->blockSignals(false);
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::ToolBarWidget::updateActorSetting()

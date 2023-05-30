@@ -9,6 +9,9 @@ namespace iRIC
 	int generateCommandId(const QString& commandName)
 	{
 		QByteArray data = QCryptographicHash::hash(commandName.toLatin1(), QCryptographicHash::Md5);
-		return data.left(4).toInt();
+		auto v = data.left(4).toInt();
+		if (v == 0) {v = 1;}
+
+		return v;
 	}
 }
