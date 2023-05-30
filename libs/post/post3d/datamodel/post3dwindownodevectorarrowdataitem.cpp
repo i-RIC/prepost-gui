@@ -212,7 +212,7 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	m_setting.arrow.minimumValue = groupSetting.minimumValue;
 
 	auto v = dataModel()->graphicsView();
-	auto arrowsData = m_setting.arrow.buildArrowsPolygonData(m_transformFilter->GetOutput(), v, m_zScale);
+	auto arrowsData = m_setting.arrow.buildArrowsPolygonData(m_transformFilter->GetOutput(), v, 1);
 
 	if (m_setting.arrow.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
