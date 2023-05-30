@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie wyświetlania punktów</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ustawienia wyświetlania</translation>
+        <translation>Ustawienia wyświetlania</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Zwrotnica</translation>
+        <translation>Zwrotnica</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Powierzchnia</translation>
+        <translation>Powierzchnia</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolor</translation>
+        <translation>Kolor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Koloruj według wartości</translation>
+        <translation>Koloruj według wartości</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Niestandardowy kolor</translation>
+        <translation>Niestandardowy kolor</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa kolorów</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Rozmiar punktu:</translation>
+        <translation>Rozmiar punktu:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienie wyświetlania strzałek</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
 </context>
 <context>

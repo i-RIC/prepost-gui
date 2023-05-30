@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de punts</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Configuració de la pantalla</translation>
+        <translation>Configuració de la pantalla</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punts</translation>
+        <translation>Punts</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Superfície</translation>
+        <translation>Superfície</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Color</translation>
+        <translation>Color</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Color per valor</translation>
+        <translation>Color per valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Color personalitzat</translation>
+        <translation>Color personalitzat</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de colors</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Mida del punt:</translation>
+        <translation>Mida del punt:</translation>
     </message>
 </context>
 <context>
@@ -157,7 +155,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració de visualització de fletxes</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulari</translation>
     </message>
 </context>
 <context>

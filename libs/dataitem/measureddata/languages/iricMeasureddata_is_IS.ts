@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktaskjástilling</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjárstilling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Stig</translation>
+        <translation>Stig</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Yfirborð</translation>
+        <translation>Yfirborð</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Litur</translation>
+        <translation>Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Litur eftir gildi</translation>
+        <translation>Litur eftir gildi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Sérsniðinn litur</translation>
+        <translation>Sérsniðinn litur</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Litakort</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktastærð:</translation>
+        <translation>Punktastærð:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Örvar sýna stilling</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>

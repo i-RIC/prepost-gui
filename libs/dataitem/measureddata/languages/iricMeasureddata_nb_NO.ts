@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Poengvisningsinnstilling</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Skjerminnstilling</translation>
+        <translation>Skjerminnstilling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poeng</translation>
+        <translation>Poeng</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Flate</translation>
+        <translation>Flate</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farge</translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Farge etter verdi</translation>
+        <translation>Farge etter verdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Egendefinert farge</translation>
+        <translation>Egendefinert farge</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekart</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstørrelse:</translation>
+        <translation>Punktstørrelse:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstilling for piler</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Skjema</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení zobrazení bodů</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Nastavení zobrazení</translation>
+        <translation>Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Body</translation>
+        <translation>Body</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Povrch</translation>
+        <translation>Povrch</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Barva</translation>
+        <translation>Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Barva podle hodnoty</translation>
+        <translation>Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Vlastní barva</translation>
+        <translation>Vlastní barva</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Barevná mapa</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Velikost bodu:</translation>
+        <translation>Velikost bodu:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení zobrazení šipek</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulář</translation>
     </message>
 </context>
 <context>

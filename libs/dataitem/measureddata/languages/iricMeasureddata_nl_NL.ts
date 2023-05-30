@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling puntenweergave</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Beeldscherm instelling</translation>
+        <translation>Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punten</translation>
+        <translation>Punten</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Oppervlak</translation>
+        <translation>Oppervlak</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kleur</translation>
+        <translation>Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Kleur op waarde</translation>
+        <translation>Kleur op waarde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Aangepaste kleur</translation>
+        <translation>Aangepaste kleur</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kleurenkaart</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puntgrootte:</translation>
+        <translation>Puntgrootte:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pijlen Display Instelling</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulier</translation>
     </message>
 </context>
 <context>

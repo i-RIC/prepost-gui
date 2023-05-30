@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Punkteanzeige</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Bildschirmeinstellung</translation>
+        <translation>Bildschirmeinstellung</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punkte</translation>
+        <translation>Punkte</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Oberfläche</translation>
+        <translation>Oberfläche</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farbe</translation>
+        <translation>Farbe</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Farbe nach Wert</translation>
+        <translation>Farbe nach Wert</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Freiwählbare Farbe</translation>
+        <translation>Freiwählbare Farbe</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Farbkarte</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktgröße:</translation>
+        <translation>Punktgröße:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellung der Pfeilanzeige</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>

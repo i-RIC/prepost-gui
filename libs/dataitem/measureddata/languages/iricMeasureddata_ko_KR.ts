@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">디스플레이 설정</translation>
+        <translation>디스플레이 설정</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">포인트들</translation>
+        <translation>포인트들</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">표면</translation>
+        <translation>표면</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">값으로 색상 지정</translation>
+        <translation>값으로 색상 지정</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">맞춤 색상</translation>
+        <translation>맞춤 색상</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러맵</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">포인트 크기:</translation>
+        <translation>포인트 크기:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>화살표 표시 설정</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>형태</translation>
     </message>
 </context>
 <context>

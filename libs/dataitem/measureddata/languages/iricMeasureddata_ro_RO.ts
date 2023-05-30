@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setare de afișare a punctelor</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Arata setarile</translation>
+        <translation>Arata setarile</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puncte</translation>
+        <translation>Puncte</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Suprafaţă</translation>
+        <translation>Suprafaţă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Culoare</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Colorează după valoare</translation>
+        <translation>Colorează după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Culoare personalizată</translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Harta de culori</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Dimensiunea punctului:</translation>
+        <translation>Dimensiunea punctului:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea afișajului săgeților</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formă</translation>
     </message>
 </context>
 <context>

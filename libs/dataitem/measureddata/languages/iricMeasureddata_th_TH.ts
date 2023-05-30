@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงคะแนน</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">การตั้งค่าการแสดงผล</translation>
+        <translation>การตั้งค่าการแสดงผล</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">คะแนน</translation>
+        <translation>คะแนน</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">พื้นผิว</translation>
+        <translation>พื้นผิว</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">สีตามมูลค่า</translation>
+        <translation>สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">สีที่กำหนดเอง</translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>แผนที่สี</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">ขนาดจุด:</translation>
+        <translation>ขนาดจุด:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>การตั้งค่าการแสดงลูกศร</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>รูปร่าง</translation>
     </message>
 </context>
 <context>

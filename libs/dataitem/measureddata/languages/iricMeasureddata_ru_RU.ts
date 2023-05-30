@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка отображения точек</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Настройка экрана</translation>
+        <translation>Настройка экрана</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Точки</translation>
+        <translation>Точки</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Поверхность</translation>
+        <translation>Поверхность</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Цвет</translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Цвет по значению</translation>
+        <translation>Цвет по значению</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Пользовательский цвет</translation>
+        <translation>Пользовательский цвет</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Цветовая карта</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Размер точки:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка отображения стрелок</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
 </context>
 <context>

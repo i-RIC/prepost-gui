@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktide kuvamise seade</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ekraani seadistus</translation>
+        <translation>Ekraani seadistus</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punktid</translation>
+        <translation>Punktid</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Pind</translation>
+        <translation>Pind</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Värv väärtuse järgi</translation>
+        <translation>Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kohandatud värv</translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvikaart</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punkti suurus:</translation>
+        <translation>Punkti suurus:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Noolte kuva seadistus</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorm</translation>
     </message>
 </context>
 <context>

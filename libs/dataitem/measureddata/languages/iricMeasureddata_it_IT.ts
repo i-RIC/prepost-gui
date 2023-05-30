@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione della visualizzazione dei punti</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulo</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Impostazione del display</translation>
+        <translation>Impostazione del display</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Punti</translation>
+        <translation>Punti</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Superficie</translation>
+        <translation>Superficie</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Colore</translation>
+        <translation>Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Colore per valore</translation>
+        <translation>Colore per valore</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Colore personalizzato</translation>
+        <translation>Colore personalizzato</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa dei colori</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensione punto:</translation>
     </message>
 </context>
 <context>
@@ -157,7 +155,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per l&apos;intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazione visualizzazione frecce</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Modulo</translation>
     </message>
 </context>
 <context>

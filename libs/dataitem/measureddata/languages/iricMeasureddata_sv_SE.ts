@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Poängvisningsinställning</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Skärminställning</translation>
+        <translation>Skärminställning</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poäng</translation>
+        <translation>Poäng</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Yta</translation>
+        <translation>Yta</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Färg</translation>
+        <translation>Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Färg efter värde</translation>
+        <translation>Färg efter värde</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Anpassad färg</translation>
+        <translation>Anpassad färg</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Färgkarta</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Punktstorlek:</translation>
+        <translation>Punktstorlek:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pilar Visningsinställning</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
 </context>
 <context>

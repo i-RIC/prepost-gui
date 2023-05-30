@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Points Display Setting</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Display Setting</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poeni</translation>
+        <translation>Poeni</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Površina</translation>
+        <translation>Površina</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Boja</translation>
+        <translation>Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Boja po vrijednosti</translation>
+        <translation>Boja po vrijednosti</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Custom Color</translation>
+        <translation>Custom Color</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Veličina tačke:</translation>
+        <translation>Veličina tačke:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Strelice Display Setting</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
 </context>
 <context>

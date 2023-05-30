@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuak bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Bistaratzeko ezarpena</translation>
+        <translation>Bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puntuak</translation>
+        <translation>Puntuak</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Azalera</translation>
+        <translation>Azalera</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Kolore</translation>
+        <translation>Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Koloreztatu balioaren arabera</translation>
+        <translation>Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kolore pertsonalizatua</translation>
+        <translation>Kolore pertsonalizatua</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore-mapa</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuen tamaina:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Geziak bistaratzeko ezarpena</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
 </context>
 <context>

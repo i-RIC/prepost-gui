@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>ضبط عرض النقاط</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">إعداد عرض</translation>
+        <translation>إعداد عرض</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">نقاط</translation>
+        <translation>نقاط</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">سطح</translation>
+        <translation>سطح</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>لون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">لون حسب القيمة</translation>
+        <translation>لون حسب القيمة</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">لون مخصص</translation>
+        <translation>لون مخصص</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>خريطة ملونة</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">حجم النقطة:</translation>
+        <translation>حجم النقطة:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد عرض الأسهم</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>استمارة</translation>
     </message>
 </context>
 <context>

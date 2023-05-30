@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontok megjelenítési beállítása</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Kijelző beállítás</translation>
+        <translation>Kijelző beállítás</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Pontok</translation>
+        <translation>Pontok</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Felület</translation>
+        <translation>Felület</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Szín</translation>
+        <translation>Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Szín érték szerint</translation>
+        <translation>Szín érték szerint</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Egyedi szín</translation>
+        <translation>Egyedi szín</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Pontméret:</translation>
+        <translation>Pontméret:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyilak megjelenítési beállítása</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
 </context>
 <context>

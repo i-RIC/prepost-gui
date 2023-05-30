@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,18 +38,18 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de l'affichage des points</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation type="vanished">Boîte de dialogue Paramètres d&apos;affichage des points</translation>
+        <translation type="vanished">Boîte de dialogue Paramètres d'affichage des points</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">Paramètre d&apos;affichage</translation>
+        <translation type="vanished">Paramètre d'affichage</translation>
     </message>
     <message>
         <source>Points</source>
@@ -83,7 +81,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">Taille des points&#xa0;:</translation>
+        <translation type="vanished">Taille des points :</translation>
     </message>
     <message>
         <source>Custom Color</source>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre d'affichage</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Points</translation>
+        <translation>Points</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Surface</translation>
+        <translation>Surface</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Couleur</translation>
+        <translation>Couleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Couleur par valeur</translation>
+        <translation>Couleur par valeur</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Couleur personnalisée</translation>
+        <translation>Couleur personnalisée</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Palette de couleurs</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Taille des points&#xa0;:</translation>
+        <translation>Taille des points :</translation>
     </message>
 </context>
 <context>
@@ -141,11 +139,11 @@
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">Réglage de l&apos;affichage</translation>
+        <translation type="vanished">Réglage de l'affichage</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">Taille des points&#xa0;:</translation>
+        <translation type="vanished">Taille des points :</translation>
     </message>
     <message>
         <source>&amp;Color Bar Setting</source>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Réglage de l'affichage des flèches</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Former</translation>
     </message>
 </context>
 <context>
@@ -201,7 +199,7 @@
     </message>
     <message>
         <source>Physical value:</source>
-        <translation type="vanished">Valeur physique&#xa0;:</translation>
+        <translation type="vanished">Valeur physique :</translation>
     </message>
     <message>
         <source>Length</source>
@@ -221,7 +219,7 @@
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="vanished">Durée à l&apos;écran&#xa0;:</translation>
+        <translation type="vanished">Durée à l'écran :</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -229,7 +227,7 @@
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="vanished">Valeur minimale à tirer&#xa0;:</translation>
+        <translation type="vanished">Valeur minimale à tirer :</translation>
     </message>
     <message>
         <source>Color</source>

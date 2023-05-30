@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt hiển thị điểm</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Thiết lập màn hình</translation>
+        <translation>Thiết lập màn hình</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">điểm</translation>
+        <translation>điểm</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Bề mặt</translation>
+        <translation>Bề mặt</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Màu sắc</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Màu theo giá trị</translation>
+        <translation>Màu theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Tự phối màu</translation>
+        <translation>Tự phối màu</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>bản đồ màu</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Kích thước điểm:</translation>
+        <translation>Kích thước điểm:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Cài đặt hiển thị mũi tên</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
 </context>
 <context>

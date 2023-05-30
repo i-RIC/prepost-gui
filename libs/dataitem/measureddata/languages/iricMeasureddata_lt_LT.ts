@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Taškų rodymo nustatymas</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ekrano nustatymas</translation>
+        <translation>Ekrano nustatymas</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Taškai</translation>
+        <translation>Taškai</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Paviršius</translation>
+        <translation>Paviršius</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Spalva</translation>
+        <translation>Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Spalva pagal vertę</translation>
+        <translation>Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Pasirinktinė spalva</translation>
+        <translation>Pasirinktinė spalva</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Spalvų žemėlapis</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Taško dydis:</translation>
+        <translation>Taško dydis:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyklės ekrano nustatymas</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Forma</translation>
     </message>
 </context>
 <context>

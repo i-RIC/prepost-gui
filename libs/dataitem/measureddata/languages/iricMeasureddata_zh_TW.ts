@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>點數顯示設置</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">顯示設定</translation>
+        <translation>顯示設定</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">積分</translation>
+        <translation>積分</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">表面</translation>
+        <translation>表面</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">顏色</translation>
+        <translation>顏色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">按值著色</translation>
+        <translation>按值著色</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">自定義顏色</translation>
+        <translation>自定義顏色</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>色圖</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">點大小：</translation>
+        <translation>點大小：</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭顯示設置</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>形式</translation>
     </message>
 </context>
 <context>

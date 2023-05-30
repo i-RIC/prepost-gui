@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -11,7 +9,7 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <source>Bird's-Eye Post-processing (2D): %1</source>
         <translation>बर्ड्स-आई पोस्ट-प्रोसेसिंग (2D): %1</translation>
     </message>
     <message>
@@ -104,7 +102,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>
@@ -311,7 +309,7 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग मैप</translation>
     </message>
 </context>
 <context>

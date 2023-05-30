@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Points Display Setting</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Display Setting</translation>
+        <translation>Display Setting</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Упайлар</translation>
+        <translation>Упайлар</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Surface</translation>
+        <translation>Surface</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Маани боюнча түс</translation>
+        <translation>Маани боюнча түс</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Ыңгайлаштырылган түс</translation>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасы</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Упайдын өлчөмү:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrows Display Setting</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
 </context>
 <context>

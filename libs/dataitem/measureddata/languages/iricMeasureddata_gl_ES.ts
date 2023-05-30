@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de puntos</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puntos</translation>
+        <translation>Puntos</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Superficie</translation>
+        <translation>Superficie</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Cor</translation>
+        <translation>Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Cor por valor</translation>
+        <translation>Cor por valor</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Cor personalizada</translation>
+        <translation>Cor personalizada</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de cores</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Tamaño do punto:</translation>
+        <translation>Tamaño do punto:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de frechas</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulario</translation>
     </message>
 </context>
 <context>

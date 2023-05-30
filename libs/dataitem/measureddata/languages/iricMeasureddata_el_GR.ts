@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης σημείων</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ρύθμιση οθόνης</translation>
+        <translation>Ρύθμιση οθόνης</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Πόντοι</translation>
+        <translation>Πόντοι</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Επιφάνεια</translation>
+        <translation>Επιφάνεια</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Χρώμα ανά τιμή</translation>
+        <translation>Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Προσαρμοσμένο χρώμα</translation>
+        <translation>Προσαρμοσμένο χρώμα</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Χάρτης χρώματος</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Μέγεθος σημείου:</translation>
+        <translation>Μέγεθος σημείου:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρύθμιση εμφάνισης βέλους</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Μορφή</translation>
     </message>
 </context>
 <context>

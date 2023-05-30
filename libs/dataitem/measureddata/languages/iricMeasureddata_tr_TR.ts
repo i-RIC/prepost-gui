@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Puan Görüntüleme Ayarı</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Ekran ayarı</translation>
+        <translation>Ekran ayarı</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Puanlar</translation>
+        <translation>Puanlar</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Yüzey</translation>
+        <translation>Yüzey</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">değere göre renk</translation>
+        <translation>değere göre renk</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Özel renk</translation>
+        <translation>Özel renk</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>renk haritası</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Puan Boyutu:</translation>
+        <translation>Puan Boyutu:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Oklar Ekran Ayarı</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Biçim</translation>
     </message>
 </context>
 <context>

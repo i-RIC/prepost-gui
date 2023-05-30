@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Points Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Poin</translation>
     </message>
 </context>
 <context>
@@ -94,39 +92,39 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation type="unfinished">Pengaturan tampilan</translation>
+        <translation>Pengaturan tampilan</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation type="unfinished">Poin</translation>
+        <translation>Poin</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation type="unfinished">Permukaan</translation>
+        <translation>Permukaan</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Warna</translation>
+        <translation>Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished">Warnai berdasarkan nilai</translation>
+        <translation>Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Warna Kustom</translation>
+        <translation>Warna Kustom</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Peta warna</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran Titik:</translation>
     </message>
 </context>
 <context>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Tampilan Panah</translation>
     </message>
 </context>
 <context>
@@ -190,7 +188,7 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Membentuk</translation>
     </message>
 </context>
 <context>
