@@ -57,6 +57,8 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::copyValue
 void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting::load(const QDomNode& node)
 {
 	CompositeContainer::load(node);
+	startPositions.clear();
+
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
 		auto child = childNodes.at(i);

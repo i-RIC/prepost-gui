@@ -59,6 +59,8 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting::copyValue(c
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::Setting::load(const QDomNode& node)
 {
 	CompositeContainer::load(node);
+	startPositions.clear();
+
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
 		auto child = childNodes.at(i);
