@@ -160,27 +160,26 @@ void PreProcessorGridAttributeCellDataItem::updateVisibility(bool visible)
 
 void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
-		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
-		imgCtrl->handleMouseMoveEvent(event, v);
-		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
-			return;
-		}
-	}
-
 	if (m_definingBoundingBox) {
-		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMouseMoveEvent(event, v);
 	} else {
-		dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
+		auto setting = colorMapSettingContainer();
+		if (setting != nullptr && setting->legendSetting()->getVisible()) {
+			auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+			imgCtrl->handleMouseMoveEvent(event, v);
+			if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+				return;
+			}
+		}
+
+		dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent())->updateAttributeBrowser(event->pos(), v);
 	}
 }
 
 void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
+	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
 		imgCtrl->handleMousePressEvent(event, v);
 		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
@@ -198,12 +197,9 @@ void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, 
 void PreProcessorGridAttributeCellDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
+	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
 		imgCtrl->handleMouseReleaseEvent(event, v);
-		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
-			return;
-		}
 	}
 
 	static QMenu* menu = nullptr;

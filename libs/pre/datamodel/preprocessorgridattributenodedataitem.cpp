@@ -174,27 +174,26 @@ int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 
 void PreProcessorGridAttributeNodeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
-		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
-		imgCtrl->handleMouseMoveEvent(event, v);
-		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
-			return;
-		}
-	}
-
 	if (m_definingBoundingBox) {
-		// drawing bounding box using mouse dragging.
 		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMouseMoveEvent(event, v);
 	} else {
-		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->updateAttributeBrowser(QPoint(event->x(), event->y()), v);
+		auto setting = colorMapSettingContainer();
+		if (setting != nullptr && setting->legendSetting()->getVisible()) {
+			auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
+			imgCtrl->handleMouseMoveEvent(event, v);
+			if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
+				return;
+			}
+		}
+
+		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->updateAttributeBrowser(event->pos(), v);
 	}
 }
 
 void PreProcessorGridAttributeNodeDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
+	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
 		imgCtrl->handleMousePressEvent(event, v);
 		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
@@ -212,12 +211,9 @@ void PreProcessorGridAttributeNodeDataItem::mousePressEvent(QMouseEvent* event, 
 void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto setting = colorMapSettingContainer();
-	if (setting != nullptr) {
+	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
 		imgCtrl->handleMouseReleaseEvent(event, v);
-		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
-			return;
-		}
 	}
 
 	static QMenu* menu = nullptr;
@@ -339,7 +335,7 @@ void PreProcessorGridAttributeNodeDataItem::editRatio()
 	editVariation(GridAttributeVariationEditWidget::Ratio, tr("ratio"));
 }
 
-void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* v)
+void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->initAttributeBrowser();
@@ -347,7 +343,7 @@ void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* v)
 	GraphicsWindowDataItem::updateVisibility();
 }
 
-void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* v)
+void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
