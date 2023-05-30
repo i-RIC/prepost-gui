@@ -2,7 +2,7 @@
 #define MEASUREDDATAVECTORGROUPDATAITEM_IMPL_H
 
 #include "../measureddatavectorgroupdataitem.h"
-#include "../measureddatavectorsetting.h"
+#include "measureddatavectorgroupdataitem_setting.h"
 
 #include <unordered_map>
 
@@ -17,12 +17,11 @@ public:
 
 	void setupActors();
 	void updateCheckState();
-	void updateActorSettings();
 
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;
 
-	MeasuredDataVectorSetting m_setting;
+	Setting m_setting;
 
 private:
 	MeasuredDataVectorGroupDataItem* m_item;

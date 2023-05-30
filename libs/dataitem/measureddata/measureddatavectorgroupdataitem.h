@@ -25,16 +25,15 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string &target) override;
 
-	MeasuredDataVectorSetting& setting();
-
 public slots:
+	void showPropertyDialog() override;
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private:
 	ColorMapSettingContainer* colorMapSetting(const std::string& target);
 
 	QDialog* propertyDialog(QWidget* p) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdate2Ds() override;
@@ -48,15 +47,18 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	void doApplyOffset(double x, double y) override;
 
+	void updateActorSetting() override;
+
 	class Impl;
 	Impl* impl;
 
 	class PropertyDialog;
+	class Setting;
+	class SettingEditWidget;
 	class UpdateSettingCommand;
-};
 
-#ifdef _DEBUG
-	#include "private/measureddatavectorgroupdataitem_impl.h"
-#endif // _DEBUG
+public:
+	friend class MeasuredDataVectorDataItem;
+};
 
 #endif // MEASUREDDATAVECTORGROUPDATAITEM_H

@@ -3,6 +3,8 @@
 #include "measureddatavectordataitem.h"
 #include "measureddatavectorgroupdataitem.h"
 #include "measureddatavectorsetting.h"
+#include "private/measureddatavectorgroupdataitem_impl.h"
+#include "private/measureddatavectorgroupdataitem_setting.h"
 
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <misc/stringtool.h>
@@ -96,7 +98,7 @@ MeasuredDataPointGroupDataItem* MeasuredDataVectorDataItem::pointGroupDataItem()
 	return dynamic_cast<MeasuredDataFileDataItem*> (parent()->parent())->pointGroupDataItem();
 }
 
-MeasuredDataVectorSetting& MeasuredDataVectorDataItem::setting()
+MeasuredDataVectorGroupDataItem::Setting& MeasuredDataVectorDataItem::setting()
 {
-	return dynamic_cast<MeasuredDataVectorGroupDataItem*>(parent())->setting();
+	return dynamic_cast<MeasuredDataVectorGroupDataItem*>(parent())->impl->m_setting;
 }

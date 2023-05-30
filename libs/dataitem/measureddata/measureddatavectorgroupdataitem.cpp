@@ -4,9 +4,10 @@
 #include "measureddatavectordataitem.h"
 #include "measureddatavectorgroupdataitem.h"
 #include "private/measureddatavectorgroupdataitem_impl.h"
-#include "private/measureddatavectorgroupdataitem_propertydialog.h"
+#include "private/measureddatavectorgroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
@@ -61,64 +62,6 @@ void MeasuredDataVectorGroupDataItem::Impl::setupActors()
 void MeasuredDataVectorGroupDataItem::Impl::updateCheckState()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.arrowsSetting.target, m_item->m_childItems, true);
-}
-
-void MeasuredDataVectorGroupDataItem::Impl::updateActorSettings()
-{
-	m_actor->VisibilityOff();
-	m_legendActor->VisibilityOff();
-	m_item->actorCollection()->RemoveAllItems();
-	m_item->actor2DCollection()->RemoveAllItems();
-
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(m_item->parent())->measuredData();
-	if (md == nullptr || md->pointData() == nullptr) {return;}
-	if (m_setting.arrowsSetting.target == "") {return;}
-
-	m_setting.arrowsSetting.updateStandardValueIfNeeded(md->pointData()->GetPointData());
-	auto filteredData = m_setting.arrowsSetting.buildFilteredData(md->pointData());
-
-	auto sampledData = m_setting.filteringSetting.buildSampledData(filteredData);
-	filteredData->Delete();
-
-	auto view = m_item->dataModel()->graphicsView();
-	auto arrowsData = m_setting.arrowsSetting.buildArrowsPolygonData(sampledData, view);
-	sampledData->Delete();
-
-	if (m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
-		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
-		auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
-		gfilter->SetInputData(arrowsData);
-		mapper->SetInputConnection(gfilter->GetOutputPort());
-		m_actor->SetMapper(mapper);
-		mapper->Delete();
-
-		m_actor->GetProperty()->SetColor(m_setting.arrowsSetting.customColor);
-	} else if (m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
-		arrowsData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.arrowsSetting.colorTarget).c_str());
-		auto cs = m_item->colorMapSetting(iRIC::toStr(m_setting.arrowsSetting.colorTarget));
-		if (cs == nullptr) {return;}
-		auto mapper = cs->buildPointDataMapper(arrowsData);
-		m_actor->SetMapper(mapper);
-		mapper->Delete();
-	}
-	arrowsData->Delete();
-
-	auto v = m_item->dataModel()->graphicsView();
-	m_actor->GetProperty()->SetLineWidth(m_setting.arrowsSetting.lineWidth * v->devicePixelRatioF());
-
-	m_item->actorCollection()->AddItem(m_actor);
-	m_item->actor2DCollection()->AddItem(m_legendActor);
-	m_item->updateVisibilityWithoutRendering();
-
-	m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
-
-	auto& as = m_setting.arrowsSetting;
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = m_item->colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legend.imageSetting.apply(v);
 }
 
 // public interfaces
@@ -178,12 +121,12 @@ void MeasuredDataVectorGroupDataItem::setTarget(const std::string& target)
 	impl->m_setting.arrowsSetting.target = target.c_str();
 	impl->m_setting.arrowsSetting.legend.title = target.c_str();
 
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
-MeasuredDataVectorSetting& MeasuredDataVectorGroupDataItem::setting()
+void MeasuredDataVectorGroupDataItem::showPropertyDialog()
 {
-	return impl->m_setting;
+	showPropertyDialogModeless();
 }
 
 void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -196,7 +139,7 @@ void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDa
 
 void MeasuredDataVectorGroupDataItem::informGridUpdate()
 {
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
 void MeasuredDataVectorGroupDataItem::updateZDepthRangeItemCount()
@@ -216,7 +159,7 @@ void MeasuredDataVectorGroupDataItem::update()
 
 void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 {
-	impl->updateActorSettings();
+	updateActorSetting();
 }
 
 ColorMapSettingContainer* MeasuredDataVectorGroupDataItem::colorMapSetting(const std::string& target)
@@ -236,13 +179,13 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 		return nullptr;
 	}
 
-	return new PropertyDialog(this, p);
-}
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Arrows Display Setting"));
+	dialog->resize(900, 700);
 
-void MeasuredDataVectorGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<PropertyDialog*> (propDialog);
-	pushRenderCommand(dialog->createModifyCommand(), this, true);
+	return dialog;
 }
 
 void MeasuredDataVectorGroupDataItem::informSelection(VTKGraphicsView* v)
@@ -328,5 +271,63 @@ void MeasuredDataVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKG
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	impl->updateActorSettings();
+	updateActorSetting();
+}
+
+void MeasuredDataVectorGroupDataItem::updateActorSetting()
+{
+	impl->m_actor->VisibilityOff();
+	impl->m_legendActor->VisibilityOff();
+	actorCollection()->RemoveAllItems();
+	actor2DCollection()->RemoveAllItems();
+
+	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	if (md == nullptr || md->pointData() == nullptr) {return;}
+	if (impl->m_setting.arrowsSetting.target == "") {return;}
+
+	impl->m_setting.arrowsSetting.updateStandardValueIfNeeded(md->pointData()->GetPointData());
+	auto filteredData = impl->m_setting.arrowsSetting.buildFilteredData(md->pointData());
+
+	auto sampledData = impl->m_setting.filteringSetting.buildSampledData(filteredData);
+	filteredData->Delete();
+
+	auto view = dataModel()->graphicsView();
+	auto arrowsData = impl->m_setting.arrowsSetting.buildArrowsPolygonData(sampledData, view);
+	sampledData->Delete();
+
+	if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
+		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
+		auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
+		gfilter->SetInputData(arrowsData);
+		mapper->SetInputConnection(gfilter->GetOutputPort());
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+
+		impl->m_actor->GetProperty()->SetColor(impl->m_setting.arrowsSetting.customColor);
+	} else if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+		arrowsData->GetPointData()->SetActiveScalars(iRIC::toStr(impl->m_setting.arrowsSetting.colorTarget).c_str());
+		auto cs = colorMapSetting(iRIC::toStr(impl->m_setting.arrowsSetting.colorTarget));
+		if (cs == nullptr) {return;}
+		auto mapper = cs->buildPointDataMapper(arrowsData);
+		impl->m_actor->SetMapper(mapper);
+		mapper->Delete();
+	}
+	arrowsData->Delete();
+
+	auto v = dataModel()->graphicsView();
+	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.arrowsSetting.lineWidth * v->devicePixelRatioF());
+
+	actorCollection()->AddItem(impl->m_actor);
+	actor2DCollection()->AddItem(impl->m_legendActor);
+	updateVisibilityWithoutRendering();
+
+	impl->m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
+
+	auto& as = impl->m_setting.arrowsSetting;
+	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+
+	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
+	if (s == nullptr) {return;}
+
+	s->legend.imageSetting.apply(v);
 }

@@ -1,9 +1,10 @@
 #ifndef MEASUREDDATAVECTORDATAITEM_H
 #define MEASUREDDATAVECTORDATAITEM_H
 
+#include "measureddatavectorgroupdataitem.h"
+
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
-class MeasuredDataVectorSetting;
 class MeasuredDataPointGroupDataItem;
 
 class MeasuredDataVectorDataItem : public NamedGraphicWindowDataItem
@@ -22,7 +23,7 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	MeasuredDataPointGroupDataItem* pointGroupDataItem() const;
-	MeasuredDataVectorSetting& setting();
+	MeasuredDataVectorGroupDataItem::Setting& setting();
 };
 
 #endif // MEASUREDDATAVECTORDATAITEM_H

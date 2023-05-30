@@ -65,29 +65,26 @@ HEADERS += measureddata_api.h \
            measureddatapointgroupdataitem.h \
            measureddatavectordataitem.h \
            measureddatavectorgroupdataitem.h \
-           measureddatavectorsetting.h \
            private/measureddatafiledataitem_impl.h \
            private/measureddatapointgroupdataitem_impl.h \
            private/measureddatapointgroupdataitem_setting.h \
            private/measureddatapointgroupdataitem_settingeditwidget.h \
            private/measureddatapointgroupdataitem_updatesettingcommand.h \
            private/measureddatavectorgroupdataitem_impl.h \
-           private/measureddatavectorgroupdataitem_propertydialog.h \
-           private/measureddatavectorgroupdataitem_updatesettingcommand.h
-FORMS += \
-         private/measureddatapointgroupdataitem_settingeditwidget.ui \
-         private/measureddatavectorgroupdataitem_propertydialog.ui
+           private/measureddatavectorgroupdataitem_setting.h \
+           private/measureddatavectorgroupdataitem_settingeditwidget.h
+FORMS += private/measureddatapointgroupdataitem_settingeditwidget.ui \
+         private/measureddatavectorgroupdataitem_settingeditwidget.ui
 SOURCES += measureddatafiledataitem.cpp \
            measureddatapointdataitem.cpp \
            measureddatapointgroupdataitem.cpp \
            measureddatavectordataitem.cpp \
            measureddatavectorgroupdataitem.cpp \
-           measureddatavectorsetting.cpp \
            private/measureddatapointgroupdataitem_setting.cpp \
            private/measureddatapointgroupdataitem_settingeditwidget.cpp \
            private/measureddatapointgroupdataitem_updatesettingcommand.cpp \
-           private/measureddatavectorgroupdataitem_propertydialog.cpp \
-           private/measureddatavectorgroupdataitem_updatesettingcommand.cpp
+           private/measureddatavectorgroupdataitem_setting.cpp \
+           private/measureddatavectorgroupdataitem_settingeditwidget.cpp
 TRANSLATIONS += languages/iricMeasureddata_ar_EG.ts \
                 languages/iricMeasureddata_bg_BG.ts \
                 languages/iricMeasureddata_bs_BA.ts \
