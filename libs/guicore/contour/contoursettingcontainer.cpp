@@ -57,11 +57,11 @@ vtkPointSet* ContourSettingContainer::buildFilteredData(vtkPointSet* data) const
 	} else if (mode == Mode::SpecifyNumberOfValues) {
 		auto min = m_colorMapSetting->getMinValue();
 		auto max = m_colorMapSetting->getMaxValue();
-		m_filter->SetNumberOfContours(numberOfValues);
+		m_filter->SetNumberOfContours(numberOfValues + 1);
 		m_filter->SetValue(0, min);
-		m_filter->SetValue(numberOfValues - 1, max);
-		for (int i = 1; i < numberOfValues - 1; ++i) {
-			m_filter->SetValue(i, min + (i / static_cast<double>(numberOfValues - 1)) * (max - min));
+		m_filter->SetValue(numberOfValues, max);
+		for (int i = 1; i < numberOfValues; ++i) {
+			m_filter->SetValue(i, min + (i / static_cast<double>(numberOfValues)) * (max - min));
 		}
 	}
 	m_filter->SetInputData(data);
