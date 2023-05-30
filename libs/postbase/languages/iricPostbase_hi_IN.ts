@@ -23,6 +23,33 @@
     </message>
 </context>
 <context>
+    <name>ParticleDataSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">प्रपत्र</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>

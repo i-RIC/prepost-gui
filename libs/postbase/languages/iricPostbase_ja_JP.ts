@@ -23,6 +23,33 @@
     </message>
 </context>
 <context>
+    <name>ParticleDataSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation>スカラー値により設定</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+</context>
+<context>
     <name>ParticleSettingEditWidget</name>
     <message>
         <source>Form</source>
