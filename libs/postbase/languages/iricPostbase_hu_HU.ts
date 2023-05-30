@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Szín</translation>
+        <translation>Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Szín érték szerint</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Egyedi szín</translation>
+        <translation>Egyedi szín</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pontméret:</translation>
     </message>
 </context>
 <context>

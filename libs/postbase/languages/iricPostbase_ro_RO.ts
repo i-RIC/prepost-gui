@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formă</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Culoare</translation>
+        <translation>Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Colorează după valoare</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Culoare personalizată</translation>
+        <translation>Culoare personalizată</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Harta de culori</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiunea punctului:</translation>
     </message>
 </context>
 <context>

@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Farve</translation>
+        <translation>Farve</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Farve efter værdi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Brugerdefineret farve</translation>
+        <translation>Brugerdefineret farve</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Farvekort</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktstørrelse:</translation>
     </message>
 </context>
 <context>

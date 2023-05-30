@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Vorm</translation>
+        <translation>Vorm</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Värv</translation>
+        <translation>Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Kohandatud värv</translation>
+        <translation>Kohandatud värv</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Värvikaart</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkti suurus:</translation>
     </message>
 </context>
 <context>

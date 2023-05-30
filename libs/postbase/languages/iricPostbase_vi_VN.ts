@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Hình thức</translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Màu sắc</translation>
+        <translation>Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Màu theo giá trị</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Tự phối màu</translation>
+        <translation>Tự phối màu</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>bản đồ màu</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích thước điểm:</translation>
     </message>
 </context>
 <context>

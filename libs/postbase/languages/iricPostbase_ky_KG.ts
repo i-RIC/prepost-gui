@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Түс</translation>
+        <translation>Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>Маани боюнча түс</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">Ыңгайлаштырылган түс</translation>
+        <translation>Ыңгайлаштырылган түс</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>Түс картасы</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Упайдын өлчөмү:</translation>
     </message>
 </context>
 <context>

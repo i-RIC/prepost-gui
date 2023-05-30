@@ -26,27 +26,27 @@
     <name>ParticleDataSettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">สี</translation>
+        <translation>สี</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation type="unfinished"></translation>
+        <translation>สีตามค่า</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation type="unfinished">สีที่กำหนดเอง</translation>
+        <translation>สีที่กำหนดเอง</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>แผนที่สี</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>ขนาดจุด:</translation>
     </message>
 </context>
 <context>
