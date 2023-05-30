@@ -35,7 +35,7 @@
       <attribute name="title">
        <string>Color</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,1">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
@@ -116,10 +116,19 @@
         </layout>
        </item>
        <item>
-        <widget class="QWidgetContainer" name="colorMapWidget" native="true">
-         <property name="enabled">
-          <bool>false</bool>
+        <widget class="QGroupBox" name="colormapGroupBox">
+         <property name="title">
+          <string>Colormap</string>
          </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QWidgetContainer" name="colorMapWidget" native="true">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
