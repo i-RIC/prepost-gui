@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Contour fysieke waarde verandering</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Dialoogvenster Puntenweergave-instelling</translation>
+        <translation type="vanished">Dialoogvenster Puntenweergave-instelling</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Beeldscherm instelling</translation>
+        <translation type="vanished">Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punten</translation>
+        <translation type="vanished">Punten</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Oppervlak</translation>
+        <translation type="vanished">Oppervlak</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Kleur op waarde</translation>
+        <translation type="vanished">Kleur op waarde</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Colormap-instelling</translation>
+        <translation type="vanished">Colormap-instelling</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntgrootte:</translation>
+        <translation type="vanished">Puntgrootte:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Aangepaste kleur</translation>
+        <translation type="vanished">Aangepaste kleur</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Beeldscherm instelling</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punten</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Oppervlak</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Kleur op waarde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Aangepaste kleur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Puntgrootte:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Pijlinstelling bijwerken</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Pijlinstelling gemeten gegevens</translation>
+        <translation type="vanished">Pijlinstelling gemeten gegevens</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

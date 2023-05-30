@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Cambio do valor físico do contorno</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Diálogo de configuración de visualización de puntos</translation>
+        <translation type="vanished">Diálogo de configuración de visualización de puntos</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuración de visualización</translation>
+        <translation type="vanished">Configuración de visualización</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puntos</translation>
+        <translation type="vanished">Puntos</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superficie</translation>
+        <translation type="vanished">Superficie</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Cor por valor</translation>
+        <translation type="vanished">Cor por valor</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuración do mapa de cores</translation>
+        <translation type="vanished">Configuración do mapa de cores</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Tamaño do punto:</translation>
+        <translation type="vanished">Tamaño do punto:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Cor personalizada</translation>
+        <translation type="vanished">Cor personalizada</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Puntos</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Superficie</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Cor por valor</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Cor personalizada</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Tamaño do punto:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Actualizar a configuración da frecha</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Configuración da frecha de datos medidos</translation>
+        <translation type="vanished">Configuración da frecha de datos medidos</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

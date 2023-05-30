@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Kontúr fizikai értékének változása</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Pontok kijelző beállítása párbeszédablak</translation>
+        <translation type="vanished">Pontok kijelző beállítása párbeszédablak</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Kijelző beállítás</translation>
+        <translation type="vanished">Kijelző beállítás</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pontok</translation>
+        <translation type="vanished">Pontok</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Felület</translation>
+        <translation type="vanished">Felület</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Szín érték szerint</translation>
+        <translation type="vanished">Szín érték szerint</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Színtérkép beállítása</translation>
+        <translation type="vanished">Színtérkép beállítása</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importálás (&amp;I)...</translation>
+        <translation type="vanished">Importálás (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Pontméret:</translation>
+        <translation type="vanished">Pontméret:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Egyedi szín</translation>
+        <translation type="vanished">Egyedi szín</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Kijelző beállítás</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Pontok</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Felület</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Szín</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Szín érték szerint</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Egyedi szín</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Pontméret:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Nyílbeállítás frissítése</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Mért adatok nyíl beállítása</translation>
+        <translation type="vanished">Mért adatok nyíl beállítása</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Sestra Balio Fisikoaren Aldaketa</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Puntuak bistaratzeko ezarpenen elkarrizketa-koadroa</translation>
+        <translation type="vanished">Puntuak bistaratzeko ezarpenen elkarrizketa-koadroa</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Bistaratzeko ezarpena</translation>
+        <translation type="vanished">Bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puntuak</translation>
+        <translation type="vanished">Puntuak</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Azalera</translation>
+        <translation type="vanished">Azalera</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolore</translation>
+        <translation type="vanished">Kolore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Koloreztatu balioaren arabera</translation>
+        <translation type="vanished">Koloreztatu balioaren arabera</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Kolore maparen ezarpena</translation>
+        <translation type="vanished">Kolore maparen ezarpena</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Inportatu (&amp;I)...</translation>
+        <translation type="vanished">Inportatu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportatu (&amp;E)...</translation>
+        <translation type="vanished">Esportatu (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Puntuen tamaina:</translation>
+        <translation type="vanished">Puntuen tamaina:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kolore pertsonalizatua</translation>
+        <translation type="vanished">Kolore pertsonalizatua</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Bistaratzeko ezarpena</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Puntuak</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Azalera</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Koloreztatu balioaren arabera</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Kolore pertsonalizatua</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Eguneratu geziaren ezarpena</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Neurtutako Datuen Gezi Ezarpena</translation>
+        <translation type="vanished">Neurtutako Datuen Gezi Ezarpena</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

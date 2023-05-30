@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Promjena fizičke vrijednosti konture</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Points Display Setting Dialog</translation>
+        <translation type="vanished">Points Display Setting Dialog</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Display Setting</translation>
+        <translation type="vanished">Display Setting</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poeni</translation>
+        <translation type="vanished">Poeni</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Površina</translation>
+        <translation type="vanished">Površina</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Boja</translation>
+        <translation type="vanished">Boja</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Boja po vrijednosti</translation>
+        <translation type="vanished">Boja po vrijednosti</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Colormap Setting</translation>
+        <translation type="vanished">Colormap Setting</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Uvoz (&amp;I)...</translation>
+        <translation type="vanished">Uvoz (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Izvoz (&amp;E)...</translation>
+        <translation type="vanished">Izvoz (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Veličina tačke:</translation>
+        <translation type="vanished">Veličina tačke:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Custom Color</translation>
+        <translation type="vanished">Custom Color</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Poeni</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Površina</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Boja</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Boja po vrijednosti</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Custom Color</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Veličina tačke:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Ažuriraj postavku strelice</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Postavka strelice za mjerene podatke</translation>
+        <translation type="vanished">Postavka strelice za mjerene podatke</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

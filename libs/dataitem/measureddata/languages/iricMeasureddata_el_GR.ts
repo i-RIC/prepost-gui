@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Αλλαγή φυσικής αξίας περιγράμματος</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Διάλογος ρυθμίσεων εμφάνισης σημείων</translation>
+        <translation type="vanished">Διάλογος ρυθμίσεων εμφάνισης σημείων</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ρύθμιση οθόνης</translation>
+        <translation type="vanished">Ρύθμιση οθόνης</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Πόντοι</translation>
+        <translation type="vanished">Πόντοι</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Επιφάνεια</translation>
+        <translation type="vanished">Επιφάνεια</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Χρώμα ανά τιμή</translation>
+        <translation type="vanished">Χρώμα ανά τιμή</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Ρύθμιση χρωματικού χάρτη</translation>
+        <translation type="vanished">Ρύθμιση χρωματικού χάρτη</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Εισαγωγή (&amp;I)...</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Εξαγωγή (&amp;E)...</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Μέγεθος σημείου:</translation>
+        <translation type="vanished">Μέγεθος σημείου:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Προσαρμοσμένο χρώμα</translation>
+        <translation type="vanished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Ρύθμιση οθόνης</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Πόντοι</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Επιφάνεια</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Χρώμα</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Χρώμα ανά τιμή</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Προσαρμοσμένο χρώμα</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Μέγεθος σημείου:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Ενημέρωση ρύθμισης βέλους</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Ρύθμιση βέλους μετρημένων δεδομένων</translation>
+        <translation type="vanished">Ρύθμιση βέλους μετρημένων δεδομένων</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

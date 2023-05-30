@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Modifica del valore fisico del contorno</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Finestra di dialogo delle impostazioni di visualizzazione dei punti</translation>
+        <translation type="vanished">Finestra di dialogo delle impostazioni di visualizzazione dei punti</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Impostazione del display</translation>
+        <translation type="vanished">Impostazione del display</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punti</translation>
+        <translation type="vanished">Punti</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superficie</translation>
+        <translation type="vanished">Superficie</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Colore</translation>
+        <translation type="vanished">Colore</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colore per valore</translation>
+        <translation type="vanished">Colore per valore</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Impostazione della mappa dei colori</translation>
+        <translation type="vanished">Impostazione della mappa dei colori</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importare (&amp;I)...</translation>
+        <translation type="vanished">Importare (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Esportare (&amp;E)...</translation>
+        <translation type="vanished">Esportare (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensione punto:</translation>
+        <translation type="vanished">Dimensione punto:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Colore personalizzato</translation>
+        <translation type="vanished">Colore personalizzato</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Impostazione del display</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punti</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Superficie</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Colore</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Colore per valore</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Colore personalizzato</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -112,7 +157,7 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per l'intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
+        <translation type="vanished">Per l&apos;intervallo di valori, il valore massimo è inferiore al valore minimo.</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Aggiorna impostazione freccia</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Impostazione della freccia dei dati misurati</translation>
+        <translation type="vanished">Impostazione della freccia dei dati misurati</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

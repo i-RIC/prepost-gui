@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Změna fyzické hodnoty obrysu</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Dialog nastavení zobrazení bodů</translation>
+        <translation type="vanished">Dialog nastavení zobrazení bodů</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavení zobrazení</translation>
+        <translation type="vanished">Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Body</translation>
+        <translation type="vanished">Body</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Povrch</translation>
+        <translation type="vanished">Povrch</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Barva podle hodnoty</translation>
+        <translation type="vanished">Barva podle hodnoty</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavení barevné mapy</translation>
+        <translation type="vanished">Nastavení barevné mapy</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Vývozní (&amp;E)...</translation>
+        <translation type="vanished">Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Velikost bodu:</translation>
+        <translation type="vanished">Velikost bodu:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Vlastní barva</translation>
+        <translation type="vanished">Vlastní barva</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Nastavení zobrazení</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Body</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Povrch</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Barva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Barva podle hodnoty</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Vlastní barva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Velikost bodu:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Aktualizovat nastavení šipky</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Nastavení šipky naměřených dat</translation>
+        <translation type="vanished">Nastavení šipky naměřených dat</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

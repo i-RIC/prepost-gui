@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>윤곽 물리적 가치 변화</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>점 표시 설정 대화상자</translation>
+        <translation type="vanished">점 표시 설정 대화상자</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>디스플레이 설정</translation>
+        <translation type="vanished">디스플레이 설정</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>포인트들</translation>
+        <translation type="vanished">포인트들</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>표면</translation>
+        <translation type="vanished">표면</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>값으로 색상 지정</translation>
+        <translation type="vanished">값으로 색상 지정</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>컬러맵 설정</translation>
+        <translation type="vanished">컬러맵 설정</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>포인트 크기:</translation>
+        <translation type="vanished">포인트 크기:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>맞춤 색상</translation>
+        <translation type="vanished">맞춤 색상</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">디스플레이 설정</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">포인트들</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">표면</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">색상</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">값으로 색상 지정</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">맞춤 색상</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">포인트 크기:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">화살표 설정 업데이트</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>측정 데이터 화살표 설정</translation>
+        <translation type="vanished">측정 데이터 화살표 설정</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

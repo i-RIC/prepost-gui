@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -261,8 +263,8 @@
         <translation type="vanished">マージ...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>"%1" グループにはマージできるデータがありません。</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -554,7 +556,7 @@
     <name>GeoDataPointmapProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
@@ -700,8 +702,8 @@
         <translation type="vanished">%1 を読み込めませんでした。%1 は %2 列目ですが、値は %3しかありません。</translation>
     </message>
     <message>
-        <source>Error occured while reading %1 value. %1 value should be real number, but "%2" specified.</source>
-        <translation type="vanished">%1 の値を読み込めませんでした。 %1 の値は実数値である必要がありますが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading %1 value. %1 value should be real number, but &quot;%2&quot; specified.</source>
+        <translation type="vanished">%1 の値を読み込めませんでした。 %1 の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
@@ -728,12 +730,12 @@
         <translation>区切り文字が指定されていません</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>"%1" を読み込めませんでした。"%1" は %2 列目ですが、値は %3しかありません。</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>&quot;%1&quot; を読み込めませんでした。&quot;%1&quot; は %2 列目ですが、値は %3しかありません。</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>"%1" の値を読み込めませんでした。 "%1" の値は実数値である必要がありますが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>&quot;%1&quot; の値を読み込めませんでした。 &quot;%1&quot; の値は実数値である必要がありますが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV etc)</source>
@@ -815,8 +817,8 @@
         <translation>クォート文字</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1122,7 +1124,7 @@
     <name>GeoDataPointmap_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Basic</source>
@@ -1344,7 +1346,7 @@
     <name>GeoDataPointmap_PolygonsManager_AttributeForMappingCondition_EditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Calculation method</source>
@@ -1371,8 +1373,8 @@
         <translation>重み付け指数 k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; は、値の加重平均を計算する際の重みとして使用されます。 r は、ポイントから、値がマップされるノードまたはセルの中心までの距離です。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; は、値の加重平均を計算する際の重みとして使用されます。 r は、ポイントから、値がマップされるノードまたはセルの中心までの距離です。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1384,7 +1386,7 @@
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -1422,8 +1424,8 @@
         <translation type="vanished">補間された面</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注:&lt;/span&gt; &amp;quot;ポイント編集モードquot;の場合、この設定は無視され、TIN データは常にポイントとして表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注:&lt;/span&gt; &amp;quot;ポイント編集モードquot;の場合、この設定は無視され、TIN データは常にポイントとして表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1473,8 +1475,8 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;もしある点を含む全ての三角形が削除される場合、それらのうち一番辺の長さが短い三角形を削除対象から外すことで、すべての点が少なくとも1つの三角形で使われるようにします。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考&lt;/span&gt;: 適用ボタンを押すと、削除される三角形が灰色で塗られて表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

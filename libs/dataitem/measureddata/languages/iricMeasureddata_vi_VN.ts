@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Thay đổi giá trị vật lý của đường viền</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Hộp thoại Cài đặt Hiển thị Điểm</translation>
+        <translation type="vanished">Hộp thoại Cài đặt Hiển thị Điểm</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Thiết lập màn hình</translation>
+        <translation type="vanished">Thiết lập màn hình</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>điểm</translation>
+        <translation type="vanished">điểm</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Bề mặt</translation>
+        <translation type="vanished">Bề mặt</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Màu theo giá trị</translation>
+        <translation type="vanished">Màu theo giá trị</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Cài đặt bản đồ màu</translation>
+        <translation type="vanished">Cài đặt bản đồ màu</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Nhập khẩu (&amp;I)...</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Xuất khẩu (&amp;E)...</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Kích thước điểm:</translation>
+        <translation type="vanished">Kích thước điểm:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Tự phối màu</translation>
+        <translation type="vanished">Tự phối màu</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Thiết lập màn hình</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">điểm</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Bề mặt</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Màu sắc</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Màu theo giá trị</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Tự phối màu</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Kích thước điểm:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Cập nhật cài đặt mũi tên</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Cài đặt mũi tên dữ liệu được đo</translation>
+        <translation type="vanished">Cài đặt mũi tên dữ liệu được đo</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,12 +38,67 @@
         <source>Contour Physical Value Change</source>
         <translation>コンター 物理量変更</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation>点の表示設定</translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>点の表示設定</translation>
+        <translation type="vanished">点の表示設定</translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="vanished">表示設定</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="vanished">点</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="vanished">補間した面</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="vanished">表示色</translation>
+    </message>
+    <message>
+        <source>Cusom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="vanished">値により設定</translation>
+    </message>
+    <message>
+        <source>Colormap Setting</source>
+        <translation type="vanished">カラーマップ設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="vanished">点のサイズ:</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="vanished">色を指定</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -60,32 +117,20 @@
         <translation>表示色</translation>
     </message>
     <message>
-        <source>Cusom Color</source>
-        <translation type="vanished">色を指定</translation>
-    </message>
-    <message>
         <source>Color by value</source>
         <translation>値により設定</translation>
     </message>
     <message>
-        <source>Colormap Setting</source>
-        <translation>カラーマップ設定</translation>
+        <source>Custom Color</source>
+        <translation>色を指定</translation>
     </message>
     <message>
-        <source>&amp;Import...</source>
-        <translation>インポート(&amp;I)...</translation>
-    </message>
-    <message>
-        <source>&amp;Export...</source>
-        <translation>エクスポート(&amp;E)...</translation>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
     </message>
     <message>
         <source>Point Size:</source>
         <translation>点のサイズ:</translation>
-    </message>
-    <message>
-        <source>Custom Color</source>
-        <translation>色を指定</translation>
     </message>
 </context>
 <context>
@@ -133,12 +178,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">ベクトルの設定変更</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation>ベクトルの表示設定</translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>実測値の矢印設定</translation>
+        <translation type="vanished">実測値の矢印設定</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation></translation>
     </message>
 </context>
 <context>

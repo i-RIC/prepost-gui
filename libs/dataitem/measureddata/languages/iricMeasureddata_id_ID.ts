@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Perubahan Nilai Fisik Kontur</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Dialog Pengaturan Tampilan Poin</translation>
+        <translation type="vanished">Dialog Pengaturan Tampilan Poin</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Pengaturan tampilan</translation>
+        <translation type="vanished">Pengaturan tampilan</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poin</translation>
+        <translation type="vanished">Poin</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Permukaan</translation>
+        <translation type="vanished">Permukaan</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Warna</translation>
+        <translation type="vanished">Warna</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Warnai berdasarkan nilai</translation>
+        <translation type="vanished">Warnai berdasarkan nilai</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Pengaturan Peta Warna</translation>
+        <translation type="vanished">Pengaturan Peta Warna</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Impor (&amp;I)...</translation>
+        <translation type="vanished">Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspor (&amp;E)...</translation>
+        <translation type="vanished">Ekspor (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Ukuran Titik:</translation>
+        <translation type="vanished">Ukuran Titik:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Warna Kustom</translation>
+        <translation type="vanished">Warna Kustom</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Pengaturan tampilan</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Poin</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Permukaan</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Warna</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Warnai berdasarkan nilai</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Warna Kustom</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Perbarui Pengaturan Panah</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Pengaturan Panah Data Terukur</translation>
+        <translation type="vanished">Pengaturan Panah Data Terukur</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

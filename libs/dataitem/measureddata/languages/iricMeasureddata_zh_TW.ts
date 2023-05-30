@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>輪廓物理值變化</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>點顯示設置對話框</translation>
+        <translation type="vanished">點顯示設置對話框</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>顯示設定</translation>
+        <translation type="vanished">顯示設定</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>積分</translation>
+        <translation type="vanished">積分</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>表面</translation>
+        <translation type="vanished">表面</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>按值著色</translation>
+        <translation type="vanished">按值著色</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>顏色映射設置</translation>
+        <translation type="vanished">顏色映射設置</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>進口 (&amp;I)...</translation>
+        <translation type="vanished">進口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
+        <translation type="vanished">出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>點大小：</translation>
+        <translation type="vanished">點大小：</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>自定義顏色</translation>
+        <translation type="vanished">自定義顏色</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">顯示設定</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">積分</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">表面</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">顏色</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">按值著色</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">自定義顏色</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">點大小：</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">更新箭頭設置</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>測量數據箭頭設置</translation>
+        <translation type="vanished">測量數據箭頭設置</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

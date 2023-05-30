@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Modificați valoarea fizică a conturului</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Dialog de setare a afișajului punctelor</translation>
+        <translation type="vanished">Dialog de setare a afișajului punctelor</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Arata setarile</translation>
+        <translation type="vanished">Arata setarile</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Puncte</translation>
+        <translation type="vanished">Puncte</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Suprafaţă</translation>
+        <translation type="vanished">Suprafaţă</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Culoare</translation>
+        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Colorează după valoare</translation>
+        <translation type="vanished">Colorează după valoare</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Setarea hărții de culori</translation>
+        <translation type="vanished">Setarea hărții de culori</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensiunea punctului:</translation>
+        <translation type="vanished">Dimensiunea punctului:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Culoare personalizată</translation>
+        <translation type="vanished">Culoare personalizată</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Arata setarile</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Puncte</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Suprafaţă</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Culoare</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Colorează după valoare</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Culoare personalizată</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Dimensiunea punctului:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Actualizați setarea săgeții</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Setare săgeată pentru date măsurate</translation>
+        <translation type="vanished">Setare săgeată pentru date măsurate</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Kontur Fysiskt värdeförändring</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Inställningsdialog för poängvisning</translation>
+        <translation type="vanished">Inställningsdialog för poängvisning</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Skärminställning</translation>
+        <translation type="vanished">Skärminställning</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Poäng</translation>
+        <translation type="vanished">Poäng</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Yta</translation>
+        <translation type="vanished">Yta</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Färg</translation>
+        <translation type="vanished">Färg</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Färg efter värde</translation>
+        <translation type="vanished">Färg efter värde</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Inställning för färgkarta</translation>
+        <translation type="vanished">Inställning för färgkarta</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importera (&amp;I)...</translation>
+        <translation type="vanished">Importera (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exportera (&amp;E)...</translation>
+        <translation type="vanished">Exportera (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktstorlek:</translation>
+        <translation type="vanished">Punktstorlek:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Anpassad färg</translation>
+        <translation type="vanished">Anpassad färg</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Skärminställning</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Poäng</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Yta</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Färg</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Färg efter värde</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Anpassad färg</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punktstorlek:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Uppdatera pilinställning</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Uppmätt data pilinställning</translation>
+        <translation type="vanished">Uppmätt data pilinställning</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

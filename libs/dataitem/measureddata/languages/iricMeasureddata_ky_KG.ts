@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Контур Физикалык баалуулуктун өзгөрүшү</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Points дисплей орнотуу диалогу</translation>
+        <translation type="vanished">Points дисплей орнотуу диалогу</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Display Setting</translation>
+        <translation type="vanished">Display Setting</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Упайлар</translation>
+        <translation type="vanished">Упайлар</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Surface</translation>
+        <translation type="vanished">Surface</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Түс</translation>
+        <translation type="vanished">Түс</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Маани боюнча түс</translation>
+        <translation type="vanished">Маани боюнча түс</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Түс картасынын жөндөөсү</translation>
+        <translation type="vanished">Түс картасынын жөндөөсү</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импорттоо (&amp;I)...</translation>
+        <translation type="vanished">Импорттоо (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Упайдын өлчөмү:</translation>
+        <translation type="vanished">Упайдын өлчөмү:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Ыңгайлаштырылган түс</translation>
+        <translation type="vanished">Ыңгайлаштырылган түс</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Display Setting</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Упайлар</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Surface</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Түс</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Маани боюнча түс</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Ыңгайлаштырылган түс</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Жебе жөндөөсүн жаңыртуу</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Өлчөнгөн маалымат жебе орнотуу</translation>
+        <translation type="vanished">Өлчөнгөн маалымат жебе орнотуу</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

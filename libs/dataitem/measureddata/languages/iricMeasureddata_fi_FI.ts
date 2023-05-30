@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Muotojen fyysisen arvon muutos</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Pistenäytön asetusikkuna</translation>
+        <translation type="vanished">Pistenäytön asetusikkuna</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Näyttöasetus</translation>
+        <translation type="vanished">Näyttöasetus</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pisteet</translation>
+        <translation type="vanished">Pisteet</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Pinta</translation>
+        <translation type="vanished">Pinta</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Väri</translation>
+        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Väri arvon mukaan</translation>
+        <translation type="vanished">Väri arvon mukaan</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Värikartan asetus</translation>
+        <translation type="vanished">Värikartan asetus</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Tuonti (&amp;I)...</translation>
+        <translation type="vanished">Tuonti (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Viedä (&amp;E)...</translation>
+        <translation type="vanished">Viedä (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Pistekoko:</translation>
+        <translation type="vanished">Pistekoko:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Mukautettu väri</translation>
+        <translation type="vanished">Mukautettu väri</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Näyttöasetus</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Pisteet</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Pinta</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Väri</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Väri arvon mukaan</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Mukautettu väri</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Päivitä nuoliasetus</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Mitattujen tietojen nuoliasetus</translation>
+        <translation type="vanished">Mitattujen tietojen nuoliasetus</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

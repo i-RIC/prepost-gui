@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Kontūro fizinės vertės keitimas</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Taškų ekrano nustatymo dialogo langas</translation>
+        <translation type="vanished">Taškų ekrano nustatymo dialogo langas</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekrano nustatymas</translation>
+        <translation type="vanished">Ekrano nustatymas</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Taškai</translation>
+        <translation type="vanished">Taškai</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Paviršius</translation>
+        <translation type="vanished">Paviršius</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Spalva pagal vertę</translation>
+        <translation type="vanished">Spalva pagal vertę</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Spalvų žemėlapio nustatymas</translation>
+        <translation type="vanished">Spalvų žemėlapio nustatymas</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importuoti (&amp;I)...</translation>
+        <translation type="vanished">Importuoti (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksportuoti (&amp;E)...</translation>
+        <translation type="vanished">Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taško dydis:</translation>
+        <translation type="vanished">Taško dydis:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Pasirinktinė spalva</translation>
+        <translation type="vanished">Pasirinktinė spalva</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Ekrano nustatymas</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Taškai</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Paviršius</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Spalva</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Spalva pagal vertę</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Pasirinktinė spalva</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Taško dydis:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Atnaujinkite rodyklės nustatymą</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Išmatuotų duomenų rodyklės nustatymas</translation>
+        <translation type="vanished">Išmatuotų duomenų rodyklės nustatymas</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

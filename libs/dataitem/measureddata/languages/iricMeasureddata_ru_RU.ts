@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Изменение физического значения контура</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Диалоговое окно настройки отображения точек</translation>
+        <translation type="vanished">Диалоговое окно настройки отображения точек</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Настройка экрана</translation>
+        <translation type="vanished">Настройка экрана</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Точки</translation>
+        <translation type="vanished">Точки</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Поверхность</translation>
+        <translation type="vanished">Поверхность</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвет</translation>
+        <translation type="vanished">Цвет</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Цвет по значению</translation>
+        <translation type="vanished">Цвет по значению</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Настройка цветовой карты</translation>
+        <translation type="vanished">Настройка цветовой карты</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортировать (&amp;I)...</translation>
+        <translation type="vanished">Импортировать (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Экспорт (&amp;E)...</translation>
+        <translation type="vanished">Экспорт (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Размер точки:</translation>
+        <translation type="vanished">Размер точки:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Пользовательский цвет</translation>
+        <translation type="vanished">Пользовательский цвет</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Настройка экрана</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Точки</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Поверхность</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Цвет</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Цвет по значению</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Пользовательский цвет</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Обновить настройку стрелки</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Настройка стрелки измеренных данных</translation>
+        <translation type="vanished">Настройка стрелки измеренных данных</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

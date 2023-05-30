@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Líkamleg verðmætabreyting útlínunnar</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Stillingargluggi fyrir punktaskjá</translation>
+        <translation type="vanished">Stillingargluggi fyrir punktaskjá</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Skjárstilling</translation>
+        <translation type="vanished">Skjárstilling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Stig</translation>
+        <translation type="vanished">Stig</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Yfirborð</translation>
+        <translation type="vanished">Yfirborð</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Litur</translation>
+        <translation type="vanished">Litur</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Litur eftir gildi</translation>
+        <translation type="vanished">Litur eftir gildi</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Litakortsstilling</translation>
+        <translation type="vanished">Litakortsstilling</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Flytja inn (&amp;I)...</translation>
+        <translation type="vanished">Flytja inn (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Útflutningur (&amp;E)...</translation>
+        <translation type="vanished">Útflutningur (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktastærð:</translation>
+        <translation type="vanished">Punktastærð:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Sérsniðinn litur</translation>
+        <translation type="vanished">Sérsniðinn litur</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Stig</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Yfirborð</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Litur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Litur eftir gildi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Sérsniðinn litur</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punktastærð:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Uppfæra örstillingu</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Stilling mæld gögn ör</translation>
+        <translation type="vanished">Stilling mæld gögn ör</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

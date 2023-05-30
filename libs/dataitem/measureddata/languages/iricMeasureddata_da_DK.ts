@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Ændring af fysisk fysisk kontur</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Indstillingsdialog for visning af punkter</translation>
+        <translation type="vanished">Indstillingsdialog for visning af punkter</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Displayindstilling</translation>
+        <translation type="vanished">Displayindstilling</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Points</translation>
+        <translation type="vanished">Points</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Overflade</translation>
+        <translation type="vanished">Overflade</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farve</translation>
+        <translation type="vanished">Farve</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Farve efter værdi</translation>
+        <translation type="vanished">Farve efter værdi</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Indstilling af farvekort</translation>
+        <translation type="vanished">Indstilling af farvekort</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importere (&amp;I)...</translation>
+        <translation type="vanished">Importere (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksport (&amp;E)...</translation>
+        <translation type="vanished">Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktstørrelse:</translation>
+        <translation type="vanished">Punktstørrelse:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Brugerdefineret farve</translation>
+        <translation type="vanished">Brugerdefineret farve</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Displayindstilling</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Points</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Overflade</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Farve</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Farve efter værdi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Brugerdefineret farve</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punktstørrelse:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Opdater pilindstilling</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Indstilling for målte data</translation>
+        <translation type="vanished">Indstilling for målte data</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

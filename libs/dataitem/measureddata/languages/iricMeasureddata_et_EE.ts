@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Kontuuri füüsilise väärtuse muutus</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Punktide kuvamise seadistuse dialoog</translation>
+        <translation type="vanished">Punktide kuvamise seadistuse dialoog</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekraani seadistus</translation>
+        <translation type="vanished">Ekraani seadistus</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punktid</translation>
+        <translation type="vanished">Punktid</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Pind</translation>
+        <translation type="vanished">Pind</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Värv</translation>
+        <translation type="vanished">Värv</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Värv väärtuse järgi</translation>
+        <translation type="vanished">Värv väärtuse järgi</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Värvikaardi seadistus</translation>
+        <translation type="vanished">Värvikaardi seadistus</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Ekspordi (&amp;E)...</translation>
+        <translation type="vanished">Ekspordi (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punkti suurus:</translation>
+        <translation type="vanished">Punkti suurus:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Kohandatud värv</translation>
+        <translation type="vanished">Kohandatud värv</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Ekraani seadistus</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Punktid</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Pind</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Värv</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Värv väärtuse järgi</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Kohandatud värv</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Punkti suurus:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Värskenda noole seadistust</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Mõõdetud andmete noole seadistus</translation>
+        <translation type="vanished">Mõõdetud andmete noole seadistus</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

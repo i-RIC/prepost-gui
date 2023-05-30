@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>Zmiana wartości fizycznej konturu</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>Okno dialogowe ustawień wyświetlania punktów</translation>
+        <translation type="vanished">Okno dialogowe ustawień wyświetlania punktów</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ustawienia wyświetlania</translation>
+        <translation type="vanished">Ustawienia wyświetlania</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Zwrotnica</translation>
+        <translation type="vanished">Zwrotnica</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Powierzchnia</translation>
+        <translation type="vanished">Powierzchnia</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kolor</translation>
+        <translation type="vanished">Kolor</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>Koloruj według wartości</translation>
+        <translation type="vanished">Koloruj według wartości</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Ustawienie mapy kolorów</translation>
+        <translation type="vanished">Ustawienie mapy kolorów</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksport (&amp;E)...</translation>
+        <translation type="vanished">Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Rozmiar punktu:</translation>
+        <translation type="vanished">Rozmiar punktu:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>Niestandardowy kolor</translation>
+        <translation type="vanished">Niestandardowy kolor</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">Ustawienia wyświetlania</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">Zwrotnica</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">Powierzchnia</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Kolor</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Koloruj według wartości</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Niestandardowy kolor</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Rozmiar punktu:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">Aktualizuj ustawienia strzałek</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>Ustawienie strzałki danych pomiarowych</translation>
+        <translation type="vanished">Ustawienie strzałki danych pomiarowych</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

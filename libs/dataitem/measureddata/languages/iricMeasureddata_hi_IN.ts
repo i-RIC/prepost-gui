@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>कंटूर भौतिक मूल्य परिवर्तन</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>अंक प्रदर्शन सेटिंग संवाद</translation>
+        <translation type="vanished">अंक प्रदर्शन सेटिंग संवाद</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>सेटिंग दिखाओ</translation>
+        <translation type="vanished">सेटिंग दिखाओ</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>अंक</translation>
+        <translation type="vanished">अंक</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>सतह</translation>
+        <translation type="vanished">सतह</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>रंग</translation>
+        <translation type="vanished">रंग</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>मूल्य से रंग</translation>
+        <translation type="vanished">मूल्य से रंग</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>कलरमैप सेटिंग</translation>
+        <translation type="vanished">कलरमैप सेटिंग</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>आयात (&amp;I)...</translation>
+        <translation type="vanished">आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>निर्यात (&amp;E)...</translation>
+        <translation type="vanished">निर्यात (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>बिंदु का आकार:</translation>
+        <translation type="vanished">बिंदु का आकार:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>कस्टम रंग</translation>
+        <translation type="vanished">कस्टम रंग</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">अंक</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">सतह</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">मूल्य से रंग</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">कस्टम रंग</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">तीर सेटिंग अपडेट करें</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>मापा डेटा तीर सेटिंग</translation>
+        <translation type="vanished">मापा डेटा तीर सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

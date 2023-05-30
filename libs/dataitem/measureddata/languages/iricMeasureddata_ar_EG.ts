@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -36,52 +38,95 @@
         <source>Contour Physical Value Change</source>
         <translation>تغيير القيمة المادية للكونتور</translation>
     </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataPointGroupDataItem_PropertyDialog</name>
     <message>
         <source>Points Display Setting Dialog</source>
-        <translation>مربع حوار إعداد عرض النقاط</translation>
+        <translation type="vanished">مربع حوار إعداد عرض النقاط</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>إعداد عرض</translation>
+        <translation type="vanished">إعداد عرض</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>نقاط</translation>
+        <translation type="vanished">نقاط</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>سطح</translation>
+        <translation type="vanished">سطح</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>لون</translation>
+        <translation type="vanished">لون</translation>
     </message>
     <message>
         <source>Color by value</source>
-        <translation>لون حسب القيمة</translation>
+        <translation type="vanished">لون حسب القيمة</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>إعداد خريطة الألوان</translation>
+        <translation type="vanished">إعداد خريطة الألوان</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>يستورد (&amp;I)...</translation>
+        <translation type="vanished">يستورد (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>يصدّر (&amp;E)...</translation>
+        <translation type="vanished">يصدّر (&amp;E)...</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>حجم النقطة:</translation>
+        <translation type="vanished">حجم النقطة:</translation>
     </message>
     <message>
         <source>Custom Color</source>
-        <translation>لون مخصص</translation>
+        <translation type="vanished">لون مخصص</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Display Setting</source>
+        <translation type="unfinished">إعداد عرض</translation>
+    </message>
+    <message>
+        <source>Points</source>
+        <translation type="unfinished">نقاط</translation>
+    </message>
+    <message>
+        <source>Surface</source>
+        <translation type="unfinished">سطح</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">لون حسب القيمة</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">لون مخصص</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">حجم النقطة:</translation>
     </message>
 </context>
 <context>
@@ -129,12 +174,23 @@
         <source>Update Arrow Setting</source>
         <translation type="vanished">تحديث إعداد السهم</translation>
     </message>
+    <message>
+        <source>Arrows Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem_PropertyDialog</name>
     <message>
         <source>Measured Data Arrow Setting</source>
-        <translation>إعداد سهم البيانات المقاسة</translation>
+        <translation type="vanished">إعداد سهم البيانات المقاسة</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
