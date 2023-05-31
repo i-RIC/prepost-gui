@@ -4,9 +4,10 @@
 #include "post3dwindowcellcontourgrouptopdataitem.h"
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindowcellcontourgroupdataitem_propertydialog.h"
+#include "private/post3dwindowcellcontourgroupdataitem_settingeditwidget.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -98,7 +99,13 @@ void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWri
 
 QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Contour Setting (cell center) (%1)").arg(standardItem()->text()));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 void Post3dWindowCellContourGroupDataItem::updateActorSetting()

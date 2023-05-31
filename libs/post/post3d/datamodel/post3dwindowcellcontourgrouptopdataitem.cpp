@@ -95,8 +95,6 @@ void Post3dWindowCellContourGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 		return;
 	}
 
-	auto gType = zoneData->gridType();
-
 	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 

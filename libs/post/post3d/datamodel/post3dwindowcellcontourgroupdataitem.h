@@ -58,9 +58,8 @@ private:
 
 	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
 
-	class PropertyDialog;
 	class SetRangesCommand;
-	class UpdateActorSettingCommand;
+	class SettingEditWidget;
 
 public:
 	friend class Post3dWindowCellContourDataItem;

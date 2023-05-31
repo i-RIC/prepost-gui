@@ -114,7 +114,7 @@ QDialog* Post3dWindowContourGroupDataItem::propertyDialog(QWidget* p)
 
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Contour Setting (%1)").arg(standardItem()->text()));
-	dialog->resize(900, 700);
+	dialog->resize(900, 650);
 	return dialog;
 }
 
