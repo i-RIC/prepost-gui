@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>ParticleArbitraryTimeEditDialog</name>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taille des points :</translation>
+        <translation>Taille des points&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -57,7 +59,7 @@
     </message>
     <message>
         <source>Physical Value:</source>
-        <translation>Valeur physique :</translation>
+        <translation>Valeur physique&#xa0;:</translation>
     </message>
     <message>
         <source>Time</source>
@@ -72,17 +74,17 @@
         <translation>Intervalle de temps de génération</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap;}
 p {margin-top: 3px; margin-bottom: 3px;}
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p&gt;If you specify 1, particles are generated for every time steps.&lt;/p&gt;
 &lt;p&gt;If you specify 2, particles are generated twice equally separated, for every time steps,&lt;/p&gt;
 &lt;p&gt;If you specify 1/2, particles are generated for every other time steps.&lt;/p&gt;
 &lt;/body&gt;&lt;/html&gt;</source>
         <extracomment>If you specify 1, particles are generated for every time steps. If you specify 2, particles are generated twice equally separated, for every time steps, If you specify 1/2, particles are generated for every other time steps.</extracomment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>-</source>
@@ -114,6 +116,33 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
 </context>
 <context>
+    <name>PolyDataSettingEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Former</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Couleur</translation>
+    </message>
+    <message>
+        <source>Color by value</source>
+        <translation type="unfinished">Couleur par valeur</translation>
+    </message>
+    <message>
+        <source>Custom Color</source>
+        <translation type="unfinished">Couleur personnalisée</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished">Palette de couleurs</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Largeur de ligne:</translation>
+    </message>
+</context>
+<context>
     <name>PostAllZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
@@ -125,7 +154,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation>Type de grille :</translation>
+        <translation>Type de grille&#xa0;:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
@@ -171,7 +200,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d'attribut</translation>
+        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -194,7 +223,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Attribute value:</source>
-        <translation type="vanished">Valeur de l'attribut :</translation>
+        <translation type="vanished">Valeur de l&apos;attribut&#xa0;:</translation>
     </message>
     <message>
         <source>Length</source>
@@ -214,7 +243,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Length on screen:</source>
-        <translation type="vanished">Durée à l'écran :</translation>
+        <translation type="vanished">Durée à l&apos;écran&#xa0;:</translation>
     </message>
     <message>
         <source>[pixel]</source>
@@ -222,7 +251,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Minimum value to draw:</source>
-        <translation type="vanished">Valeur minimale à tirer :</translation>
+        <translation type="vanished">Valeur minimale à tirer&#xa0;:</translation>
     </message>
     <message>
         <source>Sampling</source>
@@ -234,7 +263,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Sampling rate:</source>
-        <translation type="vanished">Taux d'échantillonnage:</translation>
+        <translation type="vanished">Taux d&apos;échantillonnage:</translation>
     </message>
     <message>
         <source>Specify number of particles</source>
@@ -292,7 +321,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Color by attribute value</source>
-        <translation type="vanished">Couleur par valeur d'attribut</translation>
+        <translation type="vanished">Couleur par valeur d&apos;attribut</translation>
     </message>
     <message>
         <source>Attribute:</source>
@@ -322,22 +351,22 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Move label</source>
-        <translation>Déplacer l'étiquette</translation>
+        <translation>Déplacer l&apos;étiquette</translation>
     </message>
     <message>
         <source>Resize label</source>
-        <translation>Redimensionner l'étiquette</translation>
+        <translation>Redimensionner l&apos;étiquette</translation>
     </message>
     <message>
         <source>Edit Label Setting</source>
-        <translation>Modifier le paramètre d'étiquette</translation>
+        <translation>Modifier le paramètre d&apos;étiquette</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultSettingDialog</name>
     <message>
         <source>Label Setting</source>
-        <translation>Paramètre d'étiquette</translation>
+        <translation>Paramètre d&apos;étiquette</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -405,7 +434,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Background color:</source>
-        <translation>Couleur de l'arrière plan:</translation>
+        <translation>Couleur de l&apos;arrière plan:</translation>
     </message>
 </context>
 <context>
@@ -416,14 +445,14 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Edit time setting</source>
-        <translation>Modifier le réglage de l'heure</translation>
+        <translation>Modifier le réglage de l&apos;heure</translation>
     </message>
 </context>
 <context>
     <name>PostTimeEditDialog</name>
     <message>
         <source>Time Setting</source>
-        <translation>Réglage de l'heure</translation>
+        <translation>Réglage de l&apos;heure</translation>
     </message>
     <message>
         <source>Use project setting</source>
@@ -431,7 +460,7 @@ p {margin-top: 3px; margin-bottom: 3px;}
     </message>
     <message>
         <source>Time Format</source>
-        <translation>Format de l'heure</translation>
+        <translation>Format de l&apos;heure</translation>
     </message>
 </context>
 <context>
