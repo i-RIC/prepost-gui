@@ -24,6 +24,7 @@ private slots:
 	void removeFace();
 	void setCurrentFace(int row);
 	void updateImageSetting();
+	void updateColorMapImageSetting();
 
 private:
 	void updateFaceList();

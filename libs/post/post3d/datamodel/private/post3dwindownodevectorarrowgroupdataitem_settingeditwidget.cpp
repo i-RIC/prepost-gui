@@ -21,6 +21,9 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 	connect(ui->faceListWidget, &QListWidget::currentRowChanged, this, &SettingEditWidget::setCurrentFace);
 
 	connect(&item->m_setting.legend.imageSetting, &ImageSettingContainer::updated, this, &SettingEditWidget::updateImageSetting);
+	for (const auto& pair : item->m_colorMapSettings) {
+		connect(&pair.second->legend.imageSetting, &ImageSettingContainer::updated, this, &SettingEditWidget::updateColorMapImageSetting);
+	}
 
 	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
 	grid->GetDimensions(m_gridDimensions);
@@ -151,6 +154,18 @@ void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateImageSet
 {
 	m_setting.legend.imageSetting = m_item->m_setting.legend.imageSetting;
 	ui->legendWidget->setImageSetting(m_setting.legend.imageSetting);
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateColorMapImageSetting()
+{
+	auto imgSetting = dynamic_cast<ImageSettingContainer*> (sender());
+
+	for (const auto& pair : m_item->m_colorMapSettings) {
+		if (&pair.second->legend.imageSetting == imgSetting) {
+			auto& cm = m_colorMapSettings.at(pair.first);
+			cm.legend.imageSetting = *imgSetting;
+		}
+	}
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateFaceList()
