@@ -3,10 +3,11 @@
 #include "post3dwindownodevectorarrowgroupdataitem.h"
 #include "post3dwindownodevectorarrowtopdataitem.h"
 #include "post3dwindowzonedataitem.h"
-#include "private/post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
+#include "private/post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/boolcontainerwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -239,7 +240,13 @@ void Post3dWindowNodeVectorArrowGroupDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 {
-	return new PropertyDialog(this, p);
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
+	auto widget = new SettingEditWidget(this, dialog);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Arrows Setting"));
+	dialog->resize(900, 650);
+
+	return dialog;
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()

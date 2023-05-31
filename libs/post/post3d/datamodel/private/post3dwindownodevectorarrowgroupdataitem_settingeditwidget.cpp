@@ -1,32 +1,26 @@
-#include "post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
 #include "post3dwindownodevectorarrowgroupdataitem_setfacesettingscommand.h"
-#include "post3dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
-#include "ui_post3dwindownodevectorarrowgroupdataitem_propertydialog.h"
+#include "post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
+#include "ui_post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
-#include <vtkStructuredGrid.h>
-
-Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::PropertyDialog(Post3dWindowNodeVectorArrowGroupDataItem* item, QWidget *parent) :
-	QDialog(parent),
+Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(Post3dWindowNodeVectorArrowGroupDataItem* item, QWidget *parent) :
+	ModifyCommandWidget {parent},
 	m_setting {item->m_setting},
 	m_item {item},
 	m_currentRow {-1},
-	m_applied {false},
-	ui(new Ui::Post3dWindowNodeVectorArrowGroupDataItem_PropertyDialog)
+	ui(new Ui::Post3dWindowNodeVectorArrowGroupDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
 
-	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PropertyDialog::handleButtonClick);
 	connect(ui->faceAddButton, &QPushButton::clicked, [=](bool) {addFace();});
 	connect(ui->faceRemoveButton, &QPushButton::clicked, [=](bool) {removeFace();});
-	connect(ui->faceListWidget, &QListWidget::currentRowChanged, this, &PropertyDialog::setCurrentFace);
+	connect(ui->faceListWidget, &QListWidget::currentRowChanged, this, &SettingEditWidget::setCurrentFace);
 
-	connect(&item->m_setting.legend.imageSetting, &ImageSettingContainer::updated, this, &PropertyDialog::updateImageSetting);
+	connect(&item->m_setting.legend.imageSetting, &ImageSettingContainer::updated, this, &SettingEditWidget::updateImageSetting);
 
 	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
 	grid->GetDimensions(m_gridDimensions);
@@ -56,45 +50,33 @@ Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::PropertyDialog(Post3dW
 	ui->facesSplitter->setSizes(sizes);
 }
 
-Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::~PropertyDialog()
+Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::~SettingEditWidget()
 {
 	delete ui;
 }
 
-QUndoCommand* Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::createModifyCommand(bool apply)
+QUndoCommand* Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::createModifyCommand(bool apply)
 {
 	saveCurrentFace();
 
 	ui->lengthSettingWidget->updateSetting(&m_setting);
 	m_setting.legend = ui->legendWidget->setting();
-	auto updateArrowsCommand = new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateArrows"),
-																																						true, m_setting, &m_item->m_setting);
-	auto updateSettingsCommand = new SetFaceSettingsCommand(m_settings, m_item);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget"), apply);
+
+	command->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateArrows"),
+																																						true, m_setting, &m_item->m_setting));
+	command->addCommand(new SetFaceSettingsCommand(m_settings, m_item));
 	auto updateColormapsCommand = new MergeSupportedListCommand(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateColormaps"), true);
 	for (const auto& pair : m_item->m_colorMapSettings) {
 		updateColormapsCommand->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateColormap"),
 																																												 true, m_colorMapSettings.at(pair.first), pair.second));
 	}
-	return new UpdateActorSettingCommand(apply, updateArrowsCommand, updateSettingsCommand, updateColormapsCommand, m_item);
+	command->addCommand(updateColormapsCommand);
+
+	return command;
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::accept()
-{
-	m_item->pushRenderCommand(createModifyCommand(false), m_item, true);
-
-	QDialog::accept();
-}
-
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::reject()
-{
-	if (m_applied) {
-		iRICUndoStack::instance().undo();
-	}
-
-	QDialog::reject();
-}
-
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::addFace()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::addFace()
 {
 	ui->faceSettingWidget->setEnabled(true);
 
@@ -126,7 +108,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::addFace()
 	setCurrentFace(row);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::removeFace()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::removeFace()
 {
 	if (m_settings.size() == 0) {return;}
 
@@ -145,7 +127,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::removeFace()
 	ui->faceListWidget->setCurrentRow(row);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::setCurrentFace(int row)
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::setCurrentFace(int row)
 {
 	if (m_currentRow == row) {return;}
 
@@ -165,20 +147,13 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::setCurrentFace(in
 	m_currentRow = row;
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::updateImageSetting()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateImageSetting()
 {
 	m_setting.legend.imageSetting = m_item->m_setting.legend.imageSetting;
 	ui->legendWidget->setImageSetting(m_setting.legend.imageSetting);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::handleButtonClick(QAbstractButton* button)
-{
-	if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole) {
-		apply();
-	}
-}
-
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::updateFaceList()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateFaceList()
 {
 	auto w = ui->faceListWidget;
 	w->blockSignals(true);
@@ -192,7 +167,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::updateFaceList()
 	w->blockSignals(false);
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::saveCurrentFace()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::saveCurrentFace()
 {
 	if (m_currentRow == -1) {return;}
 
@@ -206,7 +181,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::saveCurrentFace()
 	m_settings[m_currentRow].arrow = arrowSetting;
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::clearWidgets()
+void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::clearWidgets()
 {
 	Post3dWindowNodeVectorArrowDataItem::Setting dummy;
 	dummy.face.iMax = m_gridDimensions[0] - 1;
@@ -221,10 +196,4 @@ void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::clearWidgets()
 	ui->filteringWidget->setDisabled(true);
 	ui->colorSettingWidget->setDisabled(true);
 	ui->shapeWidget->setDisabled(true);
-}
-
-void Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::apply()
-{
-	m_item->pushRenderCommand(createModifyCommand(true), m_item, true);
-	m_applied = true;
 }

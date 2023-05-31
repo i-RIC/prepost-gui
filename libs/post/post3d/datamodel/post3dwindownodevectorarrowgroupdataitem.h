@@ -65,6 +65,7 @@ private:
 	class PropertyDialog;
 	class SetFaceSettingsCommand;
 	class UpdateActorSettingCommand;
+	class SettingEditWidget;
 
 	friend class Post3dWindowNodeVectorArrowDataItem;
 };
