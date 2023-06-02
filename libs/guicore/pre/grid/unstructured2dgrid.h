@@ -28,12 +28,8 @@ public:
 
 	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax) override;
 
-	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const override;
-
 private:
-	void setupIndexArray();
-
-	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredIndexGridAlgorithm;
+	void setupFilteredIndexGrid();
 };
 
 #endif // UNSTRUCTURED2DGRID_H

@@ -25,12 +25,13 @@
 #include <QTableView>
 #include <QWheelEvent>
 
+#include <algorithm>
 #include <cmath>
 
 class Structured2DGridCrosssectionEditCommand : public QUndoCommand
 {
 public:
-	Structured2DGridCrosssectionEditCommand(bool apply, const QVector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridAttributeRealNodeContainer* cont, PreProcessorGridAttributeNodeDataItem* dItem) {
+	Structured2DGridCrosssectionEditCommand(bool apply, const std::vector<vtkIdType>& indices, const QVector<double>& before, const QVector<double>& after, PreProcessorGridCrosssectionWindow* w, GridAttributeRealNodeContainer* cont, PreProcessorGridAttributeNodeDataItem* dItem) {
 		m_apply = apply;
 		m_indices = indices;
 		m_before = before;
@@ -41,7 +42,7 @@ public:
 		m_first = true;
 	}
 	void redo() {
-		for (int i = 0; i < m_indices.count(); ++i) {
+		for (int i = 0; i < m_indices.size(); ++i) {
 			m_container->setValue(m_indices.at(i), m_after.at(i));
 		}
 		m_container->setModified();
@@ -56,7 +57,7 @@ public:
 		m_first = false;
 	}
 	void undo() {
-		for (int i = 0; i < m_indices.count(); ++i) {
+		for (int i = 0; i < m_indices.size(); ++i) {
 			m_container->setValue(m_indices.at(i), m_before.at(i));
 		}
 		m_container->setModified();
@@ -85,7 +86,7 @@ public:
 private:
 	bool m_apply;
 	bool m_first;
-	QVector<vtkIdType> m_indices;
+	std::vector<vtkIdType> m_indices;
 	QVector<double> m_before;
 	QVector<double> m_after;
 	PreProcessorGridCrosssectionWindow* m_window;
@@ -582,7 +583,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 		GridAttributeContainer* cond = grid->gridAttribute(m_parentWindow->condition());
 		GridAttributeRealNodeContainer* cond2 = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
-		const QVector<vtkIdType>& selVertices = gItem->selectedVertices();
+		const auto& selVertices = gItem->selectedVertices();
 
 		QPointF mins(event->x() - 5, event->y() - 5);
 		QPointF maxs(event->x() + 5, event->y() + 5);
@@ -593,7 +594,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 			for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
 				if (i > 0) {distance += getDistance(m_parentWindow->targetIndex(), i - 1, i);}
 				vtkIdType index = grid->vertexIndex(i, m_parentWindow->targetIndex());
-				if (! selVertices.contains(index)) {continue;}
+				auto it = std::lower_bound(selVertices.begin(), selVertices.end(), index);
+				if (it == selVertices.end() || *it != index) {continue;}
 				double v = cond2->value(index);
 				QPointF p1 = m_matrix.map(QPointF(distance, v));
 				if (p1.x() >= mins.x() &&
@@ -608,7 +610,8 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 			for (unsigned int j = 0; j < grid->dimensionJ(); ++j) {
 				if (j > 0) {distance += getDistance(m_parentWindow->targetIndex(), j - 1, j);}
 				unsigned int index = grid->vertexIndex(m_parentWindow->targetIndex(), j);
-				if (! selVertices.contains(index)) {continue;}
+				auto it = std::lower_bound(selVertices.begin(), selVertices.end(), index);
+				if (it == selVertices.end() || *it == index) {continue;}
 				double v = cond2->value(index);
 				QPointF p1 = m_matrix.map(QPointF(offset - distance, v));
 				if (p1.x() >= mins.x() &&
@@ -639,9 +642,9 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseMoveEvent(QMouseEvent*
 	} else if (m_mouseEventMode == meMove) {
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
 
-		const QVector<vtkIdType>& selectedVertices = gItem->selectedVertices();
-		Structured2DGrid* grid = m_parentWindow->grid();
-		GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridAttribute(m_parentWindow->condition()));
+		const auto& selectedVertices = gItem->selectedVertices();
+		auto grid = m_parentWindow->grid();
+		auto cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridAttribute(m_parentWindow->condition()));
 		double offset = getOffset(m_dragStartPoint, event->pos());
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
@@ -756,9 +759,9 @@ void PreProcessorGridCrosssectionWindowGraphicsView::mouseReleaseEvent(QMouseEve
 		break;
 	case meMove:
 		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->conditionNodeDataItem()->parent()->parent());
-		const QVector<vtkIdType>& selectedVertices = gItem->selectedVertices();
-		Structured2DGrid* grid = m_parentWindow->grid();
-		GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridAttribute(m_parentWindow->condition()));
+		const auto& selectedVertices = gItem->selectedVertices();
+		auto grid = m_parentWindow->grid();
+		auto cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridAttribute(m_parentWindow->condition()));
 		double offset = getOffset(m_dragStartPoint, event->pos());
 		QVector<double> before, after;
 		before.reserve(selectedVertices.size());
@@ -862,7 +865,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 	PreProcessorGridAttributeNodeDataItem* item = m_parentWindow->conditionNodeDataItem();
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->parent()->parent());
 	GridAttributeRealNodeContainer* cont = dynamic_cast<GridAttributeRealNodeContainer*>(grid->gridAttribute(m_parentWindow->condition()));
-	QVector<vtkIdType> selectedVertices;
+	std::vector<vtkIdType> selectedVertices;
 	if (m_parentWindow->targetDirection() == PreProcessorGridCrosssectionWindow::dirI) {
 		double distance = 0;
 		for (unsigned int i = 0; i < grid->dimensionI(); ++i) {
@@ -875,7 +878,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 					x <= mappedMaxs.x() &&
 					y >= mappedMins.y() &&
 					y <= mappedMaxs.y()) {
-				selectedVertices.append(grid->vertexIndex(i, index));
+				selectedVertices.push_back(grid->vertexIndex(i, index));
 			}
 		}
 		gItem->setSelectedVertices(selectedVertices);
@@ -892,21 +895,21 @@ void PreProcessorGridCrosssectionWindowGraphicsView::selectPoints(const QPoint& 
 					x <= mappedMaxs.x() &&
 					y >= mappedMins.y() &&
 					y <= mappedMaxs.y()) {
-				selectedVertices.append(grid->vertexIndex(index, j));
+				selectedVertices.push_back(grid->vertexIndex(index, j));
 			}
 		}
 		gItem->setSelectedVertices(selectedVertices);
 	}
 }
 
-void PreProcessorGridCrosssectionWindowGraphicsView::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
+void PreProcessorGridCrosssectionWindowGraphicsView::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
 {
 	QItemSelection selection;
 
 	QModelIndex firstIndex;
 	bool firstset = false;
-	Structured2DGrid* grid = m_parentWindow->grid();
-	for (int k = 0; k < vertices.count(); ++k) {
+	auto grid = m_parentWindow->grid();
+	for (int k = 0; k < vertices.size(); ++k) {
 		int index = vertices.at(k);
 		unsigned int i, j;
 		grid->getIJIndex(index, &i, &j);
@@ -962,7 +965,7 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 	GridAttributeEditDialog* dialog = cont->gridAttribute()->editDialog(this);
 	dialog->setWindowTitle(tr("Edit %1").arg(cont->gridAttribute()->caption()));
 	dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(cont->gridAttribute()->caption()));
-	QVector<vtkIdType> targets;
+	std::vector<vtkIdType> targets;
 	QModelIndexList selIndices = selectionModel()->selectedIndexes();
 	for (QModelIndex index : selIndices) {
 		vtkIdType targetindex;
@@ -971,12 +974,12 @@ void PreProcessorGridCrosssectionWindowGraphicsView::moveSelectedRows()
 		} else {
 			targetindex = grid->vertexIndex(m_parentWindow->targetIndex(), index.row());
 		}
-		targets.append(targetindex);
+		targets.push_back(targetindex);
 	}
 	dialog->scanAndSetDefault(cont, targets);
 
 	if (QDialog::Accepted == dialog->exec()) {
-		PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->projectDataItem()->conditionNodeDataItem()->parent()->parent());
+		auto gItem = dynamic_cast<PreProcessorGridDataItem*>(m_parentWindow->projectDataItem()->conditionNodeDataItem()->parent()->parent());
 		dialog->applyValue(cont, targets, grid->vtkGrid()->GetPointData(), gItem);
 	}
 	delete dialog;

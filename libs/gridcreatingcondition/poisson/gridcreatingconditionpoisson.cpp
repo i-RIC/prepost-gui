@@ -4,7 +4,7 @@
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "poissonsolver.h"
 #include "springsolverthread.h"
-#include "springsolver/edge.h"
+#include "public/springsolver_edge.h"
 
 #include "private/gridcreatingconditionpoisson_addvertexcommand.h"
 #include "private/gridcreatingconditionpoisson_coordinateseditor.h"
@@ -256,7 +256,7 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 		m_activeLine = &m_centerLineSplineController;
 	}
 
-	Edge lineEdge;
+	SpringSolver::Edge lineEdge;
 	switch (m_mouseEventMode) {
 	case MouseEventMode::AddVertexNotPossible:
 	case MouseEventMode::AddVertexPrepare:

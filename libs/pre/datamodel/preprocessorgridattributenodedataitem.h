@@ -49,7 +49,7 @@ public:
 	void updateCrossectionWindows();
 	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);
 	void unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item);
-	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:

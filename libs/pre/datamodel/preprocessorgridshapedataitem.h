@@ -7,9 +7,9 @@
 
 #include <vtkSmartPointer.h>
 #include <vtkPoints.h>
-#include <vtkCubeAxesActor2D.h>
-#include <QVector2D>
+
 #include <QPoint>
+#include <QPointF>
 
 class PreProcessorGridDataItem;
 
@@ -21,7 +21,7 @@ class PreProcessorGridShapeDataItem : public PreProcessorDataItem
 
 public:
 	PreProcessorGridShapeDataItem(PreProcessorDataItem* parent);
-	virtual ~PreProcessorGridShapeDataItem();
+	~PreProcessorGridShapeDataItem() override;
 
 	virtual void informGridUpdate() = 0;
 	void handleStandardItemDoubleClicked() override;
@@ -59,8 +59,12 @@ protected:
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
 
-	QVector2D m_dragStartPoint;
+	QPointF m_dragStartPoint;
 	QPoint m_pressPoint;
+
+	class PositionDeltaDialog;
+	class PositionEditDialog;
+	class UpdatePointsCommand;
 };
 
 #endif // PREPROCESSORGRIDSHAPEDATAITEM_H

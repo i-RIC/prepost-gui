@@ -13,6 +13,7 @@
 #include <vtkAxisActor2D.h>
 #include <vtkCell.h>
 #include <vtkCollectionIterator.h>
+#include <vtkGeometryFilter.h>
 #include <vtkPointData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
@@ -67,9 +68,10 @@ void PreProcessorStructured2dGridShapeDataItem::setupActors()
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(Grid::LABEL_NAME);
-    vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
-    iRIC::setupGridIndexTextProperty(textProp);
-    m_setting.indexTextSetting.applySetting(textProp);
+
+	auto textProp = m_indexMapper->GetLabelTextProperty();
+	iRIC::setupGridIndexTextProperty(textProp);
+	m_setting.indexTextSetting.applySetting(textProp);
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -82,14 +84,20 @@ void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != nullptr) {
-		Structured2DGrid* grid = dynamic_cast<Structured2DGrid*>(g);
-
+		auto grid = dynamic_cast<Structured2DGrid*>(g);
 		m_outlineFilter->SetInputData(grid->vtkGrid());
-		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != nullptr) { m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort()); }
-		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != nullptr) { m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort()); }
+
+		auto filteredGrid = g->vtkFilteredGrid();
+		if (filteredGrid != nullptr) {
+			auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
+			filter->SetInputData(filteredGrid);
+			m_wireframeMapper->SetInputConnection(filter->GetOutputPort());
+		}
+		
+		auto filteredIndexGrid = g->vtkFilteredIndexGrid();
+		if (filteredIndexGrid != nullptr) {m_indexMapper->SetInputData(filteredIndexGrid);}
 	}
+
 	updateActorSettings();
 }
 
@@ -124,7 +132,7 @@ void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
 	}
 
 	if (m_setting.indexVisible) {
-        m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
+		m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
 		m_actor2DCollection->AddItem(m_indexActor);
 	}
 	updateVisibilityWithoutRendering();
@@ -142,14 +150,14 @@ void PreProcessorStructured2dGridShapeDataItem::doSaveToProjectMainFile(QXmlStre
 
 QDialog* PreProcessorStructured2dGridShapeDataItem::propertyDialog(QWidget* parent)
 {
-	GridShapeEditDialog* dialog = new GridShapeEditDialog(parent);
+	auto dialog = new GridShapeEditDialog(parent);
 	dialog->setSetting(m_setting);
 	return dialog;
 }
 
 void PreProcessorStructured2dGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
+	auto dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
 	m_setting = dialog->setting();
 	updateActorSettings();
 	renderGraphicsView();

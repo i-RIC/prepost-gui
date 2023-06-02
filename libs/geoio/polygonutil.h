@@ -15,6 +15,9 @@ class Polygon;
 class QPointF;
 class QPolygonF;
 
+class vtkIdList;
+class vtkPolygon;
+
 class GEOIODLL_EXPORT PolygonUtil
 {
 public:
@@ -25,6 +28,7 @@ public:
 	static void triangulate(const QPolygonF& polygon, std::vector<unsigned int>* indices);
 	static void triangulateTriangle(const QPolygonF& polygon, std::vector<unsigned int>* indices);
 	static void triangulateVtk(const QPolygonF& polygon, std::vector<unsigned int>* indices);
+	static void triangulateVtk(const QPolygonF& polygon, std::vector<unsigned int>* indices, vtkPolygon* pol, vtkIdList* triIds);
 
 private:
 	PolygonUtil();

@@ -371,16 +371,16 @@ void Post2dWindowZoneDataItem::update(bool noparticle)
 
 	PostZoneDataContainer* cont = dataContainer();
 	if (cont != nullptr && cont->data() != nullptr) {
-		m_filteredData = dataContainer()->filteredData(xmin, xmax, ymin, ymax, m_isMasked);
-		m_filteredData->UnRegister(0);
+		m_filteredData = dataContainer()->filteredData(xmin, xmax, ymin, ymax, &m_isMasked);
+		m_filteredData->UnRegister(nullptr);
 	}
 	if (cont != nullptr && cont->edgeIData() != nullptr) {
-		m_filteredEdgeIData = dataContainer()->filteredEdgeIData(xmin, xmax, ymin, ymax, m_isMasked);
-		m_filteredEdgeIData->UnRegister(0);
+		m_filteredEdgeIData = dataContainer()->filteredEdgeIData(xmin, xmax, ymin, ymax, &m_isMasked);
+		m_filteredEdgeIData->UnRegister(nullptr);
 	}
 	if (cont != nullptr && cont->edgeJData() != nullptr) {
-		m_filteredEdgeJData = dataContainer()->filteredEdgeJData(xmin, xmax, ymin, ymax, m_isMasked);
-		m_filteredEdgeJData->UnRegister(0);
+		m_filteredEdgeJData = dataContainer()->filteredEdgeJData(xmin, xmax, ymin, ymax, &m_isMasked);
+		m_filteredEdgeJData->UnRegister(nullptr);
 	}
 
 	QTime time;

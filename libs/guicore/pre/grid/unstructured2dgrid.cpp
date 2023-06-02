@@ -2,6 +2,7 @@
 #include "../gridcond/base/gridattributecontainer.h"
 #include "unstructured2dgrid.h"
 
+#include <guibase/vtktool/vtkpointsetregionandcellsizefilter.h>
 #include <misc/stringtool.h>
 
 #include <QPointF>
@@ -22,6 +23,7 @@
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
 
+#include <unordered_set>
 #include <vector>
 
 Unstructured2DGrid::Unstructured2DGrid(ProjectDataItem* parent) :
@@ -159,55 +161,51 @@ int Unstructured2DGrid::saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::str
 void Unstructured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
 	Grid::updateSimplifiedGrid(xmin, xmax, ymin, ymax);
-	setupIndexArray();
+	setupFilteredIndexGrid();
 }
 
-vtkAlgorithm* Unstructured2DGrid::vtkFilteredIndexGridAlgorithm() const
+void Unstructured2DGrid::setupFilteredIndexGrid()
 {
-	return m_vtkFilteredIndexGridAlgorithm;
-}
+	auto filteredGrid = vtkFilteredGrid();
+	if (filteredGrid == nullptr) {return;}
 
-void Unstructured2DGrid::setupIndexArray()
-{
-	if (vtkFilteredCellsAlgorithm() == nullptr) {return;}
+	int numCells = filteredGrid->GetNumberOfCells();
 
-	vtkAlgorithm* tmpalgo = vtkFilteredCellsAlgorithm();
-	vtkPolyDataAlgorithm* algo = dynamic_cast<vtkPolyDataAlgorithm*>(tmpalgo);
-	algo->Update();
-	vtkSmartPointer<vtkPolyData> filteredCells = algo->GetOutput();
-	int ccounts2 = filteredCells->GetNumberOfCells();
-	vtkSmartPointer<vtkPolyData> tmpIndexPolyData;
 	bool cullEnable;
 	int cullCellLimit, cullIndexLimit;
 	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
-	if (cullEnable && ccounts2 > cullIndexLimit){
-		vtkSmartPointer<vtkMaskPolyData> maskPoly2 = vtkSmartPointer<vtkMaskPolyData>::New();
-		int ratio = static_cast<int>(ccounts2 / cullIndexLimit);
-		if (ratio == 1) {ratio = 2;}
-		maskPoly2->SetOnRatio(ratio);
-		maskPoly2->SetInputData(filteredCells);
-		maskPoly2->Update();
-		tmpIndexPolyData = maskPoly2->GetOutput();
+
+	vtkPointSet* indexData = nullptr;
+	if (! cullEnable && numCells < cullIndexLimit) {
+		indexData = filteredGrid;
+		indexData->Register(nullptr);
 	} else {
-		tmpIndexPolyData = filteredCells;
+		auto mask = vtkSmartPointer<vtkMaskPolyData>::New();
+		int ratio = static_cast<int>(numCells / cullIndexLimit);
+		if (ratio == 1) {ratio = 2;}
+		mask->SetOnRatio(ratio);
+		mask->SetInputData(filteredGrid);
+		mask->Update();
+		indexData = mask->GetOutput();
+		indexData->Register(nullptr);
 	}
 
-	vtkSmartPointer<vtkPolyData> filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
-	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkStringArray> sa = vtkSmartPointer<vtkStringArray>::New();
+	auto filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
+	auto igPoints = vtkSmartPointer<vtkPoints>::New();
+	auto ca = vtkSmartPointer<vtkCellArray>::New();
+	auto sa = vtkSmartPointer<vtkStringArray>::New();
 	sa->SetName(Grid::LABEL_NAME);
 	vtkIdType cellid = 0;
 	double tmpp[3];
 	QString label("(%1)");
-	QSet<vtkIdType> indices;
 
-	tmpIndexPolyData->BuildCells();
-	for (int i = 0; i < tmpIndexPolyData->GetNumberOfCells(); ++i) {
-		vtkCell* cell = tmpIndexPolyData->GetCell(i);
+	std::unordered_set<vtkIdType> indices;
+
+	for (int i = 0; i < indexData->GetNumberOfCells(); ++i) {
+		vtkCell* cell = indexData->GetCell(i);
 		for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
 			vtkIdType vid = cell->GetPointId(j);
-			if (! indices.contains(vid)) {
+			if (indices.find(vid) == indices.end()) {
 				vtkGrid()->GetPoint(vid, tmpp);
 				igPoints->InsertNextPoint(tmpp);
 				ca->InsertNextCell(1, &cellid);
@@ -221,7 +219,6 @@ void Unstructured2DGrid::setupIndexArray()
 	filteredIndexGrid->SetVerts(ca);
 	filteredIndexGrid->GetPointData()->AddArray(sa);
 
-	vtkSmartPointer<vtkTrivialProducer> prod = vtkSmartPointer<vtkTrivialProducer>::New();
-	prod->SetOutput(filteredIndexGrid);
-	m_vtkFilteredIndexGridAlgorithm = prod;
+	setFilteredIndexGrid(filteredIndexGrid);
+	indexData->Delete();
 }

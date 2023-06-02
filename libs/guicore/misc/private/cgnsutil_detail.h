@@ -144,7 +144,7 @@ int CgnsUtil::loadVectorDataT(iRICLib::H5CgnsSolutionI* sol, const std::string& 
 	std::vector<T> dataZ;
 	std::vector<double> dataMag;
 
-	std::set<std::string> valueNames;
+	std::unordered_set<std::string> valueNames;
 	int ier = sol->readValueNames(&valueNames);
 	if (ier != IRIC_NO_ERROR) {return ier;}
 

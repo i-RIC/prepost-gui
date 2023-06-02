@@ -14,7 +14,7 @@ GridAttributeVariationEditWidgetT<V>::GridAttributeVariationEditWidgetT(QWidget*
 {}
 
 template <class V>
-void GridAttributeVariationEditWidgetT<V>::applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+void GridAttributeVariationEditWidgetT<V>::applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 {
 	getValueFromInnerWidget();
 

@@ -33,8 +33,8 @@ public:
 	~GridComplexConditionGroupRealEditWidget() override;
 
 	void setMode(Mode mode) override;
-	void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
-	void applyVariation(const QVector<vtkIdType>& indices, const std::vector<GridComplexConditionGroup*>& groups);
+	void applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
+	void applyVariation(const std::vector<vtkIdType>& indices, const std::vector<GridComplexConditionGroup*>& groups);
 
 private:
 	void getValueFromInnerWidget() override;

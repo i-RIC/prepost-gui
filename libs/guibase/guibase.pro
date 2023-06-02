@@ -61,6 +61,7 @@ LIBS += \
 	-lvtkFiltersExtraction-$${VTK_MAJ_MIN} \
 	-lvtkFiltersFlowPaths-$${VTK_MAJ_MIN} \
 	-lvtkFiltersGeneral-$${VTK_MAJ_MIN} \
+	-lvtkFiltersGeometry-$${VTK_MAJ_MIN} \
 	-lvtkFiltersSources-$${VTK_MAJ_MIN} \
 	-lvtkInteractionStyle-$${VTK_MAJ_MIN} \
 	-lvtkInteractionWidgets-$${VTK_MAJ_MIN} \
@@ -108,6 +109,7 @@ HEADERS += colortool.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
            vtktextpropertysettingwidget.h \
+           vtktool/vtkpointsetregionandcellsizefilter.h \
            xyaxisdisplaysettingdialog.h \
            coordinates/coordinatesedit.h \
            coordinates/coordinateseditdialog.h \
@@ -259,6 +261,7 @@ SOURCES += colortool.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            vtktextpropertysettingwidget.cpp \
+           vtktool/vtkpointsetregionandcellsizefilter.cpp \
            xyaxisdisplaysettingdialog.cpp \
            coordinates/coordinatesedit.cpp \
            coordinates/coordinateseditdialog.cpp \

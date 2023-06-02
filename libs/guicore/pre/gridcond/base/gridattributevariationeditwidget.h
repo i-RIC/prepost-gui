@@ -26,7 +26,7 @@ public:
 
 	SolverDefinitionGridAttribute* gridAttribute() const;
 	virtual void setMode(Mode mode);
-	virtual void applyVariation(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
+	virtual void applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
 
 protected:
 	virtual void getValueFromInnerWidget() = 0;

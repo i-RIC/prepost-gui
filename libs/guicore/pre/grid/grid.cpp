@@ -5,12 +5,17 @@
 #include "grid.h"
 #include "private/grid_impl.h"
 
+#include <guibase/vtktool/vtkpointsetregionandcellsizefilter.h>
+#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
+#include <misc/rectregion.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomElement>
 #include <QSettings>
 
+#include <vtkAbstractPointLocator.h>
 #include <vtkGeometryFilter.h>
 #include <vtkMaskPoints.h>
 #include <vtkMaskPolyData.h>
@@ -28,6 +33,9 @@ Grid::Impl::Impl(vtkPointSet* ps, const std::string& zoneName, SolverDefinitionG
 	m_gridType {gt},
 	m_zoneName (zoneName),
 	m_vtkGrid {ps},
+	m_vtkFilteredGrid {nullptr},
+	m_vtkFilteredIndexGrid {nullptr},
+	m_pointLocator {nullptr},
 	m_dataItem {nullptr},
 	m_isModified {false},
 	m_isMasked {false}
@@ -37,6 +45,15 @@ Grid::Impl::~Impl()
 {
 	if (m_vtkGrid != nullptr) {
 		m_vtkGrid->Delete();
+	}
+	if (m_vtkFilteredGrid != nullptr) {
+		m_vtkFilteredGrid->Delete();
+	}
+	if (m_vtkFilteredIndexGrid != nullptr) {
+		m_vtkFilteredIndexGrid->Delete();
+	}
+	if (m_pointLocator != nullptr) {
+		m_pointLocator->Delete();
 	}
 }
 
@@ -95,24 +112,31 @@ vtkPointSet* Grid::vtkGrid() const
 	return impl->m_vtkGrid;
 }
 
-vtkPolyDataAlgorithm* Grid::vtkFilteredShapeAlgorithm() const
+vtkAbstractPointLocator* Grid::pointLocator() const
 {
-	return impl->m_vtkFilteredShapeAlgorithm;
+	return impl->m_pointLocator;
 }
 
-vtkPolyDataAlgorithm* Grid::vtkFilteredPointsAlgorithm() const
+vtkPointSet* Grid::vtkFilteredGrid() const
 {
-	return impl->m_vtkFilteredPointsAlgorithm;
+	return impl->m_vtkFilteredGrid;
 }
 
-vtkPolyDataAlgorithm* Grid::vtkFilteredCellsAlgorithm() const
+vtkPointSet* Grid::vtkFilteredIndexGrid() const
 {
-	return impl->m_vtkFilteredCellsAlgorithm;
+	return impl->m_vtkFilteredIndexGrid;
 }
 
-vtkAlgorithm* Grid::vtkFilteredIndexGridAlgorithm() const
+void Grid::setPoints(vtkPoints* points)
 {
-	return nullptr;
+	impl->m_vtkGrid->SetPoints(points);
+	setModified();
+
+	auto v = impl->m_dataItem->dataModel()->graphicsView();
+
+	double xmin, xmax, ymin, ymax;
+	v->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
+	updateSimplifiedGrid(xmin, xmax, ymin, ymax);
 }
 
 QList<GridAttributeContainer*>& Grid::gridAttributes()
@@ -191,41 +215,20 @@ void Grid::setCustomModified(bool modified)
 
 void Grid::updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax)
 {
-	impl->m_isMasked = false;
-
-	double xwidth = xmax - xmin;
-	double ywidth = ymax - ymin;
-
-	vtkSmartPointer<vtkGeometryFilter> gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
-	gfilter->SetExtent(xmin - xwidth * 0.2, xmax + xwidth * 0.2, ymin - ywidth * 0.2, ymax + ywidth * 0.2, -1, 1);
-	gfilter->ExtentClippingOn();
-	gfilter->SetInputData(impl->m_vtkGrid);
-	gfilter->Update();
-	vtkSmartPointer<vtkPolyData> clippedGrid = gfilter->GetOutput();
-
-	int ccounts = clippedGrid->GetNumberOfCells();
 	bool cullEnable;
 	int cullCellLimit, cullIndexLimit;
 	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
 
-	if (cullEnable && ccounts <= cullCellLimit) {
-		impl->m_vtkFilteredShapeAlgorithm = gfilter;
-		impl->m_vtkFilteredPointsAlgorithm = gfilter;
-		impl->m_vtkFilteredCellsAlgorithm = gfilter;
-		return;
+	int maxcells = -1;
+	if (cullEnable) {
+		maxcells = cullCellLimit;
 	}
+	RectRegion region(xmin, xmax, ymin, ymax);
 
-	vtkSmartPointer<vtkMaskPolyData> maskPoly = vtkSmartPointer<vtkMaskPolyData>::New();
-	int ratio = static_cast<int>(ccounts / cullCellLimit);
-	if (ratio == 1) {ratio = 2;}
-	maskPoly->SetOnRatio(ratio);
-	maskPoly->SetInputConnection(gfilter->GetOutputPort());
+	auto filtered = vtkPointSetRegionAndCellSizeFilter::filterGeneral(impl->m_vtkGrid, region, maxcells, &impl->m_isMasked);
 
-	impl->m_vtkFilteredShapeAlgorithm = maskPoly;
-	impl->m_vtkFilteredPointsAlgorithm = maskPoly;
-	impl->m_vtkFilteredCellsAlgorithm = maskPoly;
-
-	impl->m_isMasked = true;
+	setFilteredGrid(filtered);
+	filtered->Delete();
 }
 
 bool Grid::isMasked() const
@@ -238,19 +241,33 @@ void Grid::setMasked(bool masked)
 	impl->m_isMasked = masked;
 }
 
-void Grid::setFilteredShapeAlgorithm(vtkPolyDataAlgorithm* algo)
+void Grid::setFilteredGrid(vtkPointSet* data)
 {
-	impl->m_vtkFilteredShapeAlgorithm = algo;
+	if (impl->m_vtkFilteredGrid != nullptr) {
+		impl->m_vtkFilteredGrid->Delete();
+	}
+
+	impl->m_vtkFilteredGrid = data;
+	impl->m_vtkFilteredGrid->Register(nullptr);
 }
 
-void Grid::setFilteredPointsAlgorithm(vtkPolyDataAlgorithm* algo)
+void Grid::setFilteredIndexGrid(vtkPointSet* data)
 {
-	impl->m_vtkFilteredPointsAlgorithm = algo;
+	if (impl->m_vtkFilteredIndexGrid != nullptr) {
+		impl->m_vtkFilteredIndexGrid->Delete();
+	}
+
+	impl->m_vtkFilteredIndexGrid = data;
+	impl->m_vtkFilteredIndexGrid->Register(nullptr);
 }
 
-void Grid::setFilteredCellsAlgorithm(vtkPolyDataAlgorithm* algo)
+void Grid::setPointLocator(vtkAbstractPointLocator* locator)
 {
-	impl->m_vtkFilteredCellsAlgorithm = algo;
+	impl->m_pointLocator = locator;
+	locator->SetDataSet(impl->m_vtkGrid);
+	if (impl->m_vtkGrid->GetNumberOfPoints() > 0) {
+		locator->BuildLocator();
+	}
 }
 
 void Grid::doLoadFromProjectMainFile(const QDomNode&)

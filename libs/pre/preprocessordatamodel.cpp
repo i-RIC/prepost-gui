@@ -526,7 +526,7 @@ void PreProcessorDataModel::setupGridMenu()
 			dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(m_selectedItem);
 		gItem->setNodeDataItem(nItem);
 		if (nItem != nullptr) {
-			gItem->nodeEditAction()->setEnabled(gItem->selectedVertices().count() > 0);
+			gItem->nodeEditAction()->setEnabled(gItem->selectedVertices().size() > 0);
 			gItem->nodeEditAction()->disconnect();
 			connect(gItem->nodeEditAction(), SIGNAL(triggered()), nItem, SLOT(editValue()));
 			gItem->nodeDisplaySettingAction()->setEnabled(true);
@@ -542,7 +542,7 @@ void PreProcessorDataModel::setupGridMenu()
 			dynamic_cast<PreProcessorGridAttributeCellDataItem*>(m_selectedItem);
 		gItem->setCellDataItem(cItem);
 		if (cItem != nullptr) {
-			gItem->cellEditAction()->setEnabled(gItem->selectedCells().count() > 0);
+			gItem->cellEditAction()->setEnabled(gItem->selectedCells().size() > 0);
 			gItem->cellEditAction()->disconnect();
 			connect(gItem->cellEditAction(), SIGNAL(triggered()), cItem, SLOT(editValue()));
 			gItem->cellDisplaySettingAction()->setEnabled(true);

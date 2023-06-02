@@ -4,9 +4,12 @@
 #include "structured2dgrid.h"
 #include "../../project/projectcgnsfile.h"
 #include "../gridcond/base/gridattributecontainer.h"
-#include <misc/stringtool.h>
-#include <misc/mathsupport.h>
+
+#include <guibase/vtktool/vtkpointsetregionandcellsizefilter.h>
 #include <guibase/graphicsmisc.h>
+#include <misc/mathsupport.h>
+#include <misc/rectregion.h>
+#include <misc/stringtool.h>
 
 #include <vtkPoints.h>
 #include <vtkSmartPointer.h>
@@ -18,14 +21,8 @@
 #include <vtkStringArray.h>
 #include <vtkPointData.h>
 #include <vtkPointSource.h>
-#include <QGraphicsItemGroup>
-#include <QGraphicsLineItem>
-#include <QGraphicsTextItem>
-#include <QLineF>
-#include <QMessageBox>
-#include <QPen>
+
 #include <QPointF>
-#include <QSettings>
 #include <QTextStream>
 
 #include <h5cgnsbase.h>
@@ -34,13 +31,6 @@
 #include <iriclib_errorcodes.h>
 
 #include <vector>
-
-bool RectRegion::intersect(const QLineF& line) const
-{
-	bool isInside1 = pointIsInside(line.x1(), line.y1());
-	bool isInside2 = pointIsInside(line.x2(), line.y2());
-	return (isInside1 != isInside2);
-}
 
 Structured2DGrid::Structured2DGrid(ProjectDataItem* parent) :
 	Structured2DGrid("", parent)
@@ -431,190 +421,80 @@ void Structured2DGrid::updateSimplifiedGrid(double xmin, double xmax, double ymi
 {
 	setMasked(false);
 
-	double xcenter = (xmin + xmax) * 0.5;
-	double ycenter = (ymin + ymax) * 0.5;
+	bool outOfRegion;
+	int iMin, iMax, jMin, jMax;
+	int rate;
 
-	double xwidth = (xmax - xmin);
-	double ywidth = (ymax - ymin);
+	bool cullEnable;
+	int cullCellLimit, cullIndexLimit;
+	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
 
-	xmin -= xwidth * 0.2;
-	xmax += xwidth * 0.2;
-	ymin -= ywidth * 0.2;
-	ymax += ywidth * 0.2;
+	RectRegion region(xmin, xmax, ymin, ymax);
 
-	bool outOfRegion = false;
-
-	// 1. Find the grid vertex that is the nearest to the region center.
-	vtkIdType vid = vtkGrid()->FindPoint(xcenter, ycenter, 0);
-
-	if (vid == -1) {outOfRegion = true;}
-	if (! outOfRegion) {
-		double* cv = vtkGrid()->GetPoint(vid);
-		if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
-			outOfRegion = true;
-		}
+	int maxcell = -1;
+	if (cullEnable) {
+		maxcell = cullCellLimit;
 	}
-	if (outOfRegion) {
-		// 2. If the point is out of the region, the whole grid is out of the region.
-		auto emptyAlgo = vtkSmartPointer<vtkPointSource>::New();
-		emptyAlgo->SetNumberOfPoints(0);
+	vtkPointSetRegionAndCellSizeFilter::calcExtractParameters(vtkGrid(), region, pointLocator(), maxcell, &outOfRegion, &iMin, &iMax, &jMin, &jMax, &rate);
 
-		setFilteredShapeAlgorithm(emptyAlgo);
-		setFilteredPointsAlgorithm(emptyAlgo);
-		setFilteredCellsAlgorithm(emptyAlgo);
+	if (outOfRegion) {
+		auto emptyPolyData = vtkSmartPointer<vtkPolyData>::New();
+		setFilteredGrid(emptyPolyData);
+		setFilteredIndexGrid(emptyPolyData);
 
 		m_drawnIMin = -1;
 		m_drawnIMax = -2;
 		m_drawnJMin = -1;
 		m_drawnJMax = -2;
+
 		return;
 	}
 
-	RectRegion region(xmin, xmax, ymin, ymax);
+	auto filteredGrid = vtkPointSetRegionAndCellSizeFilter::extract(vtkGrid(), iMin, iMax, jMin, jMax, rate);
+	setFilteredGrid(filteredGrid);
+	filteredGrid->Delete();
 
-	unsigned int centerI, centerJ;
-	getIJIndex(vid, &centerI, &centerJ);
-	unsigned int lineLimitIMin, lineLimitIMax, lineLimitJMin, lineLimitJMax;
-	double tmpv[3];
+	m_drawnIMin = iMin;
+	m_drawnIMax = iMax;
+	m_drawnJMin = jMin;
+	m_drawnJMax = jMax;
 
-	// test I = 0
-	vtkGrid()->GetPoint(vertexIndex(0, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMin = 0;
-	} else {
-		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
-	}
-	// test I = imax
-	vtkGrid()->GetPoint(vertexIndex(m_dimensionI - 1, centerJ), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMax = m_dimensionI - 1;
-	} else {
-		lineLimitIMax = lineLimitI(centerJ, centerI, m_dimensionI - 1, region);
-	}
-	// test J = 0
-	vtkGrid()->GetPoint(vertexIndex(centerI, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMin = 0;
-	} else {
-		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
-	}
-	// test J = jmax
-	vtkGrid()->GetPoint(vertexIndex(centerI, m_dimensionJ - 1), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMax = m_dimensionJ - 1;
-	} else {
-		lineLimitJMax = lineLimitJ(centerI, centerJ, m_dimensionJ - 1, region);
-	}
+	setMasked(rate > 1);
 
-	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
+	int tmpIMin = (m_drawnIMin / rate) * rate;
+	int tmpIMax = std::min((m_drawnIMax / rate + 1) * rate, m_dimensionI - 1);
+	int tmpJMin = (m_drawnJMin / rate) * rate;
+	int tmpJMax = std::min((m_drawnJMax / rate + 1) * rate, m_dimensionJ - 1);
 
-	// test I min direction
-	if (lineLimitIMin == 0) {
-		lineLimitIMin2 = 0;
-	} else {
-		if (lineAtIIntersect(0, region)) {
-			lineLimitIMin2 = 0;
-		} else {
-			lineLimitIMin2 = lineLimitI2(lineLimitIMin, 0, region);
-		}
-	}
-	// test I max direction
-	if (lineLimitIMax == m_dimensionI - 1) {
-		lineLimitIMax2 = m_dimensionI - 1;
-	} else {
-		if (lineAtIIntersect(m_dimensionI - 1, region)) {
-			lineLimitIMax2 = m_dimensionI - 1;
-		} else {
-			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_dimensionI - 1, region);
-		}
-	}
-
-	// test J min direction
-	if (lineLimitJMin == 0) {
-		lineLimitJMin2 = 0;
-	} else {
-		if (lineAtJIntersect(0, region)) {
-			lineLimitJMin2 = 0;
-		} else {
-			lineLimitJMin2 = lineLimitJ2(lineLimitJMin, 0, region);
-		}
-	}
-	// test J max direction
-	if (lineLimitJMax == m_dimensionJ - 1) {
-		lineLimitJMax2 = m_dimensionJ - 1;
-	} else {
-		if (lineAtJIntersect(m_dimensionJ - 1, region)) {
-			lineLimitJMax2 = m_dimensionJ - 1;
-		} else {
-			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_dimensionJ - 1, region);
-		}
-	}
-
-	vtkSmartPointer<vtkExtractGrid> exGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
-	exGrid->SetInputData(vtkGrid());
-	exGrid->Update();
-	vtkSmartPointer<vtkStructuredGrid> extractedGrid = exGrid->GetOutput();
-	int exRate = 1;
-	bool cullEnable;
-	int cullCellLimit, cullIndexLimit;
-	getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
-	while (cullEnable && extractedGrid->GetNumberOfCells() > cullCellLimit){
-		exRate *= 2;
-		exGrid->SetSampleRate(exRate, exRate, 1);
-		exGrid->Update();
-		extractedGrid = exGrid->GetOutput();
-
-		setMasked(true);
-	}
-
-	vtkSmartPointer<vtkGeometryFilter> geo = vtkSmartPointer<vtkGeometryFilter>::New();
-	geo->SetInputConnection(exGrid->GetOutputPort());
-
-	m_drawnIMin = lineLimitIMin2;
-	m_drawnIMax = lineLimitIMax2;
-	m_drawnJMin = lineLimitJMin2;
-	m_drawnJMax = lineLimitJMax2;
-
-	setFilteredShapeAlgorithm(geo);
-	setFilteredPointsAlgorithm(geo);
-	setFilteredCellsAlgorithm(geo);
-
-	int tmpIMin = (m_drawnIMin / exRate) * exRate;
-	int tmpIMax = qMin((m_drawnIMax / exRate + 1) * exRate, m_dimensionI - 1);
-	int tmpJMin = (m_drawnJMin / exRate) * exRate;
-	int tmpJMax = qMin((m_drawnJMax / exRate + 1) * exRate, m_dimensionJ - 1);
-
-	vtkSmartPointer<vtkPolyData> filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
-	vtkSmartPointer<vtkPoints> igPoints = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkStringArray> sa = vtkSmartPointer<vtkStringArray>::New();
+	auto filteredIndexGrid = vtkSmartPointer<vtkPolyData>::New();
+	auto igPoints = vtkSmartPointer<vtkPoints>::New();
+	auto ca = vtkSmartPointer<vtkCellArray>::New();
+	auto sa = vtkSmartPointer<vtkStringArray>::New();
 	sa->SetName(Grid::LABEL_NAME);
+
 	vtkIdType cellid = 0;
 	double tmpp[3];
 	QString label("(%1,%2)");
-	for (int i = tmpIMin; i <= tmpIMax; i += exRate) {
+	for (int i = tmpIMin; i <= tmpIMax; i += rate) {
 		vtkGrid()->GetPoint(vertexIndex(i, 0), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
 		sa->InsertNextValue(iRIC::toStr(label.arg(i + 1).arg(1)));
 		++ cellid;
 	}
-	for (int j = tmpJMin; j <= tmpJMax; j += exRate) {
+	for (int j = tmpJMin; j <= tmpJMax; j += rate) {
 		vtkGrid()->GetPoint(vertexIndex(0, j), tmpp);
 		igPoints->InsertNextPoint(tmpp);
 		ca->InsertNextCell(1, &cellid);
 		sa->InsertNextValue(iRIC::toStr(label.arg(1).arg(j + 1)));
 		++ cellid;
 	}
+
 	filteredIndexGrid->SetPoints(igPoints);
 	filteredIndexGrid->SetVerts(ca);
 	filteredIndexGrid->GetPointData()->AddArray(sa);
 
-
-	vtkSmartPointer<vtkTrivialProducer> prod = vtkSmartPointer<vtkTrivialProducer>::New();
-	prod->SetOutput(filteredIndexGrid);
-	m_vtkFilteredIndexGridAlgorithm = prod;
+	setFilteredIndexGrid(filteredIndexGrid);
 }
 
 int Structured2DGrid::drawnIMin() const
@@ -635,95 +515,4 @@ int Structured2DGrid::drawnJMin() const
 int Structured2DGrid::drawnJMax() const
 {
 	return m_drawnJMax;
-}
-
-vtkAlgorithm* Structured2DGrid::vtkFilteredIndexGridAlgorithm() const
-{
-	return m_vtkFilteredIndexGridAlgorithm;
-}
-
-int Structured2DGrid::lineLimitI(int j, int iIn, int iOut, const RectRegion& region)
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	double tmpv[3];
-	vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitI(j, i, iOut, region);
-	} else {
-		return lineLimitI(j, iIn, i, region);
-	}
-}
-
-int Structured2DGrid::lineLimitJ(int i, int jIn, int jOut, const RectRegion& region)
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	double tmpv[3];
-	vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitJ(i, j, jOut, region);
-	} else {
-		return lineLimitJ(i, jIn, j, region);
-	}
-}
-
-int Structured2DGrid::lineLimitI2(int iIn, int iOut, const RectRegion& region)
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	if (lineAtIIntersect(i, region)) {
-		return lineLimitI2(i, iOut, region);
-	} else {
-		return lineLimitI2(iIn, i, region);
-	}
-}
-
-int Structured2DGrid::lineLimitJ2(int jIn, int jOut, const RectRegion& region)
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	if (lineAtJIntersect(j, region)) {
-		return lineLimitJ2(j, jOut, region);
-	} else {
-		return lineLimitJ2(jIn, j, region);
-	}
-}
-
-bool Structured2DGrid::lineAtIIntersect(int i, const RectRegion& region)
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	vtkGrid()->GetPoint(vertexIndex(i, 0), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (unsigned int j = 1; j < m_dimensionJ; ++j) {
-		vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
-}
-
-bool Structured2DGrid::lineAtJIntersect(int j, const RectRegion& region)
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	vtkGrid()->GetPoint(vertexIndex(0, j), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (unsigned int i = 1; i < m_dimensionI; ++i) {
-		vtkGrid()->GetPoint(vertexIndex(i, j), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
 }

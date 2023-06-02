@@ -8,6 +8,9 @@ class SpringSolver
 public:
 	static void solve(std::vector<double>* x, std::vector<double>* y, int imax, int jmax, double eps, int maxIter, int* progress, bool* cancel);
 
+	class Grid;
+	class Edge;
+
 private:
 	SpringSolver();
 };

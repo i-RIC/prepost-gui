@@ -23,7 +23,6 @@ PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PrePr
 
 	m_selectMenu = nullptr;
 	m_regionSelectAction = new QAction(PreProcessorStructured2dGridDataItem::tr("Select I-J &Region..."), this);
-	// @todo not implemented, so disabled.
 	m_regionSelectAction->setDisabled(true);
 	setupMenu();
 	updateObjectBrowserTree();

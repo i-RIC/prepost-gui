@@ -21,6 +21,7 @@ class SolverDefinitionGridType;
 class PostCalculatedResult;
 class PostExportSetting;
 
+class vtkAbstractPointLocator;
 class vtkStructuredGrid;
 
 namespace iRICLib {
@@ -29,7 +30,6 @@ namespace iRICLib {
 
 class GUICOREDLL_EXPORT PostZoneDataContainer : public PostDataContainer
 {
-
 public:
 	const static QString labelName;
 	const static QString IBC;
@@ -54,9 +54,11 @@ public:
 	vtkPointSetAndValueRangeSetT<vtkPolyData>* polyData(const std::string& name) const;
 	const std::vector<int>& polyDataCellIds(const std::string& name) const;
 
-	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	vtkPolyData* filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	vtkPolyData* filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
+	vtkPolyData* filteredData(double xmin, double xmax, double ymin, double ymax, bool* masked) const;
+	vtkPolyData* filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool* masked) const;
+	vtkPolyData* filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool* masked) const;
+
+	vtkAbstractPointLocator* pointLocator() const;
 
 	/// Currently, zone name is used instead, temporally.
 	QString caption() const;
@@ -123,14 +125,8 @@ private:
 	void doApplyOffset(double x_diff, double y_diff) override;
 	void doApplyOffset(vtkPointSet* ps, double x_diff, double y_diff);
 
-	vtkPolyData* filteredDataStructured(vtkStructuredGrid* data, double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	vtkPolyData* filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const;
-	int lineLimitI(int j, int iIn, int iOut, const RectRegion& region) const;
-	int lineLimitJ(int i, int jIn, int jOut, const RectRegion& region) const;
-	int lineLimitI2(int iIn, int iOut, const RectRegion& region) const;
-	int lineLimitJ2(int jIn, int jOut, const RectRegion& region) const;
-	bool lineAtIIntersect(int i, const RectRegion& region) const;
-	bool lineAtJIntersect(int j, const RectRegion& region) const;
+	static vtkPolyData* filteredDataStructured(vtkStructuredGrid* data, vtkAbstractPointLocator* pointLocator, double xmin, double xmax, double ymin, double ymax, bool* masked);
+	static vtkPolyData* filteredDataUnstructured(vtkPointSet* data, double xmin, double xmax, double ymin, double ymax, bool* masked);
 
 private:
 	SolverDefinitionGridType* m_gridType;
@@ -146,6 +142,7 @@ private:
 	std::map<std::string, vtkPointSetAndValueRangeSetT<vtkPolyData>*> m_polyDataMap;
 	std::map<std::string, std::vector<int> > m_polyDataCellIdsMap;
 	std::vector<PostCalculatedResult*> m_calculatedResults;
+	vtkAbstractPointLocator* m_pointLocator;
 
 	std::string m_zoneName;
 	std::vector<int> m_size;

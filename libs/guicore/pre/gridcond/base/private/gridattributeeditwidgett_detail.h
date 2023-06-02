@@ -45,7 +45,7 @@ void GridAttributeEditWidgetT<V>::setVariantValue(const QVariant& v)
 
 
 template <class V>
-void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices)
+void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices)
 {
 	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
 	bool same = true;
@@ -70,15 +70,15 @@ void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* cont
 }
 
 template <class V>
-void GridAttributeEditWidgetT<V>::applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+void GridAttributeEditWidgetT<V>::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 {
 	if (! isValueSelected()) {return;}
 
 	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
 	vtkDataArray* oldValues = c->dataArrayCopy();
 	V val = value();
-	for (auto it = indices.begin(); it != indices.end(); ++it) {
-		c->setValue(*it, val);
+	for (auto index : indices) {
+		c->setValue(index, val);
 	}
 	vtkDataArray* newValues = c->dataArrayCopy();
 	iRICUndoStack::instance().push(new GridAttributeEditCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));

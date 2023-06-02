@@ -32,7 +32,6 @@ protected:
 	void updateActorSettings();
 
 private:
-	void setupIndexArray();
 	vtkSmartPointer<vtkActor> m_wireframeActor;
 	vtkSmartPointer<vtkDataSetMapper> m_wireframeMapper;
 	vtkSmartPointer<vtkActor2D> m_indexActor;

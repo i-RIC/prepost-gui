@@ -34,8 +34,8 @@ public:
 
 	void setLabel(const QString& label);
 	void setVariantValue(const QVariant& v);
-	void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices);
-	void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem);
+	void scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices);
+	void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem);
 
 	QVariant variantValue() const;
 

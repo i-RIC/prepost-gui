@@ -15,7 +15,9 @@
 
 #include <cs/coordinatesystem.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtktool/vtkpointsetregionandcellsizefilter.h>
 #include <misc/filesystemfunction.h>
+#include <misc/rectregion.h>
 #include <misc/stringtool.h>
 
 #include <QDomNode>
@@ -35,6 +37,8 @@
 #include <vtkPointData.h>
 #include <vtkQuad.h>
 #include <vtkSmartPointer.h>
+#include <vtkStaticPointLocator.h>
+#include <vtkStaticPointLocator2D.h>
 #include <vtkStringArray.h>
 #include <vtkStructuredGrid.h>
 #include <vtkTriangle.h>
@@ -87,6 +91,7 @@ PostZoneDataContainer::PostZoneDataContainer(const std::string& zoneName, Solver
 	m_polyDataMap {},
 	m_polyDataCellIdsMap {},
 	m_calculatedResults {},
+	m_pointLocator {nullptr},
 	m_zoneName (zoneName),
 	m_size {},
 	m_loadOK {false},
@@ -111,6 +116,9 @@ PostZoneDataContainer::~PostZoneDataContainer()
 
 	for (auto r : m_calculatedResults) {
 		delete r;
+	}
+	if (m_pointLocator != nullptr) {
+		m_pointLocator->Delete();
 	}
 }
 
@@ -241,7 +249,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 		m_labelData = vtkSmartPointer<vtkUnstructuredGrid>::New();
 	}
 
-	vtkStructuredGrid* grid = vtkStructuredGrid::SafeDownCast(m_origData);
+	auto grid = vtkStructuredGrid::SafeDownCast(m_origData);
 	int NVertexI = 0, NVertexJ = 0, NVertexK = 0;
 
 	int dim = zone->base()->dimension();
@@ -262,6 +270,19 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	}
 
 	grid->SetDimensions(NVertexI, NVertexJ, NVertexK);
+
+	if (m_pointLocator == nullptr) {
+		if (dim < 3) {
+			m_pointLocator = vtkStaticPointLocator2D::New();
+		} else {
+			m_pointLocator = vtkStaticPointLocator::New();
+		}
+		if (! zone->gridCoordinatesForSolutionExists())
+		{
+			// m_pointLocator->UseExistingSearchStructureOn(); // vtk 8.1 does not support this
+		}
+		m_pointLocator->SetDataSet(grid);
+	}
 
 	m_edgeIData->concreteData()->SetDimensions(NVertexI, NVertexJ, NVertexK);
 	m_edgeJData->concreteData()->SetDimensions(NVertexI, NVertexJ, NVertexK);
@@ -288,6 +309,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 		ier = coords->readCoordinatesY(&dataY);
 		if (ier != IRIC_NO_ERROR) {return false;}
 	}
+
 	if (dim == 3) {
 		ier = coords->readCoordinatesZ(&dataZ);
 		if (ier != IRIC_NO_ERROR) {return false;}
@@ -306,7 +328,6 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	}
 
 	grid->SetPoints(points);
-	grid->Modified();
 
 	//
 	//  Vertex(Ni=5, Nj=3) (m_data m_edgeidata m_edgejdata)
@@ -370,11 +391,8 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	//
 
 	if (dim >= 2) {
-
 		m_edgeIData->data()->SetPoints(points);
-		m_edgeIData->data()->Modified();
 		m_edgeJData->data()->SetPoints(points);
-		m_edgeJData->data()->Modified();
 
 		auto iface_points = vtkSmartPointer<vtkPoints>::New();
 		iface_points->SetDataTypeToDouble();
@@ -411,9 +429,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 			}
 		}
 		m_iFaceData->data()->SetPoints(iface_points);
-		m_iFaceData->data()->Modified();
 		m_jFaceData->data()->SetPoints(jface_points);
-		m_jFaceData->data()->Modified();
 	}
 
 	return true;
@@ -429,7 +445,13 @@ bool PostZoneDataContainer::loadUnstructuredGrid(iRICLib::H5CgnsZone* zone)
 		m_origData->Register(nullptr);
 		m_labelData = m_origData;
 	}
+
 	auto grid = vtkUnstructuredGrid::SafeDownCast(m_origData);
+
+	if (m_pointLocator == nullptr) {
+		m_pointLocator = vtkStaticPointLocator2D::New();
+		m_pointLocator->SetDataSet(grid);
+	}
 
 	int dim = zone->base()->dimension();
 	m_size = zone->size();
@@ -466,7 +488,6 @@ bool PostZoneDataContainer::loadUnstructuredGrid(iRICLib::H5CgnsZone* zone)
 		points->InsertNextPoint(dataX[i] - offset.x(), dataY[i] - offset.y(), dataZ[i]);
 	}
 	grid->SetPoints(points);
-	grid->Modified();
 
 	// Grid coordinates are loaded.
 	// load grid node connectivity data.
@@ -500,7 +521,7 @@ bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 	}
 
 	const auto& conds = m_gridType->gridAttributes();
-	std::set<std::string> valueNames;
+	std::unordered_set<std::string> valueNames;
 	int ier;
 	const auto atts = zone->gridAttributes();
 	if (atts != nullptr) {
@@ -700,6 +721,7 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 		ret = ParticleGroupLoader::load(&m_particleGroupMap, zone->particleGroupSolution(), offset());
 		if (ret == false) {goto ERROR;}
 	}
+
 	// load polydata
 	if (zone->polyDataSolutionExists()) {
 		ret = PolyDataLoader::load(&m_polyDataMap, &m_polyDataCellIdsMap, zone->polyDataSolution(), offset());
@@ -710,7 +732,6 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 		addCalculatedResultArrays();
 	}
 
-	m_origData->Modified();
 	m_data->updateValueRangeSet();
 
 	m_loadedOnce = true;
@@ -858,8 +879,8 @@ bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition posi
 	if (position == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
 		return IBCCellExists();
 	} else {
-		for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->data()->GetPointData())) {
-			if (IBC == name.c_str()) { return true; }
+		for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data(position)->data()->GetPointData())) {
+			if (IBC == name.c_str()) {return true;}
 		}
 	}
 	return false;
@@ -867,7 +888,7 @@ bool PostZoneDataContainer::IBCExists(iRICLib::H5CgnsZone::SolutionPosition posi
 
 bool PostZoneDataContainer::IBCExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
 		if (IBC == name.c_str()) {return true;}
 	}
 
@@ -876,8 +897,8 @@ bool PostZoneDataContainer::IBCExists() const
 
 bool PostZoneDataContainer::IBCCellExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
-		if (IBC == name.c_str()) { return true; }
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
+		if (IBC == name.c_str()) {return true;}
 	}
 
 	return false;
@@ -885,8 +906,8 @@ bool PostZoneDataContainer::IBCCellExists() const
 
 bool PostZoneDataContainer::IBCEdgeIExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeIData->data()->GetPointData())) {
-		if (IBC == name.c_str()) { return true; }
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeIData->data()->GetPointData())) {
+		if (IBC == name.c_str()) {return true;}
 	}
 
 	return false;
@@ -894,8 +915,8 @@ bool PostZoneDataContainer::IBCEdgeIExists() const
 
 bool PostZoneDataContainer::IBCEdgeJExists() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeJData->data()->GetPointData())) {
-		if (IBC == name.c_str()) { return true; }
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_edgeJData->data()->GetPointData())) {
+		if (IBC == name.c_str()) {return true;}
 	}
 
 	return false;
@@ -903,7 +924,7 @@ bool PostZoneDataContainer::IBCEdgeJExists() const
 
 QString PostZoneDataContainer::elevationName() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetPointData())) {
 		QString tmpName = name.c_str();
 		if (tmpName.toLower().left(9) == "elevation") {
 			return tmpName;
@@ -914,7 +935,7 @@ QString PostZoneDataContainer::elevationName() const
 
 QString PostZoneDataContainer::cellElevationName() const
 {
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(m_origData->GetCellData())) {
 		QString tmpName = name.c_str();
 		if (tmpName.toLower().left(9) == "elevation") {
 			return tmpName;
@@ -923,266 +944,79 @@ QString PostZoneDataContainer::cellElevationName() const
 	return "";
 }
 
-vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredData(double xmin, double xmax, double ymin, double ymax, bool* masked) const
 {
 	auto structured = vtkStructuredGrid::SafeDownCast(m_origData);
 	if (structured != nullptr) {
 		// Structured Data
-		return filteredDataStructured(structured, xmin, xmax, ymin, ymax, masked);
+		return filteredDataStructured(structured, m_pointLocator, xmin, xmax, ymin, ymax, masked);
 	} else {
 		// Unstructured Data
-		return filteredDataUnstructured(xmin, xmax, ymin, ymax, masked);
+		return filteredDataUnstructured(m_origData, xmin, xmax, ymin, ymax, masked);
 	}
 }
 
-vtkPolyData* PostZoneDataContainer::filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredEdgeIData(double xmin, double xmax, double ymin, double ymax, bool* masked) const
 {
 	if (m_edgeIData == nullptr) {return nullptr;}
 
-	return filteredDataStructured(m_edgeIData->concreteData(), xmin, xmax, ymin, ymax, masked);
+	return filteredDataStructured(m_edgeIData->concreteData(), m_pointLocator, xmin, xmax, ymin, ymax, masked);
 }
 
-vtkPolyData* PostZoneDataContainer::filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredEdgeJData(double xmin, double xmax, double ymin, double ymax, bool* masked) const
 {
 	if (m_edgeJData == nullptr) {return nullptr;}
 
-	return filteredDataStructured(m_edgeJData->concreteData(), xmin, xmax, ymin, ymax, masked);
+	return filteredDataStructured(m_edgeJData->concreteData(), m_pointLocator, xmin, xmax, ymin, ymax, masked);
 }
 
-vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkStructuredGrid* data, double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkAbstractPointLocator* PostZoneDataContainer::pointLocator() const
 {
-	masked = false;
+	return m_pointLocator;
+}
 
-	double xcenter = (xmin + xmax) * 0.5;
-	double ycenter = (ymin + ymax) * 0.5;
+vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkStructuredGrid* data, vtkAbstractPointLocator* pointLocator, double xmin, double xmax, double ymin, double ymax, bool* masked)
+{
+	*masked = false;
 
-	double xwidth = (xmax - xmin);
-	double ywidth = (ymax - ymin);
+	bool outOfRegion;
+	int iMin, iMax, jMin, jMax;
+	int rate;
 
-	xmin -= xwidth * 0.2;
-	xmax += xwidth * 0.2;
-	ymin -= ywidth * 0.2;
-	ymax += ywidth * 0.2;
-
-	// 1. Find the grid vertex that is the nearest to the region center.
-	vtkIdType vid = data->FindPoint(xcenter, ycenter, 0);
-	double* cv = data->GetPoint(vid);
-	if (*cv < xmin || *cv > xmax || *(cv + 1) < ymin || *(cv + 1) > ymax) {
-		// 2. If the point is out of the region, the whole grid is out of the region.
-		vtkSmartPointer<vtkPolyData> emptyPoly = vtkSmartPointer<vtkPolyData>::New();
-		emptyPoly->SetPoints(data->GetPoints());
-		emptyPoly->Register(0);
-		return emptyPoly;
-	}
-
-	RectRegion region(xmin, xmax, ymin, ymax);
-
-	int centerI, centerJ, centerK;
-
-	getNodeIJKIndex(vid, &centerI, &centerJ, &centerK);
-	int lineLimitIMin, lineLimitIMax, lineLimitJMin, lineLimitJMax;
-	double tmpv[3];
-
-	// test I = 0
-	data->GetPoint(nodeIndex(0, centerJ, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMin = 0;
-	} else {
-		lineLimitIMin = lineLimitI(centerJ, centerI, 0, region);
-	}
-	// test I = imax
-	data->GetPoint(nodeIndex(m_size[0] - 1, centerJ, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitIMax = m_size[0] - 1;
-	} else {
-		lineLimitIMax = lineLimitI(centerJ, centerI, m_size[0] - 1, region);
-	}
-	// test J = 0
-	data->GetPoint(nodeIndex(centerI, 0, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMin = 0;
-	} else {
-		lineLimitJMin = lineLimitJ(centerI, centerJ, 0, region);
-	}
-	// test J = jmax
-	data->GetPoint(nodeIndex(centerI, m_size[1] - 1, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		lineLimitJMax = m_size[1] - 1;
-	} else {
-		lineLimitJMax = lineLimitJ(centerI, centerJ, m_size[1] - 1, region);
-	}
-
-	int lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2;
-
-	// test I min direction
-	if (lineLimitIMin == 0) {
-		lineLimitIMin2 = 0;
-	} else {
-		if (lineAtIIntersect(0, region)) {
-			lineLimitIMin2 = 0;
-		} else {
-			lineLimitIMin2 = lineLimitI2(lineLimitIMin, 0, region);
-		}
-	}
-	// test I max direction
-	if (lineLimitIMax == m_size[0] - 1) {
-		lineLimitIMax2 = m_size[0] - 1;
-	} else {
-		if (lineAtIIntersect(m_size[0] - 1, region)) {
-			lineLimitIMax2 = m_size[0] - 1;
-		} else {
-			lineLimitIMax2 = lineLimitI2(lineLimitIMax, m_size[0] - 1, region);
-		}
-	}
-
-	// test J min direction
-	if (lineLimitJMin == 0) {
-		lineLimitJMin2 = 0;
-	} else {
-		if (lineAtJIntersect(0, region)) {
-			lineLimitJMin2 = 0;
-		} else {
-			lineLimitJMin2 = lineLimitJ2(lineLimitJMin, 0, region);
-		}
-	}
-	// test J max direction
-	if (lineLimitJMax == m_size[1] - 1) {
-		lineLimitJMax2 = m_size[1] - 1;
-	} else {
-		if (lineAtJIntersect(m_size[1] - 1, region)) {
-			lineLimitJMax2 = m_size[1] - 1;
-		} else {
-			lineLimitJMax2 = lineLimitI2(lineLimitJMax, m_size[1] - 1, region);
-		}
-	}
-
-	auto exGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	exGrid->SetVOI(lineLimitIMin2, lineLimitIMax2, lineLimitJMin2, lineLimitJMax2, 0, 0);
-	exGrid->SetInputData(data);
-	exGrid->Update();
-
-	auto extractedGrid = exGrid->GetOutput();
-	int exRate = 1;
 	bool cullEnable;
 	int cullCellLimit, cullIndexLimit;
 	Grid::getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
-	while (cullEnable && extractedGrid->GetNumberOfCells() > cullCellLimit){
-		exRate *= 2;
-		exGrid->SetSampleRate(exRate, exRate, 1);
-		exGrid->Update();
-		extractedGrid = exGrid->GetOutput();
-		masked = true;
+
+	RectRegion region(xmin, xmax, ymin, ymax);
+
+	int maxcell = -1;
+	if (cullEnable) {
+		maxcell = cullCellLimit;
 	}
+	vtkPointSetRegionAndCellSizeFilter::calcExtractParameters(data, region, pointLocator, maxcell, &outOfRegion, &iMin, &iMax, &jMin, &jMax, &rate);
+	auto filteredData = vtkPointSetRegionAndCellSizeFilter::extract(data, iMin, iMax, jMin, jMax, rate);
 
-	vtkSmartPointer<vtkGeometryFilter> geo = vtkSmartPointer<vtkGeometryFilter>::New();
-	geo->SetInputConnection(exGrid->GetOutputPort());
-
+	auto geo = vtkSmartPointer<vtkGeometryFilter>::New();
+	geo->SetInputData(filteredData);
 	geo->Update();
-	vtkPolyData* filtered_data = geo->GetOutput();
-	filtered_data->Register(0);
-	return filtered_data;
+	filteredData->Delete();
+
+	auto geoData = geo->GetOutput();
+	geoData->Register(nullptr);
+	*masked = rate > 1;
+
+	return geoData;
 }
 
-vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(double xmin, double xmax, double ymin, double ymax, bool& masked) const
+vtkPolyData* PostZoneDataContainer::filteredDataUnstructured(vtkPointSet* data, double xmin, double xmax, double ymin, double ymax, bool* masked)
 {
-	double xwidth = xmax - xmin;
-	double ywidth = ymax - ymin;
-	masked = false;
+	RectRegion region(xmin, xmax, ymin, ymax);
 
-	vtkSmartPointer<vtkGeometryFilter> gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
-	gfilter->SetExtent(xmin - xwidth * 0.2, xmax + xwidth * 0.2, ymin - ywidth * 0.2, ymax + ywidth * 0.2, -1, 1);
-	gfilter->ExtentClippingOn();
-	gfilter->SetInputData(m_origData);
-	gfilter->Update();
-	vtkPolyData* data = gfilter->GetOutput();
-	data->Register(0);
-	return data;
-}
+	auto geo = vtkSmartPointer<vtkGeometryFilter>::New();
+	geo->SetInputData(data);
+	geo->Update();
 
-int PostZoneDataContainer::lineLimitI(int j, int iIn, int iOut, const RectRegion& region) const
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	double tmpv[3];
-	m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitI(j, i, iOut, region);
-	} else {
-		return lineLimitI(j, iIn, i, region);
-	}
-}
-
-int PostZoneDataContainer::lineLimitJ(int i, int jIn, int jOut, const RectRegion& region) const
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	double tmpv[3];
-	m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
-	if (region.pointIsInside(tmpv[0], tmpv[1])) {
-		return lineLimitJ(i, j, jOut, region);
-	} else {
-		return lineLimitJ(i, jIn, j, region);
-	}
-}
-
-int PostZoneDataContainer::lineLimitI2(int iIn, int iOut, const RectRegion& region) const
-{
-	if (qAbs(iOut - iIn) == 1) {
-		return iIn;
-	}
-	int i = (iIn + iOut) / 2;
-	if (lineAtIIntersect(i, region)) {
-		return lineLimitI2(i, iOut, region);
-	} else {
-		return lineLimitI2(iIn, i, region);
-	}
-}
-
-int PostZoneDataContainer::lineLimitJ2(int jIn, int jOut, const RectRegion& region) const
-{
-	if (qAbs(jOut - jIn) == 1) {
-		return jIn;
-	}
-	int j = (jIn + jOut) / 2;
-	if (lineAtJIntersect(j, region)) {
-		return lineLimitJ2(j, jOut, region);
-	} else {
-		return lineLimitJ2(jIn, j, region);
-	}
-}
-
-bool PostZoneDataContainer::lineAtIIntersect(int i, const RectRegion& region) const
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	m_origData->GetPoint(nodeIndex(i, 0, 0), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int j = 1; j < m_size[1]; ++j) {
-		m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
-}
-
-bool PostZoneDataContainer::lineAtJIntersect(int j, const RectRegion& region) const
-{
-	QPointF p1, p2;
-	double tmpv[3];
-	m_origData->GetPoint(nodeIndex(0, j, 0), tmpv);
-	p1 = QPointF(tmpv[0], tmpv[1]);
-	for (int i = 1; i < m_size[0]; ++i) {
-		m_origData->GetPoint(nodeIndex(i, j, 0), tmpv);
-		p2 = QPointF(tmpv[0], tmpv[1]);
-		QLineF line(p1, p2);
-		if (region.intersect(line)) {return true;}
-	}
-	return false;
+	return vtkPointSetRegionAndCellSizeFilter::filterGeneral(geo->GetOutput(), region, -1, masked);
 }
 
 void PostZoneDataContainer::applyOffset(double x_diff, double y_diff)
@@ -1287,7 +1121,7 @@ std::string PostZoneDataContainer::inputDataPrefix()
 
 std::string PostZoneDataContainer::addInputDataPrefix(const std::string& name)
 {
-	std::string newName = inputDataPrefix();
+	auto newName = inputDataPrefix();
 	newName.append(name.c_str());
 	return newName;
 }

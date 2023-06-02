@@ -123,8 +123,17 @@ void PolygonUtil::triangulateTriangle(const QPolygonF& polygon, std::vector<unsi
 void PolygonUtil::triangulateVtk(const QPolygonF& polygon, std::vector<unsigned int>* indices)
 {
 	auto pol = vtkSmartPointer<vtkPolygon>::New();
+	auto triIds = vtkSmartPointer<vtkIdList>::New();
+	triangulateVtk(polygon, indices, pol, triIds);
+}
+
+void PolygonUtil::triangulateVtk(const QPolygonF& polygon, std::vector<unsigned int>* indices, vtkPolygon* pol, vtkIdList* triIds)
+{
 	auto points = pol->GetPoints();
 	auto ids = pol->GetPointIds();
+	points->Reset();
+	ids->Reset();
+	triIds->Reset();
 
 	auto firstP = polygon.at(0);
 	for (int i = 0; i < polygon.size() - 1; ++i) {
@@ -132,10 +141,10 @@ void PolygonUtil::triangulateVtk(const QPolygonF& polygon, std::vector<unsigned 
 		points->InsertNextPoint(p.x() - firstP.x(), p.y() - firstP.y(), 0);
 		ids->InsertNextId(i);
 	}
-	auto triIds = vtkSmartPointer<vtkIdList>::New();
 	pol->Triangulate(triIds);
 
-	indices->clear();
+	indices->resize(0);
+	indices->reserve(triIds->GetNumberOfIds());
 	for (int i = 0; i < triIds->GetNumberOfIds(); ++i) {
 		indices->push_back(triIds->GetId(i));
 	}

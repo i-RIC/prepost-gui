@@ -52,6 +52,7 @@
 #include <QUndoCommand>
 #include <QXmlStreamWriter>
 
+#include <vtkAbstractPointLocator.h>
 #include <vtkActor.h>
 #include <vtkActorCollection.h>
 #include <vtkAppendPolyData.h>
@@ -171,9 +172,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	auto cs = typedi->colorMapSetting(m_target);
 
-	auto algo = g->vtkFilteredCellsAlgorithm();
-	algo->Update();
-	auto mapper = cs->buildPointDataMapper(algo->GetOutput());
+	auto mapper = cs->buildPointDataMapper(g->vtkFilteredGrid());
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 
@@ -319,11 +318,10 @@ int PreProcessorGridAttributeNodeGroupDataItem::opacityPercent() const
 	return m_opacity;
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
+void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeNodeDataItem* item =
-			dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it);
+	for (auto i : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(i);
 		item->informSelectedVerticesChanged(vertices);
 	}
 }
@@ -479,7 +477,7 @@ vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p
 		// no grid
 		return -1;
 	}
-	vtkIdType vid = grid->vtkGrid()->FindPoint(x, y, 0);
+	vtkIdType vid = grid->pointLocator()->FindClosestPoint(x, y, 0);
 	if (vid < 0) {
 		// no point is near.
 		return -1;

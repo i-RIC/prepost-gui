@@ -121,8 +121,8 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				int i = controller->targetIndex();
 				if (i == -1) {return;}
 				for (int j = 0; j < valueCount; ++j) {
-					QVector<vtkIdType> indices;
-					indices.append(grid->vertexIndex(i, j));
+					std::vector<vtkIdType> indices;
+					indices.push_back(grid->vertexIndex(i, j));
 					editWidget->scanAndSetDefault(att, indices);
 					m_model.setData(m_model.index(j, col), editWidget->variantValue(), Qt::EditRole);
 				}
@@ -130,8 +130,8 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				int j = controller->targetIndex();
 				if (j == -1) {return;}
 				for (int i = 0; i < valueCount; ++i) {
-					QVector<vtkIdType> indices;
-					indices.append(grid->vertexIndex(i, j));
+					std::vector<vtkIdType> indices;
+					indices.push_back(grid->vertexIndex(i, j));
 					editWidget->scanAndSetDefault(att, indices);
 					m_model.setData(m_model.index(i, col), editWidget->variantValue(), Qt::EditRole);
 				}
@@ -146,8 +146,8 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				if (i >= 0 && i <= grid->dimensionI() - 2) {
 					m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
 					for (int j = 0; j < valueCount - 1; ++j) {
-						QVector<vtkIdType> indices;
-						indices.append(grid->cellIndex(i, j));
+						std::vector<vtkIdType> indices;
+						indices.push_back(grid->cellIndex(i, j));
 						editWidget->scanAndSetDefault(att, indices);
 						m_model.setData(m_model.index(j + 1, col), editWidget->variantValue(), Qt::EditRole);
 					}
@@ -165,8 +165,8 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				if (j >= 0 && j <= grid->dimensionJ() - 2) {
 					m_model.setData(m_model.index(0, col), QVariant::fromValue(nullptr), Qt::EditRole);
 					for (int i = 0; i < valueCount - 1; ++i) {
-						QVector<vtkIdType> indices;
-						indices.append(grid->cellIndex(i, j));
+						std::vector<vtkIdType> indices;
+						indices.push_back(grid->cellIndex(i, j));
 						editWidget->scanAndSetDefault(att, indices);
 						m_model.setData(m_model.index(i + 1, col), editWidget->variantValue(), Qt::EditRole);
 					}

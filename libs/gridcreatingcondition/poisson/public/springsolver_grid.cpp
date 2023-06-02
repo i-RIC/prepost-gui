@@ -1,4 +1,4 @@
-#include "grid.h"
+#include "springsolver_grid.h"
 
 namespace {
 
@@ -9,7 +9,7 @@ int index(int i, int j, int imax)
 
 } // namespace
 
-Grid::Grid(std::vector<double>* x, std::vector<double>* y, int imax, int jmax) :
+SpringSolver::Grid::Grid(std::vector<double>* x, std::vector<double>* y, int imax, int jmax) :
 	m_x {x},
 	m_y {y},
 	m_iMax {imax},
@@ -63,72 +63,72 @@ Grid::Grid(std::vector<double>* x, std::vector<double>* y, int imax, int jmax) :
 	}
 }
 
-double& Grid::x(int i, int j)
+double& SpringSolver::Grid::x(int i, int j)
 {
 	return (*m_x)[index(i, j, m_iMax)];
 }
 
-double& Grid::y(int i, int j)
+double& SpringSolver::Grid::y(int i, int j)
 {
 	return (*m_y)[index(i, j, m_iMax)];
 }
 
-int Grid::iMax() const
+int SpringSolver::Grid::iMax() const
 {
 	return m_iMax;
 }
 
-int Grid::jMax() const
+int SpringSolver::Grid::jMax() const
 {
 	return m_jMax;
 }
 
-std::vector<double>* Grid::xVec() const
+std::vector<double>* SpringSolver::Grid::xVec() const
 {
 	return m_x;
 }
 
-std::vector<double>* Grid::yVec() const
+std::vector<double>* SpringSolver::Grid::yVec() const
 {
 	return m_y;
 }
 
-Edge& Grid::iMinEdge()
+SpringSolver::Edge& SpringSolver::Grid::iMinEdge()
 {
 	return m_iMinEdge;
 }
 
-Edge& Grid::iMaxEdge()
+SpringSolver::Edge& SpringSolver::Grid::iMaxEdge()
 {
 	return m_iMaxEdge;
 }
 
-Edge& Grid::jMinEdge()
+SpringSolver::Edge& SpringSolver::Grid::jMinEdge()
 {
 	return m_jMinEdge;
 }
 
-Edge& Grid::jMaxEdge()
+SpringSolver::Edge& SpringSolver::Grid::jMaxEdge()
 {
 	return m_jMaxEdge;
 }
 
-std::vector<int>& Grid::iMinEdgeIds()
+std::vector<int>& SpringSolver::Grid::iMinEdgeIds()
 {
 	return m_iMinEdgeIds;
 }
 
-std::vector<int>& Grid::iMaxEdgeIds()
+std::vector<int>& SpringSolver::Grid::iMaxEdgeIds()
 {
 	return m_iMaxEdgeIds;
 }
 
-std::vector<int>& Grid::jMinEdgeIds()
+std::vector<int>& SpringSolver::Grid::jMinEdgeIds()
 {
 	return m_jMinEdgeIds;
 }
 
-std::vector<int>& Grid::jMaxEdgeIds()
+std::vector<int>& SpringSolver::Grid::jMaxEdgeIds()
 {
 	return m_jMaxEdgeIds;
 }
