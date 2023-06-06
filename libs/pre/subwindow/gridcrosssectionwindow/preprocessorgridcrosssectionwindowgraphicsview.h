@@ -63,7 +63,7 @@ public:
 	void cameraZoomOutX();
 	void cameraZoomInY();
 	void cameraZoomOutY();
-	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 
 private slots:
 	void moveSelectedRows();

@@ -215,7 +215,7 @@ void PreProcessorGridAttributeCellDataItem::mouseReleaseEvent(QMouseEvent* event
 		PreProcessorGridAttributeCellGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(parent());
 		delete menu;
 		menu = new QMenu(projectData()->mainWindow());
-		bool cellSelected = tmpparent->selectedCells().count() > 0;
+		bool cellSelected = tmpparent->selectedCells().size() > 0;
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(cellSelected);
 		bool nonGroupedComplex = false;
@@ -289,7 +289,7 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid cells.")).arg(m_condition->caption()));
 		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
 		i->setupEditWidget(dialog->widget());
-		QVector<vtkIdType> targets = gridDataItem->selectedCells();
+		std::vector<vtkIdType> targets = gridDataItem->selectedCells();
 		Grid* g = gridDataItem->grid();
 		dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
 
@@ -453,18 +453,18 @@ PreProcessorGridAttributeCellGroupDataItem* PreProcessorGridAttributeCellDataIte
 
 void PreProcessorGridAttributeCellDataItem::editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName)
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	auto mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
-	GridAttributeVariationEditDialog* dialog = m_condition->variationEditDialog(mainWindow());
+	auto dialog = m_condition->variationEditDialog(mainWindow());
 	if (dialog == nullptr) {return;}
 	dialog->setWindowTitle(QString(tr("Apply %1 to %2").arg(typeName).arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the %1 of %2 at the selected grid cells.")).arg(typeName).arg(m_condition->caption()));
 	dialog->widget()->setMode(mode);
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	QVector<vtkIdType> targets = tmpparent->selectedCells();
+	auto tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto targets = tmpparent->selectedCells();
 	Grid* g = tmpparent->grid();
 
 	if (QDialog::Accepted == dialog->exec()) {

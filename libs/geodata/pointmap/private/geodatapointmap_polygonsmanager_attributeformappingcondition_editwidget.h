@@ -21,8 +21,8 @@ public:
 	QVariant variantValue() const override;
 	void setVariantValue(const QVariant& v) override;
 
-	void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) override;
-	void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
+	void scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices) override;
+	void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) override;
 
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;

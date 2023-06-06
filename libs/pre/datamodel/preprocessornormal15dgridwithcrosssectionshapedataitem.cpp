@@ -151,10 +151,10 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::openCrossSectionWin
 
 Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCrossSectionShapeDataItem::selectedCrossSection()
 {
-	PreProcessorNormal15DGridWithCrossSectionDataItem* item = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(parent());
-	Structured15DGridWithCrossSection* g = dynamic_cast<Structured15DGridWithCrossSection*>(item->grid());
+	auto item = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(parent());
+	auto g = dynamic_cast<Structured15DGridWithCrossSection*>(item->grid());
 
-	if (item->selectedVertices().count() < 1) { return nullptr; }
+	if (item->selectedVertices().size() < 1) {return nullptr;}
 
 	vtkIdType index = item->selectedVertices().at(0);
 	auto it = g->crossSections().begin();

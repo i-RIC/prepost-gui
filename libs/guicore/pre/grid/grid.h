@@ -10,17 +10,16 @@
 
 #include <string>
 
-class SolverDefinition;
-class QLocale;
-class QTextStream;
-class QStringList;
-class GridInternalImporter;
-class GridInternalExporter;
 class GridAttributeContainer;
 class PreProcessorGridDataItemInterface;
 
+class QTextStream;
+class QStringList;
+
+class vtkAbstractPointLocator;
 class vtkAlgorithm;
 class vtkPolyDataAlgorithm;
+class vtkPoints;
 class vtkPointSet;
 
 namespace iRICLib {
@@ -57,10 +56,10 @@ public:
 
 	vtkPointSet* vtkGrid() const;
 
-	vtkPolyDataAlgorithm* vtkFilteredShapeAlgorithm() const;
-	vtkPolyDataAlgorithm* vtkFilteredPointsAlgorithm() const;
-	vtkPolyDataAlgorithm* vtkFilteredCellsAlgorithm() const;
-	virtual vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const;
+	vtkAbstractPointLocator* pointLocator() const;
+	vtkPointSet* vtkFilteredGrid() const;
+	vtkPointSet* vtkFilteredIndexGrid() const;
+	void setPoints(vtkPoints* points);
 
 	QList<GridAttributeContainer*>& gridAttributes();
 	GridAttributeContainer* gridAttribute(const std::string& name) const;
@@ -90,9 +89,9 @@ protected:
 	int saveGridAttributes(iRICLib::H5CgnsGridAttributes* atts);
 
 	void setMasked(bool masked);
-	void setFilteredShapeAlgorithm(vtkPolyDataAlgorithm* algo);
-	void setFilteredPointsAlgorithm(vtkPolyDataAlgorithm* algo);
-	void setFilteredCellsAlgorithm(vtkPolyDataAlgorithm* algo);
+	void setFilteredGrid(vtkPointSet* data);
+	void setFilteredIndexGrid(vtkPointSet* data);
+	void setPointLocator(vtkAbstractPointLocator* locator);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

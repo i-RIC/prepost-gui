@@ -535,7 +535,7 @@ PreProcessorGridAttributeNodeDataItem* PreProcessorGridCrosssectionWindow::condi
 }
 
 
-void PreProcessorGridCrosssectionWindow::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
+void PreProcessorGridCrosssectionWindow::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
 {
 	ui->graphicsView->informSelectedVerticesChanged(vertices);
 }

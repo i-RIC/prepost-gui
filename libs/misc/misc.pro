@@ -66,6 +66,7 @@ HEADERS += anms.h \
            qundocommandhelper.h \
            qwidgetcontainer.h \
            rangecontainert.h \
+           rectregion.h \
            simplevaluecontainert.h \
            slowmotionspeededitdialog.h \
            splineinterpolator.h \
@@ -152,6 +153,7 @@ SOURCES += anms.cpp \
            qttool.cpp \
            qundocommandhelper.cpp \
            qwidgetcontainer.cpp \
+           rectregion.cpp \
            slowmotionspeededitdialog.cpp \
            splineinterpolator.cpp \
            standarderrormessages.cpp \

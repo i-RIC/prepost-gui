@@ -48,7 +48,7 @@ public:
 	void informFocusIn();
 	Structured2DGrid* grid() const;
 	PreProcessorGridAttributeNodeDataItem* conditionNodeDataItem();
-	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	PreProcessorGridCrosssectionWindowProjectDataItem* projectDataItem() {return m_projectDataItem;}
 	const QIcon& icon() const {return m_icon;}
 

@@ -89,8 +89,8 @@ HEADERS += gcc_poisson_global.h \
            private/gridcreatingconditionpoisson_movevertexcommand.h \
            private/gridcreatingconditionpoisson_removevertexcommand.h \
            private/gridcreatingconditionpoisson_updatelabelscommand.h \
-           springsolver/edge.h \
-           springsolver/grid.h
+           public/springsolver_edge.h \
+           public/springsolver_grid.h
 FORMS += gridcreatingconditionpoissonbuildbanklinesdialog.ui \
          gridcreatingconditionpoissonctrlpointsdialog.ui \
          gridcreatingconditionpoissongridgeneratedialog.ui
@@ -111,8 +111,8 @@ SOURCES += gridcreatingconditioncreatorpoisson.cpp \
            private/gridcreatingconditionpoisson_movevertexcommand.cpp \
            private/gridcreatingconditionpoisson_removevertexcommand.cpp \
            private/gridcreatingconditionpoisson_updatelabelscommand.cpp \
-           springsolver/edge.cpp \
-           springsolver/grid.cpp
+           public/springsolver_edge.cpp \
+           public/springsolver_grid.cpp
 RESOURCES += poisson.qrc
 TRANSLATIONS += languages/iricGccPoisson_ar_EG.ts \
                 languages/iricGccPoisson_bg_BG.ts \

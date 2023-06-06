@@ -27,8 +27,8 @@ public:
 
 	Grid* m_grid;
 
-	QVector<vtkIdType> m_selectedVertices;
-	QVector<vtkIdType> m_selectedCells;
+	std::vector<vtkIdType> m_selectedVertices;
+	std::vector<vtkIdType> m_selectedCells;
 	QVector<Edge> m_selectedEdges;
 
 	PreProcessorGridAttributeNodeDataItem* m_nodeDataItem;

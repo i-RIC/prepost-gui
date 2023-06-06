@@ -8,6 +8,8 @@
 
 #include <QVector>
 
+#include <vector>
+
 class Grid;
 class QSignalMapper;
 
@@ -104,7 +106,7 @@ public:
 	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
 
-	void setSelectedVertices(const QVector<vtkIdType>& vertices);
+	void setSelectedVertices(const std::vector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
 	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
 	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
@@ -135,8 +137,8 @@ public:
 	QMenu* menu() const;
 
 	vtkPolyData* selectedVerticesPolyData() const;
-	const QVector<vtkIdType>& selectedVertices() const;
-	const QVector<vtkIdType>& selectedCells() const;
+	const std::vector<vtkIdType>& selectedVertices() const;
+	const std::vector<vtkIdType>& selectedCells() const;
 	const QVector<Edge>& selectedEdges() const;
 	void updateAttributeActorSettings() override;
 
@@ -150,6 +152,7 @@ public:
 	void updateRegionPolyData();
 
 	void updateObjectBrowserTree();
+	void updateVtkObjectsForDrawing();
 
 signals:
 	void gridAttributeChanged(const std::string& name);
@@ -170,16 +173,15 @@ private:
 	void setupGenerateAttributeActions(QMenu* menu);
 	void clearSelection();
 	void updateSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
-	QVector<vtkIdType> getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
+	std::vector<vtkIdType> getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
 	void updateSelectedVertices(MouseBoundingBox* box, bool xOr);
-	QVector<vtkIdType> getSelectedVertices(MouseBoundingBox* box, bool xOr);
+	std::vector<vtkIdType> getSelectedVertices(MouseBoundingBox* box, bool xOr);
 	QSet<vtkIdType> getSelectedVerticesSet(MouseBoundingBox* box, bool xOr);
 	void updateSelectedCells(MouseBoundingBox* box, bool xOr);
 	void updateSelectedEdges(MouseBoundingBox* box, bool xOr, VTKGraphicsView* v);
 	void updateSelectedVerticesGraphics();
 	void updateSelectedCellsGraphics();
 	void updateSelectedEdgesGraphics();
-	void finishGridLoading();
 	void closeBirdEyeWindow();
 	void closeCrosssectionWindows();
 	void informSelectedVerticesChanged();

@@ -50,6 +50,22 @@ void Post2dWindowGridShapeDataItem::updateActorSetting()
 	m_setting.update(actorCollection(), actor2DCollection(), data, data, cont->labelData(), iRIC::toStr(PostZoneDataContainer::labelName));
 
 	updateVisibilityWithoutRendering();
+
+/*
+	m_setting.outlineActor()->VisibilityOff();
+	m_setting.wireframeActor()->VisibilityOff();
+
+	auto z = zoneDataItem();
+	auto cont = z->dataContainer();
+	if (cont == nullptr || cont->data() == nullptr) {return;}
+
+	auto filterdData = z->filteredData();
+	if (filterdData == nullptr) {return;}
+
+	m_setting.update(actorCollection(), actor2DCollection(), filterdData, filterdData, cont->labelData(), iRIC::toStr(PostZoneDataContainer::labelName));
+
+	updateVisibilityWithoutRendering();
+*/
 }
 
 Post2dWindowZoneDataItem* Post2dWindowGridShapeDataItem::zoneDataItem() const

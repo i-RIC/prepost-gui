@@ -70,7 +70,10 @@ const ColorMapSettingContainer& Post2dWindowNodeScalarGroupDataItem::colorMapSet
 
 void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 {
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	impl->m_actor->VisibilityOff();
+
+	auto z = topDataItem()->zoneDataItem();
+	auto cont = z->dataContainer();
 	if (cont == nullptr || cont->data(impl->m_solutionPosition) == nullptr) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOffWithEmptyPolyData();
 		impl->m_actor->SetMapper(mapper);
@@ -82,9 +85,18 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->nodeValueRange(impl->m_target);
 	impl->m_setting.colorMapSetting.setAutoValueRange(range);
 
-	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->data(impl->m_solutionPosition)->data());
-	filtered->GetPointData()->SetActiveScalars(impl->m_target.c_str());
+	vtkPointSet* filtered = nullptr;
+	if (impl->m_setting.regionSetting.mode == Region2dSettingContainer::Mode::Full) {
+		filtered = z->filteredData();
+		if (filtered != nullptr) {
+			filtered->Register(nullptr);
+		}
+	} else {
+		filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->data()->data());
+	}
+	if (filtered == nullptr) {return;}
 
+	filtered->GetPointData()->SetActiveScalars(impl->m_target.c_str());
 	auto filtered2 = impl->m_setting.contourSetting.buildFilteredData(filtered);
 	filtered->Delete();
 
@@ -97,6 +109,8 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	impl->m_setting.colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
 	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 	impl->m_actor->GetProperty()->SetLineWidth(v->devicePixelRatioF() * impl->m_setting.contourSetting.contourLineWidth);
+
+	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

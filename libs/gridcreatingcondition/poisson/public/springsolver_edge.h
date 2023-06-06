@@ -1,12 +1,14 @@
-#ifndef EDGE_H
-#define EDGE_H
+#ifndef SPRINGSOLVER_EDGE_H
+#define SPRINGSOLVER_EDGE_H
+
+#include "../springsolver.h"
 
 #include <vector>
 
 class QPointF;
 class QVector2D;
 
-class Edge
+class SpringSolver::Edge
 {
 public:
 	Edge();
@@ -27,4 +29,4 @@ private:
 	std::vector<double> m_y;
 };
 
-#endif // EDGE_H
+#endif // SPRINGSOLVER_EDGE_H

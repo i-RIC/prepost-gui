@@ -229,7 +229,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		delete menu;
 		menu = new QMenu(projectData()->mainWindow());
 		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		bool vertexSelected = (tmpparent->selectedVertices().count() > 0);
+		bool vertexSelected = (tmpparent->selectedVertices().size() > 0);
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(vertexSelected);
 		bool nonGroupedComplex = false;
@@ -314,7 +314,7 @@ void PreProcessorGridAttributeNodeDataItem::editValue()
 		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
 		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
 		i->setupEditWidget(dialog->widget());
-		QVector<vtkIdType> targets = gridDataItem->selectedVertices();
+		auto targets = gridDataItem->selectedVertices();
 		Grid* g = gridDataItem->grid();
 		dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
 
@@ -433,10 +433,9 @@ void PreProcessorGridAttributeNodeDataItem::unregisterCrosssectionWindow(PreProc
 	}
 }
 
-void PreProcessorGridAttributeNodeDataItem::informSelectedVerticesChanged(const QVector<vtkIdType>& vertices)
+void PreProcessorGridAttributeNodeDataItem::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
-		PreProcessorGridCrosssectionWindowProjectDataItem* item = *it;
+	for (auto item : m_crosssectionWindows) {
 		item->window()->informSelectedVerticesChanged(vertices);
 	}
 }
@@ -557,7 +556,7 @@ void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariation
 	dialog->setLabel(QString(tr("Input the %1 of %2 at the selected grid nodes.")).arg(typeName).arg(m_condition->caption()));
 	dialog->widget()->setMode(mode);
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	QVector<vtkIdType> targets = tmpparent->selectedVertices();
+	auto targets = tmpparent->selectedVertices();
 	Grid* g = tmpparent->grid();
 
 	if (QDialog::Accepted == dialog->exec()) {

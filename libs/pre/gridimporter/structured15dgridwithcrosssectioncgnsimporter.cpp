@@ -23,7 +23,7 @@ bool Structured15DGridWithCrossSectionCgnsImporter::isZoneCompatible(const iRICL
 	auto size = zone.size();
 	int riversize = size.at(0);
 
-	std::set<std::string> names;
+	std::unordered_set<std::string> names;
 	int ier = iRICLib::H5Util::getGroupNames(zone.groupId(), &names);
 	if (ier != IRIC_NO_ERROR) {return false;}
 	if (names.find("GridCrosssections") == names.end()) {return false;}

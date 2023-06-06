@@ -244,7 +244,7 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	// loading data finished.
 	// now call vtk related functions, and render new grid.
 	updateSimplifiedGrid();
-	finishGridLoading();
+	updateVtkObjectsForDrawing();
 	updateActionStatus();
 	updateObjectBrowserTree();
 
@@ -457,7 +457,7 @@ bool PreProcessorGridDataItem::setGrid(Grid* newGrid)
 	}
 
 	// update vtk pipeline.
-	finishGridLoading();
+	updateVtkObjectsForDrawing();
 
 	// update the object browser tree structure.
 	updateObjectBrowserTree();
@@ -532,9 +532,9 @@ void PreProcessorGridDataItem::updateSelectedVerticesBySelectingNearest(QPointF&
 	informSelectedVerticesChanged();
 }
 
-QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr)
+std::vector<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr)
 {
-	QVector<vtkIdType> ret;
+	std::vector<vtkIdType> ret;
 	if (impl->m_grid == nullptr) {
 		// grid is not setup yet.
 		return ret;
@@ -542,7 +542,7 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesBySelectingNeare
 
 	QSet<vtkIdType> selectedVerticesSet;
 	if (xOr) {
-		for (vtkIdType i = 0; i < impl->m_selectedVertices.count(); ++i) {
+		for (vtkIdType i = 0; i < static_cast<vtkIdType>(impl->m_selectedVertices.size()); ++i) {
 			selectedVerticesSet.insert(impl->m_selectedVertices.at(i));
 		}
 	}
@@ -585,8 +585,9 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesBySelectingNeare
 		}
 	}
 
-	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it) {
-		ret.append(*s_it);
+	ret.reserve(selectedVerticesSet.size());
+	for (auto vid : selectedVerticesSet) {
+		ret.push_back(vid);
 	}
 	return ret;
 }
@@ -614,7 +615,7 @@ void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 	impl->m_selectedVerticesPolyData->SetPoints(impl->m_grid->vtkGrid()->GetPoints());
 	auto cells = vtkSmartPointer<vtkCellArray>::New();
 	vtkIdType node;
-	for (int i = 0; i < impl->m_selectedVertices.count(); ++i) {
+	for (int i = 0; i < impl->m_selectedVertices.size(); ++i) {
 		node = impl->m_selectedVertices.at(i);
 		cells->InsertNextCell(1, &(node));
 	}
@@ -624,17 +625,17 @@ void PreProcessorGridDataItem::updateSelectedVerticesGraphics()
 	impl->m_selectedVerticesPolyData->Modified();
 }
 
-QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBox* box, bool xOr)
+std::vector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBox* box, bool xOr)
 {
-	QVector<vtkIdType> ret;
+	std::vector<vtkIdType> ret;
 	if (impl->m_grid == nullptr) {
 		// grid is not setup yet.
 		return ret;
 	}
-//	if (impl->m_grid->isMasked()){return ret;}
+
 	QSet<vtkIdType> selectedVerticesSet;
 	if (xOr) {
-		for (vtkIdType i = 0; i < impl->m_selectedVertices.count(); ++i) {
+		for (vtkIdType i = 0; i < impl->m_selectedVertices.size(); ++i) {
 			selectedVerticesSet.insert(impl->m_selectedVertices.at(i));
 		}
 	}
@@ -670,16 +671,16 @@ QVector<vtkIdType> PreProcessorGridDataItem::getSelectedVertices(MouseBoundingBo
 		}
 	}
 
-	for (auto s_it = selectedVerticesSet.begin(); s_it != selectedVerticesSet.end(); ++s_it) {
-		ret.append(*s_it);
+	ret.reserve(selectedVerticesSet.size());
+	for (auto vid : selectedVerticesSet) {
+		ret.push_back(vid);
 	}
 	return ret;
 }
 
-
 QSet<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesSet(MouseBoundingBox* box, bool xOr)
 {
-	QVector<vtkIdType> vec = getSelectedVertices(box, xOr);
+	auto vec = getSelectedVertices(box, xOr);
 	QSet<vtkIdType> set;
 	for (int i = 0; i < vec.size(); ++i) {
 		set.insert(vec.at(i));
@@ -687,7 +688,7 @@ QSet<vtkIdType> PreProcessorGridDataItem::getSelectedVerticesSet(MouseBoundingBo
 	return set;
 }
 
-void PreProcessorGridDataItem::setSelectedVertices(const QVector<vtkIdType>& vertices)
+void PreProcessorGridDataItem::setSelectedVertices(const std::vector<vtkIdType>& vertices)
 {
 	impl->m_selectedVertices = vertices;
 	updateSelectedVerticesGraphics();
@@ -707,7 +708,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 
 	QSet<vtkIdType> selectedCellsSet;
 	if (xOr) {
-		for (vtkIdType i = 0; i < impl->m_selectedCells.count(); ++i) {
+		for (vtkIdType i = 0; i < impl->m_selectedCells.size(); ++i) {
 			selectedCellsSet.insert(impl->m_selectedCells.at(i));
 		}
 	}
@@ -748,7 +749,7 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 	}
 
 	for (auto s_it = selectedCellsSet.begin(); s_it != selectedCellsSet.end(); ++s_it) {
-		impl->m_selectedCells.append(*s_it);
+		impl->m_selectedCells.push_back(*s_it);
 	}
 	updateSelectedCellsGraphics();
 	updateActionStatus();
@@ -757,8 +758,8 @@ void PreProcessorGridDataItem::updateSelectedCells(MouseBoundingBox* box, bool x
 void PreProcessorGridDataItem::updateSelectedCellsGraphics()
 {
 
-	vtkSmartPointer<vtkIdList> cellids = vtkSmartPointer<vtkIdList>::New();
-	for (int i = 0; i < impl->m_selectedCells.count(); ++i) {
+	auto cellids = vtkSmartPointer<vtkIdList>::New();
+	for (int i = 0; i < impl->m_selectedCells.size(); ++i) {
 		cellids->InsertNextId(impl->m_selectedCells[i]);
 	}
 	impl->m_selectedCellsGrid->SetCellList(cellids);
@@ -795,9 +796,9 @@ void PreProcessorGridDataItem::updateSelectedEdges(MouseBoundingBox* box, bool x
 	QVector<Edge> selectedEdgesVector;
 	if (click) {
 		double p[3];
-		VTK2DGraphicsView* v2 = dynamic_cast<VTK2DGraphicsView*>(v);
+		auto v2 = dynamic_cast<VTK2DGraphicsView*>(v);
 		double stdDist = v2->stdRadius(iRIC::nearRadius());
-		vtkSmartPointer<vtkIdList> cellIds = vtkSmartPointer<vtkIdList>::New();
+		auto cellIds = vtkSmartPointer<vtkIdList>::New();
 		box->vtkGrid()->GetPoint(0, p);
 		vtkPolyData* pd = buildEdges();
 		vtkIdType pointId = pd->FindPoint(p);
@@ -1194,7 +1195,7 @@ void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name
 	}
 }
 
-void PreProcessorGridDataItem::finishGridLoading()
+void PreProcessorGridDataItem::updateVtkObjectsForDrawing()
 {
 	if (impl->m_grid != nullptr) {
 		impl->m_selectedVerticesPolyData->SetPoints(impl->m_grid->vtkGrid()->GetPoints());
@@ -1309,12 +1310,12 @@ vtkPolyData* PreProcessorGridDataItem::selectedVerticesPolyData() const
 	return impl->m_selectedVerticesPolyData;
 }
 
-const QVector<vtkIdType>& PreProcessorGridDataItem::selectedVertices() const
+const std::vector<vtkIdType>& PreProcessorGridDataItem::selectedVertices() const
 {
 	return impl->m_selectedVertices;
 }
 
-const QVector<vtkIdType>& PreProcessorGridDataItem::selectedCells() const
+const std::vector<vtkIdType>& PreProcessorGridDataItem::selectedCells() const
 {
 	return impl->m_selectedCells;
 }
@@ -1334,14 +1335,14 @@ void PreProcessorGridDataItem::updateActionStatus()
 	impl->m_polygonSelectAction->setEnabled(impl->m_grid != nullptr);
 	impl->m_birdEyeWindowAction->setEnabled(impl->m_grid != nullptr);
 
-	impl->m_nodeEditAction->setEnabled((impl->m_grid != nullptr) && (impl->m_selectedVertices.count() > 0) && (impl->m_nodeDataItem != nullptr));
+	impl->m_nodeEditAction->setEnabled((impl->m_grid != nullptr) && (impl->m_selectedVertices.size() > 0) && (impl->m_nodeDataItem != nullptr));
 	impl->m_nodeDisplaySettingAction->setEnabled((impl->m_grid != nullptr) && (impl->m_nodeDataItem != nullptr));
-	impl->m_cellEditAction->setEnabled((impl->m_grid != nullptr) && (impl->m_selectedCells.count() > 0) && (impl->m_cellDataItem != nullptr));
+	impl->m_cellEditAction->setEnabled((impl->m_grid != nullptr) && (impl->m_selectedCells.size() > 0) && (impl->m_cellDataItem != nullptr));
 	impl->m_cellDisplaySettingAction->setEnabled((impl->m_grid != nullptr) && (impl->m_cellDataItem != nullptr));
 
 	impl->m_setupScalarBarAction->setEnabled(impl->m_grid != nullptr);
 
-	m_shapeDataItem->editAction()->setEnabled(impl->m_grid != nullptr && impl->m_selectedVertices.count() > 0);
+	m_shapeDataItem->editAction()->setEnabled(impl->m_grid != nullptr && impl->m_selectedVertices.size() > 0);
 
 	PreProcessorGridAttributeMappingSettingTopDataItem* mtItem =
 		dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->mappingSettingDataItem();
@@ -1361,7 +1362,7 @@ void PreProcessorGridDataItem::silentDeleteGrid()
 	impl->m_gridIsDeleted = true;
 	updateObjectBrowserTree();
 	updateActionStatus();
-	finishGridLoading();
+	updateVtkObjectsForDrawing();
 	clearSelection();
 	closeBirdEyeWindow();
 	auto gtItem = gridTypeDataItem();
@@ -1539,16 +1540,17 @@ vtkPolyData* PreProcessorGridDataItem::buildEdges() const
 		}
 	}
 
-	vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
-	for (auto it = edges.begin(); it != edges.end(); ++it) {
+	auto ca = vtkSmartPointer<vtkCellArray>::New();
+	for (const auto& edge : edges) {
 		vtkIdType nodes[2];
-		nodes[0] = it->vertex1();
-		nodes[1] = it->vertex2();
+		nodes[0] = edge.vertex1();
+		nodes[1] = edge.vertex2();
 		ca->InsertNextCell(2, &(nodes[0]));
 	}
 	polyData->SetLines(ca);
 	polyData->BuildCells();
 	polyData->BuildLinks();
+
 	return polyData;
 }
 
@@ -1794,10 +1796,11 @@ void PreProcessorGridDataItem::updateRegionPolyData()
 	impl->m_regionPolyData->SetPoints(points);
 
 	vtkIdType pts[4] = {0, 1, 2, 3};
-	vtkSmartPointer<vtkCellArray> cells = vtkSmartPointer<vtkCellArray>::New();
+	auto cells = vtkSmartPointer<vtkCellArray>::New();
 	cells->InsertNextCell(4, pts);
 	impl->m_regionPolyData->SetPolys(cells);
 	impl->m_regionPolyData->Modified();
+
 	actorCollection()->RemoveItem(impl->m_regionActor);
 	actorCollection()->AddItem(impl->m_regionActor);
 	updateVisibilityWithoutRendering();

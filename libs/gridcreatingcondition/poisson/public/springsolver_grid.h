@@ -1,11 +1,12 @@
-#ifndef GRID_H
-#define GRID_H
+#ifndef SPRINGSOLVER_GRID_H
+#define SPRINGSOLVER_GRID_H
 
 #include <vector>
 
-#include "edge.h"
+#include "../springsolver.h"
+#include "springsolver_edge.h"
 
-class Grid
+class SpringSolver::Grid
 {
 public:
 	Grid(std::vector<double>* x, std::vector<double>* y, int imax, int jmax);
@@ -47,4 +48,4 @@ private:
 	std::vector<int> m_jMaxEdgeIds;
 };
 
-#endif // GRID_H
+#endif // SPRINGSOLVER_GRID_H

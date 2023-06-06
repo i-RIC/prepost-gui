@@ -55,10 +55,10 @@ void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget:
 	ui->exponentSpinBox->setValue(s.exponent);
 }
 
-void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::scanAndSetDefault(GridAttributeContainer* /*container*/, QVector<vtkIdType>& /*indices*/)
+void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::scanAndSetDefault(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/)
 {}
 
-void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::applyValue(GridAttributeContainer* /*container*/, QVector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemInterface* /*dItem*/)
+void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::applyValue(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemInterface* /*dItem*/)
 {}
 
 QSize GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::sizeHint() const

@@ -1,12 +1,12 @@
-#include "edge.h"
+#include "springsolver_edge.h"
 
 #include <QPointF>
 #include <QVector2D>
 
-Edge::Edge()
+SpringSolver::Edge::Edge()
 {}
 
-void Edge::setLine(const std::vector<QPointF>& line)
+void SpringSolver::Edge::setLine(const std::vector<QPointF>& line)
 {
 	std::vector<double> x, y;
 	for (const QPointF& p : line) {
@@ -16,13 +16,13 @@ void Edge::setLine(const std::vector<QPointF>& line)
 	setXY(x, y);
 }
 
-void Edge::setXY(const std::vector<double>& x, const std::vector<double>& y)
+void SpringSolver::Edge::setXY(const std::vector<double>& x, const std::vector<double>& y)
 {
 	m_x = x;
 	m_y = y;
 }
 
-int Edge::findNearestLine(double x, double y)
+int SpringSolver::Edge::findNearestLine(double x, double y)
 {
 	int edgeId = 0;
 	double minDistSquared;
@@ -38,7 +38,7 @@ int Edge::findNearestLine(double x, double y)
 	return edgeId;
 }
 
-QVector2D Edge::lineDirection(int lineId) const
+QVector2D SpringSolver::Edge::lineDirection(int lineId) const
 {
 	double x1 = m_x.at(lineId);
 	double y1 = m_y.at(lineId);
@@ -49,7 +49,7 @@ QVector2D Edge::lineDirection(int lineId) const
 	return ret.normalized();
 }
 
-void Edge::findMappedPoint(double x, double y, int lineIdHint, double* mappedX, double* mappedY, int* mappedLine) const
+void SpringSolver::Edge::findMappedPoint(double x, double y, int lineIdHint, double* mappedX, double* mappedY, int* mappedLine) const
 {
 	*mappedLine = lineIdHint;
 	nearestPoint(x, y, lineIdHint, mappedX, mappedY);
@@ -78,14 +78,14 @@ void Edge::findMappedPoint(double x, double y, int lineIdHint, double* mappedX, 
 	}
 }
 
-double Edge::distanceSquared(double x1, double y1, double x2, double y2)
+double SpringSolver::Edge::distanceSquared(double x1, double y1, double x2, double y2)
 {
 	double dx = x2 - x1;
 	double dy = y2 - y1;
 	return dx * dx + dy * dy;
 }
 
-void Edge::nearestPoint(double x, double y, int lineId, double* resultx, double* resulty) const
+void SpringSolver::Edge::nearestPoint(double x, double y, int lineId, double* resultx, double* resulty) const
 {
 	double ax = m_x.at(lineId);
 	double ay = m_y.at(lineId);
@@ -95,7 +95,7 @@ void Edge::nearestPoint(double x, double y, int lineId, double* resultx, double*
 	nearestPoint(ax, ay, bx, by, x, y, resultx, resulty);
 }
 
-void Edge::nearestPoint(double ax, double ay, double bx, double by, double px, double py, double* resultx, double* resulty) const
+void SpringSolver::Edge::nearestPoint(double ax, double ay, double bx, double by, double px, double py, double* resultx, double* resulty) const
 {
 	double abx = bx - ax;
 	double aby = by - ay;

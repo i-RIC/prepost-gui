@@ -1,6 +1,6 @@
-#include "springsolver/edge.h"
-#include "springsolver/grid.h"
 #include "springsolver.h"
+#include "public/springsolver_edge.h"
+#include "public/springsolver_grid.h"
 
 #include <QVector2D>
 
@@ -10,7 +10,7 @@ namespace {
 
 const double ROOT2 = 1.41421356;
 
-void calcDelta(Grid* grid, int i1, int j1, int i2, int j2, double* dx, double* dy)
+void calcDelta(SpringSolver::Grid* grid, int i1, int j1, int i2, int j2, double* dx, double* dy)
 {
 	double x1 = grid->x(i1, j1);
 	double x2 = grid->x(i2, j2);
@@ -21,7 +21,7 @@ void calcDelta(Grid* grid, int i1, int j1, int i2, int j2, double* dx, double* d
 	*dy = y2 - y1;
 }
 
-double edgeLen(Grid* grid, int i1, int j1, int i2, int j2)
+double edgeLen(SpringSolver::Grid* grid, int i1, int j1, int i2, int j2)
 {
 	double dx, dy;
 	calcDelta(grid, i1, j1, i2, j2, &dx, &dy);
@@ -29,7 +29,7 @@ double edgeLen(Grid* grid, int i1, int j1, int i2, int j2)
 	return sqrt(dx * dx + dy * dy);
 }
 
-double averageEdgeLength(Grid* grid) {
+double averageEdgeLength(SpringSolver::Grid* grid) {
 	int count = 0;
 	double sum = 0;
 
@@ -86,14 +86,14 @@ void calcForce(const std::vector<double>& dxVec, const std::vector<double>& dyVe
 	applyLengthLimit(forceX, forceY, deltaLimit);
 }
 
-double updateGrid(Grid* grid, double springK)
+double updateGrid(SpringSolver::Grid* grid, double springK)
 {
 	std::vector<double> origX, origY;
 
 	origX = *(grid->xVec());
 	origY = *(grid->yVec());
 
-	Grid origGrid(&origX, &origY, grid->iMax(), grid->jMax());
+	SpringSolver::Grid origGrid(&origX, &origY, grid->iMax(), grid->jMax());
 
 	int springCount = 8;
 

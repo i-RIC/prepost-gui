@@ -45,7 +45,7 @@ public:
 	void handleStandardItemChange() override;
 	void pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply = false);
 	int opacityPercent() const;
-	void informSelectedVerticesChanged(const QVector<vtkIdType>& vertices);
+	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();

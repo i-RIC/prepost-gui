@@ -11,6 +11,7 @@
 
 #include <vtkActor2DCollection.h>
 #include <vtkCollectionIterator.h>
+#include <vtkGeometryFilter.h>
 #include <vtkPointData.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkProperty.h>
@@ -52,9 +53,9 @@ void PreProcessorUnstructured2dGridShapeDataItem::setupActors()
 	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
 	m_indexMapper->SetLabelModeToLabelFieldData();
 	m_indexMapper->SetFieldDataName(Grid::LABEL_NAME);
-    vtkTextProperty* textProp = m_indexMapper->GetLabelTextProperty();
-    iRIC::setupGridIndexTextProperty(textProp);
-    m_setting.indexTextSetting.applySetting(textProp);
+	auto textProp = m_indexMapper->GetLabelTextProperty();
+	iRIC::setupGridIndexTextProperty(textProp);
+	m_setting.indexTextSetting.applySetting(textProp);
 
 	m_indexActor->SetMapper(m_indexMapper);
 
@@ -67,12 +68,16 @@ void PreProcessorUnstructured2dGridShapeDataItem::informGridUpdate()
 {
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != nullptr) {
-		Unstructured2DGrid* grid = dynamic_cast<Unstructured2DGrid*>(g);
+		auto grid = dynamic_cast<Unstructured2DGrid*>(g);
 
-		vtkAlgorithm* shapeAlgo = grid->vtkFilteredShapeAlgorithm();
-		if (shapeAlgo != nullptr) {m_wireframeMapper->SetInputConnection(shapeAlgo->GetOutputPort());}
-		vtkAlgorithm* indexGridAlgo = grid->vtkFilteredIndexGridAlgorithm();
-		if (indexGridAlgo != nullptr) {m_indexMapper->SetInputConnection(indexGridAlgo->GetOutputPort());}
+		auto filteredGrid = grid->vtkFilteredGrid();
+		if (filteredGrid != nullptr) {
+			auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
+			filter->SetInputData(filteredGrid);
+			m_wireframeMapper->SetInputConnection(filter->GetOutputPort());
+		}
+		auto filteredIndexGrid = grid->vtkFilteredIndexGrid();
+		if (filteredIndexGrid != nullptr) {m_indexMapper->SetInputData(filteredIndexGrid);}
 	}
 	updateActorSettings();
 }
@@ -102,7 +107,7 @@ void PreProcessorUnstructured2dGridShapeDataItem::updateActorSettings()
 
 QDialog* PreProcessorUnstructured2dGridShapeDataItem::propertyDialog(QWidget* parent)
 {
-	GridShapeEditDialog* dialog = new GridShapeEditDialog(parent);
+	auto dialog = new GridShapeEditDialog(parent);
 	dialog->hideShape();
 	dialog->setSetting(m_setting);
 	return dialog;
@@ -110,7 +115,7 @@ QDialog* PreProcessorUnstructured2dGridShapeDataItem::propertyDialog(QWidget* pa
 
 void PreProcessorUnstructured2dGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
 {
-	GridShapeEditDialog* dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
+	auto dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
 	m_setting = dialog->setting();
 
 	updateActorSettings();

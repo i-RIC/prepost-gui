@@ -60,7 +60,10 @@ const std::string& Post2dWindowCellScalarGroupDataItem::target() const
 
 void Post2dWindowCellScalarGroupDataItem::updateActorSetting()
 {
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	impl->m_actor->VisibilityOff();
+
+	auto z = topDataItem()->zoneDataItem();
+	auto cont = z->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOffWithEmptyPolyData();
 		impl->m_actor->SetMapper(mapper);
@@ -68,11 +71,20 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSetting()
 		return;
 	}
 
-	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->cellValueRange(impl->m_target);
+	auto range = z->gridTypeDataItem()->cellValueRange(impl->m_target);
 	impl->m_setting.colorMapSetting.setAutoValueRange(range);
-	auto ps = cont->data()->data();
 
-	auto filtered = impl->m_setting.regionSetting.buildCellFilteredData(ps);
+	vtkPointSet* filtered = nullptr;
+	if (impl->m_setting.regionSetting.mode == Region2dSettingContainer::Mode::Full) {
+		filtered = z->filteredData();
+		if (filtered != nullptr) {
+			filtered->Register(nullptr);
+		}
+	} else {
+		filtered = impl->m_setting.regionSetting.buildCellFilteredData(cont->data()->data());
+	}
+	if (filtered == nullptr) {return;}
+
 	filtered->GetCellData()->SetActiveScalars(impl->m_target.c_str());
 	auto mapper = impl->m_setting.colorMapSetting.buildCellDataMapper(filtered, false);
 	impl->m_actor->SetMapper(mapper);

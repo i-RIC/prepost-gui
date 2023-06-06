@@ -25,8 +25,8 @@ public:
 	virtual QVariant variantValue() const = 0;
 	virtual void setVariantValue(const QVariant& v) = 0;
 
-	virtual void scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices) = 0;
-	virtual void applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
+	virtual void scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices) = 0;
+	virtual void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
 
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;

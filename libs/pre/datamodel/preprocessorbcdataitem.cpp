@@ -359,13 +359,13 @@ void PreProcessorBCDataItem::assignSelectedElements()
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		const QVector<vtkIdType>& selVertices = tmpparent->selectedVertices();
-		for (int i = 0; i < selVertices.count(); ++i) {
+		const auto& selVertices = tmpparent->selectedVertices();
+		for (int i = 0; i < selVertices.size(); ++i) {
 			impl->m_indices.insert(selVertices[i]);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		const QVector<vtkIdType>& selCells = tmpparent->selectedCells();
-		for (int i = 0; i < selCells.count(); ++i) {
+		const auto& selCells = tmpparent->selectedCells();
+		for (int i = 0; i < selCells.size(); ++i) {
 			impl->m_indices.insert(selCells[i]);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
@@ -386,13 +386,13 @@ void PreProcessorBCDataItem::releaseSelectedElements()
 {
 	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		const QVector<vtkIdType>& selVertices = tmpparent->selectedVertices();
-		for (int i = 0; i < selVertices.count(); ++i) {
+		const auto& selVertices = tmpparent->selectedVertices();
+		for (int i = 0; i < selVertices.size(); ++i) {
 			impl->m_indices.remove(selVertices[i]);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		const QVector<vtkIdType>& selCells = tmpparent->selectedCells();
-		for (int i = 0; i < selCells.count(); ++i) {
+		const auto& selCells = tmpparent->selectedCells();
+		for (int i = 0; i < selCells.size(); ++i) {
 			impl->m_indices.remove(selCells[i]);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
@@ -448,13 +448,13 @@ void PreProcessorBCDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsVi
 			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 				auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
 				tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
-				selected = (tmpparent->selectedVertices().count() > 0);
+				selected = (tmpparent->selectedVertices().size() > 0);
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 				tmpparent->cellSelectingMouseReleaseEvent(event, v);
-				selected = (tmpparent->selectedCells().count() > 0);
+				selected = (tmpparent->selectedCells().size() > 0);
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 				tmpparent->edgeSelectingMouseReleaseEvent(event, v);
-				selected = (tmpparent->selectedEdges().count() > 0);
+				selected = (tmpparent->selectedEdges().size() > 0);
 			}
 			impl->m_assignAction->setEnabled(selected);
 			impl->m_releaseAction->setEnabled(selected);

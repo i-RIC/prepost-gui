@@ -8,34 +8,10 @@
 #include <vtkSmartPointer.h>
 #include <vtkStructuredGrid.h>
 
-class QLineF;
+class RectRegion;
+
 class QTextStream;
 class QPointF;
-
-class RectRegion
-{
-
-public:
-	double xMin;
-	double xMax;
-	double yMin;
-	double yMax;
-	RectRegion(double xmin, double xmax, double ymin, double ymax) {
-		xMin = xmin;
-		xMax = xmax;
-		yMin = ymin;
-		yMax = ymax;
-	}
-
-	bool pointIsInside(double x, double y) const {
-		if (x < xMin) {return false;}
-		if (x > xMax) {return false;}
-		if (y < yMin) {return false;}
-		if (y > yMax) {return false;}
-		return true;
-	}
-	bool intersect(const QLineF& line) const;
-};
 
 /// Structured two-dimensional grid
 /**
@@ -85,22 +61,13 @@ public:
 	bool isVariationOk(double ilimit, double jlimit, QTextStream& stream);
 
 	void updateSimplifiedGrid(double xmin, double xmax, double ymin, double ymax) override;
+
 	int drawnIMin() const;
 	int drawnIMax() const;
 	int drawnJMin() const;
 	int drawnJMax() const;
-	vtkAlgorithm* vtkFilteredIndexGridAlgorithm() const;
 
 private:
-	int lineLimitI(int j, int iIn, int iOut, const RectRegion& region);
-	int lineLimitJ(int i, int jIn, int jOut, const RectRegion& region);
-	int lineLimitI2(int iIn, int iOut, const RectRegion& region);
-	int lineLimitJ2(int jIn, int jOut, const RectRegion& region);
-	bool lineAtIIntersect(int i, const RectRegion& region);
-	bool lineAtJIntersect(int j, const RectRegion& region);
-
-	vtkSmartPointer<vtkAlgorithm> m_vtkFilteredIndexGridAlgorithm;
-
 	unsigned int m_drawnIMin;
 	unsigned int m_drawnIMax;
 	unsigned int m_drawnJMin;

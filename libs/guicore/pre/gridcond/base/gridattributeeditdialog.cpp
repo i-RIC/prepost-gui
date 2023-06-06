@@ -72,12 +72,12 @@ void GridAttributeEditDialog::setVariantValue(const QVariant& v)
 	m_widget->setVariantValue(v);
 }
 
-void GridAttributeEditDialog::scanAndSetDefault(GridAttributeContainer* container, QVector<vtkIdType>& indices)
+void GridAttributeEditDialog::scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices)
 {
 	m_widget->scanAndSetDefault(container, indices);
 }
 
-void GridAttributeEditDialog::applyValue(GridAttributeContainer* container, QVector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+void GridAttributeEditDialog::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
 {
 	m_widget->applyValue(container, indices, atts, dItem);
 }

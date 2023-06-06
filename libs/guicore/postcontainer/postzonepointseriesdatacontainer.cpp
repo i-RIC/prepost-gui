@@ -76,7 +76,7 @@ int PostZonePointSeriesDataContainer::loadResultData(const std::string& name, iR
 	auto sol = zone->solution(m_position);
 	if (magnitude) {
 		auto tmpPhysName = iRIC::toStr(rx.cap(1));
-		std::set<std::string> resultNames;
+		std::unordered_set<std::string> resultNames;
 		ier = sol->readValueNames(&resultNames);
 		if (ier != 0) {return false;}
 		std::vector<std::string> suffixes;

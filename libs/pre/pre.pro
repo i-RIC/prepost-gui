@@ -354,8 +354,6 @@ HEADERS += pre_global.h \
            misc/gridattributegeneratorlauncher.h \
            misc/preprocessorgridattributemappingmode.h \
            misc/preprocessorlegendboxeditdialog.h \
-           datamodel/gridshape/preprocessorgridshapedeltadialog.h \
-           datamodel/gridshape/preprocessorgridshapenewpositiondialog.h \
            datamodel/private/preprocessorbcdataitem_impl.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
@@ -364,6 +362,9 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
+           datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.h \
+           datamodel/private/preprocessorgridshapedataitem_positioneditdialog.h \
+           datamodel/private/preprocessorgridshapedataitem_updatepointscommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.h \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
@@ -438,12 +439,12 @@ FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
          datamodel/preprocessorgridcreatingconditionalgorithmselectdialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
-         datamodel/gridshape/preprocessorgridshapedeltadialog.ui \
-         datamodel/gridshape/preprocessorgridshapenewpositiondialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
          datamodel/private/preprocessorgridattributecelldataitem_propertydialog.ui \
          datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
+         datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.ui \
+         datamodel/private/preprocessorgridshapedataitem_positioneditdialog.ui \
          subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui \
          subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
@@ -526,13 +527,14 @@ SOURCES += preobjectbrowser.cpp \
            misc/gridattributegeneratorlauncher.cpp \
            misc/preprocessorgridattributemappingmode.cpp \
            misc/preprocessorlegendboxeditdialog.cpp \
-           datamodel/gridshape/preprocessorgridshapedeltadialog.cpp \
-           datamodel/gridshape/preprocessorgridshapenewpositiondialog.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \
            datamodel/private/preprocessorgridattributecelldataitem_propertydialog.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.cpp \
+           datamodel/private/preprocessorgridshapedataitem_positioneditdialog.cpp \
+           datamodel/private/preprocessorgridshapedataitem_updatepointscommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \

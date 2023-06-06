@@ -156,9 +156,7 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	auto cs = typedi->colorMapSetting(m_target);
 
-	auto algo = g->vtkFilteredCellsAlgorithm();
-	algo->Update();
-	auto mapper = cs->buildCellDataMapper(algo->GetOutput(), false);
+	auto mapper = cs->buildCellDataMapper(g->vtkFilteredGrid(), false);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 

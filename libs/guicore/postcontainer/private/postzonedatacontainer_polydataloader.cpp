@@ -31,30 +31,36 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 	std::vector<double> coordYVec;
 
 	std::vector<int> cellCounts;
-	std::vector<int> cellIntVals;
-	std::vector<double> cellRealVals;
 
 	sol->readTypes(name, &typeVec);
 	sol->readSizes(name, &sizeVec);
 	sol->readCoordinatesX(name, &coordXVec);
 	sol->readCoordinatesY(name, &coordYVec);
 
+	cellCounts.reserve(typeVec.size());
+	ids->reserve(typeVec.size() * 2);
+
 	auto points = vtkSmartPointer<vtkPoints>::New();
 	points->SetDataTypeToDouble();
+	points->Allocate(coordXVec.size());
+
 	auto lines = vtkSmartPointer<vtkCellArray>::New();
+	lines->Allocate(typeVec.size());
 	auto polys = vtkSmartPointer<vtkCellArray>::New();
+	polys->Allocate(typeVec.size());
 
 	int startIdx = 0;
+	vtkIdType triIds[3];
+	auto vtkPol = vtkSmartPointer<vtkPolygon>::New();
+	auto idList = vtkSmartPointer<vtkIdList>::New();
+	std::vector<unsigned int> indices;
 	for (unsigned int i = 0; i < typeVec.size(); ++i) {
 		int t = typeVec.at(i);
 		int s = sizeVec.at(i);
 
 		if (t == IRIC_POLYDATA_POLYGON) {
 			QPolygonF pol;
-			auto vtkPol = vtkSmartPointer<vtkPolygon>::New();
-			auto polygonPoints = vtkPol->GetPoints();
-			auto polygonIds = vtkPol->GetPointIds();
-
+			pol.reserve(s + 1);
 			for (int j = 0; j < s; ++j) {
 				QPointF point(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y());
 				pol.push_back(point);
@@ -72,13 +78,11 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 				allSame = allSame && (pol.at(0) == pol.at(i));
 			}
 
-			std::vector<unsigned int> indices;
-
+			indices.resize(0);
 			if (! allSame) {
-				PolygonUtil::triangulate(pol, &indices);
+				PolygonUtil::triangulateVtk(pol, &indices, vtkPol, idList);
 			}
 
-			vtkIdType triIds[3];
 			unsigned int pos = 0;
 			int cellCount = 0;
 			while (pos < indices.size()) {
@@ -93,6 +97,7 @@ int loadPolyData(const std::string& name, vtkPolyData* polyData, std::vector<int
 			cellCounts.push_back(cellCount);
 		} else {
 			std::vector<vtkIdType> tmp_ids;
+			tmp_ids.reserve(s);
 			for (int j = 0; j < s; ++j) {
 				points->InsertNextPoint(coordXVec.at(startIdx + j) - offset.x(), coordYVec.at(startIdx + j) - offset.y(), 0);
 				tmp_ids.push_back(startIdx + j);
