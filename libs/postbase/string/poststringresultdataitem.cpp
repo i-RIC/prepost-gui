@@ -59,7 +59,7 @@ PostStringResultDataItem::Setting::Setting() :
 	backgroundColor = Qt::lightGray;
 
 	QFont f;
-	f.fromString(settings.value("fontsetting/vis_stringresult", QString("Arial,9,-1,5,50,0,0,0,0,0")).toString());
+	f.fromString(settings.value("fontsetting/vis_stringresult", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
 	font = f;
 }
 

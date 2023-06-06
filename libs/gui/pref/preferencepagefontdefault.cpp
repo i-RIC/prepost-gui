@@ -39,19 +39,19 @@ PreferencePageFontDefault::PreferencePageFontDefault(QWidget* parent) :
 
 	QFont font;
 
-	font.fromString(settings.value("fontsetting/vis_stringresult", QString("Arial,9,-1,5,50,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/vis_stringresult", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
 	ui->visLabelsWidget->setFont(font);
 
-	font.fromString(settings.value("fontsetting/chart_title", QString("Arial,12,-1,5,75,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_title", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
 	ui->chartTitleWidget->setFont(font);
 
-	font.fromString(settings.value("fontsetting/chart_legend", QString("Arial,9,-1,5,50,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_legend", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
 	ui->chartLegendWidget->setFont(font);
 
-	font.fromString(settings.value("fontsetting/chart_axistitle", QString("Arial,12,-1,5,75,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_axistitle", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
 	ui->chartAxisTitleWidget->setFont(font);
 
-	font.fromString(settings.value("fontsetting/chart_axistick", QString("Arial,10,-1,5,50,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
 	ui->chartAxisTickWidget->setFont(font);
 
 	// temporarily hidden

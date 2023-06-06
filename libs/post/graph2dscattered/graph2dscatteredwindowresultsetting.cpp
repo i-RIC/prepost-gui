@@ -46,17 +46,17 @@ Graph2dScatteredWindowResultSetting::Graph2dScatteredWindowResultSetting() :
 	QSettings settings;
 	QFont font;
 
-	font.fromString(settings.value("fontsetting/chart_title", QString("Arial,12,-1,5,75,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_title", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
 	m_chartTitleFont = font;
 
-	font.fromString(settings.value("fontsetting/chart_legend", QString("Arial,9,-1,5,50,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_legend", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
 	m_legendFont = font;
 
-	font.fromString(settings.value("fontsetting/chart_axistitle", QString("Arial,12,-1,5,75,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_axistitle", QString("MS UI Gothic,12,-1,5,75,0,0,0,0,0")).toString());
 	m_xAxisTitleFont = font;
 	m_yAxisTitleFont = font;
 
-	font.fromString(settings.value("fontsetting/chart_axistick", QString("Arial,10,-1,5,50,0,0,0,0,0")).toString());
+	font.fromString(settings.value("fontsetting/chart_axistick", QString("MS UI Gothic,10,-1,5,50,0,0,0,0,0")).toString());
 	m_xAxisTickFont = font;
 	m_yAxisTickFont = font;
 }
