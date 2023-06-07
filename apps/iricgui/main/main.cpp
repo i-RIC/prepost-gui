@@ -3,11 +3,12 @@
 #include <vtkVersionMacros.h>
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 VTK_MODULE_INIT(vtkRenderingOpenGL);
-#else
-VTK_MODULE_INIT(vtkRenderingOpenGL2); // vtk 8.2
 #endif
 VTK_MODULE_INIT(vtkInteractionStyle);
 VTK_MODULE_INIT(vtkRenderingFreeType);
+VTK_MODULE_INIT(vtkRenderingOpenGL2);
+VTK_MODULE_INIT(vtkRenderingGL2PSOpenGL2);
+VTK_MODULE_INIT(vtkIOExportOpenGL2);
 #if (VTK_MAJOR_VERSION == 6) && (VTK_MINOR_VERSION == 1)
 VTK_MODULE_INIT(vtkRenderingFreeTypeOpenGL);
 #endif

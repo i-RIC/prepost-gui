@@ -54,6 +54,8 @@ equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
 
 equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
     LIBS += \
+	    -lvtkIOExportOpenGL2-$${VTK_MAJ_MIN} \
+	    -lvtkRenderingGL2PSOpenGL2-$${VTK_MAJ_MIN} \
 	    -lvtkRenderingOpenGL2-$${VTK_MAJ_MIN}
 }
 

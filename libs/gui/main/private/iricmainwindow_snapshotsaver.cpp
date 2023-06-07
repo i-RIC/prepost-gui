@@ -43,12 +43,12 @@ void iRICMainWindow::SnapshotSaver::save(SnapshotEnabledWindowInterface* enabled
 		QPixmap pixmap = enabledWindow->snapshot();
 		pixmap.save(filename);
 	} else if (suffix == "pdf" || suffix == "eps" || suffix == "svg") {
-		vtkRenderWindow* renderWindow = enabledWindow->getVtkRenderWindow();
+		auto renderWindow = enabledWindow->getVtkRenderWindow();
 		if (renderWindow == nullptr) {
 			QMessageBox::warning(m_mainWindow, iRICMainWindow::tr("Warning"), iRICMainWindow::tr("This window do not support snapshot with this file type."));
 			return;
 		}
-		vtkSmartPointer<vtkGL2PSExporter> exp = vtkSmartPointer<vtkGL2PSExporter>::New();
+		auto exp = vtkSmartPointer<vtkGL2PSExporter>::New();
 
 		exp->SetRenderWindow(renderWindow);
 		exp->CompressOff();
