@@ -284,6 +284,7 @@ void MeasuredDataPointGroupDataItem::updateActorSetting()
 		impl->m_actor->GetProperty()->SetColor(impl->m_setting.color);
 	} else {
 		auto value = iRIC::toStr(impl->m_setting.value);
+		polyData->GetPointData()->SetActiveScalars(value.c_str());
 		auto cs = impl->m_colorMapSettings.at(value);
 		auto mapper = cs->buildPointDataMapper(polyData);
 		impl->m_actor->SetMapper(mapper);
