@@ -13,6 +13,7 @@ public:
 	~OpacityContainer();
 
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
+	OpacityContainer& operator=(const OpacityContainer& c);
 	OpacityContainer& operator=(int val);
 	/// Operator to convert to double
 	operator double() const;

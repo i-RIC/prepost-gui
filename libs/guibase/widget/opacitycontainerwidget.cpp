@@ -28,5 +28,9 @@ void OpacityContainerWidget::apply()
 {
 	if (m_container == nullptr) {return;}
 
+	blockSignals(true);
+
 	setOpacityPercent(m_container->value());
+
+	blockSignals(false);
 }

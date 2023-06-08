@@ -24,6 +24,14 @@ XmlAttributeContainer& OpacityContainer::operator=(const XmlAttributeContainer& 
 	return *this;
 }
 
+OpacityContainer& OpacityContainer::operator=(const OpacityContainer& c)
+{
+	m_value = c.m_value;
+	emit updated();
+
+	return *this;
+}
+
 OpacityContainer& OpacityContainer::operator=(int val)
 {
 	m_value = val;
