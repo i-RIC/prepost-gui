@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Staðfestu niðurstöðuna</translation>
+        <translation type="vanished">Staðfestu niðurstöðuna</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Skrárnar á listanum hér að neðan verða búnar til eða uppfærðar.</translation>
+        <translation type="vanished">Skrárnar á listanum hér að neðan verða búnar til eða uppfærðar.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Skráareiginleikar</translation>
+        <translation type="vanished">Skráareiginleikar</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+        <translation type="vanished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Skrá</translation>
+        <translation type="vanished">Skrá</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Skráarnafn</translation>
+        <translation type="vanished">Skráarnafn</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Forskeyti:</translation>
+        <translation type="vanished">Forskeyti:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Lengd viðskeytis:</translation>
+        <translation type="vanished">Lengd viðskeytis:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Snið:</translation>
+        <translation type="vanished">Snið:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows Bitmap (*.bmp)</translation>
+        <translation type="vanished">Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Færanlegt Bitmap (*.ppm)</translation>
+        <translation type="vanished">Færanlegt Bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 Bitmap (*.xbm)</translation>
+        <translation type="vanished">X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Forskeyti</translation>
+        <translation type="vanished">Forskeyti</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Úttaksskrá</translation>
+        <translation type="vanished">Úttaksskrá</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Mappa %1 er ekki til. Viltu það núna?</translation>
+        <translation type="vanished">Mappa %1 er ekki til. Viltu það núna?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Búa til möppu %1 mistókst.</translation>
+        <translation type="vanished">Búa til möppu %1 mistókst.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Framleiðsla til Google Earth</translation>
+        <translation type="vanished">Framleiðsla til Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+        <translation type="vanished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Athugið: Þessi eiginleiki er aðeins í boði þegar hnitakerfi hefur verið tilgreint.</translation>
+        <translation type="vanished">Athugið: Þessi eiginleiki er aðeins í boði þegar hnitakerfi hefur verið tilgreint.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>KML skráarheiti</translation>
+        <translation type="vanished">KML skráarheiti</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Nafn:</translation>
+        <translation type="vanished">Nafn:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Kynning</translation>
+        <translation type="vanished">Kynning</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Notaðu þennan töframann til að tilgreina kröfur til að búa til samfellda skyndimyndaframleiðslu.</translation>
+        <translation type="vanished">Notaðu þennan töframann til að tilgreina kröfur til að búa til samfellda skyndimyndaframleiðslu.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Bíóseignir</translation>
+        <translation type="vanished">Bíóseignir</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+        <translation type="vanished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Sendu út kvikmyndaskrár</translation>
+        <translation type="vanished">Sendu út kvikmyndaskrár</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Skráarnafn</translation>
+        <translation type="vanished">Skráarnafn</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Leikhraði</translation>
+        <translation type="vanished">Leikhraði</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Tilgreindu kvikmyndalengd [sek]</translation>
+        <translation type="vanished">Tilgreindu kvikmyndalengd [sek]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Tilgreindu ramma á sekúndu</translation>
+        <translation type="vanished">Tilgreindu ramma á sekúndu</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Prófíll:</translation>
+        <translation type="vanished">Prófíll:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Úttaksskrá</translation>
+        <translation type="vanished">Úttaksskrá</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Sjálfgefið</translation>
+        <translation type="vanished">Sjálfgefið</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Stilling tímastigs</translation>
+        <translation type="vanished">Stilling tímastigs</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Vinsamlegast tilgreindu upphafstímaskref, stöðvunartíma og sleppihlutfall.</translation>
+        <translation type="vanished">Vinsamlegast tilgreindu upphafstímaskref, stöðvunartíma og sleppihlutfall.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>byrja:</translation>
+        <translation type="vanished">byrja:</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>hætta:</translation>
+        <translation type="vanished">hætta:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Sleppihlutfall:</translation>
+        <translation type="vanished">Sleppihlutfall:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Val á glugga</translation>
+        <translation type="vanished">Val á glugga</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Veldu markglugga og tilgreindu hvernig þú vilt framleiða skrár.</translation>
+        <translation type="vanished">Veldu markglugga og tilgreindu hvernig þú vilt framleiða skrár.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Markgluggar</translation>
+        <translation type="vanished">Markgluggar</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Úttaksskrá</translation>
+        <translation type="vanished">Úttaksskrá</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>Í einni skrá</translation>
+        <translation type="vanished">Í einni skrá</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Með virðingu</translation>
+        <translation type="vanished">Með virðingu</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Skipulag</translation>
+        <translation type="vanished">Skipulag</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Eins og er</translation>
+        <translation type="vanished">Eins og er</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>Lárétt</translation>
+        <translation type="vanished">Lárétt</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Lóðrétt</translation>
+        <translation type="vanished">Lóðrétt</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Bakgrunnur</translation>
+        <translation type="vanished">Bakgrunnur</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>hvítt</translation>
+        <translation type="vanished">hvítt</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>gagnsæ</translation>
+        <translation type="vanished">gagnsæ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Fleiri en einn myndgluggi hefur gagnsætt svæði. Þeir geta ekki vistað í gagnsæjar bakgrunnsmyndir. Vinsamlegast veldu hvítan bakgrunn, eða aflýstu og slökkva á gagnsæi fyrir útlínur osfrv.</translation>
+        <translation type="vanished">Fleiri en einn myndgluggi hefur gagnsætt svæði. Þeir geta ekki vistað í gagnsæjar bakgrunnsmyndir. Vinsamlegast veldu hvítan bakgrunn, eða aflýstu og slökkva á gagnsæi fyrir útlínur osfrv.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Enginn gluggi er valinn eins og er.</translation>
+        <translation type="vanished">Enginn gluggi er valinn eins og er.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Stöðug skyndimynd / kvikmynd / Google Earth útflutningshjálp</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Kynning</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Notaðu þennan töframann til að tilgreina kröfur til að búa til samfellda skyndimyndaframleiðslu.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Staðfestu niðurstöðuna</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Skrárnar á listanum hér að neðan verða búnar til eða uppfærðar.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Færanlegt Bitmap (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Forskeyti</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Úttaksskrá</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Viðvörun</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Mappa %1 er ekki til. Viltu það núna?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Villa</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Búa til möppu %1 mistókst.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Skráarnafn</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Úttaksskrá</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Sjálfgefið</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Viðvörun</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Fleiri en einn myndgluggi hefur gagnsætt svæði. Þeir geta ekki vistað í gagnsæjar bakgrunnsmyndir. Vinsamlegast veldu hvítan bakgrunn, eða aflýstu og slökkva á gagnsæi fyrir útlínur osfrv.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Enginn gluggi er valinn eins og er.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Skráareiginleikar</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Skrá</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Skráarnafn</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Forskeyti:</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Lengd viðskeytis:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Snið:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Framleiðsla til Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">KML skráarheiti</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Nafn:</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Bíóseignir</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vinsamlegast tilgreindu eiginleika útgangsskrár.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Sendu út kvikmyndaskrár</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Skráarnafn</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Leikhraði</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Tilgreindu kvikmyndalengd [sek]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Tilgreindu ramma á sekúndu</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Prófíll:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Stilling tímastigs</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Vinsamlegast tilgreindu upphafstímaskref, stöðvunartíma og sleppihlutfall.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">byrja:</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">hætta:</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Sleppihlutfall:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Val á glugga</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Veldu markglugga og tilgreindu hvernig þú vilt framleiða skrár.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Markgluggar</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Úttaksskrá</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">Í einni skrá</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Með virðingu</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Skipulag</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Eins og er</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">Lárétt</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Lóðrétt</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Bakgrunnur</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">hvítt</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">gagnsæ</translation>
     </message>
 </context>
 <context>
@@ -449,7 +770,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Veldu leysir</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Þegar þú býrð til nýtt verkefni þarftu að velja lausnina til að nota til útreikninga. Vinsamlegast veldu lausn og ýttu á „OK“ hnappinn.</translation>
     </message>
 </context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Þáttur:</translation>
+        <translation type="vanished">Þáttur:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Stærð:</translation>
+        <translation type="vanished">Stærð:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>pixlar</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 ". Þessi lausnarmaður er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 &quot;. Þessi lausnarmaður er hunsaður. %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Þetta verkefni virðist vera opnað með öðrum iRIC GUI glugga. Þú getur ekki opnað verkefnamöppu úr mörgum GUI gluggum.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Opna verkefnið er ekki afritað í vinnuskrá og þú neyðist til að vista þær breytingar sem þú gerir á þessu verkefni. Ef þú vilt halda núverandi verkefni skaltu vista það í öðru verkefni fyrst.</translation>
     </message>
     <message>
@@ -1601,7 +1934,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Núverandi virkur undirgluggi styður ekki útflutning útlínutölu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Stillingarskrá (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Til að flytja út formskrá skaltu skipta um litastillingu yfir í "Staðan háttur".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Til að flytja út formskrá skaltu skipta um litastillingu yfir í &quot;Staðan háttur&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,8 +2450,8 @@ Option -&gt; Preferences</source>
         <translation>Opnaðu nýjan 2D eftirvinnslu glugga</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Opnaðu nýjan 2D Bird's-Eye eftirvinnslu glugga</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Opnaðu nýjan 2D Bird&apos;s-Eye eftirvinnslu glugga</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

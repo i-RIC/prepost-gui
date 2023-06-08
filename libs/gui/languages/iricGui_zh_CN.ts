@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>确认结果</translation>
+        <translation type="vanished">确认结果</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>下面列表中的文件将被创建或更新。</translation>
+        <translation type="vanished">下面列表中的文件将被创建或更新。</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>向导页</translation>
+        <translation type="vanished">向导页</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>文件属性</translation>
+        <translation type="vanished">文件属性</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>请指定输出文件的属性。</translation>
+        <translation type="vanished">请指定输出文件的属性。</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>目录</translation>
+        <translation type="vanished">目录</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>文件名</translation>
+        <translation type="vanished">文件名</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>前缀:</translation>
+        <translation type="vanished">前缀:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>后缀长度:</translation>
+        <translation type="vanished">后缀长度:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>格式:</translation>
+        <translation type="vanished">格式:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows Bitmap (*.bmp)</translation>
+        <translation type="vanished">Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Portable Bitmap (*.ppm)</translation>
+        <translation type="vanished">Portable Bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 Bitmap (*.xbm)</translation>
+        <translation type="vanished">X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>前缀</translation>
+        <translation type="vanished">前缀</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>输出文件</translation>
+        <translation type="vanished">输出文件</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Folder %1 does not exists. Do you want to it now?</translation>
+        <translation type="vanished">Folder %1 does not exists. Do you want to it now?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>错误</translation>
+        <translation type="vanished">错误</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>创建文件夹 %1时失败</translation>
+        <translation type="vanished">创建文件夹 %1时失败</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>向导页</translation>
+        <translation type="vanished">向导页</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>输出到谷歌地球</translation>
+        <translation type="vanished">输出到谷歌地球</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>请指明输出文件属性</translation>
+        <translation type="vanished">请指明输出文件属性</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>注意:仅当指定坐标系时，此功能才可用。</translation>
+        <translation type="vanished">注意:仅当指定坐标系时，此功能才可用。</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>KML file name</translation>
+        <translation type="vanished">KML file name</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>名称:</translation>
+        <translation type="vanished">名称:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>介绍</translation>
+        <translation type="vanished">介绍</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>使用此向导可以指定生成连续快照输出的要求。</translation>
+        <translation type="vanished">使用此向导可以指定生成连续快照输出的要求。</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>向导页</translation>
+        <translation type="vanished">向导页</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>影片属性</translation>
+        <translation type="vanished">影片属性</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>请指明输出文件属性</translation>
+        <translation type="vanished">请指明输出文件属性</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>输出影片文件</translation>
+        <translation type="vanished">输出影片文件</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>文件名称</translation>
+        <translation type="vanished">文件名称</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>播放速度</translation>
+        <translation type="vanished">播放速度</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>指明影片长度[秒]</translation>
+        <translation type="vanished">指明影片长度[秒]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>指定每秒帧数</translation>
+        <translation type="vanished">指定每秒帧数</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>档案:</translation>
+        <translation type="vanished">档案:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>输出文件</translation>
+        <translation type="vanished">输出文件</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>默认</translation>
+        <translation type="vanished">默认</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>向导页</translation>
+        <translation type="vanished">向导页</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>时间步设置</translation>
+        <translation type="vanished">时间步设置</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>请指定开始时间步长，停止时间步长和跳过率</translation>
+        <translation type="vanished">请指定开始时间步长，停止时间步长和跳过率</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>开始:</translation>
+        <translation type="vanished">开始:</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>结束:</translation>
+        <translation type="vanished">结束:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>跳过率:</translation>
+        <translation type="vanished">跳过率:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>向导页</translation>
+        <translation type="vanished">向导页</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>窗口选择</translation>
+        <translation type="vanished">窗口选择</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>请选择目标窗口并指定要输出文件的方式。</translation>
+        <translation type="vanished">请选择目标窗口并指定要输出文件的方式。</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>目标窗口</translation>
+        <translation type="vanished">目标窗口</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>输出文件</translation>
+        <translation type="vanished">输出文件</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>到一个文件</translation>
+        <translation type="vanished">到一个文件</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>分别</translation>
+        <translation type="vanished">分别</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>页面</translation>
+        <translation type="vanished">页面</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>照原样</translation>
+        <translation type="vanished">照原样</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>横向</translation>
+        <translation type="vanished">横向</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>纵向</translation>
+        <translation type="vanished">纵向</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>背景</translation>
+        <translation type="vanished">背景</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>白</translation>
+        <translation type="vanished">白</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>透明</translation>
+        <translation type="vanished">透明</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>一个以上的可视化窗口具有透明区域。 它们无法保存到透明背景图像中。 请选择白色背景，或取消和禁用轮廓等的透明度。</translation>
+        <translation type="vanished">一个以上的可视化窗口具有透明区域。 它们无法保存到透明背景图像中。 请选择白色背景，或取消和禁用轮廓等的透明度。</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>当前无选定窗口</translation>
+        <translation type="vanished">当前无选定窗口</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>连续快照/电影/谷歌地球导出向导</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">介绍</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">使用此向导可以指定生成连续快照输出的要求。</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">确认结果</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">下面列表中的文件将被创建或更新。</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Portable Bitmap (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">前缀</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">输出文件</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Folder %1 does not exists. Do you want to it now?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">创建文件夹 %1时失败</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">输出文件</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">默认</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">一个以上的可视化窗口具有透明区域。 它们无法保存到透明背景图像中。 请选择白色背景，或取消和禁用轮廓等的透明度。</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">当前无选定窗口</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">向导页</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">文件属性</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">目录</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">前缀:</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">后缀长度:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">格式:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">向导页</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">输出到谷歌地球</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">KML file name</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">名称:</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">向导页</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">影片属性</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">输出影片文件</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">播放速度</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">指明影片长度[秒]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">指定每秒帧数</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">档案:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">向导页</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">时间步设置</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">请指定开始时间步长，停止时间步长和跳过率</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">开始:</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">结束:</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">跳过率:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">向导页</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">窗口选择</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">请选择目标窗口并指定要输出文件的方式。</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">目标窗口</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">输出文件</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">到一个文件</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">分别</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">页面</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">照原样</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">横向</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">纵向</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">背景</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">白</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">透明</translation>
     </message>
 </context>
 <context>
@@ -451,8 +772,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>选择解算器</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按"OK"按钮。</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按&quot;OK&quot;按钮。</translation>
     </message>
 </context>
 <context>
@@ -748,7 +1069,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>因数:</translation>
+        <translation type="vanished">因数:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -764,11 +1085,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>大小:</translation>
+        <translation type="vanished">大小:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>像素</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1323,9 +1656,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>在文件夹"%1"中加载求解器定义文件时发生错误。 该求解器将被忽略。
+        <translation>在文件夹&quot;%1&quot;中加载求解器定义文件时发生错误。 该求解器将被忽略。
 %2</translation>
     </message>
 </context>
@@ -1596,7 +1929,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>该项目似乎已由另一个iRIC GUI窗口打开。 您无法从多个GUI窗口打开项目文件夹。</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>已打开的项目不会复制到工作目录中，并且您将被迫保存对此项目所做的修改。 如果要保留当前项目，请先将其保存到另一个项目</translation>
     </message>
     <message>
@@ -1764,8 +2097,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>当前活动的子窗口不支持导出轮廓图。</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">要导出形状文件，请切换 "显示设置" 到 "轮廓图像", 不是 "彩色条纹" 或 "等值线"</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shape files</source>
@@ -1910,7 +2243,7 @@ Option -&gt; Preferences</source>
         <translation>设定文件 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation>要导出形状文件，请将颜色模式切换为“离散模式”。</translation>
     </message>
 </context>
@@ -2289,7 +2622,7 @@ Option -&gt; Preferences</source>
         <translation>打开新的2D后处理窗口</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>打开新的2D鸟瞰后处理窗口</translation>
     </message>
     <message>

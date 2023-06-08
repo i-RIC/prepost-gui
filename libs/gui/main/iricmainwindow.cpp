@@ -1,4 +1,3 @@
-#include "../continuoussnapshot/continuoussnapshotmoviepropertypage.h"
 #include "../continuoussnapshot/continuoussnapshotwizard.h"
 #include "../factory/postprocessorwindowfactory.h"
 #include "../factory/postprocessorwindowfactory.h"
@@ -231,6 +230,11 @@ void iRICMainWindow::newProject()
 	RecentSolversManager::append(selectedSolver->folderName());
 
 	newProject(selectedSolver);
+}
+
+void iRICMainWindow::newProject(QObject* solver)
+{
+	newProject(reinterpret_cast<SolverDefinitionAbstract*>(solver));
 }
 
 void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
@@ -978,7 +982,6 @@ void iRICMainWindow::continuousSnapshot()
 		wizard->setSetting(m_continuousSnapshotSetting);
 
 		wizard->setProjectMainFile(m_projectData->mainfile());
-		wizard->setTargetWindow(0);
 
 		if (wizard->exec() == QDialog::Accepted) {
 			m_continuousSnapshotSetting = wizard->setting();
@@ -1172,7 +1175,7 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			}
 			break;
 		}
-		QStringList profileString = ContinuousSnapshotMoviePropertyPage::getProfile(setting.movieProfile);
+		QStringList profileString = ContinuousSnapshotWizard::getMovieProfile(setting.movieProfile);
 		for (int i = 0; i < inputFilenames.count(); ++i) {
 			QString inFile  = inputFilenames.at(i);
 			QString outFile = outputFilenames.at(i);
@@ -1370,9 +1373,9 @@ void iRICMainWindow::create2dPostWindow()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("post2dwindow", posts, this);
-	QMdiSubWindow* container = posts->add(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("post2dwindow", posts, this);
+	auto container = posts->add(item);
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
@@ -1386,9 +1389,9 @@ void iRICMainWindow::create2dBirdEyePostWindow()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("post2dbirdeyewindow", posts, this);
-	QMdiSubWindow* container = posts->add(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("post2dbirdeyewindow", posts, this);
+	auto container = posts->add(item);
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
@@ -1402,9 +1405,9 @@ void iRICMainWindow::create3dPostWindow()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("post3dwindow", posts, this);
-	QMdiSubWindow* container = posts->add(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("post3dwindow", posts, this);
+	auto container = posts->add(item);
 	container->show();
 	container->setFocus();
 	item->window()->setupDefaultGeometry(index);
@@ -1418,9 +1421,9 @@ void iRICMainWindow::createGraph2dHybridWindow()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("graph2dhybridwindow", posts, this);
-	Graph2dHybridWindowProjectDataItem* item2 = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("graph2dhybridwindow", posts, this);
+	auto item2 = dynamic_cast<Graph2dHybridWindowProjectDataItem*>(item);
 	bool ok = item2->setupInitialSetting();
 	if (! ok) {
 		item->window()->setParent(nullptr);
@@ -1443,9 +1446,9 @@ void iRICMainWindow::createGraph2dScatteredWindow()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("graph2dscatteredwindow", posts, this);
-	Graph2dScatteredWindowProjectDataItem* item2 = dynamic_cast<Graph2dScatteredWindowProjectDataItem*>(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("graph2dscatteredwindow", posts, this);
+	auto item2 = dynamic_cast<Graph2dScatteredWindowProjectDataItem*>(item);
 	bool ok = item2->setupInitialSetting();
 	if (! ok) {
 		item->window()->setParent(nullptr);

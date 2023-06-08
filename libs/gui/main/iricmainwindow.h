@@ -3,7 +3,6 @@
 
 #include "../gui_api.h"
 
-#include "../continuoussnapshot/continuoussnapshotwizard.h"
 #include "../continuoussnapshot/continuoussnapshotsetting.h"
 
 #include <guicore/base/iricmainwindowinterface.h>
@@ -30,6 +29,7 @@ class QDomNode;
 class iRICMetaData;
 
 class AnimationController;
+class ContinuousSnapshotWizard;
 class SolverConsoleWindow;
 class PostProcessorWindow;
 class PreProcessorWindow;
@@ -117,7 +117,6 @@ protected:
 	void closeEvent(QCloseEvent*) override;
 
 public slots:
-	/// open start dialog.
 	void openStartDialog();
 	/// open dialog and create new project.
 	void newProject();
@@ -127,9 +126,7 @@ public slots:
 	 * This method is defined to make it possible to recieve signal
 	 * QSignalMap::map(QObject*) .
 	 */
-	void newProject(QObject* solver) {
-		newProject(reinterpret_cast<SolverDefinitionAbstract*>(solver));
-	}
+	void newProject(QObject* solver);
 	/// Create new project for the specified solver.
 	void newProject(SolverDefinitionAbstract* solver);
 	/// Open a project file

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Подтвердите результат</translation>
+        <translation type="vanished">Подтвердите результат</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Файлы в списке ниже будут созданы или обновлены.</translation>
+        <translation type="vanished">Файлы в списке ниже будут созданы или обновлены.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Свойства файла</translation>
+        <translation type="vanished">Свойства файла</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Укажите свойства выходных файлов.</translation>
+        <translation type="vanished">Укажите свойства выходных файлов.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Каталог</translation>
+        <translation type="vanished">Каталог</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Имя файла</translation>
+        <translation type="vanished">Имя файла</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Приставка :</translation>
+        <translation type="vanished">Приставка :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Длина суффикса:</translation>
+        <translation type="vanished">Длина суффикса:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Формат:</translation>
+        <translation type="vanished">Формат:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Растровое изображение Windows (*.bmp)</translation>
+        <translation type="vanished">Растровое изображение Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Переносимое растровое изображение (*.ppm)</translation>
+        <translation type="vanished">Переносимое растровое изображение (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>Растровое изображение X11 (*.xbm)</translation>
+        <translation type="vanished">Растровое изображение X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Приставка</translation>
+        <translation type="vanished">Приставка</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Выходной файл</translation>
+        <translation type="vanished">Выходной файл</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Папка %1 не существует. Вы хотите это сейчас?</translation>
+        <translation type="vanished">Папка %1 не существует. Вы хотите это сейчас?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Создание папки %1 не смогли.</translation>
+        <translation type="vanished">Создание папки %1 не смогли.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Вывод в Google Earth</translation>
+        <translation type="vanished">Вывод в Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Укажите свойства выходных файлов.</translation>
+        <translation type="vanished">Укажите свойства выходных файлов.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Примечание. Эта функция доступна только в том случае, если указана система координат.</translation>
+        <translation type="vanished">Примечание. Эта функция доступна только в том случае, если указана система координат.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>Имя файла KML</translation>
+        <translation type="vanished">Имя файла KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Имя :</translation>
+        <translation type="vanished">Имя :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Вступление</translation>
+        <translation type="vanished">Вступление</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Используйте этот мастер, чтобы указать требования для создания непрерывного вывода моментальных снимков.</translation>
+        <translation type="vanished">Используйте этот мастер, чтобы указать требования для создания непрерывного вывода моментальных снимков.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Свойства фильма</translation>
+        <translation type="vanished">Свойства фильма</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Укажите свойства выходных файлов.</translation>
+        <translation type="vanished">Укажите свойства выходных файлов.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Выходные файлы фильмов</translation>
+        <translation type="vanished">Выходные файлы фильмов</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Имя файла</translation>
+        <translation type="vanished">Имя файла</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Скорость игры</translation>
+        <translation type="vanished">Скорость игры</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Укажите продолжительность фильма [сек]</translation>
+        <translation type="vanished">Укажите продолжительность фильма [сек]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Укажите кадров в секунду</translation>
+        <translation type="vanished">Укажите кадров в секунду</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Профиль:</translation>
+        <translation type="vanished">Профиль:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Выходной файл</translation>
+        <translation type="vanished">Выходной файл</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Дефолт</translation>
+        <translation type="vanished">Дефолт</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Установка временного шага</translation>
+        <translation type="vanished">Установка временного шага</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Укажите временной шаг начала, временной шаг остановки и частоту пропусков.</translation>
+        <translation type="vanished">Укажите временной шаг начала, временной шаг остановки и частоту пропусков.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>Начните :</translation>
+        <translation type="vanished">Начните :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>останавливаться :</translation>
+        <translation type="vanished">останавливаться :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Скорость пропуска:</translation>
+        <translation type="vanished">Скорость пропуска:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Выбор окна</translation>
+        <translation type="vanished">Выбор окна</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Выберите целевые окна и укажите, как вы хотите выводить файлы.</translation>
+        <translation type="vanished">Выберите целевые окна и укажите, как вы хотите выводить файлы.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Целевые окна</translation>
+        <translation type="vanished">Целевые окна</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Выходной файл</translation>
+        <translation type="vanished">Выходной файл</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>В одном файле</translation>
+        <translation type="vanished">В одном файле</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Соответственно</translation>
+        <translation type="vanished">Соответственно</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Макет</translation>
+        <translation type="vanished">Макет</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Как есть</translation>
+        <translation type="vanished">Как есть</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>По горизонтали</translation>
+        <translation type="vanished">По горизонтали</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Вертикально</translation>
+        <translation type="vanished">Вертикально</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Фон</translation>
+        <translation type="vanished">Фон</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>белый</translation>
+        <translation type="vanished">белый</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>прозрачный</translation>
+        <translation type="vanished">прозрачный</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Более чем одно окно визуализации имеет прозрачную область. Их нельзя сохранить в прозрачных фоновых изображениях. Выберите белый фон или отмените и отключите прозрачность контуров и т. Д.</translation>
+        <translation type="vanished">Более чем одно окно визуализации имеет прозрачную область. Их нельзя сохранить в прозрачных фоновых изображениях. Выберите белый фон или отмените и отключите прозрачность контуров и т. Д.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>В настоящее время не выбрано ни одно окно.</translation>
+        <translation type="vanished">В настоящее время не выбрано ни одно окно.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Непрерывный снимок / фильм / Мастер экспорта в Google Планета Земля</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Вступление</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Используйте этот мастер, чтобы указать требования для создания непрерывного вывода моментальных снимков.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Подтвердите результат</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Файлы в списке ниже будут созданы или обновлены.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Растровое изображение Windows (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Переносимое растровое изображение (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">Растровое изображение X11 (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Приставка</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Выходной файл</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Предупреждение</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Папка %1 не существует. Вы хотите это сейчас?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ошибка</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Создание папки %1 не смогли.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Имя файла</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Выходной файл</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Дефолт</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Предупреждение</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Более чем одно окно визуализации имеет прозрачную область. Их нельзя сохранить в прозрачных фоновых изображениях. Выберите белый фон или отмените и отключите прозрачность контуров и т. Д.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">В настоящее время не выбрано ни одно окно.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Свойства файла</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Укажите свойства выходных файлов.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Каталог</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Имя файла</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Приставка :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Длина суффикса:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Формат:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Вывод в Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Укажите свойства выходных файлов.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">Имя файла KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Имя :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Свойства фильма</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Укажите свойства выходных файлов.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Выходные файлы фильмов</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Имя файла</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Скорость игры</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Укажите продолжительность фильма [сек]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Укажите кадров в секунду</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Профиль:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Установка временного шага</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Укажите временной шаг начала, временной шаг остановки и частоту пропусков.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">Начните :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">останавливаться :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Скорость пропуска:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Выбор окна</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Выберите целевые окна и укажите, как вы хотите выводить файлы.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Целевые окна</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Выходной файл</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">В одном файле</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Соответственно</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Макет</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Как есть</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">По горизонтали</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Вертикально</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Фон</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">белый</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">прозрачный</translation>
     </message>
 </context>
 <context>
@@ -449,7 +770,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Выберите решатель</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Когда вы создаете новый проект, вы должны выбрать решатель, который будет использоваться для расчета. Пожалуйста, выберите решатель и нажмите кнопку «ОК».</translation>
     </message>
 </context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Фактор:</translation>
+        <translation type="vanished">Фактор:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Размер:</translation>
+        <translation type="vanished">Размер:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>пиксели</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Ошибка при загрузке файла определения решателя в папку "%1". Этот решатель игнорируется. %2</translation>
+        <translation>Ошибка при загрузке файла определения решателя в папку &quot;%1&quot;. Этот решатель игнорируется. %2</translation>
     </message>
 </context>
 <context>
@@ -1437,7 +1770,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Кажется, этот проект открывается другим окном iRIC GUI. Вы не можете открыть папку проекта из нескольких окон графического интерфейса.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Открытый проект не копируется в рабочий каталог, и вы будете вынуждены сохранить изменения, внесенные в этот проект. Если вы хотите сохранить текущий проект, сначала сохраните его в другом проекте.</translation>
     </message>
     <message>
@@ -1670,7 +2003,7 @@ Option -&gt; Preferences</source>
         <translation>В настоящее время активное подокно не поддерживает экспорт фигур контура.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Чтобы экспортировать файл формы, переключите «Настройка отображения» на «Контурная фигура», а не «Цвет бахромы» или «Изолинии».</translation>
     </message>
     <message>
@@ -1742,7 +2075,7 @@ Option -&gt; Preferences</source>
         <translation>Файл настроек (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation>Чтобы экспортировать файл формы, переключите цветовой режим на «Дискретный режим».</translation>
     </message>
 </context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>Открыть новое окно постобработки 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Откройте новое окно постобработки 2D с высоты птичьего полета</translation>
     </message>
     <message>

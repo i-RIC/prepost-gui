@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ContinuousSnapshotFilePropertyPage</class>
- <widget class="QWizardPage" name="ContinuousSnapshotFilePropertyPage">
+ <class>ContinuousSnapshotWizard_FilePropertyPage</class>
+ <widget name="ContinuousSnapshotWizard_FilePropertyPage" class="QWizardPage">
   <property name="geometry">
    <rect>
     <x>0</x>

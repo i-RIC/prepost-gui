@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Xác nhận kết quả</translation>
+        <translation type="vanished">Xác nhận kết quả</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Các tệp trong danh sách dưới đây sẽ được tạo hoặc cập nhật.</translation>
+        <translation type="vanished">Các tệp trong danh sách dưới đây sẽ được tạo hoặc cập nhật.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Thuộc tính tệp</translation>
+        <translation type="vanished">Thuộc tính tệp</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+        <translation type="vanished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Danh mục</translation>
+        <translation type="vanished">Danh mục</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Tên tệp</translation>
+        <translation type="vanished">Tên tệp</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Tiếp đầu ngữ :</translation>
+        <translation type="vanished">Tiếp đầu ngữ :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Độ dài hậu tố:</translation>
+        <translation type="vanished">Độ dài hậu tố:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Sự sắp xếp :</translation>
+        <translation type="vanished">Sự sắp xếp :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Bản đồ bit của Windows (*.bmp)</translation>
+        <translation type="vanished">Bản đồ bit của Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Bản đồ bit di động (*.ppm)</translation>
+        <translation type="vanished">Bản đồ bit di động (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>Bản đồ bit X11 (*.xbm)</translation>
+        <translation type="vanished">Bản đồ bit X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Tiếp đầu ngữ</translation>
+        <translation type="vanished">Tiếp đầu ngữ</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tệp đầu ra</translation>
+        <translation type="vanished">Tệp đầu ra</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Thư mục %1 Không tồn tại. Bạn có muốn nó bây giờ?</translation>
+        <translation type="vanished">Thư mục %1 Không tồn tại. Bạn có muốn nó bây giờ?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Tạo thư mục %1 thất bại.</translation>
+        <translation type="vanished">Tạo thư mục %1 thất bại.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Xuất ra Google Earth</translation>
+        <translation type="vanished">Xuất ra Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+        <translation type="vanished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Lưu ý: Tính năng này chỉ khả dụng khi hệ tọa độ đã được chỉ định.</translation>
+        <translation type="vanished">Lưu ý: Tính năng này chỉ khả dụng khi hệ tọa độ đã được chỉ định.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>Tên tệp KML</translation>
+        <translation type="vanished">Tên tệp KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Tên :</translation>
+        <translation type="vanished">Tên :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>đầu ra.kml</translation>
+        <translation type="vanished">đầu ra.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Giới thiệu</translation>
+        <translation type="vanished">Giới thiệu</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Sử dụng trình hướng dẫn này để chỉ định các yêu cầu để tạo ra ảnh chụp nhanh liên tục.</translation>
+        <translation type="vanished">Sử dụng trình hướng dẫn này để chỉ định các yêu cầu để tạo ra ảnh chụp nhanh liên tục.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Thuộc tính phim</translation>
+        <translation type="vanished">Thuộc tính phim</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+        <translation type="vanished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Đầu ra các tệp phim</translation>
+        <translation type="vanished">Đầu ra các tệp phim</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Tên tệp</translation>
+        <translation type="vanished">Tên tệp</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Tốc độ chơi</translation>
+        <translation type="vanished">Tốc độ chơi</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Chỉ định thời lượng phim [giây]</translation>
+        <translation type="vanished">Chỉ định thời lượng phim [giây]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Chỉ định khung hình trên giây</translation>
+        <translation type="vanished">Chỉ định khung hình trên giây</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Hồ sơ:</translation>
+        <translation type="vanished">Hồ sơ:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tệp đầu ra</translation>
+        <translation type="vanished">Tệp đầu ra</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Vỡ nợ</translation>
+        <translation type="vanished">Vỡ nợ</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Cài đặt Timestep</translation>
+        <translation type="vanished">Cài đặt Timestep</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Vui lòng chỉ định bước thời gian bắt đầu, bước thời gian dừng và tỷ lệ bỏ qua.</translation>
+        <translation type="vanished">Vui lòng chỉ định bước thời gian bắt đầu, bước thời gian dừng và tỷ lệ bỏ qua.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>bắt đầu :</translation>
+        <translation type="vanished">bắt đầu :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>ngừng lại :</translation>
+        <translation type="vanished">ngừng lại :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Tỷ lệ bỏ qua:</translation>
+        <translation type="vanished">Tỷ lệ bỏ qua:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Lựa chọn cửa sổ</translation>
+        <translation type="vanished">Lựa chọn cửa sổ</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Vui lòng chọn cửa sổ mục tiêu và chỉ định cách bạn muốn xuất tệp.</translation>
+        <translation type="vanished">Vui lòng chọn cửa sổ mục tiêu và chỉ định cách bạn muốn xuất tệp.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Các cửa sổ mục tiêu</translation>
+        <translation type="vanished">Các cửa sổ mục tiêu</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tệp đầu ra</translation>
+        <translation type="vanished">Tệp đầu ra</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>Trong một tệp</translation>
+        <translation type="vanished">Trong một tệp</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Tương ứng</translation>
+        <translation type="vanished">Tương ứng</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Bố trí</translation>
+        <translation type="vanished">Bố trí</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Như là</translation>
+        <translation type="vanished">Như là</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>Theo chiều ngang</translation>
+        <translation type="vanished">Theo chiều ngang</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Theo chiều dọc</translation>
+        <translation type="vanished">Theo chiều dọc</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Tiểu sử</translation>
+        <translation type="vanished">Tiểu sử</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>trắng</translation>
+        <translation type="vanished">trắng</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>trong suốt</translation>
+        <translation type="vanished">trong suốt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Nhiều cửa sổ hiển thị có vùng trong suốt. Chúng không thể lưu thành hình nền trong suốt. Vui lòng chọn nền trắng hoặc hủy và vô hiệu hóa độ trong suốt cho các đường viền, v.v.</translation>
+        <translation type="vanished">Nhiều cửa sổ hiển thị có vùng trong suốt. Chúng không thể lưu thành hình nền trong suốt. Vui lòng chọn nền trắng hoặc hủy và vô hiệu hóa độ trong suốt cho các đường viền, v.v.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Hiện không có cửa sổ nào được chọn.</translation>
+        <translation type="vanished">Hiện không có cửa sổ nào được chọn.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Chụp nhanh liên tục / Phim / Trình hướng dẫn xuất Google Earth</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Giới thiệu</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Sử dụng trình hướng dẫn này để chỉ định các yêu cầu để tạo ra ảnh chụp nhanh liên tục.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Xác nhận kết quả</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Các tệp trong danh sách dưới đây sẽ được tạo hoặc cập nhật.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Bản đồ bit của Windows (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Bản đồ bit di động (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">Bản đồ bit X11 (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Tiếp đầu ngữ</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tệp đầu ra</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Thư mục %1 Không tồn tại. Bạn có muốn nó bây giờ?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Tạo thư mục %1 thất bại.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tên tệp</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tệp đầu ra</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Vỡ nợ</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Nhiều cửa sổ hiển thị có vùng trong suốt. Chúng không thể lưu thành hình nền trong suốt. Vui lòng chọn nền trắng hoặc hủy và vô hiệu hóa độ trong suốt cho các đường viền, v.v.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Hiện không có cửa sổ nào được chọn.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Thuộc tính tệp</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Danh mục</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tên tệp</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Tiếp đầu ngữ :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Độ dài hậu tố:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Sự sắp xếp :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Xuất ra Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">Tên tệp KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Tên :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">đầu ra.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Thuộc tính phim</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Vui lòng chỉ định các thuộc tính của tệp đầu ra.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Đầu ra các tệp phim</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tên tệp</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Tốc độ chơi</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Chỉ định thời lượng phim [giây]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Chỉ định khung hình trên giây</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Hồ sơ:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Cài đặt Timestep</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Vui lòng chỉ định bước thời gian bắt đầu, bước thời gian dừng và tỷ lệ bỏ qua.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">bắt đầu :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">ngừng lại :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Tỷ lệ bỏ qua:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Lựa chọn cửa sổ</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Vui lòng chọn cửa sổ mục tiêu và chỉ định cách bạn muốn xuất tệp.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Các cửa sổ mục tiêu</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tệp đầu ra</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">Trong một tệp</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Tương ứng</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Bố trí</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Như là</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">Theo chiều ngang</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Theo chiều dọc</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Tiểu sử</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">trắng</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">trong suốt</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Chọn bộ giải</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Hệ số:</translation>
+        <translation type="vanished">Hệ số:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Kích thước:</translation>
+        <translation type="vanished">Kích thước:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>điểm ảnh</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục "%1". Bộ giải này bị bỏ qua. %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục &quot;%1&quot;. Bộ giải này bị bỏ qua. %2</translation>
     </message>
 </context>
 <context>
@@ -1437,7 +1770,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dự án này dường như được mở bởi một cửa sổ iRIC GUI khác. Bạn không thể mở một thư mục dự án từ nhiều cửa sổ GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Dự án đã mở không được sao chép vào thư mục công việc và bạn sẽ buộc phải lưu các sửa đổi bạn thực hiện cho dự án này. Nếu bạn muốn giữ lại dự án hiện tại, trước tiên hãy lưu nó vào một dự án khác.</translation>
     </message>
     <message>
@@ -1605,8 +1938,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Cửa sổ phụ hiện đang hoạt động không hỗ trợ xuất hình đường viền.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển &quot;Cài đặt hiển thị&quot; thành &quot;Hình đường viền&quot;, không phải &quot;Viền màu&quot; hoặc &quot;Đường viền&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Tập tin cài đặt (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành "Chế độ rời rạc".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành &quot;Chế độ rời rạc&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,8 +2450,8 @@ Option -&gt; Preferences</source>
         <translation>Mở cửa sổ xử lý hậu kỳ 2D mới</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird's-Eye mới</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird&apos;s-Eye mới</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

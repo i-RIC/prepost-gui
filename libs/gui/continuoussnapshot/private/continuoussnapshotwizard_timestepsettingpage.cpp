@@ -1,33 +1,28 @@
-#include "ui_continuoussnapshottimestepsettingpage.h"
-
-#include "continuoussnapshottimestepsettingpage.h"
-#include "continuoussnapshotwizard.h"
+#include "continuoussnapshotwizard_timestepsettingpage.h"
+#include "ui_continuoussnapshotwizard_timestepsettingpage.h"
 
 #include <guibase/timeformat/timeformatutil.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 
-#include <QDateTime>
-
-ContinuousSnapshotTimestepSettingPage::ContinuousSnapshotTimestepSettingPage(QWidget* parent) :
-	QWizardPage(parent),
-	ui(new Ui::ContinuousSnapshotTimestepSettingPage)
+ContinuousSnapshotWizard::TimestepSettingPage::TimestepSettingPage(ContinuousSnapshotWizard* wizard) :
+	QWizardPage(wizard),
+	m_wizard {wizard},
+	ui(new Ui::ContinuousSnapshotWizard_TimestepSettingPage)
 {
 	ui->setupUi(this);
 
-	m_wizard = dynamic_cast<ContinuousSnapshotWizard*>(parent);
-
-	connect(ui->startSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStartChange(int)));
-	connect(ui->stopSlider, SIGNAL(valueChanged(int)), this, SLOT(handleStopChange(int)));
+	connect(ui->startSlider, &SliderWithValue::valueChanged, this, &TimestepSettingPage::handleStartChange);
+	connect(ui->stopSlider, &SliderWithValue::valueChanged, this, &TimestepSettingPage::handleStopChange);
 }
 
-ContinuousSnapshotTimestepSettingPage::~ContinuousSnapshotTimestepSettingPage()
+ContinuousSnapshotWizard::TimestepSettingPage::~TimestepSettingPage()
 {
 	delete ui;
 }
 
-void ContinuousSnapshotTimestepSettingPage::initializePage()
+void ContinuousSnapshotWizard::TimestepSettingPage::initializePage()
 {
 	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
 
@@ -52,7 +47,7 @@ void ContinuousSnapshotTimestepSettingPage::initializePage()
 	updateStopLabel();
 }
 
-bool ContinuousSnapshotTimestepSettingPage::validatePage()
+bool ContinuousSnapshotWizard::TimestepSettingPage::validatePage()
 {
 	auto s = m_wizard->setting();
 
@@ -64,7 +59,7 @@ bool ContinuousSnapshotTimestepSettingPage::validatePage()
 	return true;
 }
 
-void ContinuousSnapshotTimestepSettingPage::handleStartChange(int time)
+void ContinuousSnapshotWizard::TimestepSettingPage::handleStartChange(int time)
 {
 	updateStartLabel();
 
@@ -73,7 +68,7 @@ void ContinuousSnapshotTimestepSettingPage::handleStartChange(int time)
 	}
 }
 
-void ContinuousSnapshotTimestepSettingPage::handleStopChange(int time)
+void ContinuousSnapshotWizard::TimestepSettingPage::handleStopChange(int time)
 {
 	updateStopLabel();
 
@@ -82,21 +77,21 @@ void ContinuousSnapshotTimestepSettingPage::handleStopChange(int time)
 	}
 }
 
-void ContinuousSnapshotTimestepSettingPage::updateStartLabel()
+void ContinuousSnapshotWizard::TimestepSettingPage::updateStartLabel()
 {
 	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
 	double time = timeSteps.at(ui->startSlider->value() - 1);
 	updateTimeLabel(time, ui->startValueLabel);
 }
 
-void ContinuousSnapshotTimestepSettingPage::updateStopLabel()
+void ContinuousSnapshotWizard::TimestepSettingPage::updateStopLabel()
 {
 	const auto& timeSteps = m_wizard->projectMainFile()->postSolutionInfo()->timeSteps()->timesteps();
 	double time = timeSteps.at(ui->stopSlider->value() - 1);
 	updateTimeLabel(time, ui->stopValueLabel);
 }
 
-void ContinuousSnapshotTimestepSettingPage::updateTimeLabel(double timeValue, QLabel* label)
+void ContinuousSnapshotWizard::TimestepSettingPage::updateTimeLabel(double timeValue, QLabel* label)
 {
 	auto mainFile = m_wizard->projectMainFile();
 

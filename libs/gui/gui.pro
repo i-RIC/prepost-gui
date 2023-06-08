@@ -192,14 +192,7 @@ win32 {
 
 # Input
 HEADERS += gui_api.h \
-           continuoussnapshot/continuoussnapshotconfirmpage.h \
-           continuoussnapshot/continuoussnapshotfilepropertypage.h \
-           continuoussnapshot/continuoussnapshotgoogleearthsettingpage.h \
-           continuoussnapshot/continuoussnapshotintroductionpage.h \
-           continuoussnapshot/continuoussnapshotmoviepropertypage.h \
            continuoussnapshot/continuoussnapshotsetting.h \
-           continuoussnapshot/continuoussnapshottimestepsettingpage.h \
-           continuoussnapshot/continuoussnapshotwindowselectionpage.h \
            continuoussnapshot/continuoussnapshotwizard.h \
            factory/postprocessorwindowfactory.h \
            main/iricmainwindow.h \
@@ -247,6 +240,13 @@ HEADERS += gui_api.h \
            startpage/startpagerecentprojectlist.h \
            startpage/startpagerecentsolver.h \
            startpage/startpagerecentsolverlist.h \
+           continuoussnapshot/private/continuoussnapshotwizard_confirmpage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_filepropertypage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_googleearthsettingpage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_introductionpage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_moviepropertypage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.h \
+           continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.h \
            main/private/iricmainwindow_calculatedresultmanager.h \
            main/private/iricmainwindow_modelessdialogmodechanger.h \
            main/private/iricmainwindow_snapshotsaver.h \
@@ -256,12 +256,7 @@ HEADERS += gui_api.h \
            pref/private/preferencepagewebcsvtileadddialog.h \
            startpage/private/startpagedialog_impl.h \
            startpage/private/startpagelabel_impl.h
-FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
-         continuoussnapshot/continuoussnapshotgoogleearthsettingpage.ui \
-         continuoussnapshot/continuoussnapshotmoviepropertypage.ui \
-         continuoussnapshot/continuoussnapshottimestepsettingpage.ui \
-         continuoussnapshot/continuoussnapshotwindowselectionpage.ui \
-         googlemapimport/googlemapimageimportsettingdialog.ui \
+FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          misc/iricmainwindowaboutdialog.ui \
          misc/mousehelpdialog.ui \
          misc/newprojectsolverselectingdialog.ui \
@@ -284,17 +279,15 @@ FORMS += continuoussnapshot/continuoussnapshotfilepropertypage.ui \
          solverdef/solverdefinitionlistdialog.ui \
          startpage/startpagedialog.ui \
          startpage/startpagelaunchtabwidget.ui \
+         continuoussnapshot/private/continuoussnapshotwizard_filepropertypage.ui \
+         continuoussnapshot/private/continuoussnapshotwizard_googleearthsettingpage.ui \
+         continuoussnapshot/private/continuoussnapshotwizard_moviepropertypage.ui \
+         continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.ui \
+         continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.ui \
          pref/private/preferencepageriversurveyfractionadddialog.ui \
          pref/private/preferencepagetmsadddialog.ui \
          pref/private/preferencepagewebcsvtileadddialog.ui
-SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
-           continuoussnapshot/continuoussnapshotfilepropertypage.cpp \
-           continuoussnapshot/continuoussnapshotgoogleearthsettingpage.cpp \
-           continuoussnapshot/continuoussnapshotintroductionpage.cpp \
-           continuoussnapshot/continuoussnapshotmoviepropertypage.cpp \
-           continuoussnapshot/continuoussnapshotsetting.cpp \
-           continuoussnapshot/continuoussnapshottimestepsettingpage.cpp \
-           continuoussnapshot/continuoussnapshotwindowselectionpage.cpp \
+SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            continuoussnapshot/continuoussnapshotwizard.cpp \
            factory/postprocessorwindowfactory.cpp \
            main/iricmainwindow.cpp \
@@ -340,6 +333,13 @@ SOURCES += continuoussnapshot/continuoussnapshotconfirmpage.cpp \
            startpage/startpagerecentprojectlist.cpp \
            startpage/startpagerecentsolver.cpp \
            startpage/startpagerecentsolverlist.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_confirmpage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_filepropertypage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_googleearthsettingpage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_introductionpage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_moviepropertypage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.cpp \
+           continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.cpp \
            main/private/iricmainwindow_calculatedresultmanager.cpp \
            main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \

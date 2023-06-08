@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Підтвердіть результат</translation>
+        <translation type="vanished">Підтвердіть результат</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Файли зі списку нижче будуть створені або оновлені.</translation>
+        <translation type="vanished">Файли зі списку нижче будуть створені або оновлені.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Властивості файлу</translation>
+        <translation type="vanished">Властивості файлу</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Будь ласка, вкажіть властивості вихідних файлів.</translation>
+        <translation type="vanished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Довідник</translation>
+        <translation type="vanished">Довідник</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Назва файлу</translation>
+        <translation type="vanished">Назва файлу</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Префікс:</translation>
+        <translation type="vanished">Префікс:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Довжина суфікса:</translation>
+        <translation type="vanished">Довжина суфікса:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Формат:</translation>
+        <translation type="vanished">Формат:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Растрове зображення Windows (*.bmp)</translation>
+        <translation type="vanished">Растрове зображення Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Портативне растрове зображення (*.ppm)</translation>
+        <translation type="vanished">Портативне растрове зображення (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>Растрове зображення X11 (*.xbm)</translation>
+        <translation type="vanished">Растрове зображення X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Префікс</translation>
+        <translation type="vanished">Префікс</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Вихідний файл</translation>
+        <translation type="vanished">Вихідний файл</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Папка %1 не існує. Ти хочеш цього зараз?</translation>
+        <translation type="vanished">Папка %1 не існує. Ти хочеш цього зараз?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Створення папки %1 не вдалося.</translation>
+        <translation type="vanished">Створення папки %1 не вдалося.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Вивід на Google Планета Земля</translation>
+        <translation type="vanished">Вивід на Google Планета Земля</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Будь ласка, вкажіть властивості вихідних файлів.</translation>
+        <translation type="vanished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Примітка: Ця функція доступна, лише якщо вказана система координат.</translation>
+        <translation type="vanished">Примітка: Ця функція доступна, лише якщо вказана система координат.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>Назва файлу KML</translation>
+        <translation type="vanished">Назва файлу KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Ім'я:</translation>
+        <translation type="vanished">Ім&apos;я:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Вступ</translation>
+        <translation type="vanished">Вступ</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Використовуйте цей майстер, щоб визначити вимоги для створення безперервного виводу знімків.</translation>
+        <translation type="vanished">Використовуйте цей майстер, щоб визначити вимоги для створення безперервного виводу знімків.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Властивості фільму</translation>
+        <translation type="vanished">Властивості фільму</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Будь ласка, вкажіть властивості вихідних файлів.</translation>
+        <translation type="vanished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Виведення файлів фільмів</translation>
+        <translation type="vanished">Виведення файлів фільмів</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Назва файлу</translation>
+        <translation type="vanished">Назва файлу</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Швидкість відтворення</translation>
+        <translation type="vanished">Швидкість відтворення</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Вкажіть тривалість фільму [сек]</translation>
+        <translation type="vanished">Вкажіть тривалість фільму [сек]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Вкажіть кадри в секунду</translation>
+        <translation type="vanished">Вкажіть кадри в секунду</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Профіль:</translation>
+        <translation type="vanished">Профіль:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Вихідний файл</translation>
+        <translation type="vanished">Вихідний файл</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>За замовчуванням</translation>
+        <translation type="vanished">За замовчуванням</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Налаштування часу</translation>
+        <translation type="vanished">Налаштування часу</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Будь ласка, вкажіть крок часу початку, крок часу зупинки та швидкість пропуску.</translation>
+        <translation type="vanished">Будь ласка, вкажіть крок часу початку, крок часу зупинки та швидкість пропуску.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>початок:</translation>
+        <translation type="vanished">початок:</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>Стоп :</translation>
+        <translation type="vanished">Стоп :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Швидкість пропуску:</translation>
+        <translation type="vanished">Швидкість пропуску:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Вибір вікна</translation>
+        <translation type="vanished">Вибір вікна</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Виберіть цільові вікна та вкажіть, як виводити файли.</translation>
+        <translation type="vanished">Виберіть цільові вікна та вкажіть, як виводити файли.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Цільові вікна</translation>
+        <translation type="vanished">Цільові вікна</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Вихідний файл</translation>
+        <translation type="vanished">Вихідний файл</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>В одному файлі</translation>
+        <translation type="vanished">В одному файлі</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Відповідно</translation>
+        <translation type="vanished">Відповідно</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Макет</translation>
+        <translation type="vanished">Макет</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Як є</translation>
+        <translation type="vanished">Як є</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>По горизонталі</translation>
+        <translation type="vanished">По горизонталі</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>По вертикалі</translation>
+        <translation type="vanished">По вертикалі</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Довідка</translation>
+        <translation type="vanished">Довідка</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>білий</translation>
+        <translation type="vanished">білий</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>прозорий</translation>
+        <translation type="vanished">прозорий</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Увага</translation>
+        <translation type="vanished">Увага</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Більше одного вікна візуалізації має прозору область. Їх не можна зберегти у прозорі фонові зображення. Виберіть білий фон або скасуйте та вимкніть прозорість для контурів тощо.</translation>
+        <translation type="vanished">Більше одного вікна візуалізації має прозору область. Їх не можна зберегти у прозорі фонові зображення. Виберіть білий фон або скасуйте та вимкніть прозорість для контурів тощо.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Наразі не вибрано жодного вікна.</translation>
+        <translation type="vanished">Наразі не вибрано жодного вікна.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Безперервний знімок/фільм/майстер експорту Google Планета Земля</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Вступ</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Використовуйте цей майстер, щоб визначити вимоги для створення безперервного виводу знімків.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Підтвердіть результат</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Файли зі списку нижче будуть створені або оновлені.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Растрове зображення Windows (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Портативне растрове зображення (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">Растрове зображення X11 (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Префікс</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Вихідний файл</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Увага</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Папка %1 не існує. Ти хочеш цього зараз?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Помилка</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Створення папки %1 не вдалося.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Назва файлу</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Вихідний файл</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">За замовчуванням</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Увага</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Більше одного вікна візуалізації має прозору область. Їх не можна зберегти у прозорі фонові зображення. Виберіть білий фон або скасуйте та вимкніть прозорість для контурів тощо.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Наразі не вибрано жодного вікна.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Властивості файлу</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Довідник</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Назва файлу</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Префікс:</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Довжина суфікса:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Формат:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Вивід на Google Планета Земля</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">Назва файлу KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Ім&apos;я:</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Властивості фільму</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Будь ласка, вкажіть властивості вихідних файлів.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Виведення файлів фільмів</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Назва файлу</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Швидкість відтворення</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Вкажіть тривалість фільму [сек]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Вкажіть кадри в секунду</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Профіль:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Налаштування часу</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Будь ласка, вкажіть крок часу початку, крок часу зупинки та швидкість пропуску.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">початок:</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">Стоп :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Швидкість пропуску:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Вибір вікна</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Виберіть цільові вікна та вкажіть, як виводити файли.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Цільові вікна</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Вихідний файл</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">В одному файлі</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Відповідно</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Макет</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Як є</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">По горизонталі</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">По вертикалі</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Довідка</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">білий</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">прозорий</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Виберіть Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Коли ви створюєте новий проект, вам потрібно вибрати вирішувач для використання для розрахунку. Виберіть вирішувач і натисніть кнопку "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Коли ви створюєте новий проект, вам потрібно вибрати вирішувач для використання для розрахунку. Виберіть вирішувач і натисніть кнопку &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Фактор:</translation>
+        <translation type="vanished">Фактор:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Розмір:</translation>
+        <translation type="vanished">Розмір:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>пікселів</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -851,7 +1184,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>User name:</source>
-        <translation>Ім'я користувача:</translation>
+        <translation>Ім&apos;я користувача:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1006,7 +1339,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>URL:</source>
@@ -1064,7 +1397,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Min zoom level:</source>
@@ -1091,7 +1424,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Filename:</source>
-        <translation>Ім'я файлу:</translation>
+        <translation>Ім&apos;я файлу:</translation>
     </message>
     <message>
         <source>Last update time:</source>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Увага</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Сталася помилка під час завантаження файлу визначення вирішувача у папку " %1 Цей вирішувач ігнорується. %2</translation>
+        <translation>Сталася помилка під час завантаження файлу визначення вирішувача у папку &quot; %1 Цей вирішувач ігнорується. %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Схоже, цей проект відкривається ще одним вікном графічного інтерфейсу iRIC. Ви не можете відкрити папку проекту з кількох вікон графічного інтерфейсу.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Відкритий проект не копіюється в робочий каталог, і ви будете змушені зберегти внесені вами зміни до цього проекту. Якщо ви хочете зберегти поточний проект, спочатку збережіть його в іншому проекті.</translation>
     </message>
     <message>
@@ -1601,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Наразі активне під вікно не підтримує експорт фігури контуру.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Щоб експортувати файл фігури, переведіть "Параметри дисплея" на "Контурний малюнок", а не на "Колір бахроми" або "Ізолінії".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Щоб експортувати файл фігури, переведіть &quot;Параметри дисплея&quot; на &quot;Контурний малюнок&quot;, а не на &quot;Колір бахроми&quot; або &quot;Ізолінії&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1742,7 +2075,7 @@ Option -&gt; Preferences</source>
         <translation>Файл налаштування (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation>Щоб експортувати файл форми, перемкніть колірний режим на «Дискретний режим».</translation>
     </message>
 </context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>Відкрийте нове вікно 2D пост-обробки</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Відкрийте нове 2D вікно пост-обробки пташиного ока</translation>
     </message>
     <message>

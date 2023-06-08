@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Potvrďte výsledek</translation>
+        <translation type="vanished">Potvrďte výsledek</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Soubory v níže uvedeném seznamu budou vytvořeny nebo aktualizovány.</translation>
+        <translation type="vanished">Soubory v níže uvedeném seznamu budou vytvořeny nebo aktualizovány.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>Průvodce</translation>
+        <translation type="vanished">Průvodce</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Vlastnosti souboru</translation>
+        <translation type="vanished">Vlastnosti souboru</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Zadejte vlastnosti výstupních souborů.</translation>
+        <translation type="vanished">Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Adresář</translation>
+        <translation type="vanished">Adresář</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Název souboru</translation>
+        <translation type="vanished">Název souboru</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Předpona :</translation>
+        <translation type="vanished">Předpona :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Délka přípony:</translation>
+        <translation type="vanished">Délka přípony:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Formát :</translation>
+        <translation type="vanished">Formát :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows bitmapa (*.bmp)</translation>
+        <translation type="vanished">Windows bitmapa (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Přenosná bitmapa (*.ppm)</translation>
+        <translation type="vanished">Přenosná bitmapa (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>Bitová mapa X11 (*.xbm)</translation>
+        <translation type="vanished">Bitová mapa X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Předpona</translation>
+        <translation type="vanished">Předpona</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Výstupní soubor</translation>
+        <translation type="vanished">Výstupní soubor</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Složka %1 neexistuje. Chceš do toho hned?</translation>
+        <translation type="vanished">Složka %1 neexistuje. Chceš do toho hned?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Vytváření složky %1 neuspěl.</translation>
+        <translation type="vanished">Vytváření složky %1 neuspěl.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>Průvodce</translation>
+        <translation type="vanished">Průvodce</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Výstup do aplikace Google Earth</translation>
+        <translation type="vanished">Výstup do aplikace Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Zadejte vlastnosti výstupních souborů.</translation>
+        <translation type="vanished">Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Poznámka: Tato funkce je k dispozici pouze v případě, že byl zadán souřadnicový systém.</translation>
+        <translation type="vanished">Poznámka: Tato funkce je k dispozici pouze v případě, že byl zadán souřadnicový systém.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>Název souboru KML</translation>
+        <translation type="vanished">Název souboru KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Název :</translation>
+        <translation type="vanished">Název :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Úvod</translation>
+        <translation type="vanished">Úvod</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Pomocí tohoto průvodce určíte požadavky na generování nepřetržitého výstupu snímku.</translation>
+        <translation type="vanished">Pomocí tohoto průvodce určíte požadavky na generování nepřetržitého výstupu snímku.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>Průvodce</translation>
+        <translation type="vanished">Průvodce</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Vlastnosti filmu</translation>
+        <translation type="vanished">Vlastnosti filmu</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Zadejte vlastnosti výstupních souborů.</translation>
+        <translation type="vanished">Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Výstup filmových souborů</translation>
+        <translation type="vanished">Výstup filmových souborů</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Název souboru</translation>
+        <translation type="vanished">Název souboru</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Rychlost přehrávání</translation>
+        <translation type="vanished">Rychlost přehrávání</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Zadejte délku filmu [s]</translation>
+        <translation type="vanished">Zadejte délku filmu [s]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Zadejte snímky za sekundu</translation>
+        <translation type="vanished">Zadejte snímky za sekundu</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Profil:</translation>
+        <translation type="vanished">Profil:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Výstupní soubor</translation>
+        <translation type="vanished">Výstupní soubor</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Výchozí</translation>
+        <translation type="vanished">Výchozí</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>Průvodce</translation>
+        <translation type="vanished">Průvodce</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Nastavení časového kroku</translation>
+        <translation type="vanished">Nastavení časového kroku</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Zadejte krok začátku, krok zastavení a rychlost přeskočení.</translation>
+        <translation type="vanished">Zadejte krok začátku, krok zastavení a rychlost přeskočení.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>Start :</translation>
+        <translation type="vanished">Start :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>stop :</translation>
+        <translation type="vanished">stop :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Přeskočit sazbu:</translation>
+        <translation type="vanished">Přeskočit sazbu:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>Průvodce</translation>
+        <translation type="vanished">Průvodce</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Výběr okna</translation>
+        <translation type="vanished">Výběr okna</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Vyberte cílová okna a zadejte, jak chcete soubory odesílat.</translation>
+        <translation type="vanished">Vyberte cílová okna a zadejte, jak chcete soubory odesílat.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Cílová okna</translation>
+        <translation type="vanished">Cílová okna</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Výstupní soubor</translation>
+        <translation type="vanished">Výstupní soubor</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>V jednom souboru</translation>
+        <translation type="vanished">V jednom souboru</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Respektive</translation>
+        <translation type="vanished">Respektive</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Rozložení</translation>
+        <translation type="vanished">Rozložení</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Jak je</translation>
+        <translation type="vanished">Jak je</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>Horizontálně</translation>
+        <translation type="vanished">Horizontálně</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Vertikálně</translation>
+        <translation type="vanished">Vertikálně</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Pozadí</translation>
+        <translation type="vanished">Pozadí</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>bílý</translation>
+        <translation type="vanished">bílý</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>průhledný</translation>
+        <translation type="vanished">průhledný</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Více než jedno okno vizualizace má průhlednou oblast. Nelze je uložit do průhledných obrázků na pozadí. Vyberte prosím bílé pozadí nebo zrušte a zakažte průhlednost obrysů atd.</translation>
+        <translation type="vanished">Více než jedno okno vizualizace má průhlednou oblast. Nelze je uložit do průhledných obrázků na pozadí. Vyberte prosím bílé pozadí nebo zrušte a zakažte průhlednost obrysů atd.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Aktuálně není vybráno žádné okno.</translation>
+        <translation type="vanished">Aktuálně není vybráno žádné okno.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Průběžný snímek / Film / Průvodce exportem Google Earth</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Úvod</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Pomocí tohoto průvodce určíte požadavky na generování nepřetržitého výstupu snímku.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Potvrďte výsledek</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Soubory v níže uvedeném seznamu budou vytvořeny nebo aktualizovány.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windows bitmapa (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Přenosná bitmapa (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">Bitová mapa X11 (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Předpona</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Výstupní soubor</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Složka %1 neexistuje. Chceš do toho hned?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Vytváření složky %1 neuspěl.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Název souboru</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Výstupní soubor</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Výchozí</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Více než jedno okno vizualizace má průhlednou oblast. Nelze je uložit do průhledných obrázků na pozadí. Vyberte prosím bílé pozadí nebo zrušte a zakažte průhlednost obrysů atd.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Aktuálně není vybráno žádné okno.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">Průvodce</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Vlastnosti souboru</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Adresář</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Název souboru</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Předpona :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Délka přípony:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Formát :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">Průvodce</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Výstup do aplikace Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">Název souboru KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Název :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">Průvodce</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Vlastnosti filmu</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Výstup filmových souborů</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Název souboru</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Rychlost přehrávání</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Zadejte délku filmu [s]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Zadejte snímky za sekundu</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Profil:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">Průvodce</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Nastavení časového kroku</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Zadejte krok začátku, krok zastavení a rychlost přeskočení.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">Start :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">stop :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Přeskočit sazbu:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">Průvodce</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Výběr okna</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Vyberte cílová okna a zadejte, jak chcete soubory odesílat.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Cílová okna</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Výstupní soubor</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">V jednom souboru</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Respektive</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Rozložení</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Jak je</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">Horizontálně</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Vertikálně</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Pozadí</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">bílý</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">průhledný</translation>
     </message>
 </context>
 <context>
@@ -449,7 +770,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Vyberte Řešitel</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Když vytváříte nový projekt, musíte vybrat řešič, který se použije pro výpočet. Vyberte prosím řešitele a stiskněte tlačítko „OK“.</translation>
     </message>
 </context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Faktor:</translation>
+        <translation type="vanished">Faktor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Velikost:</translation>
+        <translation type="vanished">Velikost:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>pixelů</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě "%1". Tento řešitel je ignorován." %2</translation>
+        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě &quot;%1&quot;. Tento řešitel je ignorován.&quot; %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdá se, že tento projekt otevírá jiné okno GUI iRIC. Složku projektu nelze otevřít z více oken GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otevřený projekt není zkopírován do pracovního adresáře a budete nuceni uložit změny, které v tomto projektu provedete. Pokud chcete zachovat aktuální projekt, uložte jej nejprve do jiného projektu.</translation>
     </message>
     <message>
@@ -1601,7 +1934,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuálně aktivní podokno nepodporuje export obrysového obrázku.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
     <message>
@@ -1742,7 +2075,7 @@ Option -&gt; Preferences</source>
         <translation>Nastavení souboru (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation>Chcete-li exportovat soubor tvaru, přepněte barevný režim na „Diskrétní režim“.</translation>
     </message>
 </context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,8 +2450,8 @@ Option -&gt; Preferences</source>
         <translation>Otevřete nové okno 2D zpracování</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Otevřete nové okno postprocesingu 2D Bird's Eye</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Otevřete nové okno postprocesingu 2D Bird&apos;s Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

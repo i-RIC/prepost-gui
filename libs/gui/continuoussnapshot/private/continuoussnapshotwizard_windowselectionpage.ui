@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ContinuousSnapshotWindowSelectionPage</class>
- <widget class="QWizardPage" name="ContinuousSnapshotWindowSelectionPage">
+ <class>ContinuousSnapshotWizard_WindowSelectionPage</class>
+ <widget class="QWizardPage" name="ContinuousSnapshotWizard_WindowSelectionPage">
   <property name="geometry">
    <rect>
     <x>0</x>

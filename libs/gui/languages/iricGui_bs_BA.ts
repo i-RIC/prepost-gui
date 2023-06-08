@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Potvrdite rezultat</translation>
+        <translation type="vanished">Potvrdite rezultat</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Datoteke na donjoj listi bit će kreirane ili ažurirane.</translation>
+        <translation type="vanished">Datoteke na donjoj listi bit će kreirane ili ažurirane.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Svojstva datoteke</translation>
+        <translation type="vanished">Svojstva datoteke</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Molimo navedite svojstva izlaznih datoteka.</translation>
+        <translation type="vanished">Molimo navedite svojstva izlaznih datoteka.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Imenik</translation>
+        <translation type="vanished">Imenik</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Ime dokumenta</translation>
+        <translation type="vanished">Ime dokumenta</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Prefiks :</translation>
+        <translation type="vanished">Prefiks :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Dužina sufiksa:</translation>
+        <translation type="vanished">Dužina sufiksa:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Format:</translation>
+        <translation type="vanished">Format:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows bitmapa (*.bmp)</translation>
+        <translation type="vanished">Windows bitmapa (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Prenosiva bitmapa (*.ppm)</translation>
+        <translation type="vanished">Prenosiva bitmapa (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 Bitmap (*.xbm)</translation>
+        <translation type="vanished">X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Prefiks</translation>
+        <translation type="vanished">Prefiks</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Izlazna datoteka</translation>
+        <translation type="vanished">Izlazna datoteka</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Upozorenje</translation>
+        <translation type="vanished">Upozorenje</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Folder %1 ne postoji. Želite li to sada?</translation>
+        <translation type="vanished">Folder %1 ne postoji. Želite li to sada?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Greška</translation>
+        <translation type="vanished">Greška</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Kreiranje foldera %1 nije uspjelo.</translation>
+        <translation type="vanished">Kreiranje foldera %1 nije uspjelo.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Izlaz na Google Earth</translation>
+        <translation type="vanished">Izlaz na Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Molimo navedite svojstva izlaznih datoteka.</translation>
+        <translation type="vanished">Molimo navedite svojstva izlaznih datoteka.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Napomena: Ova funkcija je dostupna samo ako je naveden koordinatni sistem.</translation>
+        <translation type="vanished">Napomena: Ova funkcija je dostupna samo ako je naveden koordinatni sistem.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>Naziv KML datoteke</translation>
+        <translation type="vanished">Naziv KML datoteke</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Ime:</translation>
+        <translation type="vanished">Ime:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Uvod</translation>
+        <translation type="vanished">Uvod</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Koristite ovaj čarobnjak za specificiranje zahtjeva za generiranje kontinuiranog snimka snimke.</translation>
+        <translation type="vanished">Koristite ovaj čarobnjak za specificiranje zahtjeva za generiranje kontinuiranog snimka snimke.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Svojstva filma</translation>
+        <translation type="vanished">Svojstva filma</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Molimo navedite svojstva izlaznih datoteka.</translation>
+        <translation type="vanished">Molimo navedite svojstva izlaznih datoteka.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Izlažite filmske datoteke</translation>
+        <translation type="vanished">Izlažite filmske datoteke</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Ime dokumenta</translation>
+        <translation type="vanished">Ime dokumenta</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Brzina reprodukcije</translation>
+        <translation type="vanished">Brzina reprodukcije</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Odredite dužinu filma [sec]</translation>
+        <translation type="vanished">Odredite dužinu filma [sec]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Odredite okvire u sekundi</translation>
+        <translation type="vanished">Odredite okvire u sekundi</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Profil:</translation>
+        <translation type="vanished">Profil:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Izlazna datoteka</translation>
+        <translation type="vanished">Izlazna datoteka</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Zadano</translation>
+        <translation type="vanished">Zadano</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Vremenska postavka</translation>
+        <translation type="vanished">Vremenska postavka</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Molimo navedite korak vremena početka, korak vremena zaustavljanja i stopu preskakanja.</translation>
+        <translation type="vanished">Molimo navedite korak vremena početka, korak vremena zaustavljanja i stopu preskakanja.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>početak:</translation>
+        <translation type="vanished">početak:</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>stop:</translation>
+        <translation type="vanished">stop:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Stopa preskakanja:</translation>
+        <translation type="vanished">Stopa preskakanja:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Izbor prozora</translation>
+        <translation type="vanished">Izbor prozora</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Molimo odaberite ciljne prozore i navedite kako želite izlaziti datoteke.</translation>
+        <translation type="vanished">Molimo odaberite ciljne prozore i navedite kako želite izlaziti datoteke.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Ciljni prozori</translation>
+        <translation type="vanished">Ciljni prozori</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Izlazna datoteka</translation>
+        <translation type="vanished">Izlazna datoteka</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>U jednom fajlu</translation>
+        <translation type="vanished">U jednom fajlu</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Odnosno</translation>
+        <translation type="vanished">Odnosno</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Raspored</translation>
+        <translation type="vanished">Raspored</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Kao što je</translation>
+        <translation type="vanished">Kao što je</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>Horizontalno</translation>
+        <translation type="vanished">Horizontalno</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Vertikalno</translation>
+        <translation type="vanished">Vertikalno</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Pozadina</translation>
+        <translation type="vanished">Pozadina</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>bijela</translation>
+        <translation type="vanished">bijela</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>transparentno</translation>
+        <translation type="vanished">transparentno</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Upozorenje</translation>
+        <translation type="vanished">Upozorenje</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Više od jednog prozora za vizualizaciju ima prozirnu regiju. Ne mogu se spremiti u prozirne pozadinske slike. Odaberite bijelu pozadinu ili otkažite i onemogućite prozirnost za konture itd.</translation>
+        <translation type="vanished">Više od jednog prozora za vizualizaciju ima prozirnu regiju. Ne mogu se spremiti u prozirne pozadinske slike. Odaberite bijelu pozadinu ili otkažite i onemogućite prozirnost za konture itd.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Trenutno nije odabran nijedan prozor.</translation>
+        <translation type="vanished">Trenutno nije odabran nijedan prozor.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Čarobnjak za izvoz kontinuiranog snimka / filma / Google Earth</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Uvod</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Koristite ovaj čarobnjak za specificiranje zahtjeva za generiranje kontinuiranog snimka snimke.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Potvrdite rezultat</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Datoteke na donjoj listi bit će kreirane ili ažurirane.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windows bitmapa (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Prenosiva bitmapa (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Prefiks</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Izlazna datoteka</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Folder %1 ne postoji. Želite li to sada?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Greška</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Kreiranje foldera %1 nije uspjelo.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Ime dokumenta</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Izlazna datoteka</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Zadano</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Više od jednog prozora za vizualizaciju ima prozirnu regiju. Ne mogu se spremiti u prozirne pozadinske slike. Odaberite bijelu pozadinu ili otkažite i onemogućite prozirnost za konture itd.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Trenutno nije odabran nijedan prozor.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Svojstva datoteke</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Molimo navedite svojstva izlaznih datoteka.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Imenik</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Ime dokumenta</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Prefiks :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Dužina sufiksa:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Format:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Izlaz na Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Molimo navedite svojstva izlaznih datoteka.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">Naziv KML datoteke</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Ime:</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Svojstva filma</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Molimo navedite svojstva izlaznih datoteka.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Izlažite filmske datoteke</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Ime dokumenta</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Brzina reprodukcije</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Odredite dužinu filma [sec]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Odredite okvire u sekundi</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Profil:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Vremenska postavka</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Molimo navedite korak vremena početka, korak vremena zaustavljanja i stopu preskakanja.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">početak:</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">stop:</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Stopa preskakanja:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Izbor prozora</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Molimo odaberite ciljne prozore i navedite kako želite izlaziti datoteke.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Ciljni prozori</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Izlazna datoteka</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">U jednom fajlu</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Odnosno</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Raspored</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Kao što je</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">Horizontalno</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Vertikalno</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Pozadina</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">bijela</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">transparentno</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Odaberite Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Kada kreirate novi projekt, morate odabrati rješavač koji ćete koristiti za izračun. Molimo odaberite rješavač i pritisnite tipku "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Kada kreirate novi projekt, morate odabrati rješavač koji ćete koristiti za izračun. Molimo odaberite rješavač i pritisnite tipku &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Faktor:</translation>
+        <translation type="vanished">Faktor:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>veličina:</translation>
+        <translation type="vanished">veličina:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>piksela</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Došlo je do greške pri učitavanju datoteke definicije rješavača u mapu "%1"Ovaj rješavač se zanemaruje. %2</translation>
+        <translation>Došlo je do greške pri učitavanju datoteke definicije rješavača u mapu &quot;%1&quot;Ovaj rješavač se zanemaruje. %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Čini se da je ovaj projekt otvoren drugim iRIC GUI prozorom. Ne možete otvoriti fasciklu projekta iz više prozora sa grafičkim interfejsom.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otvoreni projekt se ne kopira u radni direktorij i bit ćete prisiljeni spremiti izmjene koje unesete u ovaj projekt. Ako želite zadržati trenutni projekt, prvo ga spremite u drugi projekt.</translation>
     </message>
     <message>
@@ -1601,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Trenutno aktivni pod-prozor ne podržava izvoz konturne figure.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite &quot;Postavke prikaza&quot; na &quot;Konturna slika&quot;, a ne na &quot;Šiške u boji&quot; ili &quot;Izoline&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Podešavanje fajla (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Da biste izvezli datoteku oblika, prebacite način boje na "Discrete Mode".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Da biste izvezli datoteku oblika, prebacite način boje na &quot;Discrete Mode&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>Otvorite novi 2D prozor za naknadnu obradu</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Otvorite novi 2D prozor za naknadnu obradu iz ptičje perspektive</translation>
     </message>
     <message>

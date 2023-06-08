@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>قم بتأكيد النتيجة</translation>
+        <translation type="vanished">قم بتأكيد النتيجة</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>سيتم إنشاء الملفات الموجودة في القائمة أدناه أو تحديثها.</translation>
+        <translation type="vanished">سيتم إنشاء الملفات الموجودة في القائمة أدناه أو تحديثها.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>الساحر الصفحة</translation>
+        <translation type="vanished">الساحر الصفحة</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>خصائص الملف</translation>
+        <translation type="vanished">خصائص الملف</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>الرجاء تحديد خصائص ملفات الإخراج.</translation>
+        <translation type="vanished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>الدليل</translation>
+        <translation type="vanished">الدليل</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>اسم الملف</translation>
+        <translation type="vanished">اسم الملف</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>اختصار :</translation>
+        <translation type="vanished">اختصار :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>طول اللاحقة:</translation>
+        <translation type="vanished">طول اللاحقة:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>صيغة :</translation>
+        <translation type="vanished">صيغة :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>بي إن جي (*.png)</translation>
+        <translation type="vanished">بي إن جي (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.بي إن جي</translation>
+        <translation type="vanished">.بي إن جي</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>صورة نقطية لـ Windows (*.bmp)</translation>
+        <translation type="vanished">صورة نقطية لـ Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>صورة نقطية محمولة (*.ppm)</translation>
+        <translation type="vanished">صورة نقطية محمولة (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 نقطية (*.xbm)</translation>
+        <translation type="vanished">X11 نقطية (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>اختصار</translation>
+        <translation type="vanished">اختصار</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ملف إلاخراج</translation>
+        <translation type="vanished">ملف إلاخراج</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>مجلد %1 ليس موجود. هل تريده الآن؟</translation>
+        <translation type="vanished">مجلد %1 ليس موجود. هل تريده الآن؟</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>إنشاء مجلد %1 باءت بالفشل.</translation>
+        <translation type="vanished">إنشاء مجلد %1 باءت بالفشل.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>الساحر الصفحة</translation>
+        <translation type="vanished">الساحر الصفحة</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>الإخراج إلى Google Earth</translation>
+        <translation type="vanished">الإخراج إلى Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>الرجاء تحديد خصائص ملفات الإخراج.</translation>
+        <translation type="vanished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>ملاحظة: هذه الميزة متاحة فقط عند تحديد نظام إحداثي.</translation>
+        <translation type="vanished">ملاحظة: هذه الميزة متاحة فقط عند تحديد نظام إحداثي.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>اسم ملف KML</translation>
+        <translation type="vanished">اسم ملف KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>اسم :</translation>
+        <translation type="vanished">اسم :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>الإخراج. kml</translation>
+        <translation type="vanished">الإخراج. kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>مقدمة</translation>
+        <translation type="vanished">مقدمة</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>استخدم هذا المعالج لتحديد المتطلبات لإنشاء إخراج لقطة مستمر.</translation>
+        <translation type="vanished">استخدم هذا المعالج لتحديد المتطلبات لإنشاء إخراج لقطة مستمر.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>الساحر الصفحة</translation>
+        <translation type="vanished">الساحر الصفحة</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>خصائص الفيلم</translation>
+        <translation type="vanished">خصائص الفيلم</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>الرجاء تحديد خصائص ملفات الإخراج.</translation>
+        <translation type="vanished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>إخراج ملفات الفيلم</translation>
+        <translation type="vanished">إخراج ملفات الفيلم</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>اسم الملف</translation>
+        <translation type="vanished">اسم الملف</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>سرعة اللعب</translation>
+        <translation type="vanished">سرعة اللعب</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>تحديد طول الفيلم [بالثانية]</translation>
+        <translation type="vanished">تحديد طول الفيلم [بالثانية]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>حدد الإطارات في الثانية</translation>
+        <translation type="vanished">حدد الإطارات في الثانية</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>الملف الشخصي:</translation>
+        <translation type="vanished">الملف الشخصي:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ملف إلاخراج</translation>
+        <translation type="vanished">ملف إلاخراج</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>تقصير</translation>
+        <translation type="vanished">تقصير</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>الساحر الصفحة</translation>
+        <translation type="vanished">الساحر الصفحة</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>ضبط الوقت</translation>
+        <translation type="vanished">ضبط الوقت</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>يرجى تحديد خطوة وقت البدء ، وخطوة وقت التوقف ، ومعدل التخطي.</translation>
+        <translation type="vanished">يرجى تحديد خطوة وقت البدء ، وخطوة وقت التوقف ، ومعدل التخطي.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>بداية :</translation>
+        <translation type="vanished">بداية :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>قف :</translation>
+        <translation type="vanished">قف :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>معدل التخطي:</translation>
+        <translation type="vanished">معدل التخطي:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>الساحر الصفحة</translation>
+        <translation type="vanished">الساحر الصفحة</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>اختيار النافذة</translation>
+        <translation type="vanished">اختيار النافذة</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>الرجاء تحديد النوافذ المستهدفة وتحديد الطريقة التي تريد بها إخراج الملفات.</translation>
+        <translation type="vanished">الرجاء تحديد النوافذ المستهدفة وتحديد الطريقة التي تريد بها إخراج الملفات.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>الهدف النوافذ</translation>
+        <translation type="vanished">الهدف النوافذ</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ملف إلاخراج</translation>
+        <translation type="vanished">ملف إلاخراج</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>في ملف واحد</translation>
+        <translation type="vanished">في ملف واحد</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>على التوالى</translation>
+        <translation type="vanished">على التوالى</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>تخطيط</translation>
+        <translation type="vanished">تخطيط</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>كما هي</translation>
+        <translation type="vanished">كما هي</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>أفقيا</translation>
+        <translation type="vanished">أفقيا</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>عموديا</translation>
+        <translation type="vanished">عموديا</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>خلفية</translation>
+        <translation type="vanished">خلفية</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>أبيض</translation>
+        <translation type="vanished">أبيض</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>شفاف</translation>
+        <translation type="vanished">شفاف</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>أكثر من نافذة تصور لها منطقة شفافة. لا يمكن حفظها في صور خلفية شفافة. الرجاء تحديد خلفية بيضاء ، أو إلغاء وتعطيل الشفافية للخطوط العريضة وما إلى ذلك.</translation>
+        <translation type="vanished">أكثر من نافذة تصور لها منطقة شفافة. لا يمكن حفظها في صور خلفية شفافة. الرجاء تحديد خلفية بيضاء ، أو إلغاء وتعطيل الشفافية للخطوط العريضة وما إلى ذلك.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>لا توجد نافذة محددة حاليا.</translation>
+        <translation type="vanished">لا توجد نافذة محددة حاليا.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>لقطة مستمرة / فيلم / معالج تصدير Google Earth</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">مقدمة</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">استخدم هذا المعالج لتحديد المتطلبات لإنشاء إخراج لقطة مستمر.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">قم بتأكيد النتيجة</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">سيتم إنشاء الملفات الموجودة في القائمة أدناه أو تحديثها.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">بي إن جي (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.بي إن جي</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">صورة نقطية لـ Windows (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">صورة نقطية محمولة (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 نقطية (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">اختصار</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ملف إلاخراج</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">تحذير</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">مجلد %1 ليس موجود. هل تريده الآن؟</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خطأ</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">إنشاء مجلد %1 باءت بالفشل.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">اسم الملف</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ملف إلاخراج</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">تقصير</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">تحذير</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">أكثر من نافذة تصور لها منطقة شفافة. لا يمكن حفظها في صور خلفية شفافة. الرجاء تحديد خلفية بيضاء ، أو إلغاء وتعطيل الشفافية للخطوط العريضة وما إلى ذلك.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">لا توجد نافذة محددة حاليا.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">الساحر الصفحة</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">خصائص الملف</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">الدليل</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">اسم الملف</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">اختصار :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">طول اللاحقة:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">صيغة :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">الساحر الصفحة</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">الإخراج إلى Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">اسم ملف KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">اسم :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">الإخراج. kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">الساحر الصفحة</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">خصائص الفيلم</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">الرجاء تحديد خصائص ملفات الإخراج.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">إخراج ملفات الفيلم</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">اسم الملف</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">سرعة اللعب</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">تحديد طول الفيلم [بالثانية]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">حدد الإطارات في الثانية</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">الملف الشخصي:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">الساحر الصفحة</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">ضبط الوقت</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">يرجى تحديد خطوة وقت البدء ، وخطوة وقت التوقف ، ومعدل التخطي.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">بداية :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">قف :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">معدل التخطي:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">الساحر الصفحة</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">اختيار النافذة</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">الرجاء تحديد النوافذ المستهدفة وتحديد الطريقة التي تريد بها إخراج الملفات.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">الهدف النوافذ</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ملف إلاخراج</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">في ملف واحد</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">على التوالى</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">تخطيط</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">كما هي</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">أفقيا</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">عموديا</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">خلفية</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">أبيض</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">شفاف</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>حدد Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر "موافق".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>عندما تقوم بإنشاء مشروع جديد ، يجب عليك تحديد حلال لاستخدامه في الحساب. الرجاء تحديد حل واضغط على زر &quot;موافق&quot;.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>عامل:</translation>
+        <translation type="vanished">عامل:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>مقاس:</translation>
+        <translation type="vanished">مقاس:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>بكسل</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد "%1". تم تجاهل هذا الحل. %2</translation>
+        <translation>حدث خطأ أثناء تحميل ملف تعريف solver في المجلد &quot;%1&quot;. تم تجاهل هذا الحل. %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>يبدو أن هذا المشروع قد تم فتحه بواسطة نافذة iRIC GUI أخرى. لا يمكنك فتح مجلد مشروع من نوافذ متعددة لواجهة المستخدم الرسومية.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>لا يتم نسخ المشروع المفتوح إلى دليل العمل ، وستضطر إلى حفظ التعديلات التي تجريها على هذا المشروع. إذا كنت تريد الاحتفاظ بالمشروع الحالي ، فيرجى حفظه في مشروع آخر أولاً.</translation>
     </message>
     <message>
@@ -1601,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>لا تدعم النافذة الفرعية النشطة حاليًا تصدير الشكل المحيطي.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">لتصدير ملف الشكل ، بدّل "إعداد العرض" إلى "شكل محيطي" ، وليس "لون هامش" أو "أيسولاينز".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">لتصدير ملف الشكل ، بدّل &quot;إعداد العرض&quot; إلى &quot;شكل محيطي&quot; ، وليس &quot;لون هامش&quot; أو &quot;أيسولاينز&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>ملف الإعداد (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>لتصدير ملف الشكل ، بدّل وضع اللون إلى "الوضع المنفصل".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>لتصدير ملف الشكل ، بدّل وضع اللون إلى &quot;الوضع المنفصل&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>افتح نافذة جديدة بعد المعالجة ثنائية الأبعاد</translation>
     </message>
     <message>

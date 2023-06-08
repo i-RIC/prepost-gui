@@ -1,31 +1,25 @@
-#include "continuoussnapshotconfirmpage.h"
-#include "continuoussnapshotsetting.h"
-#include "continuoussnapshotwizard.h"
+#include "continuoussnapshotwizard_confirmpage.h"
 
 #include <QDir>
-#include <QLabel>
-#include <QListWidget>
 #include <QVBoxLayout>
 
-ContinuousSnapshotConfirmPage::ContinuousSnapshotConfirmPage(QWidget* parent) :
-	QWizardPage(parent)
+ContinuousSnapshotWizard::ConfirmPage::ConfirmPage(ContinuousSnapshotWizard *wizard) :
+	QWizardPage(wizard),
+	m_wizard {wizard},
+	m_fileList {new QListWidget(this)}
 {
 	setTitle(tr("Confirm the result"));
-	setSubTitle(tr(
-			"The files in the list below will be created or updated. "));
+	setSubTitle(tr("The files in the list below will be created or updated. "));
 
-	m_fileList = new QListWidget(this);
 	m_fileList->setEditTriggers(QAbstractItemView::NoEditTriggers);
 	m_fileList->setSelectionMode(QAbstractItemView::NoSelection);
 
-	QVBoxLayout* layout = new QVBoxLayout();
+	auto layout = new QVBoxLayout();
 	layout->addWidget(m_fileList);
 	setLayout(layout);
-
-	m_wizard = dynamic_cast<ContinuousSnapshotWizard*>(parent);
 }
 
-void ContinuousSnapshotConfirmPage::initializePage()
+void ContinuousSnapshotWizard::ConfirmPage::initializePage()
 {
 	const auto s = m_wizard->setting();
 
@@ -36,6 +30,7 @@ void ContinuousSnapshotConfirmPage::initializePage()
 	int step = s.startTimeStep;
 	int rate = s.samplingRate;
 	int index = 1;
+
 	while (step <= s.stopTimeStep) {
 		for (QString prefix : m_wizard->prefixList()) {
 			prefix.append(QString("%1").arg(index, len, 10, QChar('0')));
@@ -57,6 +52,7 @@ void ContinuousSnapshotConfirmPage::initializePage()
 	m_fileList->sortItems();
 
 	auto setting = m_wizard->setting();
+
 	// kml file
 	if (setting.outputKml) {
 		QString kml = QDir(s.exportTargetFolder).absoluteFilePath(setting.kmlFilename);

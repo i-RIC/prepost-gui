@@ -1,18 +1,36 @@
-#include "ui_continuoussnapshotfilepropertypage.h"
+#include "continuoussnapshotwizard_filepropertypage.h"
+#include "ui_continuoussnapshotwizard_filepropertypage.h"
 
-#include "continuoussnapshotfilepropertypage.h"
-#include "continuoussnapshotwizard.h"
+#include <unordered_set>
 
-#include <QDir>
-#include <QMdiSubWindow>
-#include <QMessageBox>
-#include <QSettings>
+namespace {
 
-ContinuousSnapshotFilePropertyPage::ContinuousSnapshotFilePropertyPage(QWidget* parent) :
-	QWizardPage(parent),
-	ui(new Ui::ContinuousSnapshotFilePropertyPage)
+QString newPrefix(std::unordered_set<QString>* usedPrefixes)
+{
+	int index = 1;
+
+	while (true) {
+		auto prefix = QString("window%1_").arg(index);
+		auto it = usedPrefixes->find(prefix);
+
+		if (it == usedPrefixes->end()) {
+			usedPrefixes->insert(prefix);
+			return prefix;
+		}
+
+		++ index;
+	}
+}
+
+} // namespace
+
+ContinuousSnapshotWizard::FilePropertyPage::FilePropertyPage(ContinuousSnapshotWizard *wizard) :
+	QWizardPage(wizard),
+	m_wizard {wizard},
+	ui(new Ui::ContinuousSnapshotWizard_FilePropertyPage)
 {
 	ui->setupUi(this);
+
 	ui->formatComboBox->addItem(tr("PNG (*.png)"));
 	m_extensionList.append(tr(".png"));
 	ui->formatComboBox->addItem(tr("JPEG (*.jpg)"));
@@ -23,18 +41,24 @@ ContinuousSnapshotFilePropertyPage::ContinuousSnapshotFilePropertyPage(QWidget* 
 	m_extensionList.append(tr(".ppm"));
 	ui->formatComboBox->addItem(tr("X11 Bitmap (*.xbm)"));
 	m_extensionList.append(tr(".xbm"));
-
-	m_wizard = dynamic_cast<ContinuousSnapshotWizard*>(parent);
 }
 
-ContinuousSnapshotFilePropertyPage::~ContinuousSnapshotFilePropertyPage()
+ContinuousSnapshotWizard::FilePropertyPage::~FilePropertyPage()
 {
 	delete ui;
 }
 
-void ContinuousSnapshotFilePropertyPage::initializePage()
+void ContinuousSnapshotWizard::FilePropertyPage::initializePage()
 {
-	const auto setting = m_wizard->setting();
+	auto setting = m_wizard->setting();
+	auto& windowSettings = setting.windowSettings;
+
+	std::unordered_set<QString> usedPrefixes;
+	for (const auto& pair : windowSettings) {
+		if (pair.second.prefix != "") {
+			usedPrefixes.insert(pair.second.prefix);
+		}
+	}
 
 	// Directory
 	ui->directoryEditWidget->setDirname(setting.exportTargetFolder);
@@ -50,9 +74,14 @@ void ContinuousSnapshotFilePropertyPage::initializePage()
 	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		ui->prefixTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
-		for (QMdiSubWindow* sub : m_wizard->windowList()) {
+		for (auto sub : m_wizard->windowList()) {
+			auto it = windowSettings.find(sub->windowTitle());
+			if (it->second.prefix == "") {
+				it->second.prefix = newPrefix(&usedPrefixes);
+			}
+
 			ui->prefixTableWidget->setVerticalHeaderItem(idx, new QTableWidgetItem(sub->windowTitle()));
-			ui->prefixTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("window%1_").arg(idx + 1)));
+			ui->prefixTableWidget->setItem(idx, 0, new QTableWidgetItem(it->second.prefix));
 			++idx;
 		}
 		break;
@@ -77,10 +106,12 @@ void ContinuousSnapshotFilePropertyPage::initializePage()
 		ui->formatComboBox->setCurrentIndex(4);
 	}
 }
-
-bool ContinuousSnapshotFilePropertyPage::validatePage()
+bool ContinuousSnapshotWizard::FilePropertyPage::validatePage()
 {
 	auto setting = m_wizard->setting();
+	auto& windowSettings = setting.windowSettings;
+
+	const auto& wl = m_wizard->windowList();
 
 	// Directory
 	QDir dir(ui->directoryEditWidget->dirname());
@@ -95,15 +126,23 @@ bool ContinuousSnapshotFilePropertyPage::validatePage()
 			return false;
 		}
 	}
-	if (ui->directoryEditWidget->dirname() == "") { return false; }
+	if (ui->directoryEditWidget->dirname() == "") {return false;}
 
 	setting.exportTargetFolder = ui->directoryEditWidget->dirname();
+
 	// Table view
 	int size = ui->prefixTableWidget->rowCount();
 	m_wizard->clearPrefixList();
 	for (int i = 0; i < size; i++) {
-		QString prefix = ui->prefixTableWidget->item(i, 0)->text();
+		auto prefix = ui->prefixTableWidget->item(i, 0)->text();
 		m_wizard->addPrefixList(prefix);
+
+		if (setting.fileOutputSetting == ContinuousSnapshotSetting::FileOutputSetting::Respectively) {
+			auto w = wl.at(i);
+			auto title = w->windowTitle();
+			auto it = windowSettings.find(title);
+			it->second.prefix = prefix;
+		}
 	}
 	// Suffix length
 	setting.suffixLength = ui->suffixSpinBox->value();

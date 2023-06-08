@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>परिणाम की पुष्टि करें</translation>
+        <translation type="vanished">परिणाम की पुष्टि करें</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>नीचे दी गई सूची में फ़ाइलें बनाई या अपडेट की जाएंगी।</translation>
+        <translation type="vanished">नीचे दी गई सूची में फ़ाइलें बनाई या अपडेट की जाएंगी।</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>विजार्डपेज</translation>
+        <translation type="vanished">विजार्डपेज</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>फ़ाइल गुण</translation>
+        <translation type="vanished">फ़ाइल गुण</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+        <translation type="vanished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>निर्देशिका</translation>
+        <translation type="vanished">निर्देशिका</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>फ़ाइल का नाम</translation>
+        <translation type="vanished">फ़ाइल का नाम</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>उपसर्ग :</translation>
+        <translation type="vanished">उपसर्ग :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>प्रत्यय लंबाई:</translation>
+        <translation type="vanished">प्रत्यय लंबाई:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>प्रारूप :</translation>
+        <translation type="vanished">प्रारूप :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>पीएनजी (*.png)</translation>
+        <translation type="vanished">पीएनजी (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>पीएनजी</translation>
+        <translation type="vanished">पीएनजी</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>जेपीईजी (*.jpg)</translation>
+        <translation type="vanished">जेपीईजी (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>जेपीजी</translation>
+        <translation type="vanished">जेपीजी</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>विंडोज बिटमैप (*.bmp)</translation>
+        <translation type="vanished">विंडोज बिटमैप (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>बीएमपी</translation>
+        <translation type="vanished">बीएमपी</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>पोर्टेबल बिटमैप (*.ppm)</translation>
+        <translation type="vanished">पोर्टेबल बिटमैप (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>पीपीएम</translation>
+        <translation type="vanished">पीपीएम</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 बिटमैप (*.xbm)</translation>
+        <translation type="vanished">X11 बिटमैप (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>एक्सबीएम</translation>
+        <translation type="vanished">एक्सबीएम</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>उपसर्ग</translation>
+        <translation type="vanished">उपसर्ग</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>निर्गम संचिका</translation>
+        <translation type="vanished">निर्गम संचिका</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>फ़ोल्डर %1 मौजूद नहीं है। क्या आप इसे अभी चाहते हैं?</translation>
+        <translation type="vanished">फ़ोल्डर %1 मौजूद नहीं है। क्या आप इसे अभी चाहते हैं?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>फोल्डर बनाना %1 अनुत्तीर्ण होना।</translation>
+        <translation type="vanished">फोल्डर बनाना %1 अनुत्तीर्ण होना।</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>विजार्डपेज</translation>
+        <translation type="vanished">विजार्डपेज</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Google धरती को आउटपुट</translation>
+        <translation type="vanished">Google धरती को आउटपुट</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+        <translation type="vanished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>नोट: यह सुविधा केवल तभी उपलब्ध होती है जब एक समन्वय प्रणाली निर्दिष्ट की गई हो।</translation>
+        <translation type="vanished">नोट: यह सुविधा केवल तभी उपलब्ध होती है जब एक समन्वय प्रणाली निर्दिष्ट की गई हो।</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>केएमएल फ़ाइल का नाम</translation>
+        <translation type="vanished">केएमएल फ़ाइल का नाम</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>नाम :</translation>
+        <translation type="vanished">नाम :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>आउटपुट.केएमएल</translation>
+        <translation type="vanished">आउटपुट.केएमएल</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>परिचय</translation>
+        <translation type="vanished">परिचय</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>निरंतर स्नैपशॉट आउटपुट उत्पन्न करने के लिए आवश्यकताओं को निर्दिष्ट करने के लिए इस विज़ार्ड का उपयोग करें।</translation>
+        <translation type="vanished">निरंतर स्नैपशॉट आउटपुट उत्पन्न करने के लिए आवश्यकताओं को निर्दिष्ट करने के लिए इस विज़ार्ड का उपयोग करें।</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>विजार्डपेज</translation>
+        <translation type="vanished">विजार्डपेज</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>मूवी गुण</translation>
+        <translation type="vanished">मूवी गुण</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+        <translation type="vanished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>आउटपुट मूवी फ़ाइलें</translation>
+        <translation type="vanished">आउटपुट मूवी फ़ाइलें</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>फ़ाइल का नाम</translation>
+        <translation type="vanished">फ़ाइल का नाम</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>खेलने की गति</translation>
+        <translation type="vanished">खेलने की गति</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>मूवी की लंबाई निर्दिष्ट करें [सेकंड]</translation>
+        <translation type="vanished">मूवी की लंबाई निर्दिष्ट करें [सेकंड]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>फ्रेम प्रति सेकंड निर्दिष्ट करें</translation>
+        <translation type="vanished">फ्रेम प्रति सेकंड निर्दिष्ट करें</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>प्रोफाइल:</translation>
+        <translation type="vanished">प्रोफाइल:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>निर्गम संचिका</translation>
+        <translation type="vanished">निर्गम संचिका</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>चूक जाना</translation>
+        <translation type="vanished">चूक जाना</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>विजार्डपेज</translation>
+        <translation type="vanished">विजार्डपेज</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>टाइमस्टेप सेटिंग</translation>
+        <translation type="vanished">टाइमस्टेप सेटिंग</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>कृपया स्टार्ट टाइम स्टेप, स्टॉप टाइम स्टेप और स्किप रेट निर्दिष्ट करें।</translation>
+        <translation type="vanished">कृपया स्टार्ट टाइम स्टेप, स्टॉप टाइम स्टेप और स्किप रेट निर्दिष्ट करें।</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>प्रारंभ :</translation>
+        <translation type="vanished">प्रारंभ :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>विराम :</translation>
+        <translation type="vanished">विराम :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>छोड़ें दर:</translation>
+        <translation type="vanished">छोड़ें दर:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>विजार्डपेज</translation>
+        <translation type="vanished">विजार्डपेज</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>विंडो चयन</translation>
+        <translation type="vanished">विंडो चयन</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>कृपया लक्ष्य विंडो का चयन करें और निर्दिष्ट करें कि आप फ़ाइलों को कैसे आउटपुट करना चाहते हैं।</translation>
+        <translation type="vanished">कृपया लक्ष्य विंडो का चयन करें और निर्दिष्ट करें कि आप फ़ाइलों को कैसे आउटपुट करना चाहते हैं।</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>लक्ष्य खिड़कियां</translation>
+        <translation type="vanished">लक्ष्य खिड़कियां</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>निर्गम संचिका</translation>
+        <translation type="vanished">निर्गम संचिका</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>एक फ़ाइल में</translation>
+        <translation type="vanished">एक फ़ाइल में</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>क्रमश</translation>
+        <translation type="vanished">क्रमश</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>ख़ाका</translation>
+        <translation type="vanished">ख़ाका</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>जैसा है</translation>
+        <translation type="vanished">जैसा है</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>क्षैतिज</translation>
+        <translation type="vanished">क्षैतिज</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>लंबवत</translation>
+        <translation type="vanished">लंबवत</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>पृष्ठभूमि</translation>
+        <translation type="vanished">पृष्ठभूमि</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>सफेद</translation>
+        <translation type="vanished">सफेद</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>पारदर्शी</translation>
+        <translation type="vanished">पारदर्शी</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>एक से अधिक विज़ुअलाइज़ेशन विंडो में पारदर्शी क्षेत्र होता है। वे पारदर्शी पृष्ठभूमि छवियों में सहेजे नहीं जा सकते। कृपया सफेद पृष्ठभूमि का चयन करें, या रूपरेखा आदि के लिए पारदर्शिता को रद्द और अक्षम करें।</translation>
+        <translation type="vanished">एक से अधिक विज़ुअलाइज़ेशन विंडो में पारदर्शी क्षेत्र होता है। वे पारदर्शी पृष्ठभूमि छवियों में सहेजे नहीं जा सकते। कृपया सफेद पृष्ठभूमि का चयन करें, या रूपरेखा आदि के लिए पारदर्शिता को रद्द और अक्षम करें।</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>वर्तमान में कोई विंडो चयनित नहीं है।</translation>
+        <translation type="vanished">वर्तमान में कोई विंडो चयनित नहीं है।</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>सतत स्नैपशॉट / मूवी / Google धरती निर्यात विज़ार्ड</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">परिचय</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">निरंतर स्नैपशॉट आउटपुट उत्पन्न करने के लिए आवश्यकताओं को निर्दिष्ट करने के लिए इस विज़ार्ड का उपयोग करें।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">परिणाम की पुष्टि करें</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">नीचे दी गई सूची में फ़ाइलें बनाई या अपडेट की जाएंगी।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">पीएनजी (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">पीएनजी</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">जेपीईजी (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">जेपीजी</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">विंडोज बिटमैप (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">बीएमपी</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">पोर्टेबल बिटमैप (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">पीपीएम</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 बिटमैप (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">एक्सबीएम</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">उपसर्ग</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">निर्गम संचिका</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">फ़ोल्डर %1 मौजूद नहीं है। क्या आप इसे अभी चाहते हैं?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">त्रुटि</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">फोल्डर बनाना %1 अनुत्तीर्ण होना।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">फ़ाइल का नाम</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">निर्गम संचिका</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">चूक जाना</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">एक से अधिक विज़ुअलाइज़ेशन विंडो में पारदर्शी क्षेत्र होता है। वे पारदर्शी पृष्ठभूमि छवियों में सहेजे नहीं जा सकते। कृपया सफेद पृष्ठभूमि का चयन करें, या रूपरेखा आदि के लिए पारदर्शिता को रद्द और अक्षम करें।</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">वर्तमान में कोई विंडो चयनित नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">विजार्डपेज</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">फ़ाइल गुण</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">निर्देशिका</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">फ़ाइल का नाम</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">उपसर्ग :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">प्रत्यय लंबाई:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">प्रारूप :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">विजार्डपेज</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Google धरती को आउटपुट</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">केएमएल फ़ाइल का नाम</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">नाम :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">आउटपुट.केएमएल</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">विजार्डपेज</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">मूवी गुण</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">कृपया आउटपुट फाइलों के गुण निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">आउटपुट मूवी फ़ाइलें</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">फ़ाइल का नाम</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">खेलने की गति</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">मूवी की लंबाई निर्दिष्ट करें [सेकंड]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">फ्रेम प्रति सेकंड निर्दिष्ट करें</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">प्रोफाइल:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">विजार्डपेज</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">टाइमस्टेप सेटिंग</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">कृपया स्टार्ट टाइम स्टेप, स्टॉप टाइम स्टेप और स्किप रेट निर्दिष्ट करें।</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">प्रारंभ :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">विराम :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">छोड़ें दर:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">विजार्डपेज</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">विंडो चयन</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">कृपया लक्ष्य विंडो का चयन करें और निर्दिष्ट करें कि आप फ़ाइलों को कैसे आउटपुट करना चाहते हैं।</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">लक्ष्य खिड़कियां</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">निर्गम संचिका</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">एक फ़ाइल में</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">क्रमश</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">ख़ाका</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">जैसा है</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">लंबवत</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">पृष्ठभूमि</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">सफेद</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">पारदर्शी</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>सॉल्वर का चयन करें</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और "ओके" बटन दबाएं।</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और &quot;ओके&quot; बटन दबाएं।</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>कारक:</translation>
+        <translation type="vanished">कारक:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>आकार:</translation>
+        <translation type="vanished">आकार:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>पिक्सल</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई "%1"। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
+        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई &quot;%1&quot;। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ऐसा लगता है कि यह प्रोजेक्ट किसी अन्य iRIC GUI विंडो द्वारा खोला गया है। आप एकाधिक GUI विंडो से प्रोजेक्ट फ़ोल्डर नहीं खोल सकते हैं।</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>खोले गए प्रोजेक्ट को कार्य निर्देशिका में कॉपी नहीं किया गया है, और आप इस प्रोजेक्ट में किए गए संशोधनों को सहेजने के लिए बाध्य होंगे। यदि आप वर्तमान प्रोजेक्ट को रखना चाहते हैं, तो कृपया इसे पहले किसी अन्य प्रोजेक्ट में सहेजें।</translation>
     </message>
     <message>
@@ -1601,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>वर्तमान में सक्रिय उप-विंडो निर्यात समोच्च आकृति का समर्थन नहीं करती है।</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>फ़ाइल सेट करना (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को "असतत मोड" पर स्विच करें।</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को &quot;असतत मोड&quot; पर स्विच करें।</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>नई 2D पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>नई 2डी बर्ड्स-आई पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>

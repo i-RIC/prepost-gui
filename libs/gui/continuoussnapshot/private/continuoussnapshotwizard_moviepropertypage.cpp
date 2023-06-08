@@ -1,28 +1,20 @@
-#include "ui_continuoussnapshotmoviepropertypage.h"
+#include "continuoussnapshotwizard_moviepropertypage.h"
+#include "ui_continuoussnapshotwizard_moviepropertypage.h"
 
-#include "continuoussnapshotmoviepropertypage.h"
-#include "continuoussnapshotwizard.h"
-
-#include <QDir>
-#include <QMdiSubWindow>
-#include <QMessageBox>
-#include <QSettings>
-
-ContinuousSnapshotMoviePropertyPage::ContinuousSnapshotMoviePropertyPage(QWidget* parent) :
-	QWizardPage(parent),
-	ui(new Ui::ContinuousSnapshotMoviePropertyPage)
+ContinuousSnapshotWizard::MoviePropertyPage::MoviePropertyPage(ContinuousSnapshotWizard *wizard) :
+	QWizardPage(wizard),
+	m_wizard {wizard},
+	ui(new Ui::ContinuousSnapshotWizard_MoviePropertyPage)
 {
 	ui->setupUi(this);
-
-	m_wizard = dynamic_cast<ContinuousSnapshotWizard*>(parent);
 }
 
-ContinuousSnapshotMoviePropertyPage::~ContinuousSnapshotMoviePropertyPage()
+ContinuousSnapshotWizard::MoviePropertyPage::~MoviePropertyPage()
 {
 	delete ui;
 }
 
-void ContinuousSnapshotMoviePropertyPage::initializePage()
+void ContinuousSnapshotWizard::MoviePropertyPage::initializePage()
 {
 	const auto s = m_wizard->setting();
 
@@ -65,7 +57,7 @@ void ContinuousSnapshotMoviePropertyPage::initializePage()
 	ui->profileComboBox->setCurrentIndex(static_cast<int> (s.movieProfile));
 }
 
-bool ContinuousSnapshotMoviePropertyPage::validatePage()
+bool ContinuousSnapshotWizard::MoviePropertyPage::validatePage()
 {
 	auto s = m_wizard->setting();
 
@@ -88,7 +80,7 @@ bool ContinuousSnapshotMoviePropertyPage::validatePage()
 	return true;
 }
 
-QStringList ContinuousSnapshotMoviePropertyPage::getProfile(ContinuousSnapshotSetting::MovieProfile profile)
+QStringList ContinuousSnapshotWizard::MoviePropertyPage::getProfile(ContinuousSnapshotSetting::MovieProfile profile)
 {
 	QStringList ret;
 	switch (profile) {

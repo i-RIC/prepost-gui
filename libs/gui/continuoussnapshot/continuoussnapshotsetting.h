@@ -12,6 +12,12 @@ public:
 	enum class MovieLengthMode {Length, FPS};
 	enum class MovieProfile {MP4 = 0};
 
+	struct WindowSetting
+	{
+		bool output;
+		QString prefix;
+	};
+
 	ContinuousSnapshotSetting();
 
 	// window and layout
@@ -39,11 +45,14 @@ public:
 	// google earth
 	bool outputKml;
 	QString kmlFilename;
+	QString post2dWindowTitle;
 	double angle;
 	double north;
 	double south;
 	double east;
 	double west;
+
+	std::map<QString, WindowSetting> windowSettings;
 };
 
 #endif // CONTINUOUSSNAPSHOTSETTING_H

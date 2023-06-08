@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>Vahvista tulos</translation>
+        <translation type="vanished">Vahvista tulos</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>Alla olevan luettelon tiedostot luodaan tai päivitetään.</translation>
+        <translation type="vanished">Alla olevan luettelon tiedostot luodaan tai päivitetään.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardSivu</translation>
+        <translation type="vanished">WizardSivu</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>Tiedoston ominaisuudet</translation>
+        <translation type="vanished">Tiedoston ominaisuudet</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Määritä tulostustiedostojen ominaisuudet.</translation>
+        <translation type="vanished">Määritä tulostustiedostojen ominaisuudet.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>Hakemisto</translation>
+        <translation type="vanished">Hakemisto</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Tiedoston nimi</translation>
+        <translation type="vanished">Tiedoston nimi</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>Etuliite:</translation>
+        <translation type="vanished">Etuliite:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>Liitteen pituus:</translation>
+        <translation type="vanished">Liitteen pituus:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>Muoto:</translation>
+        <translation type="vanished">Muoto:</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windowsin bittikartta (*.bmp)</translation>
+        <translation type="vanished">Windowsin bittikartta (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>Kannettava bittikartta (*.ppm)</translation>
+        <translation type="vanished">Kannettava bittikartta (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 -bittikartta (*.xbm)</translation>
+        <translation type="vanished">X11 -bittikartta (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>Etuliite</translation>
+        <translation type="vanished">Etuliite</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tulostustiedosto</translation>
+        <translation type="vanished">Tulostustiedosto</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>Kansio %1 ei ole olemassa. Haluatko sen nyt?</translation>
+        <translation type="vanished">Kansio %1 ei ole olemassa. Haluatko sen nyt?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>Luodaan kansiota %1 epäonnistui.</translation>
+        <translation type="vanished">Luodaan kansiota %1 epäonnistui.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardSivu</translation>
+        <translation type="vanished">WizardSivu</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>Tulos Google Earthiin</translation>
+        <translation type="vanished">Tulos Google Earthiin</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Määritä tulostustiedostojen ominaisuudet.</translation>
+        <translation type="vanished">Määritä tulostustiedostojen ominaisuudet.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>Huomautus: Tämä ominaisuus on käytettävissä vain, kun koordinaattijärjestelmä on määritetty.</translation>
+        <translation type="vanished">Huomautus: Tämä ominaisuus on käytettävissä vain, kun koordinaattijärjestelmä on määritetty.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>KML -tiedoston nimi</translation>
+        <translation type="vanished">KML -tiedoston nimi</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>Nimi:</translation>
+        <translation type="vanished">Nimi:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>Johdanto</translation>
+        <translation type="vanished">Johdanto</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>Tämän ohjatun toiminnon avulla voit määrittää jatkuvan tilannekuvan tuottamisen vaatimukset.</translation>
+        <translation type="vanished">Tämän ohjatun toiminnon avulla voit määrittää jatkuvan tilannekuvan tuottamisen vaatimukset.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardSivu</translation>
+        <translation type="vanished">WizardSivu</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>Elokuvan ominaisuudet</translation>
+        <translation type="vanished">Elokuvan ominaisuudet</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>Määritä tulostustiedostojen ominaisuudet.</translation>
+        <translation type="vanished">Määritä tulostustiedostojen ominaisuudet.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>Tulosta elokuvatiedostot</translation>
+        <translation type="vanished">Tulosta elokuvatiedostot</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>Tiedoston nimi</translation>
+        <translation type="vanished">Tiedoston nimi</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>Toistonopeus</translation>
+        <translation type="vanished">Toistonopeus</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>Määritä elokuvan pituus [s]</translation>
+        <translation type="vanished">Määritä elokuvan pituus [s]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>Määritä kehykset sekunnissa</translation>
+        <translation type="vanished">Määritä kehykset sekunnissa</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>Profiili:</translation>
+        <translation type="vanished">Profiili:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tulostustiedosto</translation>
+        <translation type="vanished">Tulostustiedosto</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Oletus</translation>
+        <translation type="vanished">Oletus</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardSivu</translation>
+        <translation type="vanished">WizardSivu</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>Aikavaiheen asetus</translation>
+        <translation type="vanished">Aikavaiheen asetus</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>Määritä aloitusajan vaihe, pysäytysajan vaihe ja ohitusnopeus.</translation>
+        <translation type="vanished">Määritä aloitusajan vaihe, pysäytysajan vaihe ja ohitusnopeus.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>alkaa :</translation>
+        <translation type="vanished">alkaa :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>lopettaa :</translation>
+        <translation type="vanished">lopettaa :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>Ohitusaste:</translation>
+        <translation type="vanished">Ohitusaste:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardSivu</translation>
+        <translation type="vanished">WizardSivu</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>Ikkunan valinta</translation>
+        <translation type="vanished">Ikkunan valinta</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>Valitse kohdeikkunat ja määritä, miten haluat tulostaa tiedostoja.</translation>
+        <translation type="vanished">Valitse kohdeikkunat ja määritä, miten haluat tulostaa tiedostoja.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>Kohdeikkunat</translation>
+        <translation type="vanished">Kohdeikkunat</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>Tulostustiedosto</translation>
+        <translation type="vanished">Tulostustiedosto</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>Yhdessä tiedostossa</translation>
+        <translation type="vanished">Yhdessä tiedostossa</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>Vastaavasti</translation>
+        <translation type="vanished">Vastaavasti</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Layout</translation>
+        <translation type="vanished">Layout</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>Kuten on</translation>
+        <translation type="vanished">Kuten on</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>Vaakasuoraan</translation>
+        <translation type="vanished">Vaakasuoraan</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>Pystysuunnassa</translation>
+        <translation type="vanished">Pystysuunnassa</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>Tausta</translation>
+        <translation type="vanished">Tausta</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>valkoinen</translation>
+        <translation type="vanished">valkoinen</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>läpinäkyvä</translation>
+        <translation type="vanished">läpinäkyvä</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>Useammalla kuin yhdellä visualisointi -ikkunalla on läpinäkyvä alue. Niitä ei voi tallentaa läpinäkyviksi taustakuviksi. Valitse valkoinen tausta tai peruuta ja poista ääriviivojen läpinäkyvyys jne.</translation>
+        <translation type="vanished">Useammalla kuin yhdellä visualisointi -ikkunalla on läpinäkyvä alue. Niitä ei voi tallentaa läpinäkyviksi taustakuviksi. Valitse valkoinen tausta tai peruuta ja poista ääriviivojen läpinäkyvyys jne.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>Mikään ikkuna ei ole tällä hetkellä valittuna.</translation>
+        <translation type="vanished">Mikään ikkuna ei ole tällä hetkellä valittuna.</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>Jatkuva tilannekuva / elokuva / ohjattu Google Earth -vientitoiminto</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">Johdanto</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">Tämän ohjatun toiminnon avulla voit määrittää jatkuvan tilannekuvan tuottamisen vaatimukset.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">Vahvista tulos</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">Alla olevan luettelon tiedostot luodaan tai päivitetään.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windowsin bittikartta (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">Kannettava bittikartta (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 -bittikartta (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">Etuliite</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tulostustiedosto</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varoitus</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">Kansio %1 ei ole olemassa. Haluatko sen nyt?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">Luodaan kansiota %1 epäonnistui.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tulostustiedosto</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Oletus</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varoitus</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">Useammalla kuin yhdellä visualisointi -ikkunalla on läpinäkyvä alue. Niitä ei voi tallentaa läpinäkyviksi taustakuviksi. Valitse valkoinen tausta tai peruuta ja poista ääriviivojen läpinäkyvyys jne.</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">Mikään ikkuna ei ole tällä hetkellä valittuna.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardSivu</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">Tiedoston ominaisuudet</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Määritä tulostustiedostojen ominaisuudet.</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">Hakemisto</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">Etuliite:</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">Liitteen pituus:</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">Muoto:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardSivu</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">Tulos Google Earthiin</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Määritä tulostustiedostojen ominaisuudet.</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">KML -tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">Nimi:</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardSivu</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">Elokuvan ominaisuudet</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">Määritä tulostustiedostojen ominaisuudet.</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">Tulosta elokuvatiedostot</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">Tiedoston nimi</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">Toistonopeus</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">Määritä elokuvan pituus [s]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">Määritä kehykset sekunnissa</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">Profiili:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardSivu</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">Aikavaiheen asetus</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">Määritä aloitusajan vaihe, pysäytysajan vaihe ja ohitusnopeus.</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">alkaa :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">lopettaa :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">Ohitusaste:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardSivu</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">Ikkunan valinta</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">Valitse kohdeikkunat ja määritä, miten haluat tulostaa tiedostoja.</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">Kohdeikkunat</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">Tulostustiedosto</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">Yhdessä tiedostossa</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">Vastaavasti</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Layout</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">Kuten on</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">Vaakasuoraan</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">Pystysuunnassa</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">Tausta</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">valkoinen</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">läpinäkyvä</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valitse Ratkaisija</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina "OK" -painiketta.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina &quot;OK&quot; -painiketta.</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>Tekijä:</translation>
+        <translation type="vanished">Tekijä:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>Koko:</translation>
+        <translation type="vanished">Koko:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>pikseliä</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon "%1". Tämä ratkaisija jätetään huomiotta. %2</translation>
+        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon &quot;%1&quot;. Tämä ratkaisija jätetään huomiotta. %2</translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tämä projekti näyttää avautuvan toisella iRIC GUI -ikkunalla. Et voi avata projektikansiota useista graafisista käyttöliittymistä.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avattua projektia ei kopioida työhakemistoon, ja sinun on tallennettava tähän projektiin tekemäsi muutokset. Jos haluat säilyttää nykyisen projektin, tallenna se ensin toiseen projektiin.</translation>
     </message>
     <message>
@@ -1601,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tällä hetkellä aktiivinen alaikkuna ei tue ääriviivan vientiä.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Asetustiedosto (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Voit viedä muototiedoston vaihtamalla väritilaksi "Diskreetti tila".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>Voit viedä muototiedoston vaihtamalla väritilaksi &quot;Diskreetti tila&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,7 +2450,7 @@ Option -&gt; Preferences</source>
         <translation>Avaa uusi 2D-jälkikäsittelyikkuna</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Avaa uusi 2D-lintuperspektiivin jälkikäsittelyikkuna</translation>
     </message>
     <message>

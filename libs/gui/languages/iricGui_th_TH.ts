@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AnimationController</name>
@@ -61,305 +63,305 @@
     <name>ContinuousSnapshotConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation>ยืนยันผล</translation>
+        <translation type="vanished">ยืนยันผล</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation>ไฟล์ในรายการด้านล่างจะถูกสร้างขึ้นหรืออัปเดต</translation>
+        <translation type="vanished">ไฟล์ในรายการด้านล่างจะถูกสร้างขึ้นหรืออัปเดต</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotFilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation>คุณสมบัติไฟล์</translation>
+        <translation type="vanished">คุณสมบัติไฟล์</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+        <translation type="vanished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation>ไดเรกทอรี</translation>
+        <translation type="vanished">ไดเรกทอรี</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>ชื่อไฟล์</translation>
+        <translation type="vanished">ชื่อไฟล์</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation>คำนำหน้า :</translation>
+        <translation type="vanished">คำนำหน้า :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation>ความยาวต่อท้าย :</translation>
+        <translation type="vanished">ความยาวต่อท้าย :</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation>รูปแบบ :</translation>
+        <translation type="vanished">รูปแบบ :</translation>
     </message>
     <message>
         <source>PNG (*.png)</source>
-        <translation>PNG (*.png)</translation>
+        <translation type="vanished">PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation>.png</translation>
+        <translation type="vanished">.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation>JPEG (*.jpg)</translation>
+        <translation type="vanished">JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation>.jpg</translation>
+        <translation type="vanished">.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation>Windows Bitmap (*.bmp)</translation>
+        <translation type="vanished">Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation>.bmp</translation>
+        <translation type="vanished">.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation>บิตแมปแบบพกพา (*.ppm)</translation>
+        <translation type="vanished">บิตแมปแบบพกพา (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation>.ppm</translation>
+        <translation type="vanished">.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation>X11 บิตแมป (*.xbm)</translation>
+        <translation type="vanished">X11 บิตแมป (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation>.xbm</translation>
+        <translation type="vanished">.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation>คำนำหน้า</translation>
+        <translation type="vanished">คำนำหน้า</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ไฟล์เอาต์พุต</translation>
+        <translation type="vanished">ไฟล์เอาต์พุต</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation>img_</translation>
+        <translation type="vanished">img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation>โฟลเดอร์ %1 ไม่มีอยู่ คุณต้องการที่จะมันตอนนี้?</translation>
+        <translation type="vanished">โฟลเดอร์ %1 ไม่มีอยู่ คุณต้องการที่จะมันตอนนี้?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation>การสร้างโฟลเดอร์ %1 ล้มเหลว.</translation>
+        <translation type="vanished">การสร้างโฟลเดอร์ %1 ล้มเหลว.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotGoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation>ส่งออกไปยัง Google Earth</translation>
+        <translation type="vanished">ส่งออกไปยัง Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+        <translation type="vanished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified.</source>
-        <translation>หมายเหตุ: คุณลักษณะนี้จะใช้ได้เฉพาะเมื่อมีการระบุระบบพิกัดเท่านั้น</translation>
+        <translation type="vanished">หมายเหตุ: คุณลักษณะนี้จะใช้ได้เฉพาะเมื่อมีการระบุระบบพิกัดเท่านั้น</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation>ชื่อไฟล์ KML</translation>
+        <translation type="vanished">ชื่อไฟล์ KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation>ชื่อ :</translation>
+        <translation type="vanished">ชื่อ :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation>output.kml</translation>
+        <translation type="vanished">output.kml</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotIntroductionPage</name>
     <message>
         <source>Introduction</source>
-        <translation>บทนำ</translation>
+        <translation type="vanished">บทนำ</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation>ใช้วิซาร์ดนี้เพื่อระบุข้อกำหนดในการสร้างเอาต์พุตสแน็ปช็อตอย่างต่อเนื่อง</translation>
+        <translation type="vanished">ใช้วิซาร์ดนี้เพื่อระบุข้อกำหนดในการสร้างเอาต์พุตสแน็ปช็อตอย่างต่อเนื่อง</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotMoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation>คุณสมบัติภาพยนตร์</translation>
+        <translation type="vanished">คุณสมบัติภาพยนตร์</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation>โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+        <translation type="vanished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation>เอาต์พุตไฟล์ภาพยนตร์</translation>
+        <translation type="vanished">เอาต์พุตไฟล์ภาพยนตร์</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation>ชื่อไฟล์</translation>
+        <translation type="vanished">ชื่อไฟล์</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation>เล่นความเร็ว</translation>
+        <translation type="vanished">เล่นความเร็ว</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation>ระบุความยาวของภาพยนตร์[วินาที]</translation>
+        <translation type="vanished">ระบุความยาวของภาพยนตร์[วินาที]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation>ระบุเฟรมต่อวินาที</translation>
+        <translation type="vanished">ระบุเฟรมต่อวินาที</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation>ประวัติโดยย่อ:</translation>
+        <translation type="vanished">ประวัติโดยย่อ:</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ไฟล์เอาต์พุต</translation>
+        <translation type="vanished">ไฟล์เอาต์พุต</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>ค่าเริ่มต้น</translation>
+        <translation type="vanished">ค่าเริ่มต้น</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotTimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation>การตั้งค่าขั้นตอนเวลา</translation>
+        <translation type="vanished">การตั้งค่าขั้นตอนเวลา</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation>โปรดระบุขั้นตอนเวลาเริ่มต้น ขั้นตอนเวลาหยุด และอัตราการข้าม</translation>
+        <translation type="vanished">โปรดระบุขั้นตอนเวลาเริ่มต้น ขั้นตอนเวลาหยุด และอัตราการข้าม</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation>เริ่ม :</translation>
+        <translation type="vanished">เริ่ม :</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation>หยุด :</translation>
+        <translation type="vanished">หยุด :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation>อัตราการข้าม :</translation>
+        <translation type="vanished">อัตราการข้าม :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation>--</translation>
+        <translation type="vanished">--</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation>WizardPage</translation>
+        <translation type="vanished">WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation>การเลือกหน้าต่าง</translation>
+        <translation type="vanished">การเลือกหน้าต่าง</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation>โปรดเลือกหน้าต่างเป้าหมายและระบุวิธีที่คุณต้องการส่งออกไฟล์</translation>
+        <translation type="vanished">โปรดเลือกหน้าต่างเป้าหมายและระบุวิธีที่คุณต้องการส่งออกไฟล์</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation>หน้าต่างเป้าหมาย</translation>
+        <translation type="vanished">หน้าต่างเป้าหมาย</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation>ไฟล์เอาต์พุต</translation>
+        <translation type="vanished">ไฟล์เอาต์พุต</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation>ในไฟล์เดียว</translation>
+        <translation type="vanished">ในไฟล์เดียว</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation>ตามลำดับ</translation>
+        <translation type="vanished">ตามลำดับ</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>เค้าโครง</translation>
+        <translation type="vanished">เค้าโครง</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation>อย่างที่เป็น</translation>
+        <translation type="vanished">อย่างที่เป็น</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation>แนวนอน</translation>
+        <translation type="vanished">แนวนอน</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation>แนวตั้ง</translation>
+        <translation type="vanished">แนวตั้ง</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation>พื้นหลัง</translation>
+        <translation type="vanished">พื้นหลัง</translation>
     </message>
     <message>
         <source>white</source>
-        <translation>สีขาว</translation>
+        <translation type="vanished">สีขาว</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation>โปร่งใส</translation>
+        <translation type="vanished">โปร่งใส</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation>หน้าต่างการแสดงข้อมูลมากกว่าหนึ่งหน้าต่างมีพื้นที่โปร่งใส ไม่สามารถบันทึกลงในภาพพื้นหลังโปร่งใสได้ โปรดเลือกพื้นหลังสีขาว หรือยกเลิกและปิดใช้งานความโปร่งใสสำหรับเส้นขอบ ฯลฯ</translation>
+        <translation type="vanished">หน้าต่างการแสดงข้อมูลมากกว่าหนึ่งหน้าต่างมีพื้นที่โปร่งใส ไม่สามารถบันทึกลงในภาพพื้นหลังโปร่งใสได้ โปรดเลือกพื้นหลังสีขาว หรือยกเลิกและปิดใช้งานความโปร่งใสสำหรับเส้นขอบ ฯลฯ</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation>ไม่ได้เลือกหน้าต่างใดในขณะนี้</translation>
+        <translation type="vanished">ไม่ได้เลือกหน้าต่างใดในขณะนี้</translation>
     </message>
 </context>
 <context>
@@ -367,6 +369,325 @@
     <message>
         <source>Continuous Snapshot / Movie / Google Earth Export Wizard</source>
         <translation>สแนปชอตต่อเนื่อง / ภาพยนตร์ / ตัวช่วยสร้างการส่งออก Google Earth</translation>
+    </message>
+    <message>
+        <source>Introduction</source>
+        <translation type="unfinished">บทนำ</translation>
+    </message>
+    <message>
+        <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
+        <translation type="unfinished">ใช้วิซาร์ดนี้เพื่อระบุข้อกำหนดในการสร้างเอาต์พุตสแน็ปช็อตอย่างต่อเนื่อง</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::ConfirmPage</name>
+    <message>
+        <source>Confirm the result</source>
+        <translation type="unfinished">ยืนยันผล</translation>
+    </message>
+    <message>
+        <source>The files in the list below will be created or updated. </source>
+        <translation type="unfinished">ไฟล์ในรายการด้านล่างจะถูกสร้างขึ้นหรืออัปเดต</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::FilePropertyPage</name>
+    <message>
+        <source>PNG (*.png)</source>
+        <translation type="unfinished">PNG (*.png)</translation>
+    </message>
+    <message>
+        <source>.png</source>
+        <translation type="unfinished">.png</translation>
+    </message>
+    <message>
+        <source>JPEG (*.jpg)</source>
+        <translation type="unfinished">JPEG (*.jpg)</translation>
+    </message>
+    <message>
+        <source>.jpg</source>
+        <translation type="unfinished">.jpg</translation>
+    </message>
+    <message>
+        <source>Windows Bitmap (*.bmp)</source>
+        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+    </message>
+    <message>
+        <source>.bmp</source>
+        <translation type="unfinished">.bmp</translation>
+    </message>
+    <message>
+        <source>Portable Bitmap (*.ppm)</source>
+        <translation type="unfinished">บิตแมปแบบพกพา (*.ppm)</translation>
+    </message>
+    <message>
+        <source>.ppm</source>
+        <translation type="unfinished">.ppm</translation>
+    </message>
+    <message>
+        <source>X11 Bitmap (*.xbm)</source>
+        <translation type="unfinished">X11 บิตแมป (*.xbm)</translation>
+    </message>
+    <message>
+        <source>.xbm</source>
+        <translation type="unfinished">.xbm</translation>
+    </message>
+    <message>
+        <source>Prefix</source>
+        <translation type="unfinished">คำนำหน้า</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ไฟล์เอาต์พุต</translation>
+    </message>
+    <message>
+        <source>img_</source>
+        <translation type="unfinished">img_</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">คำเตือน</translation>
+    </message>
+    <message>
+        <source>Folder %1 does not exists. Do you want to it now?</source>
+        <translation type="unfinished">โฟลเดอร์ %1 ไม่มีอยู่ คุณต้องการที่จะมันตอนนี้?</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Creating folder %1 failed.</source>
+        <translation type="unfinished">การสร้างโฟลเดอร์ %1 ล้มเหลว.</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">ชื่อไฟล์</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ไฟล์เอาต์พุต</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">ค่าเริ่มต้น</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">คำเตือน</translation>
+    </message>
+    <message>
+        <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
+        <translation type="unfinished">หน้าต่างการแสดงข้อมูลมากกว่าหนึ่งหน้าต่างมีพื้นที่โปร่งใส ไม่สามารถบันทึกลงในภาพพื้นหลังโปร่งใสได้ โปรดเลือกพื้นหลังสีขาว หรือยกเลิกและปิดใช้งานความโปร่งใสสำหรับเส้นขอบ ฯลฯ</translation>
+    </message>
+    <message>
+        <source>No window is currently selected.</source>
+        <translation type="unfinished">ไม่ได้เลือกหน้าต่างใดในขณะนี้</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_FilePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>File Properties</source>
+        <translation type="unfinished">คุณสมบัติไฟล์</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+    </message>
+    <message>
+        <source>Directory</source>
+        <translation type="unfinished">ไดเรกทอรี</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">ชื่อไฟล์</translation>
+    </message>
+    <message>
+        <source>Prefix :</source>
+        <translation type="unfinished">คำนำหน้า :</translation>
+    </message>
+    <message>
+        <source>Suffix length :</source>
+        <translation type="unfinished">ความยาวต่อท้าย :</translation>
+    </message>
+    <message>
+        <source>Format :</source>
+        <translation type="unfinished">รูปแบบ :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Output to the Google Earth</source>
+        <translation type="unfinished">ส่งออกไปยัง Google Earth</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+    </message>
+    <message>
+        <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KML file name</source>
+        <translation type="unfinished">ชื่อไฟล์ KML</translation>
+    </message>
+    <message>
+        <source>Name :</source>
+        <translation type="unfinished">ชื่อ :</translation>
+    </message>
+    <message>
+        <source>output.kml</source>
+        <translation type="unfinished">output.kml</translation>
+    </message>
+    <message>
+        <source>Post-processing (2D) window for positioning</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Movie Properties</source>
+        <translation type="unfinished">คุณสมบัติภาพยนตร์</translation>
+    </message>
+    <message>
+        <source>Please specify the properties of output files.</source>
+        <translation type="unfinished">โปรดระบุคุณสมบัติของไฟล์ที่ส่งออก</translation>
+    </message>
+    <message>
+        <source>Output movie files</source>
+        <translation type="unfinished">เอาต์พุตไฟล์ภาพยนตร์</translation>
+    </message>
+    <message>
+        <source>File name</source>
+        <translation type="unfinished">ชื่อไฟล์</translation>
+    </message>
+    <message>
+        <source>Play speed</source>
+        <translation type="unfinished">เล่นความเร็ว</translation>
+    </message>
+    <message>
+        <source>Specify movie length[sec]</source>
+        <translation type="unfinished">ระบุความยาวของภาพยนตร์[วินาที]</translation>
+    </message>
+    <message>
+        <source>Specify frames per second</source>
+        <translation type="unfinished">ระบุเฟรมต่อวินาที</translation>
+    </message>
+    <message>
+        <source>Profile:</source>
+        <translation type="unfinished">ประวัติโดยย่อ:</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Timestep Setting</source>
+        <translation type="unfinished">การตั้งค่าขั้นตอนเวลา</translation>
+    </message>
+    <message>
+        <source>Please specify the start time step, stop time step, and the skip rate.</source>
+        <translation type="unfinished">โปรดระบุขั้นตอนเวลาเริ่มต้น ขั้นตอนเวลาหยุด และอัตราการข้าม</translation>
+    </message>
+    <message>
+        <source>start :</source>
+        <translation type="unfinished">เริ่ม :</translation>
+    </message>
+    <message>
+        <source>--</source>
+        <translation type="unfinished">--</translation>
+    </message>
+    <message>
+        <source>stop :</source>
+        <translation type="unfinished">หยุด :</translation>
+    </message>
+    <message>
+        <source>Skip rate :</source>
+        <translation type="unfinished">อัตราการข้าม :</translation>
+    </message>
+</context>
+<context>
+    <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
+    <message>
+        <source>WizardPage</source>
+        <translation type="unfinished">WizardPage</translation>
+    </message>
+    <message>
+        <source>Window Selection</source>
+        <translation type="unfinished">การเลือกหน้าต่าง</translation>
+    </message>
+    <message>
+        <source>Please select target windows and specify how you want to output files.</source>
+        <translation type="unfinished">โปรดเลือกหน้าต่างเป้าหมายและระบุวิธีที่คุณต้องการส่งออกไฟล์</translation>
+    </message>
+    <message>
+        <source>Target windows</source>
+        <translation type="unfinished">หน้าต่างเป้าหมาย</translation>
+    </message>
+    <message>
+        <source>Output file</source>
+        <translation type="unfinished">ไฟล์เอาต์พุต</translation>
+    </message>
+    <message>
+        <source>In one file</source>
+        <translation type="unfinished">ในไฟล์เดียว</translation>
+    </message>
+    <message>
+        <source>Respectively</source>
+        <translation type="unfinished">ตามลำดับ</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">เค้าโครง</translation>
+    </message>
+    <message>
+        <source>As is</source>
+        <translation type="unfinished">อย่างที่เป็น</translation>
+    </message>
+    <message>
+        <source>Horizontally</source>
+        <translation type="unfinished">แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertically</source>
+        <translation type="unfinished">แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Background</source>
+        <translation type="unfinished">พื้นหลัง</translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished">สีขาว</translation>
+    </message>
+    <message>
+        <source>transparent</source>
+        <translation type="unfinished">โปร่งใส</translation>
     </message>
 </context>
 <context>
@@ -449,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>เลือก Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม "ตกลง"</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม &quot;ตกลง&quot;</translation>
     </message>
 </context>
 <context>
@@ -745,7 +1066,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Factor:</source>
-        <translation>ปัจจัย:</translation>
+        <translation type="vanished">ปัจจัย:</translation>
     </message>
     <message>
         <source>Arrow Size:</source>
@@ -761,11 +1082,23 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Size:</source>
-        <translation>ขนาด:</translation>
+        <translation type="vanished">ขนาด:</translation>
     </message>
     <message>
         <source>pixels</source>
         <translation>พิกเซล</translation>
+    </message>
+    <message>
+        <source>Line width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1320,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ "%1" ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
+        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ &quot;%1&quot; ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
     </message>
 </context>
 <context>
@@ -1437,7 +1770,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ดูเหมือนว่าโปรเจ็กต์นี้จะเปิดขึ้นโดยหน้าต่าง iRIC GUI อื่น คุณไม่สามารถเปิดโฟลเดอร์โครงการจากหลายหน้าต่าง GUI</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>โปรเจ็กต์ที่เปิดอยู่จะไม่ถูกคัดลอกไปยังไดเร็กทอรีงาน และคุณจะถูกบังคับให้บันทึกการแก้ไขที่คุณทำกับโปรเจ็กต์นี้ หากคุณต้องการเก็บโปรเจ็กต์ปัจจุบันไว้ โปรดบันทึกไปที่โปรเจ็กต์อื่นก่อน</translation>
     </message>
     <message>
@@ -1605,8 +1938,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>หน้าต่างย่อยที่ใช้งานอยู่ในปัจจุบันไม่รองรับการส่งออกรูปทรงเส้นขอบ</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1742,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>ไฟล์การตั้งค่า (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น "โหมดแยก"</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation>หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น &quot;โหมดแยก&quot;</translation>
     </message>
 </context>
 <context>
@@ -2090,7 +2423,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2117,8 +2450,8 @@ Option -&gt; Preferences</source>
         <translation>เปิดหน้าต่างหลังการประมวลผล 2D ใหม่</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird's-Eye ใหม่</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird&apos;s-Eye ใหม่</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
