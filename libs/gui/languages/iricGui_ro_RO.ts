@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Introducere</translation>
+        <translation>Introducere</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Utilizați acest expert pentru a specifica cerințele pentru a genera ieșire instantanee continuă.</translation>
+        <translation>Utilizați acest expert pentru a specifica cerințele pentru a genera ieșire instantanee continuă.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Confirmați rezultatul</translation>
+        <translation>Confirmați rezultatul</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Fișierele din lista de mai jos vor fi create sau actualizate.</translation>
+        <translation>Fișierele din lista de mai jos vor fi create sau actualizate.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Bitmap Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Bitmap portabil (*.ppm)</translation>
+        <translation>Bitmap portabil (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Prefix</translation>
+        <translation>Prefix</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Fisier de iesire</translation>
+        <translation>Fisier de iesire</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Pliant %1 nu există. Vrei acum?</translation>
+        <translation>Pliant %1 nu exista. Vrei să o faci acum?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Se creează folderul %1 a eșuat.</translation>
+        <translation>Se creează folderul %1 a eșuat.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nume de fișier</translation>
+        <translation>Nume de fișier</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Fisier de iesire</translation>
+        <translation>Fisier de iesire</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Mod implicit</translation>
+        <translation>Mod implicit</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Mai multe ferestre de vizualizare au o regiune transparentă. Nu pot fi salvate în imagini de fundal transparente. Vă rugăm să selectați fundalul alb sau anulați și dezactivați transparența pentru contururi etc.</translation>
+        <translation>Mai mult de o fereastră de vizualizare are o regiune transparentă. Ele nu pot fi salvate în imagini de fundal transparente. Selectați fundal alb sau anulați și dezactivați transparența pentru contururi etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">În prezent nu este selectată nicio fereastră.</translation>
+        <translation>În prezent, nicio fereastră nu este selectată.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Proprietăți fișier</translation>
+        <translation>Proprietăți fișier</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
+        <translation>Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Director</translation>
+        <translation>Director</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nume de fișier</translation>
+        <translation>Nume de fișier</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Prefix:</translation>
+        <translation>Prefix:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Lungimea sufixului:</translation>
+        <translation>Lungimea sufixului:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Ieșire către Google Earth</translation>
+        <translation>Ieșire către Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
+        <translation>Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notă: Această caracteristică este disponibilă numai atunci când a fost specificat un sistem de coordonate și este scos un instantaneu al ferestrei Post-procesare (2D).</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">Numele fișierului KML</translation>
+        <translation>Nume fișier KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Nume :</translation>
+        <translation>Nume :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>ieșire.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Fereastra de post-procesare (2D) pentru poziționare</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Proprietăți film</translation>
+        <translation>Proprietăți film</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
+        <translation>Vă rugăm să specificați proprietățile fișierelor de ieșire.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Ieșire fișiere film</translation>
+        <translation>Ieșire fișiere de film</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nume de fișier</translation>
+        <translation>Nume de fișier</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Viteza de redare</translation>
+        <translation>Viteza de joc</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Specificați durata filmului [sec]</translation>
+        <translation>Specificați durata filmului[sec]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Specificați cadre pe secundă</translation>
+        <translation>Specificați cadre pe secundă</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profil:</translation>
+        <translation>Profil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Setare Timestep</translation>
+        <translation>Setarea intervalului de timp</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Vă rugăm să specificați pasul timpului de început, pasul timpului de oprire și rata de sărituri.</translation>
+        <translation>Vă rugăm să specificați pasul de timp de începere, pasul de timp de oprire și rata de omitere.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">start :</translation>
+        <translation>start :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">Stop :</translation>
+        <translation>Stop :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Omite rata:</translation>
+        <translation>Rata de omitere:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Selecția ferestrei</translation>
+        <translation>Selectarea ferestrei</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Vă rugăm să selectați ferestrele țintă și să specificați modul în care doriți să scoateți fișierele.</translation>
+        <translation>Vă rugăm să selectați ferestrele țintă și să specificați cum doriți să scoateți fișierele.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Ferestre țintă</translation>
+        <translation>Ferestre țintă</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Fisier de iesire</translation>
+        <translation>Fisier de iesire</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Într-un singur fișier</translation>
+        <translation>Într-un singur dosar</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Respectiv</translation>
+        <translation>Respectiv</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Aspect</translation>
+        <translation>Aspect</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Ca atare</translation>
+        <translation>Așa cum este</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Orizontal</translation>
+        <translation>Orizontal</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertical</translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">fundal</translation>
+        <translation>fundal</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">alb</translation>
+        <translation>alb</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">transparent</translation>
+        <translation>transparent</translation>
     </message>
 </context>
 <context>
@@ -770,7 +768,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selectați Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Când creați un proiect nou, trebuie să selectați soluția de rezolvat pe care să o utilizați pentru calcul. Selectați un rezolvator și apăsați butonul „OK”.</translation>
     </message>
 </context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lăţime:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiunea punctului:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar &quot; %1 Acest rezolvator este ignorat. %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar " %1 Acest rezolvator este ignorat. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Acest proiect pare a fi deschis de o altă fereastră GUI iRIC. Nu puteți deschide un folder de proiect din mai multe ferestre GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proiectul deschis nu este copiat în directorul de lucru și veți fi obligat să salvați modificările aduse acestui proiect. Dacă doriți să păstrați proiectul curent, vă rugăm să îl salvați mai întâi într-un alt proiect.</translation>
     </message>
     <message>
@@ -1934,7 +1932,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-fereastra activă în prezent nu acceptă exportarea conturului.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
     <message>
@@ -2075,7 +2073,7 @@ Option -&gt; Preferences</source>
         <translation>Fișier de setare (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation>Pentru a exporta fișierul de formă, comutați modul Culoare la „Mod discret”.</translation>
     </message>
 </context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Deschideți o nouă fereastră de post-procesare 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird&apos;s-Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird's-Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

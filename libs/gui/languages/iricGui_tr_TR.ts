@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>AnimationController</name>
@@ -181,7 +179,7 @@
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="vanished">Google Earth&apos;e çıktı</translation>
+        <translation type="vanished">Google Earth'e çıktı</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Tanıtım</translation>
+        <translation>giriiş</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Sürekli anlık görüntü çıktısı oluşturmak için gereksinimleri belirtmek için bu sihirbazı kullanın.</translation>
+        <translation>Sürekli anlık görüntü çıktısı oluşturmak için gereksinimleri belirtmek üzere bu sihirbazı kullanın.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">sonucu onaylayın</translation>
+        <translation>Sonucu onaylayın</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Aşağıdaki listedeki dosyalar oluşturulacak veya güncellenecektir.</translation>
+        <translation>Aşağıdaki listedeki dosyalar oluşturulacak veya güncellenecektir.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>png (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>jpeg (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bit Eşlem (*.bmp)</translation>
+        <translation>Windows Bit Eşlemi (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Taşınabilir Bitmap (*.ppm)</translation>
+        <translation>Taşınabilir Bit Eşlem (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bit eşlem (*.xbm)</translation>
+        <translation>X11 Bit Eşlemi (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Önek</translation>
+        <translation>Önek</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Çıktı dosyası</translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">resim_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Dosya %1 Yok. Şimdi istiyor musun?</translation>
+        <translation>Dosya %1 Yok. Şimdi istiyor musun?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Klasör oluşturma %1 arızalı.</translation>
+        <translation>Klasör oluşturuluyor %1 arızalı.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Dosya adı</translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Çıktı dosyası</translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Varsayılan</translation>
+        <translation>Varsayılan</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Birden fazla görselleştirme penceresi saydam bölgeye sahiptir. Şeffaf arka plan resimlerine kaydedilemezler. Lütfen beyaz arka planı seçin veya konturlar için şeffaflığı iptal edin ve devre dışı bırakın.</translation>
+        <translation>Birden fazla görselleştirme penceresi şeffaf bölgeye sahiptir. Saydam arka plan resimlerine kaydedilemezler. Lütfen beyaz arka planı seçin veya konturlar vb. için şeffaflığı iptal edin ve devre dışı bırakın.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Şu anda seçili pencere yok.</translation>
+        <translation>Şu anda seçili pencere yok.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Sihirbaz Sayfası</translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Dosya özellikleri</translation>
+        <translation>Dosya özellikleri</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">dizin</translation>
+        <translation>dizin</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Dosya adı</translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Önek :</translation>
+        <translation>önek:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Sonek uzunluğu :</translation>
+        <translation>son ek uzunluğu :</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Biçim :</translation>
+        <translation>Biçim :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Sihirbaz Sayfası</translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Google Earth&apos;e çıktı</translation>
+        <translation>Google Earth'e Çıktı</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Not: Bu özellik yalnızca bir koordinat sistemi belirtildiğinde ve İşlem Sonrası (2B) pencere anlık görüntüsü çıkarıldığında kullanılabilir.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML dosya adı</translation>
+        <translation>KML dosya adı</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">İsim :</translation>
+        <translation>İsim :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">çıktı.kml</translation>
+        <translation>çıktı.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Konumlandırma için işlem sonrası (2D) penceresi</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Sihirbaz Sayfası</translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Film Özellikleri</translation>
+        <translation>Film Özellikleri</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
+        <translation>Lütfen çıktı dosyalarının özelliklerini belirtin.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Çıktı film dosyaları</translation>
+        <translation>Çıktı film dosyaları</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Dosya adı</translation>
+        <translation>Dosya adı</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">oyun hızı</translation>
+        <translation>Çalma hızı</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Film uzunluğunu belirtin[sn]</translation>
+        <translation>Film uzunluğunu belirtin[sn]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Saniyedeki kare sayısını belirtin</translation>
+        <translation>Saniyedeki kareleri belirtin</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profil:</translation>
+        <translation>Profil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Sihirbaz Sayfası</translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Zaman Adımı Ayarı</translation>
+        <translation>Zaman Adımı Ayarı</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Lütfen başlangıç zamanı adımını, bitiş zamanı adımını ve atlama oranını belirtin.</translation>
+        <translation>Lütfen başlangıç zamanı adımını, bitiş zamanı adımını ve atlama oranını belirtin.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">Başlat :</translation>
+        <translation>başlangıç :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">Dur :</translation>
+        <translation>durmak :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Atlama oranı :</translation>
+        <translation>Atlama oranı :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Sihirbaz Sayfası</translation>
+        <translation>Sihirbaz Sayfası</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Pencere Seçimi</translation>
+        <translation>Pencere Seçimi</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Lütfen hedef pencereleri seçin ve dosyaların nasıl çıktısını almak istediğinizi belirtin.</translation>
+        <translation>Lütfen hedef pencereleri seçin ve dosyaların çıktısını nasıl almak istediğinizi belirtin.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Hedef pencereler</translation>
+        <translation>Hedef pencereler</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Çıktı dosyası</translation>
+        <translation>Çıktı dosyası</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">tek dosyada</translation>
+        <translation>tek dosyada</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Sırasıyla</translation>
+        <translation>Sırasıyla</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Düzen</translation>
+        <translation>Düzen</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">olduğu gibi</translation>
+        <translation>olduğu gibi</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">yatay</translation>
+        <translation>yatay</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">dikey</translation>
+        <translation>dikey olarak</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Arka plan</translation>
+        <translation>Arka plan</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">Beyaz</translation>
+        <translation>beyaz</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">şeffaf</translation>
+        <translation>şeffaf</translation>
     </message>
 </context>
 <context>
@@ -737,11 +735,11 @@
     <message>
         <source>When you update iRIC, you need to close iRIC before launching iRIC Maintainance.
 When you have iRIC windows other than this, close them manually.</source>
-        <translation>iRIC&apos;i güncellediğinizde, iRIC Bakımını başlatmadan önce iRIC&apos;i kapatmanız gerekir. Bunun dışında iRIC pencereleriniz olduğunda, bunları manuel olarak kapatın.</translation>
+        <translation>iRIC'i güncellediğinizde, iRIC Bakımını başlatmadan önce iRIC'i kapatmanız gerekir. Bunun dışında iRIC pencereleriniz olduğunda, bunları manuel olarak kapatın.</translation>
     </message>
     <message>
         <source>Close iRIC and launch iRIC Maintainance</source>
-        <translation>iRIC&apos;i kapatın ve iRIC Bakımını başlatın</translation>
+        <translation>iRIC'i kapatın ve iRIC Bakımını başlatın</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Çözücü Seç</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Yeni bir proje oluşturduğunuzda, hesaplama için kullanılacak çözücüyü seçmeniz gerekir. Lütfen bir çözücü seçin ve &quot;Tamam&quot; düğmesine basın.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Yeni bir proje oluşturduğunuzda, hesaplama için kullanılacak çözücüyü seçmeniz gerekir. Lütfen bir çözücü seçin ve "Tamam" düğmesine basın.</translation>
     </message>
 </context>
 <context>
@@ -814,7 +812,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Network Proxy</source>
-        <translation>Ağ Proxy&apos;si</translation>
+        <translation>Ağ Proxy'si</translation>
     </message>
     <message>
         <source>Background Images (Internet)</source>
@@ -1019,7 +1017,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Working directory is changed, but the new working directory is used AFTER exiting iRIC GUI!</source>
-        <translation>Çalışma dizini değiştirilir, ancak yeni çalışma dizini iRIC GUI&apos;den çıkıldıktan SONRA kullanılır!</translation>
+        <translation>Çalışma dizini değiştirilir, ancak yeni çalışma dizini iRIC GUI'den çıkıldıktan SONRA kullanılır!</translation>
     </message>
     <message>
         <source>Python path</source>
@@ -1027,7 +1025,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Note: Used to run solvers written in Python.</source>
-        <translation>Not: Python&apos;da yazılmış çözücüleri çalıştırmak için kullanılır.</translation>
+        <translation>Not: Python'da yazılmış çözücüleri çalıştırmak için kullanılır.</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hat genişliği:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puan Boyutu:</translation>
     </message>
 </context>
 <context>
@@ -1172,7 +1170,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>HTTP Proxy: </source>
-        <translation>HTTP Proxy&apos;si:</translation>
+        <translation>HTTP Proxy'si:</translation>
     </message>
     <message>
         <source>Port:</source>
@@ -1316,7 +1314,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Haritalar Platformu, artık Google Haritalar&apos;ı iRIC aracılığıyla kullanmak için API anahtarına ihtiyaç duyuyor. Lütfen kendi Google Haritalar API anahtarınızı alın ve Google Haritalar resimlerini Ön İşlemcide ve 2B İşlem Sonrası Windows&apos;ta arka plan resimleri olarak kullanmak için buraya girin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Haritalar Platformu, artık Google Haritalar'ı iRIC aracılığıyla kullanmak için API anahtarına ihtiyaç duyuyor. Lütfen kendi Google Haritalar API anahtarınızı alın ve Google Haritalar resimlerini Ön İşlemcide ve 2B İşlem Sonrası Windows'ta arka plan resimleri olarak kullanmak için buraya girin.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Uyarı</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Çözücü tanım dosyası &quot; klasörüne yüklenirken hata oluştu %1 &quot;. Bu çözücü yoksayılır. %2</translation>
+        <translation>Çözücü tanım dosyası " klasörüne yüklenirken hata oluştu %1 ". Bu çözücü yoksayılır. %2</translation>
     </message>
 </context>
 <context>
@@ -1701,7 +1699,7 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Welcome to iRIC!
 iRIC can simulate rivers from Colorado River to the Nile.</source>
-        <translation>iRIC&apos;e hoş geldiniz! iRIC, Colorado Nehri&apos;nden Nil&apos;e nehirleri simüle edebilir.</translation>
+        <translation>iRIC'e hoş geldiniz! iRIC, Colorado Nehri'nden Nil'e nehirleri simüle edebilir.</translation>
     </message>
     <message>
         <source>Start Simulation Project</source>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Bu proje başka bir iRIC GUI penceresi tarafından açılmış gibi görünüyor. Birden çok GUI penceresinden bir proje klasörü açamazsınız.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Açılan proje çalışma dizinine kopyalanmaz ve bu projede yaptığınız değişiklikleri kaydetmek zorunda kalırsınız. Mevcut projeyi saklamak istiyorsanız, lütfen önce başka bir projeye kaydedin.</translation>
     </message>
     <message>
@@ -1934,12 +1932,12 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Şu anda aktif olan alt pencere, kontur figürünün dışa aktarılmasını desteklemiyor.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Şekil dosyasını dışa aktarmak için, &quot;Renk Fringe&quot; veya &quot;Isolines&quot; yerine &quot;Görüntü ayarı&quot;nı &quot;Kontur Figürü&quot; olarak değiştirin.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Şekil dosyasını dışa aktarmak için, "Renk Fringe" veya "Isolines" yerine "Görüntü ayarı"nı "Kontur Figürü" olarak değiştirin.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
-        <translation>Kontur figürünü ESRI Shapefiles&apos;e aktarın</translation>
+        <translation>Kontur figürünü ESRI Shapefiles'e aktarın</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -1959,7 +1957,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>Export Google Earth KMZ for street view</source>
-        <translation>Sokak görünümü için Google Earth KMZ&apos;yi dışa aktarın</translation>
+        <translation>Sokak görünümü için Google Earth KMZ'yi dışa aktarın</translation>
     </message>
     <message>
         <source>%1 can not be overwritten.</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Ayar dosyası (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Şekil dosyasını dışa aktarmak için Renk modunu &quot;Ayrık Mod&quot; olarak değiştirin.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Şekil dosyasını dışa aktarmak için Renk modunu "Ayrık Mod" olarak değiştirin.</translation>
     </message>
 </context>
 <context>
@@ -2242,7 +2240,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (from web)</source>
-        <translation type="vanished">Coğrafi Veriler (web&apos;den)</translation>
+        <translation type="vanished">Coğrafi Veriler (web'den)</translation>
     </message>
     <message>
         <source>&amp;Hydraulic Data</source>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,7 +2448,7 @@ Option -&gt; Preferences</source>
         <translation>Yeni 2D İşlem Sonrası Penceresini Aç</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Yeni 2D Kuş Bakışı İşleme Sonrası Penceresini Aç</translation>
     </message>
     <message>
@@ -2563,7 +2561,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Geographic Data (Elevation from web)</source>
-        <translation>Coğrafi Veriler (Web&apos;den Yükseklik)</translation>
+        <translation>Coğrafi Veriler (Web'den Yükseklik)</translation>
     </message>
 </context>
 </TS>

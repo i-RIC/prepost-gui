@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Introducao</translation>
+        <translation>Introdução</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Especificar as informacoes necessarias para criar saida de instantaneo continuo, usando este wizard.</translation>
+        <translation>Use este assistente para especificar os requisitos para gerar uma saída de instantâneo contínua.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Confirmar o resultado</translation>
+        <translation>Confirme o resultado</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Os arquivos abaixo mencionados serao criados ou atualizados.</translation>
+        <translation>Os arquivos na lista abaixo serão criados ou atualizados.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Bitmap de Windows (*.bmp)</translation>
+        <translation>Mapa de bits do Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Bitmap portatil  (*.ppm)</translation>
+        <translation>Bitmap Portátil (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>Mapa de bits X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Prefixo</translation>
+        <translation>Prefixo</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Arquivo de saida</translation>
+        <translation>Arquivo de saída</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Pasta %1 nao existe. Deseja cria-la ?</translation>
+        <translation>Pasta %1 não existe. Você quer isso agora?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Nao foi possivel criar a pasta% 1.</translation>
+        <translation>Criando pasta %1 fracassado.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nome do arquivo  </translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Arquivo de saida</translation>
+        <translation>Arquivo de saída</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Padrao original</translation>
+        <translation>Padrão</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Atencao</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Uma ou mais janelas de visualizacao possuem a regiao semitransparente. Essas janelas nao poderao ser salvos nas imagens de fundo transparente. Selecione o fundo branco, ou cancele Wizard e, desative a semitransparencia de contornos etc.</translation>
+        <translation>Mais de uma janela de visualização possui região transparente. Eles não podem ser salvos em imagens de fundo transparentes. Selecione o fundo branco ou cancele e desative a transparência para contornos, etc.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Nenhuma janela foi selecionada.</translation>
+        <translation>Nenhuma janela está selecionada no momento.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Pagina de Wizard</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Atributos de arquivos</translation>
+        <translation>Propriedades do arquivo</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Configure referente ao arquivo de saida.</translation>
+        <translation>Especifique as propriedades dos arquivos de saída.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Pasta de saida</translation>
+        <translation>Diretório</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nome do arquivo  </translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Prefixo :</translation>
+        <translation>Prefixo:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Comprimento de sufixo</translation>
+        <translation>Comprimento do sufixo:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formato de arquivo :</translation>
+        <translation>Formato:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Pagina de Wizard</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Saida para Google Earth</translation>
+        <translation>Saída para o Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Configure referente ao arquivo de saida.</translation>
+        <translation>Especifique as propriedades dos arquivos de saída.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nota: Este recurso está disponível apenas quando um sistema de coordenadas foi especificado e o instantâneo da janela de pós-processamento (2D) é gerado.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">Nome do arquivo KML</translation>
+        <translation>nome do arquivo KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Nome de arquivo :</translation>
+        <translation>Nome :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>saída.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Janela de pós-processamento (2D) para posicionamento</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Pagina de Wizard</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Configuracao do arquivo de video</translation>
+        <translation>Propriedades do filme</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Configure referente ao arquivo de saida.</translation>
+        <translation>Especifique as propriedades dos arquivos de saída.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Saida do arquivo de video</translation>
+        <translation>Arquivos de filme de saída</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nome do arquivo  </translation>
+        <translation>Nome do arquivo</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Velocidade de reproducao</translation>
+        <translation>Velocidade de jogo</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Especificar a duracao de video (segundos)</translation>
+        <translation>Especifique a duração do filme [seg]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Especificar os quadros por segundo</translation>
+        <translation>Especificar quadros por segundo</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Perfil</translation>
+        <translation>Perfil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Pagina de Wizard</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Configuracao para etapa do tempo</translation>
+        <translation>Definição de intervalo de tempo</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Configure sobre horario inicial e final e sobre filtracao para salvar fotos instantaneas.</translation>
+        <translation>Especifique a etapa de tempo de início, a etapa de tempo de parada e a taxa de salto.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">Iniciar :</translation>
+        <translation>começar :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">Concluir :</translation>
+        <translation>parar :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Filtracao :</translation>
+        <translation>Taxa de salto:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Pagina de Wizard</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Selecionamento de Window</translation>
+        <translation>Seleção de janela</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Especifique a respectiva janela e o arquivo de saida.</translation>
+        <translation>Selecione as janelas de destino e especifique como deseja enviar os arquivos.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Respectivas janelas </translation>
+        <translation>Janelas de destino</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Arquivo de saida</translation>
+        <translation>Arquivo de saída</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Salvar todos num arquivo</translation>
+        <translation>Em um arquivo</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Salvar em outro arquivo</translation>
+        <translation>Respectivamente</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Layout</translation>
+        <translation>Disposição</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Conforme exibido</translation>
+        <translation>Como é</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Alinhar lado a lado</translation>
+        <translation>Horizontalmente</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Organizar verticalmente</translation>
+        <translation>Verticalmente</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Fundo</translation>
+        <translation>Fundo</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">Branco</translation>
+        <translation>branco</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">Translucido</translation>
+        <translation>transparente</translation>
     </message>
 </context>
 <context>
@@ -778,8 +776,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecionar o solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Ao iniciar um novo projeto, voce devera escolher o solucionador a ser utilizado na analise. Escolha um solucionador dentro da lista abaixo e pressione o botao &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Ao iniciar um novo projeto, voce devera escolher o solucionador a ser utilizado na analise. Escolha um solucionador dentro da lista abaixo e pressione o botao "OK".</translation>
     </message>
 </context>
 <context>
@@ -1102,15 +1100,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Espessura da linha:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Largura:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tamanho do ponto:</translation>
     </message>
 </context>
 <context>
@@ -1665,13 +1663,13 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Atencao</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta &quot;%1&quot;. Este solucionador é ignorado. %2</translation>
+        <translation>Ocorreu um erro ao carregar o arquivo de definição do solver na pasta "%1". Este solucionador é ignorado. %2</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.</source>
-        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta &quot;%1&quot; . Este solucionador sera ignorado.</translation>
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.</source>
+        <translation type="vanished">Ocorreu um erro ao baixar o arquivo de definicao sobre o solucionador, o que se encontra na pasta "%1" . Este solucionador sera ignorado.</translation>
     </message>
 </context>
 <context>
@@ -1944,7 +1942,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Este projeto parece estar aberto atraves de outra iRIC GUI. Voce nao podera abrir mesma pasta do projeto atraves de varias GUIs.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>O projeto nao sera copiado no diretorio de trabalho e suas alteracoes serao sempre salvas. Se voce deseja conservar o projeto atual, comece a trabalhar depois de salva-lo com um outro nome.</translation>
     </message>
     <message>
@@ -2117,8 +2115,8 @@ Option -&gt; Preferences</source>
         <translation>A sub-janela ativa neste momento nao suporta a exportacao de figura de contornos.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Para exportar o arquivo de shapefile, altere &quot;Configuracoes de exibicao&quot; para &quot;Figura de Contorno&quot;, nao para &quot;Franja Colorida&quot; ou &quot;Contorno&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Para exportar o arquivo de shapefile, altere "Configuracoes de exibicao" para "Figura de Contorno", nao para "Franja Colorida" ou "Contorno".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2253,8 +2251,8 @@ Option -&gt; Preferences</source>
         <translation>Arquivo de configuração (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Para exportar o arquivo de forma, alterne o modo Color para &quot;Modo discreto&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Para exportar o arquivo de forma, alterne o modo Color para "Modo discreto".</translation>
     </message>
 </context>
 <context>
@@ -2601,7 +2599,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Open new Verification Window</source>
@@ -2632,7 +2630,7 @@ Option -&gt; Preferences</source>
         <translation>Abrir nova janela (2D) de visualizacao </translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Abrir nova janela (2D) de visualizacao do mapa panoramico pela vista de passaro </translation>
     </message>
     <message>

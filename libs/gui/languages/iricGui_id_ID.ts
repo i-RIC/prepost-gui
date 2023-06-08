@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">pengantar</translation>
+        <translation>Perkenalan</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Gunakan wizard ini untuk menentukan persyaratan untuk menghasilkan output snapshot berkelanjutan.</translation>
+        <translation>Gunakan wizard ini untuk menentukan persyaratan untuk menghasilkan keluaran snapshot berkelanjutan.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Konfirmasikan hasilnya</translation>
+        <translation>Konfirmasikan hasilnya</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">File dalam daftar di bawah ini akan dibuat atau diperbarui.</translation>
+        <translation>File dalam daftar di bawah ini akan dibuat atau diperbarui.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Bitmap Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Bitmap Portabel (*.ppm)</translation>
+        <translation>Bitmap portabel (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>Bitmap X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Awalan</translation>
+        <translation>Awalan</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Berkas keluaran</translation>
+        <translation>Berkas keluaran</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Peringatan</translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Map %1 tidak ada. Apakah Anda ingin sekarang?</translation>
+        <translation>Map %1 tidak ada. Apakah Anda menginginkannya sekarang?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Membuat folder %1 gagal.</translation>
+        <translation>Membuat folder %1 gagal.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nama file</translation>
+        <translation>Nama file</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Berkas keluaran</translation>
+        <translation>Berkas keluaran</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Bawaan</translation>
+        <translation>Bawaan</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Peringatan</translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Lebih dari satu jendela visualisasi memiliki wilayah transparan. Mereka tidak dapat disimpan ke dalam gambar latar belakang transparan. Silakan pilih latar belakang putih, atau batalkan dan nonaktifkan transparansi untuk kontur, dll.</translation>
+        <translation>Lebih dari satu jendela visualisasi memiliki wilayah transparan. Mereka tidak dapat disimpan ke dalam gambar latar transparan. Harap pilih latar belakang putih, atau batalkan dan nonaktifkan transparansi untuk kontur, dll.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Tidak ada jendela yang dipilih saat ini.</translation>
+        <translation>Tidak ada jendela yang dipilih saat ini.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Halaman Penyihir</translation>
+        <translation>Halaman Wizard</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Properti File</translation>
+        <translation>Properti File</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Harap tentukan properti file output.</translation>
+        <translation>Harap tentukan properti file keluaran.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Direktori</translation>
+        <translation>Direktori</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nama file</translation>
+        <translation>Nama file</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Awalan:</translation>
+        <translation>Awalan :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Panjang akhiran:</translation>
+        <translation>Panjang akhiran :</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Halaman Penyihir</translation>
+        <translation>Halaman Wizard</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Keluaran ke Google Earth</translation>
+        <translation>Output ke Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Harap tentukan properti file output.</translation>
+        <translation>Harap tentukan properti file keluaran.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Catatan: Fitur ini hanya tersedia ketika sistem koordinat telah ditentukan, dan snapshot jendela Post-processing (2D) adalah output.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">Nama file KML</translation>
+        <translation>nama file KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Nama:</translation>
+        <translation>Nama :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">keluaran.kml</translation>
+        <translation>output.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Jendela pasca-pemrosesan (2D) untuk pemosisian</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Halaman Penyihir</translation>
+        <translation>Halaman Wizard</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Properti Film</translation>
+        <translation>Properti Film</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Harap tentukan properti file output.</translation>
+        <translation>Harap tentukan properti file keluaran.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Keluaran file film</translation>
+        <translation>Keluarkan file film</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Nama file</translation>
+        <translation>Nama file</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Kecepatan putar</translation>
+        <translation>Kecepatan putar</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Tentukan panjang film[dtk]</translation>
+        <translation>Tentukan durasi film[detik]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Tentukan frame per detik</translation>
+        <translation>Tentukan bingkai per detik</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profil:</translation>
+        <translation>Profil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Halaman Penyihir</translation>
+        <translation>Halaman Wizard</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Pengaturan Langkah Waktu</translation>
+        <translation>Pengaturan langkah waktu</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Harap tentukan langkah waktu mulai, langkah waktu berhenti, dan tingkat lewati.</translation>
+        <translation>Harap tentukan langkah waktu mulai, langkah waktu berhenti, dan tingkat lompatan.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">Mulailah :</translation>
+        <translation>awal :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">berhenti :</translation>
+        <translation>berhenti :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Lewati tingkat:</translation>
+        <translation>Tingkat melewatkan :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Halaman Penyihir</translation>
+        <translation>Halaman Wizard</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Pilihan Jendela</translation>
+        <translation>Pemilihan Jendela</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Silakan pilih jendela target dan tentukan bagaimana Anda ingin menghasilkan file.</translation>
+        <translation>Silakan pilih jendela target dan tentukan bagaimana Anda ingin mengeluarkan file.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Jendela target</translation>
+        <translation>Jendela sasaran</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Berkas keluaran</translation>
+        <translation>Berkas keluaran</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Dalam satu file</translation>
+        <translation>Dalam satu berkas</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">masing-masing</translation>
+        <translation>Masing-masing</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Tata Letak</translation>
+        <translation>Tata letak</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Dengan adanya</translation>
+        <translation>Dengan adanya</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horizontal</translation>
+        <translation>Secara horizontal</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Tegak lurus</translation>
+        <translation>Tegak lurus</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Latar belakang</translation>
+        <translation>Latar belakang</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">putih</translation>
+        <translation>putih</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">transparan</translation>
+        <translation>transparan</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pilih Pemecah</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Saat Anda membuat proyek baru, Anda harus memilih pemecah yang akan digunakan untuk perhitungan. Silakan pilih pemecah, dan tekan tombol "OK".</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar garis:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lebar:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukuran Titik:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder &quot;%1&quot;. Pemecah ini diabaikan. %2</translation>
+        <translation>Terjadi kesalahan saat memuat file definisi pemecah di folder "%1". Pemecah ini diabaikan. %2</translation>
     </message>
 </context>
 <context>
@@ -1770,7 +1768,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Proyek ini tampaknya dibuka oleh jendela GUI iRIC lainnya. Anda tidak dapat membuka folder proyek dari beberapa jendela GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proyek yang dibuka tidak disalin ke direktori kerja, dan Anda akan dipaksa untuk menyimpan modifikasi yang Anda buat pada proyek ini. Jika Anda ingin menyimpan proyek saat ini, harap simpan ke proyek lain terlebih dahulu.</translation>
     </message>
     <message>
@@ -1938,8 +1936,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-jendela aktif saat ini tidak mendukung pengeksporan gambar kontur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Untuk mengekspor file bentuk, alihkan &quot;Pengaturan tampilan&quot; ke &quot;Gambar Kontur&quot;, bukan &quot;Pinggiran Warna&quot; atau &quot;Isolin&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Untuk mengekspor file bentuk, alihkan "Pengaturan tampilan" ke "Gambar Kontur", bukan "Pinggiran Warna" atau "Isolin".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>File pengaturan (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Untuk mengekspor file bentuk, alihkan mode Warna ke &quot;Mode Diskrit&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Untuk mengekspor file bentuk, alihkan mode Warna ke "Mode Diskrit".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Buka Jendela Pasca Pemrosesan 2D baru</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Buka Jendela Pasca Pemrosesan 2D Bird&apos;s-Eye baru</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Buka Jendela Pasca Pemrosesan 2D Bird's-Eye baru</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

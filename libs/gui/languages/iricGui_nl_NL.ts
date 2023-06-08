@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Invoering</translation>
+        <translation>Invoering</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Gebruik deze wizard om de vereisten op te geven voor het genereren van continue snapshot-uitvoer.</translation>
+        <translation>Gebruik deze wizard om de vereisten op te geven voor het genereren van continue snapshot-uitvoer.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Bevestig het resultaat</translation>
+        <translation>Bevestig het resultaat</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">De bestanden in de onderstaande lijst worden aangemaakt of bijgewerkt.</translation>
+        <translation>De bestanden in de onderstaande lijst worden gemaakt of bijgewerkt.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows-bitmap (*.bmp)</translation>
+        <translation>Windows-bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Draagbare bitmap (*.ppm)</translation>
+        <translation>Draagbare bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Voorvoegsel</translation>
+        <translation>Voorvoegsel</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Uitvoerbestand</translation>
+        <translation>Uitvoer bestand</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Map %1 bestaat niet. Wil je het nu?</translation>
+        <translation>Map %1 bestaat niet. Wil je het nu?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Map maken %1 mislukt.</translation>
+        <translation>Map maken %1 mislukt.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Bestandsnaam</translation>
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Uitvoerbestand</translation>
+        <translation>Uitvoer bestand</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Standaard</translation>
+        <translation>Standaard</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Waarschuwing</translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Meer dan één visualisatievenster heeft een transparant gebied. Ze kunnen niet worden opgeslagen in transparante achtergrondafbeeldingen. Selecteer een witte achtergrond of annuleer en schakel transparantie voor contouren enz. uit.</translation>
+        <translation>Meer dan één visualisatievenster heeft een transparant gebied. Ze kunnen niet worden opgeslagen in transparante achtergrondafbeeldingen. Selecteer een witte achtergrond of annuleer en schakel transparantie voor contouren enz. uit.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Er is momenteel geen venster geselecteerd.</translation>
+        <translation>Er is momenteel geen venster geselecteerd.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPagina</translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Bestandseigenschappen</translation>
+        <translation>Bestandseigenschappen</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Geef de eigenschappen van uitvoerbestanden op.</translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Directory</translation>
+        <translation>Gids</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Bestandsnaam</translation>
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Voorvoegsel :</translation>
+        <translation>Voorvoegsel:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Achtervoegsel lengte:</translation>
+        <translation>Achtervoegsel lengte:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formaat :</translation>
+        <translation>Formaat:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPagina</translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Uitvoer naar Google Earth</translation>
+        <translation>Uitvoer naar Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Geef de eigenschappen van uitvoerbestanden op.</translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opmerking: deze functie is alleen beschikbaar als er een coördinatensysteem is opgegeven en er een nabewerking (2D) venstermomentopname wordt uitgevoerd.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML-bestandsnaam</translation>
+        <translation>KML-bestandsnaam</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Naam :</translation>
+        <translation>Naam :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>uitvoer.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Nabewerkingsvenster (2D) voor positionering</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPagina</translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmeigenschappen</translation>
+        <translation>Film eigenschappen</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Geef de eigenschappen van uitvoerbestanden op.</translation>
+        <translation>Geef de eigenschappen van uitvoerbestanden op.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Filmbestanden uitvoeren</translation>
+        <translation>Voer filmbestanden uit</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Bestandsnaam</translation>
+        <translation>Bestandsnaam</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Afspeelsnelheid</translation>
+        <translation>Speel snelheid</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Specificeer filmlengte [sec]</translation>
+        <translation>Specificeer filmlengte [sec]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Specificeer frames per seconde</translation>
+        <translation>Geef frames per seconde op</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profiel:</translation>
+        <translation>Profiel:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPagina</translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Tijdstapinstelling</translation>
+        <translation>Tijdstap instelling</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Geef de starttijdstap, stoptijdstap en de overslagsnelheid op.</translation>
+        <translation>Specificeer de starttijdstap, stoptijdstap en de skip rate.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">begin :</translation>
+        <translation>begin :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">stop :</translation>
+        <translation>stop :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Overslaan tarief:</translation>
+        <translation>Overslaan tarief:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPagina</translation>
+        <translation>WizardPagina</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Vensterselectie</translation>
+        <translation>Venster Selectie</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Selecteer doelvensters en specificeer hoe u bestanden wilt uitvoeren.</translation>
+        <translation>Selecteer doelvensters en specificeer hoe u bestanden wilt uitvoeren.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Doelvensters</translation>
+        <translation>Doel vensters</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Uitvoerbestand</translation>
+        <translation>Uitvoer bestand</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">In één bestand</translation>
+        <translation>In één bestand</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Respectievelijk</translation>
+        <translation>Respectievelijk</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Lay-out</translation>
+        <translation>Lay-out</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">zoals het is</translation>
+        <translation>Zoals het is</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">horizontaal</translation>
+        <translation>Horizontaal</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Verticaal</translation>
+        <translation>Verticaal</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Achtergrond</translation>
+        <translation>Achtergrond</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">wit</translation>
+        <translation>wit</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">transparant</translation>
+        <translation>transparant</translation>
     </message>
 </context>
 <context>
@@ -753,7 +751,7 @@ When you have iRIC windows other than this, close them manually.</source>
     <message>
         <source>This function is intended to be used by solver developers or grid creating program developers, not users.
 This wizard will generate or update translation files for solver definition files and grid creating program definition files those are registered to iRIC system. You need to specify the solver (or grid creating program) name, and the list of languages for those you want to create or update translation files.</source>
-        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma&apos;s voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
+        <translation>Deze functie is bedoeld om te worden gebruikt door ontwikkelaars van oplossers of ontwikkelaars van programma's voor het maken van rasters, niet door gebruikers. Deze wizard zal vertaalbestanden genereren of bijwerken voor oplosserdefinitiebestanden en programmadefinitiebestanden voor het maken van rasters die zijn geregistreerd in het iRIC-systeem. U moet de naam van de oplosser (of het programma voor het maken van rasters) opgeven en de lijst met talen voor degenen die u vertaalbestanden wilt maken of bijwerken.</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selecteer Oplosser</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Wanneer u een nieuw project aanmaakt, moet u de oplosser selecteren die u voor de berekening wilt gebruiken. Selecteer een oplosser en druk op de knop "OK".</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnbreedte:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Breedte:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntgrootte:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map &quot;%1&quot;. Deze oplosser wordt genegeerd. %2</translation>
+        <translation>Er is een fout opgetreden bij het laden van het oplosserdefinitiebestand in de map "%1". Deze oplosser wordt genegeerd. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dit project lijkt te worden geopend door een ander iRIC GUI-venster. U kunt een projectmap niet openen vanuit meerdere GUI-vensters.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Het geopende project wordt niet naar de werkmap gekopieerd en u zult de wijzigingen die u in dit project aanbrengt, moeten opslaan. Als u het huidige project wilt behouden, sla het dan eerst op in een ander project.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Het momenteel actieve subvenster ondersteunt het exporteren van contourfiguren niet.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Om vormbestand te exporteren, schakelt u &quot;Weergave-instelling&quot; naar &quot;Contourfiguur&quot;, niet &quot;Kleurrand&quot; of &quot;Isolijnen&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Om vormbestand te exporteren, schakelt u "Weergave-instelling" naar "Contourfiguur", niet "Kleurrand" of "Isolijnen".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Instellingsbestand (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Om een vormbestand te exporteren, schakelt u de kleurmodus naar &quot;Discrete modus&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Om een vormbestand te exporteren, schakelt u de kleurmodus naar "Discrete modus".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Nieuw venster voor 2D-nabewerking openen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Nieuw 2D Bird&apos;s-Eye Post-Processing-venster openen</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Nieuw 2D Bird's-Eye Post-Processing-venster openen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Úvod</translation>
+        <translation>Úvod</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Pomocí tohoto průvodce určíte požadavky na generování nepřetržitého výstupu snímku.</translation>
+        <translation>Pomocí tohoto průvodce zadejte požadavky na generování průběžného výstupu snímku.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Potvrďte výsledek</translation>
+        <translation>Potvrďte výsledek</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Soubory v níže uvedeném seznamu budou vytvořeny nebo aktualizovány.</translation>
+        <translation>Soubory v níže uvedeném seznamu budou vytvořeny nebo aktualizovány.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows bitmapa (*.bmp)</translation>
+        <translation>Bitmapa Windows (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Přenosná bitmapa (*.ppm)</translation>
+        <translation>Přenosná bitmapa (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">Bitová mapa X11 (*.xbm)</translation>
+        <translation>Bitmapa X11 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Předpona</translation>
+        <translation>Předpona</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Výstupní soubor</translation>
+        <translation>Výstupní soubor</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Složka %1 neexistuje. Chceš do toho hned?</translation>
+        <translation>Složka %1 neexistuje. Chceš to teď?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Vytváření složky %1 neuspěl.</translation>
+        <translation>Vytváření složky %1 nepodařilo.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Název souboru</translation>
+        <translation>Název souboru</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Výstupní soubor</translation>
+        <translation>Výstupní soubor</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Výchozí</translation>
+        <translation>Výchozí</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Více než jedno okno vizualizace má průhlednou oblast. Nelze je uložit do průhledných obrázků na pozadí. Vyberte prosím bílé pozadí nebo zrušte a zakažte průhlednost obrysů atd.</translation>
+        <translation>Více než jedno vizualizační okno má průhlednou oblast. Nelze je uložit do průhledných obrázků na pozadí. Vyberte prosím bílé pozadí nebo zrušte a zakažte průhlednost obrysů atd.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Aktuálně není vybráno žádné okno.</translation>
+        <translation>Aktuálně není vybráno žádné okno.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Průvodce</translation>
+        <translation>Stránka průvodce</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Vlastnosti souboru</translation>
+        <translation>Vlastnosti souboru</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+        <translation>Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Adresář</translation>
+        <translation>Adresář</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Název souboru</translation>
+        <translation>Název souboru</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Předpona :</translation>
+        <translation>Předpona :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Délka přípony:</translation>
+        <translation>Délka přípony:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formát :</translation>
+        <translation>Formát :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Průvodce</translation>
+        <translation>Stránka průvodce</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Výstup do aplikace Google Earth</translation>
+        <translation>Výstup do Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+        <translation>Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poznámka: Tato funkce je k dispozici pouze v případě, že byl zadán souřadnicový systém a je výstupem snímek okna následného zpracování (2D).</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">Název souboru KML</translation>
+        <translation>Název souboru KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Název :</translation>
+        <translation>Název :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>výstup.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Post-processing (2D) okno pro umístění</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Průvodce</translation>
+        <translation>Stránka průvodce</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Vlastnosti filmu</translation>
+        <translation>Vlastnosti filmu</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Zadejte vlastnosti výstupních souborů.</translation>
+        <translation>Zadejte vlastnosti výstupních souborů.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Výstup filmových souborů</translation>
+        <translation>Výstup filmových souborů</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Název souboru</translation>
+        <translation>Název souboru</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Rychlost přehrávání</translation>
+        <translation>Rychlost přehrávání</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Zadejte délku filmu [s]</translation>
+        <translation>Zadejte délku filmu [s]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Zadejte snímky za sekundu</translation>
+        <translation>Určete snímky za sekundu</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profil:</translation>
+        <translation>Profil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Průvodce</translation>
+        <translation>Stránka průvodce</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Nastavení časového kroku</translation>
+        <translation>Nastavení časového kroku</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Zadejte krok začátku, krok zastavení a rychlost přeskočení.</translation>
+        <translation>Zadejte prosím počáteční krok, krok času ukončení a rychlost přeskočení.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">Start :</translation>
+        <translation>Start :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">stop :</translation>
+        <translation>stop :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Přeskočit sazbu:</translation>
+        <translation>Míra přeskočení:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">Průvodce</translation>
+        <translation>Stránka průvodce</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Výběr okna</translation>
+        <translation>Výběr okna</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Vyberte cílová okna a zadejte, jak chcete soubory odesílat.</translation>
+        <translation>Vyberte prosím cílová okna a určete, jak chcete výstupní soubory.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Cílová okna</translation>
+        <translation>Cílová okna</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Výstupní soubor</translation>
+        <translation>Výstupní soubor</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">V jednom souboru</translation>
+        <translation>V jednom souboru</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Respektive</translation>
+        <translation>Respektive</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Rozložení</translation>
+        <translation>Rozložení</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Jak je</translation>
+        <translation>Jak je</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horizontálně</translation>
+        <translation>Horizontálně</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertikálně</translation>
+        <translation>Vertikálně</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Pozadí</translation>
+        <translation>Pozadí</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">bílý</translation>
+        <translation>bílý</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">průhledný</translation>
+        <translation>průhledný</translation>
     </message>
 </context>
 <context>
@@ -770,7 +768,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Vyberte Řešitel</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Když vytváříte nový projekt, musíte vybrat řešič, který se použije pro výpočet. Vyberte prosím řešitele a stiskněte tlačítko „OK“.</translation>
     </message>
 </context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Šířka čáry:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Šířka:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost bodu:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě &quot;%1&quot;. Tento řešitel je ignorován.&quot; %2</translation>
+        <translation>Při načítání definičního souboru řešiče do složky došlo k chybě "%1". Tento řešitel je ignorován." %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Zdá se, že tento projekt otevírá jiné okno GUI iRIC. Složku projektu nelze otevřít z více oken GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otevřený projekt není zkopírován do pracovního adresáře a budete nuceni uložit změny, které v tomto projektu provedete. Pokud chcete zachovat aktuální projekt, uložte jej nejprve do jiného projektu.</translation>
     </message>
     <message>
@@ -1934,7 +1932,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuálně aktivní podokno nepodporuje export obrysového obrázku.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Chcete -li exportovat soubor tvaru, přepněte „Nastavení zobrazení“ na „Obrysový obrázek“, nikoli „Barevné okraje“ nebo „Izolíny“.</translation>
     </message>
     <message>
@@ -2075,7 +2073,7 @@ Option -&gt; Preferences</source>
         <translation>Nastavení souboru (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation>Chcete-li exportovat soubor tvaru, přepněte barevný režim na „Diskrétní režim“.</translation>
     </message>
 </context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Otevřete nové okno 2D zpracování</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Otevřete nové okno postprocesingu 2D Bird&apos;s Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Otevřete nové okno postprocesingu 2D Bird's Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

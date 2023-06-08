@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Įvadas</translation>
+        <translation>Įvadas</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Naudokite šį vedlį norėdami nustatyti nuolatinės momentinės nuotraukos išvesties generavimo reikalavimus.</translation>
+        <translation>Naudokite šį vedlį, kad nurodytumėte nuolatinės momentinės nuotraukos generavimo reikalavimus.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Patvirtinkite rezultatą</translation>
+        <translation>Patvirtinkite rezultatą</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Žemiau esančiame sąraše esantys failai bus sukurti arba atnaujinti.</translation>
+        <translation>Toliau pateiktame sąraše esantys failai bus sukurti arba atnaujinti.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">„Windows Bitmap“ (*.bmp)</translation>
+        <translation>Windows bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Nešiojamas bitų žemėlapis (*.ppm)</translation>
+        <translation>Nešiojamas bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Priešdėlis</translation>
+        <translation>Priešdėlis</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Išvesties failas</translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Aplankas %1 neegzistuoja. Ar nori dabar?</translation>
+        <translation>Aplankas %1 neegzistuoja. Ar norite to dabar?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Klaida</translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Kuriamas aplankas %1 nepavyko.</translation>
+        <translation>Kuriamas aplankas %1 nepavyko.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Failo pavadinimas</translation>
+        <translation>Failo pavadinimas</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Išvesties failas</translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Numatytas</translation>
+        <translation>Numatytas</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Daugiau nei vienas vizualizacijos langas turi skaidrų regioną. Jie negali būti įrašyti į skaidrius fono paveikslėlius. Pasirinkite baltą foną arba atšaukite ir išjunkite kontūrų skaidrumą ir pan.</translation>
+        <translation>Daugiau nei vienas vizualizacijos langas turi skaidrią sritį. Jų negalima išsaugoti skaidriuose fono paveikslėliuose. Pasirinkite baltą foną arba atšaukite ir išjunkite kontūrų skaidrumą ir pan.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Šiuo metu nepasirinktas joks langas.</translation>
+        <translation>Šiuo metu nepasirinktas joks langas.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Failo ypatybės</translation>
+        <translation>Failo ypatybės</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Nurodykite išvesties failų ypatybes.</translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Katalogas</translation>
+        <translation>Katalogas</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Failo pavadinimas</translation>
+        <translation>Failo pavadinimas</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Priešdėlis:</translation>
+        <translation>Priešdėlis:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Priedo ilgis:</translation>
+        <translation>Priesagos ilgis:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formatas:</translation>
+        <translation>Formatas:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Išvestis į „Google“ žemę</translation>
+        <translation>Išvestis į „Google“ žemę</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Nurodykite išvesties failų ypatybes.</translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pastaba: Ši funkcija pasiekiama tik tada, kai nurodyta koordinačių sistema ir išvedamas post-apdorojimo (2D) lango momentinis vaizdas.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML failo pavadinimas</translation>
+        <translation>KML failo pavadinimas</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Vardas :</translation>
+        <translation>Vardas :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>išvestis.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Papildomo apdorojimo (2D) langas padėties nustatymui</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmo ypatybės</translation>
+        <translation>Filmo ypatybės</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Nurodykite išvesties failų ypatybes.</translation>
+        <translation>Nurodykite išvesties failų ypatybes.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Išveskite filmų failus</translation>
+        <translation>Išvesti filmų failus</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Failo pavadinimas</translation>
+        <translation>Failo pavadinimas</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Grojimo greitis</translation>
+        <translation>Grojimo greitis</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Nurodykite filmo ilgį [sek.]</translation>
+        <translation>Nurodykite filmo trukmę [sek.]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Nurodykite kadrus per sekundę</translation>
+        <translation>Nurodykite kadrus per sekundę</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profilis:</translation>
+        <translation>Profilis:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Laiko žingsnio nustatymas</translation>
+        <translation>Laiko žingsnio nustatymas</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Nurodykite pradžios laiko žingsnį, sustabdymo laiko žingsnį ir praleidimo greitį.</translation>
+        <translation>Nurodykite pradžios laiko žingsnį, pabaigos laiko žingsnį ir praleidimo rodiklį.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">pradžia:</translation>
+        <translation>pradžia:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">sustabdyti :</translation>
+        <translation>sustabdyti :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Praleidimo norma:</translation>
+        <translation>Praleisti rodiklis:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Langų pasirinkimas</translation>
+        <translation>Lango pasirinkimas</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Pasirinkite tikslinius langus ir nurodykite, kaip norite išvesti failus.</translation>
+        <translation>Pasirinkite tikslinius langus ir nurodykite, kaip norite išvesti failus.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Tiksliniai langai</translation>
+        <translation>Tiksliniai langai</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Išvesties failas</translation>
+        <translation>Išvesties failas</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Viename faile</translation>
+        <translation>Viename faile</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Atitinkamai</translation>
+        <translation>Atitinkamai</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Išdėstymas</translation>
+        <translation>Išdėstymas</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Kaip yra</translation>
+        <translation>Kaip yra</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horizontaliai</translation>
+        <translation>Horizontaliai</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertikaliai</translation>
+        <translation>Vertikaliai</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Fonas</translation>
+        <translation>Fonas</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">balta</translation>
+        <translation>baltas</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">skaidrus</translation>
+        <translation>skaidrus</translation>
     </message>
 </context>
 <context>
@@ -770,7 +768,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pasirinkite Sprendėjas</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Kai kuriate naują projektą, turite pasirinkti sprendinį, kurį naudosite skaičiavimams. Pasirinkite sprendimą ir paspauskite mygtuką „Gerai“.</translation>
     </message>
 </context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linijos plotis:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotis:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Taško dydis:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida &quot;%1&quot;. Šis sprendėjas ignoruojamas. %2</translation>
+        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida "%1". Šis sprendėjas ignoruojamas. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Atrodo, kad šį projektą atidaro kitas „iRIC GUI“ langas. Negalite atidaryti projekto aplanko iš kelių GUI langų.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Atidarytas projektas nėra nukopijuotas į darbo katalogą ir būsite priversti išsaugoti šio projekto pakeitimus. Jei norite išlaikyti dabartinį projektą, pirmiausia išsaugokite jį kitame projekte.</translation>
     </message>
     <message>
@@ -1934,7 +1932,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Šiuo metu aktyvus papildomas langas nepalaiko kontūro figūros eksportavimo.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
@@ -2075,7 +2073,7 @@ Option -&gt; Preferences</source>
         <translation>Nustatymo failas (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation>Norėdami eksportuoti formos failą, perjunkite spalvų režimą į „Diskretus režimas“.</translation>
     </message>
 </context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,7 +2448,7 @@ Option -&gt; Preferences</source>
         <translation>Atidarykite naują 2D papildomo apdorojimo langą</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Atidarykite naują 2D paukščio skrydžio papildomo apdorojimo langą</translation>
     </message>
     <message>

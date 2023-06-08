@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Ievads</translation>
+        <translation>Ievads</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Izmantojiet šo vedni, lai norādītu prasības nepārtrauktas momentuzņēmuma izvades ģenerēšanai.</translation>
+        <translation>Izmantojiet šo vedni, lai norādītu prasības nepārtrauktas momentuzņēmuma izvadei.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Apstipriniet rezultātu</translation>
+        <translation>Apstipriniet rezultātu</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Tālāk esošajā sarakstā esošie faili tiks izveidoti vai atjaunināti.</translation>
+        <translation>Tālāk esošajā sarakstā esošie faili tiks izveidoti vai atjaunināti.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Windows bitkarte (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Pārnēsājama bitkarte (*.ppm)</translation>
+        <translation>Pārnēsājama bitkarte (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitkarte (*.xbm)</translation>
+        <translation>X11 bitkarte (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Priedēklis</translation>
+        <translation>Priedēklis</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Izejas fails</translation>
+        <translation>Izvades fails</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Brīdinājums</translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Mape %1 nepastāv. Vai vēlaties to darīt tagad?</translation>
+        <translation>Mape %1 neeksistē. Vai vēlaties to tagad?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kļūda</translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Notiek mapes izveide %1 neizdevās.</translation>
+        <translation>Mapes izveide %1 neizdevās.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faila nosaukums</translation>
+        <translation>Faila nosaukums</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Izejas fails</translation>
+        <translation>Izvades fails</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Noklusējuma</translation>
+        <translation>Noklusējums</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Brīdinājums</translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Vairāk nekā vienam vizualizācijas logam ir caurspīdīgs apgabals. Tos nevar saglabāt caurspīdīgos fona attēlos. Lūdzu, atlasiet baltu fonu vai atceliet un atspējojiet kontūru caurspīdīgumu utt.</translation>
+        <translation>Vairāk nekā vienam vizualizācijas logam ir caurspīdīgs apgabals. Tos nevar saglabāt caurspīdīgos fona attēlos. Lūdzu, atlasiet baltu fonu vai atceliet un atspējojiet kontūru caurspīdīgumu utt.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Pašlaik nav atlasīts neviens logs.</translation>
+        <translation>Pašlaik nav atlasīts neviens logs.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Failu rekvizīti</translation>
+        <translation>Faila rekvizīti</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lūdzu, norādiet izvades failu rekvizītus.</translation>
+        <translation>Lūdzu, norādiet izvades failu rekvizītus.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Katalogs</translation>
+        <translation>Direktorija</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faila nosaukums</translation>
+        <translation>Faila nosaukums</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Priedēklis :</translation>
+        <translation>Priedēklis :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Sufiksa garums:</translation>
+        <translation>Sufiksa garums:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formāts:</translation>
+        <translation>Formāts:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Izeja uz Google Earth</translation>
+        <translation>Izvade uz Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lūdzu, norādiet izvades failu rekvizītus.</translation>
+        <translation>Lūdzu, norādiet izvades failu rekvizītus.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piezīme. Šī funkcija ir pieejama tikai tad, ja ir norādīta koordinātu sistēma un tiek izvadīts pēcapstrādes (2D) loga momentuzņēmums.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML faila nosaukums</translation>
+        <translation>KML faila nosaukums</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Vārds:</translation>
+        <translation>Vārds:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>izvade.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēcapstrādes (2D) logs pozicionēšanai</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmas rekvizīti</translation>
+        <translation>Filmas rekvizīti</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Lūdzu, norādiet izvades failu rekvizītus.</translation>
+        <translation>Lūdzu, norādiet izvades failu rekvizītus.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Izvadiet filmu failus</translation>
+        <translation>Izvadīt filmu failus</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faila nosaukums</translation>
+        <translation>Faila nosaukums</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Atskaņošanas ātrums</translation>
+        <translation>Atskaņošanas ātrums</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Norādiet filmas garumu [s]</translation>
+        <translation>Norādiet filmas garumu[s]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Norādiet kadrus sekundē</translation>
+        <translation>Norādiet kadrus sekundē</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profils:</translation>
+        <translation>Profils:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Laika posma iestatīšana</translation>
+        <translation>Laika soļa iestatījums</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Lūdzu, norādiet sākuma laika posmu, beigu laika posmu un izlaišanas ātrumu.</translation>
+        <translation>Lūdzu, norādiet sākuma laika soli, beigu laika posmu un izlaišanas ātrumu.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">sākt :</translation>
+        <translation>sākt :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">apstāties:</translation>
+        <translation>apstāties:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Izlaišanas ātrums:</translation>
+        <translation>Izlaišanas rādītājs:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Logu izvēle</translation>
+        <translation>Logu izvēle</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Lūdzu, atlasiet mērķa logus un norādiet, kā vēlaties izvadīt failus.</translation>
+        <translation>Lūdzu, atlasiet mērķa logus un norādiet, kā vēlaties izvadīt failus.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Mērķa logi</translation>
+        <translation>Mērķa logi</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Izejas fails</translation>
+        <translation>Izvades fails</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Vienā failā</translation>
+        <translation>Vienā failā</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Respektīvi</translation>
+        <translation>Attiecīgi</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Izkārtojums</translation>
+        <translation>Izkārtojums</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Kā ir</translation>
+        <translation>Kā ir</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horizontāli</translation>
+        <translation>Horizontāli</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertikāli</translation>
+        <translation>Vertikāli</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Fons</translation>
+        <translation>Fons</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">balts</translation>
+        <translation>balts</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">caurspīdīgs</translation>
+        <translation>caurspīdīgs</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Atlasiet Risinātājs</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Veidojot jaunu projektu, jums ir jāizvēlas risinātājs, ko izmantot aprēķiniem. Lūdzu, izvēlieties risinātāju un nospiediet pogu &quot;Labi&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Veidojot jaunu projektu, jums ir jāizvēlas risinātājs, ko izmantot aprēķiniem. Lūdzu, izvēlieties risinātāju un nospiediet pogu "Labi".</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Līnijas platums:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkta lielums:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ielādējot risinātāja definīcijas failu mapē, radās kļūda &quot; %1 Šis risinātājs tiek ignorēts. %2</translation>
+        <translation>Ielādējot risinātāja definīcijas failu mapē, radās kļūda " %1 Šis risinātājs tiek ignorēts. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Šķiet, ka šo projektu atver cits iRIC GUI logs. Projekta mapi nevar atvērt no vairākiem GUI logiem.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Atvērtais projekts netiek kopēts darba direktorijā, un jūs būsit spiests saglabāt šajā projektā veiktās izmaiņas. Ja vēlaties saglabāt pašreizējo projektu, lūdzu, vispirms saglabājiet to citā projektā.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Pašlaik aktīvais apakšlogs neatbalsta kontūras skaitļa eksportēšanu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet &quot;Displeja iestatījums&quot; uz &quot;Kontūras attēls&quot;, nevis &quot;Krāsu maliņa&quot; vai &quot;Izolīnas&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Lai eksportētu formas failu, pārslēdziet "Displeja iestatījums" uz "Kontūras attēls", nevis "Krāsu maliņa" vai "Izolīnas".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Iestatījumu fails (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Lai eksportētu formas failu, pārslēdziet krāsu režīmu uz &quot;Diskrēts režīms&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Lai eksportētu formas failu, pārslēdziet krāsu režīmu uz "Diskrēts režīms".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,7 +2448,7 @@ Option -&gt; Preferences</source>
         <translation>Atveriet jaunu 2D pēcapstrādes logu</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Atveriet jaunu 2D putnu lidojuma pēcapstrādes logu</translation>
     </message>
     <message>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Sarrera</translation>
+        <translation>Sarrera</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Erabili morroi hau argazkien irteera jarraia sortzeko baldintzak zehazteko.</translation>
+        <translation>Erabili morroi hau instantzia-irteera etengabea sortzeko baldintzak zehazteko.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Berretsi emaitza</translation>
+        <translation>Berretsi emaitza</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Beheko zerrendako fitxategiak sortu edo eguneratuko dira.</translation>
+        <translation>Beheko zerrendako fitxategiak sortu edo eguneratuko dira.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Bitmap eramangarria (*.ppm)</translation>
+        <translation>Bitmap eramangarria (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 bitmapa (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Aurrizkia</translation>
+        <translation>Aurrizkia</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Irteerako fitxategia</translation>
+        <translation>Irteera fitxategia</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Karpeta %1 ez da existitzen. Nahi al duzu orain?</translation>
+        <translation>Karpeta %1 ez da existitzen. Nahi al duzu orain?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errorea</translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Karpeta sortzen %1 huts egin du.</translation>
+        <translation>Karpeta sortzen %1 huts egin zuen.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Fitxategi izena</translation>
+        <translation>Fitxategi izena</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Irteerako fitxategia</translation>
+        <translation>Irteera fitxategia</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Lehenetsia</translation>
+        <translation>Lehenetsia</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Bistaratze leiho batek baino gehiagok eskualde gardena dute. Ezin dira atzeko planoko irudi gardenetan gorde. Mesedez, hautatu atzeko plano zuria edo ezabatu eta desgaitu gardentasuna inguruneetarako.</translation>
+        <translation>Bistaratze-leiho batek baino gehiagok eskualde gardena du. Ezin dira atzeko plano gardenetan gorde. Mesedez, hautatu hondo zuria, edo bertan behera utzi eta desgaitu gardentasuna ingerada eta abar.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Une honetan ez dago leihorik hautatuta.</translation>
+        <translation>Une honetan ez dago leihorik hautatuta.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Fitxategiaren propietateak</translation>
+        <translation>Fitxategiaren propietateak</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
+        <translation>Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Direktorioa</translation>
+        <translation>Direktorioa</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Fitxategi izena</translation>
+        <translation>Fitxategi izena</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Aurrizkia:</translation>
+        <translation>Aurrizkia:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Atzizkiaren luzera:</translation>
+        <translation>Atzizkiaren luzera:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Formatua:</translation>
+        <translation>Formatua:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Google Earth-en irteera</translation>
+        <translation>Irteera Google Earth-era</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
+        <translation>Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oharra: Ezaugarri hau koordenatu-sistema zehaztu denean eta Postprozesatzeko (2D) leihoaren argazkia ateratzen denean bakarrik dago erabilgarri.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML fitxategiaren izena</translation>
+        <translation>KML fitxategiaren izena</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Izena:</translation>
+        <translation>Izena:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">irteera.kml</translation>
+        <translation>irteera.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Posizionatzeko postprozesatzeko (2D) leihoa</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmaren propietateak</translation>
+        <translation>Filmaren propietateak</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
+        <translation>Mesedez, zehaztu irteerako fitxategien propietateak.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Irteerako film fitxategiak</translation>
+        <translation>Irteera film fitxategiak</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Fitxategi izena</translation>
+        <translation>Fitxategi izena</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Jolasteko abiadura</translation>
+        <translation>Erreproduzitzeko abiadura</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Zehaztu filmaren iraupena [seg]</translation>
+        <translation>Zehaztu filmaren iraupena[seg]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Zehaztu fotogramak segundoko</translation>
+        <translation>Zehaztu fotograma segundoko</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profila:</translation>
+        <translation>Profila:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Denbora-pasen ezarpena</translation>
+        <translation>Denboraren ezarpena</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Mesedez, zehaztu hasierako ordua, gelditzeko ordua eta saltatzeko tasa.</translation>
+        <translation>Mesedez, zehaztu hasiera-orduaren urratsa, gelditzeko denbora-urratsa eta saltatzeko tasa.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">hasiera:</translation>
+        <translation>hasi:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">gelditu:</translation>
+        <translation>gelditu:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Saltatu tasa:</translation>
+        <translation>Saltatze tasa:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Leiho hautaketa</translation>
+        <translation>Leiho hautaketa</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Hautatu xede leihoak eta zehaztu fitxategiak nola atera nahi dituzun.</translation>
+        <translation>Mesedez, hautatu helburuko leihoak eta zehaztu fitxategiak nola atera nahi dituzun.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Helburu leihoak</translation>
+        <translation>Helburuko leihoak</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Irteerako fitxategia</translation>
+        <translation>Irteera fitxategia</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Fitxategi batean</translation>
+        <translation>Fitxategi batean</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Hurrenez hurren</translation>
+        <translation>Hurrenez hurren</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Maketazioa</translation>
+        <translation>Diseinua</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Dagoen bezala</translation>
+        <translation>Dagoen bezala</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horizontalki</translation>
+        <translation>Horizontalki</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Bertikalki</translation>
+        <translation>Bertikalean</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Aurrekariak</translation>
+        <translation>Aurrekariak</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">zuria</translation>
+        <translation>zuria</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">gardena</translation>
+        <translation>gardena</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Aukeratu ebazlea</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu &quot;Ados&quot; botoia.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Proiektu berri bat sortzen duzunean, kalkulatzeko erabili beharreko konponbidea hautatu behar duzu. Mesedez, hautatu konponbide bat eta sakatu "Ados" botoia.</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lerroaren zabalera:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zabalera:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puntuen tamaina:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean &quot;%1&quot;. Konpondu honi ez zaio jaramonik egiten. %2</translation>
+        <translation>Errorea gertatu da konponbidearen definizio fitxategia karpetan kargatzean "%1". Konpondu honi ez zaio jaramonik egiten. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Badirudi proiektu hau iRIC GUI beste leiho batek ireki duela. Ezin duzu proiektuaren karpeta ireki GUI leiho anitzetatik.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Ireki den proiektua ez da laneko direktorioan kopiatzen, eta proiektu honetan egindako aldaketak gordetzera behartuko duzu. Uneko proiektua mantendu nahi baduzu, gorde lehenago beste proiektu batean.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Une azpiatiloi aktiboak ez du onartzen sestra irudia esportatzea.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Forma fitxategia esportatzeko, aldatu &quot;Pantaila ezarpena&quot; &quot;Sestra irudia&quot; eta ez &quot;Kolore marjina&quot; edo &quot;Isolinak&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Forma fitxategia esportatzeko, aldatu "Pantaila ezarpena" "Sestra irudia" eta ez "Kolore marjina" edo "Isolinak".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Ezarpen fitxategia (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Forma fitxategia esportatzeko, aldatu Kolore modua &quot;Modu diskretua&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Forma fitxategia esportatzeko, aldatu Kolore modua "Modu diskretua".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Ireki 2D prozesatzeko ondorengo leiho berria</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Ireki 2D Bird&apos;s Eye Post-Processing Leiho berria</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Ireki 2D Bird's Eye Post-Processing Leiho berria</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

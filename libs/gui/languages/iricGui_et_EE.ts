@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Sissejuhatus</translation>
+        <translation>Sissejuhatus</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Selle viisardi abil saate määrata pideva hetktõmmise väljundi loomise nõuded.</translation>
+        <translation>Kasutage seda viisardit pideva hetktõmmise väljundi genereerimiseks vajalike nõuete määramiseks.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Kinnitage tulemus</translation>
+        <translation>Kinnitage tulemus</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Allpool olevas loendis olevad failid luuakse või värskendatakse.</translation>
+        <translation>Allolevas loendis olevad failid luuakse või värskendatakse.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windowsi bitikaart (*.bmp)</translation>
+        <translation>Windowsi bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Kaasaskantav bitikaart (*.ppm)</translation>
+        <translation>Kaasaskantav bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Eesliide</translation>
+        <translation>Eesliide</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Väljundfail</translation>
+        <translation>Väljundfail</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Kaust %1 ei eksisteeri. Kas sa tahad seda nüüd teha?</translation>
+        <translation>Kaust %1 ei eksisteeri. Kas sa tahad seda nüüd?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Kausta loomine %1 ebaõnnestus.</translation>
+        <translation>Kausta loomine %1 ebaõnnestunud.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faili nimi</translation>
+        <translation>Faili nimi</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Väljundfail</translation>
+        <translation>Väljundfail</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Vaikimisi</translation>
+        <translation>Vaikimisi</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Rohkem kui ühel visualiseerimisaknal on läbipaistev piirkond. Neid ei saa salvestada läbipaistvateks taustpiltideks. Valige valge taust või tühistage ja keelake kontuuride jms läbipaistvus.</translation>
+        <translation>Rohkem kui ühel visualiseerimisaknal on läbipaistev piirkond. Neid ei saa salvestada läbipaistvatesse taustpiltidesse. Valige valge taust või tühistage ja keelake kontuuride jms läbipaistvus.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Praegu pole ühtegi akent valitud.</translation>
+        <translation>Hetkel pole ühtegi akent valitud.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>Nõustaja leht</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Faili atribuudid</translation>
+        <translation>Faili omadused</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Palun täpsustage väljundfailide omadused.</translation>
+        <translation>Palun täpsustage väljundfailide atribuudid.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Kataloog</translation>
+        <translation>Kataloog</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faili nimi</translation>
+        <translation>Faili nimi</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Eesliide:</translation>
+        <translation>Eesliide:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Sufiksi pikkus:</translation>
+        <translation>Sufiksi pikkus:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Vorming:</translation>
+        <translation>Vorming:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>Nõustaja leht</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Väljund Google Earthile</translation>
+        <translation>Väljund Google Earthi</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Palun täpsustage väljundfailide omadused.</translation>
+        <translation>Palun täpsustage väljundfailide atribuudid.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Märkus. See funktsioon on saadaval ainult siis, kui koordinaatsüsteem on määratud ja väljastatakse järeltöötluse (2D) akna hetktõmmis.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML -faili nimi</translation>
+        <translation>KML-faili nimi</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Nimi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>väljund.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Järeltöötluse (2D) aken positsioneerimiseks</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>Nõustaja leht</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmi omadused</translation>
+        <translation>Filmi omadused</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Palun täpsustage väljundfailide omadused.</translation>
+        <translation>Palun täpsustage väljundfailide atribuudid.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Väljastage filmifailid</translation>
+        <translation>Väljund filmifailid</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Faili nimi</translation>
+        <translation>Faili nimi</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Esituskiirus</translation>
+        <translation>Mängu kiirus</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Määrake filmi pikkus [sek]</translation>
+        <translation>Määrake filmi pikkus [sek]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Määrake kaadrid sekundis</translation>
+        <translation>Määrake kaadrid sekundis</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profiil:</translation>
+        <translation>Profiil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>Nõustaja leht</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Ajasammude seadistamine</translation>
+        <translation>Ajasammu seadistus</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Palun täpsustage algusaja samm, peatumisaja samm ja vahelejätmise määr.</translation>
+        <translation>Täpsustage algusaja samm, lõppaja samm ja vahelejätmise määr.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">algus:</translation>
+        <translation>algus:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">peatus:</translation>
+        <translation>peatus:</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Vahelejätmise määr:</translation>
+        <translation>Vahelejätmise määr:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>Nõustaja leht</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Akna valik</translation>
+        <translation>Akna valik</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Palun valige sihtaknad ja määrake, kuidas soovite faile väljastada.</translation>
+        <translation>Valige sihtaknad ja määrake, kuidas soovite faile väljastada.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Sihtaknad</translation>
+        <translation>Sihtaknad</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Väljundfail</translation>
+        <translation>Väljundfail</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Ühes failis</translation>
+        <translation>Ühes failis</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Vastavalt</translation>
+        <translation>Vastavalt</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Paigutus</translation>
+        <translation>Paigutus</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Nagu on</translation>
+        <translation>Nagu on</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horisontaalselt</translation>
+        <translation>Horisontaalselt</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertikaalselt</translation>
+        <translation>Vertikaalselt</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Taust</translation>
+        <translation>Taust</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">valge</translation>
+        <translation>valge</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">läbipaistev</translation>
+        <translation>läbipaistev</translation>
     </message>
 </context>
 <context>
@@ -701,7 +699,7 @@
     <name>GoogleMapImageImportSettingDialog</name>
     <message>
         <source>Google Map Image Import Setting</source>
-        <translation>Google&apos;i kaardi pildi importimise seade</translation>
+        <translation>Google'i kaardi pildi importimise seade</translation>
     </message>
     <message>
         <source>Zoom:</source>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valige Lahendaja</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Uue projekti loomisel peate valima arvutamiseks kasutatava lahendaja. Palun valige lahendaja ja vajutage nuppu "OK".</translation>
     </message>
 </context>
 <context>
@@ -783,7 +781,7 @@ This wizard will generate or update translation files for solver definition file
     <message>
         <source>%1 days have passed after launching iRIC Maintainance for the last time.
 Do you want to launch iRIC Maintainance?</source>
-        <translation>%1 päevad on möödunud pärast iRIC Maintainance&apos;i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
+        <translation>%1 päevad on möödunud pärast iRIC Maintainance'i viimast käivitamist. Kas soovite käivitada iRIC Maintainance?</translation>
     </message>
     <message>
         <source>Launch iRIC Maintainance</source>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Joone laius:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Laius:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkti suurus:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Lahendaja määratlusfaili kausta &quot;laadimisel ilmnes viga&quot;%1&quot;. Seda lahendajat eiratakse. %2</translation>
+        <translation>Lahendaja määratlusfaili kausta "laadimisel ilmnes viga"%1". Seda lahendajat eiratakse. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tundub, et selle projekti avab teine iRIC GUI aken. Projekti kausta ei saa avada mitmest GUI aknast.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avatud projekti ei kopeerita töökataloogi ja olete sunnitud sellesse projekti tehtud muudatused salvestama. Kui soovite praegust projekti säilitada, salvestage see kõigepealt teise projekti.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Praegu aktiivne alamaken ei toeta kontuurikujundi eksportimist.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Kujundifaili eksportimiseks lülitage &quot;Ekraani säte&quot; olekule &quot;Kontuurjoonis&quot;, mitte &quot;Värviline ääris&quot; või &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Kujundifaili eksportimiseks lülitage "Ekraani säte" olekule "Kontuurjoonis", mitte "Värviline ääris" või "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Seadefail (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Kujundifaili eksportimiseks lülitage värvirežiim olekusse &quot;Diskreetne režiim&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Kujundifaili eksportimiseks lülitage värvirežiim olekusse "Diskreetne režiim".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,7 +2448,7 @@ Option -&gt; Preferences</source>
         <translation>Ava uus 2D järeltöötlusaken</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Avage uus 2D linnulennult järeltöötluse aken</translation>
     </message>
     <message>

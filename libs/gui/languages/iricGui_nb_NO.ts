@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Introduksjon</translation>
+        <translation>Introduksjon</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Bruk denne veiviseren til å angi kravene for å generere kontinuerlig øyeblikksbildeutdata.</translation>
+        <translation>Bruk denne veiviseren til å spesifisere kravene for å generere kontinuerlige øyeblikksbilder.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Bekreft resultatet</translation>
+        <translation>Bekreft resultatet</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Filene i listen nedenfor vil bli opprettet eller oppdatert.</translation>
+        <translation>Filene i listen nedenfor vil bli opprettet eller oppdatert.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Bærbart bitmap (*.ppm)</translation>
+        <translation>Bærbar bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Prefiks</translation>
+        <translation>Prefiks</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Output-fil</translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Mappe %1 eksisterer ikke. Vil du det nå?</translation>
+        <translation>Mappe %1 eksisterer ikke. Vil du det nå?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Oppretter mappe %1 mislyktes.</translation>
+        <translation>Oppretter mappe %1 mislyktes.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Filnavn</translation>
+        <translation>Filnavn</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Output-fil</translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Misligholde</translation>
+        <translation>Misligholde</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Advarsel</translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Mer enn ett visualiseringsvindu har gjennomsiktig region. De kan ikke lagres i gjennomsiktige bakgrunnsbilder. Velg hvit bakgrunn, eller avbryt og deaktiver gjennomsiktighet for konturer etc.</translation>
+        <translation>Mer enn ett visualiseringsvindu har en gjennomsiktig region. De kan ikke lagres i gjennomsiktige bakgrunnsbilder. Velg hvit bakgrunn, eller avbryt og deaktiver gjennomsiktighet for konturer osv.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Ingen vinduer er valgt for øyeblikket.</translation>
+        <translation>Ingen vindu er valgt for øyeblikket.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Filegenskaper</translation>
+        <translation>Filegenskaper</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Angi egenskapene til utdatafiler.</translation>
+        <translation>Vennligst spesifiser egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Katalog</translation>
+        <translation>Katalog</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Filnavn</translation>
+        <translation>Filnavn</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Prefiks:</translation>
+        <translation>Prefiks:</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Suffikslengde:</translation>
+        <translation>Suffikslengde:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Format:</translation>
+        <translation>Format:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Utdata til Google Earth</translation>
+        <translation>Utdata til Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Angi egenskapene til utdatafiler.</translation>
+        <translation>Vennligst spesifiser egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Merk: Denne funksjonen er kun tilgjengelig når et koordinatsystem er spesifisert, og et øyeblikksbilde av etterbehandlingsvinduet (2D).</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML -filnavn</translation>
+        <translation>KML-filnavn</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Navn :</translation>
+        <translation>Navn :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">output.kml</translation>
+        <translation>output.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Etterbehandlingsvindu (2D) for posisjonering</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Filmegenskaper</translation>
+        <translation>Filmegenskaper</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Angi egenskapene til utdatafiler.</translation>
+        <translation>Vennligst spesifiser egenskapene til utdatafiler.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Send ut filmfiler</translation>
+        <translation>Send ut filmfiler</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Filnavn</translation>
+        <translation>Filnavn</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Spillhastighet</translation>
+        <translation>Spillehastighet</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Angi filmlengde [sek]</translation>
+        <translation>Spesifiser filmlengde[sek]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Angi rammer per sekund</translation>
+        <translation>Spesifiser bilder per sekund</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Profil:</translation>
+        <translation>Profil:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Tidsinnstilling</translation>
+        <translation>Innstilling av tidstrinn</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Angi trinnet for starttid, stopptid og hoppefrekvens.</translation>
+        <translation>Vennligst spesifiser starttidstrinnet, stopptidstrinnet og hopperaten.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">start :</translation>
+        <translation>start :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">Stoppe :</translation>
+        <translation>Stoppe :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Hopp over rate:</translation>
+        <translation>Hopp over rate:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Valg av vindu</translation>
+        <translation>Vindusvalg</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Velg målvinduer og angi hvordan du vil sende filer.</translation>
+        <translation>Velg målvinduer og spesifiser hvordan du vil sende ut filer.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Målvinduer</translation>
+        <translation>Mål vinduer</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Output-fil</translation>
+        <translation>Output-fil</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">I en fil</translation>
+        <translation>I én fil</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Henholdsvis</translation>
+        <translation>Henholdsvis</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Oppsett</translation>
+        <translation>Oppsett</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Som det er</translation>
+        <translation>Som det er</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Horisontalt</translation>
+        <translation>Horisontalt</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Vertikalt</translation>
+        <translation>Vertikalt</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Bakgrunn</translation>
+        <translation>Bakgrunn</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">hvit</translation>
+        <translation>hvit</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">gjennomsiktig</translation>
+        <translation>gjennomsiktig</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Velg Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Når du oppretter et nytt prosjekt, må du velge løsningen som skal brukes til beregning. Velg en løsning, og trykk &quot;OK&quot; -knappen.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Når du oppretter et nytt prosjekt, må du velge løsningen som skal brukes til beregning. Velg en løsning, og trykk "OK" -knappen.</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Linje bredde:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bredde:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktstørrelse:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil i mappen &quot;%1&quot;. Denne løsningen blir ignorert. %2</translation>
+        <translation>Det oppsto en feil under lasting av løsningsdefinisjonsfil i mappen "%1". Denne løsningen blir ignorert. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dette prosjektet ser ut til å bli åpnet av et annet iRIC GUI -vindu. Du kan ikke åpne en prosjektmappe fra flere GUI -vinduer.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Det åpnede prosjektet blir ikke kopiert til arbeidskatalogen, og du blir tvunget til å lagre endringene du gjør i dette prosjektet. Hvis du vil beholde det nåværende prosjektet, må du først lagre det i et annet prosjekt.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktivt undervindu støtter ikke eksport av konturfigur.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">For å eksportere formfil, bytt &quot;Displayinnstilling&quot; til &quot;Konturfigur&quot;, ikke &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">For å eksportere formfil, bytt "Displayinnstilling" til "Konturfigur", ikke "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Innstillingsfil (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>For å eksportere formfil, bytt fargemodus til &quot;Diskret modus&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>For å eksportere formfil, bytt fargemodus til "Diskret modus".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Åpne nytt 2D-vindu for etterbehandling</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Åpne nytt 2D Bird&apos;s-Eye Post-Processing Window</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Åpne nytt 2D Bird's-Eye Post-Processing Window</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

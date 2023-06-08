@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">Εισαγωγή</translation>
+        <translation>Εισαγωγή</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">Χρησιμοποιήστε αυτόν τον οδηγό για να καθορίσετε τις απαιτήσεις για τη δημιουργία συνεχούς εξόδου στιγμιότυπου.</translation>
+        <translation>Χρησιμοποιήστε αυτόν τον οδηγό για να καθορίσετε τις απαιτήσεις για τη δημιουργία συνεχούς εξόδου στιγμιότυπου.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">Επιβεβαιώστε το αποτέλεσμα</translation>
+        <translation>Επιβεβαιώστε το αποτέλεσμα</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">Τα αρχεία στην παρακάτω λίστα θα δημιουργηθούν ή θα ενημερωθούν.</translation>
+        <translation>Τα αρχεία στην παρακάτω λίστα θα δημιουργηθούν ή θα ενημερωθούν.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">Windows Bitmap (*.bmp)</translation>
+        <translation>Windows Bitmap (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">Φορητό Bitmap (*.ppm)</translation>
+        <translation>Φορητό Bitmap (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 Bitmap (*.xbm)</translation>
+        <translation>X11 Bitmap (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">Πρόθεμα</translation>
+        <translation>Πρόθεμα</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Αρχείο εξόδου</translation>
+        <translation>Αρχείο εξόδου</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">Ντοσιέ %1 δεν υπάρχει Θέλεις τώρα;</translation>
+        <translation>Ντοσιέ %1 δεν υπάρχει. Το θέλεις τώρα;</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Λάθος</translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">Δημιουργία φακέλου %1 απέτυχε.</translation>
+        <translation>Δημιουργία φακέλου %1 απέτυχε.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Ονομα αρχείου</translation>
+        <translation>Ονομα αρχείου</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Αρχείο εξόδου</translation>
+        <translation>Αρχείο εξόδου</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Προκαθορισμένο</translation>
+        <translation>Προκαθορισμένο</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">Περισσότερα από ένα παράθυρα απεικόνισης έχουν διαφανή περιοχή. Δεν μπορούν να αποθηκευτούν σε διαφανείς εικόνες φόντου. Επιλέξτε λευκό φόντο ή ακυρώστε και απενεργοποιήστε τη διαφάνεια για περιγράμματα κ.λπ.</translation>
+        <translation>Περισσότερα από ένα παράθυρα οπτικοποίησης έχουν διαφανή περιοχή. Δεν μπορούν να αποθηκευτούν σε διαφανείς εικόνες φόντου. Επιλέξτε λευκό φόντο ή ακυρώστε και απενεργοποιήστε τη διαφάνεια για περιγράμματα κ.λπ.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">Προς το παρόν δεν έχει επιλεγεί κανένα παράθυρο.</translation>
+        <translation>Δεν έχει επιλεγεί παράθυρο αυτήν τη στιγμή.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">Ιδιότητες αρχείου</translation>
+        <translation>Ιδιότητες αρχείου</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Καθορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
+        <translation>Προσδιορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">Ευρετήριο</translation>
+        <translation>Ευρετήριο</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Ονομα αρχείου</translation>
+        <translation>Ονομα αρχείου</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">Πρόθεμα:</translation>
+        <translation>Πρόθεμα :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">Μήκος επιθέματος:</translation>
+        <translation>Μήκος επίθημα:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">Μορφή :</translation>
+        <translation>Μορφή :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Έξοδος στο Google Earth</translation>
+        <translation>Έξοδος στο Google Earth</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Καθορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
+        <translation>Προσδιορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σημείωση: Αυτή η δυνατότητα είναι διαθέσιμη μόνο όταν έχει καθοριστεί ένα σύστημα συντεταγμένων και εμφανίζεται στιγμιότυπο παραθύρου μετά την επεξεργασία (2D).</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">Όνομα αρχείου KML</translation>
+        <translation>Όνομα αρχείου KML</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">Ονομα :</translation>
+        <translation>Ονομα :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">έξοδος.kml</translation>
+        <translation>έξοδος.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Παράθυρο μετα-επεξεργασίας (2D) για τοποθέτηση</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">Ιδιότητες ταινίας</translation>
+        <translation>Ιδιότητες ταινίας</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">Καθορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
+        <translation>Προσδιορίστε τις ιδιότητες των αρχείων εξόδου.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">Έξοδος αρχείων ταινιών</translation>
+        <translation>Έξοδος αρχείων ταινιών</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">Ονομα αρχείου</translation>
+        <translation>Ονομα αρχείου</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">Ταχύτητα παιχνιδιού</translation>
+        <translation>Ταχύτητα αναπαραγωγής</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">Καθορισμός μήκους ταινίας [δευτ.]</translation>
+        <translation>Καθορίστε τη διάρκεια της ταινίας[δευτ.]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">Καθορίστε καρέ ανά δευτερόλεπτο</translation>
+        <translation>Καθορίστε καρέ ανά δευτερόλεπτο</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">Προφίλ:</translation>
+        <translation>Προφίλ:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">Ρύθμιση χρονικού βήματος</translation>
+        <translation>Ρύθμιση χρονικού βήματος</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">Προσδιορίστε το βήμα ώρας έναρξης, το βήμα ώρας διακοπής και το ποσοστό παράλειψης.</translation>
+        <translation>Προσδιορίστε το βήμα ώρας έναρξης, το βήμα χρόνου διακοπής και το ποσοστό παράβλεψης.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">έναρξη:</translation>
+        <translation>έναρξη:</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">να σταματήσει :</translation>
+        <translation>να σταματήσει :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">Ποσοστό παράλειψης:</translation>
+        <translation>Ποσοστό παράβλεψης:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">WizardPage</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">Επιλογή παραθύρου</translation>
+        <translation>Επιλογή παραθύρου</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">Επιλέξτε παράθυρα στόχου και καθορίστε τον τρόπο με τον οποίο θέλετε να εξάγετε αρχεία.</translation>
+        <translation>Επιλέξτε παράθυρα προορισμού και καθορίστε πώς θέλετε να εξάγετε αρχεία.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">Στόχος παράθυρα</translation>
+        <translation>Παράθυρα στόχευσης</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">Αρχείο εξόδου</translation>
+        <translation>Αρχείο εξόδου</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">Σε ένα αρχείο</translation>
+        <translation>Σε ένα αρχείο</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">Αντίστοιχα</translation>
+        <translation>Αντίστοιχα</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">Σχέδιο</translation>
+        <translation>Διάταξη</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">Οπως είναι</translation>
+        <translation>Οπως είναι</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">Οριζόντια</translation>
+        <translation>Οριζόντια</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">Κάθετα</translation>
+        <translation>Κάθετα</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">Ιστορικό</translation>
+        <translation>Ιστορικό</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">λευκό</translation>
+        <translation>άσπρο</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">διαφανής</translation>
+        <translation>διαφανής</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Επιλέξτε Επίλυση</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί "OK".</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλάτος γραμμής:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Πλάτος:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Μέγεθος σημείου:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο &quot;%1&quot;. Αυτός ο επιλυτής αγνοείται. %2</translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο "%1". Αυτός ο επιλυτής αγνοείται. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Αυτό το έργο φαίνεται να ανοίγει από ένα άλλο παράθυρο iRIC GUI. Δεν μπορείτε να ανοίξετε ένα φάκελο έργου από πολλά παράθυρα GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Το έργο που ανοίξατε δεν αντιγράφεται στον κατάλογο εργασίας και θα αναγκαστείτε να αποθηκεύσετε τις τροποποιήσεις που κάνετε σε αυτό το έργο. Εάν θέλετε να διατηρήσετε το τρέχον έργο, αποθηκεύστε το πρώτα σε άλλο έργο.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Το τρέχον ενεργό υπο-παράθυρο δεν υποστηρίζει εξαγωγή σχήματος περιγράμματος.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε &quot;Ρύθμιση οθόνης&quot; σε &quot;Σχήμα περιγράμματος&quot; και όχι &quot;Χρώμα περιθωρίου&quot; ή &quot;Ισολίνες&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Ρύθμιση αρχείου (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε &quot;Διακριτή λειτουργία&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε "Διακριτή λειτουργία".</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>Άνοιγμα νέου παραθύρου 2D μετά την επεξεργασία</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Άνοιγμα νέου παραθύρου 2D Bird&apos;s-Eye Post-Processing</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Άνοιγμα νέου παραθύρου 2D Bird's-Eye Post-Processing</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

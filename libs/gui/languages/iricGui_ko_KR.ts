@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AnimationController</name>
@@ -372,322 +370,322 @@
     </message>
     <message>
         <source>Introduction</source>
-        <translation type="unfinished">소개</translation>
+        <translation>소개</translation>
     </message>
     <message>
         <source>Use this wizard to specify the requirements to generate continuous snapshot output.</source>
-        <translation type="unfinished">이 마법사를 사용하여 연속 스냅샷 출력을 생성하기 위한 요구 사항을 지정합니다.</translation>
+        <translation>이 마법사를 사용하여 연속 스냅샷 출력을 생성하기 위한 요구 사항을 지정합니다.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::ConfirmPage</name>
     <message>
         <source>Confirm the result</source>
-        <translation type="unfinished">결과 확인</translation>
+        <translation>결과 확인</translation>
     </message>
     <message>
         <source>The files in the list below will be created or updated. </source>
-        <translation type="unfinished">아래 목록의 파일이 생성되거나 업데이트됩니다.</translation>
+        <translation>아래 목록의 파일이 생성되거나 업데이트됩니다.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::FilePropertyPage</name>
     <message>
         <source>PNG (*.png)</source>
-        <translation type="unfinished">PNG (*.png)</translation>
+        <translation>PNG (*.png)</translation>
     </message>
     <message>
         <source>.png</source>
-        <translation type="unfinished">.png</translation>
+        <translation>.png</translation>
     </message>
     <message>
         <source>JPEG (*.jpg)</source>
-        <translation type="unfinished">JPEG (*.jpg)</translation>
+        <translation>JPEG (*.jpg)</translation>
     </message>
     <message>
         <source>.jpg</source>
-        <translation type="unfinished">.jpg</translation>
+        <translation>.jpg</translation>
     </message>
     <message>
         <source>Windows Bitmap (*.bmp)</source>
-        <translation type="unfinished">윈도우 비트맵 (*.bmp)</translation>
+        <translation>Windows 비트맵 (*.bmp)</translation>
     </message>
     <message>
         <source>.bmp</source>
-        <translation type="unfinished">.bmp</translation>
+        <translation>.bmp</translation>
     </message>
     <message>
         <source>Portable Bitmap (*.ppm)</source>
-        <translation type="unfinished">휴대용 비트맵 (*.ppm)</translation>
+        <translation>휴대용 비트맵 (*.ppm)</translation>
     </message>
     <message>
         <source>.ppm</source>
-        <translation type="unfinished">.ppm</translation>
+        <translation>.ppm</translation>
     </message>
     <message>
         <source>X11 Bitmap (*.xbm)</source>
-        <translation type="unfinished">X11 비트맵 (*.xbm)</translation>
+        <translation>X11 비트맵 (*.xbm)</translation>
     </message>
     <message>
         <source>.xbm</source>
-        <translation type="unfinished">.xbm</translation>
+        <translation>.xbm</translation>
     </message>
     <message>
         <source>Prefix</source>
-        <translation type="unfinished">접두사</translation>
+        <translation>접두사</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">결과물 파일</translation>
+        <translation>결과물 파일</translation>
     </message>
     <message>
         <source>img_</source>
-        <translation type="unfinished">img_</translation>
+        <translation>img_</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">경고</translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>Folder %1 does not exists. Do you want to it now?</source>
-        <translation type="unfinished">폴더 %1 존재하지 않습니다. 지금 하시겠습니까?</translation>
+        <translation>폴더 %1 존재하지 않습니다. 지금 하시겠습니까?</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>Creating folder %1 failed.</source>
-        <translation type="unfinished">폴더 생성 %1 실패한.</translation>
+        <translation>폴더 생성 %1 실패한.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::MoviePropertyPage</name>
     <message>
         <source>File name</source>
-        <translation type="unfinished">파일 이름</translation>
+        <translation>파일 이름</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">결과물 파일</translation>
+        <translation>결과물 파일</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">기본</translation>
+        <translation>기본</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard::WindowSelectionPage</name>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">경고</translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>More than one visualization window has transparent region. They can not saved into transparent background images. Please select white background, or cancel and disable transparency for contours etc.</source>
-        <translation type="unfinished">둘 이상의 시각화 창에 투명 영역이 있습니다. 투명한 배경 이미지에는 저장할 수 없습니다. 흰색 배경을 선택하거나 윤곽 등의 투명도를 취소하고 비활성화하십시오.</translation>
+        <translation>하나 이상의 시각화 창에는 투명한 영역이 있습니다. 투명한 배경 이미지로 저장할 수 없습니다. 흰색 배경을 선택하거나 취소하고 윤곽 등의 투명도를 비활성화하십시오.</translation>
     </message>
     <message>
         <source>No window is currently selected.</source>
-        <translation type="unfinished">현재 선택된 창이 없습니다.</translation>
+        <translation>현재 선택된 창이 없습니다.</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_FilePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">마법사 페이지</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>File Properties</source>
-        <translation type="unfinished">파일 속성</translation>
+        <translation>파일 속성</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">출력 파일의 속성을 지정하십시오.</translation>
+        <translation>출력 파일의 속성을 지정하십시오.</translation>
     </message>
     <message>
         <source>Directory</source>
-        <translation type="unfinished">예배 규칙서</translation>
+        <translation>예배 규칙서</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">파일 이름</translation>
+        <translation>파일 이름</translation>
     </message>
     <message>
         <source>Prefix :</source>
-        <translation type="unfinished">접두사:</translation>
+        <translation>접두어 :</translation>
     </message>
     <message>
         <source>Suffix length :</source>
-        <translation type="unfinished">접미사 길이:</translation>
+        <translation>접미사 길이:</translation>
     </message>
     <message>
         <source>Format :</source>
-        <translation type="unfinished">형식:</translation>
+        <translation>형식 :</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_GoogleEarthSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">마법사 페이지</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Output to the Google Earth</source>
-        <translation type="unfinished">Google 어스에 출력</translation>
+        <translation>Google 어스로 출력</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">출력 파일의 속성을 지정하십시오.</translation>
+        <translation>출력 파일의 속성을 지정하십시오.</translation>
     </message>
     <message>
         <source>Note: This feature is available only when a coordinate system has been specified, and Post-processing (2D) window snapshot is output.</source>
-        <translation type="unfinished"></translation>
+        <translation>참고: 이 기능은 좌표계가 지정되고 후처리(2D) 창 스냅샷이 출력되는 경우에만 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>KML file name</source>
-        <translation type="unfinished">KML 파일 이름</translation>
+        <translation>KML 파일 이름</translation>
     </message>
     <message>
         <source>Name :</source>
-        <translation type="unfinished">이름 :</translation>
+        <translation>이름 :</translation>
     </message>
     <message>
         <source>output.kml</source>
-        <translation type="unfinished">출력.kml</translation>
+        <translation>출력.kml</translation>
     </message>
     <message>
         <source>Post-processing (2D) window for positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>포지셔닝을 위한 후처리(2D) 창</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_MoviePropertyPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">마법사 페이지</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Movie Properties</source>
-        <translation type="unfinished">영화 속성</translation>
+        <translation>동영상 속성</translation>
     </message>
     <message>
         <source>Please specify the properties of output files.</source>
-        <translation type="unfinished">출력 파일의 속성을 지정하십시오.</translation>
+        <translation>출력 파일의 속성을 지정하십시오.</translation>
     </message>
     <message>
         <source>Output movie files</source>
-        <translation type="unfinished">동영상 파일 출력</translation>
+        <translation>동영상 파일 출력</translation>
     </message>
     <message>
         <source>File name</source>
-        <translation type="unfinished">파일 이름</translation>
+        <translation>파일 이름</translation>
     </message>
     <message>
         <source>Play speed</source>
-        <translation type="unfinished">재생 속도</translation>
+        <translation>재생 속도</translation>
     </message>
     <message>
         <source>Specify movie length[sec]</source>
-        <translation type="unfinished">동영상 길이 지정[초]</translation>
+        <translation>동영상 길이 지정[초]</translation>
     </message>
     <message>
         <source>Specify frames per second</source>
-        <translation type="unfinished">초당 프레임 지정</translation>
+        <translation>초당 프레임 지정</translation>
     </message>
     <message>
         <source>Profile:</source>
-        <translation type="unfinished">프로필:</translation>
+        <translation>프로필:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_TimestepSettingPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">마법사 페이지</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Timestep Setting</source>
-        <translation type="unfinished">타임스텝 설정</translation>
+        <translation>타임스텝 설정</translation>
     </message>
     <message>
         <source>Please specify the start time step, stop time step, and the skip rate.</source>
-        <translation type="unfinished">시작 시간 단계, 중지 시간 단계 및 건너뛰기 비율을 지정하십시오.</translation>
+        <translation>시작 시간 간격, 중지 시간 간격 및 건너뛰기 비율을 지정하십시오.</translation>
     </message>
     <message>
         <source>start :</source>
-        <translation type="unfinished">시작 :</translation>
+        <translation>시작 :</translation>
     </message>
     <message>
         <source>--</source>
-        <translation type="unfinished">--</translation>
+        <translation>--</translation>
     </message>
     <message>
         <source>stop :</source>
-        <translation type="unfinished">멈추다 :</translation>
+        <translation>멈추다 :</translation>
     </message>
     <message>
         <source>Skip rate :</source>
-        <translation type="unfinished">건너뛰기 비율:</translation>
+        <translation>건너뛰기 비율:</translation>
     </message>
 </context>
 <context>
     <name>ContinuousSnapshotWizard_WindowSelectionPage</name>
     <message>
         <source>WizardPage</source>
-        <translation type="unfinished">마법사 페이지</translation>
+        <translation>WizardPage</translation>
     </message>
     <message>
         <source>Window Selection</source>
-        <translation type="unfinished">창 선택</translation>
+        <translation>창 선택</translation>
     </message>
     <message>
         <source>Please select target windows and specify how you want to output files.</source>
-        <translation type="unfinished">대상 창을 선택하고 파일 출력 방법을 지정하십시오.</translation>
+        <translation>대상 창을 선택하고 파일을 출력할 방법을 지정하십시오.</translation>
     </message>
     <message>
         <source>Target windows</source>
-        <translation type="unfinished">대상 창</translation>
+        <translation>대상 창</translation>
     </message>
     <message>
         <source>Output file</source>
-        <translation type="unfinished">결과물 파일</translation>
+        <translation>결과물 파일</translation>
     </message>
     <message>
         <source>In one file</source>
-        <translation type="unfinished">하나의 파일에서</translation>
+        <translation>하나의 파일에서</translation>
     </message>
     <message>
         <source>Respectively</source>
-        <translation type="unfinished">각기</translation>
+        <translation>각기</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished">형세</translation>
+        <translation>공들여 나열한 것</translation>
     </message>
     <message>
         <source>As is</source>
-        <translation type="unfinished">그대로</translation>
+        <translation>있는 그대로</translation>
     </message>
     <message>
         <source>Horizontally</source>
-        <translation type="unfinished">수평으로</translation>
+        <translation>가로로</translation>
     </message>
     <message>
         <source>Vertically</source>
-        <translation type="unfinished">수직으로</translation>
+        <translation>수직으로</translation>
     </message>
     <message>
         <source>Background</source>
-        <translation type="unfinished">배경</translation>
+        <translation>배경</translation>
     </message>
     <message>
         <source>white</source>
-        <translation type="unfinished">하얀</translation>
+        <translation>하얀색</translation>
     </message>
     <message>
         <source>transparent</source>
-        <translation type="unfinished">투명한</translation>
+        <translation>투명한</translation>
     </message>
 </context>
 <context>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>솔버 선택</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 &quot;확인&quot; 버튼을 누르십시오.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 "확인" 버튼을 누르십시오.</translation>
     </message>
 </context>
 <context>
@@ -1090,15 +1088,15 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Line width:</source>
-        <translation type="unfinished"></translation>
+        <translation>선의 폭:</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>너비:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished"></translation>
+        <translation>포인트 크기:</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>경고</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>&quot; 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 &quot;. 이 솔버는 무시됩니다. %2</translation>
+        <translation>" 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 ". 이 솔버는 무시됩니다. %2</translation>
     </message>
 </context>
 <context>
@@ -1770,7 +1768,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>이 프로젝트는 다른 iRIC GUI 창에서 열려 있는 것 같습니다. 여러 GUI 창에서 프로젝트 폴더를 열 수 없습니다.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>열려 있는 프로젝트는 작업 디렉터리에 복사되지 않으며 이 프로젝트에 대한 수정 사항을 강제로 저장해야 합니다. 현재 프로젝트를 유지하려면 먼저 다른 프로젝트에 저장하십시오.</translation>
     </message>
     <message>
@@ -1938,8 +1936,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>현재 활성화된 하위 창은 윤곽 도형 내보내기를 지원하지 않습니다.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>설정 파일 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>모양 파일을 내보내려면 색상 모드를 &quot;불연속 모드&quot;로 전환하십시오.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>모양 파일을 내보내려면 색상 모드를 "불연속 모드"로 전환하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2423,7 +2421,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2450,8 +2448,8 @@ Option -&gt; Preferences</source>
         <translation>새 2D 후처리 창 열기</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>새 2D Bird&apos;s-Eye 후처리 창 열기</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>새 2D Bird's-Eye 후처리 창 열기</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
