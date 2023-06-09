@@ -55,7 +55,22 @@ void MeasuredDataPointDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphic
 	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
 }
 
+QDialog* MeasuredDataPointDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
+void MeasuredDataPointDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
+MeasuredDataPointGroupDataItem* MeasuredDataPointDataItem::groupDataItem() const
+{
+	return dynamic_cast<MeasuredDataPointGroupDataItem*>(parent());
+}
+
 ColorMapSettingContainer* MeasuredDataPointDataItem::activeSetting() const
 {
-	return dynamic_cast<MeasuredDataPointGroupDataItem*>(parent())->activeSetting();
+	return groupDataItem()->activeSetting();
 }

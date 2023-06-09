@@ -263,6 +263,8 @@ void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGrap
 
 void MeasuredDataPointGroupDataItem::updateActorSetting()
 {
+	impl->updateCheckState();
+
 	// make all the items invisible
 	impl->m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();

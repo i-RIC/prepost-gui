@@ -26,7 +26,6 @@ void MeasuredDataPointGroupDataItem::UpdateSettingCommand::redo()
 		m_colormapCommand->redo();
 	}
 
-	m_item->impl->updateCheckState();
 	m_item->updateActorSetting();
 }
 
@@ -37,7 +36,6 @@ void MeasuredDataPointGroupDataItem::UpdateSettingCommand::undo()
 		m_colormapCommand->undo();
 	}
 
-	m_item->impl->updateCheckState();
 	m_item->updateActorSetting();
 }
 

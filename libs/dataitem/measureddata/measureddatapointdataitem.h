@@ -4,6 +4,7 @@
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
 class ColorMapSettingContainer;
+class MeasuredDataPointGroupDataItem;
 
 class MeasuredDataPointDataItem : public NamedGraphicWindowDataItem
 {
@@ -16,10 +17,15 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
+public slots:
+	void showPropertyDialog() override;
 
 private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
+	MeasuredDataPointGroupDataItem* groupDataItem() const;
 	ColorMapSettingContainer* activeSetting() const;
 };
 

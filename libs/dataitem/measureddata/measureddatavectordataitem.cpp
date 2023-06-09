@@ -92,12 +92,27 @@ void MeasuredDataVectorDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphi
 	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
 }
 
+QDialog* MeasuredDataVectorDataItem::propertyDialog(QWidget* parent)
+{
+	return groupDataItem()->propertyDialog(parent);
+}
+
+void MeasuredDataVectorDataItem::showPropertyDialog()
+{
+	groupDataItem()->showPropertyDialog();
+}
+
 MeasuredDataPointGroupDataItem* MeasuredDataVectorDataItem::pointGroupDataItem() const
 {
 	return dynamic_cast<MeasuredDataFileDataItem*> (parent()->parent())->pointGroupDataItem();
 }
 
+MeasuredDataVectorGroupDataItem* MeasuredDataVectorDataItem::groupDataItem() const
+{
+	return dynamic_cast<MeasuredDataVectorGroupDataItem*>(parent());
+}
+
 MeasuredDataVectorGroupDataItem::Setting& MeasuredDataVectorDataItem::setting()
 {
-	return dynamic_cast<MeasuredDataVectorGroupDataItem*>(parent())->impl->m_setting;
+	return groupDataItem()->impl->m_setting;
 }
