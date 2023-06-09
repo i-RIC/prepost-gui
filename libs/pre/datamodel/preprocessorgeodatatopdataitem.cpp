@@ -397,6 +397,8 @@ void PreProcessorGeoDataTopDataItem::updateLegendBoxItems()
 	if (m_condition == nullptr) {return;}
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 	ColorTransferFunctionContainer* ctfCont = dynamic_cast<ColorTransferFunctionContainer*>(gtItem->scalarsToColors(m_condition->name()));
+	if (ctfCont == nullptr) {return;}
+
 	vtkLegendBoxActor* lActor = m_legendBoxWidget->GetLegendBoxActor();
 	lActor->SetNumberOfEntries(ctfCont->englishEnumerations().size());
 	vtkColorTransferFunction* ctf = dynamic_cast<vtkColorTransferFunction*>(ctfCont->vtkObj());
