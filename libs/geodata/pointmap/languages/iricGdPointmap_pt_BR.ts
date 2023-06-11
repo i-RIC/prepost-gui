@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -174,7 +176,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o "Modo de exibicao" para "Wireframe" ou "Face interpolada". Pressione o botao OK e ai o"Modo de exibicao" sera alterado para "Wireframe".</translation>
+        <translation type="vanished">Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o &quot;Modo de exibicao&quot; para &quot;Wireframe&quot; ou &quot;Face interpolada&quot;. Pressione o botao OK e ai o&quot;Modo de exibicao&quot; sera alterado para &quot;Wireframe&quot;.</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -241,8 +243,8 @@
         <translation type="vanished">Unir...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Não há outros dados para mesclar "%1" grupo.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Não há outros dados para mesclar &quot;%1&quot; grupo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -327,6 +329,10 @@
     <message>
         <source>&amp;Polygons Edit Mode</source>
         <translation>Modo de Edição de Polígonos (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Remove triangles with long edge setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -688,12 +694,12 @@
         <translation>Nenhum delimitador especificado</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Valores insuficientes para ler "%1"."%1"coluna é %2 mas %3 valores de entrada.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Valores insuficientes para ler &quot;%1&quot;.&quot;%1&quot;coluna é %2 mas %3 valores de entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Ocorreu um erro ao ler "%1" valor. "%1"o valor deve ser um número real, mas"%2" Especificadas.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Ocorreu um erro ao ler &quot;%1&quot; valor. &quot;%1&quot;o valor deve ser um número real, mas&quot;%2&quot; Especificadas.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -763,8 +769,8 @@
         <translation>Citação de personagem:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -843,31 +849,31 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Configuracao de exibicao</translation>
+        <translation type="vanished">Configuracao de exibicao</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation>Modo de exibicao</translation>
+        <translation type="vanished">Modo de exibicao</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pontos</translation>
+        <translation type="vanished">Pontos</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superficie interpolada</translation>
+        <translation type="vanished">Superficie interpolada</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Dimensao do ponto :</translation>
+        <translation type="vanished">Dimensao do ponto :</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation>Ocultar linhas divisorias</translation>
+        <translation type="vanished">Ocultar linhas divisorias</translation>
     </message>
 </context>
 <context>
@@ -1077,8 +1083,8 @@
         <translation>Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1295,8 +1301,8 @@
         <translation>Expoente de ponderação k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; é usado como o peso ao calcular a média ponderada dos valores. r é a distância do ponto ao nó ou centro da célula, para o qual o valor é mapeado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; é usado como o peso ao calcular a média ponderada dos valores. r é a distância do ponto ao nó ou centro da célula, para o qual o valor é mapeado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1346,8 +1352,8 @@
         <translation type="vanished">Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1379,18 +1385,41 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
+    <message>
+        <source>Setting for removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold edge length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Remocao do triangulo com lado comprido</translation>
+        <translation type="vanished">Remocao do triangulo com lado comprido</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Comprimento lateral do valor de limite :</translation>
+        <translation type="vanished">Comprimento lateral do valor de limite :</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Observacao &lt;/span&gt;: Quando voce clicar no botao Aplicar, os triangulos a serem removidos serao exibidos como pintados com cinza escura. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; Observacao &lt;/span&gt;: Quando voce clicar no botao Aplicar, os triangulos a serem removidos serao exibidos como pintados com cinza escura. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>

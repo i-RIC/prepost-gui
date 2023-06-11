@@ -1,5 +1,6 @@
 #include "geodatapointmap_pointsmanager.h"
 #include "geodatapointmap_tinmanager_breakline.h"
+#include "geodatapointmap_tinmanager_impl.h"
 #include "geodatapointmap_tinmanager_tinbuilder.h"
 
 #include <guibase/widget/waitdialog.h>
@@ -10,15 +11,12 @@
 
 namespace {
 
-void setupWaitDialog(WaitDialog* dialog, int initialProgress, bool allowCancel)
+void setupWaitDialog(WaitDialog* dialog, int initialProgress)
 {
 	dialog->showProgressBar();
 	dialog->setRange(0, 100);
 	dialog->setUnknownLimitMode(300);
 	dialog->setProgress(initialProgress);
-	if (! allowCancel) {
-		dialog->disableCancelButton();
-	}
 	dialog->setMessage(GeoDataPointmap::tr("Remeshing TINs..."));
 }
 
@@ -30,12 +28,22 @@ GeoDataPointmap::TINManager::TINBuilder::TINBuilder(TINManager* manager) :
 
 bool GeoDataPointmap::TINManager::TINBuilder::build(bool allowCancel)
 {
+	auto tin = vtkSmartPointer<vtkPolyData>::New();
+	bool ok = build(tin, allowCancel);
+	if (! ok) {return false;}
+
+	m_manager->setTinData(tin, m_manager->impl->m_pointsManager->values());
+	return true;
+}
+
+bool GeoDataPointmap::TINManager::TINBuilder::build(vtkPolyData* data, bool allowCancel)
+{
 	if (m_manager->checkIfBreakLinesHasIntersections()) {return false;}
 
 	triangulateio in, out;
 	int segmentCount = 0;
 
-	auto points = m_manager->m_pointsManager->points();
+	auto points = m_manager->impl->m_pointsManager->points();
 
 	for (auto line : m_manager->breakLines()) {
 		auto indices = line->vertexIndices();
@@ -104,11 +112,13 @@ bool GeoDataPointmap::TINManager::TINBuilder::build(bool allowCancel)
 		int prog = 10;
 
 		// Not finished yet. Show wait dialog.
-		WaitDialog waitDialog(m_manager->m_parent->preProcessorWindow());
-		setupWaitDialog(&waitDialog, prog, allowCancel);
+		WaitDialog waitDialog(m_manager->impl->m_parent->preProcessorWindow());
+		if (allowCancel) {
+			waitDialog.show();
+			setupWaitDialog(&waitDialog, prog);
+		}
 		connect(&waitDialog, &WaitDialog::canceled, this, &TINBuilder::cancel);
 
-		waitDialog.show();
 		while (! finished && ! m_canceled) {
 			qApp->processEvents();
 			finished = thread->wait(200);
@@ -138,11 +148,8 @@ bool GeoDataPointmap::TINManager::TINBuilder::build(bool allowCancel)
 			pts[2] = *(out.trianglelist + i * 3 + 2) - 1;
 			tris->InsertNextCell(3, pts);
 		}
-		auto tin = vtkSmartPointer<vtkPolyData>::New();
-		tin->SetPoints(points->GetPoints());
-		tin->SetPolys(tris);
-
-		m_manager->setTinData(tin, m_manager->m_pointsManager->values());
+		data->SetPoints(points->GetPoints());
+		data->SetPolys(tris);
 	}
 
 	trifree(out.pointmarkerlist);

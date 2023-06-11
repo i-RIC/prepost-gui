@@ -343,6 +343,7 @@ void GeoDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	GeoData::doLoadFromProjectMainFile(node);
 
+	impl->m_tinManager.load(node);
 	impl->m_displaySetting.load(node);
 	impl->m_mappingSetting.load(node);
 }
@@ -353,6 +354,7 @@ void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	GeoData::doSaveToProjectMainFile(writer);
 
+	impl->m_tinManager.save(writer);
 	impl->m_displaySetting.save(writer);
 	impl->m_mappingSetting.save(writer);
 }

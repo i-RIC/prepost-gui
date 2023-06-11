@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation type="vanished">Verschmelzen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden "%1"Gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Es sind keine anderen Daten zum Zusammenführen vorhanden &quot;%1&quot;Gruppe.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -315,6 +317,10 @@
     <message>
         <source>&amp;Polygons Edit Mode</source>
         <translation>Bearbeitungsmodus für Polygone (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Remove triangles with long edge setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -621,12 +627,12 @@
         <translation>Kein Trennzeichen angegeben</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Nicht genügend Werte zum Lesen "%1"."%1"Spalte ist %2 aber %3 Werte eingegeben.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Nicht genügend Werte zum Lesen &quot;%1&quot;.&quot;%1&quot;Spalte ist %2 aber %3 Werte eingegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Beim Lesen ist ein Fehler aufgetreten "%1" Wert. "%1" Wert sollte eine reelle Zahl sein, aber "%2" spezifiziert.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Beim Lesen ist ein Fehler aufgetreten &quot;%1&quot; Wert. &quot;%1&quot; Wert sollte eine reelle Zahl sein, aber &quot;%2&quot; spezifiziert.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -696,8 +702,8 @@
         <translation>Zitat Charakter:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -776,31 +782,31 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Bildschirmeinstellung</translation>
+        <translation type="vanished">Bildschirmeinstellung</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation>Anzeigemethode</translation>
+        <translation type="vanished">Anzeigemethode</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punkte</translation>
+        <translation type="vanished">Punkte</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Drahtmodell</translation>
+        <translation type="vanished">Drahtmodell</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Oberfläche</translation>
+        <translation type="vanished">Oberfläche</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Punktgröße:</translation>
+        <translation type="vanished">Punktgröße:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation>Bruchlinien ausblenden</translation>
+        <translation type="vanished">Bruchlinien ausblenden</translation>
     </message>
 </context>
 <context>
@@ -1010,8 +1016,8 @@
         <translation>Oberfläche</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1228,8 +1234,8 @@
         <translation>Gewichtungsexponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; wird als Gewichtung verwendet, wenn der gewichtete Durchschnitt der Werte berechnet wird. r ist der Abstand vom Punkt zum Knoten oder Zellmittelpunkt, dem der Wert zugeordnet wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; wird als Gewichtung verwendet, wenn der gewichtete Durchschnitt der Werte berechnet wird. r ist der Abstand vom Punkt zum Knoten oder Zellmittelpunkt, dem der Wert zugeordnet wird.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1279,8 +1285,8 @@
         <translation type="vanished">Oberfläche</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis:&lt;/span&gt; Im &amp;quot;Punktbearbeitungsmodusquot; wird diese Einstellung ignoriert und TIN-Daten sind immer vorhanden als Punkte angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1312,18 +1318,41 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
+    <message>
+        <source>Setting for removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold edge length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Dreiecke mit langer Kante entfernen</translation>
+        <translation type="vanished">Dreiecke mit langer Kante entfernen</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Kantenlänge begrenzen:</translation>
+        <translation type="vanished">Kantenlänge begrenzen:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Hinweis&lt;/span&gt;: Wenn Sie auf die Schaltfläche "Anwenden" klicken, werden die zu entfernenden Dreiecke dunkel gemalt grau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hinweis&lt;/span&gt;: Wenn Sie auf die Schaltfläche &quot;Anwenden&quot; klicken, werden die zu entfernenden Dreiecke dunkel gemalt grau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

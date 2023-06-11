@@ -2,6 +2,7 @@
 #include "geodatapointmap_tinmanager_actions.h"
 #include "geodatapointmap_tinmanager_breakline.h"
 #include "geodatapointmap_tinmanager_deletebreaklinecontroller.h"
+#include "geodatapointmap_tinmanager_impl.h"
 
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -17,7 +18,7 @@ GeoDataPointmap::TINManager::DeleteBreakLineController::DeleteBreakLineControlle
 
 void GeoDataPointmap::TINManager::DeleteBreakLineController::activate(VTK2DGraphicsView* v)
 {
-	auto w = m_manager->m_parent->preProcessorWindow();
+	auto w = m_manager->impl->m_parent->preProcessorWindow();
 	InformationDialog::information(w, GeoDataPointmap::tr("Information"), GeoDataPointmap::tr("Click on the break line you want to remove."), "geodatapointmapremovebreakline");
 
 	m_deleteTarget = nullptr;
@@ -37,11 +38,11 @@ void GeoDataPointmap::TINManager::DeleteBreakLineController::handleMouseMoveEven
 	auto worldPos = v->viewportToWorld(event->pos());
 	auto limitDist = v->stdRadius(iRIC::nearRadius());
 
-	for (auto line : m_manager->m_breakLines) {
+	for (auto line : m_manager->impl->m_breakLines) {
 		line->controller().pointsActor()->VisibilityOff();
 	}
 
-	for (auto line : m_manager->m_breakLines) {
+	for (auto line : m_manager->impl->m_breakLines) {
 		int edgeId;
 		if (line->controller().isEdgeSelectable(worldPos, limitDist, &edgeId)) {
 			line->controller().pointsActor()->VisibilityOn();
@@ -54,7 +55,7 @@ void GeoDataPointmap::TINManager::DeleteBreakLineController::handleMouseMoveEven
 	} else {
 		v->setCursor(m_removeCursor);
 	}
-	m_manager->m_parent->renderGraphicsView();
+	m_manager->impl->m_parent->renderGraphicsView();
 }
 
 void GeoDataPointmap::TINManager::DeleteBreakLineController::handleMousePressEvent(QMouseEvent* event, VTK2DGraphicsView* v)
@@ -62,7 +63,7 @@ void GeoDataPointmap::TINManager::DeleteBreakLineController::handleMousePressEve
 	if (m_deleteTarget == nullptr) {return;}
 	if (event->button() != Qt::LeftButton) {return;}
 
-	auto w = m_manager->m_parent->preProcessorWindow();
+	auto w = m_manager->impl->m_parent->preProcessorWindow();
 	int ret = QMessageBox::warning(w, GeoDataPointmap::tr("Warning"),
 																 GeoDataPointmap::tr("Are you sure you want to remove this break line?"),
 																 QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -70,5 +71,5 @@ void GeoDataPointmap::TINManager::DeleteBreakLineController::handleMousePressEve
 
 	m_manager->removeBreakLine(m_deleteTarget);
 	deactivate(v);
-	m_manager->m_activeController = m_manager->m_normalController;
+	m_manager->impl->m_activeController = m_manager->impl->m_normalController;
 }

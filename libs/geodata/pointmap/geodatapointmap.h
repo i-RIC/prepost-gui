@@ -154,7 +154,6 @@ private:
 	class MappingSettingDialog;
 	class PropertyDialog;
 
-	class RemoveTrianglesCommand;
 	class ModifyCommand;
 	class UpdateActorSettingsCommand;
 

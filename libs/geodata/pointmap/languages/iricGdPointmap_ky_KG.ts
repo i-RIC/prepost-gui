@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation type="vanished">Бириктирүү...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Биригүүгө башка маалымат жок "%1"тобу.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Биригүүгө башка маалымат жок &quot;%1&quot;тобу.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -315,6 +317,10 @@
     <message>
         <source>&amp;Polygons Edit Mode</source>
         <translation>Көп бурчтуктарды түзөтүү режими (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Remove triangles with long edge setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -621,12 +627,12 @@
         <translation>Бөлүүчү көрсөтүлгөн эмес</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Окууга баалар жетишсиз "%1"."%1"колонна %2 бирок %3 баалуулуктарды киргизүү.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Окууга баалар жетишсиз &quot;%1&quot;.&quot;%1&quot;колонна %2 бирок %3 баалуулуктарды киргизүү.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Окуп жатканда ката кетти "%1"баалуулук."%1"мааниси чыныгы сан болушу керек, бирок"%2"көрсөтүлгөн.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Окуп жатканда ката кетти &quot;%1&quot;баалуулук.&quot;%1&quot;мааниси чыныгы сан болушу керек, бирок&quot;%2&quot;көрсөтүлгөн.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -696,8 +702,8 @@
         <translation>Цитата мүнөзү:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -776,31 +782,31 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Display Setting</translation>
+        <translation type="vanished">Display Setting</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation>Көрсөтүү ыкмасы</translation>
+        <translation type="vanished">Көрсөтүү ыкмасы</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Упайлар</translation>
+        <translation type="vanished">Упайлар</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Surface</translation>
+        <translation type="vanished">Surface</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Пойнт өлчөмү:</translation>
+        <translation type="vanished">Пойнт өлчөмү:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation>Тыныгуу Саптарын Жашыруу</translation>
+        <translation type="vanished">Тыныгуу Саптарын Жашыруу</translation>
     </message>
 </context>
 <context>
@@ -1010,8 +1016,8 @@
         <translation>Surface</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1228,8 +1234,8 @@
         <translation>Салмак көрсөткүчү k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; маанилердин орточо салмактанып алынганын эсептөөдө салмак катары колдонулат. r - чекиттен түйүнгө же уячанын борборуна чейинки аралык, ага маани көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; маанилердин орточо салмактанып алынганын эсептөөдө салмак катары колдонулат. r - чекиттен түйүнгө же уячанын борборуна чейинки аралык, ага маани көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1279,8 +1285,8 @@
         <translation type="vanished">Surface</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Эскертүү:&lt;/span&gt; &amp;quot;Упайларды түзөтүү режиминдеquot;, бул жөндөө этибарга алынбайт жана TIN дайындары ар дайым упайлар катары көрсөтүлөт.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1312,18 +1318,41 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
+    <message>
+        <source>Setting for removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold edge length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Long Edge менен үч бурчтуктарды алып салыңыз</translation>
+        <translation type="vanished">Long Edge менен үч бурчтуктарды алып салыңыз</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Чек четинин узундугу:</translation>
+        <translation type="vanished">Чек четинин узундугу:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Колдонуу баскычын басканыңызда, алынып салынуучу үч бурчтуктар караңгы түскө боёлот боз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Эскертүү &lt;/span&gt;: Колдонуу баскычын басканыңызда, алынып салынуучу үч бурчтуктар караңгы түскө боёлот боз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

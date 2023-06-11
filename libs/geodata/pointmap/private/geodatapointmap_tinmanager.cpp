@@ -7,8 +7,12 @@
 #include "geodatapointmap_tinmanager_addbreaklinecontroller.h"
 #include "geodatapointmap_tinmanager_breakline.h"
 #include "geodatapointmap_tinmanager_deletebreaklinecontroller.h"
+#include "geodatapointmap_tinmanager_impl.h"
+#include "geodatapointmap_tinmanager_removetrianglessettingdialog.h"
+#include "geodatapointmap_tinmanager_triangleswithlongedgeremover.h"
 #include "geodatapointmap_tinmanager_tinbuilder.h"
 
+#include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
@@ -21,107 +25,100 @@
 #include <vtkLODActor.h>
 
 GeoDataPointmap::TINManager::TINManager(PointsManager* points, GeoDataPointmap* pointmap) :
-	m_tin {vtkPolyData::New()},
-	m_tinActor {vtkLODActor::New()},
-	m_qTree {nullptr},
-	m_needRebuild {false},
-	m_pointsManager {points},
-	m_parent {pointmap},
-	m_normalController {new MouseEventController {}},
-	m_addBreakLineController {new AddBreakLineController {this}},
-	m_deleteBreakLineController {new DeleteBreakLineController {this}},
-	m_activeController {m_normalController},
-	m_actions {new Actions {this}}
+	m_actions {new Actions {this}},
+	impl {new Impl {this, pointmap}}
 {
-	m_controllers.push_back(m_normalController);
-	m_controllers.push_back(m_addBreakLineController);
-	m_controllers.push_back(m_deleteBreakLineController);
+	impl->m_pointsManager = points;
 
 	setupActors();
 }
 
 GeoDataPointmap::TINManager::~TINManager()
 {
-	m_tin->Delete();
-	m_tinActor->Delete();
-	delete m_qTree;
-
-	delete m_normalController;
-	delete m_addBreakLineController;
-	delete m_deleteBreakLineController;
 	delete m_actions;
+	delete impl;
+}
+
+void GeoDataPointmap::TINManager::load(const QDomNode& node)
+{
+	impl->m_removeTrianglesSetting.load(node);
+}
+
+void GeoDataPointmap::TINManager::save(QXmlStreamWriter& writer)
+{
+	impl->m_removeTrianglesSetting.save(writer);
 }
 
 void GeoDataPointmap::TINManager::removeBreakLine(BreakLine* line)
 {
-	line->removeActorsFromRenderer(m_parent->renderer());
+	line->removeActorsFromRenderer(impl->m_parent->renderer());
 
-	for (auto it = m_breakLines.begin(); it != m_breakLines.end(); ++it) {
+	for (auto it = impl->m_breakLines.begin(); it != impl->m_breakLines.end(); ++it) {
 		if (*it == line) {
-			m_breakLines.erase(it);
+			impl->m_breakLines.erase(it);
 			break;
 		}
 	}
 	delete line;
 
 	iRICUndoStack::instance().clear();
-	m_needRebuild = true;
-	m_parent->setMapped(false);
+	impl->m_needRebuild = true;
+	impl->m_parent->setMapped(false);
 
-	m_parent->renderGraphicsView();
+	impl->m_parent->renderGraphicsView();
 }
 
 std::vector<GeoDataPointmap::TINManager::BreakLine*>& GeoDataPointmap::TINManager::breakLines()
 {
-	return m_breakLines;
+	return impl->m_breakLines;
 }
 
 const std::vector<GeoDataPointmap::TINManager::BreakLine*>& GeoDataPointmap::TINManager::breakLines() const
 {
-	return m_breakLines;
+	return impl->m_breakLines;
 }
 
 vtkPolyData* GeoDataPointmap::TINManager::tin() const
 {
-	return m_tin;
+	return impl->m_tin;
 }
 
 vtkDoubleArray* GeoDataPointmap::TINManager::values() const
 {
-	return vtkDoubleArray::SafeDownCast(m_tin->GetPointData()->GetArray(VALUES));
+	return vtkDoubleArray::SafeDownCast(impl->m_tin->GetPointData()->GetArray(VALUES));
 }
 
 void GeoDataPointmap::TINManager::setTinData(vtkPolyData* data, vtkDoubleArray* values)
 {
-	m_tin->Initialize();
-	m_tin->GetPointData()->Initialize();
+	impl->m_tin->Initialize();
+	impl->m_tin->GetPointData()->Initialize();
 
-	auto origPoints = data->GetPoints();
-	auto newPoints = vtkSmartPointer<vtkPoints>::New();
-	newPoints->SetDataTypeToDouble();
-
-	double v[3];
-	for (vtkIdType i = 0; i < origPoints->GetNumberOfPoints(); ++i) {
-		origPoints->GetPoint(i, v);
-		v[2] = 0;
-		newPoints->InsertNextPoint(v);
-	}
-	m_tin->SetPoints(newPoints);
-	m_tin->SetPolys(data->GetPolys());
+	impl->m_tin->SetPoints(data->GetPoints());
+	impl->m_tin->SetPolys(data->GetPolys());
 
 	values->SetName(VALUES);
-	m_tin->GetPointData()->AddArray(values);
-	m_tin->GetPointData()->SetActiveScalars(VALUES);
-	m_tin->BuildCells();
+	impl->m_tin->GetPointData()->AddArray(values);
+	impl->m_tin->GetPointData()->SetActiveScalars(VALUES);
+	impl->m_tin->BuildCells();
 
 	rebuildQTree();
 }
 
 void GeoDataPointmap::TINManager::rebuildTinFromPointsIfNeeded()
 {
-	if (! m_needRebuild) {return;}
+	if (! impl->m_needRebuild) {return;}
 
 	rebuildTinFromPoints(false);
+}
+
+vtkPolyData* GeoDataPointmap::TINManager::buildTinFromPoints()
+{
+	auto ret = vtkPolyData::New();
+
+	TINBuilder builder(this);
+	builder.build(ret, false);
+
+	return ret;
 }
 
 bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
@@ -130,6 +127,12 @@ bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
 	bool succeeded = builder.build(allowCancel);
 	if (! succeeded) {return false;}
 
+	if (impl->m_removeTrianglesSetting.enabled) {
+		auto newCells = TrianglesWithLongEdgeRemover::buildCellArray(impl->m_tin, impl->m_removeTrianglesSetting.thresholdLength, false, false);
+		impl->m_tin->SetPolys(newCells);
+		newCells->Delete();
+	}
+
 	rebuildQTree();
 
 	return succeeded;
@@ -137,18 +140,18 @@ bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
 
 void GeoDataPointmap::TINManager::updateBreakLinesActorSettings() const
 {
-	const auto& setting = m_parent->impl->m_displaySetting;
+	const auto& setting = impl->m_parent->impl->m_displaySetting;
 	if (! setting.breakLineVisible) {
-		for (auto line : m_breakLines) {
+		for (auto line : impl->m_breakLines) {
 			line->controller().linesActor()->VisibilityOff();
 		}
 	} else {
-		auto v = m_parent->dataModel()->graphicsView();
+		auto v = impl->m_parent->dataModel()->graphicsView();
 
 		const auto& color = setting.breakLineColor;
 		int lineWidth = setting.breakLineWidth;
-		auto col = m_parent->actorCollection();
-		for (auto line : m_breakLines) {
+		auto col = impl->m_parent->actorCollection();
+		for (auto line : impl->m_breakLines) {
 			auto lineActor = line->controller().linesActor();
 			lineActor->GetProperty()->SetLineWidth(lineWidth * v->devicePixelRatioF());
 			lineActor->GetProperty()->SetColor(color);
@@ -162,21 +165,21 @@ void GeoDataPointmap::TINManager::updateBreakLinesActorSettings() const
 
 bool GeoDataPointmap::TINManager::needRebuild() const
 {
-	return m_needRebuild;
+	return impl->m_needRebuild;
 }
 
 void GeoDataPointmap::TINManager::setNeedRebuild(bool needed)
 {
-	m_needRebuild = needed;
+	impl->m_needRebuild = needed;
 }
 
 vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weights)
 {
-	if (m_qTree == nullptr) {return nullptr;}
+	if (impl->m_qTree == nullptr) {return nullptr;}
 
 	auto env = new geos::geom::Envelope(x, x, y, y);
 	std::vector<void*> ret;
-	m_qTree->query(env, ret);
+	impl->m_qTree->query(env, ret);
 	delete env;
 
 	double point[3], closestPoint[3], pcoords[3], dist;
@@ -189,12 +192,12 @@ vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weigh
 
 	for (void* vptr : ret) {
 		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
-		m_tin->GetCellBounds(cellId, bounds);
+		impl->m_tin->GetCellBounds(cellId, bounds);
 		if (point[0] < bounds[0]) {continue;}
 		if (point[0] > bounds[1]) {continue;}
 		if (point[1] < bounds[2]) {continue;}
 		if (point[1] > bounds[3]) {continue;}
-		vtkCell* cell = m_tin->GetCell(cellId);
+		vtkCell* cell = impl->m_tin->GetCell(cellId);
 		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
 			return cell;
 		}
@@ -205,12 +208,12 @@ vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weigh
 
 bool GeoDataPointmap::TINManager::checkIfBreakLinesHasIntersections() const
 {
-	for (unsigned int i = 0; i < m_breakLines.size(); ++i) {
-		auto l1 = m_breakLines.at(i);
-		for (unsigned int j = i + 1; j < m_breakLines.size(); ++j) {
-			auto l2 = m_breakLines.at(j);
+	for (unsigned int i = 0; i < impl->m_breakLines.size(); ++i) {
+		auto l1 = impl->m_breakLines.at(i);
+		for (unsigned int j = i + 1; j < impl->m_breakLines.size(); ++j) {
+			auto l2 = impl->m_breakLines.at(j);
 			if (l1->intersects(*l2)) {
-				auto w = m_parent->preProcessorWindow();
+				auto w = impl->m_parent->preProcessorWindow();
 				QMessageBox::warning(w, GeoDataPointmap::tr("Warning"), GeoDataPointmap::tr("Break line have to have no intersection with other break lines."));
 				return true;
 			}
@@ -221,7 +224,7 @@ bool GeoDataPointmap::TINManager::checkIfBreakLinesHasIntersections() const
 
 void GeoDataPointmap::TINManager::setZDepthToBreakLines(double z)
 {
-	for (auto line : m_breakLines) {
+	for (auto line : impl->m_breakLines) {
 		line->controller().linesActor()->SetPosition(0, 0, z);
 		line->controller().pointsActor()->SetPosition(0, 0, z);
 	}
@@ -229,7 +232,7 @@ void GeoDataPointmap::TINManager::setZDepthToBreakLines(double z)
 
 bool GeoDataPointmap::TINManager::pointsUsedForBreakLines(const std::unordered_set<vtkIdType>& indices)
 {
-	for (auto line : m_breakLines) {
+	for (auto line : impl->m_breakLines) {
 		for (auto index : line->vertexIndices()) {
 			auto it = indices.find(index);
 			if (it != indices.end()) {
@@ -273,7 +276,7 @@ void GeoDataPointmap::TINManager::updateBreakLinesOnPointsDelete(const std::unor
 	keyIds.push_back(keyIdToAddCandidate);
 	offsets.push_back(offsetToAddCandidate);
 
-	for (auto line : m_breakLines) {
+	for (auto line : impl->m_breakLines) {
 		auto oldindices = line->vertexIndices();
 		std::vector<vtkIdType> newindices;
 		for (unsigned int i = 0; i < oldindices.size(); ++i) {
@@ -332,7 +335,7 @@ void GeoDataPointmap::TINManager::updateBreakLinesOnPointsUndoDelete(const std::
 	keyIds.push_back(keyIdToAddCandidate);
 	offsets.push_back(offsetToAddCandidate);
 
-	for (auto line : m_breakLines) {
+	for (auto line : impl->m_breakLines) {
 		auto  oldindices = line->vertexIndices();
 		std::vector<vtkIdType> newindices;
 		for (unsigned int i = 0; i < oldindices.size(); ++i) {
@@ -360,22 +363,22 @@ void GeoDataPointmap::TINManager::updateBreakLinesOnPointsUndoDelete(const std::
 
 void GeoDataPointmap::TINManager::addActorsToRenderer(vtkRenderer* renderer)
 {
-	renderer->AddActor(m_tinActor);
-	for (auto l : m_breakLines) {
+	renderer->AddActor(impl->m_tinActor);
+	for (auto l : impl->m_breakLines) {
 		l->addActorsToRenderer(renderer);
 	}
-	for (auto c : m_controllers) {
+	for (auto c : impl->m_controllers) {
 		c->addActorsToRenderer(renderer);
 	}
 }
 
 void GeoDataPointmap::TINManager::removeActorsFromRenderer(vtkRenderer* renderer)
 {
-	renderer->RemoveActor(m_tinActor);
-	for (auto l : m_breakLines) {
+	renderer->RemoveActor(impl->m_tinActor);
+	for (auto l : impl->m_breakLines) {
 		l->removeActorsFromRenderer(renderer);
 	}
-	for (auto c : m_controllers) {
+	for (auto c : impl->m_controllers) {
 		c->removeActorsFromRenderer(renderer);
 	}
 }
@@ -389,41 +392,42 @@ void GeoDataPointmap::TINManager::addActionsToMenu(QMenu* menu)
 	menu->addSeparator();
 
 	menu->addAction(m_actions->remeshTinAction);
+	menu->addAction(m_actions->removeTrianglesSettingAction);
 }
 
 void GeoDataPointmap::TINManager::handleKeyPressEvent(QKeyEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleKeyPressEvent(event, v);
+	impl->m_activeController->handleKeyPressEvent(event, v);
 }
 
 void GeoDataPointmap::TINManager::handleKeyReleaseEvent(QKeyEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleKeyReleaseEvent(event, v);
+	impl->m_activeController->handleKeyReleaseEvent(event, v);
 }
 
 void GeoDataPointmap::TINManager::handleMouseDoubleClickEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleMouseDoubleClickEvent(event, v);
+	impl->m_activeController->handleMouseDoubleClickEvent(event, v);
 }
 
 void GeoDataPointmap::TINManager::handleMouseMoveEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleMouseMoveEvent(event, v);
+	impl->m_activeController->handleMouseMoveEvent(event, v);
 }
 
 void GeoDataPointmap::TINManager::handleMousePressEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleMousePressEvent(event, v);
+	impl->m_activeController->handleMousePressEvent(event, v);
 }
 
 void GeoDataPointmap::TINManager::handleMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_activeController->handleMouseReleaseEvent(event, v);
+	impl->m_activeController->handleMouseReleaseEvent(event, v);
 }
 
 vtkLODActor* GeoDataPointmap::TINManager::tinActor() const
 {
-	return m_tinActor;
+	return impl->m_tinActor;
 }
 
 void GeoDataPointmap::TINManager::toggleAddBreakLineMode(bool on)
@@ -431,27 +435,27 @@ void GeoDataPointmap::TINManager::toggleAddBreakLineMode(bool on)
 	if (on) {
 		m_actions->removeBreakLineAction->setChecked(false);
 	}
-	auto v = m_parent->dataModel()->graphicsView();
-	m_activeController->deactivate(v);
+	auto v = impl->m_parent->dataModel()->graphicsView();
+	impl->m_activeController->deactivate(v);
 	if (on) {
 		iRICUndoStack::instance().clear();
 
-		auto breakLine = new BreakLine(m_pointsManager->points());
-		breakLine->addActorsToRenderer(m_parent->renderer());
+		auto breakLine = new BreakLine(impl->m_pointsManager->points());
+		breakLine->addActorsToRenderer(impl->m_parent->renderer());
 		breakLine->controller().pointsActor()->VisibilityOn();
-		m_breakLines.push_back(breakLine);
-		m_addBreakLineController->setBreakLine(breakLine);
-		m_activeController = m_addBreakLineController;
+		impl->m_breakLines.push_back(breakLine);
+		impl->m_addBreakLineController->setBreakLine(breakLine);
+		impl->m_activeController = impl->m_addBreakLineController;
 
-		m_parent->setNeedRebuildTin(true);
-		m_parent->setMapped(false);
+		impl->m_parent->setNeedRebuildTin(true);
+		impl->m_parent->setMapped(false);
 
-		m_parent->assignActorZValues(m_parent->m_zDepthRange);
-		m_parent->updateActorSetting();
+		impl->m_parent->assignActorZValues(impl->m_parent->m_zDepthRange);
+		impl->m_parent->updateActorSetting();
 	} else {
-		m_activeController = m_normalController;
+		impl->m_activeController = impl->m_normalController;
 	}
-	m_activeController->activate(v);
+	impl->m_activeController->activate(v);
 }
 
 void GeoDataPointmap::TINManager::toggleRemoveBreakLineMode(bool on)
@@ -459,52 +463,63 @@ void GeoDataPointmap::TINManager::toggleRemoveBreakLineMode(bool on)
 	if (on) {
 		m_actions->addBreakLineAction->setChecked(false);
 	}
-	auto v = m_parent->dataModel()->graphicsView();
-	m_activeController->deactivate(v);
+	auto v = impl->m_parent->dataModel()->graphicsView();
+	impl->m_activeController->deactivate(v);
 	if (on) {
-		m_activeController = m_deleteBreakLineController;
+		impl->m_activeController = impl->m_deleteBreakLineController;
 	} else {
-		m_activeController = m_normalController;
+		impl->m_activeController = impl->m_normalController;
 	}
-	m_activeController->activate(v);
+	impl->m_activeController->activate(v);
 }
 
 void GeoDataPointmap::TINManager::removeAllBreakLines()
 {
-	auto w = m_parent->preProcessorWindow();
+	auto w = impl->m_parent->preProcessorWindow();
 
 	int result = QMessageBox::warning(w, GeoDataPointmap::tr("Warning"), GeoDataPointmap::tr("Are you sure you want to remove ALL break lines?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (result == QMessageBox::No) {return;}
 
-	auto renderer = m_parent->renderer();
-	for (auto line : m_breakLines) {
+	auto renderer = impl->m_parent->renderer();
+	for (auto line : impl->m_breakLines) {
 		line->removeActorsFromRenderer(renderer);
 		delete line;
 	}
-	m_breakLines.clear();
+	impl->m_breakLines.clear();
 
 	// This operation is not undo-able.
 	iRICUndoStack::instance().clear();
-	m_parent->renderGraphicsView();
+	impl->m_parent->renderGraphicsView();
+}
+
+void GeoDataPointmap::TINManager::showRemoveTrianglesSettingDialog()
+{
+	auto dialog = new RemoveTrianglesSettingDialog(this, impl->m_parent->preProcessorWindow());
+	dialog->setAttribute(Qt::WA_DeleteOnClose);
+	connect(dialog, &QObject::destroyed, impl->m_parent->iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+
+	impl->m_parent->iricMainWindow()->enterModelessDialogMode();
+
+	dialog->show();
 }
 
 void GeoDataPointmap::TINManager::setupActors()
 {
-	auto prop = m_tinActor->GetProperty();
+	auto prop = impl->m_tinActor->GetProperty();
 	prop->SetRepresentationToPoints();
 	prop->SetLighting(false);
 }
 
 void GeoDataPointmap::TINManager::rebuildQTree()
 {
-	delete m_qTree;
-	m_qTree = new geos::index::quadtree::Quadtree();
+	delete impl->m_qTree;
+	impl->m_qTree = new geos::index::quadtree::Quadtree();
 
 	double bounds[6];
-	for (vtkIdType i = 0; i < m_tin->GetNumberOfCells(); ++i) {
-		m_tin->GetCellBounds(i, bounds);
+	for (vtkIdType i = 0; i < impl->m_tin->GetNumberOfCells(); ++i) {
+		impl->m_tin->GetCellBounds(i, bounds);
 
 		auto env = new geos::geom::Envelope(bounds[0], bounds[1], bounds[2], bounds[3]);
-		m_qTree->insert(env, reinterpret_cast<void*>(i));
+		impl->m_qTree->insert(env, reinterpret_cast<void*>(i));
 	}
 }

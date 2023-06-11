@@ -13,6 +13,7 @@ public:
 	TINBuilder(TINManager* manager);
 
 	bool build(bool allowCancel);
+	bool build(vtkPolyData* data, bool allowCancel);
 
 private slots:
 	void cancel();

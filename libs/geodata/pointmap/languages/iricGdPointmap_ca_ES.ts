@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -118,7 +120,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>S'ha acabat la reparació dels TIN.</translation>
+        <translation>S&apos;ha acabat la reparació dels TIN.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -142,7 +144,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D'acord, el mètode de visualització canviarà a Wireframe</translation>
+        <translation type="vanished">Quan vulgueu eliminar triangles amb vores llargues, heu de canviar el mètode de visualització a Wireframe o Surface. Si premeu el botó D&apos;acord, el mètode de visualització canviarà a Wireframe</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -174,7 +176,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">S'ha produït un error en exportar a %1.</translation>
+        <translation type="vanished">S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -198,7 +200,7 @@
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s'utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
+        <translation>Per afegir punts nous, seleccioneu primer un punt existent. El valor en aquest punt s&apos;utilitzarà com a valor predeterminat per als punts nous. A continuació, feu clic a qualsevol posició que vulgueu afegir punts i, a continuació, feu doble clic en prémer la tecla Retorn.</translation>
     </message>
     <message>
         <source>Add Break Line Point</source>
@@ -218,7 +220,7 @@
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="vanished">Afegiu un nou punt de línia d'intervenció</translation>
+        <translation type="vanished">Afegiu un nou punt de línia d&apos;intervenció</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -229,16 +231,16 @@
         <translation type="vanished">Combina...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>No hi ha cap altra dada per combinar "%1"grup.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>No hi ha cap altra dada per combinar &quot;%1&quot;grup.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
-        <translation>%1 s'han trobat punts duplicats a objectius de combinació i s'han omès.</translation>
+        <translation>%1 s&apos;han trobat punts duplicats a objectius de combinació i s&apos;han omès.</translation>
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
+        <translation>Heu de seleccionar un punt conegut i definir almenys una ubicació per als punts afegits. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -250,7 +252,7 @@
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Per interpolar punts, heu d'especificar més de dos punts i l'últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l'operació?</translation>
+        <translation>Per interpolar punts, heu d&apos;especificar més de dos punts i l&apos;últim punt hauria de ser un punt existent. Voleu tornar-ho a provar o cancel·lar l&apos;operació?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -274,11 +276,11 @@
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation>No s'ha pogut obrir %1.</translation>
+        <translation>No s&apos;ha pogut obrir %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation>Remella el TIN i quan s'hagi acabat, canvia al mode d'edició TIN.</translation>
+        <translation>Remella el TIN i quan s&apos;hagi acabat, canvia al mode d&apos;edició TIN.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
@@ -306,15 +308,19 @@
     </message>
     <message>
         <source>&amp;Points Edit Mode</source>
-        <translation>Mode d'edició de punts (&amp;P)</translation>
+        <translation>Mode d&apos;edició de punts (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;TIN Edit Mode</source>
-        <translation>Mode d'edició TIN (&amp;T)</translation>
+        <translation>Mode d&apos;edició TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Polygons Edit Mode</source>
-        <translation>Mode d'edició de polígons (&amp;P)</translation>
+        <translation>Mode d&apos;edició de polígons (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Remove triangles with long edge setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -336,7 +342,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>L'increment d'interpolació ha de ser superior a 0 i menor que la longitud de la línia d'interpolació</translation>
+        <translation>L&apos;increment d&apos;interpolació ha de ser superior a 0 i menor que la longitud de la línia d&apos;interpolació</translation>
     </message>
 </context>
 <context>
@@ -405,7 +411,7 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="vanished">Interpolar l'increment</translation>
+        <translation type="vanished">Interpolar l&apos;increment</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
@@ -443,7 +449,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>S'ha produït un error en exportar a %1</translation>
+        <translation>S&apos;ha produït un error en exportar a %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -462,7 +468,7 @@
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation>Error d'anàlisi %1 a la línia %2 columna %3</translation>
+        <translation>Error d&apos;anàlisi %1 a la línia %2 columna %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
@@ -529,7 +535,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -544,7 +550,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -578,11 +584,11 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation>No s'han trobat prou línies de capçalera al fitxer.</translation>
+        <translation>No s&apos;han trobat prou línies de capçalera al fitxer.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
@@ -594,7 +600,7 @@
     </message>
     <message>
         <source>%1 duplicate points found. If points with same x and y values found, the first point is imported</source>
-        <translation>%1 s'han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
+        <translation>%1 s&apos;han trobat punts duplicats. Si es troben punts amb els mateixos valors xy, s’importa el primer punt</translation>
     </message>
     <message>
         <source>At column %1, %2 or %3 expected, but %4 specified.</source>
@@ -618,15 +624,15 @@
     </message>
     <message>
         <source>No delimiter specified</source>
-        <translation>No s'ha especificat cap delimitador</translation>
+        <translation>No s&apos;ha especificat cap delimitador</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>No hi ha prou valors per llegir "%1"."%1"la columna és %2 però %3 valors d'entrada.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>No hi ha prou valors per llegir &quot;%1&quot;.&quot;%1&quot;la columna és %2 però %3 valors d&apos;entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>S'ha produït un error en llegir "%1"valor". %1 "el valor ha de ser un nombre real, però"%2"s'ha especificat.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>S&apos;ha produït un error en llegir &quot;%1&quot;valor&quot;. %1 &quot;el valor ha de ser un nombre real, però&quot;%2&quot;s&apos;ha especificat.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -645,7 +651,7 @@
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation>Configuració d'importació</translation>
+        <translation>Configuració d&apos;importació</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -696,8 +702,8 @@
         <translation>Personatge de la cita:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -705,7 +711,7 @@
     </message>
     <message>
         <source>Escape character:</source>
-        <translation>Personatge d'escapament:</translation>
+        <translation>Personatge d&apos;escapament:</translation>
     </message>
     <message>
         <source>\</source>
@@ -761,11 +767,11 @@
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
-        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s'importen.</translation>
+        <translation>Quan vulgueu ometre línies al fitxer, especifiqueu valors superiors a 1. Per exemple, si introduïu 2, totes les altres línies s&apos;importen.</translation>
     </message>
     <message>
         <source>File name:</source>
-        <translation>Nom de l'arxiu:</translation>
+        <translation>Nom de l&apos;arxiu:</translation>
     </message>
     <message>
         <source>Coordinate System</source>
@@ -776,31 +782,31 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Configuració de la pantalla</translation>
+        <translation type="vanished">Configuració de la pantalla</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation>Mètode de visualització</translation>
+        <translation type="vanished">Mètode de visualització</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Punts</translation>
+        <translation type="vanished">Punts</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Wireframe</translation>
+        <translation type="vanished">Wireframe</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Superfície</translation>
+        <translation type="vanished">Superfície</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Mida del punt:</translation>
+        <translation type="vanished">Mida del punt:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation>Amaga les línies de ruptura</translation>
+        <translation type="vanished">Amaga les línies de ruptura</translation>
     </message>
 </context>
 <context>
@@ -834,7 +840,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
+        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -906,7 +912,7 @@
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l'esquerra per seleccionar l'àrea.</translation>
+        <translation>La regió per importar dades encara no està seleccionada. Arrossegueu el mapa cap a l&apos;esquerra per seleccionar l&apos;àrea.</translation>
     </message>
 </context>
 <context>
@@ -1010,8 +1016,8 @@
         <translation>Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d&apos;edició de puntsquot;, aquesta configuració s&apos;ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1046,7 +1052,7 @@
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation>Els TIN creats a partir de punts s'utilitzen per mapejar. Els valors dels atributs de la quadrícula definits als nodes o cel·les de la quadrícula es calculen com a mitjana ponderada dels valors definits als nodes del triangle que conté el node (o el centre de la cel·la).</translation>
+        <translation>Els TIN creats a partir de punts s&apos;utilitzen per mapejar. Els valors dels atributs de la quadrícula definits als nodes o cel·les de la quadrícula es calculen com a mitjana ponderada dels valors definits als nodes del triangle que conté el node (o el centre de la cel·la).</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1054,7 +1060,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerqueu punts que estiguin a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors d'aquests punts per a la interpolació.&lt;/p&gt;&lt;p&gt;Aquest algorisme pot ser utilitzar només per a quadrícules estructurades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cerqueu punts que estiguin a prop dels nodes de la quadrícula, pel que fa a les formes de les cel·les de la quadrícula, i utilitzeu els valors d&apos;aquests punts per a la interpolació.&lt;/p&gt;&lt;p&gt;Aquest algorisme pot ser utilitzar només per a quadrícules estructurades.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
@@ -1062,11 +1068,11 @@
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation>Canvieu l'algoritme de mapatge per a cada àrea definida amb polígons</translation>
+        <translation>Canvieu l&apos;algoritme de mapatge per a cada àrea definida amb polígons</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiu àrees com a polígons i especifiqueu l'algoritme per assignar valors als nodes de la quadrícula o als centres de cel·les a partir dels valors definits en els punts.&lt;/p&gt;&lt;p&gt;L'usuari pot seleccionar a continuació: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapa del valor mínim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor màxim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor mitjà ponderat dels punts dins del cercle&lt;/li&gt; &lt;li&gt;Valor del mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definiu àrees com a polígons i especifiqueu l&apos;algoritme per assignar valors als nodes de la quadrícula o als centres de cel·les a partir dels valors definits en els punts.&lt;/p&gt;&lt;p&gt;L&apos;usuari pot seleccionar a continuació: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Mapa del valor mínim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor màxim dels punts dins del cercle&lt;/li&gt;&lt;li&gt;Mapa del valor mitjà ponderat dels punts dins del cercle&lt;/li&gt; &lt;li&gt;Valor del mapa de TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1097,7 +1103,7 @@
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'ampliacions de plantilles:</translation>
+        <translation>Nombre d&apos;ampliacions de plantilles:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -1182,15 +1188,15 @@
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Configuració d'interpolació</translation>
+        <translation>Configuració d&apos;interpolació</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Interpolar l'increment</translation>
+        <translation>Interpolar l&apos;increment</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Increment d'interpolació:</translation>
+        <translation>Increment d&apos;interpolació:</translation>
     </message>
     <message>
         <source>Line Length:</source>
@@ -1228,8 +1234,8 @@
         <translation>Exponent de ponderació k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; s'utilitza com a pes quan es calcula la mitjana ponderada dels valors. r és la distància des del punt fins al node o centre de la cel·la, al qual s'assigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; s&apos;utilitza com a pes quan es calcula la mitjana ponderada dels valors. r és la distància des del punt fins al node o centre de la cel·la, al qual s&apos;assigna el valor.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1241,7 +1247,7 @@
     </message>
     <message>
         <source>When mapping is executed, points with in the circle with the radius above are searched to map values to grid nodes or cell centers.</source>
-        <translation>Quan s'executa el mapeig, es cerquen els punts amb el cercle amb el radi superior per assignar els valors als nodes de la quadrícula o als centres de cel·les.</translation>
+        <translation>Quan s&apos;executa el mapeig, es cerquen els punts amb el cercle amb el radi superior per assignar els valors als nodes de la quadrícula o als centres de cel·les.</translation>
     </message>
 </context>
 <context>
@@ -1279,8 +1285,8 @@
         <translation type="vanished">Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d'edició de puntsquot;, aquesta configuració s'ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; en el &amp;quot;Mode d&apos;edició de puntsquot;, aquesta configuració s&apos;ignora i les dades TIN sempre són es mostra com a punts.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1312,18 +1318,41 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
+    <message>
+        <source>Setting for removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold edge length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Traieu els triangles amb la vora llarga</translation>
+        <translation type="vanished">Traieu els triangles amb la vora llarga</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Longitud límit de vora:</translation>
+        <translation type="vanished">Longitud límit de vora:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s'eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: Quan feu clic al botó Aplica, els triangles que s&apos;eliminaran es pintaran de color fosc gris. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

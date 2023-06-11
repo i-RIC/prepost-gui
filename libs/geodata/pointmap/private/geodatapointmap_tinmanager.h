@@ -32,6 +32,9 @@ public:
 	TINManager(PointsManager* points, GeoDataPointmap* pointmap);
 	~TINManager();
 
+	void load(const QDomNode& node);
+	void save(QXmlStreamWriter& writer);
+
 	void removeBreakLine(BreakLine* line);
 	std::vector<BreakLine*>& breakLines();
 	const std::vector<BreakLine*>& breakLines() const;
@@ -40,6 +43,7 @@ public:
 	vtkDoubleArray* values() const;
 	void setTinData(vtkPolyData* data, vtkDoubleArray* values);
 	void rebuildTinFromPointsIfNeeded();
+	vtkPolyData* buildTinFromPoints();
 	bool rebuildTinFromPoints(bool allowCancel);
 	void updateBreakLinesActorSettings() const;
 
@@ -71,6 +75,7 @@ public:
 
 public slots:
 	void removeAllBreakLines();
+	void showRemoveTrianglesSettingDialog();
 
 private slots:
 	void toggleAddBreakLineMode(bool on);
@@ -80,31 +85,20 @@ private:
 	void setupActors();
 	void rebuildQTree();
 
-	std::vector<BreakLine*> m_breakLines;
-
-	vtkPolyData* m_tin;
-	vtkLODActor* m_tinActor;
-	geos::index::quadtree::Quadtree* m_qTree;
-
-	bool m_needRebuild;
-
-	PointsManager* m_pointsManager;
-	GeoDataPointmap* m_parent;
-
 	class AddBreakLineController;
 	class DeleteBreakLineController;
+	class RemoveTrianglesSetting;
+	class RemoveTrianglesSettingDialog;
 	class RemoveTrianglesWithLongEdgeController;
-
-	MouseEventController* m_normalController;
-	AddBreakLineController* m_addBreakLineController;
-	DeleteBreakLineController* m_deleteBreakLineController;
-
-	std::vector<MouseEventController*> m_controllers;
-	MouseEventController* m_activeController;
+	class TrianglesWithLongEdgeRemover;
 
 	class Actions;
 	Actions* m_actions;
 
+	class Impl;
+	Impl* impl;
+
+	class RebuildTinFromPointsCommand;
 	class RemoveTrianglesCommand;
 	class TINBuilder;
 };

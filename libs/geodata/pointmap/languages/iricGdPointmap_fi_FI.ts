@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation type="vanished">Yhdistää...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Muita tietoja ei voi yhdistää "%1" ryhmä.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Muita tietoja ei voi yhdistää &quot;%1&quot; ryhmä.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -315,6 +317,10 @@
     <message>
         <source>&amp;Polygons Edit Mode</source>
         <translation>Monikulmioiden muokkaustila (&amp;P)</translation>
+    </message>
+    <message>
+        <source>Remove triangles with long edge setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -621,12 +627,12 @@
         <translation>Erotinta ei ole määritetty</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Arvot eivät riitä lukemiseen "%1"". %1 "sarake on %2 mutta %3 syötetyt arvot.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Arvot eivät riitä lukemiseen &quot;%1&quot;&quot;. %1 &quot;sarake on %2 mutta %3 syötetyt arvot.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Virhe luettaessa "%1"arvo". %1 "arvon pitäisi olla reaaliluku, mutta"%2"määritelty.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Virhe luettaessa &quot;%1&quot;arvo&quot;. %1 &quot;arvon pitäisi olla reaaliluku, mutta&quot;%2&quot;määritelty.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -696,8 +702,8 @@
         <translation>Lainaushahmo:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -776,31 +782,31 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation>Näyttöasetus</translation>
+        <translation type="vanished">Näyttöasetus</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation>Näyttömenetelmä</translation>
+        <translation type="vanished">Näyttömenetelmä</translation>
     </message>
     <message>
         <source>Points</source>
-        <translation>Pisteet</translation>
+        <translation type="vanished">Pisteet</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation>Runkokehys</translation>
+        <translation type="vanished">Runkokehys</translation>
     </message>
     <message>
         <source>Surface</source>
-        <translation>Pinta</translation>
+        <translation type="vanished">Pinta</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Pisteen koko:</translation>
+        <translation type="vanished">Pisteen koko:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
-        <translation>Piilota katkoviivat</translation>
+        <translation type="vanished">Piilota katkoviivat</translation>
     </message>
 </context>
 <context>
@@ -1010,8 +1016,8 @@
         <translation>Pinta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1228,8 +1234,8 @@
         <translation>Painoeksponentti k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; käytetään painona laskettaessa arvojen painotettua keskiarvoa. r on etäisyys pisteestä solmun tai solun keskustaan, johon arvo on kartoitettu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; käytetään painona laskettaessa arvojen painotettua keskiarvoa. r on etäisyys pisteestä solmun tai solun keskustaan, johon arvo on kartoitettu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1279,8 +1285,8 @@
         <translation type="vanished">Pinta</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Pisteiden muokkaustilassa quot; tämä asetus ohitetaan ja TIN-tiedot ovat aina näytetään pisteinä.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1312,18 +1318,41 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
+    <message>
+        <source>Setting for removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable removing triangles with long edges</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Threshold edge length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmap_TrianglesWithLongEdgeRemover_Dialog</name>
     <message>
         <source>Remove Triangles with Long Edge</source>
-        <translation>Poista kolmio pitkillä reunoilla</translation>
+        <translation type="vanished">Poista kolmio pitkillä reunoilla</translation>
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation>Rajan reunan pituus:</translation>
+        <translation type="vanished">Rajan reunan pituus:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomaa &lt;/span&gt;: Kun napsautat Käytä-painiketta, poistettavat kolmiot maalataan tummalla harmaa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

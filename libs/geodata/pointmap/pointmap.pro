@@ -199,9 +199,14 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_tinmanager_addbreaklinecontroller_addpointcommand.h \
            private/geodatapointmap_tinmanager_breakline.h \
            private/geodatapointmap_tinmanager_deletebreaklinecontroller.h \
+           private/geodatapointmap_tinmanager_impl.h \
+           private/geodatapointmap_tinmanager_rebuildtinfrompointscommand.h \
            private/geodatapointmap_tinmanager_removetrianglescommand.h \
+           private/geodatapointmap_tinmanager_removetrianglessetting.h \
+           private/geodatapointmap_tinmanager_removetrianglessettingdialog.h \
            private/geodatapointmap_tinmanager_removetriangleswithlongedgecontroller.h \
            private/geodatapointmap_tinmanager_tinbuilder.h \
+           private/geodatapointmap_tinmanager_triangleswithlongedgeremover.h \
            private/geodatapointmap_tinnodemapper.h \
            private/geodatapointmapproxy_displaysetting.h \
            private/geodatapointmapproxy_displaysettingwidget.h \
@@ -223,7 +228,7 @@ FORMS += geodatapointmapmergesettingdialog.ui \
          private/geodatapointmap_pointsmanager_filterselectedpointsdialog.ui \
          private/geodatapointmap_pointsmanager_interpolatepointcontroller_settingdialog.ui \
          private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.ui \
-         private/geodatapointmap_triangleswithlongedgeremover_dialog.ui \
+         private/geodatapointmap_tinmanager_removetrianglessettingdialog.ui \
          private/geodatapointmapproxy_displaysettingwidget.ui \
          private/geodatapointmaprealtextimporter_settingdialog.ui \
          public/geodatapointmap_displaysettingwidget.ui
@@ -290,9 +295,14 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_tinmanager_addbreaklinecontroller_addpointcommand.cpp \
            private/geodatapointmap_tinmanager_breakline.cpp \
            private/geodatapointmap_tinmanager_deletebreaklinecontroller.cpp \
+           private/geodatapointmap_tinmanager_impl.cpp \
+           private/geodatapointmap_tinmanager_rebuildtinfrompointscommand.cpp \
            private/geodatapointmap_tinmanager_removetrianglescommand.cpp \
+           private/geodatapointmap_tinmanager_removetrianglessetting.cpp \
+           private/geodatapointmap_tinmanager_removetrianglessettingdialog.cpp \
            private/geodatapointmap_tinmanager_removetriangleswithlongedgecontroller.cpp \
            private/geodatapointmap_tinmanager_tinbuilder.cpp \
+           private/geodatapointmap_tinmanager_triangleswithlongedgeremover.cpp \
            private/geodatapointmap_tinnodemapper.cpp \
            private/geodatapointmapproxy_displaysetting.cpp \
            private/geodatapointmapproxy_displaysettingwidget.cpp \

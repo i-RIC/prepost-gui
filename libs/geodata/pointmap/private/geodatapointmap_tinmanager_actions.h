@@ -13,6 +13,7 @@ public:
 	QAction* removeAllBreakLinesAction;
 
 	QAction* remeshTinAction;
+	QAction* removeTrianglesSettingAction;
 };
 
 #endif // GEODATAPOINTMAP_TINMANAGER_ACTIONS_H
