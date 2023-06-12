@@ -112,22 +112,44 @@ VTKGraphicsView::~VTKGraphicsView()
 
 double VTKGraphicsView::stdDistance(double pixels)
 {
-	double x0, y0, z0, x1, y1, z1;
-	x0 = 0; y0 = 0; z0 = 0;
-	x1 = pixels; y1 = 0; z1 = 0;
-	auto r = mainRenderer();
-	r->ViewportToNormalizedViewport(x0, y0);
-	r->NormalizedViewportToView(x0, y0, z0);
-	r->ViewToWorld(x0, y0, z0);
+	auto camera = impl->m_mainRenderer->GetActiveCamera();
+	if (camera->GetParallelProjection()) {
+		int* size = GetRenderWindow()->GetSize();
 
-	r->ViewportToNormalizedViewport(x1, y1);
-	r->NormalizedViewportToView(x1, y1, z1);
-	r->ViewToWorld(x1, y1, z1);
+		double x0, y0, z0, x1, y1, z1;
+		x0 = *(size) * 0.5; y0 = *(size + 1) * 0.5; z0 = 0;
+		x1 = x0 + pixels; y1 = y0; z1 = 0;
+		auto r = mainRenderer();
+		r->ViewportToNormalizedViewport(x0, y0);
+		r->NormalizedViewportToView(x0, y0, z0);
+		r->ViewToWorld(x0, y0, z0);
 
-	QVector3D v0(x0, y0, z0);
-	QVector3D v1(x1, y1, z1);
+		r->ViewportToNormalizedViewport(x1, y1);
+		r->NormalizedViewportToView(x1, y1, z1);
+		r->ViewToWorld(x1, y1, z1);
 
-	return (v1 - v0).length();
+		QVector3D v0(x0, y0, z0);
+		QVector3D v1(x1, y1, z1);
+
+		return (v1 - v0).length();
+	} else {
+		int* size = GetRenderWindow()->GetSize();
+
+		double fp[3];
+		double p[3];
+		double viewAngleDegree;
+
+		camera->GetFocalPoint(fp);
+		camera->GetPosition(p);
+		viewAngleDegree = camera->GetViewAngle();
+
+		QVector3D fpv(fp[0], fp[1], fp[2]);
+		QVector3D pv(p[0], p[1], p[2]);
+		auto distance = (pv - fpv).length();
+		double h = distance * std::tan(viewAngleDegree / 2.0 / 180.0 * 3.141592) * 2;
+
+		return h * pixels / *(size + 1);
+	}
 }
 
 void VTKGraphicsView::setModel(GraphicsWindowSimpleDataModel* m)
