@@ -49,6 +49,10 @@ InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QL
 	setup(*solverDef, locale);
 
 	ui->splitter->setStretchFactor(0, 0.3);
+
+	QList<int> sizes;
+	sizes << 150 << 400;
+	ui->splitter->setSizes(sizes);
 }
 
 InputConditionDialog::~InputConditionDialog()

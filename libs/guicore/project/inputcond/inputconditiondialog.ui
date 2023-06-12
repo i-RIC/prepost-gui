@@ -6,21 +6,52 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>427</width>
-    <height>370</height>
+    <width>603</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Calculation Condition</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
      <widget class="InputConditionPageList" name="m_pageList" native="true"/>
-     <widget class="InputConditionPageContainer" name="m_pageContainer" native="true"/>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>273</width>
+         <height>388</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="InputConditionPageContainer" name="m_pageContainer" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
     </widget>
    </item>
    <item>
