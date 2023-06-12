@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Remeshing TINs...</source>
-        <translation>TIN&apos;s verwisselen...</translation>
+        <translation>TIN's verwisselen...</translation>
     </message>
     <message>
         <source>Information</source>
@@ -48,7 +46,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN&apos;s opnieuw invoeren. Wil je nu remesh?</translation>
+        <translation type="vanished">Wanneer u naar deze modus overschakelt, moet u TIN's opnieuw invoeren. Wil je nu remesh?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -92,7 +90,7 @@
     </message>
     <message>
         <source>Remesh &amp;TINs</source>
-        <translation>Remesh FIN&apos;s (&amp;T)</translation>
+        <translation>Remesh FIN's (&amp;T)</translation>
     </message>
     <message>
         <source>Add &amp;Break Line</source>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Remeshing TINs finished.</source>
-        <translation>Het verwijderen van FIN&apos;s is voltooid.</translation>
+        <translation>Het verwijderen van FIN's is voltooid.</translation>
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
@@ -231,8 +229,8 @@
         <translation type="vanished">Samenvoegen...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Er zijn geen andere gegevens om in te voegen &quot;%1&quot; groep.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Er zijn geen andere gegevens om in te voegen "%1" groep.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -320,7 +318,7 @@
     </message>
     <message>
         <source>Remove triangles with long edge setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder driehoeken met lange randinstelling</translation>
     </message>
 </context>
 <context>
@@ -627,12 +625,12 @@
         <translation>Geen scheidingsteken opgegeven</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Niet genoeg waarden om te lezen &quot;%1&quot;.&quot;%1&quot; kolom is %2 maar %3 waarden ingevoerd.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Niet genoeg waarden om te lezen "%1"."%1" kolom is %2 maar %3 waarden ingevoerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen &quot;%1&quot; waarde. &quot;%1&quot; waarde moet een reëel getal zijn, maar &quot;%2&quot; opgegeven.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen "%1" waarde. "%1" waarde moet een reëel getal zijn, maar "%2" opgegeven.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -663,7 +661,7 @@
     </message>
     <message>
         <source>CSV (Comma separated values)</source>
-        <translation>CSV (door komma&apos;s gescheiden waarden)</translation>
+        <translation>CSV (door komma's gescheiden waarden)</translation>
     </message>
     <message>
         <source>Delimiters</source>
@@ -702,12 +700,12 @@
         <translation>Citaat karakter:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
-        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma&apos;s.</translation>
+        <translation>Als u meerdere aanhalingstekens wilt opgeven, voer dan alleen de tekens in, geen spaties of komma's.</translation>
     </message>
     <message>
         <source>Escape character:</source>
@@ -1016,8 +1014,8 @@
         <translation>Oppervlak</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1234,8 +1232,8 @@
         <translation>Weging Exponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; wordt gebruikt als het gewicht bij het berekenen van het gewogen gemiddelde van de waarden. r is de afstand van het punt tot het knooppunt of celcentrum, waaraan de waarde is toegewezen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; wordt gebruikt als het gewicht bij het berekenen van het gewogen gemiddelde van de waarden. r is de afstand van het punt tot het knooppunt of celcentrum, waaraan de waarde is toegewezen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1285,8 +1283,8 @@
         <translation type="vanished">Oppervlak</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; In de &amp;quot;Puntenbewerkingsmodusquot; wordt deze instelling genegeerd en worden TIN-gegevens altijd weergegeven als punten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1321,23 +1319,23 @@
     <name>GeoDataPointmap_TINManager_RemoveTrianglesSettingDialog</name>
     <message>
         <source>Setting for removing triangles with long edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Instelling voor het verwijderen van driehoeken met lange randen</translation>
     </message>
     <message>
         <source>Enable removing triangles with long edges</source>
-        <translation type="unfinished"></translation>
+        <translation>Schakel het verwijderen van driehoeken met lange randen in</translation>
     </message>
     <message>
         <source>Threshold edge length:</source>
-        <translation type="unfinished"></translation>
+        <translation>Drempel rand lengte:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer &amp;quot;Previewquot; knop wordt geklikt, worden de driehoeken die worden verwijderd grijs weergegeven.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
-        <translation type="unfinished"></translation>
+        <translation>Voorbeeld (&amp;P)</translation>
     </message>
 </context>
 <context>
@@ -1351,8 +1349,8 @@
         <translation type="vanished">Randlengte beperken:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking&lt;/span&gt;: wanneer u op de knop Toepassen klikt, worden de driehoeken die worden verwijderd, geverfd met donkere grijs.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
