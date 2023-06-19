@@ -40,7 +40,7 @@ GeoDataNetcdf::DisplaySetting GeoDataNetcdf::DisplaySettingWidget::setting() con
 		setting.mapping = DisplaySetting::Mapping::Value;
 	}
 	setting.color = ui->colorEditWidget->color();
-	setting.opacity = ui->transparencyWidget->opacityPercent();
+	setting.opacity = ui->transparencyWidget->opacity();
 
 	return setting;
 }
@@ -53,7 +53,7 @@ void GeoDataNetcdf::DisplaySettingWidget::setSetting(const DisplaySetting& setti
 		ui->byValueRadioButton->setChecked(true);
 	}
 	ui->colorEditWidget->setColor(setting.color);
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 }
 
 void GeoDataNetcdf::DisplaySettingWidget::setSetting(DisplaySetting* setting)

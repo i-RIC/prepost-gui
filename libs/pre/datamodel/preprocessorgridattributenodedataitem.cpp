@@ -138,7 +138,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
 
-	dialog->setOpacityPercent(gitem->opacityPercent());
+	dialog->setOpacity(gitem->opacity());
 
 	return dialog;
 }

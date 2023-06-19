@@ -3,6 +3,8 @@
 
 #include "../preprocessorbcdataitem.h"
 
+#include <misc/opacitycontainer.h>
+
 class BoundaryConditionDialog;
 
 class vtkActor;
@@ -20,7 +22,7 @@ public:
 	int m_projectNumber;
 	int m_cgnsNumber;
 
-	int m_opacityPercent;
+	OpacityContainer m_opacity;
 	bool m_mapped;
 	bool m_definingBoundingBox;
 	bool m_isCustomModified;

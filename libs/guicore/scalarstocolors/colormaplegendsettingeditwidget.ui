@@ -294,7 +294,7 @@
                </widget>
               </item>
               <item>
-               <widget class="TransparencyWidget" name="backgroundOpacitySlider" native="true"/>
+               <widget class="TransparencyWidget" name="backgroundOpacityWidget" native="true"/>
               </item>
               <item>
                <spacer name="horizontalSpacer_6">

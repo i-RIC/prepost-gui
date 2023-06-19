@@ -12,6 +12,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
+#include <misc/opacitycontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -178,14 +179,14 @@ QString BoundaryConditionDialog::caption() const
 	return ui->nameEdit->text();
 }
 
-void BoundaryConditionDialog::setOpacityPercent(int opacity)
+void BoundaryConditionDialog::setOpacity(const OpacityContainer& opacity)
 {
-	ui->transparencyWidget->setOpacityPercent(opacity);
+	ui->transparencyWidget->setOpacity(opacity);
 }
 
-int BoundaryConditionDialog::opacityPercent() const
+OpacityContainer BoundaryConditionDialog::opacity() const
 {
-	return ui->transparencyWidget->opacityPercent();
+	return ui->transparencyWidget->opacity();
 }
 
 QColor BoundaryConditionDialog::color() const

@@ -44,7 +44,7 @@ GeoDataPoint::DisplaySetting GeoDataPoint::DisplaySettingWidget::setting() const
 		setting.shape = DisplaySetting::Shape::Image;
 	}
 	setting.color = ui->colorEditWidget->color();
-	setting.opacity = ui->transparencyWidget->opacityPercent();
+	setting.opacity = ui->transparencyWidget->opacity();
 	setting.pointSize = ui->pointSizeSpinBox->value();
 
 	auto pixmap = ui->imageLabel->pixmap();
@@ -69,7 +69,7 @@ void GeoDataPoint::DisplaySettingWidget::setSetting(const DisplaySetting& settin
 		ui->imagesRadioButton->setChecked(true);
 	}
 	ui->colorEditWidget->setColor(setting.color);
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->pointSizeSpinBox->setValue(setting.pointSize);
 	if (! setting.image.isNull()) {
 		m_pixmap = QPixmap::fromImage(setting.image);

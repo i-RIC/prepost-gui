@@ -3,22 +3,25 @@
 
 #include "../post2dwindowcellflaggroupdataitem.h"
 
+#include <misc/opacitycontainer.h>
+
 #include <QUndoCommand>
 
 class Post2dWindowCellFlagGroupDataItem::SetSettingCommand : public QUndoCommand
 {
 public:
-	SetSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, int newo, Post2dWindowCellFlagGroupDataItem* item);
+	SetSettingCommand(const QList<Post2dWindowCellFlagSetting>& newsettings, const OpacityContainer& opacity, Post2dWindowCellFlagGroupDataItem* item);
 
 	void redo() override;
 	void undo() override;
 
 private:
 	QList<Post2dWindowCellFlagSetting> m_newSettings;
-	int m_newOpacityPercent;
+	OpacityContainer m_newOpacity;
 
 	QList<Post2dWindowCellFlagSetting> m_oldSettings;
-	int m_oldOpacityPercent;
+	OpacityContainer m_oldOpacity;
+
 	Post2dWindowCellFlagGroupDataItem* m_item;
 };
 

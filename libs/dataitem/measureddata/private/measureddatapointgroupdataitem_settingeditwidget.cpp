@@ -79,7 +79,7 @@ MeasuredDataPointGroupDataItem::Setting MeasuredDataPointGroupDataItem::SettingE
 	if (m_targets.size() > 0) {
 		ret.value = m_targets.at(ui->valueComboBox->currentIndex()).c_str();
 	}
-	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.opacity = ui->transparencyWidget->opacity();
 	ret.pointSize = ui->pointSizeSpinBox->value();
 
 	return ret;
@@ -113,6 +113,6 @@ void MeasuredDataPointGroupDataItem::SettingEditWidget::setSetting(const Setting
 			targetChanged(0);
 		}
 	}
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->pointSizeSpinBox->setValue(setting.pointSize);
 }

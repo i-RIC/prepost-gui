@@ -35,7 +35,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::ToolBarWidget::applySetting()
 	ui->pointSizeSpinBox->blockSignals(false);
 
 	ui->transparencyWidget->blockSignals(true);
-	ui->transparencyWidget->setOpacityPercent(s.opacity);
+	ui->transparencyWidget->setOpacity(s.opacity);
 	ui->transparencyWidget->blockSignals(false);
 }
 
@@ -52,7 +52,7 @@ ParticleDataSetting Post2dWindowParticlesBaseScalarGroupDataItem::ToolBarWidget:
 
 	ret.color = ui->colorWidget->color();
 	ret.particleSize = ui->pointSizeSpinBox->value();
-	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.opacity = ui->transparencyWidget->opacity();
 
 	return ret;
 }

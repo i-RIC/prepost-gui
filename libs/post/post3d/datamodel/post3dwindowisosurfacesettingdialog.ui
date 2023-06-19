@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>286</width>
-    <height>515</height>
+    <height>519</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -304,7 +304,7 @@
      <item>
       <widget class="QLabel" name="colorLabel">
        <property name="text">
-        <string>Color</string>
+        <string>Color:</string>
        </property>
       </widget>
      </item>
@@ -314,6 +314,19 @@
         <string/>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>
@@ -364,26 +377,26 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>SliderWithValue</class>
+   <extends>QSlider</extends>
+   <header>guibase/widget/sliderwithvalue.h</header>
+  </customwidget>
+  <customwidget>
    <class>ColorEditWidget</class>
    <extends>QLabel</extends>
    <header>guibase/widget/coloreditwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>SliderWithValue</class>
-   <extends>QSlider</extends>
-   <header>guibase/widget/sliderwithvalue.h</header>
+   <class>TransparencyWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/widget/transparencywidget.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>RealNumberEditWidget</class>
    <extends>QLineEdit</extends>
    <header>guibase/widget/realnumbereditwidget.h</header>
-  </customwidget>
-  <customwidget>
-   <class>TransparencyWidget</class>
-   <extends>QWidget</extends>
-   <header>guibase/widget/transparencywidget.h</header>
-   <container>1</container>
   </customwidget>
  </customwidgets>
  <tabstops>
@@ -410,8 +423,8 @@
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
+     <x>257</x>
+     <y>505</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -426,8 +439,8 @@
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
+     <x>276</x>
+     <y>505</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

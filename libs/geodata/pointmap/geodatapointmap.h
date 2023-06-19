@@ -1,8 +1,6 @@
 #ifndef GEODATAPOINTMAP_H
 #define GEODATAPOINTMAP_H
 
-#include "geodatapointmaprepresentationdialog.h"
-
 #include <guibase/polyline/polylinecontroller.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <misc/zdepthrange.h>

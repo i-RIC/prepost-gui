@@ -258,18 +258,15 @@ void PreProcessorGridAttributeCellGroupDataItem::handleStandardItemChange()
 	iRICUndoStack::instance().endMacro();
 }
 
-void PreProcessorGridAttributeCellGroupDataItem::pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply)
+void PreProcessorGridAttributeCellGroupDataItem::pushOpacityPercentAndUpdateActorSettingCommand(const OpacityContainer& opacity, QUndoCommand* subcommand, bool apply)
 {
-	OpacityContainer newOpacity;
-	newOpacity.setValue(opacity);
-
 	auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ModifyOpacityAndSubCommand"), apply);
 	com->addCommand(subcommand);
-	com->addCommand(new ValueModifyCommmand<OpacityContainer> (iRIC::generateCommandId("ModifyOpacity"), apply, newOpacity, &m_opacity));
+	com->addCommand(new ValueModifyCommmand<OpacityContainer> (iRIC::generateCommandId("ModifyOpacity"), apply, opacity, &m_opacity));
 	pushUpdateActorSettingCommand(com, this);
 }
 
-int PreProcessorGridAttributeCellGroupDataItem::opacityPercent() const
+const OpacityContainer& PreProcessorGridAttributeCellGroupDataItem::opacity() const
 {
 	return m_opacity;
 }

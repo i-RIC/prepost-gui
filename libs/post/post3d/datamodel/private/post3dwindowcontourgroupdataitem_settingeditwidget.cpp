@@ -53,7 +53,7 @@ Post3dWindowContourGroupDataItem::Setting Post3dWindowContourGroupDataItem::Sett
 
 	setting.contourSetting = ui->contourWidget->setting();
 	setting.lighting = ui->lightingCheckBox->isChecked();
-	setting.opacity = ui->opacityWidget->opacityPercent();
+	setting.opacity = ui->opacityWidget->opacity();
 
 	return setting;
 }
@@ -62,5 +62,5 @@ void Post3dWindowContourGroupDataItem::SettingEditWidget::setSetting(const Setti
 {
 	ui->contourWidget->setSetting(setting.contourSetting);
 	ui->lightingCheckBox->setChecked(setting.lighting);
-	ui->opacityWidget->setOpacityPercent(setting.opacity);
+	ui->opacityWidget->setOpacity(setting.opacity);
 }

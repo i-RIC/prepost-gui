@@ -44,7 +44,7 @@ public:
 	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
 	void pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply = false);
-	int opacityPercent() const;
+	const OpacityContainer& opacity() const;
 	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;

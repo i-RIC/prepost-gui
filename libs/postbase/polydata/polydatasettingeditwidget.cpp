@@ -93,7 +93,7 @@ PolyDataSetting PolyDataSettingEditWidget::setting() const
 	if (m_colorTargets.size() > 0) {
 		ret.value = colorTarget().c_str();
 	}
-	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.opacity = ui->transparencyWidget->opacity();
 	ret.lineWidth = ui->lineWidthSpinBox->value();
 
 	return ret;
@@ -125,7 +125,7 @@ void PolyDataSettingEditWidget::setSetting(const PolyDataSetting& setting)
 		colorTargetChanged(0);
 	}
 
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
 }
 

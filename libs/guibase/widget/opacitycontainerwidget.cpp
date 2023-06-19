@@ -11,15 +11,14 @@ OpacityContainerWidget::OpacityContainerWidget(QWidget* parent) :
 void OpacityContainerWidget::setContainer(OpacityContainer* container)
 {
 	m_container = container;
-	setOpacityPercent(container->value());
+	setOpacity(*container);
 
 	connect(container, &OpacityContainer::updated, this, &OpacityContainerWidget::apply);
 }
 
 QUndoCommand* OpacityContainerWidget::createModifyCommand(bool apply)
 {
-	OpacityContainer newValue;
-	newValue.setValue(opacityPercent());
+	OpacityContainer newValue = opacity();
 
 	return new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, newValue, m_container);
 }
@@ -30,7 +29,7 @@ void OpacityContainerWidget::apply()
 
 	blockSignals(true);
 
-	setOpacityPercent(m_container->value());
+	setOpacity(*m_container);
 
 	blockSignals(false);
 }

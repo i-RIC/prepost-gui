@@ -41,7 +41,7 @@ GeoDataPolygon::DisplaySetting GeoDataPolygon::DisplaySettingWidget::setting() c
 	}
 	setting.color = ui->colorEditWidget->color();
 	setting.lineWidth = ui->lineWidthSpinBox->value();
-	setting.opacity = ui->transparencyWidget->opacityPercent();
+	setting.opacity = ui->transparencyWidget->opacity();
 
 	return setting;
 }
@@ -55,7 +55,7 @@ void GeoDataPolygon::DisplaySettingWidget::setSetting(const DisplaySetting& sett
 	}
 	ui->colorEditWidget->setColor(setting.color);
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 }
 
 void GeoDataPolygon::DisplaySettingWidget::setSetting(DisplaySetting* setting)

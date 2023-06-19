@@ -604,9 +604,10 @@ void GeoDataPolygon::setColor(const QColor& color)
 	updateActorSetting();
 }
 
-void GeoDataPolygon::setOpacity(int opacity)
+void GeoDataPolygon::setOpacity(const OpacityContainer& opacity)
 {
 	impl->m_displaySetting.opacity = opacity;
+
 	updateActorSetting();
 }
 

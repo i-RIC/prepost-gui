@@ -42,7 +42,7 @@ GeoDataPointmap::DisplaySetting GeoDataPointmap::DisplaySettingWidget::setting()
 	}
 	ret.tinPointSize = ui->pointSizeSpinBox->value();
 	ret.tinLineWidth = ui->lineWidthSpinBox->value();
-	ret.tinOpacity = ui->tinOpacityWidget->opacityPercent();
+	ret.tinOpacity = ui->tinOpacityWidget->opacity();
 
 	ret.breakLineVisible = ui->showBreakLinesCheckBox->isChecked();
 	ret.breakLineColor = ui->breakLineColorWidget->color();
@@ -50,7 +50,7 @@ GeoDataPointmap::DisplaySetting GeoDataPointmap::DisplaySettingWidget::setting()
 
 	ret.polygonsVisible = ui->showPolygonsCheckBox->isChecked();
 	ret.polygonsLineWidth = ui->polygonLineWidthSpinBox->value();
-	ret.polygonsOpacity = ui->polygonOpacityWidget->opacityPercent();
+	ret.polygonsOpacity = ui->polygonOpacityWidget->opacity();
 
 	return ret;
 }
@@ -66,7 +66,7 @@ void GeoDataPointmap::DisplaySettingWidget::setSetting(const DisplaySetting& set
 	}
 	ui->pointSizeSpinBox->setValue(setting.tinPointSize);
 	ui->lineWidthSpinBox->setValue(setting.tinLineWidth);
-	ui->tinOpacityWidget->setOpacityPercent(setting.tinOpacity);
+	ui->tinOpacityWidget->setOpacity(setting.tinOpacity);
 
 	ui->showBreakLinesCheckBox->setChecked(setting.breakLineVisible);
 	ui->breakLineColorWidget->setColor(setting.breakLineColor);
@@ -74,7 +74,7 @@ void GeoDataPointmap::DisplaySettingWidget::setSetting(const DisplaySetting& set
 
 	ui->showPolygonsCheckBox->setChecked(setting.polygonsVisible);
 	ui->polygonLineWidthSpinBox->setValue(setting.polygonsLineWidth);
-	ui->polygonOpacityWidget->setOpacityPercent(setting.polygonsOpacity);
+	ui->polygonOpacityWidget->setOpacity(setting.polygonsOpacity);
 }
 
 void GeoDataPointmap::DisplaySettingWidget::setSetting(DisplaySetting* setting)

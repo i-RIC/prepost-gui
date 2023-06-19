@@ -5,6 +5,7 @@
 #include <guibase/widget/contoursettingwidget.h>
 #include <guibase/structuredgridregion.h>
 #include <guicore/misc/targeted/targeteditemi.h>
+#include <misc/opacitycontainer.h>
 
 #include <QMap>
 #include <vtkPolyData.h>
@@ -70,7 +71,7 @@ private:
 	StructuredGridRegion::Range3d m_range;
 	double m_isoValue;
 	QColor m_color;
-	int m_opacity;
+	OpacityContainer m_opacity;
 
 	vtkSmartPointer<vtkActor> m_isoSurfaceActor;
 	vtkSmartPointer<vtkPolyDataMapper> m_isoSurfaceMapper;

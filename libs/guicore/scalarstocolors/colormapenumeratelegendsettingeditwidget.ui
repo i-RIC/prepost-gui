@@ -36,8 +36,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>373</width>
-        <height>520</height>
+        <width>356</width>
+        <height>537</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0,0,0,0,0,0,0,1">
@@ -246,7 +246,7 @@
                </widget>
               </item>
               <item>
-               <widget class="TransparencyWidget" name="backgroundOpacitySlider" native="true"/>
+               <widget class="TransparencyWidget" name="backgroundOpacityWidget" native="true"/>
               </item>
               <item>
                <spacer name="horizontalSpacer_6">

@@ -8,6 +8,7 @@
 class GeoDataPolygonAbstractPolygon;
 class GeoDataPolygonRegionPolygon;
 class GeoDataPolygonHolePolygon;
+class OpacityContainer;
 
 class vtkActor;
 class vtkCellArray;
@@ -94,7 +95,7 @@ public:
 	void setShape(geos::geom::Polygon* polygon);
 	void setShape(geos::geom::Polygon* polygon, const std::vector<unsigned int>& triangleCells);
 	void setColor(const QColor& color);
-	void setOpacity(int opacity);
+	void setOpacity(const OpacityContainer& opacity);
 	void setMapping(Mapping mapping);
 
 	void clear();

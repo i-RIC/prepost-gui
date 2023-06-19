@@ -40,7 +40,7 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	ui->rangeWidget->setSetting(&item->impl->m_setting.regionSetting);
 	ui->contourWidget->setSetting(&item->impl->m_setting.contourSetting);
-	ui->opacityWidget->setOpacityPercent(item->impl->m_setting.opacity);
+	ui->opacityWidget->setOpacity(item->impl->m_setting.opacity);
 }
 
 Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::~SettingEditWidget()
@@ -55,8 +55,7 @@ QUndoCommand* Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::createModi
 	command->addCommand(ui->rangeWidget->createModifyCommand());
 	command->addCommand(ui->contourWidget->createModifyCommand(apply));
 
-	OpacityContainer o;
-	o.setValue(ui->opacityWidget->opacityPercent());
+	OpacityContainer o = ui->opacityWidget->opacity();
 	command->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, o, &m_item->impl->m_setting.opacity));
 
 	return command;

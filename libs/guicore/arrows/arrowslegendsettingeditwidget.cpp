@@ -26,7 +26,7 @@ ArrowsLegendSettingContainer ArrowsLegendSettingEditWidget::setting() const
 	ret.titleColor = ui->titleColorWidget->color();
 	ret.lengthColor = ui->lengthColorWidget->color();
 	ret.backgroundColor = ui->backgroundColorWidget->color();
-	ret.backgroundOpacity = ui->backgroundOpacitySlider->opacityPercent();
+	ret.backgroundOpacity = ui->backgroundOpacityWidget->opacity();
 	ret.showBorder = ui->showBorderCheckBox->isChecked();
 	ret.imageSetting = ui->imageSettingWidget->setting();
 
@@ -43,7 +43,7 @@ void ArrowsLegendSettingEditWidget::setSetting(const ArrowsLegendSettingContaine
 	ui->titleColorWidget->setColor(setting.titleColor);
 	ui->lengthColorWidget->setColor(setting.lengthColor);
 	ui->backgroundColorWidget->setColor(setting.backgroundColor);
-	ui->backgroundOpacitySlider->setOpacityPercent(setting.backgroundOpacity);
+	ui->backgroundOpacityWidget->setOpacity(setting.backgroundOpacity);
 	ui->showBorderCheckBox->setChecked(setting.showBorder);
 	ui->imageSettingWidget->setSetting(setting.imageSetting);
 }

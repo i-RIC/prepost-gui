@@ -55,9 +55,21 @@ bool SimpleValueContainerT<V>::operator==(const V& v) const
 }
 
 template <typename V>
+bool SimpleValueContainerT<V>::operator==(const SimpleValueContainerT<V>& v) const
+{
+	return m_value == v.m_value;
+}
+
+template <typename V>
 bool SimpleValueContainerT<V>::operator!=(const V& v) const
 {
 	return m_value != v;
+}
+
+template <typename V>
+bool SimpleValueContainerT<V>::operator!=(const SimpleValueContainerT<V>& v) const
+{
+	return m_value != v.m_value;
 }
 
 template <typename V>

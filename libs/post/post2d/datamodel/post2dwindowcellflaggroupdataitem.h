@@ -2,6 +2,9 @@
 #define POST2DWINDOWCELLFLAGGROUPDATAITEM_H
 
 #include "../post2dwindowdataitem.h"
+
+#include <misc/opacitycontainer.h>
+
 #include <QString>
 #include <QColor>
 
@@ -45,8 +48,9 @@ protected:
 private:
 	QList<Post2dWindowCellFlagSetting> settings();
 	void initSetting();
-	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings, int opacity);
-	int m_opacityPercent;
+	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings, const OpacityContainer& opacity);
+
+	OpacityContainer m_opacity;
 
 	class SetSettingCommand;
 };

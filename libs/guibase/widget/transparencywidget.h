@@ -10,6 +10,8 @@ namespace Ui
 	class TransparencyWidget;
 }
 
+class OpacityContainer;
+
 /// Widget to edit transparency with slider
 class GUIBASEDLL_EXPORT TransparencyWidget : public QWidget
 {
@@ -19,14 +21,14 @@ public:
 	explicit TransparencyWidget(QWidget* parent = nullptr);
 	~TransparencyWidget();
 
+	void setOpacity(const OpacityContainer& opacity);
+	OpacityContainer opacity() const;
+
+	void setOpacityPercent(const int opacityPercent);
 	int opacityPercent() const;
-	void setOpacityPercent(int opacityPercent);
 
 signals:
-	void updated(int opacityPercent);
-
-private slots:
-	void handleCheck(bool checked);
+	void updated(const OpacityContainer& opacity);
 
 private:
 	Ui::TransparencyWidget* ui;

@@ -41,7 +41,7 @@ GeoDataPolyLine::DisplaySetting GeoDataPolyLine::DisplaySettingWidget::setting()
 	}
 	setting.color = ui->colorEditWidget->color();
 	setting.lineWidth = ui->lineWidthSpinBox->value();
-	setting.opacity = ui->transparencyWidget->opacityPercent();
+	setting.opacity = ui->transparencyWidget->opacity();
 
 	return setting;
 }
@@ -55,7 +55,7 @@ void GeoDataPolyLine::DisplaySettingWidget::setSetting(const DisplaySetting& set
 	}
 	ui->colorEditWidget->setColor(setting.color);
 	ui->lineWidthSpinBox->setValue(setting.lineWidth);
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 }
 
 void GeoDataPolyLine::DisplaySettingWidget::setSetting(DisplaySetting* setting)

@@ -32,7 +32,7 @@ bool ArrowsLegendSettingContainer::ImageBuilder::build(QImage* image)
 	} else {
 		pen = QPen(Qt::transparent);
 	}
-	double opacity = s->backgroundOpacity.value() / 100.0;
+	double opacity = s->backgroundOpacity;
 	QBrush brush(QColor(bgCol.red(), bgCol.green(), bgCol.blue(), static_cast<int>(255 * opacity)));
 	painter.setPen(pen);
 	painter.setBrush(brush);

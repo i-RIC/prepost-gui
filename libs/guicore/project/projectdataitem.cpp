@@ -212,16 +212,6 @@ void ProjectDataItem::writeBackgroundColor(QColor c, QXmlStreamWriter& writer)
 	writeColorAttribute("backgroundColor", c, writer);
 }
 
-int ProjectDataItem::loadOpacityPercent(const QDomNode& node)
-{
-	return iRIC::getIntAttribute(node, "opacityPercent", 100);
-}
-
-void ProjectDataItem::writeOpacityPercent(int opacity, QXmlStreamWriter& writer)
-{
-	iRIC::setIntAttribute(writer, "opacityPercent", opacity);
-}
-
 void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 {
 	double position[3];

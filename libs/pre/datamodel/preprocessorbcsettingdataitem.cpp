@@ -223,7 +223,7 @@ void PreProcessorBCSettingDataItem::updateItem()
 		m_standardItem->setText(m_bcDataItem->standardItem()->text());
 	}
 
-	m_polygon->setOpacity(m_bcDataItem->opacityPercent());
+	m_polygon->setOpacity(m_bcDataItem->opacity());
 	m_polygon->setColor(m_bcDataItem->color());
 }
 

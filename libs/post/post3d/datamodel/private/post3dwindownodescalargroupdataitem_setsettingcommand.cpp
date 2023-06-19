@@ -3,7 +3,7 @@
 Post3dWindowNodeScalarGroupDataItem::SetSettingCommand::SetSettingCommand(
 		bool enabled, const std::string& sol,
 		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, int opacity, Post3dWindowNodeScalarGroupDataItem* item) :
+		double isovalue, const QColor& color, const OpacityContainer& opacity, Post3dWindowNodeScalarGroupDataItem* item) :
 	QUndoCommand(Post3dWindowNodeScalarGroupDataItem::tr("Update Contour Setting"))
 {
 	m_newEnabled = enabled;

@@ -52,9 +52,9 @@ void Post2dWindowCellFlagDataItem::setColor(const QColor& col)
 	m_actor->GetProperty()->SetColor(m_color.redF(), m_color.greenF(), m_color.blueF());
 }
 
-void Post2dWindowCellFlagDataItem::setOpacity(int o)
+void Post2dWindowCellFlagDataItem::setOpacity(double opacity)
 {
-	m_actor->GetProperty()->SetOpacity(o / 100.);
+	m_actor->GetProperty()->SetOpacity(opacity);
 }
 
 void Post2dWindowCellFlagDataItem::setupActors()

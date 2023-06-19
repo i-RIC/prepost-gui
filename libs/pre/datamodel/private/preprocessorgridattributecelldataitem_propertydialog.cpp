@@ -32,19 +32,19 @@ void PreProcessorGridAttributeCellDataItem::PropertyDialog::setWidget(ColorMapSe
 	connect(ui->exportButton, &QPushButton::clicked, w, &ColorMapSettingEditWidgetI::exportSetting);
 }
 
-int PreProcessorGridAttributeCellDataItem::PropertyDialog::opacityPercent() const
+OpacityContainer PreProcessorGridAttributeCellDataItem::PropertyDialog::opacity() const
 {
-	return ui->transparencyWidget->opacityPercent();
+	return ui->transparencyWidget->opacity();
 }
 
-void PreProcessorGridAttributeCellDataItem::PropertyDialog::setOpacityPercent(int opacity)
+void PreProcessorGridAttributeCellDataItem::PropertyDialog::setOpacity(const OpacityContainer& opacity)
 {
-	return ui->transparencyWidget->setOpacityPercent(opacity);
+	return ui->transparencyWidget->setOpacity(opacity);
 }
 
 void PreProcessorGridAttributeCellDataItem::PropertyDialog::accept()
 {
-	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacityPercent(), widget()->createModifyCommand(), false);
+	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacity(), widget()->createModifyCommand(), false);
 	QDialog::accept();
 }
 
@@ -66,6 +66,6 @@ void PreProcessorGridAttributeCellDataItem::PropertyDialog::handleButtonClick(QA
 
 void PreProcessorGridAttributeCellDataItem::PropertyDialog::apply()
 {
-	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacityPercent(), widget()->createModifyCommand(), true);
+	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacity(), widget()->createModifyCommand(), true);
 	m_applied = true;
 }

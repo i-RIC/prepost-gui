@@ -11,7 +11,7 @@ public:
 	SetSettingCommand(
 			bool enabled, const std::string& sol,
 			bool fullrange, StructuredGridRegion::Range3d range,
-			double isovalue, const QColor& color, int opacity, Post3dWindowNodeScalarGroupDataItem* item);
+			double isovalue, const QColor& color, const OpacityContainer& opacity, Post3dWindowNodeScalarGroupDataItem* item);
 
 	void redo() override;
 	void undo() override;
@@ -23,7 +23,7 @@ private:
 	StructuredGridRegion::Range3d m_newRange;
 	double m_newIsoValue;
 	QColor m_newColor;
-	int m_newOpacity;
+	OpacityContainer m_newOpacity;
 
 	bool m_oldEnabled;
 	std::string m_oldCurrentSolution;
@@ -31,7 +31,7 @@ private:
 	StructuredGridRegion::Range3d m_oldRange;
 	double m_oldIsoValue;
 	QColor m_oldColor;
-	int m_oldOpacity;
+	OpacityContainer m_oldOpacity;
 
 	Post3dWindowNodeScalarGroupDataItem* m_item;
 };

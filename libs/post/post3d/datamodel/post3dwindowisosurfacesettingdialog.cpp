@@ -8,6 +8,7 @@
 #include <guibase/structuredgridregion.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/opacitycontainer.h>
 
 #include <vtkPointData.h>
 #include <vtkStructuredGrid.h>
@@ -218,12 +219,12 @@ const QColor Post3dWindowIsosurfaceSettingDialog::color() const
 	return ui->colorEditWidget->color();
 }
 
-void Post3dWindowIsosurfaceSettingDialog::setOpacity(int opacity)
+void Post3dWindowIsosurfaceSettingDialog::setOpacity(const OpacityContainer& opacity)
 {
-	ui->transparencyWidget->setOpacityPercent(opacity);
+	ui->transparencyWidget->setOpacity(opacity);
 }
 
-int Post3dWindowIsosurfaceSettingDialog::opacity() const
+OpacityContainer Post3dWindowIsosurfaceSettingDialog::opacity() const
 {
-	return ui->transparencyWidget->opacityPercent();
+	return ui->transparencyWidget->opacity();
 }

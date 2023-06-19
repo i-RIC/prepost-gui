@@ -11,6 +11,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <misc/iricundostack.h>
+#include <misc/opacitycontainer.h>
 
 #include <QAction>
 #include <QDomNode>
@@ -125,7 +126,7 @@ public:
 	CreateCommand(
 		bool enabled, const std::string& sol,
 		bool fullrange, StructuredGridRegion::Range3d range,
-		double isovalue, const QColor& color, int opacity, Post3dWindowNodeScalarGroupTopDataItem* topitem) :
+		double isovalue, const QColor& color, const OpacityContainer& opacity, Post3dWindowNodeScalarGroupTopDataItem* topitem) :
 		QUndoCommand(QObject::tr("Create Isosurface"))
 	{
 		m_topItem = topitem;

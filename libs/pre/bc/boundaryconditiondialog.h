@@ -20,17 +20,18 @@ namespace iRICLib {
 	class H5CgnsConditionGroup;
 } // namespace iRICLib
 
-class PreProcessorBCDataItem;
 class InputConditionContainerSet;
 class InputConditionWidgetSet;
 class iRICMainWindow;
+class OpacityContainer;
+class PreProcessorBCDataItem;
 
 class BoundaryConditionDialog : public QDialog
 {
 	Q_OBJECT
 
 public:
-	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent = nullptr);
+	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent);
 	~BoundaryConditionDialog();
 
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);
@@ -42,8 +43,8 @@ public:
 	QString caption() const;
 	void setCaption(const QString& caption);
 
-	int opacityPercent() const;
-	void setOpacityPercent(int opacity);
+	OpacityContainer opacity() const;
+	void setOpacity(const OpacityContainer& opacity);
 
 	QColor color() const;
 	void setColor(const QColor& color);

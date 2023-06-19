@@ -32,14 +32,14 @@ QDialog* Post2dWindowCellFlagGroupDataItem::propertyDialog(QWidget* p)
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent())->gridType();
 	d->setGridType(gt);
 	d->setSettings(settings());
-	d->setOpacityPercent(m_opacityPercent);
+	d->setOpacity(m_opacity);
 	return d;
 }
 
 void Post2dWindowCellFlagGroupDataItem::handlePropertyDialogAccepted(QDialog* d)
 {
 	Post2dWindowCellFlagSettingDialog* dialog = dynamic_cast<Post2dWindowCellFlagSettingDialog*>(d);
-	pushRenderCommand(new SetSettingCommand(dialog->settings(), dialog->opacityPercent(), this), this);
+	pushRenderCommand(new SetSettingCommand(dialog->settings(), dialog->opacity(), this), this);
 }
 
 QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
@@ -57,9 +57,10 @@ QList<Post2dWindowCellFlagSetting> Post2dWindowCellFlagGroupDataItem::settings()
 	return ret;
 }
 
-void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCellFlagSetting>& settings, int opacity)
+void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCellFlagSetting>& settings, const OpacityContainer& opacity)
 {
 	QMap<Post2dWindowCellFlagSetting, Post2dWindowCellFlagDataItem*> map;
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		Post2dWindowCellFlagSetting setting;
@@ -69,10 +70,13 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 		setting.enabled  = (item->standardItem()->checkState() == Qt::Checked);
 		map.insert(setting, item);
 	}
+
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		m_standardItem->takeRow(0);
 	}
+
 	m_childItems.clear();
+
 	for (auto cit = settings.begin(); cit != settings.end(); ++cit) {
 		Post2dWindowCellFlagSetting s = *cit;
 		Post2dWindowCellFlagDataItem* item = map.value(s);
@@ -87,7 +91,7 @@ void Post2dWindowCellFlagGroupDataItem::setSettings(const QList<Post2dWindowCell
 		m_standardItem->appendRow(item->standardItem());
 		m_childItems.push_back(item);
 	}
-	m_opacityPercent = opacity;
+	m_opacity = opacity;
 	updateZDepthRange();
 }
 
@@ -96,7 +100,8 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 	ColorSource cs(0);
 	cs.load(":/libs/guicore/data/colorsource_cell.xml");
 
-	m_opacityPercent = 50;
+	m_opacity.enabled = true;
+	m_opacity.percent = 50;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent()->parent())->gridType();
 	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridAttributes();
@@ -114,7 +119,7 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 			QColor color = cs.getColor(index ++);
 			QString cap = QString("%1 (%2)").arg(icond->caption(), it.value());
 			Post2dWindowCellFlagDataItem* item = new Post2dWindowCellFlagDataItem(icond->name(), it.key(), color, cap, this);
-			item->setOpacity(m_opacityPercent);
+			item->setOpacity(m_opacity);
 			m_childItems.push_back(item);
 		}
 	}
@@ -133,10 +138,11 @@ void Post2dWindowCellFlagGroupDataItem::update()
 
 void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_opacityPercent = loadOpacityPercent(node);
+	m_opacity.load(node);
+	
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
-		item->setOpacity(m_opacityPercent);
+		item->setOpacity(m_opacity);
 	}
 	QDomNodeList childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.count(); ++i) {
@@ -156,7 +162,8 @@ void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 
 void Post2dWindowCellFlagGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writeOpacityPercent(m_opacityPercent, writer);
+	m_opacity.save(writer);
+
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
 		writer.writeStartElement("CellFlag");
@@ -168,7 +175,7 @@ void Post2dWindowCellFlagGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 bool Post2dWindowCellFlagGroupDataItem::hasTransparentPart()
 {
 	if (standardItem()->checkState() == Qt::Unchecked) {return false;}
-	if (m_opacityPercent == 100) {return false;}
+	if (m_opacity.opacityPercent() == 100) {return false;}
 	for (int i = 0; i < m_childItems.size(); ++i) {
 		GraphicsWindowDataItem* item = m_childItems[i];
 		if (item->standardItem()->checkState() == Qt::Checked) {return true;}

@@ -21,7 +21,7 @@ public:
 	int value() const;
 	const QColor& color() const;
 	void setColor(const QColor& col);
-	void setOpacity(int o);
+	void setOpacity(double opacity);
 
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;

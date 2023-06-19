@@ -18,6 +18,7 @@
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/opacitycontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -50,7 +51,7 @@
 PreProcessorBCDataItem::Impl::Impl(PreProcessorBCDataItem* item) :
 	m_projectNumber {1},
 	m_cgnsNumber {1},
-	m_opacityPercent {50},
+	m_opacity {},
 	m_mapped {false},
 	m_definingBoundingBox {false},
 	m_isCustomModified {false},
@@ -64,6 +65,8 @@ PreProcessorBCDataItem::Impl::Impl(PreProcessorBCDataItem* item) :
 	m_assignAction {new QAction(PreProcessorBCDataItem::tr("&Assign Condition"), item)},
 	m_releaseAction {new QAction(PreProcessorBCDataItem::tr("&Release Condition"), item)}
 {
+	m_opacity.percent = 50;
+
 	m_mapper->SetScalarVisibility(false);
 	auto prop = m_actor->GetProperty();
 	prop->SetLighting(false);
@@ -163,7 +166,7 @@ void PreProcessorBCDataItem::loadExternalData(const QString& filename)
 		d->load(*bc);
 
 		setName(d->caption());
-		impl->m_opacityPercent = d->opacityPercent();
+		impl->m_opacity = d->opacity();
 	} catch (...) {
 		// do nothing
 	}
@@ -261,7 +264,7 @@ void PreProcessorBCDataItem::updateActorSettings()
 
 	QColor color = impl->m_dialog->color();
 	prop->SetColor(color.redF(), color.greenF(), color.blueF());
-	prop->SetOpacity(static_cast<double>(impl->m_opacityPercent) / 100);
+	prop->SetOpacity(impl->m_opacity);
 
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 		prop->SetPointSize(impl->m_dialog->pointSize());
@@ -609,9 +612,9 @@ QColor PreProcessorBCDataItem::color() const
 	return impl->m_dialog->color();
 }
 
-int PreProcessorBCDataItem::opacityPercent() const
+OpacityContainer PreProcessorBCDataItem::opacity() const
 {
-	return impl->m_dialog->opacityPercent();
+	return impl->m_dialog->opacity();
 }
 
 SolverDefinitionBoundaryCondition* PreProcessorBCDataItem::condition() const
@@ -625,7 +628,7 @@ bool PreProcessorBCDataItem::showDialog()
 	InputConditionWidgetFilename::defaultFolder = LastIODirectory::get();
 	// show dialog
 	auto d = impl->m_dialog;
-	d->setOpacityPercent(impl->m_opacityPercent);
+	d->setOpacity(impl->m_opacity);
 	d->setEditMode();
 	int ret = d->exec();
 	if (ret == QDialog::Rejected) {return false;}
@@ -636,7 +639,7 @@ bool PreProcessorBCDataItem::showDialog()
 	}
 
 	setName(d->caption());
-	impl->m_opacityPercent = d->opacityPercent();
+	impl->m_opacity = d->opacity();
 	updateActorSettings();
 
 	// set the default folder back.

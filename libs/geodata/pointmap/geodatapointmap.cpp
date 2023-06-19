@@ -2,7 +2,6 @@
 #include "geodatapointmapmappingmode.h"
 #include "geodatapointmapmergesettingdialog.h"
 #include "geodatapointmapproxy.h"
-#include "geodatapointmaprepresentationdialog.h"
 #include "geodatapointmaptemplatemappingsetting.h"
 #include "geodatapointmaptemplatenodemapper.h"
 #include "private/geodatapointmap_impl.h"

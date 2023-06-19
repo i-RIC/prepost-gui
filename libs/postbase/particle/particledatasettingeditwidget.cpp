@@ -93,7 +93,7 @@ ParticleDataSetting ParticleDataSettingEditWidget::setting() const
 	if (m_colorTargets.size() > 0) {
 		ret.value = colorTarget().c_str();
 	}
-	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.opacity = ui->transparencyWidget->opacity();
 	ret.particleSize = ui->pointSizeSpinBox->value();
 
 	return ret;
@@ -125,7 +125,7 @@ void ParticleDataSettingEditWidget::setSetting(const ParticleDataSetting& settin
 		colorTargetChanged(0);
 	}
 
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->pointSizeSpinBox->setValue(setting.particleSize);
 }
 

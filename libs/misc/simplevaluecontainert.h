@@ -22,7 +22,9 @@ public:
 	SimpleValueContainerT<V>& operator=(const SimpleValueContainerT<V>& c);
 	SimpleValueContainerT<V>& operator=(const V& v);
 	bool operator==(const V& v) const;
+	bool operator==(const SimpleValueContainerT<V>& v) const;
 	bool operator!=(const V& v) const;
+	bool operator!=(const SimpleValueContainerT<V>& v) const;
 	operator V() const;
 	//@}
 

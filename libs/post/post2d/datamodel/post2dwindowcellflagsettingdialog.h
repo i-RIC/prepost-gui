@@ -5,7 +5,9 @@
 #include <QDialog>
 #include <QList>
 
+class OpacityContainer;
 class SolverDefinitionGridType;
+
 class QTableWidgetItem;
 class QItemSelection;
 
@@ -21,16 +23,17 @@ class Post2dWindowCellFlagSettingDialog : public QDialog
 public:
 	static const int ATTRWIDTH = 170;
 	static const int COLORWIDTH = 50;
-	explicit Post2dWindowCellFlagSettingDialog(QWidget* parent = nullptr);
+
+	explicit Post2dWindowCellFlagSettingDialog(QWidget* parent);
 	~Post2dWindowCellFlagSettingDialog();
-	void setGridType(SolverDefinitionGridType* gt) {m_gridType = gt;}
-	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings) {
-		m_settings = settings;
-		setupDialog();
-	}
-	void setOpacityPercent(int o);
-	const QList<Post2dWindowCellFlagSetting>& settings();
-	int opacityPercent();
+
+	void setGridType(SolverDefinitionGridType* gt);
+	void setSettings(const QList<Post2dWindowCellFlagSetting>& settings);
+	const QList<Post2dWindowCellFlagSetting>& settings() const;
+
+	void setOpacity(const OpacityContainer& o);
+	OpacityContainer opacity() const;
+
 	void setupDialog();
 
 private slots:

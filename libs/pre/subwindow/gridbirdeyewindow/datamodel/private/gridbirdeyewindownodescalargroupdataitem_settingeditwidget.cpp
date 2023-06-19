@@ -106,7 +106,7 @@ GridBirdEyeWindowNodeScalarGroupDataItem::Setting GridBirdEyeWindowNodeScalarGro
 		setting.colorTarget = m_cellValueNames.at(ui->cellScalarComboBox->currentIndex()).c_str();
 	}
 	setting.customColor = ui->colorEditWidget->color();
-	setting.opacity = ui->opacityWidget->opacityPercent();
+	setting.opacity = ui->opacityWidget->opacity();
 
 	return setting;
 }
@@ -140,7 +140,7 @@ void GridBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::setSetting(con
 		comboBox->blockSignals(false);
 	}
 	ui->colorEditWidget->setColor(setting.customColor);
-	ui->opacityWidget->setOpacityPercent(setting.opacity);
+	ui->opacityWidget->setOpacity(setting.opacity);
 }
 
 void GridBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::setSetting(Setting* setting)

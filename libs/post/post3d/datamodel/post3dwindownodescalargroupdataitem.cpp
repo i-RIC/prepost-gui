@@ -18,6 +18,7 @@
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/opacitycontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -53,7 +54,7 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	m_fullRange {true},
 	m_isoValue {0.0},
 	m_color {Qt::white},
-	m_opacity {100}
+	m_opacity {"opacity", 100}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -109,7 +110,7 @@ void Post3dWindowNodeScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNo
 	m_range.kMax = iRIC::getIntAttribute(node, "kMax");
 	m_isoValue = iRIC::getDoubleAttribute(node, "value");
 	m_color = iRIC::getColorAttribute(node, "color", Qt::white);
-	m_opacity = iRIC::getIntAttribute(node, "opacityPercent", 100);
+	m_opacity.load(node);
 	validateRange();
 	updateActorSettings();
 }
@@ -126,7 +127,7 @@ void Post3dWindowNodeScalarGroupDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	iRIC::setIntAttribute(writer, "kMax", m_range.kMax);
 	iRIC::setDoubleAttribute(writer, "value", m_isoValue);
 	iRIC::setColorAttribute(writer, "color", m_color);
-	iRIC::setIntAttribute(writer, "opacityPercent", m_opacity);
+	m_opacity.save(writer);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::setupActors()
@@ -263,7 +264,7 @@ void Post3dWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 {
 	m_isoSurfaceActor->GetProperty()->SetColor(m_color.red()/255., m_color.green()/255., m_color.blue()/255.);
-	m_isoSurfaceActor->GetProperty()->SetOpacity(m_opacity / 100.0);
+	m_isoSurfaceActor->GetProperty()->SetOpacity(m_opacity);
 }
 
 void Post3dWindowNodeScalarGroupDataItem::validateRange()

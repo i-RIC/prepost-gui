@@ -8,11 +8,13 @@
 #include <QColor>
 #include <QSet>
 
+class Grid;
+class OpacityContainer;
 class SolverDefinition;
 class SolverDefinitionBoundaryCondition;
-class QAction;
 class VTKGraphicsView;
-class Grid;
+
+class QAction;
 
 namespace iRICLib {
 	class H5CgnsZone;
@@ -43,7 +45,7 @@ public:
 	void setColor(const QColor& color);
 	QColor color() const;
 
-	int opacityPercent() const;
+	OpacityContainer opacity() const;
 	SolverDefinitionBoundaryCondition* condition() const;
 	bool isValid() const;
 	std::string uniqueName() const;

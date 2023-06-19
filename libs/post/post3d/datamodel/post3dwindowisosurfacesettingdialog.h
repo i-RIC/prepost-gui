@@ -14,6 +14,7 @@ namespace Ui
 	class Post3dWindowIsosurfaceSettingDialog;
 }
 
+class OpacityContainer;
 class PostZoneDataContainer;
 class Post3dWindowGridTypeDataItem;
 
@@ -39,8 +40,8 @@ public:
 	void setColor(const QColor& color);
 	const QColor color() const;
 
-	void setOpacity(int opacity);
-	int opacity() const;
+	void setOpacity(const OpacityContainer& opacity);
+	OpacityContainer opacity() const;
 
 	std::string target() const;
 	bool fullRange() const;

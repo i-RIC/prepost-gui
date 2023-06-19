@@ -7,6 +7,7 @@
 #include <guicore/solverdef/integerenumloader.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/opacitycontainer.h>
 
 #include <QBrush>
 #include <QColorDialog>
@@ -81,6 +82,17 @@ Post2dWindowCellFlagSettingDialog::~Post2dWindowCellFlagSettingDialog()
 	delete ui;
 }
 
+void Post2dWindowCellFlagSettingDialog::setGridType(SolverDefinitionGridType* gt)
+{
+	m_gridType = gt;
+}
+
+void Post2dWindowCellFlagSettingDialog::setSettings(const QList<Post2dWindowCellFlagSetting>& settings)
+{
+	m_settings = settings;
+	setupDialog();
+}
+
 void Post2dWindowCellFlagSettingDialog::setupDialog()
 {
 	// create list.
@@ -109,19 +121,19 @@ void Post2dWindowCellFlagSettingDialog::setupDialog()
 	}
 }
 
-const QList<Post2dWindowCellFlagSetting>& Post2dWindowCellFlagSettingDialog::settings()
+const QList<Post2dWindowCellFlagSetting>& Post2dWindowCellFlagSettingDialog::settings() const
 {
 	return m_settings;
 }
 
-void Post2dWindowCellFlagSettingDialog::setOpacityPercent(int o)
+void Post2dWindowCellFlagSettingDialog::setOpacity(const OpacityContainer& o)
 {
-	ui->transparencyWidget->setOpacityPercent(o);
+	ui->transparencyWidget->setOpacity(o);
 }
 
-int Post2dWindowCellFlagSettingDialog::opacityPercent()
+OpacityContainer Post2dWindowCellFlagSettingDialog::opacity() const
 {
-	return ui->transparencyWidget->opacityPercent();
+	return ui->transparencyWidget->opacity();
 }
 
 void Post2dWindowCellFlagSettingDialog::moveUp()

@@ -313,7 +313,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::pushOpacityPercentAndUpdateActo
 	pushUpdateActorSettingCommand(com, this);
 }
 
-int PreProcessorGridAttributeNodeGroupDataItem::opacityPercent() const
+const OpacityContainer& PreProcessorGridAttributeNodeGroupDataItem::opacity() const
 {
 	return m_opacity;
 }

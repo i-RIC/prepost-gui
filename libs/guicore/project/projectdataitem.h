@@ -130,10 +130,6 @@ public:
 	static QColor loadBackgroundColor(const QDomNode& node, const QColor& defaultColor);
 	/// Save background color to project.xml.
 	static void writeBackgroundColor(QColor c, QXmlStreamWriter& writer);
-	/// Load opacity color from project.xml.
-	static int loadOpacityPercent(const QDomNode& node);
-	/// Save opacity color to project.xml.
-	static void writeOpacityPercent(int opacity, QXmlStreamWriter& writer);
 	/// Load camera setting from project.xml.
 	static void loadCamera(vtkCamera* camera, const QDomNode& node);
 	/// Save camera setting to project.xml.

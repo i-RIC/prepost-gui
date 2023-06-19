@@ -36,7 +36,7 @@ GeoDataRiverSurvey::DisplaySetting GeoDataRiverSurvey::DisplaySettingWidget::set
 
 	setting.showBackground = ui->bgVisibleCheckBox->isChecked();
 	setting.showLines = ui->clVisibleCheckBox->isChecked();
-	setting.opacity = ui->transparencyWidget->opacityPercent();
+	setting.opacity = ui->transparencyWidget->opacity();
 	setting.crosssectionLinesScale = ui->zScaleSpinBox->value();
 	setting.crosssectionLinesColor = ui->colorWidget->color();
 	setting.showNames = ui->nameVisibleCheckBox->isChecked();
@@ -49,7 +49,7 @@ void GeoDataRiverSurvey::DisplaySettingWidget::setSetting(const DisplaySetting& 
 {
 	ui->bgVisibleCheckBox->setChecked(setting.showBackground);
 	ui->clVisibleCheckBox->setChecked(setting.showLines);
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 	ui->zScaleSpinBox->setValue(setting.crosssectionLinesScale);
 	ui->colorWidget->setColor(setting.crosssectionLinesColor);
 	ui->nameVisibleCheckBox->setChecked(setting.showNames);

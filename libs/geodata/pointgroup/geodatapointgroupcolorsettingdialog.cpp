@@ -56,7 +56,7 @@ void GeoDataPointGroupColorSettingDialog::setSetting(const Setting& setting)
 	}
 
 	// opacity
-	ui->transparencyWidget->setOpacityPercent(setting.opacity);
+	ui->transparencyWidget->setOpacity(setting.opacity);
 
 	// color
 	ui->colorEditWidget->setColor(setting.color);
@@ -73,7 +73,7 @@ GeoDataPointGroupColorSettingDialog::Setting GeoDataPointGroupColorSettingDialog
 	if (ui->arbitraryRadioButton->isChecked()) {ret.mapping = Arbitrary;}
 
 	// opacity
-	ret.opacity = ui->transparencyWidget->opacityPercent();
+	ret.opacity = ui->transparencyWidget->opacity();
 
 	// color
 	ret.color = ui->colorEditWidget->color();

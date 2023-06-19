@@ -113,7 +113,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Setting Post2dBirdEyeWindowNodeScala
 	}
 	setting.customColor = ui->colorEditWidget->color();
 	setting.contourSetting = ui->contourWidget->setting();
-	setting.opacity = ui->opacityWidget->opacityPercent();
+	setting.opacity = ui->opacityWidget->opacity();
 
 	return setting;
 }
@@ -148,7 +148,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::setSetting(c
 	}
 	ui->colorEditWidget->setColor(setting.customColor);
 	ui->contourWidget->setSetting(setting.contourSetting);
-	ui->opacityWidget->setOpacityPercent(setting.opacity);
+	ui->opacityWidget->setOpacity(setting.opacity);
 }
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::setSetting(Setting* setting)
