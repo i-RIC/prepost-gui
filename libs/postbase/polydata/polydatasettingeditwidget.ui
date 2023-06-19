@@ -91,6 +91,9 @@
    </item>
    <item>
     <widget class="QGroupBox" name="colorMapGroupBox">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="title">
       <string>Colormap</string>
      </property>
@@ -158,5 +161,54 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>customColorRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>customColorWidget</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>258</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>valueRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>valueComboBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>27</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>119</x>
+     <y>38</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>valueRadioButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>colorMapGroupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>26</x>
+     <y>68</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

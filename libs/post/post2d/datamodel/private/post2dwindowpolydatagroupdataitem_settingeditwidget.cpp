@@ -18,7 +18,7 @@ Post2dWindowPolyDataGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWi
 	std::unordered_map<std::string, QString> names;
 	auto gtype = item->gridTypeDataItem()->gridType();
 	auto data = item->polyData();
-	for (auto const& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetPointData())) {
+	for (auto const& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetCellData())) {
 		auto caption = gtype->output(name)->caption();
 		names.insert({name, caption});
 	}
