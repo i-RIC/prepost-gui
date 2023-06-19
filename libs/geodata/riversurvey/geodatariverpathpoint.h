@@ -75,7 +75,7 @@ public:
 	GeoDataRiverPathPoint(GeoDataRiverSurvey* rs);
 	GeoDataRiverPathPoint(double x, double y, GeoDataRiverSurvey* rs);
 	GeoDataRiverPathPoint(const QString& name, double x, double y, GeoDataRiverSurvey* rs);
-	~GeoDataRiverPathPoint();
+	virtual ~GeoDataRiverPathPoint();
 
 	/// River center position
 	const QPointF& position() const;

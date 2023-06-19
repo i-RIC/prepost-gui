@@ -39,7 +39,6 @@ void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::redo()
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->updateCrosssectionWindows();
 	m_rs->setMapped(false);
 }
@@ -53,7 +52,6 @@ void GeoDataRiverSurvey::MouseShiftRiverPathCenterCommand::undo()
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->updateCrosssectionWindows();
 }
 

@@ -39,6 +39,5 @@ void GeoDataRiverSurvey::RemoveExtensionCommand::updateData()
 	m_rs->headPoint()->updateAllXSecInterpolators();
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->updateCrosssectionWindows();
 }

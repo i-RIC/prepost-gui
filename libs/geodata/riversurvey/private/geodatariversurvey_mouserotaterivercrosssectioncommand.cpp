@@ -20,15 +20,10 @@ GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrossse
 	m_rs = data;
 	m_oldDirection = m_point->crosssectionDirection();
 
-	double fromX, fromY, toX, toY;
-	fromX = from.x();
-	fromY = from.y();
-	toX = to.x();
-	toY = to.y();
-	gview->viewportToWorld(fromX, fromY);
-	gview->viewportToWorld(toX, toY);
-	QPointF vec1 = QPointF(fromX - m_point->position().x(), fromY - m_point->position().y());
-	QPointF vec2 = QPointF(toX - m_point->position().x(), toY - m_point->position().y());
+	auto fromWorld = gview->viewportToWorld(from);
+	auto toWorld = gview->viewportToWorld(to);
+	QPointF vec1 = QPointF(fromWorld.x() - m_point->position().x(), fromWorld.y() - m_point->position().y());
+	QPointF vec2 = QPointF(toWorld.x() - m_point->position().x(), toWorld.y() - m_point->position().y());
 	double angle = iRIC::angleRadian(vec1, vec2);
 
 	m_newDirection = m_oldDirection;
@@ -40,7 +35,6 @@ void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::redo()
 	m_rs->cancelBackgroundGridUpdate();
 	m_point->setCrosssectionDirection(m_newDirection);
 	m_rs->updateShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->setMapped(false);
 }
 
@@ -49,7 +43,6 @@ void GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::undo()
 	m_rs->cancelBackgroundGridUpdate();
 	m_point->setCrosssectionDirection(m_oldDirection);
 	m_rs->updateShapeData();
-	m_rs->renderGraphicsView();
 }
 
 int GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::id() const

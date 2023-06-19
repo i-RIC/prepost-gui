@@ -40,7 +40,7 @@ namespace iRIC
 		if (cosVal >= 1) {return 0;}
 		qreal angle1 = acos(cosVal);
 		QPointF tmp = v1;
-		rotateVector90(tmp);
+		tmp = rotateVector90(tmp);
 		if (QPointF::dotProduct(tmp, v2) < 0) {
 			return 2 * M_PI - angle1;
 		} else {

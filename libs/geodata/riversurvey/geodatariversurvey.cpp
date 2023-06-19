@@ -917,7 +917,7 @@ void GeoDataRiverSurvey::deleteSelectedPoints()
 	if (num - selectedNum < 2) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("Cross-section data need at least 2 center points."), QMessageBox::Ok, QMessageBox::Ok);
 	} else {
-		iRICUndoStack::instance().push(new DeleteRiverPathPointCommand(this));
+		pushRenderCommand(new DeleteRiverPathPointCommand(this));
 	}
 }
 
@@ -997,13 +997,13 @@ void GeoDataRiverSurvey::addRightExtensionPoint()
 void GeoDataRiverSurvey::removeLeftExtensionPoint()
 {
 	GeoDataRiverPathPoint* selected = singleSelectedPoint();
-	iRICUndoStack::instance().push(new RemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
+	pushRenderCommand(new RemoveExtensionCommand(true, selected->leftBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::removeRightExtensionPoint()
 {
 	GeoDataRiverPathPoint* selected = singleSelectedPoint();
-	iRICUndoStack::instance().push(new RemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
+	pushRenderCommand(new RemoveExtensionCommand(false, selected->rightBank()->interpolate(0), selected, this));
 }
 
 void GeoDataRiverSurvey::restoreMouseEventMode()
@@ -1214,27 +1214,27 @@ void GeoDataRiverSurvey::editModeMouseMoveEvent(QMouseEvent* event, PreProcessor
 				break;
 			case Impl::EditMouseEventMode::Translate:
 				// execute translation.
-				iRICUndoStack::instance().push(new TranslateRiverPathPointCommand(impl->m_currentPoint, event->pos(), this));
+				pushRenderCommand(new TranslateRiverPathPointCommand(impl->m_currentPoint, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::RotateRight:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				pushRenderCommand(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::RotateLeft:
-				iRICUndoStack::instance().push(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
+				pushRenderCommand(new MouseRotateRiverCrosssectionCommand(impl->m_currentPoint, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::Shift:
-				iRICUndoStack::instance().push(new MouseShiftRiverPathCenterCommand(impl->m_currentPoint, event->pos(), this));
+				pushRenderCommand(new MouseShiftRiverPathCenterCommand(impl->m_currentPoint, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::MoveExtentionEndPointLeft:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(true, event->pos(), this));
+				pushRenderCommand(new MouseMoveExtensionCommand(true, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::MoveExtentionEndPointRight:
-				iRICUndoStack::instance().push(new MouseMoveExtensionCommand(false, event->pos(), this));
+				pushRenderCommand(new MouseMoveExtensionCommand(false, event->pos(), this));
 				impl->m_currentPoint = event->pos();
 				break;
 			case Impl::EditMouseEventMode::ExpansionRight:

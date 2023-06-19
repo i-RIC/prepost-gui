@@ -42,7 +42,6 @@ void GeoDataRiverSurvey::DeleteRiverPathPointCommand::redo()
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
 	m_rs->updateSelectionShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->updateCrosssectionWindows();
 	m_redoed = true;
 	m_rs->setMapped(false);
@@ -64,7 +63,6 @@ void GeoDataRiverSurvey::DeleteRiverPathPointCommand::undo()
 	m_rs->headPoint()->updateRiverShapeInterpolators();
 	m_rs->updateShapeData();
 	m_rs->updateSelectionShapeData();
-	m_rs->renderGraphicsView();
 	m_rs->updateCrosssectionWindows();
 	m_redoed = false;
 }
