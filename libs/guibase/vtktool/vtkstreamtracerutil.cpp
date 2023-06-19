@@ -23,6 +23,7 @@ void vtkStreamTracerUtil::addParticlePointsAtTime(vtkPoints* points, vtkStreamTr
 	double pos[3], prevPos[3];
 	double t, prevT;
 
+	points->Resize(points->GetNumberOfPoints() + polyData->GetNumberOfCells());
 	for (vtkIdType i = 0; i < polyData->GetNumberOfCells(); ++i) {
 		vtkCell* cell = polyData->GetCell(i);
 		for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {

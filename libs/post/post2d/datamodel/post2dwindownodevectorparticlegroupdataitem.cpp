@@ -260,6 +260,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 			// periodical
 			if (currentStep == m_nextStepToAddParticles) {
 				auto newPoints = newParticles(i);
+				points->Resize(points->GetNumberOfPoints() + newPoints->GetNumberOfPoints());
 				for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
 					double v[3];
 					newPoints->GetPoint(j, v);
@@ -275,6 +276,7 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 						vtkStreamTracerUtil::addParticlePointsAtTime(points, tracer, subTime);
 					}
 				}
+				newPoints->Delete();
 			}
 		} else {
 			// arbitrary
@@ -283,11 +285,13 @@ void Post2dWindowNodeVectorParticleGroupDataItem::addParticles()
 			bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
 			if (found) {
 				auto newPoints = newParticles(i);
+				points->Resize(points->GetNumberOfPoints() + newPoints->GetNumberOfPoints());
 				for (vtkIdType j = 0; j < newPoints->GetNumberOfPoints(); ++j) {
 					double v[3];
 					newPoints->GetPoint(j, v);
 					points->InsertNextPoint(v);
 				}
+				newPoints->Delete();
 			}
 		}
 		points->Modified();
@@ -427,14 +431,15 @@ void Post2dWindowNodeVectorParticleGroupDataItem::clearParticleActors()
 	for (auto actor : m_particleActors) {
 		r->RemoveActor(actor);
 	}
-	m_particleActors.clear();
 	m_actorCollection->RemoveAllItems();
+
+	m_particleActors.clear();
 }
 
 void Post2dWindowNodeVectorParticleGroupDataItem::clearParticles()
 {
-	for (auto grid : m_particles) {
-		grid->Delete();
+	for (auto data : m_particles) {
+		data->Delete();
 	}
 	m_particles.clear();
 }
