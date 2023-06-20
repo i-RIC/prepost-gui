@@ -48,11 +48,11 @@ std::vector<TmsImageSetting> standardSettings()
 	bool japanese = (locale == "ja_JP");
 
 	// GSI
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Standard) (Japan only)"), japanese));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Pale) (Japan only)"), japanese));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11", TmsImageSettingManager::tr("GSI (English) (Japan only)"), japanese));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15", TmsImageSettingManager::tr("GSI (Relief) (Japan only)"), japanese));
-	ret.push_back(buildSetting("tms=xyz&url=http://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Standard) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Pale) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=https://cyberjapandata.gsi.go.jp/xyz/english/{z}/{x}/{y}.png&maxNativeZoom=11", TmsImageSettingManager::tr("GSI (English) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=https://cyberjapandata.gsi.go.jp/xyz/relief/{z}/{x}/{y}.png&maxNativeZoom=15", TmsImageSettingManager::tr("GSI (Relief) (Japan only)"), japanese));
+	ret.push_back(buildSetting("tms=xyz&url=https://cyberjapandata.gsi.go.jp/xyz/ort/{z}/{x}/{y}.jpg&maxNativeZoom=18", TmsImageSettingManager::tr("GSI (Ortho images) (Japan only)"), japanese));
 
 	return ret;
 }
