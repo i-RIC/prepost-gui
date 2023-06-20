@@ -32,7 +32,7 @@ TmsRequestGSI::Impl::Impl(const QPointF &centerLonLat, const QSize &size, double
 	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::RELIEF, 15});
 	tileTypeMaxZoomMap.insert({TmsRequestGSI::TileType::ORT, 18});
 
-	QString url = QString("http://cyberjapandata.gsi.go.jp/xyz/%1/{z}/{x}/{y}.%2").arg(tileTypeUrlMap[tileType]).arg(tileTypeExtMap[tileType]);
+	QString url = QString("https://cyberjapandata.gsi.go.jp/xyz/%1/{z}/{x}/{y}.%2").arg(tileTypeUrlMap[tileType]).arg(tileTypeExtMap[tileType]);
 	std::map<QString, QString> options;
 
 	options.insert({"maxNativeZoom", QString::number(tileTypeMaxZoomMap[tileType])});
