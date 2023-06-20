@@ -43,7 +43,7 @@ public:
 	const QList<PreProcessorGridAttributeNodeDataItem*> conditions() const;
 	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	void pushOpacityPercentAndUpdateActorSettingCommand(int opacity, QUndoCommand* subcommand, bool apply = false);
+	void pushOpacityPercentAndUpdateActorSettingCommand(const OpacityContainer& opacity, QUndoCommand* subcommand, bool apply = false);
 	const OpacityContainer& opacity() const;
 	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	QAction* showAttributeBrowserAction() const;
