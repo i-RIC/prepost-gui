@@ -23,9 +23,9 @@ std::vector<GeoDataPointmapWebImporterSetting> standardSettings()
 	std::vector<GeoDataPointmapWebImporterSetting> ret;
 
 	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("USGS elevation tiles (SRTM)"), 0, 13, "https://earthexplorer.usgs.gov/wms/wmts/EPSG3857/srtm/{z}/{x}/{y}.csv"));
-	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5A)"), 0, 15, "http://cyberjapandata.gsi.go.jp/xyz/dem5a/{z}/{x}/{y}.txt"));
-	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5B)"), 0, 15, "http://cyberjapandata.gsi.go.jp/xyz/dem5b/{z}/{x}/{y}.txt"));
-	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM10B)"), 0, 14, "http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt"));
+	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5A)"), 0, 15, "https://cyberjapandata.gsi.go.jp/xyz/dem5a/{z}/{x}/{y}.txt"));
+	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM5B)"), 0, 15, "https://cyberjapandata.gsi.go.jp/xyz/dem5b/{z}/{x}/{y}.txt"));
+	ret.push_back(buildSetting(GeoDataPointmapWebImporterSettingManager::tr("GSI elevation tiles (DEM10B)"), 0, 14, "https://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt"));
 
 	return ret;
 }
