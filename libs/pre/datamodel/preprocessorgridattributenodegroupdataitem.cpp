@@ -166,13 +166,14 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 	}
 	m_opacityWidget->setEnabled(true);
 
-	// update current active scalar
-	vtkPointData* data = g->vtkGrid()->GetPointData();
-	data->SetActiveScalars(m_target.c_str());
 	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	auto cs = typedi->colorMapSetting(m_target);
 
-	auto mapper = cs->buildPointDataMapper(g->vtkFilteredGrid());
+	auto filteredGrid = g->vtkFilteredGrid();
+	vtkPointData* data = filteredGrid->GetPointData();
+	data->SetActiveScalars(m_target.c_str());
+
+	auto mapper = cs->buildPointDataMapper(filteredGrid);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
 
