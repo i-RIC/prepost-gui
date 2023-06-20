@@ -12,7 +12,7 @@ class vtkScalarsToColors;
 class GUICOREDLL_EXPORT DiscreteValuesUtil
 {
 public:
-	static vtkIntArray* buildValues(vtkDataArray* data, const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent);
+	static vtkIntArray* buildValues(vtkDataArray* data, bool fillLower, bool fillUpper, double minValue, const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent);
 	static vtkIntArray* buildValuesEnumerate(vtkDataArray* data, const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent);
 	static vtkScalarsToColors* buildScalarsToColors(const std::vector<ColorMapSettingValueColorPairContainer>& colors, bool ignoreTransparent);
 

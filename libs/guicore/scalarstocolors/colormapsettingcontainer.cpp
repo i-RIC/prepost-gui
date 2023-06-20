@@ -474,29 +474,10 @@ vtkMapper* ColorMapSettingContainer::buildCellDataMapperDiscrete(vtkDataSet* dat
 
 	auto activeScalar = getActiveScalarOrFirst(polyData->GetCellData());
 	if (activeScalar != nullptr) {
-		auto scalar = DiscreteValuesUtil::buildValues(activeScalar, actualColors, ignoreTransparent);
+		auto scalar = DiscreteValuesUtil::buildValues(activeScalar, fillLower, fillUpper, getColorTableMinValue(), actualColors, ignoreTransparent);
 		polyData2->GetCellData()->AddArray(scalar);
 		polyData2->GetCellData()->SetActiveScalars(scalar->GetName());
 		scalar->Delete();
-	}
-
-	if (! fillLower) {
-		auto lowerClip = vtkSmartPointer<iricActiveCellFilter>::New();
-		lowerClip->SetInputData(polyData2);
-		lowerClip->CellClippingOn();
-		lowerClip->SetValue(getMinValue());
-		lowerClip->Update();
-		polyData2 = lowerClip->GetOutput();
-	}
-
-	if (! fillUpper) {
-		auto upperClip = vtkSmartPointer<iricActiveCellFilter>::New();
-		upperClip->SetInputData(polyData2);
-		upperClip->CellClippingOn();
-		upperClip->SetValue(getMaxValue());
-		upperClip->InsideOutOn();
-		upperClip->Update();
-		polyData2 = upperClip->GetOutput();
 	}
 
 	auto lowerClip = vtkSmartPointer<iricActiveCellFilter>::New();

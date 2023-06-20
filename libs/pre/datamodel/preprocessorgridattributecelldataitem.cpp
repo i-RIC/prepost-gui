@@ -284,10 +284,10 @@ void PreProcessorGridAttributeCellDataItem::editValue()
 		dialog.setCurrentIndex(selectedV);
 		dialog.exec();
 	} else {
-		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
+		auto dialog = m_condition->editDialog(mainWindow());
 		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid cells.")).arg(m_condition->caption()));
-		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
+		auto i = tItem->geoDataTop()->groupDataItem(m_condition->name());
 		i->setupEditWidget(dialog->widget());
 		std::vector<vtkIdType> targets = gridDataItem->selectedCells();
 		Grid* g = gridDataItem->grid();
