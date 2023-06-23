@@ -23,9 +23,6 @@ ObjectBrowserView::ObjectBrowserView(QWidget* parent) :
 	m_deleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"),tr("&Delete..."), this);
 	connect(m_deleteAction, SIGNAL(triggered()), this, SLOT(deleteCurrentItem()));
 
-	m_undoableDeleteAction = new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"),tr("&Delete..."), this);
-	connect(m_undoableDeleteAction, SIGNAL(triggered()), this, SLOT(undoableDeleteCurrentItem()));
-
 	m_moveUpAction = new QAction(QIcon(":/libs/guibase/images/iconItemMoveUp.svg"), tr("Move up"), this);
 	connect(m_moveUpAction, SIGNAL(triggered()), this, SLOT(moveUpCurrentItem()));
 
@@ -66,11 +63,6 @@ QAction* ObjectBrowserView::propertyAction() const
 	return m_propertyAction;
 }
 
-QAction* ObjectBrowserView::undoableDeleteAction() const
-{
-	return m_undoableDeleteAction;
-}
-
 QSize ObjectBrowserView::sizeHint() const
 {
 	return QSize(250, 200);
@@ -99,12 +91,6 @@ void ObjectBrowserView::deleteCurrentItem()
 	} else {
 		emit requestDeleteItem(selected);
 	}
-}
-
-void ObjectBrowserView::undoableDeleteCurrentItem()
-{
-	QModelIndex selected = *(selectedIndexes().begin());
-	emit requestUndoableDeleteItem(selected);
 }
 
 void ObjectBrowserView::moveUpCurrentItem()

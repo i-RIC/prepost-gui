@@ -33,7 +33,6 @@ Post3dWindowProjectDataItem::Post3dWindowProjectDataItem(ProjectDataItem* parent
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowAddDialog(QModelIndex)), w->m_dataModel, SLOT(showAddDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(requestShowPropertyDialog(QModelIndex)), w->m_dataModel, SLOT(showPropertyDialog(QModelIndex)));
 	connect(w->m_objectBrowser->view(), SIGNAL(pressed(QModelIndex,QPoint)), w->m_dataModel, SLOT(handleObjectBrowserPress(QModelIndex,QPoint)));
-	connect(w->m_objectBrowser->view(), SIGNAL(requestUndoableDeleteItem(QModelIndex)), w->m_dataModel, SLOT(undoableDeleteItem(QModelIndex)));
 	delete oldCenter;
 }
 

@@ -11,10 +11,9 @@ GeoDataPolyLineNodeMapperT<V, DA>::GeoDataPolyLineNodeMapperT(GeoDataCreator* pa
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataPolyLineNodeMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataPolyLineNodeMapperT<V, DA>::initialize(bool* /*boolMap*/)
 {
-	GeoDataPolyLineNodeMapperSetting* s = new GeoDataPolyLineNodeMapperSetting();
-	return s;
+	return new GeoDataPolyLineNodeMapperSetting();
 }
 
 template <class V, class DA>

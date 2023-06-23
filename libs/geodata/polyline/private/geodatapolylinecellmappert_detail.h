@@ -12,10 +12,9 @@ GeoDataPolyLineCellMapperT<V, DA>::GeoDataPolyLineCellMapperT(GeoDataCreator* pa
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataPolyLineCellMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataPolyLineCellMapperT<V, DA>::initialize(bool* /*boolMap*/)
 {
-	GeoDataPolyLineCellMapperSetting* s = new GeoDataPolyLineCellMapperSetting();
-	return s;
+	return new GeoDataPolyLineCellMapperSetting();
 }
 
 template <class V, class DA>

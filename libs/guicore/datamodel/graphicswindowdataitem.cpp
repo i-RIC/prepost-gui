@@ -395,9 +395,6 @@ bool GraphicsWindowDataItem::isAncientChecked() const
 	return dynamic_cast<GraphicsWindowDataItem*>(parent())->isAncientChecked();
 }
 
-void GraphicsWindowDataItem::undoableDeleteItem(GraphicsWindowDataItem* /*item*/, bool /*noDraw*/)
-{}
-
 bool GraphicsWindowDataItem::addToolBarButtons(QToolBar* /*parent*/)
 {
 	return false;

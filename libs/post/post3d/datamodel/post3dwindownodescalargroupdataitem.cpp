@@ -56,7 +56,7 @@ Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dW
 	m_color {Qt::white},
 	m_opacity {"opacity", 100}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	setDefaultValues();
 	setupActors();
@@ -288,9 +288,4 @@ void Post3dWindowNodeScalarGroupDataItem::validateRange()
 		if (m_range.jMax < 0) m_range.jMax = dims[1] - 1;
 		if (m_range.kMax < 0) m_range.kMax = dims[2] - 1;
 	}
-}
-
-void Post3dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
-{
-	menu->addAction(dataModel()->objectBrowserView()->undoableDeleteAction());
 }

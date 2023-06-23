@@ -61,7 +61,6 @@ public slots:
 	void moveUpItem(const QModelIndex& index);
 	void moveDownItem(const QModelIndex& index);
 	void deleteItem(const QModelIndex& index, bool noDraw = false);
-	void undoableDeleteItem(const QModelIndex& index, bool noDraw = false);	
 
 	/// Show Add dialog of the item currently selected on object browser.
 	void showAddDialog(const QModelIndex& index);

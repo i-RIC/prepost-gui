@@ -174,15 +174,6 @@ void GraphicsWindowDataModel::deleteItem(const QModelIndex& index, bool noDraw)
 	iRICUndoStack::instance().clear();
 }
 
-void GraphicsWindowDataModel::undoableDeleteItem(const QModelIndex& index, bool noDraw)
-{
-	QStandardItem* item = m_itemModel->itemFromIndex(index);
-	GraphicsWindowDataItem* dataItem = m_rootDataItem->modelItemFromItem(item);
-	GraphicsWindowDataItem* parentDataItem = m_rootDataItem->modelItemFromItem(item->parent());
-	parentDataItem->undoableDeleteItem(dataItem, noDraw);
-	graphicsView()->setActiveDataItem(nullptr);
-}
-
 void GraphicsWindowDataModel::moveUpItem(const QModelIndex& index)
 {
 	QStandardItem* item = m_itemModel->itemFromIndex(index);

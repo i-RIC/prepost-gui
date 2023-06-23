@@ -94,8 +94,6 @@ public:
 	virtual QDialog* addDialog(QWidget* parent);
 	virtual void handleAddDialogAccepted(QDialog* addDialog);
 
-	virtual void undoableDeleteItem(GraphicsWindowDataItem* item, bool noDraw = false);
-
 	virtual bool addToolBarButtons(QToolBar* parent);
 	const std::vector<GraphicsWindowDataItem*>& childItems() const;
 

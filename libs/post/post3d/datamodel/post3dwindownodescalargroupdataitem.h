@@ -52,7 +52,6 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
-	void addCustomMenuItems(QMenu* menu) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateVisibility() override;

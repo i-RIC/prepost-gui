@@ -21,7 +21,6 @@ public:
 	QAction* moveUpAction() const;
 	QAction* moveDownAction() const;
 	QAction* propertyAction() const;
-	QAction* undoableDeleteAction() const;
 
 	QSize sizeHint() const override;
 	void select(const QModelIndex& index);
@@ -37,7 +36,6 @@ protected slots:
 	void moveDownCurrentItem();
 	void showAddForCurrentItem();
 	void showPropertyForCurrentItem();
-	void undoableDeleteCurrentItem();
 
 signals:
 	void selectionChanged();
@@ -55,7 +53,6 @@ signals:
 	void requestDeleteMeasuredData(const QModelIndex& index);
 	void requestMoveUpMeasuredData(const QModelIndex& index);
 	void requestMoveDownMeasuredData(const QModelIndex& index);
-	void requestUndoableDeleteItem(const QModelIndex& index);
 
 private:
 	void mousePressEvent(QMouseEvent* event) override;
@@ -68,7 +65,6 @@ private:
 	QAction* m_addAction;
 	QAction* m_deleteAction;
 	QAction* m_propertyAction;
-	QAction* m_undoableDeleteAction;
 
 	bool m_commandExecution;
 	bool m_isPushing;
