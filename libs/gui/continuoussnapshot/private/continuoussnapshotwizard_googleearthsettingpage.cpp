@@ -115,6 +115,8 @@ void ContinuousSnapshotWizard::GoogleEarthSettingPage::initializePage()
 
 bool ContinuousSnapshotWizard::GoogleEarthSettingPage::validatePage()
 {
+	if (! ui->googleEarthCheckBox->isChecked()) {return true;}
+
 	auto setting = m_wizard->setting();
 	setting.outputKml = ui->googleEarthCheckBox->isChecked();
 	setting.kmlFilename = ui->kmlEdit->text();
