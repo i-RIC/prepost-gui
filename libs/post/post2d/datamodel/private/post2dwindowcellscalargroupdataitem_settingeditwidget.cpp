@@ -53,8 +53,7 @@ QUndoCommand* Post2dWindowCellScalarGroupDataItem::SettingEditWidget::createModi
 	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(ui->rangeWidget->createModifyCommand());
 
-	OpacityContainer o;
-	o.setValue(ui->opacityWidget->opacity());
+	OpacityContainer o = ui->opacityWidget->opacity();
 	command->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("ModifyOpacity"), apply, o, &m_item->impl->m_setting.opacity));
 
 	return command;
