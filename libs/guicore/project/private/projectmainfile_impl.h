@@ -31,6 +31,7 @@ public:
 	VersionNumber m_solverVersion;
 	VersionNumber m_iRICVersion;
 
+	ProjectCgnsManager* m_cgnsManager;
 	std::vector<MeasuredData*> m_measuredDatas;
 	std::vector<BackgroundImageInfo*> m_backgroundImages;
 	PostSolutionInfo* m_postSolutionInfo;

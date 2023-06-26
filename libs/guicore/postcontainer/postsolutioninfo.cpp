@@ -1,6 +1,7 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
+#include "../project/projectmainfile.h"
 #include "../solverdef/solverdefinition.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "../solverdef/solverdefinitiongridtype.h"
@@ -12,14 +13,17 @@
 #include "postcontainer/postbaseiterativeintegerdatacontainer.h"
 #include "postcontainer/postbaseiterativerealdatacontainer.h"
 #include "postcontainer/postbaseiterativestringdatacontainer.h"
+#include "postcontainer/postbaseiterativevaluescontainer.h"
 #include "postcontainer/postcalculatedresult.h"
 #include "postdataexportdialog.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
 #include "posttimesteps.h"
 #include "postzonedatacontainer.h"
+#include "private/postsolutioninfo_updateifneededthread.h"
 
 #include <guibase/widget/itemselectingdialog.h>
+#include <guibase/widget/waitdialog.h>
 #include <misc/lastiodirectory.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
@@ -74,6 +78,7 @@ PostSolutionInfo::PostSolutionInfo(ProjectDataItem* parent) :
 	m_currentStep {0},
 	m_timerId {0},
 	m_cgnsFile {nullptr},
+	m_baseIterativeValuesContainer {nullptr},
 	m_exportFormat {PostDataExportDialog::Format::VTKASCII},
 	m_disableCalculatedResult {false},
 	m_particleExportPrefix {"Particle_"},
@@ -87,6 +92,7 @@ PostSolutionInfo::~PostSolutionInfo()
 	clearCalculatedResults(&m_calculatedResults2D);
 	clearCalculatedResults(&m_calculatedResults3D);
 	clearBaseIterativeResults();
+	delete m_baseIterativeValuesContainer;
 	delete m_loadedElement;
 }
 
@@ -124,6 +130,15 @@ void PostSolutionInfo::setIterationType(SolverDefinition::IterationType type)
 	}
 }
 
+QStringList PostSolutionInfo::containedFiles() const
+{
+	QStringList ret;
+	if (m_baseIterativeValuesContainer != nullptr) {
+		ret << m_baseIterativeValuesContainer->filename();
+	}
+	return ret;
+}
+
 PostIterationSteps* PostSolutionInfo::iterationSteps() const
 {
 	return m_iterationSteps;
@@ -132,6 +147,13 @@ PostIterationSteps* PostSolutionInfo::iterationSteps() const
 PostTimeSteps* PostSolutionInfo::timeSteps() const
 {
 	return m_timeSteps;
+}
+
+int PostSolutionInfo::stepCount() const
+{
+	if (m_timeSteps != nullptr) {return m_timeSteps->timesteps().size();}
+	if (m_iterationSteps != nullptr) {return m_iterationSteps->iterationSteps().size();}
+	return 0;
 }
 
 int PostSolutionInfo::currentStep() const
@@ -372,6 +394,40 @@ void PostSolutionInfo::setupZoneDataContainers()
 	if (ret) {emit zoneList3DUpdated();}
 }
 
+ProjectMainFile* PostSolutionInfo::mainFile() const
+{
+	return dynamic_cast<ProjectMainFile*> (parent());
+}
+
+void PostSolutionInfo::loadDividedBaseIterativeData()
+{
+	if (! mainFile()->separateResultExists()) {return;}
+
+	if (m_baseIterativeValuesContainer == nullptr) {
+		m_baseIterativeValuesContainer = new PostBaseIterativeValuesContainer(projectData());
+		m_baseIterativeValuesContainer->load();
+	}
+	UpdateIfNeededThread thread(m_baseIterativeValuesContainer);
+	thread.start();
+
+	WaitDialog dialog(iricMainWindow());
+	dialog.setMessage(tr("Reading time values..."));
+	dialog.showProgressBar();
+	dialog.setProgress(0);
+	dialog.show();
+
+	while (! thread.isFinished()) {
+		dialog.setProgress(thread.progress());
+		QThread::msleep(100);
+		qApp->processEvents();
+	}
+
+	int invalidDataId = thread.invalidDataId();
+	if (invalidDataId != -1) {
+		QMessageBox::warning(iricMainWindow(), tr("Warning"), tr("Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.").arg(invalidDataId + 1).arg(invalidDataId));
+	}
+}
+
 void PostSolutionInfo::loadCalculatedResult()
 {
 	if (m_loadedElement == nullptr) {return;}
@@ -425,6 +481,9 @@ void PostSolutionInfo::checkCgnsStepsUpdate()
 		QMessageBox::warning(projectData()->mainWindow(), tr("Warning"), tr("Loading calculation result for visualization failed. Please try again later, or wait until end of calculation."));
 		return;
 	}
+
+	loadDividedBaseIterativeData();
+
 	if (m_timeSteps != nullptr) {
 		m_timeSteps->checkStepsUpdate(*m_cgnsFile);
 	}
@@ -469,20 +528,21 @@ int PostSolutionInfo::loadFromCgnsFile()
 	int ier = open();
 	if (ier != IRIC_NO_ERROR) {return ier;}
 
-	int newMaxStep = 0;
-
+	PostAbstractSteps* steps = nullptr;
 	if (m_timeSteps != nullptr) {
-		m_timeSteps->blockSignals(true);
-		m_timeSteps->loadFromCgnsFile(*cgnsFile());
-		m_timeSteps->blockSignals(false);
-		newMaxStep = static_cast<int> (m_timeSteps->timesteps().size()) - 1;
+		steps = m_timeSteps;
 	}
 	if (m_iterationSteps != nullptr) {
-		m_iterationSteps->blockSignals(true);
-		m_iterationSteps->loadFromCgnsFile(*cgnsFile());
-		m_iterationSteps->blockSignals(false);
-		newMaxStep = static_cast<int> (m_iterationSteps->iterationSteps().size()) - 1;
+		steps = m_iterationSteps;
 	}
+
+	loadDividedBaseIterativeData();
+
+	steps->blockSignals(true);
+	steps->loadFromCgnsFile(*cgnsFile());
+	steps->blockSignals(false);
+	int newMaxStep = static_cast<int> (m_timeSteps->timesteps().size()) - 1;
+
 	if (m_currentStep > newMaxStep) {m_currentStep = 0;}
 
 	setCurrentStep(currentStep());
@@ -623,6 +683,11 @@ PostZoneDataContainer* PostSolutionInfo::firstZoneContainer() const
 	return nullptr;
 }
 
+PostBaseIterativeValuesContainer* PostSolutionInfo::baseIterativeValuesContainer() const
+{
+	return m_baseIterativeValuesContainer;
+}
+
 const std::map<std::string, PostBaseIterativeStringDataContainer*>& PostSolutionInfo::baseIterativeStringResults() const
 {
 	return m_baseIterativeStringResults;
@@ -684,6 +749,8 @@ void PostSolutionInfo::close()
 {
 	delete m_cgnsFile;
 	m_cgnsFile = nullptr;
+	delete m_baseIterativeValuesContainer;
+	m_baseIterativeValuesContainer = nullptr;
 }
 
 const PostExportSetting& PostSolutionInfo::exportSetting() const
@@ -704,6 +771,11 @@ void PostSolutionInfo::setExportSetting(const PostExportSetting& setting)
 void PostSolutionInfo::setParticleExportPrefix(const QString& prefix)
 {
 	m_particleExportPrefix = prefix;
+}
+
+bool PostSolutionInfo::separateResultExists() const
+{
+	return mainFile()->separateResultExists();
 }
 
 int PostSolutionInfo::fileId() const
@@ -942,6 +1014,14 @@ int PostSolutionInfo::open()
 		} else {
 			m_cgnsFile = new iRICLib::H5CgnsFile(iRIC::toStr(pd->masterCgnsFileName()), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		}
+
+		auto solutionReader = m_cgnsFile->solutionReader();
+		iRICLib::H5CgnsFileSolutionReader::Mode mode = iRICLib::H5CgnsFileSolutionReader::Mode::Standard;
+		if (mainFile()->separateResultExists()) {
+			mode = iRICLib::H5CgnsFileSolutionReader::Mode::Separate;
+		}
+		solutionReader->setMode(mode);
+
 		return IRIC_NO_ERROR;
 	} catch (...) {
 		return IRIC_H5_OPEN_FAIL;

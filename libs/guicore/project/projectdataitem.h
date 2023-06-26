@@ -66,7 +66,7 @@ public:
 	/// Set the filename. It does not include path information.
 	void setFilename(const QString& fname);
 	/// External file names that are used to store data below this node
-    virtual QStringList containedFiles() const;
+	virtual QStringList containedFiles() const;
 	//@}
 
 	/// @name Utility functions

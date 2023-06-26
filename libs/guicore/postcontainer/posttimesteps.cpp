@@ -1,7 +1,11 @@
 #include "../base/iricmainwindowinterface.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
+#include "postbaseiterativevaluescontainer.h"
+#include "postsolutioninfo.h"
 #include "posttimesteps.h"
+#include "private/postbaseiterativevaluescontainer_basecontainer.h"
+#include "private/postbaseiterativevaluescontainer_realvaluecontainer.h"
 
 #include <QMessageBox>
 #include <QString>
@@ -12,21 +16,34 @@
 
 #include <vector>
 
-PostTimeSteps::PostTimeSteps(ProjectDataItem* parent) :
+PostTimeSteps::PostTimeSteps(PostSolutionInfo* parent) :
 	PostAbstractSteps(parent)
 {}
 
 void PostTimeSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 {
-	auto biterData = file.ccBase()->biterData();
-
 	QList<double> tmplist;
-	if (biterData != nullptr) {
-		std::vector<double> buffer;
-		biterData->readTime(&buffer);
 
-		for (auto v : buffer) {
-			tmplist.push_back(v);
+	if (postSolutionInfo()->separateResultExists()) {
+		auto container = postSolutionInfo()->baseIterativeValuesContainer();
+		if (container->baseContainers().size() != 0) {
+			auto baseContainer = container->baseContainers().at(0);
+			auto timeContainer = baseContainer->realContainer(std::string("TimeValues"));
+			if (timeContainer != nullptr) {
+				for (double v : timeContainer->values()) {
+					tmplist.push_back(v);
+				}
+			}
+		}
+	} else {
+		auto biterData = file.ccBase()->biterData();
+		if (biterData != nullptr) {
+			std::vector<double> buffer;
+			biterData->readTime(&buffer);
+
+			for (auto v : buffer) {
+				tmplist.push_back(v);
+			}
 		}
 	}
 

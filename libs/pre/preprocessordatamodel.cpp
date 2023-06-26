@@ -213,7 +213,7 @@ void PreProcessorDataModel::importCalcConditionFromOtherProject(const QString& f
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(projectData()->mainWindow()->preProcessorWindow());
 		// now it's loaded. find how many cgns files are included.
 
-		QString fullname = tmpProj.workCgnsFileName("Case1");
+		QString fullname = tmpProj.masterCgnsFileName();
 		bool ret = pre->importInputCondition(fullname);
 		if (!ret) {return;}
 	}

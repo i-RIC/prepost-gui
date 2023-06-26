@@ -1,4 +1,5 @@
 #include "../base/iricmainwindowinterface.h"
+#include "../postcontainer/postbaseiterativevaluescontainer.h"
 #include "../postcontainer/postsolutioninfo.h"
 #include "../pre/base/preprocessordatamodelinterface.h"
 #include "../pre/base/preprocessorwindowinterface.h"
@@ -8,6 +9,7 @@
 #include "measured/measureddatacsvimporter.h"
 #include "offsetsettingdialog.h"
 #include "projectcgnsfile.h"
+#include "projectcgnsmanager.h"
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"
@@ -107,6 +109,7 @@ const QString ProjectMainFile::FILENAME = "project.xml";
 const QString ProjectMainFile::BGDIR = "backgroundimages";
 
 ProjectMainFile::Impl::Impl(ProjectMainFile *parent) :
+	m_cgnsManager {new ProjectCgnsManager(parent)},
 	m_postSolutionInfo {new PostSolutionInfo(parent)},
 	m_postProcessors {new ProjectPostProcessors(parent)},
 	m_coordinateSystem {nullptr},
@@ -126,6 +129,7 @@ ProjectMainFile::Impl::~Impl()
 	if (m_coordinateSystem != nullptr) {
 		m_coordinateSystem->free();
 	}
+	delete m_cgnsManager;
 	delete m_postProcessors;
 	delete m_postSolutionInfo;
 }
@@ -274,6 +278,13 @@ void ProjectMainFile::loadSolverInformation()
 	impl->m_solverVersion = element.attribute("solverVersion");
 }
 
+void ProjectMainFile::createMainCgnsFile()
+{
+	auto fname = impl->m_cgnsManager->mainFileFullName();
+	iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::Create);
+	ProjectCgnsFile::writeSolverInfo(&cgnsFile, projectData()->solverDefinition()->abstract());
+}
+
 void ProjectMainFile::initForSolverDefinition()
 {
 	SolverDefinition* def = m_projectData->solverDefinition();
@@ -284,9 +295,14 @@ void ProjectMainFile::initForSolverDefinition()
 	impl->m_postSolutionInfo->setIterationType(def->iterationType());
 }
 
-QString ProjectMainFile::filename()
+QString ProjectMainFile::filename() const
 {
 	return m_projectData->absoluteFileName(ProjectMainFile::FILENAME);
+}
+
+QString ProjectMainFile::workDirectory() const
+{
+	return m_projectData->workDirectory();
 }
 
 void ProjectMainFile::load()
@@ -501,7 +517,7 @@ QStringList ProjectMainFile::containedFiles() const
 		ret << filename;
 	}
 	// Add CGNS files.
-	ret << "Case1.cgn";
+	ret << impl->m_cgnsManager->containedFiles();
 
 	// Add External files in MainWindow
 	ret << m_projectData->mainWindow()->containedFiles();
@@ -517,7 +533,7 @@ QStringList ProjectMainFile::containedFiles() const
 
 bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newname)
 {
-	QString to = m_projectData->workCgnsFileName(newname);
+	QString to = impl->m_cgnsManager->mainFileFullName().c_str();
 
 	copyCgnsFile(fname, to);
 
@@ -571,18 +587,46 @@ QString ProjectMainFile::currentCgnsFileName() const
 
 int ProjectMainFile::loadFromCgnsFile()
 {
+	bool rebuildNeeded = false;
 	try {
-		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 		int ier = m_projectData->mainWindow()->loadFromCgnsFile();
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening CGNS file in project file : %1").arg("Case1.cgn"));
-		return IRIC_H5_CALL_ERROR;
+		if (impl->m_cgnsManager->backupFileExists()) {
+			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1. iRIC tries to salvage data from %2.").arg("Case1.cgn", "Case1_input.cgn"));
+			// copy backup file.
+			QFile::remove(impl->m_cgnsManager->mainFileFullName().c_str());
+			QFile::copy(impl->m_cgnsManager->backupFileFullName().c_str(), impl->m_cgnsManager->mainFileFullName().c_str());
+			try {
+				auto fname = impl->m_cgnsManager->mainFileFullName();
+				iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
+				ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
+				int ier = m_projectData->mainWindow()->loadFromCgnsFile();
+				if (ier != IRIC_NO_ERROR) {return ier;}
+				rebuildNeeded = true;
+			}  catch (...) {
+				QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1_input.cgn"));
+				return IRIC_H5_CALL_ERROR;
+			}
+		} else {
+			QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg("Case1.cgn"));
+			return IRIC_H5_CALL_ERROR;
+		}
 	}
 
 	postSolutionInfo()->loadFromCgnsFile();
+	if (rebuildNeeded) {
+		postSolutionInfo()->close();
+
+		int steps = postSolutionInfo()->stepCount();
+		iRICLib::H5CgnsFileSeparateSolutionUtil::rebuildBaseIterativeData(impl->m_cgnsManager->mainFileFullName(), steps);
+
+		postSolutionInfo()->loadFromCgnsFile();
+	}
+
 	return IRIC_NO_ERROR;
 }
 
@@ -592,7 +636,7 @@ int ProjectMainFile::saveToCgnsFile()
 	impl->m_postSolutionInfo->close();
 
 	try {
-		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::Create);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 
@@ -611,7 +655,7 @@ int ProjectMainFile::updateCgnsFileOtherThanGrids()
 	impl->m_postSolutionInfo->close();
 
 	try {
-		auto fname = iRIC::toStr(m_projectData->workCgnsFileName("Case1"));
+		auto fname = impl->m_cgnsManager->mainFileFullName();
 		iRICLib::H5CgnsFile cgnsFile(fname, iRICLib::H5CgnsFile::Mode::OpenModify);
 		ValueChangerT<iRICLib::H5CgnsFile*> fileChanger(&(impl->m_cgnsFile), &cgnsFile);
 		return m_projectData->mainWindow()->updateCgnsFileOtherThanGrids();
@@ -643,7 +687,6 @@ void ProjectMainFile::closeCgnsFile()
 	impl->m_postSolutionInfo->close();
 }
 
-
 const std::vector<BackgroundImageInfo*>& ProjectMainFile::backgroundImages() const
 {
 	return impl->m_backgroundImages;
@@ -661,13 +704,14 @@ const std::vector<vtkRenderer*>& ProjectMainFile::renderers() const
 
 void ProjectMainFile::clearResults()
 {
-	// close CGNS file when the solution opened it.
 	impl->m_postSolutionInfo->close();
+	impl->m_cgnsManager->deleteResultFolder();
+
+	QFile biFile(PostBaseIterativeValuesContainer::filename(workDirectory()));
+	if (biFile.exists()) {biFile.remove();}
 
 	int ier = saveToCgnsFile();
 	if (ier != IRIC_NO_ERROR) {return;}
-
-	iRICLib::H5CgnsFileSeparateSolutionUtil::clearResultFolder(iRIC::toStr(currentCgnsFileName()));
 
 	impl->m_postSolutionInfo->checkCgnsStepsUpdate();
 }
@@ -680,6 +724,16 @@ bool ProjectMainFile::separateResult() const
 void ProjectMainFile::setSeparateResult(bool separate)
 {
 	impl->m_separateResult = separate;
+}
+
+bool ProjectMainFile::separateResultExists() const
+{
+	return impl->m_cgnsManager->separateResultExists();
+}
+
+ProjectCgnsManager* ProjectMainFile::cgnsManager() const
+{
+	return impl->m_cgnsManager;
 }
 
 PostSolutionInfo* ProjectMainFile::postSolutionInfo() const

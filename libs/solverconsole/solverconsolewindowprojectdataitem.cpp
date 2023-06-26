@@ -80,7 +80,7 @@ void SolverConsoleWindowProjectDataItem::clearLogFile()
 
 void SolverConsoleWindowProjectDataItem::append(const QString& line)
 {
-	QTextStream ts(&m_file);
+	QTextStream ts(&m_consoleLogFile);
 	ts << line << endl;
 	m_solverConsoleWindow->impl->m_console->appendPlainText(line);
 }
@@ -129,14 +129,14 @@ void SolverConsoleWindowProjectDataItem::loadExternalData()
 
 void SolverConsoleWindowProjectDataItem::open()
 {
-	m_file.setFileName(filename());
-	m_file.open(QFile::Append | QFile::Text);
+	m_consoleLogFile.setFileName(filename());
+	m_consoleLogFile.open(QFile::Append | QFile::Text);
 	setModified();
 }
 
 void SolverConsoleWindowProjectDataItem::close()
 {
-	m_file.close();
+	m_consoleLogFile.close();
 }
 
 void SolverConsoleWindowProjectDataItem::exportConsoleLog()

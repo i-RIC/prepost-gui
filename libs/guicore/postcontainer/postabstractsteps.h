@@ -4,17 +4,28 @@
 #include "../guicore_global.h"
 #include "../project/projectdataitem.h"
 
+namespace iRICLib {
+	class H5CgnsFile;
+} // namespace iRICLib
+
+class PostSolutionInfo;
+
 /// This class is an abstract class that contains how many steps of
 /// results are included in the current CGNS file.
 class GUICOREDLL_EXPORT PostAbstractSteps : public ProjectDataItem
 {
 
 public:
-	PostAbstractSteps(ProjectDataItem* parent);
+	PostAbstractSteps(PostSolutionInfo* parent);
+
+	virtual void loadFromCgnsFile(iRICLib::H5CgnsFile& file) = 0;
 	/// Returns true if the current CGNS file containes more than one result step.
 	virtual bool dataExists() const = 0;
 
 protected:
+	PostSolutionInfo* postSolutionInfo() const;
+
+private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	/// Clear the iteration array data copied to this instance.

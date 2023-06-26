@@ -240,6 +240,7 @@ HEADERS += guicore_global.h \
            postcontainer/postbaseiterativerealdatacontainer.h \
            postcontainer/postbaseiterativeseriesdatacontainer.h \
            postcontainer/postbaseiterativestringdatacontainer.h \
+           postcontainer/postbaseiterativevaluescontainer.h \
            postcontainer/postbaseselectingdialog.h \
            postcontainer/postcalculatedresult.h \
            postcontainer/postcalculatedresultargument.h \
@@ -259,6 +260,7 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
+           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.h \
            project/addiblegcptablemodel.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
@@ -268,7 +270,9 @@ HEADERS += guicore_global.h \
            project/gcptablerow.h \
            project/georeferenceview.h \
            project/offsetsettingdialog.h \
+           project/private/projectcgnsmanager_impl.h \
            project/projectcgnsfile.h \
+           project/projectcgnsmanager.h \
            project/projectdata.h \
            project/projectdataitem.h \
            project/projectmainfile.h \
@@ -364,7 +368,18 @@ HEADERS += guicore_global.h \
            postcontainer/exporter/postzonedatashapeexporter.h \
            postcontainer/exporter/postzonedatatpoexporter.h \
            postcontainer/exporter/postzonedatavtkexporter.h \
+           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.h \
+           postcontainer/private/postbaseiterativevaluescontainer_binaryio.h \
+           postcontainer/private/postbaseiterativevaluescontainer_impl.h \
+           postcontainer/private/postbaseiterativevaluescontainer_integervaluecontainer.h \
+           postcontainer/private/postbaseiterativevaluescontainer_io.h \
+           postcontainer/private/postbaseiterativevaluescontainer_realvaluecontainer.h \
+           postcontainer/private/postbaseiterativevaluescontainer_textio.h \
+           postcontainer/private/postbaseiterativevaluescontainer_valuecontainer.h \
+           postcontainer/private/postbaseiterativevaluescontainer_valuecontainert.h \
+           postcontainer/private/postbaseiterativevaluescontainer_valuecontainert_detail.h \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.h \
+           postcontainer/private/postsolutioninfo_updateifneededthread.h \
            postcontainer/private/poststringresult_impl.h \
            postcontainer/private/postzonedatacontainer_particlegrouploader.h \
            postcontainer/private/postzonedatacontainer_particleloader.h \
@@ -758,6 +773,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/postbaseiterativerealdatacontainer.cpp \
            postcontainer/postbaseiterativeseriesdatacontainer.cpp \
            postcontainer/postbaseiterativestringdatacontainer.cpp \
+           postcontainer/postbaseiterativevaluescontainer.cpp \
            postcontainer/postbaseselectingdialog.cpp \
            postcontainer/postcalculatedresult.cpp \
            postcontainer/postcalculatedresultargument.cpp \
@@ -777,6 +793,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.cpp \
            project/addiblegcptablemodel.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
@@ -786,6 +803,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            project/georeferenceview.cpp \
            project/offsetsettingdialog.cpp \
            project/projectcgnsfile.cpp \
+           project/projectcgnsmanager.cpp \
            project/projectdata.cpp \
            project/projectdataitem.cpp \
            project/projectmainfile.cpp \
@@ -870,7 +888,16 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/exporter/postzonedatashapeexporter.cpp \
            postcontainer/exporter/postzonedatatpoexporter.cpp \
            postcontainer/exporter/postzonedatavtkexporter.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_binaryio.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_impl.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_integervaluecontainer.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_io.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_realvaluecontainer.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_textio.cpp \
+           postcontainer/private/postbaseiterativevaluescontainer_valuecontainer.cpp \
            postcontainer/private/postcalculatedresulteditdialog_tabledelegate.cpp \
+           postcontainer/private/postsolutioninfo_updateifneededthread.cpp \
            postcontainer/private/postzonedatacontainer_particlegrouploader.cpp \
            postcontainer/private/postzonedatacontainer_particleloader.cpp \
            postcontainer/private/postzonedatacontainer_polydataloader.cpp \

@@ -16,9 +16,9 @@ class GUICOREDLL_EXPORT PostIterationSteps : public PostAbstractSteps
 	Q_OBJECT
 
 public:
-	PostIterationSteps(ProjectDataItem* parent);
+	PostIterationSteps(PostSolutionInfo* parent);
 
-	void loadFromCgnsFile(iRICLib::H5CgnsFile& file);
+	void loadFromCgnsFile(iRICLib::H5CgnsFile& file) override;
 	const QList<int>& iterationSteps() const;
 	bool dataExists() const override;
 	void checkStepsUpdate(iRICLib::H5CgnsFile& file);

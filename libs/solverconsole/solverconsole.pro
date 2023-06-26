@@ -33,6 +33,24 @@ unix {
 }
 LIBS += -liricGuicore
 
+######################
+# External libraries #
+######################
+
+# iriclib
+
+win32 {
+    CONFIG(debug, debug|release) {
+        LIBS += -liriclibd
+    } else {
+        LIBS += -liriclib
+    }
+}
+
+unix {
+    LIBS += -liriclib
+}
+
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)

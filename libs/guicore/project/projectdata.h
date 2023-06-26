@@ -67,7 +67,6 @@ public:
 	const VersionNumber version();
 	/// Get new workfolder name to create
 	static QString newWorkfolderName(const QDir& workspace);
-	QString workCgnsFileName(const QString& name) const;
 	QString currentCgnsFileName() const;
 	QString masterCgnsFileName() const;
 	QString flushCopyCgnsFileName() const;

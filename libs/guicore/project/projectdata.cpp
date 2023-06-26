@@ -3,6 +3,7 @@
 #include "../pre/base/preprocessorwindowinterface.h"
 #include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridtype.h"
+#include "projectcgnsmanager.h"
 #include "projectdata.h"
 #include "projectmainfile.h"
 #include "projectworkspace.h"
@@ -210,12 +211,6 @@ QString ProjectData::newWorkfolderName(const QDir& workspace)
 	return iRIC::getTempFileName(workspace.absolutePath());
 }
 
-QString ProjectData::workCgnsFileName(const QString& name) const
-{
-	QString tmpstr = name;
-	return QDir(m_workDirectory).absoluteFilePath(tmpstr.append(".cgn"));
-}
-
 QString ProjectData::currentCgnsFileName() const
 {
 	if (isSolverRunning()) {
@@ -227,7 +222,7 @@ QString ProjectData::currentCgnsFileName() const
 
 QString ProjectData::masterCgnsFileName() const
 {
-	return workCgnsFileName("Case1");
+	return mainfile()->cgnsManager()->mainFileFullName().c_str();
 }
 
 QString ProjectData::flushCopyCgnsFileName() const
@@ -432,7 +427,7 @@ ERROR:
 
 bool ProjectData::hasHugeCgns() const
 {
-	QString filename = workCgnsFileName("Case1");
+	QString filename = masterCgnsFileName();
 	QFileInfo finfo(filename);
 	if (finfo.size() > 2000000000) {
 		return true;

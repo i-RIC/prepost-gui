@@ -17,6 +17,7 @@ namespace iRICLib {
 
 class PostBaseIterativeNumericalDataContainer;
 class PostBaseIterativeStringDataContainer;
+class PostBaseIterativeValuesContainer;
 class PostCalculatedResult;
 class PostIterationSteps;
 class PostTimeSteps;
@@ -36,8 +37,12 @@ public:
 
 	SolverDefinition::IterationType iterationType() const;
 	void setIterationType(SolverDefinition::IterationType type);
+
+	QStringList containedFiles() const override;
+
 	PostIterationSteps* iterationSteps() const;
 	PostTimeSteps* timeSteps() const;
+	int stepCount() const;
 	int currentStep() const;
 	double currentTimeStep();
 	/// Returns true if the current CGNS file has results.
@@ -56,6 +61,7 @@ public:
 	PostZoneDataContainer* zoneContainer3D(const std::string& zoneName) const;
 	PostZoneDataContainer* zoneContainer(Dimension dim, const std::string& zoneName) const;
 	PostZoneDataContainer* firstZoneContainer() const;
+	PostBaseIterativeValuesContainer* baseIterativeValuesContainer() const;
 
 	const std::map<std::string, PostBaseIterativeStringDataContainer*>& baseIterativeStringResults() const;
 	const std::map<std::string, PostBaseIterativeNumericalDataContainer*>& baseIterativeNumericalResults() const;
@@ -77,6 +83,7 @@ public:
 	const QString& particleExportPrefix() const;
 	void setExportSetting(const PostExportSetting& setting);
 	void setParticleExportPrefix(const QString& prefix);
+	bool separateResultExists() const;
 
 	/// File ID that can be used with cgnslib functions.
 	int fileId() const;
@@ -111,6 +118,8 @@ signals:
 private:
 	bool stepsExist() const;
 	void setupZoneDataContainers();
+	ProjectMainFile* mainFile() const;
+	void loadDividedBaseIterativeData();
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
 	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
@@ -140,6 +149,7 @@ private:
 
 	int m_timerId;
 	iRICLib::H5CgnsFile* m_cgnsFile;
+	PostBaseIterativeValuesContainer* m_baseIterativeValuesContainer;
 
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
@@ -155,6 +165,8 @@ private:
 	QString m_particleExportPrefix;
 
 	QDomElement* m_loadedElement;
+
+	class UpdateIfNeededThread;
 };
 
 #endif // POSTSOLUTIONINFO_H

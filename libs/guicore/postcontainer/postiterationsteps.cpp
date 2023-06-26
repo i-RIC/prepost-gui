@@ -2,6 +2,9 @@
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "postiterationsteps.h"
+#include "postsolutioninfo.h"
+#include "private/postbaseiterativevaluescontainer_basecontainer.h"
+#include "private/postbaseiterativevaluescontainer_integervaluecontainer.h"
 
 #include <QMessageBox>
 #include <QString>
@@ -12,21 +15,34 @@
 
 #include <vector>
 
-PostIterationSteps::PostIterationSteps(ProjectDataItem* parent) :
+PostIterationSteps::PostIterationSteps(PostSolutionInfo* parent) :
 	PostAbstractSteps(parent)
 {}
 
 void PostIterationSteps::loadFromCgnsFile(iRICLib::H5CgnsFile &file)
 {
-	auto biterData = file.ccBase()->biterData();
-
 	QList<int> tmplist;
-	if (biterData != nullptr) {
-		std::vector<int> buffer;
-		biterData->readIteration(&buffer);
 
-		for (auto v : buffer) {
-			tmplist.push_back(v);
+	if (postSolutionInfo()->separateResultExists()) {
+		auto container = postSolutionInfo()->baseIterativeValuesContainer();
+		if (container->baseContainers().size() != 0) {
+			auto baseContainer = container->baseContainers().at(0);
+			auto iterationContainer = baseContainer->integerContainer(std::string("IterationValues"));
+			if (iterationContainer != nullptr) {
+				for (double v : iterationContainer->values()) {
+					tmplist.push_back(v);
+				}
+			}
+		}
+	} else {
+		auto biterData = file.ccBase()->biterData();
+		if (biterData != nullptr) {
+			std::vector<int> buffer;
+			biterData->readIteration(&buffer);
+
+			for (auto v : buffer) {
+				tmplist.push_back(v);
+			}
 		}
 	}
 

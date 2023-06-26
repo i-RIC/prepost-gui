@@ -38,7 +38,7 @@ private:
 
 	SolverConsoleWindow* m_solverConsoleWindow;
 	WindowGeometryContainer m_geometry;
-	QFile m_file;
+	QFile m_consoleLogFile;
 };
 
 #endif // SOLVERCONSOLEWINDOWPROJECTDATAITEM_H

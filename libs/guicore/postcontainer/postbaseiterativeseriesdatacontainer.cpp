@@ -2,6 +2,9 @@
 #include "postbaseiterativeseriesdatacontainer.h"
 #include "postsolutioninfo.h"
 
+#include <guicore/postcontainer/postbaseiterativevaluescontainer.h>
+#include <guicore/postcontainer/private/postbaseiterativevaluescontainer_basecontainer.h>
+#include <guicore/postcontainer/private/postbaseiterativevaluescontainer_valuecontainer.h>
 #include <misc/stringtool.h>
 
 #include <h5cgnsbase.h>
@@ -18,6 +21,18 @@ PostBaseIterativeSeriesDataContainer::PostBaseIterativeSeriesDataContainer(const
 
 int PostBaseIterativeSeriesDataContainer::loadData()
 {
+	if (solutionInfo()->separateResultExists()) {
+		auto cont = solutionInfo()->baseIterativeValuesContainer();
+		auto bcontainer = cont->baseContainer(1);
+		if (bcontainer == nullptr) {return false;}
+		auto vcontainer = bcontainer->container(m_baseIterativeName);
+		if (vcontainer == nullptr) {return false;}
+		for (auto v : vcontainer->doubleValues()) {
+			m_data.push_back(v);
+		}
+		return IRIC_NO_ERROR;
+	}
+
 	auto solInfo = solutionInfo();
 
 	auto biter = solInfo->cgnsFile()->ccBase()->biterData();

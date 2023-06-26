@@ -6,6 +6,7 @@
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/project/projectcgnsmanager.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -23,6 +24,8 @@
 #include <QPlainTextEdit>
 #include <QSettings>
 #include <QTextCodec>
+
+#include <h5cgnsfileseparatesolutionutil.h>
 
 namespace {
 
@@ -312,7 +315,8 @@ void SolverConsoleWindow::startSolverSilently()
 {
 	impl->m_projectData->mainfile()->postSolutionInfo()->close();
 
-	QString cgnsname = "Case1.cgn";
+	// Create backup file
+	iRICLib::H5CgnsFileSeparateSolutionUtil::createBackupFile(impl->m_projectData->mainfile()->cgnsManager()->mainFileFullName());
 
 	impl->m_process = new QProcess(this);
 	QString wd = impl->m_projectData->workDirectory();
@@ -342,6 +346,8 @@ void SolverConsoleWindow::startSolverSilently()
 
 	QString solver = impl->m_projectData->solverDefinition()->executableFilename();
 	QFileInfo solverInfo(solver);
+
+	QString cgnsname = "Case1.cgn";
 	if (solverInfo.suffix() == "py" || solverInfo.suffix() == "pyc") {
 		// run python solver
 		QString pythonPath = settings.value("general/pythonpath", PythonUtil::defaultPath()).value<QString>();

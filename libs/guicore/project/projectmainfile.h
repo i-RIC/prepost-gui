@@ -21,6 +21,7 @@ class CoordinateSystem;
 class iRICMainWindowInterface;
 class MeasuredData;
 class PostSolutionInfo;
+class ProjectCgnsManager;
 class ProjectData;
 class ProjectPostProcessors;
 class SolverDefinitionAbstract;
@@ -40,9 +41,12 @@ class GUICOREDLL_EXPORT ProjectMainFile : public ProjectDataItem
 public:
 	const static QString FILENAME;
 	const static QString BGDIR;
+
 	/// Constructor
 	ProjectMainFile(ProjectData* parent);
 	virtual ~ProjectMainFile();
+	/// Create first Cgns file.
+	void createMainCgnsFile();
 	/// Initializes for the specified solver definition.
 	void initForSolverDefinition();
 	/// Load solver information from file
@@ -56,7 +60,8 @@ public:
 	/// Save data contained in files except for CGNS files.
 	bool saveExceptCGNS();
 	/// Returns the filename of project main file as an absolute path.
-	QString filename();
+	QString filename() const;
+	QString workDirectory() const;
 	/// Set information about the solver used for the calculation in this project
 	void setSolverInformation(const SolverDefinitionAbstract&);
 	/// Solver name
@@ -75,7 +80,10 @@ public:
 
 	bool separateResult() const;
 	void setSeparateResult(bool separate);
+	bool separateResultExists() const;
 
+	/// CGNS file manager
+	ProjectCgnsManager* cgnsManager() const;
 	/// Solution information
 	PostSolutionInfo* postSolutionInfo() const;
 	bool hasResults();
