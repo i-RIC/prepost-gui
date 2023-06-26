@@ -180,23 +180,23 @@ void PreProcessorBCGroupDataItem::updateNameActorSettingsOfChildren()
 }
 
 void PreProcessorBCGroupDataItem::informGridUpdate()
-{
-
-}
+{}
 
 void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_nameSetting.load(node);
 
 	m_projectBuildNumber = projectData()->version().build();
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	QDomNodeList childNodes = node.childNodes();
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomElement childElem = childNodes.at(i).toElement();
 		std::string condType = iRIC::toStr(childElem.attribute("type"));
-		SolverDefinitionBoundaryCondition* bc = gtItem->gridType()->boundaryCondition(condType);
+		auto bc = gtItem->gridType()->boundaryCondition(condType);
+		if (bc == nullptr) {continue;}
+
 		bool settingHidden = (childElem.attribute("settingHidden") == "true");
-		PreProcessorBCDataItem* bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, settingHidden);
+		auto bcItem = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, settingHidden);
 		bcItem->loadFromProjectMainFile(childElem);
 		m_childItems.push_back(bcItem);
 	}
@@ -212,8 +212,7 @@ void PreProcessorBCGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	m_nameSetting.save(writer);
 
 	renumberItemsForProject();
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		GraphicsWindowDataItem* item = *it;
+	for (auto item : m_childItems) {
 		writer.writeStartElement("BoundaryCondition");
 		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -239,7 +238,7 @@ void PreProcessorBCGroupDataItem::addCondition()
 	}
 
 	PreProcessorBCDataItem* item = addCondition(index, true);
-	if (item == 0) {return;}
+	if (item == nullptr) {return;}
 
 	dataModel()->objectBrowserView()->expand(m_standardItem->index());
 	dataModel()->objectBrowserView()->select(item->standardItem()->index());
@@ -262,7 +261,7 @@ void PreProcessorBCGroupDataItem::deleteSelected()
 
 	auto items = m_childItems;
 	std::vector<QString> names;
-	for (GraphicsWindowDataItem* item : items) {
+	for (auto item : items) {
 		names.push_back(item->standardItem()->text());
 	}
 
@@ -296,17 +295,17 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 {
 	if (index > m_addActions.count()) {return 0;}
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	SolverDefinitionGridType* gtype = gtItem->gridType();
-	SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(index);
-	PreProcessorBCDataItem* item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, hideSetting);
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto gtype = gtItem->gridType();
+	auto bc = gtype->boundaryConditions().at(index);
+	auto item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, hideSetting);
 	QString tmpName(QString("New %1").arg(bc->englishCaption().c_str()));
 	item->setName(tmpName);
 	int number = 1;
 	auto it = m_childItems.begin();
 	while (it != m_childItems.end()) {
-		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
+		auto tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
+		auto tmpbc = tmpItem->condition();
 		int tmpindex = gtype->boundaryConditions().indexOf(tmpbc);
 		if (tmpindex == index) {++ number;}
 		if (tmpindex > index) {break;}
