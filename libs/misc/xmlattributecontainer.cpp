@@ -24,7 +24,6 @@ XmlAttributeContainer::~XmlAttributeContainer()
 
 XmlAttributeContainer& XmlAttributeContainer::operator=(const XmlAttributeContainer& c)
 {
-	*(impl) = *(c.impl);
 	copyValue(c);
 	return *this;
 }
