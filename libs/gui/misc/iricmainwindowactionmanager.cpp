@@ -103,13 +103,6 @@ void iRICMainWindowActionManager::setupFileMenu()
 	m_fileMenu->addAction(openAction);
 	connect(openAction, SIGNAL(triggered()), m_parent, SLOT(openProject()));
 
-	reloadCgnsAction = new QAction(tr("Reload &CGNS file..."), m_fileMenu);
-	reloadCgnsAction->setIcon(QIcon(":/images/iconReloadPre.svg"));
-	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
-
-	m_fileMenu->addAction(reloadCgnsAction);
-	connect(reloadCgnsAction, SIGNAL(triggered()), m_parent, SLOT(reloadCgnsFile()));
-
 	saveAction = new QAction(tr("&Save"), m_fileMenu);
 	saveAction->setIcon(QIcon(":/images/iconSave.svg"));
 	saveAction->setShortcut(QKeySequence(tr("Ctrl+S")));
@@ -134,6 +127,15 @@ void iRICMainWindowActionManager::setupFileMenu()
 	propertyAction->setDisabled(true);
 	m_fileMenu->addAction(propertyAction);
 	connect(propertyAction, SIGNAL(triggered()), m_parent, SLOT(showProjectPropertyDialog()));
+
+	m_fileMenu->addSeparator();
+
+	reloadCgnsAction = new QAction(tr("Reload &CGNS file..."), m_fileMenu);
+	reloadCgnsAction->setIcon(QIcon(":/images/iconReloadPre.svg"));
+	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
+
+	m_fileMenu->addAction(reloadCgnsAction);
+	connect(reloadCgnsAction, SIGNAL(triggered()), m_parent, SLOT(reloadCgnsFile()));
 
 	m_fileMenu->addSeparator();
 
@@ -776,7 +778,6 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->setFloatable(false);
 
 	m_mainToolBar->addAction(openAction);
-	m_mainToolBar->addAction(reloadCgnsAction);
 	m_mainToolBar->addAction(saveAction);
 	m_mainToolBar->addAction(saveSnapshotAction);
 	m_mainToolBar->addAction(copySnapshotAction);
