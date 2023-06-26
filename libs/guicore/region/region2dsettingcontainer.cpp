@@ -10,7 +10,7 @@
 
 Region2dSettingContainer::Region2dSettingContainer() :
 	CompositeContainer {&mode, &range},
-	mode {"mode"},
+	mode {"regionMode"},
 	range {}
 {}
 

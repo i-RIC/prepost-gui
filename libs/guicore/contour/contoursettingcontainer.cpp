@@ -7,7 +7,7 @@ ContourSettingContainer::ContourSettingContainer() :
 	CompositeContainer({&drawContourLines, &contourLineWidth, &mode, &numberOfValues}),
 	drawContourLines {"drawContourLines", false},
 	contourLineWidth {"contourLineWidth", 1},
-	mode {"mode", Mode::UseColorMapValues},
+	mode {"contourMode", Mode::UseColorMapValues},
 	numberOfValues {"numberOfValues", 10},
 	m_colorMapSetting {nullptr},
 	m_filter {vtkContourFilter::New()}
