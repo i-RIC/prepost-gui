@@ -305,7 +305,7 @@ void Post3dWindowNodeVectorParticleGroupDataItem::setupActors()
 	for (int i = 0; i < numberOfActors(); ++i) {
 		auto actor = setupActor(i);
 		actor->GetProperty()->SetLighting(false);
-		actor->SetScale(1, m_zScale, 1);
+		actor->SetScale(1, 1, m_zScale);
 
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		actor->SetMapper(mapper);
