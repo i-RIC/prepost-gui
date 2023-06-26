@@ -72,10 +72,10 @@ void Post2dWindowCellFlagDataItem::setupActors()
 	renderer()->AddActor(m_actor);
 	actorCollection()->AddItem(m_actor);
 
-	update();
+	updateActorSetting();
 }
 
-void Post2dWindowCellFlagDataItem::update()
+void Post2dWindowCellFlagDataItem::updateActorSetting()
 {
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
@@ -119,6 +119,7 @@ void Post2dWindowCellFlagDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 {
 	QColor col = loadColorAttribute("color", node, Qt::red);
 	setColor(col);
+	updateActorSetting();
 }
 
 void Post2dWindowCellFlagDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

@@ -130,9 +130,9 @@ void Post2dWindowCellFlagGroupDataItem::initSetting()
 
 void Post2dWindowCellFlagGroupDataItem::update()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
-		item->update();
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowCellFlagDataItem*>(child);
+		item->updateActorSetting();
 	}
 }
 
@@ -140,8 +140,8 @@ void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 {
 	m_opacity.load(node);
 	
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post2dWindowCellFlagDataItem*>(child);
 		item->setOpacity(m_opacity);
 	}
 	QDomNodeList childNodes = node.childNodes();
@@ -151,8 +151,8 @@ void Post2dWindowCellFlagGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 		std::string attName = iRIC::toStr(celem.attribute("attributeName"));
 		int value = celem.attribute("value").toInt();
 
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			Post2dWindowCellFlagDataItem* item = dynamic_cast<Post2dWindowCellFlagDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto item = dynamic_cast<Post2dWindowCellFlagDataItem*>(child);
 			if (item->attributeName() == attName && item->value() == value) {
 				item->loadFromProjectMainFile(cnode);
 			}
