@@ -83,8 +83,8 @@ void calcImageParameters(QPointF* center, QSize* size, QPointF* lowerLeft, doubl
 	double angleRad = iRIC::angleRadian(stdVecX, vecX);
 	QSize windowSize = view->size();
 
-	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() + std::abs(std::sin(angleRad)) * windowSize.height();
-	double newHeight = std::abs(std::sin(angleRad)) * windowSize.width() + std::abs(std::cos(angleRad)) * windowSize.height();
+	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
+	double newHeight = std::abs(std::sin(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::cos(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 
 	*size = QSize(newWidth, newHeight);
 }
@@ -113,7 +113,7 @@ void calcImageParametersLonLat(QPointF* center, QSize* size, double* requestScal
 	double angleRad = iRIC::angleRadian(stdVecX, vecX);
 	QSize windowSize = view->size();
 
-	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() + std::abs(std::sin(angleRad)) * windowSize.height();
+	double newWidth = std::abs(std::cos(angleRad)) * windowSize.width() * view->devicePixelRatioF() + std::abs(std::sin(angleRad)) * windowSize.height() * view->devicePixelRatioF();
 	newWidth *= new_width / orig_width;
 
 	double lonCenter, latCenter;
