@@ -6,7 +6,7 @@
 #include "geodatanetcdfncexporter.h"
 
 GeoDataNetcdfTimeSeriesIntegerCreator::GeoDataNetcdfTimeSeriesIntegerCreator() :
-	GeoDataNetcdfTimeSeriesCreatorT<int, vtkIntArray> {"integerNetcdf"}
+	GeoDataNetcdfTimeSeriesCreatorT<int, vtkIntArray> {"timeSeriesIntegerNetcdf"}
 {
 	importers().push_back(new GeoDataNetcdfGdalIntegerImporter(this));
 	importers().push_back(new GeoDataNetcdfIntegerImporter(this));

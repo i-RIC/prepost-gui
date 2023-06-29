@@ -11,7 +11,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataNetcdfTimeSeriesRealCreator::GeoDataNetcdfTimeSeriesRealCreator() :
-	GeoDataNetcdfTimeSeriesCreatorT<double, vtkDoubleArray> {"realNetcdf"}
+	GeoDataNetcdfTimeSeriesCreatorT<double, vtkDoubleArray> {"timeSeriesRealNetcdf"}
 {
 	importers().push_back(new GeoDataNetcdfGdalRealImporter(this));
 	importers().push_back(new GeoDataNetcdfRealImporter(this));
@@ -24,9 +24,9 @@ GeoData* GeoDataNetcdfTimeSeriesRealCreator::create(ProjectDataItem* parent, Sol
 {
 	auto data = new GeoDataNetcdfReal(parent, this, condition);
 	if (condition == nullptr || condition->position() == SolverDefinitionGridAttribute::Position::Node) {
-		data->setMapper(new GeoDataNetcdfNodeMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataNetcdfNodeMapperT<double, vtkDoubleArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
-		data->setMapper(new GeoDataNetcdfCellMapperT<int, vtkIntArray>(this));
+		data->setMapper(new GeoDataNetcdfCellMapperT<double, vtkDoubleArray>(this));
 	}
 	return data;
 }

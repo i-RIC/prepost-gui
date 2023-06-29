@@ -914,7 +914,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		// terminate
 		int idx = 0;
 		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+			auto* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
