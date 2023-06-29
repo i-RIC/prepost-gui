@@ -116,7 +116,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildContinuousVertical(QPain
 	if (s.barAlign == BarAlign::Left) {
 		barLeft = OUTER_MARGIN;
 	} else if (s.barAlign == BarAlign::Center) {
-		barLeft = image->width() / image->devicePixelRatioF() / 2 - (maxLabelWidth + COLOR_VALUE_MARGIN + colorWidth) / 2.0;
+		barLeft = image->width() / image->devicePixelRatioF() / 2.0 - (maxLabelWidth + COLOR_VALUE_MARGIN + colorWidth) / 2.0;
 	} else if (s.barAlign == BarAlign::Right) {
 		barLeft = image->width() / image->devicePixelRatioF() - OUTER_MARGIN - maxLabelWidth - COLOR_VALUE_MARGIN - colorWidth;
 	}
@@ -221,7 +221,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildDiscreteVertical(QPainte
 	if (s.barAlign == BarAlign::Left) {
 		barLeft = OUTER_MARGIN;
 	} else if (s.barAlign == BarAlign::Center) {
-		barLeft = image->width() / image->devicePixelRatioF() / 2 - (maxLabelWidth + COLOR_VALUE_MARGIN + colorWidth) / 2.0;
+		barLeft = image->width() / image->devicePixelRatioF() / 2.0 - (maxLabelWidth + COLOR_VALUE_MARGIN + colorWidth) / 2.0;
 	} else if (s.barAlign == BarAlign::Right) {
 		barLeft = image->width() / image->devicePixelRatioF() - OUTER_MARGIN - maxLabelWidth - COLOR_VALUE_MARGIN - colorWidth;
 	}
@@ -257,7 +257,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildDiscreteVertical(QPainte
 
 	QString val2 = QString::asprintf(f.c_str(), cs->getColorTableMinValue());
 	auto rect2 = metrics.boundingRect(val2);
-	int bottom2 = image->height() - OUTER_MARGIN;
+	int bottom2 = image->height() / image->devicePixelRatioF() - OUTER_MARGIN;
 
 	QRectF textRect(labelLeft, bottom2 - rect2.height() * 0.5, labelWidth, rect2.height());
 	painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, val2);
@@ -266,7 +266,7 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildDiscreteVertical(QPainte
 		QString val = QString::asprintf(f.c_str(), cols.at(i).value.value());
 		auto rect = metrics.boundingRect(val);
 
-		double bottom = image->height() - OUTER_MARGIN - barHeight * (i + 1);
+		double bottom = image->height() / image->devicePixelRatioF() - OUTER_MARGIN - barHeight * (i + 1);
 
 		QRectF textRect(labelLeft, bottom - rect.height() * 0.5, labelWidth, rect.height());
 		painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, val);
