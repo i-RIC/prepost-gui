@@ -5,7 +5,8 @@
 
 #include <QDialog>
 #include <QList>
-#include <QMap>
+
+#include <map>
 
 class PreProcessorGridAttributeMappingSettingDataItem;
 class PreProcessorBCSettingDataItem;
@@ -29,10 +30,11 @@ public:
 
 private slots:
 	void checkAll();
+	void uncheckAll();
 
 private:
-	QMap<PreProcessorGridAttributeMappingSettingDataItem*, QCheckBox*> m_attMap;
-	QMap<PreProcessorBCSettingDataItem*, QCheckBox*> m_bcMap;
+	std::map<PreProcessorGridAttributeMappingSettingDataItem*, QCheckBox*> m_attMap;
+	std::map<PreProcessorBCSettingDataItem*, QCheckBox*> m_bcMap;
 
 	Ui::PreProcessorGridAttributeCustomMappingDialog* ui;
 };
