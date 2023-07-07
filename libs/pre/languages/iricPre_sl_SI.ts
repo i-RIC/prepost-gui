@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Mreža s pogledom na ptičje oko</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 po zadnjem urejanju niso preslikani. Ali želite zdaj izvesti preslikavo?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Nastavitev mejnega stanja "%1"ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Nastavitev mejnega stanja &quot;%1&quot;ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Opomba: Ko je različica omogočena, se ustvari različica z imenom »Privzeto« in vsi geografski podatki so premaknjeni vanjo. Iz "Brskalnika predmetov" lahko dodajate, preimenujete ali odstranjujete različice. Med različicami lahko premikate, kopirate geografske podatke. Podatki atributa mreže, ustvarjeni iz različice, ki jo izberete z »Različica za prenos v reševalec«, se posredujejo v reševalec. Pripravite lahko več različic, preklopite, katero želite posredovati reševalcu, in zagotovite učinek razlike.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Opomba: Ko je različica omogočena, se ustvari različica z imenom »Privzeto« in vsi geografski podatki so premaknjeni vanjo. Iz &quot;Brskalnika predmetov&quot; lahko dodajate, preimenujete ali odstranjujete različice. Med različicami lahko premikate, kopirate geografske podatke. Podatki atributa mreže, ustvarjeni iz različice, ki jo izberete z »Različica za prenos v reševalec«, se posredujejo v reševalec. Pripravite lahko več različic, preklopite, katero želite posredovati reševalcu, in zagotovite učinek razlike.</translation>
     </message>
 </context>
 <context>
@@ -1260,6 +1262,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Boundary Condition Setting</source>
         <translation>Nastavitev mejnega stanja</translation>
     </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
@@ -1272,7 +1278,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Izvedite (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Naslednji atributi niso bili preslikani, ker so zanje izhodne vrednosti generatorja omrežja. Če želite za njih prisilno preslikati geografske podatke, ročno preslikajte z menijem »Mreža« -&gt; »Preslikava atributov« -&gt; »Izvedi«.</translation>
     </message>
@@ -1293,12 +1299,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kartiranje geografskih podatkov je končano</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mreže "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mreže &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Mejni pogoj "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Mejni pogoj &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
 </context>
 <context>
@@ -1316,19 +1322,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Samodejno</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Priročnik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Preslikava atributov se izvede le, če ročno izberete meni »Izvedi«.</translation>
     </message>
     <message>
@@ -2045,8 +2051,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Nastavitev barvne karte</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Za urejanje barvnih nastavitev uporabite zavihek Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Za urejanje barvnih nastavitev uporabite zavihek Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2159,7 +2165,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Nastavite Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Odprite okno s pogledom na ptice (&amp;B)</translation>
     </message>
     <message>
@@ -2207,61 +2213,118 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation>Premakni točke mreže</translation>
+        <translation type="vanished">Premakni točke mreže</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
+    <message>
+        <source>x(%1):</source>
+        <translation type="unfinished">x (%1):</translation>
+    </message>
+    <message>
+        <source>y(%1):</source>
+        <translation type="unfinished">y (%1):</translation>
+    </message>
+    <message>
+        <source>x(%1, %2):</source>
+        <translation type="unfinished">x ( %1, %2 ):</translation>
+    </message>
+    <message>
+        <source>y(%1, %2):</source>
+        <translation type="unfinished">y ( %1, %2 ):</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem_PositionDeltaDialog</name>
+    <message>
+        <source>Edit Grid Coordinates</source>
+        <translation type="unfinished">Urejanje koordinat mreže</translation>
+    </message>
+    <message>
+        <source>Please input the delta coordinates of the selected grid nodes.</source>
+        <translation type="unfinished">Prosimo, vnesite delta koordinate izbranih vozlišč mreže.</translation>
+    </message>
+    <message>
+        <source>x:</source>
+        <translation type="unfinished">x:</translation>
+    </message>
+    <message>
+        <source>y:</source>
+        <translation type="unfinished">y:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem_PositionEditDialog</name>
+    <message>
+        <source>Edit Grid Coordinates</source>
+        <translation type="unfinished">Urejanje koordinat mreže</translation>
+    </message>
+    <message>
+        <source>Please input the new coordinates of the selected grid node.</source>
+        <translation type="unfinished">Prosimo, vnesite nove koordinate izbranega vozlišča mreže.</translation>
+    </message>
+    <message>
+        <source>x: </source>
+        <translation type="unfinished">x:</translation>
+    </message>
+    <message>
+        <source>y:</source>
+        <translation type="unfinished">y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation>Urejanje koordinat mreže</translation>
+        <translation type="vanished">Urejanje koordinat mreže</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation>Prosimo, vnesite delta koordinate izbranih vozlišč mreže.</translation>
+        <translation type="vanished">Prosimo, vnesite delta koordinate izbranih vozlišč mreže.</translation>
     </message>
     <message>
         <source>x:</source>
-        <translation>x:</translation>
+        <translation type="vanished">x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation>y:</translation>
+        <translation type="vanished">y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation>Urejanje koordinat mreže</translation>
+        <translation type="vanished">Urejanje koordinat mreže</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation>Prosimo, vnesite nove koordinate izbranega vozlišča mreže.</translation>
+        <translation type="vanished">Prosimo, vnesite nove koordinate izbranega vozlišča mreže.</translation>
     </message>
     <message>
         <source>x: </source>
-        <translation>x:</translation>
+        <translation type="vanished">x:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation>y:</translation>
+        <translation type="vanished">y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation>x (%1):</translation>
+        <translation type="vanished">x (%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation>y (%1):</translation>
+        <translation type="vanished">y (%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation>x ( %1, %2 ):</translation>
+        <translation type="vanished">x ( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation>y ( %1, %2 ):</translation>
+        <translation type="vanished">y ( %1, %2 ):</translation>
     </message>
 </context>
 <context>

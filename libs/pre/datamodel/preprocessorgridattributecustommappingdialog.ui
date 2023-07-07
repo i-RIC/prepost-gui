@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>354</width>
+    <height>286</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,8 +24,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>373</width>
-        <height>241</height>
+        <width>334</width>
+        <height>235</height>
        </rect>
       </property>
      </widget>
@@ -39,6 +39,26 @@
         <string>Check &amp;All</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="uncheckAllButton">
+       <property name="text">
+        <string>&amp;Uncheck All</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QDialogButtonBox" name="buttonBox">

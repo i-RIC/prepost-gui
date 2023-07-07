@@ -16,7 +16,9 @@ PreProcessorGridAttributeCustomMappingDialog::PreProcessorGridAttributeCustomMap
 	ui {new Ui::PreProcessorGridAttributeCustomMappingDialog}
 {
 	ui->setupUi(this);
-	connect(ui->checkAllButton, SIGNAL(clicked()), this, SLOT(checkAll()));
+
+	connect(ui->checkAllButton, &QCheckBox::clicked, this, &PreProcessorGridAttributeCustomMappingDialog::checkAll);
+	connect(ui->uncheckAllButton, &QCheckBox::clicked, this, &PreProcessorGridAttributeCustomMappingDialog::uncheckAll);
 }
 
 PreProcessorGridAttributeCustomMappingDialog::~PreProcessorGridAttributeCustomMappingDialog()
@@ -38,7 +40,7 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 			} else {
 				checkBox->setChecked(false);
 			}
-			m_attMap.insert(item, checkBox);
+			m_attMap.insert({item, checkBox});
 			glayout->addWidget(checkBox);
 		}
 		glayout->addStretch(1);
@@ -57,7 +59,7 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 			} else {
 				checkBox->setChecked(false);
 			}
-			m_bcMap.insert(item, checkBox);
+			m_bcMap.insert({item, checkBox});
 			blayout->addWidget(checkBox);
 		}
 		blayout->addStretch(1);
@@ -73,14 +75,14 @@ void PreProcessorGridAttributeCustomMappingDialog::setSettings(const QList<PrePr
 PreProcessorCustomMappingSetting PreProcessorGridAttributeCustomMappingDialog::setting() const
 {
 	PreProcessorCustomMappingSetting ret;
-	for (auto it = m_attMap.begin(); it != m_attMap.end(); ++it) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = it.key();
-		QCheckBox* checkBox = it.value();
+	for (const auto& pair : m_attMap) {
+		auto item = pair.first;
+		auto checkBox = pair.second;
 		ret.attSettings.insert(item->condition()->name(), checkBox->isChecked());
 	}
-	for (auto it = m_bcMap.begin(); it != m_bcMap.end(); ++it) {
-		PreProcessorBCSettingDataItem* item = it.key();
-		QCheckBox* checkBox = it.value();
+	for (const auto& pair : m_bcMap) {
+		auto item = pair.first;
+		auto checkBox = pair.second;
 		ret.bcSettings.insert(item->bcDataItem()->uniqueName(), checkBox->isChecked());
 	}
 	return ret;
@@ -88,12 +90,24 @@ PreProcessorCustomMappingSetting PreProcessorGridAttributeCustomMappingDialog::s
 
 void PreProcessorGridAttributeCustomMappingDialog::checkAll()
 {
-	for (auto it = m_attMap.begin(); it != m_attMap.end(); ++it) {
-		QCheckBox* checkBox = it.value();
+	for (const auto& pair : m_attMap) {
+		auto checkBox = pair.second;
 		checkBox->setChecked(true);
 	}
-	for (auto it = m_bcMap.begin(); it != m_bcMap.end(); ++it) {
-		QCheckBox* checkBox = it.value();
+	for (const auto& pair : m_bcMap) {
+		auto checkBox = pair.second;
 		checkBox->setChecked(true);
+	}
+}
+
+void PreProcessorGridAttributeCustomMappingDialog::uncheckAll()
+{
+	for (const auto& pair : m_attMap) {
+		auto checkBox = pair.second;
+		checkBox->setChecked(false);
+	}
+	for (const auto& pair : m_bcMap) {
+		auto checkBox = pair.second;
+		checkBox->setChecked(false);
 	}
 }

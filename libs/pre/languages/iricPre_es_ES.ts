@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Ventana de vista de pájaro de cuadrícula</translation>
     </message>
 </context>
@@ -800,8 +802,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 no estan asignado despues de edite la ultima ves. Quieres ejecutar mapeo ahora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuración de la condición de límite "%1"no se asigna después de que se editó la última vez. ¿Desea ejecutar la asignación ahora?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración de la condición de límite &quot;%1&quot;no se asigna después de que se editó la última vez. ¿Desea ejecutar la asignación ahora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1054,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: Cuando la variación está habilitada, se crea la variación denominada "Predeterminada" y todos los datos geográficos se mueven a ella. Puede agregar, renombrar, eliminar variaciones desde el "Explorador de objetos". Puede mover, copiar datos geográficos entre variaciones. Los datos de atributos de cuadrícula creados a partir de la variación que seleccione con "Variación para pasar al solucionador" se pasan al solucionador. Puede preparar múltiples variaciones, cambiar cuál pasar al solucionador y asegurarse del efecto de la diferencia.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: Cuando la variación está habilitada, se crea la variación denominada &quot;Predeterminada&quot; y todos los datos geográficos se mueven a ella. Puede agregar, renombrar, eliminar variaciones desde el &quot;Explorador de objetos&quot;. Puede mover, copiar datos geográficos entre variaciones. Los datos de atributos de cuadrícula creados a partir de la variación que seleccione con &quot;Variación para pasar al solucionador&quot; se pasan al solucionador. Puede preparar múltiples variaciones, cambiar cuál pasar al solucionador y asegurarse del efecto de la diferencia.</translation>
     </message>
 </context>
 <context>
@@ -1280,6 +1282,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>Boundary Condition Setting</source>
         <translation>Ajuste de Condicion de Contro</translation>
     </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
@@ -1292,9 +1298,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>&amp;Ejecutar...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Los siguientes atributos no se asignaron, porque los valores de salida del generador de red para ellos. Si desea mapear datos geográficos para ellos a la fuerza, mapee manualmente con el menú "Cuadrícula" -&gt; "Asignación de atributos" -&gt; "Ejecutar".</translation>
+        <translation>Los siguientes atributos no se asignaron, porque los valores de salida del generador de red para ellos. Si desea mapear datos geográficos para ellos a la fuerza, mapee manualmente con el menú &quot;Cuadrícula&quot; -&gt; &quot;Asignación de atributos&quot; -&gt; &quot;Ejecutar&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1313,12 +1319,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Mapeo de datos geograficos se termino</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>El atributo de cuadrícula "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>El atributo de cuadrícula &quot;%1&quot;se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condición de frontera "%1"se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condición de frontera &quot;%1&quot;se edita a mano. Cuando ejecute el mapeo, se descartarán todas las modificaciones que haya realizado. ¿Realmente desea ejecutar el mapeo?</translation>
     </message>
 </context>
 <context>
@@ -1336,20 +1342,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // ES" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cuando se crea la cuadrícula, se le pregunta si para ejecutar el mapeo de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // ES&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nombre = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {espacio en blanco: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Cuando se crea la cuadrícula, se le pregunta si para ejecutar el mapeo de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>La asignación de atributos se ejecuta solo cuando selecciona manualmente el menú "Ejecutar".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>La asignación de atributos se ejecuta solo cuando selecciona manualmente el menú &quot;Ejecutar&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2077,8 +2083,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configuración del mapa de colores</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Utilice la pestaña Mapa de colores para editar la configuración de color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; Utilice la pestaña Mapa de colores para editar la configuración de color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2195,7 +2201,7 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configurar &amp;Barra de Escalar...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Abrir ventana de vista de pájaro (&amp;B)</translation>
     </message>
     <message>
@@ -2239,61 +2245,118 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Move Grid Point(s)</source>
-        <translation>Mover Punto(s) de Cuadricula</translation>
+        <translation type="vanished">Mover Punto(s) de Cuadricula</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem::PositionEditDialog</name>
+    <message>
+        <source>x(%1):</source>
+        <translation type="unfinished">X(%1):</translation>
+    </message>
+    <message>
+        <source>y(%1):</source>
+        <translation type="unfinished">y (%1):</translation>
+    </message>
+    <message>
+        <source>x(%1, %2):</source>
+        <translation type="unfinished">X( %1, %2 ):</translation>
+    </message>
+    <message>
+        <source>y(%1, %2):</source>
+        <translation type="unfinished">y ( %1, %2 ):</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem_PositionDeltaDialog</name>
+    <message>
+        <source>Edit Grid Coordinates</source>
+        <translation type="unfinished">Editar Coordenadas de la Cuadricula</translation>
+    </message>
+    <message>
+        <source>Please input the delta coordinates of the selected grid nodes.</source>
+        <translation type="unfinished">Entra los delta coordenadas del nodo de cuadricula selecconiado.</translation>
+    </message>
+    <message>
+        <source>x:</source>
+        <translation type="unfinished">X:</translation>
+    </message>
+    <message>
+        <source>y:</source>
+        <translation type="unfinished">y:</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridShapeDataItem_PositionEditDialog</name>
+    <message>
+        <source>Edit Grid Coordinates</source>
+        <translation type="unfinished">Editar Coordenadas de la Cuadricula</translation>
+    </message>
+    <message>
+        <source>Please input the new coordinates of the selected grid node.</source>
+        <translation type="unfinished">Entra los nuevos coordenadas del nodo de cuadricula selecconiado.</translation>
+    </message>
+    <message>
+        <source>x: </source>
+        <translation type="unfinished">X:</translation>
+    </message>
+    <message>
+        <source>y:</source>
+        <translation type="unfinished">y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeDeltaDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation>Editar Coordenadas de la Cuadricula</translation>
+        <translation type="vanished">Editar Coordenadas de la Cuadricula</translation>
     </message>
     <message>
         <source>Please input the delta coordinates of the selected grid nodes.</source>
-        <translation>Entra los delta coordenadas del nodo de cuadricula selecconiado.</translation>
+        <translation type="vanished">Entra los delta coordenadas del nodo de cuadricula selecconiado.</translation>
     </message>
     <message>
         <source>x:</source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation>y:</translation>
+        <translation type="vanished">y:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridShapeNewPositionDialog</name>
     <message>
         <source>Edit Grid Coordinates</source>
-        <translation>Editar Coordenadas de la Cuadricula</translation>
+        <translation type="vanished">Editar Coordenadas de la Cuadricula</translation>
     </message>
     <message>
         <source>Please input the new coordinates of the selected grid node.</source>
-        <translation>Entra los nuevos coordenadas del nodo de cuadricula selecconiado.</translation>
+        <translation type="vanished">Entra los nuevos coordenadas del nodo de cuadricula selecconiado.</translation>
     </message>
     <message>
         <source>x: </source>
-        <translation>X:</translation>
+        <translation type="vanished">X:</translation>
     </message>
     <message>
         <source>y:</source>
-        <translation>y:</translation>
+        <translation type="vanished">y:</translation>
     </message>
     <message>
         <source>x(%1):</source>
-        <translation>X(%1):</translation>
+        <translation type="vanished">X(%1):</translation>
     </message>
     <message>
         <source>y(%1):</source>
-        <translation>y (%1):</translation>
+        <translation type="vanished">y (%1):</translation>
     </message>
     <message>
         <source>x(%1, %2):</source>
-        <translation>X( %1, %2 ):</translation>
+        <translation type="vanished">X( %1, %2 ):</translation>
     </message>
     <message>
         <source>y(%1, %2):</source>
-        <translation>y ( %1, %2 ):</translation>
+        <translation type="vanished">y ( %1, %2 ):</translation>
     </message>
 </context>
 <context>
