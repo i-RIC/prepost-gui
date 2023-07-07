@@ -281,8 +281,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 
 	grid->setModified();
 	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSetting();
-	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSetting();
+	griddi->updateSimplifiedGrid();
 	renderGraphicsView();
 	if (! nomessage) {
 		QMessageBox::information(mainWindow(), tr("Information"), tr("Mapping geographic data finished successfully."));
