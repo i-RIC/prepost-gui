@@ -10,8 +10,9 @@ class ArrowsColorSettingEditWidget;
 }
 
 class ArrowsSettingContainer;
-class ColorMapSettingContainer;
-class ColorMapSettingEditWidget;
+class ColorMapSettingContainerI;
+class ColorMapSettingEditWidgetI;
+class SolverDefinitionGridType;
 
 class ArrowsColorSettingEditWidget : public QWidget
 {
@@ -21,7 +22,8 @@ public:
 	explicit ArrowsColorSettingEditWidget(QWidget *parent = nullptr);
 	~ArrowsColorSettingEditWidget();
 
-	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings);
+	void setGridType(SolverDefinitionGridType* gridType);
+	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 
 	ArrowsSettingContainer setting() const;
 	void updateSetting(ArrowsSettingContainer* setting) const;
@@ -33,10 +35,11 @@ private slots:
 	void handleColorScalarChange(int index);
 
 private:
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	std::vector<std::string> m_colorMapNames;
 
-	ColorMapSettingEditWidget* m_colorMapWidget;
+	ColorMapSettingEditWidgetI* m_colorMapWidget;
+	SolverDefinitionGridType* m_gridType;
 	Ui::ArrowsColorSettingEditWidget *ui;
 };
 

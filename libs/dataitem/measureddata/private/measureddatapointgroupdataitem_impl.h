@@ -24,7 +24,7 @@ public:
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;
 
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 
 private:
 	MeasuredDataPointGroupDataItem* m_item;

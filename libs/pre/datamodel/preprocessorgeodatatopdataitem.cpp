@@ -45,7 +45,7 @@
 namespace {
 
 PreProcessorGeoDataGroupDataItem* setupReferenceInformation(
-		std::vector <GraphicsWindowDataItem*>* children,
+		std::vector<GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
@@ -57,8 +57,8 @@ PreProcessorGeoDataGroupDataItem* setupReferenceInformation(
 }
 
 void setupChildrenInGroups(
-		const QList<SolverDefinitionGridAttribute*>& stdAtts,
-		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
+		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector <GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
@@ -96,9 +96,9 @@ void setupChildrenInGroups(
 }
 
 void setupChildrenInOrder(
-		const QList<SolverDefinitionGridAttribute*>& stdAtts,
-		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
-		std::vector <GraphicsWindowDataItem*>* children,
+		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
+		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		std::vector<GraphicsWindowDataItem*>* children,
 		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)

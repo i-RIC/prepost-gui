@@ -22,7 +22,6 @@ public:
 	void update();
 
 	const std::string& target() const;
-	const ColorMapSettingContainer& colorMapSetting() const;
 
 	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
@@ -47,6 +46,7 @@ public:
 	bool exportKMLFooter(QXmlStreamWriter& writer);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, bool oneShot);
 
+	bool checkShapeExportCondition();
 	bool exportContourFigureToShape(const QString& filename, double time);
 
 private:

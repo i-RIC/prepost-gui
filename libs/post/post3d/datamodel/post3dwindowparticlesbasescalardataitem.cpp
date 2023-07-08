@@ -4,25 +4,29 @@
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guicore/image/imagesettingcontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 
 #include <vtkActor2D.h>
 
 Post3dWindowParticlesBaseScalarDataItem::Post3dWindowParticlesBaseScalarDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent),
-	m_colorMapSetting {},
+	m_colorMapSetting {nullptr},
 	m_legendActor {vtkActor2D::New()}
 {
 	renderer()->AddActor2D(m_legendActor);
-	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
-	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
 
 	auto gtItem = groupDataItem()->topDataItem()->zoneDataItem()->gridTypeDataItem();
 	auto gType = gtItem->gridType();
-	auto cap = gType->output(name)->caption();
-	m_colorMapSetting.valueCaption = cap;
-	m_colorMapSetting.legend.title = cap;
+	auto output = gType->output(name);
+	m_colorMapSetting = output->createColorMapSettingContainer();
+	m_colorMapSetting->valueCaption = output->caption();
+	m_colorMapSetting->legendSetting()->setTitle(output->caption());
+	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);
+	m_colorMapSetting->legendSetting()->imgSetting()->controller()->addItem(this);
 }
 
 Post3dWindowParticlesBaseScalarDataItem::~Post3dWindowParticlesBaseScalarDataItem()
@@ -34,10 +38,10 @@ Post3dWindowParticlesBaseScalarDataItem::~Post3dWindowParticlesBaseScalarDataIte
 void Post3dWindowParticlesBaseScalarDataItem::update()
 {
 	auto range = groupDataItem()->zoneDataItem()->gridTypeDataItem()->particleValueRange(name());
-	m_colorMapSetting.setAutoValueRange(range);
+	m_colorMapSetting->setAutoValueRange(range);
 }
 
-ColorMapSettingContainer& Post3dWindowParticlesBaseScalarDataItem::colorMapSetting()
+ColorMapSettingContainerI* Post3dWindowParticlesBaseScalarDataItem::colorMapSetting() const
 {
 	return m_colorMapSetting;
 }
@@ -53,28 +57,24 @@ QDialog* Post3dWindowParticlesBaseScalarDataItem::propertyDialog(QWidget* parent
 }
 
 void Post3dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* v)
-{
-	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
-}
+{}
 
 void Post3dWindowParticlesBaseScalarDataItem::informDeselection(VTKGraphicsView* v)
-{
-	m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
-}
+{}
 
 void Post3dWindowParticlesBaseScalarDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	groupDataItem()->mouseMoveEvent(event, v);
 }
 
 void Post3dWindowParticlesBaseScalarDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	groupDataItem()->mousePressEvent(event, v);
 }
 
 void Post3dWindowParticlesBaseScalarDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	groupDataItem()->mouseReleaseEvent(event, v);
 }
 
 bool Post3dWindowParticlesBaseScalarDataItem::addToolBarButtons(QToolBar* toolBar)
@@ -89,10 +89,10 @@ Post3dWindowParticlesBaseScalarGroupDataItem* Post3dWindowParticlesBaseScalarDat
 
 void Post3dWindowParticlesBaseScalarDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_colorMapSetting.load(node);
+	m_colorMapSetting->load(node);
 }
 
 void Post3dWindowParticlesBaseScalarDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_colorMapSetting.save(writer);
+	m_colorMapSetting->save(writer);
 }

@@ -162,7 +162,7 @@ void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 	updateActorSetting();
 }
 
-ColorMapSettingContainer* MeasuredDataVectorGroupDataItem::colorMapSetting(const std::string& target)
+ColorMapSettingContainerI* MeasuredDataVectorGroupDataItem::colorMapSetting(const std::string& target)
 {
 	auto pItem = dynamic_cast <MeasuredDataFileDataItem*>(parent())->pointGroupDataItem();
 	return pItem->colorMapSetting(target);
@@ -198,7 +198,7 @@ void MeasuredDataVectorGroupDataItem::informSelection(VTKGraphicsView* v)
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void MeasuredDataVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
@@ -211,7 +211,7 @@ void MeasuredDataVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void MeasuredDataVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -224,7 +224,7 @@ void MeasuredDataVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGra
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void MeasuredDataVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -238,7 +238,7 @@ void MeasuredDataVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGrap
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 }
 
 void MeasuredDataVectorGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -252,7 +252,7 @@ void MeasuredDataVectorGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGra
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void MeasuredDataVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -266,7 +266,7 @@ void MeasuredDataVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKG
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 }
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
@@ -329,5 +329,5 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.apply(v);
+	s->legendSetting()->imgSetting()->apply(v);
 }

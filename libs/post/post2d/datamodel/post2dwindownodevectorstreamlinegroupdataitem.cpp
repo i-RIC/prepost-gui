@@ -8,6 +8,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -45,7 +46,11 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
-		auto item = new Post2dWindowNodeVectorStreamlineDataItem(name, gt->solutionCaption(name), this);
+		std::string nameX = name;
+		nameX.append("X");
+		auto captionX = gt->output(nameX)->caption();
+		auto caption = captionX.left(captionX.length() - 1);
+		auto item = new Post2dWindowNodeVectorStreamlineDataItem(name, caption, this);
 		m_childItems.push_back(item);
 	}
 }

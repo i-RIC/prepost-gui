@@ -5,8 +5,8 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/valueselectdialog.h>

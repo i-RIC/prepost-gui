@@ -35,7 +35,7 @@ XmlAttributeContainer& ContourSettingContainer::operator=(const XmlAttributeCont
 	return operator=(dynamic_cast<const ContourSettingContainer&> (c));
 }
 
-void ContourSettingContainer::setColorMapSetting(ColorMapSettingContainer* setting)
+void ContourSettingContainer::setColorMapSetting(ColorMapSettingContainerI* setting)
 {
 	m_colorMapSetting = setting;
 }
@@ -46,8 +46,13 @@ vtkPointSet* ContourSettingContainer::buildFilteredData(vtkPointSet* data) const
 		data->Register(nullptr);
 		return data;
 	}
+	auto cs = dynamic_cast<ColorMapSettingContainer*> (m_colorMapSetting);
+	if (cs == nullptr) {
+		data->Register(nullptr);
+		return data;
+	}
 
-	auto cols = m_colorMapSetting->getColors();
+	auto cols = cs->getColors();
 	if (mode == Mode::UseColorMapValues) {
 		m_filter->SetNumberOfContours(cols.size());
 		for (int i = 0; i < cols.size(); ++i) {
@@ -55,8 +60,8 @@ vtkPointSet* ContourSettingContainer::buildFilteredData(vtkPointSet* data) const
 			m_filter->SetValue(i, c.value.value());
 		}
 	} else if (mode == Mode::SpecifyNumberOfValues) {
-		auto min = m_colorMapSetting->getMinValue();
-		auto max = m_colorMapSetting->getMaxValue();
+		auto min = cs->getMinValue();
+		auto max = cs->getMaxValue();
 		m_filter->SetNumberOfContours(numberOfValues + 1);
 		m_filter->SetValue(0, min);
 		m_filter->SetValue(numberOfValues, max);

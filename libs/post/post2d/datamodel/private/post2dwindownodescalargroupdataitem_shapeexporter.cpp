@@ -247,7 +247,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	DBFAddField(dbfh, "ValueMin", FTDouble, 40, 6);
 	DBFAddField(dbfh, "ValueMax", FTDouble, 40, 6);
 
-	const auto& cm = m_parent->colorMapSetting();
+	auto cm = dynamic_cast<ColorMapSettingContainer*> (m_parent->impl->m_setting.colorMapSetting);
 
 	auto c = m_parent->topDataItem()->zoneDataItem()->dataContainer();
 	auto filtered = m_parent->impl->m_setting.regionSetting.buildNodeFilteredData(c->data()->data());
@@ -258,18 +258,18 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 
 	vtkSmartPointer<vtkPolyData> polyData = geom->GetOutput();
 
-	if (! cm.fillLower) {
+	if (! cm->fillLower) {
 		auto lowerClip = vtkSmartPointer<vtkClipPolyData>::New();
 		lowerClip->SetInputData(polyData);
-		lowerClip->SetValue(cm.getMinValue());
+		lowerClip->SetValue(cm->getMinValue());
 		lowerClip->Update();
 		polyData = lowerClip->GetOutput();
 	}
 
-	if (! cm.fillUpper) {
+	if (! cm->fillUpper) {
 		auto upperClip = vtkSmartPointer<vtkClipPolyData>::New();
 		upperClip->SetInputData(polyData);
-		upperClip->SetValue(cm.getMaxValue());
+		upperClip->SetValue(cm->getMaxValue());
 		upperClip->InsideOutOn();
 		upperClip->Update();
 		polyData = upperClip->GetOutput();
@@ -278,16 +278,16 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	polyData->GetPointData()->SetActiveScalars(m_parent->impl->m_target.c_str());
 	int polygonId = 0;
 
-	auto colors = cm.getColors();
+	auto colors = cm->getColors();
 	for (int i = 0; i < colors.size() - 1; ++i) {
 		auto c = colors.at(i);
 		double lowValue, highValue;
 
 		if (i == 0) {
-			if (cm.fillLower) {
+			if (cm->fillLower) {
 				lowValue = - HUGE_VAL;
 			} else {
-				lowValue = cm.getColorTableMinValue();
+				lowValue = cm->getColorTableMinValue();
 			}
 		} else {
 			lowValue = colors.at(i - 1).value;
@@ -314,7 +314,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	double lowValue = colors.at(colors.size() - 2).value;
 	double highValue = HUGE_VAL;
 	auto c2 = colors.at(colors.size() - 1);
-	if (! cm.fillUpper) {
+	if (! cm->fillUpper) {
 		highValue = c2.value;
 	}
 	if (! c2.transparent) {

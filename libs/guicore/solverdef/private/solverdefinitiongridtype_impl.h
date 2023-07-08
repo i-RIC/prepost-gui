@@ -7,8 +7,8 @@
 #include <QList>
 #include <QMap>
 
-#include <map>
 #include <string>
+#include <unordered_map>
 
 class SolverDefinitionGridType::Impl
 {
@@ -21,7 +21,7 @@ public:
 	void load(const QDomElement& node, SolverDefinition* solverDef);
 	void setGridType(const QDomElement& elem);
 	void setGridGenerators(const QDomElement& elem);
-	void setupGridAttributes(const QDomElement& elem, SolverDefinition* solverDef);
+	void setupGridAttributes(const QDomElement& elem, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 	void setupBoundaryConditions(const QDomElement& elem, SolverDefinition* solverDef);
 	void buildGridAttributes(Grid* grid) const;
 	Grid* createEmptyGrid();
@@ -32,17 +32,17 @@ public:
 	bool m_multiple {false};
 	bool m_isOptional {false};
 	bool m_isKeepOrder {false};
-	QList<GridType> m_availableGridTypes;
-	QList<QString> m_availableGridGenerators;
+	std::vector<GridType> m_availableGridTypes;
+	std::vector<QString> m_availableGridGenerators;
 	GridType m_defaultGridType {gtUnknownGrid};
-	QList<SolverDefinitionGridAttribute*> m_gridAttributes;
-	QMap<std::string, SolverDefinitionGridAttribute*> m_gridAttributeNameMap;
-	QList<SolverDefinitionGridComplexAttribute*> m_gridComplexAttributes;
-	QMap<std::string, SolverDefinitionGridComplexAttribute*> m_gridComplexAttributeNameMap;
-	QList<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
-	QMap<std::string, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
-
-	std::map<std::string, SolverDefinitionOutput*> m_outputs;
+	std::vector<SolverDefinitionGridAttribute*> m_gridAttributes;
+	std::unordered_map<std::string, SolverDefinitionGridAttribute*> m_gridAttributeNameMap;
+	std::vector<SolverDefinitionGridComplexAttribute*> m_gridComplexAttributes;
+	std::unordered_map<std::string, SolverDefinitionGridComplexAttribute*> m_gridComplexAttributeNameMap;
+	std::vector<SolverDefinitionBoundaryCondition*> m_boundaryConditions;
+	std::unordered_map<std::string, SolverDefinitionBoundaryCondition*> m_boundaryConditionNameMap;
+	std::vector<SolverDefinitionGridOutput*> m_outputs;
+	std::unordered_map<std::string, SolverDefinitionGridOutput*> m_outputNameMap;
 
 	Grid* m_emptyGrid {nullptr};
 	SolverDefinitionGridType* m_parent;

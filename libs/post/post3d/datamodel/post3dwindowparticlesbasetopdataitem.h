@@ -3,6 +3,9 @@
 
 #include "../post3dwindowdataitem.h"
 
+#include <unordered_set>
+
+class ColorMapSettingContainerI;
 class Post3dWindowParticlesBaseScalarGroupDataItem;
 class Post3dWindowParticlesBaseVectorGroupDataItem;
 class Post3dWindowZoneDataItem;
@@ -21,6 +24,7 @@ public:
 	Post3dWindowParticlesBaseVectorGroupDataItem* vectorGroupDataItem() const;
 
 	void update();
+	void updateColorMaps();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
@@ -28,6 +32,8 @@ public:
 	virtual Post3dWindowZoneDataItem* zoneDataItem() const = 0;
 
 private:
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 

@@ -142,7 +142,7 @@ void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 	writer.writeEndElement();
 }
 
-ColorMapSettingContainer* MeasuredDataPointGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::activeSetting() const
 {
 	if (impl->m_setting.mappingMode == Setting::MappingMode::Arbitrary) {return nullptr;}
 
@@ -224,7 +224,7 @@ bool MeasuredDataPointGroupDataItem::hasTransparentPart()
 	return true;
 }
 
-ColorMapSettingContainer* MeasuredDataPointGroupDataItem::colorMapSetting(const std::string& target) const
+ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::colorMapSetting(const std::string& target) const
 {
 	auto it = impl->m_colorMapSettings.find(target);
 	if (it == impl->m_colorMapSettings.end()) {return nullptr;}
@@ -232,7 +232,7 @@ ColorMapSettingContainer* MeasuredDataPointGroupDataItem::colorMapSetting(const 
 	return it->second;
 }
 
-std::unordered_map<std::string, ColorMapSettingContainer*> MeasuredDataPointGroupDataItem::colorMapSettings() const
+std::unordered_map<std::string, ColorMapSettingContainerI*> MeasuredDataPointGroupDataItem::colorMapSettings() const
 {
 	return impl->m_colorMapSettings;
 }
@@ -242,7 +242,7 @@ void MeasuredDataPointGroupDataItem::informSelection(VTKGraphicsView* v)
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void MeasuredDataPointGroupDataItem::informDeselection(VTKGraphicsView* v)
@@ -250,7 +250,7 @@ void MeasuredDataPointGroupDataItem::informDeselection(VTKGraphicsView* v)
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -258,7 +258,7 @@ void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGrap
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void MeasuredDataPointGroupDataItem::updateActorSetting()
@@ -302,10 +302,10 @@ void MeasuredDataPointGroupDataItem::updateActorSetting()
 	assignActorZValues(m_zDepthRange);
 	updateVisibilityWithoutRendering();
 
-	auto as = activeSetting();
-	if (as != nullptr) {
+	auto s = activeSetting();
+	if (s != nullptr) {
 		auto v = dataModel()->graphicsView();
-		as->legend.imageSetting.controller()->handleSelection(v);
+		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	} else {
 		impl->m_legendActor->VisibilityOff();
 	}
@@ -316,7 +316,7 @@ void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraph
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 }
 
 void MeasuredDataPointGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -324,7 +324,7 @@ void MeasuredDataPointGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGrap
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -332,7 +332,7 @@ void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 }
 
 void MeasuredDataPointGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)

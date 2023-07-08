@@ -8,8 +8,9 @@
 
 #include <unordered_map>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
+class PolyDataSettingToolBarWidget;
 class Post2dWindowGridTypeDataItem;
 
 class vtkActor;
@@ -44,6 +45,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -53,7 +55,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
-	ColorMapSettingContainer* activeSetting() const;
+	ColorMapSettingContainerI* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 	vtkPolyData* polyData() const;
@@ -63,7 +65,8 @@ private:
 	vtkActor2D* m_legendActor;
 
 	PolyDataSetting m_setting;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
+	PolyDataSettingToolBarWidget* m_polyDataToolBarWidget;
 
 	class SettingEditWidget;
 

@@ -56,7 +56,7 @@ QUndoCommand* MeasuredDataPointGroupDataItem::SettingEditWidget::createModifyCom
 void MeasuredDataPointGroupDataItem::SettingEditWidget::targetChanged(int index)
 {
 	auto newvalue = m_targets.at(index);
-	auto s = m_item->impl->m_colorMapSettings.at(newvalue);
+	auto s = dynamic_cast<ColorMapSettingContainer*> (m_item->impl->m_colorMapSettings.at(newvalue));
 	m_colorMapWidget->setConcreteSetting(*s);
 }
 

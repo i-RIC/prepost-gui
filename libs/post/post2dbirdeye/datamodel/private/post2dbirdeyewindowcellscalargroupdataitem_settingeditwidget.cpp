@@ -12,6 +12,7 @@
 #include <guicore/region/region2dsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -20,6 +21,7 @@
 
 Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dBirdEyeWindowCellScalarGroupDataItem* item, QWidget *parent) :
 	ModifyCommandWidget {parent},
+	m_colorMapEditWidget {nullptr},
 	m_item {item},
 	ui(new Ui::Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget)
 {
@@ -28,10 +30,6 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 	connect(ui->cellScalarRadioButton, &QRadioButton::clicked, this, &SettingEditWidget::handleCellRadioButtonClick);
 	connect<void (QComboBox::*)(int)>(ui->nodeScalarComboBox, &QComboBox::currentIndexChanged, this, &SettingEditWidget::handleNodeScalarChange);
 	connect<void (QComboBox::*)(int)>(ui->cellScalarComboBox, &QComboBox::currentIndexChanged, this, &SettingEditWidget::handleCellScalarChange);
-
-	m_colorMapEditWidget = new ColorMapSettingEditWidget(this);
-	auto w = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
-	ui->colorMapWidget->setWidget(w);
 
 	auto zoneItem = m_item->topDataItem()->zoneDataItem();
 	auto gridType = zoneItem->gridTypeDataItem()->gridType();
@@ -171,22 +169,31 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellRa
 void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleNodeScalarChange(int index)
 {
 	auto name = m_nodeValueNames.at(index);
-
 	auto cs = m_item->impl->m_colorMapSettings.find(name)->second;
-	auto oldSetting = m_colorMapEditWidget->setting();
-	if (oldSetting != nullptr) {
-		cs->legend.copyOtherThanTitle(*oldSetting->legendSetting());
+	if (m_colorMapEditWidget != nullptr) {
+		auto oldSetting = m_colorMapEditWidget->setting();
+		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
+
+	auto output = m_item->topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(name);
+	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapEditWidget->setSetting(cs);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 }
 
 void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellScalarChange(int index)
 {
-	auto name = m_cellValueNames.at(index);
+	auto name = m_nodeValueNames.at(index);
 	auto cs = m_item->impl->m_colorMapSettings.find(name)->second;
-	auto oldSetting = m_colorMapEditWidget->setting();
-	if (oldSetting != nullptr) {
-		cs->legend.copyOtherThanTitle(*oldSetting->legendSetting());
+	if (m_colorMapEditWidget != nullptr) {
+		auto oldSetting = m_colorMapEditWidget->setting();
+		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
+
+	auto output = m_item->topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(name);
+	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapEditWidget->setSetting(cs);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 }

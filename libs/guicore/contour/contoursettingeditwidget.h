@@ -19,6 +19,8 @@ public:
 	explicit ContourSettingEditWidget(QWidget *parent);
 	~ContourSettingEditWidget();
 
+	void disable();
+
 	ContourSettingContainer setting() const;
 	void setSetting(const ContourSettingContainer& setting);
 	void setSetting(ContourSettingContainer* setting);

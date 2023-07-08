@@ -12,9 +12,14 @@
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
+#include <postbase/polydata/polydatasettingtoolbarwidget.h>
 
 #include <QMenu>
 #include <QMouseEvent>
@@ -29,7 +34,8 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	Post2dWindowDataItem {name.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},
-	m_setting {}
+	m_setting {},
+	m_polyDataToolBarWidget {new PolyDataSettingToolBarWidget(mainWindow())}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -40,15 +46,31 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNames(cont->polyData(name)->data()->GetCellData())) {
 		auto item = new Post2dWindowPolyDataValueDataItem(name, gt->solutionCaption(name), this);
 		m_childItems.push_back(item);
-		auto cs = new ColorMapSettingContainer();
-		auto caption = gt->output(name)->caption();
+		auto output = gt->output(name);
+		auto cs = output->createColorMapSettingContainer();
+		auto caption = output->caption();
 		cs->valueCaption = caption;
-		cs->legend.title = caption;
+		cs->legendSetting()->setTitle(caption);
 		m_colorMapSettings.insert({name, cs});
 	}
 
+	m_polyDataToolBarWidget->hide();
+	m_polyDataToolBarWidget->setColorMapSettings(m_colorMapSettings);
+	m_polyDataToolBarWidget->setSetting(&m_setting);
+
+	connect(m_polyDataToolBarWidget, &PolyDataSettingToolBarWidget::updated, [=]() {
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = m_polyDataToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<PolyDataSetting>(iRIC::generateCommandId("PolyDataSetting"), false, newSetting, &m_setting));
+
+		if (newSetting.mapping == PolyDataSetting::Mapping::Value) {
+			auto cm = m_colorMapSettings.at(iRIC::toStr(newSetting.value));
+			com->addCommand(new ColorMapSettingModifyCommand(m_polyDataToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		pushUpdateActorSettingCommand(com, this);
+	});
+
 	setupActors();
-	updateActorSetting();
 }
 
 Post2dWindowPolyDataGroupDataItem::~Post2dWindowPolyDataGroupDataItem()
@@ -84,6 +106,7 @@ void Post2dWindowPolyDataGroupDataItem::setTarget(const std::string& target)
 	} else {
 		m_setting.mapping = PolyDataSetting::Mapping::Value;
 	}
+	emit m_setting.updated();
 
 	updateActorSetting();
 }
@@ -134,10 +157,10 @@ void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
 		m_actor->SetMapper(mapper);
 		mapper->Delete();
 
-		auto& is = cs->legend.imageSetting;
-		is.setActor(m_legendActor);
-		is.controller()->setItem(this);
-		is.controller()->handleSelection(dataModel()->graphicsView());
+		auto is = cs->legendSetting()->imgSetting();
+		is->setActor(m_legendActor);
+		is->controller()->setItem(this);
+		is->controller()->handleSelection(dataModel()->graphicsView());
 	}
 	auto v = dataModel()->graphicsView();
 	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
@@ -178,7 +201,7 @@ void Post2dWindowPolyDataGroupDataItem::informSelection(VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleSelection(v);
+		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 
 	zoneDataItem()->initPolyDataResultAttributeBrowser();
@@ -188,7 +211,7 @@ void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleDeselection(v);
+		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
@@ -198,7 +221,7 @@ void Post2dWindowPolyDataGroupDataItem::doHandleResize(QResizeEvent* event, VTKG
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
@@ -206,7 +229,7 @@ void Post2dWindowPolyDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGr
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	}
 
 	zoneDataItem()->updatePolyDataResultAttributeBrowser(name(), event->pos(), v);
@@ -216,7 +239,7 @@ void Post2dWindowPolyDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKG
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 	}
 }
 
@@ -224,7 +247,7 @@ void Post2dWindowPolyDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VT
 {
 	auto s = activeSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	}
 
 	zoneDataItem()->fixPolyDataResultAttributeBrowser(name(), event->pos(), v);
@@ -234,6 +257,17 @@ void Post2dWindowPolyDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* a = zoneDataItem()->showAttributeBrowserActionForPolyDataResult();
 	menu->addAction(a);
+}
+
+bool Post2dWindowPolyDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	m_polyDataToolBarWidget->setParent(toolBar);
+	m_polyDataToolBarWidget->setEnabled(true);
+	m_polyDataToolBarWidget->show();
+
+	toolBar->addWidget(m_polyDataToolBarWidget);
+
+	return true;
 }
 
 void Post2dWindowPolyDataGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -276,7 +310,7 @@ void Post2dWindowPolyDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 	}
 }
 
-ColorMapSettingContainer* Post2dWindowPolyDataGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* Post2dWindowPolyDataGroupDataItem::activeSetting() const
 {
 	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {return nullptr;}
 

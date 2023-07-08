@@ -3,6 +3,7 @@
 #include "ui_post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
@@ -22,7 +23,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 
 	connect(&item->m_setting.legend.imageSetting, &ImageSettingContainer::updated, this, &SettingEditWidget::updateImageSetting);
 	for (const auto& pair : item->m_colorMapSettings) {
-		connect(&pair.second->legend.imageSetting, &ImageSettingContainer::updated, this, &SettingEditWidget::updateColorMapImageSetting);
+		connect(pair.second->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &SettingEditWidget::updateColorMapImageSetting);
 	}
 
 	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
@@ -34,10 +35,12 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 	ui->legendWidget->setSetting(s.legend);
 
 	for (const auto& pair : item->m_colorMapSettings) {
-		m_colorMapSettings.insert({pair.first, *pair.second});
+		m_colorMapSettings.insert({pair.first, pair.second->copy()});
 	}
 
-	ui->colorSettingWidget->setColorMapSettings(&m_colorMapSettings);
+	auto gt = m_item->data()->gridType();
+	ui->colorSettingWidget->setGridType(gt);
+	ui->colorSettingWidget->setColorMapSettings(m_colorMapSettings);
 
 	m_settings = item->faceSettings();
 	updateFaceList();
@@ -55,6 +58,10 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 
 Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::~SettingEditWidget()
 {
+	for (const auto& pair : m_colorMapSettings) {
+		delete pair.second;
+	}
+
 	delete ui;
 }
 
@@ -71,8 +78,7 @@ QUndoCommand* Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::creat
 	command->addCommand(new SetFaceSettingsCommand(m_settings, m_item));
 	auto updateColormapsCommand = new MergeSupportedListCommand(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateColormaps"), true);
 	for (const auto& pair : m_item->m_colorMapSettings) {
-		updateColormapsCommand->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("Post3dWindowNodeVectorArrowGroupDataItem::PropertyDialog::UpdateColormap"),
-																																												 true, m_colorMapSettings.at(pair.first), pair.second));
+		updateColormapsCommand->addCommand(new ColorMapSettingModifyCommand(m_colorMapSettings.find(pair.first)->second->copy(), pair.second));
 	}
 	command->addCommand(updateColormapsCommand);
 
@@ -161,9 +167,9 @@ void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::updateColorMap
 	auto imgSetting = dynamic_cast<ImageSettingContainer*> (sender());
 
 	for (const auto& pair : m_item->m_colorMapSettings) {
-		if (&pair.second->legend.imageSetting == imgSetting) {
-			auto& cm = m_colorMapSettings.at(pair.first);
-			cm.legend.imageSetting = *imgSetting;
+		if (pair.second->legendSetting()->imgSetting() == imgSetting) {
+			auto cm = m_colorMapSettings.at(pair.first);
+			*cm->legendSetting()->imgSetting() = *imgSetting;
 		}
 	}
 }

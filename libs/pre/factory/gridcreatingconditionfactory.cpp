@@ -65,19 +65,19 @@ const QList<GridCreatingConditionCreator*> GridCreatingConditionFactory::compati
 
 	if (gridType.availableGridGenerators().size() > 0) {
 		// gridgenerators specified. select the generators in the list only.
-		QList<QString> availableGenerators = gridType.availableGridGenerators();
-		for (it = m_creators.begin(); it != m_creators.end(); ++it){
-			QString genName = (*it)->name();
-			if (availableGenerators.contains(genName)) {
-				ret.append(*it);
+		const auto& availableGenerators = gridType.availableGridGenerators();
+		for (auto creator : m_creators){
+			QString genName = creator->name();
+			auto it = std::find(availableGenerators.begin(), availableGenerators.end(), genName);
+			if (it != availableGenerators.end()) {
+				ret.append(creator);
 			}
 		}
 	} else {
 		// select grid generators that can generate grids that are supported by the solver.
 		for (it = m_creators.begin(); it != m_creators.end(); ++it){
-			QList<SolverDefinitionGridType::GridType> types = gridType.availableGridTypes();
-			QList<SolverDefinitionGridType::GridType>::const_iterator it2;
-			for (it2 = types.begin(); it2 != types.end(); ++it2) {
+			const auto& types = gridType.availableGridTypes();
+			for (auto it2 = types.begin(); it2 != types.end(); ++it2) {
 				if ((*it)->gridType() == *it2) {
 					ret.append(*it);
 					break;

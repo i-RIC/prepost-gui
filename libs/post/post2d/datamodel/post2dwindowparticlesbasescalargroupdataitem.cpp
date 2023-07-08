@@ -16,8 +16,8 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
 
 Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGroupDataItem(Post2dWindowDataItem* p) :
@@ -109,21 +109,21 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& 
 	emit m_setting.updated();
 }
 
-ColorMapSettingContainer* Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
+ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
 	auto child = childDataItem(name);
 	if (child == nullptr) {return nullptr;}
 
-	return &child->colorMapSetting();
+	return child->colorMapSetting();
 }
 
-std::unordered_map<std::string, ColorMapSettingContainer*> Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
+std::unordered_map<std::string, ColorMapSettingContainerI*> Post2dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
 {
-	std::unordered_map<std::string, ColorMapSettingContainer*> ret;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> ret;
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post2dWindowParticlesBaseScalarDataItem*> (child);
-		auto& cm = item->colorMapSetting();
-		ret.insert({item->name(), &cm});
+		auto cm = item->colorMapSetting();
+		ret.insert({item->name(), cm});
 	}
 
 	return ret;
@@ -131,9 +131,9 @@ std::unordered_map<std::string, ColorMapSettingContainer*> Post2dWindowParticles
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleSelection(v);
+		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
@@ -141,9 +141,9 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsVi
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleDeselection(v);
+		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 
 	zoneDataItem()->clearParticleResultAttributeBrowser();
@@ -151,17 +151,17 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphics
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	}
 
 	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
@@ -169,17 +169,17 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* e
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 	}
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	}
 
 	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
@@ -245,12 +245,11 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 		auto value = iRIC::toStr(m_setting.value);
 		if (value != "") {
 			data->GetPointData()->SetActiveScalars(value.c_str());
-			auto cs = activeSetting();
+			auto cs = activeColorMapSetting();
 			auto mapper = cs->buildPointDataMapper(data);
 			m_actor->SetMapper(mapper);
 			mapper->Delete();
 
-			cs->legend.imageSetting.apply(v);
 			m_colorMapToolBarWidget->setEnabled(true);
 			m_colorMapToolBarWidget->setSetting(cs);
 		}
@@ -259,8 +258,9 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
 
-	updateCheckState();
 	updateVisibilityWithoutRendering();
+
+	topDataItem()->updateColorMaps();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -285,7 +285,6 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 		}
 	}
 
-	updateCheckState();
 	updateActorSetting();
 }
 
@@ -302,17 +301,17 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlS
 	}
 }
 
-ColorMapSettingContainer* Post2dWindowParticlesBaseScalarGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::activeColorMapSetting() const
 {
 	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
 	if (m_setting.value == "") {return nullptr;}
 
-	return &activeChildDataItem()->colorMapSetting();
+	return activeChildDataItem()->colorMapSetting();
 }
 
 Post2dWindowGridTypeDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const
 {
-	return dynamic_cast<Post2dWindowGridTypeDataItem*> (zoneDataItem()->parent());
+	return zoneDataItem()->gridTypeDataItem();
 }
 
 Post2dWindowParticlesBaseTopDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::topDataItem() const

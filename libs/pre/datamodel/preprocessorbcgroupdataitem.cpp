@@ -52,8 +52,8 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
 	SolverDefinitionGridType* gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
-		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);
+	for (int i = 0; i < gtype->boundaryConditions().size(); ++i) {
+		auto bc = gtype->boundaryConditions().at(i);
 		QString str(PreProcessorBCGroupDataItem::tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
 		connect(addAction, SIGNAL(triggered()), this, SLOT(addCondition()));
@@ -104,15 +104,16 @@ void PreProcessorBCGroupDataItem::renumberItemsForProject()
 {
 	// set numbers.
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	const QList<SolverDefinitionBoundaryCondition*>& conditions = gtItem->gridType()->boundaryConditions();
+	const auto& conditions = gtItem->gridType()->boundaryConditions();
 
 	int number = 1;
 	int condIndex = -1;
 	auto it = m_childItems.begin();
 	while (it != m_childItems.end()) {
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-		SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
-		int tmpindex = conditions.indexOf(tmpbc);
+		auto tmpbc = tmpItem->condition();
+		auto it = std::find(conditions.begin(), conditions.end(), tmpbc);
+		int tmpindex = it - conditions.begin();
 		if (tmpindex != condIndex) {
 			number = 1;
 			condIndex = tmpindex;
@@ -147,16 +148,17 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 {
 	// set numbers again.
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	const QList<SolverDefinitionBoundaryCondition*>& conditions = gtItem->gridType()->boundaryConditions();
+	const auto& conditions = gtItem->gridType()->boundaryConditions();
 
 	int number = 1;
 	int condIndex = -1;
 	auto it = m_childItems.begin();
 	while (it != m_childItems.end()) {
-		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
+		auto tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		if (tmpItem->isValid()) {
-			SolverDefinitionBoundaryCondition* tmpbc = tmpItem->condition();
-			int tmpindex = conditions.indexOf(tmpbc);
+			auto tmpbc = tmpItem->condition();
+			auto it = std::find(conditions.begin(), conditions.end(), tmpbc);
+			int tmpindex = it - conditions.begin();
 			if (tmpindex != condIndex) {
 				number = 1;
 				condIndex = tmpindex;
@@ -297,7 +299,8 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
 	auto gtype = gtItem->gridType();
-	auto bc = gtype->boundaryConditions().at(index);
+	auto conditions = gtype->boundaryConditions();
+	auto bc = conditions.at(index);
 	auto item = new PreProcessorBCDataItem(projectData()->solverDefinition(), bc, this, hideSetting);
 	QString tmpName(QString("New %1").arg(bc->englishCaption().c_str()));
 	item->setName(tmpName);
@@ -306,7 +309,8 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	while (it != m_childItems.end()) {
 		auto tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		auto tmpbc = tmpItem->condition();
-		int tmpindex = gtype->boundaryConditions().indexOf(tmpbc);
+		auto it2 = std::find(conditions.begin(), conditions.end(), tmpbc);
+		int tmpindex = it2 - conditions.begin();
 		if (tmpindex == index) {++ number;}
 		if (tmpindex > index) {break;}
 		++ it;

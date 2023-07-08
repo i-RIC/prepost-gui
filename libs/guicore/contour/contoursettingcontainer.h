@@ -8,7 +8,7 @@
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 
 class vtkContourFilter;
 class vtkPointSet;
@@ -28,7 +28,7 @@ public:
 	ContourSettingContainer& operator=(const ContourSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	void setColorMapSetting(ColorMapSettingContainer* setting);
+	void setColorMapSetting(ColorMapSettingContainerI* setting);
 
 	vtkPointSet* buildFilteredData(vtkPointSet* data) const;
 
@@ -38,7 +38,7 @@ public:
 	IntContainer numberOfValues;
 
 private:
-	ColorMapSettingContainer* m_colorMapSetting;
+	ColorMapSettingContainerI* m_colorMapSetting;
 	vtkContourFilter* m_filter;
 };
 

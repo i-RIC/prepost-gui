@@ -14,6 +14,7 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <misc/iricundostack.h>
@@ -41,12 +42,13 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
 
-	bool first = true;
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
-		if (first) {
-			m_setting.arrowsSetting.colorTarget = name.c_str();
-		}
-		first = false;
+		m_setting.arrowsSetting.colorTarget = name.c_str();
+		break;
+	}
+
+	for (auto& pair : topDataItem()->scalarGroupDataItem()->colorMapSettings()) {
+		pair.second->legendSetting()->imgSetting()->controller()->addItem(this);
 	}
 
 	m_arrowsToolBarWidget->hide();
@@ -59,9 +61,8 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &m_setting.arrowsSetting));
 
 		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
-
 			auto cm = topDataItem()->scalarGroupDataItem()->colorMapSettings().at(iRIC::toStr(newSetting.colorTarget));
-			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+			com->addCommand(new ColorMapSettingModifyCommand(m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
 		}
 		pushUpdateActorSettingCommand(com, this);
 	});
@@ -135,6 +136,12 @@ QDialog* Post2dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p
 	return dialog;
 }
 
+void Post2dWindowParticlesBaseVectorGroupDataItem::handleStandardItemChange()
+{
+	topDataItem()->updateColorMaps();
+	GraphicsWindowDataItem::handleStandardItemChange();
+}
+
 void Post2dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_setting.load(node);
@@ -157,9 +164,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsVi
 	auto& as = m_setting.arrowsSetting;
 	as.legend.imageSetting.controller()->handleSelection(v);
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleSelection(v);
+		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
@@ -170,9 +177,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphics
 	auto& as = m_setting.arrowsSetting;
 	as.legend.imageSetting.controller()->handleDeselection(v);
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleDeselection(v);
+		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 
 	zoneDataItem()->clearParticleResultAttributeBrowser();
@@ -183,9 +190,9 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* 
 	auto& as = m_setting.arrowsSetting;
 	as.legend.imageSetting.controller()->handleResize(event, v);
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleResize(event, v);
+		cs->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
@@ -198,10 +205,10 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseMoveEvent(QMouseEvent* e
 	as.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
-		controllers.push_back(cs->legend.imageSetting.controller());
+		cs->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v, true);
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -215,10 +222,10 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mousePressEvent(QMouseEvent* 
 	as.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
-		controllers.push_back(cs->legend.imageSetting.controller());
+		cs->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v, true);
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -233,10 +240,10 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	as.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeSetting();
+	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
-		controllers.push_back(cs->legend.imageSetting.controller());
+		cs->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v, true);
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -280,7 +287,10 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 
 	auto data = particleData();
 	if (data == nullptr) {return;}
-	if (m_setting.arrowsSetting.target == "") {return;}
+	if (m_setting.arrowsSetting.target == "") {
+		topDataItem()->updateColorMaps();
+		return;
+	}
 
 	m_setting.arrowsSetting.updateStandardValueIfNeeded(data->GetPointData());
 	auto filteredData = m_setting.arrowsSetting.buildFilteredData(data);
@@ -303,14 +313,11 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 		m_actor->GetProperty()->SetColor(m_setting.arrowsSetting.customColor);
 	} else if (m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 		arrowsData->GetPointData()->SetActiveScalars(iRIC::toStr(m_setting.arrowsSetting.colorTarget).c_str());
-		auto cs = activeSetting();
+		auto cs = activeColorMapSetting();
 		if (cs == nullptr) {return;}
 		auto mapper = cs->buildPointDataMapper(arrowsData);
 		m_actor->SetMapper(mapper);
 		mapper->Delete();
-
-		auto img = cs->legend.imgSetting();
-		img->apply(view);
 	}
 	arrowsData->Delete();
 
@@ -323,17 +330,13 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 
 	m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
 
-	auto& as = m_setting.arrowsSetting;
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto cs = activeSetting();
-	if (cs == nullptr) {return;}
-
-	cs->legend.imageSetting.apply(v);
+	topDataItem()->updateColorMaps();
 }
 
-ColorMapSettingContainer* Post2dWindowParticlesBaseVectorGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* Post2dWindowParticlesBaseVectorGroupDataItem::activeColorMapSetting() const
 {
+	if (! isAncientChecked() || ! isChecked()) {return nullptr;}
+	if (m_setting.arrowsSetting.target == "") {return nullptr;}
 	if (m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return nullptr;}
 
 	return topDataItem()->scalarGroupDataItem()->colorMapSetting(iRIC::toStr(m_setting.arrowsSetting.colorTarget));

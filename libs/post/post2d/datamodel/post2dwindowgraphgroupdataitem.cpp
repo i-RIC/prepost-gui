@@ -8,8 +8,8 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <misc/errormessage.h>
 #include <misc/mathsupport.h>

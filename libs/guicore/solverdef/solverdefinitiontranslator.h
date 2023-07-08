@@ -3,12 +3,15 @@
 
 #include "../guicore_global.h"
 
+#include <QObject>
+
 class QLocale;
 class QString;
 
 /// This class represents translator for Solver Definition files
-class GUICOREDLL_EXPORT SolverDefinitionTranslator
+class GUICOREDLL_EXPORT SolverDefinitionTranslator : public QObject
 {
+	Q_OBJECT
 
 public:
 	SolverDefinitionTranslator(const QString& solverfolder, const QLocale& locale);

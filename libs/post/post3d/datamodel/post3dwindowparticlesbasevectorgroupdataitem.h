@@ -8,7 +8,7 @@
 #include <postbase/particle/particledatavectorsetting.h>
 
 class ArrowsSettingToolBarWidget;
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
 class Post3dWindowGridTypeDataItem;
 class Post3dWindowParticlesBaseTopDataItem;
@@ -35,6 +35,9 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	QDialog* propertyDialog(QWidget* p) override;
+	void handleStandardItemChange() override;
+
+	ColorMapSettingContainerI* activeColorMapSetting() const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -51,7 +54,6 @@ private:
 	void updateCheckState();
 	void updateActorSetting() override;
 
-	ColorMapSettingContainer* activeSetting() const;
 	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post3dWindowParticlesBaseTopDataItem* topDataItem() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;

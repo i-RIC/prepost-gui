@@ -23,8 +23,8 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -49,13 +49,11 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
 		const auto& name = pair.first;
-		auto caption = gType->output(name)->caption();
-		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
+		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
 	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
 		const auto& name = pair.first;
-		auto caption = gType->output(name)->caption();
-		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
+		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
 
 	impl->m_colorMapToolBarWidget->hide();
@@ -134,10 +132,10 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 			data2->Delete();
 			impl->m_actor->SetMapper(mapper);
 			mapper->Delete();
-			cs->legend.imageSetting.setActor(impl->m_legendActor);
-			cs->legend.imageSetting.controller()->setItem(this);
+			cs->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
+			cs->legendSetting()->imgSetting()->controller()->setItem(this);
 			auto v = dataModel()->graphicsView();
-			cs->legend.imageSetting.apply(v);
+			cs->legendSetting()->imgSetting()->apply(v);
 		}
 	} else if (impl->m_setting.colorMode == Setting::ColorMode::ByCellScalar) {
 		auto cs = activeColorMapSetting();
@@ -147,10 +145,10 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 			auto mapper = cs->buildCellDataMapper(data, false);
 			impl->m_actor->SetMapper(mapper);
 			mapper->Delete();
-			cs->legend.imageSetting.setActor(impl->m_legendActor);
-			cs->legend.imageSetting.controller()->setItem(this);
+			cs->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
+			cs->legendSetting()->imgSetting()->controller()->setItem(this);
 			auto v = dataModel()->graphicsView();
-			cs->legend.imageSetting.apply(v);
+			cs->legendSetting()->imgSetting()->apply(v);
 		}
 	}
 
@@ -178,13 +176,11 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
 		const auto& name = pair.first;
-		auto caption = gType->output(name)->caption();
-		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
+		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
 	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
 		const auto& name = pair.first;
-		auto caption = gType->output(name)->caption();
-		impl->createOrUpdateColorMapsSetting(name, caption, pair.second);
+		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
 
 	updateActorSetting();
@@ -215,7 +211,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleSelection(v);
+		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 }
 
@@ -223,7 +219,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsVi
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleDeselection(v);
+		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 }
 
@@ -231,7 +227,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* eve
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+		cs->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	}
 }
 
@@ -239,7 +235,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* ev
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+		cs->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 	}
 }
 
@@ -247,7 +243,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* 
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+		cs->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	}
 }
 
@@ -271,7 +267,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* ev
 {
 	auto cs = activeColorMapSetting();
 	if (cs != nullptr) {
-		cs->legend.imageSetting.controller()->handleResize(event, v);
+		cs->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
@@ -312,7 +308,7 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem* Post2dBirdEyeWindowNodeScalarGrou
 	return dynamic_cast<Post2dBirdEyeWindowNodeScalarGroupTopDataItem*> (parent());
 }
 
-ColorMapSettingContainer* Post2dBirdEyeWindowNodeScalarGroupDataItem::colorMapSetting(const std::string& name) const
+ColorMapSettingContainerI* Post2dBirdEyeWindowNodeScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
 	auto it = impl->m_colorMapSettings.find(name);
 	if (it == impl->m_colorMapSettings.end()) {return nullptr;}
@@ -320,7 +316,7 @@ ColorMapSettingContainer* Post2dBirdEyeWindowNodeScalarGroupDataItem::colorMapSe
 	return it->second;
 }
 
-ColorMapSettingContainer* Post2dBirdEyeWindowNodeScalarGroupDataItem::activeColorMapSetting() const
+ColorMapSettingContainerI* Post2dBirdEyeWindowNodeScalarGroupDataItem::activeColorMapSetting() const
 {
 	if (impl->m_setting.colorMode == Setting::ColorMode::Custom) {return nullptr;}
 

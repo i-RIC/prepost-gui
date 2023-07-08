@@ -14,8 +14,8 @@
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 
 #include <vtkActor2D.h>
 
@@ -23,6 +23,7 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	impl {new Impl {this}}
 {
+	auto caption = data()->gridType()->output(target)->caption();
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	impl->m_target = target;
@@ -30,11 +31,10 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 	renderer()->AddActor2D(impl->m_legendActor);
 	impl->m_colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
 	impl->m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	impl->m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
+	impl->m_colorMapSetting.legend.title = caption;
 	impl->m_colorMapSetting.setAutoValueRange(valueRange());
 
-	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();
-	m_standardItem->setText(gType->solutionCaption(target));
+	m_standardItem->setText(caption);
 
 	impl->m_colorMapToolBarWidget->hide();
 	impl->m_colorMapToolBarWidget->setSetting(&impl->m_colorMapSetting);

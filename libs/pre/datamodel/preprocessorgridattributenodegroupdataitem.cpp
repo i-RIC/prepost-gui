@@ -79,20 +79,18 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 
 	p->standardItem()->takeRow(m_standardItem->row());
 	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridAttributes();
-	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
+	const auto& conds = typeItem->gridType()->gridAttributes();
+	for (auto cond : conds) {
 		if (cond->position() == SolverDefinitionGridAttribute::Node) {
 			// this is a node condition.
-			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
+			auto item = new PreProcessorGridAttributeNodeDataItem(cond, this);
 			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}
 
-	const QList<SolverDefinitionGridComplexAttribute*>& compconds = typeItem->gridType()->gridComplexAttributes();
-	for (auto cit = compconds.begin(); cit != compconds.end(); ++cit) {
-		SolverDefinitionGridComplexAttribute* cond = *cit;
+	const auto& compconds = typeItem->gridType()->gridComplexAttributes();
+	for (auto cond : compconds) {
 		if (cond->position() == SolverDefinitionGridComplexAttribute::Node) {
 			// this is a node condition.
 			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);

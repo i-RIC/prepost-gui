@@ -14,6 +14,7 @@
 #include <guicore/scalarstocolors/colormapsettingcontainerutil.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(const std::string& target, Post2dWindowDataItem* p) :
@@ -25,7 +26,7 @@ Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(const s
 	impl->m_target = target;
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	standardItem()->setText(gType->solutionCaption(target));
+	standardItem()->setText(gType->output(target)->caption());
 
 	impl->m_colorMapToolBarWidget->hide();
 	impl->m_colorMapToolBarWidget->setSetting(&impl->m_setting.colorMapSetting);

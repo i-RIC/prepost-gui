@@ -54,7 +54,11 @@ void ColorMapEnumerateSettingContainer::load(const QDomNode& node)
 {
 	CompositeContainer::load(node);
 
-	colors.clear();
+	std::unordered_map<double, ColorMapSettingValueColorPairContainer*> pairs;
+	for (auto& c : colors) {
+		pairs.insert({c.value.value(), &c});
+	}
+
 	const auto& children = node.childNodes();
 	for (int i = 0; i < children.size(); ++i) {
 		QDomNode itemNode = children.at(i);
@@ -62,7 +66,11 @@ void ColorMapEnumerateSettingContainer::load(const QDomNode& node)
 
 		ColorMapSettingValueColorPairContainer pair;
 		pair.load(itemNode);
-		colors.push_back(pair);
+
+		auto it = pairs.find(pair.value.value());
+		if (it != pairs.end()) {
+			*it->second = pair;
+		}
 	}
 	emit ColorMapSettingContainerI::updated();
 }

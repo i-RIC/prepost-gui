@@ -112,9 +112,28 @@ QString SolverDefinitionTranslator::translate(const QString& src) const
 {
 	if (impl->m_dictionary.contains(src)) {
 		return impl->m_dictionary.value(src);
-	} else {
-		return src;
 	}
+
+	// for vector values
+	QString srcX = src;
+	srcX.append("X");
+	if (impl->m_dictionary.contains(srcX)) {
+		QString tgtX = impl->m_dictionary.value(srcX);
+		return tgtX.left(tgtX.length() - 1);
+	}
+
+	if (src.contains(" (magnitude)")) {
+		QString srcX2 = src;
+		srcX2.replace(" (magnitude)", "");
+		srcX2.append("X");
+		if (impl->m_dictionary.contains(srcX2)) {
+			QString tgtX = impl->m_dictionary.value(srcX2);
+			QString tgt = tgtX.left(tgtX.length() - 1);
+			tgt.append(tr(" (magnitude)"));
+			return tgt;
+		}
+	}
+	return src;
 }
 
 

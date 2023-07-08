@@ -12,9 +12,10 @@ namespace Ui {
 class PolyDataSettingEditWidget;
 }
 
-class ColorMapSettingContainer;
-class ColorMapSettingEditWidget;
+class ColorMapSettingContainerI;
+class ColorMapSettingEditWidgetI;
 class PolyDataSetting;
+class SolverDefinitionGridType;
 
 class POSTBASEDLL_EXPORT PolyDataSettingEditWidget : public ModifyCommandWidget
 {
@@ -24,8 +25,9 @@ public:
 	explicit PolyDataSettingEditWidget(QWidget *parent);
 	~PolyDataSettingEditWidget();
 
+	void setGridType(SolverDefinitionGridType* gridType);
 	void setValueNames(const std::unordered_map<std::string, QString>& names);
-	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings);
+	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 	void setSetting(PolyDataSetting* setting);
 
 	QUndoCommand* createModifyCommand(bool apply) override;
@@ -39,10 +41,10 @@ private:
 	std::string colorTarget() const;
 
 	PolyDataSetting* m_setting;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	std::vector<std::string> m_colorTargets;
-	ColorMapSettingEditWidget* m_colorMapWidget;
-
+	ColorMapSettingEditWidgetI* m_colorMapWidget;
+	SolverDefinitionGridType* m_gridType;
 	Ui::PolyDataSettingEditWidget *ui;
 
 	class ModifyCommand;

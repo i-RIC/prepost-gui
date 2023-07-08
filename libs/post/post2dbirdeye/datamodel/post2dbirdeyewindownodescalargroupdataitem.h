@@ -3,7 +3,7 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class Post2dBirdEyeWindowNodeScalarDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 
@@ -45,8 +45,8 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	Post2dBirdEyeWindowNodeScalarGroupTopDataItem* topDataItem() const;
-	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
-	ColorMapSettingContainer* activeColorMapSetting() const;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
+	ColorMapSettingContainerI* activeColorMapSetting() const;
 
 	class Impl;
 	Impl* impl;

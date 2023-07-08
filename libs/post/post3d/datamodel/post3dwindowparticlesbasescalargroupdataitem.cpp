@@ -16,6 +16,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
@@ -34,7 +35,7 @@ Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGro
 	auto gt = cont->gridType();
 
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
-		auto item = new Post3dWindowParticlesBaseScalarDataItem(name, gt->solutionCaption(name), this);
+		auto item = new Post3dWindowParticlesBaseScalarDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
 	}
 	m_toolBarWidget->hide();
@@ -50,6 +51,8 @@ Post3dWindowParticlesBaseScalarGroupDataItem::~Post3dWindowParticlesBaseScalarGr
 	r->RemoveActor(m_actor);
 
 	m_actor->Delete();
+
+	delete m_toolBarWidgetController;
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::update()
@@ -93,23 +96,24 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& 
 		m_setting.mapping = ParticleDataSetting::Mapping::Value;
 	}
 	updateActorSetting();
+	emit m_setting.updated();
 }
 
-ColorMapSettingContainer* Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
+ColorMapSettingContainerI* Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSetting(const std::string& name) const
 {
 	auto child = childDataItem(name);
 	if (child == nullptr) {return nullptr;}
 
-	return &child->colorMapSetting();
+	return child->colorMapSetting();
 }
 
-std::unordered_map<std::string, ColorMapSettingContainer*> Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
+std::unordered_map<std::string, ColorMapSettingContainerI*> Post3dWindowParticlesBaseScalarGroupDataItem::colorMapSettings() const
 {
-	std::unordered_map<std::string, ColorMapSettingContainer*> ret;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> ret;
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowParticlesBaseScalarDataItem*> (child);
-		auto& cm = item->colorMapSetting();
-		ret.insert({item->name(), &cm});
+		auto cm = item->colorMapSetting();
+		ret.insert({item->name(), cm});
 	}
 
 	return ret;
@@ -117,50 +121,49 @@ std::unordered_map<std::string, ColorMapSettingContainer*> Post3dWindowParticles
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleSelection(v);
+		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleDeselection(v);
+		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleResize(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
-
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s != nullptr) {
-		s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	}
 }
 
@@ -218,12 +221,11 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 		auto value = iRIC::toStr(m_setting.value);
 		if (value != "") {
 			data->GetPointData()->SetActiveScalars(value.c_str());
-			auto cs = activeSetting();
+			auto cs = activeColorMapSetting();
 			auto mapper = cs->buildPointDataMapper(data);
 			m_actor->SetMapper(mapper);
 			mapper->Delete();
 
-			cs->legend.imageSetting.apply(v);
 			m_colorMapToolBarWidget->setEnabled(true);
 			m_colorMapToolBarWidget->setSetting(cs);
 		}
@@ -232,8 +234,9 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
 
-	updateCheckState();
 	updateVisibilityWithoutRendering();
+
+	topDataItem()->updateColorMaps();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::innerUpdateZScale(double zscale)
@@ -263,7 +266,6 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(con
 		}
 	}
 
-	updateCheckState();
 	updateActorSetting();
 }
 
@@ -280,12 +282,12 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlS
 	}
 }
 
-ColorMapSettingContainer* Post3dWindowParticlesBaseScalarGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* Post3dWindowParticlesBaseScalarGroupDataItem::activeColorMapSetting() const
 {
 	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
 	if (m_setting.value == "") {return nullptr;}
 
-	return &activeChildDataItem()->colorMapSetting();
+	return activeChildDataItem()->colorMapSetting();
 }
 
 Post3dWindowGridTypeDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const

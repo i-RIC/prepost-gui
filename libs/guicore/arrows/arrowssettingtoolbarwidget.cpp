@@ -14,7 +14,6 @@ ArrowsSettingToolBarWidget::ArrowsSettingToolBarWidget(QWidget *parent) :
 	ui->setupUi(this);
 
 	connect<void (QComboBox::*)(int)>(ui->valueComboBox, &QComboBox::currentIndexChanged, this, &ArrowsSettingToolBarWidget::handleValueChange);
-
 	connect<void (QComboBox::*)(int)>(ui->valueComboBox, &QComboBox::currentIndexChanged, this, &ArrowsSettingToolBarWidget::updated);
 	connect(ui->colorWidget, &ColorEditWidget::colorChanged, this, &ArrowsSettingToolBarWidget::updated);
 	connect(ui->lengthLegendCheckBox, &QCheckBox::toggled, this, &ArrowsSettingToolBarWidget::updated);
@@ -26,7 +25,7 @@ ArrowsSettingToolBarWidget::~ArrowsSettingToolBarWidget()
 	delete ui;
 }
 
-void ArrowsSettingToolBarWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void ArrowsSettingToolBarWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
 {
 	m_colorMapSettings = settings;
 
@@ -76,15 +75,13 @@ ArrowsSettingContainer ArrowsSettingToolBarWidget::modifiedSetting() const
 	return ret;
 }
 
-ColorMapSettingContainer ArrowsSettingToolBarWidget::modifiedColorMapSetting() const
+ColorMapSettingContainerI* ArrowsSettingToolBarWidget::modifiedColorMapSetting() const
 {
-	ColorMapSettingContainer ret;
+	if (ui->valueComboBox->currentIndex() == 0) {return nullptr;}
 
-	if (ui->valueComboBox->currentIndex() == 0) {return ret;}
-
-	ret = *m_colorMapSettings.at(m_colorMapNames.at(ui->valueComboBox->currentIndex() - 1));
-	ret.legend.visible = ui->colorMapWidget->visible();
-	ret.legend.direction = ui->colorMapWidget->direction();
+	ColorMapSettingContainerI* ret = m_colorMapSettings.at(m_colorMapNames.at(ui->valueComboBox->currentIndex() - 1))->copy();
+	ret->legendSetting()->setVisible(ui->colorMapWidget->visible());
+	ret->legendSetting()->setDirection(ui->colorMapWidget->direction());
 
 	return ret;
 }
@@ -92,6 +89,13 @@ ColorMapSettingContainer ArrowsSettingToolBarWidget::modifiedColorMapSetting() c
 void ArrowsSettingToolBarWidget::handleValueChange(int index)
 {
 	ui->colorWidget->setEnabled(index == 0);
+	ui->colorMapWidget->setEnabled(index != 0);
+
+	if (index > 0) {
+		auto target = m_colorMapNames.at(index - 1);
+		auto cm = m_colorMapSettings.at(target);
+		ui->colorMapWidget->setSetting(cm);
+	}
 }
 
 void ArrowsSettingToolBarWidget::applySetting()

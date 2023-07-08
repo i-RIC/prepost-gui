@@ -12,9 +12,10 @@
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
@@ -35,13 +36,17 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	PostZoneDataContainer* cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
-		auto item = new Post2dWindowNodeVectorArrowDataItem(name, gt->solutionCaption(name), this);
+		std::string nameX = name;
+		nameX.append("X");
+		auto captionX = gt->output(nameX)->caption();
+		auto caption = captionX.left(captionX.length() - 1);
+		auto item = new Post2dWindowNodeVectorArrowDataItem(name, caption, this);
 		m_childItems.push_back(item);
 	}
 
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
-		auto caption = gt->output(pair.first)->caption();
-		createOrUpdateColorMapsSetting(pair.first, caption, pair.second);
+		auto output = gt->output(pair.first);
+		createOrUpdateColorMapsSetting(output, pair.second);
 	}
 
 	m_arrowsToolBarWidget->hide();
@@ -55,7 +60,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 
 		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 			auto cm = m_colorMapSettings.at(iRIC::toStr(newSetting.colorTarget));
-			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+			com->addCommand(new ColorMapSettingModifyCommand(m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
 		}
 		pushUpdateActorSettingCommand(com, this);
 	});
@@ -168,9 +173,9 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 		auto mapper = cs->buildPointDataMapper(arrowsData);
 		m_actor->SetMapper(mapper);
 		mapper->Delete();
-		cs->legend.imageSetting.setActor(m_colorLegendActor);
-		cs->legend.imageSetting.controller()->setItem(this);
-		cs->legend.imageSetting.controller()->handleSelection(v);
+		cs->legendSetting()->imgSetting()->setActor(m_colorLegendActor);
+		cs->legendSetting()->imgSetting()->controller()->setItem(this);
+		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 	arrowsData->Delete();
 
@@ -192,22 +197,22 @@ Post2dWindowZoneDataItem* Post2dWindowNodeVectorArrowGroupDataItem::zoneDataItem
 	return dynamic_cast<Post2dWindowZoneDataItem*> (parent());
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range)
+void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range)
 {
-	ColorMapSettingContainer* setting = nullptr;
-	auto it = m_colorMapSettings.find(name);
+	ColorMapSettingContainerI* setting = nullptr;
+	auto it = m_colorMapSettings.find(output->name());
 	if (it == m_colorMapSettings.end()) {
-		setting = new ColorMapSettingContainer();
-		setting->valueCaption = caption;
-		setting->legend.title = caption;
-		m_colorMapSettings.insert({name, setting});
+		setting = output->createColorMapSettingContainer();
+		setting->valueCaption = output->caption();
+		setting->legendSetting()->setTitle(output->caption());
+		m_colorMapSettings.insert({output->name(), setting});
 	} else {
 		setting = it->second;
 	}
 	setting->setAutoValueRange(range);
 }
 
-ColorMapSettingContainer* Post2dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
+ColorMapSettingContainerI* Post2dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
 {
 	return m_colorMapSettings.at(name);
 }
@@ -242,6 +247,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::setTarget(const std::string& targ
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	m_setting.target = target.c_str();
+	emit m_setting.updated();
 
 	updateActorSetting();
 }
@@ -261,7 +267,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* 
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
@@ -274,7 +280,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -285,7 +291,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* even
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -301,8 +307,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 		if (s != nullptr) {
-			s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
-			controllers.push_back(s->legend.imageSetting.controller());
+			s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v, true);
+			controllers.push_back(s->legendSetting()->imgSetting()->controller());
 		}
 	}
 
@@ -321,8 +327,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* even
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 		if (s != nullptr) {
-			s->legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
-			controllers.push_back(s->legend.imageSetting.controller());
+			s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v, true);
+			controllers.push_back(s->legendSetting()->imgSetting()->controller());
 		}
 	}
 
@@ -342,8 +348,8 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 		auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 		if (s != nullptr) {
-			s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
-			controllers.push_back(s->legend.imageSetting.controller());
+			s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v, true);
+			controllers.push_back(s->legendSetting()->imgSetting()->controller());
 		}
 	}
 

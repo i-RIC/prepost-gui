@@ -14,6 +14,7 @@
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -40,7 +41,11 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 	auto cont = zoneDataItem()->dataContainer();
 	auto gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
-		auto item = new Post3dWindowNodeVectorParticleDataItem(name, gt->solutionCaption(name), this);
+		std::string nameX = name;
+		nameX.append("X");
+		auto captionX = gt->output(nameX)->caption();
+		auto caption = captionX.left(captionX.length() - 1);
+		auto item = new Post3dWindowNodeVectorParticleDataItem(name, caption, this);
 		m_childItems.push_back(item);
 	}
 }

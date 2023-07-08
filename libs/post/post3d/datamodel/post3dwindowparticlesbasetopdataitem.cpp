@@ -1,9 +1,13 @@
+#include "../post3dwindowgraphicsview.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasevectorgroupdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guicore/image/imagesettingcontainer.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
@@ -17,7 +21,7 @@
 #include <vtkRenderer.h>
 
 Post3dWindowParticlesBaseTopDataItem::Post3dWindowParticlesBaseTopDataItem(const QString& caption, Post3dWindowDataItem* p) :
-	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconPaper.svg"), p},
+	Post3dWindowDataItem {caption, QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_scalarGroupDataItem {nullptr},
 	m_vectorGroupDataItem {nullptr}
 {
@@ -71,6 +75,37 @@ void Post3dWindowParticlesBaseTopDataItem::update()
 	if (m_vectorGroupDataItem != nullptr) {
 		m_vectorGroupDataItem->update();
 	}
+}
+
+void Post3dWindowParticlesBaseTopDataItem::updateColorMaps()
+{
+	m_actor2DCollection->RemoveAllItems();
+	if (m_scalarGroupDataItem == nullptr) {return;}
+
+	for (const auto& pair: m_scalarGroupDataItem->colorMapSettings()) {
+		pair.second->legendSetting()->imgSetting()->actor()->VisibilityOff();
+	}
+
+	auto view = dataModel()->graphicsView();
+	for (const auto& cms : activeColorMaps()) {
+		cms->legendSetting()->imgSetting()->apply(view);
+		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
+	}
+}
+
+std::unordered_set<ColorMapSettingContainerI*> Post3dWindowParticlesBaseTopDataItem::activeColorMaps() const
+{
+	std::unordered_set<ColorMapSettingContainerI*> ret;
+
+	auto cm1 = m_scalarGroupDataItem->activeColorMapSetting();
+	if (cm1 != nullptr) {ret.insert(cm1);}
+
+	if (m_vectorGroupDataItem != nullptr) {
+		auto cm2 = m_vectorGroupDataItem->activeColorMapSetting();
+		if (cm2 != nullptr) {ret.insert(cm2);}
+	}
+
+	return ret;
 }
 
 void Post3dWindowParticlesBaseTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)

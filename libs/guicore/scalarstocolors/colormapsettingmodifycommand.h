@@ -5,21 +5,23 @@
 
 #include <QUndoCommand>
 
-#include <memory>
-
 class ColorMapSettingContainerI;
 
 class GUICOREDLL_EXPORT ColorMapSettingModifyCommand : public QUndoCommand
 {
 public:
 	ColorMapSettingModifyCommand(ColorMapSettingContainerI* newValue, ColorMapSettingContainerI* target);
+	~ColorMapSettingModifyCommand();
 
 	void redo() override;
 	void undo() override;
 
+	int id() const override;
+	bool mergeWith(const QUndoCommand* other) override;
+
 private:
-	std::unique_ptr<ColorMapSettingContainerI> m_newValue;
-	std::unique_ptr<ColorMapSettingContainerI> m_oldValue;
+	ColorMapSettingContainerI* m_newValue;
+	ColorMapSettingContainerI* m_oldValue;
 
 	ColorMapSettingContainerI* m_target;
 };

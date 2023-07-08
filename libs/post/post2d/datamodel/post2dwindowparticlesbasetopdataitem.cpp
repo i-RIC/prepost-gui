@@ -1,10 +1,14 @@
+#include "../post2dwindowgraphicsview.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowparticlesbasescalargroupdataitem.h"
 #include "post2dwindowparticlesbasevectorgroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/base/propertybrowser.h>
+#include <guicore/image/imagesettingcontainer.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/xmlsupport.h>
@@ -106,11 +110,42 @@ void Post2dWindowParticlesBaseTopDataItem::update()
 	}
 }
 
+void Post2dWindowParticlesBaseTopDataItem::updateColorMaps()
+{
+	m_actor2DCollection->RemoveAllItems();
+	if (m_scalarGroupDataItem == nullptr) {return;}
+
+	for (const auto& pair: m_scalarGroupDataItem->colorMapSettings()) {
+		pair.second->legendSetting()->imgSetting()->actor()->VisibilityOff();
+	}
+
+	auto view = dataModel()->graphicsView();
+	for (const auto& cms : activeColorMaps()) {
+		cms->legendSetting()->imgSetting()->apply(view);
+		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
+	}
+}
+
 void Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser()
 {
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
 	auto w = dynamic_cast<Post2dWindow*> (mainWindow());
 	w->propertyBrowser()->show();
+}
+
+std::unordered_set<ColorMapSettingContainerI*> Post2dWindowParticlesBaseTopDataItem::activeColorMaps() const
+{
+	std::unordered_set<ColorMapSettingContainerI*> ret;
+
+	auto cm1 = m_scalarGroupDataItem->activeColorMapSetting();
+	if (cm1 != nullptr) {ret.insert(cm1);}
+
+	if (m_vectorGroupDataItem != nullptr) {
+		auto cm2 = m_vectorGroupDataItem->activeColorMapSetting();
+		if (cm2 != nullptr) {ret.insert(cm2);}
+	}
+
+	return ret;
 }
 
 void Post2dWindowParticlesBaseTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -14,6 +14,7 @@ class ArrowsColorSettingEditSmallWidget;
 }
 
 class ArrowsSettingContainer;
+class SolverDefinitionGridType;
 
 class GUICOREDLL_EXPORT ArrowsColorSettingEditSmallWidget : public QWidget
 {
@@ -23,8 +24,8 @@ public:
 	explicit ArrowsColorSettingEditSmallWidget(QWidget *parent = nullptr);
 	~ArrowsColorSettingEditSmallWidget();
 
-	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings);
-	void setColorMapSettings(std::unordered_map<std::string, ColorMapSettingContainer>* settings);
+	void setGridType(SolverDefinitionGridType* gridType);
+	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 
 	ArrowsSettingContainer setting() const;
 	void updateSetting(ArrowsSettingContainer* setting) const;
@@ -37,19 +38,11 @@ private slots:
 	void openColorMapEditDialog();
 
 private:
-	enum class ColorMapMode {
-		None,
-		Copy,
-		Pointer
-	};
-
-	ColorMapSettingContainer m_colorMapSetting;
-	std::unordered_map<std::string, ColorMapSettingContainer>* m_copyColorMapSettings;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_pointerColorMapSettings;
-	ColorMapMode m_mode;
+	ColorMapSettingContainerI* m_colorMapSetting;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 
 	std::vector<std::string> m_colorMapNames;
-
+	SolverDefinitionGridType* m_gridType;
 	Ui::ArrowsColorSettingEditSmallWidget *ui;
 };
 

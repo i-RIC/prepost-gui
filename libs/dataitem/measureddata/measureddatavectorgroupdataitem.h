@@ -6,7 +6,7 @@
 #include <guicore/datamodel/graphicswindowdataitem.h>
 #include <guicore/misc/targeted/targeteditemi.h>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class MeasuredDataVectorSetting;
 class NamedGraphicWindowDataItem;
 
@@ -30,7 +30,7 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 private:
-	ColorMapSettingContainer* colorMapSetting(const std::string& target);
+	ColorMapSettingContainerI* colorMapSetting(const std::string& target);
 
 	QDialog* propertyDialog(QWidget* p) override;
 

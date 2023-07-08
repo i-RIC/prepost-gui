@@ -9,8 +9,9 @@
 #include <unordered_map>
 
 class ArrowsSettingToolBarWidget;
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
+class SolverDefinitionGridOutput;
 class Post2dWindowZoneDataItem;
 class ValueRangeContainer;
 
@@ -44,11 +45,11 @@ protected:
 	void updateActorSetting() override;
 	void updateCheckState();
 	Post2dWindowZoneDataItem* zoneDataItem() const;
-	void createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range);
+	void createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range);
 
 	ArrowsSettingContainer m_setting;
 
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 
 	class UpdateActorSettingCommand;
 
@@ -61,7 +62,7 @@ private:
 
 	void setupActors();
 
-	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
 
 	virtual vtkPointSet* buildFilteredData() = 0;
 

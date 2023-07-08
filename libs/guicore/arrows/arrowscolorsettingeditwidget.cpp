@@ -4,18 +4,18 @@
 
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <misc/stringtool.h>
 
 ArrowsColorSettingEditWidget::ArrowsColorSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
+	m_colorMapWidget {nullptr},
+	m_gridType {nullptr},
 	ui(new Ui::ArrowsColorSettingEditWidget)
 {
 	ui->setupUi(this);
-
-	m_colorMapWidget = new ColorMapSettingEditWidget(this);
-	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
-	ui->colorMapWidget->setWidget(widget);
 
 	connect<void(QComboBox::*)(int)>(ui->scalarComboBox, &QComboBox::currentIndexChanged, this, &ArrowsColorSettingEditWidget::handleColorScalarChange);
 }
@@ -25,7 +25,12 @@ ArrowsColorSettingEditWidget::~ArrowsColorSettingEditWidget()
 	delete ui;
 }
 
-void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void ArrowsColorSettingEditWidget::setGridType(SolverDefinitionGridType* gridType)
+{
+	m_gridType = gridType;
+}
+
+void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
 {
 	m_colorMapSettings = settings;
 
@@ -42,7 +47,7 @@ void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<
 	}
 	ui->scalarComboBox->blockSignals(false);
 	if (m_colorMapNames.size() > 0) {
-		m_colorMapWidget->setSetting(m_colorMapSettings.at(m_colorMapNames.at(0)));
+		handleColorScalarChange(0);
 	} else {
 		ui->customRadioButton->setChecked(true);
 		ui->customRadioButton->setDisabled(true);
@@ -103,7 +108,14 @@ void ArrowsColorSettingEditWidget::handleColorScalarChange(int index)
 {
 	auto name = m_colorMapNames.at(index);
 	auto colorSetting = m_colorMapSettings.find(name)->second;
-	colorSetting->legend.copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
 
+	if (m_colorMapWidget != nullptr) {
+		colorSetting->legendSetting()->copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
+	}
+
+	auto output = m_gridType->output(name);
+	m_colorMapWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapWidget->setSetting(colorSetting);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 }

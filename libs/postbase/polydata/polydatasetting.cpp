@@ -25,3 +25,10 @@ XmlAttributeContainer& PolyDataSetting::operator=(const XmlAttributeContainer& c
 {
 	return operator=(dynamic_cast<const PolyDataSetting&> (c));
 }
+
+void PolyDataSetting::copyValue(const XmlAttributeContainer& c)
+{
+	CompositeContainer::copyValue(c);
+
+	emit updated();
+}

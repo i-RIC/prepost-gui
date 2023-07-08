@@ -18,6 +18,12 @@ ContourSettingEditWidget::~ContourSettingEditWidget()
 	delete ui;
 }
 
+void ContourSettingEditWidget::disable()
+{
+	ui->contoursCheckBox->setChecked(false);
+	QWidget::setDisabled(true);
+}
+
 ContourSettingContainer ContourSettingEditWidget::setting() const
 {
 	ContourSettingContainer c;

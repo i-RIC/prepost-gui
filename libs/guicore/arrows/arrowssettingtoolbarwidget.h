@@ -12,7 +12,7 @@ class ArrowsSettingToolBarWidget;
 }
 
 class ArrowsSettingContainer;
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 
 class GUICOREDLL_EXPORT ArrowsSettingToolBarWidget : public QWidget
 {
@@ -22,13 +22,13 @@ public:
 	explicit ArrowsSettingToolBarWidget(QWidget *parent);
 	~ArrowsSettingToolBarWidget();
 
-	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings);
+	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 	void setSetting(ArrowsSettingContainer* setting);
 
 	void hideLegendCheckbox();
 
 	ArrowsSettingContainer modifiedSetting() const;
-	ColorMapSettingContainer modifiedColorMapSetting() const;
+	ColorMapSettingContainerI* modifiedColorMapSetting() const;
 
 signals:
 	void updated();
@@ -39,7 +39,7 @@ public slots:
 
 private:
 	ArrowsSettingContainer* m_setting;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	std::vector<std::string> m_colorMapNames;
 
 	Ui::ArrowsSettingToolBarWidget *ui;
