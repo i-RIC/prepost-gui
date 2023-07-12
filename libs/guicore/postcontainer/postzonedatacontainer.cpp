@@ -669,19 +669,19 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 
 	int ier;
 	// node scalar data
-	if (zone->nodeSolutionExists()) {
+	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		ier = CgnsUtil::loadScalarData(zone->nodeSolution(), m_origData->GetPointData(), iRIC::toStr(IBC));
 		if (ier != 0) {goto ERROR;}
 	}
 
 	// cell scalar data
-	if (zone->cellSolutionExists()) {
+	if (zone->cellSolutionExists() && zone->cellSolution() != nullptr) {
 		ier = CgnsUtil::loadScalarData(zone->cellSolution(), m_origData->GetCellData(), iRIC::toStr(IBC));
 		if (ier != 0) {goto ERROR;}
 	}
 
 	// edgeI scalar data
-	if (zone->iFaceSolutionExists()) {
+	if (zone->iFaceSolutionExists() && zone->iFaceSolution() != nullptr) {
 		ier = CgnsUtil::loadEdgeIScalarData(zone->iFaceSolution(), m_edgeIData->data()->GetPointData(), iRIC::toStr(IBC)); // post2d
 		if (ier != 0) {goto ERROR;}
 		m_edgeIData->updateValueRangeSet();
@@ -691,7 +691,7 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 	}
 
 	// edgeJ scalar data
-	if (zone->jFaceSolutionExists()) {
+	if (zone->jFaceSolutionExists() && zone->jFaceSolution() != nullptr) {
 		ier = CgnsUtil::loadEdgeJScalarData(zone->jFaceSolution(), m_edgeJData->data()->GetPointData(), iRIC::toStr(IBC)); // for post2d
 		if (ier != 0) {goto ERROR;}
 		m_edgeJData->updateValueRangeSet();
@@ -701,7 +701,7 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 	}
 
 	// node vector data
-	if (zone->nodeSolutionExists()) {
+	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		ier = CgnsUtil::loadVectorData(zone->nodeSolution(), m_origData->GetPointData());
 		if (ier != 0) {goto ERROR;}
 	}
@@ -712,18 +712,18 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 	ret = setupIndexData();
 
 	// load particles
-	if (zone->particleSolutionExists()) {
+	if (zone->particleSolutionExists() && zone->particleSolution() != nullptr) {
 		ret = ParticleLoader::load(&m_particleData, zone->particleSolution(), offset());
 		if (ret == false) {goto ERROR;}
 	}
 	// load particleGroup
-	if (zone->particleGroupSolutionExists()) {
+	if (zone->particleGroupSolutionExists() && zone->particleGroupSolution() != nullptr) {
 		ret = ParticleGroupLoader::load(&m_particleGroupMap, zone->particleGroupSolution(), offset());
 		if (ret == false) {goto ERROR;}
 	}
 
 	// load polydata
-	if (zone->polyDataSolutionExists()) {
+	if (zone->polyDataSolutionExists() && zone->polyDataSolution() != nullptr) {
 		ret = PolyDataLoader::load(&m_polyDataMap, &m_polyDataCellIdsMap, zone->polyDataSolution(), offset());
 		if (ret == false) {goto ERROR;}
 	}
