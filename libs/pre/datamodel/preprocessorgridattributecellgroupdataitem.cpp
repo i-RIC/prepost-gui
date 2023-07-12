@@ -65,23 +65,21 @@ PreProcessorGridAttributeCellGroupDataItem::PreProcessorGridAttributeCellGroupDa
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	p->standardItem()->takeRow(m_standardItem->row());
-	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	const QList<SolverDefinitionGridAttribute*>& conds = typeItem->gridType()->gridAttributes();
-	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		SolverDefinitionGridAttribute* cond = *it;
+	auto typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	const auto& conds = typeItem->gridType()->gridAttributes();
+	for (auto cond : conds) {
 		if (cond->position() == SolverDefinitionGridAttribute::CellCenter) {
 			// this is a cell condition.
-			PreProcessorGridAttributeCellDataItem* item = new PreProcessorGridAttributeCellDataItem(cond, this);
+			auto item = new PreProcessorGridAttributeCellDataItem(cond, this);
 			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
 	}
-	const QList<SolverDefinitionGridComplexAttribute*>& compconds = typeItem->gridType()->gridComplexAttributes();
-	for (auto cit = compconds.begin(); cit != compconds.end(); ++cit) {
-		SolverDefinitionGridComplexAttribute* cond = *cit;
+	const auto& compConds = typeItem->gridType()->gridComplexAttributes();
+	for (auto cond : compConds) {
 		if (cond->position() == SolverDefinitionGridComplexAttribute::CellCenter) {
 			// this is a node condition.
-			PreProcessorGridAttributeCellDataItem* item = new PreProcessorGridAttributeCellDataItem(cond, this);
+			auto item = new PreProcessorGridAttributeCellDataItem(cond, this);
 			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}

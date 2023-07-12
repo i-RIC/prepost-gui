@@ -2,8 +2,8 @@
 #define POST2DWINDOWPARTICLESBASESCALARDATAITEM_H
 
 #include <guicore/named/namedgraphicwindowdataitem.h>
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 
+class ColorMapSettingContainerI;
 class Post2dWindowParticlesBaseScalarGroupDataItem;
 
 class Post2dWindowParticlesBaseScalarDataItem : public NamedGraphicWindowDataItem
@@ -15,7 +15,7 @@ public:
 	~Post2dWindowParticlesBaseScalarDataItem();
 
 	void update();
-	ColorMapSettingContainer& colorMapSetting();
+	ColorMapSettingContainerI* colorMapSetting() const;
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
@@ -34,7 +34,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	ColorMapSettingContainer m_colorMapSetting;
+	ColorMapSettingContainerI* m_colorMapSetting;
 	vtkActor2D* m_legendActor;
 };
 

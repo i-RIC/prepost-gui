@@ -15,6 +15,8 @@
 #include "solverdefinitiongridattributerealoptioncell.h"
 #include "solverdefinitiongridattributerealoptionnode.h"
 #include "solverdefinitiongridcomplexattribute.h"
+#include "solverdefinitiongridoutput.h"
+#include "solverdefinitiongridoutputoption.h"
 #include "solverdefinitiongridtype.h"
 #include "solverdefinitionoutput.h"
 #include "private/solverdefinitiongridtype_impl.h"
@@ -64,9 +66,19 @@ SolverDefinitionGridType::Impl::~Impl()
 	for (auto c : m_gridAttributes) {
 		delete c;
 	}
-	for (const auto& pair : m_outputs) {
-		delete pair.second;
+
+	for (auto c : m_gridComplexAttributes) {
+		delete c;
 	}
+
+	for (auto c : m_boundaryConditions) {
+		delete c;
+	}
+
+	for (const auto output : m_outputs) {
+		delete output;
+	}
+
 	delete m_emptyGrid;
 }
 
@@ -86,7 +98,7 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& elem, SolverDefinit
 	setGridGenerators(elem);
 	// setup grid related conditions
 	QDomElement grcElem = iRIC::getChildNode(elem, "GridRelatedCondition").toElement();
-	setupGridAttributes(grcElem, solverDef);
+	setupGridAttributes(grcElem, solverDef, translator);
 	// setup boundary conditions;
 	setupBoundaryConditions(elem, solverDef);
 	m_emptyGrid = createEmptyGrid();
@@ -98,7 +110,7 @@ void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
 	QStringList types = gtype.split(",");
 	for (int i = 0; i < types.size(); ++i) {
 		GridType gt = stringToGridType(types.at(i).trimmed());
-		m_availableGridTypes.append(gt);
+		m_availableGridTypes.push_back(gt);
 	}
 	if (m_availableGridTypes.size() > 0) {
 		m_defaultGridType = m_availableGridTypes.at(0);
@@ -113,67 +125,79 @@ void SolverDefinitionGridType::Impl::setGridGenerators(const QDomElement& elem)
 	for (int i = 0; i < genList.size(); ++i) {
 		QString gen = genList.at(i).trimmed();
 		if (gen.isEmpty()) {continue;}
-		m_availableGridGenerators.append(gen);
+		m_availableGridGenerators.push_back(gen);
 	}
 }
 
-void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem, SolverDefinition *solverDef)
+void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem, SolverDefinition *solverDef, const SolverDefinitionTranslator& translator)
 {
 	m_isKeepOrder = (elem.attribute("keepOrder") == "true");
 	auto childNodes = elem.childNodes();
 	int order = 1;
 	for (int i = 0; i < childNodes.size(); ++i) {
 		auto itemNode = childNodes.at(i);
-		if (itemNode.nodeName() != "Item") {continue;}
+		if (itemNode.nodeName() == "Item") {
+			QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
+			QDomElement itemElem = itemNode.toElement();
+			QDomElement defElem = defNode.toElement();
 
-		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
-		QDomElement itemElem = itemNode.toElement();
-		QDomElement defElem = defNode.toElement();
-
-		if (defElem.attribute("valueType") == "complex") {
-			// Complex condition
-			SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, order);
-			m_gridComplexAttributes.append(c);
-			m_gridComplexAttributeNameMap.insert(c->name(), c);
-			++ order;
-		} else {
-			SolverDefinitionGridAttribute* c = nullptr;
-			QString pos = defElem.attribute("position");
-			if (defElem.attribute("position") == "cell") {
-				if (defElem.attribute("valueType") == "integer") {
-					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, solverDef, order);
-					} else {
-						c = new SolverDefinitionGridAttributeIntegerCell(itemElem, solverDef, order);
-					}
-				} else if (defElem.attribute("valueType") == "real") {
-					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, solverDef, order);
-					} else {
-						c = new SolverDefinitionGridAttributeRealCell(itemElem, solverDef, order);
-					}
-				}
-			} else if (defElem.attribute("position") == "node") {
-				if (defElem.attribute("valueType") == "integer") {
-					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, solverDef, order);
-					} else {
-						c = new SolverDefinitionGridAttributeIntegerNode(itemElem, solverDef, order);
-					}
-				} else if (defElem.attribute("valueType") == "real") {
-					if (InputConditionWidget::hasEnums(defElem)) {
-						c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, solverDef, order);
-					} else {
-						c = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, order);
-					}
-				}
-			}
-			if (c != nullptr) {
-				m_gridAttributes.append(c);
-				m_gridAttributeNameMap.insert(c->name(), c);
+			if (defElem.attribute("valueType") == "complex") {
+				// Complex condition
+				SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, order);
+				m_gridComplexAttributes.push_back(c);
+				m_gridComplexAttributeNameMap.insert({c->name(), c});
 				++ order;
+			} else {
+				SolverDefinitionGridAttribute* c = nullptr;
+				QString pos = defElem.attribute("position");
+				if (defElem.attribute("position") == "cell") {
+					if (defElem.attribute("valueType") == "integer") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeIntegerCell(itemElem, solverDef, order);
+						}
+					} else if (defElem.attribute("valueType") == "real") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeRealCell(itemElem, solverDef, order);
+						}
+					}
+				} else if (defElem.attribute("position") == "node") {
+					if (defElem.attribute("valueType") == "integer") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeIntegerNode(itemElem, solverDef, order);
+						}
+					} else if (defElem.attribute("valueType") == "real") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, order);
+						}
+					}
+				}
+				if (c != nullptr) {
+					m_gridAttributes.push_back(c);
+					m_gridAttributeNameMap.insert({c->name(), c});
+					++ order;
+				}
 			}
+		} else if (itemNode.nodeName() == "Output") {
+			auto defElement = iRIC::getChildNode(itemNode, "Definition").toElement();
+			auto option = defElement.attribute("option", "false");
+			SolverDefinitionGridOutput* output = nullptr;
+			if (option == "true") {
+				output = new SolverDefinitionGridOutputOption(itemNode.toElement(), solverDef, translator);
+			} else {
+				output = new SolverDefinitionGridOutput(itemNode.toElement(), solverDef, translator);
+			}
+			m_outputs.push_back(output);
+			m_outputNameMap.insert({output->name(), output});
 		}
+
 		itemNode = itemNode.nextSibling();
 	}
 }
@@ -187,8 +211,8 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 			continue;
 		}
 		auto b = new SolverDefinitionBoundaryCondition(itemNode.toElement(), solverDef);
-		m_boundaryConditions.append(b);
-		m_boundaryConditionNameMap.insert(b->name(), b);
+		m_boundaryConditions.push_back(b);
+		m_boundaryConditionNameMap.insert({b->name(), b});
 		itemNode = itemNode.nextSibling();
 	}
 }
@@ -248,37 +272,62 @@ SolverDefinitionGridType::~SolverDefinitionGridType()
 	delete impl;
 }
 
-const QList<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridAttributes() const
+const std::vector<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridAttributes() const
 {
 	return impl->m_gridAttributes;
 }
 
 SolverDefinitionGridAttribute* SolverDefinitionGridType::gridAttribute(const std::string& name) const
 {
-	return impl->m_gridAttributeNameMap.value(name);
+	auto it = impl->m_gridAttributeNameMap.find(name);
+	if (it == impl->m_gridAttributeNameMap.end()) {return nullptr;}
+
+	return it->second;
 }
 
-const QList<SolverDefinitionGridComplexAttribute*>& SolverDefinitionGridType::gridComplexAttributes() const
+const std::vector<SolverDefinitionGridComplexAttribute*>& SolverDefinitionGridType::gridComplexAttributes() const
 {
 	return impl->m_gridComplexAttributes;
 }
 
 SolverDefinitionGridComplexAttribute* SolverDefinitionGridType::gridComplexAttribute(const std::string& name) const
 {
-	return impl->m_gridComplexAttributeNameMap.value(name);
+	auto it = impl->m_gridComplexAttributeNameMap.find(name);
+	if (it == impl->m_gridComplexAttributeNameMap.end()) {return nullptr;}
+
+	return it->second;
 }
 
-const QList<SolverDefinitionBoundaryCondition*>& SolverDefinitionGridType::boundaryConditions() const
+const std::vector<SolverDefinitionBoundaryCondition*>& SolverDefinitionGridType::boundaryConditions() const
 {
 	return impl->m_boundaryConditions;
 }
 
 SolverDefinitionBoundaryCondition* SolverDefinitionGridType::boundaryCondition(const std::string& name) const
 {
-	return impl->m_boundaryConditionNameMap.value(name);
+	auto it = impl->m_boundaryConditionNameMap.find(name);
+	if (it == impl->m_boundaryConditionNameMap.end()) {return nullptr;}
+
+	return it->second;
 }
 
-const QList<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::availableGridTypes() const
+const std::vector<SolverDefinitionGridOutput*>& SolverDefinitionGridType::outputs() const
+{
+	return impl->m_outputs;
+}
+
+SolverDefinitionGridOutput* SolverDefinitionGridType::output(const std::string& name) const
+{
+	auto it = impl->m_outputNameMap.find(name);
+	if (it != impl->m_outputNameMap.end()) {return it->second;}
+
+	auto output = new SolverDefinitionGridOutput(name);
+	impl->m_outputs.push_back(output);
+	impl->m_outputNameMap.insert({name, output});
+	return output;
+}
+
+const std::vector<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::availableGridTypes() const
 {
 	return impl->m_availableGridTypes;
 }
@@ -288,7 +337,7 @@ SolverDefinitionGridType::GridType SolverDefinitionGridType::defaultGridType() c
 	return impl->m_defaultGridType;
 }
 
-const QList<QString>& SolverDefinitionGridType::availableGridGenerators() const
+const std::vector<QString>& SolverDefinitionGridType::availableGridGenerators() const
 {
 	return impl->m_availableGridGenerators;
 }
@@ -374,7 +423,8 @@ Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
 
 QString SolverDefinitionGridType::solutionCaption(const std::string& name) const
 {
-	return name.c_str();
+	auto o = output(name);
+	return o->caption();
 }
 
 QStringList SolverDefinitionGridType::solutionCaptions(const std::vector<std::string>& names) const
@@ -384,19 +434,6 @@ QStringList SolverDefinitionGridType::solutionCaptions(const std::vector<std::st
 		ret.push_back(solutionCaption(name));
 	}
 	return ret;
-}
-
-SolverDefinitionOutput* SolverDefinitionGridType::output(const std::string& name)
-{
-	auto it = impl->m_outputs.find(name);
-	if (it != impl->m_outputs.end()) {
-		return it->second;
-	}
-
-	// @todo it should be read when initializing in the future
-	auto output = new SolverDefinitionOutput(name);
-	impl->m_outputs.insert({name, output});
-	return output;
 }
 
 QString SolverDefinitionGridType::gridAttributeCaption(const std::string& name) const

@@ -206,11 +206,9 @@ bool Post2dWindowNodeScalarGroupTopDataItem::exportKMLForTimestep(QXmlStreamWrit
 bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const std::string& target)
 {
 	for (const auto& item : m_childItems) {
-		auto typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		if (target == typedi->target()) {
-			if (typedi->colorMapSetting().transitionMode == ColorMapSettingContainer::TransitionMode::Discrete) {
-				return true;
-			}
+		auto scalarItem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		if (target == scalarItem->target()) {
+			return scalarItem->checkShapeExportCondition();
 		}
 	}
 	QMessageBox::warning(mainWindow(), tr("Error"), tr("To export shape file, switch color setting to \"Discrete Mode\"."));
@@ -220,9 +218,9 @@ bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const std
 bool Post2dWindowNodeScalarGroupTopDataItem::exportContourFigureToShape(const std::string& target, const QString& filename, double time)
 {
 	for (const auto& item : m_childItems) {
-		auto typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		if (target == typedi->target()) {
-			return typedi->exportContourFigureToShape(filename, time);
+		auto scalarItem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		if (target == scalarItem->target()) {
+			return scalarItem->exportContourFigureToShape(filename, time);
 		}
 	}
 	return false;

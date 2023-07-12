@@ -25,7 +25,7 @@ PreProcessorNormal15DGridWithCrossSectionDataItem::PreProcessorNormal15DGridWith
 	m_childItems.push_back(m_cellGroupDataItem);
 	m_standardItem->takeRow(m_cellGroupDataItem->standardItem()->row());
 	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	if (gtItem->gridType()->boundaryConditions().count() > 0) {
+	if (gtItem->gridType()->boundaryConditions().size() > 0) {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		m_childItems.push_back(m_bcGroupDataItem);
 		m_standardItem->takeRow(m_bcGroupDataItem->standardItem()->row());

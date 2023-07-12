@@ -4,14 +4,19 @@
 
 #include <guicore/scalarstocolors/colormapsettingeditdialog.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
 
+
 ArrowsColorSettingEditSmallWidget::ArrowsColorSettingEditSmallWidget(QWidget *parent) :
 	QWidget(parent),
-	m_copyColorMapSettings {nullptr},
-	m_mode {ColorMapMode::None},
+	m_colorMapSetting {nullptr},
+	m_colorMapSettings {},
+	m_gridType {nullptr},
 	ui(new Ui::ArrowsColorSettingEditSmallWidget)
 {
 	ui->setupUi(this);
@@ -24,10 +29,14 @@ ArrowsColorSettingEditSmallWidget::~ArrowsColorSettingEditSmallWidget()
 	delete ui;
 }
 
-void ArrowsColorSettingEditSmallWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void ArrowsColorSettingEditSmallWidget::setGridType(SolverDefinitionGridType* gridType)
 {
-	m_pointerColorMapSettings = settings;
-	m_mode = ColorMapMode::Pointer;
+	m_gridType = gridType;
+}
+
+void ArrowsColorSettingEditSmallWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
+{
+	m_colorMapSettings = settings;
 
 	std::map<QString, std::string> sortedCaptions;
 	for (const auto& pair : settings) {
@@ -42,32 +51,8 @@ void ArrowsColorSettingEditSmallWidget::setColorMapSettings(const std::unordered
 	}
 	ui->scalarComboBox->blockSignals(false);
 	if (m_colorMapNames.size() > 0) {
-		m_colorMapSetting = *(m_pointerColorMapSettings.at(m_colorMapNames.at(0)));
+		handleColorScalarChange(0);
 	} else {
-		ui->customRadioButton->setChecked(true);
-		ui->customRadioButton->setDisabled(true);
-		ui->scalarRadioButton->setDisabled(true);
-	}
-}
-
-void ArrowsColorSettingEditSmallWidget::setColorMapSettings(std::unordered_map<std::string, ColorMapSettingContainer>* settings)
-{
-	m_copyColorMapSettings = settings;
-	m_mode = ColorMapMode::Copy;
-
-	std::map<QString, std::string> sortedCaptions;
-	for (const auto& pair : *settings) {
-		sortedCaptions.insert({pair.second.valueCaption, pair.first});
-	}
-
-	ui->scalarComboBox->blockSignals(true);
-	ui->scalarComboBox->clear();
-	for (const auto& pair : sortedCaptions) {
-		ui->scalarComboBox->addItem(pair.first);
-		m_colorMapNames.push_back(pair.second);
-	}
-	ui->scalarComboBox->blockSignals(false);
-	if (m_colorMapNames.size() == 0) {
 		ui->customRadioButton->setChecked(true);
 		ui->customRadioButton->setDisabled(true);
 		ui->scalarRadioButton->setDisabled(true);
@@ -114,47 +99,41 @@ void ArrowsColorSettingEditSmallWidget::setSetting(const ArrowsSettingContainer&
 QUndoCommand* ArrowsColorSettingEditSmallWidget::colorMapModifyCommand() const
 {
 	if (m_colorMapNames.size() == 0) {return nullptr;}
-	if (m_mode != ColorMapMode::Pointer) {return nullptr;}
 
-	auto cs = m_pointerColorMapSettings.at(m_colorMapNames.at(ui->scalarComboBox->currentIndex()));
-	return new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ArrowsColorSettingEditSmallWidget::colorMapModifyCommand"),
-																													 true, m_colorMapSetting, cs);
+	auto cs = m_colorMapSettings.at(m_colorMapNames.at(ui->scalarComboBox->currentIndex()));
+	return new ColorMapSettingModifyCommand(m_colorMapSetting, cs);
 }
 
 void ArrowsColorSettingEditSmallWidget::handleColorScalarChange(int index)
 {
-	if (m_mode != ColorMapMode::Pointer) {return;}
-
 	auto name = m_colorMapNames.at(index);
-	auto colorSetting = m_pointerColorMapSettings.find(name)->second;
-	colorSetting->legend.copyOtherThanTitle(m_colorMapSetting.legend);
+	auto origColorSetting = m_colorMapSettings.find(name)->second;
+	auto newColorSetting = origColorSetting->copy();
+	newColorSetting->valueCaption = origColorSetting->valueCaption;
 
-	m_colorMapSetting = *colorSetting;
+	if (m_colorMapSetting != nullptr) {
+		newColorSetting->legendSetting()->copyOtherThanTitle(*m_colorMapSetting->legendSetting());
+	}
+	delete m_colorMapSetting;
+	m_colorMapSetting = newColorSetting;
 }
 
 void ArrowsColorSettingEditSmallWidget::openColorMapEditDialog()
 {
 	ColorMapSettingEditDialog dialog(this);
-	ColorMapSettingEditWidget widget(&dialog);
-	dialog.setWidget(&widget);
+
+	auto name = m_colorMapNames.at(ui->scalarComboBox->currentIndex());
+	auto output = m_gridType->output(name);
+	ColorMapSettingEditWidgetI* widget = output->createColorMapSettingEditWidget(&dialog);
+	dialog.setWidget(widget);
 	dialog.disableApplyButton();
 
-	ColorMapSettingContainer csForTitle;
-	if (m_mode == ColorMapMode::Pointer) {
-		widget.setConcreteSetting(m_colorMapSetting);
-		csForTitle = m_colorMapSetting;
-	} else if (m_mode == ColorMapMode::Copy) {
-		widget.setConcreteSetting(m_copyColorMapSettings->at(m_colorMapNames.at(ui->scalarComboBox->currentIndex())));
-		csForTitle = m_copyColorMapSettings->at(m_colorMapNames.at(ui->scalarComboBox->currentIndex()));
-	}
-
-	dialog.setWindowTitle(tr("Colormap Setting (%1)").arg(csForTitle.valueCaption));
+	widget->setSetting(m_colorMapSetting);
+	dialog.setWindowTitle(tr("Colormap Setting (%1)").arg(m_colorMapSetting->valueCaption));
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
-	if (m_mode == ColorMapMode::Pointer) {
-		m_colorMapSetting = widget.concreteSetting();
-	} else if (m_mode == ColorMapMode::Copy) {
-		m_copyColorMapSettings->at(m_colorMapNames.at(ui->scalarComboBox->currentIndex())) = widget.concreteSetting();
-	}
+	auto com = widget->createModifyCommand();
+	com->redo();
+	delete com;
 }

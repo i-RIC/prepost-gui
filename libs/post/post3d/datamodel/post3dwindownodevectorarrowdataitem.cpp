@@ -7,6 +7,7 @@
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -60,7 +61,7 @@ Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const Q
 
 		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 			auto cm = groupDataItem()->m_colorMapSettings.at(iRIC::toStr(newSetting.colorTarget));
-			com->addCommand(new ValueModifyCommmand<ColorMapSettingContainer>(iRIC::generateCommandId("ColorMapSetting"), false, m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+			com->addCommand(new ColorMapSettingModifyCommand(m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
 		}
 		auto gItem = groupDataItem();
 		gItem->pushUpdateActorSettingCommand(com, gItem);
@@ -141,6 +142,12 @@ bool Post3dWindowNodeVectorArrowDataItem::addToolBarButtons(QToolBar* toolBar)
 	toolBar->addWidget(m_arrowsToolBarWidget);
 
 	return true;
+}
+
+void Post3dWindowNodeVectorArrowDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	groupDataItem()->updateActorSetting();
 }
 
 void Post3dWindowNodeVectorArrowDataItem::doLoadFromProjectMainFile(const QDomNode& node)

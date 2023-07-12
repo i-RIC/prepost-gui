@@ -3,7 +3,7 @@
 
 #include <guicore/named/namedgraphicwindowdataitem.h>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class MeasuredDataPointGroupDataItem;
 
 class MeasuredDataPointDataItem : public NamedGraphicWindowDataItem
@@ -26,7 +26,7 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	MeasuredDataPointGroupDataItem* groupDataItem() const;
-	ColorMapSettingContainer* activeSetting() const;
+	ColorMapSettingContainerI* activeSetting() const;
 };
 
 #endif // MEASUREDDATAPOINTDATAITEM_H

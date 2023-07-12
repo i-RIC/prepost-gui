@@ -1019,11 +1019,10 @@ void Post2dWindowZoneDataItem::updateCellInputAttributeBrowser(vtkIdType cellid,
 	QList<PropertyBrowserAttribute> atts;
 
 	SolverDefinitionGridType* gt = dynamic_cast<Post2dWindowGridTypeDataItem*>(parent())->gridType();
-	const QList<SolverDefinitionGridAttribute*>& conds = gt->gridAttributes();
-	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		const SolverDefinitionGridAttribute* cond = *it;
+	const auto& conds = gt->gridAttributes();
+	for (auto cond : conds) {
 		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
-		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
+		auto icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
 		if (icond == nullptr) {continue;}
 
 		const IntegerEnumLoader* el = dynamic_cast<const IntegerEnumLoader*>(cond);

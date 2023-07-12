@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PolyDataSettingToolBarWidget</class>
+ <widget class="QWidget" name="PolyDataSettingToolBarWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>253</width>
+    <height>20</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QComboBox" name="valueComboBox"/>
+   </item>
+   <item>
+    <widget class="ColorEditWidget" name="colorWidget">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="ColorMapSettingToolBarWidget" name="colorMapWidget" native="true"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ColorEditWidget</class>
+   <extends>QLabel</extends>
+   <header>guibase/widget/coloreditwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ColorMapSettingToolBarWidget</class>
+   <extends>QWidget</extends>
+   <header>guicore/scalarstocolors/colormapsettingtoolbarwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

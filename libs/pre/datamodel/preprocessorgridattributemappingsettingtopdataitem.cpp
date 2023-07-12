@@ -46,21 +46,20 @@ PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMap
 	connect(m_customMappingAction, SIGNAL(triggered()), this, SLOT(customMapping()));
 
 	// setup child items;
-	PreProcessorGridTypeDataItem* gtItem =
-		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	SolverDefinitionGridType* gType = gtItem->gridType();
-	QList<SolverDefinitionGridAttribute*> conditions = gType->gridAttributes();
-	for (auto it = conditions.begin(); it != conditions.end(); ++it) {
-		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*it)->name()));
-		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*it, geodataGroup, this);
-		m_itemNameMap.insert((*it)->name(), item);
+	const auto& conditions = gType->gridAttributes();
+	for (auto cond : conditions) {
+		auto geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem(cond->name()));
+		auto item = new PreProcessorGridAttributeMappingSettingDataItem(cond, geodataGroup, this);
+		m_itemNameMap.insert(cond->name(), item);
 		m_childItems.push_back(item);
 	}
-	QList<SolverDefinitionGridComplexAttribute*> cconditions = gType->gridComplexAttributes();
-	for (auto cit = cconditions.begin(); cit != cconditions.end(); ++cit) {
-		PreProcessorGeoDataGroupDataItem* geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem((*cit)->name()));
-		PreProcessorGridAttributeMappingSettingDataItem* item = new PreProcessorGridAttributeMappingSettingDataItem(*cit, geodataGroup, this);
-		m_itemNameMap.insert((*cit)->name(), item);
+	const auto& cconditions = gType->gridComplexAttributes();
+	for (auto cond : cconditions) {
+		auto geodataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gtItem->geoDataTop()->groupDataItem(cond->name()));
+		auto item = new PreProcessorGridAttributeMappingSettingDataItem(cond, geodataGroup, this);
+		m_itemNameMap.insert(cond->name(), item);
 		m_childItems.push_back(item);
 	}
 }

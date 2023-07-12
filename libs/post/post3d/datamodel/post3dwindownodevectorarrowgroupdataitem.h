@@ -7,11 +7,11 @@
 #include <guicore/arrows/arrowssettingcontainer.h>
 #include <guibase/vtktool/vtkarrowlegendactors.h>
 
-#include <set>
 #include <unordered_map>
+#include <unordered_set>
 
 class BoolContainerWidget;
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class Post3dWindowNodeVectorArrowTopDataItem;
 class PostZoneDataContainer;
 
@@ -26,7 +26,7 @@ public:
 	void update();
 
 	const std::string& target() const;
-	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
 	const ArrowsSettingContainer& setting() const;
 	PostZoneDataContainer* data() const;
 
@@ -51,13 +51,13 @@ private:
 
 	void updateActorSetting() override;
 	Post3dWindowNodeVectorArrowTopDataItem* topDataItem() const;
-	std::set<ColorMapSettingContainer*> activeColorMaps() const;
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
 
 	std::string m_target;
 	ArrowsSettingContainer m_setting;
 
 	vtkActor2D* m_legendActor;
-	std::unordered_map<std::string, ColorMapSettingContainer*> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	std::vector<vtkActor2D*> m_colorMapActors;
 
 	BoolContainerWidget* m_lengthLegendVisibilityWidget;

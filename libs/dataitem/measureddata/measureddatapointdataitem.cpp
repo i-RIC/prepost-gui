@@ -12,7 +12,7 @@ void MeasuredDataPointDataItem::informSelection(VTKGraphicsView* v)
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void MeasuredDataPointDataItem::informDeselection(VTKGraphicsView* v)
@@ -20,7 +20,7 @@ void MeasuredDataPointDataItem::informDeselection(VTKGraphicsView* v)
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -28,7 +28,7 @@ void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsV
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void MeasuredDataPointDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -36,7 +36,7 @@ void MeasuredDataPointDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsVi
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 }
 
 void MeasuredDataPointDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -44,7 +44,7 @@ void MeasuredDataPointDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsV
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void MeasuredDataPointDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -52,7 +52,7 @@ void MeasuredDataPointDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphic
 	auto s = activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 }
 
 QDialog* MeasuredDataPointDataItem::propertyDialog(QWidget* parent)
@@ -70,7 +70,7 @@ MeasuredDataPointGroupDataItem* MeasuredDataPointDataItem::groupDataItem() const
 	return dynamic_cast<MeasuredDataPointGroupDataItem*>(parent());
 }
 
-ColorMapSettingContainer* MeasuredDataPointDataItem::activeSetting() const
+ColorMapSettingContainerI* MeasuredDataPointDataItem::activeSetting() const
 {
 	return groupDataItem()->activeSetting();
 }

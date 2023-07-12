@@ -16,6 +16,7 @@
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/opacitycontainer.h>
@@ -78,14 +79,17 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
+	auto zoneDataItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
+	auto cont = zoneDataItem->dataContainer();
 	if (cont == nullptr) {return;}
 	vtkPointSet* ps = cont->data()->data();
 	if (ps == nullptr) {return;}
 	if (m_target == "") {return;}
 
-	m_standardItem->setText(m_target.c_str());
-	m_standardItemCopy->setText(m_target.c_str());
+	auto caption = zoneDataItem->gridTypeDataItem()->gridType()->output(m_target)->caption();
+
+	m_standardItem->setText(caption);
+	m_standardItemCopy->setText(caption);
 
 	// update current active scalar
 	vtkPointData* pd = ps->GetPointData();

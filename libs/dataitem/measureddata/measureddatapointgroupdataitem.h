@@ -9,7 +9,7 @@
 #include <string>
 #include <unordered_map>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
 
 class MEASUREDDATA_API MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
@@ -30,8 +30,8 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 
 	bool hasTransparentPart() override;
-	ColorMapSettingContainer* colorMapSetting(const std::string& target) const;
-	std::unordered_map<std::string, ColorMapSettingContainer*> colorMapSettings() const;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& target) const;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -39,7 +39,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void doApplyOffset(double x, double y) override;
-	ColorMapSettingContainer* activeSetting() const;
+	ColorMapSettingContainerI* activeSetting() const;
 
 public slots:
 	void showPropertyDialog() override;

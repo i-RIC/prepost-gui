@@ -3,8 +3,8 @@
 #include "ui_post2dwindowpolydatagroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 
 Post2dWindowPolyDataGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowPolyDataGroupDataItem* item, QWidget *parent) :
 	ModifyCommandWidget {parent},
@@ -22,8 +22,8 @@ Post2dWindowPolyDataGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWi
 		auto caption = gtype->output(name)->caption();
 		names.insert({name, caption});
 	}
+	w->setGridType(gtype);
 	w->setValueNames(names);
-
 	w->setColorMapSettings(item->m_colorMapSettings);
 	w->setSetting(&item->m_setting);
 }

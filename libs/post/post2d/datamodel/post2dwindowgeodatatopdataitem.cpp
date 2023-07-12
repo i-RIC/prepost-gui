@@ -30,8 +30,8 @@ Post2dWindowGeoDataGroupDataItem* setupReferenceInformation(
 }
 
 void setupChildrenInGroups(
-		const QList<SolverDefinitionGridAttribute*>& stdAtts,
-		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
+		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector<GraphicsWindowDataItem*>* children,
 		std::map<std::string, Post2dWindowGeoDataGroupDataItem*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
@@ -69,8 +69,8 @@ void setupChildrenInGroups(
 }
 
 void setupChildrenInOrder(
-		const QList<SolverDefinitionGridAttribute*>& stdAtts,
-		const QList<SolverDefinitionGridComplexAttribute*>& clxAtts,
+		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
+		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector<GraphicsWindowDataItem*>* children,
 		std::map<std::string, Post2dWindowGeoDataGroupDataItem*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,

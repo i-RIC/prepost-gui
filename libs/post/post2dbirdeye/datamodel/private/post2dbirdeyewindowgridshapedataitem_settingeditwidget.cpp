@@ -5,8 +5,8 @@
 #include "ui_post2dbirdeyewindowgridshapedataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <misc/stringtool.h>
 #include <misc/qundocommandhelper.h>

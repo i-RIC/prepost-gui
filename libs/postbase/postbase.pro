@@ -70,6 +70,7 @@ HEADERS += autoparticlewindowi.h \
            particle/particlesettingeditwidget.h \
            polydata/polydatasetting.h \
            polydata/polydatasettingeditwidget.h \
+           polydata/polydatasettingtoolbarwidget.h \
            string/poststringresultdataitem.h \
            string/poststringresultsettingdialog.h \
            time/posttimedataitem.h \
@@ -89,6 +90,7 @@ FORMS += postallzoneselectingdialog.ui \
          particle/particledatasettingeditwidget.ui \
          particle/particlesettingeditwidget.ui \
          polydata/polydatasettingeditwidget.ui \
+         polydata/polydatasettingtoolbarwidget.ui \
          string/poststringresultsettingdialog.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
@@ -101,6 +103,7 @@ SOURCES += postallzoneselectingdialog.cpp \
            particle/particlesettingeditwidget.cpp \
            polydata/polydatasetting.cpp \
            polydata/polydatasettingeditwidget.cpp \
+           polydata/polydatasettingtoolbarwidget.cpp \
            string/poststringresultdataitem.cpp \
            string/poststringresultsettingdialog.cpp \
            time/posttimedataitem.cpp \

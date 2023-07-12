@@ -10,7 +10,7 @@ class GUICOREDLL_EXPORT SolverDefinitionOutput : public SolverDefinitionNode
 {
 public:
 	SolverDefinitionOutput(const std::string name);
-	SolverDefinitionOutput(QDomElement node, SolverDefinition* dolverDef, const SolverDefinitionTranslator& translator);
+	SolverDefinitionOutput(QDomElement node, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 	virtual ~SolverDefinitionOutput();
 
 	const std::string& name() const;

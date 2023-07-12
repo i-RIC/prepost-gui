@@ -5,6 +5,8 @@
 
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
@@ -12,14 +14,11 @@
 PolyDataSettingEditWidget::PolyDataSettingEditWidget(QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_setting {nullptr},
+	m_colorMapWidget {nullptr},
 	ui(new Ui::PolyDataSettingEditWidget)
 {
 	ui->setupUi(this);
 	connect<void(QComboBox::*)(int)>(ui->valueComboBox, &QComboBox::currentIndexChanged, this, &PolyDataSettingEditWidget::colorTargetChanged);
-
-	m_colorMapWidget = new ColorMapSettingEditWidget(this);
-	auto w = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
-	ui->colorMapWidget->setWidget(w);
 }
 
 PolyDataSettingEditWidget::~PolyDataSettingEditWidget()
@@ -31,6 +30,11 @@ void PolyDataSettingEditWidget::setSetting(PolyDataSetting* setting)
 {
 	m_setting = setting;
 	setSetting(*setting);
+}
+
+void PolyDataSettingEditWidget::setGridType(SolverDefinitionGridType* gridType)
+{
+	m_gridType = gridType;
 }
 
 void PolyDataSettingEditWidget::setValueNames(const std::unordered_map<std::string, QString>& names)
@@ -57,7 +61,7 @@ void PolyDataSettingEditWidget::setValueNames(const std::unordered_map<std::stri
 	}
 }
 
-void PolyDataSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void PolyDataSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
 {
 	m_colorMapSettings = settings;
 }
@@ -77,7 +81,15 @@ void PolyDataSettingEditWidget::colorTargetChanged(int index)
 	auto colorTarget = m_colorTargets.at(index);
 	auto cs = m_colorMapSettings.at(colorTarget);
 
+	if (m_colorMapWidget != nullptr) {
+		cs->legendSetting()->copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
+	}
+
+	auto output = m_gridType->output(colorTarget);
+	m_colorMapWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapWidget->setSetting(cs);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 }
 
 PolyDataSetting PolyDataSettingEditWidget::setting() const

@@ -8,7 +8,7 @@
 #include <postbase/particle/particledatavectorsetting.h>
 
 class ArrowsSettingToolBarWidget;
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowParticlesBaseTopDataItem;
@@ -35,6 +35,9 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	QDialog* propertyDialog(QWidget* p) override;
+	void handleStandardItemChange() override;
+
+	ColorMapSettingContainerI* activeColorMapSetting() const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -50,7 +53,6 @@ private:
 	void updateCheckState();
 	void updateActorSetting() override;
 
-	ColorMapSettingContainer* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowParticlesBaseTopDataItem* topDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;

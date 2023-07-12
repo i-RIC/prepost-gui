@@ -3,7 +3,6 @@
 
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
-#include <QList>
 
 #include <string>
 #include <vector>
@@ -12,9 +11,9 @@ class ColorMapSettingEditWidgetI;
 class Grid;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
+class SolverDefinitionGridOutput;
 class SolverDefinitionBoundaryCondition;
 class SolverDefinitionTranslator;
-class SolverDefinitionOutput;
 
 class QStringList;
 class QWidget;
@@ -38,23 +37,29 @@ public:
 
 	/// @name Grid attributes
 	//@{
-	const QList<SolverDefinitionGridAttribute*>& gridAttributes() const;
+	const std::vector<SolverDefinitionGridAttribute*>& gridAttributes() const;
 	SolverDefinitionGridAttribute* gridAttribute(const std::string& name) const;
-	const QList<SolverDefinitionGridComplexAttribute*>& gridComplexAttributes() const;
+	const std::vector<SolverDefinitionGridComplexAttribute*>& gridComplexAttributes() const;
 	SolverDefinitionGridComplexAttribute* gridComplexAttribute(const std::string& name) const;
 	//@{
 
 	/// @name Boundary conditions
 	//@{
-	const QList<SolverDefinitionBoundaryCondition*>& boundaryConditions() const;
+	const std::vector<SolverDefinitionBoundaryCondition*>& boundaryConditions() const;
 	SolverDefinitionBoundaryCondition* boundaryCondition(const std::string& name) const;
+	//@}
+
+	/// @name Outputs
+	//@{
+	const std::vector<SolverDefinitionGridOutput*>& outputs() const;
+	SolverDefinitionGridOutput* output(const std::string& name) const;
 	//@}
 
 	/// @name Properties
 	//@{
-	const QList<GridType>& availableGridTypes() const;
+	const std::vector<GridType>& availableGridTypes() const;
 	GridType defaultGridType() const;
-	const QList<QString>& availableGridGenerators() const;
+	const std::vector<QString>& availableGridGenerators() const;
 	const std::string& name() const;
 	const QString& caption() const;
 	bool isPrimary() const;
@@ -76,7 +81,6 @@ public:
 	/// Returns the caption for the solution (calculation result)
 	QString solutionCaption(const std::string& name) const;
 	QStringList solutionCaptions(const std::vector<std::string>& names) const;
-	SolverDefinitionOutput* output(const std::string& name);
 
 	QString gridAttributeCaption(const std::string& name) const;
 	ColorMapSettingEditWidgetI* createGridAttributeColorMapSettingEditWidget(const std::string& name, QWidget* parent);

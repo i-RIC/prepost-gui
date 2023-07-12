@@ -10,8 +10,8 @@
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/stringtool.h>
 
 #include <vtkActor2D.h>
@@ -30,11 +30,17 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	auto r = renderer();
 	r->AddActor2D(m_legendActor);
 
-	m_setting.target = target.c_str();
 	auto gt = data()->gridType();
+	std::string nameX = target;
+	nameX.append("X");
+	auto captionX = gt->output(nameX)->caption();
+	auto caption = captionX.left(captionX.length() - 1);
+	m_standardItem->setText(caption);
+
+	m_setting.target = target.c_str();
 	m_setting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.legend.imageSetting.controller()->setItem(this);
-	m_setting.legend.title = gt->output(target)->caption();
+	m_setting.legend.title = caption;
 
 	for (const auto& pair : data()->data()->valueRangeSet().pointDataValueRanges()) {
 		auto cs = new ColorMapSettingContainer();
@@ -67,9 +73,6 @@ Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataI
 	r->RemoveActor2D(m_legendActor);
 	m_legendActor->Delete();
 
-	for (const auto& pair : m_colorMapSettings) {
-		delete pair.second;
-	}
 	for (const auto actor : m_colorMapActors) {
 		r->RemoveActor2D(actor);
 		actor->Delete();
@@ -86,7 +89,7 @@ const std::string& Post3dWindowNodeVectorArrowGroupDataItem::target() const
 	return m_target;
 }
 
-ColorMapSettingContainer* Post3dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
+ColorMapSettingContainerI* Post3dWindowNodeVectorArrowGroupDataItem::colorMapSetting(const std::string& name) const
 {
 	return m_colorMapSettings.at(name);
 }
@@ -160,7 +163,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* 
 {
 	m_setting.legend.imageSetting.controller()->handleSelection(v);
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleSelection(v);
+		cm->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	}
 }
 
@@ -168,7 +171,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView
 {
 	m_setting.legend.imageSetting.controller()->handleDeselection(v);
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleDeselection(v);
+		cm->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	}
 }
 
@@ -179,8 +182,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event
 	m_setting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
 	controllers.push_back(m_setting.legend.imageSetting.controller());
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
-		controllers.push_back(cm->legend.imageSetting.controller());
+		cm->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v, true);
+		controllers.push_back(cm->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -193,8 +196,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* even
 	m_setting.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
 	controllers.push_back(m_setting.legend.imageSetting.controller());
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
-		controllers.push_back(cm->legend.imageSetting.controller());
+		cm->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v, true);
+		controllers.push_back(cm->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -207,8 +210,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 	m_setting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
 	controllers.push_back(m_setting.legend.imageSetting.controller());
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
-		controllers.push_back(cm->legend.imageSetting.controller());
+		cm->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v, true);
+		controllers.push_back(cm->legendSetting()->imgSetting()->controller());
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
@@ -229,7 +232,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* even
 
 	m_setting.legend.imageSetting.controller()->handleResize(event, v);
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.controller()->handleResize(event, v);
+		cm->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
 }
 
@@ -286,7 +289,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 	auto v = dataModel()->graphicsView();
 	m_setting.legend.imageSetting.apply(v);
 	for (const auto cm : activeColorMaps()) {
-		cm->legend.imageSetting.apply(v);
+		cm->legendSetting()->imgSetting()->apply(v);
 	}
 
 	for (auto child : m_childItems) {
@@ -311,15 +314,16 @@ PostZoneDataContainer* Post3dWindowNodeVectorArrowGroupDataItem::data() const
 	return zItem->dataContainer();
 }
 
-std::set<ColorMapSettingContainer*> Post3dWindowNodeVectorArrowGroupDataItem::activeColorMaps() const
+std::unordered_set<ColorMapSettingContainerI*> Post3dWindowNodeVectorArrowGroupDataItem::activeColorMaps() const
 {
-	std::set<ColorMapSettingContainer*> ret;
+	std::unordered_set<ColorMapSettingContainerI*> ret;
 
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
-		if (item->setting().arrow.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
-			ret.insert(m_colorMapSettings.at(iRIC::toStr(item->setting().arrow.colorTarget)));
-		}
+		if (! item->isAncientChecked() || ! item->isChecked()) {continue;}
+		if (item->setting().arrow.colorMode != ArrowsSettingContainer::ColorMode::ByScalar) {continue;}
+
+		ret.insert(m_colorMapSettings.at(iRIC::toStr(item->setting().arrow.colorTarget)));
 	}
 
 	return ret;

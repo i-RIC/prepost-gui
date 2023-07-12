@@ -14,12 +14,22 @@ Post2dWindowPolyDataValueDataItem::Post2dWindowPolyDataValueDataItem(const std::
 Post2dWindowPolyDataValueDataItem::~Post2dWindowPolyDataValueDataItem()
 {}
 
+void Post2dWindowPolyDataValueDataItem::showPropertyDialog()
+{
+	polyDataGroupDataItem()->showPropertyDialog();
+}
+
+QDialog* Post2dWindowPolyDataValueDataItem::propertyDialog(QWidget* parent)
+{
+	return polyDataGroupDataItem()->propertyDialog(parent);
+}
+
 void Post2dWindowPolyDataValueDataItem::informSelection(VTKGraphicsView* v)
 {
 	auto s = polyDataGroupDataItem()->activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	zoneDataItem()->initPolyDataResultAttributeBrowser();
 }
 
@@ -28,7 +38,7 @@ void Post2dWindowPolyDataValueDataItem::informDeselection(VTKGraphicsView* v)
 	auto s = polyDataGroupDataItem()->activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
 }
 
@@ -38,7 +48,7 @@ void Post2dWindowPolyDataValueDataItem::mouseMoveEvent(QMouseEvent* event, VTKGr
 	auto s = gdi->activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	zoneDataItem()->updatePolyDataResultAttributeBrowser(gdi->name(), event->pos(), v);
 }
 
@@ -47,7 +57,7 @@ void Post2dWindowPolyDataValueDataItem::mousePressEvent(QMouseEvent* event, VTKG
 	auto s = polyDataGroupDataItem()->activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void Post2dWindowPolyDataValueDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -56,7 +66,7 @@ void Post2dWindowPolyDataValueDataItem::mouseReleaseEvent(QMouseEvent* event, VT
 	auto s = gdi->activeSetting();
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	zoneDataItem()->fixPolyDataResultAttributeBrowser(gdi->name(), event->pos(), v);
 }
 
@@ -64,6 +74,12 @@ void Post2dWindowPolyDataValueDataItem::addCustomMenuItems(QMenu* menu)
 {
 	QAction* a = zoneDataItem()->showAttributeBrowserActionForPolyDataResult();
 	menu->addAction(a);
+}
+
+bool Post2dWindowPolyDataValueDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	auto gdi = polyDataGroupDataItem();
+	return gdi->addToolBarButtons(toolBar);
 }
 
 Post2dWindowZoneDataItem* Post2dWindowPolyDataValueDataItem::zoneDataItem() const

@@ -3,10 +3,9 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <vtkSmartPointer.h>
-#include <vtkActor.h>
-#include <vtkPolyDataMapper.h>
+#include <unordered_set>
 
+class ColorMapSettingContainerI;
 class Post2dWindowParticlesBaseScalarGroupDataItem;
 class Post2dWindowParticlesBaseVectorGroupDataItem;
 class Post2dWindowZoneDataItem;
@@ -29,6 +28,7 @@ public:
 	void updateZDepthRangeItemCount(ZDepthRange& range);
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+	void updateColorMaps();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
@@ -39,6 +39,8 @@ private slots:
 	void showAttributeBrowser();
 
 private:
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 

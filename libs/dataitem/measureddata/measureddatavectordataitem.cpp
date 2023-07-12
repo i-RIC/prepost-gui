@@ -24,7 +24,7 @@ void MeasuredDataVectorDataItem::informSelection(VTKGraphicsView* v)
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleSelection(v);
+	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void MeasuredDataVectorDataItem::informDeselection(VTKGraphicsView* v)
@@ -37,7 +37,7 @@ void MeasuredDataVectorDataItem::informDeselection(VTKGraphicsView* v)
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleDeselection(v);
+	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void MeasuredDataVectorDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -50,7 +50,7 @@ void MeasuredDataVectorDataItem::doHandleResize(QResizeEvent* event, VTKGraphics
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleResize(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void MeasuredDataVectorDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -63,7 +63,7 @@ void MeasuredDataVectorDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsV
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 }
 
 void MeasuredDataVectorDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -76,7 +76,7 @@ void MeasuredDataVectorDataItem::mousePressEvent(QMouseEvent* event, VTKGraphics
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void MeasuredDataVectorDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -89,7 +89,7 @@ void MeasuredDataVectorDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphi
 	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
 	if (s == nullptr) {return;}
 
-	s->legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 }
 
 QDialog* MeasuredDataVectorDataItem::propertyDialog(QWidget* parent)

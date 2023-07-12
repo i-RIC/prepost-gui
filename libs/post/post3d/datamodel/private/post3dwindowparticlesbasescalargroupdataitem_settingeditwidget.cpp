@@ -3,8 +3,8 @@
 #include "ui_post3dwindowparticlesbasescalargroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 
 Post3dWindowParticlesBaseScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post3dWindowParticlesBaseScalarGroupDataItem* item, QWidget *parent) :
 	ModifyCommandWidget {parent},
@@ -22,8 +22,8 @@ Post3dWindowParticlesBaseScalarGroupDataItem::SettingEditWidget::SettingEditWidg
 		auto caption = gtype->output(name)->caption();
 		names.insert({name, caption});
 	}
+	w->setGridType(gtype);
 	w->setValueNames(names);
-
 	w->setColorMapSettings(item->colorMapSettings());
 	w->setSetting(&item->m_setting);
 }

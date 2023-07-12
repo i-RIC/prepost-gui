@@ -43,7 +43,12 @@ void ArrowsSettingEditWidget::setValueNames(const std::map<std::string, QString>
 	}
 }
 
-void ArrowsSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void ArrowsSettingEditWidget::setGridType(SolverDefinitionGridType* gridType)
+{
+	ui->colorSettingEditWidget->setGridType(gridType);
+}
+
+void ArrowsSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
 {
 	ui->colorSettingEditWidget->setColorMapSettings(settings);
 }

@@ -8,7 +8,7 @@
 
 #include <unordered_map>
 
-class ColorMapSettingContainer;
+class ColorMapSettingContainerI;
 class ColorMapSettingToolBarWidget;
 class NamedGraphicWindowDataItem;
 class Post2dWindowGridTypeDataItem;
@@ -34,8 +34,9 @@ public:
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
 
-	ColorMapSettingContainer* colorMapSetting(const std::string& name) const;
-	std::unordered_map<std::string, ColorMapSettingContainer*> colorMapSettings() const;
+	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
+	ColorMapSettingContainerI* activeColorMapSetting() const;
 
 	void update();
 	void showPropertyDialog() override;
@@ -62,7 +63,6 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
-	ColorMapSettingContainer* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowParticlesBaseTopDataItem* topDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;

@@ -2,6 +2,7 @@
 
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::Impl(const std::string& elevationTarget, Post2dBirdEyeWindowNodeScalarGroupDataItem* item) :
@@ -24,15 +25,15 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::~Impl()
 	m_legendActor->Delete();
 }
 
-void Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::createOrUpdateColorMapsSetting(const std::string& name, const QString& caption, const ValueRangeContainer& range)
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::Impl::createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range)
 {
-	ColorMapSettingContainer* setting = nullptr;
-	auto it = m_colorMapSettings.find(name);
+	ColorMapSettingContainerI* setting = nullptr;
+	auto it = m_colorMapSettings.find(output->name());
 	if (it == m_colorMapSettings.end()) {
-		setting = new ColorMapSettingContainer();
-		setting->valueCaption = caption;
-		setting->legend.title = caption;
-		m_colorMapSettings.insert({name, setting});
+		setting = output->createColorMapSettingContainer();
+		setting->valueCaption = output->caption();
+		setting->legendSetting()->setTitle(output->caption());
+		m_colorMapSettings.insert({output->name(), setting});
 	} else {
 		setting = it->second;
 	}

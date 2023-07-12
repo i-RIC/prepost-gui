@@ -169,10 +169,10 @@ void PreProcessorBCSettingGroupDataItem::loadItems()
 
 void PreProcessorBCSettingGroupDataItem::setupAddActions()
 {
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
-	SolverDefinitionGridType* gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().count(); ++i) {
-		SolverDefinitionBoundaryCondition* bc = gtype->boundaryConditions().at(i);
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
+	auto gtype = gtItem->gridType();
+	for (int i = 0; i < gtype->boundaryConditions().size(); ++i) {
+		auto bc = gtype->boundaryConditions().at(i);
 		QString str(tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
 		connect(addAction, SIGNAL(triggered()), this, SLOT(addCondition()));

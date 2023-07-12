@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1476,8 +1478,8 @@ Parse error %2 at %3, column %4</source>
         <translation>रंग:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
 </context>
 <context>
@@ -1583,12 +1585,12 @@ Parse error %2 at %3, column %4</source>
         <translation>परिभाषा नोड संग्रहीत नहीं है</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>गलत मान प्रकार "%1"सेट किया गया है।</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>गलत मान प्रकार &quot;%1&quot;सेट किया गया है।</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>गलत स्थिति प्रकार "%1"सेट है।</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>गलत स्थिति प्रकार &quot;%1&quot;सेट है।</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1859,8 +1861,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल %1 गणना की स्थिति में आयात करने के बाद अद्यतन किया जाता है %2. क्या आप अद्यतन की गई फ़ाइल आयात करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>आप शॉर्टकट "Ctrl + C" और "Ctrl + V" के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>आप शॉर्टकट &quot;Ctrl + C&quot; और &quot;Ctrl + V&quot; के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1989,8 +1991,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल खोलते समय त्रुटि हुई.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>पहले दो कॉलम "X" और "Y" होने चाहिए।</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>पहले दो कॉलम &quot;X&quot; और &quot;Y&quot; होने चाहिए।</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2151,8 +2153,8 @@ Do you really want to import this file?</source>
         <translation>चर की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2230,8 +2232,8 @@ Do you really want to import this file?</source>
         <translation>नीचे (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2450,6 +2452,14 @@ Do you really want to import this file?</source>
         <source>Saving calculation result as TPO files...</source>
         <translation>परिकलन परिणाम को TPO फ़ाइलों के रूप में सहेजा जा रहा है...</translation>
     </message>
+    <message>
+        <source>Reading time values...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PostStringResult</name>
@@ -2584,8 +2594,8 @@ Do you really want to import this file?</source>
         <translation>आउटपुट की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2727,7 +2737,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation>प्रोजेक्ट फ़ाइल में CGNS फ़ाइल खोलते समय त्रुटि हुई: %1</translation>
+        <translation type="vanished">प्रोजेक्ट फ़ाइल में CGNS फ़ाइल खोलते समय त्रुटि हुई: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2801,6 +2811,14 @@ Do you really want to import this file?</source>
         <source>Copying image %1 to %2 failed.</source>
         <translation>छवि की नकल करना %1 को %2 असफल।</translation>
     </message>
+    <message>
+        <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured while opening %1.</source>
+        <translation type="unfinished">खोलते समय गड़बड़ी हुई %1.</translation>
+    </message>
 </context>
 <context>
     <name>ProjectMainFile::Impl</name>
@@ -2839,8 +2857,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>कार्यक्षेत्र "%1" है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>कार्यक्षेत्र &quot;%1&quot; है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3014,6 +3032,13 @@ Do you really want to import this file?</source>
     <message>
         <source>%1 Grids</source>
         <translation>%1 ग्रिड</translation>
+    </message>
+</context>
+<context>
+    <name>SolverDefinitionTranslator</name>
+    <message>
+        <source> (magnitude)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

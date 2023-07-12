@@ -5,6 +5,8 @@
 
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
@@ -12,14 +14,12 @@
 ParticleDataSettingEditWidget::ParticleDataSettingEditWidget(QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_setting {nullptr},
+	m_colorMapWidget {nullptr},
+	m_gridType {nullptr},
 	ui(new Ui::ParticleDataSettingEditWidget)
 {
 	ui->setupUi(this);
 	connect<void(QComboBox::*)(int)>(ui->valueComboBox, &QComboBox::currentIndexChanged, this, &ParticleDataSettingEditWidget::colorTargetChanged);
-
-	m_colorMapWidget = new ColorMapSettingEditWidget(this);
-	auto w = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
-	ui->colorMapWidget->setWidget(w);
 }
 
 ParticleDataSettingEditWidget::~ParticleDataSettingEditWidget()
@@ -57,7 +57,12 @@ void ParticleDataSettingEditWidget::setValueNames(const std::unordered_map<std::
 	}
 }
 
-void ParticleDataSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings)
+void ParticleDataSettingEditWidget::setGridType(SolverDefinitionGridType* gridType)
+{
+	m_gridType = gridType;
+}
+
+void ParticleDataSettingEditWidget::setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings)
 {
 	m_colorMapSettings = settings;
 }
@@ -75,9 +80,17 @@ QUndoCommand* ParticleDataSettingEditWidget::createModifyCommand(bool apply)
 void ParticleDataSettingEditWidget::colorTargetChanged(int index)
 {
 	auto colorTarget = m_colorTargets.at(index);
-	auto cs = m_colorMapSettings.at(colorTarget);
+	auto cs = m_colorMapSettings.find(colorTarget)->second;
 
+	if (m_colorMapWidget != nullptr) {
+		cs->legendSetting()->copyOtherThanTitle(*m_colorMapWidget->setting()->legendSetting());
+	}
+
+	auto output = m_gridType->output(colorTarget);
+	m_colorMapWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapWidget->setSetting(cs);
+	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
+	ui->colorMapWidget->setWidget(widget);
 }
 
 ParticleDataSetting ParticleDataSettingEditWidget::setting() const

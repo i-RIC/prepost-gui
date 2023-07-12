@@ -9,14 +9,14 @@ namespace Ui {
 class Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget;
 }
 
-class ColorMapSettingEditWidget;
+class ColorMapSettingEditWidgetI;
 
 class Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
 
 public:
-	explicit SettingEditWidget(Post2dBirdEyeWindowCellScalarGroupDataItem* item, QWidget *parent);
+	SettingEditWidget(Post2dBirdEyeWindowCellScalarGroupDataItem* item, QWidget *parent);
 	~SettingEditWidget();
 
 	QUndoCommand* createModifyCommand(bool apply) override;
@@ -36,7 +36,7 @@ private:
 	std::vector<std::string> m_nodeValueNames;
 	std::vector<std::string> m_cellValueNames;
 
-	ColorMapSettingEditWidget* m_colorMapEditWidget;
+	ColorMapSettingEditWidgetI* m_colorMapEditWidget;
 	Post2dBirdEyeWindowCellScalarGroupDataItem* m_item;
 
 	Ui::Post2dBirdEyeWindowCellScalarGroupDataItem_SettingEditWidget *ui;

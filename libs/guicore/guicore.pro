@@ -311,6 +311,7 @@ HEADERS += guicore_global.h \
            solverdef/enumloader.h \
            solverdef/enumloadert.h \
            solverdef/integerenumloader.h \
+           solverdef/private/solverdefinitiongridoutput_impl.h \
            solverdef/realenumloader.h \
            solverdef/solverdefinition.h \
            solverdef/solverdefinitionabstract.h \
@@ -333,6 +334,8 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridattributerealoptionnode.h \
            solverdef/solverdefinitiongridattributet.h \
            solverdef/solverdefinitiongridcomplexattribute.h \
+           solverdef/solverdefinitiongridoutput.h \
+           solverdef/solverdefinitiongridoutputoption.h \
            solverdef/solverdefinitiongridtype.h \
            solverdef/solverdefinitionnode.h \
            solverdef/solverdefinitionoutput.h \
@@ -858,6 +861,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            solverdef/solverdefinitiongridattributerealoptioncell.cpp \
            solverdef/solverdefinitiongridattributerealoptionnode.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
+           solverdef/solverdefinitiongridoutput.cpp \
+           solverdef/solverdefinitiongridoutputoption.cpp \
            solverdef/solverdefinitiongridtype.cpp \
            solverdef/solverdefinitionnode.cpp \
            solverdef/solverdefinitionoutput.cpp \

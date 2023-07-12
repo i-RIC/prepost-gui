@@ -33,7 +33,7 @@ private:
 
 	ArrowsSettingContainer m_setting;
 	std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> m_settings;
-	std::unordered_map<std::string, ColorMapSettingContainer> m_colorMapSettings;
+	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
 	Post3dWindowNodeVectorArrowGroupDataItem* m_item;
 
 	int m_currentRow;

@@ -15,6 +15,7 @@ class ArrowsSettingEditWidget;
 
 class ArrowsSettingContainer;
 class ColorMapSettingContainer;
+class SolverDefinitionGridType;
 
 class QTabWidget;
 class QUndoCommand;
@@ -28,7 +29,8 @@ public:
 	~ArrowsSettingEditWidget();
 
 	void setValueNames(const std::map<std::string, QString> names);
-	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainer*>& settings);
+	void setGridType(SolverDefinitionGridType* gridType);
+	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 	void setAdditionalSettingWidget(QWidget* widget);
 
 	QTabWidget* tabWidget() const;

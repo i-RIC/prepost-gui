@@ -49,6 +49,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void handleStandardItemChange() override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

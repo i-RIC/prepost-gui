@@ -17,8 +17,8 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/solverdef/solverdefinitionoutput.h>
 
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const std::string& target, iRICLib::H5CgnsZone::SolutionPosition position, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
@@ -30,12 +30,16 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	impl->m_solutionPosition = position;
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	standardItem()->setText(gType->output(target)->caption());
+	auto output = gType->output(target);
+	standardItem()->setText(output->caption());
+	auto cs = output->createColorMapSettingContainer();
+	impl->m_setting.colorMapSetting = cs;
+	impl->m_setting.contourSetting.setColorMapSetting(cs);
 
 	impl->m_colorMapToolBarWidget->hide();
-	impl->m_colorMapToolBarWidget->setSetting(&impl->m_setting.colorMapSetting);
+	impl->m_colorMapToolBarWidget->setSetting(impl->m_setting.colorMapSetting);
 	connect(impl->m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
-		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), &impl->m_setting.colorMapSetting);
+		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), impl->m_setting.colorMapSetting);
 		pushUpdateActorSettingCommand(com, this);
 	});
 
@@ -63,11 +67,6 @@ const std::string& Post2dWindowNodeScalarGroupDataItem::target() const
 	return impl->m_target;
 }
 
-const ColorMapSettingContainer& Post2dWindowNodeScalarGroupDataItem::colorMapSetting() const
-{
-	return impl->m_setting.colorMapSetting;
-}
-
 void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 {
 	impl->m_actor->VisibilityOff();
@@ -83,7 +82,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	auto v = dataModel()->graphicsView();
 
 	auto range = topDataItem()->zoneDataItem()->gridTypeDataItem()->nodeValueRange(impl->m_target);
-	impl->m_setting.colorMapSetting.setAutoValueRange(range);
+	impl->m_setting.colorMapSetting->setAutoValueRange(range);
 
 	vtkPointSet* filtered = nullptr;
 	if (impl->m_setting.regionSetting.mode == Region2dSettingContainer::Mode::Full) {
@@ -100,13 +99,13 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 	auto filtered2 = impl->m_setting.contourSetting.buildFilteredData(filtered);
 	filtered->Delete();
 
-	auto mapper = impl->m_setting.colorMapSetting.buildPointDataMapper(filtered2);
+	auto mapper = impl->m_setting.colorMapSetting->buildPointDataMapper(filtered2);
 	filtered2->Delete();
 
 	impl->m_actor->SetMapper(mapper);
 	mapper->Delete();
 
-	impl->m_setting.colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 	impl->m_actor->GetProperty()->SetLineWidth(v->devicePixelRatioF() * impl->m_setting.contourSetting.contourLineWidth);
 
@@ -132,9 +131,9 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 
 	m_actorCollection->AddItem(impl->m_actor);
 
-	impl->m_setting.colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	impl->m_setting.colorMapSetting.legend.title = topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(target())->caption();
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->setItem(this);
+	impl->m_setting.colorMapSetting->legendSetting()->setTitle(topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(target())->caption());
 
 	updateActorSetting();
 }
@@ -190,19 +189,19 @@ bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	topDataItem()->zoneDataItem()->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	topDataItem()->zoneDataItem()->clearNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 
 	auto zItem = topDataItem()->zoneDataItem();
 	switch (impl->m_solutionPosition) {
@@ -220,12 +219,12 @@ void Post2dWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTK
 
 void Post2dWindowNodeScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	if (event->button() == Qt::LeftButton) {
 		auto zItem = topDataItem()->zoneDataItem();
 		switch (impl->m_solutionPosition) {
@@ -246,8 +245,14 @@ void Post2dWindowNodeScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 bool Post2dWindowNodeScalarGroupDataItem::checkKmlExportCondition()
 {
 	// check the condition.
-	if (impl->m_setting.colorMapSetting.transitionMode != ColorMapSettingContainer::TransitionMode::Discrete) {
-		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, Colormode needs to be \"Discrete Mode\""));
+	auto colorMapSetting = dynamic_cast<ColorMapSettingContainer*>(impl->m_setting.colorMapSetting);
+	if (colorMapSetting == nullptr) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, The value should be real value, This is an integer value."));
+		return false;
+	}
+
+	if (colorMapSetting->transitionMode != ColorMapSettingContainer::TransitionMode::Discrete) {
+		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To export KML for street view, Color mode needs to be \"Discrete Mode\""));
 		return false;
 	}
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
@@ -266,8 +271,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLHeader(QXmlStreamWriter& writ
 	writer.writeTextElement("open", "1");
 
 	// output styles.
-	const auto& cm = impl->m_setting.colorMapSetting;
-	auto colors = cm.getColors();
+	auto cm = dynamic_cast<ColorMapSettingContainer*> (impl->m_setting.colorMapSetting);
+	auto colors = cm->getColors();
 	for (int i = 0; i < colors.size(); ++i) {
 		QColor col = colors.at(i).color;
 		QString colorStr = QString("%1%2%3%4").arg("b3").arg(col.blue(), 2, 16, QChar('0')).arg(col.green(), 2, 16, QChar('0')).arg(col.red(), 2, 16, QChar('0'));
@@ -301,7 +306,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLFooter(QXmlStreamWriter& writ
 bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter& writer, int /*index*/, double time, bool oneShot)
 {
 	CoordinateSystem* cs = projectData()->mainfile()->coordinateSystem();
-	const auto& cm = impl->m_setting.colorMapSetting;
+	auto cm = dynamic_cast<ColorMapSettingContainer*> (impl->m_setting.colorMapSetting);
 
 	// Folder start
 	writer.writeStartElement("Folder");
@@ -327,8 +332,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	auto ps = cont->data()->data();
 	auto da = ps->GetPointData()->GetArray(impl->m_target.c_str());
 
-	double minValue = cm.getMinValue();
-	auto colors = cm.getColors();
+	double minValue = cm->getMinValue();
+	auto colors = cm->getColors();
 
 	auto off = offset();
 
@@ -410,6 +415,14 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	return true;
 }
 
+bool Post2dWindowNodeScalarGroupDataItem::checkShapeExportCondition()
+{
+	auto cs = dynamic_cast<ColorMapSettingContainer*> (impl->m_setting.colorMapSetting);
+	if (cs == nullptr) {return false;}
+
+	return (cs->transitionMode == ColorMapSettingContainer::TransitionMode::Discrete);
+}
+
 bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QString& filename, double time)
 {
 	return impl->m_shapeExporter->exportContourFigure(filename, time);
@@ -417,7 +430,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportContourFigureToShape(const QStri
 
 void Post2dWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void Post2dWindowNodeScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
