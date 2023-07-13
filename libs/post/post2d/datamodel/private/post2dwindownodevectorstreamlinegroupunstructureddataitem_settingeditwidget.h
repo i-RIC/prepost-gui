@@ -28,6 +28,9 @@ public:
 	Setting setting();
 	void setSetting(const Setting& setting);
 
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting baseSetting() const;
+	void setBaseSetting(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& setting);
+
 	class StartPositionEditWidget;
 
 public slots:

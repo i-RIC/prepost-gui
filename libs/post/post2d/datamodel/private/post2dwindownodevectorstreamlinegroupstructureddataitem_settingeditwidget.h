@@ -25,8 +25,11 @@ public:
 	~SettingEditWidget();
 
 	QUndoCommand* createModifyCommand(bool apply) override;
-	Setting setting();
+	Setting setting() const;
 	void setSetting(const Setting& setting);
+
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting baseSetting() const;
+	void setBaseSetting(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& setting);
 
 	class StartPositionEditWidget;
 

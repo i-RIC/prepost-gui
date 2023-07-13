@@ -7,7 +7,9 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
+#include <misc/stringtool.h>
 #include <misc/valuemodifycommandt.h>
 
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowNodeVectorStreamlineGroupStructuredDataItem* item, QWidget *parent) :
@@ -42,19 +44,25 @@ Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::~Set
 
 QUndoCommand* Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::createModifyCommand(bool apply)
 {
-	return new ValueModifyCommmand<Setting>(iRIC::generateCommandId("Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::ModifySetting"),
-																					apply, setting(), &m_item->impl->m_setting);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget"), apply);
+	command->addCommand(new ValueModifyCommmand<Post2dWindowNodeVectorStreamlineGroupDataItem::Setting>(iRIC::generateCommandId("BaseSetting"),
+																																																			apply, baseSetting(), &m_item->m_setting));
+	command->addCommand(new ValueModifyCommmand<Setting>(iRIC::generateCommandId("StructuredSetting"),
+																					apply, setting(), &m_item->impl->m_setting));
+	return command;
 }
 
-Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setting()
+Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Setting Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setting() const
 {
 	auto current = ui->startPositionListWidget->currentRow();
-	m_startPositions[current] = ui->startPositionWidget->setting();
+
+	auto startPositions = m_startPositions;
+	startPositions[current] = ui->startPositionWidget->setting();
 
 	Setting ret;
 
 	ret.region = ui->regionWidget->setting();
-	ret.startPositions = m_startPositions;
+	ret.startPositions = startPositions;
 
 	return ret;
 }
@@ -68,6 +76,22 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget:
 	ui->startPositionListWidget->setCurrentRow(0);
 	applyStartPosition(0);
 	updateRemoveButtonStatus();
+}
+
+Post2dWindowNodeVectorStreamlineGroupDataItem::Setting Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::baseSetting() const
+{
+	Post2dWindowNodeVectorStreamlineGroupDataItem::Setting ret;
+	ret.target = m_solutions.at(ui->solutionComboBox->currentIndex()).c_str();
+
+	return ret;
+}
+
+void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setBaseSetting(const Post2dWindowNodeVectorStreamlineGroupDataItem::Setting& setting)
+{
+	auto it = std::find(m_solutions.begin(), m_solutions.end(), iRIC::toStr(setting.target));
+	if (it != m_solutions.end()) {
+		ui->solutionComboBox->setCurrentIndex(it - m_solutions.begin());
+	}
 }
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::addStartPosition()
@@ -121,8 +145,6 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget:
 	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
 
 	if (m_solutions.size() < 2) {
-		m_item->m_setting.target = m_solutions[0].c_str();
-
 		ui->physValLabel->hide();
 		ui->solutionComboBox->hide();
 	}
