@@ -544,7 +544,6 @@ void GeoDataRiverSurvey::updateShapeData()
 	impl->updateVtkPointsObjects();
 	impl->updateVtkCenterAndBankLinesObjects();
 	impl->updateVtkSelectedObjects();
-	impl->updateVtkVerticalCenterLinesObjects();
 	impl->updateVtkNameLabelObjects();
 	impl->updateVtkBackgroundObjects();
 
@@ -556,6 +555,8 @@ void GeoDataRiverSurvey::updateShapeData()
 
 void GeoDataRiverSurvey::updateActorSetting()
 {
+	impl->updateVtkVerticalCenterLinesObjects();
+
 	auto col = actorCollection();
 	auto col2 = actor2DCollection();
 
