@@ -266,8 +266,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* 
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
@@ -279,8 +277,6 @@ void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView
 	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
 	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
 	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

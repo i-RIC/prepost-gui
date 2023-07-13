@@ -162,17 +162,11 @@ void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector
 void Post3dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
 {
 	m_setting.legend.imageSetting.controller()->handleSelection(v);
-	for (const auto cm : activeColorMaps()) {
-		cm->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
 	m_setting.legend.imageSetting.controller()->handleDeselection(v);
-	for (const auto cm : activeColorMaps()) {
-		cm->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
 }
 
 void Post3dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
