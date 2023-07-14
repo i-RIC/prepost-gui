@@ -571,6 +571,14 @@ int PreProcessorBCDataItem::saveToCgnsFile(iRICLib::H5CgnsZone* zone)
 	return IRIC_NO_ERROR;
 }
 
+int PreProcessorBCDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	int ret = loadFromCgnsFile(zone);
+	setName(impl->m_dialog->caption());
+
+	return ret;
+}
+
 void PreProcessorBCDataItem::handleStandardItemDoubleClicked()
 {
 	showDialog();
