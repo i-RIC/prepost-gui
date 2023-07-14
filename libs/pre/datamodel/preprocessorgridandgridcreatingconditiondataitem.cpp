@@ -61,6 +61,8 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
 	m_caption {caption},
 	m_zoneName (zoneName),
+	m_bcSettingGroupDataItem {nullptr},
+	m_bcGroupDataItem {nullptr},
 	m_gridDataItem {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -83,21 +85,18 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 		}
 	}
 
+	SolverDefinitionGridType* gType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType();
+
 	m_creatingConditionDataItem = new PreProcessorGridCreatingConditionDataItem(this);
 	m_childItems.push_back(m_creatingConditionDataItem);
-
-	m_bcSettingGroupDataItem = new PreProcessorBCSettingGroupDataItem(this);
-	m_childItems.push_back(m_bcSettingGroupDataItem);
 
 	m_mappingSettingDataItem = new PreProcessorGridAttributeMappingSettingTopDataItem(this);
 	m_childItems.push_back(m_mappingSettingDataItem);
 
-	SolverDefinitionGridType* gType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType();
+	if (gType->boundaryConditions().size() > 0) {
+		m_bcSettingGroupDataItem = new PreProcessorBCSettingGroupDataItem(this);
+		m_childItems.push_back(m_bcSettingGroupDataItem);
 
-	if (gType->boundaryConditions().size() == 0) {
-		m_standardItem->takeChild(m_bcSettingGroupDataItem->standardItem()->row());
-		m_bcGroupDataItem = nullptr;
-	} else {
 		m_bcGroupDataItem = new PreProcessorBCGroupDataItem(this);
 		connect(m_bcGroupDataItem, SIGNAL(itemsUpdated()), m_bcSettingGroupDataItem, SLOT(updateItems()));
 		connect(m_bcGroupDataItem, SIGNAL(itemsLoaded()), m_bcSettingGroupDataItem, SLOT(loadItems()));
@@ -460,7 +459,9 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 		int ret = QMessageBox::information(mainWindow(), tr("Confirmation"), tr("Do you want to map geographic data to grid attributes now?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 		if (ret == QMessageBox::Yes) {
 			m_mappingSettingDataItem->executeMapping();
-			m_bcSettingGroupDataItem->executeMapping(true);
+			if (m_bcSettingGroupDataItem != nullptr) {
+				m_bcSettingGroupDataItem->executeMapping(true);
+			}
 		}
 	}
 	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);

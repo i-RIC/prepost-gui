@@ -80,8 +80,8 @@ const vtkTextPropertySettingContainer& PreProcessorBCGroupDataItem::nameSetting(
 
 int PreProcessorBCGroupDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(child);
 		bcItem->loadFromCgnsFile(zone);
 	}
 
@@ -96,6 +96,25 @@ int PreProcessorBCGroupDataItem::saveToCgnsFile(iRICLib::H5CgnsZone* zone)
 		auto bcItem = dynamic_cast<PreProcessorBCDataItem*> (child);
 		int ier = bcItem->saveToCgnsFile(zone);
 		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+	return IRIC_NO_ERROR;
+}
+
+int PreProcessorBCGroupDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
+{
+	auto zoneBc = zone.zoneBc();
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	const auto& conditions = gtItem->gridType()->boundaryConditions();
+	for (const auto& c : conditions) {
+		auto count = zoneBc->bcCount(c->name());
+		for (int i = 1; i <= count; ++i) {
+			auto item = new PreProcessorBCDataItem(projectData()->solverDefinition(), c, this, false);
+			item->setCgnsNumber(i);
+			int ret = item->importFromCgnsFile(zone);
+			if (ret != IRIC_NO_ERROR) {return ret;}
+
+			m_childItems.push_back(item);
+		}
 	}
 	return IRIC_NO_ERROR;
 }

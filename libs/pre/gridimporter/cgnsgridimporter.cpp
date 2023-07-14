@@ -84,7 +84,7 @@ bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString
 			auto bc = m_gridDataItem->bcGroupDataItem();
 			if (bc != nullptr) {
 				bc->clear();
-				bc->loadFromCgnsFile(*zone);
+				bc->importFromCgnsFile(*zone);
 			}
 		}
 

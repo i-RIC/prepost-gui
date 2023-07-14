@@ -24,6 +24,7 @@ public:
 
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 	int saveToCgnsFile(iRICLib::H5CgnsZone* zone);
+	int importFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 	void informGridUpdate();
 	const QList<PreProcessorBCDataItem*> conditions() const;
 	void addCustomMenuItems(QMenu* menu) override;
