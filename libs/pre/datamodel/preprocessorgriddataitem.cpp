@@ -1700,7 +1700,6 @@ void PreProcessorGridDataItem::setBCGroupDataItem(PreProcessorBCGroupDataItem* i
 	if (item == 0) {return;}
 	item->setParent(this);
 	m_bcGroupDataItem = item;
-	m_standardItem->appendRow(m_bcGroupDataItem->standardItem());
 	m_childItems.push_back(m_bcGroupDataItem);
 }
 
@@ -1711,7 +1710,7 @@ void PreProcessorGridDataItem::unsetBCGroupDataItem()
 	if (it != m_childItems.end()) {m_childItems.erase(it);}
 	m_bcGroupDataItem->setParent(0);
 	m_standardItem->takeChild(m_bcGroupDataItem->standardItem()->row());
-	m_bcGroupDataItem = 0;
+	m_bcGroupDataItem = nullptr;
 }
 
 void PreProcessorGridDataItem::applyColorMapSetting(const std::string& name)
