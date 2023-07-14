@@ -131,8 +131,8 @@ void PreProcessorBCGroupDataItem::renumberItemsForProject()
 	while (it != m_childItems.end()) {
 		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		auto tmpbc = tmpItem->condition();
-		auto it = std::find(conditions.begin(), conditions.end(), tmpbc);
-		int tmpindex = it - conditions.begin();
+		auto it2 = std::find(conditions.begin(), conditions.end(), tmpbc);
+		int tmpindex = it2 - conditions.begin();
 		if (tmpindex != condIndex) {
 			number = 1;
 			condIndex = tmpindex;
@@ -176,8 +176,8 @@ void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 		auto tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		if (tmpItem->isValid()) {
 			auto tmpbc = tmpItem->condition();
-			auto it = std::find(conditions.begin(), conditions.end(), tmpbc);
-			int tmpindex = it - conditions.begin();
+			auto it2 = std::find(conditions.begin(), conditions.end(), tmpbc);
+			int tmpindex = it2 - conditions.begin();
 			if (tmpindex != condIndex) {
 				number = 1;
 				condIndex = tmpindex;
