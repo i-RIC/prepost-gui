@@ -1396,13 +1396,12 @@ bool PreProcessorDataModel::checkMappingStatus()
 			int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("%1 are not mapped after they are edited last time. Do you want to execute mapping now?").arg(notMapped.join(", ")), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				// execute mapping for each grids.
-				const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
-				for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
-					PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *cit;
-					PreProcessorGridAndGridCreatingConditionDataItem* cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(cond);
-					PreProcessorGridAttributeMappingSettingTopDataItem* tItem = cond2->mappingSettingDataItem();
+				const auto& conditions = gtItem->conditions();
+				for (auto cond : conditions) {
+					auto cond2 = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(cond);
+					auto tItem = cond2->mappingSettingDataItem();
 					for (int i = 0; i < groupsToMap.count(); ++i) {
-						PreProcessorGeoDataGroupDataItemInterface* gItem = groupsToMap[i];
+						auto gItem = groupsToMap[i];
 						tItem->customMapping(gItem->condition()->name(), true);
 					}
 				}
@@ -1412,19 +1411,23 @@ bool PreProcessorDataModel::checkMappingStatus()
 			}
 		}
 
-		const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions = gtItem->conditions();
+		const auto& conditions = gtItem->conditions();
 		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
-			PreProcessorGridAndGridCreatingConditionDataItem* cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*cit);
-			const std::vector<GraphicsWindowDataItem*>& bcslist = cond->bcSettingGroupDataItem()->childItems();
-			for (auto cit = bcslist.begin(); cit != bcslist.end(); ++cit) {
-				PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*cit);
-				if (! bcsdi->bcDataItem()->hideSetting() && ! bcsdi->isMapped()) {
-					int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
-					if (ret == QMessageBox::Yes) {
-						bcsdi->executeMapping(true, 0);
-						mapExexuted = true;
-					} else if (ret == QMessageBox::Cancel) {
-						return false;
+			auto cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*cit);
+			auto bcSettingGroupDataItem = cond->bcGroupDataItem();
+			if (bcSettingGroupDataItem != nullptr) {
+				const auto& bcslist = bcSettingGroupDataItem->childItems();
+				for (auto item : bcslist) {
+					auto bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(item);
+					if (!bcsdi->bcDataItem()->hideSetting() && !bcsdi->isMapped()) {
+						int ret = QMessageBox::warning(mainWindow(), PreProcessorDataModel::tr("Warning"), PreProcessorDataModel::tr("Boundary Condition Setting \"%1\" is not mapped after it is edited last time. Do you want to execute mapping now?").arg(bcsdi->bcDataItem()->caption()), QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel, QMessageBox::No);
+						if (ret == QMessageBox::Yes) {
+							bcsdi->executeMapping(true, 0);
+							mapExexuted = true;
+						}
+						else if (ret == QMessageBox::Cancel) {
+							return false;
+						}
 					}
 				}
 			}
