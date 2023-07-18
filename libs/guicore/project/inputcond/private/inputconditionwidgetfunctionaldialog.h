@@ -35,8 +35,9 @@ private:
 	enum AxisSetting {asLeft, asRight, asNone};
 
 public:
-	InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent = 0);
+	InputConditionWidgetFunctionalDialog(QDomNode node, const SolverDefinitionTranslator& t, QWidget* parent = nullptr);
 	~InputConditionWidgetFunctionalDialog();
+
 	const InputConditionContainerFunctional& container() const;
 	void setData(const InputConditionContainerFunctional& c);
 

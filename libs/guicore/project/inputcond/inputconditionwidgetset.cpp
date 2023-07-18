@@ -130,7 +130,7 @@ void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionCont
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
 	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
-	QString parameterCaption = itemElem.attribute("caption");
+	QString parameterCaption = t.translate(itemElem.attribute("caption"));
 	// get the definition node;
 	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
 	if (defNode.isNull()) {
