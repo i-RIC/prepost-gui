@@ -201,7 +201,8 @@ bool Post2dWindow::checkShapeExportCondition(const std::string& zoneName) const
 		m_exportScalarName = scalars.at(0).c_str();
 	} if (scalars.size() > 1) {
 		ItemSelectingDialog dialog(sItem->mainWindow());
-		dialog.setMessage(tr("Please select which scalar to export:"));
+		dialog.setWindowTitle(tr("Select value"));
+		dialog.setMessage(tr("Please select which value to export."));
 		QStringList qstringScalars;
 		for (const auto& s : scalars) {
 			qstringScalars.append(s.c_str());

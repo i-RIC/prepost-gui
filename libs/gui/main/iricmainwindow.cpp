@@ -1935,7 +1935,7 @@ void iRICMainWindow::exportCfShape()
 		warnSolverRunning();
 		return;
 	}
-	CfShapeExportWindowI* ew = dynamic_cast<CfShapeExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
+	auto ew = dynamic_cast<CfShapeExportWindowI*>(m_centralWidget->activeSubWindow()->widget());
 	if (ew == nullptr) {
 		QMessageBox::information(this, tr("Information"), tr("Currently active sub-window does not support exporting contour figure."));
 		return;
@@ -1957,6 +1957,8 @@ void iRICMainWindow::exportCfShape()
 		zoneName = zones.at(0);
 	} if (zones.size() > 1) {
 		ItemSelectingDialog dialog;
+		dialog.setWindowTitle(tr("Select Grid"));
+		dialog.setMessage(tr("Select grid to export shape files."));
 		dialog.setItems(zones);
 		int ret = dialog.exec();
 		if (ret == QDialog::Rejected) {
