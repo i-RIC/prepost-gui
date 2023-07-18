@@ -292,7 +292,7 @@ bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int ind
 
 std::vector<std::string> Post2dWindow::discreteColorDrawingZones()
 {
-	std::vector<std::string> ret;
+	std::set<std::string> retset;
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	auto gtItems = rItem->gridTypeDataItems();
 	for (int i = 0; i < gtItems.size(); ++i) {
@@ -303,10 +303,15 @@ std::vector<std::string> Post2dWindow::discreteColorDrawingZones()
 			for (auto item : sItem->childItems()) {
 				auto typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 				if (typedi->standardItem()->checkState() == Qt::Checked) {
-					ret.push_back(zItem->zoneName());
+					retset.insert(zItem->zoneName());
 				}
 			}
 		}
+	}
+
+	std::vector<std::string> ret;
+	for (auto name : retset) {
+		ret.push_back(name);
 	}
 	return ret;
 }
