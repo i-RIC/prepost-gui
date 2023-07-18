@@ -1153,13 +1153,17 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		QStringList outputFilenames;
 		QString inputFilename;
 		QString outputFilename;
+		QString prefix, prefix2;
 
 		auto setting = wizard->setting();
 
 		switch (setting.fileOutputSetting) {
 		case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
-			inputFilename = QString("img_%%1d%2").arg(setting.suffixLength).arg(setting.imageExtention);
-			outputFilename = QString("img.mp4");
+			prefix = wizard->prefixList().at(0);
+			prefix2 = prefix;
+			prefix2.replace("_", "");
+			inputFilename = QString("%1%%2d%3").arg(prefix).arg(setting.suffixLength).arg(setting.imageExtention);
+			outputFilename = QString("%1.mp4").arg(prefix2);
 			inputFilenames.append(inputFilename);
 			outputFilenames.append(outputFilename);
 			break;
@@ -1167,8 +1171,11 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 		case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 			int idx = 0;
 			for (auto it = wizard->windowList().begin(); it != wizard->windowList().end(); ++it) {
-				inputFilename = QString("window%1_%%2d%3").arg(idx + 1).arg(setting.suffixLength).arg(setting.imageExtention);
-				outputFilename = QString("window%1.mp4").arg(idx + 1);
+				auto prefix = wizard->prefixList().at(idx);
+				auto prefix2 = prefix;
+				prefix2.replace("_", "");
+				inputFilename = QString("%1%%2d%3").arg(prefix).arg(setting.suffixLength).arg(setting.imageExtention);
+				outputFilename = QString("%1.mp4").arg(prefix2);
 				inputFilenames.append(inputFilename);
 				outputFilenames.append(outputFilename);
 				++idx;

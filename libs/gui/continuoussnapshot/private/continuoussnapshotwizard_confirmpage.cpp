@@ -44,7 +44,9 @@ void ContinuousSnapshotWizard::ConfirmPage::initializePage()
 	}
 	if (s.outputMovie) {
 		for (const QString& prefix : m_wizard->prefixList()) {
-			QString movieFilename = QString("%1.mp4").arg(prefix);
+			auto p2 = prefix;
+			p2.replace("_", "");
+			QString movieFilename = QString("%1.mp4").arg(p2);
 			QString absMovieFilename = QDir(s.exportTargetFolder).absoluteFilePath(movieFilename);
 			m_fileList->addItem(QDir::toNativeSeparators(absMovieFilename));
 		}

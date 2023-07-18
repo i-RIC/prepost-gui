@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ContinuousSnapshotWizard_MoviePropertyPage</class>
- <widget name="ContinuousSnapshotWizard_MoviePropertyPage" class="QWizardPage">
+ <widget class="QWizardPage" name="ContinuousSnapshotWizard_MoviePropertyPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -39,7 +39,7 @@
          <bool>false</bool>
         </property>
         <property name="editTriggers">
-         <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+         <set>QAbstractItemView::NoEditTriggers</set>
         </property>
         <property name="columnCount">
          <number>0</number>

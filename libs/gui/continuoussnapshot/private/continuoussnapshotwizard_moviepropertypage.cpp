@@ -23,18 +23,25 @@ void ContinuousSnapshotWizard::MoviePropertyPage::initializePage()
 	// Table view
 	ui->filenameTableWidget->setColumnCount(1);
 	ui->filenameTableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem(tr("File name")));
+	QString prefix, prefix2;
 	switch (s.fileOutputSetting) {
 	case ContinuousSnapshotSetting::FileOutputSetting::Onefile:
 		ui->filenameTableWidget->setRowCount(1);
 		ui->filenameTableWidget->setVerticalHeaderItem(0, new QTableWidgetItem(tr("Output file")));
-		ui->filenameTableWidget->setItem(0, 0, new QTableWidgetItem("img.mp4"));
+		prefix = m_wizard->prefixList().at(0);
+		prefix2 = prefix;
+		prefix2.replace("_", "");
+		ui->filenameTableWidget->setItem(0, 0, new QTableWidgetItem(QString("%1.mp4").arg(prefix2)));
 		break;
 	case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 		ui->filenameTableWidget->setRowCount(m_wizard->windowList().size());
 		int idx = 0;
 		for (QMdiSubWindow* sub : m_wizard->windowList()) {
+			auto prefix = m_wizard->prefixList().at(idx);
+			auto prefix2 = prefix;
+			prefix2.replace("_", "");
 			ui->filenameTableWidget->setVerticalHeaderItem(idx, new QTableWidgetItem(sub->windowTitle()));
-			ui->filenameTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("window%1.mp4").arg(idx + 1)));
+			ui->filenameTableWidget->setItem(idx, 0, new QTableWidgetItem(QString("%1.mp4").arg(prefix2)));
 			++idx;
 		}
 		break;
