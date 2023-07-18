@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AnimationController</name>
@@ -770,7 +768,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Veldu leysir</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Þegar þú býrð til nýtt verkefni þarftu að velja lausnina til að nota til útreikninga. Vinsamlegast veldu lausn og ýttu á „OK“ hnappinn.</translation>
     </message>
 </context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 &quot;. Þessi lausnarmaður er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 ". Þessi lausnarmaður er hunsaður. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Þetta verkefni virðist vera opnað með öðrum iRIC GUI glugga. Þú getur ekki opnað verkefnamöppu úr mörgum GUI gluggum.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Opna verkefnið er ekki afritað í vinnuskrá og þú neyðist til að vista þær breytingar sem þú gerir á þessu verkefni. Ef þú vilt halda núverandi verkefni skaltu vista það í öðru verkefni fyrst.</translation>
     </message>
     <message>
@@ -1934,7 +1932,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Núverandi virkur undirgluggi styður ekki útflutning útlínutölu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -2075,16 +2073,16 @@ Option -&gt; Preferences</source>
         <translation>Stillingarskrá (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation>Til að flytja út formskrá skaltu skipta um litastillingu yfir í &quot;Staðan háttur&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation>Til að flytja út formskrá skaltu skipta um litastillingu yfir í "Staðan háttur".</translation>
     </message>
     <message>
         <source>Select Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu Grid</translation>
     </message>
     <message>
         <source>Select grid to export shape files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veldu rist til að flytja út formskrár.</translation>
     </message>
 </context>
 <context>
@@ -2431,7 +2429,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2458,8 +2456,8 @@ Option -&gt; Preferences</source>
         <translation>Opnaðu nýjan 2D eftirvinnslu glugga</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Opnaðu nýjan 2D Bird&apos;s-Eye eftirvinnslu glugga</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Opnaðu nýjan 2D Bird's-Eye eftirvinnslu glugga</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
