@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AnimationController</name>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Valitse Ratkaisija</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina &quot;OK&quot; -painiketta.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Kun luot uuden projektin, sinun on valittava laskemiseen käytettävä ratkaisija. Valitse ratkaisija ja paina "OK" -painiketta.</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon &quot;%1&quot;. Tämä ratkaisija jätetään huomiotta. %2</translation>
+        <translation>Virhe ladattaessa ratkaisijamääritystiedostoa kansioon "%1". Tämä ratkaisija jätetään huomiotta. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tämä projekti näyttää avautuvan toisella iRIC GUI -ikkunalla. Et voi avata projektikansiota useista graafisista käyttöliittymistä.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Avattua projektia ei kopioida työhakemistoon, ja sinun on tallennettava tähän projektiin tekemäsi muutokset. Jos haluat säilyttää nykyisen projektin, tallenna se ensin toiseen projektiin.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Tällä hetkellä aktiivinen alaikkuna ei tue ääriviivan vientiä.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda &quot;Näyttöasetukseksi&quot; &quot;Muotokuvio&quot;, ei &quot;Värin reunus&quot; tai &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Jos haluat viedä muototiedoston, vaihda "Näyttöasetukseksi" "Muotokuvio", ei "Värin reunus" tai "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Asetustiedosto (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Voit viedä muototiedoston vaihtamalla väritilaksi &quot;Diskreetti tila&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Voit viedä muototiedoston vaihtamalla väritilaksi "Diskreetti tila".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2087,8 +2085,8 @@ Option -&gt; Preferences</source>
         <translation>Valitse ruudukko muototiedostojen viemistä varten.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>"Diskreettitilassa" ei piirretä ääriviivoja.</translation>
     </message>
 </context>
 <context>
@@ -2435,7 +2433,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2462,7 +2460,7 @@ Option -&gt; Preferences</source>
         <translation>Avaa uusi 2D-jälkikäsittelyikkuna</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Avaa uusi 2D-lintuperspektiivin jälkikäsittelyikkuna</translation>
     </message>
     <message>

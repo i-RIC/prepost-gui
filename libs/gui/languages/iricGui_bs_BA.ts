@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>AnimationController</name>
@@ -770,8 +768,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Odaberite Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Kada kreirate novi projekt, morate odabrati rješavač koji ćete koristiti za izračun. Molimo odaberite rješavač i pritisnite tipku &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Kada kreirate novi projekt, morate odabrati rješavač koji ćete koristiti za izračun. Molimo odaberite rješavač i pritisnite tipku "OK".</translation>
     </message>
 </context>
 <context>
@@ -1653,9 +1651,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Došlo je do greške pri učitavanju datoteke definicije rješavača u mapu &quot;%1&quot;Ovaj rješavač se zanemaruje. %2</translation>
+        <translation>Došlo je do greške pri učitavanju datoteke definicije rješavača u mapu "%1"Ovaj rješavač se zanemaruje. %2</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1772,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Čini se da je ovaj projekt otvoren drugim iRIC GUI prozorom. Ne možete otvoriti fasciklu projekta iz više prozora sa grafičkim interfejsom.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otvoreni projekt se ne kopira u radni direktorij i bit ćete prisiljeni spremiti izmjene koje unesete u ovaj projekt. Ako želite zadržati trenutni projekt, prvo ga spremite u drugi projekt.</translation>
     </message>
     <message>
@@ -1934,8 +1932,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Trenutno aktivni pod-prozor ne podržava izvoz konturne figure.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite &quot;Postavke prikaza&quot; na &quot;Konturna slika&quot;, a ne na &quot;Šiške u boji&quot; ili &quot;Izoline&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite "Postavke prikaza" na "Konturna slika", a ne na "Šiške u boji" ili "Izoline".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2075,8 +2073,8 @@ Option -&gt; Preferences</source>
         <translation>Podešavanje fajla (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite način boje na &quot;Discrete Mode&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Da biste izvezli datoteku oblika, prebacite način boje na "Discrete Mode".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2087,8 +2085,8 @@ Option -&gt; Preferences</source>
         <translation>Odaberite mrežu za izvoz datoteka oblika.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>U "Discrete Mode" nije iscrtana kontura.</translation>
     </message>
 </context>
 <context>
@@ -2435,7 +2433,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2462,7 +2460,7 @@ Option -&gt; Preferences</source>
         <translation>Otvorite novi 2D prozor za naknadnu obradu</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Otvorite novi 2D prozor za naknadnu obradu iz ptičje perspektive</translation>
     </message>
     <message>
