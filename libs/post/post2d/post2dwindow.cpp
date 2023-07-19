@@ -193,9 +193,9 @@ bool Post2dWindow::checkShapeExportCondition(const std::string& zoneName) const
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
-	auto scalars = sItem->selectedScalars();
+	auto scalars = sItem->scalarsDrawnInDiscreteMode();
 	if (scalars.size() == 0) {
-		QMessageBox::warning(window(), tr("Error"), tr("No contours have been defined"));
+		QMessageBox::warning(window(), tr("Error"), tr("No contour is drawn in \"Discrete Mode\"."));
 		return false;
 	} else if (scalars.size() == 1) {
 		m_exportScalarName = scalars.at(0).c_str();
@@ -221,7 +221,7 @@ bool Post2dWindow::checkKmlExportCondition(const std::string& zoneName) const
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
-	auto scalars = sItem->selectedScalars();
+	auto scalars = sItem->scalarsDrawnInDiscreteMode();
 	if (scalars.size() == 0) {
 		QMessageBox::warning(window(), tr("Error"), tr("No Contour Figure is drawn now."));
 		return false;
@@ -301,10 +301,11 @@ std::vector<std::string> Post2dWindow::discreteColorDrawingZones()
 			auto zItem = zItems.at(j);
 			auto sItem = zItem->scalarGroupTopDataItem();
 			for (auto item : sItem->childItems()) {
-				auto typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-				if (typedi->standardItem()->checkState() == Qt::Checked) {
-					retset.insert(zItem->zoneName());
-				}
+				auto ditem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+				if (ditem->standardItem()->checkState() != Qt::Checked) {continue;}
+				if (! ditem->colorMapIsDiscreteMode()) {continue;}
+
+				retset.insert(zItem->zoneName());
 			}
 		}
 	}

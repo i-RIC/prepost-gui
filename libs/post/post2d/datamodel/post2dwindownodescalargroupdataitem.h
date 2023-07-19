@@ -46,7 +46,7 @@ public:
 	bool exportKMLFooter(QXmlStreamWriter& writer);
 	bool exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, bool oneShot);
 
-	bool checkShapeExportCondition();
+	bool colorMapIsDiscreteMode();
 	bool exportContourFigureToShape(const QString& filename, double time);
 
 private:

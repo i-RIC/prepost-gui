@@ -27,7 +27,7 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-	std::vector<std::string> selectedScalars() const;
+	std::vector<std::string> scalarsDrawnInDiscreteMode() const;
 	bool checkKmlExportCondition(const std::string& target);
 	bool exportKMLHeader(QXmlStreamWriter& writer, const std::string& target);
 	bool exportKMLFooter(QXmlStreamWriter& writer, const std::string& target);

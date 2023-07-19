@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>AnimationController</name>
@@ -768,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Изберете Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Когато създавате нов проект, трябва да изберете решението, което да използвате за изчисление. Моля, изберете решател и натиснете бутона "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Когато създавате нов проект, трябва да изберете решението, което да използвате за изчисление. Моля, изберете решател и натиснете бутона &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Внимание</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Възникна грешка при зареждане на файл с дефиниция на решаващо средство в папка " %1 Този решател се игнорира. %2</translation>
+        <translation>Възникна грешка при зареждане на файл с дефиниция на решаващо средство в папка &quot; %1 Този решател се игнорира. %2</translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Изглежда, че този проект се отваря от друг прозорец на iRIC GUI. Не можете да отворите папка на проект от множество GUI прозорци.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Отвореният проект не се копира в работна директория и ще бъдете принудени да запазите промените, които правите в този проект. Ако искате да запазите текущия проект, моля първо го запазете в друг проект.</translation>
     </message>
     <message>
@@ -1932,7 +1934,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Понастоящем активният подпрозорец не поддържа експортиране на контурна фигура.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">За да експортирате файл с форма, превключете „Настройка на дисплея“ на „Контурна фигура“, а не „Цветна ресни“ или „Изолинии“.</translation>
     </message>
     <message>
@@ -1949,7 +1951,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation>Сега не се изчертава контурна фигура.</translation>
+        <translation type="vanished">Сега не се изчертава контурна фигура.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
@@ -2073,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Файл за настройка (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>За да експортирате шейп файл, превключете цветовия режим на „Дискретен режим“.</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">За да експортирате шейп файл, превключете цветовия режим на „Дискретен режим“.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2083,6 +2085,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Select grid to export shape files.</source>
         <translation>Изберете мрежа, за да експортирате shape файлове.</translation>
+    </message>
+    <message>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2429,7 +2435,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2456,7 +2462,7 @@ Option -&gt; Preferences</source>
         <translation>Отворете нов 2D прозорец за последваща обработка</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Отворете нов 2D прозорец за пост-обработка на птичи очи</translation>
     </message>
     <message>

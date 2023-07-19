@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>AnimationController</name>
@@ -768,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>सॉल्वर का चयन करें</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और "ओके" बटन दबाएं।</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>जब आप एक नया प्रोजेक्ट बनाते हैं, तो आपको गणना के लिए उपयोग करने के लिए सॉल्वर का चयन करना होगा। कृपया एक सॉल्वर चुनें, और &quot;ओके&quot; बटन दबाएं।</translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई "%1"। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
+        <translation>फ़ोल्डर में सॉल्वर परिभाषा फ़ाइल लोड करते समय त्रुटि हुई &quot;%1&quot;। इस सॉल्वर की उपेक्षा की जाती है। %2</translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ऐसा लगता है कि यह प्रोजेक्ट किसी अन्य iRIC GUI विंडो द्वारा खोला गया है। आप एकाधिक GUI विंडो से प्रोजेक्ट फ़ोल्डर नहीं खोल सकते हैं।</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>खोले गए प्रोजेक्ट को कार्य निर्देशिका में कॉपी नहीं किया गया है, और आप इस प्रोजेक्ट में किए गए संशोधनों को सहेजने के लिए बाध्य होंगे। यदि आप वर्तमान प्रोजेक्ट को रखना चाहते हैं, तो कृपया इसे पहले किसी अन्य प्रोजेक्ट में सहेजें।</translation>
     </message>
     <message>
@@ -1932,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>वर्तमान में सक्रिय उप-विंडो निर्यात समोच्च आकृति का समर्थन नहीं करती है।</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, "डिस्प्ले सेटिंग" को "कंटूर फिगर" पर स्विच करें, न कि "कलर फ्रिंज" या "आइसोलिन्स" पर।</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, &quot;डिस्प्ले सेटिंग&quot; को &quot;कंटूर फिगर&quot; पर स्विच करें, न कि &quot;कलर फ्रिंज&quot; या &quot;आइसोलिन्स&quot; पर।</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1949,7 +1951,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation>अब कोई कंटूर चित्र नहीं बनाया गया है।</translation>
+        <translation type="vanished">अब कोई कंटूर चित्र नहीं बनाया गया है।</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
@@ -2073,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>फ़ाइल सेट करना (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>आकार फ़ाइल निर्यात करने के लिए, रंग मोड को "असतत मोड" पर स्विच करें।</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">आकार फ़ाइल निर्यात करने के लिए, रंग मोड को &quot;असतत मोड&quot; पर स्विच करें।</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2083,6 +2085,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Select grid to export shape files.</source>
         <translation>आकार फ़ाइलों को निर्यात करने के लिए ग्रिड का चयन करें।</translation>
+    </message>
+    <message>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2429,7 +2435,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2456,7 +2462,7 @@ Option -&gt; Preferences</source>
         <translation>नई 2D पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>नई 2डी बर्ड्स-आई पोस्ट-प्रोसेसिंग विंडो खोलें</translation>
     </message>
     <message>

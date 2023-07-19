@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>AnimationController</name>
@@ -768,8 +770,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Válassza a Megoldó lehetőséget</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az "OK" gombot.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az &quot;OK&quot; gombot.</translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1653,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába " %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
+        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába &quot; %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1774,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Úgy tűnik, hogy ezt a projektet egy másik iRIC GUI ablak nyitja meg. Nem nyithat meg projektmappát több GUI ablakból.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>A megnyitott projekt nem kerül átmásolásra a munkakönyvtárba, és kénytelen lesz menteni a projektben végrehajtott módosításokat. Ha meg szeretné tartani az aktuális projektet, először mentse el egy másik projektbe.</translation>
     </message>
     <message>
@@ -1932,8 +1934,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>A jelenleg aktív alablak nem támogatja a kontúr ábra exportálását.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a &quot;Kijelző beállítása&quot; &quot;Kontúr ábra&quot; -ra, nem pedig &quot;Színes szegély&quot; vagy &quot;Izolines&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -1949,7 +1951,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>No Contour Figure is drawn now.</source>
-        <translation>Most nincs kontúr ábra rajzolva.</translation>
+        <translation type="vanished">Most nincs kontúr ábra rajzolva.</translation>
     </message>
     <message>
         <source>Please select which zone to use:</source>
@@ -2073,8 +2075,8 @@ Option -&gt; Preferences</source>
         <translation>Beállítási fájl (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation>Az alakfájl exportálásához állítsa a Szín módot "Diszkrét módra".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Az alakfájl exportálásához állítsa a Szín módot &quot;Diszkrét módra&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2083,6 +2085,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Select grid to export shape files.</source>
         <translation>Válassza ki a rácsot az alakzatfájlok exportálásához.</translation>
+    </message>
+    <message>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2429,7 +2435,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2456,7 +2462,7 @@ Option -&gt; Preferences</source>
         <translation>Nyissa meg az új 2D utófeldolgozó ablakot</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Nyissa meg az új 2D madártávlatú utófeldolgozó ablakot</translation>
     </message>
     <message>

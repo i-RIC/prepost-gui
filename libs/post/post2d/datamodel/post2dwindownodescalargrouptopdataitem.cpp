@@ -147,14 +147,15 @@ void Post2dWindowNodeScalarGroupTopDataItem::mouseReleaseEvent(QMouseEvent* even
 	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
 }
 
-std::vector<std::string> Post2dWindowNodeScalarGroupTopDataItem::selectedScalars() const
+std::vector<std::string> Post2dWindowNodeScalarGroupTopDataItem::scalarsDrawnInDiscreteMode() const
 {
 	std::vector<std::string> ret;
 	for (const auto& item : m_childItems) {
-		Post2dWindowNodeScalarGroupDataItem* typedi = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
-		if (typedi->standardItem()->checkState() == Qt::Checked) {
-			ret.push_back(typedi->target());
-		}
+		auto ditem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
+		if (ditem->standardItem()->checkState() != Qt::Checked) {continue;}
+		if (! ditem->colorMapIsDiscreteMode()) {continue;}
+
+		ret.push_back(ditem->target());
 	}
 	return ret;
 }
@@ -208,10 +209,9 @@ bool Post2dWindowNodeScalarGroupTopDataItem::checkShapeExportCondition(const std
 	for (const auto& item : m_childItems) {
 		auto scalarItem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 		if (target == scalarItem->target()) {
-			return scalarItem->checkShapeExportCondition();
+			return scalarItem->colorMapIsDiscreteMode();
 		}
 	}
-	QMessageBox::warning(mainWindow(), tr("Error"), tr("To export shape file, switch color setting to \"Discrete Mode\"."));
 	return false;
 }
 

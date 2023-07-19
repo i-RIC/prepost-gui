@@ -1958,7 +1958,7 @@ void iRICMainWindow::exportCfShape()
 	std::string zoneName;
 	if (zones.size() == 0) {
 		// No valid grid.
-		QMessageBox::warning(this, tr("Error"), tr("To export shape file, switch Color mode to \"Discrete Mode\"."));
+		QMessageBox::warning(this, tr("Error"), tr("No contour is drawn in \"Discrete Mode\"."));
 		return;
 	} else if (zones.size() == 1) {
 		zoneName = zones.at(0);
@@ -2059,7 +2059,7 @@ void iRICMainWindow::exportStKMZ()
 	std::string zoneName;
 	if (zones.size() == 0) {
 		// No valid grid.
-		QMessageBox::warning(this, tr("Error"), tr("No Contour Figure is drawn now."));
+		QMessageBox::warning(this, tr("Error"), tr("No contour is drawn in \"Discrete Mode\"."));
 		return;
 	} else if (zones.size() == 1) {
 		zoneName = zones.at(0);

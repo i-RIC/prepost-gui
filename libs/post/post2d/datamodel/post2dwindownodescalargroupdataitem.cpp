@@ -415,7 +415,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 	return true;
 }
 
-bool Post2dWindowNodeScalarGroupDataItem::checkShapeExportCondition()
+bool Post2dWindowNodeScalarGroupDataItem::colorMapIsDiscreteMode()
 {
 	auto cs = dynamic_cast<ColorMapSettingContainer*> (impl->m_setting.colorMapSetting);
 	if (cs == nullptr) {return false;}
