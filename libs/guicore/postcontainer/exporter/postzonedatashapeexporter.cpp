@@ -122,7 +122,7 @@ bool exportDbf(const QString& dbfFile, vtkPointSet* ps)
 			}
 		} else if (intA != nullptr) {
 			// int.
-			for (int j = 0; j < doubleA->GetNumberOfComponents(); ++j){
+			for (int j = 0; j < intA->GetNumberOfComponents(); ++j){
 				for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
 					int v = intA->GetComponent(id, j);
 					DBFWriteIntegerAttribute(dbfh, static_cast<int>(id), fieldnum, v);
