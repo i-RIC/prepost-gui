@@ -62,11 +62,13 @@ public:
 	const std::vector<QString>& availableGridGenerators() const;
 	const std::string& name() const;
 	const QString& caption() const;
+	void setCaption(const QString& caption);
+
 	bool isPrimary() const;
 	bool multiple() const;
 	bool isOptional() const;
 	bool isKeepOrder() const;
-	void setCaption(const QString& caption);
+	bool post() const;
 	//@}
 
 	/// @name Functions to build objects

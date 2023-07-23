@@ -8,6 +8,7 @@ namespace Ui
 	class StartPageDialog;
 }
 
+class iRICMainWindow;
 class SolverDefinitionList;
 class SolverDefinitionAbstract;
 
@@ -23,7 +24,7 @@ public:
 		cmOpenOtherProject,
 		cmNone,
 	};
-	explicit StartPageDialog(QWidget* parent = nullptr);
+	explicit StartPageDialog(iRICMainWindow* parent = nullptr);
 	~StartPageDialog();
 
 	CommandMode commandMode() const;
@@ -38,6 +39,7 @@ private slots:
 	void handleOpenProjectButtonClick();
 	void handleProjectFileSelection(const QString& filename);
 	void handleSolverSelection(SolverDefinitionAbstract* solverDef);
+	void handleLaunchMiGui();
 
 private:
 	Ui::StartPageDialog* ui;

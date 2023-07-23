@@ -52,18 +52,17 @@ PreProcessorRootDataItem::PreProcessorRootDataItem(PreProcessorWindow* window, P
 	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(mm);
 
 	SolverDefinition* def = projectData()->solverDefinition();
-	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
+	auto types = def->preGridTypes();
 
 	// build grid type data items.
 	int i = 0;
 	QList<PreProcessorGridTypeDataItem*> gtitems;
-	for (auto it = types.begin(); it != types.end(); ++it) {
-		SolverDefinitionGridType* gt = *it;
+	for (auto gt : types) {
 		if (gt->defaultGridType() == SolverDefinitionGridType::gtUnknownGrid) {
 			// dummy grid type.
 			continue;
 		}
-		PreProcessorGridTypeDataItem* item = new PreProcessorGridTypeDataItem(*it, this);
+		auto item = new PreProcessorGridTypeDataItem(gt, this);
 		m_gridTypeDataItems.append(item);
 		gtitems.append(item);
 		++i;
@@ -160,9 +159,9 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->clear();
 	// add gridtypes.
 	SolverDefinition* def = projectData()->solverDefinition();
-	if (def->gridTypes().count() == 1) {
+	if (def->preGridTypes().size() == 1) {
 		// If there is no gridtypeDataitem, do nothing.
-		if (m_gridTypeDataItems.begin() != m_gridTypeDataItems.end()) {
+		if (m_gridTypeDataItems.size() != 0) {
 			// Current solver support only one grid type, and it does not allow multiple grids to input.
 			// So, construct a simplified object tree, in the object browser.
 			auto item = *(m_gridTypeDataItems.begin());
@@ -296,18 +295,6 @@ PreProcessorDataModel* PreProcessorRootDataItem::dataModel() const
 void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	/*
-	PreProcessorGridAttributeMappingMode::mode = static_cast<PreProcessorGridAttributeMappingMode::Mode>(elem.attribute("mappingMode", "0").toInt());
-	GeoDataPointmapMappingMode::mode = static_cast<GeoDataPointmapMappingMode::Mode>(elem.attribute("geoMappingMode", "0").toInt());
-	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
-	setting.tempAutoMode = static_cast<bool>(elem.attribute("tempAutoRegion", "1").toInt());
-	double tmpdbl = elem.attribute("tempStreamWiseLength", "0").toDouble();
-	if (tmpdbl != 0) {setting.tempStreamWiseLength = tmpdbl;}
-	tmpdbl = elem.attribute("tempCrossStreamLength", "0").toDouble();
-	if (tmpdbl != 0) {setting.tempCrossStreamLength = tmpdbl;}
-	setting.tempNumExpansion = elem.attribute("numExpansion", "3").toInt();
-	setting.tempWeightExponent = elem.attribute("weightExponent", "1").toDouble();
-	*/
 
 	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
 	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
@@ -347,26 +334,6 @@ void PreProcessorRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void PreProcessorRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	/*
-	QString tmpstr;
-	tmpstr.setNum(PreProcessorGridAttributeMappingMode::mode);
-	writer.writeAttribute("mappingMode", tmpstr);
-	tmpstr.setNum(GeoDataPointmapMappingMode::mode);
-	writer.writeAttribute("geoMappingMode", tmpstr);
-
-	GeoDataPointmapTemplateMappingSetting& setting = GeoDataPointmapTemplateMappingSetting::setting;
-	tmpstr.setNum(setting.tempAutoMode);
-	writer.writeAttribute("tempAutoRegion", tmpstr);
-	tmpstr.setNum(setting.tempStreamWiseLength);
-	writer.writeAttribute("tempStreamWiseLength", tmpstr);
-	tmpstr.setNum(setting.tempCrossStreamLength);
-	writer.writeAttribute("tempCrossStreamLength", tmpstr);
-	tmpstr.setNum(setting.tempNumExpansion);
-	writer.writeAttribute("numExpansion", tmpstr);
-	tmpstr.setNum(setting.tempWeightExponent);
-	writer.writeAttribute("weightExponent", tmpstr);
-	*/
-
 	writer.writeStartElement("BackgroundImages");
 	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();

@@ -260,7 +260,6 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
-           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.h \
            project/addiblegcptablemodel.h \
            project/backgroundimageinfo.h \
            project/backgroundimageinfodialog.h \
@@ -270,7 +269,6 @@ HEADERS += guicore_global.h \
            project/gcptablerow.h \
            project/georeferenceview.h \
            project/offsetsettingdialog.h \
-           project/private/projectcgnsmanager_impl.h \
            project/projectcgnsfile.h \
            project/projectcgnsmanager.h \
            project/projectdata.h \
@@ -311,7 +309,6 @@ HEADERS += guicore_global.h \
            solverdef/enumloader.h \
            solverdef/enumloadert.h \
            solverdef/integerenumloader.h \
-           solverdef/private/solverdefinitiongridoutput_impl.h \
            solverdef/realenumloader.h \
            solverdef/solverdefinition.h \
            solverdef/solverdefinitionabstract.h \
@@ -323,14 +320,22 @@ HEADERS += guicore_global.h \
            solverdef/solverdefinitiongridattributeinteger.h \
            solverdef/solverdefinitiongridattributeintegercell.h \
            solverdef/solverdefinitiongridattributeintegerdimension.h \
+           solverdef/solverdefinitiongridattributeintegeriface.h \
+           solverdef/solverdefinitiongridattributeintegerjface.h \
            solverdef/solverdefinitiongridattributeintegernode.h \
            solverdef/solverdefinitiongridattributeintegeroptioncell.h \
+           solverdef/solverdefinitiongridattributeintegeroptioniface.h \
+           solverdef/solverdefinitiongridattributeintegeroptionjface.h \
            solverdef/solverdefinitiongridattributeintegeroptionnode.h \
            solverdef/solverdefinitiongridattributereal.h \
            solverdef/solverdefinitiongridattributerealcell.h \
            solverdef/solverdefinitiongridattributerealdimension.h \
+           solverdef/solverdefinitiongridattributerealiface.h \
+           solverdef/solverdefinitiongridattributerealjface.h \
            solverdef/solverdefinitiongridattributerealnode.h \
            solverdef/solverdefinitiongridattributerealoptioncell.h \
+           solverdef/solverdefinitiongridattributerealoptioniface.h \
+           solverdef/solverdefinitiongridattributerealoptionjface.h \
            solverdef/solverdefinitiongridattributerealoptionnode.h \
            solverdef/solverdefinitiongridattributet.h \
            solverdef/solverdefinitiongridcomplexattribute.h \
@@ -477,6 +482,7 @@ HEADERS += guicore_global.h \
            project/private/cgnsfileentry_impl.h \
            project/private/colorsource_impl.h \
            project/private/georeferenceview_imageinfo.h \
+           project/private/projectcgnsmanager_impl.h \
            project/private/projectdatacopythread.h \
            project/private/projectdataitem_impl.h \
            project/private/projectdatamovethread.h \
@@ -525,6 +531,7 @@ HEADERS += guicore_global.h \
            solverdef/private/solverdefinitiongridattributedimensiont_detail.h \
            solverdef/private/solverdefinitiongridattributet_detail.h \
            solverdef/private/solverdefinitiongridcomplexattribute_impl.h \
+           solverdef/private/solverdefinitiongridoutput_impl.h \
            solverdef/private/solverdefinitiongridtype_impl.h \
            solverdef/private/solverdefinitionoutput_impl.h \
            solverdef/private/solverdefinitiontranslator_impl.h \
@@ -578,8 +585,12 @@ HEADERS += guicore_global.h \
            pre/gridcond/complex/gridcomplexattributecontainer.h \
            pre/gridcond/complex/gridcomplexattributeeditwidget.h \
            pre/gridcond/container/gridattributeintegercellcontainer.h \
+           pre/gridcond/container/gridattributeintegerifacecontainer.h \
+           pre/gridcond/container/gridattributeintegerjfacecontainer.h \
            pre/gridcond/container/gridattributeintegernodecontainer.h \
            pre/gridcond/container/gridattributerealcellcontainer.h \
+           pre/gridcond/container/gridattributerealifacecontainer.h \
+           pre/gridcond/container/gridattributerealjfacecontainer.h \
            pre/gridcond/container/gridattributerealnodecontainer.h \
            pre/gridcond/dimensionselectwidget/gridattributedimensioncomboboxselectwidget.h \
            pre/gridcond/dimensionselectwidget/gridattributedimensiontimesliderselectwidget.h \
@@ -796,7 +807,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
-           postcontainer/private/postbaseiterativevaluescontainer_basecontainer.cpp \
            project/addiblegcptablemodel.cpp \
            project/backgroundimageinfo.cpp \
            project/backgroundimageinfodialog.cpp \
@@ -851,14 +861,22 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            solverdef/solverdefinitiongridattributeinteger.cpp \
            solverdef/solverdefinitiongridattributeintegercell.cpp \
            solverdef/solverdefinitiongridattributeintegerdimension.cpp \
+           solverdef/solverdefinitiongridattributeintegeriface.cpp \
+           solverdef/solverdefinitiongridattributeintegerjface.cpp \
            solverdef/solverdefinitiongridattributeintegernode.cpp \
            solverdef/solverdefinitiongridattributeintegeroptioncell.cpp \
+           solverdef/solverdefinitiongridattributeintegeroptioniface.cpp \
+           solverdef/solverdefinitiongridattributeintegeroptionjface.cpp \
            solverdef/solverdefinitiongridattributeintegeroptionnode.cpp \
            solverdef/solverdefinitiongridattributereal.cpp \
            solverdef/solverdefinitiongridattributerealcell.cpp \
            solverdef/solverdefinitiongridattributerealdimension.cpp \
+           solverdef/solverdefinitiongridattributerealiface.cpp \
+           solverdef/solverdefinitiongridattributerealjface.cpp \
            solverdef/solverdefinitiongridattributerealnode.cpp \
            solverdef/solverdefinitiongridattributerealoptioncell.cpp \
+           solverdef/solverdefinitiongridattributerealoptioniface.cpp \
+           solverdef/solverdefinitiongridattributerealoptionjface.cpp \
            solverdef/solverdefinitiongridattributerealoptionnode.cpp \
            solverdef/solverdefinitiongridcomplexattribute.cpp \
            solverdef/solverdefinitiongridoutput.cpp \

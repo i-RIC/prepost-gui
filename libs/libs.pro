@@ -23,4 +23,5 @@ SUBDIRS = \
 	post \
 	pre \
 	gui \
+	migui \
 	iricpython
