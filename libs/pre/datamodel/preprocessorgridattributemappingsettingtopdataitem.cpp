@@ -199,11 +199,13 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	}
 
 	QList<PreProcessorBCSettingDataItem*> bcs;
-	const std::vector<GraphicsWindowDataItem*>& bclist = conditiondi->bcSettingGroupDataItem()->childItems();
-	for (auto c_it = bclist.begin(); c_it != bclist.end(); ++c_it) {
-		PreProcessorBCSettingDataItem* bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(*c_it);
-		if (bcsdi->bcDataItem()->hideSetting()) {continue;}
-		bcs.append(bcsdi);
+	auto bcSettingGroup = conditiondi->bcSettingGroupDataItem();
+	if (bcSettingGroup != nullptr) {
+		for (auto item : bcSettingGroup->childItems()) {
+			auto bcsdi = dynamic_cast<PreProcessorBCSettingDataItem*>(item);
+			if (bcsdi->bcDataItem()->hideSetting()) {continue;}
+			bcs.append(bcsdi);
+		}
 	}
 
 	mappingDialog.setSettings(gridAtts, bcs, m_mappingSetting);
