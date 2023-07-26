@@ -188,8 +188,10 @@ void PreProcessorGridCreatingConditionDataItem::createGrid()
 	// each algorithmn can select whether to show dialog or not.
 	bool ok = impl->m_condition->create(preProcessorWindow());
 	if (! ok) {return;}
-	PreProcessorBCSettingGroupDataItem* bcsgItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->bcSettingGroupDataItem();
-	bcsgItem->executeMapping();
+	auto bcsgItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent())->bcSettingGroupDataItem();
+	if (bcsgItem != nullptr) {
+		bcsgItem->executeMapping();
+	}
 	// succeeded.
 	iRICUndoStack::instance().clear();
 }
