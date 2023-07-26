@@ -1412,9 +1412,9 @@ bool PreProcessorDataModel::checkMappingStatus()
 		}
 
 		const auto& conditions = gtItem->conditions();
-		for (auto cit = conditions.begin(); cit != conditions.end(); ++cit) {
-			auto cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*cit);
-			auto bcSettingGroupDataItem = cond->bcGroupDataItem();
+		for (auto c : conditions) {
+			auto cond = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(c);
+			auto bcSettingGroupDataItem = cond->bcSettingGroupDataItem();
 			if (bcSettingGroupDataItem != nullptr) {
 				const auto& bcslist = bcSettingGroupDataItem->childItems();
 				for (auto item : bcslist) {
