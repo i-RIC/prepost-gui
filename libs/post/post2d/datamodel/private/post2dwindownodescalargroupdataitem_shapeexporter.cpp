@@ -257,6 +257,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	filtered->Delete();
 
 	vtkSmartPointer<vtkPolyData> polyData = geom->GetOutput();
+	polyData->GetPointData()->SetActiveScalars(m_parent->impl->m_target.c_str());
 
 	if (! cm->fillLower) {
 		auto lowerClip = vtkSmartPointer<vtkClipPolyData>::New();
@@ -275,7 +276,6 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 		polyData = upperClip->GetOutput();
 	}
 
-	polyData->GetPointData()->SetActiveScalars(m_parent->impl->m_target.c_str());
 	int polygonId = 0;
 
 	auto colors = cm->getColors();
