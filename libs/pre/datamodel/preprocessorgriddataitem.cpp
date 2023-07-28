@@ -1156,10 +1156,6 @@ void PreProcessorGridDataItem::setupActions()
 	impl->m_cellEditAction = new QAction(tr("&Cell Attribute..."), this);
 	impl->m_cellDisplaySettingAction = new QAction(tr("&Cell Attribute..."), this);
 
-	impl->m_setupScalarBarAction = new QAction(tr("Set &Up Scalarbar..."), this);
-	auto gtItem = gridTypeDataItem();
-	connect(impl->m_setupScalarBarAction, SIGNAL(triggered()), gtItem->geoDataTop(), SLOT(setupScalarBar()));
-
 	impl->m_birdEyeWindowAction = new QAction(tr("Open &Bird's-Eye View Window"), this);
 	impl->m_birdEyeWindowAction->setIcon(QIcon(":/libs/pre/images/iconBirdEyeWindow.svg"));
 	connect(impl->m_birdEyeWindowAction, SIGNAL(triggered()), this, SLOT(openBirdEyeWindow()));
@@ -1285,11 +1281,6 @@ QAction* PreProcessorGridDataItem::cellDisplaySettingAction() const
 	return impl->m_cellDisplaySettingAction;
 }
 
-QAction* PreProcessorGridDataItem::setupScalarBarAction() const
-{
-	return impl->m_setupScalarBarAction;
-}
-
 QAction* PreProcessorGridDataItem::birdEyeWindowAction() const
 {
 	return impl->m_birdEyeWindowAction;
@@ -1339,8 +1330,6 @@ void PreProcessorGridDataItem::updateActionStatus()
 	impl->m_nodeDisplaySettingAction->setEnabled((impl->m_grid != nullptr) && (impl->m_nodeDataItem != nullptr));
 	impl->m_cellEditAction->setEnabled((impl->m_grid != nullptr) && (impl->m_selectedCells.size() > 0) && (impl->m_cellDataItem != nullptr));
 	impl->m_cellDisplaySettingAction->setEnabled((impl->m_grid != nullptr) && (impl->m_cellDataItem != nullptr));
-
-	impl->m_setupScalarBarAction->setEnabled(impl->m_grid != nullptr);
 
 	m_shapeDataItem->editAction()->setEnabled(impl->m_grid != nullptr && impl->m_selectedVertices.size() > 0);
 

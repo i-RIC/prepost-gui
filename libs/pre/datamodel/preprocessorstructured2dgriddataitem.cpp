@@ -48,8 +48,6 @@ void PreProcessorStructured2dGridDataItem::setupMenu()
 	m_displayMenu->addAction(displaySettingAction());
 	m_displayMenu->addAction(nodeDisplaySettingAction());
 	m_displayMenu->addAction(cellDisplaySettingAction());
-	m_displayMenu->addSeparator();
-	m_displayMenu->addAction(setupScalarBarAction());
 }
 
 void PreProcessorStructured2dGridDataItem::updateActionStatus()

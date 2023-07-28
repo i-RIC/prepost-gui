@@ -75,8 +75,6 @@ public:
 	QAction* m_cellDisplaySettingAction;
 	QAction* m_birdEyeWindowAction;
 
-	QAction* m_setupScalarBarAction;
-
 	bool m_shiftPressed;
 	bool m_gridIsDeleted;
 

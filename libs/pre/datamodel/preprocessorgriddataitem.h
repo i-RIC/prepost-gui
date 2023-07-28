@@ -131,7 +131,6 @@ public:
 	QAction* nodeDisplaySettingAction() const;
 	QAction* cellEditAction() const;
 	QAction* cellDisplaySettingAction() const;
-	QAction* setupScalarBarAction() const;
 	QAction* birdEyeWindowAction() const;
 	QMenu* generateAttMenu() const;
 	QMenu* menu() const;

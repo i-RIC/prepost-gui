@@ -55,6 +55,4 @@ void PreProcessorNormal15DGridWithCrossSectionDataItem::setupMenu()
 	m_displayMenu->addAction(displaySettingAction());
 	m_displayMenu->addAction(nodeDisplaySettingAction());
 	m_displayMenu->addAction(cellDisplaySettingAction());
-	m_displayMenu->addSeparator();
-	m_displayMenu->addAction(setupScalarBarAction());
 }

@@ -429,8 +429,6 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	QMenu* colorMapMenu = new QMenu(tr("&Color Setting..."), m_geographicDataMenu);
 	colorMapMenu->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
 	m_geographicDataMenu->addMenu(colorMapMenu);
-	QAction* setupScalarBarAction = new QAction(tr("Set Up Scalarbar..."), m_geographicDataMenu);
-	m_geographicDataMenu->addAction(setupScalarBarAction);
 
 	// add colormap edit menu for each raw data type.
 	PreProcessorGridTypeDataItem* gti = getGridTypeItem(m_selectedItem);
@@ -444,10 +442,8 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			connect(action, SIGNAL(triggered()), groupDataitem, SLOT(editScalarsToColors()));
 			colorMapMenu->addAction(action);
 		}
-		connect(setupScalarBarAction, SIGNAL(triggered()), gti->geoDataTop(), SLOT(setupScalarBar()));
 	} else {
 		colorMapMenu->setDisabled(true);
-		setupScalarBarAction->setDisabled(true);
 	}
 	m_geographicDataMenu->addSeparator();
 
