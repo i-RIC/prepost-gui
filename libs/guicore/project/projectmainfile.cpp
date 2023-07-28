@@ -22,6 +22,7 @@
 #include <cs/coordinatesystemselectdialog.h>
 #include <guibase/timeformat/timeformatutil.h>
 #include <misc/errormessage.h>
+#include <misc/filesystemfunction.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -61,46 +62,21 @@
 
 namespace {
 
-void deleteCgnsFile(const QString& filename)
-{
-	// delete the CGNS itself
-	QFile(filename).remove();
-
-	// delete linked file like Case1_Solution1.cgn, Case1_Solution2.cgn, ...
-	QFileInfo finfo(filename);
-	QStringList nameFilters;
-	nameFilters.append("*.cgn");
-	nameFilters.append("*.cgns");
-	QRegExp re(finfo.baseName() + "_Solution[\\d]+");
-	auto files = finfo.absoluteDir().entryList(nameFilters, QDir::Files);
-	for (auto f : files) {
-		QFileInfo f_info(f);
-		if (re.indexIn(f_info.baseName()) != -1) {
-			QFile(finfo.absoluteDir().filePath(f)).remove();
-		}
-	}
-}
-
 void copyCgnsFile(const QString& from, const QString& to)
 {
 	// copy the CGNS itself
 	QFile::copy(from, to);
 
-	// copy linked file like Case1_Solution1.cgn, Case1_Solution2.cgn, ...
-	QFileInfo from_finfo(from);
-	QFileInfo to_finfo(to);
+	QFileInfo from_info(from);
+	QFileInfo to_info(to);
 
-	QStringList nameFilters;
-	nameFilters.append("*.cgn");
-	nameFilters.append("*.cgns");
-	QRegExp re(from_finfo.baseName() + "_Solution[\\d]+");
-	auto files = from_finfo.absoluteDir().entryList(nameFilters, QDir::Files);
-	for (auto f : files) {
-		QFileInfo f_info(f);
-		if (re.indexIn(f_info.baseName()) != -1) {
-			QFile::copy(from_finfo.absoluteDir().filePath(f), to_finfo.absoluteDir().filePath(f));
-		}
-	}
+	auto from_result = from_info.absoluteDir().absoluteFilePath("result");
+	auto to_result = to_info.absoluteDir().absoluteFilePath("result");
+
+	QFile from_result_file(from_result);
+	if (! from_result_file.exists()) {return;}
+
+	iRIC::copyDirRecursively(from_result, to_result);
 }
 
 } // namespace
@@ -540,8 +516,8 @@ bool ProjectMainFile::importCgnsFile(const QString& fname, const QString& newnam
 	std::string solverName;
 	VersionNumber versionNumber;
 
-	bool ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
-	if (ret == true) {
+	int ret = ProjectCgnsFile::readSolverInfo(to, &solverName, &versionNumber);
+	if (ret == IRIC_NO_ERROR) {
 		if (impl->m_solverName != solverName || (! impl->m_solverVersion.compatibleWith(versionNumber))) {
 			projectData()->setPostOnlyMode();
 		}
