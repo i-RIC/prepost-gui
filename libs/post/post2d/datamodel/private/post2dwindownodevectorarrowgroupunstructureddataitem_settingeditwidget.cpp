@@ -36,6 +36,7 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SettingEditWidget::Setting
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd)) {
 		names.insert({name, gridType->solutionCaption(name)});
 	}
+	ui->arrowsSettingWidget->setGridType(gridType);
 	ui->arrowsSettingWidget->setValueNames(names);
 	ui->arrowsSettingWidget->setColorMapSettings(m_item->m_colorMapSettings);
 
