@@ -59,6 +59,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::copyVal
 
 void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::Setting::load(const QDomNode& node)
 {
+	startPositions.clear();
 	CompositeContainer::load(node);
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
