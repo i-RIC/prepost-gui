@@ -25,14 +25,19 @@ void Post2dWindowNodeVectorParticleDataItem::informDeselection(VTKGraphicsView* 
 	zoneDataItem()->clearNodeResultAttributeBrowser();
 }
 
-void Post2dWindowNodeVectorParticleDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+void Post2dWindowNodeVectorParticleDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
+	groupDataItem()->mousePressEvent(event, v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
+	groupDataItem()->mouseReleaseEvent(event, v);
+}
+
+void Post2dWindowNodeVectorParticleDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
+{
+	groupDataItem()->mouseMoveEvent(event, v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu* menu)
