@@ -130,6 +130,8 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mousePressEvent(QM
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	Post2dWindowNodeVectorParticleGroupDataItem::mouseReleaseEvent(event, v);
+
 	auto view = dynamic_cast<VTK2DGraphicsView*> (v);
 	QPointF pos = view->viewportToWorld(event->pos());
 
@@ -140,6 +142,8 @@ void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseReleaseEvent(
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	Post2dWindowNodeVectorParticleGroupDataItem::mouseMoveEvent(event, v);
+
 	if (! impl->m_dragging) {return;}
 
 	auto view = dynamic_cast<VTK2DGraphicsView*> (v);
