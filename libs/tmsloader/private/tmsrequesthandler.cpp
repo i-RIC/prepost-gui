@@ -18,10 +18,15 @@ const int TIMER_INTERVAL_MSEC = 100;
 
 void calcSizeAndZoomLevel(const QSize& targetSize, double targetMeterPerPixel, const QPointF& center, QSize* size, int* zoomLevel)
 {
-	*zoomLevel = TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel);
-	double mpp = TmsUtil::meterPerPixel(center, *zoomLevel);
-	double rate = targetMeterPerPixel / mpp;
-	*size = QSize(targetSize.width() * rate, targetSize.height() * rate);
+	*zoomLevel = TmsUtil::calcNativeZoomLevel(center, targetMeterPerPixel) + 1;
+	while (true) {
+		-- *zoomLevel;
+		double mpp = TmsUtil::meterPerPixel(center, *zoomLevel);
+		double rate = targetMeterPerPixel / mpp;
+		*size = QSize(targetSize.width() * rate, targetSize.height() * rate);
+
+		if (rate < 1.0) {break;}
+	}
 }
 
 } // namespace
