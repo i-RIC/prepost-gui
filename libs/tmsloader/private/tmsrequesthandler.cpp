@@ -120,6 +120,10 @@ void TmsRequestHandler::setup()
 		content.replace(pair.first, pair.second);
 	}
 	m_webView->setHtml(content);
+	m_loading = true;
+
+	m_image = QImage(size.width(), size.height(), QImage::Format_ARGB32);
+	emit imageUpdated();
 
 	connect(&m_timer, SIGNAL(timeout()), this, SLOT(checkImage()));
 	m_timer.start(TIMER_INTERVAL_MSEC);
@@ -127,6 +131,8 @@ void TmsRequestHandler::setup()
 
 void TmsRequestHandler::checkImage()
 {
+	if (m_loading == true) {return;}
+
 	QImage newImage(m_webView->size(), QImage::Format_ARGB32);
 	m_webView->render(&newImage);
 
@@ -142,6 +148,8 @@ void TmsRequestHandler::checkImage()
 void TmsRequestHandler::handleLoaded()
 {
 	if (m_terminating) {return;}
+
+	m_loading = false;
 
 	QImage image(m_webView->size(), QImage::Format_ARGB32);
 	m_webView->render(&image);

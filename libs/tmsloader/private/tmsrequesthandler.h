@@ -72,6 +72,7 @@ private:
 	QImage m_image;
 	mutable QMutex m_imageMutex;
 	bool m_terminating;
+	bool m_loading;
 
 	QTimer m_timer;
 };
