@@ -679,17 +679,33 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::drawScales(QPainter* pai
 		painter->setFont(m_impl->m_displaySetting.lbBankMarkersFont);
 		QFontMetricsF metrics(m_impl->m_displaySetting.lbBankMarkersFont);
 
-		// left bank
-		QString label = tr("Left Bank Side");
-		auto rect = metrics.boundingRect(label);
-		QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
-		painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
+		QString label;
 
-		// right bank side
-		label = tr("Right Bank Side");
-		rect = metrics.boundingRect(label);
-		fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
-		painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
+		if (m_impl->m_controller->targetDirection() == Direction::I) {
+			// left bank
+			label = tr("Left Bank Side");
+			auto rect = metrics.boundingRect(label);
+			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
+			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
+
+			// right bank side
+			label = tr("Right Bank Side");
+			rect = metrics.boundingRect(label);
+			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
+			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
+		} else {
+			// Downstream side
+			label = tr("Downstream");
+			auto rect = metrics.boundingRect(label);
+			QRectF fontRect = QRectF(SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
+			painter->drawText(fontRect, Qt::AlignRight | Qt::AlignTop, label);
+
+			// Upstream
+			label = tr("Upstream");
+			rect = metrics.boundingRect(label);
+			fontRect = QRectF(w->width() - rect.width()	- SIDE_MARKER_HOFFSET, SIDE_MARKER_VOFFSET, rect.width() + 5, rect.height() + 5);
+			painter->drawText(fontRect, Qt::AlignLeft | Qt::AlignTop, label);
+		}
 
 		painter->restore();
 	}
