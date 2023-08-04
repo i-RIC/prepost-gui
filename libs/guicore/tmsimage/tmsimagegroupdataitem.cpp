@@ -322,6 +322,9 @@ void TmsImageGroupDataItem::requestImage()
 	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));
 
 	delete request;
+
+	impl->m_actor->VisibilityOff();
+	renderGraphicsView();
 }
 
 void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)
