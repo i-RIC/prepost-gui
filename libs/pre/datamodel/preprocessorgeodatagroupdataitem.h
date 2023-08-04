@@ -12,6 +12,7 @@
 class ColorMapSettingToolBarWidgetController;
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataDataItem;
+class PreProcessorGridTypeDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
 class GridAttributeEditWidget;
 class Grid;
@@ -51,6 +52,7 @@ public:
 	void closeCgnsFile() override;
 	SolverDefinitionGridAttribute* condition() override;
 	bool isChildCaptionAvailable(const QString& cap);
+	bool colorBarShouldBeVisible() const;
 
 	int mappingCount() const;
 	void executeMapping(Grid* grid, WaitDialog* dialog);
@@ -61,6 +63,7 @@ public:
 	bool getValueRange(double* min, double* max) override;
 	void applyColorMapSetting() override;
 	void updateZDepthRangeItemCount() override;
+	void handleStandardItemChange() override;
 
 	bool importAvailable();
 	bool webImportAvailable();
@@ -95,6 +98,7 @@ public:
 	QStringList containedFiles() const override;
 	void updateVisibility(bool visible) override;
 	void setDimensionsToFirst();
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 
 	std::vector<GeoDataImporter*> importers() const;
 	GeoDataImporter* importer(const std::string& name) const;

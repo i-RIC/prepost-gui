@@ -141,16 +141,22 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 	if (m_actor == nullptr) {return;}
 
 	bool visible = false;
+	bool itemTested = false;
+
 	auto item = m_controller->item();
-    if (item != nullptr && item->isAncientChecked() && item->isChecked()) {
-    	visible = true;
+    if (item != nullptr) {
+		bool itemTested = true;
+		if (item->isAncientChecked() && item->isChecked()) {
+			visible = true;
+		}
     }
 	for (auto item : m_controller->items()) {
+		itemTested = true;
 		if (! item->isAncientChecked()) {continue;}
 		if (! item->isChecked()) {continue;}
 		visible = true;
 	}
-	if (! visible){
+	if (itemTested && ! visible) {
 		m_actor->VisibilityOff();
 	}
 
@@ -185,7 +191,7 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 		item->actor2DCollection()->AddItem(m_actor);
 		item->updateVisibilityWithoutRendering();
 	} else {
-		if (visible) {
+		if (itemTested && visible) {
 			m_actor->VisibilityOn();
 		}
 	}

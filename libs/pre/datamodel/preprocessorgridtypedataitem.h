@@ -43,6 +43,7 @@ public:
 	bool isChildCaptionAvailable(const QString& caption);
 	ColorMapSettingContainerI* colorMapSetting(const std::string& attName) const override;
 	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
+	void updateColorBarVisibility(const std::string& attName);
 
 	QAction* addNewGridAction() const;
 	bool isGridEdited() const;

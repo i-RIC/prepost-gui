@@ -284,6 +284,7 @@ void PreProcessorRootDataItem::deleteItem(QStandardItem* item, bool noDraw)
 
 	if (gItem != nullptr && ! noDraw) {
 		gItem->informDataChange();
+		gItem->gridTypeDataItem()->updateColorBarVisibility(gItem->condition()->name());
 	}
 }
 

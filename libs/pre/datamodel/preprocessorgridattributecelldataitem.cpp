@@ -38,6 +38,7 @@
 #include <misc/qwidgetcontainer.h>
 #include <misc/stringtool.h>
 #include <misc/tpoexporter.h>
+#include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -90,20 +91,11 @@ PreProcessorGridAttributeCellDataItem::PreProcessorGridAttributeCellDataItem(Sol
 		m_generatePointMapAction->setDisabled(true);
 	}
 
-	auto imgSetting = gridTypeDataItem()->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
-	imgSetting->controller()->addItem(this);
-
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
 PreProcessorGridAttributeCellDataItem::~PreProcessorGridAttributeCellDataItem()
-{
-	auto gtItem = gridTypeDataItem();
-	if (gtItem != nullptr) {
-		auto imgSetting = gtItem->colorMapSetting(condition()->name())->legendSetting()->imgSetting();
-		imgSetting->controller()->removeItem(this);
-	}
-}
+{}
 
 QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 {
@@ -157,10 +149,11 @@ int PreProcessorGridAttributeCellDataItem::loadFromCgnsFile()
 
 void PreProcessorGridAttributeCellDataItem::updateVisibility(bool visible)
 {
-	GraphicsWindowDataItem::updateVisibility(visible);
+	static bool updating = false;
+	if (updating) {return;}
 
-	auto v = dataModel()->graphicsView();
-	colorMapSettingContainer()->legendSetting()->imgSetting()->apply(v);
+	ValueChangerT<bool> updatingChanger(&updating, true);
+	groupDataItem()->gridDataItem()->gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
 void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -171,7 +164,7 @@ void PreProcessorGridAttributeCellDataItem::mouseMoveEvent(QMouseEvent* event, V
 		auto setting = colorMapSettingContainer();
 		if (setting != nullptr && setting->legendSetting()->getVisible()) {
 			auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
-			imgCtrl->handleMouseMoveEvent(event, v);
+			imgCtrl->handleMouseMoveEvent(this, event, v);
 			if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
 				return;
 			}
@@ -186,7 +179,7 @@ void PreProcessorGridAttributeCellDataItem::mousePressEvent(QMouseEvent* event, 
 	auto setting = colorMapSettingContainer();
 	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
-		imgCtrl->handleMousePressEvent(event, v);
+		imgCtrl->handleMousePressEvent(this, event, v);
 		if (imgCtrl->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {
 			return;
 		}
@@ -204,7 +197,7 @@ void PreProcessorGridAttributeCellDataItem::mouseReleaseEvent(QMouseEvent* event
 	auto setting = colorMapSettingContainer();
 	if (setting != nullptr && setting->legendSetting()->getVisible()) {
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
-		imgCtrl->handleMouseReleaseEvent(event, v);
+		imgCtrl->handleMouseReleaseEvent(this, event, v);
 	}
 
 	static QMenu* menu = nullptr;

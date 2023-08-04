@@ -56,7 +56,13 @@ void ImageSettingContainer::Controller::handleMouseMoveEvent(QMouseEvent* event,
 	if (item == nullptr) {
 		item = firstItem();
 	}
+	if (item == nullptr) {return;}
 
+	handleMouseMoveEvent(item, event, v, noCursorUpdate);
+}
+
+void ImageSettingContainer::Controller::handleMouseMoveEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
+{
 	auto event2 = v->createReverseScaledEvent(*event);
 
 	switch (m_mouseEventMode) {
@@ -67,7 +73,7 @@ void ImageSettingContainer::Controller::handleMouseMoveEvent(QMouseEvent* event,
 		item->pushRenderCommand(new ResizeCommand(false, m_previousPosition, event2.pos(), m_setting, v), item);
 		break;
 	default:
-		updateMouseEventMode(event, v);
+		updateMouseEventMode(item, event, v);
 		if (! noCursorUpdate) {
 			updateMouseCursor(v);
 		}
@@ -81,9 +87,13 @@ void ImageSettingContainer::Controller::handleMousePressEvent(QMouseEvent* event
 	if (item == nullptr) {
 		item = firstItem();
 	}
-
 	if (item == nullptr) {return;}
 
+	handleMousePressEvent(item, event, v, noCursorUpdate);
+}
+
+void ImageSettingContainer::Controller::handleMousePressEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
+{
 	auto event2 = v->createReverseScaledEvent(*event);
 
 	switch (m_mouseEventMode) {
@@ -107,6 +117,14 @@ void ImageSettingContainer::Controller::handleMousePressEvent(QMouseEvent* event
 void ImageSettingContainer::Controller::handleMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
 {
 	updateMouseEventMode(event, v);
+	if (! noCursorUpdate) {
+		updateMouseCursor(v);
+	}
+}
+
+void ImageSettingContainer::Controller::handleMouseReleaseEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
+{
+	updateMouseEventMode(item, event, v);
 	if (! noCursorUpdate) {
 		updateMouseCursor(v);
 	}
@@ -151,6 +169,24 @@ void ImageSettingContainer::Controller::updateMouseEventMode(QMouseEvent* event,
 		if (! item->isChecked()) {continue;}
 		checked = true;
 	}
+
+	updateMouseEventMode(checked, event, v);
+}
+
+void ImageSettingContainer::Controller::updateMouseEventMode(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v)
+{
+	bool checked = false;
+	if (item->isAncientChecked() && item->isChecked()) {
+		checked = true;
+	}
+
+	updateMouseEventMode(checked, event, v);
+}
+
+void ImageSettingContainer::Controller::updateMouseEventMode(bool checked, QMouseEvent* event, VTKGraphicsView* v)
+{
+	m_mouseEventMode = MouseEventMode::Normal;
+
 	if (! checked) {return;}
 
 	auto r = m_setting->rect(v->size(), v);

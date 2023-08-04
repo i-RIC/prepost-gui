@@ -40,6 +40,7 @@
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 #include <geodata/pointmap/geodatapointmap.h>
 #include <geodata/pointmap/geodatapointmaprealcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
@@ -120,11 +121,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	// add dimensions container
 	m_dimensions = new GridAttributeDimensionsContainer(cond, this);
 
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent->parent());
-	auto cm = gtItem->colorMapSetting(cond->name());
-	if (cm != nullptr) {
-		cm->legendSetting()->imgSetting()->controller()->addItem(this);
-	}
+	auto gtItem = gridTypeDataItem();
 	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), preProcessorWindow());
 
 	// add background data item.
@@ -136,7 +133,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 
 PreProcessorGeoDataGroupDataItem::~PreProcessorGeoDataGroupDataItem()
 {
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	if (gtItem != nullptr) {
 		auto cm = gtItem->colorMapSetting(condition()->name());
 		if (cm != nullptr) {
@@ -392,6 +389,8 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 	iRICUndoStack::instance().clear();
 	return;
 
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
+
 ERROR_CLEARING:
 	if (wDialog != nullptr) {
 		wDialog->hide();
@@ -468,6 +467,7 @@ void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemInt
 	dataModel()->graphicsView()->ResetCameraClippingRange();
 	emit selectGeoData(geoData->standardItem()->index());
 	setModified();
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
 std::vector<GeoDataImporter*> PreProcessorGeoDataGroupDataItem::importers() const
@@ -745,6 +745,8 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 	iRICUndoStack::instance().clear();
 	return;
 
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
+
 ERROR_CLEANING:
 	if (wDialog != nullptr) {
 		wDialog->hide();
@@ -770,7 +772,7 @@ void PreProcessorGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 	auto& factory = GeoDataFactory::instance();
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count() - 1; ++i) {
-		PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
+		auto item = new PreProcessorGeoDataDataItem(this);
 		QDomNode child = children.at(i);
 		// restore
 		GeoData* geodata = factory.restore(child, item, m_condition);
@@ -809,12 +811,25 @@ void PreProcessorGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 
 bool PreProcessorGeoDataGroupDataItem::isChildCaptionAvailable(const QString& caption)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		if (dynamic_cast<PreProcessorGeoDataDataItem*>(*it)->geoData()->caption() == caption) {
+	for (auto child : m_childItems) {
+		if (dynamic_cast<PreProcessorGeoDataDataItem*>(child)->geoData()->caption() == caption) {
 			return false;
 		}
 	}
 	return true;
+}
+
+bool PreProcessorGeoDataGroupDataItem::colorBarShouldBeVisible() const
+{
+	if (! isAncientChecked()) {return false;}
+	if (m_standardItem->checkState() == Qt::Unchecked) {return false;}
+
+	for (auto child : m_childItems) {
+		if (child == m_backgroundItem) {continue;}
+		if (child->standardItem()->checkState() == Qt::Checked) {return true;}
+	}
+
+	return false;
 }
 
 int PreProcessorGeoDataGroupDataItem::mappingCount() const
@@ -995,7 +1010,7 @@ void PreProcessorGeoDataGroupDataItem::applyColorMapSetting()
 		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		item->applyColorMapSetting();
 	}
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting != nullptr) {
 		setting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
@@ -1005,6 +1020,12 @@ void PreProcessorGeoDataGroupDataItem::applyColorMapSetting()
 void PreProcessorGeoDataGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(10);
+}
+
+void PreProcessorGeoDataGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
 const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
@@ -1088,7 +1109,7 @@ void PreProcessorGeoDataGroupDataItem::clearDimensionsIfNoDataExists()
 	// at least background data exists.
 	if (m_childItems.size() > 1) {return;}
 
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	for (auto c : gtItem->conditions()) {
 		// check if grid exists
 		if (c->gridDataItem()->grid() != nullptr) {return;}
@@ -1101,8 +1122,8 @@ void PreProcessorGeoDataGroupDataItem::clearDimensionsIfNoDataExists()
 QStringList PreProcessorGeoDataGroupDataItem::getGeoDatasNotMapped()
 {
 	QStringList ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 		GeoData* geoData = item->geoData();
 		if (! geoData->isMapped()) {
 			ret.append(geoData->caption());
@@ -1122,7 +1143,7 @@ void PreProcessorGeoDataGroupDataItem::addCopyPolygon(GeoDataPolygon* polygon)
 	if (c == nullptr) {return;}
 
 	// create a new GeoData item.
-	PreProcessorGeoDataDataItem* item = new PreProcessorGeoDataDataItem(this);
+	auto item = new PreProcessorGeoDataDataItem(this);
 	// the standarditem is set at the last position, so make it the first.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(item->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
@@ -1180,29 +1201,29 @@ GeoDataCreator* PreProcessorGeoDataGroupDataItem::getPointMapCreator()
 
 void PreProcessorGeoDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting == nullptr) {return;}
 
-	setting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+	setting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 }
 
 void PreProcessorGeoDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting == nullptr) {return;}
 
-	setting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+	setting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v);
 }
 
 void PreProcessorGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting == nullptr) {return;}
 
-	setting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+	setting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 }
 
 void PreProcessorGeoDataGroupDataItem::exportAllPolygons()
@@ -1483,14 +1504,18 @@ void PreProcessorGeoDataGroupDataItem::setDimensionsToFirst()
 	m_dimensions->setCurrentIndex(0, true);
 }
 
+PreProcessorGridTypeDataItem* PreProcessorGeoDataGroupDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+}
+
 void PreProcessorGeoDataGroupDataItem::updateVisibility(bool visible)
 {
 	GraphicsWindowDataItem::updateVisibility(visible);
 
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
-	auto setting = typedi->colorMapSetting(condition()->name());
-	if (setting != nullptr) {
-		auto v = dataModel()->graphicsView();
-		setting->legendSetting()->imgSetting()->apply(v);
-	}
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }

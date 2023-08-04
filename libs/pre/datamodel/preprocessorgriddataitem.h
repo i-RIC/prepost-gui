@@ -105,6 +105,7 @@ public:
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
 	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
+	bool colorBarShouldBeVisible(const std::string& name) const;
 
 	void setSelectedVertices(const std::vector<vtkIdType>& vertices);
 	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;

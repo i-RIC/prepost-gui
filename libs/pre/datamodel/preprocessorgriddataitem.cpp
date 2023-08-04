@@ -1391,6 +1391,16 @@ PreProcessorBCGroupDataItem* PreProcessorGridDataItem::bcGroupDataItem() const
 	return m_bcGroupDataItem;
 }
 
+bool PreProcessorGridDataItem::colorBarShouldBeVisible(const std::string& name) const
+{
+	if (m_nodeGroupDataItem->isChecked()) {
+		return m_nodeGroupDataItem->colorBarShouldBeVisible(name);
+	} else if (m_cellGroupDataItem->isChecked()) {
+		return m_cellGroupDataItem->colorBarShouldBeVisible(name);
+	}
+	return false;
+}
+
 void PreProcessorGridDataItem::updateAttributeActorSettings()
 {
 	m_nodeGroupDataItem->updateActorSetting();

@@ -58,13 +58,14 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	void applyColorMapSetting(const std::string& name);
 	PreProcessorGridDataItem* gridDataItem() const;
+	bool colorBarShouldBeVisible(const std::string& name) const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showAttributeBrowser();
 
 protected:
-	PreProcessorGridAttributeNodeDataItem* activeChildItem();
+	PreProcessorGridAttributeNodeDataItem* activeChildItem() const;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);

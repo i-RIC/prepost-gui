@@ -39,14 +39,20 @@ public:
 	Position resizePosition() const;
 
 	void handleMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
+	void handleMouseMoveEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleMousePressEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
+	void handleMousePressEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
+	void handleMouseReleaseEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleResize(QResizeEvent* event, VTKGraphicsView* v);
 
 	static void updateMouseCursor(VTKGraphicsView* v, const std::vector<ImageSettingContainer::Controller*>& controllers);
 
 private:
 	void updateMouseEventMode(QMouseEvent* event, VTKGraphicsView* v);
+	void updateMouseEventMode(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v);
+	void updateMouseEventMode(bool checked, QMouseEvent* event, VTKGraphicsView* v);
+
 	void updateMouseCursor(VTKGraphicsView* v);
 	GraphicsWindowDataItem* firstItem() const;
 

@@ -264,7 +264,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 	updateActorSetting();
 }
 
-PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::activeChildItem()
+PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::activeChildItem() const
 {
 	return m_nameMap.value(m_target);
 }
@@ -540,4 +540,16 @@ void PreProcessorGridAttributeNodeGroupDataItem::applyColorMapSetting(const std:
 PreProcessorGridDataItem* PreProcessorGridAttributeNodeGroupDataItem::gridDataItem() const
 {
 	return dynamic_cast<PreProcessorGridDataItem*> (parent());
+}
+
+bool PreProcessorGridAttributeNodeGroupDataItem::colorBarShouldBeVisible(const std::string& name) const
+{
+	auto active = activeChildItem();
+	if (active == nullptr) {return false;}
+
+	if (active->name() != name) {return false;}
+	if (! active->isAncientChecked()) {return false;}
+	if (! active->isChecked()) {return false;}
+
+	return true;
 }

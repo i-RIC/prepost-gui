@@ -98,6 +98,8 @@ void PreProcessorGeoDataDataItem::handleStandardItemChange()
 			m_standardItem->setData(m_geoData->caption(), Qt::EditRole);
 		}
 	}
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*> (groupDataItem());
+	gItem->gridTypeDataItem()->updateColorBarVisibility(gItem->condition()->name());
 }
 
 void PreProcessorGeoDataDataItem::doLoadFromProjectMainFile(const QDomNode& node)

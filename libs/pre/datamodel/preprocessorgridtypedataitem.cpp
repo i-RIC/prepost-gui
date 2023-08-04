@@ -20,6 +20,7 @@
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
+#include <misc/valuechangert.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -31,7 +32,8 @@
 
 PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
 	PreProcessorGridTypeDataItemInterface {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
-	m_gridType {type}
+	m_gridType {type},
+	m_geoDataTop {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	setSubPath(type->name().c_str());
@@ -230,6 +232,39 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> PreProcessorGridType
 	return m_colorMapSettingContainers;
 }
 
+void PreProcessorGridTypeDataItem::updateColorBarVisibility(const std::string& attName)
+{
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+
+	auto cm = colorMapSetting(attName);
+	if (cm == nullptr) {return;}
+	auto actor = cm->legendSetting()->imgSetting()->actor();
+	m_actor2DCollection->RemoveItem(actor);
+	actor->VisibilityOff();
+
+	bool visible = false;
+	if (m_geoDataTop == nullptr) {return;}
+
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*> (m_geoDataTop->groupDataItem(attName));
+	visible = visible || gItem->colorBarShouldBeVisible();
+
+	for (auto cond : m_conditions) {
+		auto gItem = dynamic_cast<PreProcessorGridDataItem*> (cond->gridDataItem());
+		visible = visible || gItem->colorBarShouldBeVisible(attName);
+	}
+	visible = visible && cm->legendSetting()->getVisible();
+	if (visible) {
+		auto v = dataModel()->graphicsView();
+		cm->legendSetting()->imgSetting()->apply(v);
+		m_actor2DCollection->AddItem(actor);
+	}
+
+	updateVisibility();
+}
+
 QAction* PreProcessorGridTypeDataItem::addNewGridAction() const
 {
 	return m_addNewGridAction;
@@ -418,6 +453,8 @@ void PreProcessorGridTypeDataItem::applyColorMapSetting(const std::string& name)
 	for (const auto c : m_conditions) {
 		c->gridDataItem()->applyColorMapSetting(name);
 	}
+	updateColorBarVisibility(name);
+
 	emit colorMapSettingChanged(name);
 }
 
