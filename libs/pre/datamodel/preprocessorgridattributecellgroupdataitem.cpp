@@ -133,9 +133,9 @@ void PreProcessorGridAttributeCellGroupDataItem::handleNamedItemChange(NamedGrap
 void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 {
 	m_opacityWidget->setDisabled(true);
-	m_colorMapWidgetContainer->setWidget(nullptr);
-
 	m_actor->VisibilityOff();
+
+	// make all the items invisible
 	m_actorCollection->RemoveAllItems();
 	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g == nullptr) {
@@ -158,10 +158,6 @@ void PreProcessorGridAttributeCellGroupDataItem::updateActorSetting()
 	auto mapper = cs->buildCellDataMapper(filteredGrid, false);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
-
-	auto colorMapWidget = activeChildItem()->colorMapSettingToolBarWidgetController()->widget();
-	colorMapWidget->setParent(m_colorMapWidgetContainer);
-	m_colorMapWidgetContainer->setWidget(colorMapWidget);
 
 	m_actor->GetProperty()->SetOpacity(m_opacity);
 
@@ -268,6 +264,16 @@ void PreProcessorGridAttributeCellGroupDataItem::pushOpacityPercentAndUpdateActo
 const OpacityContainer& PreProcessorGridAttributeCellGroupDataItem::opacity() const
 {
 	return m_opacity;
+}
+
+OpacityContainerWidget* PreProcessorGridAttributeCellGroupDataItem::opacityWidget() const
+{
+	return m_opacityWidget;
+}
+
+QWidgetContainer* PreProcessorGridAttributeCellGroupDataItem::colorMapWidgetContainer() const
+{
+	return m_colorMapWidgetContainer;
 }
 
 QAction* PreProcessorGridAttributeCellGroupDataItem::showAttributeBrowserAction() const
@@ -447,11 +453,10 @@ bool PreProcessorGridAttributeCellGroupDataItem::addToolBarButtons(QToolBar* too
 	m_colorMapWidgetContainer->show();
 	toolBar->addWidget(m_colorMapWidgetContainer);
 
-	PreProcessorGridAttributeCellDataItem* activeItem = activeChildItem();
+	auto activeItem = activeChildItem();
 	if (activeItem == nullptr) {return true;}
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
+	auto grid = gridDataItem()->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
 	const auto& selectWidgets = cont->dimensions()->selectWidgets();
 	if (selectWidgets.size() >= 0) {
@@ -500,4 +505,9 @@ void PreProcessorGridAttributeCellGroupDataItem::doSaveToProjectMainFile(QXmlStr
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+}
+
+PreProcessorGridDataItem* PreProcessorGridAttributeCellGroupDataItem::gridDataItem() const
+{
+	return dynamic_cast<PreProcessorGridDataItem*> (parent());
 }

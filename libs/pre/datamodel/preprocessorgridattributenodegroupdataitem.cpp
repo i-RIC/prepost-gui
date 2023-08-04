@@ -148,7 +148,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::setTarget(const std::string& ta
 void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 {
 	m_opacityWidget->setDisabled(true);
-	m_colorMapWidgetContainer->setWidget(nullptr);
 	m_actor->VisibilityOff();
 
 	// make all the items invisible
@@ -174,10 +173,6 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 	auto mapper = cs->buildPointDataMapper(filteredGrid);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
-
-	auto colorMapWidget = activeChildItem()->colorMapSettingToolBarWidgetController()->widget();
-	colorMapWidget->setParent(m_colorMapWidgetContainer);
-	m_colorMapWidgetContainer->setWidget(colorMapWidget);
 
 	m_actor->GetProperty()->SetOpacity(m_opacity);
 
@@ -312,6 +307,16 @@ void PreProcessorGridAttributeNodeGroupDataItem::pushOpacityPercentAndUpdateActo
 const OpacityContainer& PreProcessorGridAttributeNodeGroupDataItem::opacity() const
 {
 	return m_opacity;
+}
+
+OpacityContainerWidget* PreProcessorGridAttributeNodeGroupDataItem::opacityWidget() const
+{
+	return m_opacityWidget;
+}
+
+QWidgetContainer* PreProcessorGridAttributeNodeGroupDataItem::colorMapWidgetContainer() const
+{
+	return m_colorMapWidgetContainer;
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
@@ -506,11 +511,10 @@ bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* too
 	m_colorMapWidgetContainer->show();
 	toolBar->addWidget(m_colorMapWidgetContainer);
 
-	PreProcessorGridAttributeNodeDataItem* activeItem = activeChildItem();
+	auto activeItem = activeChildItem();
 	if (activeItem == 0) {return true;}
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
+	auto grid = gridDataItem()->grid();
 	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
 	const auto& selectWidgets = cont->dimensions()->selectWidgets();
 	if (selectWidgets.size() > 0) {
@@ -531,4 +535,9 @@ void PreProcessorGridAttributeNodeGroupDataItem::applyColorMapSetting(const std:
 	if (m_target != name) {return;}
 
 	updateActorSetting();
+}
+
+PreProcessorGridDataItem* PreProcessorGridAttributeNodeGroupDataItem::gridDataItem() const
+{
+	return dynamic_cast<PreProcessorGridDataItem*> (parent());
 }

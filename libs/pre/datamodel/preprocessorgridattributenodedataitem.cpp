@@ -14,6 +14,7 @@
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
 #include <guibase/widget/contoursettingwidget.h>
+#include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
@@ -24,17 +25,21 @@
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/grid/structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditdialog.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
+#include <misc/qwidgetcontainer.h>
 #include <misc/stringtool.h>
 #include <misc/tpoexporter.h>
 #include <misc/xmlsupport.h>
@@ -576,5 +581,31 @@ void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariation
 
 bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	return groupDataItem()->addToolBarButtons(toolBar);
+	auto opacityW = groupDataItem()->opacityWidget();
+	opacityW->setParent(toolBar);
+	opacityW->show();
+	toolBar->addWidget(opacityW);
+
+	toolBar->addSeparator();
+
+	auto cmwContainer = groupDataItem()->colorMapWidgetContainer();
+	cmwContainer->setParent(toolBar);
+	cmwContainer->show();
+	toolBar->addWidget(cmwContainer);
+	cmwContainer->setWidget(m_colorMapToolBarWidgetController->widget());
+
+	Grid* grid = groupDataItem()->gridDataItem()->grid();
+	GridAttributeContainer* cont = grid->gridAttribute(condition()->name());
+	const auto& selectWidgets = cont->dimensions()->selectWidgets();
+	if (selectWidgets.size() > 0) {
+		toolBar->addSeparator();
+
+		for (int i = 0; i < selectWidgets.size(); ++i) {
+			GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
+			QAction* action = toolBar->addWidget(w);
+			action->setVisible(true);
+		}
+	}
+
+	return true;
 }

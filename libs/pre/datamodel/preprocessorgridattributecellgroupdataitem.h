@@ -9,6 +9,7 @@
 class NamedGraphicWindowDataItem;
 class OpacityContainerWidget;
 class PreProcessorGridAttributeCellDataItem;
+class PreProcessorGridDataItem;
 class QWidgetContainer;
 
 class vtkActor;
@@ -43,6 +44,8 @@ public:
 	void handleStandardItemChange() override;
 	void pushOpacityPercentAndUpdateActorSettingCommand(const OpacityContainer& opacity, QUndoCommand* subcommand, bool apply = false);
 	const OpacityContainer& opacity() const;
+	OpacityContainerWidget* opacityWidget() const;
+	QWidgetContainer* colorMapWidgetContainer() const;
 	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
@@ -51,6 +54,7 @@ public:
 	void updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v);
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	void applyColorMapSetting(const std::string& name);
+	PreProcessorGridDataItem* gridDataItem() const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
