@@ -4,6 +4,8 @@
 #include "measureddatavectorgroupdataitem_settingeditwidget.h"
 #include "ui_measureddatavectorgroupdataitem_settingeditwidget.h"
 
+#include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinition.h>
 #include <guicore/filter/generalfilteringsettingeditwidget.h>
 #include <guicore/project/measured/measureddata.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -19,12 +21,14 @@ MeasuredDataVectorGroupDataItem::SettingEditWidget::SettingEditWidget(MeasuredDa
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_filteringEditWidget);
 
 	auto fileDataItem = dynamic_cast<MeasuredDataFileDataItem*> (item->parent());
+	auto gType = item->projectData()->solverDefinition()->dummyGridType();
 	auto md = fileDataItem->measuredData();
 
 	std::map<std::string, QString> names;
 	for (const auto& name : md->vectorNames()) {
 		names.insert({name, name.c_str()});
 	}
+	ui->arrowsSettingWidget->setGridType(gType);
 	ui->arrowsSettingWidget->setValueNames(names);
 	ui->arrowsSettingWidget->setColorMapSettings(fileDataItem->pointGroupDataItem()->colorMapSettings());
 
