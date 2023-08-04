@@ -225,7 +225,7 @@ void GridBirdEyeWindowGridDataItem::updateActorSettings()
 			m_actor->SetMapper(mapper);
 			mapper->Delete();
 		}
-		ls->imgSetting()->controller()->handleSelection(m_model->graphicsView());
+		ls->imgSetting()->apply(m_model->graphicsView());
 	}
 	m_actor->VisibilityOn();
 

@@ -166,28 +166,6 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::innerUpdateZScale(double zsca
 	updateActorSetting();
 }
 
-void Post3dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleSelection(v);
-
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-}
-
-void Post3dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleDeselection(v);
-
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-}
-
 void Post3dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = m_setting.arrowsSetting;
@@ -330,7 +308,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 	actor2DCollection()->AddItem(m_legendActor);
 	updateVisibilityWithoutRendering();
 
-	m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
+	m_setting.arrowsSetting.legend.imageSetting.apply(v);
 
 	topDataItem()->updateColorMaps();
 }

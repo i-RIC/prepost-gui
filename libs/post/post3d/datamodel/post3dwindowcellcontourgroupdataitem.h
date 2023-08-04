@@ -43,8 +43,6 @@ private:
 	std::vector<Post3dWindowCellRangeSettingContainer> ranges() const;
 	void setRanges(const std::vector<Post3dWindowCellRangeSettingContainer>& ranges);
 
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;

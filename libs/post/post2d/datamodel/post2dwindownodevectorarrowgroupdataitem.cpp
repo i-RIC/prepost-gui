@@ -175,7 +175,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 		mapper->Delete();
 		cs->legendSetting()->imgSetting()->setActor(m_colorLegendActor);
 		cs->legendSetting()->imgSetting()->controller()->setItem(this);
-		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
+		cs->legendSetting()->imgSetting()->apply(v);
 	}
 	arrowsData->Delete();
 
@@ -260,23 +260,11 @@ void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
 {
 	zoneDataItem()->initNodeResultAttributeBrowser();
-
-	m_setting.legend.imageSetting.controller()->handleSelection(v);
-
-	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
-	if (s == nullptr) {return;}
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
 	zoneDataItem()->clearNodeResultAttributeBrowser();
-
-	m_setting.legend.imageSetting.controller()->handleDeselection(v);
-
-	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-	auto s = colorMapSetting(iRIC::toStr(m_setting.colorTarget));
-	if (s == nullptr) {return;}
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

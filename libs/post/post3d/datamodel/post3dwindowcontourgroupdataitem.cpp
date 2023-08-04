@@ -181,16 +181,6 @@ void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFa
 	oview->expand(standardItem()->index());
 }
 
-void Post3dWindowContourGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	impl->m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
-}
-
-void Post3dWindowContourGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	impl->m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
-}
-
 void Post3dWindowContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);

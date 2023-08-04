@@ -160,7 +160,7 @@ void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
 		auto is = cs->legendSetting()->imgSetting();
 		is->setActor(m_legendActor);
 		is->controller()->setItem(this);
-		is->controller()->handleSelection(dataModel()->graphicsView());
+		is->apply(dataModel()->graphicsView());
 	}
 	auto v = dataModel()->graphicsView();
 	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
@@ -199,21 +199,11 @@ void Post2dWindowPolyDataGroupDataItem::assignActorZValues(const ZDepthRange& ra
 
 void Post2dWindowPolyDataGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-
 	zoneDataItem()->initPolyDataResultAttributeBrowser();
 }
 
 void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto s = activeSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
 }
 

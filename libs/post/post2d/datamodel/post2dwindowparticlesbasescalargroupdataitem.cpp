@@ -131,21 +131,11 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> Post2dWindowParticle
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-
 	zoneDataItem()->clearParticleResultAttributeBrowser();
 }
 

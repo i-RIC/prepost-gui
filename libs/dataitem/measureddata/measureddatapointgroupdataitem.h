@@ -33,8 +33,6 @@ public:
 	ColorMapSettingContainerI* colorMapSetting(const std::string& target) const;
 	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
 
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;

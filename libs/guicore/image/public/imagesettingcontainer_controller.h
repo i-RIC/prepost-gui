@@ -28,7 +28,6 @@ public:
 	Controller(ImageSettingContainer* setting);
 
 	MouseEventMode mouseEventMode() const;
-	bool selected() const;
 
 	GraphicsWindowDataItem* item() const;
 	void setItem(GraphicsWindowDataItem* item);
@@ -44,9 +43,6 @@ public:
 	void handleMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate = false);
 	void handleResize(QResizeEvent* event, VTKGraphicsView* v);
 
-	void handleSelection(VTKGraphicsView* v);
-	void handleDeselection(VTKGraphicsView* v);
-
 	static void updateMouseCursor(VTKGraphicsView* v, const std::vector<ImageSettingContainer::Controller*>& controllers);
 
 private:
@@ -61,7 +57,6 @@ private:
 
 	GraphicsWindowDataItem* m_item;
 	std::unordered_set<GraphicsWindowDataItem*> m_items;
-	bool m_selected;
 	ImageSettingContainer* m_setting;
 };
 

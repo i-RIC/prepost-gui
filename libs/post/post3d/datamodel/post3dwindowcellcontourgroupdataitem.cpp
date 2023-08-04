@@ -171,16 +171,6 @@ void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWin
 	oview->expand(standardItem()->index());
 }
 
-void Post3dWindowCellContourGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	m_colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
-}
-
-void Post3dWindowCellContourGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	m_colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
-}
-
 void Post3dWindowCellContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);

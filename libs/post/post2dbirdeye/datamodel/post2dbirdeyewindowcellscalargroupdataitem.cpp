@@ -206,22 +206,6 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::innerUpdateZScale(double scale)
 	impl->m_actor->SetScale(1, 1, scale);
 }
 
-void Post2dBirdEyeWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-}
-
-void Post2dBirdEyeWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-}
-
 void Post2dBirdEyeWindowCellScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();

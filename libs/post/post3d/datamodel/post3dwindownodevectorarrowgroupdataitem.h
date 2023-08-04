@@ -33,8 +33,6 @@ public:
 	std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> faceSettings();
 	void setFaceSettings(const std::vector<Post3dWindowNodeVectorArrowDataItem::Setting>& settings);
 
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;

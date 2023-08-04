@@ -188,32 +188,6 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
-void MeasuredDataVectorGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto& as = impl->m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleSelection(v);
-
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-}
-
-void MeasuredDataVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto& as = impl->m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleDeselection(v);
-
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-}
-
 void MeasuredDataVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = impl->m_setting.arrowsSetting;
@@ -321,7 +295,7 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 	actor2DCollection()->AddItem(impl->m_legendActor);
 	updateVisibilityWithoutRendering();
 
-	impl->m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
+	impl->m_setting.arrowsSetting.legend.imageSetting.apply(v);
 
 	auto& as = impl->m_setting.arrowsSetting;
 	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}

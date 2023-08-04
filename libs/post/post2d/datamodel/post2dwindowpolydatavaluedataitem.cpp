@@ -26,19 +26,11 @@ QDialog* Post2dWindowPolyDataValueDataItem::propertyDialog(QWidget* parent)
 
 void Post2dWindowPolyDataValueDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto s = polyDataGroupDataItem()->activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	zoneDataItem()->initPolyDataResultAttributeBrowser();
 }
 
 void Post2dWindowPolyDataValueDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto s = polyDataGroupDataItem()->activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	zoneDataItem()->clearPolyDataResultAttributeBrowser();
 }
 

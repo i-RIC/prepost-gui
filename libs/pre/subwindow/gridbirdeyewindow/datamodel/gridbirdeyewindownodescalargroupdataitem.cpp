@@ -201,22 +201,6 @@ void GridBirdEyeWindowNodeScalarGroupDataItem::innerUpdateZScale(double scale)
 	impl->m_actor->SetScale(1, 1, scale);
 }
 
-void GridBirdEyeWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-}
-
-void GridBirdEyeWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-}
-
 void GridBirdEyeWindowNodeScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();

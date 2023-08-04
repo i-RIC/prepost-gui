@@ -161,27 +161,11 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::innerUpdate2Ds()
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleSelection(v);
-
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	auto& as = m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleDeselection(v);
-
-	auto cs = activeColorMapSetting();
-	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-
 	zoneDataItem()->clearParticleResultAttributeBrowser();
 }
 
@@ -328,7 +312,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 	actor2DCollection()->AddItem(m_legendActor);
 	updateVisibilityWithoutRendering();
 
-	m_setting.arrowsSetting.legend.imageSetting.controller()->handleSelection(v);
+	m_setting.arrowsSetting.legend.imageSetting.apply(v);
 
 	topDataItem()->updateColorMaps();
 }

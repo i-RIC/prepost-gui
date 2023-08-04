@@ -189,13 +189,11 @@ bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 	topDataItem()->zoneDataItem()->initNodeResultAttributeBrowser();
 }
 
 void Post2dWindowNodeScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 	topDataItem()->zoneDataItem()->clearNodeResultAttributeBrowser();
 }
 

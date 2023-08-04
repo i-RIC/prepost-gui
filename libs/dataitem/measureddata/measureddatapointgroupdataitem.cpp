@@ -237,22 +237,6 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> MeasuredDataPointGro
 	return impl->m_colorMapSettings;
 }
 
-void MeasuredDataPointGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto s = activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-}
-
-void MeasuredDataPointGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto s = activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-}
-
 void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();
@@ -305,7 +289,7 @@ void MeasuredDataPointGroupDataItem::updateActorSetting()
 	auto s = activeSetting();
 	if (s != nullptr) {
 		auto v = dataModel()->graphicsView();
-		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
+		s->legendSetting()->imgSetting()->apply(v);
 	} else {
 		impl->m_legendActor->VisibilityOff();
 	}

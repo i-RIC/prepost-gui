@@ -7,22 +7,6 @@ MeasuredDataPointDataItem::MeasuredDataPointDataItem(const std::string& name, co
 	NamedGraphicWindowDataItem(name, caption, parent)
 {}
 
-void MeasuredDataPointDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto s = activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-}
-
-void MeasuredDataPointDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto s = activeSetting();
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-}
-
 void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeSetting();

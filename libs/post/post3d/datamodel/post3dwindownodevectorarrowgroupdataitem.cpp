@@ -159,16 +159,6 @@ void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector
 	oview->expand(standardItem()->index());
 }
 
-void Post3dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	m_setting.legend.imageSetting.controller()->handleSelection(v);
-}
-
-void Post3dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	m_setting.legend.imageSetting.controller()->handleDeselection(v);
-}
-
 void Post3dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	std::vector<ImageSettingContainer::Controller*> controllers;

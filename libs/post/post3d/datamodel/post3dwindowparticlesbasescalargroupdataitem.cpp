@@ -119,22 +119,6 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> Post3dWindowParticle
 	return ret;
 }
 
-void Post3dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto s = activeColorMapSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-	}
-}
-
-void Post3dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto s = activeColorMapSetting();
-	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-	}
-}
-
 void Post3dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto s = activeColorMapSetting();

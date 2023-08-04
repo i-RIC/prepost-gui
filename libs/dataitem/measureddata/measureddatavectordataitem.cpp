@@ -14,32 +14,6 @@ MeasuredDataVectorDataItem::MeasuredDataVectorDataItem(const std::string& name, 
 	NamedGraphicWindowDataItem {name, caption, parent}
 {}
 
-void MeasuredDataVectorDataItem::informSelection(VTKGraphicsView* v)
-{
-	auto& as = setting().arrowsSetting;
-	as.legend.imageSetting.controller()->handleSelection(v);
-
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleSelection(v);
-}
-
-void MeasuredDataVectorDataItem::informDeselection(VTKGraphicsView* v)
-{
-	auto& as = setting().arrowsSetting;
-	as.legend.imageSetting.controller()->handleDeselection(v);
-
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = pointGroupDataItem()->colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleDeselection(v);
-}
-
 void MeasuredDataVectorDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto& as = setting().arrowsSetting;

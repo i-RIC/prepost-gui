@@ -12,18 +12,12 @@ ImageSettingContainer::Controller::Controller(ImageSettingContainer* setting) :
 	m_previousPosition {},
 	m_item {nullptr},
 	m_items {},
-	m_selected {false},
 	m_setting {setting}
 {}
 
 ImageSettingContainer::Controller::MouseEventMode ImageSettingContainer::Controller::mouseEventMode() const
 {
 	return m_mouseEventMode;
-}
-
-bool ImageSettingContainer::Controller::selected() const
-{
-	return m_selected;
 }
 
 GraphicsWindowDataItem* ImageSettingContainer::Controller::item() const
@@ -121,18 +115,6 @@ void ImageSettingContainer::Controller::handleMouseReleaseEvent(QMouseEvent* eve
 void ImageSettingContainer::Controller::handleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	m_setting->apply(event->size(), v);
-}
-
-void ImageSettingContainer::Controller::handleSelection(VTKGraphicsView* v)
-{
-	m_selected = true;
-	m_setting->apply(v->size(), v);
-}
-
-void ImageSettingContainer::Controller::handleDeselection(VTKGraphicsView* v)
-{
-	m_selected = false;
-	m_setting->apply(v->size(), v);
 }
 
 void ImageSettingContainer::Controller::updateMouseCursor(VTKGraphicsView* v, const std::vector<ImageSettingContainer::Controller*>& controllers)

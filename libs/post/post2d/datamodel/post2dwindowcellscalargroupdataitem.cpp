@@ -181,13 +181,11 @@ bool Post2dWindowCellScalarGroupDataItem::hasTransparentPart()
 
 void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleSelection(v);
 	topDataItem()->zoneDataItem()->initCellResultAttributeBrowser();
 }
 
 void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleDeselection(v);
 	topDataItem()->zoneDataItem()->clearCellResultAttributeBrowser();
 }
 

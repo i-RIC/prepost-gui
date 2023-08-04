@@ -183,22 +183,14 @@ void PreProcessorGeoDataDataItem::handleStandardItemDoubleClicked()
 
 void PreProcessorGeoDataDataItem::informSelection(VTKGraphicsView* v)
 {
-	// delegate to raw data.
+	// delegate to geo data.
 	m_geoData->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
-
-	auto setting = colorMapSettingContainer();
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleSelection(v);
 }
 
 void PreProcessorGeoDataDataItem::informDeselection(VTKGraphicsView* v)
 {
-	// delegate to raw data.
+	// delegate to geo data.
 	m_geoData->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
-
-	auto setting = colorMapSettingContainer();
-	if (setting == nullptr) {return;}
-	setting->legendSetting()->imgSetting()->controller()->handleDeselection(v);
 }
 
 void PreProcessorGeoDataDataItem::viewOperationEnded(VTKGraphicsView* v)
