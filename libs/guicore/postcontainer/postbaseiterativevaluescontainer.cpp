@@ -138,9 +138,12 @@ void PostBaseIterativeValuesContainer::setupContainers()
 	try {
 		iRICLib::H5CgnsFile cgnsFile(cgnsName, iRICLib::H5CgnsFile::Mode::OpenReadOnly);
 		for (int baseId = 1; baseId <= cgnsFile.baseNum(); ++baseId) {
-			auto c = new BaseContainer(baseId);
 			auto base = cgnsFile.baseById(baseId);
-			c->setupContainers(base->biterData());
+			auto bIter = base->biterData();
+			if (bIter == nullptr) {continue;}
+
+			auto c = new BaseContainer(baseId);
+			c->setupContainers(bIter);
 			impl->m_baseContainers.push_back(c);
 		}
 	} catch (...) {
