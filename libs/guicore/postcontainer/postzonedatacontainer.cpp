@@ -715,17 +715,27 @@ void PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool dis
 	if (zone->particleSolutionExists() && zone->particleSolution() != nullptr) {
 		ret = ParticleLoader::load(&m_particleData, zone->particleSolution(), offset());
 		if (ret == false) {goto ERROR;}
+	} else if (m_particleData != nullptr){
+		m_particleData->concreteData()->Initialize();
 	}
 	// load particleGroup
 	if (zone->particleGroupSolutionExists() && zone->particleGroupSolution() != nullptr) {
 		ret = ParticleGroupLoader::load(&m_particleGroupMap, zone->particleGroupSolution(), offset());
 		if (ret == false) {goto ERROR;}
+	} else {
+		for (auto& pair : m_particleGroupMap) {
+			pair.second->data()->Initialize();
+		}
 	}
 
 	// load polydata
 	if (zone->polyDataSolutionExists() && zone->polyDataSolution() != nullptr) {
 		ret = PolyDataLoader::load(&m_polyDataMap, &m_polyDataCellIdsMap, zone->polyDataSolution(), offset());
 		if (ret == false) {goto ERROR;}
+	} else {
+		for (auto& pair : m_polyDataMap) {
+			pair.second->data()->Initialize();
+		}
 	}
 
 	if (! disableCalculatedResult) {
