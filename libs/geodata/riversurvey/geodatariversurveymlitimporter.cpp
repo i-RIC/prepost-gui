@@ -227,6 +227,11 @@ bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImpo
 	}
 	GeoDataRiverSurveyImporter::removePointsWithoutAltitudes(points);
 
+	if (points->size() == 0) {
+		QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("There is not cross section data. Maybe you selected a wrong folder."));
+		return false;
+	}
+
 	return true;
 }
 
