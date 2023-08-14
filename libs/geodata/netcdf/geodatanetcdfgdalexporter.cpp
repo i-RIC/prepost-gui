@@ -94,7 +94,7 @@ bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename,
 const QStringList GeoDataNetcdfGdalExporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("GeoTiff files(*.tif)"));
+	ret.append(tr("GeoTiff files(*.tif *.tiff)"));
 	ret.append(tr("ArcInfo ASCII files(*.asc)"));
 	return ret;
 }

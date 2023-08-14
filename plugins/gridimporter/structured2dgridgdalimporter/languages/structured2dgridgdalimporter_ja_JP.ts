@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Structured2DGridGdalImporter</name>
@@ -7,11 +9,15 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation>GeoTIFF ファイル (*.tif)</translation>
+        <translation type="vanished">GeoTIFF ファイル (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
         <translation>ArcInfo ASCII ファイル (*.asc)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif *.tiff)</source>
+        <translation>GeoTIFF ファイル (*.tif *.tiff)</translation>
     </message>
 </context>
 </TS>

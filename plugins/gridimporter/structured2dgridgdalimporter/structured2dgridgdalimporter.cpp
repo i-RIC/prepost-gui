@@ -25,7 +25,7 @@ QString Structured2DGridGdalImporter::caption() const
 QStringList Structured2DGridGdalImporter::fileDialogFilters() const
 {
 	QStringList ret;
-	ret.append(tr("GeoTiff files(*.tif)"));
+	ret.append(tr("GeoTiff files(*.tif *.tiff)"));
 	ret.append(tr("ArcInfo ASCII files(*.asc)"));
 	return ret;
 }
@@ -74,7 +74,6 @@ bool Structured2DGridGdalImporter::import(Grid* grid, const QString& filename, c
 	for (auto& att : atts){
 		att->allocate();
 	}
-
 
 	return true;
 }

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GeoDataNetcdf</name>
@@ -106,8 +108,8 @@
         <translation>Recunoașteți rezultatul:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vă rugăm să utilizați următoarele litere pentru a defini modelul: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; "&gt; An: AAAA &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Luna: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Ziua: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreapta: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ora: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Vă rugăm să utilizați următoarele litere pentru a defini modelul: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- indent: 0; text-indent: 0px; &quot;&gt; An: AAAA &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Luna: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ziua: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- dreapta: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ora: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Second: ss &lt;/li&gt; &lt;/ul&gt; &lt;/ body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,7 +135,7 @@
         <translation>Aceste date nu pot fi exportate. Se pare că nu a fost importat din *.tif sau *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
         <translation>Aceste date nu pot fi exportate. Datele cu dimensiunea „Timp” nu pot fi exportate în *.tif sau *.asc.</translation>
     </message>
     <message>
@@ -142,7 +144,11 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation>Fișiere GeoTiff (*.tif)</translation>
+        <translation type="vanished">Fișiere GeoTiff (*.tif)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif *.tiff)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -157,7 +163,7 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation>Fișiere GeoTiff (*.tif)</translation>
+        <translation type="vanished">Fișiere GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -191,6 +197,10 @@
         <source>Opening %1 failed.</source>
         <translation>Deschidere %1 a eșuat.</translation>
     </message>
+    <message>
+        <source>GeoTiff files(*.tif *.tiff)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
@@ -207,7 +217,7 @@
         <translation>Aceste date nu pot fi exportate. Se pare că nu a fost importat din *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
         <translation>Aceste date nu pot fi exportate. Datele cu dimensiunea „Timp” nu pot fi exportate în *.png</translation>
     </message>
     <message>
@@ -418,7 +428,7 @@
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
         <translation>Datele rader MP în bandă X pot fi importate pentru condiții de rețea cu dimensiunea „Timp”.</translation>
     </message>
     <message>

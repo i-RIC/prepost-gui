@@ -65,7 +65,7 @@ GeoDataNetcdfGdalImporter::~GeoDataNetcdfGdalImporter()
 const QStringList GeoDataNetcdfGdalImporter::fileDialogFilters()
 {
 	QStringList ret;
-	ret.append(tr("GeoTiff files(*.tif)"));
+	ret.append(tr("GeoTiff files(*.tif *.tiff)"));
 	ret.append(tr("ArcInfo ASCII files(*.asc)"));
 	return ret;
 }

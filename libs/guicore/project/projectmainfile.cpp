@@ -725,7 +725,7 @@ bool ProjectMainFile::hasResults()
 void ProjectMainFile::addBackgroundImage()
 {
 	QString dir = LastIODirectory::get();
-	QString filter(tr("All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)"));
+	QString filter(tr("All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)"));
 	auto mdiArea = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
 	QString fname = QFileDialog::getOpenFileName(mdiArea->currentSubWindow(), tr("Open Image file"), dir, filter);
 	if (fname == "") {return;}

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataNetcdf</name>
@@ -106,8 +108,8 @@
         <translation>Αναγνώριση αποτελέσματος:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style="margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;"&gt;&lt;li style=" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Year: YYYY&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Month: MM&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Day: DD&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Hour: hh&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Minute: mm&lt;/li&gt;&lt;li style=" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Χρησιμοποιήστε τα ακόλουθα γράμματα για να ορίσετε μοτίβο: &lt;/p&gt; &lt;ul style = "margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; "&gt; &lt;li style =" margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- εσοχή: 0; text-indent: 0px; "&gt; Έτος: ΕΕΕΕ &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; "&gt; Μήνας: MM &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; "&gt; Ημέρα: DD &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; ourρα: hh &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Minute: mm &lt;/li&gt; &lt;li style =" margin-top: 0px; margin-bottom: 12px; margin- αριστερά: 0px; περιθώριο-δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Δεύτερο: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Please use the following letters to define pattern:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Year: YYYY&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Month: MM&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Day: DD&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hour: hh&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Minute: mm&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Second: ss&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Χρησιμοποιήστε τα ακόλουθα γράμματα για να ορίσετε μοτίβο: &lt;/p&gt; &lt;ul style = &quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin -right: 0px; -qt-list-indent: 1; &quot;&gt; &lt;li style =&quot; margin-top: 12px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-block- εσοχή: 0; text-indent: 0px; &quot;&gt; Έτος: ΕΕΕΕ &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt -block-indent: 0; text-indent: 0px; &quot;&gt; Μήνας: MM &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px ; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ημέρα: DD &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin- δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; ourρα: hh &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 0px; margin-left: 0px ; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Minute: mm &lt;/li&gt; &lt;li style =&quot; margin-top: 0px; margin-bottom: 12px; margin- αριστερά: 0px; περιθώριο-δεξιά: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Δεύτερο: ss &lt;/li&gt; &lt;/ul&gt; &lt;/body &gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>File name does not match the pattern</source>
@@ -133,8 +135,8 @@
         <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Φαίνεται ότι δεν έγινε εισαγωγή από *.tif ή *.asc.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.tif or *.asc.</source>
-        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με ιδιότητα "Timeρα" σε *.tif ή *.asc.</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.tif or *.asc.</source>
+        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με ιδιότητα &quot;Timeρα&quot; σε *.tif ή *.asc.</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -142,7 +144,11 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation>Αρχεία GeoTiff (*.tif)</translation>
+        <translation type="vanished">Αρχεία GeoTiff (*.tif)</translation>
+    </message>
+    <message>
+        <source>GeoTiff files(*.tif *.tiff)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -157,7 +163,7 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif)</source>
-        <translation>Αρχεία GeoTiff (*.tif)</translation>
+        <translation type="vanished">Αρχεία GeoTiff (*.tif)</translation>
     </message>
     <message>
         <source>ArcInfo ASCII files(*.asc)</source>
@@ -191,6 +197,10 @@
         <source>Opening %1 failed.</source>
         <translation>Ανοιγμα %1 απέτυχε.</translation>
     </message>
+    <message>
+        <source>GeoTiff files(*.tif *.tiff)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
@@ -207,8 +217,8 @@
         <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Φαίνεται ότι δεν εισήχθη από το *.png.</translation>
     </message>
     <message>
-        <source>This data cannot be exported. Data with "Time" dimension cannot be exported to *.png</source>
-        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με την ιδιότητα "Timeρα" στο *.png</translation>
+        <source>This data cannot be exported. Data with &quot;Time&quot; dimension cannot be exported to *.png</source>
+        <translation>Δεν είναι δυνατή η εξαγωγή αυτών των δεδομένων. Δεν είναι δυνατή η εξαγωγή δεδομένων με την ιδιότητα &quot;Timeρα&quot; στο *.png</translation>
     </message>
     <message>
         <source>Error occured while opening %1</source>
@@ -418,8 +428,8 @@
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>X band MP rader data can be imported for grid conditions with dimension "Time".</source>
-        <translation>Τα δεδομένα του rader MP band rader μπορούν να εισαχθούν για συνθήκες δικτύου με διάσταση "Χρόνος".</translation>
+        <source>X band MP rader data can be imported for grid conditions with dimension &quot;Time&quot;.</source>
+        <translation>Τα δεδομένα του rader MP band rader μπορούν να εισαχθούν για συνθήκες δικτύου με διάσταση &quot;Χρόνος&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
