@@ -17,8 +17,6 @@ public:
 	PreProcessorMeasuredDataTopDataItem(GraphicsWindowDataItem* parent);
 	~PreProcessorMeasuredDataTopDataItem() override;
 	const QList<MeasuredDataFileDataItem*> fileDataItems() const;
-	void setupActors();
-	void updateActorSettings();
 	void addCustomMenuItems(QMenu* menu) override;
 
 public slots:

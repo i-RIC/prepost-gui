@@ -141,7 +141,7 @@ bool Post2dWindowEdgeJScalarGroupTopDataItem::hasTransparentPart()
 	return true;
 }
 
-void Post2dWindowEdgeJScalarGroupTopDataItem::informSelection(VTKGraphicsView* v)
+void Post2dWindowEdgeJScalarGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	zoneDataItem()->initNodeResultAttributeBrowser();
 }

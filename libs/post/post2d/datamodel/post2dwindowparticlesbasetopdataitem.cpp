@@ -1,7 +1,7 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowparticlesbasescalargroupdataitem.h"
-#include "post2dwindowparticlesbasevectorgroupdataitem.h"
+#include "post2dwindowparticlesbasevectorgrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guicore/base/propertybrowser.h>
@@ -57,7 +57,7 @@ void Post2dWindowParticlesBaseTopDataItem::setup()
 	m_childItems.push_back(m_scalarGroupDataItem);
 
 	if (vectorExist) {
-		m_vectorGroupDataItem = new Post2dWindowParticlesBaseVectorGroupDataItem(this);
+		m_vectorGroupDataItem = new Post2dWindowParticlesBaseVectorGroupTopDataItem(this);
 		m_childItems.push_back(m_vectorGroupDataItem);
 	}
 }
@@ -68,7 +68,7 @@ Post2dWindowParticlesBaseScalarGroupDataItem* Post2dWindowParticlesBaseTopDataIt
 	return m_scalarGroupDataItem;
 }
 
-Post2dWindowParticlesBaseVectorGroupDataItem* Post2dWindowParticlesBaseTopDataItem::vectorGroupDataItem() const
+Post2dWindowParticlesBaseVectorGroupTopDataItem* Post2dWindowParticlesBaseTopDataItem::vectorGroupDataItem() const
 {
 	return m_vectorGroupDataItem;
 }
@@ -78,9 +78,9 @@ QAction* Post2dWindowParticlesBaseTopDataItem::showAttributeBrowserAction() cons
 	return m_showAttributeBrowserAction;
 }
 
-void Post2dWindowParticlesBaseTopDataItem::updateZDepthRangeItemCount(ZDepthRange& range)
+void Post2dWindowParticlesBaseTopDataItem::updateZDepthRangeItemCount()
 {
-	range.setItemCount(1);
+	m_zDepthRange.setItemCount(1);
 }
 
 void Post2dWindowParticlesBaseTopDataItem::assignActorZValues(const ZDepthRange& range)
@@ -110,7 +110,7 @@ void Post2dWindowParticlesBaseTopDataItem::update()
 	}
 }
 
-void Post2dWindowParticlesBaseTopDataItem::updateColorMaps()
+void Post2dWindowParticlesBaseTopDataItem::updateColorMapLegendsVisibility()
 {
 	m_actor2DCollection->RemoveAllItems();
 	if (m_scalarGroupDataItem == nullptr) {return;}
@@ -120,10 +120,12 @@ void Post2dWindowParticlesBaseTopDataItem::updateColorMaps()
 	}
 
 	auto view = dataModel()->graphicsView();
-	for (const auto& cms : activeColorMaps()) {
+	for (const auto& cms : activeColorMapsWithVisibleLegend()) {
 		cms->legendSetting()->imgSetting()->apply(view);
 		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
 	}
+
+	updateVisibilityWithoutRendering();
 }
 
 void Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser()
@@ -133,16 +135,18 @@ void Post2dWindowParticlesBaseTopDataItem::showAttributeBrowser()
 	w->propertyBrowser()->show();
 }
 
-std::unordered_set<ColorMapSettingContainerI*> Post2dWindowParticlesBaseTopDataItem::activeColorMaps() const
+std::unordered_set<ColorMapSettingContainerI*> Post2dWindowParticlesBaseTopDataItem::activeColorMapsWithVisibleLegend() const
 {
 	std::unordered_set<ColorMapSettingContainerI*> ret;
 
-	auto cm1 = m_scalarGroupDataItem->activeColorMapSetting();
+	auto cm1 = m_scalarGroupDataItem->activeColorMapSettingWithVisibleLegend();
 	if (cm1 != nullptr) {ret.insert(cm1);}
 
 	if (m_vectorGroupDataItem != nullptr) {
-		auto cm2 = m_vectorGroupDataItem->activeColorMapSetting();
-		if (cm2 != nullptr) {ret.insert(cm2);}
+		auto colormaps = m_vectorGroupDataItem->activeColorMapSettingsWithVisibleLegend();
+		for (auto cm : colormaps) {
+			ret.insert(cm);
+		}
 	}
 
 	return ret;

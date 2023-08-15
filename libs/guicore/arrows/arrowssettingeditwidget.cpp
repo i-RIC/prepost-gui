@@ -15,32 +15,15 @@
 
 ArrowsSettingEditWidget::ArrowsSettingEditWidget(QWidget *parent) :
 	QWidget(parent),
-	m_valueNames {},
 	m_setting {nullptr},
 	ui(new Ui::ArrowsSettingEditWidget)
 {
 	ui->setupUi(this);
-	connect<void(QComboBox::*)(const QString&)>(ui->valueComboBox, &QComboBox::currentTextChanged, this, &ArrowsSettingEditWidget::handleTargetChange);
 }
 
 ArrowsSettingEditWidget::~ArrowsSettingEditWidget()
 {
 	delete ui;
-}
-
-void ArrowsSettingEditWidget::setValueNames(const std::map<std::string, QString> names)
-{
-	ui->valueComboBox->clear();
-
-	std::map<QString, std::string> sortedCaptions;
-	for (const auto& pair : names) {
-		sortedCaptions.insert({pair.second, pair.first});
-	}
-
-	for (const auto& pair : sortedCaptions) {
-		ui->valueComboBox->addItem(pair.first);
-		m_valueNames.push_back(pair.second);
-	}
 }
 
 void ArrowsSettingEditWidget::setGridType(SolverDefinitionGridType* gridType)
@@ -67,7 +50,7 @@ ArrowsSettingContainer ArrowsSettingEditWidget::setting() const
 {
 	ArrowsSettingContainer ret;
 
-	ret.target = m_valueNames.at(ui->valueComboBox->currentIndex()).c_str();
+	ret.target = m_setting->target;
 	ui->lengthSettingWidget->updateSetting(&ret);
 	ui->colorSettingEditWidget->updateSetting(&ret);
 	ui->arrowShapeWidget->updateSetting(&ret);
@@ -83,20 +66,11 @@ void ArrowsSettingEditWidget::setSetting(ArrowsSettingContainer* setting)
 
 	auto targetStr = iRIC::toStr(setting->target);
 
-	for (int i = 0; i < m_valueNames.size(); ++i) {
-		if (m_valueNames.at(i) == targetStr) {
-			ui->valueComboBox->setCurrentIndex(i);
-		}
-	}
 	ui->lengthSettingWidget->setSetting(*setting);
 	ui->colorSettingEditWidget->setSetting(*setting);
 	ui->arrowShapeWidget->setSetting(*setting);
 
 	ui->legendWidget->setSetting(setting->legend);
-
-	if (targetStr == "") {
-		ui->legendWidget->setTitle(ui->valueComboBox->currentText());
-	}
 
 	connect(&m_setting->legend.imageSetting, &ImageSettingContainer::updated, this, &ArrowsSettingEditWidget::updateImageSetting);
 }

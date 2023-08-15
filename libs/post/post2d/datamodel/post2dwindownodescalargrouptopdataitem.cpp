@@ -59,7 +59,7 @@ void Post2dWindowNodeScalarGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamW
 
 void Post2dWindowNodeScalarGroupTopDataItem::updateZDepthRangeItemCount()
 {
-	m_zDepthRange.setItemCount((unsigned int)m_childItems.size());
+	m_zDepthRange.setItemCount(static_cast<unsigned int> (m_childItems.size()));
 }
 
 void Post2dWindowNodeScalarGroupTopDataItem::update()
@@ -77,7 +77,7 @@ Post2dWindowZoneDataItem* Post2dWindowNodeScalarGroupTopDataItem::zoneDataItem()
 
 QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	auto zItem = dynamic_cast<Post2dWindowZoneDataItem*>(parent());
+	auto zItem = zoneDataItem();
 	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::Node) == nullptr) {
 		return nullptr;
 	}
@@ -98,7 +98,7 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 
 void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto zoneData = zoneDataItem()->dataContainer();
 	if (zoneData == nullptr || zoneData->data() == nullptr) {
 		return;
 	}

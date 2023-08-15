@@ -42,40 +42,7 @@
           <enum>Qt::Horizontal</enum>
          </property>
          <widget class="QWidget" name="layoutWidget">
-          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,0,1">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,1">
-             <item>
-              <widget class="QLabel" name="valueLabel">
-               <property name="minimumSize">
-                <size>
-                 <width>80</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>Value:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="valueComboBox"/>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>0</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0,1">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>

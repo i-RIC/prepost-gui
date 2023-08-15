@@ -130,8 +130,8 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowparticlesbasescalardataitem.h \
            datamodel/post3dwindowparticlesbasescalargroupdataitem.h \
            datamodel/post3dwindowparticlesbasetopdataitem.h \
-           datamodel/post3dwindowparticlesbasevectordataitem.h \
            datamodel/post3dwindowparticlesbasevectorgroupdataitem.h \
+           datamodel/post3dwindowparticlesbasevectorgrouptopdataitem.h \
            datamodel/post3dwindowparticlestopdataitem.h \
            datamodel/post3dwindowrootdataitem.h \
            datamodel/post3dwindowsurfacedataitem.h \
@@ -219,8 +219,8 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowparticlesbasescalardataitem.cpp \
            datamodel/post3dwindowparticlesbasescalargroupdataitem.cpp \
            datamodel/post3dwindowparticlesbasetopdataitem.cpp \
-           datamodel/post3dwindowparticlesbasevectordataitem.cpp \
            datamodel/post3dwindowparticlesbasevectorgroupdataitem.cpp \
+           datamodel/post3dwindowparticlesbasevectorgrouptopdataitem.cpp \
            datamodel/post3dwindowparticlestopdataitem.cpp \
            datamodel/post3dwindowrootdataitem.cpp \
            datamodel/post3dwindowsurfacedataitem.cpp \

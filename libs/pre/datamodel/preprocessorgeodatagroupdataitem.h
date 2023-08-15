@@ -111,12 +111,12 @@ public slots:
 	void addGeoData(QObject* creator);
 	void import();
 	void importFromWeb();
+	void deleteAll();
 	void doExport();
 	void exportAllPolygons();
 
 private slots:
 	void deleteSelected();
-	void deleteAll();
 	void cancelImport();
 	void editVariationSetting();
 

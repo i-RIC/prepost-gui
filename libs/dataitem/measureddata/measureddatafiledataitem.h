@@ -5,9 +5,12 @@
 
 #include <guicore/datamodel/graphicswindowdataitem.h>
 
+#include <unordered_set>
+
+class ColorMapSettingContainerI;
 class MeasuredData;
 class MeasuredDataPointGroupDataItem;
-class MeasuredDataVectorGroupDataItem;
+class MeasuredDataVectorGroupTopDataItem;
 
 class MEASUREDDATA_API MeasuredDataFileDataItem : public GraphicsWindowDataItem
 {
@@ -19,8 +22,10 @@ public:
 
 	MeasuredData* measuredData() const;
 	MeasuredDataPointGroupDataItem* pointGroupDataItem() const;
-	MeasuredDataVectorGroupDataItem* vectorGroupDataItem() const;
+	MeasuredDataVectorGroupTopDataItem* vectorGroupDataItem() const;
 	void addCustomMenuItems(QMenu* menu) override;
+
+	void updateColorMapLegendsVisibility();
 
 private slots:
 	void exportToFile();
@@ -29,6 +34,8 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doApplyOffset(double x, double y) override;
+
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMapsWithVisibleLegend() const;
 
 	class Impl;
 	Impl* impl;

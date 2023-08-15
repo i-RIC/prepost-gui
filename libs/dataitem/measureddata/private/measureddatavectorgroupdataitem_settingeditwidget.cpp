@@ -1,5 +1,6 @@
 #include "../measureddatafiledataitem.h"
 #include "../measureddatapointgroupdataitem.h"
+#include "../measureddatavectorgrouptopdataitem.h"
 #include "measureddatavectorgroupdataitem_impl.h"
 #include "measureddatavectorgroupdataitem_settingeditwidget.h"
 #include "ui_measureddatavectorgroupdataitem_settingeditwidget.h"
@@ -20,16 +21,10 @@ MeasuredDataVectorGroupDataItem::SettingEditWidget::SettingEditWidget(MeasuredDa
 	ui->setupUi(this);
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_filteringEditWidget);
 
-	auto fileDataItem = dynamic_cast<MeasuredDataFileDataItem*> (item->parent());
+	auto fileDataItem = item->topDataItem()->fileDataItem();
 	auto gType = item->projectData()->solverDefinition()->dummyGridType();
-	auto md = fileDataItem->measuredData();
 
-	std::map<std::string, QString> names;
-	for (const auto& name : md->vectorNames()) {
-		names.insert({name, name.c_str()});
-	}
 	ui->arrowsSettingWidget->setGridType(gType);
-	ui->arrowsSettingWidget->setValueNames(names);
 	ui->arrowsSettingWidget->setColorMapSettings(fileDataItem->pointGroupDataItem()->colorMapSettings());
 
 	ui->arrowsSettingWidget->setSetting(&m_item->impl->m_setting.arrowsSetting);

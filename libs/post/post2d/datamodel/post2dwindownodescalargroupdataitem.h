@@ -5,7 +5,6 @@
 
 #include <h5cgnszone.h>
 
-class ColorMapSettingContainer;
 class Post2dWindowPointScalarGroupTopDataItemI;
 
 class vtkActor;

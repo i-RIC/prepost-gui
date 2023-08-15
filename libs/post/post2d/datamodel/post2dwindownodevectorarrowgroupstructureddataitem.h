@@ -11,7 +11,7 @@ class Post2dWindowNodeVectorArrowGroupStructuredDataItem : public Post2dWindowNo
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorArrowGroupStructuredDataItem(const std::string& name, Post2dWindowDataItem* parent);
 
 public slots:
 	void showPropertyDialog() override;

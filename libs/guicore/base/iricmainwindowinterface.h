@@ -63,6 +63,7 @@ public slots:
 	virtual void enterModelessDialogMode() = 0;
 	virtual void exitModelessDialogMode() = 0;
 	virtual void updateWindowList() = 0;
+	virtual void importMeasuredData() = 0;
 };
 
 #endif // IRICMAINWINDOWINTERFACE_H

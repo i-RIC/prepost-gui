@@ -21,6 +21,7 @@ MeasuredDataPointGroupDataItem::Setting::Setting(const Setting& setting) :
 MeasuredDataPointGroupDataItem::Setting& MeasuredDataPointGroupDataItem::Setting::operator=(const Setting& setting)
 {
 	copyValue(setting);
+	emit updated();
 	return *this;
 }
 

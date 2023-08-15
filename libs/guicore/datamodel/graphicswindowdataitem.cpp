@@ -339,7 +339,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 	// update the visibility of actors those are handled
 	// by this instance.
 	while (!it->IsDoneWithTraversal()) {
-		vtkActor* actor = vtkActor::SafeDownCast(it->GetCurrentObject());
+		auto actor = vtkActor::SafeDownCast(it->GetCurrentObject());
 		actor->SetVisibility(visible);
 		it->GoToNextItem();
 	}
@@ -350,7 +350,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 	// update the visibility of actors those are handled
 	// by this instance.
 	while (!it->IsDoneWithTraversal()) {
-		vtkActor2D* actor = vtkActor2D::SafeDownCast(it->GetCurrentObject());
+		auto actor = vtkActor2D::SafeDownCast(it->GetCurrentObject());
 		actor->SetVisibility(visible);
 		it->GoToNextItem();
 	}
@@ -358,7 +358,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 
 	// cascade to update the visibility of actors those are
 	// handled by the child instances.
-	for (GraphicsWindowDataItem* child : m_childItems) {
+	for (auto child : m_childItems) {
 		child->updateVisibility(visible);
 	}
 }

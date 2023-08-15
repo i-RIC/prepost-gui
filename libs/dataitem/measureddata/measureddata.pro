@@ -65,23 +65,30 @@ HEADERS += measureddata_api.h \
            measureddatapointgroupdataitem.h \
            measureddatavectordataitem.h \
            measureddatavectorgroupdataitem.h \
+           measureddatavectorgrouptopdataitem.h \
            private/measureddatafiledataitem_impl.h \
            private/measureddatapointgroupdataitem_impl.h \
            private/measureddatapointgroupdataitem_setting.h \
            private/measureddatapointgroupdataitem_settingeditwidget.h \
+           private/measureddatapointgroupdataitem_toolbarwidget.h \
+           private/measureddatapointgroupdataitem_toolbarwidgetcontroller.h \
            private/measureddatapointgroupdataitem_updatesettingcommand.h \
            private/measureddatavectorgroupdataitem_impl.h \
            private/measureddatavectorgroupdataitem_setting.h \
            private/measureddatavectorgroupdataitem_settingeditwidget.h
 FORMS += private/measureddatapointgroupdataitem_settingeditwidget.ui \
+         private/measureddatapointgroupdataitem_toolbarwidget.ui \
          private/measureddatavectorgroupdataitem_settingeditwidget.ui
 SOURCES += measureddatafiledataitem.cpp \
            measureddatapointdataitem.cpp \
            measureddatapointgroupdataitem.cpp \
            measureddatavectordataitem.cpp \
            measureddatavectorgroupdataitem.cpp \
+           measureddatavectorgrouptopdataitem.cpp \
            private/measureddatapointgroupdataitem_setting.cpp \
            private/measureddatapointgroupdataitem_settingeditwidget.cpp \
+           private/measureddatapointgroupdataitem_toolbarwidget.cpp \
+           private/measureddatapointgroupdataitem_toolbarwidgetcontroller.cpp \
            private/measureddatapointgroupdataitem_updatesettingcommand.cpp \
            private/measureddatavectorgroupdataitem_setting.cpp \
            private/measureddatavectorgroupdataitem_settingeditwidget.cpp

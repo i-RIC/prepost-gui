@@ -3,6 +3,8 @@
 #include "measureddatapointgroupdataitem.h"
 #include "private/measureddatapointgroupdataitem_impl.h"
 #include "private/measureddatapointgroupdataitem_settingeditwidget.h"
+#include "private/measureddatapointgroupdataitem_toolbarwidget.h"
+#include "private/measureddatapointgroupdataitem_toolbarwidgetcontroller.h"
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/scalarbarsetting.h>
@@ -11,8 +13,9 @@
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/project/measured/measureddata.h>
@@ -20,7 +23,9 @@
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
+#include <QMainWindow>
 #include <QStandardItem>
+#include <QToolBar>
 #include <QXmlStreamWriter>
 
 #include <vtkActor.h>
@@ -33,6 +38,9 @@
 MeasuredDataPointGroupDataItem::Impl::Impl(MeasuredDataPointGroupDataItem* item) :
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},
+	m_toolBarWidget {new ToolBarWidget {m_setting, item, item->mainWindow()}},
+	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(item->mainWindow())},
+	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, item)},
 	m_item {item}
 {}
 
@@ -54,8 +62,6 @@ void MeasuredDataPointGroupDataItem::Impl::setupActors()
 	m_actor->GetProperty()->SetLighting(false);
 	r->AddActor(m_actor);
 	r->AddActor2D(m_legendActor);
-
-	m_item->updateActorSetting();
 }
 
 void MeasuredDataPointGroupDataItem::Impl::updateCheckState()
@@ -92,7 +98,6 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 		s->legend.setTitle(name.c_str());
 		s->setAutoValueRange(range[0], range[1]);
 		s->legend.imageSetting.setActor(impl->m_legendActor);
-		s->legend.imageSetting.controller()->setItem(this);
 
 		impl->m_colorMapSettings.insert({name, s});
 	}
@@ -102,6 +107,9 @@ MeasuredDataPointGroupDataItem::MeasuredDataPointGroupDataItem(GraphicsWindowDat
 		impl->m_setting.mappingMode = Setting::MappingMode::Value;
 		setTarget(name);
 	}
+
+	impl->m_toolBarWidget->hide();
+	impl->m_colorMapToolBarWidget->hide();
 }
 
 MeasuredDataPointGroupDataItem::~MeasuredDataPointGroupDataItem()
@@ -112,6 +120,7 @@ MeasuredDataPointGroupDataItem::~MeasuredDataPointGroupDataItem()
 void MeasuredDataPointGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
+	emit impl->m_setting.updated();
 
 	auto cmNode = iRIC::getChildNode(node, "ColorMaps");
 	if (! cmNode.isNull()) {
@@ -142,15 +151,24 @@ void MeasuredDataPointGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 	writer.writeEndElement();
 }
 
-ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::activeSetting() const
+ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::activeColorMapSetting() const
 {
+	if (m_standardItem->checkState() == Qt::Unchecked) {return nullptr;}
 	if (impl->m_setting.mappingMode == Setting::MappingMode::Arbitrary) {return nullptr;}
-
 	auto v = iRIC::toStr(impl->m_setting.value);
 	auto it = impl->m_colorMapSettings.find(v);
 	if (it == impl->m_colorMapSettings.end()) {return nullptr;}
 
 	return it->second;
+}
+
+ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::activeColorMapSettingWithVisibleLegend() const
+{
+	auto cm = activeColorMapSetting();
+	if (cm == nullptr) {return nullptr;}
+	if (! cm->legendSetting()->getVisible()) {return nullptr;}
+
+	return cm;
 }
 
 void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
@@ -204,7 +222,7 @@ std::string MeasuredDataPointGroupDataItem::target() const
 
 void MeasuredDataPointGroupDataItem::setTarget(const std::string &target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems, true);
 	impl->m_setting.value = target.c_str();
 
 	if (target == "") {
@@ -239,17 +257,26 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> MeasuredDataPointGro
 
 void MeasuredDataPointGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
+}
+
+void MeasuredDataPointGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = isAncientChecked() && isChecked();
+	impl->m_toolBarWidget->setEnabled(v);
+	impl->m_colorMapToolBarWidget->setEnabled(v && impl->m_setting.mappingMode == Setting::MappingMode::Value);
 }
 
 void MeasuredDataPointGroupDataItem::updateActorSetting()
 {
 	impl->updateCheckState();
 
-	// make all the items invisible
+	impl->m_colorMapToolBarWidget->setDisabled(true);
 	impl->m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
@@ -275,6 +302,9 @@ void MeasuredDataPointGroupDataItem::updateActorSetting()
 		auto mapper = cs->buildPointDataMapper(polyData);
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
+
+		impl->m_colorMapToolBarWidget->setEnabled(true);
+		impl->m_colorMapToolBarWidget->setSetting(cs);
 	}
 
 	auto prop = impl->m_actor->GetProperty();
@@ -284,20 +314,13 @@ void MeasuredDataPointGroupDataItem::updateActorSetting()
 	m_actorCollection->AddItem(impl->m_actor);
 
 	assignActorZValues(m_zDepthRange);
-	updateVisibilityWithoutRendering();
 
-	auto s = activeSetting();
-	if (s != nullptr) {
-		auto v = dataModel()->graphicsView();
-		s->legendSetting()->imgSetting()->apply(v);
-	} else {
-		impl->m_legendActor->VisibilityOff();
-	}
+	fileDataItem()->updateColorMapLegendsVisibility();
 }
 
 void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
@@ -305,7 +328,7 @@ void MeasuredDataPointGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraph
 
 void MeasuredDataPointGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
@@ -313,7 +336,7 @@ void MeasuredDataPointGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGrap
 
 void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSetting();
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
@@ -322,4 +345,29 @@ void MeasuredDataPointGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGr
 void MeasuredDataPointGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
 	updateActorSetting();
+}
+
+void MeasuredDataPointGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	fileDataItem()->updateColorMapLegendsVisibility();
+}
+
+bool MeasuredDataPointGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	impl->m_toolBarWidget->setParent(toolBar);
+	impl->m_toolBarWidget->show();
+	toolBar->addWidget(impl->m_toolBarWidget);
+	toolBar->addSeparator();
+
+	impl->m_colorMapToolBarWidget->setParent(toolBar);
+	impl->m_colorMapToolBarWidget->show();
+	toolBar->addWidget(impl->m_colorMapToolBarWidget);
+
+	return true;
+}
+
+MeasuredDataFileDataItem* MeasuredDataPointGroupDataItem::fileDataItem() const
+{
+	return dynamic_cast<MeasuredDataFileDataItem*>(parent());
 }

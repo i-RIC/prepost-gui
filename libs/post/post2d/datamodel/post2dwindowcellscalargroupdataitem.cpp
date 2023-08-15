@@ -179,12 +179,12 @@ bool Post2dWindowCellScalarGroupDataItem::hasTransparentPart()
 	return true;
 }
 
-void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	topDataItem()->zoneDataItem()->initCellResultAttributeBrowser();
 }
 
-void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
+void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	topDataItem()->zoneDataItem()->clearCellResultAttributeBrowser();
 }

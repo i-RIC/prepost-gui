@@ -98,7 +98,7 @@ std::string Post2dWindowParticlesBaseScalarGroupDataItem::target() const
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems, true);
 	m_setting.value = target.c_str();
 	if (m_setting.value == "") {
 		m_setting.mapping = ParticleDataSetting::Mapping::Arbitrary;
@@ -129,19 +129,19 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> Post2dWindowParticle
 	return ret;
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* v)
+void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
 }
 
-void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* v)
+void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
 	zoneDataItem()->clearParticleResultAttributeBrowser();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
 		s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
@@ -149,9 +149,9 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* 
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 	}
 
 	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
@@ -159,17 +159,17 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* e
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v);
 	}
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 	}
 
 	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
@@ -193,6 +193,12 @@ bool Post2dWindowParticlesBaseScalarGroupDataItem::addToolBarButtons(QToolBar* t
 	toolBar->addWidget(m_colorMapToolBarWidget);
 
 	return true;
+}
+
+void Post2dWindowParticlesBaseScalarGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	topDataItem()->updateColorMapLegendsVisibility();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -248,9 +254,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
 
-	updateVisibilityWithoutRendering();
-
-	topDataItem()->updateColorMaps();
+	topDataItem()->updateColorMapLegendsVisibility();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -293,10 +297,20 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlS
 
 ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::activeColorMapSetting() const
 {
+	if (m_standardItem->checkState() == Qt::Unchecked) {return nullptr;}
 	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
 	if (m_setting.value == "") {return nullptr;}
 
 	return activeChildDataItem()->colorMapSetting();
+}
+
+ColorMapSettingContainerI* Post2dWindowParticlesBaseScalarGroupDataItem::activeColorMapSettingWithVisibleLegend() const
+{
+	auto cm = activeColorMapSetting();
+	if (cm == nullptr) {return nullptr;}
+	if (! cm->legendSetting()->getVisible()) {return nullptr;}
+
+	return cm;
 }
 
 Post2dWindowGridTypeDataItem* Post2dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const

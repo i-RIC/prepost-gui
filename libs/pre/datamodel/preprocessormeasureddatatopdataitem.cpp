@@ -4,7 +4,7 @@
 
 #include <dataitem/measureddata/measureddatafiledataitem.h>
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
-#include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
@@ -40,8 +40,6 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 	m_standardItem->setData(QVariant("MEASUREDDATAS"), Qt::UserRole + 10);
 	setIsCommandExecuting(false);
 
-	setupActors();
-
 	connect(m_importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
 	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
 	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
@@ -51,9 +49,7 @@ PreProcessorMeasuredDataTopDataItem::PreProcessorMeasuredDataTopDataItem(Graphic
 }
 
 PreProcessorMeasuredDataTopDataItem::~PreProcessorMeasuredDataTopDataItem()
-{
-
-}
+{}
 
 void PreProcessorMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
@@ -89,16 +85,6 @@ const QList<MeasuredDataFileDataItem*> PreProcessorMeasuredDataTopDataItem::file
 		ret.append(item);
 	}
 	return ret;
-}
-
-void PreProcessorMeasuredDataTopDataItem::setupActors()
-{
-
-}
-
-void PreProcessorMeasuredDataTopDataItem::updateActorSettings()
-{
-
 }
 
 void PreProcessorMeasuredDataTopDataItem::addChildItem()

@@ -88,7 +88,7 @@ std::string Post3dWindowParticlesBaseScalarGroupDataItem::target() const
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::setTarget(const std::string& target)
 {
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems, true);
 	m_setting.value = target.c_str();
 	if (m_setting.value == "") {
 		m_setting.mapping = ParticleDataSetting::Mapping::Arbitrary;
@@ -121,7 +121,7 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> Post3dWindowParticle
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
 		s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 	}
@@ -129,25 +129,25 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* 
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v);
 	}
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeColorMapSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s != nullptr) {
-		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 	}
 }
 
@@ -163,6 +163,12 @@ bool Post3dWindowParticlesBaseScalarGroupDataItem::addToolBarButtons(QToolBar* t
 	toolBar->addWidget(m_colorMapToolBarWidget);
 
 	return true;
+}
+
+void Post3dWindowParticlesBaseScalarGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	topDataItem()->updateColorMapLegendsVisibility();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
@@ -218,9 +224,7 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
 	m_actorCollection->AddItem(m_actor);
 
-	updateVisibilityWithoutRendering();
-
-	topDataItem()->updateColorMaps();
+	topDataItem()->updateColorMapLegendsVisibility();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::innerUpdateZScale(double zscale)
@@ -268,10 +272,20 @@ void Post3dWindowParticlesBaseScalarGroupDataItem::doSaveToProjectMainFile(QXmlS
 
 ColorMapSettingContainerI* Post3dWindowParticlesBaseScalarGroupDataItem::activeColorMapSetting() const
 {
+	if (m_standardItem->checkState() == Qt::Unchecked) {return nullptr;}
 	if (m_setting.mapping ==  ParticleDataSetting::Mapping::Arbitrary) {return nullptr;}
 	if (m_setting.value == "") {return nullptr;}
 
 	return activeChildDataItem()->colorMapSetting();
+}
+
+ColorMapSettingContainerI* Post3dWindowParticlesBaseScalarGroupDataItem::activeColorMapSettingWithVisibleLegend() const
+{
+	auto cm = activeColorMapSetting();
+	if (cm == nullptr) {return nullptr;}
+	if (! cm->legendSetting()->getVisible()) {return nullptr;}
+
+	return cm;
 }
 
 Post3dWindowGridTypeDataItem* Post3dWindowParticlesBaseScalarGroupDataItem::gridTypeDataItem() const

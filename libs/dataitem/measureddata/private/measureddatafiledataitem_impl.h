@@ -13,7 +13,7 @@ public:
 	MeasuredData* m_measuredData;
 
 	MeasuredDataPointGroupDataItem* m_pointGroupDataItem;
-	MeasuredDataVectorGroupDataItem* m_vectorGroupDataItem;
+	MeasuredDataVectorGroupTopDataItem* m_vectorGroupDataItem;
 
 	QAction* m_exportAction;
 };

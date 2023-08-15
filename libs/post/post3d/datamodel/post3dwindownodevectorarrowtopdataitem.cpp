@@ -16,6 +16,14 @@ Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(P
 	m_zScale {1.0}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	auto cont = zoneDataItem()->dataContainer();
+	auto gType = cont->gridType();
+
+	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data(iRICLib::H5CgnsZone::SolutionPosition::Node)->data()->GetPointData())) {
+		auto item = buildItem(val, gType);
+		m_childItems.push_back(item);
+	}
 }
 
 double Post3dWindowNodeVectorArrowTopDataItem::zScale() const
@@ -34,6 +42,11 @@ void Post3dWindowNodeVectorArrowTopDataItem::update()
 		auto child = dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (item);
 		child->update();
 	}
+}
+
+Post3dWindowZoneDataItem* Post3dWindowNodeVectorArrowTopDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
 }
 
 void Post3dWindowNodeVectorArrowTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -100,13 +113,20 @@ void Post3dWindowNodeVectorArrowTopDataItem::handleAddDialogAccepted(QDialog* pr
 	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
-	auto newItem = new Post3dWindowNodeVectorArrowGroupDataItem(sol, this);
-	newItem->standardItem()->setText(gType->output(sol)->caption());
-	newItem->updateZScale(m_zScale);
+	auto newItem = buildItem(sol, gType);
 
 	m_childItems.push_back(newItem);
 	updateItemMap();
 	iRICUndoStack::instance().clear();
 
 	newItem->showPropertyDialog();
+}
+
+Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowTopDataItem::buildItem(const std::string& name, SolverDefinitionGridType* gtype)
+{
+	auto newItem = new Post3dWindowNodeVectorArrowGroupDataItem(name, this);
+	newItem->standardItem()->setText(gtype->output(name)->caption());
+	newItem->updateZScale(m_zScale);
+
+	return newItem;
 }

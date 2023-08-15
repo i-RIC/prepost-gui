@@ -8,7 +8,7 @@
 #include "datamodel/post2dwindowcellscalargrouptopdataitem.h"
 #include "datamodel/post2dwindownodescalargroupdataitem.h"
 #include "datamodel/post2dwindownodescalargrouptopdataitem.h"
-#include "datamodel/post2dwindownodevectorarrowgroupdataitem.h"
+#include "datamodel/post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "datamodel/post2dwindownodevectorparticlegroupdataitem.h"
 #include "datamodel/post2dwindownodevectorstreamlinegroupdataitem.h"
 #include "datamodel/post2dwindowpolydatagroupdataitem.h"
@@ -21,6 +21,7 @@
 #include <dataitem/measureddata/measureddatafiledataitem.h>
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/post/postzoneselectingdialog.h>
@@ -131,18 +132,18 @@ void Post2dWindowDataModel::updateTmsList()
 
 void Post2dWindowDataModel::gridShapeSetting()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowGridShapeDataItem* item = zItem->gridShapeDataItem();
+	auto item = zItem->gridShapeDataItem();
 	if (item == nullptr) {return;}
 	item->showPropertyDialog();
 }
 
 void Post2dWindowDataModel::addContour()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowNodeScalarGroupTopDataItem* item = zItem->scalarGroupTopDataItem();
+	auto item = zItem->scalarGroupTopDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Contour setting is not available, because this result does not contain scalar values."));
 		return;
@@ -157,21 +158,21 @@ void Post2dWindowDataModel::contourSetting()
 
 void Post2dWindowDataModel::vectorSetting()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowNodeVectorArrowGroupDataItem* item = zItem->arrowGroupDataItem();
+	auto item = zItem->arrowGroupDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Arrow setting is not available, because this result does not contain vector values."));
 		return;
 	}
-	item->showPropertyDialog();
+	item->showAddDialog();
 }
 
 void Post2dWindowDataModel::streamlineSetting()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowNodeVectorStreamlineGroupDataItem* item = zItem->streamlineDataItem();
+	auto item = zItem->streamlineDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Streamline setting is not available, because this result does not contain vector values."));
 		return;
@@ -181,9 +182,9 @@ void Post2dWindowDataModel::streamlineSetting()
 
 void Post2dWindowDataModel::particleSetting()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowNodeVectorParticleGroupDataItem* item = zItem->particleDataItem();
+	auto item = zItem->particleDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(),tr("Warning"), tr("Particle setting is not available, because this result does not contain vector values."));
 		return;
@@ -201,17 +202,17 @@ void Post2dWindowDataModel::polygonSetting()
 
 void Post2dWindowDataModel::cellFlagSetting()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) {return;}
-	Post2dWindowCellFlagGroupDataItem* item = zItem->cellFlagGroupDataItem();
+	auto item = zItem->cellFlagGroupDataItem();
 	item->showPropertyDialog();
 }
 
 void Post2dWindowDataModel::addCellScalar()
 {
-	Post2dWindowZoneDataItem* zItem = getZoneDataItem();
+	auto zItem = getZoneDataItem();
 	if (zItem == nullptr) { return; }
-	Post2dWindowCellScalarGroupTopDataItem* item = zItem->cellScalarGroupTopDataItem();
+	auto item = zItem->cellScalarGroupTopDataItem();
 	if (item == nullptr) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Contour setting is not available, because this result does not contain cell scalar values."));
 		return;

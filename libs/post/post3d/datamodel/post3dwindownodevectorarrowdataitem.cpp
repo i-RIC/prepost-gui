@@ -233,6 +233,14 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	updateVisibilityWithoutRendering();
 }
 
+void Post3dWindowNodeVectorArrowDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = isAncientChecked() && isChecked();
+	m_arrowsToolBarWidget->setEnabled(v);
+}
+
 Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowDataItem::groupDataItem() const
 {
 	return dynamic_cast<Post3dWindowNodeVectorArrowGroupDataItem*> (parent());

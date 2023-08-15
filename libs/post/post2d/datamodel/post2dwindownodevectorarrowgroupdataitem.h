@@ -4,7 +4,6 @@
 #include "../post2dwindowdataitem.h"
 
 #include <guicore/arrows/arrowssettingcontainer.h>
-#include <guicore/misc/targeted/targeteditemi.h>
 
 #include <unordered_map>
 
@@ -13,14 +12,15 @@ class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
 class SolverDefinitionGridOutput;
 class Post2dWindowZoneDataItem;
+class Post2dWindowNodeVectorArrowGroupTopDataItem;
 class ValueRangeContainer;
 
-class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
+class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeVectorArrowGroupDataItem(Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorArrowGroupDataItem(const std::string& target, Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupDataItem();
 
 	void informSelection(VTKGraphicsView* v) override;
@@ -32,19 +32,16 @@ public:
 	void assignActorZValues(const ZDepthRange& range) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	std::string target() const;
 
 	void update();
-
-public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	void updateActorSetting() override;
-	void updateCheckState();
-	Post2dWindowZoneDataItem* zoneDataItem() const;
+	Post2dWindowNodeVectorArrowGroupTopDataItem* topDataItem() const;
 	void createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range);
 
 	ArrowsSettingContainer m_setting;
@@ -54,9 +51,8 @@ protected:
 	class UpdateActorSettingCommand;
 
 private:
-	std::string target() const override;
-	void setTarget(const std::string& target) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
+	void updateVisibility(bool visible) override;
 
 	void innerUpdate2Ds() override;
 

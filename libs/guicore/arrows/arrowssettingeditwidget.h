@@ -28,7 +28,6 @@ public:
 	explicit ArrowsSettingEditWidget(QWidget *parent = nullptr);
 	~ArrowsSettingEditWidget();
 
-	void setValueNames(const std::map<std::string, QString> names);
 	void setGridType(SolverDefinitionGridType* gridType);
 	void setColorMapSettings(const std::unordered_map<std::string, ColorMapSettingContainerI*>& settings);
 	void setAdditionalSettingWidget(QWidget* widget);
@@ -45,8 +44,6 @@ private slots:
 	void updateImageSetting();
 
 private:
-	std::vector<std::string> m_valueNames;
-
 	ArrowsSettingContainer* m_setting;
 
 	class ModifyCommand;

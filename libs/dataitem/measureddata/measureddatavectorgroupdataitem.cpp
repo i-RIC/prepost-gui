@@ -3,24 +3,30 @@
 #include "measureddatapointgroupdataitem.h"
 #include "measureddatavectordataitem.h"
 #include "measureddatavectorgroupdataitem.h"
+#include "measureddatavectorgrouptopdataitem.h"
 #include "private/measureddatavectorgroupdataitem_impl.h"
 #include "private/measureddatavectorgroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
-#include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <misc/iricundostack.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
 #include <misc/stringtool.h>
+#include <misc/valuemodifycommandt.h>
 #include <misc/xmlsupport.h>
 
-#include <QDomElement>
 #include <QIcon>
-#include <QSettings>
+#include <QMainWindow>
+#include <QStandardItem>
+#include <QToolBar>
 
 #include <vtkActor2D.h>
 #include <vtkActor2DCollection.h>
@@ -37,6 +43,7 @@
 MeasuredDataVectorGroupDataItem::Impl::Impl(MeasuredDataVectorGroupDataItem* item) :
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},
+	m_arrowsToolBarWidget {nullptr},
 	m_item {item}
 {}
 
@@ -66,20 +73,18 @@ void MeasuredDataVectorGroupDataItem::Impl::updateCheckState()
 
 // public interfaces
 
-MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowDataItem* p) :
-	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
+MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(const std::string& target, GraphicsWindowDataItem* p) :
+	GraphicsWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	impl {new Impl(this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	impl->m_setting.arrowsSetting.target = target.c_str();
+	impl->m_setting.arrowsSetting.legend.title = target.c_str();
 
+	m_standardItem->setText(target.c_str());
 	impl->setupActors();
 
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
-
-	for (const auto& name : md->vectorNames()) {
-		auto item = new MeasuredDataVectorDataItem(name, name.c_str(), this);
-		m_childItems.push_back(item);
-	}
+	MeasuredData* md = topDataItem()->fileDataItem()->measuredData();
 
 	impl->m_setting.arrowsSetting.legend.imageSetting.setActor(impl->m_legendActor);
 	impl->m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
@@ -89,10 +94,22 @@ MeasuredDataVectorGroupDataItem::MeasuredDataVectorGroupDataItem(GraphicsWindowD
 		impl->m_setting.arrowsSetting.colorTarget = name.c_str();
 	}
 
-	if (md->vectorNames().size() > 0) {
-		auto name = md->vectorNames().at(0);
-		setTarget(name);
-	}
+	impl->m_arrowsToolBarWidget = new ArrowsSettingToolBarWidget(mainWindow());
+	impl->m_arrowsToolBarWidget->hide();
+	impl->m_arrowsToolBarWidget->setColorMapSettings(topDataItem()->fileDataItem()->pointGroupDataItem()->colorMapSettings());
+	impl->m_arrowsToolBarWidget->setSetting(&impl->m_setting.arrowsSetting);
+
+	connect(impl->m_arrowsToolBarWidget, &ArrowsSettingToolBarWidget::updated, [=](){
+		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
+		auto newSetting = impl->m_arrowsToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<ArrowsSettingContainer>(iRIC::generateCommandId("ArrowsSetting"), false, newSetting, &impl->m_setting.arrowsSetting));
+
+		if (newSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
+			auto cm = topDataItem()->fileDataItem()->pointGroupDataItem()->colorMapSettings().at(iRIC::toStr(newSetting.colorTarget));
+			com->addCommand(new ColorMapSettingModifyCommand(impl->m_arrowsToolBarWidget->modifiedColorMapSetting(), cm));
+		}
+		pushUpdateActorSettingCommand(com, this);
+	});
 }
 
 MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
@@ -115,31 +132,9 @@ std::string MeasuredDataVectorGroupDataItem::target() const
 	return impl->m_setting.arrowsSetting.target;
 }
 
-void MeasuredDataVectorGroupDataItem::setTarget(const std::string& target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	impl->m_setting.arrowsSetting.target = target.c_str();
-	impl->m_setting.arrowsSetting.legend.title = target.c_str();
-
-	updateActorSetting();
-}
-
 void MeasuredDataVectorGroupDataItem::showPropertyDialog()
 {
 	showPropertyDialogModeless();
-}
-
-void MeasuredDataVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
-}
-
-void MeasuredDataVectorGroupDataItem::informGridUpdate()
-{
-	updateActorSetting();
 }
 
 void MeasuredDataVectorGroupDataItem::updateZDepthRangeItemCount()
@@ -154,7 +149,7 @@ void MeasuredDataVectorGroupDataItem::assignActorZValues(const ZDepthRange& rang
 
 void MeasuredDataVectorGroupDataItem::update()
 {
-	informGridUpdate();
+	updateActorSetting();
 }
 
 void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
@@ -162,15 +157,33 @@ void MeasuredDataVectorGroupDataItem::innerUpdate2Ds()
 	updateActorSetting();
 }
 
-ColorMapSettingContainerI* MeasuredDataVectorGroupDataItem::colorMapSetting(const std::string& target)
+ColorMapSettingContainerI* MeasuredDataVectorGroupDataItem::colorMapSetting(const std::string& target) const
 {
-	auto pItem = dynamic_cast <MeasuredDataFileDataItem*>(parent())->pointGroupDataItem();
+	auto pItem = topDataItem()->fileDataItem()->pointGroupDataItem();
 	return pItem->colorMapSetting(target);
+}
+
+ColorMapSettingContainerI* MeasuredDataVectorGroupDataItem::activeColorMapSetting() const
+{
+	if (! isAncientChecked() || ! isChecked()) {return nullptr;}
+	if (impl->m_setting.arrowsSetting.target == "") {return nullptr;}
+	if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return nullptr;}
+
+	return colorMapSetting(iRIC::toStr(impl->m_setting.arrowsSetting.colorTarget));
+}
+
+ColorMapSettingContainerI* MeasuredDataVectorGroupDataItem::activeColorMapSettingWithVisibleLegend() const
+{
+	auto cm = activeColorMapSetting();
+	if (cm == nullptr) {return nullptr;}
+	if (! cm->legendSetting()->getVisible()) {return nullptr;}
+
+	return cm;
 }
 
 QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 {
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = topDataItem()->fileDataItem()->measuredData();
 	if (md == nullptr || md->pointData() == nullptr) {
 		return nullptr;
 	}
@@ -182,10 +195,20 @@ QDialog* MeasuredDataVectorGroupDataItem::propertyDialog(QWidget* p)
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
-	dialog->setWindowTitle(tr("Arrows Display Setting"));
+	dialog->setWindowTitle(tr("Arrows Display Setting (%1)").arg(target().c_str()));
 	dialog->resize(900, 700);
 
 	return dialog;
+}
+
+bool MeasuredDataVectorGroupDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	impl->m_arrowsToolBarWidget->setParent(toolBar);
+	impl->m_arrowsToolBarWidget->show();
+
+	toolBar->addWidget(impl->m_arrowsToolBarWidget);
+
+	return true;
 }
 
 void MeasuredDataVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -193,59 +216,70 @@ void MeasuredDataVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGra
 	auto& as = impl->m_setting.arrowsSetting;
 	as.legend.imageSetting.controller()->handleResize(event, v);
 
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
-
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
+	auto cs = activeColorMapSetting();
+	if (cs != nullptr) {
+		cs->legendSetting()->imgSetting()->controller()->handleResize(event, v);
+	}
 }
 
 void MeasuredDataVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	std::vector<ImageSettingContainer::Controller*> controllers;
+
 	auto& as = impl->m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
-	if (as.legend.imageSetting.controller()->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {return;}
+	controllers.push_back(as.legend.imageSetting.controller());
+	as.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
 
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto cs = activeColorMapSetting();
+	if (cs != nullptr) {
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
+		cs->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v, true);
+	}
 
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void MeasuredDataVectorGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	std::vector<ImageSettingContainer::Controller*> controllers;
 	auto& as = impl->m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleMousePressEvent(event, v);
-	if (as.legend.imageSetting.controller()->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {return;}
+	controllers.push_back(as.legend.imageSetting.controller());
+	as.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
 
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto cs = activeColorMapSetting();
+	if (cs != nullptr) {
+		cs->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v, true);
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
+	}
 
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void MeasuredDataVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
+	std::vector<ImageSettingContainer::Controller*> controllers;
 	auto& as = impl->m_setting.arrowsSetting;
-	as.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
-	if (as.legend.imageSetting.controller()->mouseEventMode() != ImageSettingContainer::Controller::MouseEventMode::Normal) {return;}
+	as.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
+	controllers.push_back(as.legend.imageSetting.controller());
 
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto cs = activeColorMapSetting();
+	if (cs != nullptr) {
+		cs->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v, true);
+		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
+	}
 
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
-
-	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
 }
 
 void MeasuredDataVectorGroupDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
 	updateActorSetting();
+}
+
+void MeasuredDataVectorGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	topDataItem()->fileDataItem()->updateColorMapLegendsVisibility();
 }
 
 void MeasuredDataVectorGroupDataItem::updateActorSetting()
@@ -255,7 +289,7 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 	actorCollection()->RemoveAllItems();
 	actor2DCollection()->RemoveAllItems();
 
-	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent())->measuredData();
+	MeasuredData* md = topDataItem()->fileDataItem()->measuredData();
 	if (md == nullptr || md->pointData() == nullptr) {return;}
 	if (impl->m_setting.arrowsSetting.target == "") {return;}
 
@@ -269,7 +303,8 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 	auto arrowsData = impl->m_setting.arrowsSetting.buildArrowsPolygonData(sampledData, view);
 	sampledData->Delete();
 
-	if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
+	auto cs = activeColorMapSetting();
+	if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom || cs == nullptr) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		auto gfilter = vtkSmartPointer<vtkGeometryFilter>::New();
 		gfilter->SetInputData(arrowsData);
@@ -280,8 +315,6 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 		impl->m_actor->GetProperty()->SetColor(impl->m_setting.arrowsSetting.customColor);
 	} else if (impl->m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::ByScalar) {
 		arrowsData->GetPointData()->SetActiveScalars(iRIC::toStr(impl->m_setting.arrowsSetting.colorTarget).c_str());
-		auto cs = colorMapSetting(iRIC::toStr(impl->m_setting.arrowsSetting.colorTarget));
-		if (cs == nullptr) {return;}
 		auto mapper = cs->buildPointDataMapper(arrowsData);
 		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
@@ -293,15 +326,21 @@ void MeasuredDataVectorGroupDataItem::updateActorSetting()
 
 	actorCollection()->AddItem(impl->m_actor);
 	actor2DCollection()->AddItem(impl->m_legendActor);
-	updateVisibilityWithoutRendering();
 
 	impl->m_setting.arrowsSetting.legend.imageSetting.apply(v);
 
-	auto& as = impl->m_setting.arrowsSetting;
-	if (as.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	topDataItem()->fileDataItem()->updateColorMapLegendsVisibility();
+}
 
-	auto s = colorMapSetting(iRIC::toStr(as.colorTarget));
-	if (s == nullptr) {return;}
+void MeasuredDataVectorGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
 
-	s->legendSetting()->imgSetting()->apply(v);
+	auto v = isAncientChecked() && isChecked();
+	impl->m_arrowsToolBarWidget->setEnabled(v);
+}
+
+MeasuredDataVectorGroupTopDataItem* MeasuredDataVectorGroupDataItem::topDataItem() const
+{
+	return dynamic_cast<MeasuredDataVectorGroupTopDataItem*> (parent());
 }

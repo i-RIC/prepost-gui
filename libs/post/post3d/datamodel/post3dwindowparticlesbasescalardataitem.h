@@ -6,8 +6,6 @@
 class ColorMapSettingContainerI;
 class Post3dWindowParticlesBaseScalarGroupDataItem;
 
-class vtkActor2D;
-
 class Post3dWindowParticlesBaseScalarDataItem : public NamedGraphicWindowDataItem
 {
 	Q_OBJECT
