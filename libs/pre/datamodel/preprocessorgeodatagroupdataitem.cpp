@@ -95,7 +95,6 @@ XmlAttributeContainer& PreProcessorGeoDataGroupDataItem::VariationSetting::opera
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
 	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
 	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
-	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), PreProcessorGeoDataGroupDataItem::tr("&Color Setting..."), this)},
 	m_editVariationSettingAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Edit &Variation Setting..."), this)},
 	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
 	m_deleteSelectedAction {new QAction(QIcon(":/libs/guibase/images/iconDeleteItem.svg"), PreProcessorGeoDataGroupDataItem::tr("Delete &Selected..."), this)},
@@ -115,7 +114,6 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	connect(m_deleteAllAction, &QAction::triggered, this, [=](bool) {deleteAll();});
 	connect(m_exportAllPolygonsAction, &QAction::triggered, [=](bool) {exportAllPolygons();});
 	connect(this, &PreProcessorGeoDataGroupDataItem::selectGeoData, dataModel(), &PreProcessorDataModelInterface::handleObjectBrowserSelection);
-	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
 	connect(m_editVariationSettingAction, &QAction::triggered, [=](bool){editVariationSetting();});
 
 	// add dimensions container
@@ -186,11 +184,6 @@ void PreProcessorGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 	m_exportAllPolygonsAction->setEnabled(polygonExists());
 	menu->addAction(m_exportAllPolygonsAction);
 
-	if (! m_condition->isReferenceInformation()) {
-		menu->addSeparator();
-		// menu->addAction(m_editVariationSettingAction);
-		menu->addAction(m_editColorMapAction);
-	}
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
 	menu->addAction(m_deleteAllAction);
@@ -495,6 +488,29 @@ GeoDataImporter* PreProcessorGeoDataGroupDataItem::importer(const std::string& n
 		}
 	}
 	return nullptr;
+}
+
+void PreProcessorGeoDataGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
+QDialog* PreProcessorGeoDataGroupDataItem::propertyDialog(QWidget* w)
+{
+	if (m_condition->isReferenceInformation()) {return nullptr;}
+
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
+	auto setting = typedi->colorMapSetting(condition()->name());
+	if (setting == nullptr) {return nullptr;}
+
+	auto dialog = new ColorMapSettingEditDialog(this, preProcessorWindow());
+	auto widget = condition()->createColorMapSettingEditWidget(dialog);
+	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
+	widget->setSetting(setting);
+	dialog->setWidget(widget);
+	dialog->resize(850, 650);
+
+	return dialog;
 }
 
 void PreProcessorGeoDataGroupDataItem::importGeoData(QObject* c)
@@ -1038,24 +1054,6 @@ const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataI
 	return ret;
 }
 
-void PreProcessorGeoDataGroupDataItem::editScalarsToColors()
-{
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*> (parent()->parent());
-	auto setting = typedi->colorMapSetting(condition()->name());
-	if (setting == nullptr) {return;}
-
-	auto dialog = new ColorMapSettingEditDialog(this, preProcessorWindow());
-	auto widget = condition()->createColorMapSettingEditWidget(dialog);
-	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
-	widget->setSetting(setting);
-	dialog->setWidget(widget);
-	dialog->resize(850, 650);
-	dialog->show();
-
-	iricMainWindow()->enterModelessDialogMode();
-	connect(dialog, &QDialog::destroyed, [=](QObject*){iricMainWindow()->exitModelessDialogMode();});
-}
-
 bool PreProcessorGeoDataGroupDataItem::addImportAction(QMenu* menu)
 {
 	QString cap = m_condition->caption();
@@ -1428,12 +1426,6 @@ void PreProcessorGeoDataGroupDataItem::requestCrosssectionWindowDelete(GeoDataRi
 bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	bool added = false;
-
-	if (! m_condition->isReferenceInformation()) {
-		toolBar->addAction(m_editColorMapAction);
-		toolBar->addSeparator();
-		added = true;
-	}
 
 	if (m_toolBarWidgetController != nullptr) {
 		auto widget = m_toolBarWidgetController->widget();

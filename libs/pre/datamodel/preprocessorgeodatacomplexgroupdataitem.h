@@ -37,9 +37,10 @@ public:
 	std::vector<GridComplexConditionGroup*> groups() const override;
 	bool addToolBarButtons(QToolBar* parent) override;
 
+	void showPropertyDialog() override;
+
 public slots:
 	void showEditGroupDialog();
-	void editScalarsToColors() override;
 
 protected:
 	void addBackground();

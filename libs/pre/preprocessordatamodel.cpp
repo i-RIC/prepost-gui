@@ -439,7 +439,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
 			QAction* action = new QAction(condCaption, colorMapMenu);
-			connect(action, SIGNAL(triggered()), groupDataitem, SLOT(editScalarsToColors()));
+			connect(action, &QAction::triggered, groupDataitem, &PreProcessorGeoDataGroupDataItemInterface::showPropertyDialog);
 			colorMapMenu->addAction(action);
 		}
 	} else {
@@ -451,11 +451,11 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	QMenu* importMenu = new QMenu(tr("Import"), m_geographicDataMenu);
 	importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_geographicDataMenu->addMenu(importMenu);
-	connect(importMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataImportMenu()));
+	connect(importMenu, &QMenu::aboutToShow, preWindow, &PreProcessorWindow::setupGeoDataImportMenu);
 	QMenu* exportMenu = new QMenu(tr("Export"), m_geographicDataMenu);
 	exportMenu->setIcon(QIcon(":/libs/guibase/images/iconExport.svg"));
 	m_geographicDataMenu->addMenu(exportMenu);
-	connect(exportMenu, SIGNAL(aboutToShow()), preWindow, SLOT(setupGeoDataExportMenu()));
+	connect(exportMenu, &QMenu::aboutToShow, preWindow, &PreProcessorWindow::setupGeoDataExportMenu);
 
 	m_geographicDataMenu->addAction(exportAllPolygonsAction);
 }

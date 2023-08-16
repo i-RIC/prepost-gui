@@ -28,8 +28,7 @@
 
 Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {cond->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
-	m_condition {cond},
-	m_editColorMapAction {new QAction(QIcon(":/libs/guibase/images/iconColor.svg"), Post2dWindowGeoDataGroupDataItem::tr("&Color Setting..."), this)}
+	m_condition {cond}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -38,8 +37,6 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 		cm->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
 	}
 	applyColorMapSetting();
-
-	connect(m_editColorMapAction, &QAction::triggered, [=](bool) {editScalarsToColors();});
 
 	auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent->parent());
 	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), mainWindow());
@@ -61,13 +58,8 @@ DelegatedColorMapSettingContainer* Post2dWindowGeoDataGroupDataItem::colorMapSet
 	return typedi->colorMapSetting(condition()->name());
 }
 
-void Post2dWindowGeoDataGroupDataItem::addCustomMenuItems(QMenu* menu)
-{
-	if (! m_condition->isReferenceInformation()) {
-		menu->addSeparator();
-		menu->addAction(m_editColorMapAction);
-	}
-}
+void Post2dWindowGeoDataGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
+{}
 
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
 {
@@ -162,12 +154,6 @@ bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	bool added = false;
 
-	if (! m_condition->isReferenceInformation()) {
-		toolBar->addAction(m_editColorMapAction);
-		toolBar->addSeparator();
-		added = true;
-	}
-
 	if (m_toolBarWidgetController != nullptr) {
 		auto widget = m_toolBarWidgetController->widget();
 		widget->setParent(toolBar);
@@ -179,20 +165,22 @@ bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 	return added;
 }
 
-void Post2dWindowGeoDataGroupDataItem::editScalarsToColors()
+void Post2dWindowGeoDataGroupDataItem::showPropertyDialog()
+{
+	showPropertyDialogModeless();
+}
+
+QDialog* Post2dWindowGeoDataGroupDataItem::propertyDialog(QWidget* parent)
 {
 	auto setting = colorMapSetting();
-	if (setting == nullptr) {return;}
+	if (setting == nullptr) {return nullptr;}
 
 	auto dialog = new ScalarsToColorsEditDialog(this, mainWindow());
 	dialog->setAttribute(Qt::WA_DeleteOnClose);
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	dialog->setSetting(setting);
 
-	dialog->show();
-
-	iricMainWindow()->enterModelessDialogMode();
-	connect(dialog, &QDialog::destroyed, [=](QObject*){iricMainWindow()->exitModelessDialogMode();});
+	return dialog;
 }
 
 void Post2dWindowGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)

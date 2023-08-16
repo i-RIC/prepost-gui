@@ -103,10 +103,12 @@ public:
 	std::vector<GeoDataImporter*> importers() const;
 	GeoDataImporter* importer(const std::string& name) const;
 
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
 public slots:
 	void importGeoData(QObject* creator);
 	void addGeoData(QObject* creator);
-	virtual void editScalarsToColors();
 	void import();
 	void importFromWeb();
 	void doExport();
@@ -135,7 +137,6 @@ protected:
 	QMenu* m_importMenu;
 	QMenu* m_addMenu;
 	QAction* m_webImportAction;
-	QAction* m_editColorMapAction;
 	QAction* m_editVariationSettingAction;
 	QAction* m_exportAllPolygonsAction;
 	QAction* m_deleteSelectedAction;

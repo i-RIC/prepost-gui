@@ -30,8 +30,8 @@ public:
 
 	bool addToolBarButtons(QToolBar* toolBar) override;
 
-private slots:
-	void editScalarsToColors();
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -40,8 +40,6 @@ private:
 	QMap<QString, Post2dWindowGeoDataDataItem*> m_itemNameMap;
 	ColorMapSettingToolBarWidgetController* m_toolBarWidgetController;
 	SolverDefinitionGridAttribute* m_condition;
-
-	QAction* m_editColorMapAction;
 
 	class ScalarsToColorsEditDialog;
 };

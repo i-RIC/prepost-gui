@@ -182,10 +182,6 @@ void PreProcessorGeoDataComplexGroupDataItem::addCustomMenuItems(QMenu* menu)
 	m_exportAllPolygonsAction->setEnabled(polygonExists());
 	menu->addAction(m_exportAllPolygonsAction);
 
-	if (! m_condition->isReferenceInformation()) {
-		menu->addSeparator();
-		menu->addAction(m_editColorMapAction);
-	}
 	menu->addSeparator();
 	menu->addAction(m_deleteSelectedAction);
 	menu->addAction(m_deleteAllAction);
@@ -369,9 +365,9 @@ void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditW
 	w->setDefaultIndex(defIndex);
 }
 
-void PreProcessorGeoDataComplexGroupDataItem::editScalarsToColors()
+void PreProcessorGeoDataComplexGroupDataItem::showPropertyDialog()
 {
-	PreProcessorGeoDataGroupDataItem::editScalarsToColors();
+	PreProcessorGeoDataGroupDataItem::showPropertyDialog();
 	applyScalarsToColorsSetting();
 }
 
@@ -447,10 +443,6 @@ std::vector<GridComplexConditionGroup*> PreProcessorGeoDataComplexGroupDataItem:
 bool PreProcessorGeoDataComplexGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	bool added = false;
-
-	toolBar->addAction(m_editColorMapAction);
-	toolBar->addSeparator();
-	added = true;
 
 	if (m_toolBarWidgetController != nullptr) {
 		auto widget = m_toolBarWidgetController->widget();
