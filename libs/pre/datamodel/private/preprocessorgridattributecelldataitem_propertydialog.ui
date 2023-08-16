@@ -13,9 +13,18 @@
   <property name="windowTitle">
    <string>Grid Cell Attribute Display Setting</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,0,0">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0">
    <item>
-    <widget class="QWidgetContainer" name="widgetContainer" native="true"/>
+    <widget class="QGroupBox" name="colormapGroupBox">
+     <property name="title">
+      <string>Colormap (This setting is common with Geographic Data)</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QWidgetContainer" name="widgetContainer" native="true"/>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,1">
@@ -82,15 +91,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>TransparencyWidget</class>
-   <extends>QWidget</extends>
-   <header>guibase/widget/transparencywidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
    <class>QWidgetContainer</class>
    <extends>QWidget</extends>
    <header>misc/qwidgetcontainer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>TransparencyWidget</class>
+   <extends>QWidget</extends>
+   <header>guibase/widget/transparencywidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

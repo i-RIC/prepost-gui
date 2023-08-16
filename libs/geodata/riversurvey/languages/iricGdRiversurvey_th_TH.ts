@@ -1412,6 +1412,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <source>Colormap</source>
         <translation>แผนที่สี</translation>
     </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridCreatingConditionRiverSurveyInterface</name>

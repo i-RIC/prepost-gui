@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -185,8 +187,8 @@
         <translation>Ocurrió un error al leer la línea del encabezado. El encabezado debe tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser "%2", pero "%3" es dado.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Ocurrió un error al leer la línea del encabezado. Columna %1 debiera ser &quot;%2&quot;, pero &quot;%3&quot; es dado.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -209,32 +211,32 @@
         <translation>Ocurrió un error al leer la línea %1. Los datos deben tener al menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Se produjo un error al leer el valor "pid" en la línea %1. "pid" debe ser un valor entero pero "%2" está especificado.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Se produjo un error al leer el valor &quot;pid&quot; en la línea %1. &quot;pid&quot; debe ser un valor entero pero &quot;%2&quot; está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Se produjo un error al leer el valor "vid" en la línea %1. "vid" debe ser un valor entero pero "%2" está especificado.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Se produjo un error al leer el valor &quot;vid&quot; en la línea %1. &quot;vid&quot; debe ser un valor entero pero &quot;%2&quot; está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Se produjo un error al leer el valor "x" en la línea %1. "x" debería ser un valor real pero "%2" está especificado.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Se produjo un error al leer el valor &quot;x&quot; en la línea %1. &quot;x&quot; debería ser un valor real pero &quot;%2&quot; está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Se produjo un error al leer el valor "y" en la línea %1. "y" debería ser un valor real pero "%2" está especificado.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Se produjo un error al leer el valor &quot;y&quot; en la línea %1. &quot;y&quot; debería ser un valor real pero &quot;%2&quot; está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Se produjo un error al leer el valor del "valor" en la línea %1. "valor" debe ser un valor real pero "%2" está especificado.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Se produjo un error al leer el valor del &quot;valor&quot; en la línea %1. &quot;valor&quot; debe ser un valor real pero &quot;%2&quot; está especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Ocurrió un error al leer la línea %1. "nombre" debe ser el mismo para las líneas donde los valores de "pid" son los mismos.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. &quot;nombre&quot; debe ser el mismo para las líneas donde los valores de &quot;pid&quot; son los mismos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Ocurrió un error al leer la línea %1. "valor" debe ser el mismo para las líneas donde los valores "pid" son los mismos.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Ocurrió un error al leer la línea %1. &quot;valor&quot; debe ser el mismo para las líneas donde los valores &quot;pid&quot; son los mismos.</translation>
     </message>
 </context>
 <context>
@@ -365,11 +367,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>mapa de colores</translation>
+        <translation type="vanished">mapa de colores</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Ancho de línea:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

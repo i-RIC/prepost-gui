@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -126,8 +128,8 @@
         <translation>Produciuse un erro ao ler a liña de cabeceira. A cabeceira debe ter polo menos 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Produciuse un erro ao ler a liña de cabeceira. Columna %1 debería ser "%2", pero"%3"dase.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Produciuse un erro ao ler a liña de cabeceira. Columna %1 debería ser &quot;%2&quot;, pero&quot;%3&quot;dase.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -150,32 +152,32 @@
         <translation>Produciuse un erro ao ler a liña %1. Os datos deben ter como mínimo 6 columnas.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Produciuse un erro ao ler o valor "pid" na liña %1. "pid" debería ser un valor enteiro pero "%2"especifícase.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Produciuse un erro ao ler o valor &quot;pid&quot; na liña %1. &quot;pid&quot; debería ser un valor enteiro pero &quot;%2&quot;especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Produciuse un erro ao ler o valor "vid" na liña %1. "vid" debería ser un valor enteiro pero "%2"especifícase.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Produciuse un erro ao ler o valor &quot;vid&quot; na liña %1. &quot;vid&quot; debería ser un valor enteiro pero &quot;%2&quot;especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Produciuse un erro ao ler o valor "x" na liña %1. "x" debería ter un valor real pero "%2"especifícase.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Produciuse un erro ao ler o valor &quot;x&quot; na liña %1. &quot;x&quot; debería ter un valor real pero &quot;%2&quot;especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Produciuse un erro ao ler o valor "y" na liña %1. "y" debería ter un valor real pero "%2"especifícase.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Produciuse un erro ao ler o valor &quot;y&quot; na liña %1. &quot;y&quot; debería ter un valor real pero &quot;%2&quot;especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Produciuse un erro ao ler o valor "valor" na liña %1. "valor" debería ser un valor real pero "%2"especifícase.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Produciuse un erro ao ler o valor &quot;valor&quot; na liña %1. &quot;valor&quot; debería ser un valor real pero &quot;%2&quot;especifícase.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Produciuse un erro ao ler a liña %1. "nome" debería ser o mesmo para as liñas onde os valores "pid" son iguais.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Produciuse un erro ao ler a liña %1. &quot;nome&quot; debería ser o mesmo para as liñas onde os valores &quot;pid&quot; son iguais.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Produciuse un erro ao ler a liña %1. "valor" debería ser o mesmo para as liñas onde os valores "pid" son iguais.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Produciuse un erro ao ler a liña %1. &quot;valor&quot; debería ser o mesmo para as liñas onde os valores &quot;pid&quot; son iguais.</translation>
     </message>
 </context>
 <context>
@@ -259,11 +261,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de cores</translation>
+        <translation type="vanished">Mapa de cores</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Ancho de liña:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

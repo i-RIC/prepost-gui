@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -14,7 +16,7 @@
         <translation type="vanished">警告</translation>
     </message>
     <message>
-        <source>There is no other polygon or polygon group in "%1" group.</source>
+        <source>There is no other polygon or polygon group in &quot;%1&quot; group.</source>
         <translation type="vanished"> %1组中没有其他面或面组。</translation>
     </message>
     <message>
@@ -193,7 +195,7 @@
         <translation>读取标题行时出错。标题至少应有 6 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
         <translation>读取标题行时出错。柱子 %1 应该 ” %2 “， 但 ” %3 “ 给出。</translation>
     </message>
     <message>
@@ -217,31 +219,31 @@
         <translation>读取行时出错 %1.数据至少应有 6 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
         <translation>在线读取“pid”值时出错 %1. “pid”应该是整数值但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
         <translation>在线读取“vid”值时出错 %1. “vid”应该是整数值但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>读取行中的“x”值时出错 %1. “x”应该是真实值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>在线读取“y”值时发生错误 %1. “y”应该是真正的价值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
         <translation>在线读取“值”值时发生错误 %1. “价值”应该是真正的价值，但“ %2 ”的规定。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
         <translation>读取行时出错 %1.对于“pid”值相同的行，“name”应该相同。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
         <translation>读取行时出错 %1.对于“pid”值相同的行，“value”应该相同。</translation>
     </message>
 </context>
@@ -413,11 +415,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>色图</translation>
+        <translation type="vanished">色图</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>行宽：</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

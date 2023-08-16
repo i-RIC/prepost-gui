@@ -480,7 +480,11 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

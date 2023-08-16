@@ -496,7 +496,11 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>色图</translation>
+        <translation type="vanished">色图</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

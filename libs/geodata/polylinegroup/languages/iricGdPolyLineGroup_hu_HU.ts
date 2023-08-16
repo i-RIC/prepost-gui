@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -118,8 +120,8 @@
         <translation>Hiba történt a fejléc olvasása közben. A fejlécnek legalább 6 oszlopnak kell lennie.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Hiba történt a fejléc olvasása közben. Oszlop %1 kellene "%2", de "%3" adott.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Hiba történt a fejléc olvasása közben. Oszlop %1 kellene &quot;%2&quot;, de &quot;%3&quot; adott.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -142,32 +144,32 @@
         <translation>Hiba történt a sor olvasása közben %1. Az adatoknak legalább 6 oszlopból kell állniuk.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Hiba történt a "fedél" érték sorban történő olvasása közben %1. A "fedő" egész számnak kell lennie, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt a &quot;fedél&quot; érték sorban történő olvasása közben %1. A &quot;fedő&quot; egész számnak kell lennie, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Hiba történt a "vid" érték sorban történő olvasása közben %1. A "vid" egész számnak kell lennie, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt a &quot;vid&quot; érték sorban történő olvasása közben %1. A &quot;vid&quot; egész számnak kell lennie, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "x" érték sorban történő olvasása közben %1. Az "x" valós érték, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;x&quot; érték sorban történő olvasása közben %1. Az &quot;x&quot; valós érték, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "y" érték sorban történő olvasása közben %1. Az "y" valós érték, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;y&quot; érték sorban történő olvasása közben %1. Az &quot;y&quot; valós érték, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "érték" érték sorban történő olvasása közben %1. Az "érték" valós értéknek kell lennie, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;érték&quot; érték sorban történő olvasása közben %1. Az &quot;érték&quot; valós értéknek kell lennie, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Hiba történt a sor olvasása közben %1. A "név" azonos legyen azoknál a soroknál, ahol a "fedő" értéke megegyezik.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Hiba történt a sor olvasása közben %1. A &quot;név&quot; azonos legyen azoknál a soroknál, ahol a &quot;fedő&quot; értéke megegyezik.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Hiba történt a sor olvasása közben %1. Az "érték" -nek azonosnak kell lennie azoknál a soroknál, ahol a "fedő" értékek azonosak.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Hiba történt a sor olvasása közben %1. Az &quot;érték&quot; -nek azonosnak kell lennie azoknál a soroknál, ahol a &quot;fedő&quot; értékek azonosak.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -242,11 +244,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Colormap</translation>
+        <translation type="vanished">Colormap</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

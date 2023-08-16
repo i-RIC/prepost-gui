@@ -29,7 +29,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="basicTab">
       <attribute name="title">
@@ -441,9 +441,18 @@
       <attribute name="title">
        <string>Colormap for values</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_8">
+      <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
-        <widget class="QWidgetContainer" name="colorMapWidget" native="true"/>
+        <widget class="QGroupBox" name="colormapGroupBox">
+         <property name="title">
+          <string>Colormap (This setting is the common for all items in the same geographic data group)</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QWidgetContainer" name="colorMapWidget" native="true"/>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -453,9 +462,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ColorEditWidget</class>
-   <extends>QLabel</extends>
-   <header>guibase/widget/coloreditwidget.h</header>
+   <class>QWidgetContainer</class>
+   <extends>QWidget</extends>
+   <header>misc/qwidgetcontainer.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -465,9 +474,9 @@
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>QWidgetContainer</class>
-   <extends>QWidget</extends>
-   <header>misc/qwidgetcontainer.h</header>
+   <class>ColorEditWidget</class>
+   <extends>QLabel</extends>
+   <header>guibase/widget/coloreditwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

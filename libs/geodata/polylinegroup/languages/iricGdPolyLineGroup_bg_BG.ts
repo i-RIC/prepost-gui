@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -118,8 +120,8 @@
         <translation>Възникна грешка при четене на заглавния ред. Заглавката трябва да има поне 6 колони.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Възникна грешка при четене на заглавния ред. Колона %1 би трябвало "%2", но "%3" е даден.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Възникна грешка при четене на заглавния ред. Колона %1 би трябвало &quot;%2&quot;, но &quot;%3&quot; е даден.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -142,32 +144,32 @@
         <translation>Възникна грешка при четене на ред %1. Данните трябва да имат поне 6 колони.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Възникна грешка при четене на стойността на "капака" в ред %1. "капак" трябва да е цяло число, но "%2"е посочено.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Възникна грешка при четене на стойността на &quot;капака&quot; в ред %1. &quot;капак&quot; трябва да е цяло число, но &quot;%2&quot;е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Възникна грешка при четене на стойност "vid" в ред %1. "vid" трябва да е цяло число, но "%2"е посочено.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Възникна грешка при четене на стойност &quot;vid&quot; в ред %1. &quot;vid&quot; трябва да е цяло число, но &quot;%2&quot;е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Възникна грешка при четене на стойност "x" в ред %1. "x" трябва да е реална стойност, но "%2"е посочено.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Възникна грешка при четене на стойност &quot;x&quot; в ред %1. &quot;x&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Възникна грешка при четене на стойност "y" в ред %1. "y" трябва да е реална стойност, но "%2"е посочено.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Възникна грешка при четене на стойност &quot;y&quot; в ред %1. &quot;y&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Възникна грешка при четене на стойност "стойност" в ред %1. "стойност" трябва да е реална стойност, но "%2"е посочено.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Възникна грешка при четене на стойност &quot;стойност&quot; в ред %1. &quot;стойност&quot; трябва да е реална стойност, но &quot;%2&quot;е посочено.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Възникна грешка при четене на ред %1. "име" трябва да е същото за редове, където стойностите на "капак" са еднакви.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Възникна грешка при четене на ред %1. &quot;име&quot; трябва да е същото за редове, където стойностите на &quot;капак&quot; са еднакви.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Възникна грешка при четене на ред %1. "стойност" трябва да е еднаква за редове, където стойностите на "капак" са еднакви.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Възникна грешка при четене на ред %1. &quot;стойност&quot; трябва да е еднаква за редове, където стойностите на &quot;капак&quot; са еднакви.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -242,11 +244,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Цветна карта</translation>
+        <translation type="vanished">Цветна карта</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Ширина на линията:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

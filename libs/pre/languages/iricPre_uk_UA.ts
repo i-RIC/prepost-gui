@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -11,7 +13,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -74,7 +76,7 @@
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв'язувачем. Можливо, буде імпортовано лише якусь частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
+        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв&apos;язувачем. Можливо, буде імпортовано лише якусь частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -113,13 +115,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Браузер об'єктів</translation>
+        <translation>Браузер об&apos;єктів</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Вікно сітки з пташиного ока</translation>
     </message>
 </context>
@@ -713,7 +715,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation>Налаштування скаляра...</translation>
+        <translation type="vanished">Налаштування скаляра...</translation>
     </message>
     <message>
         <source>Import</source>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не відображаються після останнього редагування. Ви хочете виконати зіставлення зараз?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Налаштування граничних умов "%1"не відображається після останнього редагування. Виконати відображення зараз?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Налаштування граничних умов &quot;%1&quot;не відображається після останнього редагування. Виконати відображення зараз?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -878,7 +880,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Color Setting...</source>
-        <translation>Налаштування кольору (&amp;C)...</translation>
+        <translation type="vanished">Налаштування кольору (&amp;C)...</translation>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
@@ -1046,13 +1048,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>Примітка. Коли варіант увімкнено, створюється варіант із назвою «За замовчуванням», і до нього переміщуються всі географічні дані. Ви можете додавати, перейменовувати, видаляти варіації з «Оглядача об’єктів». Ви можете переміщувати, копіювати географічні дані між варіантами. Дані атрибутів сітки, створені з варіанту, який ви вибрали за допомогою «Варіант для передачі розв’язувачу», передаються розв’язувачу. Ви можете підготувати кілька варіантів, вибрати, які передати розв’язувачу, і переконатися в ефекті різниці.</translation>
     </message>
 </context>
@@ -1211,6 +1213,10 @@ The grid attribute data created from the variation that you select with "Variati
         <source>&amp;Export...</source>
         <translation>Експорт (&amp;E)...</translation>
     </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
@@ -1276,9 +1282,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Виконати (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Наведені нижче атрибути не були відображені, оскільки вихідні значення генератора сітки для них. Якщо ви хочете відобразити географічні дані для них примусово, будь ласка, зіставте їх вручну за допомогою меню "Сітка" -&gt; "Зіставлення атрибутів" -&gt; "Виконати".</translation>
+        <translation>Наведені нижче атрибути не були відображені, оскільки вихідні значення генератора сітки для них. Якщо ви хочете відобразити географічні дані для них примусово, будь ласка, зіставте їх вручну за допомогою меню &quot;Сітка&quot; -&gt; &quot;Зіставлення атрибутів&quot; -&gt; &quot;Виконати&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1297,12 +1303,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картування географічних даних завершено</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибут сітки "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибут сітки &quot;%1&quot;редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Гранична умова "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Гранична умова &quot;%1&quot;редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
 </context>
 <context>
@@ -1320,19 +1326,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Коли створюється сітка, вас запитують, чи щоразу виконувати відображення атрибутів. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Коли створюється сітка, вас запитують, чи щоразу виконувати відображення атрибутів. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Посібник</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Зіставлення атрибутів виконується лише тоді, коли ви вручну вибираєте меню «Виконати».</translation>
     </message>
     <message>
@@ -1481,6 +1487,10 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>&amp;Export...</source>
         <translation>Експорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1748,6 +1758,14 @@ This algorithm can be used only for structured grids.</source>
         <source>Distance(m) from %1</source>
         <translation>Відстань (м) від %1</translation>
     </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
@@ -1783,7 +1801,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Name</source>
-        <translation>Ім'я</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -2049,8 +2067,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Налаштування кольорової карти</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2160,10 +2178,10 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Set &amp;Up Scalarbar...</source>
-        <translation>Налаштуйте Скалярну панель (&amp;U)...</translation>
+        <translation type="vanished">Налаштуйте Скалярну панель (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Відкрийте вікно перегляду пташиного погляду (&amp;B)</translation>
     </message>
     <message>

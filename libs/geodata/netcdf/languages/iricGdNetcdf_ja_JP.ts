@@ -500,7 +500,11 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation>カラーマップ (この設定は同じ地理情報グループ内の全要素で共通です)</translation>
     </message>
 </context>
 <context>

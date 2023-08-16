@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -118,8 +120,8 @@
         <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Nagłówek powinien mieć co najmniej 6 kolumn.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Kolumna %1 Powinien być "%2", ale "%3" jest podawany.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Wystąpił błąd podczas odczytywania wiersza nagłówka. Kolumna %1 Powinien być &quot;%2&quot;, ale &quot;%3&quot; jest podawany.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -142,31 +144,31 @@
         <translation>Wystąpił błąd podczas odczytu wiersza %1. Dane powinny mieć co najmniej 6 kolumn.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytu wartości "lid" w linii %1. „pokrywka” powinna być liczbą całkowitą, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytu wartości &quot;lid&quot; w linii %1. „pokrywka” powinna być liczbą całkowitą, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytywania wartości "vid" w linii %1. „vid” powinno być liczbą całkowitą, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytywania wartości &quot;vid&quot; w linii %1. „vid” powinno być liczbą całkowitą, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytywania wartości „x” w wierszu %1. „x” powinno być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytywania wartości „x” w wierszu %1. „x” powinno być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytywania wartości "y" w wierszu %1. „y” powinno być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytywania wartości &quot;y&quot; w wierszu %1. „y” powinno być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Wystąpił błąd podczas odczytu wartości "value" w linii %1. „wartość” powinna być rzeczywistą wartością, ale „ %2 " jest specyficzne.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Wystąpił błąd podczas odczytu wartości &quot;value&quot; w linii %1. „wartość” powinna być rzeczywistą wartością, ale „ %2 &quot; jest specyficzne.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Wystąpił błąd podczas odczytu wiersza %1. "name" powinno być takie samo dla linii, w których wartości "lid" są takie same.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Wystąpił błąd podczas odczytu wiersza %1. &quot;name&quot; powinno być takie samo dla linii, w których wartości &quot;lid&quot; są takie same.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
         <translation>Wystąpił błąd podczas odczytu wiersza %1. „wartość” powinna być taka sama dla wierszy, w których wartości „pokrywki” są takie same.</translation>
     </message>
     <message>
@@ -242,11 +244,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa kolorów</translation>
+        <translation type="vanished">Mapa kolorów</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Szerokość linii:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

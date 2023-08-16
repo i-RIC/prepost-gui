@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -26,8 +28,8 @@
         <translation type="vanished">警告</translation>
     </message>
     <message>
-        <source>There is no other polyLine or polyLine group in "%1" group.</source>
-        <translation type="vanished">"%1" グループには、他に折れ線や折れ線グループがありません。</translation>
+        <source>There is no other polyLine or polyLine group in &quot;%1&quot; group.</source>
+        <translation type="vanished">&quot;%1&quot; グループには、他に折れ線や折れ線グループがありません。</translation>
     </message>
     <message>
         <source>Deleting polylines will also remove any graph windows associated with them.  Are you sure you want to delete selected polylines?</source>
@@ -316,8 +318,8 @@
         <translation>ヘッダ行の読み込み中にエラーが発生しました。ヘッダには6列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は "%2" のはずですが、"%3" が指定されています。</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>ヘッダ行の読み込み中にエラーが発生しました。%1 列目の値は &quot;%2&quot; のはずですが、&quot;%3&quot; が指定されています。</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -340,32 +342,32 @@
         <translation>%1行目の読み込み中にエラーが発生しました。6列以上データがなくてはいけません。</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>%1行目の "lid" の読み込み中にエラーが発生しました。 "lid" は整数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;lid&quot; の読み込み中にエラーが発生しました。 &quot;lid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>%1行目の "vid" の読み込み中にエラーが発生しました。 "vid" は整数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;vid&quot; の読み込み中にエラーが発生しました。 &quot;vid&quot; は整数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "x" の読み込み中にエラーが発生しました。 "x" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;x&quot; の読み込み中にエラーが発生しました。 &quot;x&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "y" の読み込み中にエラーが発生しました。 "y" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;y&quot; の読み込み中にエラーが発生しました。 &quot;y&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>%1行目の "value" の読み込み中にエラーが発生しました。 "value" は実数値でなくてはいけませんが、 "%2" が指定されました。</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>%1行目の &quot;value&quot; の読み込み中にエラーが発生しました。 &quot;value&quot; は実数値でなくてはいけませんが、 &quot;%2&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>%1行目の読み込み中にエラーが発生しました。 "name" は同じ "lid" の行で共通である必要があります。</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;name&quot; は同じ &quot;lid&quot; の行で共通である必要があります。</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>%1行目の読み込み中にエラーが発生しました。 "value" は同じ "lid" の行で共通である必要があります。</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>%1行目の読み込み中にエラーが発生しました。 &quot;value&quot; は同じ &quot;lid&quot; の行で共通である必要があります。</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -406,7 +408,7 @@
     <name>GeoDataPolyLineGroupProxy_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
@@ -522,7 +524,7 @@
     <name>GeoDataPolyLineGroup_DisplaySettingWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Color</source>
@@ -538,11 +540,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>線の幅:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation>カラーマップ (この設定は同じ地理情報グループ内の全要素で共通です)</translation>
     </message>
 </context>
 </TS>

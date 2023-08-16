@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -126,8 +128,8 @@
         <translation>Pri branju vrstice glave je prišlo do napake. Glava mora imeti vsaj 6 stolpcev.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Pri branju vrstice glave je prišlo do napake. Stolpec %1 moral bi biti "%2", ampak"%3" je podan.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Pri branju vrstice glave je prišlo do napake. Stolpec %1 moral bi biti &quot;%2&quot;, ampak&quot;%3&quot; je podan.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -150,32 +152,32 @@
         <translation>Pri branju vrstice je prišlo do napake %1. Podatki morajo imeti vsaj 6 stolpcev.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Pri branju vrednosti "pid" v vrstici je prišlo do napake %1. "pid" mora biti cela vrednost, vendar "%2"je določeno.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Pri branju vrednosti &quot;pid&quot; v vrstici je prišlo do napake %1. &quot;pid&quot; mora biti cela vrednost, vendar &quot;%2&quot;je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Pri branju vrstice "vid" je prišlo do napake %1. "vid" mora biti celoštevilčna vrednost, vendar "%2"je določeno.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Pri branju vrstice &quot;vid&quot; je prišlo do napake %1. &quot;vid&quot; mora biti celoštevilčna vrednost, vendar &quot;%2&quot;je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Pri branju vrednosti "x" v vrstici je prišlo do napake %1. "x" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Pri branju vrednosti &quot;x&quot; v vrstici je prišlo do napake %1. &quot;x&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Pri branju vrednosti "y" v vrstici je prišlo do napake %1. "y" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Pri branju vrednosti &quot;y&quot; v vrstici je prišlo do napake %1. &quot;y&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Pri branju vrednosti "vrednost" v vrstici je prišlo do napake %1. "vrednost" bi morala biti resnična vrednost, vendar "%2"je določeno.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Pri branju vrednosti &quot;vrednost&quot; v vrstici je prišlo do napake %1. &quot;vrednost&quot; bi morala biti resnična vrednost, vendar &quot;%2&quot;je določeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Pri branju vrstice je prišlo do napake %1. "ime" bi moralo biti enako za vrstice, kjer so vrednosti "pid" enake.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Pri branju vrstice je prišlo do napake %1. &quot;ime&quot; bi moralo biti enako za vrstice, kjer so vrednosti &quot;pid&quot; enake.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Pri branju vrstice je prišlo do napake %1. "vrednost" mora biti enaka za vrstice, kjer so vrednosti "pid" enake.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Pri branju vrstice je prišlo do napake %1. &quot;vrednost&quot; mora biti enaka za vrstice, kjer so vrednosti &quot;pid&quot; enake.</translation>
     </message>
 </context>
 <context>
@@ -259,11 +261,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Širina črte:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

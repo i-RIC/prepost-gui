@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -126,8 +128,8 @@
         <translation>حدث خطأ أثناء قراءة سطر العنوان. يجب أن يحتوي الرأس على 6 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون "%2"، لكن "%3" معطى.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون &quot;%2&quot;، لكن &quot;%3&quot; معطى.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -150,32 +152,32 @@
         <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تحتوي البيانات على 6 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة "pid" في السطر %1. يجب أن تكون "pid" قيمة عددية ولكن "%2" محدد.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة &quot;pid&quot; في السطر %1. يجب أن تكون &quot;pid&quot; قيمة عددية ولكن &quot;%2&quot; محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة "vid" في السطر %1. يجب أن يكون "vid" قيمة عددية ولكن "%2" محدد.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة &quot;vid&quot; في السطر %1. يجب أن يكون &quot;vid&quot; قيمة عددية ولكن &quot;%2&quot; محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة "x" في السطر %1. يجب أن تكون "x" قيمة حقيقية ولكن "%2" محدد.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة &quot;x&quot; في السطر %1. يجب أن تكون &quot;x&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة "y" في السطر %1. يجب أن تكون "y" قيمة حقيقية ولكن "%2" محدد.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة &quot;y&quot; في السطر %1. يجب أن تكون &quot;y&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة "القيمة" في السطر %1. يجب أن تكون "القيمة" قيمة حقيقية ولكن "%2" محدد.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة &quot;القيمة&quot; في السطر %1. يجب أن تكون &quot;القيمة&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن يكون "الاسم" هو نفسه بالنسبة للأسطر حيث تكون قيم "pid" هي نفسها.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن يكون &quot;الاسم&quot; هو نفسه بالنسبة للأسطر حيث تكون قيم &quot;pid&quot; هي نفسها.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تكون "القيمة" هي نفسها بالنسبة للأسطر التي تكون فيها قيم "pid" هي نفسها.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تكون &quot;القيمة&quot; هي نفسها بالنسبة للأسطر التي تكون فيها قيم &quot;pid&quot; هي نفسها.</translation>
     </message>
 </context>
 <context>
@@ -259,11 +261,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>خريطة ملونة</translation>
+        <translation type="vanished">خريطة ملونة</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>عرض الخط:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

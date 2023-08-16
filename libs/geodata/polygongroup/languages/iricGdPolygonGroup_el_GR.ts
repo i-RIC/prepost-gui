@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -126,8 +128,8 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Η κεφαλίδα πρέπει να έχει τουλάχιστον 6 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι "%2", αλλά "%3" δίνεται.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής κεφαλίδας. Στήλη %1 πρέπει να είναι &quot;%2&quot;, αλλά &quot;%3&quot; δίνεται.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -150,32 +152,32 @@
         <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Τα δεδομένα πρέπει να έχουν τουλάχιστον 6 στήλες.</translation>
     </message>
     <message>
-        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "pid" στη γραμμή %1 Το Το "pid" πρέπει να είναι ακέραιος αριθμός αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;pid&quot; στη γραμμή %1 Το Το &quot;pid&quot; πρέπει να είναι ακέραιος αριθμός αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "vid" στη γραμμή %1 Το Το "vid" πρέπει να είναι ακέραιη τιμή αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;vid&quot; στη γραμμή %1 Το Το &quot;vid&quot; πρέπει να είναι ακέραιη τιμή αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "x" στη γραμμή %1 Το Το "x" πρέπει να είναι πραγματική τιμή αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;x&quot; στη γραμμή %1 Το Το &quot;x&quot; πρέπει να είναι πραγματική τιμή αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "y" στη γραμμή %1 Το Το "y" πρέπει να έχει πραγματική αξία, αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;y&quot; στη γραμμή %1 Το Το &quot;y&quot; πρέπει να έχει πραγματική αξία, αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής "τιμή" στη γραμμή %1 Το Η "αξία" πρέπει να είναι πραγματική αξία αλλά "%2"καθορίζεται.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της τιμής &quot;τιμή&quot; στη γραμμή %1 Το Η &quot;αξία&quot; πρέπει να είναι πραγματική αξία αλλά &quot;%2&quot;καθορίζεται.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Το "όνομα" πρέπει να είναι το ίδιο για τις γραμμές όπου οι τιμές "pid" είναι ίδιες.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Το &quot;όνομα&quot; πρέπει να είναι το ίδιο για τις γραμμές όπου οι τιμές &quot;pid&quot; είναι ίδιες.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Η "τιμή" πρέπει να είναι η ίδια για τις γραμμές όπου οι τιμές "pid" είναι ίδιες.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την ανάγνωση της γραμμής %1 Το Η &quot;τιμή&quot; πρέπει να είναι η ίδια για τις γραμμές όπου οι τιμές &quot;pid&quot; είναι ίδιες.</translation>
     </message>
 </context>
 <context>
@@ -259,11 +261,15 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Χρωματικός χάρτης</translation>
+        <translation type="vanished">Χρωματικός χάρτης</translation>
     </message>
     <message>
         <source>Line Width:</source>
         <translation>Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

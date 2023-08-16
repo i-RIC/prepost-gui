@@ -115,6 +115,7 @@ QDialog* PreProcessorGridAttributeCellDataItem::propertyDialog(QWidget* p)
 	dialog->setWidget(widget);
 
 	dialog->setOpacity(gitem->opacity());
+	dialog->resize(900, 700);
 
 	return dialog;
 }
