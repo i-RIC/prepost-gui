@@ -385,7 +385,7 @@ void PreProcessorGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitio
 	auto r = renderer();
 
 	auto c = att->createColorMapSettingContainer();
-	c->legendSetting()->setVisible(false);
+	c->legendSetting()->setVisible(true);
 	c->legendSetting()->setTitle(att->caption());
 	m_colorMapSettingContainers.insert({att->name(), c});
 
