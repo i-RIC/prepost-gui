@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -128,8 +126,8 @@
         <translation>Došlo je do greške pri čitanju zaglavlja. Zaglavlje treba imati najmanje 6 kolona.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti &quot;%2&quot;, ali&quot;%3&quot;je dato.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Došlo je do greške pri čitanju zaglavlja. Kolona %1 treba biti "%2", ali"%3"je dato.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -152,32 +150,32 @@
         <translation>Došlo je do greške pri čitanju retka %1. Podaci trebaju imati najmanje 6 kolona.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju &quot;pid&quot; vrijednosti u redu %1. &quot;pid&quot; bi trebao biti cijela vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju "pid" vrijednosti u redu %1. "pid" bi trebao biti cijela vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju &quot;vid&quot; vrijednosti u redu %1. &quot;vid&quot; bi trebao biti cijela vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju "vid" vrijednosti u redu %1. "vid" bi trebao biti cijela vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;x&quot; u redu %1. &quot;x&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "x" u redu %1. "x" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;y&quot; u redu %1. &quot;y&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "y" u redu %1. "y" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Došlo je do greške pri čitanju vrijednosti &quot;value&quot; u redu %1. &quot;vrijednost&quot; bi trebala biti stvarna vrijednost, ali &quot;%2&quot;je navedeno.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Došlo je do greške pri čitanju vrijednosti "value" u redu %1. "vrijednost" bi trebala biti stvarna vrijednost, ali "%2"je navedeno.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Došlo je do greške pri čitanju retka %1. &quot;name&quot; bi trebao biti isti za redove gdje su &quot;pid&quot; vrijednosti iste.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Došlo je do greške pri čitanju retka %1. "name" bi trebao biti isti za redove gdje su "pid" vrijednosti iste.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Došlo je do greške pri čitanju retka %1. &quot;vrijednost&quot; bi trebala biti ista za redove gdje su &quot;pid&quot; vrijednosti iste.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Došlo je do greške pri čitanju retka %1. "vrijednost" bi trebala biti ista za redove gdje su "pid" vrijednosti iste.</translation>
     </message>
 </context>
 <context>
@@ -269,7 +267,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa boja (Ova postavka je zajednička za sve stavke u istoj grupi geografskih podataka)</translation>
     </message>
 </context>
 </TS>

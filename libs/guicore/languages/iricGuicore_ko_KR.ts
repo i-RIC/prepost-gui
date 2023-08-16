@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1478,8 +1476,8 @@ Parse error %2 at %3, column %4</source>
         <translation>색상:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1585,12 +1583,12 @@ Parse error %2 at %3, column %4</source>
         <translation>정의 노드가 저장되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>잘못된 값 유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>잘못된 값 유형 "%1"가 설정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>잘못된 조건유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>잘못된 조건유형 "%1"가 설정되어 있습니다.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1861,8 +1859,8 @@ Do you really want to import this file?</source>
         <translation>정보</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>단축키 &quot;Ctrl + C&quot; 및 &quot;Ctrl + V&quot;를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>단축키 "Ctrl + C" 및 "Ctrl + V"를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -1987,8 +1985,8 @@ Do you really want to import this file?</source>
         <translation>파일을 여는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>처음 두 열은 &quot;X&quot;와 &quot;Y&quot;여야 합니다.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>처음 두 열은 "X"와 "Y"여야 합니다.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2153,8 +2151,8 @@ Do you really want to import this file?</source>
         <translation>변수의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2162,7 +2160,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 &quot;테스트를 위한 값&quot;을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2232,8 +2230,8 @@ Do you really want to import this file?</source>
         <translation>아래에 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2594,8 +2592,8 @@ Do you really want to import this file?</source>
         <translation>출력의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2821,7 +2819,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
-        <translation type="unfinished"></translation>
+        <translation>모든 이미지 (*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</translation>
     </message>
 </context>
 <context>
@@ -2861,8 +2859,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>작업 공간 &quot;%1&quot; 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>작업 공간 "%1" 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>

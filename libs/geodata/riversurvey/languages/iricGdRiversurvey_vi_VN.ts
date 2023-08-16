@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm trên bản đồ, bạn có thể sử dụng &quot;Dữ liệu đám mây điểm bản đồ&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm trên bản đồ, bạn có thể sử dụng "Dữ liệu đám mây điểm bản đồ"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm bản đồ, bạn có thể sử dụng &quot;Dữ liệu đám mây điểm bản đồ&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm bản đồ, bạn có thể sử dụng "Dữ liệu đám mây điểm bản đồ"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Ở một số khu vực, dữ liệu không tồn tại trong dữ liệu đám mây điểm và giá trị 0 được ánh xạ cho các điểm đó. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm bản đồ, bạn có thể sử dụng &quot;Dữ liệu đám mây điểm bản đồ&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Dữ liệu mặt cắt ngang được tạo bằng dữ liệu đám mây điểm. Ở một số khu vực, dữ liệu không tồn tại trong dữ liệu đám mây điểm và giá trị 0 được ánh xạ cho các điểm đó. Nếu bạn muốn điều chỉnh lại vị trí mặt cắt và dữ liệu đám mây điểm bản đồ, bạn có thể sử dụng "Dữ liệu đám mây điểm bản đồ"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -623,8 +621,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Cài đặt độ cao và độ dốc không hợp lệ.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Khi bạn chỉ định độ cao của điểm cuối, nó không thể giống với điểm bắt đầu. Nếu bạn muốn vẽ đường ngang, vui lòng chọn &quot;Chỉ định khoảng cách ngang&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Khi bạn chỉ định độ cao của điểm cuối, nó không thể giống với điểm bắt đầu. Nếu bạn muốn vẽ đường ngang, vui lòng chọn "Chỉ định khoảng cách ngang".</translation>
     </message>
 </context>
 <context>
@@ -850,8 +848,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Chỉnh sửa mặt cắt bằng cách nhấp chuột. Hoàn tất chỉnh sửa bằng cách nhấp đúp hoặc nhấn phím quay lại. Bạn có thể chỉnh sửa chính xác mặt cắt bằng cách nhập các giá trị từ hộp thoại. Vui lòng nhập chế độ chỉnh sửa hộp thoại từ &quot;Chỉnh sửa từ Hộp thoại&quot; trong menu chuột phải.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Chỉnh sửa mặt cắt bằng cách nhấp chuột. Hoàn tất chỉnh sửa bằng cách nhấp đúp hoặc nhấn phím quay lại. Bạn có thể chỉnh sửa chính xác mặt cắt bằng cách nhập các giá trị từ hộp thoại. Vui lòng nhập chế độ chỉnh sửa hộp thoại từ "Chỉnh sửa từ Hộp thoại" trong menu chuột phải.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1047,40 +1045,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Lỗi</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị LX không hợp lệ</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị LX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị LY không hợp lệ</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị LY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị RX không hợp lệ</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị RX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị RY không hợp lệ</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị RY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Số điểm không hợp lệ</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 hàng %2 "%3": Số điểm không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị chỉ mục không hợp lệ</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 hàng %2 "%3": Giá trị chỉ mục không hợp lệ</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 hàng %2 : dữ liệu mặt cắt cho %3 không đủ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị khoảng cách không hợp lệ</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị khoảng cách không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 hàng %2 &quot;%3&quot;: Giá trị độ cao không hợp lệ</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 hàng %2 "%3": Giá trị độ cao không hợp lệ</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1119,8 +1117,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Hàng %2 : Đọc lỗi. Cần ít nhất hai giá trị.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Hàng %2 : Đọc lỗi. Không phải giá trị số thực &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Hàng %2 : Đọc lỗi. Không phải giá trị số thực "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1246,36 +1244,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Hàng %2 : KP không phải là đầu vào</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Hàng %2 &quot;%3&quot;: Giá trị LX không hợp lệ</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị LX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Hàng %2 &quot;%3&quot;: Giá trị LY không hợp lệ</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị LY không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Hàng %2 &quot;%3&quot;: Giá trị RX không hợp lệ</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị RX không hợp lệ</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Hàng %2 &quot;%3&quot;: Giá trị RY không hợp lệ</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Hàng %2 "%3": Giá trị RY không hợp lệ</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Dữ liệu đánh dấu khoảng cách không được tìm thấy. Sẽ được bỏ qua.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 hàng %2 : &quot;%3&quot;: Dữ liệu cờ không hợp lệ.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 hàng %2 : "%3": Dữ liệu cờ không hợp lệ.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 hàng %2 : &quot;%3&quot;: Dữ liệu khoảng cách không hợp lệ.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 hàng %2 : "%3": Dữ liệu khoảng cách không hợp lệ.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 hàng %2 : &quot;%3&quot;: Dữ liệu độ cao không hợp lệ.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 hàng %2 : "%3": Dữ liệu độ cao không hợp lệ.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1311,7 +1309,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>There is not cross section data. Maybe you selected a wrong folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Không có dữ liệu mặt cắt ngang. Có lẽ bạn đã chọn một thư mục sai.</translation>
     </message>
 </context>
 <context>
@@ -1389,8 +1387,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Dễ thấy</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý:&lt;/span&gt; Bạn có thể tùy chỉnh màu bằng tab Bản đồ màu.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Bạn có thể tùy chỉnh màu bằng tab Bản đồ màu.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -1414,7 +1412,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bản đồ màu (Cài đặt này là chung cho tất cả các mục trong cùng một nhóm dữ liệu địa lý)</translation>
     </message>
 </context>
 <context>

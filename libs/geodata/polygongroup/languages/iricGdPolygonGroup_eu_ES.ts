@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -128,8 +126,8 @@
         <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Goiburuak 6 zutabe izan behar ditu gutxienez.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan &quot;%2&quot;, baina&quot;%3&quot;ematen da.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Errore bat gertatu da goiburuaren lerroa irakurtzean. Zutabea %1 behar izan "%2", baina"%3"ematen da.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -152,32 +150,32 @@
         <translation>Errore bat gertatu da lerroa irakurtzean %1. Datuek gutxienez 6 zutabe izan behar dituzte.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;pid&quot; balioa irakurtzean %1. &quot;pid&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "pid" balioa irakurtzean %1. "pid" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;vid&quot; balioa irakurtzean %1. &quot;vid&quot; zenbaki osoak izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "vid" balioa irakurtzean %1. "vid" zenbaki osoak izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errore bat gertatu da &quot;x&quot; balioa lerroan irakurtzean %1. &quot;x&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Errore bat gertatu da "x" balioa lerroan irakurtzean %1. "x" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da lerroan &quot;y&quot; balioa irakurtzean %1. &quot;y&quot; -k benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da lerroan "y" balioa irakurtzean %1. "y" -k benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Errorea gertatu da &quot;balioa&quot; lerroan irakurtzean %1. &quot;balioa&quot; benetako balioa izan beharko luke baina &quot;%2&quot;zehazten da.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Errorea gertatu da "balioa" lerroan irakurtzean %1. "balioa" benetako balioa izan beharko luke baina "%2"zehazten da.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;izena&quot; berdina izan behar da &quot;pid&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "izena" berdina izan behar da "pid" balioak berdinak diren lerroetan.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Errore bat gertatu da lerroa irakurtzean %1. &quot;balioa&quot; berdina izan behar da &quot;pid&quot; balioak berdinak diren lerroetan.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Errore bat gertatu da lerroa irakurtzean %1. "balioa" berdina izan behar da "pid" balioak berdinak diren lerroetan.</translation>
     </message>
 </context>
 <context>
@@ -269,7 +267,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolore-mapa (Ezarpen hau ohikoa da datu geografikoen talde bereko elementu guztientzat)</translation>
     </message>
 </context>
 </TS>

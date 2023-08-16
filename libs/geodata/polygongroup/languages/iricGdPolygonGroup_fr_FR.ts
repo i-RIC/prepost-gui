@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -25,14 +23,14 @@
     </message>
     <message>
         <source>Polygons Display Setting</source>
-        <translation>Paramètre d&apos;affichage des polygones</translation>
+        <translation>Paramètre d'affichage des polygones</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupColorSettingDialog</name>
     <message>
         <source>Polygon Group Display Setting</source>
-        <translation type="vanished">Paramètre d&apos;affichage du groupe de polygones</translation>
+        <translation type="vanished">Paramètre d'affichage du groupe de polygones</translation>
     </message>
     <message>
         <source>Color</source>
@@ -82,7 +80,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Une erreur s&apos;est produite lors de l&apos;exportation vers %1.</translation>
+        <translation>Une erreur s'est produite lors de l'exportation vers %1.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -113,82 +111,82 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Une erreur s&apos;est produite lors de l&apos;ouverture %1</translation>
+        <translation>Une erreur s'est produite lors de l'ouverture %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne d&apos;en-tête. Assurez-vous que le fichier est enregistré en codage UTF-8.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne d'en-tête. Assurez-vous que le fichier est enregistré en codage UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne d&apos;en-tête. L&apos;en-tête doit avoir au moins 5 colonnes.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne d'en-tête. L'en-tête doit avoir au moins 5 colonnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne d&apos;en-tête. L&apos;en-tête doit avoir au moins 6 colonnes.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne d'en-tête. L'en-tête doit avoir au moins 6 colonnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne d&apos;en-tête. Colonne %1 devrait être &quot;%2&quot;, mais &quot;%3&quot; est donné.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne d'en-tête. Colonne %1 devrait être "%2", mais "%3" est donné.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. Il n&apos;y a pas de données.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. Il n'y a pas de données.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Polygon should have three points at least.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. Le polygone doit avoir au moins trois points.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. Le polygone doit avoir au moins trois points.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. Assurez-vous que le fichier est enregistré en codage UTF-8.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. Assurez-vous que le fichier est enregistré en codage UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. Les données doivent avoir au moins 5 colonnes.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. Les données doivent avoir au moins 5 colonnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. Les données doivent avoir au moins 6 colonnes.</translation>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. Les données doivent avoir au moins 6 colonnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la valeur &quot;pid&quot; en ligne %1. &quot;pid&quot; doit être une valeur entière mais &quot;%2&quot; est spécifié.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la valeur "pid" en ligne %1. "pid" doit être une valeur entière mais "%2" est spécifié.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la valeur &quot;vid&quot; en ligne %1. &quot;vid&quot; doit être une valeur entière mais &quot;%2&quot; est spécifié.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la valeur "vid" en ligne %1. "vid" doit être une valeur entière mais "%2" est spécifié.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la valeur &quot;x&quot; en ligne %1. &quot;x&quot; devrait être une valeur réelle mais &quot;%2&quot; est spécifié.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la valeur "x" en ligne %1. "x" devrait être une valeur réelle mais "%2" est spécifié.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la valeur &quot;y&quot; en ligne %1. &quot;y&quot; devrait être une valeur réelle mais &quot;%2&quot; est spécifié.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la valeur "y" en ligne %1. "y" devrait être une valeur réelle mais "%2" est spécifié.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la valeur &quot;valeur&quot; en ligne %1. &quot;valeur&quot; devrait être une valeur réelle mais &quot;%2&quot; est spécifié.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la valeur "valeur" en ligne %1. "valeur" devrait être une valeur réelle mais "%2" est spécifié.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. &quot;name&quot; doit être le même pour les lignes où les valeurs &quot;pid&quot; sont les mêmes.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. "name" doit être le même pour les lignes où les valeurs "pid" sont les mêmes.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Une erreur s&apos;est produite lors de la lecture de la ligne %1. &quot;value&quot; doit être le même pour les lignes où les valeurs &quot;pid&quot; sont les mêmes.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Une erreur s'est produite lors de la lecture de la ligne %1. "value" doit être le même pour les lignes où les valeurs "pid" sont les mêmes.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolygonGroupProxy</name>
     <message>
         <source>Edit display setting</source>
-        <translation type="vanished">Modifier le paramètre d&apos;affichage</translation>
+        <translation type="vanished">Modifier le paramètre d'affichage</translation>
     </message>
     <message>
         <source>Polygons Display Setting</source>
-        <translation>Paramètre d&apos;affichage des polygones</translation>
+        <translation>Paramètre d'affichage des polygones</translation>
     </message>
 </context>
 <context>
@@ -230,7 +228,7 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation>%1 Le polygone ne peut pas être importé. Un polygone comme ci-dessous ne peut pas être importé : - Il a moins de trois points - Il n&apos;est pas fermé - Les lignes de polygone se coupent - Le polygone de trou est en dehors du polygone de région - Le polygone passe plusieurs fois au même point</translation>
+        <translation>%1 Le polygone ne peut pas être importé. Un polygone comme ci-dessous ne peut pas être importé : - Il a moins de trois points - Il n'est pas fermé - Les lignes de polygone se coupent - Le polygone de trou est en dehors du polygone de région - Le polygone passe plusieurs fois au même point</translation>
     </message>
     <message>
         <source>Polygon%1</source>
@@ -269,7 +267,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap (Ce paramètre est commun à tous les éléments du même groupe de données géographiques)</translation>
     </message>
 </context>
 </TS>

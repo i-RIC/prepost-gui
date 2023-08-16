@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">ผสาน...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน &quot;%1&quot; กลุ่ม.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>ไม่มีข้อมูลอื่นที่จะรวมใน "%1" กลุ่ม.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -627,12 +625,12 @@
         <translation>ไม่ได้ระบุตัวคั่น</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>มีค่าไม่เพียงพอที่จะอ่าน &quot;%1&quot;. &quot;%1&quot; คอลัมน์คือ %2 แต่ %3 ค่าที่ป้อน</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>มีค่าไม่เพียงพอที่จะอ่าน "%1". "%1" คอลัมน์คือ %2 แต่ %3 ค่าที่ป้อน</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่าน &quot;%1&quot; ค่า. &quot;%1&quot; ค่าควรเป็นจำนวนจริง แต่ &quot;%2&quot; ระบุไว้</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่าน "%1" ค่า. "%1" ค่าควรเป็นจำนวนจริง แต่ "%2" ระบุไว้</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -702,8 +700,8 @@
         <translation>ตัวอักษรอ้าง:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1016,8 +1014,8 @@
         <translation>พื้นผิว</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1041,7 +1039,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>แผนที่สี (การตั้งค่านี้เป็นค่าทั่วไปสำหรับทุกรายการในกลุ่มข้อมูลทางภูมิศาสตร์เดียวกัน)</translation>
     </message>
 </context>
 <context>
@@ -1238,8 +1236,8 @@
         <translation>เลขชี้กำลังน้ำหนัก k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; ใช้เป็นน้ำหนักเมื่อคำนวณค่าเฉลี่ยถ่วงน้ำหนักของค่าต่างๆ r คือระยะทางจากจุดไปยังโหนดหรือศูนย์กลางเซลล์ ซึ่งค่านั้นถูกแมป&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; ใช้เป็นน้ำหนักเมื่อคำนวณค่าเฉลี่ยถ่วงน้ำหนักของค่าต่างๆ r คือระยะทางจากจุดไปยังโหนดหรือศูนย์กลางเซลล์ ซึ่งค่านั้นถูกแมป&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1289,8 +1287,8 @@
         <translation type="vanished">พื้นผิว</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ:&lt;/span&gt; เมื่ออยู่ใน &amp;quot;Points Edit Modequot; การตั้งค่านี้จะถูกละเว้นและข้อมูล TIN จะถูกละเว้นเสมอ แสดงเป็นจุด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1336,8 +1334,8 @@
         <translation>ความยาวขอบเกณฑ์:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: เมื่อ &amp;quot;แสดงตัวอย่างquot; เมื่อคลิกปุ่ม สามเหลี่ยมที่จะถูกลบจะแสดงเป็นสีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: เมื่อ &amp;quot;แสดงตัวอย่างquot; เมื่อคลิกปุ่ม สามเหลี่ยมที่จะถูกลบจะแสดงเป็นสีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1355,8 +1353,8 @@
         <translation type="vanished">จำกัดความยาวของขอบ:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: เมื่อคุณคลิกที่ปุ่ม Apply รูปสามเหลี่ยมที่จะถูกลบออกจะถูกทาด้วยสีเข้ม สีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: เมื่อคุณคลิกที่ปุ่ม Apply รูปสามเหลี่ยมที่จะถูกลบออกจะถูกทาด้วยสีเข้ม สีเทา&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

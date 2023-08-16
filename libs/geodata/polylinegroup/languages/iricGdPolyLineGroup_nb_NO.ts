@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -120,8 +118,8 @@
         <translation>Det oppstod en feil under lesing av overskriftslinje. Overskriften skal ha minst seks kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Det oppstod en feil under lesing av overskriftslinje. Kolonne %1 bør være &quot;%2&quot;, men &quot;%3&quot; er gitt.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Det oppstod en feil under lesing av overskriftslinje. Kolonne %1 bør være "%2", men "%3" er gitt.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -144,32 +142,32 @@
         <translation>Det oppsto en feil under lesing av linjen %1. Data skal ha minst seks kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppstod en feil under lesing av &quot;lokk&quot; -verdien på linjen %1. &quot;lokk&quot; skal være heltall, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Det oppstod en feil under lesing av "lokk" -verdien på linjen %1. "lokk" skal være heltall, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;vid&quot; -verdien på linjen %1. &quot;vid&quot; skal være heltall, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "vid" -verdien på linjen %1. "vid" skal være heltall, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;x&quot; -verdien på linjen %1. &quot;x&quot; skal være reell verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "x" -verdien på linjen %1. "x" skal være reell verdi, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;y&quot; -verdien på linjen %1. &quot;y&quot; skal være ekte verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "y" -verdien på linjen %1. "y" skal være ekte verdi, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Det oppsto en feil under lesing av &quot;verdi&quot; -verdien på linjen %1. &quot;verdi&quot; skal være reell verdi, men &quot;%2&quot;er spesifisert.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Det oppsto en feil under lesing av "verdi" -verdien på linjen %1. "verdi" skal være reell verdi, men "%2"er spesifisert.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Det oppsto en feil under lesing av linjen %1. &quot;navn&quot; bør være det samme for linjer der &quot;lokk&quot; -verdiene er de samme.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Det oppsto en feil under lesing av linjen %1. "navn" bør være det samme for linjer der "lokk" -verdiene er de samme.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Det oppsto en feil under lesing av linjen %1. &quot;verdi&quot; bør være den samme for linjer der &quot;lokk&quot; -verdiene er de samme.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Det oppsto en feil under lesing av linjen %1. "verdi" bør være den samme for linjer der "lokk" -verdiene er de samme.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -252,7 +250,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekart (denne innstillingen er felles for alle elementer i samme geografiske datagruppe)</translation>
     </message>
 </context>
 </TS>

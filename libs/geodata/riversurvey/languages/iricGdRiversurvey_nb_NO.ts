@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Tverrsnittsdata genereres ved hjelp av punktsky-data. Hvis du vil justere tverrsnittsposisjon og kartpunkt -clouoddata igjen, kan du bruke &quot;Map point cloud data&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Tverrsnittsdata genereres ved hjelp av punktsky-data. Hvis du vil justere tverrsnittsposisjon og kartpunkt -clouoddata igjen, kan du bruke "Map point cloud data"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Tverrsnittsdata genereres ved hjelp av punktskydata. Hvis du vil justere tverrsnittsposisjon og kartlegge punktskydata igjen, kan du bruke &quot;Kartpunktskydata&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Tverrsnittsdata genereres ved hjelp av punktskydata. Hvis du vil justere tverrsnittsposisjon og kartlegge punktskydata igjen, kan du bruke "Kartpunktskydata"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation>Tverrsnittsdata genereres ved hjelp av punktskydata. I noen regioner fantes ikke data i punktskydata, og verdi 0 ble kartlagt for disse punktene. Hvis du vil justere tverrsnittsposisjon og kartlegge punktskydata igjen, kan du bruke &quot;Kartpunktskydata&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation>Tverrsnittsdata genereres ved hjelp av punktskydata. I noen regioner fantes ikke data i punktskydata, og verdi 0 ble kartlagt for disse punktene. Hvis du vil justere tverrsnittsposisjon og kartlegge punktskydata igjen, kan du bruke "Kartpunktskydata"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
 </context>
 <context>
@@ -623,8 +621,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Innstillingene for høyde og gradient er ugyldige.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Når du angir høyde på sluttpunktet, kan det ikke være det samme som startpunktet. Hvis du vil tegne en horisontal linje, må du velge &quot;Angi horisontal avstand&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Når du angir høyde på sluttpunktet, kan det ikke være det samme som startpunktet. Hvis du vil tegne en horisontal linje, må du velge "Angi horisontal avstand".</translation>
     </message>
 </context>
 <context>
@@ -854,8 +852,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>Rediger tverrsnittet ved å klikke med musen. Fullfør redigeringen ved å dobbeltklikke eller trykke på retur -tasten. Du kan nøyaktig redigere tverrsnittet ved å legge inn verdier fra dialogboksen. Skriv inn redigeringsmodus for dialog fra &quot;Rediger fra dialog&quot; i høyreklikkmenyen.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>Rediger tverrsnittet ved å klikke med musen. Fullfør redigeringen ved å dobbeltklikke eller trykke på retur -tasten. Du kan nøyaktig redigere tverrsnittet ved å legge inn verdier fra dialogboksen. Skriv inn redigeringsmodus for dialog fra "Rediger fra dialog" i høyreklikkmenyen.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1047,40 +1045,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Feil</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: LX -verdien er ugyldig</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 linje %2 "%3": LX -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: LY -verdien er ugyldig</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 linje %2 "%3": LY -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: RX -verdien er ugyldig</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 linje %2 "%3": RX -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: RY -verdien er ugyldig</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 linje %2 "%3": RY -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: Poengtallet er ugyldig</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 linje %2 "%3": Poengtallet er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 linje %2 &quot;%3&quot;: Ugyldig indeksverdi</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 linje %2 "%3": Ugyldig indeksverdi</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 linje %2 : tverrsnittsdata for %3 ikke nok</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: Avstandsverdi er ugyldig</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 linje %2 "%3": Avstandsverdi er ugyldig</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 linje %2 &quot;%3&quot;: Høydeverdien er ugyldig</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 linje %2 "%3": Høydeverdien er ugyldig</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1119,8 +1117,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linje %2 : Lesefeil. Trenger minst to verdier.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Linje %2 : Lesefeil. Ikke virkelig tallverdi &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Linje %2 : Lesefeil. Ikke virkelig tallverdi "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1246,36 +1244,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linje %2 : KP er ikke inndata</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Linje %2 &quot;%3&quot;: LX -verdien er ugyldig</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Linje %2 "%3": LX -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Linje %2 &quot;%3&quot;: LY -verdien er ugyldig</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Linje %2 "%3": LY -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Linje %2 &quot;%3&quot;: RX -verdien er ugyldig</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Linje %2 "%3": RX -verdien er ugyldig</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Linje %2 &quot;%3&quot;: RY -verdien er ugyldig</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Linje %2 "%3": RY -verdien er ugyldig</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Avstandsmarkeringsdata ble ikke funnet. Blir ignorert.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 linje %2 : &quot;%3&quot;: Flaggdata er ugyldige.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 linje %2 : "%3": Flaggdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 linje %2 : &quot;%3&quot;: Avstandsdata er ugyldige.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 linje %2 : "%3": Avstandsdata er ugyldige.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 linje %2 : &quot;%3&quot;: Høydedata er ugyldige.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 linje %2 : "%3": Høydedata er ugyldige.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1311,7 +1309,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>There is not cross section data. Maybe you selected a wrong folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det er ikke tverrsnittsdata. Kanskje du valgte feil mappe.</translation>
     </message>
 </context>
 <context>
@@ -1389,8 +1387,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Synlig</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Merk:&lt;/span&gt; Du kan tilpasse fargen ved å bruke Colormap-fanen.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; Du kan tilpasse fargen ved å bruke Colormap-fanen.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -1414,7 +1412,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fargekart (denne innstillingen er felles for alle elementer i samme geografiske datagruppe)</translation>
     </message>
 </context>
 <context>

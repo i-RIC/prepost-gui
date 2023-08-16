@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -120,8 +118,8 @@
         <translation>Er is een fout opgetreden bij het lezen van de kopregel. Header moet minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn &quot;%2&quot;, maar &quot;%3&quot; is gegeven.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de kopregel. Kolom %1 zou moeten zijn "%2", maar "%3" is gegeven.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -144,32 +142,32 @@
         <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. Gegevens moeten minimaal 6 kolommen hebben.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;deksel&quot;-waarde in de regel %1. &quot;lid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "deksel"-waarde in de regel %1. "lid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;vid&quot;-waarde in de regel %1. &quot;vid&quot; moet een geheel getal zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "vid"-waarde in de regel %1. "vid" moet een geheel getal zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;x&quot;-waarde in de regel %1. &quot;x&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "x"-waarde in de regel %1. "x" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de &quot;y&quot;-waarde in de regel %1. &quot;y&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de "y"-waarde in de regel %1. "y" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Er is een fout opgetreden bij het lezen van de waarde &quot;waarde&quot; in de regel %1. &quot;waarde&quot; zou echte waarde moeten zijn, maar &quot;%2&quot; is gespecificeerd.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Er is een fout opgetreden bij het lezen van de waarde "waarde" in de regel %1. "waarde" zou echte waarde moeten zijn, maar "%2" is gespecificeerd.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;name&quot; moet hetzelfde zijn voor regels waar de &quot;lid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "name" moet hetzelfde zijn voor regels waar de "lid"-waarden hetzelfde zijn.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. &quot;value&quot; moet hetzelfde zijn voor regels waar de &quot;lid&quot;-waarden hetzelfde zijn.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Er is een fout opgetreden tijdens het lezen van de regel %1. "value" moet hetzelfde zijn voor regels waar de "lid"-waarden hetzelfde zijn.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>
@@ -252,7 +250,7 @@
     </message>
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
-        <translation type="unfinished"></translation>
+        <translation>Colormap (deze instelling is gemeenschappelijk voor alle items in dezelfde geografische gegevensgroep)</translation>
     </message>
 </context>
 </TS>

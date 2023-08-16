@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>Structured2DGridGdalImporter</name>
@@ -17,7 +15,7 @@
     </message>
     <message>
         <source>GeoTiff files(*.tif *.tiff)</source>
-        <translation type="unfinished"></translation>
+        <translation>GeoTiff failid (*.tif *.tiff)</translation>
     </message>
 </context>
 </TS>
