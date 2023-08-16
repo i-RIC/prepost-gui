@@ -266,10 +266,20 @@ after_build:
             $env:iriclib_DIR="c:/iricdev-2019/lib/install/iriclib-" + $matches[1] + "/lib/cmake/iriclib"
           }
         }
+        Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
+          if ($_ -match '^set HDF5_VER=(.*)$') {
+            $env:hdf5_DIR="c:/iricdev-2019/lib/install/hdf5-" + $matches[1] + "/cmake/hdf5"
+          }
+        }
+        Get-Content C:\iricdev-2019\versions.cmd | ForEach-Object {
+          if ($_ -match '^set POCO_VER=(.*)$') {
+            $env:poco_DIR="c:/iricdev-2019/lib/install/poco-" + $matches[1] + "/lib/cmake/Poco"
+          }
+        }
         if ($env:APPVEYOR_REPO_BRANCH -eq "master_v4") {
-          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=prod_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=prod_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -Dhdf5_DIR:PATH=$env:hdf5_DIR -Dpoco_DIR:PATH=$env:poco_DIR -G $env:generator ..
         } else {
-          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=dev_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -G $env:generator ..
+          cmake -DPREPOST_GUI:PATH=$env:APPVEYOR_BUILD_FOLDER -DSRC_FOLDER:STRING=dev_v4_src -Diriclib_DIR:PATH=$env:iriclib_DIR -Dhdf5_DIR:PATH=$env:hdf5_DIR -Dpoco_DIR:PATH=$env:poco_DIR -G $env:generator ..
         }
         if ($LastExitCode -ne 0) { $host.SetShouldExit($LastExitCode) }
       }
