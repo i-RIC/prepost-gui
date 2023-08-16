@@ -49,7 +49,7 @@ public:
 	bool isGridEdited() const;
 	void setGridEdited();
 	ModifyCommandDialog* createApplyColorMapSettingDialog(const std::string& name, QWidget *parent) override;
-	QUndoCommand* createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply = false);
+	QUndoCommand* createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply = false);
 
 	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
 

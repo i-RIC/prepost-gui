@@ -197,7 +197,7 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.h \
            datamodel/private/post2dwindowgraphsettingdialog_impl.h \
            datamodel/private/post2dwindowgridshapedataitem_settingeditwidget.h \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingandrendercommand.h \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h \
            datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h \
            datamodel/private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.h \
@@ -321,7 +321,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindowgraphgroupdataitem_setsettingcommand.cpp \
            datamodel/private/post2dwindowgraphsettingcustomregiondialog.cpp \
            datamodel/private/post2dwindowgridshapedataitem_settingeditwidget.cpp \
-           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingcommand.cpp \
+           datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/post2dwindowgridtypedataitem_applycolormapsettingdialog.cpp \
            datamodel/private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.cpp \
            datamodel/private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.cpp \

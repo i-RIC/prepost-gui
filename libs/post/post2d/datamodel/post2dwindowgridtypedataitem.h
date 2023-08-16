@@ -38,7 +38,7 @@ public:
 	SolverDefinitionGridType* gridType() const;
 	Post2dWindowGeoDataTopDataItem* geoDataItem() const;
 	ModifyCommandDialog* createApplyColorMapSettingDialog(const std::string& name, QWidget* parent) override;
-	QUndoCommand* createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply);
+	QUndoCommand* createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply);
 
 	const ValueRangeContainer& nodeValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;
@@ -50,6 +50,7 @@ public:
 	const std::unordered_map<std::string, ValueRangeContainer>& polyDataValueRanges() const;
 	DelegatedColorMapSettingContainer* colorMapSetting(const std::string& name) const;
 	const std::unordered_map<std::string, DelegatedColorMapSettingContainer*>& colorMapSettingContainers() const;
+	void updateColorBarVisibility(const std::string& attName);
 
 	void setupZoneDataItems();
 	void update();
@@ -90,7 +91,7 @@ private:
 
 	bool m_isZoneDataItemsSetup;
 
-	class ApplyColorMapSettingCommand;
+	class ApplyColorMapSettingAndRenderCommand;
 	class ApplyColorMapSettingDialog;
 	class PreColorMapSettingUpdateHandler;
 	class ToolBarWidgetController;

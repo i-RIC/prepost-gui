@@ -1,5 +1,6 @@
 #include "post2dwindowgeodatadataitem.h"
 #include "post2dwindowgeodatagroupdataitem.h"
+#include "post2dwindowgridtypedataitem.h"
 
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
@@ -82,6 +83,14 @@ void Post2dWindowGeoDataDataItem::updateZDepthRangeItemCount()
 GraphicsWindowDataModel* Post2dWindowGeoDataDataItem::dataModel() const
 {
 	return GraphicsWindowDataItem::dataModel();
+}
+
+void Post2dWindowGeoDataDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+
+	auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (parent());
+	gItem->gridTypeDataItem()->updateColorBarVisibility(gItem->condition()->name());
 }
 
 void Post2dWindowGeoDataDataItem::applyColorMapSetting()

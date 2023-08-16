@@ -48,7 +48,7 @@ QUndoCommand* GridBirdEyeWindowGridDataItem::EditDisplaySettingDialog::createMod
 	if (ui->valueRadioButton->isChecked()) {
 		auto w = dynamic_cast<ColorMapSettingEditWidgetI*> (ui->colorMapWidget->widget());
 		auto cs_com = w->createModifyCommand();
-		cs = m_item->gridTypeDataItem()->createApplyColorMapSettingCommand(colorTarget(), cs_com, apply);
+		cs = m_item->gridTypeDataItem()->createApplyColorMapSettingAndRenderCommand(colorTarget(), cs_com, apply);
 	}
 
 	return new UpdateDisplaySettingCommand(apply, s, cs);

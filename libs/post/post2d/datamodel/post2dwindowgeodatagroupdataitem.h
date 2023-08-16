@@ -9,6 +9,7 @@ class ColorMapSettingToolBarWidgetController;
 class DelegatedColorMapSettingContainer;
 class SolverDefinitionGridAttribute;
 class Post2dWindowGeoDataDataItem;
+class Post2dWindowGridTypeDataItem;
 
 class Post2dWindowGeoDataGroupDataItem : public Post2dWindowDataItem
 {
@@ -18,6 +19,7 @@ public:
 	Post2dWindowGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, Post2dWindowDataItem* parent);
 	~Post2dWindowGeoDataGroupDataItem();
 	SolverDefinitionGridAttribute* condition() const;
+	bool colorBarShouldBeVisible() const;
 
 	DelegatedColorMapSettingContainer* colorMapSetting() const;
 	void addCustomMenuItems(QMenu* menu) override;
@@ -27,11 +29,15 @@ public:
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void handleStandardItemChange() override;
+	void updateVisibility(bool visible) override;
 
 	bool addToolBarButtons(QToolBar* toolBar) override;
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;
+
+	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

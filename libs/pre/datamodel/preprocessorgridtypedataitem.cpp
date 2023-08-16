@@ -523,7 +523,7 @@ ModifyCommandDialog* PreProcessorGridTypeDataItem::createApplyColorMapSettingDia
 	return new ApplyColorMapSettingDialog(name, parent, this);
 }
 
-QUndoCommand* PreProcessorGridTypeDataItem::createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply)
+QUndoCommand* PreProcessorGridTypeDataItem::createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply)
 {
 	return new ApplyColorMapSettingAndRenderCommand(command, name, apply, this);
 }

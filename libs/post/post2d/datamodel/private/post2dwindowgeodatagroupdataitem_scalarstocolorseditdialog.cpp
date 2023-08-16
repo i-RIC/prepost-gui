@@ -31,7 +31,7 @@ void Post2dWindowGeoDataGroupDataItem::ScalarsToColorsEditDialog::setSetting(Del
 QUndoCommand* Post2dWindowGeoDataGroupDataItem::ScalarsToColorsEditDialog::createModifyCommand(bool apply)
 {
 	auto typeDataItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (m_item->parent()->parent());
-	return typeDataItem->createApplyColorMapSettingCommand(m_item->condition()->name(), ui->widget->createModifyCommand(apply), apply);
+	return typeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), ui->widget->createModifyCommand(apply), apply);
 }
 
 void Post2dWindowGeoDataGroupDataItem::ScalarsToColorsEditDialog::accept()

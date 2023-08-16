@@ -18,6 +18,7 @@
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <misc/valuechangert.h>
 
 #include <QDomNodeList>
 #include <QMap>
@@ -32,13 +33,9 @@ Post2dWindowGeoDataGroupDataItem::Post2dWindowGeoDataGroupDataItem(SolverDefinit
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cm = colorMapSetting();
-	if (cm != nullptr) {
-		cm->customSetting->legendSetting()->imgSetting()->controller()->setItem(this);
-	}
 	applyColorMapSetting();
 
-	auto gtItem = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent->parent());
+	auto gtItem = gridTypeDataItem();
 	m_toolBarWidgetController = gtItem->createToolBarWidgetController(cond->name(), mainWindow());
 }
 
@@ -52,9 +49,21 @@ SolverDefinitionGridAttribute* Post2dWindowGeoDataGroupDataItem::condition() con
 	return m_condition;
 }
 
+bool Post2dWindowGeoDataGroupDataItem::colorBarShouldBeVisible() const
+{
+	if (! isAncientChecked()) {return false;}
+	if (m_standardItem->checkState() == Qt::Unchecked) {return false;}
+
+	for (auto child : m_childItems) {
+		if (child->standardItem()->checkState() == Qt::Checked) {return true;}
+	}
+
+	return false;
+}
+
 DelegatedColorMapSettingContainer* Post2dWindowGeoDataGroupDataItem::colorMapSetting() const
 {
-	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	return typedi->colorMapSetting(condition()->name());
 }
 
@@ -116,7 +125,7 @@ void Post2dWindowGeoDataGroupDataItem::applyColorMapSetting()
 		auto item = dynamic_cast<Post2dWindowGeoDataDataItem*>(child);
 		item->applyColorMapSetting();
 	}
-	auto typedi = dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
+	auto typedi = gridTypeDataItem();
 	auto setting = typedi->colorMapSetting(condition()->name());
 	if (setting != nullptr) {
 		setting->activeImageSetting()->apply(dataModel()->graphicsView());
@@ -148,6 +157,12 @@ void Post2dWindowGeoDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTK
 	if (setting->usePreSetting) {return;}
 
 	setting->customSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+}
+
+void Post2dWindowGeoDataGroupDataItem::handleStandardItemChange()
+{
+	GraphicsWindowDataItem::handleStandardItemChange();
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
 bool Post2dWindowGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
@@ -183,6 +198,11 @@ QDialog* Post2dWindowGeoDataGroupDataItem::propertyDialog(QWidget* parent)
 	return dialog;
 }
 
+Post2dWindowGridTypeDataItem* Post2dWindowGeoDataGroupDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<Post2dWindowGridTypeDataItem*> (parent()->parent());
+}
+
 void Post2dWindowGeoDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList children = node.childNodes();
@@ -205,4 +225,15 @@ void Post2dWindowGeoDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter&
 		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+}
+
+void Post2dWindowGeoDataGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }

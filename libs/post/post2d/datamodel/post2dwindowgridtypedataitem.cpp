@@ -2,7 +2,7 @@
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowzonedataitem.h"
-#include "private/post2dwindowgridtypedataitem_applycolormapsettingcommand.h"
+#include "private/post2dwindowgridtypedataitem_applycolormapsettingandrendercommand.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h"
 #include "private/post2dwindowgridtypedataitem_precolormapsettingupdatehandler.h"
 #include "private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.h"
@@ -24,6 +24,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
+#include <misc/valuechangert.h>
 
 namespace {
 
@@ -139,9 +140,9 @@ ModifyCommandDialog* Post2dWindowGridTypeDataItem::createApplyColorMapSettingDia
 	return new ApplyColorMapSettingDialog(name, parent, this);
 }
 
-QUndoCommand* Post2dWindowGridTypeDataItem::createApplyColorMapSettingCommand(const std::string& name, QUndoCommand* command, bool apply)
+QUndoCommand* Post2dWindowGridTypeDataItem::createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply)
 {
-	return new ApplyColorMapSettingCommand(command, name, apply, this);
+	return new ApplyColorMapSettingAndRenderCommand(command, name, apply, this);
 }
 
 const ValueRangeContainer& Post2dWindowGridTypeDataItem::nodeValueRange(const std::string& name) const
@@ -211,6 +212,35 @@ DelegatedColorMapSettingContainer* Post2dWindowGridTypeDataItem::colorMapSetting
 const std::unordered_map<std::string, DelegatedColorMapSettingContainer*>& Post2dWindowGridTypeDataItem::colorMapSettingContainers() const
 {
 	return m_colorMapSettingContainers;
+}
+
+void Post2dWindowGridTypeDataItem::updateColorBarVisibility(const std::string& attName)
+{
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+
+	auto cm = colorMapSetting(attName);
+	if (cm == nullptr) {return;}
+	auto actor = cm->activeImageSetting()->actor();
+	m_actor2DCollection->RemoveItem(actor);
+	actor->VisibilityOff();
+
+	bool visible = false;
+	if (m_geoDataItem == nullptr) {return;}
+
+	auto gItem = m_geoDataItem->groupDataItem(attName);
+	visible = visible || gItem->colorBarShouldBeVisible();
+
+	visible = visible && cm->customSetting->legendSetting()->getVisible();
+	if (visible) {
+		auto v = dataModel()->graphicsView();
+		cm->customSetting->legendSetting()->imgSetting()->apply(v);
+		m_actor2DCollection->AddItem(actor);
+	}
+
+	updateVisibility();
 }
 
 void Post2dWindowGridTypeDataItem::setupZoneDataItems()
@@ -292,6 +322,8 @@ void Post2dWindowGridTypeDataItem::applyColorMapSetting(const std::string& name)
 {
 	auto i = m_geoDataItem->groupDataItem(name);
 	i->applyColorMapSetting();
+
+	updateColorBarVisibility(name);
 }
 
 void Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated(const std::string& name)

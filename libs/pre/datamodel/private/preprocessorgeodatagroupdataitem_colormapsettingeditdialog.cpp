@@ -51,7 +51,7 @@ QUndoCommand* PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::creat
 
 void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::accept()
 {
-	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingCommand(m_item->condition()->name(), createModifyCommand(), false));
+	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(), false));
 
 	QDialog::accept();
 }
@@ -75,6 +75,6 @@ void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::handleButtonCl
 
 void PreProcessorGeoDataGroupDataItem::ColorMapSettingEditDialog::apply()
 {
-	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingCommand(m_item->condition()->name(), createModifyCommand(), true));
+	m_item->pushCommand(m_gridTypeDataItem->createApplyColorMapSettingAndRenderCommand(m_item->condition()->name(), createModifyCommand(), true));
 	m_applied = true;
 }

@@ -23,6 +23,7 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void updateZDepthRangeItemCount() override;
 	GraphicsWindowDataModel* dataModel() const override;
+	void handleStandardItemChange() override;
 	void applyColorMapSetting();
 
 private slots:
