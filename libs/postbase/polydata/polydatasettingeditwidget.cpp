@@ -113,7 +113,7 @@ PolyDataSetting PolyDataSettingEditWidget::setting() const
 
 void PolyDataSettingEditWidget::setSetting(const PolyDataSetting& setting)
 {
-	if (setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
+	if (setting.mapping == PolyDataSetting::Mapping::Arbitrary || m_colorTargets.size() == 0) {
 		ui->customColorRadioButton->setChecked(true);
 	} else {
 		ui->valueRadioButton->setChecked(true);

@@ -114,7 +114,7 @@ ParticleDataSetting ParticleDataSettingEditWidget::setting() const
 
 void ParticleDataSettingEditWidget::setSetting(const ParticleDataSetting& setting)
 {
-	if (setting.mapping == ParticleDataSetting::Mapping::Arbitrary) {
+	if (setting.mapping == ParticleDataSetting::Mapping::Arbitrary || m_colorTargets.size() == 0) {
 		ui->customColorRadioButton->setChecked(true);
 	} else {
 		ui->valueRadioButton->setChecked(true);
