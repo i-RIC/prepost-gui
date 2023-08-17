@@ -19,7 +19,9 @@ public:
 		CellCenter,      ///< Cell center
 		EdgeI,
 		EdgeJ,
-		EdgeK
+		EdgeK,
+		Particle,
+		PolyData
 	};
 
 	SolverDefinitionGridOutput(const std::string& name);

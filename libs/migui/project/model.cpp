@@ -583,6 +583,9 @@ void buildOutputGridOutputsForGridType(Model* model, SolverDefinitionGridType* g
 	auto gtCaption = gt->caption();
 
 	for (auto o : gt->outputs()) {
+		if (o->position() == SolverDefinitionGridOutput::Position::Particle) {continue;}
+		if (o->position() == SolverDefinitionGridOutput::Position::PolyData) {continue;}
+
 		ConnectionOutput::ValueType vt = ConnectionOutput::ValueType::Real;
 		auto o2 = dynamic_cast<SolverDefinitionGridOutputOption*> (o);
 		if (o2 != nullptr) {
