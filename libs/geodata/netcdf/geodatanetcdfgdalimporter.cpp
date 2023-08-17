@@ -73,6 +73,7 @@ const QStringList GeoDataNetcdfGdalImporter::fileDialogFilters()
 const QStringList GeoDataNetcdfGdalImporter::acceptableExtensions()
 {
 	QStringList ret;
+	ret.append("tiff");
 	ret.append("tif");
 	ret.append("asc");
 	return ret;
