@@ -498,6 +498,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricGuicore.dll
   ${PREPOST_GUI}/libdlls/Release/iricHdRiversurveywaterelevation.dll
   ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
+  ${PREPOST_GUI}/libdlls/Release/iricMiGui.dll
   ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2dbirdeye.dll
@@ -1774,6 +1775,45 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/hydraulicdata/riversurveywaterelevation/languages/iricHdRiversurveywaterelevation_vi_VN.qm
   ${PREPOST_GUI}/libs/hydraulicdata/riversurveywaterelevation/languages/iricHdRiversurveywaterelevation_zh_CN.qm
   ${PREPOST_GUI}/libs/hydraulicdata/riversurveywaterelevation/languages/iricHdRiversurveywaterelevation_zh_TW.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ar_EG.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_bg_BG.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_bs_BA.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ca_ES.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_cs_CZ.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_da_DK.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_de_DE.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_el_GR.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_es_ES.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_et_EE.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_eu_ES.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_fi_FI.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_fr_FR.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_gl_ES.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_hi_IN.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_hu_HU.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_id_ID.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_is_IS.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_it_IT.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ja_JP.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ko_KR.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ky_KG.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_lt_LT.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_lv_LV.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_nb_NO.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_nl_NL.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_pl_PL.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_pt_BR.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_pt_PT.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ro_RO.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_ru_RU.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_sl_SI.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_sv_SE.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_th_TH.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_tr_TR.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_uk_UA.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_vi_VN.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_zh_CN.qm
+  ${PREPOST_GUI}/libs/migui/languages/iricMiGui_zh_TW.qm
   ${PREPOST_GUI}/libs/misc/languages/iricMisc_ar_EG.qm
   ${PREPOST_GUI}/libs/misc/languages/iricMisc_bg_BG.qm
   ${PREPOST_GUI}/libs/misc/languages/iricMisc_bs_BA.qm
