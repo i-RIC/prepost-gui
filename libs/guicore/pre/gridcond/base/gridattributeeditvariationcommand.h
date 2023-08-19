@@ -20,7 +20,7 @@ public:
 	void undo() override;
 
 private:
-	void copyData(vtkDataArray* data, bool modified);
+	void copyValues(vtkDataArray* data, bool modified);
 
 	vtkSmartPointer<vtkDataArray> m_newValues;
 	vtkSmartPointer<vtkDataArray> m_oldValues;

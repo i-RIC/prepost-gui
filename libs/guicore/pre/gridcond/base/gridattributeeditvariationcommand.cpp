@@ -20,18 +20,18 @@ GridAttributeEditVariationCommand::GridAttributeEditVariationCommand(const std::
 
 void GridAttributeEditVariationCommand::redo()
 {
-	copyData(m_newValues, true);
+	copyValues(m_newValues, true);
 }
 
 void GridAttributeEditVariationCommand::undo()
 {
-	copyData(m_oldValues, m_oldCustomModified);
+	copyValues(m_oldValues, m_oldCustomModified);
 }
 
-void GridAttributeEditVariationCommand::copyData(vtkDataArray* data, bool modified)
+void GridAttributeEditVariationCommand::copyValues(vtkDataArray* data, bool modified)
 {
 	m_attributes->GetArray(m_name.c_str())->DeepCopy(data);
-	m_dataItem->updateAttributeActorSettings();
+	m_dataItem->updateSimplifiedGrid();
 	m_dataItem->informGridAttributeChange(m_name);
 	m_dataItem->grid()->setModified();
 	m_dataItem->grid()->gridAttribute(m_name)->setCustomModified(modified);
