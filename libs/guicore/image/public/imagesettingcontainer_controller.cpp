@@ -95,7 +95,9 @@ void ImageSettingContainer::Controller::handleMousePressEvent(QMouseEvent* event
 void ImageSettingContainer::Controller::handleMousePressEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
 {
 	auto event2 = v->createReverseScaledEvent(*event);
+	if (event2.button() != Qt::LeftButton) {return;}
 
+	updateMouseEventMode(item, event, v);
 	switch (m_mouseEventMode) {
 	case MouseEventMode::MovePrepare:
 		m_mouseEventMode = MouseEventMode::Move;
@@ -124,6 +126,8 @@ void ImageSettingContainer::Controller::handleMouseReleaseEvent(QMouseEvent* eve
 
 void ImageSettingContainer::Controller::handleMouseReleaseEvent(GraphicsWindowDataItem* item, QMouseEvent* event, VTKGraphicsView* v, bool noCursorUpdate)
 {
+	if (event->button() != Qt::LeftButton) {return;}
+
 	updateMouseEventMode(item, event, v);
 	if (! noCursorUpdate) {
 		updateMouseCursor(v);
