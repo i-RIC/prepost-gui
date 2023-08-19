@@ -28,6 +28,11 @@ Graph2dScatteredWindowDataSourceDialog::~Graph2dScatteredWindowDataSourceDialog(
 	}
 }
 
+void Graph2dScatteredWindowDataSourceDialog::setDimension(PostSolutionInfo::Dimension dim)
+{
+	m_dimension = dim;
+}
+
 void Graph2dScatteredWindowDataSourceDialog::setZoneDataContainer(PostZoneDataContainer* cont)
 {
 	m_container = cont;
@@ -37,7 +42,7 @@ void Graph2dScatteredWindowDataSourceDialog::setZoneDataContainer(PostZoneDataCo
 void Graph2dScatteredWindowDataSourceDialog::setSetting(Graph2dScatteredWindowResultSetting& setting)
 {
 	m_setting = setting;
-	QList<Graph2dScatteredWindowResultSetting::Setting>& tmpdata = setting.targetDatas();
+	const auto& tmpdata = setting.targetDatas();
 
 	// x axis
 	int idx = m_xAxisValues.indexOf(setting.xAxis());
@@ -66,13 +71,14 @@ Graph2dScatteredWindowResultSetting Graph2dScatteredWindowDataSourceDialog::sett
 
 	// x axis values
 	int idx = ui->xAxisComboBox->currentIndex();
-	QString newXAxis = m_xAxisValues.at(idx);
+	std::string newXAxis = m_xAxisValues.at(idx);
 	if (m_setting.xAxis() != newXAxis) {
-		ret.setXAxis(newXAxis);
+		ret.setXAxis(newXAxis, ui->xAxisComboBox->currentText());
 		ret.setXAxisAutoRange(true);
 		ret.setXAxisLog(false);
 		ret.setXAxisReverse(false);
 	}
+
 	// y values
 	QList<Graph2dScatteredWindowResultSetting::Setting>& tmpdata = ret.targetDatas();
 	tmpdata.clear();
@@ -84,7 +90,11 @@ Graph2dScatteredWindowResultSetting Graph2dScatteredWindowDataSourceDialog::sett
 			if (s != 0) {
 				tmpdata.append(*s);
 			} else {
-				tmpdata.append(Graph2dScatteredWindowResultSetting::Setting(m_yAxisValues.at(i)));
+				std::string name = m_yAxisValues.at(i);
+				QString caption = ui->yAxisListWidget->item(i)->text();
+				Graph2dScatteredWindowResultSetting::Setting s(name);
+				s.setCaption(caption);
+				tmpdata.append(s);
 			}
 		}
 	}
@@ -103,17 +113,20 @@ void Graph2dScatteredWindowDataSourceDialog::setup()
 	m_yAxisValues.clear();
 
 	// add data values.
-	vtkPointSet* ps = m_container->data()->data();
-	vtkPointData* pd = ps->GetPointData();
+	auto ps = m_container->data()->data();
+	auto pd = ps->GetPointData();
+	auto dt = m_container->gridType();
 	int arrs = pd->GetNumberOfArrays();
 	for (int i = 0; i < arrs; ++i) {
 		vtkAbstractArray* aa = pd->GetAbstractArray(i);
 		vtkDataArray* da = dynamic_cast<vtkDataArray*>(aa);
 		if (da == nullptr) {continue;}
 		if (da->GetNumberOfComponents() != 1) {continue;}
-		QString name = da->GetName();
-		ui->xAxisComboBox->addItem(name);
-		ui->yAxisListWidget->addItem(name);
+
+		std::string name = da->GetName();
+		QString caption = dt->outputCaption(name);
+		ui->xAxisComboBox->addItem(caption);
+		ui->yAxisListWidget->addItem(caption);
 		m_xAxisValues.append(name);
 		m_yAxisValues.append(name);
 	}

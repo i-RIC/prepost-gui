@@ -30,11 +30,11 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 
 	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
 	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	m_colorMapSetting.legend.title = data()->gridType()->output(target)->caption();
+	m_colorMapSetting.legend.title = data()->gridType()->outputCaption(target);
 	m_colorMapSetting.setAutoValueRange(valueRange());
 
 	auto gType = zoneDataItem()->gridTypeDataItem()->gridType();
-	m_standardItem->setText(gType->solutionCaption(m_target));
+	m_standardItem->setText(gType->outputCaption(m_target));
 
 	m_colorMapToolBarWidget->hide();
 	m_colorMapToolBarWidget->setSetting(&m_colorMapSetting);

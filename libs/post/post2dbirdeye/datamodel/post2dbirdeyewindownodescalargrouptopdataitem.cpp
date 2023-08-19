@@ -55,7 +55,7 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 	std::unordered_map<std::string, QString> solutions;
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->dataContainer()->data()->data()->GetPointData())) {
-		solutions.insert({sol, gType->solutionCaption(sol)});
+		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
 	auto dialog = new ValueSelectDialog(p);

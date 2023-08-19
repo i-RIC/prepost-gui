@@ -34,11 +34,11 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 
 	auto cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
+	auto caption = gt->vectorOutputCaption(target);
 
 	m_setting.arrowsSetting.target = target.c_str();
-	auto output = gt->output(target);
-	m_setting.arrowsSetting.legend.title = output->caption();
-	m_standardItem->setText(output->caption());
+	m_standardItem->setText(caption);
+	m_setting.arrowsSetting.legend.title = caption;
 
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);

@@ -27,9 +27,9 @@
 #include <qwt_plot_curve.h>
 
 Graph2dHybridWindowGridIJKResultDataItem::Graph2dHybridWindowGridIJKResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
+	: Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent)
 {
-	m_physVal = setting.name();
+	m_physVal = setting.name().c_str();
 }
 
 Graph2dHybridWindowGridIJKResultDataItem::~Graph2dHybridWindowGridIJKResultDataItem()

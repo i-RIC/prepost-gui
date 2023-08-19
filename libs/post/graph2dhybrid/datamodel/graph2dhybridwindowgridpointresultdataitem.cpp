@@ -25,11 +25,11 @@
 #include <qwt_plot_curve.h>
 
 Graph2dHybridWindowGridPointResultDataItem::Graph2dHybridWindowGridPointResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
-	Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
+	Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent)
 {
 	const auto& s = dataModel()->setting();
 	auto info = s.targetDataTypeInfo();
-	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, iRIC::toStr(setting.name()), s.gridIndex(), info->gridLocation, postSolutionInfo());
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, setting.name(), s.gridIndex(), info->gridLocation, postSolutionInfo());
 }
 
 Graph2dHybridWindowGridPointResultDataItem::~Graph2dHybridWindowGridPointResultDataItem()
@@ -51,7 +51,7 @@ void Graph2dHybridWindowGridPointResultDataItem::updateValues()
 
 	const auto& s = dataModel()->setting();
 	auto info = s.targetDataTypeInfo();
-	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, iRIC::toStr(title()), s.gridIndex(), info->gridLocation, postSolutionInfo());
+	m_dataContainer = new PostZonePointSeriesDataContainer(info->dimension, info->zoneName, m_setting.name(), s.gridIndex(), info->gridLocation, postSolutionInfo());
 	m_dataContainer->update();
 	auto timesteps = dataModel()->postSolutionInfo()->timeSteps()->timesteps();
 

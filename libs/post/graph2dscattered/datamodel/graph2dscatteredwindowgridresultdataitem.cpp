@@ -11,7 +11,7 @@
 #include <cmath>
 
 Graph2dScatteredWindowGridResultDataItem::Graph2dScatteredWindowGridResultDataItem(const Graph2dScatteredWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
-	Graph2dScatteredWindowResultDataItem(setting.name(), index, setting, parent)
+	Graph2dScatteredWindowResultDataItem(setting.caption(), index, setting, parent)
 {
 	m_yAxis = setting.name();
 }
@@ -47,7 +47,7 @@ void Graph2dScatteredWindowGridResultDataItem::updateValues()
 	setupData(m_yValues, m_yAxis, ps);
 }
 
-void Graph2dScatteredWindowGridResultDataItem::setupData(std::vector<double>& vals, const QString& name, vtkPointSet* ps)
+void Graph2dScatteredWindowGridResultDataItem::setupData(std::vector<double>& vals, const std::string& name, vtkPointSet* ps)
 {
 	if (name == Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X) {
 		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
@@ -66,7 +66,7 @@ void Graph2dScatteredWindowGridResultDataItem::setupData(std::vector<double>& va
 		}
 	} else {
 		vtkPointData* pd = ps->GetPointData();
-		vtkDataArray* da = pd->GetArray(iRIC::toStr(name).c_str());
+		vtkDataArray* da = pd->GetArray(name.c_str());
 		double tuple;
 		for (vtkIdType id = 0; id < ps->GetNumberOfPoints(); ++id) {
 			da->GetTuple(id, &tuple);

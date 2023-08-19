@@ -101,7 +101,7 @@ QDialog* Post2dWindowEdgeJScalarGroupTopDataItem::addDialog(QWidget* p)
 	std::unordered_map<std::string, QString> solutions;
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::JFace)->data()->GetPointData())) {
-		solutions.insert({sol, gType->solutionCaption(sol)});
+		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
 	auto dialog = new ValueSelectDialog(p);
@@ -124,7 +124,7 @@ void Post2dWindowEdgeJScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowNodeScalarGroupDataItem(sol, iRICLib::H5CgnsZone::SolutionPosition::JFace, this);
-	newItem->standardItem()->setText(gType->solutionCaption(sol));
+	newItem->standardItem()->setText(gType->outputCaption(sol));
 
 	m_childItems.push_back(newItem);
 	updateItemMap();

@@ -1,4 +1,5 @@
 #include "../post2dwindowcellscalargrouptopdataitem.h"
+#include "../post2dwindowgridtypedataitem.h"
 #include "../post2dwindowzonedataitem.h"
 #include "post2dwindowcellscalargroupdataitem_impl.h"
 #include "post2dwindowcellscalargroupdataitem_settingeditwidget.h"
@@ -7,6 +8,8 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
@@ -32,9 +35,10 @@ Post2dWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 		sgrid->GetDimensions(dims);
 		ui->rangeWidget->setDimensions(dims[0] - 1, dims[1] - 1); // cell
 	}
+	auto output = item->topDataItem()->zoneDataItem()->gridTypeDataItem()->gridType()->output(item->target());
 
-	auto cmw = new ColorMapSettingEditWidget(this);
-	cmw->setSetting(&item->impl->m_setting.colorMapSetting);
+	auto cmw = output->createColorMapSettingEditWidget(this);
+	cmw->setSetting(item->impl->m_setting.colorMapSetting);
 	m_colorMapWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
 
 	ui->colorMapWidget->setWidget(m_colorMapWidget);

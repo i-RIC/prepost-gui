@@ -30,9 +30,11 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 	impl->m_solutionPosition = position;
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	auto output = gType->output(target);
-	standardItem()->setText(output->caption());
+	QString caption = gType->outputCaption(target);
+	SolverDefinitionGridOutput* output = gType->output(target);
+	standardItem()->setText(caption);
 	auto cs = output->createColorMapSettingContainer();
+	cs->legendSetting()->setTitle(caption);
 	impl->m_setting.colorMapSetting = cs;
 	impl->m_setting.contourSetting.setColorMapSetting(cs);
 
@@ -133,7 +135,6 @@ void Post2dWindowNodeScalarGroupDataItem::setupActors()
 
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
 	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->setItem(this);
-	impl->m_setting.colorMapSetting->legendSetting()->setTitle(topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(target())->caption());
 
 	updateActorSetting();
 }

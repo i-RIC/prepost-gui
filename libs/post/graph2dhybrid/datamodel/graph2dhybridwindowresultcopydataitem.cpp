@@ -125,7 +125,7 @@ void Graph2dHybridWindowResultCopyDataItem::setTitle(const QString& title)
 	m_standardItem->setText(title);
 	m_standardItemCopy = m_standardItem->clone();
 	m_curve->setTitle(title);
-	m_setting.setName(title);
+	m_setting.setCaption(title);
 }
 
 void Graph2dHybridWindowResultCopyDataItem::setVisible(bool visible)
@@ -144,7 +144,7 @@ void Graph2dHybridWindowResultCopyDataItem::setSetting(const Graph2dHybridWindow
 {
 	m_setting = s;
 	m_setting.setupCurve(m_curve);
-	setTitle(s.name());
+	setTitle(s.caption());
 }
 
 const Graph2dHybridWindowResultSetting::Setting& Graph2dHybridWindowResultCopyDataItem::setting() const

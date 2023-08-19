@@ -13,6 +13,8 @@
 
 #include <h5cgnszone.h>
 
+#include <map>
+
 class GeoDataPolyLine;
 class GeoDataPolyLineGroup;
 class GeoDataPolyLineGroupPolyLine;
@@ -22,6 +24,7 @@ class Graph2dWindowDataItem;
 class PostZoneDataContainer;
 class ColorSource;
 class QwtPlotCustomCurve;
+class SolverDefinition;
 class SolverDefinitionGridType;
 class QDomNode;
 class QXmlStreamWriter;
@@ -117,11 +120,13 @@ public:
 
 	public:
 		Setting();
-		Setting(const QString& name);
+		Setting(const std::string& name);
 
 		void setupCurve(QwtPlotCustomCurve* curve) const;
-		const QString& name() const;
-		void setName(const QString& name);
+		const std::string& name() const;
+		void setName(const std::string& name);
+		const QString& caption() const;
+		void setCaption(const QString& caption);
 		AxisSide axisSide() const;
 		void setAxisSide(AxisSide as);
 		int lineWidth() const;
@@ -140,7 +145,8 @@ public:
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 
 	private:
-		QString m_name;
+		std::string m_name;
+		QString m_caption;
 		AxisSide m_axisSide;
 		int m_lineWidth;
 		QColor m_customColor;
@@ -154,7 +160,7 @@ public:
 		DataType dataType;
 		PostSolutionInfo::Dimension dimension;
 		std::string zoneName;
-		QMap<iRICLib::H5CgnsZone::SolutionPosition, QStringList> dataNamesMap;
+		QMap<iRICLib::H5CgnsZone::SolutionPosition, std::map<std::string, QString>> dataNamesMap;
 		SolverDefinitionGridType* gridType;
 		iRICLib::H5CgnsZone::SolutionPosition gridLocation;
 		void loadFromProjectMainFile(const QDomNode& node);
@@ -162,11 +168,10 @@ public:
 		bool operator==(const DataTypeInfo& info);
 	};
 
-	// constructor
 	Graph2dHybridWindowResultSetting();
 	~Graph2dHybridWindowResultSetting();
 
-	bool init(PostSolutionInfo* sol);
+	bool init(PostSolutionInfo* sol, SolverDefinition* def);
 	bool settingExists();
 
 	QList<Graph2dWindowDataItem*> setupItems(Graph2dHybridWindowResultGroupDataItem* gItem) const ;

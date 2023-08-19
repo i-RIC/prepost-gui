@@ -21,7 +21,7 @@ class Graph2dScatteredWindowDataSourceDialog : public QDialog
 public:
 	explicit Graph2dScatteredWindowDataSourceDialog(QWidget* parent = nullptr);
 	~Graph2dScatteredWindowDataSourceDialog();
-	void setDimension(PostSolutionInfo::Dimension dim) {m_dimension = dim;}
+	void setDimension(PostSolutionInfo::Dimension dim);
 	void setZoneDataContainer(PostZoneDataContainer* cont);
 
 	void setSetting(Graph2dScatteredWindowResultSetting& setting);
@@ -38,8 +38,8 @@ private:
 
 	QList<Graph2dScatteredWindowResultSetting::Setting*> m_initialSettings;
 
-	QStringList m_xAxisValues;
-	QStringList m_yAxisValues;
+	QList<std::string> m_xAxisValues;
+	QList<std::string> m_yAxisValues;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWDATASOURCEDIALOG_H

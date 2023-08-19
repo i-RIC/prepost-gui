@@ -21,6 +21,7 @@
 #include "solverdefinitionoutput.h"
 #include "private/solverdefinitiongridtype_impl.h"
 
+#include <QRegExp>
 #include <QStringList>
 
 #include <misc/stringtool.h>
@@ -327,6 +328,38 @@ SolverDefinitionGridOutput* SolverDefinitionGridType::output(const std::string& 
 	return output;
 }
 
+QString SolverDefinitionGridType::outputCaption(const std::string& name) const
+{
+	QRegExp re("^(.+) \\(magnitude\\)$");
+	auto pos = re.indexIn(name.c_str());
+	if (pos >= 0) {
+		auto target2 = iRIC::toStr(re.cap(1)) + "X";
+		auto o = output(target2);
+		auto caption = o->caption();
+		return QString("%1 (magnitude)").arg(caption.left(caption.length() - 1));
+	} else {
+		auto o = output(name);
+		return o->caption();
+	}
+}
+
+QString SolverDefinitionGridType::vectorOutputCaption(const std::string& name) const
+{
+	std::string nameX = name;
+	nameX.append("X");
+	auto captionX = outputCaption(nameX);
+	return captionX.left(captionX.length() - 1);
+}
+
+QStringList SolverDefinitionGridType::outputCaptions(const std::vector<std::string>& names) const
+{
+	QStringList ret;
+	for (auto name : names) {
+		ret.push_back(outputCaption(name));
+	}
+	return ret;
+}
+
 const std::vector<SolverDefinitionGridType::GridType>& SolverDefinitionGridType::availableGridTypes() const
 {
 	return impl->m_availableGridTypes;
@@ -417,21 +450,6 @@ Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
 	}
 	if (ret != 0){
 		buildGridAttributes(ret);
-	}
-	return ret;
-}
-
-QString SolverDefinitionGridType::solutionCaption(const std::string& name) const
-{
-	auto o = output(name);
-	return o->caption();
-}
-
-QStringList SolverDefinitionGridType::solutionCaptions(const std::vector<std::string>& names) const
-{
-	QStringList ret;
-	for (auto name : names) {
-		ret.push_back(solutionCaption(name));
 	}
 	return ret;
 }

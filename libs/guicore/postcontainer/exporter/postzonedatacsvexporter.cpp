@@ -1,6 +1,8 @@
 #include "postzonedatacsvexporter.h"
 #include "../postzonedatacontainer.h"
 
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+
 #include <QFile>
 #include <QTextStream>
 #include <QVector2D>
@@ -43,11 +45,12 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 	stream << ",Y";
 	if (dim[2] != 1){stream << ",Z";}
 	vtkPointData* pData = sgrid->GetPointData();
+	auto gtype = c->gridType();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
 		int comps = array->GetNumberOfComponents();
-		QString name = pData->GetArrayName(i);
-		outputHeaders(name, comps, &(dim[0]), stream);
+		QString caption = gtype->outputCaption(pData->GetArrayName(i));
+		outputHeaders(caption, comps, &(dim[0]), stream);
 	}
 	vtkCellData* cData = sgrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
@@ -216,7 +219,7 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 	}
 }
 
-void exportUnstructuredGrid(QTextStream& stream, vtkUnstructuredGrid* ugrid)
+void exportUnstructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkUnstructuredGrid* ugrid)
 {
 	stream << ugrid->GetNumberOfPoints();
 	stream << "\r\n";
@@ -225,17 +228,18 @@ void exportUnstructuredGrid(QTextStream& stream, vtkUnstructuredGrid* ugrid)
 	stream << ",X";
 	stream << ",Y";
 	vtkPointData* pData = ugrid->GetPointData();
+	auto gtype = c->gridType();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
 		if (array == 0){continue;}
 		int comps = array->GetNumberOfComponents();
-		QString name = pData->GetArrayName(i);
+		QString caption = gtype->outputCaption(pData->GetArrayName(i));
 		if (comps == 1){
-			stream << "," << name;
+			stream << "," << caption;
 		} else if (comps == 2){
-			stream << "," << name << "X," << name << "Y";
+			stream << "," << caption << "X," << caption << "Y";
 		} else if (comps == 3){
-			stream << "," << name << "X," << name << "Y";
+			stream << "," << caption << "X," << caption << "Y";
 		}
 	}
 	stream << "\r\n";
@@ -306,7 +310,7 @@ bool PostZoneDataCsvExporter::exportToFile(PostZoneDataContainer* c, const QStri
 	} else if (ugrid != 0){
 		vtkSmartPointer<vtkUnstructuredGrid> copy;
 		vtkUnstructuredGrid* grid = applyOffset<vtkUnstructuredGrid>(ugrid, copy, offset);
-		exportUnstructuredGrid(stream, grid);
+		exportUnstructuredGrid(c, stream, grid);
 	}
 	f.close();
 	return true;

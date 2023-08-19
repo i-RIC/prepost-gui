@@ -111,7 +111,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget:
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
-	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+	ComboBoxTool::setupItems(gt->outputCaptions(m_solutions), ui->solutionComboBox);
 
 	if (m_solutions.size() < 2) {
 		m_item->m_setting.target = m_solutions[0].c_str();

@@ -33,7 +33,7 @@ void Graph2dHybridWindowDrawSettingDialog::setResultSettings(const QList<Graph2d
 	ui->resultListWidget->clear();
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::Setting setting = list.at(i);
-		ui->resultListWidget->addItem(setting.name());
+		ui->resultListWidget->addItem(setting.caption());
 	}
 	ui->resultListWidget->setCurrentRow(0);
 }
@@ -49,7 +49,7 @@ void Graph2dHybridWindowDrawSettingDialog::setCopySettings(const QList<Graph2dHy
 	ui->copyListWidget->clear();
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::Setting setting = list.at(i);
-		ui->copyListWidget->addItem(setting.name());
+		ui->copyListWidget->addItem(setting.caption());
 	}
 	if (list.count() > 0) {
 		ui->copyListWidget->setCurrentRow(0);
@@ -69,7 +69,7 @@ void Graph2dHybridWindowDrawSettingDialog::setImportDataSettings(const QList<Gra
 	ui->extListWidget->clear();
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dHybridWindowResultSetting::Setting setting = list.at(i);
-		ui->extListWidget->addItem(setting.name());
+		ui->extListWidget->addItem(setting.caption());
 	}
 	if (list.count() > 0) {
 		ui->extListWidget->setCurrentRow(0);

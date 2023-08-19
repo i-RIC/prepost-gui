@@ -21,9 +21,9 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateValues() override;
 
-	static void setupData(std::vector<double>& vals, const QString& name, vtkPointSet* ps);
+	static void setupData(std::vector<double>& vals, const std::string& name, vtkPointSet* ps);
 
-	QString m_yAxis;
+	std::string m_yAxis;
 };
 
 #endif // GRAPH2DSCATTEREDWINDOWGRIDRESULTDATAITEM_H

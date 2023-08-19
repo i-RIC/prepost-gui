@@ -35,19 +35,14 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-
-	std::string nameX = target;
-	nameX.append("X");
-	auto captionX = gt->output(nameX)->caption();
-	auto caption = captionX.left(captionX.length() - 1);
+	auto caption = gt->vectorOutputCaption(target);
 	standardItem()->setText(caption);
 
 	m_setting.target = target.c_str();
 	m_setting.legend.title = caption;
 
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
-		auto output = gt->output(pair.first);
-		createOrUpdateColorMapsSetting(output, pair.second);
+		createOrUpdateColorMapsSetting(gt, pair.first, pair.second);
 	}
 
 	m_arrowsToolBarWidget->hide();
@@ -177,15 +172,16 @@ Post2dWindowNodeVectorArrowGroupTopDataItem* Post2dWindowNodeVectorArrowGroupDat
 	return dynamic_cast<Post2dWindowNodeVectorArrowGroupTopDataItem*> (parent());
 }
 
-void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range)
+void Post2dWindowNodeVectorArrowGroupDataItem::createOrUpdateColorMapsSetting(SolverDefinitionGridType* gtype, const std::string& name, const ValueRangeContainer& range)
 {
+	auto output = gtype->output(name);
 	ColorMapSettingContainerI* setting = nullptr;
-	auto it = m_colorMapSettings.find(output->name());
+	auto it = m_colorMapSettings.find(name);
 	if (it == m_colorMapSettings.end()) {
 		setting = output->createColorMapSettingContainer();
-		setting->valueCaption = output->caption();
-		setting->legendSetting()->setTitle(output->caption());
-		m_colorMapSettings.insert({output->name(), setting});
+		setting->valueCaption = gtype->outputCaption(name);
+		setting->legendSetting()->setTitle(gtype->outputCaption(name));
+		m_colorMapSettings.insert({name, setting});
 	} else {
 		setting = it->second;
 	}

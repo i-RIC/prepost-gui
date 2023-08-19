@@ -31,10 +31,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	r->AddActor2D(m_legendActor);
 
 	auto gt = data()->gridType();
-	std::string nameX = target;
-	nameX.append("X");
-	auto captionX = gt->output(nameX)->caption();
-	auto caption = captionX.left(captionX.length() - 1);
+	auto caption = gt->vectorOutputCaption(target);
 	m_standardItem->setText(caption);
 
 	m_setting.target = target.c_str();
@@ -43,17 +40,18 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_setting.legend.title = caption;
 
 	for (const auto& pair : data()->data()->valueRangeSet().pointDataValueRanges()) {
-		auto cs = new ColorMapSettingContainer();
-		auto caption = gt->output(pair.first)->caption();
+		auto output = gt->output(pair.first);
+		auto cs = output->createColorMapSettingContainer();
+		auto caption = gt->outputCaption(pair.first);
 		cs->valueCaption = caption;
-		cs->legend.title = caption;
+		cs->legendSetting()->setTitle(caption);
 		cs->setAutoValueRange(pair.second);
 
 		auto actor = vtkActor2D::New();
 		r->AddActor2D(actor);
 
-		cs->legend.imageSetting.setActor(actor);
-		cs->legend.imageSetting.controller()->setItem(this);
+		cs->legendSetting()->imgSetting()->setActor(actor);
+		cs->legendSetting()->imgSetting()->controller()->setItem(this);
 
 		m_colorMapSettings.insert({pair.first, cs});
 		m_colorMapActors.push_back(actor);

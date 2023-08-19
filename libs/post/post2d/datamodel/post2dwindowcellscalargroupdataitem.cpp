@@ -26,12 +26,17 @@ Post2dWindowCellScalarGroupDataItem::Post2dWindowCellScalarGroupDataItem(const s
 	impl->m_target = target;
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	standardItem()->setText(gType->output(target)->caption());
+	QString caption = gType->outputCaption(target);
+	SolverDefinitionGridOutput* output = gType->output(target);
+	standardItem()->setText(caption);
+	auto cs = output->createColorMapSettingContainer();
+	cs->legendSetting()->setTitle(caption);
+	impl->m_setting.colorMapSetting = cs;
 
 	impl->m_colorMapToolBarWidget->hide();
-	impl->m_colorMapToolBarWidget->setSetting(&impl->m_setting.colorMapSetting);
+	impl->m_colorMapToolBarWidget->setSetting(impl->m_setting.colorMapSetting);
 	connect(impl->m_colorMapToolBarWidget, &ColorMapSettingToolBarWidget::updated, [=](){
-		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), &impl->m_setting.colorMapSetting);
+		auto com = new ColorMapSettingModifyCommand(impl->m_colorMapToolBarWidget->modifiedSetting(), impl->m_setting.colorMapSetting);
 		pushUpdateActorSettingCommand(com, this);
 	});
 
@@ -73,7 +78,7 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSetting()
 	}
 
 	auto range = z->gridTypeDataItem()->cellValueRange(impl->m_target);
-	impl->m_setting.colorMapSetting.setAutoValueRange(range);
+	impl->m_setting.colorMapSetting->setAutoValueRange(range);
 
 	vtkPointSet* filtered = nullptr;
 	if (impl->m_setting.regionSetting.mode == Region2dSettingContainer::Mode::Full) {
@@ -87,17 +92,17 @@ void Post2dWindowCellScalarGroupDataItem::updateActorSetting()
 	if (filtered == nullptr) {return;}
 
 	filtered->GetCellData()->SetActiveScalars(impl->m_target.c_str());
-	auto mapper = impl->m_setting.colorMapSetting.buildCellDataMapper(filtered, false);
+	auto mapper = impl->m_setting.colorMapSetting->buildCellDataMapper(filtered, false);
 	impl->m_actor->SetMapper(mapper);
 
 	filtered->Delete();
 	mapper->Delete();
 
-	impl->m_setting.colorMapSetting.legend.imageSetting.apply(dataModel()->graphicsView());
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->apply(dataModel()->graphicsView());
 	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 
 	m_actor2DCollection->RemoveAllItems();
-	if (impl->m_setting.colorMapSetting.legend.visible) {
+	if (impl->m_setting.colorMapSetting->legendSetting()->getVisible()) {
 		m_actor2DCollection->AddItem(impl->m_legendActor);
 	}
 
@@ -123,9 +128,8 @@ void Post2dWindowCellScalarGroupDataItem::setupActors()
 
 	m_actorCollection->AddItem(impl->m_actor);
 
-	impl->m_setting.colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->setItem(this);
-	impl->m_setting.colorMapSetting.legend.title = topDataItem()->zoneDataItem()->dataContainer()->gridType()->solutionCaption(target());
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->setActor(impl->m_legendActor);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->setItem(this);
 
 	updateActorSetting();
 }
@@ -191,18 +195,18 @@ void Post2dWindowCellScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v
 
 void Post2dWindowCellScalarGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	topDataItem()->zoneDataItem()->updateCellResultAttributeBrowser(event->pos(), v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	if (event->button() == Qt::LeftButton) {
 		topDataItem()->zoneDataItem()->fixCellResultAttributeBrowser(event->pos(), v);
 	}
@@ -210,7 +214,7 @@ void Post2dWindowCellScalarGroupDataItem::mouseReleaseEvent(QMouseEvent* event, 
 
 void Post2dWindowCellScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	impl->m_setting.colorMapSetting.legend.imageSetting.controller()->handleResize(event, v);
+	impl->m_setting.colorMapSetting->legendSetting()->imgSetting()->controller()->handleResize(event, v);
 }
 
 void Post2dWindowCellScalarGroupDataItem::addCustomMenuItems(QMenu* menu)

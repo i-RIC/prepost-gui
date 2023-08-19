@@ -73,9 +73,9 @@ private:
 	void setupMainWidgets();
 	void enableMainWidgets(bool enable);
 
-	void setupWidgetForDim(QLabel* dataLabel, QComboBox* dataComboBox, QLabel* locationLabel, QComboBox* locationComboBox, QListWidget* dataListWidget, const QList<Graph2dHybridWindowResultSetting::DataTypeInfo*>& dataList);
-	void handleDataComboBoxChange(int index, QComboBox* comboBox, QListWidget* dataListWidget, Graph2dHybridWindowResultSetting::DimType dimType);
-	void handleLocationComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, Graph2dHybridWindowResultSetting::DimType dimType);
+	void setupWidgetForDim(QLabel* dataLabel, QComboBox* dataComboBox, QLabel* locationLabel, QComboBox* locationComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, const QList<Graph2dHybridWindowResultSetting::DataTypeInfo*>& dataList);
+	void handleDataComboBoxChange(int index, QComboBox* comboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType);
+	void handleLocationComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType);
 
 	void clearListSelectionExcept(QListWidget* listWidget);
 
@@ -84,6 +84,7 @@ private:
 	void updateImportDataList();
 	void updateButtonStatus();
 	QListWidget* getActiveListWidget();
+	const std::vector<std::string>& getActiveDataNameList() const;
 	void updateLists(QListWidget* widget);
 	QList<Graph2dHybridWindowResultSetting::XAxisMode> m_xAxisModes;
 	Graph2dHybridWindowResultSetting m_setting;
@@ -95,6 +96,10 @@ private:
 	Graph2dHybridWindowImportDataGroupDataItem* m_importDataGroup;
 
 	std::vector<QWidget*> m_mainWidgets;
+	std::vector<std::string> m_pointDataNameList;
+	std::vector<std::string> m_oneDimDataNameList;
+	std::vector<std::string> m_twoDimDataNameList;
+	std::vector<std::string> m_threeDimDataNameList;
 
 	iRICMainWindowInterface* m_mainWindow;
 

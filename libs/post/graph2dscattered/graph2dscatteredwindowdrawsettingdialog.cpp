@@ -23,7 +23,7 @@ void Graph2dScatteredWindowDrawSettingDialog::setResultSettings(const QList<Grap
 	ui->resultListWidget->clear();
 	for (int i = 0; i < list.count(); ++i) {
 		Graph2dScatteredWindowResultSetting::Setting setting = list.at(i);
-		ui->resultListWidget->addItem(setting.name());
+		ui->resultListWidget->addItem(setting.caption());
 	}
 	ui->resultListWidget->setCurrentRow(0);
 }

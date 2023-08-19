@@ -25,7 +25,7 @@ void Graph2dScatteredWindowSettingWidget::setSetting(Graph2dScatteredWindowResul
 {
 	m_setting = setting;
 	this->blockSignals(true);
-	ui->labelLineEdit->setText(setting->name());
+	ui->labelLineEdit->setText(setting->caption());
 	if (setting->axisSide() == Graph2dScatteredWindowResultSetting::asLeft) {
 		ui->yAxisLeftRadioButton->setChecked(true);
 	} else {
@@ -40,7 +40,7 @@ void Graph2dScatteredWindowSettingWidget::setSetting(Graph2dScatteredWindowResul
 
 void Graph2dScatteredWindowSettingWidget::updateLabel(const QString& label)
 {
-	m_setting->setName(label);
+	m_setting->setCaption(label);
 	emit labelChanged(label);
 }
 

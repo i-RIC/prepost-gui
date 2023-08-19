@@ -35,7 +35,7 @@ Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGro
 	auto gt = cont->gridType();
 
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
-		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->output(name)->caption(), this);
+		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->outputCaption(name), this);
 		m_childItems.push_back(item);
 	}
 	m_toolBarWidget->hide();
