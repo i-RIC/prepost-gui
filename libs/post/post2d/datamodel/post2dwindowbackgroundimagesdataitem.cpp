@@ -189,8 +189,24 @@ void Post2dWindowBackgroundImagesDataItem::deleteAll()
 	}
 }
 
-void Post2dWindowBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{}
+void Post2dWindowBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	auto nodeList = node.childNodes();
+	for (int i = 0; i < nodeList.count(); ++i) {
+		auto childElem = nodeList.at(i).toElement();
+		if (i < static_cast<int> (m_childItems.size())) {
+			auto iItem = dynamic_cast<Post2dWindowBackgroundImageDataItem*> (m_childItems.at(i));
+			iItem->loadFromProjectMainFile(childElem);
+		}
+	}
+}
 
-void Post2dWindowBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{}
+void Post2dWindowBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	for (auto child : m_childItems) {
+		auto iItem = dynamic_cast<Post2dWindowBackgroundImageDataItem*> (child);
+		writer.writeStartElement("BackgroundImage");
+		iItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+}

@@ -6,6 +6,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/qttool.h>
@@ -19,6 +20,7 @@
 #include <vtkRenderer.h>
 
 #include <algorithm>
+#include <unordered_map>
 
 PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
@@ -44,7 +46,7 @@ PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(Graph
 void PreProcessorBackgroundImagesDataItem::addChildItem()
 {
 	BackgroundImageInfo* image = *(projectData()->mainfile()->backgroundImages().begin());
-	PreProcessorBackgroundImageDataItem* iItem = new PreProcessorBackgroundImageDataItem(image, this);
+	auto iItem = new PreProcessorBackgroundImageDataItem(image, this);
 	// make the standard item top.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(iItem->standardItem()->row());
 	m_standardItem->insertRows(0, takenItems);
@@ -63,10 +65,10 @@ void PreProcessorBackgroundImagesDataItem::deleteChildItem(int i)
 	auto it = m_childItems.begin();
 	delete *(it + i);
 	dynamic_cast<PreProcessorRootDataItem*>(parent())->updateItemMap();
-	for (it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorBackgroundImageDataItem* bgItem = dynamic_cast<PreProcessorBackgroundImageDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto bgItem = dynamic_cast<PreProcessorBackgroundImageDataItem*>(child);
 		QModelIndex idx = bgItem->standardItem()->index();
-		if (idx != dataModel()->objectBrowserView()->currentIndex()) { continue; }
+		if (idx != dataModel()->objectBrowserView()->currentIndex()) {continue;}
 		bgItem->updateMoveUpDownActions(dataModel()->objectBrowserView());
 	}
 	renderGraphicsView();
@@ -75,7 +77,7 @@ void PreProcessorBackgroundImagesDataItem::deleteChildItem(int i)
 void PreProcessorBackgroundImagesDataItem::moveUpChildItem(int i)
 {
 	// reorder the standard item.
-	QList<QStandardItem*> items = m_standardItem->takeRow(i);
+	auto items = m_standardItem->takeRow(i);
 	m_standardItem->insertRows(i - 1, items);
 
 	// reorder the m_childItems.
@@ -95,7 +97,7 @@ void PreProcessorBackgroundImagesDataItem::moveUpChildItem(int i)
 void PreProcessorBackgroundImagesDataItem::moveDownChildItem(int i)
 {
 	// reorder the standard item.
-	QList<QStandardItem*> items = m_standardItem->takeRow(i);
+	auto items = m_standardItem->takeRow(i);
 	m_standardItem->insertRows(i + 1, items);
 
 	// reorder the m_childList.
@@ -166,8 +168,24 @@ void PreProcessorBackgroundImagesDataItem::deleteAll()
 	}
 }
 
-void PreProcessorBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{}
+void PreProcessorBackgroundImagesDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	auto nodeList = node.childNodes();
+	for (int i = 0; i < nodeList.count(); ++i) {
+		auto childElem = nodeList.at(i).toElement();
+		if (i < static_cast<int> (m_childItems.size())) {
+			auto iItem = dynamic_cast<PreProcessorBackgroundImageDataItem*> (m_childItems.at(i));
+			iItem->loadFromProjectMainFile(childElem);
+		}
+	}
+}
 
-void PreProcessorBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{}
+void PreProcessorBackgroundImagesDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	for (auto child : m_childItems) {
+		auto iItem = dynamic_cast<PreProcessorBackgroundImageDataItem*> (child);
+		writer.writeStartElement("BackgroundImage");
+		iItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+}

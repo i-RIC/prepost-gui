@@ -79,10 +79,14 @@ BackgroundImageInfo* Post2dWindowBackgroundImageDataItem::imageInfo() const
 }
 
 void Post2dWindowBackgroundImageDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
+{
+	updateVisibilityWithoutRendering();
+}
 
-void Post2dWindowBackgroundImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
-{}
+void Post2dWindowBackgroundImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	writer.writeAttribute("fileName", m_imageInfo->fileName());
+}
 
 void Post2dWindowBackgroundImageDataItem::assignActorZValues(const ZDepthRange& range)
 {

@@ -75,10 +75,14 @@ void PreProcessorBackgroundImageDataItem::updateZDepthRangeItemCount()
 }
 
 void PreProcessorBackgroundImageDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
+{
+	updateVisibilityWithoutRendering();
+}
 
-void PreProcessorBackgroundImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
-{}
+void PreProcessorBackgroundImageDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	writer.writeAttribute("fileName", m_imageInfo->fileName());
+}
 
 void PreProcessorBackgroundImageDataItem::assignActorZValues(const ZDepthRange& range)
 {
