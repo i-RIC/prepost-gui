@@ -1478,11 +1478,12 @@ void iRICMainWindow::openVerificationDialog()
 	if (index == 10) {
 		index = 1;
 	}
-	ProjectPostProcessors* posts = m_projectData->mainfile()->postProcessors();
-	PostProcessorWindowProjectDataItem* item = m_postWindowFactory->factory("graph2dverificationwindow", posts, this);
-	Graph2dVerificationWindowProjectDataItem* item2 = dynamic_cast<Graph2dVerificationWindowProjectDataItem*>(item);
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("graph2dverificationwindow", posts, this);
+	auto item2 = dynamic_cast<Graph2dVerificationWindowProjectDataItem*>(item);
 	bool ok = item2->setupInitialSetting();
 	if (!ok) {
+		item->window()->setParent(nullptr);
 		delete item;
 		return;
 	}
