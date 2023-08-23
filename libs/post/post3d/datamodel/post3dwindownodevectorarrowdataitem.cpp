@@ -41,7 +41,6 @@ XmlAttributeContainer& Post3dWindowNodeVectorArrowDataItem::Setting::operator=(c
 Post3dWindowNodeVectorArrowDataItem::Post3dWindowNodeVectorArrowDataItem(const QString& label, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_actor {vtkActor::New()},
-	m_transformFilter {vtkTransformFilter::New()},
 	m_setting {},
 	m_zScale {1},
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
@@ -76,7 +75,6 @@ Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
 	r->RemoveActor(m_actor);
 
 	m_actor->Delete();
-	m_transformFilter->Delete();
 }
 
 vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
@@ -166,10 +164,6 @@ void Post3dWindowNodeVectorArrowDataItem::innerUpdateZScale(double zscale)
 {
 	m_zScale = zscale;
 
-	auto t = vtkSmartPointer<vtkTransform>::New();
-	t->Scale(1, 1, zscale);
-	m_transformFilter->SetTransform(t);
-
 	updateActorSetting();
 }
 
@@ -182,9 +176,6 @@ void Post3dWindowNodeVectorArrowDataItem::setupActors()
 {
 	auto r = renderer();
 	r->AddActor(m_actor);
-
-	auto t = vtkSmartPointer<vtkTransform>::New();
-	m_transformFilter->SetTransform(t);
 }
 
 void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
@@ -208,10 +199,6 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	auto filteredData = groupDataItem()->m_setting.buildFilteredData(sampledData);
 	sampledData->Delete();
 
-	m_transformFilter->SetInputData(filteredData);
-	m_transformFilter->Update();
-	filteredData->Delete();
-
 	const auto& groupSetting = groupDataItem()->m_setting;
 	m_setting.arrow.target = groupSetting.target;
 	m_setting.arrow.standardValue = groupSetting.standardValue;
@@ -219,7 +206,8 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	m_setting.arrow.minimumValue = groupSetting.minimumValue;
 
 	auto v = dataModel()->graphicsView();
-	auto arrowsData = m_setting.arrow.buildArrowsPolygonData(m_transformFilter->GetOutput(), v, 1);
+	auto arrowsData = m_setting.arrow.buildArrowsPolygonData(filteredData, v, m_zScale);
+	filteredData->Delete();
 
 	if (m_setting.arrow.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();

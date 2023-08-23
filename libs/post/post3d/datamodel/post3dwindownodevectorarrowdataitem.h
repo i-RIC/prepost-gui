@@ -13,8 +13,6 @@
 class ArrowsSettingToolBarWidget;
 class Post3dWindowNodeVectorArrowGroupDataItem;
 
-class vtkTransformFilter;
-
 class Post3dWindowNodeVectorArrowDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
@@ -63,7 +61,6 @@ private:
 	Post3dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;
 
 	vtkActor* m_actor;
-	vtkTransformFilter* m_transformFilter;
 
 	Setting m_setting;
 	double m_zScale;
