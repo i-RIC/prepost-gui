@@ -172,6 +172,9 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 
 void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
+	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
+
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
@@ -202,9 +205,9 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-//	writer.writeStartElement("BackgroundImages");
-//	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
-//	writer.writeEndElement();
+	writer.writeStartElement("BackgroundImages");
+	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
 
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		writer.writeStartElement("GridType");
