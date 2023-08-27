@@ -8,6 +8,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
@@ -46,16 +47,14 @@ Post2dWindowMeasuredDataTopDataItem::Post2dWindowMeasuredDataTopDataItem(Graphic
 }
 
 Post2dWindowMeasuredDataTopDataItem::~Post2dWindowMeasuredDataTopDataItem()
-{
-
-}
+{}
 
 void Post2dWindowMeasuredDataTopDataItem::setupChildItem()
 {
 	if (projectData()->mainfile()->measuredDatas().size() == 0) {return;}
 	const auto& measuredDatas = projectData()->mainfile()->measuredDatas();
-	for (auto it = measuredDatas.begin(); it != measuredDatas.end(); ++it) {
-		MeasuredDataFileDataItem* fItem = new MeasuredDataFileDataItem(*it, this);
+	for (auto data : measuredDatas) {
+		auto fItem = new MeasuredDataFileDataItem(data, this);
 		// there is no need to make the standard item top.
 		m_childItems.push_back(fItem);
 	}
@@ -66,16 +65,31 @@ void Post2dWindowMeasuredDataTopDataItem::setupChildItem()
 	setModified();
 }
 
-void Post2dWindowMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
+void Post2dWindowMeasuredDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	std::unordered_map<int, MeasuredDataFileDataItem*> items;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<MeasuredDataFileDataItem*> (child);
+		items.insert({item->measuredData()->index(), item});
+	}
 
+	QDomNodeList children = node.childNodes();
+	for (int i = 0; i < children.count(); ++i) {
+		QDomElement child = children.at(i).toElement();
+		int index = child.attribute("index").toInt();
+		auto it = items.find(index);
+		if (it != items.end()) {
+			auto item = it->second;
+			item->loadFromProjectMainFile(child);
+		}
+	}
 }
 
 void Post2dWindowMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	for (auto child : m_childItems) {
 		writer.writeStartElement("MeasuredDataFile");
-		(*it)->saveToProjectMainFile(writer);
+		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -83,22 +97,18 @@ void Post2dWindowMeasuredDataTopDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 const QList<MeasuredDataFileDataItem*> Post2dWindowMeasuredDataTopDataItem::fileDataItems() const
 {
 	QList<MeasuredDataFileDataItem*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		MeasuredDataFileDataItem* item = dynamic_cast<MeasuredDataFileDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<MeasuredDataFileDataItem*>(child);
 		ret.append(item);
 	}
 	return ret;
 }
 
 void Post2dWindowMeasuredDataTopDataItem::setupActors()
-{
-
-}
+{}
 
 void Post2dWindowMeasuredDataTopDataItem::updateActorSettings()
-{
-
-}
+{}
 
 void Post2dWindowMeasuredDataTopDataItem::addChildItem()
 {

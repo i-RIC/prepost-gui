@@ -192,6 +192,9 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		// Post2dWindowGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
 		// gtItem->standardItem()->setCheckState(Qt::Checked);
 	}
+
+	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
+	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
 	QDomNode titleNode = iRIC::getChildNode(node, "Title");
 	if (! titleNode.isNull()) {m_titleDataItem->loadFromProjectMainFile(titleNode);}
 	QDomNode timeNode = iRIC::getChildNode(node, "Time");
@@ -214,6 +217,11 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+
+	writer.writeStartElement("MeasuredDatas");
+	m_measuredDataTopDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
 	writer.writeStartElement("Title");
 	m_titleDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
