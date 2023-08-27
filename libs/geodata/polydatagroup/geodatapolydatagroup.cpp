@@ -503,6 +503,7 @@ void GeoDataPolyDataGroup::mergePolyDataAndPolyDataGroups()
 	updateVtkObjects();
 	updateSelectedDataVtkObjects();
 	updateAttributeBrowser();
+	updateActorSetting();
 }
 
 void GeoDataPolyDataGroup::handleAttributeBrowserVisibilityChange(bool visible)
