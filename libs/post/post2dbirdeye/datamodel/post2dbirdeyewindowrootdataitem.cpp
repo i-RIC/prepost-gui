@@ -110,6 +110,9 @@ void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! titleNode.isNull()) {m_titleDataItem->loadFromProjectMainFile(titleNode);}
 	QDomNode timeNode = iRIC::getChildNode(node, "Time");
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
+	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
+
 	updateItemMap();
 }
 void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -125,6 +128,10 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 
 	writer.writeStartElement("Time");
 	m_timeDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Axes");
+	m_axesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

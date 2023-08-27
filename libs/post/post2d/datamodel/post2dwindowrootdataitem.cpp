@@ -199,6 +199,8 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! titleNode.isNull()) {m_titleDataItem->loadFromProjectMainFile(titleNode);}
 	QDomNode timeNode = iRIC::getChildNode(node, "Time");
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
+	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
 	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
 	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
 	QDomNode tmsNode = iRIC::getChildNode(node, "TmsBackground");
@@ -228,6 +230,10 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	writer.writeStartElement("Time");
 	m_timeDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Axes");
+	m_axesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	writer.writeStartElement("DistanceMeasures");
