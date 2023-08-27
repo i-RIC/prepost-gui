@@ -103,6 +103,7 @@ MeasuredDataVectorGroupDataItem::~MeasuredDataVectorGroupDataItem()
 void MeasuredDataVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_setting.load(node);
+	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(impl->m_setting.arrowsSetting.target), m_childItems);
 }
 
 void MeasuredDataVectorGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
