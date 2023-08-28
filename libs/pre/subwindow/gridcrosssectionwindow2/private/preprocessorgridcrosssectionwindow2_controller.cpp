@@ -104,6 +104,7 @@ void PreProcessorGridCrosssectionWindow2::Controller::handleJClick()
 
 void PreProcessorGridCrosssectionWindow2::Controller::handleSettingChange()
 {
+	m_impl->setTargetDirection(targetDirection());
 	m_impl->m_window->update();
 
 	if (m_impl->m_displaySetting.enableAutoRescale) {

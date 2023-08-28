@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Rutenett for fugleperspektiv</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 blir ikke kartlagt etter at de ble redigert sist. Vil du utføre kartlegging nå?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Grensetilstandsinnstilling "%1"er ikke kartlagt etter at det ble redigert sist. Vil du utføre kartlegging nå?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Grensetilstandsinnstilling &quot;%1&quot;er ikke kartlagt etter at det ble redigert sist. Vil du utføre kartlegging nå?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Merk: Når variant er aktivert, opprettes variant kalt "Standard", og alle geografiske data flyttes til den. Du kan legge til, gi nytt navn, fjerne varianter fra "Object Browser". Du kan flytte, kopiere geografiske data mellom varianter. Rutenettattributtdataene som er opprettet fra varianten som du velger med "Variasjon for å overføre til løser" sendes til løser. Du kan forberede flere varianter, bytte hvilken som skal overføres til løseren, og forsikre deg om effekten av forskjellen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Merk: Når variant er aktivert, opprettes variant kalt &quot;Standard&quot;, og alle geografiske data flyttes til den. Du kan legge til, gi nytt navn, fjerne varianter fra &quot;Object Browser&quot;. Du kan flytte, kopiere geografiske data mellom varianter. Rutenettattributtdataene som er opprettet fra varianten som du velger med &quot;Variasjon for å overføre til løser&quot; sendes til løser. Du kan forberede flere varianter, bytte hvilken som skal overføres til løseren, og forsikre deg om effekten av forskjellen.</translation>
     </message>
 </context>
 <context>
@@ -1280,9 +1282,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Henrette (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Følgende attributter ble ikke kartlagt, fordi nettverksgeneratorens utgangsverdier for dem. Hvis du vil kartlegge geografiske data for dem med makt, kan du kartlegge manuelt med menyen "Rutenett" -&gt; "Attributt kartlegging" -&gt; "Utfør".</translation>
+        <translation>Følgende attributter ble ikke kartlagt, fordi nettverksgeneratorens utgangsverdier for dem. Hvis du vil kartlegge geografiske data for dem med makt, kan du kartlegge manuelt med menyen &quot;Rutenett&quot; -&gt; &quot;Attributt kartlegging&quot; -&gt; &quot;Utfør&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1303,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kartlegging av geografiske data er fullført</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Rutenettattributtet "%1"redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Rutenettattributtet &quot;%1&quot;redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Grensetilstanden "%1"redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Grensetilstanden &quot;%1&quot;redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1326,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // NO" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Når rutenettet er opprettet, blir du spurt om for å utføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // NO&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Når rutenettet er opprettet, blir du spurt om for å utføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Håndbok</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attributtkartlegging utføres bare når du manuelt velger "Utfør" -menyen.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attributtkartlegging utføres bare når du manuelt velger &quot;Utfør&quot; -menyen.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1764,6 +1766,10 @@ This algorithm can be used only for structured grids.</source>
         <source>Upstream</source>
         <translation>Oppstrøms</translation>
     </message>
+    <message>
+        <source>Upstream/downstream markers</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
@@ -2065,8 +2071,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fargekartinnstilling</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; Bruk Colormap-fanen for å redigere fargeinnstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Merk:&lt;/span&gt; Bruk Colormap-fanen for å redigere fargeinnstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2179,7 +2185,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Sett opp skalarlinje (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Åpne fugleperspektiv (&amp;B)</translation>
     </message>
     <message>

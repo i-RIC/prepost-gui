@@ -188,6 +188,15 @@ void PreProcessorGridCrosssectionWindow2::Impl::updateAspectRatioEdit()
 	m_aspectRatioEdit->setValue(ratio);
 }
 
+void PreProcessorGridCrosssectionWindow2::Impl::setTargetDirection(Direction dir)
+{
+	if (dir == Direction::I) {
+		m_markersDisplayCheckBox->setText(tr("Left/right bank markers"));
+	} else if (dir == Direction::J) {
+		m_markersDisplayCheckBox->setText(tr("Upstream/downstream markers"));
+	}
+}
+
 ColorMapSettingContainerI* PreProcessorGridCrosssectionWindow2::Impl::preColorMapSetting(const std::string& name)
 {
 	return m_gridDataItem->gridTypeDataItem()->colorMapSetting(name);
