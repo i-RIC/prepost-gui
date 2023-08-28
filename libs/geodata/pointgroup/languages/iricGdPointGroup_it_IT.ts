@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPointGroup</name>
@@ -102,7 +104,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Si è verificato un errore durante l'esportazione in %1.</translation>
+        <translation>Si è verificato un errore durante l&apos;esportazione in %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -125,7 +127,7 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>Si è verificato un errore durante l'apertura %1</translation>
+        <translation>Si è verificato un errore durante l&apos;apertura %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
@@ -133,15 +135,15 @@
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 3 columns at least.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L'intestazione dovrebbe avere almeno 3 colonne.</translation>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L&apos;intestazione dovrebbe avere almeno 3 colonne.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 4 columns at least.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L'intestazione dovrebbe avere almeno 4 colonne.</translation>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. L&apos;intestazione dovrebbe avere almeno 4 colonne.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Si è verificato un errore durante la lettura della riga di intestazione. Colonna %1 dovrebbe essere "%2", ma "%3" viene data.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Si è verificato un errore durante la lettura della riga di intestazione. Colonna %1 dovrebbe essere &quot;%2&quot;, ma &quot;%3&quot; viene data.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Si è verificato un errore durante la lettura della riga %1. I dati dovrebbero avere almeno 4 colonne.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore "x" nella riga %1. "x" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore &quot;x&quot; nella riga %1. &quot;x&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore "y" nella riga %1. "y" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore &quot;y&quot; nella riga %1. &quot;y&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Si è verificato un errore durante la lettura del valore "value" nella riga %1. "valore" dovrebbe essere un valore reale ma "%2" è specificato.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Si è verificato un errore durante la lettura del valore &quot;value&quot; nella riga %1. &quot;valore&quot; dovrebbe essere un valore reale ma &quot;%2&quot; è specificato.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +175,10 @@
     <message>
         <source>Edit display setting</source>
         <translation type="vanished">Modifica le impostazioni di visualizzazione</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished">Impostazione della visualizzazione dei punti</translation>
     </message>
 </context>
 <context>
@@ -183,7 +189,7 @@
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -232,7 +238,7 @@
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>Immagini dell'icona</translation>
+        <translation>Immagini dell&apos;icona</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -248,7 +254,7 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Quando la larghezza o l'altezza dell'immagine importata è maggiore di Dimensione massima, l'immagine viene automaticamente ridotta in modo che la larghezza o l'altezza diventi uguale alla dimensione massima.</translation>
+        <translation>Quando la larghezza o l&apos;altezza dell&apos;immagine importata è maggiore di Dimensione massima, l&apos;immagine viene automaticamente ridotta in modo che la larghezza o l&apos;altezza diventi uguale alla dimensione massima.</translation>
     </message>
     <message>
         <source>Color</source>
@@ -295,7 +301,7 @@
     </message>
     <message>
         <source>Icon Images</source>
-        <translation type="vanished">Immagini dell'icona</translation>
+        <translation type="vanished">Immagini dell&apos;icona</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -311,7 +317,7 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation type="vanished">Quando la larghezza o l'altezza dell'immagine importata è maggiore di Dimensione massima, l'immagine viene automaticamente ridotta in modo che la larghezza o l'altezza diventi uguale alla dimensione massima.</translation>
+        <translation type="vanished">Quando la larghezza o l&apos;altezza dell&apos;immagine importata è maggiore di Dimensione massima, l&apos;immagine viene automaticamente ridotta in modo che la larghezza o l&apos;altezza diventi uguale alla dimensione massima.</translation>
     </message>
 </context>
 </TS>

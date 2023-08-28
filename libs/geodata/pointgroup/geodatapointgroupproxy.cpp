@@ -22,7 +22,9 @@
 GeoDataPointGroupProxy::GeoDataPointGroupProxy(GeoDataPointGroup* geodata) :
 	GeoDataProxy(geodata),
 	impl {new Impl {}}
-{}
+{
+	impl->m_displaySetting.displaySetting = geodata->impl->m_displaySetting;
+}
 
 GeoDataPointGroupProxy::~GeoDataPointGroupProxy()
 {
@@ -62,7 +64,7 @@ QDialog* GeoDataPointGroupProxy::propertyDialog(QWidget* parent)
 	auto dialog = new PropertyDialog(this, parent);
 	auto widget = new DisplaySettingWidget(this, dialog);
 	dialog->setWidget(widget);
-	dialog->setWindowTitle("Points Display Setting");
+	dialog->setWindowTitle(tr("Points Display Setting"));
 	return dialog;
 }
 
