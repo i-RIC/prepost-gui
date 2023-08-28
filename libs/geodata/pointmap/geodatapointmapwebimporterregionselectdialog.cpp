@@ -80,5 +80,5 @@ void GeoDataPointmapWebImporterRegionSelectDialog::accept()
 void GeoDataPointmapWebImporterRegionSelectDialog::switchMap(int index)
 {
 	auto s = m_settings.at(index);
-	ui->mapWidget->setMapSetting(s.setting());
+	ui->mapWidget->setMapSetting(s);
 }

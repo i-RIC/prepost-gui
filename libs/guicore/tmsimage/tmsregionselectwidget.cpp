@@ -17,7 +17,7 @@ TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
 	m_isSelected {false},
 	m_pointLonLat1 {0, 0},
 	m_pointLonLat2 {0, 0},
-	m_mapSetting (""),
+	m_mapSetting {},
 	m_requestId {-1},
 	m_loader {w},
 	m_viewOperationState {ViewOperationState::None},
@@ -27,7 +27,7 @@ TmsRegionSelectWidget::Impl::Impl(TmsRegionSelectWidget* w) :
 	m_zoomCursor(m_zoomPixmap),
 	m_widget {w}
 {
-	m_mapSetting = "tms=gsi&tiletype=std";
+	m_mapSetting = TmsImageSetting::buildFromQuery("tms=gsi&tiletype=std");
 }
 
 TmsRegionSelectWidget::Impl::~Impl()
@@ -197,7 +197,7 @@ void TmsRegionSelectWidget::wheelEvent(QWheelEvent* event)
 	requestUpdate();
 }
 
-void TmsRegionSelectWidget::setMapSetting(const std::string& setting)
+void TmsRegionSelectWidget::setMapSetting(const TmsImageSetting& setting)
 {
 	impl->m_mapSetting = setting;
 	requestUpdate();

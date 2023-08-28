@@ -8,6 +8,7 @@
 #include <string>
 
 class CoordinateSystem;
+class TmsImageSetting;
 
 class GUICOREDLL_EXPORT TmsRegionSelectWidget : public QWidget
 {
@@ -20,12 +21,12 @@ public:
 	void paintEvent(QPaintEvent *);
 	void resizeEvent(QResizeEvent *);
 
-	void mousePressEvent(QMouseEvent *);
-	void mouseReleaseEvent(QMouseEvent *);
-	void mouseMoveEvent(QMouseEvent *);
+	void mousePressEvent(QMouseEvent* event);
+	void mouseReleaseEvent(QMouseEvent* event);
+	void mouseMoveEvent(QMouseEvent* event);
 	void wheelEvent(QWheelEvent* event);
 
-	void setMapSetting(const std::string& setting);
+	void setMapSetting(const TmsImageSetting& setting);
 	void setCenter(double lon, double lat);
 	void setZoomLevel(double zoomLevel);
 
