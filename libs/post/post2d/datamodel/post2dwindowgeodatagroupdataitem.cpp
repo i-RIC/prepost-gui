@@ -190,8 +190,7 @@ QDialog* Post2dWindowGeoDataGroupDataItem::propertyDialog(QWidget* parent)
 	auto setting = colorMapSetting();
 	if (setting == nullptr) {return nullptr;}
 
-	auto dialog = new ScalarsToColorsEditDialog(this, mainWindow());
-	dialog->setAttribute(Qt::WA_DeleteOnClose);
+	auto dialog = new ScalarsToColorsEditDialog(this, parent);
 	dialog->setWindowTitle(tr("%1 Color Setting").arg(m_condition->caption()));
 	dialog->setSetting(setting);
 

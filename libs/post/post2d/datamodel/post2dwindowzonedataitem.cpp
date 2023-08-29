@@ -11,6 +11,7 @@
 #include "post2dwindownodescalargroupdataitem.h"
 #include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem.h"
+#include "post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgroupunstructureddataitem.h"
 #include "post2dwindownodevectorparticlegroupstructureddataitem.h"
 #include "post2dwindownodevectorparticlegroupunstructureddataitem.h"
@@ -99,12 +100,11 @@ Post2dWindowZoneDataItem::Post2dWindowZoneDataItem(const std::string& zoneName, 
 
 	if (cont->vectorValueExists()) {
 		vtkPointSet* data = cont->data()->data();
+		m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupTopDataItem(this);
 		if (dynamic_cast<vtkUnstructuredGrid*> (data) != nullptr){
-			m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(this);
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(this);
 		} else {
-			m_arrowGroupDataItem = new Post2dWindowNodeVectorArrowGroupStructuredDataItem(this);
 			m_streamlineGroupDataItem = new Post2dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
 			m_particleGroupDataItem = new Post2dWindowNodeVectorParticleGroupStructuredDataItem(this);
 		}
@@ -195,6 +195,10 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! arrowGroupNode.isNull() && m_arrowGroupDataItem != nullptr) {
 		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupNode);
 	}
+	QDomNode arrowGroupTopNode = iRIC::getChildNode(node, "ArrowGroupTopV4");
+	if (! arrowGroupTopNode.isNull() && m_arrowGroupDataItem != nullptr) {
+		m_arrowGroupDataItem->loadFromProjectMainFile(arrowGroupTopNode);
+	}
 	QDomNode streamlineGroupNode = iRIC::getChildNode(node, "StreamlineGroup");
 	if (! streamlineGroupNode.isNull() && m_streamlineGroupDataItem != nullptr) {
 		m_streamlineGroupDataItem->loadFromProjectMainFile(streamlineGroupNode);
@@ -254,7 +258,7 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		writer.writeEndElement();
 	}
 	if (m_arrowGroupDataItem != nullptr) {
-		writer.writeStartElement("ArrowGroupV4");
+		writer.writeStartElement("ArrowGroupTopV4");
 		m_arrowGroupDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
@@ -467,7 +471,7 @@ Post2dWindowNodeScalarGroupTopDataItem* Post2dWindowZoneDataItem::scalarGroupTop
 	return m_scalarGroupTopDataItem;
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowZoneDataItem::arrowGroupDataItem() const
+Post2dWindowNodeVectorArrowGroupTopDataItem* Post2dWindowZoneDataItem::arrowGroupDataItem() const
 {
 	return m_arrowGroupDataItem;
 }

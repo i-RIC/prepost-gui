@@ -11,14 +11,12 @@ Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::UpdateActor
 void Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::redo()
 {
 	m_command->redo();
-	m_item->updateCheckState();
 	m_item->updateActorSetting();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::UpdateActorSettingCommand::undo()
 {
 	m_command->undo();
-	m_item->updateCheckState();
 	m_item->updateActorSetting();
 }
 

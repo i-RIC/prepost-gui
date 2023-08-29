@@ -9,6 +9,7 @@
 class vtkActor;
 class vtkActor2D;
 class ColorMapSettingContainer;
+class ColorMapSettingToolBarWidget;
 
 class MeasuredDataPointGroupDataItem::Impl
 {
@@ -25,6 +26,10 @@ public:
 	vtkActor2D* m_legendActor;
 
 	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
+	ToolBarWidget* m_toolBarWidget;
+
+	ColorMapSettingToolBarWidget* m_colorMapToolBarWidget;
+	ToolBarWidgetController* m_toolBarWidgetController;
 
 private:
 	MeasuredDataPointGroupDataItem* m_item;

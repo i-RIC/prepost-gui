@@ -7,7 +7,7 @@
 
 class ColorMapSettingContainerI;
 class Post3dWindowParticlesBaseScalarGroupDataItem;
-class Post3dWindowParticlesBaseVectorGroupDataItem;
+class Post3dWindowParticlesBaseVectorGroupTopDataItem;
 class Post3dWindowZoneDataItem;
 
 class Post3dWindowParticlesBaseTopDataItem : public Post3dWindowDataItem
@@ -16,15 +16,15 @@ class Post3dWindowParticlesBaseTopDataItem : public Post3dWindowDataItem
 
 public:
 	Post3dWindowParticlesBaseTopDataItem(const QString& caption, Post3dWindowDataItem* parent);
-	~Post3dWindowParticlesBaseTopDataItem();
+	~Post3dWindowParticlesBaseTopDataItem() override;
 
 	void setup();
 
 	Post3dWindowParticlesBaseScalarGroupDataItem* scalarGroupDataItem() const;
-	Post3dWindowParticlesBaseVectorGroupDataItem* vectorGroupDataItem() const;
+	Post3dWindowParticlesBaseVectorGroupTopDataItem* vectorGroupDataItem() const;
 
 	void update();
-	void updateColorMaps();
+	void updateColorMapLegendsVisibility();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
@@ -32,13 +32,13 @@ public:
 	virtual Post3dWindowZoneDataItem* zoneDataItem() const = 0;
 
 private:
-	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMapsWithVisibleLegend() const;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post3dWindowParticlesBaseScalarGroupDataItem* m_scalarGroupDataItem;
-	Post3dWindowParticlesBaseVectorGroupDataItem* m_vectorGroupDataItem;
+	Post3dWindowParticlesBaseVectorGroupTopDataItem* m_vectorGroupDataItem;
 };
 
 #endif // POST3DWINDOWPARTICLESBASETOPDATAITEM_H

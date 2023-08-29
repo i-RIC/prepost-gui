@@ -4,7 +4,7 @@
 
 #include <dataitem/measureddata/measureddatafiledataitem.h>
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
-#include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guicore/base/iricmainwindowinterface.h>

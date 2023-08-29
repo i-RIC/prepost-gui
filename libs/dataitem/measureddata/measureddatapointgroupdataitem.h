@@ -10,6 +10,7 @@
 #include <unordered_map>
 
 class ColorMapSettingContainerI;
+class MeasuredDataFileDataItem;
 class NamedGraphicWindowDataItem;
 
 class MEASUREDDATA_API MeasuredDataPointGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
@@ -37,7 +38,11 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void doApplyOffset(double x, double y) override;
-	ColorMapSettingContainerI* activeSetting() const;
+	void handleStandardItemChange() override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
+
+	ColorMapSettingContainerI* activeColorMapSetting() const;
+	ColorMapSettingContainerI* activeColorMapSettingWithVisibleLegend() const;
 
 public slots:
 	void showPropertyDialog() override;
@@ -47,8 +52,10 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
+	void updateVisibility(bool visible) override;
 
 	void updateActorSetting() override;
+	MeasuredDataFileDataItem* fileDataItem() const;
 
 	class Impl;
 	Impl* impl;
@@ -57,6 +64,8 @@ private:
 	class SettingEditWidget;
 
 	class PropertyDialog;
+	class ToolBarWidget;
+	class ToolBarWidgetController;
 	class UpdateSettingCommand;
 };
 

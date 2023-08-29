@@ -4,7 +4,6 @@
 #include "../post3dwindowdataitem.h"
 
 #include <guibase/vtktool/vtkarrowlegendactors.h>
-#include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/particle/particledatavectorsetting.h>
 
 class ArrowsSettingToolBarWidget;
@@ -12,20 +11,20 @@ class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
 class Post3dWindowGridTypeDataItem;
 class Post3dWindowParticlesBaseTopDataItem;
+class Post3dWindowParticlesBaseVectorGroupTopDataItem;
 
 class vtkPolyData;
 class vtkTransformFilter;
 
-class Post3dWindowParticlesBaseVectorGroupDataItem : public Post3dWindowDataItem, public TargetedItemI
+class Post3dWindowParticlesBaseVectorGroupDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	Post3dWindowParticlesBaseVectorGroupDataItem(Post3dWindowDataItem* p);
+	Post3dWindowParticlesBaseVectorGroupDataItem(const std::string& target, Post3dWindowDataItem* p);
 	~Post3dWindowParticlesBaseVectorGroupDataItem();
 
-	std::string target() const override;
-	void setTarget(const std::string& target) override;
+	std::string target() const;
 
 	void update();
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
@@ -36,9 +35,9 @@ public:
 	void handleStandardItemChange() override;
 
 	ColorMapSettingContainerI* activeColorMapSetting() const;
+	ColorMapSettingContainerI* activeColorMapSettingWithVisibleLegend() const;
 
 public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showPropertyDialog() override;
 
 private:
@@ -51,15 +50,16 @@ private:
 	void setupActors();
 	void updateCheckState();
 	void updateActorSetting() override;
+	void updateVisibility(bool visible) override;
 
 	Post3dWindowGridTypeDataItem* gridTypeDataItem() const;
-	Post3dWindowParticlesBaseTopDataItem* topDataItem() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;
+	Post3dWindowParticlesBaseTopDataItem* topDataItem() const;
+	Post3dWindowParticlesBaseVectorGroupTopDataItem* vectorTopDataItem() const;
 	vtkPolyData* particleData() const;
 
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;
-	vtkTransformFilter* m_transformFilter;
 
 	ParticleDataVectorSetting m_setting;
 	double m_zScale;

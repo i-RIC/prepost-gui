@@ -11,7 +11,7 @@ class Post2dWindowNodeVectorArrowGroupUnstructuredDataItem : public Post2dWindow
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(Post2dWindowDataItem* parent);
+	Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(const std::string& name, Post2dWindowDataItem* parent);
 	QDialog* propertyDialog(QWidget* p) override;
 
 public slots:

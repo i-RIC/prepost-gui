@@ -37,6 +37,7 @@ public:
 	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
 	std::unordered_map<std::string, ColorMapSettingContainerI*> colorMapSettings() const;
 	ColorMapSettingContainerI* activeColorMapSetting() const;
+	ColorMapSettingContainerI* activeColorMapSettingWithVisibleLegend() const;
 
 	void update();
 	void showPropertyDialog() override;
@@ -46,6 +47,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void handleStandardItemChange() override;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);

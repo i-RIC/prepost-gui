@@ -16,6 +16,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	QDialog* propertyDialog(QWidget* parent) override;
+	bool addToolBarButtons(QToolBar* toolBar) override;
 
 public slots:
 	void showPropertyDialog() override;
@@ -24,7 +25,7 @@ private:
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	MeasuredDataPointGroupDataItem* groupDataItem() const;
-	ColorMapSettingContainerI* activeSetting() const;
+	ColorMapSettingContainerI* activeColorMapSettingWithVisibleLegend() const;
 };
 
 #endif // MEASUREDDATAPOINTDATAITEM_H

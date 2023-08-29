@@ -236,6 +236,14 @@ QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 	return dialog;
 }
 
+void Post3dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = isAncientChecked() && isChecked();
+	m_lengthLegendVisibilityWidget->setEnabled(v);
+}
+
 void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 {
 	m_legendActor->VisibilityOff();

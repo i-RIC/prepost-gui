@@ -30,6 +30,7 @@
 #include <dataitem/measureddata/measureddatafiledataitem.h>
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
+#include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -394,12 +395,12 @@ void PreProcessorDataModel::setupGeoDataMenus()
 			dummy->addAction(m_geoDataAddActions.value(polylineCreator));
 			m_geographicDataMenu->addMenu(dummy);
 
-			PreProcessorGeoDataComplexGroupDataItem* cgitem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItem*>(gitem);
+			auto cgitem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItem*>(gitem);
 			if (cgitem != nullptr) {
 				editGroupAction->setEnabled(true);
-				connect(editGroupAction, SIGNAL(triggered()), cgitem, SLOT(showEditGroupDialog()));
+				connect(editGroupAction, &QAction::triggered, cgitem, &PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog);
 			}
-			connect(deleteAllAction, SIGNAL(triggered()), gitem, SLOT(deleteAll()));
+			connect(deleteAllAction, &QAction::triggered, gitem, &PreProcessorGeoDataGroupDataItem::deleteAll);
 			exportAllPolygonsAction->setEnabled(gitem->polygonExists());
 			connect(exportAllPolygonsAction, SIGNAL(triggered()), gitem, SLOT(exportAllPolygons()));
 		} else {
@@ -433,12 +434,12 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	// add colormap edit menu for each raw data type.
 	PreProcessorGridTypeDataItem* gti = getGridTypeItem(m_selectedItem);
 	if (gti != nullptr) {
-		QList<PreProcessorGeoDataGroupDataItemInterface*> groups = gti->geoDataTop()->groupDataItems();
+		auto groups = gti->geoDataTop()->groupDataItems();
 		for (auto it = groups.begin(); it != groups.end(); ++it) {
 			PreProcessorGeoDataGroupDataItemInterface* groupDataitem = *it;
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
-			QAction* action = new QAction(condCaption, colorMapMenu);
+			auto action = new QAction(condCaption, colorMapMenu);
 			connect(action, &QAction::triggered, groupDataitem, &PreProcessorGeoDataGroupDataItemInterface::showPropertyDialog);
 			colorMapMenu->addAction(action);
 		}
@@ -447,7 +448,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	}
 	m_geographicDataMenu->addSeparator();
 
-	PreProcessorWindow* preWindow = dynamic_cast<PreProcessorWindow*>(mainWindow());
+	auto preWindow = dynamic_cast<PreProcessorWindow*>(mainWindow());
 	QMenu* importMenu = new QMenu(tr("Import"), m_geographicDataMenu);
 	importMenu->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	m_geographicDataMenu->addMenu(importMenu);
@@ -463,14 +464,14 @@ void PreProcessorDataModel::setupGeoDataMenus()
 QMenu* PreProcessorDataModel::setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* /*gcItem*/)
 {
 	QMenu* gridCreationMenu = new QMenu(tr("&Grid Creating Condition"), parentMenu);
-	connect(gridCreationMenu, SIGNAL(aboutToShow()), this, SLOT(setupGridCreationMenuContent()));
+	connect(gridCreationMenu, &QMenu::aboutToShow, this, &PreProcessorDataModel::setupGridCreationMenuContent);
 	return gridCreationMenu;
 }
 
 QMenu* PreProcessorDataModel::setupBoundaryConditionSettingMenu(QMenu* parentMenu)
 {
 	QMenu* bcsMenu = new QMenu(tr("B&oundary Condition Setting"), parentMenu);
-	connect(bcsMenu, SIGNAL(aboutToShow()), this, SLOT(setupBoundaryConditionSettingMenuContent()));
+	connect(bcsMenu, &QMenu::aboutToShow, this, &PreProcessorDataModel::setupBoundaryConditionSettingMenuContent);
 	return bcsMenu;
 }
 
@@ -588,14 +589,14 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 	QAction* vectorAction = m_measuredValuesMenu->addAction(tr("&Arrows..."));
 	m_measuredValuesMenu->addSeparator();
 	QAction* importAction = m_measuredValuesMenu->addAction(QIcon(":/libs/guibase/images/iconImport.svg"), tr("&Import..."));
-	connect(importAction, SIGNAL(triggered()), iricMainWindow(), SLOT(importMeasuredData()));
+	connect(importAction, &QAction::triggered, iricMainWindow(), &iRICMainWindowInterface::importMeasuredData);
 
 	if (fitem == nullptr) {
 		pointAction->setDisabled(true);
 		vectorAction->setDisabled(true);
 	} else {
-		connect(pointAction, SIGNAL(triggered()), fitem->pointGroupDataItem(), SLOT(showPropertyDialog()));
-		connect(vectorAction, SIGNAL(triggered()), fitem->vectorGroupDataItem(), SLOT(showPropertyDialog()));
+		connect(pointAction, &QAction::triggered, fitem->pointGroupDataItem(), &MeasuredDataPointGroupDataItem::showPropertyDialog);
+		connect(vectorAction, &QAction::triggered, fitem->vectorGroupDataItem(), &MeasuredDataVectorGroupTopDataItem::showPropertyDialog);
 	}
 	m_additionalMenus.append(m_measuredValuesMenu);
 	m_dummyMenus.append(m_measuredValuesMenu);

@@ -25,7 +25,7 @@ class Post2dWindowGraphGroupDataItem;
 class Post2dWindowGridShapeDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowNodeScalarGroupTopDataItem;
-class Post2dWindowNodeVectorArrowGroupDataItem;
+class Post2dWindowNodeVectorArrowGroupTopDataItem;
 class Post2dWindowNodeVectorStreamlineGroupDataItem;
 class Post2dWindowNodeVectorParticleGroupDataItem;
 class Post2dWindowParticleGroupRootDataItem;
@@ -61,7 +61,7 @@ public:
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowGridShapeDataItem* gridShapeDataItem() const;
 	Post2dWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
-	Post2dWindowNodeVectorArrowGroupDataItem* arrowGroupDataItem() const;
+	Post2dWindowNodeVectorArrowGroupTopDataItem* arrowGroupDataItem() const;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* streamlineDataItem() const;
 	Post2dWindowNodeVectorParticleGroupDataItem* particleDataItem() const;
 	Post2dWindowCellFlagGroupDataItem* cellFlagGroupDataItem() const;
@@ -140,7 +140,7 @@ private:
 	Post2dWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
 	Post2dWindowEdgeIScalarGroupTopDataItem* m_edgeIScalarGroupTopDataItem;
 	Post2dWindowEdgeJScalarGroupTopDataItem* m_edgeJScalarGroupTopDataItem;
-	Post2dWindowNodeVectorArrowGroupDataItem* m_arrowGroupDataItem;
+	Post2dWindowNodeVectorArrowGroupTopDataItem* m_arrowGroupDataItem;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
 	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post2dWindowCellFlagGroupDataItem* m_cellFlagGroupDataItem;

@@ -3,10 +3,11 @@
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowparticlesbasevectorgroupdataitem.h"
-#include "post3dwindowparticlesbasevectordataitem.h"
+#include "post3dwindowparticlesbasevectorgrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 #include "private/post3dwindowparticlesbasevectorgroupdataitem_settingeditwidget.h"
 
+#include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
@@ -16,7 +17,7 @@
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guibase/vtkdatasetattributestool.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <misc/iricundostack.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -26,23 +27,22 @@
 #include <vtkTransform.h>
 #include <vtkTransformFilter.h>
 
-Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGroupDataItem(Post3dWindowDataItem* p) :
-	Post3dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
+Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGroupDataItem(const std::string& target, Post3dWindowDataItem* p) :
+	Post3dWindowDataItem("", QIcon(":/libs/guibase/images/iconPaper.svg"), p),
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},
-	m_transformFilter {vtkTransformFilter::New()},
 	m_zScale {1},
 	m_arrowsToolBarWidget {new ArrowsSettingToolBarWidget(mainWindow())}
 {
-	setupStandardItem(Checked, NotReorderable, NotDeletable);
+	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	auto cont = zoneDataItem()->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->GetPointData())) {
-		auto item = new Post3dWindowParticlesBaseVectorDataItem(name, gt->solutionCaption(name), this);
-		m_childItems.push_back(item);
-	}
+	m_setting.arrowsSetting.target = target.c_str();
+	auto output = gt->output(target);
+	m_setting.arrowsSetting.legend.title = output->caption();
+	m_standardItem->setText(output->caption());
 
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
@@ -50,10 +50,6 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
 		m_setting.arrowsSetting.colorTarget = name.c_str();
 		break;
-	}
-
-	for (auto& pair : topDataItem()->scalarGroupDataItem()->colorMapSettings()) {
-		pair.second->legendSetting()->imgSetting()->controller()->addItem(this);
 	}
 
 	m_arrowsToolBarWidget->hide();
@@ -84,7 +80,6 @@ Post3dWindowParticlesBaseVectorGroupDataItem::~Post3dWindowParticlesBaseVectorGr
 
 	m_actor->Delete();
 	m_legendActor->Delete();
-	m_transformFilter->Delete();
 }
 
 std::string Post3dWindowParticlesBaseVectorGroupDataItem::target() const
@@ -92,28 +87,9 @@ std::string Post3dWindowParticlesBaseVectorGroupDataItem::target() const
 	return m_setting.arrowsSetting.target;
 }
 
-void Post3dWindowParticlesBaseVectorGroupDataItem::setTarget(const std::string& target)
-{
-	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.arrowsSetting.target = target.c_str();
-	m_setting.arrowsSetting.legend.title = target.c_str();
-
-	updateActorSetting();
-
-	emit m_setting.arrowsSetting.updated();
-}
-
 void Post3dWindowParticlesBaseVectorGroupDataItem::update()
 {
 	updateActorSetting();
-}
-
-void Post3dWindowParticlesBaseVectorGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
-{
-	if (m_isCommandExecuting) {return;}
-
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Arrow Physical Value Change"));
-	pushRenderCommand(cmd, this, true);
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::showPropertyDialog()
@@ -126,7 +102,7 @@ QDialog* Post3dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
-	dialog->setWindowTitle(tr("Particles Vector Setting"));
+	dialog->setWindowTitle(tr("Particles Vector Setting (%1)").arg(m_standardItem->text()));
 	dialog->resize(900, 650);
 
 	return dialog;
@@ -134,8 +110,8 @@ QDialog* Post3dWindowParticlesBaseVectorGroupDataItem::propertyDialog(QWidget* p
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::handleStandardItemChange()
 {
-	topDataItem()->updateColorMaps();
 	GraphicsWindowDataItem::handleStandardItemChange();
+	topDataItem()->updateColorMapLegendsVisibility();
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -159,10 +135,6 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::innerUpdateZScale(double zsca
 {
 	m_zScale = zscale;
 
-	auto t = vtkSmartPointer<vtkTransform>::New();
-	t->Scale(1, 1, zscale);
-	m_transformFilter->SetTransform(t);
-
 	updateActorSetting();
 }
 
@@ -185,9 +157,9 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::mouseMoveEvent(QMouseEvent* e
 	as.legend.imageSetting.controller()->handleMouseMoveEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeColorMapSetting();
+	auto cs = activeColorMapSettingWithVisibleLegend();
 	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v, true);
+		cs->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v, true);
 		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
@@ -202,9 +174,9 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::mousePressEvent(QMouseEvent* 
 	as.legend.imageSetting.controller()->handleMousePressEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeColorMapSetting();
+	auto cs = activeColorMapSettingWithVisibleLegend();
 	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v, true);
+		cs->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v, true);
 		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
@@ -219,9 +191,9 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	as.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v, true);
 	controllers.push_back(as.legend.imageSetting.controller());
 
-	auto cs = activeColorMapSetting();
+	auto cs = activeColorMapSettingWithVisibleLegend();
 	if (cs != nullptr) {
-		cs->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v, true);
+		cs->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v, true);
 		controllers.push_back(cs->legendSetting()->imgSetting()->controller());
 	}
 
@@ -245,9 +217,6 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::setupActors()
 	auto r = renderer();
 	r->AddActor(m_actor);
 	r->AddActor2D(m_legendActor);
-
-	auto transform = vtkSmartPointer<vtkTransform>::New();
-	m_transformFilter->SetTransform(transform);
 }
 
 void Post3dWindowParticlesBaseVectorGroupDataItem::updateCheckState()
@@ -265,7 +234,7 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 	auto data = particleData();
 	if (data == nullptr) {return;}
 	if (m_setting.arrowsSetting.target == "") {
-		topDataItem()->updateColorMaps();
+		topDataItem()->updateColorMapLegendsVisibility();
 		return;
 	}
 
@@ -275,12 +244,9 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 	auto sampledData = m_setting.filteringSetting.buildSampledData(filteredData);
 	filteredData->Delete();
 
-	m_transformFilter->SetInputData(sampledData);
-	m_transformFilter->Update();
-	sampledData->Delete();
-
 	auto view = dataModel()->graphicsView();
-	auto arrowsData = m_setting.arrowsSetting.buildArrowsPolygonData(m_transformFilter->GetOutput(), view, m_zScale);
+	auto arrowsData = m_setting.arrowsSetting.buildArrowsPolygonData(sampledData, view, m_zScale);
+	sampledData->Delete();
 
 	if (m_setting.arrowsSetting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
@@ -310,7 +276,15 @@ void Post3dWindowParticlesBaseVectorGroupDataItem::updateActorSetting()
 
 	m_setting.arrowsSetting.legend.imageSetting.apply(v);
 
-	topDataItem()->updateColorMaps();
+	topDataItem()->updateColorMapLegendsVisibility();
+}
+
+void Post3dWindowParticlesBaseVectorGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	auto v = isAncientChecked() && isChecked();
+	m_arrowsToolBarWidget->setEnabled(v);
 }
 
 ColorMapSettingContainerI* Post3dWindowParticlesBaseVectorGroupDataItem::activeColorMapSetting() const
@@ -322,22 +296,36 @@ ColorMapSettingContainerI* Post3dWindowParticlesBaseVectorGroupDataItem::activeC
 	return topDataItem()->scalarGroupDataItem()->colorMapSetting(iRIC::toStr(m_setting.arrowsSetting.colorTarget));
 }
 
+ColorMapSettingContainerI* Post3dWindowParticlesBaseVectorGroupDataItem::activeColorMapSettingWithVisibleLegend() const
+{
+	auto cm = activeColorMapSetting();
+	if (cm == nullptr) {return nullptr;}
+	if (! cm->legendSetting()->getVisible()) {return nullptr;}
+
+	return cm;
+}
+
 Post3dWindowGridTypeDataItem* Post3dWindowParticlesBaseVectorGroupDataItem::gridTypeDataItem() const
 {
-	return dynamic_cast<Post3dWindowGridTypeDataItem*> (zoneDataItem()->parent());
+	return vectorTopDataItem()->zoneDataItem()->gridTypeDataItem();
 }
 
 Post3dWindowParticlesBaseTopDataItem* Post3dWindowParticlesBaseVectorGroupDataItem::topDataItem() const
 {
-	return dynamic_cast<Post3dWindowParticlesBaseTopDataItem*> (parent());
+	return vectorTopDataItem()->topDataItem();
 }
 
 Post3dWindowZoneDataItem* Post3dWindowParticlesBaseVectorGroupDataItem::zoneDataItem() const
 {
-	return topDataItem()->zoneDataItem();
+	return vectorTopDataItem()->zoneDataItem();
 }
 
 vtkPolyData* Post3dWindowParticlesBaseVectorGroupDataItem::particleData() const
 {
-	return topDataItem()->particleData();
+	return vectorTopDataItem()->particleData();
+}
+
+Post3dWindowParticlesBaseVectorGroupTopDataItem* Post3dWindowParticlesBaseVectorGroupDataItem::vectorTopDataItem() const
+{
+	return dynamic_cast<Post3dWindowParticlesBaseVectorGroupTopDataItem*> (parent());
 }

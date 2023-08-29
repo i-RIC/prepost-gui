@@ -6,6 +6,8 @@
 
 #include <unordered_map>
 
+class ArrowsSettingToolBarWidget;
+
 class vtkActor;
 class vtkActor2D;
 
@@ -20,6 +22,7 @@ public:
 
 	vtkActor* m_actor;
 	vtkActor2D* m_legendActor;
+	ArrowsSettingToolBarWidget* m_arrowsToolBarWidget;
 
 	Setting m_setting;
 

@@ -1,12 +1,13 @@
 #include "post2dwindownodevectorarrowgroupstructureddataitem.h"
+#include "post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 
-Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowGroupStructuredDataItem(Post2dWindowDataItem* p) :
-	Post2dWindowNodeVectorArrowGroupDataItem {p}
+Post2dWindowNodeVectorArrowGroupStructuredDataItem::Post2dWindowNodeVectorArrowGroupStructuredDataItem(const std::string& name, Post2dWindowDataItem* p) :
+	Post2dWindowNodeVectorArrowGroupDataItem {name, p}
 {}
 
 void Post2dWindowNodeVectorArrowGroupStructuredDataItem::showPropertyDialog()
@@ -19,7 +20,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);
-	dialog->setWindowTitle(tr("Arrows Setting"));
+	dialog->setWindowTitle(tr("Arrows Setting (%1)").arg(m_standardItem->text()));
 	dialog->resize(900, 650);
 
 	return dialog;
@@ -27,7 +28,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupStructuredDataItem::propertyDialog(QWid
 
 vtkPointSet* Post2dWindowNodeVectorArrowGroupStructuredDataItem::buildFilteredData()
 {
-	auto dc = zoneDataItem()->dataContainer();
+	auto dc = topDataItem()->zoneDataItem()->dataContainer();
 	if (dc == nullptr) {return nullptr;}
 	auto data = dc->data();
 	if (data == nullptr) {return nullptr;}
@@ -61,7 +62,6 @@ void Post2dWindowNodeVectorArrowGroupStructuredDataItem::doLoadFromProjectMainFi
 
 	Post2dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(node);
 
-	updateCheckState();
 	updateActorSetting();
 }
 

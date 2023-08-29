@@ -160,9 +160,9 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowmeasureddatatopdataitem.h \
            datamodel/post2dwindownodescalargroupdataitem.h \
            datamodel/post2dwindownodescalargrouptopdataitem.h \
-           datamodel/post2dwindownodevectorarrowdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.h \
+           datamodel/post2dwindownodevectorarrowgrouptopdataitem.h \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.h \
            datamodel/post2dwindownodevectorparticledataitem.h \
            datamodel/post2dwindownodevectorparticlegroupdataitem.h \
@@ -177,8 +177,8 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowparticlesbasescalardataitem.h \
            datamodel/post2dwindowparticlesbasescalargroupdataitem.h \
            datamodel/post2dwindowparticlesbasetopdataitem.h \
-           datamodel/post2dwindowparticlesbasevectordataitem.h \
            datamodel/post2dwindowparticlesbasevectorgroupdataitem.h \
+           datamodel/post2dwindowparticlesbasevectorgrouptopdataitem.h \
            datamodel/post2dwindowparticlestopdataitem.h \
            datamodel/post2dwindowpointscalargrouptopdataitemi.h \
            datamodel/post2dwindowpolydatagroupdataitem.h \
@@ -287,9 +287,9 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowmeasureddatatopdataitem.cpp \
            datamodel/post2dwindownodescalargroupdataitem.cpp \
            datamodel/post2dwindownodescalargrouptopdataitem.cpp \
-           datamodel/post2dwindownodevectorarrowdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupstructureddataitem.cpp \
+           datamodel/post2dwindownodevectorarrowgrouptopdataitem.cpp \
            datamodel/post2dwindownodevectorarrowgroupunstructureddataitem.cpp \
            datamodel/post2dwindownodevectorparticledataitem.cpp \
            datamodel/post2dwindownodevectorparticlegroupdataitem.cpp \
@@ -304,8 +304,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowparticlesbasescalardataitem.cpp \
            datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp \
            datamodel/post2dwindowparticlesbasetopdataitem.cpp \
-           datamodel/post2dwindowparticlesbasevectordataitem.cpp \
            datamodel/post2dwindowparticlesbasevectorgroupdataitem.cpp \
+           datamodel/post2dwindowparticlesbasevectorgrouptopdataitem.cpp \
            datamodel/post2dwindowparticlestopdataitem.cpp \
            datamodel/post2dwindowpolydatagroupdataitem.cpp \
            datamodel/post2dwindowpolydatatopdataitem.cpp \

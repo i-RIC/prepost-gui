@@ -1,4 +1,5 @@
 #include "../post2dwindowgridtypedataitem.h"
+#include "../post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "../post2dwindowzonedataitem.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget_additionalwidgets.h"
@@ -22,7 +23,7 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::SettingEd
 	ui->setupUi(this);
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_additionalWidgets);
 
-	auto dataContainer = item->zoneDataItem()->dataContainer();
+	auto dataContainer = item->topDataItem()->zoneDataItem()->dataContainer();
 	auto data = dataContainer->data()->data();
 	if (! dataContainer->IBCExists()) {
 		m_additionalWidgets->regionWidget()->disableActive();
@@ -32,15 +33,9 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::SettingEd
 	structured->GetDimensions(dims);
 	m_additionalWidgets->regionWidget()->setDimensions(dims[0], dims[1]);
 
-	std::map<std::string, QString> names;
-	auto pd = data->GetPointData();
-	auto tItem = item->zoneDataItem()->gridTypeDataItem();
+	auto tItem = item->topDataItem()->zoneDataItem()->gridTypeDataItem();
 	auto gridType = tItem->gridType();
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd)) {
-		names.insert({name, gridType->solutionCaption(name)});
-	}
 	ui->arrowsSettingWidget->setGridType(gridType);
-	ui->arrowsSettingWidget->setValueNames(names);
 	ui->arrowsSettingWidget->setColorMapSettings(m_item->m_colorMapSettings);
 	ui->arrowsSettingWidget->setSetting(&item->m_setting);
 	m_additionalWidgets->samplingWidget()->setSetting(&item->m_filteringSetting);

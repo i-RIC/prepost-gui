@@ -20,15 +20,8 @@ Post2dWindowParticlesBaseVectorGroupDataItem::SettingEditWidget::SettingEditWidg
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_filteringEditWidget);
 
 	auto gridTypeDataItem = item->gridTypeDataItem();
-	auto particleData = item->particleData();
 
-	std::map<std::string, QString> names;
 	auto gtype = gridTypeDataItem->gridType();
-	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(particleData->GetPointData())) {
-		auto caption = gtype->solutionCaption(name);
-		names.insert({name, caption});
-	}
-	ui->arrowsSettingWidget->setValueNames(names);
 
 	auto colorMaps = m_item->topDataItem()->scalarGroupDataItem()->colorMapSettings();
 	ui->arrowsSettingWidget->setGridType(gtype);

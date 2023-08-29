@@ -113,6 +113,7 @@ public:
 	/// Update the status (enabled or disabled) of move-up, and move-down actions.
 	virtual void updateMoveUpDownActions(ObjectBrowserView* view);
 	void setIsCommandExecuting(bool exec);
+	virtual void assignActorZValues(const ZDepthRange& range);
 	void update2Ds();
 	void updateZScale(double scale);
 	void loadCheckState(const QDomNode& node);
@@ -132,7 +133,6 @@ protected:
 	void setupStandardItem(CheckFlag cflag, ReorderFlag rflag, DeleteFlag dflag, const QString& text = "");
 
 	PostSolutionInfo* postSolutionInfo();
-	virtual void assignActorZValues(const ZDepthRange& range);
 	void assignActorZValues(const ZDepthRange& range, const std::vector<GraphicsWindowDataItem*>& items);
 	virtual GraphicsWindowDataModel* dataModel() const;
 	vtkRenderer* renderer() const;

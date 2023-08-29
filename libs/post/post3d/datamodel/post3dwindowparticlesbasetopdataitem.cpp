@@ -1,7 +1,7 @@
 #include "../post3dwindowgraphicsview.h"
 #include "post3dwindowparticlesbasetopdataitem.h"
 #include "post3dwindowparticlesbasescalargroupdataitem.h"
-#include "post3dwindowparticlesbasevectorgroupdataitem.h"
+#include "post3dwindowparticlesbasevectorgrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/image/imagesettingcontainer.h>
@@ -52,7 +52,7 @@ void Post3dWindowParticlesBaseTopDataItem::setup()
 	m_childItems.push_back(m_scalarGroupDataItem);
 
 	if (vectorExist) {
-		m_vectorGroupDataItem = new Post3dWindowParticlesBaseVectorGroupDataItem(this);
+		m_vectorGroupDataItem = new Post3dWindowParticlesBaseVectorGroupTopDataItem(this);
 		m_childItems.push_back(m_vectorGroupDataItem);
 	}
 }
@@ -62,7 +62,7 @@ Post3dWindowParticlesBaseScalarGroupDataItem* Post3dWindowParticlesBaseTopDataIt
 	return m_scalarGroupDataItem;
 }
 
-Post3dWindowParticlesBaseVectorGroupDataItem* Post3dWindowParticlesBaseTopDataItem::vectorGroupDataItem() const
+Post3dWindowParticlesBaseVectorGroupTopDataItem* Post3dWindowParticlesBaseTopDataItem::vectorGroupDataItem() const
 {
 	return m_vectorGroupDataItem;
 }
@@ -77,7 +77,7 @@ void Post3dWindowParticlesBaseTopDataItem::update()
 	}
 }
 
-void Post3dWindowParticlesBaseTopDataItem::updateColorMaps()
+void Post3dWindowParticlesBaseTopDataItem::updateColorMapLegendsVisibility()
 {
 	m_actor2DCollection->RemoveAllItems();
 	if (m_scalarGroupDataItem == nullptr) {return;}
@@ -87,22 +87,26 @@ void Post3dWindowParticlesBaseTopDataItem::updateColorMaps()
 	}
 
 	auto view = dataModel()->graphicsView();
-	for (const auto& cms : activeColorMaps()) {
+	for (const auto& cms : activeColorMapsWithVisibleLegend()) {
 		cms->legendSetting()->imgSetting()->apply(view);
 		m_actor2DCollection->AddItem(cms->legendSetting()->imgSetting()->actor());
 	}
+
+	updateVisibilityWithoutRendering();
 }
 
-std::unordered_set<ColorMapSettingContainerI*> Post3dWindowParticlesBaseTopDataItem::activeColorMaps() const
+std::unordered_set<ColorMapSettingContainerI*> Post3dWindowParticlesBaseTopDataItem::activeColorMapsWithVisibleLegend() const
 {
 	std::unordered_set<ColorMapSettingContainerI*> ret;
 
-	auto cm1 = m_scalarGroupDataItem->activeColorMapSetting();
+	auto cm1 = m_scalarGroupDataItem->activeColorMapSettingWithVisibleLegend();
 	if (cm1 != nullptr) {ret.insert(cm1);}
 
 	if (m_vectorGroupDataItem != nullptr) {
-		auto cm2 = m_vectorGroupDataItem->activeColorMapSetting();
-		if (cm2 != nullptr) {ret.insert(cm2);}
+		auto colormaps = m_vectorGroupDataItem->activeColorMapSettingsWithVisibleLegend();
+		for (auto cm : colormaps) {
+			ret.insert(cm);
+		}
 	}
 
 	return ret;

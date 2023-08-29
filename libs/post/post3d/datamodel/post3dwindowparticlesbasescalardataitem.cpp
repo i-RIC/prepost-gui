@@ -26,7 +26,6 @@ Post3dWindowParticlesBaseScalarDataItem::Post3dWindowParticlesBaseScalarDataItem
 	m_colorMapSetting->valueCaption = output->caption();
 	m_colorMapSetting->legendSetting()->setTitle(output->caption());
 	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);
-	m_colorMapSetting->legendSetting()->imgSetting()->controller()->addItem(this);
 }
 
 Post3dWindowParticlesBaseScalarDataItem::~Post3dWindowParticlesBaseScalarDataItem()
@@ -56,10 +55,10 @@ QDialog* Post3dWindowParticlesBaseScalarDataItem::propertyDialog(QWidget* parent
 	return groupDataItem()->propertyDialog(parent);
 }
 
-void Post3dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* v)
+void Post3dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* /*v*/)
 {}
 
-void Post3dWindowParticlesBaseScalarDataItem::informDeselection(VTKGraphicsView* v)
+void Post3dWindowParticlesBaseScalarDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {}
 
 void Post3dWindowParticlesBaseScalarDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)

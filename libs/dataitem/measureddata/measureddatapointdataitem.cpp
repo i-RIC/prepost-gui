@@ -9,7 +9,7 @@ MeasuredDataPointDataItem::MeasuredDataPointDataItem(const std::string& name, co
 
 void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleResize(event, v);
@@ -17,31 +17,36 @@ void MeasuredDataPointDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsV
 
 void MeasuredDataPointDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s == nullptr) {return;}
 
-	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 }
 
 void MeasuredDataPointDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s == nullptr) {return;}
 
-	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMousePressEvent(this, event, v);
 }
 
 void MeasuredDataPointDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	auto s = activeSetting();
+	auto s = activeColorMapSettingWithVisibleLegend();
 	if (s == nullptr) {return;}
 
-	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
+	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 }
 
 QDialog* MeasuredDataPointDataItem::propertyDialog(QWidget* parent)
 {
 	return groupDataItem()->propertyDialog(parent);
+}
+
+bool MeasuredDataPointDataItem::addToolBarButtons(QToolBar* toolBar)
+{
+	return groupDataItem()->addToolBarButtons(toolBar);
 }
 
 void MeasuredDataPointDataItem::showPropertyDialog()
@@ -54,7 +59,7 @@ MeasuredDataPointGroupDataItem* MeasuredDataPointDataItem::groupDataItem() const
 	return dynamic_cast<MeasuredDataPointGroupDataItem*>(parent());
 }
 
-ColorMapSettingContainerI* MeasuredDataPointDataItem::activeSetting() const
+ColorMapSettingContainerI* MeasuredDataPointDataItem::activeColorMapSettingWithVisibleLegend() const
 {
-	return groupDataItem()->activeSetting();
+	return groupDataItem()->activeColorMapSettingWithVisibleLegend();
 }

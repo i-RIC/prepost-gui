@@ -46,9 +46,7 @@ void ArrowsColorSettingEditWidget::setColorMapSettings(const std::unordered_map<
 		m_colorMapNames.push_back(pair.second);
 	}
 	ui->scalarComboBox->blockSignals(false);
-	if (m_colorMapNames.size() > 0) {
-		handleColorScalarChange(0);
-	} else {
+	if (m_colorMapNames.size() == 0) {
 		ui->customRadioButton->setChecked(true);
 		ui->customRadioButton->setDisabled(true);
 		ui->scalarRadioButton->setDisabled(true);
@@ -85,6 +83,11 @@ void ArrowsColorSettingEditWidget::setSetting(const ArrowsSettingContainer& sett
 	ui->colorEditWidget->setColor(setting.customColor);
 
 	auto scalarStr = iRIC::toStr(setting.colorTarget);
+	auto it = std::find(m_colorMapNames.begin(), m_colorMapNames.end(), scalarStr);
+	if (it == m_colorMapNames.end() && m_colorMapNames.size() > 0) {
+		scalarStr = m_colorMapNames.at(0);
+	}
+
 	for (int i = 0; i < m_colorMapNames.size(); ++i) {
 		if (m_colorMapNames.at(i) == scalarStr) {
 			ui->scalarComboBox->blockSignals(true);

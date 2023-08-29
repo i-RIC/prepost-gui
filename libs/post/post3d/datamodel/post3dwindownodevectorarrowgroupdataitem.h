@@ -46,6 +46,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 	QDialog* propertyDialog(QWidget* p) override;
+	void updateVisibility(bool visible) override;
 
 	void updateActorSetting() override;
 	Post3dWindowNodeVectorArrowTopDataItem* topDataItem() const;

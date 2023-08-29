@@ -7,7 +7,7 @@
 
 class ColorMapSettingContainerI;
 class Post2dWindowParticlesBaseScalarGroupDataItem;
-class Post2dWindowParticlesBaseVectorGroupDataItem;
+class Post2dWindowParticlesBaseVectorGroupTopDataItem;
 class Post2dWindowZoneDataItem;
 
 class Post2dWindowParticlesBaseTopDataItem : public Post2dWindowDataItem
@@ -16,19 +16,19 @@ class Post2dWindowParticlesBaseTopDataItem : public Post2dWindowDataItem
 
 public:
 	Post2dWindowParticlesBaseTopDataItem(const QString& caption, Post2dWindowDataItem* parent);
-	virtual ~Post2dWindowParticlesBaseTopDataItem();
+	~Post2dWindowParticlesBaseTopDataItem() override;
 
 	void setup();
 
 	Post2dWindowParticlesBaseScalarGroupDataItem* scalarGroupDataItem() const;
-	Post2dWindowParticlesBaseVectorGroupDataItem* vectorGroupDataItem() const;
+	Post2dWindowParticlesBaseVectorGroupTopDataItem* vectorGroupDataItem() const;
 
 	QAction* showAttributeBrowserAction() const;
 
-	void updateZDepthRangeItemCount(ZDepthRange& range);
+	void updateZDepthRangeItemCount() override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void update();
-	void updateColorMaps();
+	void updateColorMapLegendsVisibility();
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
@@ -39,13 +39,13 @@ private slots:
 	void showAttributeBrowser();
 
 private:
-	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
+	std::unordered_set<ColorMapSettingContainerI*> activeColorMapsWithVisibleLegend() const;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	Post2dWindowParticlesBaseScalarGroupDataItem* m_scalarGroupDataItem;
-	Post2dWindowParticlesBaseVectorGroupDataItem* m_vectorGroupDataItem;
+	Post2dWindowParticlesBaseVectorGroupTopDataItem* m_vectorGroupDataItem;
 
 	QAction* m_showAttributeBrowserAction;
 };
