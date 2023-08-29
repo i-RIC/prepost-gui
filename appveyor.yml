@@ -40,6 +40,8 @@ image:
 # must be re-evaluated everytime.  env vars CAN be passed from ps: to pwsh: but not the
 # other way around (see develop_v4-363)
 init:
+  - if "%Configuration%"=="Debug"   (set config=debug)
+  - if "%Configuration%"=="Release" (set config=release)
   - ps: |
       # Sometimes the plaintext of secure variables is displayed so filter out secure vars
       Get-ChildItem env: | Where-Object { $_.Name -NotMatch "access_token" -and $_.Name -notmatch 'json_pw'}
