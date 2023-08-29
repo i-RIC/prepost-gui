@@ -9,6 +9,7 @@
 class SolverDefinitionTranslator::Impl
 {
 public:
+	Impl();
 	Impl(const QString& solverfolder, const QLocale& locale);
 	void load(const QString& solverfolder, const QLocale& locale);
 

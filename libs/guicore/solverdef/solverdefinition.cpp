@@ -182,9 +182,19 @@ const QDir& SolverDefinition::folder() const
 	return impl->m_abstract.folder();
 }
 
-const QList<SolverDefinitionGridType*> SolverDefinition::gridTypes() const
+const QList<SolverDefinitionGridType*>& SolverDefinition::gridTypes() const
 {
 	return impl->m_gridTypes;
+}
+
+std::vector<SolverDefinitionGridType*> SolverDefinition::preGridTypes() const
+{
+	std::vector<SolverDefinitionGridType*> ret;
+	for (auto type : impl->m_gridTypes) {
+		if (type->post()) {continue;}
+		ret.push_back(type);
+	}
+	return ret;
 }
 
 SolverDefinitionGridType* SolverDefinition::dummyGridType() const

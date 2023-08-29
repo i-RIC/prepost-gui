@@ -35,23 +35,28 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post2dWindowDataModel*>(dataModel())->postSolutionInfo();
 
-	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
+	const auto& types = def->gridTypes();
 	// build grid type data items.
 	QList<Post2dWindowGridTypeDataItem*> gtitems;
-	for (auto it = types.begin(); it != types.end(); ++it) {
-		Post2dWindowGridTypeDataItem* item = new Post2dWindowGridTypeDataItem(*it, this);
+	const auto& conts = post->zoneContainers2D();
+	for (auto type : types) {
+		bool zoneExists = false;
+		for (auto c : conts) {
+			zoneExists = zoneExists || c->gridType() == type;
+		}
+		if (! zoneExists) {continue;}
+
+		auto item = new Post2dWindowGridTypeDataItem(type, this);
 		m_gridTypeDataItems.append(item);
 		gtitems.append(item);
 	}
 	// create grid type data item for dummy grid type if needed.
-	const QList<PostZoneDataContainer*>& conts = post->zoneContainers2D();
 	bool needDummy = false;
-	for (int i = 0; i < conts.count(); ++i) {
-		PostZoneDataContainer* c = conts.at(i);
+	for (auto c : conts) {
 		needDummy = needDummy || (c->gridType() == def->dummyGridType());
 	}
 	if (needDummy) {
-		Post2dWindowGridTypeDataItem* item = new Post2dWindowGridTypeDataItem(def->dummyGridType(), this);
+		auto item = new Post2dWindowGridTypeDataItem(def->dummyGridType(), this);
 		m_gridTypeDataItems.append(item);
 		gtitems.append(item);
 	}

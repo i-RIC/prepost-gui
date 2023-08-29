@@ -1,7 +1,7 @@
 #ifndef SOLVERDEFINITIONABSTRACTWIDGET_H
 #define SOLVERDEFINITIONABSTRACTWIDGET_H
 
-class SolverDefinitionAbstract;
+#include "../gui_api.h"
 
 #include <QWidget>
 
@@ -10,9 +10,11 @@ namespace Ui
 	class SolverDefinitionAbstractWidget;
 }
 
+class SolverDefinitionAbstract;
+
 /// This class defines the dialog to show information about a solver,
 /// like name, version, release date etc.
-class SolverDefinitionAbstractWidget : public QWidget
+class GUI_API SolverDefinitionAbstractWidget : public QWidget
 {
 	Q_OBJECT
 

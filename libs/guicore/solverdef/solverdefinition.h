@@ -30,9 +30,7 @@ public:
 		ConvergenceIteration,
 		TimeIteration,
 	};
-	/// Constructor
 	SolverDefinition(const QString& solverfolder, const QLocale& locale);
-	/// Destructor
 	~SolverDefinition();
 	/// Solver name in adequate locale
 	const std::string& name() const;
@@ -55,7 +53,9 @@ public:
 	/// The folder that contains files related to solver.
 	const QDir& folder() const;
 	/// The list of grid types
-	const QList<SolverDefinitionGridType*> gridTypes() const;
+	const QList<SolverDefinitionGridType*>& gridTypes() const;
+	std::vector<SolverDefinitionGridType*> preGridTypes() const;
+
 	SolverDefinitionGridType* dummyGridType() const;
 	/// Get grid type from name
 	SolverDefinitionGridType* gridType(const std::string& name) const;

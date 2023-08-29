@@ -10,6 +10,9 @@
 #include <QDomNode>
 #include <QString>
 
+SolverDefinitionTranslator::Impl::Impl()
+{}
+
 SolverDefinitionTranslator::Impl::Impl(const QString &solverfolder, const QLocale &locale) :
 	m_locale {locale}
 {
@@ -92,7 +95,8 @@ SolverDefinitionTranslator::SolverDefinitionTranslator(const QString& solverfold
 	impl {new Impl {solverfolder, locale}}
 {}
 
-SolverDefinitionTranslator::SolverDefinitionTranslator(const SolverDefinitionTranslator& t)
+SolverDefinitionTranslator::SolverDefinitionTranslator(const SolverDefinitionTranslator& t) :
+	impl {new Impl {}}
 {
 	*impl = *(t.impl);
 }

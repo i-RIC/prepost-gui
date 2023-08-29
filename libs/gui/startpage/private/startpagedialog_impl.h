@@ -9,6 +9,8 @@ public:
 	CommandMode m_commandMode;
 	SolverDefinitionAbstract* m_solverDefinition;
 	QString m_projectFileName;
+
+	iRICMainWindow* m_mainWindow;
 };
 
 #endif // STARTPAGEDIALOG_IMPL_H

@@ -28,22 +28,27 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 	SolverDefinition* def = projectData()->solverDefinition();
 	PostSolutionInfo* post = dynamic_cast<Post3dWindowDataModel*>(dataModel())->postSolutionInfo();
 
-	const QList<SolverDefinitionGridType*>& types = def->gridTypes();
+	const auto& types = def->gridTypes();
 	// build grid type data items.
-	for (auto it = types.begin(); it != types.end(); ++it) {
-		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(*it, this);
+	const auto& conts = post->zoneContainers3D();
+	for (auto type : types) {
+		bool zoneExists = false;
+		for (auto c : conts) {
+			zoneExists = zoneExists || c->gridType() == type;
+		}
+		if (! zoneExists) {continue;}
+
+		auto item = new Post3dWindowGridTypeDataItem(type, this);
 		m_gridTypeDataItems.append(item);
 		m_childItems.push_back(item);
 	}
 	// create grid type data item for dummy grid type if needed.
-	const QList<PostZoneDataContainer*>& conts = post->zoneContainers3D();
 	bool needDummy = false;
-	for (int i = 0; i < conts.count(); ++i) {
-		PostZoneDataContainer* c = conts.at(i);
+	for (auto c : conts) {
 		needDummy = needDummy || (c->gridType() == def->dummyGridType());
 	}
 	if (needDummy) {
-		Post3dWindowGridTypeDataItem* item = new Post3dWindowGridTypeDataItem(def->dummyGridType(), this);
+		auto item = new Post3dWindowGridTypeDataItem(def->dummyGridType(), this);
 		m_gridTypeDataItems.append(item);
 		m_childItems.push_back(item);
 	}

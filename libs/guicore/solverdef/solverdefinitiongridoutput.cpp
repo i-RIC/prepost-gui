@@ -31,6 +31,10 @@ void SolverDefinitionGridOutput::Impl::load(const QDomElement& elem)
 		m_position = Position::EdgeJ;
 	} else if (pos == "edgek") {
 		m_position = Position::EdgeK;
+	} else if (pos == "particle") {
+		m_position = Position::Particle;
+	} else if (pos == "polydata") {
+		m_position = Position::PolyData;
 	}
 }
 

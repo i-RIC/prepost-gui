@@ -8,4 +8,5 @@ CONFIG += ordered
 
 SUBDIRS = \
 	iricgui \
+	iricmigui \
 	rivmaker

@@ -1,6 +1,8 @@
 #ifndef SOLVERDEFINITIONLIST_H
 #define SOLVERDEFINITIONLIST_H
 
+#include "../gui_api.h"
+
 #include <QObject>
 #include <QLocale>
 
@@ -16,7 +18,7 @@ class ProjectData;
  * The main role of this class is to provide the list of solvers ( solverList() ),
  * that is updated automatically, and emits updated() signal when the list is updated.
  */
-class SolverDefinitionList : public QObject
+class GUI_API SolverDefinitionList : public QObject
 {
 	Q_OBJECT
 

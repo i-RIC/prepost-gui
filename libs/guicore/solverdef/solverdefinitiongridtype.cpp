@@ -7,12 +7,20 @@
 #include "solverdefinitionboundarycondition.h"
 #include "solverdefinitiongridattribute.h"
 #include "solverdefinitiongridattributeintegercell.h"
+#include "solverdefinitiongridattributeintegeriface.h"
+#include "solverdefinitiongridattributeintegerjface.h"
 #include "solverdefinitiongridattributeintegernode.h"
 #include "solverdefinitiongridattributeintegeroptioncell.h"
+#include "solverdefinitiongridattributeintegeroptioniface.h"
+#include "solverdefinitiongridattributeintegeroptionjface.h"
 #include "solverdefinitiongridattributeintegeroptionnode.h"
 #include "solverdefinitiongridattributerealcell.h"
+#include "solverdefinitiongridattributerealiface.h"
+#include "solverdefinitiongridattributerealjface.h"
 #include "solverdefinitiongridattributerealnode.h"
 #include "solverdefinitiongridattributerealoptioncell.h"
+#include "solverdefinitiongridattributerealoptioniface.h"
+#include "solverdefinitiongridattributerealoptionjface.h"
 #include "solverdefinitiongridattributerealoptionnode.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridoutput.h"
@@ -92,6 +100,9 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& elem, SolverDefinit
 	m_multiple = (multistr == "true");
 	QString optstr = elem.attribute("optional", "false");
 	m_isOptional = (optstr == "true");
+	QString poststr = elem.attribute("post", "false");
+	m_post = (poststr == "true");
+
 	// set grid type
 	setGridType(elem);
 	// set grid generators
@@ -162,6 +173,34 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 							c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, solverDef, order);
 						} else {
 							c = new SolverDefinitionGridAttributeRealCell(itemElem, solverDef, order);
+						}
+					}
+				} else if (defElem.attribute("position") == "iface") {
+					if (defElem.attribute("valueType") == "integer") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeIntegerOptionIFace(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeIntegerIFace(itemElem, solverDef, order);
+						}
+					} else if (defElem.attribute("valueType") == "real") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeRealOptionIFace(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeRealIFace(itemElem, solverDef, order);
+						}
+					}
+				} else if (defElem.attribute("position") == "jface") {
+					if (defElem.attribute("valueType") == "integer") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeIntegerOptionJFace(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeIntegerJFace(itemElem, solverDef, order);
+						}
+					} else if (defElem.attribute("valueType") == "real") {
+						if (InputConditionWidget::hasEnums(defElem)) {
+							c = new SolverDefinitionGridAttributeRealOptionJFace(itemElem, solverDef, order);
+						} else {
+							c = new SolverDefinitionGridAttributeRealJFace(itemElem, solverDef, order);
 						}
 					}
 				} else if (defElem.attribute("position") == "node") {
@@ -375,6 +414,11 @@ bool SolverDefinitionGridType::isOptional() const
 bool SolverDefinitionGridType::isKeepOrder() const
 {
 	return impl->m_isKeepOrder;
+}
+
+bool SolverDefinitionGridType::post() const
+{
+	return impl->m_post;
 }
 
 void SolverDefinitionGridType::buildGridAttributes(Grid* grid) const

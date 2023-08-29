@@ -32,6 +32,8 @@ public:
 	bool m_multiple {false};
 	bool m_isOptional {false};
 	bool m_isKeepOrder {false};
+	bool m_post {false};
+
 	std::vector<GridType> m_availableGridTypes;
 	std::vector<QString> m_availableGridGenerators;
 	GridType m_defaultGridType {gtUnknownGrid};

@@ -86,7 +86,7 @@ void Post2dWindowNodeScalarGroupDataItem::updateActorSetting()
 
 	vtkPointSet* filtered = nullptr;
 	if (impl->m_setting.regionSetting.mode == Region2dSettingContainer::Mode::Full) {
-		filtered = z->filteredData();
+		filtered = z->filteredData(impl->m_solutionPosition);
 		if (filtered != nullptr) {
 			filtered->Register(nullptr);
 		}
