@@ -44,7 +44,7 @@ void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zon
 	vtkPointData* pd = zoneData->data()->data()->GetPointData();
 
 	m_targets = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
-	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->solutionCaptions(m_targets), ui->physicalValueComboBox);
+	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->outputCaptions(m_targets), ui->physicalValueComboBox);
 
 	auto grid = vtkStructuredGrid::SafeDownCast(zoneData->data()->data());
 	int dims[3];

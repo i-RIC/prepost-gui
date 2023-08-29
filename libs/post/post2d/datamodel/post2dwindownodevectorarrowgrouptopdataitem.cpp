@@ -82,7 +82,7 @@ QDialog* Post2dWindowNodeVectorArrowGroupTopDataItem::addDialog(QWidget* parent)
 	std::unordered_map<std::string, QString> solutions;
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::Node)->data()->GetPointData())) {
-		solutions.insert({sol, gType->solutionCaption(sol)});
+		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
 	auto dialog = new ValueSelectDialog(parent);
@@ -105,7 +105,7 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::handleAddDialogAccepted(QDialo
 	auto sol = dialog->selectedValue();
 
 	auto newItem = buildItem(sol);
-	newItem->standardItem()->setText(gType->solutionCaption(sol));
+	newItem->standardItem()->setText(gType->outputCaption(sol));
 
 	m_childItems.push_back(newItem);
 	updateItemMap();

@@ -158,7 +158,7 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidge
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);
-	ComboBoxTool::setupItems(gt->solutionCaptions(m_solutions), ui->solutionComboBox);
+	ComboBoxTool::setupItems(gt->outputCaptions(m_solutions), ui->solutionComboBox);
 
 	if (m_solutions.size() < 2) {
 		ui->physValLabel->hide();

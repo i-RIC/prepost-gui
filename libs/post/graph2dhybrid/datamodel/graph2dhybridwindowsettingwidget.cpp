@@ -30,7 +30,7 @@ void Graph2dHybridWindowSettingWidget::setSetting(Graph2dHybridWindowResultSetti
 {
 	m_setting = setting;
 	this->blockSignals(true);
-	ui->labelLineEdit->setText(setting->name());
+	ui->labelLineEdit->setText(setting->caption());
 	if (setting->axisSide() == Graph2dHybridWindowResultSetting::asLeft) {
 		ui->yAxisLeftRadioButton->setChecked(true);
 	} else {
@@ -82,7 +82,7 @@ void Graph2dHybridWindowSettingWidget::setupForExternalData()
 
 void Graph2dHybridWindowSettingWidget::updateLabel(const QString& label)
 {
-	m_setting->setName(label);
+	m_setting->setCaption(label);
 	emit labelChanged(label);
 }
 

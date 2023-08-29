@@ -12,11 +12,15 @@ class Post2dWindowCellScalarGroupDataItem::Setting : public CompositeContainer {
 public:
 	Setting();
 	Setting(const Setting& setting);
+	~Setting();
 
 	Setting& operator=(const Setting& setting);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
-	ColorMapSettingContainer colorMapSetting;
+	void load(const QDomNode& node) override;
+	void save(QXmlStreamWriter& writer) const override;
+
+	ColorMapSettingContainerI* colorMapSetting;
 	Region2dSettingContainer regionSetting;
 	OpacityContainer opacity;
 };

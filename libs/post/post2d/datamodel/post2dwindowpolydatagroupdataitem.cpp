@@ -44,7 +44,7 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 	SolverDefinitionGridType* gt = cont->gridType();
 
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNames(cont->polyData(name)->data()->GetCellData())) {
-		auto item = new Post2dWindowPolyDataValueDataItem(name, gt->solutionCaption(name), this);
+		auto item = new Post2dWindowPolyDataValueDataItem(name, gt->outputCaption(name), this);
 		m_childItems.push_back(item);
 		auto output = gt->output(name);
 		auto cs = output->createColorMapSettingContainer();

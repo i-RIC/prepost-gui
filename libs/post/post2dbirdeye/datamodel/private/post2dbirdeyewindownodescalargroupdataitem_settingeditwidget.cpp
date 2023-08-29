@@ -36,7 +36,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 
 	std::map<QString, std::string> nodeCaptionMap;
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetPointData())) {
-		auto caption = gridType->solutionCaption(name);
+		auto caption = gridType->outputCaption(name);
 		nodeCaptionMap.insert({caption, name});
 	}
 	ui->nodeScalarComboBox->blockSignals(true);
@@ -50,7 +50,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 	std::map<QString, std::string> cellCaptionMap;
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetCellData())) {
 		if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
-		auto caption = gridType->solutionCaption(name);
+		auto caption = gridType->outputCaption(name);
 		cellCaptionMap.insert({caption, name});
 	}
 	ui->cellScalarComboBox->blockSignals(true);

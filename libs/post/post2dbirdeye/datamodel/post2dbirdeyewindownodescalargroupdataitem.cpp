@@ -44,7 +44,7 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	impl->m_setting.colorTarget = elevationTarget.c_str();
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	standardItem()->setText(gType->solutionCaption(elevationTarget));
+	standardItem()->setText(gType->outputCaption(elevationTarget));
 
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
 	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {

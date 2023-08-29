@@ -96,7 +96,7 @@ QDialog* Post2dWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->dataContainer()->data()->data()->GetCellData())) {
 		if (PostZoneDataContainer::hasInputDataPrefix(sol)) {continue;}
-		solutions.insert({sol, gType->solutionCaption(sol)});
+		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
 	auto dialog = new ValueSelectDialog(p);
@@ -119,7 +119,7 @@ void Post2dWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowCellScalarGroupDataItem(sol, this);
-	newItem->standardItem()->setText(gType->solutionCaption(sol));
+	newItem->standardItem()->setText(gType->outputCaption(sol));
 
 	m_childItems.push_back(newItem);
 	updateItemMap();

@@ -80,7 +80,7 @@ QDialog* Post3dWindowContourGroupTopDataItem::addDialog(QWidget* p)
 	std::unordered_map<std::string, QString> solutions;
 
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zoneData->data()->data()->GetPointData())) {
-		solutions.insert({sol, gType->solutionCaption(sol)});
+		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 	dialog->setValues(solutions);
 	dialog->setWindowTitle(tr("Select Calculation Result"));

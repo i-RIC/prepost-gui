@@ -23,8 +23,8 @@ Post2dWindowParticlesBaseScalarDataItem::Post2dWindowParticlesBaseScalarDataItem
 	auto gType = gtItem->gridType();
 	auto output = gType->output(name);
 	m_colorMapSetting = output->createColorMapSettingContainer();
-	m_colorMapSetting->valueCaption = output->caption();
-	m_colorMapSetting->legendSetting()->setTitle(output->caption());
+	m_colorMapSetting->valueCaption = caption;
+	m_colorMapSetting->legendSetting()->setTitle(caption);
 	m_colorMapSetting->legendSetting()->imgSetting()->setActor(m_legendActor);
 }
 

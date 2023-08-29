@@ -33,7 +33,7 @@ Post3dWindowNodeVectorParticleGroupStructuredDataItem::SettingEditWidget::Settin
 
 	std::unordered_map<std::string, QString> solutions;
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd)) {
-		auto cap = gtype->solutionCaption(sol);
+		auto cap = gtype->outputCaption(sol);
 		solutions.insert({sol, cap});
 	}
 	ui->particleSettingWidget->setSolutions(solutions);

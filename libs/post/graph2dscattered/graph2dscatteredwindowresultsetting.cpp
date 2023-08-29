@@ -8,18 +8,146 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
 #include <postbase/postallzoneselectingdialog.h>
+#include <misc/stringtool.h>
 
 #include <qwt_plot.h>
 
 #include <QDomNode>
 #include <QSettings>
 
-const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X = "_positionX";
-const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y = "_positionY";
-const QString Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z = "_positionZ";
-const QString Graph2dScatteredWindowResultSetting::XAXIS_STREAM_WISE_DISTANCE = "_streamWiseDistance";
+const std::string Graph2dScatteredWindowResultSetting::XAXIS_POSITION_X = "_positionX";
+const std::string Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Y = "_positionY";
+const std::string Graph2dScatteredWindowResultSetting::XAXIS_POSITION_Z = "_positionZ";
+const std::string Graph2dScatteredWindowResultSetting::XAXIS_STREAM_WISE_DISTANCE = "_streamWiseDistance";
 
 ColorSource* Graph2dScatteredWindowResultSetting::m_colorSource = new ColorSource(0);
+
+
+
+Graph2dScatteredWindowResultSetting::Setting::Setting() :
+	m_name {""},
+	m_axisSide {AxisSide::asLeft},
+	m_customColor {Qt::black},
+	m_symbolType {SymbolType::symCircle},
+	m_symbolSize {7}
+{}
+
+Graph2dScatteredWindowResultSetting::Setting::Setting(const std::string& name) :
+	m_name {name},
+	m_axisSide {AxisSide::asLeft},
+	m_customColor {Qt::black},
+	m_symbolType {SymbolType::symCircle},
+	m_symbolSize {7}
+{}
+
+void Graph2dScatteredWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
+{
+	if (m_axisSide == Graph2dScatteredWindowResultSetting::asLeft) {
+		curve->setYAxis(QwtPlot::yLeft);
+	} else {
+		curve->setYAxis(QwtPlot::yRight);
+	}
+
+	// symbol
+	// no line.
+	QPen pen;
+	pen.setColor(Qt::transparent);
+	pen.setWidth(1);
+	pen.setStyle(Qt::SolidLine);
+	curve->setPen(pen);
+	QwtSymbol* symbol = new QwtSymbol();
+	symbol->setStyle(Graph2dScatteredWindowResultSetting::getSymbolStyle(m_symbolType));
+	symbol->setSize(m_symbolSize);
+	pen.setColor(m_customColor);
+	pen.setWidth(1);
+	pen.setStyle(Qt::SolidLine);
+	symbol->setPen(pen);
+	QBrush brush;
+	brush.setColor(Qt::transparent);
+	symbol->setBrush(brush);
+	curve->setSymbol(symbol);
+}
+
+const std::string& Graph2dScatteredWindowResultSetting::Setting::name() const
+{
+	return m_name;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setName(const std::string& name)
+{
+	m_name = name;
+}
+
+const QString& Graph2dScatteredWindowResultSetting::Setting::caption() const
+{
+	return m_caption;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setCaption(const QString& caption)
+{
+	m_caption = caption;
+}
+
+Graph2dScatteredWindowResultSetting::AxisSide Graph2dScatteredWindowResultSetting::Setting::axisSide() const
+{
+	return m_axisSide;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setAxisSide(AxisSide as)
+{
+	m_axisSide = as;
+}
+
+const QColor& Graph2dScatteredWindowResultSetting::Setting::customColor() const
+{
+	return m_customColor;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setCustomColor(const QColor& c)
+{
+	m_customColor = c;
+}
+
+Graph2dScatteredWindowResultSetting::SymbolType Graph2dScatteredWindowResultSetting::Setting::symbolType() const{
+	return m_symbolType;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setSymbolType(SymbolType st)
+{
+	m_symbolType = st;
+}
+
+int Graph2dScatteredWindowResultSetting::Setting::symbolSize() const
+{
+	return m_symbolSize;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::setSymbolSize(int size)
+{
+	m_symbolSize = size;
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)
+{
+	QDomElement elem = node.toElement();
+
+	m_name = iRIC::toStr(elem.attribute("name"));
+	m_caption = elem.attribute("caption");
+	m_axisSide = static_cast<AxisSide>(iRIC::getIntAttribute(node, "axisSide"));
+	m_customColor = iRIC::getColorAttribute(node, "customColor");
+	m_symbolType = static_cast<SymbolType>(iRIC::getIntAttribute(node, "symbolType"));
+	m_symbolSize = iRIC::getIntAttribute(node, "symbolSize");
+}
+
+void Graph2dScatteredWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter& writer) const
+{
+	writer.writeAttribute("name", m_name.c_str());
+	writer.writeAttribute("caption", m_caption);
+	iRIC::setIntAttribute(writer, "axisSide", static_cast<int>(m_axisSide));
+	iRIC::setColorAttribute(writer, "customColor", m_customColor);
+	iRIC::setIntAttribute(writer, "symbolType", static_cast<int>(m_symbolType));
+	iRIC::setIntAttribute(writer, "symbolSize", m_symbolSize);
+}
 
 Graph2dScatteredWindowResultSetting::Graph2dScatteredWindowResultSetting() :
 	m_xAxisAutoRange {true},
@@ -79,6 +207,16 @@ bool Graph2dScatteredWindowResultSetting::init(PostSolutionInfo* sol)
 	PostZoneDataContainer* cont = dialog.container();
 	m_zoneName = cont->zoneName();
 	return true;
+}
+
+PostSolutionInfo::Dimension Graph2dScatteredWindowResultSetting::dimension() const
+{
+	return m_dimension;
+}
+
+const std::string& Graph2dScatteredWindowResultSetting::zoneName() const
+{
+	return m_zoneName;
 }
 
 QFont Graph2dScatteredWindowResultSetting::chartTitleFont() const
@@ -145,7 +283,7 @@ void Graph2dScatteredWindowResultSetting::setYAxisTickFont(const QFont& font)
 void Graph2dScatteredWindowResultSetting::loadFromProjectMainFile(const QDomNode& node)
 {
 	QDomElement elem = node.toElement();
-	m_xAxis = elem.attribute("xAxis");
+	m_xAxis = iRIC::toStr(elem.attribute("xAxis"));
 	m_xAxisAutoRange = iRIC::getBooleanAttribute(node, "xAxisAutoRange");
 	m_xAxisValueMin = iRIC::getDoubleAttribute(node, "xAxisValueMin");
 	m_xAxisValueMax = iRIC::getDoubleAttribute(node, "xAxisValueMax");
@@ -190,7 +328,7 @@ void Graph2dScatteredWindowResultSetting::loadFromProjectMainFile(const QDomNode
 
 void Graph2dScatteredWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("xAxis", m_xAxis);
+	writer.writeAttribute("xAxis", m_xAxis.c_str());
 	iRIC::setBooleanAttribute(writer, "xAxisAutoRange", m_xAxisAutoRange);
 	iRIC::setDoubleAttribute(writer, "xAxisValueMin", m_xAxisValueMin);
 	iRIC::setDoubleAttribute(writer, "xAxisValueMax", m_xAxisValueMax);
@@ -233,54 +371,6 @@ void Graph2dScatteredWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter
 	writer.writeEndElement();
 }
 
-void Graph2dScatteredWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)
-{
-	QDomElement elem = node.toElement();
-
-	m_name = elem.attribute("name");
-	m_axisSide = static_cast<AxisSide>(iRIC::getIntAttribute(node, "axisSide"));
-	m_customColor = iRIC::getColorAttribute(node, "customColor");
-	m_symbolType = static_cast<SymbolType>(iRIC::getIntAttribute(node, "symbolType"));
-	m_symbolSize = iRIC::getIntAttribute(node, "symbolSize");
-}
-
-void Graph2dScatteredWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter& writer) const
-{
-	writer.writeAttribute("name", m_name);
-	iRIC::setIntAttribute(writer, "axisSide", static_cast<int>(m_axisSide));
-	iRIC::setColorAttribute(writer, "customColor", m_customColor);
-	iRIC::setIntAttribute(writer, "symbolType", static_cast<int>(m_symbolType));
-	iRIC::setIntAttribute(writer, "symbolSize", m_symbolSize);
-}
-
-void Graph2dScatteredWindowResultSetting::Setting::setupCurve(QwtPlotCustomCurve* curve) const
-{
-	if (m_axisSide == Graph2dScatteredWindowResultSetting::asLeft) {
-		curve->setYAxis(QwtPlot::yLeft);
-	} else {
-		curve->setYAxis(QwtPlot::yRight);
-	}
-
-	// symbol
-	// no line.
-	QPen pen;
-	pen.setColor(Qt::transparent);
-	pen.setWidth(1);
-	pen.setStyle(Qt::SolidLine);
-	curve->setPen(pen);
-	QwtSymbol* symbol = new QwtSymbol();
-	symbol->setStyle(Graph2dScatteredWindowResultSetting::getSymbolStyle(m_symbolType));
-	symbol->setSize(m_symbolSize);
-	pen.setColor(m_customColor);
-	pen.setWidth(1);
-	pen.setStyle(Qt::SolidLine);
-	symbol->setPen(pen);
-	QBrush brush;
-	brush.setColor(Qt::transparent);
-	symbol->setBrush(brush);
-	curve->setSymbol(symbol);
-}
-
 QwtSymbol::Style Graph2dScatteredWindowResultSetting::getSymbolStyle(SymbolType st)
 {
 	switch (st) {
@@ -313,7 +403,7 @@ QString Graph2dScatteredWindowResultSetting::autoYAxisLabel(AxisSide as)
 	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
 		if (s.axisSide() == as) {
-			labels.append(s.name());
+			labels.append(s.caption());
 		}
 	}
 	return labels.join(", ");
@@ -328,6 +418,216 @@ bool Graph2dScatteredWindowResultSetting::axisNeeded(AxisSide as)
 	return false;
 }
 
+QList<Graph2dScatteredWindowResultSetting::Setting>& Graph2dScatteredWindowResultSetting::targetDatas()
+{
+	return m_targetDatas;
+}
+
+const QList<Graph2dScatteredWindowResultSetting::Setting>& Graph2dScatteredWindowResultSetting::targetDatas() const
+{
+	return m_targetDatas;
+}
+
+bool Graph2dScatteredWindowResultSetting::xAxisAutoRange() const
+{
+	return m_xAxisAutoRange;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisAutoRange(bool a)
+{
+	m_xAxisAutoRange = a;
+}
+
+double Graph2dScatteredWindowResultSetting::xAxisValueMin() const
+{
+	return m_xAxisValueMin;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisValueMin(double min)
+{
+	m_xAxisValueMin = min;
+}
+
+double Graph2dScatteredWindowResultSetting::xAxisValueMax() const
+{
+	return m_xAxisValueMax;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisValueMax(double max)
+{
+	m_xAxisValueMax = max;
+}
+
+bool Graph2dScatteredWindowResultSetting::xAxisReverse() const
+{
+	return m_xAxisReverse;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisReverse(bool rev)
+{
+	m_xAxisReverse = rev;
+}
+
+bool Graph2dScatteredWindowResultSetting::xAxisLog() const
+{
+	return m_xAxisLog;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisLog(bool log)
+{
+	m_xAxisLog = log;
+}
+
+const QString& Graph2dScatteredWindowResultSetting::xAxisLabel() const
+{
+	return m_xAxisLabel;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxisLabel(const QString& l)
+{
+	m_xAxisLabel = l;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisLeftAutoRange() const
+{
+	return m_yAxisLeftAutoRange;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftAutoRange(bool a)
+{
+	m_yAxisLeftAutoRange = a;
+}
+
+double Graph2dScatteredWindowResultSetting::yAxisLeftMin() const
+{
+	return m_yAxisLeftMin;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftMin(double min)
+{
+	m_yAxisLeftMin = min;
+}
+
+double Graph2dScatteredWindowResultSetting::yAxisLeftMax() const
+{
+	return m_yAxisLeftMax;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftMax(double max)
+{
+	m_yAxisLeftMax = max;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisLeftReverse() const
+{
+	return m_yAxisLeftReverse;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftReverse(bool reverse)
+{
+	m_yAxisLeftReverse = reverse;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisLeftLog() const
+{
+	return m_yAxisLeftLog;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftLog(bool log)
+{
+	m_yAxisLeftLog = log;
+}
+
+QString Graph2dScatteredWindowResultSetting::yAxisLeftTitle() const
+{
+	return m_yAxisLeftTitle;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisLeftTitle(const QString title)
+{
+	m_yAxisLeftTitle = title;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisRightAutoRange() const
+{
+	return m_yAxisRightAutoRange;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightAutoRange(bool a)
+{
+	m_yAxisRightAutoRange = a;
+}
+
+double Graph2dScatteredWindowResultSetting::yAxisRightMin() const
+{
+	return m_yAxisRightMin;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightMin(double min)
+{
+	m_yAxisRightMin = min;
+}
+
+double Graph2dScatteredWindowResultSetting::yAxisRightMax() const
+{
+	return m_yAxisRightMax;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightMax(double max)
+{
+	m_yAxisRightMax = max;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisRightReverse() const
+{
+	return m_yAxisRightReverse;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightReverse(bool reverse)
+{
+	m_yAxisRightReverse = reverse;
+}
+
+bool Graph2dScatteredWindowResultSetting::yAxisRightLog() const
+{
+	return m_yAxisRightLog;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightLog(bool log)
+{
+	m_yAxisRightLog = log;
+}
+
+QString Graph2dScatteredWindowResultSetting::yAxisRightTitle() const
+{
+	return m_yAxisRightTitle;
+}
+
+void Graph2dScatteredWindowResultSetting::setYAxisRightTitle(const QString title)
+{
+	m_yAxisRightTitle = title;
+}
+
+const QString& Graph2dScatteredWindowResultSetting::title() const
+{
+	return m_title;
+}
+
+void Graph2dScatteredWindowResultSetting::setTitle(const QString& t)
+{
+	m_title = t;
+}
+
+bool Graph2dScatteredWindowResultSetting::addTimeToTitle() const
+{
+	return m_addTimeToTitle;
+}
+
+void Graph2dScatteredWindowResultSetting::setAddTimeToTitle(bool add)
+{
+	m_addTimeToTitle = add;
+}
+
 QList<Graph2dWindowDataItem*> Graph2dScatteredWindowResultSetting::setupItems(Graph2dScatteredWindowResultGroupDataItem* gItem) const
 {
 	QList<Graph2dWindowDataItem*> ret;
@@ -336,6 +636,22 @@ QList<Graph2dWindowDataItem*> Graph2dScatteredWindowResultSetting::setupItems(Gr
 		ret.append(item);
 	}
 	return ret;
+}
+
+std::string Graph2dScatteredWindowResultSetting::xAxis() const
+{
+	return m_xAxis;
+}
+
+QString Graph2dScatteredWindowResultSetting::xAxisCaption() const
+{
+	return m_xAxisCaption;
+}
+
+void Graph2dScatteredWindowResultSetting::setXAxis(const std::string& axis, const QString& caption)
+{
+	m_xAxis = axis;
+	m_xAxisCaption = caption;
 }
 
 void Graph2dScatteredWindowResultSetting::setAutoXAxisLabel()
@@ -350,7 +666,7 @@ void Graph2dScatteredWindowResultSetting::setAutoXAxisLabel()
 	} else if (m_xAxis == XAXIS_STREAM_WISE_DISTANCE) {
 		m_xAxisLabel = Graph2dScatteredWindowResultDataItem::tr("Stream-wise Distance");
 	} else {
-		m_xAxisLabel = m_xAxis;
+		m_xAxisLabel = m_xAxisCaption;
 	}
 }
 

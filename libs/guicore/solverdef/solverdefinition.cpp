@@ -2,6 +2,7 @@
 #include "solverdefinitionabstract.h"
 #include "solverdefinitiongridtype.h"
 #include "solverdefinitiontranslator.h"
+#include "solverdefinitionoutput.h"
 #include "private/solverdefinition_impl.h"
 
 #include <misc/errormessage.h>
@@ -75,6 +76,10 @@ void SolverDefinition::Impl::load()
 	} else {
 		setupGridTypes(gdsNode, translator);
 	}
+	QDomNode goNode = iRIC::getChildNode(sdElem, "GlobalOutput");
+	if (! goNode.isNull()) {
+		setupGlobalOutput(goNode, translator);
+	}
 	// Create dummy grid type for post-processor to handle grids.
 	m_dummyGridType = new SolverDefinitionGridType(m_abstract.name(), m_abstract.caption());
 }
@@ -111,6 +116,16 @@ void SolverDefinition::Impl::setupGridTypes(const QDomNode& node, const SolverDe
 SolverDefinitionGridType* SolverDefinition::Impl::setupGridType(const QDomNode& node, bool isPrimary)
 {
 	return new SolverDefinitionGridType(node.toElement(), m_parent, isPrimary);
+}
+
+void SolverDefinition::Impl::setupGlobalOutput(const QDomNode& node, const SolverDefinitionTranslator& translator)
+{
+	auto children = node.childNodes();
+	for (int i = 0; i < children.size(); ++i) {
+		auto child = children.at(i).toElement();
+		auto o = new SolverDefinitionOutput(child, m_parent, translator);
+		m_globalOutputs.insert({o->name(), o});
+	}
 }
 
 SolverDefinitionTranslator SolverDefinition::Impl::buildTranslator() const
@@ -205,6 +220,16 @@ SolverDefinitionGridType* SolverDefinition::dummyGridType() const
 SolverDefinitionGridType* SolverDefinition::gridType(const std::string& name) const
 {
 	return impl->m_gridTypeNameMap.value(name);
+}
+
+SolverDefinitionOutput* SolverDefinition::globalOutput(const std::string& name) const
+{
+	auto it = impl->m_globalOutputs.find(name);
+	if (it != impl->m_globalOutputs.end()) {return it->second;}
+
+	auto o = new SolverDefinitionOutput(name);
+	impl->m_globalOutputs.insert({o->name(), o});
+	return o;
 }
 
 const QDomDocument& SolverDefinition::document() const

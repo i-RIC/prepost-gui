@@ -22,11 +22,11 @@
 #include <qwt_plot_curve.h>
 
 Graph2dHybridWindowBaseIterativeResultDataItem::Graph2dHybridWindowBaseIterativeResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
-	Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent)
+	Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent)
 {
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
-	m_dataContainer = new PostBaseIterativeSeriesDataContainer(iRIC::toStr(setting.name()), projectData()->mainfile()->postSolutionInfo());
+	m_dataContainer = new PostBaseIterativeSeriesDataContainer(setting.name(), projectData()->mainfile()->postSolutionInfo());
 }
 
 Graph2dHybridWindowBaseIterativeResultDataItem::~Graph2dHybridWindowBaseIterativeResultDataItem()

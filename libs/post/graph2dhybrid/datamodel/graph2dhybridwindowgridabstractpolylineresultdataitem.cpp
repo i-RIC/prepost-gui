@@ -25,8 +25,8 @@ namespace {
 }
 
 Graph2dHybridWindowGridAbstractPolylineResultDataItem::Graph2dHybridWindowGridAbstractPolylineResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
-	Graph2dHybridWindowResultDataItem(setting.name(), index, setting, parent),
-	m_physVal {setting.name()}
+	Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent),
+	m_physVal {setting.name().c_str()}
 {}
 
 Graph2dHybridWindowGridAbstractPolylineResultDataItem::~Graph2dHybridWindowGridAbstractPolylineResultDataItem()

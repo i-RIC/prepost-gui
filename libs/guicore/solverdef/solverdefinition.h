@@ -7,8 +7,9 @@
 class QDir;
 class QDomDocument;
 class QString;
-class SolverDefinitionGridType;
 class SolverDefinitionAbstract;
+class SolverDefinitionGridType;
+class SolverDefinitionOutput;
 class SolverDefinitionTranslator;
 class VersionNumber;
 
@@ -59,6 +60,7 @@ public:
 	SolverDefinitionGridType* dummyGridType() const;
 	/// Get grid type from name
 	SolverDefinitionGridType* gridType(const std::string& name) const;
+	SolverDefinitionOutput* globalOutput(const std::string& name) const;
 	/// XML Document
 	const QDomDocument& document() const;
 

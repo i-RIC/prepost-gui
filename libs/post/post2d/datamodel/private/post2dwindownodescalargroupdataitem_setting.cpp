@@ -14,6 +14,11 @@ Post2dWindowNodeScalarGroupDataItem::Setting::Setting(const Setting& setting) :
 	copyValue(setting);
 }
 
+Post2dWindowNodeScalarGroupDataItem::Setting::~Setting()
+{
+	delete colorMapSetting;
+}
+
 Post2dWindowNodeScalarGroupDataItem::Setting& Post2dWindowNodeScalarGroupDataItem::Setting::operator=(const Setting& setting)
 {
 	copyValue(setting);

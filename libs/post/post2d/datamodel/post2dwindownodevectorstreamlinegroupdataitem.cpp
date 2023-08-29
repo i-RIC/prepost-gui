@@ -46,10 +46,7 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
-		std::string nameX = name;
-		nameX.append("X");
-		auto captionX = gt->output(nameX)->caption();
-		auto caption = captionX.left(captionX.length() - 1);
+		auto caption = gt->vectorOutputCaption(name);
 		auto item = new Post2dWindowNodeVectorStreamlineDataItem(name, caption, this);
 		m_childItems.push_back(item);
 	}

@@ -17,6 +17,9 @@
 #include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/solverdef/solverdefinition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <guicore/solverdef/solverdefinitionoutput.h>
 
 #if defined(_MSC_VER)
 // disable macro redefinition warnings
@@ -59,6 +62,7 @@
 
 Graph2dHybridWindowResultSetting::Setting::Setting() :
 	m_name {""},
+	m_caption {""},
 	m_axisSide {asLeft},
 	m_lineWidth {1},
 	m_customColor {Qt::black},
@@ -68,20 +72,30 @@ Graph2dHybridWindowResultSetting::Setting::Setting() :
 	m_barChart {false}
 {}
 
-Graph2dHybridWindowResultSetting::Setting::Setting(const QString& name) :
+Graph2dHybridWindowResultSetting::Setting::Setting(const std::string& name) :
 	Setting()
 {
 	m_name = name;
 }
 
-const QString& Graph2dHybridWindowResultSetting::Setting::name() const
+const std::string& Graph2dHybridWindowResultSetting::Setting::name() const
 {
 	return m_name;
 }
 
-void Graph2dHybridWindowResultSetting::Setting::setName(const QString& name)
+void Graph2dHybridWindowResultSetting::Setting::setName(const std::string& name)
 {
 	m_name = name;
+}
+
+const QString& Graph2dHybridWindowResultSetting::Setting::caption() const
+{
+	return m_caption;
+}
+
+void Graph2dHybridWindowResultSetting::Setting::setCaption(const QString& caption)
+{
+	m_caption = caption;
 }
 
 Graph2dHybridWindowResultSetting::AxisSide Graph2dHybridWindowResultSetting::Setting::axisSide() const
@@ -222,7 +236,7 @@ Graph2dHybridWindowResultSetting::~Graph2dHybridWindowResultSetting()
 	delete m_colorSource;
 }
 
-bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
+bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, SolverDefinition* def)
 {
 	m_postSolutionInfo = sol;
 	auto file = m_postSolutionInfo->cgnsFile();
@@ -241,7 +255,8 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 	if (ier != 0) {return false;}
 
 	for (const auto& name : valueNames) {
-		ti.dataNamesMap[ti.gridLocation].append(name.c_str());
+		auto output = def->globalOutput(name);
+		ti.dataNamesMap[ti.gridLocation].insert({name, output->caption()});
 	}
 	if (valueNames.size() > 0) {
 		m_dataTypeInfos.push_back(ti);
@@ -295,22 +310,26 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol)
 			if (cont->data() == nullptr) {return false;}
 
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
-				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].append(name.c_str());
+				auto caption = ti.gridType->outputCaption(name);
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].insert({name, caption});
 			}
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetCellData())) {
 				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
-				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].append(name.c_str());
+				auto caption = ti.gridType->outputCaption(name);
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].insert({name, caption});
 			}
 			auto edgeIData = cont->edgeIData();
 			if (edgeIData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->data()->GetPointData())) {
-					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].append(name.c_str());
+					auto caption = ti.gridType->outputCaption(name);
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].insert({name, caption});
 				}
 			}
 			auto edgeJData = cont->edgeJData();
 			if (edgeJData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeJData->data()->GetPointData())) {
-					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].append(name.c_str());
+					auto caption = ti.gridType->outputCaption(name);
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].insert({name, caption});
 				}
 			}
 			if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::Node) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].size() > 0) {
@@ -581,7 +600,7 @@ QString Graph2dHybridWindowResultSetting::autoYAxisLabel(AxisSide as) const
 	for (int i = 0; i < m_targetDatas.count(); ++i) {
 		const Setting& s = m_targetDatas[i];
 		if (s.axisSide() == as) {
-			labels.append(s.name());
+			labels.append(s.caption());
 		}
 	}
 	return labels.join(", ");
@@ -1472,7 +1491,8 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 			for (int i = 0; i < names.count(); ++i) {
 				QDomElement elem = names.at(i).toElement();
 				QString name = elem.attribute("name");
-				dataNamesMap[loc].append(name);
+				QString caption = elem.attribute("caption");
+				dataNamesMap[loc].insert({iRIC::toStr(name), caption});
 			}
 		}
 		namesNode = namesNode.nextSibling();
@@ -1489,9 +1509,11 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlS
 	for (auto loc : dataNamesMap.keys()) {
 		writer.writeStartElement("DataNames");
 		writer.writeAttribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(loc));
-		for (auto name : dataNamesMap[loc]) {
+		const auto& nameAndCaptions = dataNamesMap[loc];
+		for (const auto& pair : nameAndCaptions) {
 			writer.writeStartElement("DataName");
-			writer.writeAttribute("name", name);
+			writer.writeAttribute("name", pair.first.c_str());
+			writer.writeAttribute("caption", pair.second);
 			writer.writeEndElement();
 		}
 		writer.writeEndElement();
@@ -1502,7 +1524,8 @@ void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QD
 {
 	QDomElement elem = node.toElement();
 
-	m_name = elem.attribute("name");
+	m_name = iRIC::toStr(elem.attribute("name"));
+	m_caption = elem.attribute("caption");
 	m_axisSide = static_cast<AxisSide>(iRIC::getIntAttribute(node, "axisSide"));
 	m_lineWidth = iRIC::getIntAttribute(node, "lineWidth");
 	m_customColor = iRIC::getColorAttribute(node, "customColor");
@@ -1514,7 +1537,8 @@ void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QD
 
 void Graph2dHybridWindowResultSetting::Setting::saveToProjectMainFile(QXmlStreamWriter& writer) const
 {
-	writer.writeAttribute("name", m_name);
+	writer.writeAttribute("name", m_name.c_str());
+	writer.writeAttribute("caption", m_caption);
 	iRIC::setIntAttribute(writer, "axisSide", static_cast<int>(m_axisSide));
 	iRIC::setIntAttribute(writer, "lineWidth", m_lineWidth);
 	iRIC::setColorAttribute(writer, "customColor", m_customColor);

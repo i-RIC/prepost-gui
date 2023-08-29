@@ -43,10 +43,7 @@ Post2dWindowNodeVectorParticleGroupDataItem::Post2dWindowNodeVectorParticleGroup
 	auto cont = zoneDataItem()->dataContainer();
 	auto gt = cont->gridType();
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
-		std::string nameX = name;
-		nameX.append("X");
-		auto captionX = gt->output(nameX)->caption();
-		auto caption = captionX.left(captionX.length() - 1);
+		auto caption = gt->vectorOutputCaption(name);
 		auto item = new Post2dWindowNodeVectorParticleDataItem(name, caption, this);
 		m_childItems.push_back(item);
 	}

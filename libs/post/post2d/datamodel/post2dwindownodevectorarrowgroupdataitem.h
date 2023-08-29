@@ -10,9 +10,9 @@
 class ArrowsSettingToolBarWidget;
 class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
-class SolverDefinitionGridOutput;
 class Post2dWindowZoneDataItem;
 class Post2dWindowNodeVectorArrowGroupTopDataItem;
+class SolverDefinitionGridType;
 class ValueRangeContainer;
 
 class Post2dWindowNodeVectorArrowGroupDataItem : public Post2dWindowDataItem
@@ -42,7 +42,7 @@ protected:
 
 	void updateActorSetting() override;
 	Post2dWindowNodeVectorArrowGroupTopDataItem* topDataItem() const;
-	void createOrUpdateColorMapsSetting(SolverDefinitionGridOutput* output, const ValueRangeContainer& range);
+	void createOrUpdateColorMapsSetting(SolverDefinitionGridType* gtype, const std::string& name, const ValueRangeContainer& range);
 
 	ArrowsSettingContainer m_setting;
 

@@ -53,6 +53,9 @@ public:
 	//@{
 	const std::vector<SolverDefinitionGridOutput*>& outputs() const;
 	SolverDefinitionGridOutput* output(const std::string& name) const;
+	QString outputCaption(const std::string& name) const;
+	QString vectorOutputCaption(const std::string& name) const;
+	QStringList outputCaptions(const std::vector<std::string>& names) const;
 	//@}
 
 	/// @name Properties
@@ -79,10 +82,6 @@ public:
 	Grid* createEmptyGrid();
 	Grid* createEmptyGrid(GridType type);
 	//@}
-
-	/// Returns the caption for the solution (calculation result)
-	QString solutionCaption(const std::string& name) const;
-	QStringList solutionCaptions(const std::vector<std::string>& names) const;
 
 	QString gridAttributeCaption(const std::string& name) const;
 	ColorMapSettingEditWidgetI* createGridAttributeColorMapSettingEditWidget(const std::string& name, QWidget* parent);

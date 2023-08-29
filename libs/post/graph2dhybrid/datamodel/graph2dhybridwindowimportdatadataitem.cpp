@@ -112,7 +112,7 @@ void Graph2dHybridWindowImportDataDataItem::setTitle(const QString& title)
 	m_standardItem->setText(title);
 	m_standardItemCopy = m_standardItem->clone();
 	m_curve->setTitle(title);
-	m_setting.setName(title);
+	m_setting.setCaption(title);
 }
 
 void Graph2dHybridWindowImportDataDataItem::setVisible(bool visible)
@@ -136,7 +136,7 @@ void Graph2dHybridWindowImportDataDataItem::setSetting(const Graph2dHybridWindow
 {
 	m_setting = s;
 	m_setting.setupCurve(m_curve);
-	setTitle(s.name());
+	setTitle(s.caption());
 }
 
 QwtPlotCustomCurve* Graph2dHybridWindowImportDataDataItem::curve() const
