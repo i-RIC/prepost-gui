@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,7 +75,7 @@
         <translation>英数字のみ使用できます。</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
+        <source>Folder "%1" already exists.</source>
         <translation>フォルダ「%1」は既に存在します。</translation>
     </message>
 </context>
@@ -207,7 +205,7 @@
         <translation>プロジェクトは %1 に保存されました</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <source>Error occured while preparing data for model in "%1"</source>
         <translation>モデル「%1」用のデータの準備中にエラーが発生しました。</translation>
     </message>
     <message>
@@ -215,7 +213,7 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <source>No existing project folder found in "%1".</source>
         <translation>「%1」には既存のプロジェクトフォルダがありません。</translation>
     </message>
     <message>
@@ -243,7 +241,7 @@
         <translation>このプロジェクトは変更されています。保存しますか?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
         <translation>%1 の保存に失敗しました。他のプログラムがファイルを開いていないか確認してから再度試して下さい。</translation>
     </message>
 </context>
