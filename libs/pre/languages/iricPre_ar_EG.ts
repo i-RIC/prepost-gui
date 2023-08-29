@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>الجانب الأيسر من الضفة</translation>
+        <translation type="vanished">الجانب الأيسر من الضفة</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>جانب الضفة اليمنى</translation>
+        <translation type="vanished">جانب الضفة اليمنى</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>نسبة العرض إلى الارتفاع (V / H): 1 / %1</translation>
+        <translation type="vanished">نسبة العرض إلى الارتفاع (V / H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>المصب</translation>
+        <translation type="vanished">المصب</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>المنبع</translation>
+        <translation type="vanished">المنبع</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>إعداد عرض سمة الشبكة (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">الجانب الأيسر من الضفة</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">جانب الضفة اليمنى</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">المصب</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">المنبع</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">نسبة العرض إلى الارتفاع (V / H): 1 / %1</translation>
     </message>
 </context>
 <context>

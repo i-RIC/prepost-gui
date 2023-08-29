@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Левый берег</translation>
+        <translation type="vanished">Левый берег</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Правый берег</translation>
+        <translation type="vanished">Правый берег</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Соотношение сторон (В/Г): 1 / %1</translation>
+        <translation type="vanished">Соотношение сторон (В/Г): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>вниз по течению</translation>
+        <translation type="vanished">вниз по течению</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>вверх по течению</translation>
+        <translation type="vanished">вверх по течению</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Настройка отображения атрибутов сетки (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">Левый берег</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Правый берег</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">вниз по течению</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">вверх по течению</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Соотношение сторон (В/Г): 1 / %1</translation>
     </message>
 </context>
 <context>

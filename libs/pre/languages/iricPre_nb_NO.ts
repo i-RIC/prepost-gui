@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Venstre Bank Side</translation>
+        <translation type="vanished">Venstre Bank Side</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Høyre bredd</translation>
+        <translation type="vanished">Høyre bredd</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Sideforhold (V/H): 1 / %1</translation>
+        <translation type="vanished">Sideforhold (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Nedstrøms</translation>
+        <translation type="vanished">Nedstrøms</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Oppstrøms</translation>
+        <translation type="vanished">Oppstrøms</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Visningsinnstilling for rutenettattributt (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Høyre bredd</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Nedstrøms</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Oppstrøms</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Sideforhold (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

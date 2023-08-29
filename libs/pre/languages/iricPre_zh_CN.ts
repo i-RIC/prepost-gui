@@ -1784,15 +1784,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸边</translation>
+        <translation type="vanished">左岸边</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸边</translation>
+        <translation type="vanished">右岸边</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>纵横比（V/H）：1 / %1</translation>
+        <translation type="vanished">纵横比（V/H）：1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1816,11 +1816,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>下游</translation>
+        <translation type="vanished">下游</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>上游</translation>
+        <translation type="vanished">上游</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1870,6 +1870,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>网格属性显示设置（ %1 )</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">下游</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">上游</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">纵横比（V/H）：1 / %1</translation>
     </message>
 </context>
 <context>

@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Bên Bờ Trái</translation>
+        <translation type="vanished">Bên Bờ Trái</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Bên Bờ Phải</translation>
+        <translation type="vanished">Bên Bờ Phải</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Tỷ lệ khung hình (V/H): 1 / %1</translation>
+        <translation type="vanished">Tỷ lệ khung hình (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Hạ lưu</translation>
+        <translation type="vanished">Hạ lưu</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Thượng nguồn</translation>
+        <translation type="vanished">Thượng nguồn</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Cài đặt hiển thị thuộc tính lưới (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Hạ lưu</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Thượng nguồn</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Tỷ lệ khung hình (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

@@ -10,6 +10,8 @@
 
 class PreProcessorGridCrosssectionWindow2::GraphicsView : public QAbstractItemView
 {
+	Q_OBJECT
+
 public:
 	GraphicsView(QWidget* w);
 

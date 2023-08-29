@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Vasen rantapuoli</translation>
+        <translation type="vanished">Vasen rantapuoli</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Oikean rannan puoli</translation>
+        <translation type="vanished">Oikean rannan puoli</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Kuvasuhde (V/H): 1 / %1</translation>
+        <translation type="vanished">Kuvasuhde (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Alavirtaan</translation>
+        <translation type="vanished">Alavirtaan</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Ylävirta</translation>
+        <translation type="vanished">Ylävirta</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Ruudukon attribuutin näyttöasetus (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Alavirtaan</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Ylävirta</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Kuvasuhde (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

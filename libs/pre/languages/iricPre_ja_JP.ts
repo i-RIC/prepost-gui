@@ -1909,15 +1909,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸側</translation>
+        <translation type="vanished">左岸側</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸側</translation>
+        <translation type="vanished">右岸側</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>縦横比 (V/H): 1 / %1</translation>
+        <translation type="vanished">縦横比 (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1941,11 +1941,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>下流</translation>
+        <translation type="vanished">下流</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>上流</translation>
+        <translation type="vanished">上流</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1995,6 +1995,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>格子属性表示設定 (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation>左岸側</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation>右岸側</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation>下流</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation>上流</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation>縦横比 (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

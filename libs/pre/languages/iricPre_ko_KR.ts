@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>레프트 뱅크 사이드</translation>
+        <translation type="vanished">레프트 뱅크 사이드</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>우안면</translation>
+        <translation type="vanished">우안면</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>종횡비(V/H): 1 / %1</translation>
+        <translation type="vanished">종횡비(V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>하류</translation>
+        <translation type="vanished">하류</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>업스트림</translation>
+        <translation type="vanished">업스트림</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>그리드 속성 표시 설정(%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">하류</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">업스트림</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">종횡비(V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

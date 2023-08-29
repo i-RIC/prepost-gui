@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Levá strana břehu</translation>
+        <translation type="vanished">Levá strana břehu</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Strana pravého břehu</translation>
+        <translation type="vanished">Strana pravého břehu</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Poměr stran (V/H): 1 / %1</translation>
+        <translation type="vanished">Poměr stran (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Po proudu</translation>
+        <translation type="vanished">Po proudu</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Proti proudu</translation>
+        <translation type="vanished">Proti proudu</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Nastavení zobrazení atributu mřížky (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Po proudu</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Proti proudu</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Poměr stran (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

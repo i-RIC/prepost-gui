@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>लेफ्ट बैंक साइड</translation>
+        <translation type="vanished">लेफ्ट बैंक साइड</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>राइट बैंक साइड</translation>
+        <translation type="vanished">राइट बैंक साइड</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>पहलू अनुपात (वी/एच): 1 / %1</translation>
+        <translation type="vanished">पहलू अनुपात (वी/एच): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>डाउनस्ट्रीम</translation>
+        <translation type="vanished">डाउनस्ट्रीम</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>नदी के ऊपर</translation>
+        <translation type="vanished">नदी के ऊपर</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>ग्रिड विशेषता प्रदर्शन सेटिंग (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">लेफ्ट बैंक साइड</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">राइट बैंक साइड</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">डाउनस्ट्रीम</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">नदी के ऊपर</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">पहलू अनुपात (वी/एच): 1 / %1</translation>
     </message>
 </context>
 <context>

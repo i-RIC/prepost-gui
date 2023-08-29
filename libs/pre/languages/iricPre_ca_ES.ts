@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Ribera Esquerra</translation>
+        <translation type="vanished">Ribera Esquerra</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Ribera dreta</translation>
+        <translation type="vanished">Ribera dreta</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d&apos;aspecte (V/H): 1/ %1</translation>
+        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Aigües avall</translation>
+        <translation type="vanished">Aigües avall</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Riu amunt</translation>
+        <translation type="vanished">Riu amunt</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Configuració de visualització de l&apos;atribut de la quadrícula (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Aigües avall</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Riu amunt</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>

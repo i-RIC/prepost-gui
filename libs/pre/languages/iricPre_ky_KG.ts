@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Сол жээк жагы</translation>
+        <translation type="vanished">Сол жээк жагы</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Оң жээк жагы</translation>
+        <translation type="vanished">Оң жээк жагы</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Аспект катышы (V/H): 1 / %1</translation>
+        <translation type="vanished">Аспект катышы (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Төмөнкү агым</translation>
+        <translation type="vanished">Төмөнкү агым</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Жогорку агым</translation>
+        <translation type="vanished">Жогорку агым</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Тор атрибутун көрсөтүү жөндөөлөрү (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Төмөнкү агым</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Жогорку агым</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Аспект катышы (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

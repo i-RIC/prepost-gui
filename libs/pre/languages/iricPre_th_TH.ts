@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>ฝั่งซ้าย</translation>
+        <translation type="vanished">ฝั่งซ้าย</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>ฝั่งขวา</translation>
+        <translation type="vanished">ฝั่งขวา</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>อัตราส่วนภาพ (V/H): 1 / %1</translation>
+        <translation type="vanished">อัตราส่วนภาพ (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>ปลายน้ำ</translation>
+        <translation type="vanished">ปลายน้ำ</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>ต้นน้ำ</translation>
+        <translation type="vanished">ต้นน้ำ</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>การตั้งค่าการแสดงแอตทริบิวต์ตาราง (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">ฝั่งซ้าย</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">ฝั่งขวา</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">ปลายน้ำ</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">ต้นน้ำ</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">อัตราส่วนภาพ (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Lewy brzeg</translation>
+        <translation type="vanished">Lewy brzeg</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Prawa strona brzegu</translation>
+        <translation type="vanished">Prawa strona brzegu</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Współczynnik proporcji (pion./wys.): 1 / %1</translation>
+        <translation type="vanished">Współczynnik proporcji (pion./wys.): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>W dół rzeki</translation>
+        <translation type="vanished">W dół rzeki</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Pod prąd</translation>
+        <translation type="vanished">Pod prąd</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Ustawienie wyświetlania atrybutów siatki (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">Lewy brzeg</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Prawa strona brzegu</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">W dół rzeki</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Pod prąd</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Współczynnik proporcji (pion./wys.): 1 / %1</translation>
     </message>
 </context>
 <context>

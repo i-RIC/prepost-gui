@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Margem Esquerda</translation>
+        <translation type="vanished">Margem Esquerda</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Margem direita</translation>
+        <translation type="vanished">Margem direita</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Proporção (V/H): 1 / %1</translation>
+        <translation type="vanished">Proporção (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Rio abaixo</translation>
+        <translation type="vanished">Rio abaixo</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>rio acima</translation>
+        <translation type="vanished">rio acima</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Configuração de exibição de atributo de grade (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Rio abaixo</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">rio acima</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Proporção (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

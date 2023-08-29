@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Pe malul stâng</translation>
+        <translation type="vanished">Pe malul stâng</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Pe malul drept</translation>
+        <translation type="vanished">Pe malul drept</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Raport de aspect (V/H): 1 / %1</translation>
+        <translation type="vanished">Raport de aspect (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>în aval</translation>
+        <translation type="vanished">în aval</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>în amonte</translation>
+        <translation type="vanished">în amonte</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Setarea de afișare a atributului grilei (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">în aval</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">în amonte</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Raport de aspect (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

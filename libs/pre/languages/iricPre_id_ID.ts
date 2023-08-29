@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Sisi Bank Kiri</translation>
+        <translation type="vanished">Sisi Bank Kiri</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Sisi Kanan Bank</translation>
+        <translation type="vanished">Sisi Kanan Bank</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Rasio aspek (V/H): 1 / %1</translation>
+        <translation type="vanished">Rasio aspek (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Hilir</translation>
+        <translation type="vanished">Hilir</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Ke hulu</translation>
+        <translation type="vanished">Ke hulu</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Pengaturan Tampilan Atribut Grid (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Hilir</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Ke hulu</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Rasio aspek (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

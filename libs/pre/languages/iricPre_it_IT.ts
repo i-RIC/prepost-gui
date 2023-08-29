@@ -1744,23 +1744,23 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Lato della riva sinistra</translation>
+        <translation type="vanished">Lato della riva sinistra</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Lato della riva destra</translation>
+        <translation type="vanished">Lato della riva destra</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Proporzioni (V/H): 1 / %1</translation>
+        <translation type="vanished">Proporzioni (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>A valle</translation>
+        <translation type="vanished">A valle</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>A monte</translation>
+        <translation type="vanished">A monte</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1810,6 +1810,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Impostazione visualizzazione attributi griglia (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">A valle</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">A monte</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Proporzioni (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

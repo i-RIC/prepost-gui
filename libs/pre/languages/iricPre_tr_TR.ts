@@ -1744,23 +1744,23 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Sol Banka Tarafı</translation>
+        <translation type="vanished">Sol Banka Tarafı</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Sağ Banka Tarafı</translation>
+        <translation type="vanished">Sağ Banka Tarafı</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>En-boy oranı (D/H): 1 / %1</translation>
+        <translation type="vanished">En-boy oranı (D/H): 1 / %1</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>akıntı yönünde</translation>
+        <translation type="vanished">akıntı yönünde</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>yukarı akış</translation>
+        <translation type="vanished">yukarı akış</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1810,6 +1810,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Izgara Niteliği Görüntüleme Ayarı (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">Sol Banka Tarafı</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Sağ Banka Tarafı</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">akıntı yönünde</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">yukarı akış</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">En-boy oranı (D/H): 1 / %1</translation>
     </message>
 </context>
 <context>

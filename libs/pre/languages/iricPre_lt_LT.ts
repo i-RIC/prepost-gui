@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Kairiojo kranto pusė</translation>
+        <translation type="vanished">Kairiojo kranto pusė</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Dešinysis krantas</translation>
+        <translation type="vanished">Dešinysis krantas</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Kraštinių santykis (V/H): 1 / %1</translation>
+        <translation type="vanished">Kraštinių santykis (V/H): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Pasroviui</translation>
+        <translation type="vanished">Pasroviui</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Prieš srovę</translation>
+        <translation type="vanished">Prieš srovę</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Tinklelio atributo rodymo nustatymas (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished">Kairiojo kranto pusė</translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Pasroviui</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Prieš srovę</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Kraštinių santykis (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>

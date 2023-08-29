@@ -1728,15 +1728,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Leva stran brega</translation>
+        <translation type="vanished">Leva stran brega</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Desna stran brega</translation>
+        <translation type="vanished">Desna stran brega</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Razmerje stranic (V/V): 1 / %1</translation>
+        <translation type="vanished">Razmerje stranic (V/V): 1 / %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1760,11 +1760,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Dolvodno</translation>
+        <translation type="vanished">Dolvodno</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Gorvodno</translation>
+        <translation type="vanished">Gorvodno</translation>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
@@ -1814,6 +1814,29 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
         <translation>Nastavitev prikaza atributa mreže (%1)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
+    <message>
+        <source>Left Bank Side</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right Bank Side</source>
+        <translation type="unfinished">Desna stran brega</translation>
+    </message>
+    <message>
+        <source>Downstream</source>
+        <translation type="unfinished">Dolvodno</translation>
+    </message>
+    <message>
+        <source>Upstream</source>
+        <translation type="unfinished">Gorvodno</translation>
+    </message>
+    <message>
+        <source>Aspect ratio (V/H): 1 / %1</source>
+        <translation type="unfinished">Razmerje stranic (V/V): 1 / %1</translation>
     </message>
 </context>
 <context>
