@@ -72,13 +72,14 @@ PreProcessorBCSettingDataItem::~PreProcessorBCSettingDataItem()
 }
 
 void PreProcessorBCSettingDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-}
+{}
 
-void PreProcessorBCSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
+void PreProcessorBCSettingDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_bcDataItem->setMapped(m_polygon->isMapped());
 	updateFilename();
+
+	writer.writeAttribute("name", m_bcDataItem->uniqueName().c_str());
 }
 
 void PreProcessorBCSettingDataItem::handleStandardItemDoubleClicked()

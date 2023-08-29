@@ -88,8 +88,19 @@ void PreProcessorBCSettingGroupDataItem::deleteAll()
 	}
 }
 
-void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{}
+void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+{
+	m_itemCheckState.clear();
+	const auto& childs = node.childNodes();
+	for (int i = 0; i < childs.size(); ++i) {
+		auto child = childs.at(i).toElement();
+		auto name = child.attribute("name");
+		bool checked = (child.attribute("checkState") == "2");
+		if (! name.isNull()) {
+			m_itemCheckState.insert({iRIC::toStr(name), checked});
+		}
+	}
+}
 
 void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
@@ -117,10 +128,10 @@ void PreProcessorBCSettingGroupDataItem::updateZDepthRangeItemCount()
 
 void PreProcessorBCSettingGroupDataItem::updateItems()
 {
-	PreProcessorGridAndGridCreatingConditionDataItem* gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
+	auto gagItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(gagItem->gridDataItem());
 	if (gItem == nullptr) {return;}
-	PreProcessorBCGroupDataItem* bcgitem = gItem->bcGroupDataItem();
+	auto bcgitem = gItem->bcGroupDataItem();
 	if (bcgitem == nullptr) {return;}
 
 	m_itemMap.clear();
@@ -131,17 +142,24 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	// setup current children set as tmpItemSet.
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> tmpItemMap;
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*>(child);
 		tmpItemMap.insert(item->bcDataItem(), item);
 	}
 	m_childItems.clear();
-	const auto& children = bcgitem->childItems();
-	for (auto it = children.begin(); it != children.end(); ++it) {
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
-		PreProcessorBCSettingDataItem* bcsItem = tmpItemMap.value(bcItem, 0);
+	for (auto child : bcgitem->childItems()) {
+		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(child);
+		auto bcsItem = tmpItemMap.value(bcItem, nullptr);
 		if (bcsItem == nullptr) {
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
+			auto it = m_itemCheckState.find(bcItem->uniqueName());
+			if (it != m_itemCheckState.end()) {
+				if (it->second) {
+					bcsItem->standardItem()->setCheckState(Qt::Checked);
+				} else {
+					bcsItem->standardItem()->setCheckState(Qt::Unchecked);
+				}
+			}
 		} else {
 			if (! bcsItem->bcDataItem()->hideSetting()) {
 				m_standardItem->appendRow(bcsItem->standardItem());
@@ -157,12 +175,14 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 	}
 	updateItemMap();
 	updateZDepthRange();
+
+	m_itemCheckState.clear();
 }
 
 void PreProcessorBCSettingGroupDataItem::loadItems()
 {
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*>(child);
 		item->loadData();
 	}
 }
@@ -204,10 +224,10 @@ void PreProcessorBCSettingGroupDataItem::addCondition()
 	}
 	if (index >= m_addActions.count()) {return;}
 
-	PreProcessorGridAndGridCreatingConditionDataItem* item = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(item->gridDataItem());
-	PreProcessorBCDataItem* bcItem = gItem->bcGroupDataItem()->addCondition(index);
-	PreProcessorBCSettingDataItem* bcsItem = m_itemMap.value(bcItem);
+	auto item = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(item->gridDataItem());
+	auto bcItem = gItem->bcGroupDataItem()->addCondition(index);
+	auto bcsItem = m_itemMap.value(bcItem);
 
 	dataModel()->objectBrowserView()->expand(m_standardItem->index());
 	dataModel()->objectBrowserView()->select(bcsItem->standardItem()->index());
@@ -216,16 +236,16 @@ void PreProcessorBCSettingGroupDataItem::addCondition()
 
 void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 {
-	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
+	auto gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	auto gitem = gccdItem->gridDataItem();
 	Grid* grid = gitem->grid();
 	if (grid == nullptr && ! noDraw) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		return;
 	}
 
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorBCSettingDataItem* item = dynamic_cast<PreProcessorBCSettingDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorBCSettingDataItem*>(child);
 		item->executeMapping(true, 0);
 	}
 	if (! noDraw) {

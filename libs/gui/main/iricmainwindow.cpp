@@ -52,6 +52,7 @@
 #include <misc/iricrootpath.h>
 #include <misc/lastiodirectory.h>
 #include <misc/networksetting.h>
+#include <misc/qmdiareawithscrollbehaviormodification.h>
 #include <misc/stringtool.h>
 #include <misc/valuechangert.h>
 #include <misc/xmlsupport.h>
@@ -203,7 +204,7 @@ void iRICMainWindow::setupBasicSubWindows()
 
 void iRICMainWindow::setupCentralWidget()
 {
-	m_centralWidget = new QMdiArea(this);
+	m_centralWidget = new QMdiAreaWithScrollBehaviorModification(this);
 	m_centralWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	m_centralWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 	m_centralWidget->setActivationOrder(QMdiArea::CreationOrder);

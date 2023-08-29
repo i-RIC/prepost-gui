@@ -256,7 +256,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile
 	QDomNode condNode = iRIC::getChildNode(node, "GridCreatingCondition");
 	if (! condNode.isNull()) {m_creatingConditionDataItem->loadFromProjectMainFile(condNode);}
 	// load boundary condition setting information.
-	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditionSetting");
+	QDomNode bcNode = iRIC::getChildNode(node, "BoundaryConditionSettings");
 	if (! bcNode.isNull() && m_bcSettingGroupDataItem != nullptr) {m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
 	// load grid information.
 	QDomNode gridNode = iRIC::getChildNode(node, "Grid");
@@ -281,8 +281,8 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(Q
 	// save boundary condition setting information
 	if (m_bcSettingGroupDataItem != nullptr) {
 		writer.writeStartElement("BoundaryConditionSettings");
-		writer.writeEndElement();
 		m_bcSettingGroupDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
 	}
 
 	// save grid information

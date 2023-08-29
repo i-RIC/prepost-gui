@@ -362,10 +362,14 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 		double averageDepth = sum / points.size();
 
+		if (! cm->fillLower && averageDepth < cm->getMinValue()) {continue;}
+		if (! cm->fillUpper && averageDepth > cm->getMaxValue()) {continue;}
+
 		int colorIndex = static_cast<int> (colors.size()) - 1;
 		for (int i = 0; i < colors.size() - 1; ++i) {
 			if (averageDepth < colors.at(i + 1).value) {
 				colorIndex = i;
+				break;
 			}
 		}
 

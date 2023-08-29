@@ -29,6 +29,7 @@ public:
 	Structured2DGrid* grid() const;
 	void updateAspectRatioEdit();
 
+	void setTargetDirection(Direction dir);
 	ColorMapSettingContainerI* preColorMapSetting(const std::string& name);
 
 	// display settings

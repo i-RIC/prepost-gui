@@ -28,7 +28,9 @@
 GeoDataRiverSurveyProxy::GeoDataRiverSurveyProxy(GeoDataRiverSurvey* geodata) :
 	GeoDataProxy(geodata),
 	impl {new Impl {}}
-{}
+{
+	impl->m_displaySetting.displaySetting = geodata->impl->m_displaySetting;
+}
 
 GeoDataRiverSurveyProxy::~GeoDataRiverSurveyProxy()
 {
