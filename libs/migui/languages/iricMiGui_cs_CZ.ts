@@ -1,285 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>ConnectionAddDialog</name>
     <message>
         <source>Add Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat připojení</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstup</translation>
     </message>
     <message>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelka:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hodnota:</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstup</translation>
     </message>
 </context>
 <context>
     <name>ExistingModelAddDialog</name>
     <message>
         <source>Add Existing Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat existující modely</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelky</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Název složky</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Řešitel</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Output time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Časový interval výstupu</translation>
     </message>
 </context>
 <context>
     <name>ModelAddDialog</name>
     <message>
         <source>Add Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat model</translation>
     </message>
     <message>
         <source>Folder Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Název složky:</translation>
     </message>
     <message>
         <source>Please input the folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte název složky.</translation>
     </message>
     <message>
         <source>Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelka</translation>
     </message>
     <message>
         <source>Please input folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadejte název složky.</translation>
     </message>
     <message>
         <source>You can use only ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Můžete použít pouze znaky ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>složka "%1" již existuje.</translation>
     </message>
 </context>
 <context>
     <name>ModelDeleteDialog</name>
     <message>
         <source>Delete Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazat model</translation>
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cílová složka:</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim</translation>
     </message>
     <message>
         <source>Keep the content in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Udržujte obsah ve složce</translation>
     </message>
     <message>
         <source>Delete all files in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Smažte všechny soubory ve složce</translation>
     </message>
 </context>
 <context>
     <name>iRICMIMainWindow</name>
     <message>
         <source>iRIC-MI 0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI 0,0,1</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelky</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat (&amp;A)...</translation>
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat existující (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranit (&amp;R)...</translation>
     </message>
     <message>
         <source>Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Spojení</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizujte (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomoc (&amp;H)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel nástrojů</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstup (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový projekt (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>OTEVŘENO (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastnictví (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Nedávné projekty (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>O (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Zavřít (&amp;C)</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu načíst</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládání %1 nepodařilo. Ujistěte se, že soubor otevírají jiné programy, a zkuste to znovu.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekt byl úspěšně uložen do %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Došlo k chybě při přípravě dat pro model v "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Nebyla nalezena žádná existující složka projektu v "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation type="unfinished"></translation>
+        <translation>Opravdu chcete toto připojení smazat?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte složku pro uložení projektu</translation>
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 již existuje. Vyberte prosím jinou složku.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte soubor projektu, který chcete otevřít</translation>
     </message>
     <message>
         <source>iRIC-MI project file (iricmi_project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubor projektu iRIC-MI (iricmi_project.xml)</translation>
     </message>
     <message>
         <source>The project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekt je upraven. Chcete ušetřit?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Ukládání "%1" se nezdařilo. Ujistěte se, že soubor otevírá jiný program, a zkuste to znovu.</translation>
     </message>
 </context>
 <context>
     <name>iRICMIProject</name>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Název složky</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Řešitel</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Popis</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>OTEVŘENO</translation>
     </message>
     <message>
         <source>Output model</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstupní model</translation>
     </message>
     <message>
         <source>Output value</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstupní hodnota</translation>
     </message>
     <message>
         <source>Input model</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstupní model</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation type="unfinished"></translation>
+        <translation>Vstupní hodnota</translation>
     </message>
 </context>
 </TS>

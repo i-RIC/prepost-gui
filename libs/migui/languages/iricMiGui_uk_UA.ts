@@ -1,285 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>ConnectionAddDialog</name>
     <message>
         <source>Add Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати підключення</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихід</translation>
     </message>
     <message>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>модель:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Значення:</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Введення</translation>
     </message>
 </context>
 <context>
     <name>ExistingModelAddDialog</name>
     <message>
         <source>Add Existing Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати існуючі моделі</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Моделі</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва папки</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Розв'язувач</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Output time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Інтервал часу виведення</translation>
     </message>
 </context>
 <context>
     <name>ModelAddDialog</name>
     <message>
         <source>Add Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати модель</translation>
     </message>
     <message>
         <source>Folder Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва папки:</translation>
     </message>
     <message>
         <source>Please input the folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть назву папки.</translation>
     </message>
     <message>
         <source>Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Модель</translation>
     </message>
     <message>
         <source>Please input folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Введіть назву папки.</translation>
     </message>
     <message>
         <source>You can use only ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви можете використовувати лише символи ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>папка "%1" вже існує.</translation>
     </message>
 </context>
 <context>
     <name>ModelDeleteDialog</name>
     <message>
         <source>Delete Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Видалити модель</translation>
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Цільова папка:</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим</translation>
     </message>
     <message>
         <source>Keep the content in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Зберігайте вміст у папці</translation>
     </message>
     <message>
         <source>Delete all files in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Видаліть усі файли в папці</translation>
     </message>
 </context>
 <context>
     <name>iRICMIMainWindow</name>
     <message>
         <source>iRIC-MI 0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI 0.0.1</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Моделі</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>додати (&amp;A)...</translation>
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Додати існуючий (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>видалити (&amp;R)...</translation>
     </message>
     <message>
         <source>Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Зв'язки</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
-        <translation type="unfinished"></translation>
+        <translation>Візуалізуйте (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Довідка (&amp;H)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>панель інструментів</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихід (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Новий проект (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>ВІДЧИНЕНО (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>зберегти (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Власність (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Останні проекти (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>про (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Закрити (&amp;C)</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Перезавантажити</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Збереження %1 не вдалося. Будь ласка, переконайтеся, що інші програми відкривають файл, і повторіть спробу.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Проект успішно збережено в %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Сталася помилка під час підготовки даних для моделі в "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>УВАГА</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Не знайдено існуючої папки проекту в "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ви впевнені, що хочете видалити це підключення?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть папку для збереження проекту</translation>
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 вже існує. Виберіть іншу папку.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть файл проекту для відкриття</translation>
     </message>
     <message>
         <source>iRIC-MI project file (iricmi_project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл проекту iRIC-MI (iricmi_project.xml)</translation>
     </message>
     <message>
         <source>The project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Проект змінено. Ви хочете заощадити?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Збереження"%1" не вдалося. Переконайтеся, що файл відкриває інша програма, і повторіть спробу.</translation>
     </message>
 </context>
 <context>
     <name>iRICMIProject</name>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Назва папки</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Розв'язувач</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>опис</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>ВІДЧИНЕНО</translation>
     </message>
     <message>
         <source>Output model</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихідна модель</translation>
     </message>
     <message>
         <source>Output value</source>
-        <translation type="unfinished"></translation>
+        <translation>Вихідне значення</translation>
     </message>
     <message>
         <source>Input model</source>
-        <translation type="unfinished"></translation>
+        <translation>Вхідна модель</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation type="unfinished"></translation>
+        <translation>Вхідне значення</translation>
     </message>
 </context>
 </TS>

@@ -1,285 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>ConnectionAddDialog</name>
     <message>
         <source>Add Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj forbindelse</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Produktion</translation>
     </message>
     <message>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>Model:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Værdi:</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Input</translation>
     </message>
 </context>
 <context>
     <name>ExistingModelAddDialog</name>
     <message>
         <source>Add Existing Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj eksisterende modeller</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeller</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappenavn</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Løser</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Output time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Output tidsinterval</translation>
     </message>
 </context>
 <context>
     <name>ModelAddDialog</name>
     <message>
         <source>Add Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj model</translation>
     </message>
     <message>
         <source>Folder Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappenavn:</translation>
     </message>
     <message>
         <source>Please input the folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indtast venligst mappenavnet.</translation>
     </message>
     <message>
         <source>Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Model</translation>
     </message>
     <message>
         <source>Please input folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indtast venligst mappenavn.</translation>
     </message>
     <message>
         <source>You can use only ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan kun bruge ASCII-tegn.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Mappe"%1" eksisterer allerede.</translation>
     </message>
 </context>
 <context>
     <name>ModelDeleteDialog</name>
     <message>
         <source>Delete Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Slet model</translation>
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Målmappe:</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>Keep the content in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Gem indholdet i mappen</translation>
     </message>
     <message>
         <source>Delete all files in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Slet alle filer i mappen</translation>
     </message>
 </context>
 <context>
     <name>iRICMIMainWindow</name>
     <message>
         <source>iRIC-MI 0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI 0.0.1</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeller</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføje (&amp;A)...</translation>
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilføj eksisterende (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjerne (&amp;R)...</translation>
     </message>
     <message>
         <source>Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Forbindelser</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualiser (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fil (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjælp (&amp;H)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>værktøjslinje</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Afslut (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyt projekt (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Åben (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemme (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejendom (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Seneste projekter (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Om (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tæt (&amp;C)</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Genindlæs</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemmer %1 mislykkedes. Sørg for, at andre programmer åbner filen, og prøv igen.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektet blev gemt til %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Der opstod en fejl under forberedelse af data til model i "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Ingen eksisterende projektmappe fundet i "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation type="unfinished"></translation>
+        <translation>Er du sikker på, at du vil slette denne forbindelse?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg mappe for at gemme projektet</translation>
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 eksisterer allerede. Vælg venligst en anden mappe.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg projektfil for at åbne</translation>
     </message>
     <message>
         <source>iRIC-MI project file (iricmi_project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI projektfil (iricmi_project.xml)</translation>
     </message>
     <message>
         <source>The project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Projektet er ændret. Vil du gemme?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Gemmer"%1" mislykkedes. Sørg for, at et andet program åbner filen, og prøv igen.</translation>
     </message>
 </context>
 <context>
     <name>iRICMIProject</name>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappenavn</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Løser</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelse</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Åben</translation>
     </message>
     <message>
         <source>Output model</source>
-        <translation type="unfinished"></translation>
+        <translation>Output model</translation>
     </message>
     <message>
         <source>Output value</source>
-        <translation type="unfinished"></translation>
+        <translation>Output værdi</translation>
     </message>
     <message>
         <source>Input model</source>
-        <translation type="unfinished"></translation>
+        <translation>Input model</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation type="unfinished"></translation>
+        <translation>Indtastningsværdi</translation>
     </message>
 </context>
 </TS>

@@ -1,285 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>ConnectionAddDialog</name>
     <message>
         <source>Add Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix una connexió</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortida</translation>
     </message>
     <message>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>Model:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor:</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Entrada</translation>
     </message>
 </context>
 <context>
     <name>ExistingModelAddDialog</name>
     <message>
         <source>Add Existing Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix els models existents</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Models</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la carpeta</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Solucionador</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Output time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Interval de temps de sortida</translation>
     </message>
 </context>
 <context>
     <name>ModelAddDialog</name>
     <message>
         <source>Add Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix un model</translation>
     </message>
     <message>
         <source>Folder Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la carpeta:</translation>
     </message>
     <message>
         <source>Please input the folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduïu el nom de la carpeta.</translation>
     </message>
     <message>
         <source>Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Model</translation>
     </message>
     <message>
         <source>Please input folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Introduïu el nom de la carpeta.</translation>
     </message>
     <message>
         <source>You can use only ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Només podeu utilitzar caràcters ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Carpeta "%1" ja existeix.</translation>
     </message>
 </context>
 <context>
     <name>ModelDeleteDialog</name>
     <message>
         <source>Delete Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimeix el model</translation>
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Carpeta de destinació:</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode</translation>
     </message>
     <message>
         <source>Keep the content in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Conserveu el contingut a la carpeta</translation>
     </message>
     <message>
         <source>Delete all files in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Suprimeix tots els fitxers de la carpeta</translation>
     </message>
 </context>
 <context>
     <name>iRICMIMainWindow</name>
     <message>
         <source>iRIC-MI 0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI 0.0.1</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Models</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix (&amp;A)...</translation>
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix l'existent (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminar (&amp;R)...</translation>
     </message>
     <message>
         <source>Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Connexions</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualitza (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Dossier (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuda (&amp;H)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>barra d'eines</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sortida (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Nou Projecte (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Obert (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Desa (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Propietat (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Projectes recents (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sobre (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanca (&amp;C)</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Recarregar</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error</translation>
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Estalvi %1 fracassat. Assegureu-vos que altres programes estan obrint el fitxer i torneu-ho a provar.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Projecte desat correctament a %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>S'ha produït un error en preparar les dades per al model a "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Avís</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>No s'ha trobat cap carpeta de projecte existent a "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation type="unfinished"></translation>
+        <translation>Esteu segur que voleu suprimir aquesta connexió?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu la carpeta per desar el projecte</translation>
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ja existeix. Seleccioneu una altra carpeta.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccioneu el fitxer del projecte per obrir</translation>
     </message>
     <message>
         <source>iRIC-MI project file (iricmi_project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fitxer de projecte iRIC-MI (iricmi_project.xml)</translation>
     </message>
     <message>
         <source>The project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Es modifica el projecte. Vols estalviar?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Guardant "%1" ha fallat. Assegureu-vos que un altre programa estigui obrint el fitxer i torneu-ho a provar.</translation>
     </message>
 </context>
 <context>
     <name>iRICMIProject</name>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de la carpeta</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Solucionador</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Descripció</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Obert</translation>
     </message>
     <message>
         <source>Output model</source>
-        <translation type="unfinished"></translation>
+        <translation>Model de sortida</translation>
     </message>
     <message>
         <source>Output value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor de sortida</translation>
     </message>
     <message>
         <source>Input model</source>
-        <translation type="unfinished"></translation>
+        <translation>Model d'entrada</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation type="unfinished"></translation>
+        <translation>Valor d'entrada</translation>
     </message>
 </context>
 </TS>

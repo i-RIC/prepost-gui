@@ -1,285 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>ConnectionAddDialog</name>
     <message>
         <source>Add Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot savienojumu</translation>
     </message>
     <message>
         <source>Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvade</translation>
     </message>
     <message>
         <source>Model:</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelis:</translation>
     </message>
     <message>
         <source>Value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vērtība:</translation>
     </message>
     <message>
         <source>Input</source>
-        <translation type="unfinished"></translation>
+        <translation>Ievade</translation>
     </message>
 </context>
 <context>
     <name>ExistingModelAddDialog</name>
     <message>
         <source>Add Existing Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienojiet esošos modeļus</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeļi</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapes nosaukums</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Risinātājs</translation>
     </message>
 </context>
 <context>
     <name>Model</name>
     <message>
         <source>Output time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvades laika intervāls</translation>
     </message>
 </context>
 <context>
     <name>ModelAddDialog</name>
     <message>
         <source>Add Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot modeli</translation>
     </message>
     <message>
         <source>Folder Name:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapes nosaukums:</translation>
     </message>
     <message>
         <source>Please input the folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, ievadiet mapes nosaukumu.</translation>
     </message>
     <message>
         <source>Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Modelis</translation>
     </message>
     <message>
         <source>Please input folder name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, ievadiet mapes nosaukumu.</translation>
     </message>
     <message>
         <source>You can use only ASCII characters.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varat izmantot tikai ASCII rakstzīmes.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Mape "%1" jau eksistē.</translation>
     </message>
 </context>
 <context>
     <name>ModelDeleteDialog</name>
     <message>
         <source>Delete Model</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzēst modeli</translation>
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mērķa mape:</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režīms</translation>
     </message>
     <message>
         <source>Keep the content in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Saglabājiet saturu mapē</translation>
     </message>
     <message>
         <source>Delete all files in the folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Dzēsiet visus mapē esošos failus</translation>
     </message>
 </context>
 <context>
     <name>iRICMIMainWindow</name>
     <message>
         <source>iRIC-MI 0.0.1</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI 0.0.1</translation>
     </message>
     <message>
         <source>Models</source>
-        <translation type="unfinished"></translation>
+        <translation>Modeļi</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pievienot esošo (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
-        <translation type="unfinished"></translation>
+        <translation>Noņemt (&amp;R)...</translation>
     </message>
     <message>
         <source>Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Savienojumi</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vizualizēt (&amp;V)...</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fails (&amp;F)</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Palīdzība (&amp;H)</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>rīkjosla</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Izeja (&amp;E)</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
-        <translation type="unfinished"></translation>
+        <translation>Jauns Projekts (&amp;N)...</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>&amp;Open...</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvērt (&amp;O)...</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>&amp;Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Saglabāt (&amp;S)</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>&amp;Property...</source>
-        <translation type="unfinished"></translation>
+        <translation>Īpašums (&amp;P)...</translation>
     </message>
     <message>
         <source>&amp;Recent Projects</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaunākie projekti (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;About...</source>
-        <translation type="unfinished"></translation>
+        <translation>Par (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Aizvērt (&amp;C)</translation>
     </message>
     <message>
         <source>Reload</source>
-        <translation type="unfinished"></translation>
+        <translation>Pārlādēt</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <translation>Saglabāšana %1 neizdevās. Lūdzu, pārbaudiet, vai citas programmas atver failu, un mēģiniet vēlreiz.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekts veiksmīgi saglabāts %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Sagatavojot datus modelim, radās kļūda %1 "</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation type="unfinished"></translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Mapē "" netika atrasta neviena esoša projekta mape %1 ".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vai tiešām vēlaties dzēst šo savienojumu?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet mapi, lai saglabātu projektu</translation>
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 jau eksistē. Lūdzu, atlasiet citu mapi.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet projekta failu, ko atvērt</translation>
     </message>
     <message>
         <source>iRIC-MI project file (iricmi_project.xml)</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI projekta fails (iricmi_project.xml)</translation>
     </message>
     <message>
         <source>The project is modified. Do you want to save?</source>
-        <translation type="unfinished"></translation>
+        <translation>Projekts tiek pārveidots. Vai vēlaties ietaupīt?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation type="unfinished"></translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Saglabā"%1" neizdevās. Lūdzu, pārbaudiet, vai cita programma atver failu, un mēģiniet vēlreiz.</translation>
     </message>
 </context>
 <context>
     <name>iRICMIProject</name>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapes nosaukums</translation>
     </message>
     <message>
         <source>Solver</source>
-        <translation type="unfinished"></translation>
+        <translation>Risinātājs</translation>
     </message>
     <message>
         <source>Description</source>
-        <translation type="unfinished"></translation>
+        <translation>Apraksts</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvērt</translation>
     </message>
     <message>
         <source>Output model</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvades modelis</translation>
     </message>
     <message>
         <source>Output value</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvades vērtība</translation>
     </message>
     <message>
         <source>Input model</source>
-        <translation type="unfinished"></translation>
+        <translation>Ievades modelis</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation type="unfinished"></translation>
+        <translation>Ievades vērtība</translation>
     </message>
 </context>
 </TS>
