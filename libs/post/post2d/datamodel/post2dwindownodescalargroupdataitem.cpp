@@ -20,6 +20,20 @@
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
+namespace {
+
+struct Point3D {
+	Point3D(double xx, double yy, double zz):
+		x {xx}, y {yy}, z {zz}
+	{}
+
+	double x;
+	double y;
+	double z;
+};
+
+}
+
 Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const std::string& target, iRICLib::H5CgnsZone::SolutionPosition position, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {"", QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	impl {new Impl {this}}
@@ -336,14 +350,14 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 	auto off = offset();
 
-	std::vector<std::vector<std::vector<QVector3D> > > polygons;
-	std::vector<std::vector<QVector3D> > emptyList;
+	std::vector<std::vector<std::vector<Point3D> > > polygons;
+	std::vector<std::vector<Point3D> > emptyList;
 	for (int i = 0; i < colors.size(); ++i) {
 		polygons.push_back(emptyList);
 	}
 
 	for (vtkIdType cellId = 0; cellId < ps->GetNumberOfCells(); ++cellId) {
-		std::vector<QVector3D> points;
+		std::vector<Point3D> points;
 		vtkCell* cell = ps->GetCell(cellId);
 
 		double sum = 0;
@@ -357,7 +371,8 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			v[1] += off.y();
 			cs->mapGridToGeo(v[0], v[1], &lon, &lat);
 			double val = da->GetTuple1(pointId);
-			points.push_back(QVector3D(lon, lat, val));
+			points.push_back(Point3D(lon, lat, val));
+			// points.push_back(Point3D(v[0], v[1], val));
 			sum += val;
 		}
 
@@ -368,7 +383,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 
 		int colorIndex = static_cast<int> (colors.size()) - 1;
 		for (int i = 0; i < colors.size() - 1; ++i) {
-			if (averageDepth < colors.at(i + 1).value) {
+			if (averageDepth < colors.at(i).value) {
 				colorIndex = i;
 				break;
 			}
@@ -398,7 +413,7 @@ bool Post2dWindowNodeScalarGroupDataItem::exportKMLForTimestep(QXmlStreamWriter&
 			QStringList coordinates;
 			for (int i = 0; i <= points.size(); ++i) {
 				const auto& p = points.at(i % points.size());
-				coordinates.push_back(QString("%1,%2,%3").arg(QString::number(p.x(), 'g', 16)).arg(QString::number(p.y(), 'g', 16)).arg(QString::number(p.z(), 'g', 8)));
+				coordinates.push_back(QString("%1,%2,%3").arg(QString::number(p.x, 'g', 16)).arg(QString::number(p.y, 'g', 16)).arg(QString::number(p.z, 'g', 8)));
 			}
 			writer.writeStartElement("Polygon");
 			writer.writeTextElement("altitudeMode", "relativeToGround");
