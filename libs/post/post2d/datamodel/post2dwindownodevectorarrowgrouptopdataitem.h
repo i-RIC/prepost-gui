@@ -8,6 +8,7 @@ class Post2dWindowNodeVectorArrowGroupDataItem;
 class Post2dWindowNodeVectorArrowGroupTopDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowNodeVectorArrowGroupTopDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowNodeVectorArrowGroupTopDataItem();
