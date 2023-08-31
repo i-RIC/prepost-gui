@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Die Kopfzeile sollte mindestens 4 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein "%2", aber " %3 “ ist gegeben.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Beim Lesen der Kopfzeile ist ein Fehler aufgetreten. Spalte %1 sollte sein &quot;%2&quot;, aber &quot; %3 “ ist gegeben.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Beim Lesen der Zeile ist ein Fehler aufgetreten %1. Daten sollten mindestens 4 Spalten haben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "x"-Wertes in der Zeile ist ein Fehler aufgetreten %1. "x" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;x&quot;-Wertes in der Zeile ist ein Fehler aufgetreten %1. &quot;x&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des "y"-Wertes in Zeile ist ein Fehler aufgetreten %1. "y" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des &quot;y&quot;-Wertes in Zeile ist ein Fehler aufgetreten %1. &quot;y&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Beim Lesen des Werts "Wert" in der Zeile ist ein Fehler aufgetreten %1. "Wert" sollte ein echter Wert sein, aber "%2" angegeben.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Beim Lesen des Werts &quot;Wert&quot; in der Zeile ist ein Fehler aufgetreten %1. &quot;Wert&quot; sollte ein echter Wert sein, aber &quot;%2&quot; angegeben.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +175,10 @@
     <message>
         <source>Edit display setting</source>
         <translation type="vanished">Anzeigeeinstellung bearbeiten</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished">Einstellung der Punkteanzeige</translation>
     </message>
 </context>
 <context>

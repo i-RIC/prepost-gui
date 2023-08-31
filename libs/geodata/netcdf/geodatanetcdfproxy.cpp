@@ -16,7 +16,9 @@
 GeoDataNetcdfProxy::GeoDataNetcdfProxy(GeoDataNetcdf* geodata) :
 	GeoDataProxy(geodata),
 	impl {new Impl {}}
-{}
+{
+	impl->m_displaySetting.displaySetting = geodata->impl->m_displaySetting;
+}
 
 GeoDataNetcdfProxy::~GeoDataNetcdfProxy()
 {

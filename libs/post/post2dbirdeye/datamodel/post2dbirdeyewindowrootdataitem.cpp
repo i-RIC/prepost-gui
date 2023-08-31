@@ -103,13 +103,16 @@ void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
 		// Current solver support only one grid type, and it does not allow multiple grids to input.
 		// The only, and hidden gridtype node should be checked always.
-		Post2dBirdEyeWindowGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
-		gtItem->standardItem()->setCheckState(Qt::Checked);
+		// Post2dBirdEyeWindowGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
+		// gtItem->standardItem()->setCheckState(Qt::Checked);
 	}
 	QDomNode titleNode = iRIC::getChildNode(node, "Title");
 	if (! titleNode.isNull()) {m_titleDataItem->loadFromProjectMainFile(titleNode);}
 	QDomNode timeNode = iRIC::getChildNode(node, "Time");
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
+	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
+
 	updateItemMap();
 }
 void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -125,6 +128,10 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 
 	writer.writeStartElement("Time");
 	m_timeDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Axes");
+	m_axesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

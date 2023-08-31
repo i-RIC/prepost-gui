@@ -172,6 +172,9 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 
 void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	QDomNode bgNode = iRIC::getChildNode(node, "BackgroundImages");
+	if (! bgNode.isNull()) {m_backgroundImagesDataItem->loadFromProjectMainFile(bgNode);}
+
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		QDomNode c = node.firstChild();
 		while (! c.isNull()) {
@@ -186,13 +189,18 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (def->gridTypes().count() == 1 && !(firstType->multiple())) {
 		// Current solver support only one grid type, and it does not allow multiple grids to input.
 		// The only, and hidden gridtype node should be checked always.
-		Post2dWindowGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
-		gtItem->standardItem()->setCheckState(Qt::Checked);
+		// Post2dWindowGridTypeDataItem* gtItem = *(m_gridTypeDataItems.begin());
+		// gtItem->standardItem()->setCheckState(Qt::Checked);
 	}
+
+	QDomNode mdNode = iRIC::getChildNode(node, "MeasuredDatas");
+	if (! mdNode.isNull()) {m_measuredDataTopDataItem->loadFromProjectMainFile(mdNode);}
 	QDomNode titleNode = iRIC::getChildNode(node, "Title");
 	if (! titleNode.isNull()) {m_titleDataItem->loadFromProjectMainFile(titleNode);}
 	QDomNode timeNode = iRIC::getChildNode(node, "Time");
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
+	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
+	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
 	QDomNode dmNode = iRIC::getChildNode(node, "DistanceMeasures");
 	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
 	QDomNode tmsNode = iRIC::getChildNode(node, "TmsBackground");
@@ -202,21 +210,30 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 }
 void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-//	writer.writeStartElement("BackgroundImages");
-//	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
-//	writer.writeEndElement();
+	writer.writeStartElement("BackgroundImages");
+	m_backgroundImagesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
 
 	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
 		writer.writeStartElement("GridType");
 		(*it)->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
+
+	writer.writeStartElement("MeasuredDatas");
+	m_measuredDataTopDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
 	writer.writeStartElement("Title");
 	m_titleDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	writer.writeStartElement("Time");
 	m_timeDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Axes");
+	m_axesDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 
 	writer.writeStartElement("DistanceMeasures");

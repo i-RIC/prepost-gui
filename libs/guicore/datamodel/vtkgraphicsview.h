@@ -40,6 +40,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event) override;
 	virtual void mouseMoveEvent(QMouseEvent* event) override;
 	void wheelEvent(QWheelEvent* event) override;
+	bool event(QEvent* event) override;
 
 	void standardKeyPressEvent(QKeyEvent* event);
 	void standardKeyReleaseEvent(QKeyEvent* event);

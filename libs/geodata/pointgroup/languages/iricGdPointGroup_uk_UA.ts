@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>Під час читання рядка заголовка сталася помилка. Заголовок повинен містити принаймні 4 стовпці.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Під час читання рядка заголовка сталася помилка. Колонка %1 має бути "%2", але"%3"дається.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Під час читання рядка заголовка сталася помилка. Колонка %1 має бути &quot;%2&quot;, але&quot;%3&quot;дається.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Під час читання рядка сталася помилка %1. Дані повинні мати принаймні 4 стовпці.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Під час читання значення "x" у рядку сталася помилка %1. "x" має бути реальним значенням, але "%2"зазначено.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Під час читання значення &quot;x&quot; у рядку сталася помилка %1. &quot;x&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Сталася помилка під час читання значення "y" у рядку %1. "y" має бути реальним значенням, але "%2"зазначено.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Сталася помилка під час читання значення &quot;y&quot; у рядку %1. &quot;y&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Сталася помилка під час читання значення "value" у рядку %1. "значення" має бути реальним значенням, але "%2"зазначено.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Сталася помилка під час читання значення &quot;value&quot; у рядку %1. &quot;значення&quot; має бути реальним значенням, але &quot;%2&quot;зазначено.</translation>
     </message>
 </context>
 <context>
@@ -173,6 +175,10 @@
     <message>
         <source>Edit display setting</source>
         <translation type="vanished">Змінити налаштування дисплея</translation>
+    </message>
+    <message>
+        <source>Points Display Setting</source>
+        <translation type="unfinished">Налаштування відображення балів</translation>
     </message>
 </context>
 <context>

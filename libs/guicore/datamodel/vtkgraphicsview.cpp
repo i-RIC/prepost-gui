@@ -339,6 +339,16 @@ void VTKGraphicsView::wheelEvent(QWheelEvent* event)
 	render();
 }
 
+bool VTKGraphicsView::event(QEvent* event)
+{
+	if (event->type() == QEvent::Type::Wheel) {
+		auto wheelEvent = dynamic_cast<QWheelEvent*>(event);
+		if ((wheelEvent->modifiers() & Qt::ControlModifier) == 0) {return false;}
+	}
+
+	return QVTKOpenGLNativeWidget::event(event);
+}
+
 void VTKGraphicsView::standardKeyPressEvent(QKeyEvent* event)
 {
 	vtkRenderWindowInteractor* i = GetRenderWindow()->GetInteractor();

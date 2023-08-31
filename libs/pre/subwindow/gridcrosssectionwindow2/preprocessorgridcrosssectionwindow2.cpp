@@ -101,6 +101,7 @@ void PreProcessorGridCrosssectionWindow2::saveToProjectMainFile(QXmlStreamWriter
 
 void PreProcessorGridCrosssectionWindow2::setTarget(Direction dir, int index)
 {
+	impl->setTargetDirection(dir);
 	impl->m_controller->setTarget(dir, index);
 	cameraFit();
 }

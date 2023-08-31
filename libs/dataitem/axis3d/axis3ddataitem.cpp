@@ -83,7 +83,9 @@ void Axis3dDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 }
 
 void Axis3dDataItem::doLoadFromProjectMainFile(const QDomNode&)
-{}
+{
+	updateVisibilityWithoutRendering();
+}
 
 void Axis3dDataItem::doSaveToProjectMainFile(QXmlStreamWriter&)
 {}

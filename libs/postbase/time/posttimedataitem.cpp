@@ -165,4 +165,6 @@ void PostTimeDataItem::updateActorSettings()
 	m_setting.fontSetting.applySetting(prop);
 	prop->SetJustificationToLeft();
 	prop->SetVerticalJustificationToBottom();
+
+	updateVisibilityWithoutRendering();
 }

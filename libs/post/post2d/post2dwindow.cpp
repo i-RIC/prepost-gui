@@ -166,21 +166,23 @@ void Post2dWindow::editZScale()
 
 bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, double time, const QString& zoneName)
 {
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	Post2dWindowZoneDataItem* zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
+	auto pItem = zItem->particleDataItem();
 	return pItem->exportParticles(filePrefix, fileIndex, time);
 }
 
 QList<QString> Post2dWindow::particleDrawingZones()
 {
 	QList<QString> ret;
-	Post2dWindowRootDataItem* rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
+	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	QList<Post2dWindowGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
 	for (int i = 0; i < gtItems.count(); ++i) {
-		Post2dWindowGridTypeDataItem* gtItem = gtItems.at(i);
+		auto gtItem = gtItems.at(i);
 		for (auto zItem : gtItem->zoneDatas()) {
-			Post2dWindowNodeVectorParticleGroupDataItem* pItem = zItem->particleDataItem();
+			auto pItem = zItem->particleDataItem();
+			if (pItem == nullptr) {continue;}
+
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
 				ret.append(zItem->zoneName().c_str());
 			}

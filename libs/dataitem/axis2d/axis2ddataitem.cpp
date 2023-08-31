@@ -59,7 +59,9 @@ Axis2dDataItem::~Axis2dDataItem()
 }
 
 void Axis2dDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{}
+{
+	updateVisibilityWithoutRendering();
+}
 
 void Axis2dDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
 {}

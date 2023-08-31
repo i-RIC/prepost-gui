@@ -7,6 +7,7 @@
 
 #include <QInputDialog>
 #include <QSettings>
+#include <QUrl>
 
 PreferencePageTms::PreferencePageTms(QWidget *parent) :
 	PreferencePage {parent},
@@ -72,7 +73,7 @@ void PreferencePageTms::edit()
 	PreferencePageTmsAddDialog dialog(this);
 	dialog.setWindowTitle(tr("Background Image (Internet) Edit"));
 	dialog.setCaption(oldSetting.caption());
-	dialog.setUrl(oldSetting.url());
+	dialog.setUrl(oldSetting.url().toUtf8());
 	dialog.setMaxZoom(oldSetting.maxZoomLevel());
 
 	int ret = dialog.exec();

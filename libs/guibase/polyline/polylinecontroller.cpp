@@ -108,7 +108,7 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 		// almost parallel to y axis
 		double x = (*(bounds) + *(bounds + 1)) * 0.5;
 		if (std::fabs(pos.x() - x) > limitDistance) {return false;}
-		for (int i = 0; i < line.size() - 1; ++i) {
+		for (int i = 0; i < static_cast<int>(line.size()) - 1; ++i) {
 			double y1 = line.at(i).y();
 			double y2 = line.at(i + 1).y();
 			if (std::fmin(y1, y2) - limitDistance < pos.y() && pos.y() < std::fmax(y1, y2) + limitDistance) {
@@ -120,7 +120,7 @@ bool PolyLineController::isEdgeSelectable(const QPointF& pos, double limitDistan
 		// almost parallel to x axis
 		double y = (*(bounds + 2) + *(bounds + 3)) * 0.5;
 		if (std::fabs(pos.y() - y) > limitDistance) {return false;}
-		for (int i = 0; i < line.size() - 1; ++i) {
+		for (int i = 0; i < static_cast<int>(line.size()) - 1; ++i) {
 			double x1 = line.at(i).x();
 			double x2 = line.at(i + 1).x();
 			if (std::fmin(x1, x2) - limitDistance < pos.x() && pos.x() < std::fmax(x1, x2) + limitDistance) {
@@ -137,7 +137,7 @@ int PolyLineController::findNearestLine(const QPointF& pos) const
 	int edgeId = 0;
 	double minDistSquared;
 	QPointF ret;
-	int lineSize = polyLine().size() - 1;
+	int lineSize = static_cast<int> (polyLine().size()) - 1;
 	for (int i = 0; i < lineSize; ++i) {
 		ret = impl->nearestPoint(i, pos);
 		double distSquared = iRIC::lengthSquared(pos - ret);

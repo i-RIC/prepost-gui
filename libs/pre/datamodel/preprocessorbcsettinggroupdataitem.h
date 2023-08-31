@@ -4,6 +4,8 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <QMap>
 
+#include <unordered_map>
+
 class PreProcessorBCDataItem;
 class PreProcessorBCSettingDataItem;
 class Grid;
@@ -44,6 +46,8 @@ protected:
 
 private:
 	QMap<PreProcessorBCDataItem*, PreProcessorBCSettingDataItem*> m_itemMap;
+	std::unordered_map<std::string, bool> m_itemCheckState;
+
 	QList<QAction*> m_addActions;
 	QAction* m_deleteSelectedAction;
 	QAction* m_deleteAllAction;

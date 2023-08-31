@@ -11,6 +11,7 @@
 
 #include <QLocale>
 #include <QSettings>
+#include <QUrl>
 #include <QUrlQuery>
 
 using namespace tmsloader;
@@ -27,7 +28,8 @@ TmsImageSetting buildSetting(const std::string& setting, const QString& caption,
 	}
 	QUrlQuery query(s.c_str());
 	query.addQueryItem("caption", caption);
-	return TmsImageSetting(iRIC::toStr(query.toString(QUrl::FullyEncoded)));
+
+	return TmsImageSetting::buildFromQuery(query.toString(QUrl::FullyEncoded));
 }
 
 std::vector<TmsImageSetting> standardSettings()
@@ -65,7 +67,7 @@ std::vector<TmsImageSetting> loadSettings()
 	QStringList slist = qs.value("tmsimage/customsettings", QStringList()).toStringList();
 
 	for (auto str : slist) {
-		ret.push_back(TmsImageSetting(iRIC::toStr(str)));
+		ret.push_back(TmsImageSetting::buildFromString(str));
 	}
 
 	return ret;
@@ -75,7 +77,7 @@ void saveSettings(const std::vector<TmsImageSetting>& settings)
 {
 	QStringList slist;
 	for (auto s : settings) {
-		slist.push_back(s.setting().c_str());
+		slist.push_back(s.setting());
 	}
 
 	QSettings qs;
@@ -110,18 +112,24 @@ void TmsImageSettingManager::setSettings(const std::vector<TmsImageSetting>& set
 	saveSettings(settings);
 }
 
-TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& name, const QString& url, int maxZoom)
+TmsImageSetting TmsImageSettingManager::setupXYZSetting(const QString& caption, const QString& url, int maxZoom)
 {
-	return buildSetting(iRIC::toStr(QString("tms=xyz&url=%1&maxNativeZoom=%2").arg(url).arg(maxZoom)), name);
+	TmsImageSetting ret;
+
+	ret.setValue("tms", "xyz");
+	ret.setValue("url", url);
+	ret.setValue("maxNativeZoom", QString::number(maxZoom));
+	ret.setValue("caption", caption);
+
+	return ret;
 }
 
-TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, double scale, const std::string& setting) const
+TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, const QSize& size, double scale, const TmsImageSetting& setting) const
 {
-	QUrlQuery query(setting.c_str());
-	QString tms = query.queryItemValue("tms");
+	QString tms = setting.value("tms");
 	if (tms == "googlemap") {
 		TmsRequestGoogleMap::MapType mapType = TmsRequestGoogleMap::MapType::ROADMAP;
-		QString mapTypeStr = query.queryItemValue("mapType");
+		QString mapTypeStr = setting.value("mapType");
 		if (mapTypeStr == "roadmap") {
 			mapType = TmsRequestGoogleMap::MapType::ROADMAP;
 		} else if (mapTypeStr == "satellite") {
@@ -136,7 +144,7 @@ TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, co
 		return new TmsRequestOpenStreetMap(centerLonLat, size, scale);
 	} else if (tms == "bing") {
 		TmsRequestBing::ImagerySet iset = TmsRequestBing::ImagerySet::AERIAL;
-		QString imagerySetStr = query.queryItemValue("imageryset");
+		QString imagerySetStr = setting.value("imageryset");
 		if (imagerySetStr == "aerial") {
 			iset = TmsRequestBing::ImagerySet::AERIAL;
 		} else if (imagerySetStr == "road") {
@@ -145,7 +153,7 @@ TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, co
 		return new TmsRequestBing(centerLonLat, size, scale, iset);
 	} else if (tms == "gsi") {
 		TmsRequestGSI::TileType tileType = TmsRequestGSI::TileType::STD;
-		QString tileTypeStr = query.queryItemValue("tiletype");
+		QString tileTypeStr = setting.value("tiletype");
 		if (tileTypeStr == "std") {
 			tileType = TmsRequestGSI::TileType::STD;
 		} else if (tileTypeStr == "pale") {
@@ -159,9 +167,9 @@ TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, co
 		}
 		return new TmsRequestGSI(centerLonLat, size, scale, tileType);
 	} else if (tms == "xyz") {
-		QString url = query.queryItemValue("url");
+		QString url = setting.value("url");
 		std::map<QString, QString> options;
-		QString maxZoom = query.queryItemValue("maxNativeZoom");
+		QString maxZoom = setting.value("maxNativeZoom");
 		if (! maxZoom.isNull()) {
 			options.insert({"maxNativeZoom", maxZoom});
 		}
@@ -169,3 +177,4 @@ TmsRequest* TmsImageSettingManager::buildRequest(const QPointF& centerLonLat, co
 	}
 	return nullptr;
 }
+

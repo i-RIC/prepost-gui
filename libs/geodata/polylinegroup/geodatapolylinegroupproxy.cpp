@@ -14,7 +14,9 @@
 GeoDataPolyLineGroupProxy::GeoDataPolyLineGroupProxy(GeoDataPolyLineGroup* geodata) :
 	GeoDataProxy(geodata),
 	impl {new Impl {}}
-{}
+{
+	impl->m_displaySetting.displaySetting = geodata->impl->m_displaySetting;
+}
 
 GeoDataPolyLineGroupProxy::~GeoDataPolyLineGroupProxy()
 {
