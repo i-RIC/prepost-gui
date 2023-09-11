@@ -30,6 +30,7 @@ class iRICMetaData;
 
 class AnimationController;
 class ContinuousSnapshotWizard;
+class CoordinateSystemDisplayWidget;
 class SolverConsoleWindow;
 class PostProcessorWindow;
 class PreProcessorWindow;
@@ -38,6 +39,7 @@ class SolverDefinition;
 class SolverDefinitionAbstract;
 class ProjectWorkspace;
 class MousePositionWidget;
+class VtkGraphicsViewScaleWidget;
 class VTK2DGraphicsView;
 class GridCreatingConditionCreator;
 class CoordinateSystemBuilder;
@@ -247,7 +249,10 @@ private:
 	QString timeString(int time);
 
 	MousePositionWidget* m_mousePositionWidget;
-	/// Action manager;
+	CoordinateSystemDisplayWidget* m_coordinateSystemWidget;
+	VtkGraphicsViewScaleWidget* m_viewScaleWidget;
+
+	/// Action manager
 	iRICMainWindowActionManager* m_actionManager;
 
 	/// Dialog manager

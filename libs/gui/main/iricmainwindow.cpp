@@ -28,11 +28,13 @@
 #include <guicore/base/clipboardoperatablewindowinterface.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/datamodel/vtkgraphicsviewscalewidget.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
 #include <guicore/misc/iricmetadata.h>
+#include <guicore/misc/coordinatesystemdisplaywidget.h>
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -100,6 +102,9 @@
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iRICMainWindowInterface(parent),
+	m_mousePositionWidget {nullptr},
+	m_coordinateSystemWidget {nullptr},
+	m_viewScaleWidget {nullptr},
 	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
 	m_workspace {new ProjectWorkspace {this}},
 	m_projectData {nullptr},
@@ -274,6 +279,8 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	}
 
 	m_mousePositionWidget->setProjectData(m_projectData);
+	m_coordinateSystemWidget->setProjectData(m_projectData);
+
 	setupForNewProjectData();
 
 	handleCgnsSwitch();
@@ -460,6 +467,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
+	m_coordinateSystemWidget->setProjectData(m_projectData);
 
 	RecentProjectsManager::append(filename);
 	updatePostActionStatus();
@@ -654,7 +662,8 @@ bool iRICMainWindow::closeProject()
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
 	m_projectData = nullptr;
-	m_mousePositionWidget->setProjectData(0);
+	m_mousePositionWidget->setProjectData(nullptr);
+	m_coordinateSystemWidget->setProjectData(nullptr);
 	updateWindowTitle();
 	updatePostActionStatus();
 
@@ -701,13 +710,21 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		return;
 	}
 	QWidget* innerWindow = newActiveWindow->widget();
-	GeoDataRiverSurveyCrosssectionWindow* cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
+	auto cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
 	if (cw != nullptr) {
 		cw->informFocusIn();
 	} else {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 		pre->informUnfocusRiverCrosssectionWindows();
 	}
+
+	auto wwv = dynamic_cast<WindowWithVtkGraphicsViewI*> (innerWindow);
+	if (wwv != nullptr) {
+		m_viewScaleWidget->setView(wwv->getVtkGraphicsView());
+	} else {
+		m_viewScaleWidget->setView(nullptr);
+	}
+
 	m_mousePositionWidget->clear();
 	connect(innerWindow, SIGNAL(worldPositionChangedForStatusBar(QPointF)), m_mousePositionWidget, SLOT(updatePosition(QPointF)));
 	m_actionManager->informSubWindowChange(innerWindow);
@@ -914,6 +931,7 @@ void iRICMainWindow::showProjectPropertyDialog()
 	dialog.exec();
 
 	m_animationController->updateLabelAndPostWindows();
+	m_coordinateSystemWidget->updateDisplay();
 }
 
 void iRICMainWindow::cut()
@@ -1619,9 +1637,16 @@ void iRICMainWindow::reflectWindowZIndices()
 void iRICMainWindow::setupStatusBar()
 {
 	QStatusBar* sb = statusBar();
+
+	m_viewScaleWidget = new VtkGraphicsViewScaleWidget(this);
+	sb->addPermanentWidget(m_viewScaleWidget);
+
 	m_mousePositionWidget = new MousePositionWidget(this);
 	m_mousePositionWidget->clear();
 	sb->addPermanentWidget(m_mousePositionWidget);
+
+	m_coordinateSystemWidget = new CoordinateSystemDisplayWidget(this);
+	sb->addPermanentWidget(m_coordinateSystemWidget);
 }
 
 void iRICMainWindow::updatePostActionStatus()

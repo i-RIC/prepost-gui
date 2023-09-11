@@ -152,6 +152,18 @@ double VTKGraphicsView::stdDistance(double pixels)
 	}
 }
 
+double VTKGraphicsView::getScale()
+{
+	auto activeCamera = impl->m_mainRenderer->GetActiveCamera();
+	return activeCamera->GetParallelScale();
+}
+
+void VTKGraphicsView::setScale(double scale)
+{
+	auto activeCamera = impl->m_mainRenderer->GetActiveCamera();
+	return activeCamera->SetParallelScale(scale);
+}
+
 void VTKGraphicsView::setModel(GraphicsWindowSimpleDataModel* m)
 {
 	impl->m_model = m;
@@ -172,6 +184,8 @@ void VTKGraphicsView::scale(double s)
 	setupCamera();
 	impl->m_mainRenderer->GetActiveCamera()->Zoom(s);
 	update2Ds();
+
+	emit scaleChanged(getScale());
 }
 
 void VTKGraphicsView::keyPressEvent(QKeyEvent* event)
@@ -281,6 +295,7 @@ void VTKGraphicsView::mouseReleaseEvent(QMouseEvent* event)
 			}
 			impl->m_activeDataItem->viewOperationEnded(this);
 			impl->m_model->viewOperationEndedGlobal();
+			emit scaleChanged(getScale());
 		} else {
 			auto scaledEvent = createScaledEvent(*event);
 			impl->m_activeDataItem->mouseReleaseEvent(&scaledEvent, this);
@@ -335,6 +350,7 @@ void VTKGraphicsView::wheelEvent(QWheelEvent* event)
 	}
 	impl->m_model->viewOperationEndedGlobal();
 
+	emit scaleChanged(getScale());
 	update2Ds();
 	render();
 }
@@ -568,6 +584,7 @@ void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 void VTKGraphicsView::cameraFit()
 {
 	fitInView();
+	emit scaleChanged(getScale());
 	impl->m_model->viewOperationEndedGlobal();
 	render();
 }

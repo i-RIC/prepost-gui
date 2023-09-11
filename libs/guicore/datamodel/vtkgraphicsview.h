@@ -24,6 +24,9 @@ public:
 
 	double stdDistance(double pixels);
 
+	double getScale();
+	void setScale(double scale);
+
 	/// @name Model related functions
 	//@{
 	void setModel(GraphicsWindowSimpleDataModel* m);
@@ -60,6 +63,9 @@ public:
 
 	QMouseEvent createScaledEvent(const QMouseEvent& event);
 	QMouseEvent createReverseScaledEvent(const QMouseEvent& event);
+
+signals:
+	void scaleChanged(double scale);
 
 public slots:
 	void render();
