@@ -173,6 +173,8 @@ bool Graph2dHybridWindowResultSetting::DataTypeInfo::operator==(const DataTypeIn
 	if (dataType != info.dataType) {return false;}
 	if (dimension != info.dimension) {return false;}
 	if (zoneName != info.zoneName) {return false;}
+	if (gridLocation != info.gridLocation) {return false;}
+
 	return true;
 }
 
@@ -256,7 +258,8 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, SolverDefinit
 
 	for (const auto& name : valueNames) {
 		auto output = def->globalOutput(name);
-		ti.dataNamesMap[ti.gridLocation].insert({name, output->caption()});
+		ti.dataNamesMap[ti.gridLocation].push_back(name);
+		ti.dataCaptionsMap[ti.gridLocation].insert({name, output->caption()});
 	}
 	if (valueNames.size() > 0) {
 		m_dataTypeInfos.push_back(ti);
@@ -311,25 +314,29 @@ bool Graph2dHybridWindowResultSetting::init(PostSolutionInfo* sol, SolverDefinit
 
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
 				auto caption = ti.gridType->outputCaption(name);
-				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].insert({name, caption});
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].push_back(name);
+				ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::Node].insert({name, caption});
 			}
 			for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetCellData())) {
 				if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 				auto caption = ti.gridType->outputCaption(name);
-				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].insert({name, caption});
+				ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].push_back(name);
+				ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::Cell].insert({name, caption});
 			}
 			auto edgeIData = cont->edgeIData();
 			if (edgeIData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeIData->data()->GetPointData())) {
 					auto caption = ti.gridType->outputCaption(name);
-					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].insert({name, caption});
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].push_back(name);
+					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::IFace].insert({name, caption});
 				}
 			}
 			auto edgeJData = cont->edgeJData();
 			if (edgeJData != nullptr) {
 				for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(edgeJData->data()->GetPointData())) {
 					auto caption = ti.gridType->outputCaption(name);
-					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].insert({name, caption});
+					ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].push_back(name);
+					ti.dataCaptionsMap[iRICLib::H5CgnsZone::SolutionPosition::JFace].insert({name, caption});
 				}
 			}
 			if (ti.dataNamesMap.find(iRICLib::H5CgnsZone::SolutionPosition::Node) != ti.dataNamesMap.end() && ti.dataNamesMap[iRICLib::H5CgnsZone::SolutionPosition::Node].size() > 0) {
@@ -1350,7 +1357,6 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 			if (tmpInfo == info) {
 				Q_ASSERT(m_targetDataTypeInfo == nullptr);
 				m_targetDataTypeInfo = &tmpInfo;
-				m_targetDataTypeInfo->gridLocation = info.gridLocation;
 			}
 		}
 	}
@@ -1481,22 +1487,6 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::loadFromProjectMainFile(con
 	zoneName = iRIC::toStr(elem.attribute("zoneName"));
 	QString loc = elem.attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition::Node));
 	gridLocation = Graph2dHybridWindowResultSetting::getGridLocation(loc);
-
-	QDomNode namesNode = node.firstChild();
-	while (! namesNode.isNull()) {
-		if (namesNode.nodeName() == "DataNames") {
-			QString att = namesNode.toElement().attribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(iRICLib::H5CgnsZone::SolutionPosition::Node));
-			auto loc = Graph2dHybridWindowResultSetting::getGridLocation(att);
-			QDomNodeList names = namesNode.childNodes();
-			for (int i = 0; i < names.count(); ++i) {
-				QDomElement elem = names.at(i).toElement();
-				QString name = elem.attribute("name");
-				QString caption = elem.attribute("caption");
-				dataNamesMap[loc].insert({iRIC::toStr(name), caption});
-			}
-		}
-		namesNode = namesNode.nextSibling();
-	}
 }
 
 void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlStreamWriter& writer) const
@@ -1505,19 +1495,6 @@ void Graph2dHybridWindowResultSetting::DataTypeInfo::saveToProjectMainFile(QXmlS
 	iRIC::setIntAttribute(writer, "dimension", static_cast<int>(dimension));
 	writer.writeAttribute("zoneName", zoneName.c_str());
 	writer.writeAttribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(gridLocation));
-
-	for (auto loc : dataNamesMap.keys()) {
-		writer.writeStartElement("DataNames");
-		writer.writeAttribute("gridLocation", Graph2dHybridWindowResultSetting::getGridLocationString(loc));
-		const auto& nameAndCaptions = dataNamesMap[loc];
-		for (const auto& pair : nameAndCaptions) {
-			writer.writeStartElement("DataName");
-			writer.writeAttribute("name", pair.first.c_str());
-			writer.writeAttribute("caption", pair.second);
-			writer.writeEndElement();
-		}
-		writer.writeEndElement();
-	}
 }
 
 void Graph2dHybridWindowResultSetting::Setting::loadFromProjectMainFile(const QDomNode& node)

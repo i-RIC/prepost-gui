@@ -83,9 +83,9 @@ private:
 	void clearTargetDataTypeInfo();
 	void updateImportDataList();
 	void updateButtonStatus();
-	QListWidget* getActiveListWidget();
-	const std::vector<std::string>& getActiveDataNameList() const;
-	void updateLists(QListWidget* widget);
+	QListWidget* getActiveListWidget() const;
+	std::vector<std::string>& getActiveDataNameList();
+	void updateLists(QListWidget* widget, std::vector<std::string>* nameList);
 	QList<Graph2dHybridWindowResultSetting::XAxisMode> m_xAxisModes;
 	Graph2dHybridWindowResultSetting m_setting;
 

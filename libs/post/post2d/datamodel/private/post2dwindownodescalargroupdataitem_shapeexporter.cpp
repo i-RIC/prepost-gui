@@ -9,6 +9,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <misc/stringtool.h>
 #include <guibase/geometry/pointring.h>
 #include <guibase/geometry/polygonregion.h>

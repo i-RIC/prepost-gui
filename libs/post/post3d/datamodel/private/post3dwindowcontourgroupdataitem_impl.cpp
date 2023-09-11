@@ -6,7 +6,6 @@
 #include <vtkActor2D.h>
 
 Post3dWindowContourGroupDataItem::Impl::Impl(Post3dWindowContourGroupDataItem* item) :
-	m_colorMapSetting {},
 	m_legendActor {vtkActor2D::New()},
 	m_colorMapToolBarWidget {new ColorMapSettingToolBarWidget(item->mainWindow())},
 	m_opacityToolBarWidget {new OpacityContainerWidget(item->mainWindow())}

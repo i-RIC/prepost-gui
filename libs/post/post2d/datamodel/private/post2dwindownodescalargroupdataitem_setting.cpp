@@ -1,5 +1,7 @@
 #include "post2dwindownodescalargroupdataitem_setting.h"
 
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+
 Post2dWindowNodeScalarGroupDataItem::Setting::Setting() :
 	CompositeContainer {&regionSetting, &opacity, &contourSetting},
 	colorMapSetting {nullptr},

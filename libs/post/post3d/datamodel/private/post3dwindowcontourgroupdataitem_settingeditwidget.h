@@ -27,7 +27,7 @@ private:
 	Setting setting() const;
 	void setSetting(const Setting& setting);
 
-	ColorMapSettingEditWidget* m_colorMapWidget;
+	ModifyCommandWidget* m_colorMapWidget;
 	Post3dWindowContourGroupDataItem* m_item;
 
 	Ui::Post3dWindowContourGroupDataItem_SettingEditWidget *ui;

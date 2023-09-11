@@ -9,8 +9,6 @@ namespace Ui {
 class Post2dWindowNodeScalarGroupDataItem_SettingEditWidget;
 }
 
-class ModifyCommandWidget;
-
 class Post2dWindowNodeScalarGroupDataItem::SettingEditWidget : public ModifyCommandWidget
 {
 	Q_OBJECT

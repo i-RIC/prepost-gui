@@ -12,6 +12,8 @@ class Post3dWindowZoneDataItem;
 
 class Post3dWindowParticlesBaseVectorGroupTopDataItem : public Post3dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post3dWindowParticlesBaseVectorGroupTopDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowParticlesBaseVectorGroupTopDataItem();

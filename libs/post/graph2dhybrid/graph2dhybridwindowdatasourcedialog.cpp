@@ -36,13 +36,13 @@ void comboBoxSetCurrentIndexBlockingSignals(QComboBox* comboBox, int index)
 	comboBox->blockSignals(false);
 }
 
-void setupListWidget(QListWidget* listWidget, std::vector<std::string>* nameList, const std::map<std::string, QString>& map)
+void setupListWidget(QListWidget* listWidget, std::vector<std::string>* nameList, const std::vector<std::string>& names, const std::map<std::string, QString>& captions)
 {
 	nameList->clear();
 	listWidget->clear();
-	for (const auto& pair : map) {
-		nameList->push_back(pair.first);
-		listWidget->addItem(pair.second);
+	for (const auto& name : names) {
+		nameList->push_back(name);
+		listWidget->addItem(captions.at(name));
 	}
 }
 
@@ -193,8 +193,9 @@ void Graph2dHybridWindowDataSourceDialog::setSetting(const Graph2dHybridWindowRe
 	}
 
 	QListWidget* listWidget = getActiveListWidget();
+	auto& nameList = getActiveDataNameList();
 	if (listWidget != nullptr) {
-		updateLists(listWidget);
+		updateLists(listWidget, &nameList);
 	}
 
 	if (info == nullptr) {
@@ -321,7 +322,7 @@ void Graph2dHybridWindowDataSourceDialog::addSetting()
 		setupTargetDataTypeInfo();
 	}
 	QListWidget* listWidget = getActiveListWidget();
-	const std::vector<std::string>& nameList = getActiveDataNameList();
+	auto& nameList = getActiveDataNameList();
 
 	int index = listWidget->currentRow();
 	std::string name = nameList.at(index);
@@ -331,7 +332,7 @@ void Graph2dHybridWindowDataSourceDialog::addSetting()
 	s.setCaption(caption);
 	datas.append(s);
 
-	updateLists(listWidget);
+	updateLists(listWidget, &nameList);
 	if (index >= listWidget->count()) {index = listWidget->count() - 1;}
 	listWidget->setCurrentRow(index);
 
@@ -345,11 +346,13 @@ void Graph2dHybridWindowDataSourceDialog::addSetting()
 void Graph2dHybridWindowDataSourceDialog::removeSetting()
 {
 	QListWidget* listWidget = getActiveListWidget();
+	auto& nameList = getActiveDataNameList();
+
 	int row = ui->selectedDataListWidget->currentRow();
 	QList<Graph2dHybridWindowResultSetting::Setting>& datas = m_setting.targetDatas();
 	datas.removeAt(row);
 
-	updateLists(listWidget);
+	updateLists(listWidget, &nameList);
 	if (ui->selectedDataListWidget->count() == 0) {
 		clearTargetDataTypeInfo();
 	}
@@ -385,7 +388,7 @@ void Graph2dHybridWindowDataSourceDialog::editSetting()
 	m_setting.setYAxisRightTitle(m_setting.autoYAxisLabel(Graph2dHybridWindowResultSetting::asRight));
 }
 
-void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget)
+void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget, std::vector<std::string>* nameList)
 {
 	std::set<std::string> addedItems;
 	const auto& datas = m_setting.targetDatas();
@@ -393,13 +396,18 @@ void Graph2dHybridWindowDataSourceDialog::updateLists(QListWidget* listWidget)
 		addedItems.insert(data.name());
 	}
 	// update listWidget
+	nameList->clear();
 	listWidget->clear();
 	auto loc = m_setting.targetDataTypeInfo()->gridLocation;
 	Q_ASSERT(m_setting.targetDataTypeInfo()->dataNamesMap.find(loc) != m_setting.targetDataTypeInfo()->dataNamesMap.end());
-	auto nameAndCaptions = m_setting.targetDataTypeInfo()->dataNamesMap[loc];
-	for (const auto& pair : nameAndCaptions) {
-		if (addedItems.find(pair.first) != addedItems.end()) {continue;}
-		listWidget->addItem(pair.second);
+	auto names = m_setting.targetDataTypeInfo()->dataNamesMap[loc];
+	auto captions = m_setting.targetDataTypeInfo()->dataCaptionsMap[loc];
+
+	for (const auto& name : names) {
+		if (addedItems.find(name) != addedItems.end()) {continue;}
+
+		nameList->push_back(name);
+		listWidget->addItem(captions.at(name));
 	}
 	// update selected
 	ui->selectedDataListWidget->clear();
@@ -609,7 +617,7 @@ void Graph2dHybridWindowDataSourceDialog::setupWidgetForDim(QLabel* dataLabel, Q
 		}
 		int index = info->dataNamesMap.keys().indexOf(info->gridLocation);
 		locationComboBox->setCurrentIndex(index);
-		setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation]);
+		setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation], info->dataCaptionsMap[info->gridLocation]);
 	}
 	locationComboBox->blockSignals(false);
 }
@@ -638,7 +646,7 @@ void Graph2dHybridWindowDataSourceDialog::handleDataComboBoxChange(int index, QC
 		}
 	}
 
-	setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation]);
+	setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation], info->dataCaptionsMap[info->gridLocation]);
 }
 
 void Graph2dHybridWindowDataSourceDialog::handleLocationComboBoxChange(int index, QComboBox* locationComboBox, QComboBox* dataComboBox, QListWidget* dataListWidget, std::vector<std::string>* nameList, Graph2dHybridWindowResultSetting::DimType dimType)
@@ -666,7 +674,7 @@ void Graph2dHybridWindowDataSourceDialog::handleLocationComboBoxChange(int index
 		}
 	}
 	info->gridLocation = Graph2dHybridWindowResultSetting::getGridLocationTranslated(locationComboBox->itemText(index));
-	setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation]);
+	setupListWidget(dataListWidget, nameList, info->dataNamesMap[info->gridLocation], info->dataCaptionsMap[info->gridLocation]);
 }
 
 void Graph2dHybridWindowDataSourceDialog::clearListSelectionExcept(QListWidget* listWidget)
@@ -742,7 +750,7 @@ void Graph2dHybridWindowDataSourceDialog::clearTargetDataTypeInfo()
 	m_setting.setTargetDataTypeInfo(nullptr);
 }
 
-QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
+QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget() const
 {
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	if (tinfo != nullptr) {
@@ -776,7 +784,7 @@ QListWidget* Graph2dHybridWindowDataSourceDialog::getActiveListWidget()
 	return nullptr;
 }
 
-const std::vector<std::string>& Graph2dHybridWindowDataSourceDialog::getActiveDataNameList() const
+std::vector<std::string>& Graph2dHybridWindowDataSourceDialog::getActiveDataNameList()
 {
 	Graph2dHybridWindowResultSetting::DataTypeInfo* tinfo = m_setting.targetDataTypeInfo();
 	if (tinfo != nullptr) {
