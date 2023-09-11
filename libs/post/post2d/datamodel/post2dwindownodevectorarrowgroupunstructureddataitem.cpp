@@ -28,8 +28,13 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 
 vtkPointSet* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::buildFilteredData()
 {
-	auto data = topDataItem()->zoneDataItem()->dataContainer()->data()->data();
-	auto clippedData = m_regionSetting.buildNodeFilteredData(data);
+	auto dc = topDataItem()->zoneDataItem()->dataContainer();
+	if (dc == nullptr) {return nullptr;}
+	auto data = dc->data();
+	if (data == nullptr) {return nullptr;}
+
+	auto data2 = data->data();
+	auto clippedData = m_regionSetting.buildNodeFilteredData(data2);
 
 	m_setting.updateStandardValueIfNeeded(clippedData->GetPointData());
 	auto filtered = m_setting.buildFilteredData(clippedData);
