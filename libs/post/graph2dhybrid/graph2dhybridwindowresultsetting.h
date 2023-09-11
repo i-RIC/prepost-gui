@@ -160,9 +160,11 @@ public:
 		DataType dataType;
 		PostSolutionInfo::Dimension dimension;
 		std::string zoneName;
-		QMap<iRICLib::H5CgnsZone::SolutionPosition, std::map<std::string, QString>> dataNamesMap;
-		SolverDefinitionGridType* gridType;
 		iRICLib::H5CgnsZone::SolutionPosition gridLocation;
+
+		QMap<iRICLib::H5CgnsZone::SolutionPosition, std::vector<std::string>> dataNamesMap;
+		QMap<iRICLib::H5CgnsZone::SolutionPosition, std::map<std::string, QString>> dataCaptionsMap;
+		SolverDefinitionGridType* gridType;
 		void loadFromProjectMainFile(const QDomNode& node);
 		void saveToProjectMainFile(QXmlStreamWriter& writer) const;
 		bool operator==(const DataTypeInfo& info);
