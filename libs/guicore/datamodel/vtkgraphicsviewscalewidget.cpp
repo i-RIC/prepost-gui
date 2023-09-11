@@ -23,10 +23,6 @@ VtkGraphicsViewScaleWidget::~VtkGraphicsViewScaleWidget()
 
 void VtkGraphicsViewScaleWidget::setView(VTKGraphicsView* view)
 {
-	if (m_view != nullptr) {
-		m_view->disconnect(this);
-	}
-
 	m_view = view;
 	connect(m_view, &VTKGraphicsView::scaleChanged, this, &VtkGraphicsViewScaleWidget::updateDisplay);
 
