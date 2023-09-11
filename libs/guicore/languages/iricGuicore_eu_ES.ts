@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1144,19 +1142,19 @@ Parse error %2 at %3, column %4</source>
     <name>CoordinateSystemDisplayWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>CS: (not specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>CS: (zehaztu gabe)</translation>
     </message>
     <message>
         <source>(Not Specified)</source>
-        <translation type="unfinished"></translation>
+        <translation>(Zehaztu gabea)</translation>
     </message>
     <message>
         <source>CS: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>CS: %1</translation>
     </message>
 </context>
 <context>
@@ -1497,8 +1495,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Kolore:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1604,12 +1602,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definizio nodoa ez da gordetzen</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Balio mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Balio mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Egoera mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Egoera mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1880,8 +1878,8 @@ Do you really want to import this file?</source>
         <translation>Fitxategia %1 Kalkulu-baldintzara inportatu ondoren eguneratzen da %2. Eguneratutako fitxategia inportatu nahi duzu?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Balioak kopiatu eta itsatsi ditzakezu, &quot;Ctrl + C&quot; eta &quot;Ctrl + V&quot; lasterbideekin.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Balioak kopiatu eta itsatsi ditzakezu, "Ctrl + C" eta "Ctrl + V" lasterbideekin.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2010,8 +2008,8 @@ Do you really want to import this file?</source>
         <translation>Errorea gertatu da fitxategia irekitzean.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Lehenengo bi zutabeek &quot;X&quot; eta &quot;Y&quot; izan behar dute.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Lehenengo bi zutabeek "X" eta "Y" izan behar dute.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2172,8 +2170,8 @@ Do you really want to import this file?</source>
         <translation>Aldagaiaren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2251,8 +2249,8 @@ Do you really want to import this file?</source>
         <translation>Behera (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2613,8 +2611,8 @@ Do you really want to import this file?</source>
         <translation>Irteeraren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2880,8 +2878,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Laneko eremua &quot;%1&quot;du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Laneko eremua "%1"du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3275,30 +3273,30 @@ Do you really want to import this file?</source>
     <name>VtkGraphicsViewScaleWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Scale: 1 / 3.123</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskala: 1 / 3.123</translation>
     </message>
     <message>
         <source>Scale: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Eskala: %1</translation>
     </message>
 </context>
 <context>
     <name>VtkGraphicsViewScaleWidget_ScaleEditDialog</name>
     <message>
         <source>Edit Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Editatu Eskala</translation>
     </message>
     <message>
         <source>Please input new scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesedez, sartu eskala berria</translation>
     </message>
     <message>
         <source>1 / </source>
-        <translation type="unfinished"></translation>
+        <translation>1/</translation>
     </message>
 </context>
 <context>
