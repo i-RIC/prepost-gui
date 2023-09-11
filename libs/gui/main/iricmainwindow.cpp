@@ -33,6 +33,7 @@
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
 #include <guicore/misc/iricmetadata.h>
+#include <guicore/misc/coordinatesystemdisplaywidget.h>
 #include <guicore/misc/mousepositionwidget.h>
 #include <guicore/post/postprocessorwindowprojectdataitem.h>
 #include <guicore/postcontainer/postdataexportdialog.h>
@@ -100,6 +101,8 @@
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iRICMainWindowInterface(parent),
+	m_mousePositionWidget {nullptr},
+	m_coordinateSystemWidget {nullptr},
 	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
 	m_workspace {new ProjectWorkspace {this}},
 	m_projectData {nullptr},
@@ -274,6 +277,8 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 	}
 
 	m_mousePositionWidget->setProjectData(m_projectData);
+	m_coordinateSystemWidget->setProjectData(m_projectData);
+
 	setupForNewProjectData();
 
 	handleCgnsSwitch();
@@ -460,6 +465,7 @@ void iRICMainWindow::openProject(const QString& filename)
 	LastIODirectory::set(QFileInfo(filename).absolutePath());
 	m_projectData->mainfile()->clearModified();
 	m_mousePositionWidget->setProjectData(m_projectData);
+	m_coordinateSystemWidget->setProjectData(m_projectData);
 
 	RecentProjectsManager::append(filename);
 	updatePostActionStatus();
@@ -654,7 +660,8 @@ bool iRICMainWindow::closeProject()
 	ActiveSubwindowChanged(dynamic_cast<QMdiSubWindow*>(m_solverConsoleWindow->parentWidget()));
 	delete m_projectData;
 	m_projectData = nullptr;
-	m_mousePositionWidget->setProjectData(0);
+	m_mousePositionWidget->setProjectData(nullptr);
+	m_coordinateSystemWidget->setProjectData(nullptr);
 	updateWindowTitle();
 	updatePostActionStatus();
 
@@ -914,6 +921,7 @@ void iRICMainWindow::showProjectPropertyDialog()
 	dialog.exec();
 
 	m_animationController->updateLabelAndPostWindows();
+	m_coordinateSystemWidget->updateDisplay();
 }
 
 void iRICMainWindow::cut()
@@ -1622,6 +1630,9 @@ void iRICMainWindow::setupStatusBar()
 	m_mousePositionWidget = new MousePositionWidget(this);
 	m_mousePositionWidget->clear();
 	sb->addPermanentWidget(m_mousePositionWidget);
+
+	m_coordinateSystemWidget = new CoordinateSystemDisplayWidget(this);
+	sb->addPermanentWidget(m_coordinateSystemWidget);
 }
 
 void iRICMainWindow::updatePostActionStatus()

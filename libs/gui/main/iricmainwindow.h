@@ -30,6 +30,7 @@ class iRICMetaData;
 
 class AnimationController;
 class ContinuousSnapshotWizard;
+class CoordinateSystemDisplayWidget;
 class SolverConsoleWindow;
 class PostProcessorWindow;
 class PreProcessorWindow;
@@ -247,7 +248,9 @@ private:
 	QString timeString(int time);
 
 	MousePositionWidget* m_mousePositionWidget;
-	/// Action manager;
+	CoordinateSystemDisplayWidget* m_coordinateSystemWidget;
+
+	/// Action manager
 	iRICMainWindowActionManager* m_actionManager;
 
 	/// Dialog manager

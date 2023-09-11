@@ -218,6 +218,7 @@ HEADERS += guicore_global.h \
            image/imagesettingcontainer.h \
            image/imagesettingwidget.h \
            misc/cgnsutil.h \
+           misc/coordinatesystemdisplaywidget.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
@@ -680,6 +681,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          filter/structured3dfilteringsettingeditwidget.ui \
          filter/structuredgridskiporsubdividesettingeditwidget.ui \
          image/imagesettingwidget.ui \
+         misc/coordinatesystemdisplaywidget.ui \
          misc/mousepositionwidget.ui \
          post/postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
@@ -766,6 +768,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            image/imagesettingcontainer.cpp \
            image/imagesettingwidget.cpp \
            misc/cgnsutil.cpp \
+           misc/coordinatesystemdisplaywidget.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \

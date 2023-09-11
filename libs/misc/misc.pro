@@ -58,6 +58,7 @@ HEADERS += anms.h \
            qfontdisplaylabel.h \
            qfonteditwidget.h \
            qimagedisplaywidget.h \
+           qlabelwithclickedsignal.h \
            qmdiareawithscrollbehaviormodification.h \
            qpointfcompare.h \
            qpointfcontainer.h \
@@ -147,6 +148,7 @@ SOURCES += anms.cpp \
            qfontdisplaylabel.cpp \
            qfonteditwidget.cpp \
            qimagedisplaywidget.cpp \
+           qlabelwithclickedsignal.cpp \
            qmdiareawithscrollbehaviormodification.cpp \
            qpointfcompare.cpp \
            qpointfcontainer.cpp \
