@@ -76,6 +76,8 @@ vtkDataSet* Post3dWindowNodeVectorParticleGroupStructuredDataItem::getRegion()
 
 QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
+	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);

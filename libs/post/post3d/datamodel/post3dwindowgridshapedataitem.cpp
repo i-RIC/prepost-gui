@@ -43,6 +43,10 @@ void Post3dWindowGridShapeDataItem::update()
 
 void Post3dWindowGridShapeDataItem::updateActorSetting()
 {
+	m_setting.outlineActor()->VisibilityOff();
+	m_setting.wireframeActor()->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
+
 	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
 
@@ -85,6 +89,8 @@ void Post3dWindowGridShapeDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
+	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);

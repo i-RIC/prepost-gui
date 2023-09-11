@@ -85,8 +85,12 @@ void Post3dWindowContourDataItem::innerUpdateZScale(double scale)
 
 void Post3dWindowContourDataItem::updateActorSetting()
 {
+	m_actor->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
+
 	auto data = groupDataItem()->data();
 	if (data == nullptr) {return;}
+
 	auto grid = vtkStructuredGrid::SafeDownCast(data->data()->data());
 	auto face = m_setting.extractFace(grid);
 
@@ -106,6 +110,7 @@ void Post3dWindowContourDataItem::updateActorSetting()
 	m_actor->GetProperty()->SetLighting(impl->m_setting.lighting);
 	m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
 	m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth);
+	m_actorCollection->AddItem(m_actor);
 
 	updateVisibilityWithoutRendering();
 }

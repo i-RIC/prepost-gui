@@ -197,6 +197,8 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dBirdEyeWindowCellScalarGroupDataItem::propertyDialog(QWidget* p)
 {
+	if (topDataItem()->zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 

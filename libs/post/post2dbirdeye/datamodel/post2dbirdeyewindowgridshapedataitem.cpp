@@ -69,6 +69,9 @@ void Post2dBirdEyeWindowGridShapeDataItem::update()
 
 void Post2dBirdEyeWindowGridShapeDataItem::updateActorSetting()
 {
+	impl->m_setting.gridShape.outlineActor()->VisibilityOff();
+	impl->m_setting.gridShape.wireframeActor()->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
 
 	auto cont = zoneDataItem()->dataContainer();
 	if (cont == nullptr || cont->data() == nullptr) {return;}
@@ -113,6 +116,8 @@ void Post2dBirdEyeWindowGridShapeDataItem::showPropertyDialog()
 
 QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
+	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 

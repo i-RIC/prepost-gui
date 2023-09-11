@@ -79,8 +79,12 @@ void Post3dWindowCellContourDataItem::innerUpdateZScale(double scale)
 
 void Post3dWindowCellContourDataItem::updateActorSettings()
 {
+	m_actor->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
+
 	auto data = groupDataItem()->data();
 	if (data == nullptr) {return;}
+
 	auto grid = vtkStructuredGrid::SafeDownCast(data->data()->data());
 	auto extracted = m_setting.extractRegion(grid);
 
@@ -88,6 +92,7 @@ void Post3dWindowCellContourDataItem::updateActorSettings()
 	auto mapper = groupDataItem()->m_colorMapSetting.buildCellDataMapper(extracted, false);
 	m_actor->SetMapper(mapper);
 	mapper->Delete();
+	m_actorCollection->AddItem(m_actor);
 
 	updateVisibilityWithoutRendering();
 }
