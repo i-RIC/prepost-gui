@@ -81,6 +81,11 @@ vtkRenderWindow* Post3dWindow::getVtkRenderWindow() const
 	return r->GetRenderWindow();
 }
 
+VTKGraphicsView* Post3dWindow::getVtkGraphicsView() const
+{
+	return m_dataModel->graphicsView();
+}
+
 QList<QMenu*> Post3dWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;

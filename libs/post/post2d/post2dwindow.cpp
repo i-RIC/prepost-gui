@@ -91,6 +91,11 @@ vtkRenderWindow* Post2dWindow::getVtkRenderWindow() const
 	return r->GetRenderWindow();
 }
 
+VTKGraphicsView* Post2dWindow::getVtkGraphicsView() const
+{
+	return m_dataModel->graphicsView();
+}
+
 QList<QMenu*> Post2dWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;

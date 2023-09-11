@@ -39,6 +39,7 @@ class SolverDefinition;
 class SolverDefinitionAbstract;
 class ProjectWorkspace;
 class MousePositionWidget;
+class VtkGraphicsViewScaleWidget;
 class VTK2DGraphicsView;
 class GridCreatingConditionCreator;
 class CoordinateSystemBuilder;
@@ -249,6 +250,7 @@ private:
 
 	MousePositionWidget* m_mousePositionWidget;
 	CoordinateSystemDisplayWidget* m_coordinateSystemWidget;
+	VtkGraphicsViewScaleWidget* m_viewScaleWidget;
 
 	/// Action manager
 	iRICMainWindowActionManager* m_actionManager;

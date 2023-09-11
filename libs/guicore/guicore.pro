@@ -206,6 +206,8 @@ HEADERS += guicore_global.h \
            datamodel/vtk2dgraphicsview.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
+           datamodel/vtkgraphicsviewscalewidget.h \
+           datamodel/windowwithvtkgraphicsviewi.h \
            executer/iricmainwindowexecuterwatcher.h \
            filter/generalfilteringsettingcontainer.h \
            filter/generalfilteringsettingeditwidget.h \
@@ -362,6 +364,7 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtkgraphicsview_impl.h \
+           datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.h \
            image/private/imagesettingcontainer_movecommand.h \
            image/private/imagesettingcontainer_resizecommand.h \
            image/private/imagesettingcontainer_updatecommand.h \
@@ -676,6 +679,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          arrows/arrowsshapesettingeditwidget.ui \
          contour/contoursettingeditwidget.ui \
          datamodel/propertybrowserview.ui \
+         datamodel/vtkgraphicsviewscalewidget.ui \
          filter/generalfilteringsettingeditwidget.ui \
          filter/structured2dfilteringsettingeditwidget.ui \
          filter/structured3dfilteringsettingeditwidget.ui \
@@ -705,6 +709,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.ui \
          scalarstocolors/colormapsettingtoolbarwidget.ui \
          scalarstocolors/delegatedcolormapsettingeditwidget.ui \
+         datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.ui \
          pre/complex/gridcomplexconditiondialog.ui \
          pre/complex/gridcomplexconditiongroupeditdialog.ui \
          pre/complex/gridcomplexconditiongrouprealeditwidget.ui \
@@ -756,6 +761,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/vtk2dgraphicsview.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
+           datamodel/vtkgraphicsviewscalewidget.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
            filter/generalfilteringsettingcontainer.cpp \
            filter/generalfilteringsettingeditwidget.cpp \
@@ -903,6 +909,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/private/graphicswindowdataitem_updateactorsettingcommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
+           datamodel/private/vtkgraphicsviewscalewidget_scaleeditdialog.cpp \
            image/private/imagesettingcontainer_movecommand.cpp \
            image/private/imagesettingcontainer_resizecommand.cpp \
            image/private/imagesettingcontainer_updatecommand.cpp \

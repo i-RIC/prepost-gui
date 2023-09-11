@@ -7,6 +7,7 @@
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 
 class QAction;
 class QToolBar;
@@ -21,7 +22,8 @@ class Post2dBirdEyeWindowEditBackgroundColorCommand;
 class Post2dBirdEyeWindow :
 	public PostProcessorWindow,
 	public AdditionalMenuWindowI,
-	public WindowWithObjectBrowserInterface
+	public WindowWithObjectBrowserInterface,
+	public WindowWithVtkGraphicsViewI
 {
 	Q_OBJECT
 
@@ -31,6 +33,7 @@ public:
 
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
+	VTKGraphicsView* getVtkGraphicsView() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;

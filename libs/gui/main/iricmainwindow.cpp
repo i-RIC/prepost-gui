@@ -28,6 +28,7 @@
 #include <guicore/base/clipboardoperatablewindowinterface.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/datamodel/vtkgraphicsviewscalewidget.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
@@ -103,6 +104,7 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	iRICMainWindowInterface(parent),
 	m_mousePositionWidget {nullptr},
 	m_coordinateSystemWidget {nullptr},
+	m_viewScaleWidget {nullptr},
 	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
 	m_workspace {new ProjectWorkspace {this}},
 	m_projectData {nullptr},
@@ -708,13 +710,21 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 		return;
 	}
 	QWidget* innerWindow = newActiveWindow->widget();
-	GeoDataRiverSurveyCrosssectionWindow* cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
+	auto cw = dynamic_cast<GeoDataRiverSurveyCrosssectionWindow*>(innerWindow);
 	if (cw != nullptr) {
 		cw->informFocusIn();
 	} else {
 		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
 		pre->informUnfocusRiverCrosssectionWindows();
 	}
+
+	auto wwv = dynamic_cast<WindowWithVtkGraphicsViewI*> (innerWindow);
+	if (wwv != nullptr) {
+		m_viewScaleWidget->setView(wwv->getVtkGraphicsView());
+	} else {
+		m_viewScaleWidget->setView(nullptr);
+	}
+
 	m_mousePositionWidget->clear();
 	connect(innerWindow, SIGNAL(worldPositionChangedForStatusBar(QPointF)), m_mousePositionWidget, SLOT(updatePosition(QPointF)));
 	m_actionManager->informSubWindowChange(innerWindow);
@@ -1627,6 +1637,10 @@ void iRICMainWindow::reflectWindowZIndices()
 void iRICMainWindow::setupStatusBar()
 {
 	QStatusBar* sb = statusBar();
+
+	m_viewScaleWidget = new VtkGraphicsViewScaleWidget(this);
+	sb->addPermanentWidget(m_viewScaleWidget);
+
 	m_mousePositionWidget = new MousePositionWidget(this);
 	m_mousePositionWidget->clear();
 	sb->addPermanentWidget(m_mousePositionWidget);

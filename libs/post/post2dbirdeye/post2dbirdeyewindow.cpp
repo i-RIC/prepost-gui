@@ -78,6 +78,11 @@ vtkRenderWindow* Post2dBirdEyeWindow::getVtkRenderWindow() const
 	return r->GetRenderWindow();
 }
 
+VTKGraphicsView* Post2dBirdEyeWindow::getVtkGraphicsView() const
+{
+	return m_dataModel->graphicsView();
+}
+
 QList<QMenu*> Post2dBirdEyeWindow::getAdditionalMenus() const
 {
 	QList<QMenu*> menus;

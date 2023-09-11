@@ -9,6 +9,7 @@
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
 
@@ -38,7 +39,8 @@ class PREDLL_EXPORT PreProcessorWindow :
 	public WindowWithTmsI,
 	public WindowWithPropertyBrowser,
 	public WindowWithZIndexInterface,
-	public BackgroundColorEditVtkInterface
+	public BackgroundColorEditVtkInterface,
+	public WindowWithVtkGraphicsViewI
 {
 	Q_OBJECT
 
@@ -86,6 +88,7 @@ public:
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
 	PreProcessorDataModelInterface* dataModel() const override;
+	VTKGraphicsView* getVtkGraphicsView() const override;
 	bool setupCgnsFilesIfNeeded(bool readGrid);
 
 	void updateTmsList() override;

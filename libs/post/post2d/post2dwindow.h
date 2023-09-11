@@ -10,6 +10,7 @@
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/cfshapeexportwindowi.h>
 #include <postbase/particleexportwindowi.h>
@@ -36,7 +37,8 @@ class Post2dWindow :
 	public ParticleExportWindowI,
 	public SVKmlExportWindowI,
 	public BackgroundColorEditVtkInterface,
-	public AutoParticleWindowI
+	public AutoParticleWindowI,
+	public WindowWithVtkGraphicsViewI
 {
 	Q_OBJECT
 
@@ -46,6 +48,7 @@ public:
 
 	QPixmap snapshot() override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
+	VTKGraphicsView* getVtkGraphicsView() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
