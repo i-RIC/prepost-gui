@@ -12,6 +12,8 @@ class Post2dWindowZoneDataItem;
 
 class Post2dWindowParticlesBaseVectorGroupTopDataItem : public Post2dWindowDataItem
 {
+	Q_OBJECT
+
 public:
 	Post2dWindowParticlesBaseVectorGroupTopDataItem(Post2dWindowDataItem* parent);
 	~Post2dWindowParticlesBaseVectorGroupTopDataItem();
