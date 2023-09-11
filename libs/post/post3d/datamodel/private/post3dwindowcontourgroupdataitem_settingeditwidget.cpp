@@ -1,11 +1,15 @@
 #include "post3dwindowcontourgroupdataitem_impl.h"
 #include "post3dwindowcontourgroupdataitem_setfacescommand.h"
 #include "post3dwindowcontourgroupdataitem_settingeditwidget.h"
+#include "../post3dwindowgridtypedataitem.h"
+#include "../post3dwindowzonedataitem.h"
 #include "ui_post3dwindowcontourgroupdataitem_settingeditwidget.h"
 
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
@@ -14,16 +18,18 @@
 
 Post3dWindowContourGroupDataItem::SettingEditWidget::SettingEditWidget(Post3dWindowContourGroupDataItem* item, QWidget *parent) :
 	ModifyCommandWidget(parent),
-	m_colorMapWidget {new ColorMapSettingEditWidget {this}},
 	m_item {item},
 	ui(new Ui::Post3dWindowContourGroupDataItem_SettingEditWidget)
 {
 	ui->setupUi(this);
 
-	auto w = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapWidget, this);
-	ui->colorMapWidget->setWidget(w);
+	auto output = item->zoneDataItem()->gridTypeDataItem()->gridType()->output(item->target());
 
-	m_colorMapWidget->setSetting(&item->impl->m_colorMapSetting);
+	auto cmw = output->createColorMapSettingEditWidget(this);
+	cmw->setSetting(item->impl->m_setting.colorMapSetting);
+	m_colorMapWidget = new ColorMapSettingEditWidgetWithImportExportButton(cmw, this);
+
+	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	setSetting(item->impl->m_setting);
 
 	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
@@ -40,7 +46,7 @@ QUndoCommand* Post3dWindowContourGroupDataItem::SettingEditWidget::createModifyC
 {
 	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post3dWindowContourGroupDataItem::SettingEditWidget"), apply);
 
-	command->addCommand(m_colorMapWidget->createModifyCommand());
+	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(new ValueModifyCommmand<Setting> (iRIC::generateCommandId("Setting"), apply, setting(), &m_item->impl->m_setting));
 	command->addCommand(new SetFacesCommand(ui->faceListWidget->faces(), m_item));
 

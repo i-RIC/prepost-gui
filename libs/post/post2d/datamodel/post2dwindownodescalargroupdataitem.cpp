@@ -12,13 +12,19 @@
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/image/imagesettingcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontainer.h>
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/stringtool.h>
+
+#include <QRegExp>
 
 namespace {
 
@@ -45,7 +51,17 @@ Post2dWindowNodeScalarGroupDataItem::Post2dWindowNodeScalarGroupDataItem(const s
 
 	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
 	QString caption = gType->outputCaption(target);
-	SolverDefinitionGridOutput* output = gType->output(target);
+
+	SolverDefinitionGridOutput* output = nullptr;
+	QRegExp re("^(.+) \\(magnitude\\)$");
+	auto pos = re.indexIn(target.c_str());
+	if (pos >= 0) {
+		auto target2 = iRIC::toStr(re.cap(1)) + "X";
+		output = gType->output(target2);
+	} else {
+		output = gType->output(target);
+	}
+
 	standardItem()->setText(caption);
 	auto cs = output->createColorMapSettingContainer();
 	cs->legendSetting()->setTitle(caption);

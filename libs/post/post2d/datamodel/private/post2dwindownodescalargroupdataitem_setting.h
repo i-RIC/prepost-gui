@@ -4,10 +4,11 @@
 #include "../post2dwindownodescalargroupdataitem.h"
 
 #include <guicore/contour/contoursettingcontainer.h>
-#include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/region/region2dsettingcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
+
+class ColorMapSettingContainerI;
 
 class Post2dWindowNodeScalarGroupDataItem::Setting : public CompositeContainer
 {

@@ -1,5 +1,7 @@
 #include "post3dwindowcontourgroupdataitem_setting.h"
 
+#include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+
 Post3dWindowContourGroupDataItem::Setting::Setting() :
 	CompositeContainer({&contourSetting, &lighting, &opacity}),
 	contourSetting {},
@@ -22,4 +24,16 @@ Post3dWindowContourGroupDataItem::Setting& Post3dWindowContourGroupDataItem::Set
 XmlAttributeContainer& Post3dWindowContourGroupDataItem::Setting::operator=(const XmlAttributeContainer& c)
 {
 	return operator=(dynamic_cast<const Setting&> (c));
+}
+
+void Post3dWindowContourGroupDataItem::Setting::load(const QDomNode& node)
+{
+	CompositeContainer::load(node);
+	colorMapSetting->load(node);
+}
+
+void Post3dWindowContourGroupDataItem::Setting::save(QXmlStreamWriter& writer) const
+{
+	CompositeContainer::save(writer);
+	colorMapSetting->save(writer);
 }

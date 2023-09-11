@@ -94,11 +94,11 @@ void Post3dWindowContourDataItem::updateActorSetting()
 
 	auto impl = groupDataItem()->impl;
 
-	impl->m_setting.contourSetting.setColorMapSetting(&impl->m_colorMapSetting);
+	impl->m_setting.contourSetting.setColorMapSetting(impl->m_setting.colorMapSetting);
 	auto face2 = impl->m_setting.contourSetting.buildFilteredData(face);
 	face->Delete();
 
-	auto mapper = impl->m_colorMapSetting.buildPointDataMapper(face2);
+	auto mapper = impl->m_setting.colorMapSetting->buildPointDataMapper(face2);
 	face2->Delete();
 	m_actor->SetMapper(mapper);
 	mapper->Delete();

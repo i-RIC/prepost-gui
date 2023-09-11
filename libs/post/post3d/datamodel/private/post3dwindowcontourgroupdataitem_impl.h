@@ -19,7 +19,6 @@ public:
 
 	std::string m_target;
 
-	ColorMapSettingContainer m_colorMapSetting;
 	Setting m_setting;
 	vtkActor2D* m_legendActor;
 

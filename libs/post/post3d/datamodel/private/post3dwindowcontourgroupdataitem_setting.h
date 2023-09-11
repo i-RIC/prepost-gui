@@ -8,6 +8,8 @@
 #include <misc/compositecontainer.h>
 #include <misc/opacitycontainer.h>
 
+class ColorMapSettingContainerI;
+
 class Post3dWindowContourGroupDataItem::Setting : public CompositeContainer
 {
 public:
@@ -17,6 +19,10 @@ public:
 	Setting& operator=(const Setting& s);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
+	void load(const QDomNode& node) override;
+	void save(QXmlStreamWriter& writer) const override;
+
+	ColorMapSettingContainerI* colorMapSetting;
 	ContourSettingContainer contourSetting;
 	BoolContainer lighting;
 	OpacityContainer opacity;
