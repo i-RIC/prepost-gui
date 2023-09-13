@@ -11,6 +11,7 @@
 class NamedGraphicWindowDataItem;
 class Post3dWindowNodeVectorStreamlineDataItem;
 class Post3dWindowStreamlineStructuredSetProperty;
+class Post3dWindowZoneDataItem;
 
 class vtkActor;
 class vtkStreamTracer;
@@ -46,6 +47,7 @@ protected:
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	void clearActors();
+	Post3dWindowZoneDataItem* zoneDataItem() const;
 
 	void innerUpdateZScale(double zscale) override;
 	void applyZScale();

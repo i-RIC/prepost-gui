@@ -89,6 +89,8 @@ const std::string& Post2dBirdEyeWindowNodeScalarGroupDataItem::elevationTarget()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 {
+	impl->m_actor->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
 	impl->m_legendActor->VisibilityOff();
 	m_actor2DCollection->RemoveAllItems();
 
@@ -156,6 +158,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 
 	auto v = dataModel()->graphicsView();
 	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.contourSetting.contourLineWidth * v->devicePixelRatioF());
+	m_actorCollection->AddItem(impl->m_actor);
+
 	updateVisibilityWithoutRendering();
 }
 
@@ -173,14 +177,16 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 {
 	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
-	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
-		const auto& name = pair.first;
-		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
-	}
-	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
-		const auto& name = pair.first;
-		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
+	if (cont != nullptr) {
+		auto gType = cont->gridType();
+		for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+			const auto& name = pair.first;
+			impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
+		}
+		for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
+			const auto& name = pair.first;
+			impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
+		}
 	}
 
 	updateActorSetting();
@@ -193,6 +199,8 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
+	if (topDataItem()->zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 

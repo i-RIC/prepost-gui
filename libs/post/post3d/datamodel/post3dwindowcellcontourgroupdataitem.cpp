@@ -99,6 +99,8 @@ void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWri
 
 QDialog* Post3dWindowCellContourGroupDataItem::propertyDialog(QWidget* p)
 {
+	if (data() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);

@@ -227,6 +227,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 {
+	if (data() == nullptr) {return nullptr;}
+
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
 	dialog->setWidget(widget);

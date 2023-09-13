@@ -78,13 +78,18 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::clearActors()
 	m_streamlineActors.clear();
 }
 
+Post3dWindowZoneDataItem* Post3dWindowNodeVectorStreamlineGroupDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
+}
+
 void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(iRIC::toStr(m_setting.target), m_childItems, true);
 
 	clearActors();
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->dataContainer();
 	if (cont == nullptr) {return;}
 
 	auto ps = cont->data()->data();
