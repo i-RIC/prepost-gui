@@ -21,8 +21,10 @@ public:
 
 	void setView(VTKGraphicsView* view);
 
-private slots:
+public slots:
 	void updateDisplay();
+
+private slots:
 	void editScale();
 
 private:

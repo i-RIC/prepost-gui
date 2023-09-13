@@ -179,8 +179,10 @@ HEADERS += guicore_global.h \
            base/animationcontrollerinterface.h \
            base/clipboardoperatablewindowinterface.h \
            base/iricmainwindowinterface.h \
+           base/private/qmainwindowwithsnapshotresizewidget_editdialog.h \
            base/propertybrowser.h \
-           base/snapshotenabledwindowinterface.h \
+           base/qmainwindowwithsnapshot.h \
+           base/qmainwindowwithsnapshotresizewidget.h \
            base/windowwithobjectbrowserinterface.h \
            base/windowwithpropertybrowser.h \
            base/windowwithtmsi.h \
@@ -201,9 +203,11 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowrootdataitem.h \
            datamodel/graphicswindowsimpledatamodel.h \
            datamodel/modifycommandandrenderdialog.h \
+           datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.h \
            datamodel/propertybrowserattribute.h \
            datamodel/propertybrowserview.h \
            datamodel/vtk2dgraphicsview.h \
+           datamodel/vtk2dgraphicsviewanglewidget.h \
            datamodel/vtk3dgraphicsview.h \
            datamodel/vtkgraphicsview.h \
            datamodel/vtkgraphicsviewscalewidget.h \
@@ -677,8 +681,12 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          arrows/arrowssettingeditwidget.ui \
          arrows/arrowssettingtoolbarwidget.ui \
          arrows/arrowsshapesettingeditwidget.ui \
+         base/private/qmainwindowwithsnapshotresizewidget_editdialog.ui \
+         base/qmainwindowwithsnapshotresizewidget.ui \
          contour/contoursettingeditwidget.ui \
+         datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.ui \
          datamodel/propertybrowserview.ui \
+         datamodel/vtk2dgraphicsviewanglewidget.ui \
          datamodel/vtkgraphicsviewscalewidget.ui \
          filter/generalfilteringsettingeditwidget.ui \
          filter/structured2dfilteringsettingeditwidget.ui \
@@ -737,8 +745,10 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            arrows/arrowssettingtoolbarwidget.cpp \
            arrows/arrowsshapesettingeditwidget.cpp \
            base/iricmainwindowinterface.cpp \
+           base/private/qmainwindowwithsnapshotresizewidget_editdialog.cpp \
            base/propertybrowser.cpp \
-           base/snapshotenabledwindowinterface.cpp \
+           base/qmainwindowwithsnapshot.cpp \
+           base/qmainwindowwithsnapshotresizewidget.cpp \
            base/windowwithzindexinterface.cpp \
            bgcolor/backgroundcoloreditinterface.cpp \
            bgcolor/backgroundcoloreditvtkinterface.cpp \
@@ -756,9 +766,11 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
            datamodel/modifycommandandrenderdialog.cpp \
+           datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.cpp \
            datamodel/propertybrowserattribute.cpp \
            datamodel/propertybrowserview.cpp \
            datamodel/vtk2dgraphicsview.cpp \
+           datamodel/vtk2dgraphicsviewanglewidget.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            datamodel/vtkgraphicsviewscalewidget.cpp \

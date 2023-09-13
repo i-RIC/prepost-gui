@@ -4,8 +4,8 @@
 #include "gd_riversurvey_global.h"
 #include "geodatarivercrosssection.h"
 
-#include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/base/additionalmenuwindowi.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
 
 #include <QMainWindow>
 #include <QList>
@@ -31,8 +31,7 @@ namespace Ui
 }
 
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCrosssectionWindow :
-	public QMainWindow,
-	public SnapshotEnabledWindowInterface,
+	public QMainWindowWithSnapshot,
 	public AdditionalMenuWindowI
 {
 	Q_OBJECT
@@ -69,7 +68,8 @@ public:
 	void informFocusIn();
 	void toggleGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs);
 	const QIcon& icon() const;
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 

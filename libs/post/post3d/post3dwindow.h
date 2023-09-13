@@ -34,7 +34,8 @@ public:
 	Post3dWindow(QWidget* parent, int index, Post3dWindowProjectDataItem* pdi);
 	~Post3dWindow();
 
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
 

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>InformationDialog</name>
@@ -47,14 +49,14 @@
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Interval d'animació en segons:</translation>
+        <translation>Interval d&apos;animació en segons:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation>Arxiu d'obertura %1 fracassat.</translation>
+        <translation>Arxiu d&apos;obertura %1 fracassat.</translation>
     </message>
 </context>
 <context>
@@ -62,6 +64,56 @@
     <message>
         <source>Select Value</source>
         <translation>Seleccioneu Valor</translation>
+    </message>
+</context>
+<context>
+    <name>WindowSizeEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select from standard sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Standard sizes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>WindowSizeStandardSettingEditDialog</name>
+    <message>
+        <source>Edit Window Size Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

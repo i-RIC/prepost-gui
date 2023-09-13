@@ -56,6 +56,10 @@ void GridBirdEyeWindowProjectDataItem::informWindowClose()
 
 void GridBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	/// object browser visibility
+	m_window->objectBrowser()->setVisible(iRIC::getBooleanAttribute(node, "objectBrowserVisible", true));
+
+	/// load background color
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	m_window->setBackgroundColor(col);
 
@@ -78,6 +82,12 @@ void GridBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode&
 
 void GridBirdEyeWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	ProjectDataItem::writeBackgroundColor(m_window->backgroundColor(), writer);
+
+	/// object browser visibility
+	iRIC::setBooleanAttribute(writer, "objectBrowserVisible", m_window->objectBrowser()->isVisible());
+
+	/// save background color
 	ProjectDataItem::writeBackgroundColor(m_window->backgroundColor(), writer);
 
 	/// save Window geometry

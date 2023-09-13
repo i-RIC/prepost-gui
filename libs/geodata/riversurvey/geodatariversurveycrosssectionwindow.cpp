@@ -92,7 +92,7 @@ GeoDataRiverSurveyCrosssectionWindow::Impl::~Impl()
 }
 
 GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
-	QMainWindow {parent},
+	QMainWindowWithSnapshot {parent},
 	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow},
 	impl {new Impl(pdi)}
 {
@@ -790,15 +790,20 @@ const QIcon& GeoDataRiverSurveyCrosssectionWindow::icon() const
 	return impl->m_icon;
 }
 
-QPixmap GeoDataRiverSurveyCrosssectionWindow::snapshot()
+QPixmap GeoDataRiverSurveyCrosssectionWindow::snapshot() const
 {
-	GeoDataRiverSurveyCrosssectionWindowGraphicsView* g = ui->graphicsView;
+	auto g = ui->graphicsView;
 	QPixmap pixmap(g->size());
 	QPainter painter;
 	painter.begin(&pixmap);
 	g->render(&painter);
 	painter.end();
 	return pixmap;
+}
+
+QWidget* GeoDataRiverSurveyCrosssectionWindow::snapshotArea() const
+{
+	return ui->graphicsView;
 }
 
 QList<QMenu*> GeoDataRiverSurveyCrosssectionWindow::getAdditionalMenus() const

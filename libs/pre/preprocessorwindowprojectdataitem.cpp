@@ -89,6 +89,9 @@ PreProcessorWindowProjectDataItem::~PreProcessorWindowProjectDataItem()
 
 void PreProcessorWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	/// object browser visibility
+	m_preProcessorWindow->objectBrowser()->setVisible(iRIC::getBooleanAttribute(node, "objectBrowserVisible", true));
+
 	PreProcessorWindow* parent = m_preProcessorWindow;
 	/// load background color
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
@@ -111,6 +114,9 @@ void PreProcessorWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode
 
 void PreProcessorWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	/// object browser visibility
+	iRIC::setBooleanAttribute(writer, "objectBrowserVisible", m_preProcessorWindow->objectBrowser()->isVisible());
+
 	/// save background color
 	ProjectDataItem::writeBackgroundColor(m_preProcessorWindow->backgroundColor(), writer);
 

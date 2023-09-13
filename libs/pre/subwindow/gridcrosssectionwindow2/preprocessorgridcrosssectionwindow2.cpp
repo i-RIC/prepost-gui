@@ -20,7 +20,7 @@
 #include <misc/xmlsupport.h>
 
 PreProcessorGridCrosssectionWindow2::PreProcessorGridCrosssectionWindow2(PreProcessorGridDataItem* item, QWidget *parent) :
-	QMainWindow(parent),
+	QMainWindowWithSnapshot {parent},
 	impl {new Impl {item, this}},
 	ui(new Ui::PreProcessorGridCrosssectionWindow2)
 {
@@ -141,7 +141,7 @@ void PreProcessorGridCrosssectionWindow2::applyColorMapSetting(const std::string
 	updateGraphicsView();
 }
 
-QPixmap PreProcessorGridCrosssectionWindow2::snapshot()
+QPixmap PreProcessorGridCrosssectionWindow2::snapshot() const
 {
 	auto gv = impl->graphicsView();
 
@@ -157,6 +157,11 @@ QPixmap PreProcessorGridCrosssectionWindow2::snapshot()
 	gv->render(&painter, QPoint(), region, QWidget::DrawChildren);
 	painter.end();
 	return pixmap;
+}
+
+QWidget* PreProcessorGridCrosssectionWindow2::snapshotArea() const
+{
+	return impl->graphicsView();
 }
 
 bool PreProcessorGridCrosssectionWindow2::saveCsvFile(const QString& fileName)

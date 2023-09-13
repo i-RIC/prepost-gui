@@ -30,6 +30,8 @@ private:
 	QSettings m_settings;
 	std::vector<double> m_fractions;
 	Ui::PreferencePageRiverSurvey *ui;
+
+	class FractionAddDialog;
 };
 
 #endif // PREFERENCEPAGERIVERSURVEY_H

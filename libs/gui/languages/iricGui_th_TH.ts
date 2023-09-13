@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>AnimationController</name>
@@ -689,6 +691,29 @@
     </message>
 </context>
 <context>
+    <name>CopyCameraSettingDialog</name>
+    <message>
+        <source>Copy Camera Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Check All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -768,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>เลือก Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม "ตกลง"</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>เมื่อคุณสร้างโครงการใหม่ คุณต้องเลือกตัวแก้ไขเพื่อใช้ในการคำนวณ โปรดเลือกตัวแก้ไขและกดปุ่ม &quot;ตกลง&quot;</translation>
     </message>
 </context>
 <context>
@@ -833,6 +858,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Text Format</source>
         <translation>รูปแบบข้อความ</translation>
+    </message>
+    <message>
+        <source>Window Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1236,15 +1265,30 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation>บวกเศษส่วน</translation>
+        <translation type="vanished">บวกเศษส่วน</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation>ระบุเศษส่วนที่จะบวก:</translation>
+        <translation type="vanished">ระบุเศษส่วนที่จะบวก:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation>1:</translation>
+        <translation type="vanished">1:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurvey_FractionAddDialog</name>
+    <message>
+        <source>Add fraction</source>
+        <translation type="unfinished">บวกเศษส่วน</translation>
+    </message>
+    <message>
+        <source>Specify the fraction to add:</source>
+        <translation type="unfinished">ระบุเศษส่วนที่จะบวก:</translation>
+    </message>
+    <message>
+        <source>1:</source>
+        <translation type="unfinished">1:</translation>
     </message>
 </context>
 <context>
@@ -1412,6 +1456,41 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
         <translation>ตัวอย่าง: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWindowSize</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">เพิ่ม (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">แก้ไข (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished">ลบ (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>&amp;Reset to Default...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">คำเตือน</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset to default settings?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ "%1" ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
+        <translation>เกิดข้อผิดพลาดขณะโหลดไฟล์คำจำกัดความของตัวแก้ไขในโฟลเดอร์ &quot;%1&quot; ตัวแก้ปัญหานี้ถูกละเว้น %2</translation>
     </message>
 </context>
 <context>
@@ -1709,6 +1788,10 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <source>Support</source>
         <translation>สนับสนุน</translation>
     </message>
+    <message>
+        <source>&amp;Start iRIC-MI GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
@@ -1731,6 +1814,61 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Recent Projects:</source>
         <translation>โครงการล่าสุด:</translation>
+    </message>
+</context>
+<context>
+    <name>SubwindowsAlignDialog</name>
+    <message>
+        <source>Align Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins between windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Object Browsers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1768,7 +1906,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>ดูเหมือนว่าโปรเจ็กต์นี้จะเปิดขึ้นโดยหน้าต่าง iRIC GUI อื่น คุณไม่สามารถเปิดโฟลเดอร์โครงการจากหลายหน้าต่าง GUI</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>โปรเจ็กต์ที่เปิดอยู่จะไม่ถูกคัดลอกไปยังไดเร็กทอรีงาน และคุณจะถูกบังคับให้บันทึกการแก้ไขที่คุณทำกับโปรเจ็กต์นี้ หากคุณต้องการเก็บโปรเจ็กต์ปัจจุบันไว้ โปรดบันทึกไปที่โปรเจ็กต์อื่นก่อน</translation>
     </message>
     <message>
@@ -1936,8 +2074,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>หน้าต่างย่อยที่ใช้งานอยู่ในปัจจุบันไม่รองรับการส่งออกรูปทรงเส้นขอบ</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน "การตั้งค่าการแสดงผล" เป็น "รูปร่างรูปร่าง" ไม่ใช่ "ขอบสี" หรือ "ไอโซลีน"</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยน &quot;การตั้งค่าการแสดงผล&quot; เป็น &quot;รูปร่างรูปร่าง&quot; ไม่ใช่ &quot;ขอบสี&quot; หรือ &quot;ไอโซลีน&quot;</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2073,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>ไฟล์การตั้งค่า (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น "โหมดแยก"</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">หากต้องการส่งออกไฟล์รูปร่าง ให้เปลี่ยนโหมดสีเป็น &quot;โหมดแยก&quot;</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2085,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>เลือกกริดเพื่อส่งออกไฟล์รูปร่าง</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>ไม่มีการวาดรูปร่างใน "โหมดไม่ต่อเนื่อง"</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>ไม่มีการวาดรูปร่างใน &quot;โหมดไม่ต่อเนื่อง&quot;</translation>
     </message>
 </context>
 <context>
@@ -2348,7 +2486,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation>หน้าต่างกระเบื้อง (&amp;T)</translation>
+        <translation type="vanished">หน้าต่างกระเบื้อง (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
@@ -2433,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2460,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>เปิดหน้าต่างหลังการประมวลผล 2D ใหม่</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird's-Eye ใหม่</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>เปิดหน้าต่างหลังการประมวลผลแบบ 2D Bird&apos;s-Eye ใหม่</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2574,6 +2712,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Geographic Data (Elevation from web)</source>
         <translation>ข้อมูลทางภูมิศาสตร์ (ระดับความสูงจากเว็บ)</translation>
+    </message>
+    <message>
+        <source>&amp;Align Windows...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy &amp;Camera Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

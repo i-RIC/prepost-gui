@@ -1,6 +1,6 @@
 #include "preferencepageriversurvey.h"
 #include "ui_preferencepageriversurvey.h"
-#include "private/preferencepageriversurveyfractionadddialog.h"
+#include "private/preferencepageriversurvey_fractionadddialog.h"
 
 #include <QMessageBox>
 #include <QString>
@@ -43,7 +43,7 @@ void PreferencePageRiverSurvey::update()
 
 void PreferencePageRiverSurvey::add()
 {
-	PreferencePageRiverSurveyFractionAddDialog dialog(this);
+	FractionAddDialog dialog(this);
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 

@@ -18,7 +18,7 @@
 #include <vtkRenderer.h>
 
 GridBirdEyeWindow::GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item) :
-	QMainWindow(parent),
+	QMainWindowWithSnapshot {parent},
 	m_projectDataItem {nullptr}
 {
 	init(item);
@@ -50,12 +50,22 @@ void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
 	addDockWidget(Qt::LeftDockWidgetArea, m_objectBrowser);
 }
 
-QPixmap GridBirdEyeWindow::snapshot()
+ObjectBrowser* GridBirdEyeWindow::objectBrowser() const
+{
+	return m_objectBrowser;
+}
+
+QPixmap GridBirdEyeWindow::snapshot() const
 {
 	QImage img = m_dataModel->graphicsView()->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
 	pixmap.setDevicePixelRatio(devicePixelRatioF());
 	return pixmap;
+}
+
+QWidget* GridBirdEyeWindow::snapshotArea() const
+{
+	return m_dataModel->graphicsView();
 }
 
 vtkRenderWindow* GridBirdEyeWindow::getVtkRenderWindow() const

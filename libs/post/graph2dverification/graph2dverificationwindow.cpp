@@ -67,7 +67,7 @@ void Graph2dVerificationWindow::setupDefaultGeometry(int index)
 	parent->resize(700, 500);
 }
 
-QPixmap Graph2dVerificationWindow::snapshot()
+QPixmap Graph2dVerificationWindow::snapshot() const
 {
 	QWidget* w = centralWidget();
 	QPixmap pixmap(w->size());
@@ -80,6 +80,11 @@ QPixmap Graph2dVerificationWindow::snapshot()
 	painter.end();
 	// TODO add comment
 	return pixmap;
+}
+
+QWidget* Graph2dVerificationWindow::snapshotArea() const
+{
+	return centralWidget();
 }
 
 QList<QMenu*> Graph2dVerificationWindow::getAdditionalMenus() const

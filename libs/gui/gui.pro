@@ -167,6 +167,7 @@ LIBS += \
 	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
 	-lvtkInteractionStyle-$${VTK_MAJ_MIN} \
 	-lvtkIOExport-$${VTK_MAJ_MIN} \
+	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
 	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
 	-lvtkRenderingFreeTypeOpenGL-$${VTK_MAJ_MIN} \
 	-lvtkRenderingOpenGL-$${VTK_MAJ_MIN}
@@ -198,6 +199,7 @@ HEADERS += gui_api.h \
            main/iricmainwindow.h \
            main/iricmergablecommands.h \
            misc/animationcontroller.h \
+           misc/copycamerasettingdialog.h \
            misc/flushrequester.h \
            misc/installertool.h \
            misc/iricmainwindowaboutdialog.h \
@@ -209,6 +211,8 @@ HEADERS += gui_api.h \
            misc/projecttypeselectdialog.h \
            misc/recentprojectsmanager.h \
            misc/recentsolversmanager.h \
+           misc/subwindowsaligndialog.h \
+           misc/windowaligner.h \
            misc/wrongsettingexception.h \
            pref/preferencedialog.h \
            pref/preferencepage.h \
@@ -222,6 +226,8 @@ HEADERS += gui_api.h \
            pref/preferencepagetextformat.h \
            pref/preferencepagetms.h \
            pref/preferencepagewebcsvtile.h \
+           pref/preferencepagewindowsize.h \
+           pref/private/preferencepageriversurvey_fractionadddialog.h \
            projectproperty/projectpropertybasicinfowidget.h \
            projectproperty/projectpropertydialog.h \
            solverdef/solverdefinitionabstractdialog.h \
@@ -251,16 +257,17 @@ HEADERS += gui_api.h \
            main/private/iricmainwindow_modelessdialogmodechanger.h \
            main/private/iricmainwindow_snapshotsaver.h \
            misc/private/cancelhandler.h \
-           pref/private/preferencepageriversurveyfractionadddialog.h \
            pref/private/preferencepagetmsadddialog.h \
            pref/private/preferencepagewebcsvtileadddialog.h \
            startpage/private/startpagedialog_impl.h \
            startpage/private/startpagelabel_impl.h
 FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
+         misc/copycamerasettingdialog.ui \
          misc/iricmainwindowaboutdialog.ui \
          misc/mousehelpdialog.ui \
          misc/newprojectsolverselectingdialog.ui \
          misc/projecttypeselectdialog.ui \
+         misc/subwindowsaligndialog.ui \
          pref/preferencedialog.ui \
          pref/preferencepagebackgroundgrid.ui \
          pref/preferencepagefontdefault.ui \
@@ -272,6 +279,8 @@ FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          pref/preferencepagetextformat.ui \
          pref/preferencepagetms.ui \
          pref/preferencepagewebcsvtile.ui \
+         pref/preferencepagewindowsize.ui \
+         pref/private/preferencepageriversurvey_fractionadddialog.ui \
          projectproperty/projectpropertybasicinfowidget.ui \
          projectproperty/projectpropertydialog.ui \
          solverdef/solverdefinitionabstractdialog.ui \
@@ -284,7 +293,6 @@ FORMS += googlemapimport/googlemapimageimportsettingdialog.ui \
          continuoussnapshot/private/continuoussnapshotwizard_moviepropertypage.ui \
          continuoussnapshot/private/continuoussnapshotwizard_timestepsettingpage.ui \
          continuoussnapshot/private/continuoussnapshotwizard_windowselectionpage.ui \
-         pref/private/preferencepageriversurveyfractionadddialog.ui \
          pref/private/preferencepagetmsadddialog.ui \
          pref/private/preferencepagewebcsvtileadddialog.ui
 SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
@@ -292,6 +300,7 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            factory/postprocessorwindowfactory.cpp \
            main/iricmainwindow.cpp \
            misc/animationcontroller.cpp \
+           misc/copycamerasettingdialog.cpp \
            misc/flushrequester.cpp \
            misc/installertool.cpp \
            misc/iricmainwindowaboutdialog.cpp \
@@ -303,6 +312,8 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            misc/projecttypeselectdialog.cpp \
            misc/recentprojectsmanager.cpp \
            misc/recentsolversmanager.cpp \
+           misc/subwindowsaligndialog.cpp \
+           misc/windowaligner.cpp \
            pref/preferencedialog.cpp \
            pref/preferencepage.cpp \
            pref/preferencepagebackgroundgrid.cpp \
@@ -315,6 +326,8 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            pref/preferencepagetextformat.cpp \
            pref/preferencepagetms.cpp \
            pref/preferencepagewebcsvtile.cpp \
+           pref/preferencepagewindowsize.cpp \
+           pref/private/preferencepageriversurvey_fractionadddialog.cpp \
            projectproperty/projectpropertybasicinfowidget.cpp \
            projectproperty/projectpropertydialog.cpp \
            solverdef/solverdefinitionabstractdialog.cpp \
@@ -344,7 +357,6 @@ SOURCES += continuoussnapshot/continuoussnapshotsetting.cpp \
            main/private/iricmainwindow_modelessdialogmodechanger.cpp \
            main/private/iricmainwindow_snapshotsaver.cpp \
            misc/private/cancelhandler.cpp \
-           pref/private/preferencepageriversurveyfractionadddialog.cpp \
            pref/private/preferencepagetmsadddialog.cpp \
            pref/private/preferencepagewebcsvtileadddialog.cpp
 RESOURCES += gui.qrc

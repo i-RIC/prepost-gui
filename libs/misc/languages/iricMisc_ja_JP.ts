@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>InformationDialog</name>
@@ -62,6 +64,56 @@
     <message>
         <source>Select Value</source>
         <translation>値の選択</translation>
+    </message>
+</context>
+<context>
+    <name>WindowSizeEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>形状</translation>
+    </message>
+    <message>
+        <source>Mode</source>
+        <translation>モード</translation>
+    </message>
+    <message>
+        <source>Select from standard sizes</source>
+        <translation>標準サイズから選択</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>手動</translation>
+    </message>
+    <message>
+        <source>Standard sizes</source>
+        <translation>標準サイズ</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+</context>
+<context>
+    <name>WindowSizeStandardSettingEditDialog</name>
+    <message>
+        <source>Edit Window Size Setting</source>
+        <translation>ウィンドウサイズ設定の編集</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+    <message>
+        <source>Comment:</source>
+        <translation>コメント:</translation>
     </message>
 </context>
 </TS>

@@ -28,6 +28,8 @@ VTK2DGraphicsView::VTK2DGraphicsView(QWidget* parent) :
 
 	iren->Delete();
 	style->Delete();
+
+	connect(this, &VTKGraphicsView::viewOperationEnded, this, &VTK2DGraphicsView::handleViewOperationEnd);
 }
 
 void VTK2DGraphicsView::resetCamera()
@@ -121,6 +123,10 @@ void VTK2DGraphicsView::getDrawnRegion(double* xmin, double* xmax, double* ymin,
 void VTK2DGraphicsView::rotate(double r)
 {
 	mainRenderer()->GetActiveCamera()->Roll(r);
+	model()->viewOperationEndedGlobal();
+	render();
+
+	emit angleChanged(getAngle());
 }
 
 void VTK2DGraphicsView::resetRoll()
@@ -225,6 +231,20 @@ void VTK2DGraphicsView::emitWorldPosition(int x, int y)
 	emit worldPositionChanged(QPointF(dx, dy));
 }
 
+double VTK2DGraphicsView::getAngle() const
+{
+	return mainRenderer()->GetActiveCamera()->GetRoll();
+}
+
+void VTK2DGraphicsView::setAngle(double angle)
+{
+	mainRenderer()->GetActiveCamera()->SetRoll(angle);
+	model()->viewOperationEndedGlobal();
+	render();
+
+	emit angleChanged(angle);
+}
+
 void VTK2DGraphicsView::mouseMoveEvent(QMouseEvent* event)
 {
 	double dx, dy;
@@ -272,11 +292,16 @@ void VTK2DGraphicsView::cameraResetRotation()
 	resetRoll();
 	model()->viewOperationEndedGlobal();
 	render();
+
+	emit angleChanged(getAngle());
 }
 
 void VTK2DGraphicsView::cameraRotate90()
 {
 	rotate(90);
-	model()->viewOperationEndedGlobal();
-	render();
+}
+
+void VTK2DGraphicsView::handleViewOperationEnd()
+{
+	emit angleChanged(getAngle());
 }

@@ -171,7 +171,9 @@ public:
 	/// Action to clear calculation condition.
 	QAction* solverClearResultAction;
 	/// Action to tile windows inside the m_Center (that is a QMdiArea) of iRICMainWindow.
-	QAction* windowTileAction;
+	QAction* windowAlignAction;
+	/// Action to copy camera settings
+	QAction* windowCopyCameraAction;
 	/// Action to set focus on PreProcessorWindow.
 	QAction* windowFocusPreProcessorAction;
 	/// Action to set focus on SolverConsoleWindow.

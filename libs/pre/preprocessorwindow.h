@@ -3,7 +3,6 @@
 
 #include "pre_global.h"
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/base/snapshotenabledwindowinterface.h>
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/base/windowwithpropertybrowser.h>
@@ -33,7 +32,6 @@ class PreProcessorGraphicsView;
 /// PreProcessorWindow class implements the main window of pre-processor.
 class PREDLL_EXPORT PreProcessorWindow :
 	public PreProcessorWindowInterface,
-	public SnapshotEnabledWindowInterface,
 	public AdditionalMenuWindowI,
 	public WindowWithObjectBrowserInterface,
 	public WindowWithTmsI,
@@ -74,7 +72,8 @@ public:
 	QString checkGrid(bool detail) override;
 	void showEvent(QShowEvent* e) override;
 	void hideEvent(QHideEvent* e) override;
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;

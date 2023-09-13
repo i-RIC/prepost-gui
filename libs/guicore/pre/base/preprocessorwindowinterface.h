@@ -2,14 +2,13 @@
 #define PREPROCESSORWINDOWINTERFACE_H
 
 #include "../../guicore_global.h"
-#include <QMainWindow>
+#include "../../base/qmainwindowwithsnapshot.h"
 
 class PreProcessorDataModelInterface;
-class PropertyBrowser;
 
 class QMenu;
 
-class GUICOREDLL_EXPORT PreProcessorWindowInterface : public QMainWindow
+class GUICOREDLL_EXPORT PreProcessorWindowInterface : public QMainWindowWithSnapshot
 {
 
 public:

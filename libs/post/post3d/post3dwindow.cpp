@@ -64,15 +64,20 @@ void Post3dWindow::setupDefaultGeometry(int index)
 	restoreState(m_initialState);
 }
 
-QPixmap Post3dWindow::snapshot()
+QPixmap Post3dWindow::snapshot() const
 {
-	Post3dWindowGraphicsView* view = m_dataModel->graphicsView();
+	auto view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
+	if (m_isTransparent) {makeBackgroundTransparent(view, pixmap);}
 	pixmap.setDevicePixelRatio(devicePixelRatioF());
 
 	return pixmap;
+}
+
+QWidget* Post3dWindow::snapshotArea() const
+{
+	return m_dataModel->graphicsView();
 }
 
 vtkRenderWindow* Post3dWindow::getVtkRenderWindow() const

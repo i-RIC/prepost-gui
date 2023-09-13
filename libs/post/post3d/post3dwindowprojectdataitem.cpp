@@ -45,6 +45,9 @@ void Post3dWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node
 {
 	auto w = dynamic_cast<Post3dWindow*>(m_window);
 
+	/// object browser visibility
+	w->objectBrowser()->setVisible(iRIC::getBooleanAttribute(node, "objectBrowserVisible", true));
+
 	/// load background color
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
@@ -73,6 +76,9 @@ void Post3dWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writ
 	writer.writeAttribute("type", "post3dwindow");
 	Post3dWindow* w = dynamic_cast<Post3dWindow*>(m_window);
 	iRIC::setIntAttribute(writer, "index", w->index());
+
+	/// object browser visibility
+	iRIC::setBooleanAttribute(writer, "objectBrowserVisible", w->objectBrowser()->isVisible());
 
 	/// save background color
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);

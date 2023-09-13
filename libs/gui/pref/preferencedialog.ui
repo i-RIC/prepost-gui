@@ -78,6 +78,11 @@
        <string>Background Grid</string>
       </attribute>
      </widget>
+     <widget class="PreferencePageWindowSize" name="windowSizeTab">
+      <attribute name="title">
+       <string>Window Size</string>
+      </attribute>
+     </widget>
     </widget>
    </item>
    <item>
@@ -151,6 +156,12 @@
    <class>PreferencePageFontDefault</class>
    <extends>QWidget</extends>
    <header>preferencepagefontdefault.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreferencePageWindowSize</class>
+   <extends>QWidget</extends>
+   <header>pref/preferencepagewindowsize.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -21,7 +21,9 @@ public:
 	explicit Graph2dScatteredWindow(QWidget* parent, int index, Graph2dScatteredWindowProjectDataItem* pdi);
 	~Graph2dScatteredWindow();
 
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
+
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 

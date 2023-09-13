@@ -31,7 +31,8 @@ public:
 	Post2dBirdEyeWindow(QWidget* parent, int index, Post2dBirdEyeWindowProjectDataItem* pdi);
 	~Post2dBirdEyeWindow();
 
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
 

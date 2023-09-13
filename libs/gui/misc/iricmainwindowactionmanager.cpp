@@ -380,9 +380,13 @@ void iRICMainWindowActionManager::setupViewMenu()
 
 	m_viewMenu->addSeparator();
 
-	windowTileAction = new QAction(tr("&Tile Windows"), m_viewMenu);
-	m_viewMenu->addAction(windowTileAction);
-	connect(windowTileAction, SIGNAL(triggered()), m_parent, SLOT(tileSubWindows()));
+	windowAlignAction = new QAction(tr("&Align Windows..."), m_viewMenu);
+	m_viewMenu->addAction(windowAlignAction);
+	connect(windowAlignAction, &QAction::triggered, m_parent, &iRICMainWindow::alignSubWindows);
+
+	windowCopyCameraAction = new QAction(tr("Copy &Camera Setting..."), m_viewMenu);
+	m_viewMenu->addAction(windowCopyCameraAction);
+	connect(windowCopyCameraAction, &QAction::triggered, m_parent, &iRICMainWindow::copyCameraSetting);
 
 	m_windowMenuSeparetor = m_viewMenu->addSeparator();
 
@@ -451,26 +455,26 @@ void iRICMainWindowActionManager::setupSimulationMenu()
 	solverRunAction->setIcon(QIcon(":/images/iconSolverRun.svg"));
 	solverRunAction->setShortcut(QKeySequence(tr("Ctrl+R")));
 	m_simulationMenu->addAction(solverRunAction);
-	connect(solverRunAction, SIGNAL(triggered()), m_parent->solverConsoleWindow(), SLOT(startSolver()));
+	connect(solverRunAction, &QAction::triggered, m_parent->solverConsoleWindow(), &SolverConsoleWindow::startSolver);
 
 	solverStopAction = new QAction(tr("&Stop", "stop solver"), m_simulationMenu);
 	solverStopAction->setIcon(QIcon(":/images/iconSolverStop.svg"));
 	m_simulationMenu->addAction(solverStopAction);
-	connect(solverStopAction, SIGNAL(triggered()), m_parent->solverConsoleWindow(), SLOT(terminateSolver()));
+	connect(solverStopAction, &QAction::triggered, m_parent->solverConsoleWindow(), &SolverConsoleWindow::terminateSolver);
 
 	m_simulationMenu->addSeparator();
 
 	solverAboutAction = new QAction(tr("&Solver Information..."), m_simulationMenu);
 	solverAboutAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
 	m_simulationMenu->addAction(solverAboutAction);
-	connect(solverAboutAction, SIGNAL(triggered()), m_parent->m_miscDialogManager, SLOT(aboutCurrentSolver()));
+	connect(solverAboutAction, &QAction::triggered, m_parent->m_miscDialogManager, &iRICMainWindowMiscDialogManager::aboutCurrentSolver);
 
 	m_simulationMenu->addSeparator();
 
 	m_simulationMenu->addAction(m_parent->solverConsoleWindow()->exportLogAction);
 
-	connect(m_parent->solverConsoleWindow(), SIGNAL(solverStarted()), this, SLOT(handleSolverStart()));
-	connect(m_parent->solverConsoleWindow(), SIGNAL(solverFinished()), this, SLOT(handleSolverFinish()));
+	connect(m_parent->solverConsoleWindow(), &SolverConsoleWindow::solverStarted, this, &iRICMainWindowActionManager::handleSolverStart);
+	connect(m_parent->solverConsoleWindow(), &SolverConsoleWindow::solverFinished, this, &iRICMainWindowActionManager::handleSolverFinish);
 
 	m_simulationMenu->setEnabled(false);
 	enableActions(m_simulationMenu->actions(), false);
@@ -480,12 +484,12 @@ void iRICMainWindowActionManager::setupWindowMenu()
 {
 	windowFocusPreProcessorAction = new QAction(tr("Focus &PreProcessor Window"), this);
 	windowFocusPreProcessorAction->setIcon(QIcon(":/images/iconPreprocessing.svg"));
-	connect(windowFocusPreProcessorAction, SIGNAL(triggered()), m_parent, SLOT(focusPreProcessorWindow()));
+	connect(windowFocusPreProcessorAction, &QAction::triggered, m_parent, &iRICMainWindow::focusPreProcessorWindow);
 	windowFocusPreProcessorAction->setDisabled(true);
 
 	windowFocusSolverConsoleAction = new QAction(tr("Focus &Solver Console Window"), this);
 	windowFocusSolverConsoleAction->setIcon(QIcon(":/libs/solverconsole/images/iconSolver.svg"));
-	connect(windowFocusSolverConsoleAction, SIGNAL(triggered()), m_parent, SLOT(focusSolverConsoleWindow()));
+	connect(windowFocusSolverConsoleAction, &QAction::triggered, m_parent, &iRICMainWindow::focusSolverConsoleWindow);
 	windowFocusSolverConsoleAction->setDisabled(true);
 
 }
@@ -512,34 +516,34 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	windowCreateNew2dPostProcessorAction = new QAction(tr("Open new 2D Post-Processing Window"), m_resultMenu);
 	windowCreateNew2dPostProcessorAction->setIcon(QIcon(":/libs/post/post2d/images/iconVis2D.svg"));
 	m_resultMenu->addAction(windowCreateNew2dPostProcessorAction);
-	connect(windowCreateNew2dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create2dPostWindow()));
+	connect(windowCreateNew2dPostProcessorAction, &QAction::triggered, m_parent, &iRICMainWindow::create2dPostWindow);
 
 	windowCreateNew2dBirdEyePostProcessorAction = new QAction(tr("Open new 2D Bird's-Eye Post-Processing Window"), m_resultMenu);
 	windowCreateNew2dBirdEyePostProcessorAction->setIcon(QIcon(":/libs/post/post2dbirdeye/images/iconVis2DBirdEye.svg"));
 	m_resultMenu->addAction(windowCreateNew2dBirdEyePostProcessorAction);
-	connect(windowCreateNew2dBirdEyePostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create2dBirdEyePostWindow()));
+	connect(windowCreateNew2dBirdEyePostProcessorAction, &QAction::triggered, m_parent, &iRICMainWindow::create2dBirdEyePostWindow);
 
 	windowCreateNew3dPostProcessorAction = new QAction(tr("Open new 3D Post-Processing Window"), m_resultMenu);
 	windowCreateNew3dPostProcessorAction->setIcon(QIcon(":/libs/post/post3d/images/iconVis3D.svg"));
 	m_resultMenu->addAction(windowCreateNew3dPostProcessorAction);
-	connect(windowCreateNew3dPostProcessorAction, SIGNAL(triggered()), m_parent, SLOT(create3dPostWindow()));
+	connect(windowCreateNew3dPostProcessorAction, &QAction::triggered, m_parent, &iRICMainWindow::create3dPostWindow);
 
 	m_resultMenu->addSeparator();
 
 	windowCreateNewGraph2dHybridWindowAction = new QAction(tr("Open new Graph Window"), m_resultMenu);
 	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.svg"));
 	m_resultMenu->addAction(windowCreateNewGraph2dHybridWindowAction);
-	connect(windowCreateNewGraph2dHybridWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dHybridWindow()));
+	connect(windowCreateNewGraph2dHybridWindowAction, &QAction::triggered, m_parent, &iRICMainWindow::createGraph2dHybridWindow);
 
 	windowCreateNewGraph2dScatteredWindowAction = new QAction(tr("Open new Scattered Chart Window"), m_resultMenu);
 	windowCreateNewGraph2dScatteredWindowAction->setIcon(QIcon(":/images/iconVisGraphScattered.svg"));
 	m_resultMenu->addAction(windowCreateNewGraph2dScatteredWindowAction);
-	connect(windowCreateNewGraph2dScatteredWindowAction, SIGNAL(triggered()), m_parent, SLOT(createGraph2dScatteredWindow()));
+	connect(windowCreateNewGraph2dScatteredWindowAction, &QAction::triggered, m_parent, &iRICMainWindow::createGraph2dScatteredWindow);
 
 	windowCreateVerificationDialogAction = new QAction(tr("Open new Verification Window"), m_resultMenu);
 	windowCreateVerificationDialogAction->setIcon(QIcon(":/images/iconGraphVerification.svg"));
 	m_resultMenu->addAction(windowCreateVerificationDialogAction);
-	connect(windowCreateVerificationDialogAction, SIGNAL(triggered()), m_parent, SLOT(openVerificationDialog()));
+	connect(windowCreateVerificationDialogAction, &QAction::triggered, m_parent, &iRICMainWindow::openVerificationDialog);
 
 	m_resultMenu->addSeparator();
 
@@ -548,8 +552,8 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 	calcResultReloadToolBarAction = new QAction(tr("&Reload Calculation Result"), m_resultMenu);
 	calcResultReloadToolBarAction->setIcon(QIcon(":/images/iconReload.svg"));
 	m_resultMenu->addAction(calcResultReloadAction);
-	connect(calcResultReloadAction, SIGNAL(triggered()), m_parent, SLOT(checkCgnsStepsUpdate()));
-	connect(calcResultReloadToolBarAction, SIGNAL(triggered()), m_parent, SLOT(checkCgnsStepsUpdate()));
+	connect(calcResultReloadAction, &QAction::triggered, m_parent, &iRICMainWindow::checkCgnsStepsUpdate);
+	connect(calcResultReloadToolBarAction, &QAction::triggered, m_parent, &iRICMainWindow::checkCgnsStepsUpdate);
 
 	solverClearResultAction = new QAction(tr("&Delete..."), m_resultMenu);
 	solverClearResultAction->setIcon(QIcon(":/libs/guibase/images/iconDeleteItem.svg"));
@@ -771,8 +775,8 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar = new iRICToolBar(tr("Main ToolBar"), m_parent);
 	m_mainToolBar->setObjectName("iricMainToolBar");
 
-	connect(viewMainToolBarAction, SIGNAL(triggered(bool)), m_mainToolBar, SLOT(setVisible(bool)));
-	connect(m_mainToolBar, SIGNAL(visibilityChanged(bool)), viewMainToolBarAction, SLOT(setChecked(bool)));
+	connect(viewMainToolBarAction, &QAction::triggered, m_mainToolBar, &QToolBar::setVisible);
+	connect(m_mainToolBar, &QToolBar::visibilityChanged, viewMainToolBarAction, &QAction::setChecked);
 
 	m_mainToolBar->setAllowedAreas(Qt::TopToolBarArea);
 	m_mainToolBar->setFloatable(false);
@@ -847,8 +851,8 @@ void iRICMainWindowActionManager::setupWindowsToolBar()
 	m_windowsToolBar->setMinimumSize(QSize(27, 27));
 #endif
 
-	connect(viewWindowsToolBarAction, SIGNAL(triggered(bool)), m_windowsToolBar , SLOT(setVisible(bool)));
-	connect(m_windowsToolBar, SIGNAL(visibilityChanged(bool)), viewWindowsToolBarAction, SLOT(setChecked(bool)));
+	connect(viewWindowsToolBarAction, &QAction::triggered, m_windowsToolBar, &QToolBar::setVisible);
+	connect(m_windowsToolBar, &QToolBar::visibilityChanged, viewWindowsToolBarAction, &QAction::setChecked);
 
 	m_windowsToolBar->setAllowedAreas(Qt::AllToolBarAreas);
 	m_windowsToolBar->setFloatable(false);

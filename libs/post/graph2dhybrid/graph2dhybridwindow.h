@@ -20,7 +20,9 @@ class Graph2dHybridWindow :
 public:
 	explicit Graph2dHybridWindow(QWidget* parent, int index, Graph2dHybridWindowProjectDataItem* pdi);
 	~Graph2dHybridWindow();
-	QPixmap snapshot() override;
+
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 

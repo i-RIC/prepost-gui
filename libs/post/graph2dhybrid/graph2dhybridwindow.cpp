@@ -56,7 +56,7 @@ void Graph2dHybridWindow::setupDefaultGeometry(int index)
 	parent->resize(700, 500);
 }
 
-QPixmap Graph2dHybridWindow::snapshot()
+QPixmap Graph2dHybridWindow::snapshot() const
 {
 	QWidget* w = centralWidget();
 
@@ -72,6 +72,11 @@ QPixmap Graph2dHybridWindow::snapshot()
 	w->render(&painter, QPoint(), region, QWidget::DrawChildren);
 	painter.end();
 	return pixmap;
+}
+
+QWidget* Graph2dHybridWindow::snapshotArea() const
+{
+	return centralWidget();
 }
 
 QList<QMenu*> Graph2dHybridWindow::getAdditionalMenus() const

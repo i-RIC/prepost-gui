@@ -27,15 +27,21 @@ public:
 	void panTo(double x, double y);
 	void emitPosition(int x, int y);
 	void emitWorldPosition(int x, int y);
+	double getAngle() const;
+	void setAngle(double angle);
 
 public slots:
 	void cameraResetRotation();
 	void cameraRotate90();
 
+private slots:
+	void handleViewOperationEnd();
+
 signals:
 	void worldPositionChangedForStatusBar(const QPointF& pos);
 	void positionChanged(int x, int y);
 	void worldPositionChanged(const QPointF& v);
+	void angleChanged(double angle);
 
 private:
 	virtual void fitInView() override;

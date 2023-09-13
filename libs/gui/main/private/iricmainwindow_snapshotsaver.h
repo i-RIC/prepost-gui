@@ -3,14 +3,14 @@
 
 #include "../iricmainwindow.h"
 
-class SnapshotEnabledWindowInterface;
+class QMainWindowWithSnapshot;
 
 class iRICMainWindow::SnapshotSaver
 {
 public:
 	SnapshotSaver(iRICMainWindow* mainWindow);
 
-	void save(SnapshotEnabledWindowInterface* enabledWindow);
+	void save(QMainWindowWithSnapshot* enabledWindow);
 
 private:
 	iRICMainWindow* m_mainWindow;

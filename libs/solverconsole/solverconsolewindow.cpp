@@ -94,7 +94,7 @@ void SolverConsoleWindow::Impl::appendLogLine(const QString& line)
 // public interfaces
 
 SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
-	QMainWindow {parent},
+	QMainWindowWithSnapshot {parent},
 	impl {new Impl(parent, this)}
 {
 	impl->init();
@@ -291,11 +291,16 @@ void SolverConsoleWindow::copy() const
 	impl->m_console->copy();
 }
 
-QPixmap SolverConsoleWindow::snapshot()
+QPixmap SolverConsoleWindow::snapshot() const
 {
 	QPixmap pixmap(impl->m_console->size());
 	impl->m_console->render(&pixmap);
 	return pixmap;
+}
+
+QWidget* SolverConsoleWindow::snapshotArea() const
+{
+	return impl->m_console;
 }
 
 void SolverConsoleWindow::clear()

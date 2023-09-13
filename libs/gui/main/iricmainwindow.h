@@ -39,6 +39,8 @@ class SolverDefinition;
 class SolverDefinitionAbstract;
 class ProjectWorkspace;
 class MousePositionWidget;
+class QMainWindowWithSnapshotResizeWidget;
+class Vtk2dGraphicsViewAngleWidget;
 class VtkGraphicsViewScaleWidget;
 class VTK2DGraphicsView;
 class GridCreatingConditionCreator;
@@ -190,7 +192,8 @@ public slots:
 	void clearCalculationResult();
 	/// Manage calculated results;
 	void manageCalculatedResults();
-	void tileSubWindows();
+	void alignSubWindows();
+	void copyCameraSetting();
 
 signals:
 	void allPostProcessorsUpdated();
@@ -251,6 +254,8 @@ private:
 	MousePositionWidget* m_mousePositionWidget;
 	CoordinateSystemDisplayWidget* m_coordinateSystemWidget;
 	VtkGraphicsViewScaleWidget* m_viewScaleWidget;
+	Vtk2dGraphicsViewAngleWidget* m_viewAngleWidget;
+	QMainWindowWithSnapshotResizeWidget* m_resizeWidget;
 
 	/// Action manager
 	iRICMainWindowActionManager* m_actionManager;

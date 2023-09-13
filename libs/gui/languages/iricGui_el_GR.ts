@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>AnimationController</name>
@@ -689,6 +691,29 @@
     </message>
 </context>
 <context>
+    <name>CopyCameraSettingDialog</name>
+    <message>
+        <source>Copy Camera Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Check All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -768,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Επιλέξτε Επίλυση</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -833,6 +858,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Text Format</source>
         <translation>Μορφή κειμένου</translation>
+    </message>
+    <message>
+        <source>Window Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1236,15 +1265,30 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation>Προσθέστε κλάσμα</translation>
+        <translation type="vanished">Προσθέστε κλάσμα</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation>Καθορίστε το κλάσμα που θα προσθέσετε:</translation>
+        <translation type="vanished">Καθορίστε το κλάσμα που θα προσθέσετε:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation>1:</translation>
+        <translation type="vanished">1:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurvey_FractionAddDialog</name>
+    <message>
+        <source>Add fraction</source>
+        <translation type="unfinished">Προσθέστε κλάσμα</translation>
+    </message>
+    <message>
+        <source>Specify the fraction to add:</source>
+        <translation type="unfinished">Καθορίστε το κλάσμα που θα προσθέσετε:</translation>
+    </message>
+    <message>
+        <source>1:</source>
+        <translation type="unfinished">1:</translation>
     </message>
 </context>
 <context>
@@ -1412,6 +1456,41 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
         <translation>Παράδειγμα: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWindowSize</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Μορφή</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Προσθήκη (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Επεξεργασία (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished">Διαγράφω (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>&amp;Reset to Default...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset to default settings?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο "%1". Αυτός ο επιλυτής αγνοείται. %2</translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο &quot;%1&quot;. Αυτός ο επιλυτής αγνοείται. %2</translation>
     </message>
 </context>
 <context>
@@ -1709,6 +1788,10 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <source>Support</source>
         <translation>Υποστήριξη</translation>
     </message>
+    <message>
+        <source>&amp;Start iRIC-MI GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
@@ -1731,6 +1814,61 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Recent Projects:</source>
         <translation>Πρόσφατες εργασίες:</translation>
+    </message>
+</context>
+<context>
+    <name>SubwindowsAlignDialog</name>
+    <message>
+        <source>Align Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins between windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Object Browsers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Αυτό το έργο φαίνεται να ανοίγει από ένα άλλο παράθυρο iRIC GUI. Δεν μπορείτε να ανοίξετε ένα φάκελο έργου από πολλά παράθυρα GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Το έργο που ανοίξατε δεν αντιγράφεται στον κατάλογο εργασίας και θα αναγκαστείτε να αποθηκεύσετε τις τροποποιήσεις που κάνετε σε αυτό το έργο. Εάν θέλετε να διατηρήσετε το τρέχον έργο, αποθηκεύστε το πρώτα σε άλλο έργο.</translation>
     </message>
     <message>
@@ -1932,8 +2070,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Το τρέχον ενεργό υπο-παράθυρο δεν υποστηρίζει εξαγωγή σχήματος περιγράμματος.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε &quot;Ρύθμιση οθόνης&quot; σε &quot;Σχήμα περιγράμματος&quot; και όχι &quot;Χρώμα περιθωρίου&quot; ή &quot;Ισολίνες&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2073,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>Ρύθμιση αρχείου (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε "Διακριτή λειτουργία".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε &quot;Διακριτή λειτουργία&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2085,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>Επιλέξτε πλέγμα για εξαγωγή αρχείων σχήματος.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Δεν σχεδιάζεται περίγραμμα στη "Διακριτή λειτουργία".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Δεν σχεδιάζεται περίγραμμα στη &quot;Διακριτή λειτουργία&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2348,7 +2486,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation>Παράθυρα πλακιδίων (&amp;T)</translation>
+        <translation type="vanished">Παράθυρα πλακιδίων (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
@@ -2433,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2460,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Άνοιγμα νέου παραθύρου 2D μετά την επεξεργασία</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Άνοιγμα νέου παραθύρου 2D Bird's-Eye Post-Processing</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Άνοιγμα νέου παραθύρου 2D Bird&apos;s-Eye Post-Processing</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2574,6 +2712,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Geographic Data (Elevation from web)</source>
         <translation>Γεωγραφικά δεδομένα (Υψόμετρο από τον Ιστό)</translation>
+    </message>
+    <message>
+        <source>&amp;Align Windows...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy &amp;Camera Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

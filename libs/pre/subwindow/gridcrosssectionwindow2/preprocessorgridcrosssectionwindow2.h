@@ -1,7 +1,7 @@
 #ifndef PREPROCESSORGRIDCROSSSECTIONWINDOW2_H
 #define PREPROCESSORGRIDCROSSSECTIONWINDOW2_H
 
-#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
 
 #include <QMainWindow>
 
@@ -11,7 +11,7 @@ class PreProcessorGridCrosssectionWindow2;
 
 class PreProcessorGridDataItem;
 
-class PreProcessorGridCrosssectionWindow2 : public QMainWindow, public SnapshotEnabledWindowInterface
+class PreProcessorGridCrosssectionWindow2 : public QMainWindowWithSnapshot
 {
 	Q_OBJECT
 
@@ -31,7 +31,8 @@ public:
 	void applyTmpTargetSetting();
 	void update();
 	void applyColorMapSetting(const std::string& name);
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	bool saveCsvFile(const QString& fileName);
 
 	class GraphicsView;
