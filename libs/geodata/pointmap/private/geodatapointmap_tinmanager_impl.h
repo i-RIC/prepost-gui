@@ -4,6 +4,8 @@
 #include "geodatapointmap_tinmanager.h"
 #include "geodatapointmap_tinmanager_removetrianglessetting.h"
 
+class vtkPointSetGeos2dIndex;
+
 class GeoDataPointmap::TINManager::Impl
 {
 public:
@@ -13,7 +15,7 @@ public:
 	std::vector<BreakLine*> m_breakLines;
 	vtkPolyData* m_tin;
 	vtkLODActor* m_tinActor;
-	geos::index::quadtree::Quadtree* m_qTree;
+	vtkPointSetGeos2dIndex* m_index;
 	bool m_needRebuild;
 
 	RemoveTrianglesSetting m_removeTrianglesSetting;

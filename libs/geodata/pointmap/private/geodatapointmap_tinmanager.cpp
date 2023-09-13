@@ -12,6 +12,7 @@
 #include "geodatapointmap_tinmanager_triangleswithlongedgeremover.h"
 #include "geodatapointmap_tinmanager_tinbuilder.h"
 
+#include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
@@ -20,7 +21,6 @@
 #include <misc/mouseeventcontroller.h>
 
 #include <geos/geom/Envelope.h>
-#include <geos/index/quadtree/Quadtree.h>
 
 #include <vtkLODActor.h>
 
@@ -101,7 +101,7 @@ void GeoDataPointmap::TINManager::setTinData(vtkPolyData* data, vtkDoubleArray* 
 	impl->m_tin->GetPointData()->SetActiveScalars(VALUES);
 	impl->m_tin->BuildCells();
 
-	rebuildQTree();
+	rebuildIndex();
 }
 
 void GeoDataPointmap::TINManager::rebuildTinFromPointsIfNeeded()
@@ -133,7 +133,7 @@ bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
 		newCells->Delete();
 	}
 
-	rebuildQTree();
+	rebuildIndex();
 
 	return succeeded;
 }
@@ -175,35 +175,8 @@ void GeoDataPointmap::TINManager::setNeedRebuild(bool needed)
 
 vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weights)
 {
-	if (impl->m_qTree == nullptr) {return nullptr;}
-
-	auto env = new geos::geom::Envelope(x, x, y, y);
-	std::vector<void*> ret;
-	impl->m_qTree->query(env, ret);
-	delete env;
-
-	double point[3], closestPoint[3], pcoords[3], dist;
-	double bounds[6];
-	int subId;
-
-	point[0] = x;
-	point[1] = y;
-	point[2] = 0;
-
-	for (void* vptr : ret) {
-		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
-		impl->m_tin->GetCellBounds(cellId, bounds);
-		if (point[0] < bounds[0]) {continue;}
-		if (point[0] > bounds[1]) {continue;}
-		if (point[1] < bounds[2]) {continue;}
-		if (point[1] > bounds[3]) {continue;}
-		vtkCell* cell = impl->m_tin->GetCell(cellId);
-		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
-			return cell;
-		}
-	}
-
-	return nullptr;
+	if (impl->m_index == nullptr) {return nullptr;}
+	return impl->m_index->findCell(x, y, weights);
 }
 
 bool GeoDataPointmap::TINManager::checkIfBreakLinesHasIntersections() const
@@ -510,16 +483,8 @@ void GeoDataPointmap::TINManager::setupActors()
 	prop->SetLighting(false);
 }
 
-void GeoDataPointmap::TINManager::rebuildQTree()
+void GeoDataPointmap::TINManager::rebuildIndex()
 {
-	delete impl->m_qTree;
-	impl->m_qTree = new geos::index::quadtree::Quadtree();
-
-	double bounds[6];
-	for (vtkIdType i = 0; i < impl->m_tin->GetNumberOfCells(); ++i) {
-		impl->m_tin->GetCellBounds(i, bounds);
-
-		auto env = new geos::geom::Envelope(bounds[0], bounds[1], bounds[2], bounds[3]);
-		impl->m_qTree->insert(env, reinterpret_cast<void*>(i));
-	}
+	delete impl->m_index;
+	impl->m_index = new vtkPointSetGeos2dIndex(impl->m_tin);
 }

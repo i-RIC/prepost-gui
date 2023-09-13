@@ -9,14 +9,6 @@
 
 #include <unordered_set>
 
-namespace geos {
-	namespace index{
-		namespace quadtree {
-			class Quadtree;
-		} // quadtree
-	} // index
-} // geos
-
 class MouseEventController;
 
 class vtkCell;
@@ -83,7 +75,7 @@ private slots:
 
 private:
 	void setupActors();
-	void rebuildQTree();
+	void rebuildIndex();
 
 	class AddBreakLineController;
 	class DeleteBreakLineController;
