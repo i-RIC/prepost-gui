@@ -6,14 +6,6 @@
 #include "geodatabackground.h"
 #include <misc/integerrangecontainer.h>
 
-class GeoDataBackgroundNodeMapperSetting : public GeoDataMapperSettingI
-{
-public:
-	GeoDataBackgroundNodeMapperSetting() : GeoDataMapperSettingI() {}
-	virtual ~GeoDataBackgroundNodeMapperSetting() {}
-	IntegerRangeContainer ranges;
-};
-
 template <class V, class DA>
 class GeoDataBackgroundNodeMapperT : public GeoDataNodeMapperT<V, DA>
 {

@@ -1,7 +1,7 @@
 #include "gridcreatingconditiontriangle_movepolygoncommand.h"
 #include "../gridcreatingconditiontriangleabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::MovePolygonCommand::MovePolygonCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionTriangle* pol) :

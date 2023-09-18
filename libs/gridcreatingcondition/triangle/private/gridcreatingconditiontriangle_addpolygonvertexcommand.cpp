@@ -1,7 +1,7 @@
 #include "gridcreatingconditiontriangle_addpolygonvertexcommand.h"
 #include "../gridcreatingconditiontriangleabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::AddPolygonVertexCommand::AddPolygonVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionTriangle* pol) :

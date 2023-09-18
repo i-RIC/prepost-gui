@@ -15,8 +15,8 @@ class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowGraphicsView;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
 class HydraulicDataRiverSurveyWaterElevation;
-class PreProcessorGeoDataGroupDataItemInterface;
-class PreProcessorHydraulicDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
+class PreProcessorHydraulicDataGroupDataItemI;
 
 class QAction;
 class QIcon;
@@ -44,7 +44,7 @@ public:
 	const static int TABLE_COLOR_WIDTH = 40;
 	const static int TABLE_ROWHEIGHT = 24;
 
-	explicit GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
+	explicit GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemI* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~GeoDataRiverSurveyCrosssectionWindow();
 
 	void setRiverSurvey(GeoDataRiverSurvey* rs);
@@ -73,7 +73,7 @@ public:
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const;
+	PreProcessorGeoDataGroupDataItemI* groupDataItem() const;
 	void setSelectedRow(int row);
 	bool isAspectRatioFixed() const;
 	bool isRegionFixed() const;
@@ -146,7 +146,7 @@ private:
 
 	QStandardItemModel* model() const;
 	QItemSelectionModel* selectionModel() const;
-	PreProcessorHydraulicDataGroupDataItemInterface* waterElevationGroup();
+	PreProcessorHydraulicDataGroupDataItemI* waterElevationGroup();
 	HydraulicDataRiverSurveyWaterElevation* waterElevation(int index);
 
 	Ui::GeoDataRiverSurveyCrosssectionWindow* ui;

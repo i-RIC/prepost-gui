@@ -7,8 +7,8 @@
 #include <geodata/polygongroup/geodatapolygongrouppolygon.h>
 #include <geodata/polygongroup/private/geodatapolygongroup_impl.h>
 #include <geodata/polygon/geodatapolygon.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <misc/mathsupport.h>
 
@@ -178,31 +178,31 @@ void GeoDataPointmap::PolygonsManager::deactivate(VTK2DGraphicsView* v)
 
 void GeoDataPointmap::PolygonsManager::handleKeyPressEvent(QKeyEvent* event, VTK2DGraphicsView* v)
 {
-	m_polygonGroup->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void GeoDataPointmap::PolygonsManager::handleKeyReleaseEvent(QKeyEvent* event, VTK2DGraphicsView* v)
 {
-	m_polygonGroup->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void GeoDataPointmap::PolygonsManager::handleMouseDoubleClickEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_polygonGroup->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void GeoDataPointmap::PolygonsManager::handleMouseMoveEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_polygonGroup->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void GeoDataPointmap::PolygonsManager::handleMousePressEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	m_polygonGroup->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void GeoDataPointmap::PolygonsManager::handleMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
 	if (event->button() == Qt::RightButton) {return;}
-	m_polygonGroup->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygonGroup->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }

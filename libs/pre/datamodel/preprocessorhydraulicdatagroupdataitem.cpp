@@ -1,9 +1,9 @@
 #include "preprocessorhydraulicdatadataitem.h"
 #include "preprocessorhydraulicdatagroupdataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatadataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/hydraulicdata/hydraulicdata.h>
 #include <guicore/pre/hydraulicdata/hydraulicdatacreator.h>
 #include <guicore/pre/hydraulicdata/hydraulicdataimporter.h>
@@ -21,7 +21,7 @@
 #include <set>
 
 PreProcessorHydraulicDataGroupDataItem::PreProcessorHydraulicDataGroupDataItem(HydraulicDataCreator* creator, PreProcessorDataItem* parent) :
-	PreProcessorHydraulicDataGroupDataItemInterface (parent),
+	PreProcessorHydraulicDataGroupDataItemI (parent),
 	m_creator {creator}
 {
 	setSubPath(creator->typeName().c_str());
@@ -42,11 +42,11 @@ HydraulicDataCreator* PreProcessorHydraulicDataGroupDataItem::creator() const
 	return m_creator;
 }
 
-const QList<PreProcessorHydraulicDataDataItemInterface*> PreProcessorHydraulicDataGroupDataItem::hydraulicDatas() const
+const QList<PreProcessorHydraulicDataDataItemI*> PreProcessorHydraulicDataGroupDataItem::hydraulicDatas() const
 {
-	QList<PreProcessorHydraulicDataDataItemInterface*> ret;
+	QList<PreProcessorHydraulicDataDataItemI*> ret;
 	for (auto child : m_childItems) {
-		ret.push_back(dynamic_cast<PreProcessorHydraulicDataDataItemInterface*>(child));
+		ret.push_back(dynamic_cast<PreProcessorHydraulicDataDataItemI*>(child));
 	}
 	return ret;
 }
@@ -216,7 +216,7 @@ void PreProcessorHydraulicDataGroupDataItem::setUniqueNameAndCaption(HydraulicDa
 	std::set<QString> captionSet;
 
 	for (auto child : m_childItems) {
-		auto item = dynamic_cast<PreProcessorHydraulicDataDataItemInterface*> (child);
+		auto item = dynamic_cast<PreProcessorHydraulicDataDataItemI*> (child);
 		auto data = item->hydraulicData();
 		nameSet.insert(data->name());
 		captionSet.insert(data->caption());
@@ -239,7 +239,7 @@ std::set<QString> PreProcessorHydraulicDataGroupDataItem::usedCaptions() const
 {
 	std::set<QString> ret;
 	for (auto child : m_childItems) {
-		auto item = dynamic_cast<PreProcessorHydraulicDataDataItemInterface*> (child);
+		auto item = dynamic_cast<PreProcessorHydraulicDataDataItemI*> (child);
 		auto data = item->hydraulicData();
 		ret.insert(data->caption());
 	}

@@ -4,7 +4,10 @@
 #include "private/post3dwindowgridshapedataitem_settingeditwidget.h"
 
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4gridutil.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 
 Post3dWindowGridShapeDataItem::Post3dWindowGridShapeDataItem(Post3dWindowDataItem* parent) :
@@ -47,11 +50,12 @@ void Post3dWindowGridShapeDataItem::updateActorSetting()
 	m_setting.wireframeActor()->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {return;}
 
-	auto data = cont->data()->data();
-	m_setting.update(actorCollection(), actor2DCollection(), data, data, cont->labelData(), iRIC::toStr(PostZoneDataContainer::labelName));
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid());
+	auto data = grid->vtkConcreteData()->concreteData();
+	m_setting.update(actorCollection(), actor2DCollection(), data, data, grid->vtkIndexData(), v4GridUtil::LABEL_NAME);
 
 	updateVisibilityWithoutRendering();
 }
@@ -89,7 +93,8 @@ void Post3dWindowGridShapeDataItem::showPropertyDialog()
 
 QDialog* Post3dWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
-	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {return nullptr;}
 
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);

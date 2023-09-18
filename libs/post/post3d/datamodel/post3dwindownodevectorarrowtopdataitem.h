@@ -26,7 +26,6 @@ public:
 	Post3dWindowZoneDataItem* zoneDataItem() const;
 
 private:
-
 	void addCustomMenuItems(QMenu* menu) override;
 
 	QDialog* addDialog(QWidget* p) override;

@@ -6,7 +6,7 @@
 
 class SolverDefinitionGridAttribute;
 class PreProcessorGeoDataGroupDataItem;
-class Grid;
+class v4InputGrid;
 class WaitDialog;
 
 class PreProcessorGridAttributeMappingSettingDataItem : public PreProcessorDataItem
@@ -22,8 +22,8 @@ public:
 	PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent);
 	PreProcessorGeoDataGroupDataItem* geodataGroupDataItem() const {return m_geodataGroupDataItem;}
 	SolverDefinitionGridAttribute* condition() const {return m_condition;}
-	void setDefaultValue(Grid* grid);
-	void executeMapping(Grid* grid, WaitDialog* dialog);
+	void setDefaultValue(v4InputGrid* grid);
+	void executeMapping(v4InputGrid* grid, WaitDialog* dialog);
 	int mappingCount() const;
 
 protected:

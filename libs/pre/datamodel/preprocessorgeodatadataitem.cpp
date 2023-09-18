@@ -5,8 +5,8 @@
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodataexporter.h>
@@ -19,20 +19,8 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 
-#include <QAction>
-#include <QDir>
-#include <QFileDialog>
-#include <QIcon>
-#include <QMenu>
-#include <QMessageBox>
-#include <QSignalMapper>
-#include <QStandardItem>
-#include <QStringList>
-#include <QToolBar>
-#include <QXmlStreamWriter>
-
 PreProcessorGeoDataDataItem::PreProcessorGeoDataDataItem(PreProcessorDataItem* parent) :
-	PreProcessorGeoDataDataItemInterface {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
+	PreProcessorGeoDataDataItemI {"", QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_geoData {nullptr},
 	m_deleteSilently {false}
 {
@@ -62,9 +50,9 @@ void PreProcessorGeoDataDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_exportAction);
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataDataItem::groupDataItem() const
+PreProcessorGeoDataGroupDataItemI* PreProcessorGeoDataDataItem::groupDataItem() const
 {
-	return dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent());
+	return dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent());
 }
 
 GeoData* PreProcessorGeoDataDataItem::geoData() const
@@ -186,48 +174,48 @@ void PreProcessorGeoDataDataItem::handleStandardItemDoubleClicked()
 void PreProcessorGeoDataDataItem::informSelection(VTKGraphicsView* v)
 {
 	// delegate to geo data.
-	m_geoData->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->informSelection(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::informDeselection(VTKGraphicsView* v)
 {
 	// delegate to geo data.
-	m_geoData->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->informDeselection(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::viewOperationEnded(VTKGraphicsView* v)
 {
-	m_geoData->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->keyPressEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::mouseDoubleClickEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->mouseDoubleClickEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_geoData->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 QStringList PreProcessorGeoDataDataItem::containedFiles() const
@@ -306,7 +294,7 @@ void PreProcessorGeoDataDataItem::innerUpdate2Ds()
 
 void PreProcessorGeoDataDataItem::doViewOperationEndedGlobal(VTKGraphicsView* v)
 {
-	m_geoData->viewOperationEndedGlobal(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_geoData->viewOperationEndedGlobal(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorGeoDataDataItem::doApplyOffset(double x, double y)
@@ -327,9 +315,9 @@ void PreProcessorGeoDataDataItem::removeFile()
 
 ColorMapSettingContainerI* PreProcessorGeoDataDataItem::colorMapSettingContainer() const
 {
-	auto groupdi = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent());
+	auto groupdi = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent());
 	if (groupdi == nullptr) {return nullptr;}
 
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(groupdi->parent()->parent());
+	auto typedi = dynamic_cast<PreProcessorGridTypeDataItemI*>(groupdi->parent()->parent());
 	return typedi->colorMapSetting(groupdi->condition()->name());
 }

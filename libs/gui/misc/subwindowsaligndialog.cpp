@@ -6,7 +6,7 @@
 
 #include <guibase/objectbrowser.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
 
 #include <map>
 
@@ -45,7 +45,7 @@ void SubwindowsAlignDialog::updateMarginWidgetStatus()
 
 void SubwindowsAlignDialog::alignSubWindows()
 {
-	std::vector<WindowWithObjectBrowserInterface*> windowsToShowObjectBrowser;
+	std::vector<WindowWithObjectBrowserI*> windowsToShowObjectBrowser;
 	std::vector<QMdiSubWindow*> activeSubWindows;
 
 	bool hideOb = ui->hideObjectBrowsersCheckBox->isChecked();
@@ -54,7 +54,7 @@ void SubwindowsAlignDialog::alignSubWindows()
 		if (subWindow->isMinimized()) {continue;}
 
 		activeSubWindows.push_back(subWindow);
-		auto wob = dynamic_cast<WindowWithObjectBrowserInterface*> (subWindow->widget());
+		auto wob = dynamic_cast<WindowWithObjectBrowserI*> (subWindow->widget());
 		if (wob != nullptr) {
 			auto ob = wob->objectBrowser();
 			if (! ob->isHidden()) {

@@ -14,6 +14,13 @@ include( ../../../paths.pri )
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = unstructured2dgridvtkexporter_pch.h
 
+# iricGuibase library
+
+unix {
+	LIBS += -L"../../../libs/guibase"
+}
+LIBS += -liricGuibase
+
 # iricGuicore library
 
 unix {

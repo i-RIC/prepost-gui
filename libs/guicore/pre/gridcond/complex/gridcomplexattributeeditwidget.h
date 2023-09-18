@@ -4,13 +4,16 @@
 #include "../../../guicore_global.h"
 
 #include "../base/gridattributeeditwidgett.h"
+
 #include <QMap>
 #include <QList>
+
+#include <vtkIntArray.h>
 
 class QComboBox;
 class SolverDefinitionGridComplexAttribute;
 
-class GUICOREDLL_EXPORT GridComplexAttributeEditWidget : public GridAttributeEditWidgetT<int>
+class GUICOREDLL_EXPORT GridComplexAttributeEditWidget : public GridAttributeEditWidgetT<int, vtkIntArray>
 {
 public:
 	GridComplexAttributeEditWidget(QWidget* parent, SolverDefinitionGridComplexAttribute* cond);

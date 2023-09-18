@@ -162,7 +162,7 @@ void GridBirdEyeWindowGridDataItem::EditDisplaySettingDialog::apply()
 void GridBirdEyeWindowGridDataItem::EditDisplaySettingDialog::setupWarpTargets()
 {
 	for (const auto& att : m_gridType->gridAttributes()) {
-		if (att->position() == SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (att->position() == SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		if (att->isOption()) {continue;}
 
 		ui->elevationComboBox->addItem(att->caption());

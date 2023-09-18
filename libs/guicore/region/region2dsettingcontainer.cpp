@@ -1,7 +1,9 @@
+#include "../grid/v4structured2dgrid.h"
+#include "../postcontainer/v4solutiongrid.h"
 #include "region2dsettingcontainer.h"
-#include "../postcontainer/postzonedatacontainer.h"
 
 #include <guibase/iricactivecellfilter.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <misc/stringtool.h>
 
 #include <vtkClipPolyData.h>
@@ -41,9 +43,9 @@ vtkPointSet* Region2dSettingContainer::buildNodeFilteredData(vtkPointSet* data)
 		filter->SetInputData(data);
 		auto clipper = vtkSmartPointer<vtkClipPolyData>::New();
 		clipper->SetInputConnection(filter->GetOutputPort());
-		clipper->SetValue(PostZoneDataContainer::IBCLimit);
+		clipper->SetValue(v4SolutionGrid::IBCLimit);
 		clipper->InsideOutOff();
-		data->GetPointData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+		data->GetPointData()->SetActiveScalars(v4SolutionGrid::IBC.c_str());
 		clipper->Update();
 		auto clipped = clipper->GetOutput();
 		clipped->Register(nullptr);
@@ -62,9 +64,9 @@ vtkPointSet* Region2dSettingContainer::buildCellFilteredData(vtkPointSet* data)
 	} else if (mode == Mode::Active) {
 		auto filter = vtkSmartPointer<iricActiveCellFilter>::New();
 		filter->SetInputData(data);
-		filter->SetValue(PostZoneDataContainer::IBCLimit);
+		filter->SetValue(v4SolutionGrid::IBCLimit);
 		filter->CellClippingOn();
-		data->GetCellData()->SetActiveScalars(iRIC::toStr(PostZoneDataContainer::IBC).c_str());
+		data->GetCellData()->SetActiveScalars(v4SolutionGrid::IBC.c_str());
 		filter->Update();
 		auto activeData = filter->GetOutput();
 		activeData->Register(nullptr);
@@ -73,4 +75,31 @@ vtkPointSet* Region2dSettingContainer::buildCellFilteredData(vtkPointSet* data)
 		return range.buildCellFilteredData(vtkStructuredGrid::SafeDownCast(data));
 	}
 	return nullptr;
+}
+
+vtkPointSet* Region2dSettingContainer::buildCellFilteredData(v4Structured2dGrid* grid)
+{
+	if (mode == Mode::Custom) {
+		return grid->regionFilteredCellData(range.iMin, range.iMax, range.jMin, range.jMax);
+	} else {
+		return buildCellFilteredData(grid->vtkData()->data());
+	}
+}
+
+vtkPointSet* Region2dSettingContainer::buildIEdgeFilteredData(v4Structured2dGrid* grid)
+{
+	if (mode == Mode::Custom) {
+		return grid->regionFilteredIEdgeData(range.iMin, range.iMax, range.jMin, range.jMax);
+	} else {
+		return buildCellFilteredData(grid->vtkIEdgeData()->data());
+	}
+}
+
+vtkPointSet* Region2dSettingContainer::buildJEdgeFilteredData(v4Structured2dGrid* grid)
+{
+	if (mode == Mode::Custom) {
+		return grid->regionFilteredJEdgeData(range.iMin, range.iMax, range.jMin, range.jMax);
+	} else {
+		return buildCellFilteredData(grid->vtkJEdgeData()->data());
+	}
 }

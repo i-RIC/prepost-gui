@@ -2,9 +2,12 @@
 #define GRIDATTRIBUTEINTEGERVARIATIONEDITWIDGET_H
 
 #include "../base/gridattributevariationeditwidgett.h"
+
+#include <vtkIntArray.h>
+
 class IntegerNumberEditWidget;
 
-class GridAttributeIntegerVariationEditWidget : public GridAttributeVariationEditWidgetT<int>
+class GridAttributeIntegerVariationEditWidget : public GridAttributeVariationEditWidgetT<int, vtkIntArray>
 {
 public:
 	GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond);

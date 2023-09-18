@@ -6,10 +6,13 @@
 #include "private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
@@ -35,8 +38,6 @@ Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::~Post2dWindowNodeVect
 	renderer()->RemoveActor(impl->m_previewActor.pointsActor());
 
 	clearActors();
-
-	delete impl;
 }
 
 QDialog* Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::propertyDialog(QWidget* p)
@@ -116,8 +117,8 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::setupActors()
 {
 	clearActors();
 
-	auto zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = zoneContainer->data()->data();
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = cont->gridData()->grid()->vtkData()->data();
 
 	auto regionData = impl->m_setting.region.buildNodeFilteredData(grid);
 	auto r = renderer();

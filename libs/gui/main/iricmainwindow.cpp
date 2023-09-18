@@ -27,11 +27,11 @@
 #include <guibase/executer/silentexecuterwatcher.h>
 #include <guibase/irictoolbar.h>
 #include <guibase/widget/itemselectingdialog.h>
-#include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/clipboardoperatablewindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
 #include <guicore/base/qmainwindowwithsnapshotresizewidget.h>
 #include <guicore/base/windowwithtmsi.h>
-#include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/base/windowwithzindexi.h>
 #include <guicore/datamodel/vtkgraphicsviewscalewidget.h>
 #include <guicore/datamodel/vtk2dgraphicsviewanglewidget.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
@@ -107,7 +107,7 @@
 #include <iriclib_errorcodes.h>
 
 iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
-	iRICMainWindowInterface(parent),
+	iRICMainWindowI(parent),
 	m_mousePositionWidget {nullptr},
 	m_coordinateSystemWidget {nullptr},
 	m_viewScaleWidget {nullptr},
@@ -1638,7 +1638,7 @@ void iRICMainWindow::updateWindowZIndices()
 	int index = 1;
 
 	for (QMdiSubWindow* w : m_centralWidget->subWindowList(QMdiArea::StackingOrder)) {
-		WindowWithZIndexInterface* w2 = dynamic_cast<WindowWithZIndexInterface*>(w->widget());
+		WindowWithZIndexI* w2 = dynamic_cast<WindowWithZIndexI*>(w->widget());
 		w2->setZindex(index++);
 	}
 }
@@ -1649,7 +1649,7 @@ void iRICMainWindow::reflectWindowZIndices()
 	QList<QMdiSubWindow*> wlist = m_centralWidget->subWindowList();
 	for (auto it = wlist.begin(); it != wlist.end(); ++it) {
 		QMdiSubWindow* w = (*it);
-		WindowWithZIndexInterface* w2 = dynamic_cast<WindowWithZIndexInterface*>(w->widget());
+		WindowWithZIndexI* w2 = dynamic_cast<WindowWithZIndexI*>(w->widget());
 		if (w->isVisible()) {
 			windowsToShow.insert(w2->zindex(), w);
 		}
@@ -2240,7 +2240,7 @@ QString iRICMainWindow::tmpFileName(int len) const
 	return workDir.absoluteFilePath(filename);
 }
 
-AnimationControllerInterface* iRICMainWindow::animationController() const
+AnimationControllerI* iRICMainWindow::animationController() const
 {
 	return m_animationController;
 }

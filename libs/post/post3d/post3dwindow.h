@@ -5,8 +5,8 @@
 #include <QByteArray>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
-#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
+#include <guicore/bgcolor/backgroundcoloreditvtki.h>
 #include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
@@ -22,9 +22,9 @@ class Post3dWindowActionManager;
 class Post3dWindow :
 	public PostProcessorWindow,
 	public AdditionalMenuWindowI,
-	public WindowWithObjectBrowserInterface,
+	public WindowWithObjectBrowserI,
 	public ParticleExportWindowI,
-	public BackgroundColorEditVtkInterface,
+	public BackgroundColorEditVtkI,
 	public AutoParticleWindowI,
 	public WindowWithVtkGraphicsViewI
 {

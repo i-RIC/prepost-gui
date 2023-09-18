@@ -8,7 +8,7 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -89,10 +89,10 @@ void Post3dWindowCellContourGroupDataItem::doSaveToProjectMainFile(QXmlStreamWri
 {
 	m_colorMapSetting.save(writer);
 
-	for (int i = 0; i < m_childItems.size(); ++i) {
-		auto fitem = dynamic_cast<Post3dWindowCellContourDataItem*>(m_childItems.at(i));
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowCellContourDataItem*>(child);
 		writer.writeStartElement("RangeSetting");
-		fitem->saveToProjectMainFile(writer);
+		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
@@ -133,9 +133,9 @@ Post3dWindowZoneDataItem* Post3dWindowCellContourGroupDataItem::zoneDataItem() c
 	return dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 }
 
-PostZoneDataContainer* Post3dWindowCellContourGroupDataItem::data() const
+v4PostZoneDataContainer* Post3dWindowCellContourGroupDataItem::data() const
 {
-	return zoneDataItem()->dataContainer();
+	return zoneDataItem()->v4DataContainer();
 }
 
 std::vector<Post3dWindowCellRangeSettingContainer> Post3dWindowCellContourGroupDataItem::ranges() const

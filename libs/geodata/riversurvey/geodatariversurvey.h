@@ -18,7 +18,7 @@ class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
 
-class GridCreatingConditionRiverSurveyInterface;
+class GridCreatingConditionRiverSurveyI;
 
 /// Polygon container.
 /**
@@ -43,16 +43,16 @@ public:
 	void setupMenu() override;
 	void setupDataItem() override;
 	bool addToolBarButtons(QToolBar* parent) override;
-	void informSelection(PreProcessorGraphicsViewInterface* v) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void informSelection(PreProcessorGraphicsViewI* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	bool getValueRange(double* min, double* max) override;
@@ -71,8 +71,8 @@ public:
 	vtkCell* findBackgroundGridCell(double x, double y, double* weight) const;
 	void updateCrosssectionWindows();
 	void setColoredPoints(GeoDataRiverPathPoint* black);
-	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
-	GridCreatingConditionRiverSurveyInterface* gridCreatingCondition() const;
+	void setGridCreatingCondition(GridCreatingConditionRiverSurveyI* cond);
+	GridCreatingConditionRiverSurveyI* gridCreatingCondition() const;
 	void useDivisionPointsForBackgroundGrid(bool use);
 
 	void refreshBackgroundGrid();
@@ -128,19 +128,19 @@ private:
 	iRICLib::H5CgnsGeographicDataGroup::Type iRICLibType() const override;
 	void doApplyOffset(double x, double y) override;
 
-	void createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
+	void createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
+	void createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
 
-	void editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	void editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	void editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	void editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
+	void editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
+	void editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	void editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
 
 	void pushUpdateLabelsCommand(QUndoCommand* com, bool renderRedoOnly = false);
 	void finishDefiningLine();

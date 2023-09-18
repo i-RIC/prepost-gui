@@ -5,7 +5,7 @@
 
 #include "../continuoussnapshot/continuoussnapshotsetting.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <misc/versionnumber.h>
 #include <pre/preprocessorwindow.h>
 
@@ -52,7 +52,7 @@ class iRICMainWindowMiscDialogManager;
 class PostProcessorWindowFactory;
 
 /// This class represents the main window of iRIC 2.0.
-class GUI_API iRICMainWindow : public iRICMainWindowInterface
+class GUI_API iRICMainWindow : public iRICMainWindowI
 {
 	Q_OBJECT
 
@@ -75,7 +75,7 @@ public:
 	bool continuousSnapshotInProgress() const override;
 	void setContinuousSnapshotInProgress(bool prog) override;
 	QString tmpFileName(int len = 0) const;
-	AnimationControllerInterface* animationController() const override;
+	AnimationControllerI* animationController() const override;
 	CoordinateSystemBuilder* coordinateSystemBuilder() const override;
 	void initForSolverDefinition() override;
 

@@ -7,7 +7,7 @@ class GeoDataMapper::Impl
 {
 public:
 	QString m_caption;
-	Grid* m_grid;
+	v4InputGrid* m_grid;
 	GridAttributeContainer* m_container;
 	GeoData* m_geoData;
 };

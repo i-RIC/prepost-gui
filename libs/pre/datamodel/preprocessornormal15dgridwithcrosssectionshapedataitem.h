@@ -7,7 +7,7 @@
 #include <vtkActor.h>
 #include <vtkDataSetMapper.h>
 
-class Structured15DGridWithCrossSectionCrossSection;
+class v4Structured15dGridWithCrossSectionCrossSection;
 class Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem;
 
 class PreProcessorNormal15DGridWithCrossSectionShapeDataItem : public PreProcessorGridShapeDataItem
@@ -44,7 +44,7 @@ private slots:
 	void openCrossSectionWindow();
 
 private:
-	Structured15DGridWithCrossSectionCrossSection* selectedCrossSection();
+	v4Structured15dGridWithCrossSectionCrossSection* selectedCrossSection();
 
 	vtkSmartPointer<vtkActor> m_edgeActor;
 	vtkSmartPointer<vtkActor> m_vertexActor;

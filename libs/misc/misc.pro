@@ -80,6 +80,7 @@ HEADERS += anms.h \
            valuearraycontainert.h \
            valuechangert.h \
            valuemodifycommandt.h \
+           valuerangecontainer.h \
            valuerestorert.h \
            valueselectdialog.h \
            versionnumber.h \
@@ -170,6 +171,7 @@ SOURCES += anms.cpp \
            stringtool.cpp \
            threadwithprogressinfo.cpp \
            tpoexporter.cpp \
+           valuerangecontainer.cpp \
            valueselectdialog.cpp \
            versionnumber.cpp \
            windowgeometrycontainer.cpp \

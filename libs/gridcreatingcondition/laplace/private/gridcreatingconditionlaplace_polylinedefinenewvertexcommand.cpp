@@ -1,7 +1,7 @@
 #include "gridcreatingconditionlaplace_polylinedefinenewvertexcommand.h"
 
 #include <guibase/polyline/polylinecontroller.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::PolyLineDefineNewVertexCommand::PolyLineDefineNewVertexCommand(bool keyDown, const QPoint& point, PolyLineController* line, GridCreatingConditionLaplace* cond) :

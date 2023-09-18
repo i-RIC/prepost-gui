@@ -8,9 +8,9 @@
 #include <QObject>
 
 class GeoData;
-class Grid;
 class GridAttributeContainer;
 class GeoDataMapperSettingI;
+class v4InputGrid;
 
 class GUICOREDLL_EXPORT GeoDataMapper : public QObject
 {
@@ -20,20 +20,20 @@ public:
 
 	const QString& caption() const;
 
-	void setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata);
+	void setTarget(v4InputGrid* grid, GridAttributeContainer* container, GeoData* geodata);
 
 	virtual GeoDataMapperSettingI* initialize(bool* boolMap) = 0;
 	virtual void map(bool* boolMap, GeoDataMapperSettingI* setting) = 0;
 	virtual void terminate(GeoDataMapperSettingI* setting) = 0;
 
 protected:
-	Grid* grid() const;
+	v4InputGrid* grid() const;
 	GridAttributeContainer* container() const;
 	GeoData* geoData() const;
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

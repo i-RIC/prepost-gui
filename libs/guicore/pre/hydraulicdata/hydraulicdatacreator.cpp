@@ -23,8 +23,6 @@ HydraulicDataCreator::~HydraulicDataCreator()
 	for (auto exporter : impl->m_multiExporters) {
 		delete exporter;
 	}
-
-	delete impl;
 }
 
 const std::string& HydraulicDataCreator::typeName() const

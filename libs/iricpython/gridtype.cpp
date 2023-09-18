@@ -6,7 +6,7 @@
 #include <pre/datamodel/preprocessorgridandgridcreatingconditiondataitem.h>
 #include <pre/datamodel/preprocessorgridtypedataitem.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 
 using namespace iRICPython;
 

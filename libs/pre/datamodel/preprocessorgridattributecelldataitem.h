@@ -1,81 +1,19 @@
 #ifndef PREPROCESSORGRIDATTRIBUTECELLDATAITEM_H
 #define PREPROCESSORGRIDATTRIBUTECELLDATAITEM_H
 
-#include <guicore/named/namedgraphicwindowdataitem.h>
-#include <misc/boolcontainer.h>
-#include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
+#include "preprocessorgridattributeabstractcelldataitem.h"
 
-class ColorMapSettingContainerI;
-class ColorMapSettingToolBarWidgetController;
-class PreProcessorGeoDataGroupDataItemInterface;
-class PreProcessorGridAttributeCellGroupDataItem;
-class PreProcessorGridTypeDataItem;
-class SolverDefinitionGridAttribute;
-
-class QAction;
-
-class vtkMapper;
-class vtkStructuredGrid;
-
-class PreProcessorGridAttributeCellDataItem : public NamedGraphicWindowDataItem
+class PreProcessorGridAttributeCellDataItem : public PreProcessorGridAttributeAbstractCellDataItem
 {
 	Q_OBJECT
 
 public:
 	PreProcessorGridAttributeCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent);
-	~PreProcessorGridAttributeCellDataItem();
-
 	QDialog* propertyDialog(QWidget* parent) override;
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
-	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
-	void addCustomMenuItems(QMenu* menu) override;
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
-	SolverDefinitionGridAttribute* condition() {return m_condition;}
-	void informDataChange();
-	bool addToolBarButtons(QToolBar* toolbar) override;
-	ColorMapSettingContainerI* colorMapSettingContainer() const;
-	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
-
-public slots:
-	void showPropertyDialog() override;
-
-private slots:
-	void editValue();
-	void editDifference();
-	void editRatio();
-	void showDisplaySettingDialog() {showPropertyDialog();}
-	void exportToFile();
-	void generatePointMap();
 
 private:
-	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
-	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
-	PreProcessorGridAttributeCellGroupDataItem* groupDataItem() const;
-	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
-
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-	int loadFromCgnsFile() override;
-	void updateVisibility(bool visible) override;
-
-	SolverDefinitionGridAttribute* m_condition;
-
-	BoolContainer m_isCustomModified;
-
-	bool m_definingBoundingBox;
-	QAction* m_editValueAction;
-	QAction* m_exportAction;
-	QAction* m_generatePointMapAction;
-	QAction* m_editDifferenceAction;
-	QAction* m_editRatioAction;
-
-	ColorMapSettingToolBarWidgetController* m_colorMapToolBarWidgetController;
-
-	class PropertyDialog;
+	PreProcessorGridDataItem::SelectedDataWithIdController* selectedDataController() const override;
+	QString positionCaption() const override;
 };
 
 #endif // PREPROCESSORGRIDATTRIBUTECELLDATAITEM_H

@@ -6,15 +6,16 @@
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <postbase/polydata/polydatasetting.h>
 
+#include <memory>
 #include <unordered_map>
 
 class ColorMapSettingContainerI;
 class NamedGraphicWindowDataItem;
+class v4PolyData2d;
 class PolyDataSettingToolBarWidget;
+class Post2dWindowAttributeBrowserController;
 class Post2dWindowGridTypeDataItem;
-
-class vtkActor;
-class vtkActor2D;
+class Post2dWindowPolyDataTopDataItem;
 
 class Post2dWindowPolyDataGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -28,6 +29,8 @@ public:
 
 	std::string target() const override;
 	void setTarget(const std::string& target) override;
+	Post2dWindowAttributeBrowserController* attributeBrowserController() const;
+	QAction* showAttributeBrowserAction() const;
 
 	void setupActors();
 	void update();
@@ -50,6 +53,9 @@ public:
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 
+private slots:
+	void showAttributeBrowser();
+
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -58,16 +64,14 @@ private:
 	ColorMapSettingContainerI* activeSetting() const;
 	Post2dWindowGridTypeDataItem* gridTypeDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;
-	vtkPolyData* polyData() const;
+	Post2dWindowPolyDataTopDataItem* topDataItem() const;
+	v4PolyData2d* polyData() const;
 	void updateCheckState();
 
-	vtkActor* m_actor;
-	vtkActor2D* m_legendActor;
+	class Impl;
+	std::unique_ptr<Impl> impl;
 
-	PolyDataSetting m_setting;
-	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettings;
-	PolyDataSettingToolBarWidget* m_polyDataToolBarWidget;
-
+	class AttributeBrowserController;
 	class SettingEditWidget;
 
 public:

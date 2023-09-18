@@ -11,8 +11,8 @@
 class GeoData;
 class GeoDataCreator;
 class SolverDefinitionGridAttribute;
-class PreProcessorGeoDataDataItemInterface;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataDataItemI;
+class PreProcessorGeoDataGroupDataItemI;
 
 class GUICOREDLL_EXPORT GeoDataImporter : public QObject
 {
@@ -24,14 +24,14 @@ public:
 	std::string name() const;
 	QString caption() const;
 
-	PreProcessorGeoDataDataItemInterface* import(const QString& filename, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	PreProcessorGeoDataDataItemI* import(const QString& filename, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	GeoDataCreator* creator() const;
 
 	virtual const QStringList fileDialogFilters() = 0;
 	virtual const QStringList acceptableExtensions() = 0;
 
-	bool importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	bool importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	virtual bool importData(GeoData* data, int index, QWidget* w) = 0;
 
 protected:
@@ -39,10 +39,10 @@ protected:
 	QString selectedFilter() const;
 
 private:
-	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

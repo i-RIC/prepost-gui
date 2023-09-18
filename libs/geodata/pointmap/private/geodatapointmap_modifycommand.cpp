@@ -1,6 +1,6 @@
 #include "geodatapointmap_modifycommand.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 GeoDataPointmap::ModifyCommand::ModifyCommand(QUndoCommand* command, GeoDataPointmap* pointmap) :
 	QUndoCommand {command->text()},

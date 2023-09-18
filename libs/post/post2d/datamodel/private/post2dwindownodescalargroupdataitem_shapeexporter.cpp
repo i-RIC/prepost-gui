@@ -6,7 +6,10 @@
 #include "post2dwindownodescalargroupdataitem_shapeexporter.h"
 
 #include <cs/coordinatesystem.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
@@ -46,9 +49,9 @@ std::vector<PolygonRegion*> setupMergedPolygons(std::vector<PolygonRegion*> pols
 {
 	bool merged = false;
 
-	for (int i = 0; i < pols.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (pols.size()); ++i) {
 		PolygonRegion* r1 = pols.at(i);
-		for (int j = i + 1; j < pols.size(); ++j) {
+		for (int j = i + 1; j < static_cast<int> (pols.size()); ++j) {
 			PolygonRegion* r2 = pols.at(j);
 			if (r1->merge(r2)) {
 				merged = true;
@@ -167,18 +170,18 @@ void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double
 	const std::vector<vtkIdType>& points = regionRing->points();
 	nVertices += (static_cast<int>(points.size()) + 1);
 	double v[3];
-	for (int i = 0; i < points.size() + 1; ++i) {
+	for (int i = 0; i < static_cast<int> (points.size()) + 1; ++i) {
 		vtkIdType id = points.at(i % points.size());
 		regionRing->getVtkPoints()->GetPoint(id, v);
 		xvec.push_back(v[0]);
 		yvec.push_back(v[1]);
 	}
-	for (int i = 0; i < region->holes().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (region->holes().size()); ++i) {
 		PointRing* holeRing = region->holes().at(i);
 		partStart[i + 1] = nVertices;
 		const std::vector<vtkIdType>& holePoints = holeRing->points();
 		nVertices += (static_cast<int>(holePoints.size()) + 1);
-		for (int i = 0; i < holePoints.size() + 1; ++i) {
+		for (int i = 0; i < static_cast<int> (holePoints.size())  + 1; ++i) {
 			vtkIdType id = holePoints.at(i % holePoints.size());
 			holeRing->getVtkPoints()->GetPoint(id, v);
 			xvec.push_back(v[0]);
@@ -207,25 +210,6 @@ void outputPolygon(PolygonRegion* region, SHPHandle shph, DBFHandle dbfh, double
 	DBFWriteDoubleAttribute(dbfh, polygonId, 2, max);
 }
 
-
-void outputPointRing(const PointRing& ring, std::ostream& os)
-{
-	for (vtkIdType id : ring.points()) {
-		os << id << " ";
-	}
-	os << endl;
-}
-
-void outputRegion(const PolygonRegion& region, std::ostream& os)
-{
-	os << "Region: " << endl;
-	outputPointRing(*region.region(), os);
-	os << "Holes: " << endl;
-	for (auto h : region.holes()) {
-		outputPointRing(*h, os);
-	}
-}
-
 } // namespace
 
 Post2dWindowNodeScalarGroupDataItem::ShapeExporter::ShapeExporter(Post2dWindowNodeScalarGroupDataItem* parent) :
@@ -250,8 +234,8 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 
 	auto cm = dynamic_cast<ColorMapSettingContainer*> (m_parent->impl->m_setting.colorMapSetting);
 
-	auto c = m_parent->topDataItem()->zoneDataItem()->dataContainer();
-	auto filtered = m_parent->impl->m_setting.regionSetting.buildNodeFilteredData(c->data()->data());
+	auto c = m_parent->topDataItem()->zoneDataItem()->v4DataContainer();
+	auto filtered = m_parent->impl->m_setting.regionSetting.buildNodeFilteredData(c->gridData()->grid()->vtkData()->data());
 	auto geom = vtkSmartPointer<vtkGeometryFilter>::New();
 	geom->SetInputData(filtered);
 	geom->Update();
@@ -280,7 +264,7 @@ bool Post2dWindowNodeScalarGroupDataItem::ShapeExporter::exportContourFigure(con
 	int polygonId = 0;
 
 	auto colors = cm->getColors();
-	for (int i = 0; i < colors.size() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (colors.size()) - 1; ++i) {
 		auto c = colors.at(i);
 		double lowValue, highValue;
 

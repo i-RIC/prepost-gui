@@ -4,14 +4,14 @@
 #include "geodatamapper.h"
 #include "../gridcond/base/gridattributecontainert.h"
 
-template <class V>
+template <class V, class DA>
 class GeoDataMapperT : public GeoDataMapper
 {
 public:
 	GeoDataMapperT(const QString& caption, QObject* parent);
 
 protected:
-	GridAttributeContainerT<V>* container() const;
+	GridAttributeContainerT<V, DA>* container() const;
 	V fromVariant(const QVariant& val) const;
 };
 

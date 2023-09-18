@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth_impl.h"
 #include "gridcreatingconditioncenterandwidth_movecommand.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 #include <vtkPolyData.h>

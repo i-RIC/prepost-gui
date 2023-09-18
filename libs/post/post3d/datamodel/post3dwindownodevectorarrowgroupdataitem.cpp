@@ -6,9 +6,13 @@
 #include "private/post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
 #include <guibase/widget/boolcontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -39,7 +43,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::Post3dWindowNodeVectorArrowGroupDataIt
 	m_setting.legend.imageSetting.controller()->setItem(this);
 	m_setting.legend.title = caption;
 
-	for (const auto& pair : data()->data()->valueRangeSet().pointDataValueRanges()) {
+	for (const auto& pair : data()->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
 		auto output = gt->output(pair.first);
 		auto cs = output->createColorMapSettingContainer();
 		auto caption = gt->outputCaption(pair.first);
@@ -300,10 +304,10 @@ const ArrowsSettingContainer& Post3dWindowNodeVectorArrowGroupDataItem::setting(
 	return m_setting;
 }
 
-PostZoneDataContainer* Post3dWindowNodeVectorArrowGroupDataItem::data() const
+v4PostZoneDataContainer* Post3dWindowNodeVectorArrowGroupDataItem::data() const
 {
-	auto zItem = dynamic_cast<Post3dWindowZoneDataItem*> (parent()->parent());
-	return zItem->dataContainer();
+	auto zItem = topDataItem()->zoneDataItem();
+	return zItem->v4DataContainer();
 }
 
 std::unordered_set<ColorMapSettingContainerI*> Post3dWindowNodeVectorArrowGroupDataItem::activeColorMaps() const

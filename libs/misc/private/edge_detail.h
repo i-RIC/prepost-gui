@@ -7,6 +7,8 @@
 
 #include <vtkType.h>
 
+#include <unordered_set>
+
 inline Edge::Edge()
 {
 	m_vertex1 = 0;
@@ -76,6 +78,13 @@ inline QDataStream& operator>>(QDataStream& in, Edge edge)
 inline uint qHash(const Edge& e)
 {
 	return qHash(e.vertex1()) / 2 + qHash(e.vertex2()) / 2;
+}
+
+inline size_t Edge::HashFunction::operator()(const Edge& edge) const
+{
+	size_t hash1 = std::hash<vtkIdType>()(edge.m_vertex1);
+	size_t hash2 = std::hash<vtkIdType>()(edge.m_vertex2) << 1;
+	return hash1 ^ hash2;
 }
 
 #endif // EDGE_DETAIL_H

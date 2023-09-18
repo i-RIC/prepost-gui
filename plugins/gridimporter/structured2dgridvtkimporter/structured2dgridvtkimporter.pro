@@ -14,17 +14,34 @@ include( ../../../paths.pri )
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = structured2dgridvtkimporter_pch.h
 
+# iricGuibase library
+
+unix {
+	LIBS += -L"../../../libs/guibase"
+}
+LIBS += -liricGuibase
+
 # iricGuicore library
 
+unix {
+	LIBS += -L"../../../libs/guicore"
+}
 LIBS += -liricGuicore
+
+# iricMisc library
+
+unix {
+	LIBS += -L"../../../libs/misc"
+}
 LIBS += -liricMisc
+
 
 # VTK
 
 LIBS += \
 	-lvtkCommonCore-$${VTK_MAJ_MIN} \
-        -lvtkCommonDataModel-$${VTK_MAJ_MIN} \
-        -lvtkIoLegacy-$${VTK_MAJ_MIN}
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN} \
+	-lvtkIoLegacy-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

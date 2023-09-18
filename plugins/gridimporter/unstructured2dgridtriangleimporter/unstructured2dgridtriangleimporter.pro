@@ -14,6 +14,10 @@ include( ../../../paths.pri )
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = unstructured2dgridtriangleimporter_pch.h
 
+# iricGuibase library
+
+LIBS += -liricGuibase
+
 # iricGuicore library
 
 LIBS += -liricGuicore

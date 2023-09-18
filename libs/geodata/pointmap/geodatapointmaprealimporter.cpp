@@ -18,7 +18,7 @@ GeoDataPointmapRealImporter::GeoDataPointmapRealImporter(GeoDataCreator* creator
 	GeoDataImporter("tpo", tr("DEM etc. (*.tpo)"), creator)
 {}
 
-bool GeoDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
+bool GeoDataPointmapRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	GeoDataPointmapRealImporterFilterDialog filterDialog(w);
 	if (filterDialog.exec() != QDialog::Accepted) {

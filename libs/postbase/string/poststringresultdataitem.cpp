@@ -8,7 +8,7 @@
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/post/postzonedataitem.h>
 #include <guicore/postcontainer/poststringresult.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -83,9 +83,12 @@ PostStringResultDataItem::PostStringResultDataItem(GraphicsWindowDataItem* paren
 
 	m_stringResult = new PostStringResult(this);
 
+	// TODO FIX THIS
+	/*
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent);
-	m_stringResult->setZoneDataContainer(zItem->dataContainer(), mainWindow());
+	m_stringResult->setZoneDataContainer(zItem->v4DataContainer(), mainWindow());
 	m_stringResult->updateValue();
+	*/
 }
 
 PostStringResultDataItem::~PostStringResultDataItem()
@@ -187,8 +190,11 @@ void PostStringResultDataItem::updateMouseCursor(VTKGraphicsView* v)
 
 void PostStringResultDataItem::update()
 {
+	// TODO FIX THIS
+	return;
+
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
-	auto c = zItem->dataContainer();
+	auto c = zItem->v4DataContainer();
 	if (c == nullptr) {
 		m_actor->VisibilityOff();
 		return;
@@ -323,7 +329,7 @@ void PostStringResultDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphics
 QDialog* PostStringResultDataItem::propertyDialog(QWidget* w)
 {
 	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
-	auto c = zItem->dataContainer();
+	auto c = zItem->v4DataContainer();
 	if (c == nullptr) {return nullptr;}
 
 	auto dialog = new PostStringResultSettingDialog(w);

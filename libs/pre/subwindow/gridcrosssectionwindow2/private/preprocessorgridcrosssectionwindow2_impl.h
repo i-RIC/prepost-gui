@@ -9,7 +9,7 @@
 #include <unordered_map>
 #include <vector>
 
-class Structured2DGrid;
+class v4Structured2dGrid;
 class RealNumberEditWidget;
 
 class PreProcessorGridCrosssectionWindow2::Impl
@@ -26,7 +26,7 @@ public:
 	void setupDisplaySettings();
 
 	GraphicsView* graphicsView() const;
-	Structured2DGrid* grid() const;
+	v4Structured2dGrid* grid() const;
 	void updateAspectRatioEdit();
 
 	void setTargetDirection(Direction dir);

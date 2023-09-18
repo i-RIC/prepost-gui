@@ -5,9 +5,9 @@
 #include "geodatapointmap_tinmanager_breakline.h"
 #include "geodatapointmap_tinmanager_impl.h"
 
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
@@ -32,7 +32,7 @@ void GeoDataPointmap::TINManager::AddBreakLineController::setBreakLine(BreakLine
 	m_breakLine = line;
 }
 
-void GeoDataPointmap::TINManager::AddBreakLineController::activate(VTK2DGraphicsView* v)
+void GeoDataPointmap::TINManager::AddBreakLineController::activate(VTK2DGraphicsView* /*v*/)
 {
 	auto w = m_manager->impl->m_parent->preProcessorWindow();
 	InformationDialog::information(w, GeoDataPointmap::tr("Information"), GeoDataPointmap::tr("Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key."), "geodatapointmapaddbreakline");
@@ -45,14 +45,14 @@ void GeoDataPointmap::TINManager::AddBreakLineController::deactivate(VTK2DGraphi
 	finish();
 }
 
-void GeoDataPointmap::TINManager::AddBreakLineController::handleKeyPressEvent(QKeyEvent* event, VTK2DGraphicsView* v)
+void GeoDataPointmap::TINManager::AddBreakLineController::handleKeyPressEvent(QKeyEvent* event, VTK2DGraphicsView* /*v*/)
 {
 	if (iRIC::isEnterKey(event->key())) {
 		finish();
 	}
 }
 
-void GeoDataPointmap::TINManager::AddBreakLineController::handleMouseDoubleClickEvent(QMouseEvent* event, VTK2DGraphicsView* v)
+void GeoDataPointmap::TINManager::AddBreakLineController::handleMouseDoubleClickEvent(QMouseEvent* /*event*/, VTK2DGraphicsView* /*v*/)
 {
 	finish();
 }

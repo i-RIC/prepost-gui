@@ -8,8 +8,6 @@ SUBDIRS = \
 	centerandwidth \
 	compoundchannel \
 	externalprogram \
-	gridcombine \
-	gridgenerator \
 	laplace \
 	poisson \
 	rectangularregion \

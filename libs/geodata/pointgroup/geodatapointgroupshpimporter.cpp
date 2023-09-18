@@ -4,7 +4,7 @@
 #include "private/geodatapointgroup_impl.h"
 
 #include <cs/coordinatesystemconverter.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/informationdialog.h>
 #include <misc/errormessage.h>
@@ -40,7 +40,7 @@ const QStringList GeoDataPointGroupShpImporter::fileDialogFilters()
 	return ret;
 }
 
-bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* w)
+bool GeoDataPointGroupShpImporter::importData(GeoData* data, int /*index*/, QWidget* /*w*/)
 {
 	auto group = dynamic_cast<GeoDataPointGroup*>(data);
 

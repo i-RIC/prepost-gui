@@ -9,8 +9,8 @@
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -177,7 +177,7 @@ void GeoDataPointmapRealTextImporter::cancel()
 }
 
 
-bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	std::vector<QByteArray> lines;
 	QFile file_preview(filename);

@@ -10,7 +10,7 @@ class Post3dWindowParticlesTopDataItem : public Post3dWindowParticlesBaseTopData
 public:
 	Post3dWindowParticlesTopDataItem(Post3dWindowDataItem* parent);
 
-	vtkPolyData* particleData() const override;
+	v4Particles3d* particleData() const override;
 	Post3dWindowZoneDataItem* zoneDataItem() const override;
 };
 

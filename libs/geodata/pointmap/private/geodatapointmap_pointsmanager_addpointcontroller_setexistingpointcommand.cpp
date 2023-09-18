@@ -1,7 +1,7 @@
 #include "geodatapointmap_pointsmanager_addpointcontroller_setexistingpointcommand.h"
 
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
 GeoDataPointmap::PointsManager::AddPointController::SetExistingPointCommand::SetExistingPointCommand(vtkIdType pointId, double value, AddPointController* controller) :
 	m_pointId {pointId},

@@ -10,7 +10,7 @@ namespace Ui {
 class PostStringResultSettingDialog;
 }
 
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class PostStringResultSettingDialog : public QDialog
 {
@@ -20,7 +20,7 @@ public:
 	explicit PostStringResultSettingDialog(QWidget *parent = nullptr);
 	~PostStringResultSettingDialog();
 
-	void setZoneDataContainer(PostZoneDataContainer* container);
+	void setZoneDataContainer(v4PostZoneDataContainer* container);
 
 	PostStringResult* stringResult() const;
 	void setStringResult(PostStringResult* result);

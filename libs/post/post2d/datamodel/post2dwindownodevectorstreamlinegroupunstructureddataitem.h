@@ -3,6 +3,7 @@
 
 #include "post2dwindownodevectorstreamlinegroupdataitem.h"
 
+#include <memory>
 #include <vector>
 
 class Post2dWindowStreamlineUnstructuredSettingDialog;
@@ -47,7 +48,7 @@ private:
 	void disablePreviewActor();
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 };

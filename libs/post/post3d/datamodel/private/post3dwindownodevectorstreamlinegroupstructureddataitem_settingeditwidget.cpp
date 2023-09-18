@@ -5,7 +5,9 @@
 
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>
@@ -21,8 +23,8 @@ Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::Sett
 	connect(ui->removeButton, &QPushButton::clicked, this, &SettingEditWidget::removeStartPosition);
 	connect(ui->startPositionListWidget, &QListWidget::currentRowChanged, this, &SettingEditWidget::handleCurrentStartPositionChanged);
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(m_item->parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 	int dims[3];
 	grid->GetDimensions(dims);
 	ui->startPositionWidget->setDimensions(dims);
@@ -105,9 +107,9 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget:
 	applyStartPosition(index);
 }
 
-void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setupSolutionComboBox(PostZoneDataContainer* zoneData)
+void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setupSolutionComboBox(v4PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->data()->GetPointData();
+	vtkPointData* pd = zoneData->gridData()->grid()->vtkData()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

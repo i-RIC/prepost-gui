@@ -8,7 +8,7 @@ class QPlainTextEdit;
 class SolverConsoleWindow::Impl
 {
 public:
-	Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w);
+	Impl(iRICMainWindowI* mainW, SolverConsoleWindow* w);
 
 	void init();
 
@@ -27,7 +27,7 @@ public:
 	SolverConsoleWindowProjectDataItem* m_projectDataItem;
 
 	ProjectData* m_projectData;
-	iRICMainWindowInterface* m_iricMainWindow;
+	iRICMainWindowI* m_iricMainWindow;
 
 private:
 	SolverConsoleWindow* m_window;

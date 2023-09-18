@@ -1,20 +1,20 @@
-#include "../../base/iricmainwindowinterface.h"
+#include "../../base/iricmainwindowi.h"
 #include "../../datamodel/graphicswindowdataitem.h"
 #include "../../datamodel/graphicswindowdatamodel.h"
 #include "../../datamodel/vtkgraphicsview.h"
 #include "../../project/projectdata.h"
-#include "../base/preprocessorgraphicsviewinterface.h"
-#include "../base/preprocessorgridtypedataiteminterface.h"
-#include "../base/preprocessorgeodatadataiteminterface.h"
-#include "../base/preprocessorgeodatagroupdataiteminterface.h"
-#include "../base/preprocessorgeodatatopdataiteminterface.h"
-#include "../base/preprocessorwindowinterface.h"
+#include "../base/preprocessorgraphicsviewi.h"
+#include "../base/preprocessorgridtypedataitemi.h"
+#include "../base/preprocessorgeodatadataitemi.h"
+#include "../base/preprocessorgeodatagroupdataitemi.h"
+#include "../base/preprocessorgeodatatopdataitemi.h"
+#include "../base/preprocessorwindowi.h"
 #include "geodata.h"
 #include "geodatacreator.h"
 
 #include <guibase/objectbrowserview.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorhydraulicdatatopdataitemi.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/zdepthrange.h>
@@ -100,7 +100,7 @@ std::vector<GeoDataExporter*> GeoData::exporters() const
 
 void GeoData::setupDataItem()
 {
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
 	QString fname = name();
 	fname.append(".dat");
 	item->setFilename(fname);
@@ -140,31 +140,31 @@ void GeoData::handleStandardItemChange()
 void GeoData::handleStandardItemDoubleClicked()
 {}
 
-void GeoData::informSelection(PreProcessorGraphicsViewInterface*)
+void GeoData::informSelection(PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::informDeselection(PreProcessorGraphicsViewInterface*)
+void GeoData::informDeselection(PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::viewOperationEnded(PreProcessorGraphicsViewInterface*)
+void GeoData::viewOperationEnded(PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::keyPressEvent(QKeyEvent*, PreProcessorGraphicsViewInterface*)
+void GeoData::keyPressEvent(QKeyEvent*, PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::keyReleaseEvent(QKeyEvent*, PreProcessorGraphicsViewInterface*)
+void GeoData::keyReleaseEvent(QKeyEvent*, PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::mouseDoubleClickEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+void GeoData::mouseDoubleClickEvent(QMouseEvent*, PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::mouseMoveEvent(QMouseEvent*, PreProcessorGraphicsViewInterface* )
+void GeoData::mouseMoveEvent(QMouseEvent*, PreProcessorGraphicsViewI* )
 {}
 
-void GeoData::mousePressEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+void GeoData::mousePressEvent(QMouseEvent*, PreProcessorGraphicsViewI*)
 {}
 
-void GeoData::mouseReleaseEvent(QMouseEvent*, PreProcessorGraphicsViewInterface*)
+void GeoData::mouseReleaseEvent(QMouseEvent*, PreProcessorGraphicsViewI*)
 {}
 
 void GeoData::addCustomMenuItems(QMenu*)
@@ -225,7 +225,7 @@ GeoDataProxy* GeoData::getProxy()
 	return nullptr;
 }
 
-void GeoData::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface*)
+void GeoData::viewOperationEndedGlobal(PreProcessorGraphicsViewI*)
 {}
 
 void GeoData::applyOffset(double x, double y)
@@ -239,39 +239,39 @@ void GeoData::handleDimensionCurrentIndexChange(int, int)
 void GeoData::handleDimensionValuesChange(const std::vector<QVariant>&, const std::vector<QVariant>&)
 {}
 
-PreProcessorWindowInterface* GeoData::preProcessorWindow()
+PreProcessorWindowI* GeoData::preProcessorWindow()
 {
-	return dynamic_cast<PreProcessorWindowInterface*>(geoDataDataItem()->mainWindow());
+	return dynamic_cast<PreProcessorWindowI*>(geoDataDataItem()->mainWindow());
 }
 
 
-PreProcessorGeoDataTopDataItemInterface* GeoData::geoDataTopDataItem() const
+PreProcessorGeoDataTopDataItemI* GeoData::geoDataTopDataItem() const
 {
-	return dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>(geoDataGroupDataItem()->parent());
+	return dynamic_cast<PreProcessorGeoDataTopDataItemI*>(geoDataGroupDataItem()->parent());
 }
 
-PreProcessorGeoDataGroupDataItemInterface* GeoData::geoDataGroupDataItem() const
+PreProcessorGeoDataGroupDataItemI* GeoData::geoDataGroupDataItem() const
 {
-	return dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(geoDataDataItem()->parent());
+	return dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(geoDataDataItem()->parent());
 }
 
-PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const
+PreProcessorGeoDataDataItemI* GeoData::geoDataDataItem() const
 {
-	return dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	return dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
 }
 
-PreProcessorGridTypeDataItemInterface* GeoData::gridTypeDataItem() const
+PreProcessorGridTypeDataItemI* GeoData::gridTypeDataItem() const
 {
-	return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(geoDataTopDataItem()->parent());
+	return dynamic_cast<PreProcessorGridTypeDataItemI*>(geoDataTopDataItem()->parent());
 }
 
-PreProcessorHydraulicDataTopDataItemInterface* GeoData::hydraulicDataTopDataItem() const
+PreProcessorHydraulicDataTopDataItemI* GeoData::hydraulicDataTopDataItem() const
 {
 	auto gridTypeName = geoDataTopDataItem()->gridType()->name();
 	return dataModel()->hydraulicDataTopDataItem(gridTypeName);
 }
 
-PreProcessorHydraulicDataGroupDataItemInterface* GeoData::hydraulicDataGroupDataItem(const std::string& name) const
+PreProcessorHydraulicDataGroupDataItemI* GeoData::hydraulicDataGroupDataItem(const std::string& name) const
 {
 	auto topDataItem = hydraulicDataTopDataItem();
 	if (topDataItem == nullptr) {return nullptr;}
@@ -310,16 +310,16 @@ void GeoData::showPropertyDialogModeless()
 	QDialog* propDialog = propertyDialog(preProcessorWindow());
 	if (propDialog == nullptr) {return;}
 	propDialog->setAttribute(Qt::WA_DeleteOnClose);
-	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
 
 	iricMainWindow()->enterModelessDialogMode();
 
 	propDialog->show();
 }
 
-PreProcessorGraphicsViewInterface* GeoData::graphicsView()
+PreProcessorGraphicsViewI* GeoData::graphicsView()
 {
-	return dynamic_cast<PreProcessorGraphicsViewInterface*>(preProcessorWindow()->centralWidget());
+	return dynamic_cast<PreProcessorGraphicsViewI*>(preProcessorWindow()->centralWidget());
 }
 
 vtkRenderer* GeoData::renderer()
@@ -361,7 +361,7 @@ MouseBoundingBox* GeoData::mouseBoundingBox()
 	return geoDataDataItem()->mouseBoundingBox();
 }
 
-PreProcessorDataModelInterface* GeoData::dataModel() const
+PreProcessorDataModelI* GeoData::dataModel() const
 {
 	return geoDataDataItem()->dataModel();
 }

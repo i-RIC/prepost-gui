@@ -20,9 +20,7 @@ TmsImageSetting::TmsImageSetting(const TmsImageSetting& setting) :
 }
 
 TmsImageSetting::~TmsImageSetting()
-{
-	delete impl;
-}
+{}
 
 TmsImageSetting& TmsImageSetting::operator=(const TmsImageSetting& setting)
 {

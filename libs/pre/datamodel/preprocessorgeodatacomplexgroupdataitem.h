@@ -3,7 +3,7 @@
 
 #include "preprocessorgeodatagroupdataitem.h"
 #include <guicore/project/projectdata.h>
-#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
 
 #include <QColor>
 
@@ -13,7 +13,7 @@ class ColorMapSettingToolBarWidgetController;
 class GridComplexConditionDialog;
 class QAction;
 
-class PreProcessorGeoDataComplexGroupDataItem : public PreProcessorGeoDataGroupDataItem, public PreProcessorGeoDataComplexGroupDataItemInterface
+class PreProcessorGeoDataComplexGroupDataItem : public PreProcessorGeoDataGroupDataItem, public PreProcessorGeoDataComplexGroupDataItemI
 {
 	Q_OBJECT
 

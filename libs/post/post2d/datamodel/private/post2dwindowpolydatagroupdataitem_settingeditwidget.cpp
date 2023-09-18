@@ -1,8 +1,11 @@
 #include "../post2dwindowgridtypedataitem.h"
+#include "post2dwindowpolydatagroupdataitem_impl.h"
 #include "post2dwindowpolydatagroupdataitem_settingeditwidget.h"
 #include "ui_post2dwindowpolydatagroupdataitem_settingeditwidget.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4polydata2d.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
@@ -17,15 +20,15 @@ Post2dWindowPolyDataGroupDataItem::SettingEditWidget::SettingEditWidget(Post2dWi
 
 	std::unordered_map<std::string, QString> names;
 	auto gtype = item->gridTypeDataItem()->gridType();
-	auto data = item->polyData();
+	auto data = item->polyData()->vtkConcreteData()->concreteData();
 	for (auto const& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetCellData())) {
 		auto caption = gtype->output(name)->caption();
 		names.insert({name, caption});
 	}
 	w->setGridType(gtype);
 	w->setValueNames(names);
-	w->setColorMapSettings(item->m_colorMapSettings);
-	w->setSetting(&item->m_setting);
+	w->setColorMapSettings(item->impl->m_colorMapSettings);
+	w->setSetting(&item->impl->m_setting);
 }
 
 Post2dWindowPolyDataGroupDataItem::SettingEditWidget::~SettingEditWidget()

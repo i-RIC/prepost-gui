@@ -2,7 +2,7 @@
 
 #include <geodata/point/geodatapoint.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/iricundostack.h>
 
 #include <QAction>

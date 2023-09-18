@@ -5,7 +5,10 @@
 
 #include <h5cgnszone.h>
 
-class Post2dWindowPointScalarGroupTopDataItemI;
+#include <memory>
+
+class Post2dWindowAttributeBrowserController;
+class Post2dWindowNodeScalarGroupTopDataItem;
 
 class vtkActor;
 class vtkActor2D;
@@ -15,7 +18,7 @@ class Post2dWindowNodeScalarGroupDataItem : public Post2dWindowDataItem
 	Q_OBJECT
 
 public:
-	Post2dWindowNodeScalarGroupDataItem(const std::string& target, iRICLib::H5CgnsZone::SolutionPosition position, Post2dWindowDataItem* parent);
+	Post2dWindowNodeScalarGroupDataItem(const std::string& target, Post2dWindowDataItem* parent);
 	~Post2dWindowNodeScalarGroupDataItem();
 
 	void update();
@@ -58,10 +61,10 @@ private:
 
 	void innerUpdateZScale(double scale) override;
 
-	Post2dWindowPointScalarGroupTopDataItemI* topDataItem() const;
+	Post2dWindowNodeScalarGroupTopDataItem* topDataItem() const;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 	class SettingEditWidget;

@@ -6,7 +6,7 @@
 #include <misc/valuemodifycommandt.h>
 
 GridShapeSettingEditWidget::GridShapeSettingEditWidget(QWidget *parent) :
-	QWidget(parent),
+	ModifyCommandWidget(parent),
 	ui(new Ui::GridShapeSettingEditWidget)
 {
 	ui->setupUi(this);
@@ -67,7 +67,7 @@ void GridShapeSettingEditWidget::setSetting(const GridShapeSettingContainer& s)
 	}
 }
 
-QUndoCommand* GridShapeSettingEditWidget::createModifyCommand(bool allowMerge) const
+QUndoCommand* GridShapeSettingEditWidget::createModifyCommand(bool allowMerge)
 {
 	return new ValueModifyCommmand<GridShapeSettingContainer>(
 				iRIC::generateCommandId("GridShapeSettingEditWidget::Modify"),

@@ -1,10 +1,10 @@
 #include "geodatapointmap_pointsmanager_selectpointpolygoncontroller.h"
 
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guibase/polygon/polygonpushvertexcommand.h>
 #include <guicore/datamodel/vtk2dgraphicsview.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/keyboardsupport.h>
 
 #include <QMessageBox>

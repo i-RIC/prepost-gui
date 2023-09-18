@@ -17,9 +17,7 @@ ColorSource::ColorSource(ProjectDataItem* d) :
 }
 
 ColorSource::~ColorSource()
-{
-	delete impl;
-}
+{}
 
 void ColorSource::loadDefault()
 {

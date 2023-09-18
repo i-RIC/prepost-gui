@@ -7,8 +7,10 @@
 #include "ui_post2dwindownodevectorarrowgroupstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/filter/structured2dfilteringsettingeditwidget.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/region/region2dsettingeditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -23,14 +25,14 @@ Post2dWindowNodeVectorArrowGroupStructuredDataItem::SettingEditWidget::SettingEd
 	ui->setupUi(this);
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_additionalWidgets);
 
-	auto dataContainer = item->topDataItem()->zoneDataItem()->dataContainer();
-	auto data = dataContainer->data()->data();
-	if (! dataContainer->IBCExists()) {
+	auto cont = item->topDataItem()->zoneDataItem()->v4DataContainer();
+	auto data = cont->gridData()->grid();
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		m_additionalWidgets->regionWidget()->disableActive();
 	}
-	auto structured = vtkStructuredGrid::SafeDownCast(data);
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (data);
 	int dims[3];
-	structured->GetDimensions(dims);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 	m_additionalWidgets->regionWidget()->setDimensions(dims[0], dims[1]);
 
 	auto tItem = item->topDataItem()->zoneDataItem()->gridTypeDataItem();

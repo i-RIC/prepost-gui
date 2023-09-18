@@ -44,7 +44,6 @@ GridComplexConditionWidget::~GridComplexConditionWidget()
 		w->setParent(nullptr);
 		w->hide();
 	}
-	delete impl;
 }
 
 void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement& elem)

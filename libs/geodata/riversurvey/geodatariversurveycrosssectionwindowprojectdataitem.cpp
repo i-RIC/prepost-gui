@@ -2,9 +2,9 @@
 #include "geodatariversurveycrosssectionwindow.h"
 #include "geodatariversurveycrosssectionwindowprojectdataitem.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 
-GeoDataRiverSurveyCrosssectionWindowProjectDataItem::GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemInterface* gitem, QWidget* parentWindow) :
+GeoDataRiverSurveyCrosssectionWindowProjectDataItem::GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemI* gitem, QWidget* parentWindow) :
 	ProjectDataItem {gitem}
 {
 	GeoDataRiverSurveyCrosssectionWindow* w = new GeoDataRiverSurveyCrosssectionWindow(gitem, this, parentWindow);
@@ -24,7 +24,7 @@ GeoDataRiverSurveyCrosssectionWindowProjectDataItem::~GeoDataRiverSurveyCrosssec
 void GeoDataRiverSurveyCrosssectionWindowProjectDataItem::informWindowClose()
 {
 	if (m_window != nullptr) {
-		PreProcessorGeoDataGroupDataItemInterface* gItem = m_window->groupDataItem();
+		PreProcessorGeoDataGroupDataItemI* gItem = m_window->groupDataItem();
 		m_window = nullptr;
 		gItem->requestCrosssectionWindowDelete(this);
 	}

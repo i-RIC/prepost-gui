@@ -4,9 +4,12 @@
 #include "private/post2dwindownodevectorstreamlinegroupstructureddataitem_impl.h"
 #include "private/post2dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 #include <misc/modifycommanddialog.h>
@@ -25,9 +28,7 @@ Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::Post2dWindowNodeVectorS
 }
 
 Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::~Post2dWindowNodeVectorStreamlineGroupStructuredDataItem()
-{
-	delete impl;
-}
+{}
 
 void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues()
 {
@@ -35,10 +36,10 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 
 	impl->m_setting.startPositions.clear();
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 	int dim[3];
-	grid->GetDimensions(dim);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dim);
 
 	Setting::StartPosition pos;
 	pos.range.iMin = 0;
@@ -55,16 +56,16 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 {
 	clearActors();
 
-	auto zoneContainer = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 
-	auto regionData = impl->m_setting.region.buildNodeFilteredData(grid);
+	auto regionData = impl->m_setting.region.buildNodeFilteredData(sGrid);
 	auto r = renderer();
 	auto col = actorCollection();
 
 	const auto& positions = impl->m_setting.startPositions;
 	for (const auto& pos : positions) {
-		auto grid2 = pos.range.buildNodeFilteredData(grid);
+		auto grid2 = pos.range.buildNodeFilteredData(sGrid);
 		auto grid3 = pos.skipOrSubdivide.buildSampledData(grid2, StructuredGridSkipOrSubdivideSettingContainer::Dimension::Two);
 		grid2->Delete();
 		auto filter = vtkSmartPointer<vtkGeometryFilter>::New();

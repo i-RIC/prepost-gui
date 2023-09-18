@@ -11,11 +11,11 @@
 
 #include <geodata/polydata/geodatapolydata.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributeeditnameandvaluedialog.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -157,31 +157,31 @@ void GeoDataPolyDataGroup::showInitialDialog()
 	addData();
 }
 
-void GeoDataPolyDataGroup::viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolyDataGroup::viewOperationEnded(PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GeoDataPolyDataGroup::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode != Mode::EditingData) {return;}
 
 	impl->m_editTargetData->keyPressEvent(event, v);
 }
 
-void GeoDataPolyDataGroup::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode != Mode::EditingData) {return;}
 
 	impl->m_editTargetData->keyReleaseEvent(event, v);
 }
 
-void GeoDataPolyDataGroup::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode != Mode::EditingData) {return;}
 
 	impl->m_editTargetData->mouseDoubleClickEvent(event, v);
 }
 
-void GeoDataPolyDataGroup::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Mode::EditingData) {
 		impl->m_editTargetData->mouseMoveEvent(event, v);
@@ -193,7 +193,7 @@ void GeoDataPolyDataGroup::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphi
 	}
 }
 
-void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		if (impl->m_mode == Mode::EditingData) {
@@ -216,7 +216,7 @@ void GeoDataPolyDataGroup::mousePressEvent(QMouseEvent* event, PreProcessorGraph
 	}
 }
 
-void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Mode::EditingData) {
 		if (event->button() == Qt::LeftButton) {
@@ -273,7 +273,7 @@ void GeoDataPolyDataGroup::mouseReleaseEvent(QMouseEvent* event, PreProcessorGra
 
 }
 
-void GeoDataPolyDataGroup::informSelection(PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolyDataGroup::informSelection(PreProcessorGraphicsViewI* /*v*/)
 {
 	auto actors = actorsToShowWhenSelected();
 
@@ -294,7 +294,7 @@ void GeoDataPolyDataGroup::informSelection(PreProcessorGraphicsViewInterface* /*
 	updateVisibilityWithoutRendering();
 }
 
-void GeoDataPolyDataGroup::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyDataGroup::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	mergeEditTargetData();
 
@@ -347,7 +347,7 @@ void GeoDataPolyDataGroup::editName()
 void GeoDataPolyDataGroup::editNameAndValue()
 {
 	auto dialog = m_gridAttribute->editNameAndValueDialog(preProcessorWindow());
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	i->setupEditWidget(dialog->widget());
 	dialog->setName("");
@@ -427,14 +427,14 @@ void GeoDataPolyDataGroup::deleteSelectedData()
 	impl->updateAttributeBrowser();
 	impl->updateActionStatus();
 
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (parent());
+	auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (parent());
 	p->informValueRangeChange();
 	p->informDataChange();
 }
 
 void GeoDataPolyDataGroup::editColorSetting()
 {
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
+	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->showPropertyDialog();
 }
 
 void GeoDataPolyDataGroup::showAttributeBrowser()
@@ -447,14 +447,14 @@ void GeoDataPolyDataGroup::mergePolyDataAndPolyDataGroups()
 {
 	mergeEditTargetData();
 
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
-	std::vector<PreProcessorGeoDataDataItemInterface*> dataToMerge;
-	std::map<PreProcessorGeoDataDataItemInterface*, int> dataIndex;
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent());
+	std::vector<PreProcessorGeoDataDataItemI*> dataToMerge;
+	std::map<PreProcessorGeoDataDataItemI*, int> dataIndex;
 	int thisIndex = 0;
 
 	int index = 0;
 	for (auto item : gItem->childItems()) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (item);
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (item);
 		auto geoData = p->geoData();
 		if (geoData == this) {
 			thisIndex = index;
@@ -478,7 +478,7 @@ void GeoDataPolyDataGroup::mergePolyDataAndPolyDataGroups()
 	if (ret == QDialog::Rejected) {return;}
 
 	dataToMerge = dialog.selectedItems();
-	int thisCount = impl->m_data.size();
+	int thisCount = static_cast<int> (impl->m_data.size());
 	int position = 0;
 	for (auto item : dataToMerge) {
 		auto geoData = item->geoData();
@@ -494,7 +494,7 @@ void GeoDataPolyDataGroup::mergePolyDataAndPolyDataGroups()
 		} else if (isMergablePolyDataGroup(geoData)) {
 			auto group = dynamic_cast<GeoDataPolyDataGroup*> (geoData);
 			mergePolyDataGroup(group, position);
-			position += group->allData().size();
+			position += static_cast<int> (group->allData().size());
 		}
 		item->setDeleteSilently(true);
 		delete item;
@@ -577,13 +577,13 @@ void GeoDataPolyDataGroup::copy()
 {
 	mergeEditTargetData();
 
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	auto tItem = dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>(gItem->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
+	auto tItem = dynamic_cast<PreProcessorGeoDataTopDataItemI*>(gItem->parent());
 
-	std::vector<PreProcessorGeoDataGroupDataItemInterface*> targetGroups;
+	std::vector<PreProcessorGeoDataGroupDataItemI*> targetGroups;
 	QStringList targetNames;
 
-	for (PreProcessorGeoDataGroupDataItemInterface* item : tItem->groupDataItems()) {
+	for (PreProcessorGeoDataGroupDataItemI* item : tItem->groupDataItems()) {
 		if (item == gItem) {continue;}
 
 		targetGroups.push_back(item);
@@ -594,7 +594,7 @@ void GeoDataPolyDataGroup::copy()
 	QString item = QInputDialog::getItem(preProcessorWindow(), tr("Select Geographic Data"), tr("Please select which geographic data to copy this %1.").arg(creator()->shapeName()), targetNames, 0, false, &ok);
 	if (! ok) {return;} // canceled
 
-	PreProcessorGeoDataGroupDataItemInterface* targetGroup = targetGroups[targetNames.indexOf(item)];
+	PreProcessorGeoDataGroupDataItemI* targetGroup = targetGroups[targetNames.indexOf(item)];
 
 	auto geoDataItem = targetGroup->buildGeoDataDataItem();
 
@@ -810,7 +810,7 @@ void GeoDataPolyDataGroup::setupNewEditTargetData()
 {
 	GeoDataPolyData* d = createEditTargetData();
 	impl->m_editTargetData = d;
-	d->setCaption(captionForData(impl->m_data.size() + 1));
+	d->setCaption(captionForData(static_cast<int> (impl->m_data.size()) + 1));
 	d->showInitialDialog();
 	d->informSelection(graphicsView());
 

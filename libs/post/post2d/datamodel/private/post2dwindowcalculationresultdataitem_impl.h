@@ -1,0 +1,30 @@
+#ifndef POST2DWINDOWCALCULATIONRESULTDATAITEM_IMPL_H
+#define POST2DWINDOWCALCULATIONRESULTDATAITEM_IMPL_H
+
+#include "../post2dwindowcalculationresultdataitem.h"
+
+class Post2dWindowCalculationResultDataItem::Impl
+{
+public:
+	Impl(Post2dWindowCalculationResultDataItem* item);
+	~Impl();
+
+	Post2dWindowGridShapeDataItem* m_gridShapeDataItem;
+	Post2dWindowNodeScalarGroupTopDataItem* m_nodeScalarGroupTopDataItem;
+	Post2dWindowCellScalarGroupTopDataItem* m_cellScalarGroupTopDataItem;
+	Post2dWindowIEdgeScalarGroupTopDataItem* m_iEdgeScalarGroupTopDataItem;
+	Post2dWindowJEdgeScalarGroupTopDataItem* m_jEdgeScalarGroupTopDataItem;
+	Post2dWindowGraphGroupDataItem* m_graphGroupDataItem;
+	Post2dWindowNodeVectorArrowGroupTopDataItem* m_arrowGroupDataItem;
+	Post2dWindowNodeVectorStreamlineGroupDataItem* m_streamlineGroupDataItem;
+	Post2dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
+	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
+	Post2dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
+	Post2dWindowPolyDataTopDataItem* m_polyDataDataItem;
+	PostStringResultDataItem* m_stringDataItem;
+
+private:
+	Post2dWindowCalculationResultDataItem* m_item;
+};
+
+#endif // POST2DWINDOWCALCULATIONRESULTDATAITEM_IMPL_H

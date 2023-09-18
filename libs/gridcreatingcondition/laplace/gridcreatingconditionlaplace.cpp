@@ -10,14 +10,17 @@
 
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
@@ -36,7 +39,7 @@ namespace {
 
 GeoDataRiverSurvey* findRiverSurveyData(GridCreatingCondition* cond)
 {
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(cond->parent()->parent()->parent());
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(cond->parent()->parent()->parent());
 	auto rtItem = gtItem->geoDataTop();
 
 	for (auto gItem : rtItem->groupDataItems()) {
@@ -143,7 +146,7 @@ void GridCreatingConditionLaplace::showInitialDialog()
 	GridCreatingConditionLaplaceCtrlPointsDialog dialog(preProcessorWindow());
 	dialog.setLocale(iricMainWindow()->locale());
 	dialog.setMaximum(numPoints);
-	int ret = dialog.exec();
+	dialog.exec();
 	impl->copyCenterLine(rs, dialog.value());
 
 	impl->m_centerLineOnlyMouseEventMode = Impl::CenterLineOnlyMouseEventMode::Normal;
@@ -152,14 +155,19 @@ void GridCreatingConditionLaplace::showInitialDialog()
 	renderGraphicsView();
 }
 
-bool GridCreatingConditionLaplace::create(QWidget* parent)
+bool GridCreatingConditionLaplace::create(QWidget* /*parent*/)
 {
-	Grid* grid = impl->createGrid();
+	v4Structured2dGrid* grid = impl->createGrid();
 	if (grid == nullptr) {
 		return false;
 	}
 
-	emit gridCreated(grid);
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+	emit gridCreated(ret);
 
 	return true;
 }
@@ -170,14 +178,10 @@ bool GridCreatingConditionLaplace::ready() const
 }
 
 void GridCreatingConditionLaplace::clear()
-{
-
-}
+{}
 
 void GridCreatingConditionLaplace::setupActors()
-{
-
-}
+{}
 
 void GridCreatingConditionLaplace::setupMenu()
 {
@@ -232,26 +236,26 @@ void GridCreatingConditionLaplace::setupMenu()
 	m_menu->addAction(m_conditionDataItem->exportAction());
 }
 
-void GridCreatingConditionLaplace::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::informSelection(PreProcessorGraphicsViewI* /*v*/)
 {
 	impl->m_itemSelected = true;
 	impl->updateActorSetting();
 	renderGraphicsView();
 }
 
-void GridCreatingConditionLaplace::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	impl->m_itemSelected = false;
 	impl->updateActorSetting();
 	renderGraphicsView();
 }
 
-void GridCreatingConditionLaplace::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (! iRIC::isEnterKey(event->key())) {return;}
@@ -260,10 +264,10 @@ void GridCreatingConditionLaplace::keyPressEvent(QKeyEvent* event, PreProcessorG
 	}
 }
 
-void GridCreatingConditionLaplace::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionLaplace::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (impl->m_centerLineOnlyMouseEventMode == Impl::CenterLineOnlyMouseEventMode::Defining) {
@@ -272,7 +276,7 @@ void GridCreatingConditionLaplace::mouseDoubleClickEvent(QMouseEvent* event, Pre
 	}
 }
 
-void GridCreatingConditionLaplace::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		switch (impl->m_centerLineOnlyMouseEventMode) {
@@ -333,7 +337,7 @@ void GridCreatingConditionLaplace::mouseMoveEvent(QMouseEvent* event, PreProcess
 	impl->m_previousPos = event->pos();
 }
 
-void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (event->button() == Qt::LeftButton) {
@@ -395,7 +399,7 @@ void GridCreatingConditionLaplace::mousePressEvent(QMouseEvent* event, PreProces
 	impl->m_pressPos = event->pos();
 }
 
-void GridCreatingConditionLaplace::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_editMode == Impl::EditMode::CenterLineOnly) {
 		if (event->button() == Qt::LeftButton) {
@@ -621,8 +625,8 @@ bool GridCreatingConditionLaplace::wholeRegionDivisionSetting(bool gridCreateBut
 	}
 	dialog.setILength(iLen);
 	dialog.setJLength(jLen);
-	dialog.setIDivMin(impl->m_divCountsStreamWise.size());
-	dialog.setJDivMin(impl->m_divCountsCrossSection.size());
+	dialog.setIDivMin(static_cast<int> (impl->m_divCountsStreamWise.size()));
+	dialog.setJDivMin(static_cast<int> (impl->m_divCountsCrossSection.size()));
 	dialog.setIDiv(idiv);
 	dialog.setJDiv(jdiv);
 
@@ -771,7 +775,7 @@ void GridCreatingConditionLaplace::informPreviewGridPointsUpdate(int i, int j)
 {
 	delete impl->m_previewGrid;
 	impl->m_previewGrid = impl->createSubRegionGrid(i, j);
-	impl->m_previewGridMapper->SetInputData(impl->m_previewGrid->vtkGrid());
+	impl->m_previewGridMapper->SetInputData(impl->m_previewGrid->vtkConcreteData()->concreteData());
 	impl->m_previewGridActor->VisibilityOn();
 
 	renderGraphicsView();
@@ -905,7 +909,5 @@ void GridCreatingConditionLaplace::saveExternalData(const QString& filename)
 	}
 }
 
-void GridCreatingConditionLaplace::doApplyOffset(double x, double y)
-{
-
-}
+void GridCreatingConditionLaplace::doApplyOffset(double /*x*/, double /*y*/)
+{}

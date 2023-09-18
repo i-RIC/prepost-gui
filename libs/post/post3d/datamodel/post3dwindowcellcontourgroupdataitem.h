@@ -10,7 +10,7 @@
 
 class ColorMapSettingToolBarWidget;
 class Post3dWindowZoneDataItem;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 class ValueRangeContainer;
 
 class vtkActor2D;
@@ -38,7 +38,7 @@ private:
 
 	const ValueRangeContainer& valueRange() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;
-	PostZoneDataContainer* data() const;
+	v4PostZoneDataContainer* data() const;
 
 	std::vector<Post3dWindowCellRangeSettingContainer> ranges() const;
 	void setRanges(const std::vector<Post3dWindowCellRangeSettingContainer>& ranges);

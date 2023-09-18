@@ -31,7 +31,8 @@ LIBS += -liricMisc
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-$${VTK_MAJ_MIN}
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

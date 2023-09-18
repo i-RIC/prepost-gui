@@ -61,13 +61,16 @@ SolverDefinitionGridOutput::SolverDefinitionGridOutput(const QDomElement& elem, 
 }
 
 SolverDefinitionGridOutput::~SolverDefinitionGridOutput()
-{
-	delete impl;
-}
+{}
 
 SolverDefinitionGridOutput::Position SolverDefinitionGridOutput::position() const
 {
 	return impl->m_position;
+}
+
+QVariant SolverDefinitionGridOutput::attributeBrowserValue(double value) const
+{
+	return value;
 }
 
 ColorMapSettingContainerI* SolverDefinitionGridOutput::createColorMapSettingContainer() const

@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncompoundchannel_definepolylinenewpointcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::DefinePolyLineNewPointCommand::DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :

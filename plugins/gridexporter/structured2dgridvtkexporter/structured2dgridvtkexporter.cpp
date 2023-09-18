@@ -1,5 +1,7 @@
 #include "structured2dgridvtkexporter.h"
-#include <guicore/pre/grid/structured2dgrid.h>
+
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -7,6 +9,7 @@
 #include <QFile>
 #include <QDir>
 
+#include <vtkSmartPointer.h>
 #include <vtkStructuredGridWriter.h>
 
 Structured2DGridVTKExporter::Structured2DGridVTKExporter() :
@@ -33,19 +36,19 @@ QStringList Structured2DGridVTKExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridVTKExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured2DGridVTKExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
 	QString tempPath = QDir::tempPath();
 	QString tmpFile = iRIC::getTempFileName(tempPath);
 
-	vtkStructuredGridWriter* writer = vtkStructuredGridWriter::New();
-	writer->SetInputData(vtkStructuredGrid::SafeDownCast(grid->vtkGrid()));
+	auto writer = vtkSmartPointer<vtkStructuredGridWriter>::New();
+	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+	writer->SetInputData(grid2d->vtkConcreteData()->concreteData());
 	writer->SetFileTypeToASCII();
 	writer->SetFileName(iRIC::toStr(tmpFile).c_str());
 
 	// export data.
 	writer->Update();
-	writer->Delete();
 
 	// rename the temporary file to the target file.
 	if (QFile::exists(filename)){

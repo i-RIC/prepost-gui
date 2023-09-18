@@ -14,8 +14,7 @@
 #include "preprocessorgeodatatopdataitem.h"
 
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
@@ -23,16 +22,6 @@
 #include <guicore/solverdef/solverdefinitiongridattributedimension.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-
-#include <QAction>
-#include <QApplication>
-#include <QDomElement>
-#include <QIcon>
-#include <QList>
-#include <QMenu>
-#include <QMessageBox>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 
 PreProcessorGridAttributeMappingSettingTopDataItem::PreProcessorGridAttributeMappingSettingTopDataItem(PreProcessorDataItem* p) :
 	PreProcessorDataItem {p}
@@ -71,28 +60,21 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::doSaveToProjectMainFile
 {}
 
 void PreProcessorGridAttributeMappingSettingTopDataItem::informGeoDataChange()
-{
-	/*
-		PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(parent()->parent()->parent());
-		if (root->gridAttributeMappingMode() == PreProcessorRootDataItem::mmAuto){
-			executeMapping();
-		}
-	 */
-}
+{}
 
 void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 {
 	// Get the grid.
-	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	Grid* grid = conditiondi->gridDataItem()->grid();
+	auto conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	v4InputGrid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
 	if (! checkDimensions()) {return;}
 	int count = 0;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(child);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridAttribute(cond->name());
-		if (!container->mapped()) {
+		auto container = grid->attribute(cond->name());
+		if (! container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			count += item->mappingCount();
 		}
@@ -111,7 +93,7 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
 		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridAttribute(cond->name());
+		auto container = grid->attribute(cond->name());
 		if (! container->mapped()) {
 			// mapping is done only when it is not mapped by the grid creating condition.
 			item->executeMapping(grid, &dialog);
@@ -124,8 +106,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::executeMapping()
 	}
 	dialog.hide();
 
-	grid->setModified();
-	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
+	grid->setIsModified(true);
+	auto griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
 	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(griddi->nodeGroupDataItem())->updateActorSetting();
 	dynamic_cast<PreProcessorGridAttributeCellGroupDataItem*>(griddi->cellGroupDataItem())->updateActorSetting();
 
@@ -146,12 +128,12 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::setDefaultValues()
 {
 	// Get the grid.
 	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	Grid* grid = conditiondi->gridDataItem()->grid();
+	v4InputGrid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(child);
 		SolverDefinitionGridAttribute* cond = item->condition();
-		GridAttributeContainer* container = grid->gridAttribute(cond->name());
+		auto container = grid->attribute(cond->name());
 		if (! container->mapped()) {
 			item->setDefaultValue(grid);
 		}
@@ -181,10 +163,10 @@ bool PreProcessorGridAttributeMappingSettingTopDataItem::checkDimensions()
 void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nomessage)
 {
 	// Get the grid.
-	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	Grid* grid = conditiondi->gridDataItem()->grid();
+	auto conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
+	v4InputGrid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	iRICMainWindowI* mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
@@ -193,8 +175,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	if (! checkDimensions()) {return;}
 	PreProcessorGridAttributeCustomMappingDialog mappingDialog(mainWindow());
 	QList<PreProcessorGridAttributeMappingSettingDataItem*> gridAtts;
-	for (auto c_it = m_childItems.begin(); c_it != m_childItems.end(); ++c_it) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*c_it);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(child);
 		gridAtts.append(item);
 	}
 
@@ -217,12 +199,12 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	int count = 0;
 
 	for (int i = 0; i < gridAtts.size(); ++i) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = gridAtts.at(i);
+		auto item = gridAtts.at(i);
 		if (!m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridAttributeContainer* cont = grid->gridAttribute(item->condition()->name());
-		if (cont->isCustomModified()) {
+		auto att = grid->attribute(item->condition()->name());
+		if (att->isCustomModified()) {
 			int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(item->condition()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 			if (ret == QMessageBox::Yes) {
 				count = count + item->mappingCount();
@@ -266,9 +248,9 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 		if (! m_mappingSetting.attSettings.value(item->condition()->name())) {
 			continue;
 		}
-		GridAttributeContainer* cont = grid->gridAttribute(item->condition()->name());
+		auto att = grid->attribute(item->condition()->name());
 		item->executeMapping(grid, &dialog);
-		cont->setCustomModified(false);
+		att->setCustomModified(false);
 	}
 
 	for (int i = 0; i < bcs.size(); ++i) {
@@ -280,8 +262,8 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(bool nome
 	}
 	dialog.hide();
 
-	grid->setModified();
-	PreProcessorGridDataItem* griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
+	grid->setIsModified(true);
+	auto griddi = dynamic_cast<PreProcessorGridDataItem*>(conditiondi->gridDataItem());
 	griddi->updateSimplifiedGrid();
 	renderGraphicsView();
 	if (! nomessage) {
@@ -293,21 +275,21 @@ void PreProcessorGridAttributeMappingSettingTopDataItem::customMapping(const std
 {
 	// Get the grid.
 	PreProcessorGridAndGridCreatingConditionDataItem* conditiondi = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	Grid* grid = conditiondi->gridDataItem()->grid();
+	v4InputGrid* grid = conditiondi->gridDataItem()->grid();
 	if (grid == nullptr) {return;}
-	if (grid->gridAttribute(attName)->isCustomModified() && ! iricMainWindow()->cuiMode()) {
-		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(grid->gridAttribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+	if (grid->attribute(attName)->isCustomModified() && ! iricMainWindow()->cuiMode()) {
+		int ret = QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The grid attribute \"%1\" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?").arg(grid->attribute(attName)->gridAttribute()->caption()), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 		if (ret == QMessageBox::No) {return;}
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeMappingSettingDataItem* item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(*it);
-		if (item->condition() == grid->gridAttribute(attName)->gridAttribute()) {
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeMappingSettingDataItem*>(child);
+		if (item->condition() == grid->attribute(attName)->gridAttribute()) {
 			// execute mapping.
 			item->executeMapping(grid, 0);
-			grid->gridAttribute(attName)->setCustomModified(false);
+			grid->attribute(attName)->setCustomModified(false);
 		}
 	}
-	grid->setModified();
+	grid->setIsModified(true);
 	if (! nomessage && ! iricMainWindow()->cuiMode()) {
 		QMessageBox::information(mainWindow(), tr("Mapping geographic data finished"), tr("Mapping geographic data finished successfully."));
 	}

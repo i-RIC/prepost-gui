@@ -4,7 +4,7 @@
 #include "../../guicore_global.h"
 #include "geodatabackground.h"
 
-class PreProcessorGeoDataComplexGroupDataItemInterface;
+class PreProcessorGeoDataComplexGroupDataItemI;
 
 class GUICOREDLL_EXPORT GeoDataBackgroundComplex : public GeoDataBackground
 {
@@ -13,12 +13,12 @@ class GUICOREDLL_EXPORT GeoDataBackgroundComplex : public GeoDataBackground
 public:
 	GeoDataBackgroundComplex(ProjectDataItem* d, GeoDataCreator* creator, SolverDefinitionGridAttribute* att);
 
-	void setItem(PreProcessorGeoDataComplexGroupDataItemInterface* item);
+	void setItem(PreProcessorGeoDataComplexGroupDataItemI* item);
 
 	QVariant variantValue() override;
 
 private:
-	PreProcessorGeoDataComplexGroupDataItemInterface* m_item;
+	PreProcessorGeoDataComplexGroupDataItemI* m_item;
 };
 
 

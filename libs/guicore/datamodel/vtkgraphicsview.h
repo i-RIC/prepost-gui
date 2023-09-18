@@ -8,6 +8,8 @@
 
 #include <vtkSmartPointer.h>
 
+#include <memory>
+
 class GraphicsWindowDataItem;
 class GraphicsWindowSimpleDataModel;
 class vtkCamera;
@@ -105,7 +107,7 @@ public:
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 class VTKGraphicsViewArbitraryMove : public QUndoCommand

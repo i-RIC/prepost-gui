@@ -9,12 +9,12 @@
 
 #include <string>
 
-class PreProcessorGridDataItemInterface;
+class PreProcessorGridDataItemI;
 
 class GridAttributeEditCommand :  public QUndoCommand
 {
 public:
-	GridAttributeEditCommand(const std::string& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem);
+	GridAttributeEditCommand(const std::string& name, vtkDataArray* newValues, vtkDataArray* oldValues, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem);
 
 	void redo() override;
 	void undo() override;
@@ -28,7 +28,7 @@ private:
 	bool m_oldCustomModified;
 	vtkSmartPointer<vtkDataSetAttributes> m_attributes;
 	std::string m_name;
-	PreProcessorGridDataItemInterface* m_dataItem;
+	PreProcessorGridDataItemI* m_dataItem;
 };
 
 #endif // GRIDATTRIBUTEEDITCOMMAND_H

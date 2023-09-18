@@ -6,11 +6,12 @@
 
 #include <QObject>
 
+#include <memory>
 #include <string>
 #include <vector>
 
 class ColorMapSettingEditWidgetI;
-class Grid;
+class v4InputGrid;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridComplexAttribute;
 class SolverDefinitionGridOutput;
@@ -79,11 +80,12 @@ public:
 
 	/// @name Functions to build objects
 	//@{
-	void buildGridAttributes(Grid* grid) const;
+	void buildGridAttributes(v4InputGrid* grid) const;
+
 	/// Returns a pointer to a grid that has no data.
-	Grid* emptyGrid() const;
-	Grid* createEmptyGrid();
-	Grid* createEmptyGrid(GridType type);
+	v4InputGrid* emptyGrid() const;
+	v4InputGrid* createEmptyGrid();
+	v4InputGrid* createEmptyGrid(GridType type);
 	//@}
 
 	QString gridAttributeCaption(const std::string& name) const;
@@ -91,7 +93,7 @@ public:
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

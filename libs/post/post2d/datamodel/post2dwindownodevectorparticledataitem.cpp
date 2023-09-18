@@ -1,3 +1,6 @@
+#include "../post2dwindowattributebrowsercontroller.h"
+#include "post2dwindowcalculationresultdataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorparticledataitem.h"
 #include "post2dwindownodevectorparticlegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
@@ -17,12 +20,12 @@ Post2dWindowNodeVectorParticleDataItem::Post2dWindowNodeVectorParticleDataItem(c
 
 void Post2dWindowNodeVectorParticleDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initNodeResultAttributeBrowser();
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowNodeVectorParticleDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearNodeResultAttributeBrowser();
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowNodeVectorParticleDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -32,18 +35,17 @@ void Post2dWindowNodeVectorParticleDataItem::mousePressEvent(QMouseEvent* event,
 
 void Post2dWindowNodeVectorParticleDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	groupDataItem()->mouseReleaseEvent(event, v);
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	groupDataItem()->mouseMoveEvent(event, v);
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorParticleDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = zoneDataItem()->showAttributeBrowserActionForNodeResult();
-	menu->addAction(abAction);
+	menu->addAction(groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->showAttributeBrowserAction());
 }
 
 void Post2dWindowNodeVectorParticleDataItem::showPropertyDialog()

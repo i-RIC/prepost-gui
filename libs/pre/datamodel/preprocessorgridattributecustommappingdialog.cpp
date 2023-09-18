@@ -7,10 +7,6 @@
 
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 
-#include <QCheckBox>
-#include <QGroupBox>
-#include <QVBoxLayout>
-
 PreProcessorGridAttributeCustomMappingDialog::PreProcessorGridAttributeCustomMappingDialog(QWidget* parent) :
 	QDialog {parent},
 	ui {new Ui::PreProcessorGridAttributeCustomMappingDialog}

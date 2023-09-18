@@ -5,7 +5,9 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
@@ -79,13 +81,13 @@ Post3dWindowNodeVectorArrowDataItem::~Post3dWindowNodeVectorArrowDataItem()
 
 vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
 {
-	auto data = groupDataItem()->data();
-	if (data == nullptr) {return nullptr;}
+	auto cont = groupDataItem()->data();
+	if (cont == nullptr) {return nullptr;}
 
-	auto data2 = data->data();
-	if (data2 == nullptr) {return nullptr;}
+	auto grid = cont->gridData();
+	if (grid == nullptr) {return nullptr;}
 
-	return m_setting.face.extractFace(vtkStructuredGrid::SafeDownCast(data2->data()));
+	return m_setting.face.extractFace(dynamic_cast<v4Structured3dGrid*> (grid->grid())->vtkConcreteData()->concreteData());
 }
 
 const Post3dWindowNodeVectorArrowDataItem::Setting& Post3dWindowNodeVectorArrowDataItem::setting() const
@@ -183,15 +185,15 @@ void Post3dWindowNodeVectorArrowDataItem::updateActorSetting()
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto data = groupDataItem()->data();
-	if (data == nullptr) {return;}
+	auto cont = groupDataItem()->data();
+	if (cont == nullptr) {return;}
 	
-	auto data2 = data->data();
-	if (data2 == nullptr) {return;}
+	auto grid = cont->gridData();
+	if (grid == nullptr) {return;}
 
-	auto grid = vtkStructuredGrid::SafeDownCast(data2->data());
+	auto sGrid = dynamic_cast<v4Structured3dGrid*> (grid->grid());
 
-	auto grid2 = m_setting.face.extractFace(grid);
+	auto grid2 = m_setting.face.extractFace(sGrid->vtkConcreteData()->concreteData());
 
 	auto sampledData = m_setting.filtering.buildSampledData(grid2);
 	grid2->Delete();

@@ -2,7 +2,7 @@
 #include "preprocessorgeodatavariationdataitem.h"
 
 PreProcessorGeoDataVariationDataItem::PreProcessorGeoDataVariationDataItem(PreProcessorGeoDataGroupDataItem* item) :
-	PreProcessorGeoDataGroupDataItemInterface {
+	PreProcessorGeoDataGroupDataItemI {
 		dynamic_cast<PreProcessorGeoDataGroupDataItem*>(item)->condition(),item}
 {}
 
@@ -39,9 +39,9 @@ void PreProcessorGeoDataVariationDataItem::addCopyPolygon(GeoDataPolygon* polygo
 
 }
 
-const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataVariationDataItem::geoDatas() const
+const QList<PreProcessorGeoDataDataItemI*> PreProcessorGeoDataVariationDataItem::geoDatas() const
 {
-	QList<PreProcessorGeoDataDataItemInterface*> ret;
+	QList<PreProcessorGeoDataDataItemI*> ret;
 
 	return ret;
 }
@@ -51,12 +51,12 @@ GridAttributeDimensionsContainer* PreProcessorGeoDataVariationDataItem::dimensio
 	return groupDataItem()->dimensions();
 }
 
-PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataVariationDataItem::buildGeoDataDataItem()
+PreProcessorGeoDataDataItemI* PreProcessorGeoDataVariationDataItem::buildGeoDataDataItem()
 {
 	return groupDataItem()->buildGeoDataDataItem();
 }
 
-void PreProcessorGeoDataVariationDataItem::addGeoData(PreProcessorGeoDataDataItemInterface *geoData)
+void PreProcessorGeoDataVariationDataItem::addGeoData(PreProcessorGeoDataDataItemI *geoData)
 {
 
 }

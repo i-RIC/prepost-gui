@@ -1,6 +1,7 @@
 #include "../pre/gridcond/base/gridattributeeditdialog.h"
 #include "../pre/gridcond/base/gridattributeeditnameandvaluedialog.h"
 #include "../pre/gridcond/base/gridattributevariationeditdialog.h"
+#include "../scalarstocolors/colormapfactory.h"
 #include "../scalarstocolors/colormapfactoryi.h"
 #include "../scalarstocolors/colormapsettingcontaineri.h"
 #include "../scalarstocolors/colormapsettingeditdialog.h"
@@ -70,7 +71,9 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 SolverDefinitionGridAttribute::SolverDefinitionGridAttribute() :
 	SolverDefinitionNode {},
 	impl {new Impl {this}}
-{}
+{
+	setColorMapFactory(new ColorMapFactory());
+}
 
 SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order) :
 	SolverDefinitionNode {elem, definition},
@@ -79,12 +82,12 @@ SolverDefinitionGridAttribute::SolverDefinitionGridAttribute(const QDomElement& 
 	impl->m_position = pos;
 	impl->m_isOption = isOption;
 	impl->m_order = order;
+
+	setColorMapFactory(new ColorMapFactory());
 }
 
 SolverDefinitionGridAttribute::~SolverDefinitionGridAttribute()
-{
-	delete impl;
-}
+{}
 
 const std::string& SolverDefinitionGridAttribute::name() const
 {
@@ -161,7 +164,7 @@ std::vector<SolverDefinitionGridAttributeDimension *>& SolverDefinitionGridAttri
 	return impl->m_dimensions;
 }
 
-GridAttributeContainer* SolverDefinitionGridAttribute::container(Grid* grid)
+GridAttributeContainer* SolverDefinitionGridAttribute::container(v4InputGrid* grid)
 {
 	return buildContainer(grid);
 }
@@ -228,6 +231,10 @@ void SolverDefinitionGridAttribute::setPosition(Position pos)
 
 void SolverDefinitionGridAttribute::setColorMapFactory(ColorMapFactoryI* factory)
 {
+	if (impl->m_colorMapFactory != nullptr) {
+		delete impl->m_colorMapFactory;
+	}
+
 	impl->m_colorMapFactory = factory;
 }
 

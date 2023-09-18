@@ -16,7 +16,7 @@ public:
 	const QStringList acceptableExtensions() override;
 
 private:
-	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	bool importDataDOM(GeoData* data, int index, QWidget* w);
 	bool importDataSAX(GeoData* data, int index, QWidget* w);

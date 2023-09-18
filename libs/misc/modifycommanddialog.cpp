@@ -18,6 +18,11 @@ ModifyCommandDialog::~ModifyCommandDialog()
 	delete ui;
 }
 
+ModifyCommandWidget* ModifyCommandDialog::widget() const
+{
+	return m_widget;
+}
+
 void ModifyCommandDialog::setWidget(ModifyCommandWidget* widget)
 {
 	m_widget = widget;

@@ -10,7 +10,7 @@ public:
 	Structured15DGridWithCrossSectionCgnsImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
-protected:
+private:
 	bool isZoneCompatible(const iRICLib::H5CgnsZone& zone) override;
 };
 

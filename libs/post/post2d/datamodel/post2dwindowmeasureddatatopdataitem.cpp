@@ -7,7 +7,7 @@
 #include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

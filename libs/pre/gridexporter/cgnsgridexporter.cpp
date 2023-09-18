@@ -1,8 +1,12 @@
 #include "cgnsgridexporter.h"
 
-#include <guicore/pre/grid/grid.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/grid/v4inputgridio.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/stringtool.h>
 
@@ -38,26 +42,8 @@ bool CgnsGridExporter::isGridTypeSupported(SolverDefinitionGridType::GridType /*
 	return true;
 }
 
-bool CgnsGridExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool CgnsGridExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
-	QString tmpname = getProjectData(grid)->tmpFileName();
-	try {
-		iRICLib::H5CgnsFile file(iRIC::toStr(tmpname), iRICLib::H5CgnsFile::Mode::Create);
-		grid->saveToCgnsFile(file.ccBase(), "iRICZone");
-	}  catch (...) {
-		return false;
-	}
-
-	// if it already exists, remove it first.
-	QFile cgnsfile(filename);
-	if (cgnsfile.exists()) {
-		cgnsfile.remove();
-	}
-	// copy to the specified file.
-	bool ret = QFile::copy(tmpname, filename);
-	if (! ret) {return false;}
-
-	// Delete the temporary file
-	QFile::remove(tmpname);
+	// actually this implementation is never used.
 	return true;
 }

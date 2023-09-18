@@ -4,7 +4,7 @@
 #include "private/geodatapolyline_impl.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 
 #include <vtkActor.h>

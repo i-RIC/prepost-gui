@@ -4,7 +4,7 @@
 #include <misc/stringtool.h>
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 
@@ -21,7 +21,7 @@ GeoDataNetcdfGdalExporter::GeoDataNetcdfGdalExporter(GeoDataCreator* creator) :
 GeoDataNetcdfGdalExporter::~GeoDataNetcdfGdalExporter()
 {}
 
-bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
+bool GeoDataNetcdfGdalExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* /*pd*/)
 {
 	GeoDataNetcdf* netcdf = dynamic_cast<GeoDataNetcdf*> (data);
 	if (! netcdf->geoTransformExists()) {

@@ -8,7 +8,7 @@
 #include "graphicswindowrootdataitem.h"
 #include <guibase/objectbrowserview.h>
 #include "vtkgraphicsview.h"
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../project/projectdata.h"
 
 #include <vtkRenderWindow.h>

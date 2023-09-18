@@ -15,7 +15,7 @@ namespace Ui
 }
 
 class OpacityContainer;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 class Post3dWindowGridTypeDataItem;
 
 class Post3dWindowIsosurfaceSettingDialog : public QDialog
@@ -26,7 +26,7 @@ public:
 	explicit Post3dWindowIsosurfaceSettingDialog(QWidget* parent = nullptr);
 	~Post3dWindowIsosurfaceSettingDialog();
 
-	void setZoneData(PostZoneDataContainer* zoneData);
+	void setZoneData(v4PostZoneDataContainer* zoneData);
 	void setEnabled(bool enabled);
 
 	void setTarget(const std::string& target);

@@ -16,14 +16,13 @@
 #include <set>
 #include <vector>
 
-class Grid;
 class Interpolator2D1;
 class LinearLXSecInterpolator;
 class LinearRXSecInterpolator;
-class Structured2DGrid;
 class GeoDataRiverSurvey;
 class GeoDataRiverSurveyBackgroundGridCreateThread;
 class HydraulicDataRiverSurveyWaterElevation;
+class v4InputGrid;
 
 namespace iRICLib
 {
@@ -154,7 +153,7 @@ public:
 	void UpdateGridInterpolators();
 	/// Returns the number of grid nodes along I-direction.
 	unsigned int gridCounts(GeoDataRiverPathPoint* end) const;
-	void createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last = false);
+	void createGrid(v4InputGrid* grid, unsigned int initcount, bool elevmapping, bool last = false);
 
 	/// True when this point is selected
 	bool IsSelected;

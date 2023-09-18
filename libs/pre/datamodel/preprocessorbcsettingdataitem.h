@@ -3,7 +3,7 @@
 
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <geodata/polygon/geodatapolygon.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 #include <QString>
 #include <QColor>
@@ -21,12 +21,12 @@ class BoundaryConditionDialog;
 class SolverDefinition;
 class SolverDefinitionBoundaryCondition;
 class PreProcessorBCDataItem;
-class QAction;
 class VTKGraphicsView;
-class Grid;
 class WaitDialog;
 
-class PreProcessorBCSettingDataItem : public PreProcessorGeoDataDataItemInterface
+class QAction;
+
+class PreProcessorBCSettingDataItem : public PreProcessorGeoDataDataItemI
 {
 	Q_OBJECT
 
@@ -54,7 +54,7 @@ public:
 	bool isMapped() const;
 	ColorMapSettingContainerI* colorMapSettingContainer() const override;
 
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const override;
+	PreProcessorGeoDataGroupDataItemI* groupDataItem() const override;
 	GeoData* geoData() const override;
 	void setGeoData(GeoData *) override;
 

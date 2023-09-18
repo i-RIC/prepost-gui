@@ -13,6 +13,8 @@
 #include <QColor>
 
 class NamedGraphicWindowDataItem;
+class Post3dWindowIsosurfaceSetProperty;
+class Post3dWindowZoneDataItem;
 
 class vtkLODActor;
 class vtkActor;
@@ -20,7 +22,6 @@ class vtkDataSetMapper;
 class vtkPolyDataMapper;
 class vtkContourFilter;
 
-class Post3dWindowIsosurfaceSetProperty;
 
 class Post3dWindowNodeScalarGroupTopDataItem : public Post3dWindowDataItem
 {
@@ -33,6 +34,7 @@ public:
 	Post3dWindowNodeScalarGroupTopDataItem(Post3dWindowDataItem* parent);
 	~Post3dWindowNodeScalarGroupTopDataItem();
 
+	Post3dWindowZoneDataItem* zoneDataItem() const;
 	void updateActorSettings();
 	void informDataChange(const QString& name);
 	void setupActors();
@@ -42,15 +44,13 @@ public:
 	QDialog* addDialog(QWidget* parent) override;
 	void handleAddDialogAccepted(QDialog* propDialog) override;
 
-protected:
+private:
 	void addCustomMenuItems(QMenu* menu) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void innerUpdateZScale(double scale) override;
 
-private:
 	void setDefaultValues();
-	void setupIsosurfaceSetting();
 
 	std::string m_target;
 	bool m_fullRange;

@@ -3,7 +3,7 @@
 #include <guicore/pre/hydraulicdata/hydraulicdata.h>
 
 PreProcessorHydraulicDataDataItem::PreProcessorHydraulicDataDataItem(PreProcessorDataItem* parent) :
-	PreProcessorHydraulicDataDataItemInterface (parent)
+	PreProcessorHydraulicDataDataItemI (parent)
 {}
 
 HydraulicData* PreProcessorHydraulicDataDataItem::hydraulicData() const

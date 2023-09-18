@@ -5,9 +5,11 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/widget/waitdialog.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
@@ -15,19 +17,8 @@
 #include <geodata/polygon/geodatapolygonabstractpolygon.h>
 #include <geodata/polygon/geodatapolygonregionpolygon.h>
 
-#include <vtkCell.h>
-
-#include <QAction>
-#include <QFile>
-#include <QKeyEvent>
-#include <QMainWindow>
-#include <QMenu>
-#include <QMessageBox>
-#include <QMouseEvent>
-#include <QStandardItem>
-
 PreProcessorBCSettingDataItem::PreProcessorBCSettingDataItem(PreProcessorBCDataItem* item, GraphicsWindowDataItem* parent) :
-	PreProcessorGeoDataDataItemInterface {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
+	PreProcessorGeoDataDataItemI {item->standardItem()->text(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
 	m_bcDataItem {item}
 {
 	if (item->hideSetting()) {
@@ -100,17 +91,17 @@ void PreProcessorBCSettingDataItem::informSelection(VTKGraphicsView* v)
 		m_polygon->setSelectMode(GeoDataPolygon::smPolygon);
 		m_polygon->setSelectedPolygon(m_polygon->regionPolygon());
 	}
-	m_polygon->informSelection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->informSelection(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorBCSettingDataItem::informDeselection(VTKGraphicsView* v)
 {
-	m_polygon->informDeselection(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->informDeselection(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorBCSettingDataItem::viewOperationEnded(VTKGraphicsView* v)
 {
-	m_polygon->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->viewOperationEnded(dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/, VTKGraphicsView* /*v*/)
@@ -126,12 +117,12 @@ void PreProcessorBCSettingDataItem::mouseDoubleClickEvent(QMouseEvent* /*event*/
 
 void PreProcessorBCSettingDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_polygon->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorBCSettingDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_polygon->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 	m_dragStartPoint = QPoint(event->x(), event->y());
 }
 
@@ -141,7 +132,7 @@ void PreProcessorBCSettingDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGra
 		m_rightClickingMenu->move(event->globalPos());
 		m_rightClickingMenu->show();
 	} else {
-		m_polygon->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+		m_polygon->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 	}
 }
 
@@ -159,7 +150,7 @@ void PreProcessorBCSettingDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsV
 
 void PreProcessorBCSettingDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	m_polygon->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	m_polygon->keyReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewI*>(v));
 }
 
 void PreProcessorBCSettingDataItem::addCustomMenuItems(QMenu* menu)
@@ -182,7 +173,7 @@ ColorMapSettingContainerI* PreProcessorBCSettingDataItem::colorMapSettingContain
 	return nullptr;
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorBCSettingDataItem::groupDataItem() const
+PreProcessorGeoDataGroupDataItemI* PreProcessorBCSettingDataItem::groupDataItem() const
 {
 	return nullptr;
 }
@@ -247,9 +238,9 @@ void PreProcessorBCSettingDataItem::updateFilename()
 
 void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dialog)
 {
-	PreProcessorGridAndGridCreatingConditionDataItem* gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent()->parent());
-	PreProcessorGridDataItemInterface* gitem = gccdItem->gridDataItem();
-	Grid* grid = gitem->grid();
+	auto gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent()->parent());
+	auto gitem = gccdItem->gridDataItem();
+	v4InputGrid* grid = gitem->grid();
 	if (grid == nullptr && ! noDraw) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		if (dialog != nullptr) {
@@ -262,12 +253,12 @@ void PreProcessorBCSettingDataItem::executeMapping(bool noDraw, WaitDialog* dial
 		return;
 	}
 
-	vtkPointSet* pset = grid->vtkGrid();
+	vtkPointSet* pset = grid->grid()->vtkData()->data();
 	vtkPointSet* polygonGrid = m_polygon->polyData();
 	double bounds[6];
 	polygonGrid->GetBounds(bounds);
 
-	QSet<vtkIdType> vertices;
+	std::unordered_set<vtkIdType> vertices;
 
 	for (vtkIdType vid = 0; vid != pset->GetNumberOfPoints(); ++vid) {
 		double p[3];

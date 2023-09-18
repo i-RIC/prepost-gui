@@ -1,7 +1,7 @@
 #include "../gridexporter/cgnsgridexporter.h"
 #include "gridexporterfactory.h"
 
-#include <guicore/pre/grid/gridexporterinterface.h>
+#include <guicore/pre/grid/gridexporteri.h>
 #include <misc/iricrootpath.h>
 
 #include <QApplication>
@@ -27,7 +27,7 @@ GridExporterFactory& GridExporterFactory::instance()
 GridExporterFactory::GridExporterFactory()
 {
 	// load built-in exporters first.
-	m_exporterList.append(new CgnsGridExporter());
+	m_exporterList.push_back(new CgnsGridExporter());
 
 	// load plug-in exporters.
 	QSettings settings;
@@ -52,11 +52,11 @@ GridExporterFactory::GridExporterFactory()
 			}
 			QPluginLoader loader(pluginDir.absoluteFilePath(fileName));
 			QObject* plugin = loader.instance();
-			GridExporterInterface* exporter = 0;
+			GridExporterI* exporter = 0;
 			if (! plugin) {
 				goto LOADERROR;
 			}
-			exporter = qobject_cast<GridExporterInterface*> (plugin);
+			exporter = qobject_cast<GridExporterI*> (plugin);
 			if (! exporter) {
 				delete plugin;
 				goto LOADERROR;
@@ -64,7 +64,7 @@ GridExporterFactory::GridExporterFactory()
 			if (translator) {
 				qApp->installTranslator(translator);
 			}
-			m_exporterList.append(exporter);
+			m_exporterList.push_back(exporter);
 			continue;
 
 LOADERROR:
@@ -81,13 +81,14 @@ GridExporterFactory::~GridExporterFactory()
 	m_exporterList.clear();
 }
 
-const QList<GridExporterInterface*> GridExporterFactory::list(SolverDefinitionGridType::GridType gt) const
+const std::vector<GridExporterI*> GridExporterFactory::listForGridType(SolverDefinitionGridType::GridType gt) const
 {
-	QList<GridExporterInterface*> ret;
-	for (GridExporterInterface* iface : m_exporterList) {
-		if (iface->isGridTypeSupported(gt)) {
-			ret.append(iface);
+	std::vector<GridExporterI*> ret;
+	for (auto exporter: m_exporterList) {
+		if (exporter->isGridTypeSupported(gt)) {
+			ret.push_back(exporter);
 		}
 	}
+
 	return ret;
 }

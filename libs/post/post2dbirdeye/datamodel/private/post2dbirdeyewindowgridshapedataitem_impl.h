@@ -8,8 +8,12 @@ class Post2dBirdEyeWindowGridShapeDataItem::Impl
 {
 public:
 	Impl();
+	~Impl();
 
 	Setting m_setting;
+
+	vtkWarpScalar* m_gridWarp;
+	vtkWarpScalar* m_labelWarp;
 };
 
 #endif // POST2DBIRDEYEWINDOWGRIDSHAPEDATAITEM_IMPL_H

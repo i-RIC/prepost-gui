@@ -1,9 +1,8 @@
 #ifndef GRIDCREATINGCONDITIONRIVERSURVEY_H
 #define GRIDCREATINGCONDITIONRIVERSURVEY_H
 
-#include <geodata/riversurvey/gridcreatingconditionriversurveyinterface.h>
+#include <geodata/riversurvey/gridcreatingconditionriversurveyi.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
-#include <guicore/pre/grid/structured2dgrid.h>
 #include <vtkSmartPointer.h>
 #include <vtkActor.h>
 #include <vtkLODActor.h>
@@ -30,7 +29,7 @@ class GridCreatingConditionRiverSurveyPointMoveDialog;
 class GridCreatingConditionCtrlPointRepositionCommand;
 class GridCreatingConditionCtrlPointMoveCommand;
 
-class GridCreatingConditionRiverSurvey : public GridCreatingConditionRiverSurveyInterface
+class GridCreatingConditionRiverSurvey : public GridCreatingConditionRiverSurveyI
 {
 	Q_OBJECT
 
@@ -66,17 +65,17 @@ public:
 	bool init() override;
 	void setupActors() override;
 	void setupMenu() override;
-	void informSelection(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void informSelection(PreProcessorGraphicsViewI* /*v*/) override;
+	void informDeselection(PreProcessorGraphicsViewI* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);

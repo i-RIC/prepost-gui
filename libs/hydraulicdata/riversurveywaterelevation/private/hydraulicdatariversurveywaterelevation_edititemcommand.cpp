@@ -1,7 +1,7 @@
 #include "hydraulicdatariversurveywaterelevation_edititemcommand.h"
 #include "hydraulicdatariversurveywaterelevation_impl.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 
 HydraulicDataRiverSurveyWaterElevation::EditItemCommand::EditItemCommand(const QString& name, bool specified, double value, HydraulicDataRiverSurveyWaterElevation* we) :
 	m_newSpecified {specified},

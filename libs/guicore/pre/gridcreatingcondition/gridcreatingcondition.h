@@ -5,24 +5,26 @@
 #include "../../project/projectdataitem.h"
 #include <QString>
 
-class QWidget;
-class QKeyEvent;
-class QMouseEvent;
-class QMenu;
-class QDialog;
-class QToolBar;
-class QUndoCommand;
-class Grid;
+class v4InputGrid;
 class GridCreatingConditionCreator;
-class PreProcessorGridCreatingConditionDataItemInterface;
-class PreProcessorGraphicsViewInterface;
-class PreProcessorDataModelInterface;
-class PreProcessorWindowInterface;
+class PreProcessorGridCreatingConditionDataItemI;
+class PreProcessorGraphicsViewI;
+class PreProcessorDataModelI;
+class PreProcessorWindowI;
 class ZDepthRange;
+
 class vtkRenderer;
 class vtkActorCollection;
 class vtkActor2DCollection;
 class vtkPoints;
+
+class QDialog;
+class QKeyEvent;
+class QMenu;
+class QMouseEvent;
+class QToolBar;
+class QUndoCommand;
+class QWidget;
 
 /// The container class that holds grid creating condition.
 class GUICOREDLL_EXPORT GridCreatingCondition : public ProjectDataItem
@@ -54,15 +56,15 @@ public:
 	virtual void setupMenu() {}
 	virtual void handleStandardItemChange() {}
 	virtual void handleStandardItemDoubleClicked() {}
-	virtual void informSelection(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
-	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) {}
+	virtual void informSelection(PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void informDeselection(PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void viewOperationEnded(PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
+	virtual void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) {}
 	virtual void addCustomMenuItems(QMenu* /*menu*/) {}
 	virtual void updateZDepthRangeItemCount(ZDepthRange& range);
 	virtual void assignActorZValues(const ZDepthRange& /*range*/) {}
@@ -74,12 +76,12 @@ public:
 	virtual void clear() = 0;
 	void updateVisibility();
 	void updateVisibilityWithoutRendering();
-	PreProcessorWindowInterface* preProcessorWindow() const;
+	PreProcessorWindowI* preProcessorWindow() const;
 	void applyOffset(double x, double y) {doApplyOffset(x, y);}
 
 signals:
-	void gridCreated(Grid* g);
-	void tmpGridCreated(Grid* g);
+	void gridCreated(v4InputGrid* g);
+	void tmpGridCreated(v4InputGrid* g);
 
 protected:
 	ProjectData* projectData();
@@ -87,14 +89,14 @@ protected:
 	vtkActorCollection* actorCollection();
 	vtkActor2DCollection* actor2DCollection();
 	virtual void updateFilename() {}
-	PreProcessorGridCreatingConditionDataItemInterface* gccDataItem() const;
-	PreProcessorGraphicsViewInterface* graphicsView() const;
-	PreProcessorDataModelInterface* dataModel() const;
+	PreProcessorGridCreatingConditionDataItemI* gccDataItem() const;
+	PreProcessorGraphicsViewI* graphicsView() const;
+	PreProcessorDataModelI* dataModel() const;
 	void renderGraphicsView();
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com);
-	PreProcessorGridCreatingConditionDataItemInterface* m_conditionDataItem;
+	PreProcessorGridCreatingConditionDataItemI* m_conditionDataItem;
 	GridCreatingConditionCreator* m_creator;
 	QMenu* m_menu;
 

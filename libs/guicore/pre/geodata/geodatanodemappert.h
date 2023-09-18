@@ -2,17 +2,13 @@
 #define GEODATANODEMAPPERT_H
 
 #include "geodatamappert.h"
-#include "../gridcond/base/gridattributenodecontainert.h"
 
 template <class V, class DA>
-class GeoDataNodeMapperT : public GeoDataMapperT<V>
+class GeoDataNodeMapperT : public GeoDataMapperT<V, DA>
 {
 public:
 	GeoDataNodeMapperT(const QString& caption, QObject* parent);
 	~GeoDataNodeMapperT();
-
-protected:
-	GridAttributeNodeContainerT<V, DA>* container() const;
 };
 
 #include "private/geodatanodemappert_detail.h"

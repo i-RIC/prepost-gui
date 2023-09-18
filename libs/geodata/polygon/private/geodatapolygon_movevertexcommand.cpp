@@ -1,7 +1,7 @@
 #include "geodatapolygon_movevertexcommand.h"
 #include "../geodatapolygonabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 #include <QPointF>

@@ -77,7 +77,7 @@ void GridAttributeEditDialog::scanAndSetDefault(GridAttributeContainer* containe
 	m_widget->scanAndSetDefault(container, indices);
 }
 
-void GridAttributeEditDialog::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+void GridAttributeEditDialog::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem)
 {
 	m_widget->applyValue(container, indices, atts, dItem);
 }

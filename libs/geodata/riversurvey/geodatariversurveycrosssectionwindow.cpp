@@ -12,10 +12,10 @@
 #include "private/geodatariversurveycrosssectionwindow_wsetabledelegate.h"
 
 #include <guibase/widget/realnumbereditwidget.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatadataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
 #include <guicore/pre/hydraulicdata/hydraulicdata.h>
 #include <guicore/project/colorsource.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
@@ -91,7 +91,7 @@ GeoDataRiverSurveyCrosssectionWindow::Impl::~Impl()
 	delete m_colorSource;
 }
 
-GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemInterface* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
+GeoDataRiverSurveyCrosssectionWindow::GeoDataRiverSurveyCrosssectionWindow(PreProcessorGeoDataGroupDataItemI* gitem, GeoDataRiverSurveyCrosssectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindowWithSnapshot {parent},
 	ui {new Ui::GeoDataRiverSurveyCrosssectionWindow},
 	impl {new Impl(pdi)}
@@ -819,7 +819,7 @@ const std::shared_ptr<QToolBar>& GeoDataRiverSurveyCrosssectionWindow::getAdditi
 	return impl->m_toolBar;
 }
 
-PreProcessorGeoDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
+PreProcessorGeoDataGroupDataItemI* GeoDataRiverSurveyCrosssectionWindow::groupDataItem() const
 {
 	return impl->m_groupDataItem;
 }
@@ -858,7 +858,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverSurveys()
 	const auto& items = impl->m_groupDataItem->childItems();
 	std::vector<GeoDataRiverSurvey*> rivDatas;
 	for (int i = 0; i < items.size(); ++i) {
-		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(items.at(i));
+		PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(items.at(i));
 		GeoDataRiverSurvey* geodata = dynamic_cast<GeoDataRiverSurvey*>(item->geoData());
 		if (geodata == nullptr) {continue;}
 
@@ -1243,7 +1243,7 @@ void GeoDataRiverSurveyCrosssectionWindow::updateRiverPathPoints()
 	}
 }
 
-PreProcessorHydraulicDataGroupDataItemInterface* GeoDataRiverSurveyCrosssectionWindow::waterElevationGroup()
+PreProcessorHydraulicDataGroupDataItemI* GeoDataRiverSurveyCrosssectionWindow::waterElevationGroup()
 {
 	return impl->m_targetRiverSurvey->hydraulicDataGroupDataItem("waterelevation");
 }

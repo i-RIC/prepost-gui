@@ -7,20 +7,20 @@
 
 #include <misc/iricundostack.h>
 
-template <class V>
-GridAttributeEditWidgetT<V>::GridAttributeEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
+template <class V, class DA>
+GridAttributeEditWidgetT<V, DA>::GridAttributeEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
 	GridAttributeEditWidget {parent, cond}
 {}
 
-template <class V>
-V GridAttributeEditWidgetT<V>::value() const
+template <class V, class DA>
+V GridAttributeEditWidgetT<V, DA>::value() const
 {
 	getValueFromInnerWidget();
 	return m_value;
 }
 
-template <class V>
-void GridAttributeEditWidgetT<V>::setValue(V value)
+template <class V, class DA>
+void GridAttributeEditWidgetT<V, DA>::setValue(V value)
 {
 	m_value = value;
 	setValueCleared(false);
@@ -29,14 +29,14 @@ void GridAttributeEditWidgetT<V>::setValue(V value)
 }
 
 
-template <class V>
-QVariant GridAttributeEditWidgetT<V>::variantValue() const
+template <class V, class DA>
+QVariant GridAttributeEditWidgetT<V, DA>::variantValue() const
 {
 	return QVariant(value());
 }
 
-template <class V>
-void GridAttributeEditWidgetT<V>::setVariantValue(const QVariant& v)
+template <class V, class DA>
+void GridAttributeEditWidgetT<V, DA>::setVariantValue(const QVariant& v)
 {
 	SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(gridAttribute());
 	V tmpval = cond->fromVariant(v);
@@ -44,10 +44,10 @@ void GridAttributeEditWidgetT<V>::setVariantValue(const QVariant& v)
 }
 
 
-template <class V>
-void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices)
+template <class V, class DA>
+void GridAttributeEditWidgetT<V, DA>::scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices)
 {
-	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
+	auto c = dynamic_cast<GridAttributeContainerT<V, DA>* >(container);
 	bool same = true;
 	V val;
 	auto it = indices.begin();
@@ -69,13 +69,13 @@ void GridAttributeEditWidgetT<V>::scanAndSetDefault(GridAttributeContainer* cont
 	}
 }
 
-template <class V>
-void GridAttributeEditWidgetT<V>::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+template <class V, class DA>
+void GridAttributeEditWidgetT<V, DA>::applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem)
 {
 	if (! isValueSelected()) {return;}
 
-	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
-	vtkDataArray* oldValues = c->dataArrayCopy();
+	auto c = dynamic_cast<GridAttributeContainerT<V, DA>*>(container);
+	DA* oldValues = c->dataArrayCopy();
 	V val = value();
 	for (auto index : indices) {
 		c->setValue(index, val);

@@ -16,7 +16,7 @@ PostStringResultSettingDialog::~PostStringResultSettingDialog()
 	delete ui;
 }
 
-void PostStringResultSettingDialog::setZoneDataContainer(PostZoneDataContainer* container)
+void PostStringResultSettingDialog::setZoneDataContainer(v4PostZoneDataContainer* container)
 {
 	ui->settingWidget->setZoneDataContainer(container);
 }

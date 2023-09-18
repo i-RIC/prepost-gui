@@ -11,11 +11,11 @@
 #include "geodatapointmap_tinmanager.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/lastiodirectory.h>
 #include <misc/informationdialog.h>
 #include <misc/mathsupport.h>

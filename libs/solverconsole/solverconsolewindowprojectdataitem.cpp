@@ -2,7 +2,7 @@
 #include "solverconsolewindowprojectdataitem.h"
 #include "private/solverconsolewindow_impl.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <misc/lastiodirectory.h>
 #include <misc/xmlsupport.h>
@@ -154,7 +154,7 @@ void SolverConsoleWindowProjectDataItem::exportConsoleLog()
 	}
 	ret = ret && QFile::copy(filename(), fname);
 	if (ret) {
-		projectData()->mainWindow()->statusBar()->showMessage(tr("Solver console log is successfully exported to %1.").arg(fname), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		projectData()->mainWindow()->statusBar()->showMessage(tr("Solver console log is successfully exported to %1.").arg(fname), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
 	} else {

@@ -13,9 +13,7 @@ GridAttributeEditWidget::GridAttributeEditWidget(QWidget* parent, SolverDefiniti
 {}
 
 GridAttributeEditWidget::~GridAttributeEditWidget()
-{
-	delete impl;
-}
+{}
 
 SolverDefinitionGridAttribute* GridAttributeEditWidget::gridAttribute() const
 {

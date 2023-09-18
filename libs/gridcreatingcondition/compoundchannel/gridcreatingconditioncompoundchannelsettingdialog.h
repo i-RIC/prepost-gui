@@ -4,8 +4,6 @@
 #include <QDialog>
 #include <QMap>
 
-class Grid;
-
 namespace Ui
 {
 	class GridCreatingConditionCompoundChannelSettingDialog;

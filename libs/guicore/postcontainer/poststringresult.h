@@ -9,7 +9,7 @@
 #include <vector>
 
 class PostStringResultArgument;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class QJSValue;
 class QString;
@@ -38,8 +38,8 @@ public:
 
 	void copyValue(const PostStringResult &result);
 
-	PostZoneDataContainer* zoneDataContainer() const;
-	void setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent);
+	v4PostZoneDataContainer* zoneDataContainer() const;
+	void setZoneDataContainer(v4PostZoneDataContainer* container, QWidget* parent);
 
 private:
 	QJSValue buildFunction();
@@ -47,7 +47,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	PostZoneDataContainer* m_container;
+	v4PostZoneDataContainer* m_container;
 	std::vector<PostStringResultArgument*> m_arguments;
 	QString m_script;
 

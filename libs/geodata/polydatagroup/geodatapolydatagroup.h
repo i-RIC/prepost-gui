@@ -54,16 +54,16 @@ public:
 	bool addToolBarButtons(QToolBar *parent) override;
 	void showInitialDialog() override;
 
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
 
-	void informSelection(PreProcessorGraphicsViewInterface* v) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void informSelection(PreProcessorGraphicsViewI* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
 
 protected slots:
 	void addData();
@@ -142,7 +142,7 @@ private:
 	virtual bool isMergablePolyDataGroup(GeoData* geoData) = 0;
 	virtual QString captionForData(int number) = 0;
 
-	virtual GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d) = 0;
+	virtual GeoDataPolyDataGroup* createInstanceForCopy(PreProcessorGeoDataDataItemI* d) = 0;
 
 	class EditNameAndValueCommand;
 	class SortCommand;

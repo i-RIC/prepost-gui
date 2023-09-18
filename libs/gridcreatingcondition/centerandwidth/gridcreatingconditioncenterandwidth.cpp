@@ -12,14 +12,14 @@
 
 #include <geoio/polylineio.h>
 #include <guibase/vtktextpropertysettingdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -138,15 +138,15 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 	showDialog(parent);
 	if (! impl->m_isAccepted) {return false;}
 
-	Grid* grid = createGrid();
-	if (grid == 0) {return false;}
+	auto grid = createGrid();
+	if (grid == nullptr) {return false;}
 	impl->m_isGridCreated = true;
 
 	emit gridCreated(grid);
 	return true;
 }
 
-Grid* GridCreatingConditionCenterAndWidth::createGrid()
+v4InputGrid* GridCreatingConditionCenterAndWidth::createGrid()
 {
 	if (impl->m_setting.iMax * impl->m_setting.jMax > MAXGRIDSIZE) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
@@ -154,14 +154,8 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 	}
 	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax - 1);
 
-	Structured2DGrid* grid = new Structured2DGrid(0);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
-
+	auto grid = new v4Structured2dGrid();
 	grid->setDimensions(impl->m_setting.iMax, impl->m_setting.jMax);
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate(impl->m_setting.iMax * impl->m_setting.jMax);
 
 	for (int j = 0; j < impl->m_setting.jMax; j++) {
 		for (int i = 0; i < impl->m_setting.iMax; i++) {
@@ -183,30 +177,29 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 			dy = (impl->m_setting.width / (impl->m_setting.jMax - 1)) * dy / s;
 			int center = (impl->m_setting.jMax - 1) / 2;
 			if (i == 0) {
-				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
+				grid->setPoint2d(i, j, QPointF(p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx));
 			} else if (i == impl->m_setting.iMax - 1) {
-				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + (center - j) * (- dy), p1[1] + (center - j) * dx, 0.0);
+				grid->setPoint2d(i, j, QPointF(p1[0] + (center - j) * (- dy), p1[1] + (center - j) * dx));
 			} else {
 				impl->m_splinePoints->GetPoint(i, p1);
-				points->InsertPoint(impl->m_setting.iMax * j + i, p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx, 0.0);
+				grid->setPoint2d(i, j, QPointF(p1[0] + ((- 1) * center + j) * (- dy), p1[1] + ((- 1) * center + j) * dx));
 			}
 		}
 	}
-	grid->vtkGrid()->SetPoints(points);
-	points->Delete();
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid->gridAttributes()) {
-		c->allocate();
-	}
-	grid->setModified();
-	return grid;
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+	return ret;
 }
 
 void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = new GridCreatingConditionCenterAndWidthDialog(parent);
-	connect(dialog, SIGNAL(applied(QDialog*)), this, SLOT(handleDialogApplied(QDialog*)));
+	connect(dialog, &GridCreatingConditionCenterAndWidthDialog::applied, this, &GridCreatingConditionCenterAndWidth::handleDialogApplied);
+
 	dialog->setLength(impl->m_setting.length);
 	dialog->setWidth(impl->m_setting.width);
 	dialog->setIMax(impl->m_setting.iMax);
@@ -228,26 +221,28 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 
 void GridCreatingConditionCenterAndWidth::handleDialogApplied(QDialog* d)
 {
-	GridCreatingConditionCenterAndWidthDialog* dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
+	auto dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
+
 	setIMax(dialog->iMax());
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
 
 	createSpline(impl->m_polyLineController.polyData()->GetPoints(), impl->m_setting.iMax - 1);
 
-	Grid* g = createGrid();
-	if (g == 0) {return;}
+	auto g = createGrid();
+	if (g == nullptr) {return;}
 	if (impl->m_previewGrid != nullptr) {delete impl->m_previewGrid;}
 	impl->m_previewGrid = g;
 
-	impl->m_previewMapper->SetInputData(impl->m_previewGrid->vtkGrid());
+	impl->m_previewMapper->SetInputData(impl->m_previewGrid->grid()->vtkData()->data());
 	impl->m_previewActor->VisibilityOn();
 	renderGraphicsView();
 }
 
 void GridCreatingConditionCenterAndWidth::handleDialogAccepted(QDialog* d)
 {
-	GridCreatingConditionCenterAndWidthDialog* dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
+	auto dialog = dynamic_cast<GridCreatingConditionCenterAndWidthDialog*>(d);
+
 	setIMax(dialog->iMax());
 	setJMax(dialog->jMax());
 	setWidth(dialog->width());
@@ -325,26 +320,26 @@ void GridCreatingConditionCenterAndWidth::setupMenu()
 	impl->m_rightClickingMenu->addAction(impl->m_exportCenterLineAction);
 }
 
-void GridCreatingConditionCenterAndWidth::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::informSelection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(selectedEdgeWidth);
 	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(5.0);
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionCenterAndWidth::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_polyLineController.linesActor()->GetProperty()->SetLineWidth(normalEdgeWidth);
 	impl->m_polyLineController.pointsActor()->GetProperty()->SetPointSize(1.0);
 	v->unsetCursor();
 }
 
-void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
@@ -352,10 +347,10 @@ void GridCreatingConditionCenterAndWidth::keyPressEvent(QKeyEvent* event, PrePro
 	definePolyLine();
 }
 
-void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCenterAndWidth::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionCenterAndWidth::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCenterAndWidth::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
 
@@ -418,7 +413,7 @@ void GridCreatingConditionCenterAndWidth::createSpline(vtkPoints* points, int di
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case Impl::MouseEventMode::Normal:
@@ -455,7 +450,7 @@ void GridCreatingConditionCenterAndWidth::mouseMoveEvent(QMouseEvent* event, Pre
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -515,7 +510,7 @@ void GridCreatingConditionCenterAndWidth::mousePressEvent(QMouseEvent* event, Pr
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -552,7 +547,7 @@ void GridCreatingConditionCenterAndWidth::deletePolyLine()
 {
 	std::vector<QPointF> emptyVec;
 	impl->m_polyLineController.setPolyLine(emptyVec);
-	ZDepthRange range = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent())->zDepthRange();
+	ZDepthRange range = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent())->zDepthRange();
 	assignActorZValues(range);
 
 	impl->m_mouseEventMode = Impl::MouseEventMode::BeforeDefining;

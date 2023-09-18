@@ -39,7 +39,7 @@ void ColorMapEnumerateSettingEditWidget::ColorTableController::applyToTable()
 	const auto& colors = s.colors;
 
 	m_model.setColumnCount(3);
-	m_model.setRowCount(colors.size());
+	m_model.setRowCount(static_cast<int> (colors.size()));
 
 	m_model.setHeaderData(0, Qt::Orientation::Horizontal, ColorMapEnumerateSettingEditWidget::tr("Value"));
 	m_model.setHeaderData(1, Qt::Orientation::Horizontal, ColorMapEnumerateSettingEditWidget::tr("Color"));

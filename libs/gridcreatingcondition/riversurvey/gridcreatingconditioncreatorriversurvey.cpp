@@ -2,11 +2,11 @@
 #include "gridcreatingconditionriversurvey.h"
 
 #include <guibase/irictoolbar.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
 
 #include <QAction>
@@ -40,14 +40,14 @@ GridCreatingCondition* GridCreatingConditionCreatorRiverSurvey::create(ProjectDa
 	return new GridCreatingConditionRiverSurvey(parent, this);
 }
 
-bool GridCreatingConditionCreatorRiverSurvey::checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* condDataItem) const
+bool GridCreatingConditionCreatorRiverSurvey::checkAvailability(PreProcessorGridCreatingConditionDataItemI* condDataItem) const
 {
 	bool riverSurveyFound = false;
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(condDataItem->parent()->parent());
-	PreProcessorGeoDataTopDataItemInterface* rtItem = gtItem->geoDataTop();
-	for (PreProcessorGeoDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
-		QList<PreProcessorGeoDataDataItemInterface*> rItems = gItem->geoDatas();
-		for (PreProcessorGeoDataDataItemInterface* rItem : rItems) {
+	PreProcessorGridTypeDataItemI* gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(condDataItem->parent()->parent());
+	PreProcessorGeoDataTopDataItemI* rtItem = gtItem->geoDataTop();
+	for (PreProcessorGeoDataGroupDataItemI* gItem : rtItem->groupDataItems()) {
+		QList<PreProcessorGeoDataDataItemI*> rItems = gItem->geoDatas();
+		for (PreProcessorGeoDataDataItemI* rItem : rItems) {
 			riverSurveyFound = riverSurveyFound || (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr);
 		}
 	}

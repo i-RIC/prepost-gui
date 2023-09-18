@@ -1,183 +1,111 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessorstructured2dgridshapedataitem.h"
+#include "public/preprocessorgriddataitem_selectednodescontroller.h"
 
 #include <guibase/graphicsmisc.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guibase/gridshape/gridshapesettingeditwidget.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4gridutil.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guibase/gridshape/gridshapesettingeditwidget.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-
-#include <QXmlStreamWriter>
-
-#include <vtkActor2DCollection.h>
-#include <vtkAxisActor2D.h>
-#include <vtkCell.h>
-#include <vtkCollectionIterator.h>
-#include <vtkGeometryFilter.h>
-#include <vtkPointData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkProperty2D.h>
-#include <vtkRenderer.h>
-#include <vtkTextProperty.h>
 
 PreProcessorStructured2dGridShapeDataItem::PreProcessorStructured2dGridShapeDataItem(PreProcessorDataItem* parent) :
 	PreProcessorGridShapeDataItem {parent}
 {
 	setupActors();
-	updateActorSettings();
+	updateActorSetting();
 }
 
 PreProcessorStructured2dGridShapeDataItem::~PreProcessorStructured2dGridShapeDataItem()
 {
-	m_outlineFilter->SetInputData(0);
-
-	renderer()->RemoveActor(m_outlineActor);
-	renderer()->RemoveActor(m_wireframeActor);
-	renderer()->RemoveActor2D(m_indexActor);
+	renderer()->RemoveActor(m_setting.outlineActor());
+	renderer()->RemoveActor(m_setting.wireframeActor());
+	renderer()->RemoveActor2D(m_setting.indexActor());
 }
 
 void PreProcessorStructured2dGridShapeDataItem::setupActors()
 {
-	m_outlineActor = vtkSmartPointer<vtkActor>::New();
-	// no lighting is needed.
-	m_outlineActor->GetProperty()->SetLighting(false);
-	m_outlineActor->GetProperty()->SetLineWidth(normalOutlineWidth);
-	renderer()->AddActor(m_outlineActor);
+	auto oa = m_setting.outlineActor();
+	oa->GetProperty()->SetLighting(false);
+	oa->GetProperty()->SetLineWidth(normalOutlineWidth);
+	renderer()->AddActor(oa);
 
-	// build mapper too.
-	m_outlineMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_outlineActor->SetMapper(m_outlineMapper);
+	auto wa = m_setting.wireframeActor();
+	wa->GetProperty()->SetLighting(false);
+	renderer()->AddActor(wa);
 
-	// setup grid outline filter.
-	m_outlineFilter = vtkSmartPointer<vtkStructuredGridOutlineFilter>::New();
-	m_outlineMapper->SetInputConnection(m_outlineFilter->GetOutputPort());
-
-	m_wireframeActor = vtkSmartPointer<vtkActor>::New();
-	m_wireframeActor->GetProperty()->SetLighting(false);
-	renderer()->AddActor(m_wireframeActor);
-
-	m_wireframeMapper = vtkSmartPointer<vtkPolyDataMapper>::New();
-	m_wireframeMapper->SetScalarVisibility(false);
-	m_wireframeActor->SetMapper(m_wireframeMapper);
-	m_wireframeActor->GetProperty()->SetRepresentationToWireframe();
-
-	m_indexActor = vtkSmartPointer<vtkActor2D>::New();
-	renderer()->AddActor2D(m_indexActor);
-
-	m_indexMapper = vtkSmartPointer<vtkLabeledDataMapper>::New();
-	m_indexMapper->SetLabelModeToLabelFieldData();
-	m_indexMapper->SetFieldDataName(Grid::LABEL_NAME);
-
-	auto textProp = m_indexMapper->GetLabelTextProperty();
-	iRIC::setupGridIndexTextProperty(textProp);
-	m_setting.indexTextSetting.applySetting(textProp);
-
-	m_indexActor->SetMapper(m_indexMapper);
-
-	m_outlineActor->VisibilityOff();
-	m_wireframeActor->VisibilityOff();
-	m_indexActor->VisibilityOff();
+	auto ia = m_setting.indexActor();
+	renderer()->AddActor2D(ia);
 }
 
 void PreProcessorStructured2dGridShapeDataItem::informGridUpdate()
 {
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g != nullptr) {
-		auto grid = dynamic_cast<Structured2DGrid*>(g);
-		m_outlineFilter->SetInputData(grid->vtkGrid());
-
-		auto filteredGrid = g->vtkFilteredGrid();
-		if (filteredGrid != nullptr) {
-			auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
-			filter->SetInputData(filteredGrid);
-			m_wireframeMapper->SetInputConnection(filter->GetOutputPort());
-		}
-		
-		auto filteredIndexGrid = g->vtkFilteredIndexGrid();
-		if (filteredIndexGrid != nullptr) {m_indexMapper->SetInputData(filteredIndexGrid);}
-	}
-
-	updateActorSettings();
+	updateActorSetting();
 }
 
-void PreProcessorStructured2dGridShapeDataItem::updateActorSettings()
+void PreProcessorStructured2dGridShapeDataItem::updateActorSetting()
 {
-	// make all the items invisible
-	m_outlineActor->VisibilityOff();
-	m_wireframeActor->VisibilityOff();
-	m_indexActor->VisibilityOff();
+	actorCollection()->RemoveAllItems();
+	actor2DCollection()->RemoveAllItems();
 
-	m_actorCollection->RemoveAllItems();
-	m_actor2DCollection->RemoveAllItems();
+	m_setting.outlineActor()->VisibilityOff();
+	m_setting.wireframeActor()->VisibilityOff();
+	m_setting.indexActor()->VisibilityOff();
 
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == nullptr) {
-		// grid is not setup yet.
-		return;
-	}
+	v4InputGrid* g = gridDataItem()->grid();
+	if (g == nullptr) {return;}
 
-	switch (GridShapeEditDialog::Shape(m_setting.shape)) {
-	case GridShapeEditDialog::Outline:
-		m_outlineActor->GetProperty()->SetColor(m_setting.color);
-		m_actorCollection->AddItem(m_outlineActor);
-		break;
+	auto grid2d = dynamic_cast<v4Grid2d*> (g->grid());
+	vtkPointSet* filteredData = grid2d->vtkFilteredData();
+	vtkPointSet* indexData = grid2d->vtkFilteredIndexData();
 
-	case GridShapeEditDialog::Wireframe:
-		m_outlineActor->GetProperty()->SetColor(m_setting.color);
-		m_actorCollection->AddItem(m_outlineActor);
-		m_wireframeActor->GetProperty()->SetColor(m_setting.color);
-		m_actorCollection->AddItem(m_wireframeActor);
-		break;
-	}
+	m_setting.update(actorCollection(), actor2DCollection(),
+									 filteredData, filteredData,
+									 indexData, v4GridUtil::LABEL_NAME);
 
-	if (m_setting.indexVisible) {
-		m_setting.indexTextSetting.applySetting(m_indexMapper->GetLabelTextProperty());
-		m_actor2DCollection->AddItem(m_indexActor);
-	}
 	updateVisibilityWithoutRendering();
 }
 
-void PreProcessorStructured2dGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
+void PreProcessorStructured2dGridShapeDataItem::showPropertyDialog()
 {
-	PreProcessorGridShapeDataItem::doLoadFromProjectMainFile(node);
-}
-
-void PreProcessorStructured2dGridShapeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
-{
-	PreProcessorGridShapeDataItem::doSaveToProjectMainFile(writer);
+	showPropertyDialogModeless();
 }
 
 QDialog* PreProcessorStructured2dGridShapeDataItem::propertyDialog(QWidget* parent)
 {
-	auto dialog = new GridShapeEditDialog(parent);
-	dialog->setSetting(m_setting);
-	return dialog;
-}
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, parent);
+	auto widget = new GridShapeSettingEditWidget(dialog);
+	dialog->setWidget(widget);
 
-void PreProcessorStructured2dGridShapeDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto dialog = dynamic_cast<GridShapeEditDialog*>(propDialog);
-	m_setting = dialog->setting();
-	updateActorSettings();
-	renderGraphicsView();
+	widget->setSetting(&m_setting);
+	dialog->setWindowTitle(tr("Grid Shape Setting"));
+
+	return dialog;
 }
 
 void PreProcessorStructured2dGridShapeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	m_outlineActor->GetProperty()->SetLineWidth(selectedOutlineWidth);
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(true);
+	m_setting.outlineActor()->GetProperty()->SetLineWidth(selectedOutlineWidth);
+	gridDataItem()->selectedNodesController()->setVisibility(true);
 	updateVisibility();
 }
 
 void PreProcessorStructured2dGridShapeDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	m_outlineActor->GetProperty()->SetLineWidth(normalOutlineWidth);
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(false);
+	m_setting.outlineActor()->GetProperty()->SetLineWidth(normalOutlineWidth);
+	gridDataItem()->selectedNodesController()->setVisibility(false);
+}
+
+void PreProcessorStructured2dGridShapeDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(2);
 }
 
 void PreProcessorStructured2dGridShapeDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_outlineActor->SetPosition(0, 0, range.max());
-	m_wireframeActor->SetPosition(0, 0, range.min());
+	m_setting.outlineActor()->SetPosition(0, 0, range.max());
+	m_setting.wireframeActor()->SetPosition(0, 0, range.min());
 }

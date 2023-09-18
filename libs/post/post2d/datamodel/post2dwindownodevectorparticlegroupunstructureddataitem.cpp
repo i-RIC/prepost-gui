@@ -4,11 +4,11 @@
 #include "private/post2dwindownodevectorparticlegroupunstructureddataitem_impl.h"
 #include "private/post2dwindownodevectorparticlegroupunstructureddataitem_settingeditwidget.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
-#include <QMouseEvent>
-#include <QSettings>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Post2dWindowNodeVectorParticleGroupUnstructuredDataItem(Post2dWindowDataItem* parent) :
 	Post2dWindowNodeVectorParticleGroupDataItem {parent},
@@ -19,9 +19,7 @@ Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::Post2dWindowNodeVectorP
 }
 
 Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::~Post2dWindowNodeVectorParticleGroupUnstructuredDataItem()
-{
-	delete impl;
-}
+{}
 
 void Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::showPropertyDialog()
 {
@@ -70,8 +68,8 @@ vtkPolyData* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::newParticl
 
 vtkDataSet* Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::getRegion()
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	auto grid = zoneContainer->data()->data();
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = cont->gridData()->grid()->vtkData()->data();
 
 	return impl->m_setting.region.buildNodeFilteredData(grid);
 }

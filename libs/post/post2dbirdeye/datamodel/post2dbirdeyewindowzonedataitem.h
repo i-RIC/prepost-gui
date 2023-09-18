@@ -10,6 +10,7 @@ class Post2dBirdEyeWindowGridTypeDataItem;
 class Post2dBirdEyeWindowCellScalarGroupTopDataItem;
 class Post2dBirdEyeWindowNodeScalarGroupTopDataItem;
 class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class Post2dBirdEyeWindowZoneDataItem : public Post2dBirdEyeWindowDataItem
 {
@@ -23,7 +24,7 @@ public:
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 
-	PostZoneDataContainer* dataContainer();
+	v4PostZoneDataContainer* v4DataContainer();
 	int zoneNumber() const;
 	std::string zoneName() const;
 

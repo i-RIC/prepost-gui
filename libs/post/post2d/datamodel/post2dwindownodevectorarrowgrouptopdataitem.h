@@ -3,6 +3,7 @@
 
 #include "../post2dwindowdataitem.h"
 
+class Post2dWindowCalculationResultDataItem;
 class Post2dWindowNodeVectorArrowGroupDataItem;
 
 class Post2dWindowNodeVectorArrowGroupTopDataItem : public Post2dWindowDataItem
@@ -16,6 +17,7 @@ public:
 	void updateZDepthRangeItemCount() override;
 	void update();
 
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
 	Post2dWindowZoneDataItem* zoneDataItem() const;
 
 	void informSelection(VTKGraphicsView* v) override;
@@ -32,7 +34,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Post2dWindowNodeVectorArrowGroupDataItem* buildItem(const std::string& name);
+	Post2dWindowNodeVectorArrowGroupDataItem* createChild(const std::string& name);
 };
 
 #endif // POST2DWINDOWNODEVECTORARROWGROUPTOPDATAITEM_H

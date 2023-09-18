@@ -1,14 +1,14 @@
 #ifndef PREPROCESSORGRIDDATAITEMFACTORY_H
 #define PREPROCESSORGRIDDATAITEMFACTORY_H
 
-class Grid;
+class v4InputGrid;
 class PreProcessorDataItem;
 class PreProcessorGridDataItem;
 
 class PreProcessorGridDataItemFactory
 {
 public:
-	static PreProcessorGridDataItem* factory(Grid* grid, PreProcessorDataItem* parent);
+	static PreProcessorGridDataItem* factory(v4InputGrid* grid, PreProcessorDataItem* parent);
 
 private:
 	PreProcessorGridDataItemFactory();

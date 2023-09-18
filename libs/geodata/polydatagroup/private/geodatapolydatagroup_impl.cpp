@@ -3,7 +3,7 @@
 #include "../geodatapolydatagrouppolydata.h"
 
 #include <geodata/polydata/geodatapolydata.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 
 #include <QAction>
 #include <QMenu>

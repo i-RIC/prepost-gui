@@ -3,12 +3,14 @@
 #include "geodatarivershapeinterpolator.h"
 #include "geodatariversurvey.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainert.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
+
+#include <vtkDoubleArray.h>
 
 #include <QList>
 #include <QVector>
@@ -957,18 +959,19 @@ const QPointF& GeoDataRiverPathPoint::crosssectionDirectionR() const
 	return m_crosssectionDirectionR;
 }
 
-void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int initcount, bool elevmapping, bool last)
+void GeoDataRiverPathPoint::createGrid(v4InputGrid* grid, unsigned int initcount, bool elevmapping, bool last)
 {
 	auto attName = m_rs->gridAttribute()->name();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid->grid());
 
-	GridAttributeContainerT<double>* elev = dynamic_cast<GridAttributeContainerT<double>*>(grid->gridAttribute(attName));
+	auto elev = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>*>(grid->attribute(attName));
 	QPointF vec2d;
 	int index;
 	if (last) {
 		// export grid points only crosssections.
 		// check grid size.
 		bool error = false;
-		if ((1 + initcount) > grid->dimensionI()) {
+		if ((1 + initcount) > sgrid->dimensionI()) {
 			error = true;
 		}
 		if (error) {throw ec_InvalidGridSize;}
@@ -977,31 +980,31 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		unsigned int rightctrlpoints = static_cast<unsigned int>(CenterToRightCtrlPoints.size());
 		// river center
 		vec2d = m_position;
-		index = grid->vertexIndex(initcount, rightctrlpoints + 1);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount, rightctrlpoints + 1);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_lXSec->interpolate(0).height());
 		}
 
 		// left bank
 		vec2d = crosssectionPosition(m_lXSec->interpolate(1).position());
-		index = grid->vertexIndex(initcount, leftctrlpoints + rightctrlpoints + 2);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount, leftctrlpoints + rightctrlpoints + 2);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_lXSec->interpolate(1).height());
 		}
 		// right bank.
 		vec2d = crosssectionPosition(m_rXSec->interpolate(1).position());
-		index = grid->vertexIndex(initcount, 0);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount, 0);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, m_rXSec->interpolate(1).height());
 		}
 		// points between river center and left bank
 		for (unsigned int i = 0; i < leftctrlpoints; ++i) {
 			vec2d = crosssectionPosition(m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).position());
-			index = grid->vertexIndex(initcount, rightctrlpoints + 2 + i);
-			grid->setVertex(index, vec2d);
+			index = sgrid->pointIndex(initcount, rightctrlpoints + 2 + i);
+			sgrid->setPoint2d(index, vec2d);
 			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).height());
 			}
@@ -1010,8 +1013,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		for (unsigned int i = 0; i < rightctrlpoints; ++i) {
 			// Check the points on the crosssection
 			vec2d = crosssectionPosition(m_rXSec->interpolate(CenterToRightCtrlPoints[i]).position());
-			index = grid->vertexIndex(initcount, rightctrlpoints - i);
-			grid->setVertex(index, vec2d);
+			index = sgrid->pointIndex(initcount, rightctrlpoints - i);
+			sgrid->setPoint2d(index, vec2d);
 			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, m_rXSec->interpolate(CenterToRightCtrlPoints[i]).height());
 			}
@@ -1020,7 +1023,7 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	}
 	// check grid size.
 	bool error = false;
-	if ((CenterLineCtrlPoints.size() + 1 + initcount) > grid->dimensionI()) {
+	if ((CenterLineCtrlPoints.size() + 1 + initcount) > sgrid->dimensionI()) {
 		error = true;
 	}
 	if (error) {throw ec_InvalidGridSize;}
@@ -1036,8 +1039,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 
 	// on cross section
 	vec2d = m_position;
-	index = grid->vertexIndex(initcount, rightctrlpoints + 1);
-	grid->setVertex(index, vec2d);
+	index = sgrid->pointIndex(initcount, rightctrlpoints + 1);
+	sgrid->setPoint2d(index, vec2d);
 	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_LeftBank, 0, 0, 0));
 	}
@@ -1045,8 +1048,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	// points between river center and the river center of the next point.
 	for (unsigned int i = 0; i < CenterLineCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&GeoDataRiverPathPoint::riverCenter, CenterLineCtrlPoints[i]);
-		index = grid->vertexIndex(initcount + i + 1, rightctrlpoints + 1);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount + i + 1, rightctrlpoints + 1);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_LeftBank, 0, 0, CenterLineCtrlPoints[i]));
 		}
@@ -1056,16 +1059,16 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 
 	// on cross section
 	vec2d = m_leftBank->interpolate(0);
-	index = grid->vertexIndex(initcount, rightctrlpoints + leftctrlpoints + 2);
-	grid->setVertex(index, vec2d);
+	index = sgrid->pointIndex(initcount, rightctrlpoints + leftctrlpoints + 2);
+	sgrid->setPoint2d(index, vec2d);
 	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_LeftBank, 1, 1, 0));
 	}
 	// points between left bank and the left bank of the next point.
 	for (unsigned int i = 0; i < LeftBankCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&GeoDataRiverPathPoint::leftBank, LeftBankCtrlPoints[i]);
-		index = grid->vertexIndex(initcount + i + 1, rightctrlpoints + leftctrlpoints + 2);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount + i + 1, rightctrlpoints + leftctrlpoints + 2);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_LeftBank, 1, 1, LeftBankCtrlPoints[i]));
 		}
@@ -1075,16 +1078,16 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 
 	// on cross section
 	vec2d = m_rightBank->interpolate(0);
-	index = grid->vertexIndex(initcount, 0);
-	grid->setVertex(index, vec2d);
+	index = sgrid->pointIndex(initcount, 0);
+	sgrid->setPoint2d(index, vec2d);
 	if (elev != nullptr && elevmapping) {
 		elev->setValue(index, myHeight(bk_RightBank, 1, 1, 0));
 	}
 	// points between right bank and the right bank of the next point.
 	for (unsigned int i = 0; i < RightBankCtrlPoints.size(); ++i) {
 		vec2d = myCtrlPointPosition2D(&GeoDataRiverPathPoint::rightBank, RightBankCtrlPoints[i]);
-		index = grid->vertexIndex(initcount + i + 1, 0);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount + i + 1, 0);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(bk_RightBank, 1, 1, RightBankCtrlPoints[i]));
 		}
@@ -1094,8 +1097,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	for (unsigned int i = 0; i < leftctrlpoints; ++i) {
 		// on cross section
 		vec2d = crosssectionPosition(m_lXSec->interpolate(CenterToLeftCtrlPoints[i]).position());
-		index = grid->vertexIndex(initcount, rightctrlpoints + 2 + i);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount, rightctrlpoints + 2 + i);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(GeoDataRiverPathPoint::bk_LeftBank, CenterToLeftCtrlPoints[i], m_nextPoint->CenterToLeftCtrlPoints[i], 0));
 		}
@@ -1103,8 +1106,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j) {
 			double param = GridCtrlParameter(bk_LeftBank, i, j);
 			vec2d = GridCtrlPosition(bk_LeftBank, i, param);
-			index = grid->vertexIndex(initcount + 1 + j, rightctrlpoints + 2 + i);
-			grid->setVertex(index, vec2d);
+			index = sgrid->pointIndex(initcount + 1 + j, rightctrlpoints + 2 + i);
+			sgrid->setPoint2d(index, vec2d);
 			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, myHeight(GeoDataRiverPathPoint::bk_LeftBank, CenterToLeftCtrlPoints[i], m_nextPoint->CenterToLeftCtrlPoints[i], param));
 			}
@@ -1114,8 +1117,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 	for (unsigned int i = 0; i < rightctrlpoints; ++i) {
 		// on cross section
 		vec2d = crosssectionPosition(m_rXSec->interpolate(CenterToRightCtrlPoints[i]).position());
-		index = grid->vertexIndex(initcount, rightctrlpoints - i);
-		grid->setVertex(index, vec2d);
+		index = sgrid->pointIndex(initcount, rightctrlpoints - i);
+		sgrid->setPoint2d(index, vec2d);
 		if (elev != nullptr && elevmapping) {
 			elev->setValue(index, myHeight(GeoDataRiverPathPoint::bk_RightBank, CenterToRightCtrlPoints[i], m_nextPoint->CenterToRightCtrlPoints[i], 0));
 		}
@@ -1123,8 +1126,8 @@ void GeoDataRiverPathPoint::createGrid(Structured2DGrid* grid, unsigned int init
 		for (unsigned int j = 0; j < CenterLineCtrlPoints.size(); ++j) {
 			double param = GridCtrlParameter(bk_RightBank, i, j);
 			vec2d = GridCtrlPosition(bk_RightBank, i, param);
-			index = grid->vertexIndex(initcount + 1 + j, rightctrlpoints - i);
-			grid->setVertex(index, vec2d);
+			index = sgrid->pointIndex(initcount + 1 + j, rightctrlpoints - i);
+			sgrid->setPoint2d(index, vec2d);
 			if (elev != nullptr && elevmapping) {
 				elev->setValue(index, myHeight(GeoDataRiverPathPoint::bk_RightBank, CenterToRightCtrlPoints[i], m_nextPoint->CenterToRightCtrlPoints[i], param));
 			}
@@ -1456,7 +1459,7 @@ void GeoDataRiverPathPoint::reposCtrlPoints(CtrlPointPosition position, int mini
 		t1 = vec[maxindex + 1];
 	}
 	if (method.method == CtrlPointsAddMethod::am_Uniform) {
-		double dt = (t1 - t0) / static_cast<double>(numbers + 1);
+		double dt = (t1 - t0) / (static_cast<double>(numbers) + 1);
 		for (int i = 0; i < numbers; ++i) {
 			vec[minindex + i] = t0 + dt * (i + 1);
 //			tmpvalues.push_back(t0 + dt * (i+1));
@@ -1464,7 +1467,7 @@ void GeoDataRiverPathPoint::reposCtrlPoints(CtrlPointPosition position, int mini
 	} else if (method.method == CtrlPointsAddMethod::am_EqRatio_Ratio) {
 		double first;
 		if (method.param == 1) {
-			first = (t1 - t0) / static_cast<double>(numbers + 1);
+			first = (t1 - t0) / (static_cast<double>(numbers) + 1);
 		} else {
 			first = (t1 - t0) / ((1 - std::pow(method.param, numbers + 1)) / (1 - method.param));
 		}

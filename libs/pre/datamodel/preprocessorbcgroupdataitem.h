@@ -5,8 +5,9 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 
 class PreProcessorBCDataItem;
+class PreProcessorGridDataItem;
+class PreProcessorGridTypeDataItem;
 class ColorSource;
-class Grid;
 
 namespace iRICLib {
 	class H5CgnsZone;
@@ -36,6 +37,8 @@ public:
 	PreProcessorBCDataItem* addCondition(int index, bool hideSetting = false);
 	void renumberItemsForProject();
 	const QList<QAction*> addActions() const;
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
+	PreProcessorGridDataItem* gridDataItem() const;
 
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;

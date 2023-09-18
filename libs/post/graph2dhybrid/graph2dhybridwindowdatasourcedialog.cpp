@@ -9,7 +9,7 @@
 #include <geodata/polyline/geodatapolyline.h>
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 

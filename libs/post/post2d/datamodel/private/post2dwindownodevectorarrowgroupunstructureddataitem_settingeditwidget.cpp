@@ -8,7 +8,8 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/filter/generalfilteringsettingeditwidget.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/region/region2dsettingeditwidget.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -23,8 +24,8 @@ Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::SettingEditWidget::Setting
 	ui->setupUi(this);
 	ui->arrowsSettingWidget->setAdditionalSettingWidget(m_additionalWidgets);
 
-	auto dataContainer = item->topDataItem()->zoneDataItem()->dataContainer();
-	if (! dataContainer->IBCExists()) {
+	auto dataContainer = item->topDataItem()->zoneDataItem()->v4DataContainer();
+	if (! dataContainer->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		m_additionalWidgets->regionWidget()->disableActive();
 	}
 	m_additionalWidgets->regionWidget()->hideCustom();

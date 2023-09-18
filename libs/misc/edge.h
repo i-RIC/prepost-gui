@@ -21,6 +21,11 @@ public:
 	bool operator==(const Edge& e) const;
 	bool operator<(const Edge& e) const;
 
+	struct HashFunction
+	{
+		size_t operator()(const Edge& edge) const;
+	};
+
 private:
 	vtkIdType m_vertex1;
 	vtkIdType m_vertex2;

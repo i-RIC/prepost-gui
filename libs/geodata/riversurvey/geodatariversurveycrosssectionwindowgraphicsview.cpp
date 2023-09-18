@@ -1,4 +1,4 @@
-#include "gridcreatingconditionriversurveyinterface.h"
+#include "gridcreatingconditionriversurveyi.h"
 #include "geodatarivercrosssection.h"
 #include "geodatarivercrosssectionaltitudemovedialog.h"
 #include "geodatariverpathpoint.h"
@@ -15,10 +15,10 @@
 #include <geodata/polyline/geodatapolylineimplpolyline.h>
 #include <geodata/polylinegroup/geodatapolylinegroup.h>
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
 #include <guicore/project/projectdataitem.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevation.h>
 #include <hydraulicdata/riversurveywaterelevation/hydraulicdatariversurveywaterelevationitem.h>
@@ -841,7 +841,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 
 	double marginRate = 3;
 
-	auto gridTypeDataItem = dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>
+	auto gridTypeDataItem = dynamic_cast<PreProcessorGeoDataTopDataItemI*>
 			(m_parentWindow->targetRiverSurvey()->geoDataDataItem()->parent()->parent());
 	auto refGroupDataItem = gridTypeDataItem->groupDataItem("_referenceinformation");
 
@@ -867,7 +867,7 @@ void GeoDataRiverSurveyCrosssectionWindowGraphicsView::drawPolyLineCrossPoints(Q
 	double ymax = qMax(marginedLeft.y(), marginedRight.y());
 
 	for (auto child : refGroupDataItem->childItems()) {
-		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (child);
+		auto geoDataItem = dynamic_cast<PreProcessorGeoDataDataItemI*> (child);
 		if (geoDataItem->standardItem()->checkState() != Qt::Checked) {continue;}
 
 		auto polyLine = dynamic_cast<GeoDataPolyLine*> (geoDataItem->geoData());

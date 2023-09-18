@@ -35,7 +35,7 @@ GridBirdEyeWindow::~GridBirdEyeWindow()
 	iRICUndoStack::instance().clear();
 }
 
-void GridBirdEyeWindow::init(PreProcessorGridDataItem* item)
+void GridBirdEyeWindow::init(PreProcessorGridDataItem* /*item*/)
 {
 	setWindowTitle(tr("Grid Bird's-Eye View Window"));
 
@@ -148,7 +148,7 @@ void GridBirdEyeWindow::cameraZXPlane()
 
 void GridBirdEyeWindow::editBackgroundColor()
 {
-	BackgroundColorEditInterface::editBackgroundColor(this);
+	BackgroundColorEditI::editBackgroundColor(this);
 }
 
 void GridBirdEyeWindow::editDisplaySetting()

@@ -6,28 +6,33 @@
 
 class vtkDataArray;
 
-template <class V>
+template <class V, class DA>
 class GridAttributeContainerT : public GridAttributeContainer
 {
 public:
-	GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond);
-	virtual ~GridAttributeContainerT();
+	GridAttributeContainerT(v4InputGrid* grid, SolverDefinitionGridAttributeT<V>* cond);
+	~GridAttributeContainerT();
 
-	virtual V value(unsigned int index) const = 0;
-	virtual void setValue(unsigned int index, V value) = 0;
+	V value(unsigned int index) const;
+	void setValue(unsigned int index, V value);
 
 	int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) override;
 	int loadFromCgnsFileForIndex(const iRICLib::H5CgnsGridAttributes& atts, int index);
 	int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) override;
 	int saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttributes* atts, int index);
 
-	virtual vtkDataArray* dataArray() const = 0;
-	virtual vtkDataArray* dataArrayCopy() const = 0;
-	virtual void setModified() override;
+	DA* dataArray() const;
+	DA* dataArrayCopy() const;
+	void allocate() override;
+
+	void setModified() override;
 
 	bool loadFromExternalFile(const QString& filename) override;
 	bool saveToExternalFile(const QString& filename) override;
 	bool getValueRange(double* min, double* max) override;
+
+private:
+	void addArrayIfNeeded();
 };
 
 #include "private/gridattributecontainert_detail.h"

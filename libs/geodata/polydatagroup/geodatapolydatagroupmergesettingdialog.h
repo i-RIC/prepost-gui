@@ -9,7 +9,7 @@ namespace Ui {
 class GeoDataPolyDataGroupMergeSettingDialog;
 }
 
-class PreProcessorGeoDataDataItemInterface;
+class PreProcessorGeoDataDataItemI;
 
 class GeoDataPolyDataGroupMergeSettingDialog : public QDialog
 {
@@ -19,11 +19,11 @@ public:
 	explicit GeoDataPolyDataGroupMergeSettingDialog(QWidget *parent = 0);
 	~GeoDataPolyDataGroupMergeSettingDialog();
 
-	void setItems(const std::vector<PreProcessorGeoDataDataItemInterface*>& items);
-	std::vector<PreProcessorGeoDataDataItemInterface*> selectedItems() const;
+	void setItems(const std::vector<PreProcessorGeoDataDataItemI*>& items);
+	std::vector<PreProcessorGeoDataDataItemI*> selectedItems() const;
 
 private:
-	std::vector<PreProcessorGeoDataDataItemInterface*> m_items;
+	std::vector<PreProcessorGeoDataDataItemI*> m_items;
 
 	Ui::GeoDataPolyDataGroupMergeSettingDialog *ui;
 };

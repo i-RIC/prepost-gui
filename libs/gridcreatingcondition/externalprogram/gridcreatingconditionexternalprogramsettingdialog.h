@@ -6,7 +6,7 @@
 class QAbstractButton;
 class SolverDefinition;
 class QLocale;
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 
 namespace Ui
 {
@@ -21,7 +21,7 @@ class GridCreatingConditionExternalProgramSettingDialog : public QDialog
 	Q_OBJECT
 
 public:
-	GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* mainW, QWidget* parent);
+	GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowI* mainW, QWidget* parent);
 	~GridCreatingConditionExternalProgramSettingDialog();
 
 	bool load();

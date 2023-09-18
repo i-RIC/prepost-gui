@@ -4,6 +4,9 @@
 
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <misc/iricundostack.h>
+#include <misc/mergesupportedlistcommand.h>
+#include <misc/qundocommandhelper.h>
+#include <misc/valuemodifycommandt.h>
 
 PreProcessorGridAttributeNodeDataItem::PropertyDialog::PropertyDialog(PreProcessorGridAttributeNodeGroupDataItem* item, QWidget *parent) :
 	QDialog(parent),
@@ -44,8 +47,7 @@ void PreProcessorGridAttributeNodeDataItem::PropertyDialog::setOpacity(const Opa
 
 void PreProcessorGridAttributeNodeDataItem::PropertyDialog::accept()
 {
-	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacity(), widget()->createModifyCommand(), false);
-
+	m_item->pushUpdateActorSettingCommand(createModifyCommand(false), m_item);
 	QDialog::accept();
 }
 
@@ -67,6 +69,15 @@ void PreProcessorGridAttributeNodeDataItem::PropertyDialog::handleButtonClick(QA
 
 void PreProcessorGridAttributeNodeDataItem::PropertyDialog::apply()
 {
-	m_item->pushOpacityPercentAndUpdateActorSettingCommand(opacity(), widget()->createModifyCommand(), true);
+	m_item->pushUpdateActorSettingCommand(createModifyCommand(true), m_item);
 	m_applied = true;
+}
+
+QUndoCommand* PreProcessorGridAttributeNodeDataItem::PropertyDialog::createModifyCommand(bool apply)
+{
+	auto ret = new MergeSupportedListCommand(iRIC::generateCommandId("PreProcessorGridAttributeAbstractCellDataItem::PropertyDialog"), apply);
+	ret->addCommand(widget()->createModifyCommand());
+	ret->addCommand(new ValueModifyCommmand<OpacityContainer>(iRIC::generateCommandId("Opacity"), apply, opacity(), &m_item->opacity()));
+
+	return ret;
 }

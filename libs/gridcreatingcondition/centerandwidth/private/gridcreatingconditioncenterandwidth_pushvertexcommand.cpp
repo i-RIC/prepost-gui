@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth_impl.h"
 #include "gridcreatingconditioncenterandwidth_pushvertexcommand.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCenterAndWidth::PushVertexCommand::PushVertexCommand(bool keyDown, const QPoint& point, GridCreatingConditionCenterAndWidth* cond) :

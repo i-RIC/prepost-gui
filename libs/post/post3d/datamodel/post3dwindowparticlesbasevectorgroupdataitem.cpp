@@ -11,9 +11,10 @@
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4particles3d.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -36,7 +37,7 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	auto caption = gt->vectorOutputCaption(target);
 
@@ -47,7 +48,7 @@ Post3dWindowParticlesBaseVectorGroupDataItem::Post3dWindowParticlesBaseVectorGro
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
 
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
+	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->vtkConcreteData()->concreteData()->GetPointData())) {
 		m_setting.arrowsSetting.colorTarget = name.c_str();
 		break;
 	}

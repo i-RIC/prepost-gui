@@ -4,8 +4,8 @@
 #include "../gridcreatingconditionpoisson.h"
 
 #include <guibase/coordinates/coordinatesedit.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>

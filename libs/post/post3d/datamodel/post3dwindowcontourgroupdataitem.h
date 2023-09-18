@@ -4,11 +4,12 @@
 #include "../post3dwindowfacesettingcontainer.h"
 #include "../post3dwindowdataitem.h"
 
+#include <memory>
 #include <string>
 
 class ColorMapSettingContainer;
 class Post3dWindowZoneDataItem;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 class ValueRangeContainer;
 
 class Post3dWindowContourGroupDataItem : public Post3dWindowDataItem
@@ -36,7 +37,7 @@ private:
 
 	const ValueRangeContainer& valueRange() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;
-	PostZoneDataContainer* data() const;
+	v4PostZoneDataContainer* data() const;
 
 	std::vector<Post3dWindowFaceSettingContainer> faces() const;
 	void setFaces(const std::vector<Post3dWindowFaceSettingContainer>& ranges);
@@ -48,7 +49,7 @@ private:
 	bool addToolBarButtons(QToolBar* toolBar) override;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 	class SettingEditWidget;

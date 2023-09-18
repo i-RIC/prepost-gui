@@ -5,25 +5,27 @@
 #include "private/post2dbirdeyewindowgridshapedataitem_settingeditwidget.h"
 
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4gridutil.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 
 #include <vtkWarpScalar.h>
 
 Post2dBirdEyeWindowGridShapeDataItem::Post2dBirdEyeWindowGridShapeDataItem(Post2dBirdEyeWindowDataItem* parent) :
 	Post2dBirdEyeWindowDataItem {tr("Grid shape"), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},
-	m_gridWarp {vtkWarpScalar::New()},
-	m_labelWarp {vtkWarpScalar::New()},
 	impl {new Impl {}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
-	if (vtkStructuredGrid::SafeDownCast(cont->data()->data()) == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+	if (sGrid == nullptr) {
 		impl->m_setting.gridShape.shape = GridShapeSettingContainer::Shape::Wireframe;
 	}
 
-	impl->m_setting.elevationTarget = cont->elevationName();
+	impl->m_setting.elevationTarget = cont->gridData()->elevationName(v4SolutionGrid::Position::Node).c_str();
 
 	setupActors();
 }
@@ -34,11 +36,6 @@ Post2dBirdEyeWindowGridShapeDataItem::~Post2dBirdEyeWindowGridShapeDataItem()
 	r->RemoveActor(impl->m_setting.gridShape.outlineActor());
 	r->RemoveActor(impl->m_setting.gridShape.wireframeActor());
 	r->RemoveActor2D(impl->m_setting.gridShape.indexActor());
-
-	m_gridWarp->Delete();
-	m_labelWarp->Delete();
-
-	delete impl;
 }
 
 void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
@@ -51,13 +48,13 @@ void Post2dBirdEyeWindowGridShapeDataItem::setupActors()
 	auto v = dataModel()->graphicsView();
 	impl->m_setting.gridShape.outlineActor()->GetProperty()->SetLineWidth(GridShapeSettingContainer::normalOutlineWidth * v->devicePixelRatioF());
 
-	m_gridWarp->UseNormalOn();
-	m_gridWarp->SetNormal(0, 0, 1);
-	m_gridWarp->SetScaleFactor(1);
+	impl->m_gridWarp->UseNormalOn();
+	impl->m_gridWarp->SetNormal(0, 0, 1);
+	impl->m_gridWarp->SetScaleFactor(1);
 
-	m_labelWarp->UseNormalOn();
-	m_labelWarp->SetNormal(0, 0, 1);
-	m_labelWarp->SetScaleFactor(1);
+	impl->m_labelWarp->UseNormalOn();
+	impl->m_labelWarp->SetNormal(0, 0, 1);
+	impl->m_labelWarp->SetScaleFactor(1);
 
 	updateActorSetting();
 }
@@ -73,21 +70,22 @@ void Post2dBirdEyeWindowGridShapeDataItem::updateActorSetting()
 	impl->m_setting.gridShape.wireframeActor()->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto cont = zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {return;}
 
-	m_gridWarp->SetInputData(cont->data()->data());
-	m_gridWarp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(impl->m_setting.elevationTarget).c_str());
-	m_gridWarp->Update();
+	impl->m_gridWarp->SetInputData(cont->gridData()->grid()->vtkData()->data());
+	impl->m_gridWarp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(impl->m_setting.elevationTarget).c_str());
+	impl->m_gridWarp->Update();
 
-	m_labelWarp->SetInputData(cont->labelData());
-	m_labelWarp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(impl->m_setting.elevationTarget).c_str());
-	m_labelWarp->Update();
+	auto grid2d = dynamic_cast<v4Grid2d*> (cont->gridData()->grid());
+	impl->m_labelWarp->SetInputData(grid2d->vtkFilteredIndexData());
+	impl->m_labelWarp->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, iRIC::toStr(impl->m_setting.elevationTarget).c_str());
+	impl->m_labelWarp->Update();
 
 	impl->m_setting.gridShape.update(actorCollection(), actor2DCollection(),
-									 m_gridWarp->GetOutput() , m_gridWarp->GetOutput(),
-									 m_labelWarp->GetOutput(),
-									 iRIC::toStr(PostZoneDataContainer::labelName));
+									 impl->m_gridWarp->GetOutput(), impl->m_gridWarp->GetOutput(),
+									 impl->m_labelWarp->GetOutput(),
+									 v4GridUtil::LABEL_NAME);
 
 	updateVisibilityWithoutRendering();
 }
@@ -116,7 +114,7 @@ void Post2dBirdEyeWindowGridShapeDataItem::showPropertyDialog()
 
 QDialog* Post2dBirdEyeWindowGridShapeDataItem::propertyDialog(QWidget* p)
 {
-	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+	if (zoneDataItem()->v4DataContainer() == nullptr) {return nullptr;}
 
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);

@@ -16,6 +16,7 @@ PRECOMPILED_HEADER = unstructured2dgridvtkimporter_pch.h
 
 # iricGuicore library
 
+LIBS += -liricGuibase
 LIBS += -liricGuicore
 LIBS += -liricMisc
 

@@ -3,21 +3,11 @@
 #include "geodatarivershapeinterpolator.h"
 #include "geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-
-#include <QList>
-#include <QSettings>
-#include <QVector2D>
-
-#include <vtkDoubleArray.h>
-#include <vtkExtractGrid.h>
-#include <vtkPointData.h>
-#include <vtkPoints.h>
-#include <vtkQuad.h>
 
 #define DATA "Data"
 
@@ -331,12 +321,12 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 
 	while (p != nullptr) {
 		if (! p->previousPoint()->firstPoint()) {
-			vtkSmartPointer<vtkExtractGrid> extract = vtkSmartPointer<vtkExtractGrid>::New();
+			auto extract = vtkSmartPointer<vtkExtractGrid>::New();
 			extract->SetInputData(m_grid);
 			extract->SetVOI(gridOffset - IDIVNUM, gridOffset, 0, JDIVNUM * 2, 0, 0);
 			extract->Update();
-			vtkStructuredGrid* grid = extract->GetOutput();
-			grid->Register(0);
+			auto grid = extract->GetOutput();
+			grid->Register(nullptr);
 			m_partialGrids.insert(p->previousPoint(), grid);
 		}
 		gridOffset += IDIVNUM;
@@ -350,9 +340,9 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runStandard()
 
 bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 {
-	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(parent());
-	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();
-	GeoDataRiverPathPoint* lastp = p;
+	auto rs = dynamic_cast<GeoDataRiverSurvey*>(parent());
+	auto p = rs->headPoint()->nextPoint();
+	auto lastp = p;
 	while (lastp->nextPoint() != nullptr) {
 		lastp = lastp->nextPoint();
 	}
@@ -361,22 +351,16 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 	int gridJSize = p->CenterToLeftCtrlPoints.size() + p->CenterToRightCtrlPoints.size() + 3;
 
 	// initializes grid.
-	Structured2DGrid* tmpgrid = new Structured2DGrid(nullptr);
+	auto tmpgrid = new v4Structured2dGrid();
 	tmpgrid->setDimensions(gridISize, gridJSize);
-	PreProcessorGeoDataDataItemInterface* rawItem = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(rs->parent());
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(rawItem->parent()->parent()->parent());
+	auto rawItem = dynamic_cast<PreProcessorGeoDataDataItemI*>(rs->parent());
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(rawItem->parent()->parent()->parent());
 	SolverDefinitionGridType* gt = gtItem->gridType();
-	gt->buildGridAttributes(tmpgrid);
+	auto inputGrid = new v4InputGrid(gt, tmpgrid);
+	gt->buildGridAttributes(inputGrid);
 
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	points->InsertPoint(gridISize * gridJSize - 1, 0, 0, 0);
-	tmpgrid->vtkGrid()->SetPoints(points);
+	inputGrid->allocateAttributes();
 
-	QList<GridAttributeContainer*>& clist = tmpgrid->gridAttributes();
-	for (auto it = clist.begin(); it != clist.end(); ++it) {
-		(*it)->allocate();
-	}
 	// update grid interpolator.
 	updateGridInterpolators();
 
@@ -389,7 +373,7 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 			return (m_abort == false);
 		}
 
-		p->createGrid(tmpgrid, current, true);
+		p->createGrid(inputGrid, current, true);
 		current += static_cast<unsigned int>(p->CenterLineCtrlPoints.size() + 1);
 		p = p->nextPoint();
 	}
@@ -397,18 +381,18 @@ bool GeoDataRiverSurveyBackgroundGridCreateThread::runUsingDivisionPoints()
 		delete tmpgrid;
 		return (m_abort == false);
 	}
-	p->createGrid(tmpgrid, current, true, true);
-	tmpgrid->setModified();
+	p->createGrid(inputGrid, current, true, true);
+	tmpgrid->pointsModified();
 
 	p = rs->headPoint()->nextPoint();
 	int gridOffset = 0;
 
 	m_grid = vtkSmartPointer<vtkStructuredGrid>::New();
 	m_grid->SetDimensions(gridISize, gridJSize, 1);
-	m_grid->SetPoints(tmpgrid->vtkGrid()->GetPoints());
+	m_grid->SetPoints(tmpgrid->vtkConcreteData()->concreteData()->GetPoints());
 	auto attName = rs->gridAttribute()->name();
 
-	vtkDataArray* tmpData = tmpgrid->vtkGrid()->GetPointData()->GetArray(attName.c_str());
+	vtkDataArray* tmpData = tmpgrid->vtkConcreteData()->concreteData()->GetPointData()->GetArray(attName.c_str());
 	if (tmpData != nullptr) {
 		vtkSmartPointer<vtkDoubleArray> data = vtkSmartPointer<vtkDoubleArray>::New();
 		data->DeepCopy(tmpData);

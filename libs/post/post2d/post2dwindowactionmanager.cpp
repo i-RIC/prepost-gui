@@ -3,7 +3,7 @@
 #include "post2dwindowdatamodel.h"
 
 #include <guibase/irictoolbar.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 
 #include <QAction>
 #include <QIcon>

@@ -23,8 +23,8 @@ public:
 	void setGridGenerators(const QDomElement& elem);
 	void setupGridAttributes(const QDomElement& elem, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 	void setupBoundaryConditions(const QDomElement& elem, SolverDefinition* solverDef);
-	void buildGridAttributes(Grid* grid) const;
-	Grid* createEmptyGrid();
+	void buildGridAttributes(v4InputGrid* grid) const;
+	v4InputGrid* createEmptyGrid(GridType gridType);
 
 	std::string m_name;
 	QString m_caption;
@@ -46,7 +46,7 @@ public:
 	std::vector<SolverDefinitionGridOutput*> m_outputs;
 	std::unordered_map<std::string, SolverDefinitionGridOutput*> m_outputNameMap;
 
-	Grid* m_emptyGrid {nullptr};
+	v4InputGrid* m_emptyGrid {nullptr};
 	SolverDefinitionGridType* m_parent;
 };
 

@@ -4,7 +4,9 @@
 #include "post2dbirdeyewindowgridshapedataitem_settingeditwidget.h"
 #include "ui_post2dbirdeyewindowgridshapedataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guibase/vtkdatasetattributestool.h>
@@ -21,15 +23,15 @@ Post2dBirdEyeWindowGridShapeDataItem::SettingEditWidget::SettingEditWidget(Post2
 {
 	ui->setupUi(this);
 
-	auto grid = item->zoneDataItem()->dataContainer()->data()->data();
-	auto sgrid = vtkStructuredGrid::SafeDownCast(grid);
-	if (sgrid == nullptr) {
+	auto grid = item->zoneDataItem()->v4DataContainer()->gridData();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+	if (sGrid == nullptr) {
 		ui->shapeEditWidget->hideShape();
 	}
 
 	std::map<QString, std::string> captionMap;
-	auto gType = item->zoneDataItem()->dataContainer()->gridType();
-	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid->GetPointData())) {
+	auto gType = item->zoneDataItem()->v4DataContainer()->gridType();
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid->grid()->vtkData()->data()->GetPointData())) {
 		auto cap = gType->output(name)->caption();
 		captionMap.insert({cap, name});
 	}

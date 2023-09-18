@@ -3,11 +3,11 @@
 #include "postprocessorwindow.h"
 #include "postprocessorwindowprojectdataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 
 #include <QMdiSubWindow>
 
@@ -50,7 +50,7 @@ PostSolutionInfo* PostProcessorWindow::postSolutionInfo()
 	return m_projectDataItem->projectData()->mainfile()->postSolutionInfo();
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PostProcessorWindow::refDataGroupDataItem()
+PreProcessorGeoDataGroupDataItemI* PostProcessorWindow::refDataGroupDataItem()
 {
 	auto preModel = postSolutionInfo()->iricMainWindow()->preProcessorWindow()->dataModel();
 	if (preModel->geoDataTopDataItem() == nullptr) {

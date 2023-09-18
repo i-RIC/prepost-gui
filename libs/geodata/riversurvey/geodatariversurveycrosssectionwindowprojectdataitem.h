@@ -6,13 +6,13 @@
 #include <guicore/project/projectdataitem.h>
 
 class GeoDataRiverSurveyCrosssectionWindow;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
 
 class GD_RIVERSURVEY_EXPORT GeoDataRiverSurveyCrosssectionWindowProjectDataItem : public ProjectDataItem
 {
 
 public:
-	GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemInterface* gitem, QWidget* parentWindow);
+	GeoDataRiverSurveyCrosssectionWindowProjectDataItem(PreProcessorGeoDataGroupDataItemI* gitem, QWidget* parentWindow);
 	~GeoDataRiverSurveyCrosssectionWindowProjectDataItem();
 	void informWindowClose();
 	void requestWindowClose();

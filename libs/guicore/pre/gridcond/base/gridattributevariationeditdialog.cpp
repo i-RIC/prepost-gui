@@ -35,7 +35,7 @@ void GridAttributeVariationEditDialog::setLabel(const QString& label)
 	ui->label->setText(label);
 }
 
-void GridAttributeVariationEditDialog::applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+void GridAttributeVariationEditDialog::applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem)
 {
 	m_widget->applyVariation(container, indices, atts, dItem);
 }

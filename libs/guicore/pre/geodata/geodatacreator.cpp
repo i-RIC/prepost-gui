@@ -1,5 +1,5 @@
 #include "../../datamodel/graphicswindowdataitem.h"
-#include "../base/preprocessorgeodatadataiteminterface.h"
+#include "../base/preprocessorgeodatadataitemi.h"
 #include "geodata.h"
 #include "geodatacreator.h"
 #include "../geodatabackground/geodatabackground.h"
@@ -18,9 +18,7 @@ GeoDataCreator::GeoDataCreator(const QString& typeName, const QString& caption) 
 }
 
 GeoDataCreator::~GeoDataCreator()
-{
-	delete impl;
-}
+{}
 
 QString GeoDataCreator::name(unsigned int) const
 {
@@ -52,7 +50,7 @@ void GeoDataCreator::setNameAndDefaultCaption(const std::vector<GraphicsWindowDa
 
 	// first, setup nameSet and captionSet.
 	for (auto it = list.begin(); it != list.end(); ++it) {
-		GeoData* geodata = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(*it)->geoData();
+		GeoData* geodata = dynamic_cast<PreProcessorGeoDataDataItemI*>(*it)->geoData();
 		if (dynamic_cast<GeoDataBackground*> (geodata) != nullptr) {continue;}
 
 		if (geodata->name() != "") {nameSet.insert(geodata->name());}

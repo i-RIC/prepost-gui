@@ -1,3 +1,4 @@
+#include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowpolydatagroupdataitem.h"
 #include "post2dwindowpolydatavaluedataitem.h"
 #include "post2dwindowzonedataitem.h"
@@ -26,12 +27,12 @@ QDialog* Post2dWindowPolyDataValueDataItem::propertyDialog(QWidget* parent)
 
 void Post2dWindowPolyDataValueDataItem::informSelection(VTKGraphicsView* v)
 {
-	zoneDataItem()->initPolyDataResultAttributeBrowser();
+	polyDataGroupDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowPolyDataValueDataItem::informDeselection(VTKGraphicsView* v)
 {
-	zoneDataItem()->clearPolyDataResultAttributeBrowser();
+	polyDataGroupDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowPolyDataValueDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -41,7 +42,7 @@ void Post2dWindowPolyDataValueDataItem::mouseMoveEvent(QMouseEvent* event, VTKGr
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
-	zoneDataItem()->updatePolyDataResultAttributeBrowser(gdi->name(), event->pos(), v);
+	polyDataGroupDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowPolyDataValueDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -59,13 +60,12 @@ void Post2dWindowPolyDataValueDataItem::mouseReleaseEvent(QMouseEvent* event, VT
 	if (s == nullptr) {return;}
 
 	s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
-	zoneDataItem()->fixPolyDataResultAttributeBrowser(gdi->name(), event->pos(), v);
+	polyDataGroupDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowPolyDataValueDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* a = zoneDataItem()->showAttributeBrowserActionForPolyDataResult();
-	menu->addAction(a);
+	menu->addAction(polyDataGroupDataItem()->showAttributeBrowserAction());
 }
 
 bool Post2dWindowPolyDataValueDataItem::addToolBarButtons(QToolBar* toolBar)
@@ -76,7 +76,7 @@ bool Post2dWindowPolyDataValueDataItem::addToolBarButtons(QToolBar* toolBar)
 
 Post2dWindowZoneDataItem* Post2dWindowPolyDataValueDataItem::zoneDataItem() const
 {
-	return dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent()->parent());
+	return polyDataGroupDataItem()->zoneDataItem();
 }
 
 

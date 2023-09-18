@@ -37,9 +37,9 @@ PreProcessorWindow::PreProcessorWindow(QWidget *parent) :
 	setWindowTitle(PreProcessorWindow::tr("Main Window"));
 	setWindowIcon(QIcon(":/images/iconMain.png"));
 
-	connect(&(impl->m_view), SIGNAL(positionChanged(QPointF)), this, SIGNAL(positionChangedForStatusBar(QPointF)));
-	connect(&(impl->m_model), SIGNAL(valueChanged(double)), this, SIGNAL(valueChangedForStatusBar(double)));
-	connect(&(impl->m_model), SIGNAL(valueCleared()), this, SIGNAL(valueClearedForStatusBar()));
+	connect(&(impl->m_view), &PreProcessorView::positionChanged, this, &PreProcessorWindow::positionChangedForStatusBar);
+	connect(&(impl->m_model), &PreProcessorModel::valueChanged, this, &PreProcessorWindow::valueChangedForStatusBar);
+	connect(&(impl->m_model), &PreProcessorModel::valueCleared, this, &PreProcessorWindow::valueClearedForStatusBar);
 
 	resize(600, 500);
 }

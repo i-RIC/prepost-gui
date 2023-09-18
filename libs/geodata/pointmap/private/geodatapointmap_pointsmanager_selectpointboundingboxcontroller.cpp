@@ -3,7 +3,7 @@
 #include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/pre/base/preprocessordataitem.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
 #include <misc/mathsupport.h>
 
 GeoDataPointmap::PointsManager::SelectPointBoundingBoxController::SelectPointBoundingBoxController(PointsManager* manager) :

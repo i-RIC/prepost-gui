@@ -1,18 +1,20 @@
 #include "../preprocessorgriddataitem.h"
 #include "preprocessorgridshapedataitem_updatepointscommand.h"
 
-#include <guicore/pre/grid/grid.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid2d.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/qundocommandhelper.h>
 
 PreProcessorGridShapeDataItem::UpdatePointsCommand::UpdatePointsCommand(bool finish, vtkPoints* newPoints, PreProcessorGridDataItem* item) :
 	QUndoCommand("Update points"),
 	m_finish {finish},
 	m_newPoints {newPoints},
-	m_oldPoints {item->grid()->vtkGrid()->GetPoints()},
+	m_oldPoints {vtkPoints::New()},
 	m_item {item}
 {
 	m_newPoints->Register(nullptr);
-	m_oldPoints->Register(nullptr);
+	m_oldPoints->DeepCopy(item->grid()->grid()->vtkData()->data()->GetPoints());
 }
 
 PreProcessorGridShapeDataItem::UpdatePointsCommand::~UpdatePointsCommand()
@@ -55,9 +57,10 @@ bool PreProcessorGridShapeDataItem::UpdatePointsCommand::mergeWith(const QUndoCo
 
 void PreProcessorGridShapeDataItem::UpdatePointsCommand::setPoints(vtkPoints* points, bool buildLocator)
 {
-	m_item->grid()->setPoints(points);
+	m_item->grid()->grid()->vtkData()->data()->GetPoints()->DeepCopy(points);
+
 	if (buildLocator) {
-		m_item->grid()->pointLocator()->BuildLocator();
+		m_item->grid()->grid()->pointsModified();
 	}
 	m_item->updateVtkObjectsForDrawing();
 }

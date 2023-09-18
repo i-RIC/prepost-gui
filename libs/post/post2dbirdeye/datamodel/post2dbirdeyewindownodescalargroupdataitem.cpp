@@ -9,14 +9,17 @@
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -29,11 +32,6 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <vtkGeometryFilter.h>
-#include <vtkPolyData.h>
-#include <vtkSmartPointer.h>
-#include <vtkWarpScalar.h>
-
 Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDataItem(const std::string& elevationTarget, Post2dBirdEyeWindowDataItem* p) :
 	Post2dBirdEyeWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	impl {new Impl {elevationTarget, this}}
@@ -43,15 +41,15 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::Post2dBirdEyeWindowNodeScalarGroupDa
 	impl->m_setting.colorMode = Setting::ColorMode::ByNodeScalar;
 	impl->m_setting.colorTarget = elevationTarget.c_str();
 
-	auto gType = topDataItem()->zoneDataItem()->dataContainer()->gridType();
+	auto gType = topDataItem()->zoneDataItem()->v4DataContainer()->gridType();
 	standardItem()->setText(gType->outputCaption(elevationTarget));
 
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
+	for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
 		const auto& name = pair.first;
 		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
-	for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
+	for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges()) {
 		const auto& name = pair.first;
 		impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 	}
@@ -78,8 +76,6 @@ Post2dBirdEyeWindowNodeScalarGroupDataItem::~Post2dBirdEyeWindowNodeScalarGroupD
 	auto r = renderer();
 	r->RemoveActor(impl->m_actor);
 	r->RemoveActor2D(impl->m_legendActor);
-
-	delete impl;
 }
 
 const std::string& Post2dBirdEyeWindowNodeScalarGroupDataItem::elevationTarget() const
@@ -94,10 +90,10 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 	impl->m_legendActor->VisibilityOff();
 	m_actor2DCollection->RemoveAllItems();
 
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {return;}
 
-	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->data()->data());
+	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(cont->gridData()->grid()->vtkData()->data());
 	filtered->GetPointData()->SetActiveScalars(impl->m_elevationTarget.c_str());
 
 	auto warp = vtkSmartPointer<vtkWarpScalar>::New();
@@ -176,14 +172,14 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::setupActors()
 
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::update()
 {
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	if (cont != nullptr) {
 		auto gType = cont->gridType();
-		for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+		for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
 			const auto& name = pair.first;
 			impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 		}
-		for (const auto& pair : cont->data()->valueRangeSet().cellDataValueRanges()) {
+		for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges()) {
 			const auto& name = pair.first;
 			impl->createOrUpdateColorMapsSetting(gType->output(name), pair.second);
 		}
@@ -199,7 +195,7 @@ void Post2dBirdEyeWindowNodeScalarGroupDataItem::showPropertyDialog()
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	if (topDataItem()->zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+	if (topDataItem()->zoneDataItem()->v4DataContainer() == nullptr) {return nullptr;}
 
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);

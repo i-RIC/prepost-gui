@@ -5,24 +5,26 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
 #include <QObject>
-#include <QList>
 
-class GridExporterInterface;
+#include <vector>
+
+class GridExporterI;
 
 class PREDLL_EXPORT GridExporterFactory : public QObject
 {
 
 public:
 	~GridExporterFactory();
-	const QList<GridExporterInterface*> list(SolverDefinitionGridType::GridType gt) const;
+
+	const std::vector<GridExporterI*> listForGridType(SolverDefinitionGridType::GridType gt) const;
+
 	static void init();
 	static GridExporterFactory& instance();
 
 private:
-	// Constructor is private
 	GridExporterFactory();
-	QList<GridExporterInterface*> m_exporterList;
 
+	std::vector<GridExporterI*> m_exporterList;
 	static GridExporterFactory* m_instance;
 };
 

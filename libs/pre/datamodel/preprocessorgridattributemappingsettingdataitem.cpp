@@ -1,13 +1,8 @@
 #include "preprocessorgridattributemappingsettingdataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
 
-#include <guicore/pre/grid/grid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-
-#include <QDomElement>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 
 PreProcessorGridAttributeMappingSettingDataItem::PreProcessorGridAttributeMappingSettingDataItem(SolverDefinitionGridAttribute* cond, PreProcessorGeoDataGroupDataItem* geodataGroup, PreProcessorDataItem* parent) :
 	PreProcessorDataItem {parent},
@@ -29,13 +24,13 @@ void PreProcessorGridAttributeMappingSettingDataItem::doSaveToProjectMainFile(QX
 	m_mappingMode.save(writer);
 }
 
-void PreProcessorGridAttributeMappingSettingDataItem::setDefaultValue(Grid* grid)
+void PreProcessorGridAttributeMappingSettingDataItem::setDefaultValue(v4InputGrid* grid)
 {
 	// delegate to geodatagroupdataitem.
 	m_geodataGroupDataItem->setDefaultValue(grid);
 }
 
-void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(Grid* grid, WaitDialog* dialog)
+void PreProcessorGridAttributeMappingSettingDataItem::executeMapping(v4InputGrid* grid, WaitDialog* dialog)
 {
 	if (m_mappingMode == mmFromGeoData) {
 		// delegate to geodatagroupdataitem.

@@ -45,7 +45,6 @@ public slots:
 	void streamlineSetting();
 	void particleSetting();
 	void polygonSetting();
-	void cellFlagSetting();
 	void cellScalarSetting();
 	void titleSetting();
 	void timeSetting();

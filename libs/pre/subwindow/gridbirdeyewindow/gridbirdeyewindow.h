@@ -5,8 +5,8 @@
 
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
-#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
+#include <guicore/bgcolor/backgroundcoloreditvtki.h>
 
 #include <QIcon>
 
@@ -21,8 +21,8 @@ class QAction;
 class GridBirdEyeWindow :
 	public QMainWindowWithSnapshot,
 	public AdditionalMenuWindowI,
-	public BackgroundColorEditVtkInterface,
-	public WindowWithObjectBrowserInterface
+	public BackgroundColorEditVtkI,
+	public WindowWithObjectBrowserI
 {
 	Q_OBJECT
 

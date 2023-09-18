@@ -4,7 +4,10 @@
 #include "ui_post2dwindownodevectorparticlegroupunstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -26,8 +29,8 @@ Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::SettingEditWidget::Sett
 
 	ui->particleSettingWidget->setProjectMainFile(m_item->projectData()->mainfile());
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(m_item->parent())->dataContainer();
-	auto grid = cont->data()->data();
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
+	auto grid = cont->gridData()->grid()->vtkData()->data();
 
 	auto gtype = cont->gridType();
 	auto pd = grid->GetPointData();
@@ -40,7 +43,7 @@ Post2dWindowNodeVectorParticleGroupUnstructuredDataItem::SettingEditWidget::Sett
 	ui->particleSettingWidget->setSolutions(solutions);
 	ui->particleSettingWidget->setSetting(&m_item->m_setting);
 
-	if (! cont->IBCExists()) {
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		ui->regionWidget->disableActive();
 	}
 

@@ -8,7 +8,9 @@
 #include "ui_gridbirdeyewindownodescalargroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/pre/grid/grid.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -34,7 +36,7 @@ GridBirdEyeWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(G
 
 	auto model = dynamic_cast<GridBirdEyeWindowDataModel*> (m_item->dataModel());
 	auto gridType = model->gridTypeDataItem()->gridType();
-	auto grid = m_item->topDataItem()->zoneDataItem()->grid()->vtkGrid();
+	auto grid = m_item->topDataItem()->zoneDataItem()->grid()->grid()->vtkData()->data();
 
 	std::map<QString, std::string> nodeCaptionMap;
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid->GetPointData())) {

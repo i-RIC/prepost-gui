@@ -15,7 +15,8 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
@@ -50,17 +51,18 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_shapeDataItem = new Post3dWindowGridShapeDataItem(this);
 
-	PostZoneDataContainer* cont = dataContainer();
-	if (cont->scalarValueExists()) {
+	auto cont = v4DataContainer();
+	auto grid = cont->gridData();
+	if (grid->scalarValueExists(v4SolutionGrid::Position::Node)) {
 		m_contourGroupTopItem = new Post3dWindowContourGroupTopDataItem(this);
 		m_scalarGroupDataItem = new Post3dWindowNodeScalarGroupTopDataItem(this);
 	}
 
-	if (cont->cellScalarValueExists()) {
+	if (grid->scalarValueExists(v4SolutionGrid::Position::CellCenter)) {
 		m_cellContourGroupTopItem = new Post3dWindowCellContourGroupTopDataItem(this);
 	}
 
-	if (cont->vectorValueExists()) {
+	if (grid->vectorValueExists(v4SolutionGrid::Position::Node)) {
 		m_arrowTopDataItem = new Post3dWindowNodeVectorArrowTopDataItem(this);
 		m_streamlineGroupDataItem = new Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(this);
 		m_particleGroupDataItem = new Post3dWindowNodeVectorParticleGroupStructuredDataItem(this);
@@ -78,16 +80,16 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 
 	m_childItems.push_back(m_shapeDataItem);
 
-	if (cont->scalarValueExists()) {
+	if (grid->scalarValueExists(v4SolutionGrid::Position::Node)) {
 		m_childItems.push_back(m_contourGroupTopItem);
 		m_childItems.push_back(m_scalarGroupDataItem);
 	}
 
-	if (cont->cellScalarValueExists()) {
+	if (grid->scalarValueExists(v4SolutionGrid::Position::CellCenter)) {
 		m_childItems.push_back(m_cellContourGroupTopItem);
 	}
 
-	if (cont->vectorValueExists()) {
+	if (grid->vectorValueExists(v4SolutionGrid::Position::Node)) {
 		m_childItems.push_back(m_arrowTopDataItem);
 		m_childItems.push_back(m_streamlineGroupDataItem);
 		m_childItems.push_back(m_particleGroupDataItem);
@@ -280,9 +282,9 @@ void Post3dWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 	m_shapeDataItem->informDeselection(v);
 }
 
-PostZoneDataContainer* Post3dWindowZoneDataItem::dataContainer()
+v4PostZoneDataContainer* Post3dWindowZoneDataItem::v4DataContainer()
 {
-	return postSolutionInfo()->zoneContainer3D(m_zoneName);
+	return postSolutionInfo()->v4ZoneContainer3D(m_zoneName);
 }
 
 void Post3dWindowZoneDataItem::update()

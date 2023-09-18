@@ -180,7 +180,7 @@ void Post3dWindow::updateProjectionMenu(QAction* parallel, QAction* perspective)
 
 void Post3dWindow::editBackgroundColor()
 {
-	BackgroundColorEditInterface::editBackgroundColor(this);
+	BackgroundColorEditI::editBackgroundColor(this);
 }
 
 void Post3dWindow::editZScale()

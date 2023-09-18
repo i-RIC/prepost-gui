@@ -90,7 +90,7 @@ private:
 	bool loadDefaultFromCsvFile(const QString& filename);
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // INPUTCONDITIONCONTAINERFUNCTIONAL_H

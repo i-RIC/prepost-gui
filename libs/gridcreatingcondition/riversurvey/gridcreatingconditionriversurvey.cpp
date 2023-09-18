@@ -5,18 +5,18 @@
 #include "gridcreatingconditionriversurveypointrepositiondialog.h"
 #include "gridcreatingconditionriversurveyregiondialog.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
@@ -183,7 +183,7 @@ private:
 
 
 GridCreatingConditionRiverSurvey::GridCreatingConditionRiverSurvey(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
-	GridCreatingConditionRiverSurveyInterface(parent, creator),
+	GridCreatingConditionRiverSurveyI(parent, creator),
 	m_riverSurvey {nullptr},
 	m_lastStartPoint {nullptr},
 	m_lastEndPoint {nullptr},
@@ -251,14 +251,14 @@ bool GridCreatingConditionRiverSurvey::ready() const
 bool GridCreatingConditionRiverSurvey::init()
 {
 	// set m_riverSurvey.
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent()->parent()->parent());
-	PreProcessorGeoDataTopDataItemInterface* rtItem = gtItem->geoDataTop();
+	PreProcessorGridTypeDataItemI* gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(parent()->parent()->parent());
+	PreProcessorGeoDataTopDataItemI* rtItem = gtItem->geoDataTop();
 	bool found = false;
 
-	for (PreProcessorGeoDataGroupDataItemInterface* gItem : rtItem->groupDataItems()) {
-		QList<PreProcessorGeoDataDataItemInterface*> rItems = gItem->geoDatas();
+	for (PreProcessorGeoDataGroupDataItemI* gItem : rtItem->groupDataItems()) {
+		QList<PreProcessorGeoDataDataItemI*> rItems = gItem->geoDatas();
 		for (auto rit = rItems.begin(); ! found && rit != rItems.end(); ++rit) {
-			PreProcessorGeoDataDataItemInterface* rItem = *rit;
+			PreProcessorGeoDataDataItemI* rItem = *rit;
 			if (dynamic_cast<GeoDataRiverSurvey*>(rItem->geoData()) != nullptr) {
 				// this is a cross-section data!
 
@@ -540,7 +540,7 @@ void GridCreatingConditionRiverSurvey::setupMenu()
 	m_menu->addAction(m_repositionAction);
 	m_menu->addSeparator();
 
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	// ContextMenu
 	if (m_rightClickingMenu == nullptr) {
 		m_rightClickingMenu = new QMenu();
@@ -558,7 +558,7 @@ void GridCreatingConditionRiverSurvey::setupMenu()
 	}
 }
 
-void GridCreatingConditionRiverSurvey::informSelection(PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRiverSurvey::informSelection(PreProcessorGraphicsViewI* /*v*/)
 {
 	updateShapeData(true);
 	allActorsOff();
@@ -585,7 +585,7 @@ void GridCreatingConditionRiverSurvey::informSelection(PreProcessorGraphicsViewI
 	}
 }
 
-void GridCreatingConditionRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRiverSurvey::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	allActorsOff();
 	vtkActorCollection* col = actorCollection();
@@ -609,21 +609,21 @@ void GridCreatingConditionRiverSurvey::informDeselection(PreProcessorGraphicsVie
 	}
 }
 
-void GridCreatingConditionRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionRiverSurvey::keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRiverSurvey::keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionRiverSurvey::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRiverSurvey::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRiverSurvey::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	double worldX = (double) event->x();
 	double worldY = (double) event->y();
@@ -669,7 +669,7 @@ void GridCreatingConditionRiverSurvey::mouseMoveEvent(QMouseEvent* event, PrePro
 	}
 }
 
-void GridCreatingConditionRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		if (m_mouseEventMode == meNormal) {
@@ -686,7 +686,7 @@ void GridCreatingConditionRiverSurvey::mousePressEvent(QMouseEvent* event, PrePr
 	m_dragStartPoint = event->pos();
 }
 
-void GridCreatingConditionRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		if (m_mouseEventMode == meNormal) {
@@ -786,7 +786,7 @@ void GridCreatingConditionRiverSurvey::mouseReleaseEvent(QMouseEvent* event, Pre
 	}
 }
 
-void GridCreatingConditionRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRiverSurvey::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_mouseEventMode) {
 	case meMovePrepare:
@@ -868,7 +868,7 @@ void GridCreatingConditionRiverSurvey::saveExternalData(const QString& /*filenam
 
 void GridCreatingConditionRiverSurvey::setupActions()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_createAction = p->createAction();
 
 	m_addAction = new QAction(tr("&Add Division Points..."), this);
@@ -1565,9 +1565,8 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 	m_lastStartPoint = start;
 	m_lastEndPoint = end;
 
-	Structured2DGrid* grid = new Structured2DGrid(nullptr);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
+	auto grid = new v4Structured2dGrid();
+
 
 	GeoDataRiverPathPoint* p = m_riverSurvey->headPoint()->nextPoint();
 	unsigned int dimJ = static_cast<unsigned int>(p->CenterToLeftCtrlPoints.size() + p->CenterToRightCtrlPoints.size() + 3);
@@ -1577,15 +1576,15 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return;
 	}
-	grid->setDimensions(dimI, dimJ);
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
-	points->InsertPoint(dimI * dimJ - 1, 0, 0, 0);
-	grid->vtkGrid()->SetPoints(points);
 
-	for (GridAttributeContainer* c : grid->gridAttributes()) {
-		c->allocate();
-	}
+	grid->setDimensions(dimI, dimJ);
+
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+
 	// update grid interpolator.
 	updateGridInterpolators();
 
@@ -1593,14 +1592,14 @@ void GridCreatingConditionRiverSurvey::createGrid(GeoDataRiverPathPoint* start, 
 	unsigned int current = 0;
 	p = m_lastStartPoint;
 	while (p != m_lastEndPoint) {
-		p->createGrid(grid, current, false);
+		p->createGrid(ret, current, false);
 		current += static_cast<unsigned int>(p->CenterLineCtrlPoints.size() + 1);
 		p = p->nextPoint();
 	}
-	p->createGrid(grid, current, false, true);
-	grid->setModified();
+	p->createGrid(ret, current, false, true);
+	grid->pointsModified();
 
-	emit gridCreated(grid);
+	emit gridCreated(ret);
 	iRICUndoStack::instance().clear();
 }
 
@@ -1814,7 +1813,7 @@ void GridCreatingConditionRiverSurvey::handleDataDestroy()
 {
 	// Cross-section data is destroyed.
 	// This algorithm is no longer available.
-	PreProcessorGridCreatingConditionDataItemInterface* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* item = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	item->setCondition(nullptr);
 	m_riverSurvey = nullptr;
 	delete this;

@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 
 GridAttributeRealVariationEditWidget::GridAttributeRealVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
-	GridAttributeVariationEditWidgetT<double>(parent, cond)
+	GridAttributeVariationEditWidgetT<double, vtkDoubleArray>(parent, cond)
 {
 	m_widget = new RealNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();

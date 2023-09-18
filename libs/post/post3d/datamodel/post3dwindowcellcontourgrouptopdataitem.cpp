@@ -4,7 +4,10 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -70,17 +73,17 @@ void Post3dWindowCellContourGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 
 QDialog* Post3dWindowCellContourGroupTopDataItem::addDialog(QWidget* p)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return nullptr;
 	}
 
-	auto gType = zoneData->gridType();
+	auto gType = cont->gridType();
 
 	auto dialog = new ValueSelectDialog(p);
 	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zoneData->data()->data()->GetCellData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetCellData())) {
 		solutions.insert({sol, gType->output(sol)->caption()});
 	}
 	dialog->setValues(solutions);
@@ -90,8 +93,8 @@ QDialog* Post3dWindowCellContourGroupTopDataItem::addDialog(QWidget* p)
 
 void Post3dWindowCellContourGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return;
 	}
 
@@ -106,4 +109,9 @@ void Post3dWindowCellContourGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 	iRICUndoStack::instance().clear();
 
 	newItem->showPropertyDialog();
+}
+
+Post3dWindowZoneDataItem* Post3dWindowCellContourGroupTopDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
 }

@@ -1,5 +1,5 @@
 #include "geodatabackground_editvaluecommand.h"
-#include "../../base/preprocessorgeodatadataiteminterface.h"
+#include "../../base/preprocessorgeodatadataitemi.h"
 
 GeoDataBackground::EditValueCommand::EditValueCommand(GeoDataBackground::Type type, const QVariant& val, GeoDataBackground* b) :
 	QUndoCommand(GeoDataBackground::tr("Background edit value")),
@@ -27,7 +27,7 @@ void GeoDataBackground::EditValueCommand::applyValues(GeoDataBackground::Type t,
 	m_background->m_customValue = val;
 	m_background->setMapped(mapped);
 
-	auto geoData = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (m_background->parent());
+	auto geoData = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_background->parent());
 	geoData->informValueRangeChange();
 	geoData->informDataChange();
 }

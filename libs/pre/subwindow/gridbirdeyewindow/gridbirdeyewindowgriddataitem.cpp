@@ -7,10 +7,12 @@
 #include "private/gridbirdeyewindowgriddataitem_updateactorsettingcommand.h"
 
 #include <guibase/graphicsmisc.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -151,9 +153,9 @@ void GridBirdEyeWindowGridDataItem::setupActors()
 void GridBirdEyeWindowGridDataItem::setDefaultSetting()
 {
 	auto dItem = gridDataItem();
-	Grid* g = dItem->grid();
+	auto g = dItem->grid();
 
-	if (g->gridAttribute(ELEVATION.c_str()) != nullptr) {
+	if (g->attribute(ELEVATION.c_str()) != nullptr) {
 		m_setting.warpTarget = ELEVATION.c_str();
 		m_setting.mapping = GridBirdEyeWindowSetting::Mapping::Value;
 		m_setting.colorTarget = ELEVATION.c_str();
@@ -191,7 +193,7 @@ void GridBirdEyeWindowGridDataItem::updateActorSettings()
 	auto grid = gridDataItem()->grid();
 
 	auto warp = vtkSmartPointer<vtkWarpScalar>::New();
-	warp->SetInputData(grid->vtkGrid());
+	warp->SetInputData(grid->grid()->vtkData()->data());
 	warp->SetUseNormal(1);
 	warp->SetNormal(0, 0, 1);
 	warp->SetScaleFactor(m_setting.zScale);

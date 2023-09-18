@@ -106,9 +106,7 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
 }
 
 VTKGraphicsView::~VTKGraphicsView()
-{
-	delete impl;
-}
+{}
 
 double VTKGraphicsView::stdDistance(double pixels)
 {

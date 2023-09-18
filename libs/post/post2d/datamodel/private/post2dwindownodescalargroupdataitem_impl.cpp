@@ -9,7 +9,6 @@
 
 Post2dWindowNodeScalarGroupDataItem::Impl::Impl(Post2dWindowNodeScalarGroupDataItem* item) :
 	m_target {},
-	m_solutionPosition {iRICLib::H5CgnsZone::SolutionPosition::Node},
 	m_setting {},
 	m_actor {vtkActor::New()},
 	m_legendActor {vtkActor2D::New()},

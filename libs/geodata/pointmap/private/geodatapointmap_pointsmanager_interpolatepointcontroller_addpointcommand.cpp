@@ -1,7 +1,7 @@
 #include "geodatapointmap_pointsmanager_interpolatepointcontroller_addpointcommand.h"
 
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
 GeoDataPointmap::PointsManager::InterpolatePointController::AddPointCommand::AddPointCommand(const QPointF& point, double value, bool newFlag, InterpolatePointController* controller) :
 	m_point {point},

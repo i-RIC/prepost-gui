@@ -1,19 +1,24 @@
 #include "post2dbirdeyewindowgridtypedataitem.h"
 #include "post2dbirdeyewindowzonedataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 namespace {
 
-PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
+v4PostZoneDataContainer* getContainerWithZoneType(const std::vector<v4PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
 {
-	for (auto container : conts) {
-		if (container->gridType() == gt) {
-			return container;
+	for (auto c : conts) {
+		if (c->gridType() == gt) {
+			return c;
 		}
 	}
 	return nullptr;
@@ -115,6 +120,34 @@ const std::unordered_map<std::string, ValueRangeContainer>& Post2dBirdEyeWindowG
 	return m_cellValueRanges;
 }
 
+const ValueRangeContainer& Post2dBirdEyeWindowGridTypeDataItem::iEdgeValueRange(const std::string& name) const
+{
+	const auto it = m_iEdgeValueRanges.find(name);
+	if (it != m_iEdgeValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post2dBirdEyeWindowGridTypeDataItem::iEdgeValueRanges() const
+{
+	return m_iEdgeValueRanges;
+}
+
+const ValueRangeContainer& Post2dBirdEyeWindowGridTypeDataItem::jEdgeValueRange(const std::string& name) const
+{
+	const auto it = m_jEdgeValueRanges.find(name);
+	if (it != m_jEdgeValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post2dBirdEyeWindowGridTypeDataItem::JEdgeValueRanges() const
+{
+	return m_jEdgeValueRanges;
+}
+
 void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 {
 	// first, clear the current zonedata.
@@ -123,11 +156,11 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	m_zoneDatas.clear();
 
-	const auto& zones = postSolutionInfo()->zoneContainers2D();
+	const auto& zones = postSolutionInfo()->v4ZoneContainers2D();
 	int num = 0;
 	int zoneNum = 0;
 	for (auto cont : zones) {
-		if (cont->data() == nullptr) {continue;}
+		if (cont->gridData() == nullptr) {continue;}
 		if (cont->gridType() != m_gridType) {continue;}
 
 		auto zdata = new Post2dBirdEyeWindowZoneDataItem(cont->zoneName(), num++, this);
@@ -137,11 +170,13 @@ void Post2dBirdEyeWindowGridTypeDataItem::setupZoneDataItems()
 		++zoneNum;
 	}
 
-	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+	v4PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
 
 	if (zCont != nullptr) {
 		updateNodeValueRanges();
 		updateCellValueRanges();
+		updateIEdgeValueRanges();
+		updateJEdgeValueRanges();
 	}
 
 	m_isZoneDataItemsSetup = (zoneNum != 0);
@@ -160,10 +195,12 @@ void Post2dBirdEyeWindowGridTypeDataItem::update()
 	// update value range.
 	updateNodeValueRanges();
 	updateCellValueRanges();
+	updateIEdgeValueRanges();
+	updateJEdgeValueRanges();
 
 	// update child items.
-	for (auto it = m_zoneDatas.begin(); it != m_zoneDatas.end(); ++it) {
-		(*it)->update();
+	for (auto z : m_zoneDatas) {
+		z->update();
 	}
 }
 
@@ -172,9 +209,10 @@ void Post2dBirdEyeWindowGridTypeDataItem::updateNodeValueRanges()
 	m_nodeValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr || cont->gridData() == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
+		merge(cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
 	}
 }
 
@@ -183,9 +221,40 @@ void Post2dBirdEyeWindowGridTypeDataItem::updateCellValueRanges()
 	m_cellValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr || cont->gridData() == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+		merge(cont->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+	}
+}
+
+void Post2dBirdEyeWindowGridTypeDataItem::updateIEdgeValueRanges()
+{
+	m_iEdgeValueRanges.clear();
+
+	for (auto zItem : m_zoneDatas) {
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr || cont->gridData() == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+		if (sGrid == nullptr) {continue;}
+
+		merge(sGrid->vtkIEdgeData()->valueRangeSet().cellDataValueRanges(), &m_iEdgeValueRanges);
+	}
+}
+
+void Post2dBirdEyeWindowGridTypeDataItem::updateJEdgeValueRanges()
+{
+	m_jEdgeValueRanges.clear();
+
+	for (auto zItem : m_zoneDatas) {
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr || cont->gridData() == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+		if (sGrid == nullptr) {continue;}
+
+		merge(sGrid->vtkJEdgeData()->valueRangeSet().cellDataValueRanges(), &m_jEdgeValueRanges);
 	}
 }
 
@@ -197,7 +266,7 @@ void Post2dBirdEyeWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNo
 		for (int i = 0; i < zones.size(); ++i) {
 			QDomNode zoneNode = zones.at(i);
 			std::string zoneName = iRIC::toStr(zoneNode.toElement().attribute("name"));
-			Post2dBirdEyeWindowZoneDataItem* zdi = zoneData(zoneName);
+			auto zdi = zoneData(zoneName);
 			if (zdi != nullptr) {
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
@@ -210,10 +279,9 @@ void Post2dBirdEyeWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWrit
 	writer.writeAttribute("name", m_gridType->name().c_str());
 
 	writer.writeStartElement("Zones");
-	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
-		Post2dBirdEyeWindowZoneDataItem* zitem = *zit;
+	for (auto zItem : m_zoneDatas) {
 		writer.writeStartElement("Zone");
-		zitem->saveToProjectMainFile(writer);
+		zItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();

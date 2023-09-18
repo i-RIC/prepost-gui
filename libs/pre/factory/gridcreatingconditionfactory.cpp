@@ -3,8 +3,6 @@
 #include <gridcreatingcondition/centerandwidth/gridcreatingconditioncreatorcenterandwidth.h>
 #include <gridcreatingcondition/compoundchannel/gridcreatingconditioncreatorcompoundchannel.h>
 #include <gridcreatingcondition/externalprogram/gridcreatingconditioncreatorexternalprogram.h>
-#include <gridcreatingcondition/gridcombine/gridcreatingconditioncreatorgridcombine.h>
-#include <gridcreatingcondition/gridgenerator/gridcreatingconditioncreatorgridgenerator.h>
 #include <gridcreatingcondition/laplace/gridcreatingconditioncreatorlaplace.h>
 #include <gridcreatingcondition/poisson/gridcreatingconditioncreatorpoisson.h>
 #include <gridcreatingcondition/rectangularregion/gridcreatingconditioncreatorrectangularregion.h>

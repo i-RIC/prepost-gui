@@ -6,7 +6,7 @@
 #include <string>
 
 class GeoDataImporter;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
 class SolverDefinitionGridAttribute;
 
 namespace iRICPython {
@@ -16,14 +16,14 @@ class GeoData;
 class IRICPYTHON_API GeoDataImporter
 {
 public:
-	GeoDataImporter(::GeoDataImporter* importer, SolverDefinitionGridAttribute* att, PreProcessorGeoDataGroupDataItemInterface *groupItem);
+	GeoDataImporter(::GeoDataImporter* importer, SolverDefinitionGridAttribute* att, PreProcessorGeoDataGroupDataItemI *groupItem);
 
 	GeoData* importGeoData(const std::string& filename);
 
 private:
 	::GeoDataImporter* m_importer;
 	SolverDefinitionGridAttribute* m_att;
-	PreProcessorGeoDataGroupDataItemInterface* m_groupItem;
+	PreProcessorGeoDataGroupDataItemI* m_groupItem;
 };
 
 } // iRICPython

@@ -117,9 +117,7 @@ InputConditionContainerFunctional::InputConditionContainerFunctional(const Input
 }
 
 InputConditionContainerFunctional::~InputConditionContainerFunctional()
-{
-	delete impl;
-}
+{}
 
 InputConditionContainerFunctional& InputConditionContainerFunctional::operator=(const InputConditionContainerFunctional& i)
 {

@@ -5,9 +5,9 @@
 #include "../post2dwindowgraphicsview.h"
 #include "private/post2dwindowgeodatagroupdataitem_scalarstocolorseditdialog.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataproxy.h>
 #include <guicore/image/imagesettingcontainer.h>
@@ -17,7 +17,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <misc/valuechangert.h>
 
 #include <QDomNodeList>
@@ -73,8 +73,8 @@ void Post2dWindowGeoDataGroupDataItem::addCustomMenuItems(QMenu* /*menu*/)
 void Post2dWindowGeoDataGroupDataItem::updateChildren()
 {
 	Post2dWindowGeoDataTopDataItem* tItem = dynamic_cast<Post2dWindowGeoDataTopDataItem*>(parent());
-	PreProcessorGeoDataTopDataItemInterface* rtItem = tItem->preGeoDataTopDataItem();
-	PreProcessorGeoDataGroupDataItemInterface* gItem = rtItem->groupDataItem(m_condition->name());
+	PreProcessorGeoDataTopDataItemI* rtItem = tItem->preGeoDataTopDataItem();
+	PreProcessorGeoDataGroupDataItemI* gItem = rtItem->groupDataItem(m_condition->name());
 
 	std::vector<GraphicsWindowDataItem*> oldChildren = m_childItems;
 	QMap<GeoData*, Post2dWindowGeoDataDataItem*> map;
@@ -88,7 +88,7 @@ void Post2dWindowGeoDataGroupDataItem::updateChildren()
 
 	std::vector<GraphicsWindowDataItem*> origChildren = gItem->childItems();
 	for (int i = 0; i < origChildren.size(); ++i) {
-		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(origChildren.at(i));
+		PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(origChildren.at(i));
 		GeoData* geoData = item->geoData();
 		if (geoData == nullptr) {continue;}
 

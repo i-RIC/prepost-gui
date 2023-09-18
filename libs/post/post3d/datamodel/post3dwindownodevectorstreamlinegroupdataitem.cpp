@@ -3,10 +3,13 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -39,9 +42,9 @@ Post3dWindowNodeVectorStreamlineGroupDataItem::Post3dWindowNodeVectorStreamlineG
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();
-	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		auto caption = gt->vectorOutputCaption(name);
 		auto item = new Post3dWindowNodeVectorStreamlineDataItem(name, caption, this);
 		m_childItems.push_back(item);
@@ -86,10 +89,10 @@ void Post3dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 
 	clearActors();
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return;}
 
-	auto ps = cont->data()->data();
+	auto ps = cont->gridData()->grid()->vtkData()->data();
 	if (ps == nullptr) {return;}
 	if (m_setting.target == "") {return;}
 

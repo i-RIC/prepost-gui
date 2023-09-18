@@ -170,9 +170,9 @@ bool ColorMapEnumerateSettingEditWidget::ImportDialog::importData()
 	m_setting.valueCaptions = m_originalSetting.valueCaptions;
 
 	auto colors = m_originalSetting.colors;
-	int minSize = colors.size();
+	int minSize = static_cast<int> (colors.size());
 	if (m_setting.colors.size() < minSize) {
-		minSize = m_setting.colors.size();
+		minSize = static_cast<int> (m_setting.colors.size());
 	}
 	for (int i = 0; i < minSize; ++i) {
 		colors.at(i).color = m_setting.colors.at(i).color;

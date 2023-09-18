@@ -6,14 +6,11 @@
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-
-#include <vtkGeometryFilter.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkStructuredGrid.h>
 
 Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::Post3dWindowNodeVectorStreamlineGroupStructuredDataItem(Post3dWindowDataItem* parent) :
 	Post3dWindowNodeVectorStreamlineGroupDataItem(parent),
@@ -23,9 +20,7 @@ Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::Post3dWindowNodeVectorS
 }
 
 Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::~Post3dWindowNodeVectorStreamlineGroupStructuredDataItem()
-{
-	delete impl;
-}
+{}
 
 void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::showPropertyDialog()
 {
@@ -36,8 +31,8 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupActors()
 {
 	clearActors();
 
-	auto zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 
 	auto r = renderer();
 	auto col = actorCollection();
@@ -81,8 +76,8 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 
 	impl->m_setting.startPositions.clear();
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 	int dim[3];
 	grid->GetDimensions(dim);
 
@@ -102,7 +97,7 @@ void Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::setupDefaultValues
 
 QDialog* Post3dWindowNodeVectorStreamlineGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
-	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+	if (zoneDataItem()->v4DataContainer() == nullptr) {return nullptr;}
 
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);

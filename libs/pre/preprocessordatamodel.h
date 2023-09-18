@@ -2,7 +2,7 @@
 #define PREPROCESSORDATAMODEL_H
 
 #include "pre_global.h"
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
 #include <QList>
 #include <QMap>
 
@@ -18,16 +18,16 @@ class PreProcessorRootDataItem;
 class PreProcessorGraphicsView;
 class MouseBoundingBox;
 class PreProcessorGridTypeDataItem;
-class PreProcessorGridCreatingConditionDataItemInterface;
-class PreProcessorGeoDataGroupDataItemInterface;
-class PreProcessorGeoDataDataItemInterface;
-class PreProcessorGridAndGridCreatingConditionDataItemInterface;
+class PreProcessorGridCreatingConditionDataItemI;
+class PreProcessorGeoDataGroupDataItemI;
+class PreProcessorGeoDataDataItemI;
+class PreProcessorGridAndGridCreatingConditionDataItemI;
 class PreProcessorGridDataItem;
 class PreProcessorGeoDataGroupDataItem;
 class PreProcessorGeoDataDataItem;
 class PreProcessorBackgroundImageDataItem;
 class PreProcessorGridCreatingConditionDataItem;
-class PreProcessorGeoDataTopDataItemInterface;
+class PreProcessorGeoDataTopDataItemI;
 class PreProcessorBCSettingDataItem;
 class PreProcessorBCDataItem;
 class MeasuredDataFileDataItem;
@@ -37,7 +37,7 @@ class QSignalMapper;
 
 /// This class handles ALL informations that are handled
 /// inside pre-processing window.
-class PREDLL_EXPORT PreProcessorDataModel : public PreProcessorDataModelInterface
+class PREDLL_EXPORT PreProcessorDataModel : public PreProcessorDataModelI
 {
 	Q_OBJECT
 
@@ -49,7 +49,7 @@ public:
 	~PreProcessorDataModel();
 
 	/// The view to display pre-processor main region
-	PreProcessorGraphicsViewInterface* graphicsView() const override;
+	PreProcessorGraphicsViewI* graphicsView() const override;
 	/// Import input condition from the specified CGNS file.
 	bool importInputCondition(const QString& filename);
 	bool exportInputCondition(const QString& filename);
@@ -73,11 +73,11 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus();
-	PreProcessorGridTypeDataItemInterface* gridTypeDataItem(const std::string& type) const override;
-	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const override;
-	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem(const std::string& type) const override;
-	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem(const std::string& type) const override;
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const override;
+	PreProcessorGridTypeDataItemI* gridTypeDataItem(const std::string& type) const override;
+	PreProcessorGeoDataTopDataItemI* geoDataTopDataItem() const override;
+	PreProcessorGeoDataTopDataItemI* geoDataTopDataItem(const std::string& type) const override;
+	PreProcessorHydraulicDataTopDataItemI* hydraulicDataTopDataItem(const std::string& type) const override;
+	PreProcessorGridAndGridCreatingConditionDataItemI* getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const override;
 	void applyOffset(double x, double y) override;
 
 	void updateTmsList();
@@ -111,7 +111,7 @@ private:
 
 	void setupGeoDataAddActions(PreProcessorGeoDataGroupDataItem* item);
 	void setupGeoDataMenus();
-	QMenu* setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* gcItem);
+	QMenu* setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemI* gcItem);
 	QMenu* setupBoundaryConditionSettingMenu(QMenu* parentMenu);
 	void setupGridMenu();
 	void setupMeasuredValuesMenu();
@@ -125,21 +125,21 @@ private:
 	static PreProcessorBCSettingDataItem* getBCSettingDataItem(GraphicsWindowDataItem* item);
 
 	bool addGridCreatingConditionImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
-	bool addGridCreatingConditionImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
+	bool addGridCreatingConditionImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name);
 	bool addGridCreatingConditionExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
-	bool addGridCreatingConditionExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
+	bool addGridCreatingConditionExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name);
 	bool addGridImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
-	bool addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
+	bool addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name);
 	bool addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone);
-	bool addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name);
+	bool addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name);
 	bool setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataImportFromWebMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
-	bool setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
-	bool setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt);
+	bool setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemI* gt);
+	bool setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemI* gt);
 	bool setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt);
 	bool setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt);
-	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemInterface* gt);
-	bool geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt);
+	bool setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemI* gt);
+	bool geoDataExportAvailable(PreProcessorGeoDataGroupDataItemI* gt);
 
 	MouseBoundingBox* m_mouseBoundingBox;
 	QList<QMenu*> m_additionalMenus;

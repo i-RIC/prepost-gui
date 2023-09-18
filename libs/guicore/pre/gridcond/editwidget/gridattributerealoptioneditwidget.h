@@ -6,9 +6,11 @@
 #include <QMap>
 #include <QList>
 
+#include <vtkDoubleArray.h>
+
 class QComboBox;
 
-class GridAttributeRealOptionEditWidget : public GridAttributeEditWidgetT<double>
+class GridAttributeRealOptionEditWidget : public GridAttributeEditWidgetT<double, vtkDoubleArray>
 {
 public:
 	GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);

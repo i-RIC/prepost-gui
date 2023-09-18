@@ -14,9 +14,11 @@
 
 #include <guibase/colortool.h>
 #include <guibase/irictoolbar.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4gridstructurecheckeri.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/iricundostack.h>
 
@@ -32,14 +34,13 @@
 #include <vtkRenderer.h>
 
 PreProcessorWindow::PreProcessorWindow(QWidget* parent) :
-	PreProcessorWindowInterface(parent)
+	PreProcessorWindowI(parent)
 {
 	init();
 }
 
 PreProcessorWindow::~PreProcessorWindow()
-{
-}
+{}
 
 void PreProcessorWindow::init()
 {
@@ -117,17 +118,14 @@ bool PreProcessorWindow::isInputConditionSet()
 
 PreProcessorWindow::GridState PreProcessorWindow::checkGridState()
 {
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(model()->rootDataItem());
-	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(model()->rootDataItem());
+	auto gridTypeDataItems = root->gridTypeDataItems();
 	bool ngexists = false;
 	bool okexists = false;
-	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it) {
-		PreProcessorGridTypeDataItem* typeItem = (*it);
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
-			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
-			if (g->grid() == 0) {
+	for (auto typeItem : gridTypeDataItems) {
+		for (auto cond : typeItem->conditions()) {
+			auto g = cond->gridDataItem();
+			if (g->grid() == nullptr) {
 				ngexists = true;
 			} else {
 				okexists = true;
@@ -162,21 +160,18 @@ QString PreProcessorWindow::checkGrid(bool detail)
 {
 	QString ret;
 	PreProcessorDataModel* m = model();
-	PreProcessorRootDataItem* root = m->rootDataItem();
-	QList<PreProcessorGridTypeDataItem*> gridTypeDataItems = root->gridTypeDataItems();
+	auto root = m->rootDataItem();
+	auto gridTypeDataItems = root->gridTypeDataItems();
 	QList<QString> gridNames;
 	QList<QString> gridMessages;
 	QFile logFile(m->projectData()->absoluteFileName("gridcheck.txt"));
 	logFile.open(QFile::WriteOnly | QFile::Text);
 	QTextStream logStream(&logFile);
-	for (auto it = gridTypeDataItems.begin(); it != gridTypeDataItems.end(); ++it) {
-		PreProcessorGridTypeDataItem* typeItem = (*it);
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = typeItem->conditions();
-		for (auto it2 = conds.begin(); it2 != conds.end(); ++it2) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* cond = *it2;
-			PreProcessorGridDataItemInterface* g = cond->gridDataItem();
-			Grid* grid = g->grid();
-			if (grid == 0) {
+	for (auto typeItem : gridTypeDataItems) {
+		for (auto cond : typeItem->conditions()) {
+			auto g = cond->gridDataItem();
+			v4InputGrid* grid = g->grid();
+			if (grid == nullptr) {
 				gridNames.append(cond->caption());
 				QString msg = "<ul>";
 				msg += "<li>" + tr("Grid is not created or imported yet.") + "</li>";
@@ -186,8 +181,10 @@ QString PreProcessorWindow::checkGrid(bool detail)
 			}
 			if (detail) {
 				logStream << tr("Checking grid %1 ...").arg(cond->caption()) << endl;
-				QStringList messages = grid->checkShape(logStream);
-				if (messages.count() > 0) {
+				QStringList messages;
+				auto grid2 = grid->grid();
+				bool ok = grid2->structureChecker()->check(grid2, &messages, &logStream);
+				if (! ok) {
 					gridNames.append(cond->caption());
 					QString msg;
 					msg = "<ul>";
@@ -222,7 +219,7 @@ QString PreProcessorWindow::checkGrid(bool detail)
 
 QPixmap PreProcessorWindow::snapshot() const
 {
-	PreProcessorGraphicsViewInterface* view = m_dataModel->graphicsView();
+	PreProcessorGraphicsViewI* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
 	QPixmap pixmap = QPixmap::fromImage(img);
 	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
@@ -303,7 +300,7 @@ void PreProcessorWindow::cameraMoveDown()
 
 void PreProcessorWindow::editBackgroundColor()
 {
-	BackgroundColorEditInterface::editBackgroundColor(this);
+	BackgroundColorEditI::editBackgroundColor(this);
 }
 
 class PreProcessorWindowCloseCommand : public QUndoCommand
@@ -445,7 +442,7 @@ bool PreProcessorWindow::checkMappingStatus()
 	return model()->checkMappingStatus();
 }
 
-PreProcessorDataModelInterface* PreProcessorWindow::dataModel() const
+PreProcessorDataModelI* PreProcessorWindow::dataModel() const
 {
 	return m_dataModel;
 }

@@ -1,10 +1,11 @@
+#include "../../../datamodel/preprocessorgriddataitem.h"
+#include "../public/preprocessorgridcrosssectionwindow2_graphicsview.h"
 #include "preprocessorgridcrosssectionwindow2_controller.h"
 #include "preprocessorgridcrosssectionwindow2_edittablecontroller.h"
 #include "preprocessorgridcrosssectionwindow2_edittablecontroller_delegate.h"
 #include "preprocessorgridcrosssectionwindow2_impl.h"
-#include "../public/preprocessorgridcrosssectionwindow2_graphicsview.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/gridcond/base/gridattributestringconverter.h>
@@ -84,7 +85,6 @@ bool PreProcessorGridCrosssectionWindow2::EditTableController::saveCsvFile(const
 
 void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 {
-	auto grid = m_impl->grid();
 	auto controller = m_impl->m_controller;
 
 	std::vector<GridAttributeDisplaySettingContainer*> activeSettings;
@@ -94,7 +94,13 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 		activeSettings.push_back(&s);
 	}
 
-	m_model.setColumnCount(activeSettings.size());
+	m_model.setColumnCount(static_cast<int> (activeSettings.size()));
+
+	auto grid = m_impl->grid();
+	if (grid == nullptr) {
+		m_model.setRowCount(0);
+		return;
+	}
 
 	int valueCount = 0;
 	if (controller->targetDirection() == Direction::I) {
@@ -113,8 +119,8 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 	m_model.setHorizontalHeaderLabels(labels);
 
 	int col = 0;
-	for (auto& s : activeSettings) {
-		auto att = grid->gridAttribute(s->attribute()->name());
+	for (const auto& s : activeSettings) {
+		auto att = m_impl->m_gridDataItem->grid()->attribute(s->attribute()->name());
 		auto editWidget = s->attribute()->editWidget(m_view);
 		if (s->attribute()->position() == SolverDefinitionGridAttribute::Position::Node) {
 			if (controller->targetDirection() == Direction::I) {
@@ -122,7 +128,7 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				if (i == -1) {return;}
 				for (int j = 0; j < valueCount; ++j) {
 					std::vector<vtkIdType> indices;
-					indices.push_back(grid->vertexIndex(i, j));
+					indices.push_back(grid->pointIndex(i, j));
 					editWidget->scanAndSetDefault(att, indices);
 					m_model.setData(m_model.index(j, col), editWidget->variantValue(), Qt::EditRole);
 				}
@@ -131,7 +137,7 @@ void PreProcessorGridCrosssectionWindow2::EditTableController::applyToTable()
 				if (j == -1) {return;}
 				for (int i = 0; i < valueCount; ++i) {
 					std::vector<vtkIdType> indices;
-					indices.push_back(grid->vertexIndex(i, j));
+					indices.push_back(grid->pointIndex(i, j));
 					editWidget->scanAndSetDefault(att, indices);
 					m_model.setData(m_model.index(i, col), editWidget->variantValue(), Qt::EditRole);
 				}

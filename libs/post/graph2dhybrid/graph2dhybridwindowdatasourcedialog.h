@@ -11,7 +11,7 @@ namespace Ui
 	class Graph2dHybridWindowDataSourceDialog;
 }
 
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class Graph2dHybridWindowResultSetting;
 class QListWidget;
 class Graph2dHybridWindowImportDataGroupDataItem;
@@ -30,7 +30,7 @@ public:
 	void setSetting(const Graph2dHybridWindowResultSetting& setting);
 	void setImportData(Graph2dHybridWindowImportDataGroupDataItem* group);
 	const Graph2dHybridWindowResultSetting& setting();
-	void setMainWindow(iRICMainWindowInterface* mainw) {m_mainWindow = mainw;}
+	void setMainWindow(iRICMainWindowI* mainw) {m_mainWindow = mainw;}
 
 public slots:
 	void accept() override;
@@ -101,7 +101,7 @@ private:
 	std::vector<std::string> m_twoDimDataNameList;
 	std::vector<std::string> m_threeDimDataNameList;
 
-	iRICMainWindowInterface* m_mainWindow;
+	iRICMainWindowI* m_mainWindow;
 
 	Ui::Graph2dHybridWindowDataSourceDialog* ui;
 };

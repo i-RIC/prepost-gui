@@ -76,7 +76,8 @@ HEADERS += gcc_riversurvey15d_global.h \
            gridcreatingconditionriversurvey15dpointmovedialog.h \
            gridcreatingconditionriversurvey15dpointregionadddialog.h \
            gridcreatingconditionriversurvey15dpointrepositiondialog.h \
-           gridcreatingconditionriversurvey15dregiondialog.h
+           gridcreatingconditionriversurvey15dregiondialog.h \
+           private/gridcreatingconditionriversurvey15d_deletectrlpointcommand.h
 FORMS += gridcreatingconditionriversurvey15dpointadddialog.ui \
          gridcreatingconditionriversurvey15dpointmovedialog.ui \
          gridcreatingconditionriversurvey15dpointregionadddialog.ui \
@@ -88,7 +89,8 @@ SOURCES += gridcreatingconditioncreatorriversurvey15d.cpp \
            gridcreatingconditionriversurvey15dpointmovedialog.cpp \
            gridcreatingconditionriversurvey15dpointregionadddialog.cpp \
            gridcreatingconditionriversurvey15dpointrepositiondialog.cpp \
-           gridcreatingconditionriversurvey15dregiondialog.cpp
+           gridcreatingconditionriversurvey15dregiondialog.cpp \
+           private/gridcreatingconditionriversurvey15d_deletectrlpointcommand.cpp
 TRANSLATIONS += languages/iricGccRiversurvey15d_ar_EG.ts \
                 languages/iricGccRiversurvey15d_bg_BG.ts \
                 languages/iricGccRiversurvey15d_bs_BA.ts \

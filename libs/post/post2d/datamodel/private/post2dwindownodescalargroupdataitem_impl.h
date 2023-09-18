@@ -14,7 +14,6 @@ public:
 	~Impl();
 
 	std::string m_target;
-	iRICLib::H5CgnsZone::SolutionPosition m_solutionPosition;
 
 	Setting m_setting;
 

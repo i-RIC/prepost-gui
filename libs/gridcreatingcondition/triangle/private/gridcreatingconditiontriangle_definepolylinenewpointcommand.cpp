@@ -1,7 +1,7 @@
 #include "gridcreatingconditiontriangle_definepolylinenewpointcommand.h"
 #include "../gridcreatingconditiontriangleabstractline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::DefinePolyLineNewPointCommand::DefinePolyLineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionTriangle* cond) :

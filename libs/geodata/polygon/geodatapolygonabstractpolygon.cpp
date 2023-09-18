@@ -5,8 +5,8 @@
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
 #include <vtkActor.h>
 #include <vtkCellData.h>

@@ -1,7 +1,7 @@
 #include "geodatapolyline_pushnewpointcommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GeoDataPolyLine::PushNewPointCommand::PushNewPointCommand(bool keyDown, const QPoint& point, GeoDataPolyLine* pol) :

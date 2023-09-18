@@ -26,7 +26,7 @@ private slots:
 	void handleDone();
 
 private:
-	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w) override;
+	bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 
 	double m_lonMin;
 	double m_lonMax;

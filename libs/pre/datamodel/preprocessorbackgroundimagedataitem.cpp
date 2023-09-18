@@ -1,17 +1,10 @@
 #include "preprocessorbackgroundimagedataitem.h"
 
 #include <guibase/objectbrowserview.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/backgroundimageinfodialog.h>
-
-#include <QAction>
-#include <QMenu>
-#include <QStandardItem>
-#include <QToolBar>
-
-#include <vtkRenderer.h>
 
 PreProcessorBackgroundImageDataItem::PreProcessorBackgroundImageDataItem(BackgroundImageInfo* image, PreProcessorDataItem* parent) :
 	PreProcessorDataItem {image->fileName(), QIcon(":/libs/guibase/images/iconPaper.svg"), parent},

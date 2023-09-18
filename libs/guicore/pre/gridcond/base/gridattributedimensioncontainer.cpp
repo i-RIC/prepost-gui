@@ -15,9 +15,7 @@ GridAttributeDimensionContainer::GridAttributeDimensionContainer(SolverDefinitio
 {}
 
 GridAttributeDimensionContainer::~GridAttributeDimensionContainer()
-{
-	delete impl;
-}
+{}
 
 std::string GridAttributeDimensionContainer::name() const
 {

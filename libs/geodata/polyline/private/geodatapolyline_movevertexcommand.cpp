@@ -1,7 +1,7 @@
 #include "geodatapolyline_movevertexcommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 #include <QPointF>

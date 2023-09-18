@@ -1,10 +1,14 @@
+#include "../grid/v4structured2dgrid.h"
+#include "../grid/v4structured3dgrid.h"
 #include "postbaseiterativenumericaldatacontainer.h"
 #include "postbaseiterativestringdatacontainer.h"
 #include "postsolutioninfo.h"
 #include "poststringresult.h"
 #include "poststringresultargument.h"
-#include "postzonedatacontainer.h"
+#include "v4postzonedatacontainer.h"
+#include "v4solutiongrid.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <misc/stringtool.h>
 
 #include <vtkCellData.h>
@@ -175,7 +179,7 @@ QJSValue PostStringResultArgument::baseIterativeJsValue() const
 QJSValue PostStringResultArgument::nodeJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->data()->data()->GetPointData();
+	auto pd = z->gridData()->grid()->vtkData()->data()->GetPointData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -184,7 +188,7 @@ QJSValue PostStringResultArgument::nodeJsValue() const
 QJSValue PostStringResultArgument::cellJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->data()->data()->GetCellData();
+	auto pd = z->gridData()->grid()->vtkData()->data()->GetCellData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -193,7 +197,8 @@ QJSValue PostStringResultArgument::cellJsValue() const
 QJSValue PostStringResultArgument::edgeIJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->iFaceData()->data()->GetPointData();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(z->gridData()->grid());
+	auto pd = sGrid->vtkIEdgeData()->data()->GetCellData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -202,7 +207,8 @@ QJSValue PostStringResultArgument::edgeIJsValue() const
 QJSValue PostStringResultArgument::edgeJJsValue() const
 {
 	auto z = zoneDataContainer();
-	auto pd = z->jFaceData()->data()->GetPointData();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(z->gridData()->grid());
+	auto pd = sGrid->vtkJEdgeData()->data()->GetCellData();
 	int index = arrayIndex();
 	vtkDataArray* da = pd->GetArray(name().c_str());
 	return *(da->GetTuple(index));
@@ -217,26 +223,39 @@ QJSValue PostStringResultArgument::edgeKJsValue() const
 int PostStringResultArgument::arrayIndex() const
 {
 	auto z = zoneDataContainer();
-	auto pointSet = z->data();
-	auto st = dynamic_cast<vtkStructuredGrid*>(pointSet);
-	auto ust = dynamic_cast<vtkUnstructuredGrid*>(pointSet);
+	auto grid = z->gridData();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
+	auto uGrid = dynamic_cast<vtkUnstructuredGrid*>(grid->grid());
 
-	if (ust != nullptr) {
+	if (uGrid != nullptr) {
 		// unstructured grid
 		return m_setting.index;
-	} else if (st != nullptr) {
+	} else if (sGrid2d != nullptr) {
 		auto t = m_setting.type.value();
 		if (t == Type::GridNode) {
-			return z->nodeIndex(m_setting.i, m_setting.j, m_setting.k);
+			return sGrid2d->pointIndex(m_setting.i,  m_setting.j);
 		} else if (t == Type::GridCell) {
-			return z->cellIndex(m_setting.i, m_setting.j, m_setting.k);
+			return sGrid2d->cellIndex(m_setting.i, m_setting.j);
 		} else if (t == Type::GridEdgeI) {
-			return z->ifaceIndex(m_setting.i, m_setting.j, m_setting.k);
+			return sGrid2d->iEdgeIndex(m_setting.i, m_setting.j);
 		} else if (t == Type::GridEdgeJ) {
-			return z->jfaceIndex(m_setting.i, m_setting.j, m_setting.k);
+			return sGrid2d->jEdgeIndex(m_setting.i, m_setting.j);
 		} else if (t == Type::GridEdgeK) {
-			// @todo implement this
 			return 0;
+		}
+	} else if (sGrid3d != nullptr) {
+		auto t = m_setting.type.value();
+		if (t == Type::GridNode) {
+			return sGrid3d->pointIndex(m_setting.i,  m_setting.j, m_setting.k);
+		} else if (t == Type::GridCell) {
+			return sGrid3d->cellIndex(m_setting.i, m_setting.j, m_setting.k);
+		} else if (t == Type::GridEdgeI) {
+			return sGrid3d->iFaceIndex(m_setting.i, m_setting.j, m_setting.k);
+		} else if (t == Type::GridEdgeJ) {
+			return sGrid3d->jFaceIndex(m_setting.i, m_setting.j, m_setting.k);
+		} else if (t == Type::GridEdgeK) {
+			return sGrid3d->kFaceIndex(m_setting.i, m_setting.j, m_setting.k);
 		}
 	}
 	// just for avoiding compiler warning
@@ -246,19 +265,21 @@ int PostStringResultArgument::arrayIndex() const
 void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	vtkPointSet* data = z->data()->data();
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
+	auto grid = z->gridData();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
+	auto uGrid = dynamic_cast<vtkUnstructuredGrid*>(grid->grid());
 
 	*fixed = false;
-	if (st != nullptr) {
-		int dim[3];
-		st->GetDimensions(dim);
-		if (m_setting.i >= dim[0]) {
+	if (uGrid != nullptr) {
+		if (m_setting.index >= uGrid->GetNumberOfPoints()) {
 			*fixed = true;
-		} else if (m_setting.j >= dim[1]) {
+			m_setting.index = 0;
+		}
+	} else if (sGrid2d != nullptr) {
+		if (m_setting.i >= sGrid2d->dimensionI()) {
 			*fixed = true;
-		} else if (m_setting.k >= dim[2]) {
+		} else if (m_setting.j >= sGrid2d->dimensionJ()) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -266,10 +287,18 @@ void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
 			m_setting.j = 0;
 			m_setting.k = 0;
 		}
-	} else if (ust != nullptr) {
-		if (m_setting.index >= ust->GetNumberOfPoints()) {
+	} else if (sGrid3d != nullptr) {
+		if (m_setting.i >= sGrid3d->dimensionI()) {
 			*fixed = true;
-			m_setting.index = 0;
+		} else if (m_setting.j >= sGrid3d->dimensionJ()) {
+			*fixed = true;
+		} else if (m_setting.k >= sGrid3d->dimensionK()) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
 		}
 	}
 }
@@ -277,19 +306,21 @@ void PostStringResultArgument::fixNodeIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	vtkPointSet* data = z->data()->data();
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
+	auto grid = z->gridData();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
+	auto uGrid = dynamic_cast<vtkUnstructuredGrid*>(grid->grid());
 
 	*fixed = false;
-	if (st != nullptr) {
-		int dim[3];
-		st->GetDimensions(dim);
-		if (m_setting.i >= dim[0] - 1) {
+	if (uGrid != nullptr) {
+		if (m_setting.index >= uGrid->GetNumberOfCells()) {
 			*fixed = true;
-		} else if (m_setting.j >= dim[1] - 1) {
+			m_setting.index = 0;
+		}
+	} else if (sGrid2d != nullptr) {
+		if (m_setting.i >= sGrid2d->dimensionI() - 1) {
 			*fixed = true;
-		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+		} else if (m_setting.j >= sGrid2d->dimensionJ() - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -297,10 +328,18 @@ void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 			m_setting.j = 0;
 			m_setting.k = 0;
 		}
-	} else if (ust != nullptr) {
-		if (m_setting.index >= ust->GetNumberOfCells()) {
+	} else if (sGrid3d != nullptr) {
+		if (m_setting.i >= sGrid3d->dimensionI() - 1) {
 			*fixed = true;
-			m_setting.index = 0;
+		} else if (m_setting.j >= sGrid3d->dimensionJ() - 1) {
+			*fixed = true;
+		} else if (m_setting.k >= sGrid3d->dimensionK() - 1) {
+			*fixed = true;
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
 		}
 	}
 }
@@ -308,18 +347,28 @@ void PostStringResultArgument::fixCellIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	vtkPointSet* data = z->data()->data();
+	auto grid = z->gridData();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
 
-	auto st = vtkStructuredGrid::SafeDownCast(data);
 	*fixed = false;
-	if (st != nullptr) {
-		int dim[3];
-		st->GetDimensions(dim);
-		if (m_setting.i >= dim[0]) {
+	if (sGrid2d != nullptr) {
+		if (m_setting.i >= sGrid2d->dimensionI()) {
 			*fixed = true;
-		} else if (m_setting.j >= dim[1] - 1) {
+		} else if (m_setting.j >= sGrid2d->dimensionJ() - 1) {
 			*fixed = true;
-		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	} else if (sGrid3d != nullptr) {
+		if (m_setting.i >= sGrid3d->dimensionI()) {
+			*fixed = true;
+		} else if (m_setting.j >= sGrid3d->dimensionJ() - 1) {
+			*fixed = true;
+		} else if (m_setting.k >= sGrid3d->dimensionK() - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -333,18 +382,28 @@ void PostStringResultArgument::fixEdgeIIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	vtkPointSet* data = z->data()->data();
+	auto grid = z->gridData();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
 
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	if (st != nullptr) {
-		int dim[3];
-		st->GetDimensions(dim);
-		*fixed = false;
-		if (m_setting.i >= dim[0] - 1) {
+	*fixed = false;
+	if (sGrid2d != nullptr) {
+		if (m_setting.i >= sGrid2d->dimensionI() - 1) {
 			*fixed = true;
-		} else if (m_setting.j >= dim[1]) {
+		} else if (m_setting.j >= sGrid2d->dimensionJ()) {
 			*fixed = true;
-		} else if (dim[2] > 1 && m_setting.k >= dim[2] - 1) {
+		}
+		if (*fixed) {
+			m_setting.i = 0;
+			m_setting.j = 0;
+			m_setting.k = 0;
+		}
+	} else if (sGrid3d != nullptr) {
+		if (m_setting.i >= sGrid3d->dimensionI() - 1) {
+			*fixed = true;
+		} else if (m_setting.j >= sGrid3d->dimensionJ()) {
+			*fixed = true;
+		} else if (m_setting.k >= sGrid3d->dimensionK() - 1) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -358,18 +417,16 @@ void PostStringResultArgument::fixEdgeJIndexIfNeeded(bool* fixed)
 void PostStringResultArgument::fixEdgeKIndexIfNeeded(bool* fixed)
 {
 	auto z = zoneDataContainer();
-	vtkPointSet* data = z->data()->data();
+	auto grid = z->gridData();
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*>(grid->grid());
 
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	if (st != nullptr) {
-		int dim[3];
-		st->GetDimensions(dim);
-		*fixed = false;
-		if (m_setting.i >= dim[0] - 1) {
+	*fixed = false;
+	if (sGrid3d != nullptr) {
+		if (m_setting.i >= sGrid3d->dimensionI() - 1) {
 			*fixed = true;
-		} else if (m_setting.j >= dim[1] - 1) {
+		} else if (m_setting.j >= sGrid3d->dimensionJ() - 1) {
 			*fixed = true;
-		} else if (m_setting.k >= dim[2]) {
+		} else if (m_setting.k >= sGrid3d->dimensionK()) {
 			*fixed = true;
 		}
 		if (*fixed) {
@@ -385,7 +442,7 @@ PostStringResult* PostStringResultArgument::result() const
 	return dynamic_cast<PostStringResult*>(parent());
 }
 
-PostZoneDataContainer* PostStringResultArgument::zoneDataContainer() const
+v4PostZoneDataContainer* PostStringResultArgument::zoneDataContainer() const
 {
 	return result()->zoneDataContainer();
 }

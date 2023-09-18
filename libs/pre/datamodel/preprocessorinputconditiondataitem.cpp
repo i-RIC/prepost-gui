@@ -1,6 +1,6 @@
 #include "preprocessorinputconditiondataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/inputcond/inputconditiondialog.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
@@ -24,7 +24,7 @@ PreProcessorInputConditionDataItem::PreProcessorInputConditionDataItem(GraphicsW
 	PreProcessorDataItem {parent}
 {
 	try {
-		iRICMainWindowInterface* mainW = projectData()->mainWindow();
+		iRICMainWindowI* mainW = projectData()->mainWindow();
 		m_dialog = new InputConditionDialog(projectData()->solverDefinition(), mainW->locale() , mainW);
 		m_dialog->setWorkFolder(projectData()->workDirectory());
 		connect(m_dialog, SIGNAL(accepted()), this, SLOT(setModified()));

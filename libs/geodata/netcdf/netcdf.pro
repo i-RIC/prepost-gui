@@ -147,6 +147,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfgdalrealimporter.h \
            geodatanetcdfgrayscalepngrealexporter.h \
            geodatanetcdfgrayscalepngrealimporter.h \
+           geodatanetcdfifacemappert.h \
            geodatanetcdfimporter.h \
            geodatanetcdfimporterdateselectdialog.h \
            geodatanetcdfimportersettingdialog.h \
@@ -154,6 +155,7 @@ HEADERS += gd_netcdf_global.h \
            geodatanetcdfinteger.h \
            geodatanetcdfintegercreator.h \
            geodatanetcdfintegerimporter.h \
+           geodatanetcdfjfacemappert.h \
            geodatanetcdfncexporter.h \
            geodatanetcdfnodemappert.h \
            geodatanetcdfproxy.h \
@@ -170,7 +172,9 @@ HEADERS += gd_netcdf_global.h \
            private/geodatanetcdf_impl.h \
            private/geodatanetcdfcellmappert_detail.h \
            private/geodatanetcdfcreatort_detail.h \
+           private/geodatanetcdfifacemappert_detail.h \
            private/geodatanetcdfimportert_detail.h \
+           private/geodatanetcdfjfacemappert_detail.h \
            private/geodatanetcdfnodemappert_detail.h \
            private/geodatanetcdfproxy_displaysetting.h \
            private/geodatanetcdfproxy_displaysettingwidget.h \

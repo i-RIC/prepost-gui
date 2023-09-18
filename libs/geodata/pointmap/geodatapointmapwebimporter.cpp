@@ -7,7 +7,7 @@
 #include <cs/webmercatorutil.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/informationdialog.h>
@@ -153,7 +153,7 @@ void GeoDataPointmapWebImporter::handleDone()
 	m_isWaitingHttpResponse = false;
 }
 
-bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPointmapWebImporter::doInit(int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	*count = 1;
 	auto mainfile = item->projectData()->mainfile();

@@ -1,5 +1,5 @@
-#include "../base/iricmainwindowinterface.h"
-#include "../base/windowwithzindexinterface.h"
+#include "../base/iricmainwindowi.h"
+#include "../base/windowwithzindexi.h"
 #include "projectdata.h"
 #include "projectdataitem.h"
 #include "projectmainfile.h"
@@ -34,9 +34,7 @@ ProjectDataItem::ProjectDataItem(const QString& filename, ProjectDataItem* d) :
 }
 
 ProjectDataItem::~ProjectDataItem()
-{
-	delete impl;
-}
+{}
 
 void ProjectDataItem::loadFromProjectMainFile(const QDomNode& node)
 {
@@ -119,7 +117,7 @@ ProjectDataItem* ProjectDataItem::parent() const
 	return dynamic_cast<ProjectDataItem*> (QObject::parent());
 }
 
-iRICMainWindowInterface* ProjectDataItem::iricMainWindow() const
+iRICMainWindowI* ProjectDataItem::iricMainWindow() const
 {
 	auto p = projectData();
 	if (p == nullptr) {return nullptr;}

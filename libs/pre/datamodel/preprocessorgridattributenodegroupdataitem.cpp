@@ -8,21 +8,22 @@
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
+#include "preprocessorgridshapedataitem.h"
 #include "preprocessorgridtypedataitem.h"
 
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserattribute.h>
 #include <guicore/datamodel/propertybrowserview.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/pre/complex/gridcomplexconditiongroup.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributeintegernodecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -30,7 +31,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridattributeintegeroptionnode.h>
+#include <guicore/solverdef/solverdefinitiongridattributeintegeroption.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -42,33 +43,6 @@
 #include <misc/valuemodifycommandt.h>
 #include <misc/xmlsupport.h>
 
-#include <QAction>
-#include <QDomNode>
-#include <QList>
-#include <QMenu>
-#include <QMouseEvent>
-#include <QStandardItem>
-#include <QToolBar>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
-
-#include <vtkAbstractPointLocator.h>
-#include <vtkActor.h>
-#include <vtkActorCollection.h>
-#include <vtkAppendPolyData.h>
-#include <vtkCellData.h>
-#include <vtkCleanPolyData.h>
-#include <vtkClipPolyData.h>
-#include <vtkColorTransferFunction.h>
-#include <vtkContourFilter.h>
-#include <vtkDelaunay2D.h>
-#include <vtkDoubleArray.h>
-#include <vtkPointData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkStructuredGridGeometryFilter.h>
-
 PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDataItem(PreProcessorDataItem* p) :
 	PreProcessorDataItem {tr("Node attributes"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
 	m_actor {vtkActor::New()},
@@ -78,24 +52,24 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	p->standardItem()->takeRow(m_standardItem->row());
-	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto typeItem = gridTypeDataItem();
 	const auto& conds = typeItem->gridType()->gridAttributes();
 	for (auto cond : conds) {
-		if (cond->position() == SolverDefinitionGridAttribute::Node) {
+		if (cond->position() == SolverDefinitionGridAttribute::Position::Node) {
 			// this is a node condition.
 			auto item = new PreProcessorGridAttributeNodeDataItem(cond, this);
 			m_childItems.push_back(item);
-			m_nameMap.insert(item->condition()->name(), item);
+			m_nameMap.insert({item->condition()->name(), item});
 		}
 	}
 
 	const auto& compconds = typeItem->gridType()->gridComplexAttributes();
 	for (auto cond : compconds) {
-		if (cond->position() == SolverDefinitionGridComplexAttribute::Node) {
+		if (cond->position() == SolverDefinitionGridComplexAttribute::Position::Node) {
 			// this is a node condition.
 			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
 			m_childItems.push_back(item);
-			m_nameMap.insert(item->condition()->name(), item);
+			m_nameMap.insert({item->condition()->name(), item});
 		}
 	}
 
@@ -152,8 +126,8 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 
 	// make all the items invisible
 	m_actorCollection->RemoveAllItems();
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
-	if (g == 0) {
+	v4InputGrid* g = gridDataItem()->grid();
+	if (g == nullptr) {
 		// grid is not setup yet.
 		return;
 	}
@@ -163,10 +137,10 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 	}
 	m_opacityWidget->setEnabled(true);
 
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	auto cs = typedi->colorMapSetting(m_target);
+	auto cs = gridTypeDataItem()->colorMapSetting(m_target);
 
-	auto filteredGrid = g->vtkFilteredGrid();
+	auto grid2d = dynamic_cast<v4Grid2d*> (g->grid());
+	auto filteredGrid = grid2d->vtkFilteredData();
 	vtkPointData* data = filteredGrid->GetPointData();
 	data->SetActiveScalars(m_target.c_str());
 
@@ -183,16 +157,17 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_opacity.load(node);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		std::string name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name();
+	for (auto item : conditions()) {
+		const auto& name = item->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name.c_str());
-		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
+		if (! childNode.isNull()) {item->loadFromProjectMainFile(childNode);}
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeNodeDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it);
-		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
+
+	for (auto child: m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeNodeDataItem*> (child);
+		if (item->standardItem()->checkState() == Qt::Checked) {
 			// this is the current Condition!
-			setTarget(tmpItem->condition()->name());
+			setTarget(item->condition()->name());
 		}
 	}
 }
@@ -200,17 +175,17 @@ void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 void PreProcessorGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_opacity.save(writer);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+	for (auto item : conditions()) {
 		writer.writeStartElement("NodeAttribute");
-		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name().c_str());
-		(*it)->saveToProjectMainFile(writer);
+		writer.writeAttribute("name", item->condition()->name().c_str());
+		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const std::string& name)
 {
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->informGridAttributeChange(name);
+	gridDataItem()->informGridAttributeChange(name);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateZDepthRangeItemCount()
@@ -236,22 +211,14 @@ QDialog* PreProcessorGridAttributeNodeGroupDataItem::propertyDialog(QWidget* par
 	return child->propertyDialog(parent);
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::handlePropertyDialogAccepted(QDialog* propDialog)
-{
-	auto child = activeChildItem();
-	if (child == nullptr) {return;}
-
-	child->handlePropertyDialogAccepted(propDialog);
-}
-
 void PreProcessorGridAttributeNodeGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	updateAttributeBrowser(QPoint(event->x(), event->y()), v);
+	updateAttributeBrowser(event->pos(), v);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	fixAttributeBrowser(QPoint(event->x(), event->y()), v);
+	fixAttributeBrowser(event->pos(), v);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::assignActorZValues(const ZDepthRange& range)
@@ -266,45 +233,46 @@ void PreProcessorGridAttributeNodeGroupDataItem::informGridUpdate()
 
 PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::activeChildItem() const
 {
-	return m_nameMap.value(m_target);
+	return nodeDataItem(m_target);
 }
 
-const QList<PreProcessorGridAttributeNodeDataItem*> PreProcessorGridAttributeNodeGroupDataItem::conditions() const
+std::vector<PreProcessorGridAttributeNodeDataItem*> PreProcessorGridAttributeNodeGroupDataItem::conditions() const
 {
-	QList<PreProcessorGridAttributeNodeDataItem*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		ret.append(dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it));
+	std::vector<PreProcessorGridAttributeNodeDataItem*> ret;
+	for (auto child : m_childItems) {
+		ret.push_back(dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(child));
 	}
 	return ret;
 }
 
 PreProcessorGridAttributeNodeDataItem* PreProcessorGridAttributeNodeGroupDataItem::nodeDataItem(const std::string& name) const
 {
-	return m_nameMap.value(name, nullptr);
+	auto it = m_nameMap.find(name);
+	if (it == m_nameMap.end()) {return nullptr;}
+
+	return it->second;
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::handleStandardItemChange()
 {
 	if (m_isCommandExecuting) {return;}
+
 	iRICUndoStack::instance().beginMacro(QObject::tr("Object Browser Item Change"));
 	GraphicsWindowDataItem::handleStandardItemChange();
 	if (m_standardItem->checkState() == Qt::Checked) {
-		// uncheck the node group dataitem.
-		PreProcessorGridAttributeCellGroupDataItem* nitem = dynamic_cast<PreProcessorGridDataItem*>(parent())->cellGroupDataItem();
-		nitem->standardItem()->setCheckState(Qt::Unchecked);
+		// uncheck other group dataitems
+		auto gItem = gridDataItem();
+		for (auto child : gItem->childItems()) {
+			if (child == this) {continue;}
+			if (child == gItem->shapeDataItem()) {continue;}
+
+			child->standardItem()->setCheckState(Qt::Unchecked);
+		}
 	}
 	iRICUndoStack::instance().endMacro();
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::pushOpacityPercentAndUpdateActorSettingCommand(const OpacityContainer& opacity, QUndoCommand* subcommand, bool apply)
-{
-	auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ModifyOpacityAndSubCommand"), apply);
-	com->addCommand(subcommand);
-	com->addCommand(new ValueModifyCommmand<OpacityContainer> (iRIC::generateCommandId("ModifyOpacity"), apply, opacity, &m_opacity));
-	pushUpdateActorSettingCommand(com, this);
-}
-
-const OpacityContainer& PreProcessorGridAttributeNodeGroupDataItem::opacity() const
+OpacityContainer& PreProcessorGridAttributeNodeGroupDataItem::opacity()
 {
 	return m_opacity;
 }
@@ -319,14 +287,6 @@ QWidgetContainer* PreProcessorGridAttributeNodeGroupDataItem::colorMapWidgetCont
 	return m_colorMapWidgetContainer;
 }
 
-void PreProcessorGridAttributeNodeGroupDataItem::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
-{
-	for (auto i : m_childItems) {
-		auto item = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(i);
-		item->informSelectedVerticesChanged(vertices);
-	}
-}
-
 QAction* PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowserAction() const
 {
 	return m_showAttributeBrowserAction;
@@ -335,27 +295,24 @@ QAction* PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowserAction(
 void PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowser()
 {
 	initAttributeBrowser();
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gridTypeDataItem())) {
+		auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->show();
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gridTypeDataItem())) {
 		menu->addAction(m_showAttributeBrowserAction);
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::initAttributeBrowser()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
+	SolverDefinitionGridType::GridType gt = gridTypeDataItem()->gridType()->defaultGridType();
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
 		pb->view()->resetForVertex(true);
 	} else if (gt == SolverDefinitionGridType::gtUnstructured2DGrid) {
@@ -365,7 +322,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::initAttributeBrowser()
 
 void PreProcessorGridAttributeNodeGroupDataItem::clearAttributeBrowser()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
 	pb->view()->hideAll();
 	m_attributeBrowserFixed = false;
@@ -373,129 +330,121 @@ void PreProcessorGridAttributeNodeGroupDataItem::clearAttributeBrowser()
 
 void PreProcessorGridAttributeNodeGroupDataItem::fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
-	PropertyBrowser* pb = pre->propertyBrowser();
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pb = pre->propertyBrowser();
 	if (! pb->isVisible()) {return;}
 
 	vtkIdType vid = findVertex(p, v);
 	m_attributeBrowserFixed = (vid >= 0);
 	if (vid < 0) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
-		pre->propertyBrowser()->view()->resetAttributes();
+		pb->view()->resetAttributes();
 		return;
 	}
 	double vertex[3];
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
-	grid->vtkGrid()->GetPoint(vid, vertex);
+	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	v4InputGrid* grid = gitem->grid();
+	grid->grid()->vtkData()->data()->GetPoint(vid, vertex);
 
 	updateAttributeBrowser(vid, vertex[0], vertex[1], v);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
-	PropertyBrowser* pb = pre->propertyBrowser();
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pb = pre->propertyBrowser();
 	if (! pb->isVisible()) {return;}
 	if (m_attributeBrowserFixed) {return;}
 
 	vtkIdType vid = findVertex(p, v);
 	if (vid < 0) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
-		pre->propertyBrowser()->view()->resetAttributes();
+		pb->view()->resetAttributes();
 		return;
 	}
 	double vertex[3];
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
-	grid->vtkGrid()->GetPoint(vid, vertex);
+	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	v4InputGrid* grid = gitem->grid();
+	grid->grid()->vtkData()->data()->GetPoint(vid, vertex);
 
 	updateAttributeBrowser(vid, vertex[0], vertex[1], v);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/)
 {
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	auto geoTopItem = gtitem->geoDataTop();
-	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
+	auto gtItem = gridTypeDataItem();
+	auto geoTopItem = gtItem->geoDataTop();
+	SolverDefinitionGridType::GridType gt = gtItem->gridType()->defaultGridType();
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
+	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	v4InputGrid* grid = gitem->grid();
 
 	QList<PropertyBrowserAttribute> atts;
-	const QList<GridAttributeContainer*> conds = grid->gridAttributes();
-	for (auto it = conds.begin(); it != conds.end(); ++it) {
-		GridAttributeContainer* cond = *it;
-		auto icond = dynamic_cast<GridAttributeIntegerNodeContainer*>(cond);
-		auto rcond = dynamic_cast<GridAttributeRealNodeContainer*>(cond);
-		auto ccond = dynamic_cast<GridComplexAttributeContainer*>(cond);
+	for (auto att : grid->attributes()) {
+		if (att->gridAttribute()->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
 
-		if (icond != nullptr) {
-			if (icond->gridAttribute()->isOption()) {
-				SolverDefinitionGridAttributeIntegerOptionNode* optCond =
-					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionNode*>(icond->gridAttribute());
-				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), optCond->enumerations().value(icond->value(vid)));
+		auto iAtt = dynamic_cast<GridAttributeIntegerContainer*>(att);
+		auto rAtt = dynamic_cast<GridAttributeRealContainer*>(att);
+		auto cAtt = dynamic_cast<GridComplexAttributeContainer*>(att);
+
+		if (iAtt != nullptr) {
+			if (iAtt->gridAttribute()->isOption()) {
+				auto optCond = dynamic_cast<SolverDefinitionGridAttributeIntegerOption*>(iAtt->gridAttribute());
+				PropertyBrowserAttribute att(iAtt->gridAttribute()->caption(), optCond->enumerations().value(iAtt->value(vid)));
 				atts.append(att);
 			} else {
-				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), icond->value(vid));
+				PropertyBrowserAttribute att(iAtt->gridAttribute()->caption(), iAtt->value(vid));
 				atts.append(att);
 			}
-		} else if (rcond != nullptr) {
-			PropertyBrowserAttribute att(rcond->gridAttribute()->caption(), rcond->value(vid));
+		} else if (rAtt!= nullptr) {
+			PropertyBrowserAttribute att(rAtt->gridAttribute()->caption(), rAtt->value(vid));
 			atts.append(att);
-		} else if (ccond != nullptr) {
-			auto group = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*>
-					(geoTopItem->groupDataItem(ccond->name()));
+		} else if (cAtt!= nullptr) {
+			auto group = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemI*>
+					(geoTopItem->groupDataItem(cAtt->name()));
 			if (group->condition()->position() != SolverDefinitionGridComplexAttribute::Position::Node) {continue;}
 
-			auto v = ccond->value(vid);
-			GridComplexConditionGroup* g = group->groups().at(v - 1);
+			auto v = cAtt->value(vid);
+			auto g = group->groups().at(v - 1);
 			PropertyBrowserAttribute att(group->condition()->caption(), g->caption());
 			atts.append(att);
 		}
 	}
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
-		Structured2DGrid* g2 = dynamic_cast<Structured2DGrid*>(gitem->grid());
-		unsigned int i, j;
-		g2->getIJIndex(vid, &i, &j);
+		auto g2 = dynamic_cast<v4Structured2dGrid*> (gitem->grid()->grid());
+		vtkIdType i, j;
+		g2->getPointIJIndex(vid, &i, &j);
 		pre->propertyBrowser()->view()->setVertexAttributes(i, j, x, y, atts);
 	} else if (gt == SolverDefinitionGridType::gtUnstructured2DGrid) {
 		pre->propertyBrowser()->view()->setVertexAttributes(vid, x, y, atts);
 	}
 }
 
+PreProcessorGridTypeDataItem* PreProcessorGridAttributeNodeGroupDataItem::gridTypeDataItem() const
+{
+	return gridDataItem()->gridTypeDataItem();
+}
+
 vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p, VTKGraphicsView* v)
 {
-	double x = p.x();
-	double y = p.y();
-	PreProcessorGraphicsView* v2 = dynamic_cast<PreProcessorGraphicsView*>(v);
-	v2->viewportToWorld(x, y);
+	auto v2 = dynamic_cast<PreProcessorGraphicsView*>(v);
+	QPointF pos = v2->viewportToWorld(p);
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
+	v4InputGrid* grid = gridDataItem()->grid();
 	if (grid == nullptr) {
 		// no grid
 		return -1;
 	}
-	vtkIdType vid = grid->pointLocator()->FindClosestPoint(x, y, 0);
+	double limitDist = v2->stdRadius(iRIC::nearRadius());
+	double point[3] = {pos.x(), pos.y(), 0};
+	double dist;
+	vtkIdType vid = grid->grid()->vtkData()->pointLocator()->FindClosestPointWithinRadius(limitDist, point, dist);
 	if (vid < 0) {
 		// no point is near.
-		return -1;
-	}
-	double vertex[3];
-	grid->vtkGrid()->GetPoint(vid, vertex);
-
-	QVector2D vec1(x, y);
-	QVector2D vec2(vertex[0], vertex[1]);
-	double distance = (vec2 - vec1).length();
-	double limitDist = v2->stdRadius(iRIC::nearRadius());
-	if (distance > limitDist) {
-		// no point is near.
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+		auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->view()->resetAttributes();
 		return -1;
 	}
+
 	return vid;
 }
 
@@ -515,13 +464,15 @@ bool PreProcessorGridAttributeNodeGroupDataItem::addToolBarButtons(QToolBar* too
 	if (activeItem == 0) {return true;}
 
 	auto grid = gridDataItem()->grid();
-	GridAttributeContainer* cont = grid->gridAttribute(activeItem->condition()->name());
-	const auto& selectWidgets = cont->dimensions()->selectWidgets();
+	if (grid == nullptr) {return true;}
+
+	auto att = grid->attribute(activeItem->condition()->name());
+	const auto& selectWidgets = att->dimensions()->selectWidgets();
 	if (selectWidgets.size() > 0) {
 		toolBar->addSeparator();
 
-		for (int i = 0; i < selectWidgets.size(); ++i) {
-			GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
+		for (int i = 0; i < static_cast<int> (selectWidgets.size()); ++i) {
+			auto w = selectWidgets.at(i);
 			QAction* action = toolBar->addWidget(w);
 			action->setVisible(true);
 		}

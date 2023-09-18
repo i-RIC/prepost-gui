@@ -108,7 +108,9 @@ HEADERS += gd_polylinegroup_global.h \
            geodatapolylinegroupcreatort.h \
            geodatapolylinegroupcsvexporter.h \
            geodatapolylinegroupcsvimporter.h \
+           geodatapolylinegroupifacemappert.h \
            geodatapolylinegroupintegercreator.h \
+           geodatapolylinegroupjfacemappert.h \
            geodatapolylinegroupnodemappert.h \
            geodatapolylinegrouppolyline.h \
            geodatapolylinegroupproxy.h \
@@ -119,6 +121,8 @@ HEADERS += gd_polylinegroup_global.h \
            private/geodatapolylinegroup_impl.h \
            private/geodatapolylinegroupcellmappert_detail.h \
            private/geodatapolylinegroupcreatort_detail.h \
+           private/geodatapolylinegroupifacemappert_detail.h \
+           private/geodatapolylinegroupjfacemappert_detail.h \
            private/geodatapolylinegroupnodemappert_detail.h \
            private/geodatapolylinegrouppolyline_impl.h \
            private/geodatapolylinegroupproxy_displaysetting.h \

@@ -26,9 +26,7 @@ InputConditionContainer::InputConditionContainer(const InputConditionContainer& 
 }
 
 InputConditionContainer::~InputConditionContainer()
-{
-	delete impl;
-}
+{}
 
 void InputConditionContainer::setName(const std::string& name)
 {

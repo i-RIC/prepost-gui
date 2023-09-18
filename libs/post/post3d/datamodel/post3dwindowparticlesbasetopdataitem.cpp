@@ -4,8 +4,8 @@
 #include "post3dwindowparticlesbasevectorgrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guicore/grid/v4particles3d.h>
 #include <guicore/image/imagesettingcontainer.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -34,7 +34,7 @@ Post3dWindowParticlesBaseTopDataItem::~Post3dWindowParticlesBaseTopDataItem()
 void Post3dWindowParticlesBaseTopDataItem::setup()
 {
 	bool vectorExist = false;
-	vtkPolyData* partD = particleData();
+	vtkPolyData* partD = particleData()->vtkConcreteData()->concreteData();
 	auto pd = partD->GetPointData();
 
 	int num = pd->GetNumberOfArrays();

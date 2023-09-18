@@ -2,7 +2,7 @@
 #include "geodatapolydatagroup_impl.h"
 #include "../geodatapolydatagrouppolydata.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 GeoDataPolyDataGroup::EditNameAndValueCommand::EditNameAndValueCommand(const std::vector<QString>& names, const std::vector<QVariant>& values, const std::vector<GeoDataPolyDataGroupPolyData*> data, GeoDataPolyDataGroup* group) :
 	QUndoCommand(GeoDataPolyDataGroup::tr("Edit name and value of polydatas")),
@@ -37,7 +37,7 @@ void GeoDataPolyDataGroup::EditNameAndValueCommand::apply(const std::vector<QStr
 	m_group->updateVtkObjects();
 	m_group->updateSelectedDataVtkObjects();
 	m_group->updateAttributeBrowser();
-	auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (m_group->parent());
+	auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_group->parent());
 	p->informValueRangeChange();
 	p->informDataChange();
 }

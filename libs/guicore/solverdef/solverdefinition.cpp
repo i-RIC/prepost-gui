@@ -143,9 +143,7 @@ SolverDefinition::SolverDefinition(const QString& solverfolder, const QLocale& l
 }
 
 SolverDefinition::~SolverDefinition()
-{
-	delete impl;
-}
+{}
 
 const std::string& SolverDefinition::name() const
 {

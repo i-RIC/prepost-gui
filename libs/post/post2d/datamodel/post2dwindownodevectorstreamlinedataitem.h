@@ -27,7 +27,6 @@ public slots:
 private:
 	QDialog* propertyDialog(QWidget* parent) override;
 
-	Post2dWindowZoneDataItem* zoneDataItem() const;
 	Post2dWindowNodeVectorStreamlineGroupDataItem* groupDataItem() const;
 };
 

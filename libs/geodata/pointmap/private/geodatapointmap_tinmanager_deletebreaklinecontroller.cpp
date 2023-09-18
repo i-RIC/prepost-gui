@@ -5,7 +5,7 @@
 #include "geodatapointmap_tinmanager_impl.h"
 
 #include <guicore/datamodel/vtk2dgraphicsview.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/informationdialog.h>
 #include <misc/mathsupport.h>
 

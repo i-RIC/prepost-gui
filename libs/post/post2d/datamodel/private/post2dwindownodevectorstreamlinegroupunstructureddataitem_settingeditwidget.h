@@ -14,7 +14,7 @@ namespace Ui {
 class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem_SettingEditWidget;
 }
 
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidget : public ModifyCommandWidget
 {
@@ -43,7 +43,7 @@ private slots:
 	void handleCurrentStartPositionChanged(int index);
 
 private:
-	void setupSolutionComboBox(PostZoneDataContainer* data);
+	void setupSolutionComboBox(v4PostZoneDataContainer* data);
 	void updateRemoveButtonStatus();
 	void updateStartPositionList();
 	void applyStartPosition(int index);

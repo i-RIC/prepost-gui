@@ -4,14 +4,16 @@
 #include <guicore/misc/targeted/targeteditemi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/opacitycontainer.h>
-#include <QMap>
 
 #include <string>
+#include <unordered_map>
+#include <vector>
 
 class NamedGraphicWindowDataItem;
 class OpacityContainerWidget;
 class PreProcessorGridAttributeNodeDataItem;
 class PreProcessorGridDataItem;
+class PreProcessorGridTypeDataItem;
 class QWidgetContainer;
 
 class vtkActor;
@@ -35,20 +37,17 @@ public:
 	void informDeselection(VTKGraphicsView* v) override;
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void informGridUpdate();
-	const QList<PreProcessorGridAttributeNodeDataItem*> conditions() const;
+	std::vector<PreProcessorGridAttributeNodeDataItem*> conditions() const;
 	PreProcessorGridAttributeNodeDataItem* nodeDataItem(const std::string& name) const;
 	void handleStandardItemChange() override;
-	void pushOpacityPercentAndUpdateActorSettingCommand(const OpacityContainer& opacity, QUndoCommand* subcommand, bool apply = false);
-	const OpacityContainer& opacity() const;
+	OpacityContainer& opacity();
 	OpacityContainerWidget* opacityWidget() const;
 	QWidgetContainer* colorMapWidgetContainer() const;
-	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	QAction* showAttributeBrowserAction() const;
 	void addCustomMenuItems(QMenu* menu) override;
 	void initAttributeBrowser();
@@ -64,13 +63,13 @@ public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
 	void showAttributeBrowser();
 
-protected:
+private:
 	PreProcessorGridAttributeNodeDataItem* activeChildItem() const;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* v);
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 
-private:
 	vtkIdType findVertex(const QPoint& p, VTKGraphicsView* v);
 
 	std::string m_target;
@@ -80,7 +79,7 @@ private:
 	QAction* m_showAttributeBrowserAction;
 	OpacityContainer m_opacity;
 	bool m_attributeBrowserFixed;
-	QMap<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
+	std::unordered_map<std::string, PreProcessorGridAttributeNodeDataItem*> m_nameMap;
 
 	OpacityContainerWidget* m_opacityWidget;
 	QWidgetContainer* m_colorMapWidgetContainer;

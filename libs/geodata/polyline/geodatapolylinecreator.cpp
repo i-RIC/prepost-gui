@@ -3,7 +3,7 @@
 #include "geodatapolylineimporter.h"
 #include "geodatapolylineshapeexporter.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 #include <QStandardItem>
 

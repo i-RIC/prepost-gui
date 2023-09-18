@@ -104,9 +104,9 @@ public:
 	void createModeUpdateMouseEventMode(const QPoint& mousePosition);
 	void editModeUpdateMouseEventMode();
 
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void createModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v);
-	void editModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
+	void createModeUpdateMouseCursor(PreProcessorGraphicsViewI* v);
+	void editModeUpdateMouseCursor(PreProcessorGraphicsViewI* v);
 
 	Mode m_mode;
 	DisplaySetting m_displaySetting;
@@ -230,7 +230,7 @@ public:
 	int m_selectedEdgeId;
 
 	Qt::KeyboardModifiers m_keyboardModifiers;
-	GridCreatingConditionRiverSurveyInterface* m_gridCreatingCondition;
+	GridCreatingConditionRiverSurveyI* m_gridCreatingCondition;
 	GeoDataRiverSurveyBackgroundGridCreateThread* m_gridThread;
 
 	GeoDataRiverSurvey* m_rs;

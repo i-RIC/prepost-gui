@@ -34,7 +34,7 @@ private:
 	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, QWidget* w);
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // HYDRAULICDATAIMPORTER_H

@@ -8,7 +8,7 @@
 #include "graph2dwindowrootdataitem.h"
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include "graph2dwindowverticalaxissetting.h"
 #include "graph2dwindowverticalaxissettingdialog.h"
 #include "graph2dwindowview.h"

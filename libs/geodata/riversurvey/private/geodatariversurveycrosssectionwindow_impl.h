@@ -55,7 +55,7 @@ public:
 	QStandardItemModel* m_model;
 	QItemSelectionModel* m_selectionModel;
 
-	PreProcessorGeoDataGroupDataItemInterface* m_groupDataItem;
+	PreProcessorGeoDataGroupDataItemI* m_groupDataItem;
 
 	QMenu* m_elevationPointMenu;
 	QAction* m_editFromSelectedPointAction;

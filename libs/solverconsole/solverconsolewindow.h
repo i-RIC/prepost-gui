@@ -2,14 +2,14 @@
 #define SOLVERCONSOLEWINDOW_H
 
 #include "solverconsole_global.h"
-#include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/clipboardoperatablewindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
-#include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/base/windowwithzindexi.h>
 
 #include <QMainWindow>
 #include <QProcess>
 
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class ProjectData;
 class ProjectDataItem;
 class SolverConsoleWindowProjectDataItem;
@@ -23,13 +23,13 @@ class QAction;
 	*/
 class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
 	public QMainWindowWithSnapshot,
-	public ClipboardOperatableWindowInterface,
-	public WindowWithZIndexInterface
+	public ClipboardOperatableWindowI,
+	public WindowWithZIndexI
 {
 	Q_OBJECT
 
 public:
-	SolverConsoleWindow(iRICMainWindowInterface* parent);
+	SolverConsoleWindow(iRICMainWindowI* parent);
 	~SolverConsoleWindow();
 
 	/// Set newly created project data.

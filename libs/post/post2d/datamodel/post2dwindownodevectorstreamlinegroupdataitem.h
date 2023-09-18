@@ -9,7 +9,9 @@
 #include <vector>
 
 class NamedGraphicWindowDataItem;
+class Post2dWindowCalculationResultDataItem;
 class Post2dWindowNodeVectorStreamlineDataItem;
+class Post2dWindowZoneDataItem;
 
 class vtkActor;
 class vtkStreamTracer;
@@ -41,6 +43,7 @@ public:
 	void addCustomMenuItems(QMenu* menu) override;
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -52,6 +55,7 @@ protected:
 	virtual void informGridUpdate();
 	virtual void setupActors() = 0;
 	void clearActors();
+	Post2dWindowZoneDataItem* zoneDataItem() const;
 
 	static void setupStreamTracer(vtkStreamTracer* tracer);
 

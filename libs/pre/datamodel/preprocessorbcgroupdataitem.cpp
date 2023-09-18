@@ -7,20 +7,13 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
-
-#include <QDomNode>
-#include <QMainWindow>
-#include <QMenu>
-#include <QMessageBox>
-#include <QSettings>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 
 #include <h5cgnsbc.h>
 #include <h5cgnszone.h>
@@ -50,17 +43,17 @@ PreProcessorBCGroupDataItem::PreProcessorBCGroupDataItem(PreProcessorDataItem* p
 
 	m_colorSource = new ColorSource(this);
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
-	SolverDefinitionGridType* gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().size(); ++i) {
-		auto bc = gtype->boundaryConditions().at(i);
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent->parent());
+	auto gridType = gtItem->gridType();
+	for (int i = 0; i < gridType->boundaryConditions().size(); ++i) {
+		auto bc = gridType->boundaryConditions().at(i);
 		QString str(PreProcessorBCGroupDataItem::tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
 		connect(addAction, SIGNAL(triggered()), this, SLOT(addCondition()));
 		m_addActions.append(addAction);
 	}
-	connect(m_deleteSelectedAction, SIGNAL(triggered()), this, SLOT(deleteSelected()));
-	connect(m_deleteAllAction, SIGNAL(triggered()), this, SLOT(deleteAll()));
+	connect(m_deleteSelectedAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::deleteSelected);
+	connect(m_deleteAllAction, &QAction::triggered, this, &PreProcessorBCGroupDataItem::deleteAll);
 
 	m_dummyEditAction->setDisabled(true);
 	m_dummyDeleteAction->setDisabled(true);
@@ -103,7 +96,9 @@ int PreProcessorBCGroupDataItem::saveToCgnsFile(iRICLib::H5CgnsZone* zone)
 int PreProcessorBCGroupDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
 	auto zoneBc = zone.zoneBc();
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	if (zoneBc == nullptr) {return IRIC_NO_ERROR;}
+
+	auto gtItem = gridTypeDataItem();
 	const auto& conditions = gtItem->gridType()->boundaryConditions();
 	for (const auto& c : conditions) {
 		auto count = zoneBc->bcCount(c->name());
@@ -122,14 +117,14 @@ int PreProcessorBCGroupDataItem::importFromCgnsFile(const iRICLib::H5CgnsZone& z
 void PreProcessorBCGroupDataItem::renumberItemsForProject()
 {
 	// set numbers.
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	const auto& conditions = gtItem->gridType()->boundaryConditions();
 
 	int number = 1;
 	int condIndex = -1;
 	auto it = m_childItems.begin();
 	while (it != m_childItems.end()) {
-		PreProcessorBCDataItem* tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
+		auto tmpItem = dynamic_cast<PreProcessorBCDataItem*>(*it);
 		auto tmpbc = tmpItem->condition();
 		auto it2 = std::find(conditions.begin(), conditions.end(), tmpbc);
 		int tmpindex = it2 - conditions.begin();
@@ -149,6 +144,16 @@ const QList<QAction*> PreProcessorBCGroupDataItem::addActions() const
 	return m_addActions;
 }
 
+PreProcessorGridTypeDataItem* PreProcessorBCGroupDataItem::gridTypeDataItem() const
+{
+	return gridDataItem()->gridTypeDataItem();
+}
+
+PreProcessorGridDataItem* PreProcessorBCGroupDataItem::gridDataItem() const
+{
+	return dynamic_cast<PreProcessorGridDataItem*> (parent());
+}
+
 QDialog* PreProcessorBCGroupDataItem::propertyDialog(QWidget* parent)
 {
 	auto dialog = new PreProcessorBcGroupSettingDialog(parent);
@@ -166,7 +171,7 @@ void PreProcessorBCGroupDataItem::handlePropertyDialogAccepted(QDialog* propDial
 void PreProcessorBCGroupDataItem::renumberItemsForCgns()
 {
 	// set numbers again.
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto gtItem = gridDataItem()->gridTypeDataItem();
 	const auto& conditions = gtItem->gridType()->boundaryConditions();
 
 	int number = 1;
@@ -208,7 +213,7 @@ void PreProcessorBCGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node
 	m_nameSetting.load(node);
 
 	m_projectBuildNumber = projectData()->version().build();
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto gtItem = gridTypeDataItem();
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.count(); ++i) {
 		QDomElement childElem = childNodes.at(i).toElement();
@@ -258,7 +263,7 @@ void PreProcessorBCGroupDataItem::addCondition()
 		if (m_addActions[index] == a) {break;}
 	}
 
-	PreProcessorBCDataItem* item = addCondition(index, true);
+	auto item = addCondition(index, true);
 	if (item == nullptr) {return;}
 
 	dataModel()->objectBrowserView()->expand(m_standardItem->index());
@@ -316,7 +321,7 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 {
 	if (index > m_addActions.count()) {return 0;}
 
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto gtItem = gridDataItem()->gridTypeDataItem();
 	auto gtype = gtItem->gridType();
 	auto conditions = gtype->boundaryConditions();
 	auto bc = conditions.at(index);
@@ -339,9 +344,9 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	item->setColor(m_colorSource->getColor(static_cast<int> (m_childItems.size())));
 	// add it simply.
 	m_childItems.insert(it, item);
-	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto gItem = gridDataItem();
 	if (gItem->grid() != nullptr) {
-		gItem->grid()->setModified();
+		gItem->grid()->setIsModified(true);
 	}
 
 	// setup object browser tree again.
@@ -349,8 +354,8 @@ PreProcessorBCDataItem* PreProcessorBCGroupDataItem::addCondition(int index, boo
 	for (int row = rows - 1; row >= 0; --row) {
 		m_standardItem->takeRow(row);
 	}
-	for (int i = 0; i < m_childItems.size(); ++i) {
-		m_standardItem->appendRow(m_childItems.at(i)->standardItem());
+	for (auto child : m_childItems) {
+		m_standardItem->appendRow(child->standardItem());
 	}
 	updateItemMap();
 	assignActorZValues(m_zDepthRange);
@@ -372,8 +377,8 @@ QMenu* PreProcessorBCGroupDataItem::bcMenu() const
 void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
 {
 	m_bcMenu->clear();
-	for (int i = 0; i < m_addActions.count(); ++i) {
-		m_bcMenu->addAction(m_addActions[i]);
+	for (auto action : m_addActions) {
+		m_bcMenu->addAction(action);
 	}
 	m_bcMenu->addSeparator();
 	if (item == 0) {
@@ -394,9 +399,8 @@ void PreProcessorBCGroupDataItem::updateBCMenu(PreProcessorBCDataItem* item)
 
 void PreProcessorBCGroupDataItem::clear()
 {
-	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.size(); ++i) {
-		GraphicsWindowDataItem* item = itemCopys[i];
+	auto itemCopys = m_childItems;
+	for (auto item : itemCopys) {
 		delete item;
 	}
 	m_childItems.clear();
@@ -405,10 +409,8 @@ void PreProcessorBCGroupDataItem::clear()
 
 void PreProcessorBCGroupDataItem::clearPoints()
 {
-	std::vector<GraphicsWindowDataItem*> itemCopys = m_childItems;
-	for (int i = 0; i < itemCopys.size(); ++i) {
-		GraphicsWindowDataItem* item = itemCopys[i];
-		PreProcessorBCDataItem* bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
+	for (auto item : m_childItems) {
+		auto bcItem = dynamic_cast<PreProcessorBCDataItem*>(item);
 		bcItem->clearPoints();
 	}
 }

@@ -2,16 +2,9 @@
 #define GEODATABACKGROUNDCELLMAPPERT_H
 
 #include "../geodata/geodatacellmappert.h"
+#include "../geodata/geodatamappersettingi.h"
 #include "geodatabackground.h"
 #include <misc/integerrangecontainer.h>
-
-class GeoDataBackgroundCellMapperSetting : public GeoDataMapperSettingI
-{
-public:
-	GeoDataBackgroundCellMapperSetting() : GeoDataMapperSettingI() {}
-	~GeoDataBackgroundCellMapperSetting() {}
-	IntegerRangeContainer ranges;
-};
 
 template <class V, class DA>
 class GeoDataBackgroundCellMapperT : public GeoDataCellMapperT<V, DA>

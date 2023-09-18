@@ -12,7 +12,7 @@
 #include "graph2dscatteredwindowfontsettingdialog.h"
 #include "graph2dscatteredwindowview.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

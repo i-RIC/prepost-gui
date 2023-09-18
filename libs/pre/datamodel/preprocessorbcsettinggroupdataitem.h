@@ -8,7 +8,7 @@
 
 class PreProcessorBCDataItem;
 class PreProcessorBCSettingDataItem;
-class Grid;
+
 class QAction;
 
 class PreProcessorBCSettingGroupDataItem : public PreProcessorDataItem

@@ -41,8 +41,8 @@ public:
 	Impl(GridCreatingConditionCenterAndWidth* parent);
 	~Impl();
 
-	void updateMouseEventMode(const QPoint& pos, PreProcessorGraphicsViewInterface* view);
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseEventMode(const QPoint& pos, PreProcessorGraphicsViewI* view);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateActionStatus();
 
 	Setting m_setting;
@@ -60,7 +60,7 @@ public:
 
 	vtkActor* m_previewActor;
 	vtkDataSetMapper* m_previewMapper;
-	Grid* m_previewGrid;
+	v4InputGrid* m_previewGrid;
 
 	vtkCardinalSpline* m_xSpline;
 	vtkCardinalSpline* m_ySpline;

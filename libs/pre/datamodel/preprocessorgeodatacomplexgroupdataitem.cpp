@@ -5,8 +5,8 @@
 #include "preprocessorgeodatadataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/complex/gridcomplexconditiondialog.h>
 #include <guicore/pre/complex/gridcomplexconditionwidget.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
@@ -27,10 +27,6 @@
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
 #include <geodata/polygon/geodatapolygon.h>
-
-#include <QAction>
-#include <QLocale>
-#include <QMenu>
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
@@ -201,7 +197,7 @@ void PreProcessorGeoDataComplexGroupDataItem::updateColorMap()
 	std::vector<ColorMapSettingValueColorPairContainer> cols;
 	std::map<double, QString> captions;
 
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		auto g = m_groups.at(i);
 
 		double val = i + 1;
@@ -226,7 +222,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	std::vector<GridComplexConditionGroup::Setting> settings;
 	std::vector<GridComplexConditionWidget*> widgets;
 
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		auto g = m_groups.at(i);
 
 		settings.push_back(g->setting());
@@ -244,7 +240,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	if (ret == QDialog::Rejected) {
 		deleteWidgets(&widgets, &newWidgets);
 
-		for (int i = 0; i < m_groups.size(); ++i) {
+		for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 			m_groups[i]->setSetting(settings.at(i));
 		}
 		return;
@@ -253,7 +249,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	// Apply change values.
 	std::vector<GridComplexConditionGroup*> oldGroups = m_groups;
 	m_groups.clear();
-	for (int i = 0; i < newWidgets.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (newWidgets.size()); ++i) {
 		auto w = newWidgets.at(i);
 		m_groups.push_back(w->group());
 	}
@@ -263,7 +259,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	std::vector<int> valueMap;
 	int newindex = 1;
 	int newDefault = 0;
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		if (m_groups[i]->isDefault()) {
 			newDefault = i + 1;
 		}
@@ -271,7 +267,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	// 0 is mapped to new default value
 	valueMap.push_back(newDefault);
 
-	for (int i = 0; i < oldGroups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (oldGroups.size()); ++i) {
 		auto g = oldGroups[i];
 		auto it = std::find(m_groups.begin(), m_groups.end(), g);
 		if (it == m_groups.end()) {
@@ -291,7 +287,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 		if (p != nullptr) {
 			int currval = p->variantValue().toInt();
 			int newVal = 0;
-			if (currval >= valueMap.size()) {
+			if (currval >= static_cast<int> (valueMap.size())) {
 				newVal = newDefault;
 			} else {
 				newVal = valueMap.at(currval);
@@ -304,14 +300,14 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 	PreProcessorGridTypeDataItem* gtItem =
 		dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	for (auto ccItem : gtItem->conditions()) {
-		Grid* g = ccItem->gridDataItem()->grid();
+		v4InputGrid* g = ccItem->gridDataItem()->grid();
 		if (g == nullptr) {continue;}
-		GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
+		auto cont = g->attribute(m_condition->name());
 		auto cont2 = dynamic_cast<GridComplexAttributeContainer*>(cont);
 		for (unsigned int i = 0; i < cont2->dataCount(); ++i) {
 			int currval = cont2->value(i);
 			int newVal = 0;
-			if (currval >= valueMap.size()) {
+			if (currval >= static_cast<int> (valueMap.size())) {
 				newVal = newDefault;
 			} else {
 				newVal = valueMap.at(currval);
@@ -319,7 +315,7 @@ void PreProcessorGeoDataComplexGroupDataItem::showEditGroupDialog()
 			cont2->setValue(i, newVal);
 		}
 		cont2->dataArray()->Modified();
-		g->setModified();
+		g->setIsModified(true);
 	}
 
 	// set the default folder back.
@@ -343,7 +339,7 @@ void PreProcessorGeoDataComplexGroupDataItem::setupStringConverter(GridAttribute
 	auto c = dynamic_cast<GridAttributeStringConverterEnumerate*> (converter);
 	QMap<QVariant, QString> enums;
 
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		enums.insert(QVariant(i + 1), m_groups[i]->caption());
 	}
 
@@ -355,7 +351,7 @@ void PreProcessorGeoDataComplexGroupDataItem::setupEditWidget(GridAttributeEditW
 	auto w = dynamic_cast<GridComplexAttributeEditWidget*>(widget);
 	QMap<int, QString> enums;
 	int defIndex = 0;
-	for (int i = 0; i < m_groups.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_groups.size()); ++i) {
 		enums.insert(i + 1, m_groups[i]->caption());
 		if (m_groups[i]->isDefault()) {
 			defIndex = i + 1;
@@ -377,7 +373,7 @@ void PreProcessorGeoDataComplexGroupDataItem::applyScalarsToColorsSetting()
 	auto s = tItem->colorMapSetting(m_condition->name());
 	auto es = dynamic_cast<ColorMapEnumerateSettingContainer*>(s);
 
-	for (int i = 0; i < es->colors.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (es->colors.size()); ++i) {
 		const auto& c = es->colors.at(i);
 		auto g = m_groups[i];
 		g->setColor(c.color.value());

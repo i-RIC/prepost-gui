@@ -1,7 +1,7 @@
 #include "geodatapoint.h"
 #include "geodatapointcreator.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 #include <QStandardItem>
 

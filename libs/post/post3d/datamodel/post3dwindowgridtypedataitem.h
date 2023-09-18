@@ -3,7 +3,7 @@
 
 #include "../post3dwindowdataitem.h"
 
-#include <guicore/misc/valuerangecontainer.h>
+#include <misc/valuerangecontainer.h>
 
 #include <map>
 #include <unordered_map>

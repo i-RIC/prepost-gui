@@ -4,7 +4,7 @@
 #include "geodatapointmap_tinmanager_tinbuilder.h"
 
 #include <guibase/widget/waitdialog.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <triangle/triangle.h>
 #include <triangle/triangleexecutethread.h>
 #include <triangle/triangleutil.h>

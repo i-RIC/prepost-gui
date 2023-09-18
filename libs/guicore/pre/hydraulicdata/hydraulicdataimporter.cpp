@@ -8,9 +8,7 @@ HydraulicDataImporter::HydraulicDataImporter(HydraulicDataCreator* creator) :
 {}
 
 HydraulicDataImporter::~HydraulicDataImporter()
-{
-	delete impl;
-}
+{}
 
 HydraulicDataCreator* HydraulicDataImporter::creator() const
 {

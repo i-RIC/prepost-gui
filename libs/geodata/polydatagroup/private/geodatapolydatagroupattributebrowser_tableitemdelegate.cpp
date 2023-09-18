@@ -3,8 +3,8 @@
 #include "geodatapolydatagroupattributebrowser_tableitemdelegate.h"
 
 #include <geodata/polydata/geodatapolydata.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/solverdef/integerenumloader.h>
 
@@ -29,7 +29,7 @@ void GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate::paint(QPainter* pa
 	if (m_group == nullptr) {return;}
 	int col = index.column();
 	auto att = m_group->gridAttribute();
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (m_group->parent()->parent());
+	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (m_group->parent()->parent());
 	bool isRef = att->isReferenceInformation();
 	if (col == 0) {
 		// name
@@ -60,7 +60,7 @@ QWidget* GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate::createEditor(Q
 	if (m_group == nullptr) {return nullptr;}
 	int col = index.column();
 	auto att = m_group->gridAttribute();
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (m_group->parent()->parent());
+	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (m_group->parent()->parent());
 	bool isRef = att->isReferenceInformation();
 	if (col == 0) {
 		// name
@@ -128,7 +128,7 @@ void GeoDataPolyDataGroupAttributeBrowser::TableItemDelegate::setModelData(QWidg
 			if (targetData != nullptr) {offset = -1;}
 			m_group->data().at(index.row() + offset)->setValue(newValue);
 		}
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (m_group->parent());
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (m_group->parent());
 		m_group->updateVtkObjects();
 		p->informValueRangeChange();
 		p->informDataChange();

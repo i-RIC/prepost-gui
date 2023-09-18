@@ -2,8 +2,8 @@
 #include "geodatanetcdfxbandimporter.h"
 #include "private/geodatanetcdf_impl.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
@@ -49,7 +49,7 @@ const QStringList GeoDataNetcdfXbandImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfXbandImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_groupDataItem = item;
 

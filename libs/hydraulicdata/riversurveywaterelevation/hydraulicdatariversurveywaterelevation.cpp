@@ -4,7 +4,7 @@
 #include "private/hydraulicdatariversurveywaterelevation_edititemcommand.h"
 #include "private/hydraulicdatariversurveywaterelevation_impl.h"
 
-#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
 #include <guicore/project/colorsource.h>
 
 #include <QDataStream>
@@ -14,7 +14,7 @@ HydraulicDataRiverSurveyWaterElevation::HydraulicDataRiverSurveyWaterElevation(P
 	HydraulicData {parent},
 	impl {new Impl {}}
 {
-	auto groupItem = dynamic_cast<PreProcessorHydraulicDataGroupDataItemInterface*> (parent->parent());
+	auto groupItem = dynamic_cast<PreProcessorHydraulicDataGroupDataItemI*> (parent->parent());
 	int colorIndex = groupItem->childItems().size();
 
 	ColorSource cs(this);

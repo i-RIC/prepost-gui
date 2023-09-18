@@ -3,6 +3,8 @@
 
 #include "post3dwindownodevectorstreamlinegroupdataitem.h"
 
+#include <memory>
+
 class Post3dWindowNodeVectorStreamlineGroupStructuredDataItem : public Post3dWindowNodeVectorStreamlineGroupDataItem
 {
 	Q_OBJECT
@@ -27,7 +29,7 @@ private:
 	void setupDefaultValues();
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 };

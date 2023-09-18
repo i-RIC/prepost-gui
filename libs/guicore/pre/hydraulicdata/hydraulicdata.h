@@ -5,7 +5,7 @@
 #include "../../project/projectdataitem.h"
 
 class HydraulicDataCreator;
-class PreProcessorHydraulicDataDataItemInterface;
+class PreProcessorHydraulicDataDataItemI;
 
 class QUndoCommand;
 
@@ -24,7 +24,7 @@ public:
 	virtual bool dataExists() const = 0;
 
 protected:
-  PreProcessorHydraulicDataDataItemInterface* hydraulicDataDataItem() const;
+  PreProcessorHydraulicDataDataItemI* hydraulicDataDataItem() const;
   void pushCommand(QUndoCommand* com);
 
 private:
@@ -32,7 +32,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

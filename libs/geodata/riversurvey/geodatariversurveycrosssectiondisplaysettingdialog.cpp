@@ -9,9 +9,9 @@ GeoDataRiverSurveyCrossSectionDisplaySettingDialog::GeoDataRiverSurveyCrossSecti
 {
 	ui->setupUi(this);
 
-	connect(ui->aspectRatioFontButton, SIGNAL(clicked(bool)), this, SLOT(editAspectRatioFont()));
-	connect(ui->distanceMarkersFontButton, SIGNAL(clicked(bool)), this, SLOT(editDistanceMarkersFont()));
-	connect(ui->lbBankMakersFontButton, SIGNAL(clicked(bool)), this, SLOT(editLbBankMarkersFont()));
+	connect(ui->aspectRatioFontButton, &QPushButton::clicked, this, &GeoDataRiverSurveyCrossSectionDisplaySettingDialog::editAspectRatioFont);
+	connect(ui->distanceMarkersFontButton, &QPushButton::clicked, this, &GeoDataRiverSurveyCrossSectionDisplaySettingDialog::editDistanceMarkersFont);
+	connect(ui->lbBankMakersFontButton, &QPushButton::clicked, this, &GeoDataRiverSurveyCrossSectionDisplaySettingDialog::editLbBankMarkersFont);
 }
 
 GeoDataRiverSurveyCrossSectionDisplaySettingDialog::~GeoDataRiverSurveyCrossSectionDisplaySettingDialog()

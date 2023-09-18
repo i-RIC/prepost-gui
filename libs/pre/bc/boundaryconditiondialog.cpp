@@ -3,7 +3,7 @@
 #include "../datamodel/preprocessorbcdataitem.h"
 #include "boundaryconditiondialog.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/inputcond/inputconditioncontainerset.h>
 #include <guicore/project/inputcond/inputconditionpage.h>
 #include <guicore/project/inputcond/inputconditionwidgetset.h>
@@ -25,7 +25,7 @@
 
 #include <iriclib_errorcodes.h>
 
-BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent) :
+BoundaryConditionDialog::BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowI* mw, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::BoundaryConditionDialog)
 {

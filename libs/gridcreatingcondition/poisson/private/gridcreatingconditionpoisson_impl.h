@@ -10,7 +10,6 @@
 #include <QCursor>
 
 class GeoDataRiverSurvey;
-class Grid;
 
 class QAction;
 
@@ -37,14 +36,14 @@ public:
 	void finishDefiningLine();
 	void updateLabelsAndSplines();
 	void updateMouseEventMode(const QPoint& mousePosition);
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateActionStatus();
 
 	void copyCenterLine(GeoDataRiverSurvey* data, int num);
 	void importLine(PolyLineController* line);
 	void exportLine(PolyLineController* line, const QString& lineName);
 
-	Grid* createGrid();
+	v4InputGrid* createGrid();
 
 	PolyLineController m_centerLineController;
 	PolyLineController m_leftBankLineController;

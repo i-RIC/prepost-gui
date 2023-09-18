@@ -1,7 +1,7 @@
 #include "gridcreatingconditionpoisson_definenewpointcommand.h"
 #include "gridcreatingconditionpoisson_impl.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionPoisson::DefineNewPointCommand::DefineNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionPoisson* cond) :

@@ -5,7 +5,11 @@
 
 #include <guicore/misc/targeted/targeteditemi.h>
 
+#include <memory>
+
 class NamedGraphicWindowDataItem;
+class Post2dWindowCalculationResultDataItem;
+class Post2dWindowZoneDataItem;
 
 class Post2dWindowGraphGroupDataItem : public Post2dWindowDataItem, public TargetedItemI
 {
@@ -26,6 +30,8 @@ public slots:
 
 private:
 	void setDefaultSetting();
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
+	Post2dWindowZoneDataItem* zoneDataItem() const;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -39,7 +45,7 @@ private:
 	void innerUpdateZScale(double scale) override;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class SetSettingCommand;
 };

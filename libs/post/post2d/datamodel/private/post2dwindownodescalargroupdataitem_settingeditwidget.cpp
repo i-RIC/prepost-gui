@@ -5,7 +5,9 @@
 #include "post2dwindownodescalargroupdataitem_settingeditwidget.h"
 #include "ui_post2dwindownodescalargroupdataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -21,18 +23,18 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::SettingEditWidget(Post2d
 {
 	ui->setupUi(this);
 
-	auto container = item->topDataItem()->zoneDataItem()->dataContainer();
-	if (! container->IBCExists()) {
+	auto cont = item->topDataItem()->zoneDataItem()->v4DataContainer();
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		ui->rangeWidget->disableActive();
 	}
 
-	auto data = container->data()->data();
-	auto sgrid = vtkStructuredGrid::SafeDownCast(data);
-	if (sgrid == nullptr) {
+	auto data = cont->gridData()->grid();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (data);
+	if (sGrid == nullptr) {
 		ui->rangeWidget->hideCustom();
 	} else {
 		int dims[3];
-		sgrid->GetDimensions(dims);
+		sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 		ui->rangeWidget->setDimensions(dims[0], dims[1]);
 	}
 	auto output = item->topDataItem()->zoneDataItem()->gridTypeDataItem()->gridType()->output(item->target());
@@ -59,7 +61,7 @@ Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::~SettingEditWidget()
 
 QUndoCommand* Post2dWindowNodeScalarGroupDataItem::SettingEditWidget::createModifyCommand(bool apply)
 {
-	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowNodeScalarGroupDataItem::SetProperty"), apply);
+	auto command = new MergeSupportedListCommand(iRIC::generateCommandId("Post2dWindowV4NodeScalarGroupDataItem::SetProperty"), apply);
 	command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	command->addCommand(ui->rangeWidget->createModifyCommand());
 	command->addCommand(ui->contourWidget->createModifyCommand(apply));

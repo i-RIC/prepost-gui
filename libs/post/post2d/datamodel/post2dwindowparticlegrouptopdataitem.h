@@ -12,8 +12,8 @@ public:
 
 	const std::string& name() const;
 
-	vtkPolyData* particleData() const override;
-	Post2dWindowZoneDataItem* zoneDataItem() const override;
+	v4Particles2d*particleData() const override;
+	Post2dWindowCalculationResultDataItem* resultDataItem() const override;
 
 private:
 	std::string m_name;

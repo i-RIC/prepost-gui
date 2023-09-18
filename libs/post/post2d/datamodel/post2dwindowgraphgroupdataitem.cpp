@@ -1,3 +1,4 @@
+#include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgraphdataitem.h"
 #include "post2dwindowgraphgroupdataitem.h"
 #include "post2dwindowgraphsettingdialog.h"
@@ -6,8 +7,10 @@
 #include "private/post2dwindowgraphgroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
@@ -196,9 +199,9 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->data()->data()->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		auto item = new Post2dWindowGraphDataItem(name, gt->output(name)->caption(), this);
 		m_childItems.push_back(item);
 	}
@@ -207,7 +210,7 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	r->AddActor(impl->m_baseLinesActor.actor());
 	r->AddActor(impl->m_graphLinesActor.linesActor());
 
-	vtkPoints* basePoints = cont->data()->data()->GetPoints();
+	vtkPoints* basePoints = cont->gridData()->grid()->vtkData()->data()->GetPoints();
 	impl->m_baseLinesPolyData->SetPoints(basePoints);
 
 	setDefaultSetting();
@@ -220,8 +223,6 @@ Post2dWindowGraphGroupDataItem::~Post2dWindowGraphGroupDataItem()
 	vtkRenderer* r = renderer();
 	r->RemoveActor(impl->m_baseLinesActor.actor());
 	r->RemoveActor(impl->m_graphLinesActor.linesActor());
-
-	delete impl;
 }
 
 void Post2dWindowGraphGroupDataItem::update()
@@ -235,20 +236,20 @@ void Post2dWindowGraphGroupDataItem::update()
 
 	if (impl->m_setting.graphTarget == "") {return;}
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	auto grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
-	auto basePoints = cont->data()->data()->GetPoints();
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+	auto basePoints = sGrid->vtkData()->data()->GetPoints();
 
 	int dims[3];
-	grid->GetDimensions(dims);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 
 	std::vector<std::vector<QPointF> > lines;
 
-	vtkDataArray *da = cont->data()->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
+	auto da = sGrid->vtkData()->data()->GetPointData()->GetArray(iRIC::toStr(impl->m_setting.graphTarget).c_str());
 	if (da == nullptr) {throw ErrorMessage("data not found");}
 
-	vtkSmartPointer<vtkCellArray> cellsBase = vtkSmartPointer<vtkCellArray>::New();
-	vtkSmartPointer<vtkCellArray> cellsGraph = vtkSmartPointer<vtkCellArray>::New();
+	auto cellsBase = vtkSmartPointer<vtkCellArray>::New();
+	auto cellsGraph = vtkSmartPointer<vtkCellArray>::New();
 
 	double scale = impl->m_setting.graphScale;
 
@@ -260,7 +261,7 @@ void Post2dWindowGraphGroupDataItem::update()
 			// base line
 			std::vector<vtkIdType> baseIndices(dims[1]);
 			for (int j = 0; j < dims[1]; ++j) {
-				int idx = cont->nodeIndex(i, j, 0);
+				int idx = sGrid->pointIndex(i, j);
 				baseIndices[j] = idx;
 			}
 			cellsBase->InsertNextCell(dims[1], baseIndices.data());
@@ -269,7 +270,7 @@ void Post2dWindowGraphGroupDataItem::update()
 			std::vector<double> vals(dims[1]);
 			double offset = 0;
 			for (int j = 0; j < dims[1]; ++j) {
-				vals[j] = da->GetTuple1(cont->nodeIndex(i, j, 0));
+				vals[j] = da->GetTuple1(sGrid->pointIndex(i, j));
 			}
 			if (impl->m_setting.graphValueFix == Post2dWindowGraphSetting::SubtractMax) {
 				offset = - *(std::max_element(vals.begin(), vals.end()));
@@ -282,9 +283,9 @@ void Post2dWindowGraphGroupDataItem::update()
 				double p[3];
 				double dx, dy;
 
-				int idx = cont->nodeIndex(i, j, 0);
+				int idx = sGrid->pointIndex(i, j);
 				basePoints->GetPoint(idx, p);
-				getDirection(impl->m_setting, i, j, grid, &dx, &dy);
+				getDirection(impl->m_setting, i, j, sGrid->vtkConcreteData()->concreteData(), &dx, &dy);
 
 				double val = vals[j] + offset;
 				double x = p[0] + dx * val * scale;
@@ -300,7 +301,7 @@ void Post2dWindowGraphGroupDataItem::update()
 			// base line
 			std::vector<vtkIdType> baseIndices(dims[0]);
 			for (int i = 0; i < dims[0]; ++i) {
-				int idx = cont->nodeIndex(i, j, 0);
+				int idx = sGrid->pointIndex(i, j);
 				baseIndices[i] = idx;
 			}
 			cellsBase->InsertNextCell(dims[0], baseIndices.data());
@@ -309,7 +310,7 @@ void Post2dWindowGraphGroupDataItem::update()
 			std::vector<double> vals(dims[0]);
 			double offset = 0;
 			for (int i = 0; i < dims[0]; ++i) {
-				vals[i] = da->GetTuple1(cont->nodeIndex(i, j, 0));
+				vals[i] = da->GetTuple1(sGrid->pointIndex(i, j));
 			}
 			if (impl->m_setting.graphValueFix == Post2dWindowGraphSetting::SubtractMax) {
 				offset = - *(std::max_element(vals.begin(), vals.end()));
@@ -322,9 +323,9 @@ void Post2dWindowGraphGroupDataItem::update()
 				double p[3];
 				double dx, dy;
 
-				int idx = cont->nodeIndex(i, j, 0);
+				int idx = sGrid->pointIndex(i, j);
 				basePoints->GetPoint(idx, p);
-				getDirection(impl->m_setting, i, j, grid, &dx, &dy);
+				getDirection(impl->m_setting, i, j, sGrid->vtkConcreteData()->concreteData(), &dx, &dy);
 
 				double val = vals[i] + offset;
 				double x = p[0] + dx * val * scale;
@@ -380,10 +381,10 @@ void Post2dWindowGraphGroupDataItem::handleNamedItemChange(NamedGraphicWindowDat
 
 void Post2dWindowGraphGroupDataItem::setDefaultSetting()
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 	int dims[3];
-	grid->GetDimensions(dims);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 
 	auto& s = impl->m_setting;
 	s.direction = Post2dWindowGraphSetting::dirI;
@@ -391,6 +392,16 @@ void Post2dWindowGraphGroupDataItem::setDefaultSetting()
 	s.regionEndIndex = dims[0] - 1;
 	s.regionSkipIndex = 1;
 	s.graphTarget = "";
+}
+
+Post2dWindowCalculationResultDataItem* Post2dWindowGraphGroupDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*> (parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowGraphGroupDataItem::zoneDataItem() const
+{
+	return resultDataItem()->zoneDataItem();
 }
 
 void Post2dWindowGraphGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -406,14 +417,14 @@ void Post2dWindowGraphGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& w
 
 QDialog* Post2dWindowGraphGroupDataItem::propertyDialog(QWidget* p)
 {
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	vtkStructuredGrid* grid = dynamic_cast<vtkStructuredGrid*> (cont->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 	int dims[3];
-	grid->GetDimensions(dims);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 
 	auto dialog = new Post2dWindowGraphSettingDialog(p);
 	dialog->setDimensions(dims[0], dims[1]);
-	dialog->setTargets(vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid->GetPointData()));
+	dialog->setTargets(vtkDataSetAttributesTool::getArrayNamesWithOneComponent(sGrid->vtkData()->data()->GetPointData()));
 
 	dialog->setSetting(impl->m_setting);
 	return dialog;

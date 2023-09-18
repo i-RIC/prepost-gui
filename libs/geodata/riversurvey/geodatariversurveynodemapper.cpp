@@ -1,7 +1,10 @@
 #include "geodatariversurvey.h"
 #include "geodatariversurveynodemapper.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/pre/geodata/geodatamappersettingi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/doublemappingsetting.h>
 
 #include <vtkCell.h>
@@ -54,11 +57,11 @@ GeoDataMapperSettingI* GeoDataRiverSurveyNodeMapper::initialize(bool* boolMap)
 	GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(GeoDataMapper::geoData());
 	double point[3];
 	double weights[4];
-	auto grid = GeoDataMapper::grid()->vtkGrid();
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
-			grid->GetPoint(i, point);
+			vtkGrid->GetPoint(i, point);
 
 			// investigate whether the point is inside one of the cells.
 			auto cell = rs->findBackgroundGridCell(point[0], point[1], weights);

@@ -1,7 +1,7 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../post/postprocessorwindow.h"
-#include "../post/postprocessorwindowfactoryinterface.h"
-#include "../post/postprocessorwindowfactoryinterface.h"
+#include "../post/postprocessorwindowfactoryi.h"
+#include "../post/postprocessorwindowfactoryi.h"
 #include "../post/postprocessorwindowprojectdataitem.h"
 #include "projectdata.h"
 #include "projectpostprocessors.h"
@@ -219,7 +219,7 @@ void ProjectPostProcessors::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 QMdiSubWindow* ProjectPostProcessors::add(PostProcessorWindowProjectDataItem* newitem)
 {
-	iRICMainWindowInterface* w = projectData()->mainWindow();
+	iRICMainWindowI* w = projectData()->mainWindow();
 	if (w == nullptr) {return nullptr;}
 	QMdiArea* area = dynamic_cast<QMdiArea*>(w->centralWidget());
 	QMdiSubWindow* container = area->addSubWindow(newitem->window());
@@ -245,7 +245,7 @@ int ProjectPostProcessors::windowCount() const
 	return m_postProcessorWindows.count();
 }
 
-void ProjectPostProcessors::setFactory(PostProcessorWindowFactoryInterface* factory)
+void ProjectPostProcessors::setFactory(PostProcessorWindowFactoryI* factory)
 {
 	m_factory = factory;
 }

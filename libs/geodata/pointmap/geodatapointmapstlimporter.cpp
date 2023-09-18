@@ -5,8 +5,8 @@
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/stringtool.h>
@@ -30,7 +30,7 @@ GeoDataPointmapSTLImporter::~GeoDataPointmapSTLImporter()
 	delete m_converter;
 }
 
-bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPointmapSTLImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	bool ok = checkHeader(filename, w);
 	if (! ok) {return false;}

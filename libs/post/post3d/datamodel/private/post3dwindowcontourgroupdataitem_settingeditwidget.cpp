@@ -5,7 +5,9 @@
 #include "../post3dwindowzonedataitem.h"
 #include "ui_post3dwindowcontourgroupdataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -32,8 +34,8 @@ Post3dWindowContourGroupDataItem::SettingEditWidget::SettingEditWidget(Post3dWin
 	ui->colorMapWidget->setWidget(m_colorMapWidget);
 	setSetting(item->impl->m_setting);
 
-	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
-	ui->faceListWidget->setDimensions(grid->GetDimensions());
+	auto grid = dynamic_cast<v4Structured3dGrid*> (m_item->data()->gridData()->grid());
+	ui->faceListWidget->setDimensions(grid->vtkConcreteData()->concreteData()->GetDimensions());
 	ui->faceListWidget->setFaces(item->faces());
 }
 

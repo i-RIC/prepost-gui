@@ -2,7 +2,7 @@
 #define PREPROCESSORGRIDTYPEDATAITEM_H
 
 #include "../pre_global.h"
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
 
 #include <guicore/image/imagesettingcontainer.h>
 
@@ -14,14 +14,14 @@
 class ColorMapSettingToolBarWidgetController;
 class SolverDefinitionGridAttribute;
 class SolverDefinitionGridType;
-class PreProcessorGeoDataTopDataItemInterface;
-class PreProcessorGridAndGridCreatingConditionDataItemInterface;
+class PreProcessorGeoDataTopDataItemI;
+class PreProcessorGridAndGridCreatingConditionDataItemI;
 
 class vtkActor2D;
 
 class QAction;
 
-class PREDLL_EXPORT PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemInterface
+class PREDLL_EXPORT PreProcessorGridTypeDataItem : public PreProcessorGridTypeDataItemI
 {
 	Q_OBJECT
 
@@ -32,13 +32,13 @@ public:
 	const std::string& name() const;
 	SolverDefinitionGridType* gridType() const override;
 
-	PreProcessorGeoDataTopDataItemInterface* geoDataTop() const override;
-	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTop() const override;
+	PreProcessorGeoDataTopDataItemI* geoDataTop() const override;
+	PreProcessorHydraulicDataTopDataItemI* hydraulicDataTop() const override;
 
-	const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& conditions() const override;
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* condition(const std::string& name) const;
+	const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& conditions() const override;
+	PreProcessorGridAndGridCreatingConditionDataItemI* condition(const std::string& name) const;
 
-	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface* child) const;
+	bool isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemI* child) const;
 	void addCustomMenuItems(QMenu* menu) override;
 	bool isChildCaptionAvailable(const QString& caption);
 	ColorMapSettingContainerI* colorMapSetting(const std::string& attName) const override;
@@ -73,11 +73,11 @@ private:
 	std::string nextChildZonename();
 
 	SolverDefinitionGridType* m_gridType;
-	PreProcessorGeoDataTopDataItemInterface* m_geoDataTop;
-	PreProcessorHydraulicDataTopDataItemInterface* m_hydraulicDataTop;
+	PreProcessorGeoDataTopDataItemI* m_geoDataTop;
+	PreProcessorHydraulicDataTopDataItemI* m_hydraulicDataTop;
 	std::unordered_map<std::string, ColorMapSettingContainerI*> m_colorMapSettingContainers;
 	std::unordered_map<std::string, vtkActor2D*> m_colorMapLegendActors;
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> m_conditions;
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> m_conditions;
 	/// Action to add new condition.
 	QAction* m_addNewGridAction;
 

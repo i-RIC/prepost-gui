@@ -3,7 +3,8 @@
 #include "geodatapointmap_templatenodemapper.h"
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/doublemappingsetting.h>
 #include <misc/mathsupport.h>
 
@@ -27,7 +28,7 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateNodeMapper::initialize(bool* boo
 {
 	auto s = new ::Setting();
 	auto pointmap = dynamic_cast<GeoDataPointmap*>(geoData());
-	auto grid2d = dynamic_cast<Structured2DGrid*>(GeoDataMapper::grid());
+	auto grid2d = dynamic_cast<v4Structured2dGrid*>(GeoDataMapper::grid()->grid());
 	if (grid2d == nullptr) {return s;}
 	if (container()->gridAttribute()->isOption()) {
 		// @todo not implemented yet.
@@ -43,12 +44,12 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateNodeMapper::initialize(bool* boo
 		unsigned int count = grid2d->nodeCount();
 		for (unsigned int index = 0; index < count; ++index) {
 			if (*(boolMap + index)) {continue;}
-			unsigned int i, j;
-			grid2d->getIJIndex(index, &i, &j);
+			vtkIdType i, j;
+			grid2d->getPointIJIndex(index, &i, &j);
 
 			bool found = false;
 			// get the grid node coordinates.
-			QPointF vec2d = grid2d->vertex(i, j);
+			QPointF vec2d = grid2d->point2d(i, j);
 
 			int iCount = 0;
 			int jCount = 0;
@@ -56,21 +57,21 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateNodeMapper::initialize(bool* boo
 			QPointF jVec(0, 0);
 
 			if (i != 0) {
-				iVec += vec2d - grid2d->vertex(i - 1, j);
+				iVec += vec2d - grid2d->point2d(i - 1, j);
 				++ iCount;
 			}
 			if (i != grid2d->dimensionI() - 1) {
-				iVec += grid2d->vertex(i + 1, j) - vec2d;
+				iVec += grid2d->point2d(i + 1, j) - vec2d;
 				++ iCount;
 			}
 			iVec /= iCount;
 
 			if (j != 0) {
-				jVec += vec2d - grid2d->vertex(i, j - 1);
+				jVec += vec2d - grid2d->point2d(i, j - 1);
 				++ jCount;
 			}
 			if (j != grid2d->dimensionJ() - 1) {
-				jVec += grid2d->vertex(i, j + 1) - vec2d;
+				jVec += grid2d->point2d(i, j + 1) - vec2d;
 				++ jCount;
 			}
 			jVec /= jCount;

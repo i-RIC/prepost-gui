@@ -271,12 +271,12 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, std::ve
 
 	const geos::geom::LineString* eLS = resultPol->getExteriorRing();
 
-	pointCount += (eLS->getNumPoints() - 1);
-	segmentCount += (eLS->getNumPoints() - 1);
+	pointCount += (static_cast<int> (eLS->getNumPoints()) - 1);
+	segmentCount += (static_cast<int> (eLS->getNumPoints()) - 1);
 	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
 		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
-		pointCount += (iLS->getNumPoints() - 1);
-		segmentCount += (iLS->getNumPoints() - 1);
+		pointCount += (static_cast<int> (iLS->getNumPoints()) - 1);
+		segmentCount += (static_cast<int> (iLS->getNumPoints()) - 1);
 	}
 	clearTrianglateio(in);
 
@@ -294,7 +294,6 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, std::ve
 	int sOff = 0;
 	std::map<Point2D, unsigned int> pointMap;
 
-	const auto& coord = eLS->getCoordinateN(0);
 	QPointF cOff(0, 0);
 
 	addPointsAndSegments(in, &pointMap, pointIdVec, &pointCount, &pOff, &sOff, cOff, eLS);
@@ -313,7 +312,7 @@ void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, std::ve
 		*(in->holelist + i * 2	) = innerP.x();
 		*(in->holelist + i * 2 + 1) = innerP.y();
 	}
-	in->numberofpoints = pointIdVec->size();
+	in->numberofpoints = static_cast<int> (pointIdVec->size());
 
 	delete resultPol;
 }
@@ -326,7 +325,7 @@ geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, con
 
 	std::set<QPointF> points;
 
-	for (unsigned int i = 0; i < regionPol.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (regionPol.size()); ++i) {
 		QPointF p = regionPol.at(i);
 		geos::geom::Coordinate c(p.x(), p.y(), 0);
 		cs->setAt(c, i);

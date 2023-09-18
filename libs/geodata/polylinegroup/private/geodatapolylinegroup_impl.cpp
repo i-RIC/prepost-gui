@@ -3,7 +3,7 @@
 #include <geoio/polygonutil.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polyline/geodatapolyline.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/iricundostack.h>
 
 #include <QAction>

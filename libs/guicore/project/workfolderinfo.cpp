@@ -29,9 +29,7 @@ WorkfolderInfo::WorkfolderInfo(const QString& workfolder, QObject* parent) :
 {}
 
 WorkfolderInfo::~WorkfolderInfo()
-{
-	delete impl;
-}
+{}
 
 QString WorkfolderInfo::folderName() const
 {

@@ -3,6 +3,8 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
+#include <memory>
+
 class Post2dBirdEyeWindowZoneDataItem;
 
 class vtkWarpScalar;
@@ -34,12 +36,9 @@ private:
 	void updateActorSetting() override;
 	Post2dBirdEyeWindowZoneDataItem* zoneDataItem() const;
 
-	vtkWarpScalar* m_gridWarp;
-	vtkWarpScalar* m_labelWarp;
-
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 	class SettingEditWidget;

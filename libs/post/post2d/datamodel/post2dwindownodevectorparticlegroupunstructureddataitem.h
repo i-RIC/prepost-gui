@@ -10,6 +10,8 @@
 
 #include <QList>
 
+#include <memory>
+
 class Post2dWindowParticleUnstructuredSettingDialog;
 
 class Post2dWindowNodeVectorParticleGroupUnstructuredDataItem : public Post2dWindowNodeVectorParticleGroupDataItem
@@ -51,7 +53,7 @@ private:
 	void disablePreviewActor();
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 };

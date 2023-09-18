@@ -38,7 +38,7 @@ void AttributeBrowserTargetDataItem::setupActors()
 	m_polygonsActor.paintActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_polygonsActor.paintActor());
 
-	m_polygonsActor.linesActor()->GetProperty()->SetLineWidth(2 * v->devicePixelRatioF());
+	m_polygonsActor.linesActor()->GetProperty()->SetLineWidth(5 * v->devicePixelRatioF());
 	m_polygonsActor.linesActor()->GetProperty()->SetColor(0.5, 0.5, 0.5);
 	m_polygonsActor.linesActor()->GetProperty()->SetOpacity(0.6);
 	r->AddActor(m_polygonsActor.linesActor());

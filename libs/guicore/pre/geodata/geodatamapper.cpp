@@ -12,23 +12,21 @@ GeoDataMapper::GeoDataMapper(const QString& caption, QObject* parent) :
 }
 
 GeoDataMapper::~GeoDataMapper()
-{
-	delete impl;
-}
+{}
 
 const QString& GeoDataMapper::caption() const
 {
 	return impl->m_caption;
 }
 
-void GeoDataMapper::setTarget(Grid* grid, GridAttributeContainer* container, GeoData* geodata)
+void GeoDataMapper::setTarget(v4InputGrid* grid, GridAttributeContainer* container, GeoData* geodata)
 {
 	impl->m_grid = grid;
 	impl->m_container = container;
 	impl->m_geoData = geodata;
 }
 
-Grid* GeoDataMapper::grid() const
+v4InputGrid* GeoDataMapper::grid() const
 {
 	return impl->m_grid;
 }

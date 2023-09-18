@@ -1,6 +1,7 @@
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
+#include "post2dwindowinputgriddataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingandrendercommand.h"
 #include "private/post2dwindowgridtypedataitem_applycolormapsettingdialog.h"
@@ -8,13 +9,18 @@
 #include "private/post2dwindowgridtypedataitem_toolbarwidgetcontroller.h"
 #include "../post2dwindowgraphicsview.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -28,7 +34,7 @@
 
 namespace {
 
-PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
+v4PostZoneDataContainer* getContainerWithZoneType(const std::vector<v4PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
 {
 	for (auto container : conts) {
 		if (container->gridType() == gt) {
@@ -77,7 +83,7 @@ Post2dWindowGridTypeDataItem::Post2dWindowGridTypeDataItem(SolverDefinitionGridT
 
 	auto gridTypeDataItem = dataModel()->iricMainWindow()->preProcessorWindow()->dataModel()->gridTypeDataItem(type->name());
 	if (gridTypeDataItem != nullptr) {
-		connect(gridTypeDataItem, &PreProcessorGridTypeDataItemInterface::colorMapSettingChanged, this, &Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated);
+		connect(gridTypeDataItem, &PreProcessorGridTypeDataItemI::colorMapSettingChanged, this, &Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated);
 		setupColorMapSettingContainers(gridTypeDataItem);
 	}
 
@@ -173,6 +179,34 @@ const std::unordered_map<std::string, ValueRangeContainer>& Post2dWindowGridType
 	return m_cellValueRanges;
 }
 
+const ValueRangeContainer& Post2dWindowGridTypeDataItem::iEdgeValueRange(const std::string& name) const
+{
+	const auto it = m_iEdgeValueRanges.find(name);
+	if (it != m_iEdgeValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post2dWindowGridTypeDataItem::iEdgeValueRanges() const
+{
+	return m_iEdgeValueRanges;
+}
+
+const ValueRangeContainer& Post2dWindowGridTypeDataItem::jEdgeValueRange(const std::string& name) const
+{
+	const auto it = m_jEdgeValueRanges.find(name);
+	if (it != m_jEdgeValueRanges.end()) {
+		return it->second;
+	}
+	return m_dummyRange;
+}
+
+const std::unordered_map<std::string, ValueRangeContainer>& Post2dWindowGridTypeDataItem::jEdgeValueRanges() const
+{
+	return m_jEdgeValueRanges;
+}
+
 const ValueRangeContainer& Post2dWindowGridTypeDataItem::particleValueRange(const std::string& name) const
 {
 	const auto it = m_particleValueRanges.find(name);
@@ -233,6 +267,11 @@ void Post2dWindowGridTypeDataItem::updateColorBarVisibility(const std::string& a
 	auto gItem = m_geoDataItem->groupDataItem(attName);
 	visible = visible || gItem->colorBarShouldBeVisible();
 
+	for (auto zone : m_zoneDatas) {
+		auto gItem = zone->inputGridDataItem();
+		if (gItem == nullptr) {continue;}
+		visible = visible || gItem->colorBarShouldBeVisible(attName);
+	}
 	visible = visible && cm->customSetting->legendSetting()->getVisible();
 	if (visible) {
 		auto v = dataModel()->graphicsView();
@@ -251,25 +290,25 @@ void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	m_zoneDatas.clear();
 
-	const auto& zones = postSolutionInfo()->zoneContainers2D();
-	int num = 0;
+	const auto& zones = postSolutionInfo()->v4ZoneContainers2D();
 	int zoneNum = 0;
 	for (auto cont : zones) {
-		if (cont->data() == nullptr) {continue;}
 		if (cont->gridType() != m_gridType) {continue;}
 
-		auto zdata = new Post2dWindowZoneDataItem(cont->zoneName(), num++, this);
+		auto zdata = new Post2dWindowZoneDataItem(cont->zoneName(), this);
 		m_zoneDatas.push_back(zdata);
 		m_zoneDataNameMap.insert({cont->zoneName(), zdata});
 		m_childItems.push_back(zdata);
 		++zoneNum;
 	}
 
-	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+	auto zCont = getContainerWithZoneType(zones, m_gridType);
 
 	if (zCont != nullptr) {
 		updateNodeValueRanges();
 		updateCellValueRanges();
+		updateIEdgeValueRanges();
+		updateJEdgeValueRanges();
 		updateParticleValueRanges();
 		updatePolyDataValueRanges();
 	}
@@ -332,7 +371,7 @@ void Post2dWindowGridTypeDataItem::handlePreColorMapSettingUpdated(const std::st
 	renderGraphicsView();
 }
 
-void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGridTypeDataItemInterface* item)
+void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGridTypeDataItemI* item)
 {
 	for (auto att : item->gridType()->gridAttributes()) {
 		setupColorMapSettingContainer(att, item);
@@ -343,7 +382,7 @@ void Post2dWindowGridTypeDataItem::setupColorMapSettingContainers(PreProcessorGr
 	}
 }
 
-void Post2dWindowGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemInterface* item)
+void Post2dWindowGridTypeDataItem::setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemI* item)
 {
 	auto r = renderer();
 	auto v = dataModel()->graphicsView();
@@ -374,46 +413,65 @@ void Post2dWindowGridTypeDataItem::updateNodeValueRanges()
 	m_nodeValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
-
-		auto edgeIData = zItem->dataContainer()->edgeIData();
-		if (edgeIData != nullptr) {
-			merge(edgeIData->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
-		}
-		auto edgeJData = zItem->dataContainer()->edgeJData();
-		if (edgeJData != nullptr) {
-			merge(edgeJData->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
-		}
+		merge(cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
 	}
 }
 
 void Post2dWindowGridTypeDataItem::updateCellValueRanges()
 {
 	m_cellValueRanges.clear();
-
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+		merge(cont->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+	}
+}
+
+void Post2dWindowGridTypeDataItem::updateIEdgeValueRanges()
+{
+	m_iEdgeValueRanges.clear();
+	for (auto zItem : m_zoneDatas) {
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+		if (sGrid == nullptr) {continue;}
+
+		merge(sGrid->vtkIEdgeData()->valueRangeSet().cellDataValueRanges(), &m_iEdgeValueRanges);
+	}
+}
+
+void Post2dWindowGridTypeDataItem::updateJEdgeValueRanges()
+{
+	m_jEdgeValueRanges.clear();
+	for (auto zItem : m_zoneDatas) {
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
+
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
+		if (sGrid == nullptr) {continue;}
+
+		merge(sGrid->vtkJEdgeData()->valueRangeSet().cellDataValueRanges(), &m_jEdgeValueRanges);
 	}
 }
 
 void Post2dWindowGridTypeDataItem::updateParticleValueRanges()
 {
 	m_particleValueRanges.clear();
-
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
-		auto cont = zItem->dataContainer();
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
 
 		auto pData = cont->particleData();
 		if (pData != nullptr) {
-			merge(pData->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
+			merge(pData->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
 		}
 		for (const auto& pair : cont->particleGroupMap()) {
-			merge(pair.second->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
+			merge(pair.second->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
 		}
 	}
 }
@@ -421,13 +479,12 @@ void Post2dWindowGridTypeDataItem::updateParticleValueRanges()
 void Post2dWindowGridTypeDataItem::updatePolyDataValueRanges()
 {
 	m_polyDataValueRanges.clear();
-
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
-		auto cont = zItem->dataContainer();
+		auto cont = zItem->v4DataContainer();
+		if (cont == nullptr) {continue;}
 
 		for (const auto& pair : cont->polyDataMap()) {
-			merge(pair.second->valueRangeSet().cellDataValueRanges(), &m_polyDataValueRanges);
+			merge(pair.second->grid()->vtkData()->valueRangeSet().cellDataValueRanges(), &m_polyDataValueRanges);
 		}
 	}
 }
@@ -445,7 +502,7 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 		for (int i = 0; i < zones.size(); ++i) {
 			QDomNode zoneNode = zones.at(i);
 			std::string zoneName = iRIC::toStr(zoneNode.toElement().attribute("name"));
-			Post2dWindowZoneDataItem* zdi = zoneData(zoneName);
+			auto zdi = zoneData(zoneName);
 			if (zdi != nullptr) {
 				zdi->loadFromProjectMainFile(zoneNode);
 			}
@@ -464,10 +521,9 @@ void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wri
 	}
 
 	writer.writeStartElement("Zones");
-	for (auto zit = m_zoneDatas.begin(); zit != m_zoneDatas.end(); ++zit) {
-		Post2dWindowZoneDataItem* zitem = *zit;
+	for (auto zItem : m_zoneDatas) {
 		writer.writeStartElement("Zone");
-		zitem->saveToProjectMainFile(writer);
+		zItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();

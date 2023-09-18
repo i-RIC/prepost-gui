@@ -3,23 +3,28 @@
 
 #include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
 
-#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <misc/edge.h>
 
 #include <QVector>
 
+#include <unordered_set>
 #include <vector>
 
-class Grid;
+class v4InputGrid;
 class QSignalMapper;
 
-class QAction;
+class GridImporterI;
 class PreProcessorBCGroupDataItem;
 class PreProcessorGridAndGridCreatingConditionDataItem;
-class PreProcessorGridAttributeNodeGroupDataItem;
-class PreProcessorGridAttributeNodeDataItem;
-class PreProcessorGridAttributeCellGroupDataItem;
 class PreProcessorGridAttributeCellDataItem;
+class PreProcessorGridAttributeCellGroupDataItem;
+class PreProcessorGridAttributeIEdgeGroupDataItem;
+class PreProcessorGridAttributeIEdgeDataItem;
+class PreProcessorGridAttributeJEdgeGroupDataItem;
+class PreProcessorGridAttributeJEdgeDataItem;
+class PreProcessorGridAttributeNodeDataItem;
+class PreProcessorGridAttributeNodeGroupDataItem;
 class PreProcessorGridShapeDataItem;
 class PreProcessorGridTypeDataItem;
 class VTK2DGraphicsView;
@@ -28,28 +33,39 @@ class GridPointMouseMoveCommand;
 class GridAttributeEditCommand;
 
 class vtkPolyData;
+class QAction;
 
 namespace iRICLib {
 	class H5CgnsBase;
 	class H5CgnsZone;
 } // namespace iRICLib
 
-class PreProcessorGridDataItem : public PreProcessorGridDataItemInterface
+class PreProcessorGridDataItem : public PreProcessorGridDataItemI
 {
 	Q_OBJECT
 
 public:
+	class SelectedAbstractCellsController;
+	class SelectedDataController;
+	class SelectedDataWithIdController;
+	class SelectedNodesController;
+	class SelectedCellsController;
+	class SelectedIEdgesController;
+	class SelectedJEdgesController;
+	class SelectedEdgesController;
+
 	PreProcessorGridDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGridDataItem();
 
-	Grid* grid() const override;
-	bool setGrid(Grid* newGrid) override;
+	v4InputGrid* grid() const override;
+	bool setGrid(v4InputGrid* newGrid) override;
 
 	int loadFromCgnsFile() override;
 	int loadFromCgnsFile(const iRICLib::H5CgnsZone& zone);
 	int saveToCgnsFile() override;
 	int saveToCgnsFile(iRICLib::H5CgnsBase* base, const std::string& zoneName);
 	void closeCgnsFile() override;
+	bool importFromImporter(v4InputGrid* grid, GridImporterI* importer, const QString& filename, const QString& selectedFilter);
 
 	void updateActionStatus() override;
 
@@ -61,39 +77,16 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
-	// Mouse event handlers for grid nodes selecting
-
-	void nodeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void nodeSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void nodeSelectingMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v);
-
-	void nodeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void nodeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-
-	// Mouse event handlers for grid cells selecting
-
-	void cellSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void cellSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void cellSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-
-	void cellSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void cellSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
+	SelectedNodesController* selectedNodesController() const;
+	SelectedCellsController* selectedCellsController() const;
+	SelectedIEdgesController* selectedIEdgesController() const;
+	SelectedJEdgesController* selectedJEdgesController() const;
+	SelectedEdgesController* selectedEdgesController() const;
 
 	// Mouse event handlers for grid edges selecting
 
-	void edgeSelectingMouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void edgeSelectingMousePressEvent(QMouseEvent* event, VTKGraphicsView* v);
-	void edgeSelectingMouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v);
-
-	void edgeSelectingKeyPressEvent(QKeyEvent* event, VTKGraphicsView* v);
-	void edgeSelectingKeyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v);
-
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
-
-	void setSelectedPointsVisibility(bool visible);
-	void setSelectedCellsVisibility(bool visible);
-	void setSelectedEdgesVisibility(bool visible);
 
 	void updateZDepthRangeItemCount() override;
 	void informGridAttributeChangeAll();
@@ -104,12 +97,16 @@ public:
 	PreProcessorGridShapeDataItem* shapeDataItem() const;
 	PreProcessorGridAttributeNodeGroupDataItem* nodeGroupDataItem() const;
 	PreProcessorGridAttributeCellGroupDataItem* cellGroupDataItem() const;
+	PreProcessorGridAttributeIEdgeGroupDataItem* iEdgeGroupDataItem() const;
+	PreProcessorGridAttributeJEdgeGroupDataItem* jEdgeGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
 	bool colorBarShouldBeVisible(const std::string& name) const;
 
-	void setSelectedVertices(const std::vector<vtkIdType>& vertices);
-	QVector<vtkIdType> getCellsFromVertices(const QSet<vtkIdType>& vertices) const;
-	QVector<Edge> getEdgesFromVertices(const QSet<vtkIdType>& vertices) const;
+	std::vector<vtkIdType> getCellsFromVertices(const std::unordered_set<vtkIdType>& vertices) const;
+	std::vector<Edge> getEdgesFromVertices(const std::unordered_set<vtkIdType>& vertices) const;
+	std::vector<vtkIdType> getIEdgesFromVertices(const std::unordered_set<vtkIdType>& vertices) const;
+	std::vector<vtkIdType> getJEdgesFromVertices(const std::unordered_set<vtkIdType>& vertices) const;
+
 	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
 	void unsetBCGroupDataItem() override;
 	void applyColorMapSetting(const std::string& name) override;
@@ -136,10 +133,6 @@ public:
 	QMenu* generateAttMenu() const;
 	QMenu* menu() const;
 
-	vtkPolyData* selectedVerticesPolyData() const;
-	const std::vector<vtkIdType>& selectedVertices() const;
-	const std::vector<vtkIdType>& selectedCells() const;
-	const QVector<Edge>& selectedEdges() const;
 	void updateAttributeActorSettings() override;
 
 	void setNodeDataItem(PreProcessorGridAttributeNodeDataItem* nodeItem);
@@ -172,24 +165,16 @@ private:
 	void setupActions();
 	void setupGenerateAttributeActions(QMenu* menu);
 	void clearSelection();
-	void updateSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
-	std::vector<vtkIdType> getSelectedVerticesBySelectingNearest(QPointF& pos, double maxDistance, bool xOr);
-	void updateSelectedVertices(MouseBoundingBox* box, bool xOr);
-	std::vector<vtkIdType> getSelectedVertices(MouseBoundingBox* box, bool xOr);
-	QSet<vtkIdType> getSelectedVerticesSet(MouseBoundingBox* box, bool xOr);
-	void updateSelectedCells(MouseBoundingBox* box, bool xOr);
-	void updateSelectedEdges(MouseBoundingBox* box, bool xOr, VTKGraphicsView* v);
-	void updateSelectedVerticesGraphics();
-	void updateSelectedCellsGraphics();
-	void updateSelectedEdgesGraphics();
+	void setDimensionsToAttributes();
 	void closeBirdEyeWindow();
 	void closeCrosssectionWindows();
-	void informSelectedVerticesChanged();
 
 protected:
 	PreProcessorGridShapeDataItem* m_shapeDataItem;
 	PreProcessorGridAttributeNodeGroupDataItem* m_nodeGroupDataItem;
 	PreProcessorGridAttributeCellGroupDataItem* m_cellGroupDataItem;
+	PreProcessorGridAttributeIEdgeGroupDataItem* m_iEdgeGroupDataItem;
+	PreProcessorGridAttributeJEdgeGroupDataItem* m_jEdgeGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 
 private:
@@ -204,6 +189,10 @@ private:
 
 	class Impl;
 	Impl* impl;
+
+	class CgnsExporter;
+	class CgnsImporter;
+	class ProjectImporter;
 
 public:
 	friend class GridPointMouseMoveCommand;

@@ -1,13 +1,13 @@
 #ifndef STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTIONWINDOW_H
 #define STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTIONWINDOW_H
 
-#include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
+#include <guicore/grid/v4structured15dgridwithcrosssectioncrosssection.h>
 
 #include <QMainWindow>
 #include <QUndoCommand>
 
-class Structured15DGridWithCrossSection;
-class Structured15DGridWithCrossSectionCrossSection;
+class v4Structured15dGridWithCrossSection;
+class v4Structured15dGridWithCrossSectionCrossSection;
 class Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem;
 class PreProcessorNormal15DGridWithCrossSectionShapeDataItem;
 
@@ -25,13 +25,16 @@ class Structured15DGridWithCrossSectionCrossSectionWindow : public QMainWindow
 	Q_OBJECT
 
 public:
-	explicit Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
+	Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent = nullptr);
 	~Structured15DGridWithCrossSectionCrossSectionWindow();
-	QAction* deleteAction() {return m_deleteAction;}
+
+	QAction* deleteAction() const;
 	void setupData();
 	bool updateComboBoxes();
-	void setTarget(Structured15DGridWithCrossSectionCrossSection* cs);
-	Structured15DGridWithCrossSectionCrossSection* target() {return m_blackLineCrossSection;}
+	void setTarget(v4Structured15dGridWithCrossSectionCrossSection* cs);
+	v4Structured15dGridWithCrossSectionCrossSection* target() const;
+
+	class EditCommand;
 
 public slots:
 	void updateView();
@@ -66,8 +69,8 @@ private:
 	QItemSelectionModel* m_selectionModel;
 	QAction* m_deleteAction;
 	QComboBox* m_blackLineComboBox;
-	Structured15DGridWithCrossSection* m_grid;
-	Structured15DGridWithCrossSectionCrossSection* m_blackLineCrossSection;
+	v4Structured15dGridWithCrossSection* m_grid;
+	v4Structured15dGridWithCrossSectionCrossSection* m_blackLineCrossSection;
 	PreProcessorNormal15DGridWithCrossSectionShapeDataItem* m_shapeItem;
 	bool m_settingUp;
 	Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* m_projectDataItem;
@@ -77,26 +80,6 @@ private:
 public:
 	friend class Structured15DGridWithCrossSectionCrossSectionWindowGraphicsView;
 	friend class Structured15DGridCrossSectionEditCommand;
-};
-
-class Structured15DGridCrossSectionEditCommand : public QUndoCommand
-{
-
-public:
-	Structured15DGridCrossSectionEditCommand(bool apply, const QString& title, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& after, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& before, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, bool tableaction = false);
-	void redo() override;
-	void undo() override;
-
-private:
-	bool m_apply;
-	bool m_first;
-	bool m_tableaction;
-//	GeoDataRiverPathPoint* m_point;
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> m_before;
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> m_after;
-	Structured15DGridWithCrossSectionCrossSectionWindow* m_window;
-	PreProcessorNormal15DGridWithCrossSectionShapeDataItem* m_item;
-//	GeoDataRiverSurvey* m_rs;
 };
 
 #endif // STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTIONWINDOW_H

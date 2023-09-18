@@ -114,7 +114,9 @@ HEADERS += gd_polygongroup_global.h \
            geodatapolygongroupcreatort.h \
            geodatapolygongroupcsvexporter.h \
            geodatapolygongroupcsvimporter.h \
+           geodatapolygongroupifacemappert.h \
            geodatapolygongroupintegercreator.h \
+           geodatapolygongroupjfacemappert.h \
            geodatapolygongroupnodemappert.h \
            geodatapolygongrouppolygon.h \
            geodatapolygongroupproxy.h \
@@ -126,6 +128,8 @@ HEADERS += gd_polygongroup_global.h \
            private/geodatapolygongroup_impl.h \
            private/geodatapolygongroupcellmappert_detail.h \
            private/geodatapolygongroupcreatort_detail.h \
+           private/geodatapolygongroupifacemappert_detail.h \
+           private/geodatapolygongroupjfacemappert_detail.h \
            private/geodatapolygongroupnodemappert_detail.h \
            private/geodatapolygongrouppolygon_impl.h \
            private/geodatapolygongrouppolygon_triangulatori.h \

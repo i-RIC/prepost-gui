@@ -1,10 +1,10 @@
 #include "ui_gridcomplexconditiondialog.h"
 
-#include "../../base/iricmainwindowinterface.h"
+#include "../../base/iricmainwindowi.h"
 #include "../../project/colorsource.h"
 #include "../../project/projectdata.h"
 #include "../../solverdef/solverdefinitiongridcomplexattribute.h"
-#include "../base/preprocessorgeodatacomplexgroupdataiteminterface.h"
+#include "../base/preprocessorgeodatacomplexgroupdataitemi.h"
 #include "gridcomplexconditiondialog.h"
 #include "gridcomplexconditionwidget.h"
 
@@ -12,7 +12,7 @@
 #include <QTextCodec>
 #include <QWidget>
 
-GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemInterface* item, QWidget* parent) :
+GridComplexConditionDialog::GridComplexConditionDialog(PreProcessorGeoDataComplexGroupDataItemI* item, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridComplexConditionDialog)
 {

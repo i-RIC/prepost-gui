@@ -2,7 +2,9 @@
 #include "post3dwindowgridshapedataitem_settingeditwidget.h"
 #include "ui_post3dwindowgridshapedataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 #include <vtkStructuredGrid.h>
 
@@ -13,9 +15,9 @@ Post3dWindowGridShapeDataItem::SettingEditWidget::SettingEditWidget(Post3dWindow
 {
 	ui->setupUi(this);
 
-	auto grid = item->zoneDataItem()->dataContainer()->data()->data();
-	auto sgrid = vtkStructuredGrid::SafeDownCast(grid);
-	if (sgrid == nullptr) {
+	auto grid = item->zoneDataItem()->v4DataContainer()->gridData()->grid();
+	auto sGrid = dynamic_cast<v4Structured3dGrid*> (grid);
+	if (sGrid == nullptr) {
 		ui->shapeEditWidget->hideShape();
 	}
 

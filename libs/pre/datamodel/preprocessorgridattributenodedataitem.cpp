@@ -1,29 +1,27 @@
 #include "../preprocessorgraphicsview.h"
-#include "../preprocessorwindow.h"
-#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
-#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h"
 #include "attributebrowserhelper.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "preprocessorgridtypedataitem.h"
-#include "preprocessorgeodatagroupdataitem.h"
-#include "preprocessorgeodatatopdataitem.h"
-#include "preprocessorgraphicsview.h"
 #include "private/preprocessorgridattributenodedataitem_propertydialog.h"
+#include "public/preprocessorgriddataitem_selectednodescontroller.h"
 
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
-#include <guibase/widget/contoursettingwidget.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/widget/opacitycontainerwidget.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/complex/gridcomplexconditiongroup.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/image/imagesettingcontainer.h>
+#include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/pre/complex/gridcomplexconditiongroupeditdialog.h>
 #include <guicore/pre/complex/gridcomplexconditiongrouprealeditwidget.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
@@ -31,44 +29,19 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
+#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidgetcontroller.h>
-#include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <misc/errormessage.h>
 #include <misc/iricundostack.h>
 #include <misc/lastiodirectory.h>
 #include <misc/qwidgetcontainer.h>
-#include <misc/stringtool.h>
 #include <misc/tpoexporter.h>
 #include <misc/valuechangert.h>
-#include <misc/xmlsupport.h>
-
-#include <QDomNode>
-#include <QFileDialog>
-#include <QMdiArea>
-#include <QMdiSubWindow>
-#include <QMenu>
-#include <QMessageBox>
-#include <QMouseEvent>
-#include <QStandardItem>
-#include <QStatusBar>
-#include <QTextStream>
-#include <QVector>
-#include <QXmlStreamWriter>
-
-#include <vtkCell.h>
-#include <vtkCollectionIterator.h>
-#include <vtkDoubleArray.h>
-#include <vtkPointData.h>
-#include <vtkRenderer.h>
-#include <vtkVariant.h>
 
 #include <iriclib_errorcodes.h>
-
-#include <cfloat>
-#include <string>
 
 PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent)
@@ -128,14 +101,14 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 	auto setting = colorMapSettingContainer();
 	if (setting == nullptr) {return nullptr;}
 
-	auto gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-	auto dialog = new PropertyDialog(gitem, p);
+	auto gItem = groupDataItem();
+	auto dialog = new PropertyDialog(gItem, p);
 	dialog->setWindowTitle(tr("Grid Node Attribute Display Setting (%1)").arg(condition()->caption()));
 	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
 	widget->setSetting(setting);
 	dialog->setWidget(widget);
 
-	dialog->setOpacity(gitem->opacity());
+	dialog->setOpacity(gItem->opacity());
 	dialog->resize(900, 700);
 
 	return dialog;
@@ -148,11 +121,10 @@ void PreProcessorGridAttributeNodeDataItem::doLoadFromProjectMainFile(const QDom
 
 void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	QString mod;
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	Grid* g = tmpparent->grid();
+	v4InputGrid* g = gridDataItem()->grid();
 	if (g != nullptr) {
-		GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
+		auto cont = g->attribute(m_condition->name());
+		QString mod;
 		mod.setNum(static_cast<int>(cont->isCustomModified()));
 		writer.writeAttribute("isCustomModified", mod);
 	}
@@ -160,11 +132,10 @@ void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWr
 
 int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 {
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	Grid* g = tmpparent->grid();
+	v4InputGrid* g = gridDataItem()->grid();
 	if (g == nullptr) {return IRIC_NO_ERROR;}
 
-	GridAttributeContainer* cont = g->gridAttribute(m_condition->name());
+	auto cont = g->attribute(m_condition->name());
 	cont->setCustomModified(m_isCustomModified);
 
 	return IRIC_NO_ERROR;
@@ -173,7 +144,7 @@ int PreProcessorGridAttributeNodeDataItem::loadFromCgnsFile()
 void PreProcessorGridAttributeNodeDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (m_definingBoundingBox) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMouseMoveEvent(event, v);
+		gridDataItem()->selectedNodesController()->handleMouseMoveEvent(event, v);
 	} else {
 		auto setting = colorMapSettingContainer();
 		if (setting != nullptr && setting->legendSetting()->getVisible()) {
@@ -184,7 +155,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseMoveEvent(QMouseEvent* event, V
 			}
 		}
 
-		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->updateAttributeBrowser(event->pos(), v);
+		groupDataItem()->updateAttributeBrowser(event->pos(), v);
 	}
 }
 
@@ -202,7 +173,7 @@ void PreProcessorGridAttributeNodeDataItem::mousePressEvent(QMouseEvent* event, 
 	if (event->button() == Qt::LeftButton) {
 		// start drawing the mouse bounding box.
 		m_definingBoundingBox = true;
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMousePressEvent(event, v);
+		gridDataItem()->selectedNodesController()->handleMousePressEvent(event, v);
 	}
 }
 
@@ -213,21 +184,20 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		auto imgCtrl = setting->legendSetting()->imgSetting()->controller();
 		imgCtrl->handleMouseReleaseEvent(this, event, v);
 	}
+	auto gItem = gridDataItem();
 
 	static QMenu* menu = nullptr;
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
 			auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
-			tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
+			gItem->selectedNodesController()->handleMouseReleaseEvent(event, v2);
 		}
 		m_definingBoundingBox = false;
-		dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->fixAttributeBrowser(QPoint(event->x(), event->y()), v);
+		groupDataItem()->fixAttributeBrowser(event->pos(), v);
 	} else if (event->button() == Qt::RightButton) {
 		delete menu;
 		menu = new QMenu(projectData()->mainWindow());
-		PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		bool vertexSelected = (tmpparent->selectedVertices().size() > 0);
+		bool vertexSelected = (gItem->selectedNodesController()->selectedDataIds().size() > 0);
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(vertexSelected);
 		bool nonGroupedComplex = false;
@@ -241,7 +211,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 			m_editRatioAction->setEnabled(vertexSelected);
 		}
 
-		Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(tmpparent->grid());
+		auto sgrid = dynamic_cast<v4Structured2dGrid*> (gItem->grid()->grid());
 
 		if (sgrid != nullptr) {
 			menu->addSeparator();
@@ -252,6 +222,7 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 			m_openVXsectionWindowAction->setEnabled(vertexSelected);
 		}
 		menu->addSeparator();
+		menu->addAction(groupDataItem()->showAttributeBrowserAction());
 		menu->move(event->globalPos());
 		menu->show();
 	}
@@ -259,14 +230,12 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 
 void PreProcessorGridAttributeNodeDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	gitem->nodeSelectingKeyPressEvent(event, v);
+	gridDataItem()->selectedNodesController()->handleKeyPressEvent(event, v);
 }
 
 void PreProcessorGridAttributeNodeDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	gitem->nodeSelectingKeyReleaseEvent(event, v);
+	gridDataItem()->selectedNodesController()->handleKeyReleaseEvent(event, v);
 }
 
 void PreProcessorGridAttributeNodeDataItem::addCustomMenuItems(QMenu* menu)
@@ -276,48 +245,46 @@ void PreProcessorGridAttributeNodeDataItem::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_exportAction);
 	menu->addSeparator();
 
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
-		PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent());
-		menu->addAction(gitem->showAttributeBrowserAction());
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gridTypeDataItem())) {
+		menu->addAction(groupDataItem()->showAttributeBrowserAction());
 	}
 }
 
 void PreProcessorGridAttributeNodeDataItem::editValue()
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	auto mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
 
-	auto tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
+	auto gItem = gridDataItem();
+	auto tItem = gridTypeDataItem();
 	auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
-	auto gridDataItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (compAtt != nullptr && compAtt->isGrouped() == false) {
-		auto gItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
-		if (gridDataItem->selectedVertices().size() > 2) {
+		auto cItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemI*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
+		if (gItem->selectedNodesController()->selectedDataIds().size() > 2) {
 			QMessageBox::warning(mainWindow(), tr("Warning"), tr("Please select only one node."));
 			return;
 		}
-		auto selectedV = gridDataItem->selectedVertices().at(0);
+		auto selectedV = gItem->selectedNodesController()->selectedDataIds().at(0);
 
 		m_groupEditDialog->setWindowTitle(tr("Edit %1").arg(m_condition->caption()));
-		m_groupEditDialog->setGroups(gItem->groups());
+		m_groupEditDialog->setGroups(cItem->groups());
 		m_groupEditDialog->setCurrentIndex(selectedV);
 		m_groupEditDialog->exec();
 	} else {
 		GridAttributeEditDialog* dialog = m_condition->editDialog(mainWindow());
 		dialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
 		dialog->setLabel(QString(tr("Input the new value of %1 at the selected grid nodes.")).arg(m_condition->caption()));
-		PreProcessorGeoDataGroupDataItemInterface* i = tItem->geoDataTop()->groupDataItem(m_condition->name());
+		auto i = tItem->geoDataTop()->groupDataItem(m_condition->name());
 		i->setupEditWidget(dialog->widget());
-		auto targets = gridDataItem->selectedVertices();
-		Grid* g = gridDataItem->grid();
-		dialog->scanAndSetDefault(g->gridAttribute(m_condition->name()), targets);
+		const auto& targets = gItem->selectedNodesController()->selectedDataIds();
+		v4InputGrid* g = gItem->grid();
+		dialog->scanAndSetDefault(g->attribute(m_condition->name()), targets);
 
 		if (QDialog::Accepted == dialog->exec()) {
-			dialog->applyValue(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), gridDataItem);
+			dialog->applyValue(g->attribute(m_condition->name()), targets, g->grid()->vtkData()->data()->GetPointData(), gItem);
 		}
 		delete dialog;
 	}
@@ -335,16 +302,16 @@ void PreProcessorGridAttributeNodeDataItem::editRatio()
 
 void PreProcessorGridAttributeNodeDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->initAttributeBrowser();
+	gridDataItem()->selectedNodesController()->setVisibility(true);
+	groupDataItem()->initAttributeBrowser();
 
 	GraphicsWindowDataItem::updateVisibility();
 }
 
 void PreProcessorGridAttributeNodeDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->clearAttributeBrowser();
+	gridDataItem()->selectedNodesController()->setVisibility(false);
+	groupDataItem()->clearAttributeBrowser();
 }
 
 SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition() const
@@ -354,13 +321,12 @@ SolverDefinitionGridAttribute* PreProcessorGridAttributeNodeDataItem::condition(
 
 void PreProcessorGridAttributeNodeDataItem::informDataChange()
 {
-	dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(parent())->informDataChange(m_condition->name());
+	groupDataItem()->informDataChange(m_condition->name());
 }
 
 ColorMapSettingContainerI* PreProcessorGridAttributeNodeDataItem::colorMapSettingContainer() const
 {
-	auto typedi = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-	return typedi->colorMapSetting(m_condition->name());
+	return gridTypeDataItem()->colorMapSetting(m_condition->name());
 }
 
 ColorMapSettingToolBarWidgetController* PreProcessorGridAttributeNodeDataItem::colorMapSettingToolBarWidgetController() const
@@ -370,28 +336,28 @@ ColorMapSettingToolBarWidgetController* PreProcessorGridAttributeNodeDataItem::c
 
 void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
 {
-	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = gridDataItem();
 
-	unsigned int index = gItem->selectedVertices().at(0);
-	unsigned int i, j;
+	unsigned int index = gItem->selectedNodesController()->selectedDataIds().at(0);
 
-	Grid* g = gItem->grid();
-	auto grid = dynamic_cast<Structured2DGrid*>(g);
-	grid->getIJIndex(index, &i, &j);
+	v4InputGrid* g = gItem->grid();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*>(g->grid());
+	vtkIdType i, j;
+	sgrid->getPointIJIndex(index, &i, &j);
 
 	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::I, i);
 }
 
 void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 {
-	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = gridDataItem();
 
-	unsigned int index = gItem->selectedVertices().at(0);
-	unsigned int i, j;
+	unsigned int index = gItem->selectedNodesController()->selectedDataIds().at(0);
+	vtkIdType i, j;
 
-	Grid* g = gItem->grid();
-	auto grid = dynamic_cast<Structured2DGrid*>(g);
-	grid->getIJIndex(index, &i, &j);
+	v4InputGrid* g = gItem->grid();
+	auto sgrid = dynamic_cast<v4Structured2dGrid*>(g->grid());
+	sgrid->getPointIJIndex(index, &i, &j);
 
 	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
 }
@@ -401,46 +367,9 @@ void PreProcessorGridAttributeNodeDataItem::showPropertyDialog()
 	showPropertyDialogModeless();
 }
 
-void PreProcessorGridAttributeNodeDataItem::updateCrossectionWindows()
-{
-	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it) {
-		PreProcessorGridCrosssectionWindow* w = (*w_it)->window();
-		w->setupData();
-		w->updateView();
-	}
-}
-
-void PreProcessorGridAttributeNodeDataItem::requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item)
-{
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
-		if (*it == item) {
-			m_crosssectionWindows.erase(it);
-			delete item;
-			return;
-		}
-	}
-}
-
-void PreProcessorGridAttributeNodeDataItem::unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item)
-{
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
-		if (*it == item) {
-			m_crosssectionWindows.erase(it);
-			return;
-		}
-	}
-}
-
-void PreProcessorGridAttributeNodeDataItem::informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices)
-{
-	for (auto item : m_crosssectionWindows) {
-		item->window()->informSelectedVerticesChanged(vertices);
-	}
-}
-
 void PreProcessorGridAttributeNodeDataItem::exportToFile()
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	auto mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
@@ -459,8 +388,8 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 		}
 		exporter.setOffset(offset());
 
-		PreProcessorGridDataItem* gitem =  dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-		vtkPointSet* vtkGrid = gitem->grid()->vtkGrid();
+		auto gItem =  gridDataItem();
+		vtkPointSet* vtkGrid = gItem->grid()->grid()->vtkData()->data();
 		vtkDataArray* da = vtkGrid->GetPointData()->GetArray(m_condition->name().c_str());
 
 		// output values
@@ -471,7 +400,7 @@ void PreProcessorGridAttributeNodeDataItem::exportToFile()
 			exporter.addPoint(x[0], x[1], val);
 		}
 		exporter.close();
-		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		iricMainWindow()->statusBar()->showMessage(tr("Grid condition successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
 	} catch (ErrorMessage& message) {
@@ -485,8 +414,7 @@ void PreProcessorGridAttributeNodeDataItem::generatePointMap()
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {return;}
 
-	auto gridDataItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	auto grid = gridDataItem->grid()->vtkGrid();
+	auto grid = gridDataItem()->grid()->grid()->vtkData()->data();
 	auto points = grid->GetPoints();
 	auto values = vtkDoubleArray::SafeDownCast(grid->GetPointData()->GetArray(m_condition->name().c_str()));
 
@@ -513,9 +441,7 @@ void PreProcessorGridAttributeNodeDataItem::generatePointMap()
 
 void PreProcessorGridAttributeNodeDataItem::doApplyOffset(double /*x*/, double /*y*/)
 {
-	if (PreProcessorGridAttributeNodeGroupDataItem* gitem = dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*>(this->parent())) {
-		gitem->updateActorSetting();
-	}
+	groupDataItem()->updateActorSetting();
 }
 
 void PreProcessorGridAttributeNodeDataItem::updateVisibility(bool /*visible*/)
@@ -524,7 +450,7 @@ void PreProcessorGridAttributeNodeDataItem::updateVisibility(bool /*visible*/)
 	if (updating) {return;}
 
 	ValueChangerT<bool> updatingChanger(&updating, true);
-	groupDataItem()->gridDataItem()->gridTypeDataItem()->updateColorBarVisibility(condition()->name());
+	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
 PreProcessorGridTypeDataItem* PreProcessorGridAttributeNodeDataItem::gridTypeDataItem() const
@@ -532,7 +458,7 @@ PreProcessorGridTypeDataItem* PreProcessorGridAttributeNodeDataItem::gridTypeDat
 	return dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGridAttributeNodeDataItem::geoDataGroupDataItem() const
+PreProcessorGeoDataGroupDataItemI* PreProcessorGridAttributeNodeDataItem::geoDataGroupDataItem() const
 {
 	return gridTypeDataItem()->geoDataTop()->groupDataItem(m_condition->name());
 }
@@ -542,9 +468,14 @@ PreProcessorGridAttributeNodeGroupDataItem* PreProcessorGridAttributeNodeDataIte
 	return dynamic_cast<PreProcessorGridAttributeNodeGroupDataItem*> (parent());
 }
 
+PreProcessorGridDataItem* PreProcessorGridAttributeNodeDataItem::gridDataItem() const
+{
+	return groupDataItem()->gridDataItem();
+}
+
 void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName)
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	iRICMainWindowI* mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
@@ -554,20 +485,20 @@ void PreProcessorGridAttributeNodeDataItem::editVariation(GridAttributeVariation
 	dialog->setWindowTitle(QString(tr("Apply %1 to %2").arg(typeName).arg(m_condition->caption())));
 	dialog->setLabel(QString(tr("Input the %1 of %2 at the selected grid nodes.")).arg(typeName).arg(m_condition->caption()));
 	dialog->widget()->setMode(mode);
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	auto targets = tmpparent->selectedVertices();
-	Grid* g = tmpparent->grid();
+	auto gItem = gridDataItem();
+	const auto& targets = gItem->selectedNodesController()->selectedDataIds();
+	v4InputGrid* g = gItem->grid();
 
 	if (QDialog::Accepted == dialog->exec()) {
 		auto compAtt = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
 		if (compAtt != nullptr && compAtt->isGrouped() == false) {
-			auto tItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent()->parent());
-			auto gItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemInterface*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
+			auto tItem = gridTypeDataItem();
+			auto cItem = dynamic_cast<PreProcessorGeoDataComplexGroupDataItemI*> (tItem->geoDataTop()->groupDataItem(m_condition->name()));
 			auto w = dynamic_cast<GridComplexConditionGroupRealEditWidget*> (dialog->widget());
-			w->applyVariation(targets, gItem->groups());
+			w->applyVariation(targets, cItem->groups());
 			iRICUndoStack::instance().clear();
 		} else {
-			dialog->applyVariation(g->gridAttribute(m_condition->name()), targets, g->vtkGrid()->GetPointData(), tmpparent);
+			dialog->applyVariation(g->attribute(m_condition->name()), targets, g->grid()->vtkData()->data()->GetPointData(), gItem);
 		}
 	}
 	delete dialog;
@@ -588,14 +519,14 @@ bool PreProcessorGridAttributeNodeDataItem::addToolBarButtons(QToolBar* toolBar)
 	toolBar->addWidget(cmwContainer);
 	cmwContainer->setWidget(m_colorMapToolBarWidgetController->widget());
 
-	Grid* grid = groupDataItem()->gridDataItem()->grid();
-	GridAttributeContainer* cont = grid->gridAttribute(condition()->name());
+	v4InputGrid* grid = groupDataItem()->gridDataItem()->grid();
+	auto cont = grid->attribute(condition()->name());
 	const auto& selectWidgets = cont->dimensions()->selectWidgets();
 	if (selectWidgets.size() > 0) {
 		toolBar->addSeparator();
 
-		for (int i = 0; i < selectWidgets.size(); ++i) {
-			GridAttributeDimensionSelectWidget* w = selectWidgets.at(i);
+		for (int i = 0; i < static_cast<int> (selectWidgets.size()); ++i) {
+			auto w = selectWidgets.at(i);
 			QAction* action = toolBar->addWidget(w);
 			action->setVisible(true);
 		}

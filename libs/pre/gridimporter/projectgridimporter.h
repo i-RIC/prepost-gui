@@ -10,7 +10,7 @@ class PreProcessorGridDataItem;
 class ProjectGridImporter : public GridInternalImporter
 {
 	Q_OBJECT
-	Q_INTERFACES(GridImporterInterface)
+	Q_INTERFACES(GridImporterI)
 
 public:
 	ProjectGridImporter();
@@ -22,9 +22,8 @@ public:
 	QStringList fileDialogFilters() const override;
 
 	/// Import grid data from external file.
-	bool import(Grid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
+	bool import(v4InputGrid* grid, const QString& filename, const QString& selectedFilter, QWidget* parent) override;
 
-protected:
 	virtual CgnsGridImporter* getCgnsImporter() = 0;
 
 private:

@@ -14,12 +14,12 @@
 
 #include <iriclib_polyline.h>
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -141,26 +141,26 @@ void GeoDataPolyLine::setMouseEventMode(MouseEventMode mode)
 	impl->m_mouseEventMode = mode;
 }
 
-void GeoDataPolyLine::informSelection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::informSelection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_polyLine->setActive(true);
 
 	updateMouseCursor(v);
 }
 
-void GeoDataPolyLine::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_polyLine->setActive(false);
 
 	v->unsetCursor();
 }
 
-void GeoDataPolyLine::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GeoDataPolyLine::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolyLine::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (impl->m_mouseEventMode != meDefining) {return;}
@@ -168,17 +168,17 @@ void GeoDataPolyLine::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewIn
 	definePolyLine(false);
 }
 
-void GeoDataPolyLine::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolyLine::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GeoDataPolyLine::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolyLine::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_mouseEventMode == meDefining) {
 		definePolyLine(true);
 	}
 }
 
-void GeoDataPolyLine::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meNormal:
@@ -218,7 +218,7 @@ void GeoDataPolyLine::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsVie
 	}
 }
 
-void GeoDataPolyLine::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 
@@ -293,7 +293,7 @@ void GeoDataPolyLine::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 	}
 }
 
-void GeoDataPolyLine::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -330,7 +330,7 @@ void GeoDataPolyLine::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphics
 	}
 }
 
-void GeoDataPolyLine::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolyLine::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meNormal:

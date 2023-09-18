@@ -1,8 +1,9 @@
+#include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowparticlegrouprootdataitem.h"
 #include "post2dwindowparticlegrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -13,7 +14,7 @@ Post2dWindowParticleGroupRootDataItem::Post2dWindowParticleGroupRootDataItem(Pos
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupMap();
 
 	for (auto pair : map) {
@@ -32,6 +33,16 @@ void Post2dWindowParticleGroupRootDataItem::update()
 		auto gItem = dynamic_cast<Post2dWindowParticleGroupTopDataItem*>(c);
 		gItem->update();
 	}
+}
+
+Post2dWindowCalculationResultDataItem* Post2dWindowParticleGroupRootDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*>(parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowParticleGroupRootDataItem::zoneDataItem() const
+{
+	return resultDataItem()->zoneDataItem();
 }
 
 void Post2dWindowParticleGroupRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)

@@ -8,6 +8,7 @@
 #include <vector>
 
 class NamedGraphicWindowDataItem;
+class Post2dWindowCalculationResultDataItem;
 class Post2dWindowNodeVectorParticleDataItem;
 class Post2dWindowZoneDataItem;
 
@@ -34,6 +35,7 @@ public:
 	void updateZDepthRangeItemCount() override;
 	virtual void assignActorZValues(const ZDepthRange& range) override;
 	void update();
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
 	bool exportParticles(const QString& filePrefix, int fileIndex, double time);
 
 public slots:

@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncompoundchannel_movepolylinecommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::MovePolyLineCommand::MovePolyLineCommand(bool keyDown, const QPoint& from, const QPoint& to, GridCreatingConditionCompoundChannel* cond) :

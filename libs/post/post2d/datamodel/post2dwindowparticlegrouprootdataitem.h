@@ -3,6 +3,9 @@
 
 #include "../post2dwindowdataitem.h"
 
+class Post2dWindowCalculationResultDataItem;
+class Post2dWindowZoneDataItem;
+
 class Post2dWindowParticleGroupRootDataItem : public Post2dWindowDataItem
 {
 	Q_OBJECT
@@ -14,6 +17,9 @@ public:
 	void update();
 
 private:
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
+	Post2dWindowZoneDataItem* zoneDataItem() const;
+
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 };

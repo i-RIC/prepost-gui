@@ -10,8 +10,8 @@
 #include <cs/coordinatesystemselectdialog.h>
 #include <cs/gdalutil.h>
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
@@ -84,7 +84,7 @@ void GeoDataNetcdfGdalImporter::cancel()
 	m_canceled = true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	clear();
 	GDALAllRegister();
@@ -133,7 +133,7 @@ bool GeoDataNetcdfGdalImporter::setMode(SolverDefinitionGridAttribute* condition
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
@@ -155,7 +155,7 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_timeZone = item->projectData()->mainfile()->timeZone();
 
@@ -318,7 +318,7 @@ bool GeoDataNetcdfGdalImporter::importDataForTimeMode(GeoDataNetcdf* netcdf, QWi
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::setCoordinateSystem(const QString& filename, GDALDataset* dataset, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::setCoordinateSystem(const QString& filename, GDALDataset* dataset, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	OGRSpatialReference* sr = new OGRSpatialReference();
 

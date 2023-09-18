@@ -13,7 +13,7 @@
 #include <QPointF>
 
 class GeoDataRiverSurvey;
-class Structured2DGrid;
+class v4Structured2dGrid;
 
 class vtkActor;
 class vtkDataSetMapper;
@@ -74,8 +74,8 @@ public:
 	Impl(GridCreatingConditionLaplace* cond);
 	~Impl();
 
-	Structured2DGrid* createGrid();
-	Structured2DGrid* createSubRegionGrid(int i, int j);
+	v4Structured2dGrid* createGrid();
+	v4Structured2dGrid* createSubRegionGrid(int i, int j);
 	static std::vector<QPointF> buildSubGrid(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
 	static std::vector<QPointF> buildSubGridByRatio(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
 	static std::vector<QPointF> buildSubGridByPoisson(const std::vector<QPointF>& edgeLineStreamWise1, const std::vector<QPointF>& edgeLineStreamWise2, const std::vector<QPointF>& edgeLineCrossSection1, const std::vector<QPointF>& edgeLineCrossSection2, const DeployParameter& pp);
@@ -128,10 +128,10 @@ public:
 	PolygonController* updateSelectedSubRegion(const QPoint& pos);
 	bool setupNewEdgeSetting();
 	bool isNewEdgeFinishReady();
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 
 	void buildBankLines();
-	void addNewEdge(const QPoint& pos, PreProcessorGraphicsViewInterface* v);
+	void addNewEdge(const QPoint& pos, PreProcessorGraphicsViewI* v);
 
 	void updateCenterLineLabelsAndSpline();
 	void updateEdgeLinesForSelection();
@@ -153,7 +153,7 @@ public:
 	void pushEdgeEditCoordinatesCommand(bool streamWise, int i, int j, std::vector<QPointF>& coords, bool apply = false);
 	void pushCenterLineUpdateLabelsAndSplineCommand(QUndoCommand* comm);
 
-	void pushNewEdgeStartDefinitionCommand(bool keyDown, const QPoint& pos, PreProcessorGraphicsViewInterface* v);
+	void pushNewEdgeStartDefinitionCommand(bool keyDown, const QPoint& pos, PreProcessorGraphicsViewI* v);
 	void pushNewEdgeDefineNewVertexCommand(bool keyDown, const QPoint& pos);
 
 	void pushEdgeMoveCommand(bool keyDown, const QPoint& from, const QPoint& to);
@@ -247,7 +247,7 @@ public:
 	std::vector<PolyLineController*> m_edgeLinesCrossSectionForDivisionPreview;
 
 	std::vector<PolygonController*> m_subRegionPolygons;
-	Structured2DGrid* m_previewGrid;
+	v4Structured2dGrid* m_previewGrid;
 	std::vector<QPointF> m_previewGridPoints;
 	vtkDataSetMapper* m_previewGridMapper;
 	vtkActor* m_previewGridActor;

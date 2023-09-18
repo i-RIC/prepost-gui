@@ -1,7 +1,7 @@
 #include "geodatariversurvey_mouserotaterivercrosssectioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/mathsupport.h>
 #include <misc/qundocommandhelper.h>
 
@@ -16,7 +16,7 @@ GeoDataRiverSurvey::MouseRotateRiverCrosssectionCommand::MouseRotateRiverCrossse
 		}
 		p = p->nextPoint();
 	}
-	PreProcessorGraphicsViewInterface* gview = data->graphicsView();
+	PreProcessorGraphicsViewI* gview = data->graphicsView();
 	m_rs = data;
 	m_oldDirection = m_point->crosssectionDirection();
 

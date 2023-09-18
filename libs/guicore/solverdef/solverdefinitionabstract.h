@@ -30,6 +30,8 @@ public:
 	 * the strings in "definition.xml" is used.
 	 */
 	SolverDefinitionAbstract(const QString& solverfolder, const QLocale& locale, QObject* parent);
+	~SolverDefinitionAbstract();
+
 	/// The name of the folder which contains files related to the solver
 	/// (ex. definition.xml, translation_ja_JP.xml, solver.exe)
 	const QString& folderName() const;

@@ -1,6 +1,10 @@
 #include "geodatapointmap.h"
 #include "geodatapointmapnodemapper.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+
 namespace {
 
 DoubleMappingSetting setupSetting(unsigned int target, vtkCell* cell, double* weights)
@@ -47,12 +51,13 @@ GeoDataMapperSettingI* GeoDataPointmapNodeMapper::initialize(bool* boolMap)
 		double bounds[6];
 		tin->GetBounds(bounds);
 
+		vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 		for (unsigned int i = 0; i < count; ++i) {
 			if (*(boolMap + i)) {continue;}
 
 			// not mapped yet.
 			double point[3];
-			GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+			vtkGrid->GetPoint(i, point);
 			if (!isNodeInsideBounds(point, bounds)) { continue; }
 
 			vtkCell* cell = pointmap->findTinCell(point[0], point[1], weights);

@@ -4,7 +4,7 @@
 #include "../base/gridattributeeditwidgett.h"
 class IntegerNumberEditWidget;
 
-class GridAttributeIntegerEditWidget : public GridAttributeEditWidgetT<int>
+class GridAttributeIntegerEditWidget : public GridAttributeEditWidgetT<int, vtkIntArray>
 {
 
 public:

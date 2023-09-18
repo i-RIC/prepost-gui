@@ -1,10 +1,10 @@
 #include "post2dwindowgeodatagroupdataitem.h"
 #include "post2dwindowgeodatatopdataitem.h"
 
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridattributerealnode.h>
+#include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <pre/datamodel/preprocessorgeodatatopdataitem.h>
@@ -39,28 +39,28 @@ void setupChildrenInGroups(
 {
 	// node simple items
 	for (auto att : stdAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
 		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// node complex items
 	for (auto att : clxAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
 		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell simple items
 	for (auto att : stdAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell complex items
 	for (auto att : clxAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		auto i = new Post2dWindowGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
@@ -122,7 +122,7 @@ void removeNonGroupedComplexAttributes(Post2dWindowGeoDataTopDataItem* item)
 
 } // namespace
 
-Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemInterface* ditem, Post2dWindowDataItem* parent) :
+Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDataTopDataItemI* ditem, Post2dWindowDataItem* parent) :
 	Post2dWindowDataItem {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_preGeoDataTopDataItem {ditem}
 {
@@ -141,7 +141,7 @@ Post2dWindowGeoDataTopDataItem::Post2dWindowGeoDataTopDataItem(PreProcessorGeoDa
 	connect(ditem, SIGNAL(dataChanged()), this, SLOT(updateChildren()));
 }
 
-PreProcessorGeoDataTopDataItemInterface* Post2dWindowGeoDataTopDataItem::preGeoDataTopDataItem() const
+PreProcessorGeoDataTopDataItemI* Post2dWindowGeoDataTopDataItem::preGeoDataTopDataItem() const
 {
 	return m_preGeoDataTopDataItem;
 }
@@ -193,6 +193,6 @@ void Post2dWindowGeoDataTopDataItem::buildReferenceInformationAttribute()
 	itemElem.setAttribute("caption", tr("Reference Information"));
 
 	auto solverDef = projectData()->solverDefinition();
-	m_referenceInformationAttribute = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, 10000);
+	m_referenceInformationAttribute = new SolverDefinitionGridAttributeReal(itemElem, solverDef, SolverDefinitionGridAttribute::Position::Node, false, 10000);
 	m_referenceInformationAttribute->setIsReferenceInformation(true);
 }

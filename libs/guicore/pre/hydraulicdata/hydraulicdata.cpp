@@ -1,6 +1,6 @@
 #include "hydraulicdata.h"
 #include "private/hydraulicdata_impl.h"
-#include "../base/preprocessorhydraulicdatadataiteminterface.h"
+#include "../base/preprocessorhydraulicdatadataitemi.h"
 
 #include <QUndoCommand>
 
@@ -16,9 +16,7 @@ HydraulicData::HydraulicData(ProjectDataItem* parent) :
 {}
 
 HydraulicData::~HydraulicData()
-{
-	delete impl;
-}
+{}
 
 QString HydraulicData::name() const
 {
@@ -41,9 +39,9 @@ void HydraulicData::setCaption(const QString& caption)
 	impl->m_caption = caption;
 }
 
-PreProcessorHydraulicDataDataItemInterface* HydraulicData::hydraulicDataDataItem() const
+PreProcessorHydraulicDataDataItemI* HydraulicData::hydraulicDataDataItem() const
 {
-	return dynamic_cast<PreProcessorHydraulicDataDataItemInterface*>(parent());
+	return dynamic_cast<PreProcessorHydraulicDataDataItemI*>(parent());
 }
 
 void HydraulicData::pushCommand(QUndoCommand* com)

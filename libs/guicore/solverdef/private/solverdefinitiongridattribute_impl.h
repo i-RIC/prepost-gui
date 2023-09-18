@@ -26,7 +26,7 @@ public:
 	QVariant m_variantDefaultValue;
 	QVariant m_variantMaximumValue;
 	QVariant m_variantMinimumValue;
-	Position m_position {Node};
+	Position m_position {SolverDefinitionGridAttribute::Position::Node};
 	QString m_mapping;
 	QString m_mappingArgs;
 	int m_order {0};

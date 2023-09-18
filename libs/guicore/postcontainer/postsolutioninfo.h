@@ -11,6 +11,9 @@
 #include <QMap>
 #include <QStringList>
 
+#include <map>
+#include <vector>
+
 namespace iRICLib {
 	class H5CgnsFile;
 } // namespace iRICLib
@@ -22,6 +25,7 @@ class PostCalculatedResult;
 class PostIterationSteps;
 class PostTimeSteps;
 class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class QDomElement;
 
@@ -51,6 +55,15 @@ public:
 	void informCgnsSteps();
 	int loadFromCgnsFile() override;
 	void closeCgnsFile() override;
+
+	const std::vector<v4PostZoneDataContainer*>& v4ZoneContainers1D() const;
+	const std::vector<v4PostZoneDataContainer*>& v4ZoneContainers2D() const;
+	const std::vector<v4PostZoneDataContainer*>& v4ZoneContainers3D() const;
+	const std::vector<v4PostZoneDataContainer*>& v4ZoneContainers(Dimension dim) const;
+	v4PostZoneDataContainer* v4ZoneContainer1D(const std::string& zoneName) const;
+	v4PostZoneDataContainer* v4ZoneContainer2D(const std::string& zoneName) const;
+	v4PostZoneDataContainer* v4ZoneContainer3D(const std::string& zoneName) const;
+	v4PostZoneDataContainer* v4ZoneContainer(Dimension dim, const std::string& zoneName) const;
 
 	const QList<PostZoneDataContainer*>& zoneContainers1D() const;
 	const QList<PostZoneDataContainer*>& zoneContainers2D() const;
@@ -123,6 +136,7 @@ private:
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
 	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
+	bool innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<PostCalculatedResult*> > *calculatedResults);
 
 	bool setupBaseIterativeResults();
 	void clearBaseIterativeResults();
@@ -132,6 +146,7 @@ private:
 	void timerEvent(QTimerEvent*) override;
 
 	static void clearContainers(QList<PostZoneDataContainer*>* conts);
+	static void clearContainers(std::vector<v4PostZoneDataContainer*>* conts);
 
 	static const int TIMERINTERVAL = 500;
 	SolverDefinition::IterationType m_iterationType;
@@ -139,6 +154,13 @@ private:
 	PostIterationSteps* m_iterationSteps;
 	PostTimeSteps* m_timeSteps;
 	int m_currentStep;
+
+	std::vector<v4PostZoneDataContainer*> m_v4ZoneContainers1D;
+	std::vector<v4PostZoneDataContainer*> m_v4ZoneContainers2D;
+	std::vector<v4PostZoneDataContainer*> m_v4ZoneContainers3D;
+	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap1D;
+	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap2D;
+	std::map<std::string, v4PostZoneDataContainer*> m_v4ZoneContainerNameMap3D;
 
 	QList<PostZoneDataContainer*> m_zoneContainers1D;
 	QList<PostZoneDataContainer*> m_zoneContainers2D;

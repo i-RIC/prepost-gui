@@ -4,6 +4,8 @@
 #include "../geodatapolygongroupcellmappert.h"
 #include "../geodatapolygongroupcreatort.h"
 #include "../geodatapolygongroupnodemappert.h"
+#include "../geodatapolygongroupifacemappert.h"
+#include "../geodatapolygongroupjfacemappert.h"
 
 template <typename V, typename DA>
 GeoDataPolygonGroupCreatorT<V, DA>::GeoDataPolygonGroupCreatorT(const QString& typeName) :
@@ -23,6 +25,10 @@ GeoData* GeoDataPolygonGroupCreatorT<V, DA>::create(ProjectDataItem* parent, Sol
 		g->setMapper(new GeoDataPolygonGroupNodeMapperT<V, DA>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 		g->setMapper(new GeoDataPolygonGroupCellMapperT<V, DA>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		g->setMapper(new GeoDataPolygonGroupIFaceMapperT<V, DA>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		g->setMapper(new GeoDataPolygonGroupJFaceMapperT<V, DA>(this));
 	}
 	return g;
 }

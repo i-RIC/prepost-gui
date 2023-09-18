@@ -1,3 +1,6 @@
+#include "../post2dwindowattributebrowsercontroller.h"
+#include "post2dwindowcalculationresultdataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindownodevectorarrowgroupstructureddataitem.h"
@@ -5,8 +8,12 @@
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -17,9 +24,8 @@ Post2dWindowNodeVectorArrowGroupTopDataItem::Post2dWindowNodeVectorArrowGroupTop
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
-	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data(iRICLib::H5CgnsZone::SolutionPosition::Node)->data()->GetPointData())) {
-		auto item = buildItem(val);
+	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(resultDataItem()->grid()->vtkData()->data()->GetPointData())) {
+		auto item = createChild(val);
 		item->standardItem()->setCheckState(Qt::Unchecked);
 		m_childItems.push_back(item);
 	}
@@ -41,47 +47,54 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::update()
 	}
 }
 
+Post2dWindowCalculationResultDataItem* Post2dWindowNodeVectorArrowGroupTopDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*> (parent());
+}
+
 Post2dWindowZoneDataItem* Post2dWindowNodeVectorArrowGroupTopDataItem::zoneDataItem() const
 {
-	return dynamic_cast<Post2dWindowZoneDataItem*> (parent());
+	return resultDataItem()->zoneDataItem();
 }
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initNodeResultAttributeBrowser();
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearNodeResultAttributeBrowser();
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 {
 	menu->addAction(dataModel()->objectBrowserView()->addAction());
+	menu->addSeparator();
+	menu->addAction(resultDataItem()->nodeScalarGroupTopDataItem()->showAttributeBrowserAction());
 }
 
 QDialog* Post2dWindowNodeVectorArrowGroupTopDataItem::addDialog(QWidget* parent)
 {
-	auto zItem = zoneDataItem();
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::Node) == nullptr) {
+	if (resultDataItem()->grid() == nullptr) {
 		return nullptr;
 	}
 
-	auto gType = zItem->dataContainer()->gridType();
+	auto zItem = zoneDataItem();
+	auto gType = zItem->v4DataContainer()->gridType();
 	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(zItem->dataContainer()->data(iRICLib::H5CgnsZone::SolutionPosition::Node)->data()->GetPointData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
@@ -94,17 +107,17 @@ QDialog* Post2dWindowNodeVectorArrowGroupTopDataItem::addDialog(QWidget* parent)
 
 void Post2dWindowNodeVectorArrowGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = zoneDataItem()->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return;
 	}
 
-	auto gType = zoneData->gridType();
+	auto gType = cont->gridType();
 
 	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
-	auto newItem = buildItem(sol);
+	auto newItem = createChild(sol);
 	newItem->standardItem()->setText(gType->outputCaption(sol));
 
 	m_childItems.push_back(newItem);
@@ -124,7 +137,7 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::doLoadFromProjectMainFile(cons
 	if (node.nodeName() == "ArrowGroupV4") {
 		// old style
 		auto target = iRIC::toStr(node.toElement().attribute("target"));
-		auto item = buildItem(target);
+		auto item = createChild(target);
 		item->loadFromProjectMainFile(node);
 		m_childItems.push_back(item);
 	} else if (node.nodeName() == "ArrowGroupTopV4") {
@@ -133,7 +146,7 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::doLoadFromProjectMainFile(cons
 			QDomElement childElem = children.at(i).toElement();
 			if (childElem.nodeName() == "ArrowGroupV4") {
 				auto target = iRIC::toStr(childElem.attribute("target"));
-				auto item = buildItem(target);
+				auto item = createChild(target);
 				item->loadFromProjectMainFile(childElem);
 				m_childItems.push_back(item);
 			}
@@ -152,17 +165,17 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::doSaveToProjectMainFile(QXmlSt
 	}
 }
 
-Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowNodeVectorArrowGroupTopDataItem::buildItem(const std::string& name)
+Post2dWindowNodeVectorArrowGroupDataItem* Post2dWindowNodeVectorArrowGroupTopDataItem::createChild(const std::string& name)
 {
-	auto data = zoneDataItem()->dataContainer();
+	auto data = zoneDataItem()->v4DataContainer();
 	if (data == nullptr) {return nullptr;}
 
-	auto data2 = data->data();
+	auto data2 = data->gridData();
 	if (data2 == nullptr) {return nullptr;}
 
-	auto data3 = data2->data();
-	auto unst = vtkUnstructuredGrid::SafeDownCast(data3);
-	auto st = vtkStructuredGrid::SafeDownCast(data3);
+	auto data3 = data2->grid();
+	auto unst = dynamic_cast<v4Unstructured2dGrid*> (data3);
+	auto st = dynamic_cast<v4Structured2dGrid*> (data3);
 
 	if (st != nullptr) {
 		return new Post2dWindowNodeVectorArrowGroupStructuredDataItem(name, this);

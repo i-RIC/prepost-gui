@@ -3,7 +3,7 @@
 #include "../gridcreatingconditioncompoundchannelgridregionpolygon.h"
 #include "../gridcreatingconditioncompoundchannellowwaterchannelpolygon.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/informationdialog.h>
 
 GridCreatingConditionCompoundChannel::SwitchStatusCommand::SwitchStatusCommand(GridCreatingConditionCompoundChannel::Status newStatus, GridCreatingConditionCompoundChannel* condition) :

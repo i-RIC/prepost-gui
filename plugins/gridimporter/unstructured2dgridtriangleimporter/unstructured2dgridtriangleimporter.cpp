@@ -1,6 +1,7 @@
 #include "unstructured2dgridtriangleimporter.h"
 
-#include <guicore/pre/grid/unstructured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 
 #include <QDir>
@@ -12,11 +13,10 @@
 #include <vtkPoints.h>
 #include <vtkSmartPointer.h>
 #include <vtkTriangle.h>
-#include <vtkUnstructuredGrid.h>
 
 Unstructured2dGridTriangleImporter::Unstructured2dGridTriangleImporter() :
 	QObject {nullptr},
-	GridImporterInterface{}
+	GridImporterI{}
 {}
 
 QStringList Unstructured2dGridTriangleImporter::fileDialogFilters() const
@@ -36,9 +36,9 @@ SolverDefinitionGridType::GridType Unstructured2dGridTriangleImporter::supported
 	return SolverDefinitionGridType::gtUnstructured2DGrid;
 }
 
-bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool Unstructured2dGridTriangleImporter::import(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
-	Unstructured2DGrid* grid2d = dynamic_cast<Unstructured2DGrid*>(grid);
+	auto grid2d = dynamic_cast<v4Unstructured2dGrid*> (grid->grid());
 
 	QFileInfo nodefinfo(filename);
 
@@ -65,8 +65,8 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	// read header.
 	ts >> numNode >> dim >> numAtts >> bMarkers;
 
-	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	points->SetDataTypeToDouble();
+	vtkUnstructuredGrid* ugrid = grid2d->vtkConcreteData()->concreteData();
+	auto points = ugrid->GetPoints();
 	points->Allocate(numNode);
 	for (int i = 0; i < numNode; ++i){
 		int index;
@@ -80,8 +80,6 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 		points->InsertNextPoint(x, y, 0);
 	}
 
-	vtkUnstructuredGrid* ugrid = grid2d->vtkGrid();
-	ugrid->SetPoints(points);
 	// Close *.node file
 	nodef.close();
 
@@ -92,7 +90,7 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	int numTri, nodesPerTri;
 	// read header.
 	ts >> numTri >> nodesPerTri >> numAtts;
-	vtkSmartPointer<vtkTriangle> triangle;
+	vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
 	for (int i = 0; i < numTri; ++i){
 		int index, v0, v1, v2;
 		ts >> index >> v0 >> v1 >> v2;
@@ -100,7 +98,6 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 			double attribute;
 			ts >> attribute;  // Load attribute. It is discarded.
 		}
-		triangle = vtkSmartPointer<vtkTriangle>::New();
 		triangle->GetPointIds()->SetId(0, v0 - 1);
 		triangle->GetPointIds()->SetId(1, v1 - 1);
 		triangle->GetPointIds()->SetId(2, v2 - 1);
@@ -111,10 +108,7 @@ bool Unstructured2dGridTriangleImporter::import(Grid* grid, const QString& filen
 	ugrid->Modified();
 	ugrid->BuildLinks();
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid2d->gridAttributes()){
-		c->allocate();
-	}
+	grid->allocateAttributes();
 
 	return true;
 }

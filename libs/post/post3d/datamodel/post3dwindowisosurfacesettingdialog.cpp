@@ -6,7 +6,9 @@
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/structuredgridregion.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/opacitycontainer.h>
 
@@ -39,14 +41,14 @@ Post3dWindowIsosurfaceSettingDialog::~Post3dWindowIsosurfaceSettingDialog()
 	delete ui;
 }
 
-void Post3dWindowIsosurfaceSettingDialog::setZoneData(PostZoneDataContainer* zoneData)
+void Post3dWindowIsosurfaceSettingDialog::setZoneData(v4PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->data()->GetPointData();
+	vtkPointData* pd = zoneData->gridData()->grid()->vtkData()->data()->GetPointData();
 
 	m_targets = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(pd);
 	ComboBoxTool::setupItems(m_gridTypeDataItem->gridType()->outputCaptions(m_targets), ui->physicalValueComboBox);
 
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneData->data()->data());
+	auto grid = dynamic_cast<v4Structured3dGrid*> (zoneData->gridData()->grid())->vtkConcreteData()->concreteData();
 	int dims[3];
 	grid->GetDimensions(dims);
 	ui->iminSlider->setRange(1, dims[0]);

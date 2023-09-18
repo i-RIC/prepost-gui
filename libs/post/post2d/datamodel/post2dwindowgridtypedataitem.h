@@ -3,8 +3,8 @@
 
 #include "../post2dwindowdataitem.h"
 
-#include <guicore/misc/valuerangecontainer.h>
-#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgridtypedataitemi.h>
+#include <misc/valuerangecontainer.h>
 
 #include <map>
 #include <unordered_map>
@@ -17,13 +17,13 @@ class SolverDefinitionGridAttribute;
 class SolverDefinitionGridType;
 class Post2dWindowGeoDataTopDataItem;
 class Post2dWindowZoneDataItem;
-class PreProcessorGridTypeDataItemInterface;
+class PreProcessorGridTypeDataItemI;
 
 class QAction;
 
 class vtkActor2D;
 
-class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public Post2dWindowGridTypeDataItemInterface
+class Post2dWindowGridTypeDataItem : public Post2dWindowDataItem, public Post2dWindowGridTypeDataItemI
 {
 	Q_OBJECT
 
@@ -42,12 +42,22 @@ public:
 
 	const ValueRangeContainer& nodeValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;
+
 	const ValueRangeContainer& cellValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& cellValueRanges() const;
+
+	const ValueRangeContainer& iEdgeValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& iEdgeValueRanges() const;
+
+	const ValueRangeContainer& jEdgeValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& jEdgeValueRanges() const;
+
 	const ValueRangeContainer& particleValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& particleValueRanges() const;
+
 	const ValueRangeContainer& polyDataValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& polyDataValueRanges() const;
+
 	DelegatedColorMapSettingContainer* colorMapSetting(const std::string& name) const;
 	const std::unordered_map<std::string, DelegatedColorMapSettingContainer*>& colorMapSettingContainers() const;
 	void updateColorBarVisibility(const std::string& attName);
@@ -62,11 +72,13 @@ public slots:
 	void handlePreColorMapSettingUpdated(const std::string& name);
 
 private:
-	void setupColorMapSettingContainers(PreProcessorGridTypeDataItemInterface* item);
-	void setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemInterface* item);
+	void setupColorMapSettingContainers(PreProcessorGridTypeDataItemI* item);
+	void setupColorMapSettingContainer(SolverDefinitionGridAttribute* att, PreProcessorGridTypeDataItemI* item);
 
 	void updateNodeValueRanges();
 	void updateCellValueRanges();
+	void updateIEdgeValueRanges();
+	void updateJEdgeValueRanges();
 	void updateParticleValueRanges();
 	void updatePolyDataValueRanges();
 
@@ -77,6 +89,8 @@ private:
 	SolverDefinitionGridType* m_gridType;
 	std::unordered_map<std::string, ValueRangeContainer> m_nodeValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_cellValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_iEdgeValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_jEdgeValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_particleValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_polyDataValueRanges;
 	ValueRangeContainer m_dummyRange;

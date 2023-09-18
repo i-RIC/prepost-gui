@@ -4,7 +4,9 @@
 #include "ui_post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -25,8 +27,8 @@ Post3dWindowNodeVectorParticleGroupStructuredDataItem::SettingEditWidget::Settin
 
 	ui->particleSettingWidget->setProjectMainFile(m_item->projectData()->mainfile());
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(m_item->parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 
 	auto gtype = cont->gridType();
 	auto pd = grid->GetPointData();

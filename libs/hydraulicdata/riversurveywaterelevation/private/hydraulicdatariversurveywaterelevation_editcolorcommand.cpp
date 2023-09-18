@@ -1,6 +1,6 @@
 #include "hydraulicdatariversurveywaterelevation_editcolorcommand.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 
 HydraulicDataRiverSurveyWaterElevation::EditColorCommand::EditColorCommand(const QColor& color, HydraulicDataRiverSurveyWaterElevation* we) :
 	m_newColor {color},

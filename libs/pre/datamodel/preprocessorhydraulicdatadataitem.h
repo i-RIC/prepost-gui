@@ -1,9 +1,9 @@
 #ifndef PREPROCESSORHYDRAULICDATADATAITEM_H
 #define PREPROCESSORHYDRAULICDATADATAITEM_H
 
-#include <guicore/pre/base/preprocessorhydraulicdatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatadataitemi.h>
 
-class PreProcessorHydraulicDataDataItem : public PreProcessorHydraulicDataDataItemInterface
+class PreProcessorHydraulicDataDataItem : public PreProcessorHydraulicDataDataItemI
 {
 public:
 	PreProcessorHydraulicDataDataItem(PreProcessorDataItem* parent);

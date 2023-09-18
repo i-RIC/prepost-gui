@@ -12,16 +12,12 @@
 #include <QMenu>
 
 PreProcessorStructured2dGridDataItem::PreProcessorStructured2dGridDataItem(PreProcessorDataItem* parent) :
-	PreProcessorGridDataItem {parent}
+	PreProcessorGridDataItem {parent},
+	m_selectMenu {nullptr}
 {
 	m_shapeDataItem = new PreProcessorStructured2dGridShapeDataItem(this);
 	m_childItems.push_back(m_shapeDataItem);
-	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
-	m_childItems.push_back(m_nodeGroupDataItem);
-	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
-	m_childItems.push_back(m_cellGroupDataItem);
 
-	m_selectMenu = nullptr;
 	m_regionSelectAction = new QAction(PreProcessorStructured2dGridDataItem::tr("Select I-J &Region..."), this);
 	m_regionSelectAction->setDisabled(true);
 	setupMenu();

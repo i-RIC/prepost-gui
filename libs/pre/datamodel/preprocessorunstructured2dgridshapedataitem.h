@@ -2,23 +2,16 @@
 #define PREPROCESSORUNSTRUCTURED2DGRIDSHAPEDATAITEM_H
 
 #include "preprocessorgridshapedataitem.h"
-#include <vtkSmartPointer.h>
-#include <vtkActor2D.h>
-#include <vtkMapper.h>
-#include <vtkUnstructuredGrid.h>
-#include <vtkDataSetMapper.h>
-#include <vtkLabeledDataMapper.h>
 
 class PreProcessorUnstructured2dGridShapeDataItem : public PreProcessorGridShapeDataItem
 {
-
 private:
 	static const int normalLineWidth = 1;
 
 public:
 	PreProcessorUnstructured2dGridShapeDataItem(PreProcessorDataItem* parent);
 	~PreProcessorUnstructured2dGridShapeDataItem();
-	/// Inform that the grid is updated.
+
 	void informGridUpdate() override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
@@ -26,16 +19,12 @@ public:
 
 protected:
 	void assignActorZValues(const ZDepthRange& range) override;
-	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
-	void setupActors();
-	void updateActorSettings();
 
-private:
-	vtkSmartPointer<vtkActor> m_wireframeActor;
-	vtkSmartPointer<vtkDataSetMapper> m_wireframeMapper;
-	vtkSmartPointer<vtkActor2D> m_indexActor;
-	vtkSmartPointer<vtkLabeledDataMapper> m_indexMapper;
+	void showPropertyDialog() override;
+	QDialog* propertyDialog(QWidget* parent) override;
+
+	void setupActors();
+	void updateActorSetting() override;
 };
 
 #endif // PREPROCESSORUNSTRUCTURED2DGRIDSHAPEDATAITEM_H

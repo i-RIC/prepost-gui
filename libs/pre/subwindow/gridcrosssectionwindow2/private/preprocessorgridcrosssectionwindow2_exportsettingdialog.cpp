@@ -3,7 +3,9 @@
 #include "../../../datamodel/preprocessorgriddataitem.h"
 #include "ui_preprocessorgridcrosssectionwindow2_exportsettingdialog.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <misc/lastiodirectory.h>
 
 PreProcessorGridCrosssectionWindow2::ExportSettingDialog::ExportSettingDialog(PreProcessorGridCrosssectionWindow2* window) :
@@ -15,7 +17,7 @@ PreProcessorGridCrosssectionWindow2::ExportSettingDialog::ExportSettingDialog(Pr
 	connect(ui->currentRadioButton, &QRadioButton::clicked, [=] (bool) {handleCurrentClicked();});
 	connect(ui->allRadioButton, &QRadioButton::clicked, [=] (bool) {handleAllClicked();});
 
-	auto grid = dynamic_cast<Structured2DGrid*>(window->impl->m_gridDataItem->grid());
+	auto grid = dynamic_cast<v4Structured2dGrid*>(window->impl->m_gridDataItem->grid()->grid());
 
 	if (window->targetDirection() == Direction::I) {
 		int iDim = grid->dimensionI();
@@ -64,6 +66,7 @@ PreProcessorGridCrosssectionWindow2::ExportSettingDialog::CrossSectionMode PrePr
 	} else if (ui->currentRadioButton->isChecked()) {
 		return CrossSectionMode::Custom;
 	}
+	return CrossSectionMode::All;
 }
 
 void PreProcessorGridCrosssectionWindow2::ExportSettingDialog::setMode(CrossSectionMode mode)

@@ -113,7 +113,6 @@ HEADERS += colortool.h \
            vtktextpropertysettingcontainer.h \
            vtktextpropertysettingdialog.h \
            vtktextpropertysettingwidget.h \
-           vtktool/vtkpointsetregionandcellsizefilter.h \
            xyaxisdisplaysettingdialog.h \
            coordinates/coordinatesedit.h \
            coordinates/coordinateseditdialog.h \
@@ -151,6 +150,14 @@ HEADERS += colortool.h \
            timeformat/timeformat.h \
            timeformat/timeformateditwidget.h \
            timeformat/timeformatutil.h \
+           vtkpointsetextended/vtkpointsetextended.h \
+           vtkpointsetextended/vtkpointsetextendedt.h \
+           vtkpointsetextended/vtkpolydataextended2d.h \
+           vtkpointsetextended/vtkpolydataextended3d.h \
+           vtkpointsetextended/vtkstructuredgridextended2d.h \
+           vtkpointsetextended/vtkstructuredgridextended3d.h \
+           vtkpointsetextended/vtkunstructuredgridextended2d.h \
+           vtktool/valuerangecontainerutil.h \
            vtktool/vtkactorpolydatamapperpair.h \
            vtktool/vtkarrowlegendactors.h \
            vtktool/vtkcelldatawarp.h \
@@ -160,6 +167,7 @@ HEADERS += colortool.h \
            vtktool/vtkparametricsplineutil.h \
            vtktool/vtkpointsetgeos2dindex.h \
            vtktool/vtkpointsetregionandcellsizefilter.h \
+           vtktool/vtkpointsetvaluerangeset.h \
            vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatamapperutil.h \
@@ -172,7 +180,6 @@ HEADERS += colortool.h \
            widget/asciionlytextedit.h \
            widget/boolcontainerwidget.h \
            widget/centeredcheckbox.h \
-           widget/cgnszoneselectdialog.h \
            widget/coloreditwidget.h \
            widget/contoursettingwidget.h \
            widget/coordinateeditwidget.h \
@@ -197,6 +204,8 @@ HEADERS += colortool.h \
            point/private/pointcontroller_impl.h \
            polygon/private/polygoncontroller_impl.h \
            polyline/private/polylinecontroller_impl.h \
+           vtkpointsetextended/private/vtkpointsetextended_impl.h \
+           vtkpointsetextended/private/vtkpointsetextendedt_detail.h \
            vtktool/private/vtkactorpolydatamapperpair_impl.h \
            vtktool/private/vtkarrowlegendactors_impl.h \
            vtktool/private/vtklabel2dactor_impl.h \
@@ -207,14 +216,6 @@ HEADERS += colortool.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
            widget/private/realnumbereditwidget_impl.h
-equals(VTK_MAJOR_VERSION, 6):equals(VTK_MINOR_VERSION, 1) {
-    HEADERS += \
-           vtkScalarBarActorInternal-6.1.h
-}
-equals(VTK_MAJOR_VERSION, 8):equals(VTK_MINOR_VERSION, 2) {
-    HEADERS += \
-           vtkScalarBarActorInternal-8.2.h
-}
 FORMS += scalarbardialog.ui \
          scalarbarwidget.ui \
          structuredgridregionselectwidget.ui \
@@ -226,7 +227,6 @@ FORMS += scalarbardialog.ui \
          gridshape/gridshapesettingeditwidget.ui \
          timeformat/timeformateditwidget.ui \
          widget/boolcontainerwidget.ui \
-         widget/cgnszoneselectdialog.ui \
          widget/contoursettingwidget.ui \
          widget/dirnameeditwidget.ui \
          widget/doublespinboxwithhelp.ui \
@@ -268,7 +268,6 @@ SOURCES += colortool.cpp \
            vtktextpropertysettingcontainer.cpp \
            vtktextpropertysettingdialog.cpp \
            vtktextpropertysettingwidget.cpp \
-           vtktool/vtkpointsetregionandcellsizefilter.cpp \
            xyaxisdisplaysettingdialog.cpp \
            coordinates/coordinatesedit.cpp \
            coordinates/coordinateseditdialog.cpp \
@@ -304,6 +303,13 @@ SOURCES += colortool.cpp \
            polyline/polylineutil.cpp \
            timeformat/timeformateditwidget.cpp \
            timeformat/timeformatutil.cpp \
+           vtkpointsetextended/vtkpointsetextended.cpp \
+           vtkpointsetextended/vtkpolydataextended2d.cpp \
+           vtkpointsetextended/vtkpolydataextended3d.cpp \
+           vtkpointsetextended/vtkstructuredgridextended2d.cpp \
+           vtkpointsetextended/vtkstructuredgridextended3d.cpp \
+           vtkpointsetextended/vtkunstructuredgridextended2d.cpp \
+           vtktool/valuerangecontainerutil.cpp \
            vtktool/vtkactorpolydatamapperpair.cpp \
            vtktool/vtkarrowlegendactors.cpp \
            vtktool/vtkcelldatawarp.cpp \
@@ -313,6 +319,7 @@ SOURCES += colortool.cpp \
            vtktool/vtkparametricsplineutil.cpp \
            vtktool/vtkpointsetgeos2dindex.cpp \
            vtktool/vtkpointsetregionandcellsizefilter.cpp \
+           vtktool/vtkpointsetvaluerangeset.cpp \
            vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatamapperutil.cpp \
@@ -325,7 +332,6 @@ SOURCES += colortool.cpp \
            widget/asciionlytextedit.cpp \
            widget/boolcontainerwidget.cpp \
            widget/centeredcheckbox.cpp \
-           widget/cgnszoneselectdialog.cpp \
            widget/coloreditwidget.cpp \
            widget/contoursettingwidget.cpp \
            widget/coordinateeditwidget.cpp \
@@ -346,6 +352,7 @@ SOURCES += colortool.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp \
            coordinates/private/coordinateseditdialogdelegate.cpp \
+           vtkpointsetextended/private/vtkpointsetextended_impl.cpp \
            vtktool/private/vtkpointsetgeos2dindex_impl.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
