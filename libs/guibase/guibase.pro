@@ -57,6 +57,7 @@ LIBS += \
 	-lvtkFiltersExtraction-6.1 \
 	-lvtkFiltersFlowPaths-6.1 \
 	-lvtkFiltersGeneral-6.1 \
+	-lvtkFiltersGeometry-6.1 \
 	-lvtkFiltersSources-6.1 \
 	-lvtkInteractionStyle-6.1 \
 	-lvtkInteractionWidgets-6.1 \
@@ -69,6 +70,10 @@ win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
+
+# geos
+
+LIBS += -lgeos
 
 # Input
 HEADERS += arrowsettingcontainer.h \
@@ -157,6 +162,8 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkparametricsplineutil.h \
+           vtktool/vtkpointsetgeos2dindex.h \
+           vtktool/vtkpointsetregionandcellsizefilter.h \
            vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatapaintactor.h \
@@ -196,6 +203,7 @@ HEADERS += arrowsettingcontainer.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
+           vtktool/private/vtkpointsetgeos2dindex_impl.h \
            vtktool/private/vtkpolygonactor_impl.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
@@ -303,6 +311,8 @@ SOURCES += arrowsettingcontainer.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkparametricsplineutil.cpp \
+           vtktool/vtkpointsetgeos2dindex.cpp \
+           vtktool/vtkpointsetregionandcellsizefilter.cpp \
            vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatapaintactor.cpp \
@@ -331,7 +341,8 @@ SOURCES += arrowsettingcontainer.cpp \
            widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp \
-           coordinates/private/coordinateseditdialogdelegate.cpp
+           coordinates/private/coordinateseditdialogdelegate.cpp \
+           vtktool/private/vtkpointsetgeos2dindex_impl.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
                 languages/iricGuibase_bg_BG.ts \
