@@ -74,7 +74,7 @@ private:
 	const geos::geom::GeometryFactory* m_geomFactory;
 	QTime m_timeToStartJob;
 
-	void setupTriangleInput(triangulateio* in, GeoDataPolygon* p, QPointF* offset);
+	void setupTriangleInput(triangulateio* in, std::vector<int>* pointIdVec, GeoDataPolygon* p, QPointF* offset);
 	QPointF polygonInnerPoint(GeoDataPolygonAbstractPolygon* region, const std::vector<GeoDataPolygonAbstractPolygon*>& holes, const QPointF& offset);
 
 	explicit GeoDataPolygonTriangleThread();
