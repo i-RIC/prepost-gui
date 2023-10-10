@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1497,8 +1495,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Түс:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Эскертүү: Аты үчүн ASCII символдорун гана колдоно аласыз.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү: Аты үчүн ASCII символдорун гана колдоно аласыз.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1604,12 +1602,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Аныктоо түйүнү сакталбайт</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Туура эмес valueType &quot;%1&quot;коюлган.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Туура эмес valueType "%1"коюлган.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Түрү туура эмес &quot;%1&quot;коюлган.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Түрү туура эмес "%1"коюлган.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1880,8 +1878,8 @@ Do you really want to import this file?</source>
         <translation>Файл %1 эсептөө шартына киргизилгенден кийин жаңыртылат %2. Жаңыртылган файлды импорттоону каалайсызбы?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>&quot;Ctrl + C&quot; жана &quot;Ctrl + V&quot; жарлыктары менен баалуулуктарды көчүрүп, чаптай аласыз.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>"Ctrl + C" жана "Ctrl + V" жарлыктары менен баалуулуктарды көчүрүп, чаптай аласыз.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2010,8 +2008,8 @@ Do you really want to import this file?</source>
         <translation>Файлды ачууда ката кетти.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Биринчи эки мамыча &quot;X&quot; жана &quot;Y&quot; болушу керек.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Биринчи эки мамыча "X" жана "Y" болушу керек.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2172,8 +2170,8 @@ Do you really want to import this file?</source>
         <translation>Өзгөрмөнүн аныктамасы</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2251,8 +2249,8 @@ Do you really want to import this file?</source>
         <translation>Down (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Эскертүү &lt;/span&gt;: Тизмедеги тартип маанилүү. Аныктамада, тизмектин башында пайда болгон жөнөкөй операция эсептөөлөрүнүн маанисин өзгөрмө катары колдоно аласыз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2613,8 +2611,8 @@ Do you really want to import this file?</source>
         <translation>Чыгаруунун аныктамасы</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; караңыз &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2880,8 +2878,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Жумуш мейкиндиги &quot;%1&quot;бар %2 мындан ары колдонулбай турган долбоор папкалары. Аларды алып салгыңыз келеби?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Жумуш мейкиндиги "%1"бар %2 мындан ары колдонулбай турган долбоор папкалары. Аларды алып салгыңыз келеби?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3061,7 +3059,7 @@ Do you really want to import this file?</source>
     <name>SolverDefinitionGridType</name>
     <message>
         <source>%1 (magnitude)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 (магнитуда)</translation>
     </message>
 </context>
 <context>
