@@ -4,6 +4,8 @@
 #include "../guicore_global.h"
 #include "solverdefinitionnode.h"
 
+#include <QObject>
+
 #include <string>
 #include <vector>
 
@@ -18,8 +20,9 @@ class SolverDefinitionTranslator;
 class QStringList;
 class QWidget;
 
-class GUICOREDLL_EXPORT SolverDefinitionGridType : public SolverDefinitionNode
+class GUICOREDLL_EXPORT SolverDefinitionGridType : public QObject, public SolverDefinitionNode
 {
+	Q_OBJECT
 
 public:
 	enum GridType {

@@ -28,6 +28,16 @@ void outputHeaders(const QString& name, int comps, int *dim, QTextStream& stream
 	}
 }
 
+QString getCaption(vtkDataArray* data, SolverDefinitionGridType* gType)
+{
+	std::string name = data->GetName();
+	if (data->GetNumberOfComponents() == 1) {
+		return gType->outputCaption(name);
+	} else {
+		return gType->vectorOutputCaption(name);
+	}
+}
+
 void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
 {
 	int dim[3];
@@ -48,30 +58,26 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 	auto gtype = c->gridType();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
-		int comps = array->GetNumberOfComponents();
-		QString caption = gtype->outputCaption(pData->GetArrayName(i));
-		outputHeaders(caption, comps, &(dim[0]), stream);
+		auto caption = getCaption(array, gtype);
+		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* cData = sgrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = cData->GetArray(i);
-		int comps = array->GetNumberOfComponents();
-		QString name = cData->GetArrayName(i);
-		outputHeaders(name, comps, &(dim[0]), stream);
+		auto caption = getCaption(array, gtype);
+		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkPointData* ifData = c->iFaceData()->data()->GetPointData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
-		int comps = array->GetNumberOfComponents();
-		QString name = ifData->GetArrayName(i);
-		outputHeaders(name, comps, &(dim[0]), stream);
+		auto caption = getCaption(array, gtype);
+		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkPointData* jfData = c->jFaceData()->data()->GetPointData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
-		int comps = array->GetNumberOfComponents();
-		QString name = jfData->GetArrayName(i);
-		outputHeaders(name, comps, &(dim[0]), stream);
+		auto caption = getCaption(array, gtype);
+		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 
 	stream << "\r\n";

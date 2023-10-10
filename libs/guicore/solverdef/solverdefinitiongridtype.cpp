@@ -375,7 +375,7 @@ QString SolverDefinitionGridType::outputCaption(const std::string& name) const
 		auto target2 = iRIC::toStr(re.cap(1)) + "X";
 		auto o = output(target2);
 		auto caption = o->caption();
-		return QString("%1 (magnitude)").arg(caption.left(caption.length() - 1));
+		return tr("%1 (magnitude)").arg(caption.left(caption.length() - 1));
 	} else {
 		auto o = output(name);
 		return o->caption();

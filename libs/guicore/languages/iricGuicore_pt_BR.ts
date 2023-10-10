@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1491,8 +1493,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Cor de exibicao:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação: você pode usar apenas caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação: você pode usar apenas caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1598,12 +1600,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Elemento de definicao nao foi encontrado</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Foi especificado o invalido valueType "%1".</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Foi especificado o invalido valueType &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Foi especificada a invalida conditionType "%1".</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Foi especificada a invalida conditionType &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.</source>
@@ -1895,8 +1897,8 @@ Do you really want to import this file?</source>
         <translation>Os valores são copiados para a área de transferência.</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Você pode copiar e colar os valores, com o atalho "Ctrl + C" e "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Você pode copiar e colar os valores, com o atalho &quot;Ctrl + C&quot; e &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2012,8 +2014,8 @@ Do you really want to import this file?</source>
         <translation>Ocorreu um erro ao abrir o arquivo. </translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>As primeiras duas colunas deverao ser "X", e  "Y" </translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>As primeiras duas colunas deverao ser &quot;X&quot;, e  &quot;Y&quot; </translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2178,8 +2180,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de numero variavel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;  &lt;/span&gt;&lt;/a&gt; para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2187,7 +2189,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o "valor de teste" e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Clicando neste botao, voce podera verificar se a definicao e correta . Se ocorrer um erro ao analisar a definicao, a mensagem de erro sera exibida. Quando a definicao for analisada com exito, o valor sera calculado sendo utilizado o &quot;valor de teste&quot; e o mesmo sera exibida. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>----</source>
@@ -2257,8 +2259,8 @@ Do you really want to import this file?</source>
         <translation>Abaixo (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; Atencao &lt;/span&gt;: A ordem na lista e importante. Na definicao do numero variavel, voce podera usar os itens que se encontram na parte superior da lista, assim como o numero variavel apresentado pelo solucionador. .&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2619,8 +2621,8 @@ Do you really want to import this file?</source>
         <translation>Definicao de Saida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voce podera definir o numero variavel com linguagem JavaScript. Por favor, veja &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt; &lt;/span&gt;&lt;/a&gt;  para detalhes.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2886,8 +2888,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>O espaco de trabalho %1 " contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>O espaco de trabalho %1 &quot; contem %2 pastas de projeto que parecem nao ser mais usadas. Deseja remove-las ?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3061,6 +3063,13 @@ Do you really want to import this file?</source>
     <message>
         <source>%1 Grids</source>
         <translation>% 1 grades</translation>
+    </message>
+</context>
+<context>
+    <name>SolverDefinitionGridType</name>
+    <message>
+        <source>%1 (magnitude)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
