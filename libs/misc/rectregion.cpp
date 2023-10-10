@@ -1,5 +1,7 @@
 #include "rectregion.h"
 
+#include <QLineF>
+
 RectRegion::RectRegion(double xmin, double xmax, double ymin, double ymax):
 	xMin {xmin},
 	xMax {xmax},

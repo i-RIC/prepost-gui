@@ -3,8 +3,12 @@
 
 #include "../guibase_global.h"
 
-class vtkAbstractPointLocator;
 class RectRegion;
+
+class vtkAbstractPointLocator;
+class vtkPointSet;
+class vtkPolyData;
+class vtkStructuredGrid;
 
 class GUIBASEDLL_EXPORT vtkPointSetRegionAndCellSizeFilter
 {
