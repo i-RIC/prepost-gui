@@ -152,12 +152,14 @@ void PreProcessorBCSettingGroupDataItem::updateItems()
 		auto bcsItem = tmpItemMap.value(bcItem, nullptr);
 		if (bcsItem == nullptr) {
 			bcsItem = new PreProcessorBCSettingDataItem(bcItem, this);
-			auto it = m_itemCheckState.find(bcItem->uniqueName());
-			if (it != m_itemCheckState.end()) {
-				if (it->second) {
-					bcsItem->standardItem()->setCheckState(Qt::Checked);
-				} else {
-					bcsItem->standardItem()->setCheckState(Qt::Unchecked);
+			if (bcsItem->standardItem() != nullptr) {
+				auto it = m_itemCheckState.find(bcItem->uniqueName());
+				if (it != m_itemCheckState.end()) {
+					if (it->second) {
+						bcsItem->standardItem()->setCheckState(Qt::Checked);
+					} else {
+						bcsItem->standardItem()->setCheckState(Qt::Unchecked);
+					}
 				}
 			}
 		} else {
