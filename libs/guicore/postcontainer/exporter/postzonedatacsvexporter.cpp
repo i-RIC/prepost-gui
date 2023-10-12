@@ -28,16 +28,6 @@ void outputHeaders(const QString& name, int comps, int *dim, QTextStream& stream
 	}
 }
 
-QString getCaption(vtkDataArray* data, SolverDefinitionGridType* gType)
-{
-	std::string name = data->GetName();
-	if (data->GetNumberOfComponents() == 1) {
-		return gType->outputCaption(name);
-	} else {
-		return gType->vectorOutputCaption(name);
-	}
-}
-
 void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStructuredGrid* sgrid, int imin, int imax, int jmin, int jmax, int kmin, int kmax)
 {
 	int dim[3];
@@ -58,26 +48,22 @@ void exportStructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkStru
 	auto gtype = c->gridType();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
-		auto caption = getCaption(array, gtype);
-		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkCellData* cData = sgrid->GetCellData();
 	for (int i = 0; i < cData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = cData->GetArray(i);
-		auto caption = getCaption(array, gtype);
-		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkPointData* ifData = c->iFaceData()->data()->GetPointData();
 	for (int i = 0; i < ifData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = ifData->GetArray(i);
-		auto caption = getCaption(array, gtype);
-		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 	vtkPointData* jfData = c->jFaceData()->data()->GetPointData();
 	for (int i = 0; i < jfData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = jfData->GetArray(i);
-		auto caption = getCaption(array, gtype);
-		outputHeaders(caption, array->GetNumberOfComponents(), &(dim[0]), stream);
+		outputHeaders(array->GetName(), array->GetNumberOfComponents(), &(dim[0]), stream);
 	}
 
 	stream << "\r\n";
@@ -234,18 +220,16 @@ void exportUnstructuredGrid(PostZoneDataContainer* c, QTextStream& stream, vtkUn
 	stream << ",X";
 	stream << ",Y";
 	vtkPointData* pData = ugrid->GetPointData();
-	auto gtype = c->gridType();
 	for (int i = 0; i < pData->GetNumberOfArrays(); ++i){
 		vtkDataArray* array = pData->GetArray(i);
-		if (array == 0){continue;}
+		if (array == nullptr) {continue;}
 		int comps = array->GetNumberOfComponents();
-		QString caption = gtype->outputCaption(pData->GetArrayName(i));
 		if (comps == 1){
-			stream << "," << caption;
+			stream << "," << array->GetName();
 		} else if (comps == 2){
-			stream << "," << caption << "X," << caption << "Y";
+			stream << "," << array->GetName() << "X," << array->GetName() << "Y";
 		} else if (comps == 3){
-			stream << "," << caption << "X," << caption << "Y";
+			stream << "," << array->GetName() << "X," << array->GetName() << "Y," << array->GetName() << "Z";
 		}
 	}
 	stream << "\r\n";
