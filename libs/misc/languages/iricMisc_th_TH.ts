@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>InformationDialog</name>
@@ -70,50 +68,50 @@
     <name>WindowSizeEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">รูปร่าง</translation>
+        <translation>รูปร่าง</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>โหมด</translation>
     </message>
     <message>
         <source>Select from standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกจากขนาดมาตรฐาน</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>คู่มือ</translation>
     </message>
     <message>
         <source>Standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>ขนาดมาตรฐาน</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>ความกว้าง:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>ความสูง:</translation>
     </message>
 </context>
 <context>
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>แก้ไขการตั้งค่าขนาดหน้าต่าง</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>ความกว้าง:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>ความสูง:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>ความคิดเห็น:</translation>
     </message>
 </context>
 </TS>

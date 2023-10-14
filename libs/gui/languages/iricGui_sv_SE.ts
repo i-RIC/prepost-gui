@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera kamerainställning</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Källa:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Mål</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Markera alla (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbocka alla (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Välj Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>När du skapar ett nytt projekt måste du välja den lösare som ska användas för beräkning. Välj en lösare och tryck på &quot;OK&quot; -knappen.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>När du skapar ett nytt projekt måste du välja den lösare som ska användas för beräkning. Välj en lösare och tryck på "OK" -knappen.</translation>
     </message>
 </context>
 <context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Fönsterstorlek</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Lägg till fraktion</translation>
+        <translation>Lägg till bråkdel</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Ange fraktionen som ska läggas till:</translation>
+        <translation>Ange bråket som ska läggas till:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Lägg till (&amp;A)...</translation>
+        <translation>Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Redigera (&amp;E)...</translation>
+        <translation>Redigera (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Radera (&amp;D)...</translation>
+        <translation>Radera (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Återställ till standard (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varning</translation>
+        <translation>Varning</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Är du säker att du vill radera "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Är du säker på att du vill återställa till standardinställningarna?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Varning</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Ett fel uppstod när lösningsdefinitionsfilen skulle laddas i mappen &quot;%1&quot;. Den här lösaren ignoreras. %2</translation>
+        <translation>Ett fel uppstod när lösningsdefinitionsfilen skulle laddas i mappen "%1". Den här lösaren ignoreras. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta iRIC-MI GUI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Justera Windows</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Inriktning</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutnät</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Skick</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Kolumner</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Rader</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Total storlek</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Marginaler mellan fönster</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Horisontell:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertikal:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj objektwebbläsare</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Det här projektet verkar öppnas av ett annat iRIC GUI -fönster. Du kan inte öppna en projektmapp från flera GUI -fönster.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Det öppnade projektet kopieras inte till arbetskatalogen och du kommer att tvingas spara de ändringar du gör i detta projekt. Om du vill behålla det aktuella projektet, spara det först i ett annat projekt.</translation>
     </message>
     <message>
@@ -2070,8 +2068,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Aktuellt subfönster stöder inte export av kontursiffror.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">För att exportera formfil, växla &quot;Displayinställning&quot; till &quot;Konturfigur&quot;, inte &quot;Color Fringe&quot; eller &quot;Isolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">För att exportera formfil, växla "Displayinställning" till "Konturfigur", inte "Color Fringe" eller "Isolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>Inställningsfil (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">För att exportera formfil, byt färgläge till &quot;Diskret läge&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">För att exportera formfil, byt färgläge till "Diskret läge".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>Välj rutnät för att exportera formfiler.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>Ingen kontur ritas i &quot;Diskret läge&quot;.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>Ingen kontur ritas i "Diskret läge".</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,7 +2596,7 @@ Option -&gt; Preferences</source>
         <translation>Öppna nytt 2D-efterbehandlingsfönster</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Öppna nytt 2D fågelperspektiv efter bearbetningsfönster</translation>
     </message>
     <message>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Justera Windows (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera kamerainställning (&amp;C)...</translation>
     </message>
 </context>
 </TS>

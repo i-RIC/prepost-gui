@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Камера жөндөөлөрүн көчүрүү</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Булак:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Максаттар</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Баарын текшер (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Баарынан белгини алып салыңыз (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Чечүүчү тандоо</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Жаңы долбоор түзгөндө, эсептөө үчүн колдонуу үчүн чечимди тандоо керек. Сураныч, чечимди тандап, &quot;OK&quot; баскычын басыңыз.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Жаңы долбоор түзгөндө, эсептөө үчүн колдонуу үчүн чечимди тандоо керек. Сураныч, чечимди тандап, "OK" баскычын басыңыз.</translation>
     </message>
 </context>
 <context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Терезе өлчөмү</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Бөлчөк кошуу</translation>
+        <translation>Бөлчөк кошуу</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Кошуу үчүн фракцияны көрсөтүңүз:</translation>
+        <translation>Кошула турган бөлчүктү көрсөтүңүз:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Кошуу (&amp;A)...</translation>
+        <translation>кошуу (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Түзөтүү (&amp;E)...</translation>
+        <translation>Түзөтүү (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Жок кылуу (&amp;D)...</translation>
+        <translation>Жок кылуу (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Демейкиге кайра коюу (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Эскертүү</translation>
+        <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Чын эле жок кылгыңыз келеби "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Чын эле демейки жөндөөлөргө кайтаргыңыз келеби?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Чечүүчү аныктоочу файлды папкага жүктөө учурунда ката кетти &quot;%1&quot;. Бул чечүүчү эске алынбайт. %2</translation>
+        <translation>Чечүүчү аныктоочу файлды папкага жүктөө учурунда ката кетти "%1". Бул чечүүчү эске алынбайт. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>iRIC-MI GUI иштетиңиз (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Windowsту тегиздөө</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Тегиздөө</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Горизонталдуу</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикалдуу</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Тор</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Шарт</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Мамычалар</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Катарлар</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Жалпы өлчөм</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Терезелердин ортосундагы чектер</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Туурасынан:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вертикалдуу:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Объект браузерлерин жашыруу</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Бул долбоор башка iRIC GUI терезеси менен ачылган окшойт. Сиз бир нече GUI терезелеринен долбоордун папкасын ача албайсыз.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Ачылган долбоор жумуш каталогуна көчүрүлбөйт жана сиз бул долбоорго киргизилген өзгөртүүлөрдү сактоого аргасыз болосуз. Эгерде сиз учурдагы долбоорду сактап калгыңыз келсе, алгач аны башка долбоорго сактап коюңуз.</translation>
     </message>
     <message>
@@ -2070,8 +2068,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Учурда активдүү суб-терезе контур фигурасын экспорттоону колдобойт.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Форма файлын экспорттоо үчүн, &quot;Дисплейдин жөндөөсүн&quot; &quot;Түс кыркасына&quot; же &quot;Изолиндерге&quot; эмес, &quot;Контур фигурасына&quot; которуңуз.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Форма файлын экспорттоо үчүн, "Дисплейдин жөндөөсүн" "Түс кыркасына" же "Изолиндерге" эмес, "Контур фигурасына" которуңуз.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>Орнотуу файлы (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Форма файлын экспорттоо үчүн Түс режимин &quot;Дискреттүү режимге&quot; которуңуз.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Форма файлын экспорттоо үчүн Түс режимин "Дискреттүү режимге" которуңуз.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>Форма файлдарын экспорттоо үчүн торду тандаңыз.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>&quot;Дискреттүү режимде&quot; контур тартылбайт.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>"Дискреттүү режимде" контур тартылбайт.</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>Жаңы 2D иштетүүдөн кийинки терезени ачыңыз</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Жаңы 2D Bird&apos;s Eye Post-Processing терезесин ачыңыз</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Жаңы 2D Bird's Eye Post-Processing терезесин ачыңыз</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Windowsту тегиздөө (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Камера жөндөөлөрүн көчүрүү (&amp;C)...</translation>
     </message>
 </context>
 </TS>

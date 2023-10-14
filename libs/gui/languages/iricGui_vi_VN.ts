@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Sao chép cài đặt camera</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nguồn:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Mục tiêu</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiểm tra tất cả (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Bỏ chọn tất cả (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Chọn bộ giải</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút &quot;OK&quot;.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút "OK".</translation>
     </message>
 </context>
 <context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Kích thước cửa sổ</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Thêm phân số</translation>
+        <translation>Thêm phân số</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Chỉ định phân số để thêm:</translation>
+        <translation>Xác định phân số cần cộng:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Hình thức</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Thêm vào (&amp;A)...</translation>
+        <translation>Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Chỉnh sửa (&amp;E)...</translation>
+        <translation>Biên tập (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Xóa bỏ (&amp;D)...</translation>
+        <translation>Xóa bỏ (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Đặt lại về mặc định (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Cảnh báo</translation>
+        <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Bạn có chắc chắn muốn xóa "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bạn có chắc chắn muốn đặt lại về cài đặt mặc định không?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục &quot;%1&quot;. Bộ giải này bị bỏ qua. %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục "%1". Bộ giải này bị bỏ qua. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Khởi động GUI iRIC-MI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Căn chỉnh Windows</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Căn chỉnh</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Nằm ngang</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Thẳng đứng</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Lưới</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Tình trạng</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Cột</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Hàng</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Tổng kích thước</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Lề giữa các cửa sổ</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nằm ngang:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Thẳng đứng:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ẩn trình duyệt đối tượng</translation>
     </message>
 </context>
 <context>
@@ -1906,7 +1904,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dự án này dường như được mở bởi một cửa sổ iRIC GUI khác. Bạn không thể mở một thư mục dự án từ nhiều cửa sổ GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Dự án đã mở không được sao chép vào thư mục công việc và bạn sẽ buộc phải lưu các sửa đổi bạn thực hiện cho dự án này. Nếu bạn muốn giữ lại dự án hiện tại, trước tiên hãy lưu nó vào một dự án khác.</translation>
     </message>
     <message>
@@ -2074,8 +2072,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Cửa sổ phụ hiện đang hoạt động không hỗ trợ xuất hình đường viền.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển &quot;Cài đặt hiển thị&quot; thành &quot;Hình đường viền&quot;, không phải &quot;Viền màu&quot; hoặc &quot;Đường viền&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>Tập tin cài đặt (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành &quot;Chế độ rời rạc&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành "Chế độ rời rạc".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>Chọn lưới để xuất tệp hình dạng.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>Không có đường viền nào được vẽ trong &quot;Chế độ rời rạc&quot;.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>Không có đường viền nào được vẽ trong "Chế độ rời rạc".</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>Mở cửa sổ xử lý hậu kỳ 2D mới</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird&apos;s-Eye mới</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird's-Eye mới</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Căn chỉnh Windows (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Sao chép cài đặt camera (&amp;C)...</translation>
     </message>
 </context>
 </TS>

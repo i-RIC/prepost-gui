@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>InformationDialog</name>
@@ -70,50 +68,50 @@
     <name>WindowSizeEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režimas</translation>
     </message>
     <message>
         <source>Select from standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Rinkitės iš standartinių dydžių</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>vadovas</translation>
     </message>
     <message>
         <source>Standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Standartiniai dydžiai</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotis:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukštis:</translation>
     </message>
 </context>
 <context>
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Redaguoti lango dydžio nustatymą</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotis:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Aukštis:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>komentaras:</translation>
     </message>
 </context>
 </TS>

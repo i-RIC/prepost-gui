@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>InformationDialog</name>
@@ -70,50 +68,50 @@
     <name>WindowSizeEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Form</translation>
+        <translation>Bilden</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus</translation>
     </message>
     <message>
         <source>Select from standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie aus Standardgrößen</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Handbuch</translation>
     </message>
     <message>
         <source>Standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Standardgrößen</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhe:</translation>
     </message>
 </context>
 <context>
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bearbeiten Sie die Einstellung für die Fenstergröße</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Breite:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Höhe:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kommentar:</translation>
     </message>
 </context>
 </TS>

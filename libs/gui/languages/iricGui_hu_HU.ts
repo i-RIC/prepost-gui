@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamerabeállítás másolása</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Forrás:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Célok</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Ellenőrizni mind (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Minden választás törlése (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Válassza a Megoldó lehetőséget</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az &quot;OK&quot; gombot.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>Új projekt létrehozásakor ki kell választania a számításhoz használandó megoldót. Kérjük, válasszon megoldást, és nyomja meg az "OK" gombot.</translation>
     </message>
 </context>
 <context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Ablak mérete</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Frakció hozzáadása</translation>
+        <translation>Adjunk hozzá frakciót</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Adja meg a hozzáadni kívánt törtet:</translation>
+        <translation>Adja meg a hozzáadandó törtet:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Forma</translation>
+        <translation>Forma</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Hozzáadás (&amp;A)...</translation>
+        <translation>Hozzáadás (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Szerkesztés (&amp;E)...</translation>
+        <translation>Szerkesztés (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Töröl (&amp;D)...</translation>
+        <translation>Töröl (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Visszaállítás alapértelmezettre (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelem</translation>
+        <translation>Figyelem</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Biztos vagy benne, hogy törölni akarod "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Biztosan vissza szeretné állítani az alapértelmezett beállításokat?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába &quot; %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
+        <translation>Hiba történt a megoldásmeghatározó fájl betöltése közben a mappába " %1 Ezt a megoldót figyelmen kívül hagyják. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Indítsa el az iRIC-MI GUI-t (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>A Windows igazítása</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Igazítás</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Vízszintes</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Függőleges</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rács</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Feltétel</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Oszlopok</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Sorok</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Teljes méret</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Margók az ablakok között</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vízszintes:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Függőleges:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Objektumböngészők elrejtése</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Úgy tűnik, hogy ezt a projektet egy másik iRIC GUI ablak nyitja meg. Nem nyithat meg projektmappát több GUI ablakból.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>A megnyitott projekt nem kerül átmásolásra a munkakönyvtárba, és kénytelen lesz menteni a projektben végrehajtott módosításokat. Ha meg szeretné tartani az aktuális projektet, először mentse el egy másik projektbe.</translation>
     </message>
     <message>
@@ -2070,8 +2068,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>A jelenleg aktív alablak nem támogatja a kontúr ábra exportálását.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a &quot;Kijelző beállítása&quot; &quot;Kontúr ábra&quot; -ra, nem pedig &quot;Színes szegély&quot; vagy &quot;Izolines&quot;.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">Alakzatfájl exportálásához kapcsolja a "Kijelző beállítása" "Kontúr ábra" -ra, nem pedig "Színes szegély" vagy "Izolines".</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>Beállítási fájl (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Az alakfájl exportálásához állítsa a Szín módot &quot;Diszkrét módra&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Az alakfájl exportálásához állítsa a Szín módot "Diszkrét módra".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>Válassza ki a rácsot az alakzatfájlok exportálásához.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>&quot;Diszkrét módban&quot; nem rajzolódik kontúr.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>"Diszkrét módban" nem rajzolódik kontúr.</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,7 +2596,7 @@ Option -&gt; Preferences</source>
         <translation>Nyissa meg az új 2D utófeldolgozó ablakot</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
         <translation>Nyissa meg az új 2D madártávlatú utófeldolgozó ablakot</translation>
     </message>
     <message>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>A Windows igazítása (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Kamerabeállítás másolása (&amp;C)...</translation>
     </message>
 </context>
 </TS>

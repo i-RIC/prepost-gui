@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>InformationDialog</name>
@@ -70,50 +68,50 @@
     <name>WindowSizeEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Veidlapa</translation>
+        <translation>Veidlapa</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Režīms</translation>
     </message>
     <message>
         <source>Select from standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Izvēlieties standarta izmērus</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>Rokasgrāmata</translation>
     </message>
     <message>
         <source>Standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>Standarta izmēri</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Augstums:</translation>
     </message>
 </context>
 <context>
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Rediģēt loga izmēra iestatījumu</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Platums:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>Augstums:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>komentēt:</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>InformationDialog</name>
@@ -70,50 +68,50 @@
     <name>WindowSizeEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>방법</translation>
     </message>
     <message>
         <source>Select from standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>표준 크기에서 선택</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation>수동</translation>
     </message>
     <message>
         <source>Standard sizes</source>
-        <translation type="unfinished"></translation>
+        <translation>표준 크기</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>너비:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>키:</translation>
     </message>
 </context>
 <context>
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>창 크기 설정 편집</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>너비:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished"></translation>
+        <translation>키:</translation>
     </message>
     <message>
         <source>Comment:</source>
-        <translation type="unfinished"></translation>
+        <translation>논평:</translation>
     </message>
 </context>
 </TS>

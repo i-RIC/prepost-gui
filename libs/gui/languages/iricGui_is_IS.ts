@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Afritaðu myndavélarstillingu</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Heimild:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Markmið</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Hakaðu við Allt (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Taktu hakið úr Allt (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,7 +791,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Veldu leysir</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Þegar þú býrð til nýtt verkefni þarftu að velja lausnina til að nota til útreikninga. Vinsamlegast veldu lausn og ýttu á „OK“ hnappinn.</translation>
     </message>
 </context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Gluggastærð</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Bæta við broti</translation>
+        <translation>Bæta við broti</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Tilgreindu brotið sem á að bæta við:</translation>
+        <translation>Tilgreindu brotið sem á að bæta við:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Bæta við (&amp;A)...</translation>
+        <translation>Bæta við (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Breyta (&amp;E)...</translation>
+        <translation>Breyta (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Eyða (&amp;D)...</translation>
+        <translation>Eyða (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Endurstilla í sjálfgefið (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Viðvörun</translation>
+        <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Ertu viss um að þú viljir eyða "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ertu viss um að þú viljir endurstilla sjálfgefna stillingar?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 &quot;. Þessi lausnarmaður er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 ". Þessi lausnarmaður er hunsaður. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Ræstu iRIC-MI GUI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Samræma Windows</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Jöfnun</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Lárétt</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Lóðrétt</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Ástand</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Dálkar</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Raðir</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Heildarstærð</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaðar á milli glugga</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lárétt:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lóðrétt:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Fela hlutvafra</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Þetta verkefni virðist vera opnað með öðrum iRIC GUI glugga. Þú getur ekki opnað verkefnamöppu úr mörgum GUI gluggum.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Opna verkefnið er ekki afritað í vinnuskrá og þú neyðist til að vista þær breytingar sem þú gerir á þessu verkefni. Ef þú vilt halda núverandi verkefni skaltu vista það í öðru verkefni fyrst.</translation>
     </message>
     <message>
@@ -2070,7 +2068,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Núverandi virkur undirgluggi styður ekki útflutning útlínutölu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>Stillingarskrá (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">Til að flytja út formskrá skaltu skipta um litastillingu yfir í &quot;Staðan háttur&quot;.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">Til að flytja út formskrá skaltu skipta um litastillingu yfir í "Staðan háttur".</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>Veldu rist til að flytja út formskrár.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>Engin útlínur er teiknaður í &quot;Stöðugum ham&quot;.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>Engin útlínur er teiknaður í "Stöðugum ham".</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>Opnaðu nýjan 2D eftirvinnslu glugga</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Opnaðu nýjan 2D Bird&apos;s-Eye eftirvinnslu glugga</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Opnaðu nýjan 2D Bird's-Eye eftirvinnslu glugga</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Samræma Windows (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Afritaðu myndavélarstillingu (&amp;C)...</translation>
     </message>
 </context>
 </TS>

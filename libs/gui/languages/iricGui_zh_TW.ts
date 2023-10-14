@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>複製相機設定</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>來源：</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>目標</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇所有 (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>取消所有 (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,7 +791,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>選擇求解器</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>創建新項目時，必須選擇用於計算的求解器。請選擇一個求解器，然後按“確定”按鈕。</translation>
     </message>
 </context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>窗口尺寸</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">添加分數</translation>
+        <translation>新增分數</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">指定要添加的分數：</translation>
+        <translation>指定要新增的分數：</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1：</translation>
+        <translation>1：</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">添加 (&amp;A)...</translation>
+        <translation>添加 (&amp;A) ……</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">編輯 (&amp;E)...</translation>
+        <translation>編輯 (&amp;E) ……</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">刪除 (&amp;D)...</translation>
+        <translation>刪除 (&amp;D) ……</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>重設為預設 (&amp;R) ……</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>你確定你要刪除 ” %1 「？</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>您確定要重設為預設值嗎？</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>在文件夾“中加載求解器定義文件時發生錯誤” %1 &quot;。這個求解器被忽略了。 %2</translation>
+        <translation>在文件夾“中加載求解器定義文件時發生錯誤” %1 "。這個求解器被忽略了。 %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>啟動 iRIC-MI GUI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>對齊視窗</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>結盟</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>水平的</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直的</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>網格</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>狀態</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>列</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>行數</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>總尺寸</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>視窗之間的邊距</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>水平的：</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>垂直的：</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>隱藏物件瀏覽器</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>這個項目似乎是由另一個 iRIC GUI 窗口打開的。不能從多個 GUI 窗口打開項目文件夾。</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>打開的項目不會復製到工作目錄，您將被迫保存對此項目所做的修改。如果要保留當前項目，請先將其保存到另一個項目中。</translation>
     </message>
     <message>
@@ -2070,7 +2068,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>當前活動子窗口不支持導出輪廓圖。</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">要導出形狀文件，請將“顯示設置”切換到“輪廓圖”，而不是“彩色邊緣”或“等值線”。</translation>
     </message>
     <message>
@@ -2211,7 +2209,7 @@ Option -&gt; Preferences</source>
         <translation>設定文件 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation type="vanished">要導出形狀文件，請將顏色模式切換為“離散模式”。</translation>
     </message>
     <message>
@@ -2223,7 +2221,7 @@ Option -&gt; Preferences</source>
         <translation>選擇網格以導出形狀文件。</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <source>No contour is drawn in "Discrete Mode".</source>
         <translation>在“離散模式”下不繪製輪廓。</translation>
     </message>
 </context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>打開新的 2D 後處理窗口</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>打開新的 2D Bird&apos;s-Eye Post-Processing 窗口</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>打開新的 2D Bird's-Eye Post-Processing 窗口</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>對齊視窗 (&amp;A) ……</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>複製相機設定 (&amp;C) ……</translation>
     </message>
 </context>
 </TS>

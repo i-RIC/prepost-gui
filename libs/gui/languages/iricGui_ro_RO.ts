@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>AnimationController</name>
@@ -694,23 +692,23 @@
     <name>CopyCameraSettingDialog</name>
     <message>
         <source>Copy Camera Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiați setarea camerei</translation>
     </message>
     <message>
         <source>Source:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sursă:</translation>
     </message>
     <message>
         <source>Targets</source>
-        <translation type="unfinished"></translation>
+        <translation>Ținte</translation>
     </message>
     <message>
         <source>&amp;Check All</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectați toate (&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Uncheck All</source>
-        <translation type="unfinished"></translation>
+        <translation>Deselecteaza tot (&amp;U)</translation>
     </message>
 </context>
 <context>
@@ -793,7 +791,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selectați Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
         <translation>Când creați un proiect nou, trebuie să selectați soluția de rezolvat pe care să o utilizați pentru calcul. Selectați un rezolvator și apăsați butonul „OK”.</translation>
     </message>
 </context>
@@ -861,7 +859,7 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Window Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensiunea ferestrei</translation>
     </message>
 </context>
 <context>
@@ -1280,15 +1278,15 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurvey_FractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation type="unfinished">Adăugați fracția</translation>
+        <translation>Adăugați fracția</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation type="unfinished">Specificați fracția de adăugat:</translation>
+        <translation>Specificați fracția de adăugat:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation type="unfinished">1:</translation>
+        <translation>1:</translation>
     </message>
 </context>
 <context>
@@ -1462,35 +1460,35 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageWindowSize</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formă</translation>
+        <translation>Formă</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Adăuga (&amp;A)...</translation>
+        <translation>Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Editați | × (&amp;E)...</translation>
+        <translation>Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation type="unfinished">Șterge (&amp;D)...</translation>
+        <translation>Șterge (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Reset to Default...</source>
-        <translation type="unfinished"></translation>
+        <translation>Resetare la valorile implicite (&amp;R)...</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation type="unfinished"></translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>Ești sigur că vrei să ștergi "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigur doriți să resetați setările implicite?</translation>
     </message>
 </context>
 <context>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar &quot; %1 Acest rezolvator este ignorat. %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar " %1 Acest rezolvator este ignorat. %2</translation>
     </message>
 </context>
 <context>
@@ -1790,7 +1788,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>&amp;Start iRIC-MI GUI</source>
-        <translation type="unfinished"></translation>
+        <translation>Porniți GUI iRIC-MI (&amp;S)</translation>
     </message>
 </context>
 <context>
@@ -1820,55 +1818,55 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <name>SubwindowsAlignDialog</name>
     <message>
         <source>Align Windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Aliniați Windows</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished"></translation>
+        <translation>Aliniere</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished"></translation>
+        <translation>Orizontală</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Grilă</translation>
     </message>
     <message>
         <source>Condition</source>
-        <translation type="unfinished"></translation>
+        <translation>Condiție</translation>
     </message>
     <message>
         <source>Columns</source>
-        <translation type="unfinished"></translation>
+        <translation>Coloane</translation>
     </message>
     <message>
         <source>Rows</source>
-        <translation type="unfinished"></translation>
+        <translation>Rânduri</translation>
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Marimea totala</translation>
     </message>
     <message>
         <source>Margins between windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Margini între ferestre</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Orizontală:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vertical:</translation>
     </message>
     <message>
         <source>Hide Object Browsers</source>
-        <translation type="unfinished"></translation>
+        <translation>Ascundeți browserele de obiecte</translation>
     </message>
 </context>
 <context>
@@ -1910,7 +1908,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Acest proiect pare a fi deschis de o altă fereastră GUI iRIC. Nu puteți deschide un folder de proiect din mai multe ferestre GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proiectul deschis nu este copiat în directorul de lucru și veți fi obligat să salvați modificările aduse acestui proiect. Dacă doriți să păstrați proiectul curent, vă rugăm să îl salvați mai întâi într-un alt proiect.</translation>
     </message>
     <message>
@@ -2070,7 +2068,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-fereastra activă în prezent nu acceptă exportarea conturului.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
         <translation type="vanished">Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
     <message>
@@ -2211,7 +2209,7 @@ Option -&gt; Preferences</source>
         <translation>Fișier de setare (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
         <translation type="vanished">Pentru a exporta fișierul de formă, comutați modul Culoare la „Mod discret”.</translation>
     </message>
     <message>
@@ -2223,7 +2221,7 @@ Option -&gt; Preferences</source>
         <translation>Selectați grila pentru a exporta fișiere de formă.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <source>No contour is drawn in "Discrete Mode".</source>
         <translation>Nu este desenat niciun contur în „Modul discret”.</translation>
     </message>
 </context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>Deschideți o nouă fereastră de post-procesare 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird&apos;s-Eye</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird's-Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2715,11 +2713,11 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Align Windows...</source>
-        <translation type="unfinished"></translation>
+        <translation>Aliniați Windows (&amp;A)...</translation>
     </message>
     <message>
         <source>Copy &amp;Camera Setting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiați setarea camerei (&amp;C)...</translation>
     </message>
 </context>
 </TS>
