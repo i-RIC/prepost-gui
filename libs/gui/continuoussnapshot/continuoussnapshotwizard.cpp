@@ -8,15 +8,6 @@
 #include "private/continuoussnapshotwizard_timestepsettingpage.h"
 #include "private/continuoussnapshotwizard_windowselectionpage.h"
 
-#include <guicore/base/snapshotenabledwindowinterface.h>
-
-#include <QDir>
-#include <QLabel>
-#include <QListWidget>
-#include <QMdiSubWindow>
-#include <QPushButton>
-#include <QVBoxLayout>
-
 ContinuousSnapshotWizard::ContinuousSnapshotWizard(QWidget* parent) :
 	QWizard(parent),
 	m_projectMainFile {nullptr}

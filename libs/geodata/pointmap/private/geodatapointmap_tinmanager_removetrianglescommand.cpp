@@ -22,5 +22,5 @@ void GeoDataPointmap::TINManager::RemoveTrianglesCommand::apply(vtkCellArray* ce
 {
 	m_manager->impl->m_tin->SetPolys(cellArray);
 	m_manager->impl->m_tin->Modified();
-	m_manager->rebuildQTree();
+	m_manager->rebuildIndex();
 }

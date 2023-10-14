@@ -3,7 +3,7 @@
 
 #include "solverconsole_global.h"
 #include <guicore/base/clipboardoperatablewindowinterface.h>
-#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
 #include <guicore/base/windowwithzindexinterface.h>
 
 #include <QMainWindow>
@@ -22,9 +22,8 @@ class QAction;
 	* the STDOUT of solver.
 	*/
 class SOLVERCONSOLEDLL_EXPORT SolverConsoleWindow :
-	public QMainWindow,
+	public QMainWindowWithSnapshot,
 	public ClipboardOperatableWindowInterface,
-	public SnapshotEnabledWindowInterface,
 	public WindowWithZIndexInterface
 {
 	Q_OBJECT
@@ -57,7 +56,8 @@ public:
 	void terminateSolverSilently();
 	void waitForSolverFinish();
 
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 
 	QColor backgroundColor() const;
 	void setBackgroundColor(const QColor& c);

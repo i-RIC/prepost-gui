@@ -1,7 +1,7 @@
 #include "preprocessorwindowinterface.h"
 
 PreProcessorWindowInterface::PreProcessorWindowInterface(QWidget* widget) :
-	QMainWindow {widget}
+	QMainWindowWithSnapshot {widget}
 {}
 
 PreProcessorWindowInterface::~PreProcessorWindowInterface()

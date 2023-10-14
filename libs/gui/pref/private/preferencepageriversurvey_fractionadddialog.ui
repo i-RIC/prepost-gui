@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PreferencePageRiverSurveyFractionAddDialog</class>
- <widget class="QDialog" name="PreferencePageRiverSurveyFractionAddDialog">
+ <class>PreferencePageRiverSurvey_FractionAddDialog</class>
+ <widget class="QDialog" name="PreferencePageRiverSurvey_FractionAddDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -88,7 +88,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>PreferencePageRiverSurveyFractionAddDialog</receiver>
+   <receiver>PreferencePageRiverSurvey_FractionAddDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -104,7 +104,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>PreferencePageRiverSurveyFractionAddDialog</receiver>
+   <receiver>PreferencePageRiverSurvey_FractionAddDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

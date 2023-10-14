@@ -1,6 +1,6 @@
 #include "iricmainwindow_snapshotsaver.h"
 
-#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
 #include <guicore/project/projectdata.h>
 #include <misc/lastiodirectory.h>
 #include <misc/stringtool.h>
@@ -20,7 +20,7 @@ iRICMainWindow::SnapshotSaver::SnapshotSaver(iRICMainWindow* mainWindow) :
 	m_mainWindow {mainWindow}
 {}
 
-void iRICMainWindow::SnapshotSaver::save(SnapshotEnabledWindowInterface* enabledWindow)
+void iRICMainWindow::SnapshotSaver::save(QMainWindowWithSnapshot* enabledWindow)
 {
 	QString defaultname = QDir(LastIODirectory::get()).absoluteFilePath("snapshot");
 	QString fileTypes = iRICMainWindow::tr("PNG files (*.png);;JPEG file (*.jpg);;Windows BMP file (*.bmp)");

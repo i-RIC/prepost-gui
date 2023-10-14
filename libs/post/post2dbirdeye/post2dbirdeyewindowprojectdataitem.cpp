@@ -50,6 +50,9 @@ void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 {
 	auto w = dynamic_cast<Post2dBirdEyeWindow*>(m_window);
 
+	/// object browser visibility
+	w->objectBrowser()->setVisible(iRIC::getBooleanAttribute(node, "objectBrowserVisible", true));
+
 	/// load background color
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
 	w->setBackgroundColor(col);
@@ -78,6 +81,9 @@ void Post2dBirdEyeWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 	writer.writeAttribute("type", "post2dbirdeyewindow");
 	Post2dBirdEyeWindow* w = dynamic_cast<Post2dBirdEyeWindow*>(m_window);
 	iRIC::setIntAttribute(writer, "index", w->index());
+
+	/// object browser visibility
+	iRIC::setBooleanAttribute(writer, "objectBrowserVisible", w->objectBrowser()->isVisible());
 
 	/// save background color
 	ProjectDataItem::writeBackgroundColor(w->backgroundColor(), writer);

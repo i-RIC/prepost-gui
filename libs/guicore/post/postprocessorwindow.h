@@ -2,7 +2,7 @@
 #define POSTPROCESSORWINDOW_H
 
 #include "../guicore_global.h"
-#include "../base/snapshotenabledwindowinterface.h"
+#include "../base/qmainwindowwithsnapshot.h"
 #include <QMainWindow>
 #include <QIcon>
 
@@ -12,7 +12,7 @@ class PreProcessorGeoDataGroupDataItemInterface;
 class ProjectData;
 
 /// Abstract Post processor window
-class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindow, public SnapshotEnabledWindowInterface
+class GUICOREDLL_EXPORT PostProcessorWindow : public QMainWindowWithSnapshot
 {
 	Q_OBJECT
 

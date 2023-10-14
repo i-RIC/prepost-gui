@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AnimationController</name>
@@ -689,6 +691,29 @@
     </message>
 </context>
 <context>
+    <name>CopyCameraSettingDialog</name>
+    <message>
+        <source>Copy Camera Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Check All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -768,7 +793,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Pasirinkite Sprendėjas</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Kai kuriate naują projektą, turite pasirinkti sprendinį, kurį naudosite skaičiavimams. Pasirinkite sprendimą ir paspauskite mygtuką „Gerai“.</translation>
     </message>
 </context>
@@ -833,6 +858,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Text Format</source>
         <translation>Teksto formatas</translation>
+    </message>
+    <message>
+        <source>Window Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1236,15 +1265,30 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation>Pridėti trupmeną</translation>
+        <translation type="vanished">Pridėti trupmeną</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation>Nurodykite trupmeną, kurią norite pridėti:</translation>
+        <translation type="vanished">Nurodykite trupmeną, kurią norite pridėti:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation>1:</translation>
+        <translation type="vanished">1:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurvey_FractionAddDialog</name>
+    <message>
+        <source>Add fraction</source>
+        <translation type="unfinished">Pridėti trupmeną</translation>
+    </message>
+    <message>
+        <source>Specify the fraction to add:</source>
+        <translation type="unfinished">Nurodykite trupmeną, kurią norite pridėti:</translation>
+    </message>
+    <message>
+        <source>1:</source>
+        <translation type="unfinished">1:</translation>
     </message>
 </context>
 <context>
@@ -1412,6 +1456,41 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
         <translation>Pavyzdys: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWindowSize</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Forma</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Papildyti (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Redaguoti (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished">Ištrinti (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>&amp;Reset to Default...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Įspėjimas</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset to default settings?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida "%1". Šis sprendėjas ignoruojamas. %2</translation>
+        <translation>Įkeliant sprendėjo apibrėžimo failą į aplanką įvyko klaida &quot;%1&quot;. Šis sprendėjas ignoruojamas. %2</translation>
     </message>
 </context>
 <context>
@@ -1709,6 +1788,10 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <source>Support</source>
         <translation>Palaikymas</translation>
     </message>
+    <message>
+        <source>&amp;Start iRIC-MI GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
@@ -1731,6 +1814,61 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Recent Projects:</source>
         <translation>Naujausi projektai:</translation>
+    </message>
+</context>
+<context>
+    <name>SubwindowsAlignDialog</name>
+    <message>
+        <source>Align Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins between windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Object Browsers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Atrodo, kad šį projektą atidaro kitas „iRIC GUI“ langas. Negalite atidaryti projekto aplanko iš kelių GUI langų.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Atidarytas projektas nėra nukopijuotas į darbo katalogą ir būsite priversti išsaugoti šio projekto pakeitimus. Jei norite išlaikyti dabartinį projektą, pirmiausia išsaugokite jį kitame projekte.</translation>
     </message>
     <message>
@@ -1932,7 +2070,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Šiuo metu aktyvus papildomas langas nepalaiko kontūro figūros eksportavimo.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Norėdami eksportuoti figūros failą, perjunkite „Ekrano nustatymas“ į „Kontūro paveikslėlis“, o ne „Spalvotas brūkšnys“ arba „Isolines“.</translation>
     </message>
     <message>
@@ -2073,7 +2211,7 @@ Option -&gt; Preferences</source>
         <translation>Nustatymo failas (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Norėdami eksportuoti formos failą, perjunkite spalvų režimą į „Diskretus režimas“.</translation>
     </message>
     <message>
@@ -2085,7 +2223,7 @@ Option -&gt; Preferences</source>
         <translation>Pasirinkite tinklelį, kad eksportuotumėte formos failus.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>„Diskrečiuoju režimu“ nenubrėžiamas joks kontūras.</translation>
     </message>
 </context>
@@ -2348,7 +2486,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation>Plytelių langai (&amp;T)</translation>
+        <translation type="vanished">Plytelių langai (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
@@ -2433,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2460,7 +2598,7 @@ Option -&gt; Preferences</source>
         <translation>Atidarykite naują 2D papildomo apdorojimo langą</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Atidarykite naują 2D paukščio skrydžio papildomo apdorojimo langą</translation>
     </message>
     <message>
@@ -2574,6 +2712,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Geographic Data (Elevation from web)</source>
         <translation>Geografiniai duomenys (aukštis iš žiniatinklio)</translation>
+    </message>
+    <message>
+        <source>&amp;Align Windows...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy &amp;Camera Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

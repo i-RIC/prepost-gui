@@ -43,7 +43,7 @@ PreProcessorWindow::~PreProcessorWindow()
 
 void PreProcessorWindow::init()
 {
-	setMinimumSize(480, 360);
+	setMinimumSize(300, 200);
 	setWindowTitle(tr("Pre-processing Window"));
 
 	// setup graphics view
@@ -221,7 +221,7 @@ QString PreProcessorWindow::checkGrid(bool detail)
 	}
 }
 
-QPixmap PreProcessorWindow::snapshot()
+QPixmap PreProcessorWindow::snapshot() const
 {
 	PreProcessorGraphicsViewInterface* view = m_dataModel->graphicsView();
 	QImage img = view->getImage();
@@ -229,6 +229,11 @@ QPixmap PreProcessorWindow::snapshot()
 	if (m_isTransparent) { makeBackgroundTransparent(view, pixmap); }
 
 	return pixmap;
+}
+
+QWidget* PreProcessorWindow::snapshotArea() const
+{
+	return m_graphicsView;
 }
 
 vtkRenderWindow* PreProcessorWindow::getVtkRenderWindow() const

@@ -3,11 +3,12 @@
 
 #include "../../datamodel/preprocessorgriddataitem.h"
 
-#include <QMainWindow>
-#include <QIcon>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/base/snapshotenabledwindowinterface.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
+#include <guicore/base/windowwithobjectbrowserinterface.h>
 #include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+
+#include <QIcon>
 
 class GridBirdEyeObjectBrowser;
 class GridBirdEyeWindowActionManager;
@@ -18,10 +19,10 @@ class QAction;
 
 /// This class represents the two-dimensional post-processing window.
 class GridBirdEyeWindow :
-	public QMainWindow,
-	public SnapshotEnabledWindowInterface,
+	public QMainWindowWithSnapshot,
 	public AdditionalMenuWindowI,
-	public BackgroundColorEditVtkInterface
+	public BackgroundColorEditVtkInterface,
+	public WindowWithObjectBrowserInterface
 {
 	Q_OBJECT
 
@@ -29,7 +30,10 @@ public:
 	GridBirdEyeWindow(QWidget* parent, PreProcessorGridDataItem* item);
 	~GridBirdEyeWindow();
 
-	QPixmap snapshot() override;
+	ObjectBrowser* objectBrowser() const override;
+
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 
 	QList<QMenu*> getAdditionalMenus() const override;

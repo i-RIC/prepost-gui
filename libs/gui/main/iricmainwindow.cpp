@@ -2,6 +2,7 @@
 #include "../factory/postprocessorwindowfactory.h"
 #include "../factory/postprocessorwindowfactory.h"
 #include "../misc/animationcontroller.h"
+#include "../misc/copycamerasettingdialog.h"
 #include "../misc/filesystemfunction.h"
 #include "../misc/flushrequester.h"
 #include "../misc/iricmainwindowactionmanager.h"
@@ -10,6 +11,7 @@
 #include "../misc/projecttypeselectdialog.h"
 #include "../misc/recentprojectsmanager.h"
 #include "../misc/recentsolversmanager.h"
+#include "../misc/subwindowsaligndialog.h"
 #include "../pref/preferencedialog.h"
 #include "../projectproperty/projectpropertydialog.h"
 #include "../solverdef/solverdefinitionlist.h"
@@ -26,13 +28,17 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/widget/itemselectingdialog.h>
 #include <guicore/base/clipboardoperatablewindowinterface.h>
+#include <guicore/base/qmainwindowwithsnapshot.h>
+#include <guicore/base/qmainwindowwithsnapshotresizewidget.h>
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexinterface.h>
 #include <guicore/datamodel/vtkgraphicsviewscalewidget.h>
+#include <guicore/datamodel/vtk2dgraphicsviewanglewidget.h>
 #include <guicore/executer/iricmainwindowexecuterwatcher.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/particleexportwindowi.h>
 #include <postbase/svkmlexportwindowi.h>
+#include <guicore/datamodel/vtk2dgraphicsview.h>
 #include <guicore/misc/iricmetadata.h>
 #include <guicore/misc/coordinatesystemdisplaywidget.h>
 #include <guicore/misc/mousepositionwidget.h>
@@ -105,6 +111,8 @@ iRICMainWindow::iRICMainWindow(bool cuiMode, QWidget* parent) :
 	m_mousePositionWidget {nullptr},
 	m_coordinateSystemWidget {nullptr},
 	m_viewScaleWidget {nullptr},
+	m_viewAngleWidget {nullptr},
+	m_resizeWidget {nullptr},
 	m_miscDialogManager {new iRICMainWindowMiscDialogManager {this}},
 	m_workspace {new ProjectWorkspace {this}},
 	m_projectData {nullptr},
@@ -721,8 +729,26 @@ void iRICMainWindow::ActiveSubwindowChanged(QMdiSubWindow* newActiveWindow)
 	auto wwv = dynamic_cast<WindowWithVtkGraphicsViewI*> (innerWindow);
 	if (wwv != nullptr) {
 		m_viewScaleWidget->setView(wwv->getVtkGraphicsView());
+		auto qmw = dynamic_cast<QMainWindowWithSnapshot*> (innerWindow);
+		if (qmw != nullptr) {
+			connect(qmw, &QMainWindowWithSnapshot::snapshotAreaResized, m_viewScaleWidget, &VtkGraphicsViewScaleWidget::updateDisplay);
+		}
+		auto v = wwv->getVtkGraphicsView();
+		auto v2d = dynamic_cast<VTK2DGraphicsView*>(v);
+		if (v2d != nullptr) {
+			m_viewAngleWidget->setView(v2d);
+		} else {
+			m_viewAngleWidget->setView(nullptr);
+		}
 	} else {
 		m_viewScaleWidget->setView(nullptr);
+		m_viewAngleWidget->setView(nullptr);
+	}
+	auto qmw = dynamic_cast<QMainWindowWithSnapshot*> (innerWindow);
+	if (qmw != nullptr) {
+		m_resizeWidget->setWindow(qmw);
+	} else {
+		m_resizeWidget->setWindow(nullptr);
 	}
 
 	m_mousePositionWidget->clear();
@@ -954,30 +980,30 @@ void iRICMainWindow::paste()
 
 void iRICMainWindow::snapshot()
 {
-	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
-	SnapshotEnabledWindowInterface* enabledWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
+	auto widget = m_centralWidget->activeSubWindow()->widget();
+	auto snapshotEnabledWindow = dynamic_cast<QMainWindowWithSnapshot*>(widget);
 
-	if (enabledWindow == nullptr) {
+	if (snapshotEnabledWindow == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("This windows does not support snapshot function."));
 		return;
 	}
 
 	SnapshotSaver saver(this);
-	saver.save(enabledWindow);
+	saver.save(snapshotEnabledWindow);
 }
 
 void iRICMainWindow::copySnapshot()
 {
-	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
-	SnapshotEnabledWindowInterface* enabledWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
+	auto widget = m_centralWidget->activeSubWindow()->widget();
+	auto snapshotEnabledWindow = dynamic_cast<QMainWindowWithSnapshot*>(widget);
 
-	if (enabledWindow == nullptr) {
+	if (snapshotEnabledWindow == nullptr) {
 		QMessageBox::warning(this, tr("Warning"), tr("This windows does not support snapshot function."));
 		return;
 	}
 
-	enabledWindow->setTransparent(false);
-	QPixmap pixmap = enabledWindow->snapshot();
+	snapshotEnabledWindow->setTransparent(false);
+	QPixmap pixmap = snapshotEnabledWindow->snapshot();
 
 	QClipboard *clipboard = QApplication::clipboard();
 	clipboard->setPixmap(pixmap);
@@ -993,9 +1019,10 @@ void iRICMainWindow::continuousSnapshot()
 		QMessageBox::warning(this, tr("Warning"), tr("This menu is not available while the solver is running."), QMessageBox::Ok);
 		return;
 	}
-	QWidget* widget = m_centralWidget->activeSubWindow()->widget();
-	SnapshotEnabledWindowInterface* enableWindow = dynamic_cast<SnapshotEnabledWindowInterface*>(widget);
-	if (enableWindow != nullptr) {
+
+	auto widget = m_centralWidget->activeSubWindow()->widget();
+	auto snapshotEnabledWindow = dynamic_cast<QMainWindowWithSnapshot*>(widget);
+	if (snapshotEnabledWindow != nullptr) {
 		ContinuousSnapshotWizard* wizard = new ContinuousSnapshotWizard(this);
 
 		wizard->setSetting(m_continuousSnapshotSetting);
@@ -1115,9 +1142,9 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 					painter.setBackgroundMode(Qt::OpaqueMode);
 				}
 				QPoint begin(0, 0);
-				for (QMdiSubWindow* sub : wizard->windowList()) {
-					SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
-					QWidget* center = dynamic_cast<QMainWindow*>(sub->widget())->centralWidget();
+				for (auto sub : wizard->windowList()) {
+					auto window = dynamic_cast<QMainWindowWithSnapshot*>(sub->widget());
+					QWidget* center = window->centralWidget();
 					window->setTransparent(setting.imageIsTransparent);
 
 					switch (setting.outputLayout) {
@@ -1146,8 +1173,8 @@ void iRICMainWindow::saveContinuousSnapshot(ContinuousSnapshotWizard* wizard, QX
 			}
 		case ContinuousSnapshotSetting::FileOutputSetting::Respectively:
 			int i = 0;
-			for (QMdiSubWindow* sub : wizard->windowList()) {
-				SnapshotEnabledWindowInterface* window = dynamic_cast<SnapshotEnabledWindowInterface*>(sub->widget());
+			for (auto sub : wizard->windowList()) {
+				auto window = dynamic_cast<QMainWindowWithSnapshot*>(sub->widget());
 				window->setTransparent(setting.imageIsTransparent);
 				QPixmap pixmap = window->snapshot();
 				pixmap.save(*fit);
@@ -1640,6 +1667,11 @@ void iRICMainWindow::setupStatusBar()
 
 	m_viewScaleWidget = new VtkGraphicsViewScaleWidget(this);
 	sb->addPermanentWidget(m_viewScaleWidget);
+	m_viewAngleWidget = new Vtk2dGraphicsViewAngleWidget(this);
+	sb->addPermanentWidget(m_viewAngleWidget);
+
+	m_resizeWidget = new QMainWindowWithSnapshotResizeWidget(this);
+	sb->addPermanentWidget(m_resizeWidget);
 
 	m_mousePositionWidget = new MousePositionWidget(this);
 	m_mousePositionWidget->clear();
@@ -2288,11 +2320,16 @@ void iRICMainWindow::exportVisGraphSetting()
 	}
 }
 
-void iRICMainWindow::tileSubWindows()
+void iRICMainWindow::alignSubWindows()
 {
-	m_centralWidget->tileSubWindows();
-	m_centralWidget->hide();
-	m_centralWidget->show();
+	SubwindowsAlignDialog dialog(m_centralWidget, this);
+	dialog.exec();
+}
+
+void iRICMainWindow::copyCameraSetting()
+{
+	CopyCameraSettingDialog dialog(m_centralWidget, this);
+	dialog.exec();
 }
 
 void iRICMainWindow::initForSolverDefinition()

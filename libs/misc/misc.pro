@@ -84,6 +84,9 @@ HEADERS += anms.h \
            valueselectdialog.h \
            versionnumber.h \
            windowgeometrycontainer.h \
+           windowsizeeditwidget.h \
+           windowsizestandardsetting.h \
+           windowsizestandardsettingeditdialog.h \
            xmlattributecontainer.h \
            xmlsupport.h \
            zdepthrange.h \
@@ -111,7 +114,9 @@ FORMS += informationdialog.ui \
          primitiveview.ui \
          qfonteditwidget.ui \
          slowmotionspeededitdialog.ui \
-         valueselectdialog.ui
+         valueselectdialog.ui \
+         windowsizeeditwidget.ui \
+         windowsizestandardsettingeditdialog.ui
 SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
@@ -168,6 +173,9 @@ SOURCES += anms.cpp \
            valueselectdialog.cpp \
            versionnumber.cpp \
            windowgeometrycontainer.cpp \
+           windowsizeeditwidget.cpp \
+           windowsizestandardsetting.cpp \
+           windowsizestandardsettingeditdialog.cpp \
            xmlattributecontainer.cpp \
            xmlsupport.cpp \
            zdepthrange.cpp \

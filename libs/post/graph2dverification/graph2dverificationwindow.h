@@ -19,9 +19,11 @@ class Graph2dVerificationWindow :
 	Q_OBJECT
 
 public:
-	explicit Graph2dVerificationWindow(QWidget* parent, int index, Graph2dVerificationWindowProjectDataItem* pdi);
+	Graph2dVerificationWindow(QWidget* parent, int index, Graph2dVerificationWindowProjectDataItem* pdi);
 	~Graph2dVerificationWindow();
-	QPixmap snapshot() override;
+
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	QList<QMenu*> getAdditionalMenus() const override;
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 

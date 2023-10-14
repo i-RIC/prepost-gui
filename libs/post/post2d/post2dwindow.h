@@ -46,7 +46,8 @@ public:
 	Post2dWindow(QWidget* parent, int index, Post2dWindowProjectDataItem* pdi);
 	~Post2dWindow();
 
-	QPixmap snapshot() override;
+	QPixmap snapshot() const override;
+	QWidget* snapshotArea() const override;
 	vtkRenderWindow* getVtkRenderWindow() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
 

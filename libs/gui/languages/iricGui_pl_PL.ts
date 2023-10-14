@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>AnimationController</name>
@@ -689,6 +691,29 @@
     </message>
 </context>
 <context>
+    <name>CopyCameraSettingDialog</name>
+    <message>
+        <source>Copy Camera Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Targets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Check All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Uncheck All</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FlushRequester</name>
     <message>
         <source>Waiting for solver to copy CGNS file...</source>
@@ -768,7 +793,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Wybierz Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Kiedy tworzysz nowy projekt, musisz wybrać solver, który będzie używany do obliczeń. Wybierz solver i naciśnij przycisk „OK”.</translation>
     </message>
 </context>
@@ -833,6 +858,10 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Text Format</source>
         <translation>Format tekstu</translation>
+    </message>
+    <message>
+        <source>Window Size</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1236,15 +1265,30 @@ Do you want to launch iRIC Maintainance?</source>
     <name>PreferencePageRiverSurveyFractionAddDialog</name>
     <message>
         <source>Add fraction</source>
-        <translation>Dodaj ułamek</translation>
+        <translation type="vanished">Dodaj ułamek</translation>
     </message>
     <message>
         <source>Specify the fraction to add:</source>
-        <translation>Określ ułamek do dodania:</translation>
+        <translation type="vanished">Określ ułamek do dodania:</translation>
     </message>
     <message>
         <source>1:</source>
-        <translation>1:</translation>
+        <translation type="vanished">1:</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageRiverSurvey_FractionAddDialog</name>
+    <message>
+        <source>Add fraction</source>
+        <translation type="unfinished">Dodaj ułamek</translation>
+    </message>
+    <message>
+        <source>Specify the fraction to add:</source>
+        <translation type="unfinished">Określ ułamek do dodania:</translation>
+    </message>
+    <message>
+        <source>1:</source>
+        <translation type="unfinished">1:</translation>
     </message>
 </context>
 <context>
@@ -1412,6 +1456,41 @@ Do you want to launch iRIC Maintainance?</source>
     <message>
         <source>Example: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</source>
         <translation>Przykład: http://cyberjapandata.gsi.go.jp/xyz/dem/{z}/{x}/{y}.txt</translation>
+    </message>
+</context>
+<context>
+    <name>PreferencePageWindowSize</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formularz</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Dodać (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Edytować (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete...</source>
+        <translation type="unfinished">Kasować (&amp;D)...</translation>
+    </message>
+    <message>
+        <source>&amp;Reset to Default...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Ostrzeżenie</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Are you sure you want to reset to default settings?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1651,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 ". Ten solver jest ignorowany. %2</translation>
+        <translation>Wystąpił błąd podczas ładowania pliku definicji solvera w folderze „ %1 &quot;. Ten solver jest ignorowany. %2</translation>
     </message>
 </context>
 <context>
@@ -1709,6 +1788,10 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <source>Support</source>
         <translation>Wsparcie</translation>
     </message>
+    <message>
+        <source>&amp;Start iRIC-MI GUI</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartPageLaunchTabWidget</name>
@@ -1731,6 +1814,61 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     <message>
         <source>Recent Projects:</source>
         <translation>Ostatnie projekty:</translation>
+    </message>
+</context>
+<context>
+    <name>SubwindowsAlignDialog</name>
+    <message>
+        <source>Align Windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Condition</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Columns</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Total Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins between windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Object Browsers</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1772,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Wydaje się, że ten projekt jest otwierany przez inne okno interfejsu iRIC GUI. Nie można otworzyć folderu projektu z wielu okien GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Otwarty projekt nie jest kopiowany do katalogu roboczego i będziesz zmuszony do zapisania zmian dokonanych w tym projekcie. Jeśli chcesz zachować aktualny projekt, najpierw zapisz go w innym projekcie.</translation>
     </message>
     <message>
@@ -1932,7 +2070,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Obecnie aktywne okno podrzędne nie obsługuje eksportowania konturu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Aby wyeksportować plik kształtu, przełącz opcję „Ustawienia wyświetlania” na „Figurę konturu”, a nie na „Obramowanie kolorów” lub „Izolinie”.</translation>
     </message>
     <message>
@@ -2073,7 +2211,7 @@ Option -&gt; Preferences</source>
         <translation>Plik ustawień (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Aby wyeksportować plik kształtu, przełącz tryb Kolor na „Tryb dyskretny”.</translation>
     </message>
     <message>
@@ -2085,7 +2223,7 @@ Option -&gt; Preferences</source>
         <translation>Wybierz siatkę, aby wyeksportować pliki kształtów.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>Żaden kontur nie jest rysowany w „Trybie dyskretnym”.</translation>
     </message>
 </context>
@@ -2348,7 +2486,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>&amp;Tile Windows</source>
-        <translation>Okna kafelkowe (&amp;T)</translation>
+        <translation type="vanished">Okna kafelkowe (&amp;T)</translation>
     </message>
     <message>
         <source>Ca&amp;mera Control</source>
@@ -2433,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2460,7 +2598,7 @@ Option -&gt; Preferences</source>
         <translation>Otwórz nowe okno przetwarzania końcowego 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Otwórz nowe okno przetwarzania końcowego z lotu ptaka 2D</translation>
     </message>
     <message>
@@ -2574,6 +2712,14 @@ Option -&gt; Preferences</source>
     <message>
         <source>Geographic Data (Elevation from web)</source>
         <translation>Dane geograficzne (wysokość z sieci)</translation>
+    </message>
+    <message>
+        <source>&amp;Align Windows...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy &amp;Camera Setting...</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

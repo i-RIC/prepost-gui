@@ -61,15 +61,21 @@ void Post2dBirdEyeWindow::setupDefaultGeometry(int index)
 	restoreState(m_initialState);
 }
 
-QPixmap Post2dBirdEyeWindow::snapshot()
+QPixmap Post2dBirdEyeWindow::snapshot() const
 {
-	Post2dBirdEyeWindowGraphicsView* view = m_dataModel->graphicsView();
-	QImage img = view->getImage();
-	QPixmap pixmap = QPixmap::fromImage(img);
-	if (m_isTransparent) {makeBackgroundTransparent(view, pixmap);}
-	pixmap.setDevicePixelRatio(devicePixelRatioF());
+	auto view = m_dataModel->graphicsView();
+	auto img = view->getImage();
+	auto pixmap = QPixmap::fromImage(img);
 
+	if (m_isTransparent) {makeBackgroundTransparent(view, pixmap);}
+
+	pixmap.setDevicePixelRatio(devicePixelRatioF());
 	return pixmap;
+}
+
+QWidget* Post2dBirdEyeWindow::snapshotArea() const
+{
+	return m_dataModel->graphicsView();
 }
 
 vtkRenderWindow* Post2dBirdEyeWindow::getVtkRenderWindow() const

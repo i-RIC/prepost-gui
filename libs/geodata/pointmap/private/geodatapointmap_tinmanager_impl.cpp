@@ -2,6 +2,7 @@
 #include "geodatapointmap_tinmanager_deletebreaklinecontroller.h"
 #include "geodatapointmap_tinmanager_impl.h"
 
+#include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 #include <misc/mouseeventcontroller.h>
 
 #include <vtkLODActor.h>
@@ -10,7 +11,7 @@
 GeoDataPointmap::TINManager::Impl::Impl(TINManager* tinManager, GeoDataPointmap* parent) :
 	m_tin {vtkPolyData::New()},
 	m_tinActor {vtkLODActor::New()},
-	m_qTree {nullptr},
+	m_index {nullptr},
 	m_needRebuild {false},
 	m_normalController {new MouseEventController {}},
 	m_addBreakLineController {new AddBreakLineController {tinManager}},
@@ -27,7 +28,7 @@ GeoDataPointmap::TINManager::Impl::~Impl()
 {
 	m_tin->Delete();
 	m_tinActor->Delete();
-	delete m_qTree;
+	delete m_index;
 
 	delete m_normalController;
 	delete m_addBreakLineController;
