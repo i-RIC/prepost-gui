@@ -348,7 +348,7 @@ void buildInputGridAttributeItem(Model* model, SolverDefinitionGridType* gt, Sol
 		caption = QString("%1 / %2").arg(gtCaption, att->caption());
 		input = new ConnectionInput(caption, model, ConnectionInput::InputType::GridAttribute, gt->name(), att->name(), valueType);
 	} else {
-		input = new ConnectionInput(att->caption(), model, ConnectionInput::InputType::GridAttribute, gt->name(), att->name(), valueType);
+		input = new ConnectionInput(att->caption(), model, ConnectionInput::InputType::GridAttribute, att->name(), valueType);
 	}
 	inputs->push_back(input);
 }
