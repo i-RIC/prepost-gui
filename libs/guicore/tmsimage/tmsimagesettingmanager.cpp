@@ -35,10 +35,10 @@ std::vector<TmsImageSetting> standardSettings()
 	std::vector<TmsImageSetting> ret;
 
 	// Google Map
-	ret.push_back(buildSetting("tms=googlemap&mapType=roadmap", TmsImageSettingManager::tr("Google Map (Road)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=satellite", TmsImageSettingManager::tr("Google Map (Satellite)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=hybrid", TmsImageSettingManager::tr("Google Map (Hybrid)")));
-	ret.push_back(buildSetting("tms=googlemap&mapType=terrain", TmsImageSettingManager::tr("Google Map (Terrain)")));
+	// ret.push_back(buildSetting("tms=googlemap&mapType=roadmap", TmsImageSettingManager::tr("Google Map (Road)")));
+	// ret.push_back(buildSetting("tms=googlemap&mapType=satellite", TmsImageSettingManager::tr("Google Map (Satellite)")));
+	// ret.push_back(buildSetting("tms=googlemap&mapType=hybrid", TmsImageSettingManager::tr("Google Map (Hybrid)")));
+	// ret.push_back(buildSetting("tms=googlemap&mapType=terrain", TmsImageSettingManager::tr("Google Map (Terrain)")));
 
 	// Open Street Map
 	ret.push_back(buildSetting("tms=openstreetmap", TmsImageSettingManager::tr("Open Street Map")));
