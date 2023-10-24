@@ -67,8 +67,10 @@ void GeoDataPolygonGroupNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSett
 		} else {
 			V value = GeoDataMapperT<V>::fromVariant(pol->value());
 			while (idx <= maxIdx) {
-				da->SetValue(idx, value);
-				*(boolMap + idx) = true;
+				if (*(boolMap + idx) == false) {
+					da->SetValue(idx, value);
+					*(boolMap + idx) = true;
+				}
 				++ idx;
 			}
 		}
