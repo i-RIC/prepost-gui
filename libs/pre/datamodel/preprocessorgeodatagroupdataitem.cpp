@@ -786,8 +786,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		for (int i = 0; i < dataCount; ++i) {
 			*(boolMap + i) = false;
 		}
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -800,8 +800,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			*(boolMap + i) = false;
 		}
 		int idx = 0;
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -814,8 +814,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		}
 		// terminate
 		idx = 0;
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
@@ -829,8 +829,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		for (int i = 0; i < dataCount; ++i) {
 			*(boolMap + i) = false;
 		}
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -843,8 +843,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 				*(boolMap + i) = false;
 			}
 			int idx = 0;
-			for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-				PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+			for (auto child : m_childItems) {
+				auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 				GeoData* geodata = item->geoData();
 				GeoDataMapper* mapper = geodata->mapper();
 				mapper->setTarget(grid, container, geodata);
@@ -858,8 +858,8 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		}
 		// terminate
 		int idx = 0;
-		for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-			PreProcessorGeoDataDataItem* item = dynamic_cast<PreProcessorGeoDataDataItem*>(*it);
+		for (auto child : m_childItems) {
+			auto* item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
