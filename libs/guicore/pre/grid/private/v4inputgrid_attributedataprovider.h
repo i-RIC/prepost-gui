@@ -20,6 +20,7 @@ public:
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(const std::string& name, QWidget* parent) const override;
 	ColorMapSettingEditDialog* createColorMapSettingEditDialog(const std::string& name, QWidget* parent) const override;
 	ColorMapSettingToolBarWidget* createColorMapSettingToolbarWidget(const std::string& name, QWidget* parent) const override;
+	GridAttributeStringConverter* createStringConverter(const std::string& name) const override;
 
 private:
 	SolverDefinitionGridAttribute* attribute(const std::string& name) const;

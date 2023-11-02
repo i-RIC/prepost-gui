@@ -174,6 +174,7 @@ public slots:
 	void create2dPostWindow();
 	void create2dBirdEyePostWindow();
 	void create3dPostWindow();
+	void createPostCrosssectionWindow();
 	void createGraph2dHybridWindow();
 	void createGraph2dScatteredWindow();
 	void openVerificationDialog();

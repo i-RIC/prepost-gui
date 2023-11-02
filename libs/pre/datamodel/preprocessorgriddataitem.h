@@ -1,7 +1,8 @@
 #ifndef PREPROCESSORGRIDDATAITEM_H
 #define PREPROCESSORGRIDDATAITEM_H
 
-#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectioninternalwindow.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
 
 #include <guicore/pre/base/preprocessorgriddataitemi.h>
 #include <misc/edge.h>
@@ -110,9 +111,9 @@ public:
 	void setBCGroupDataItem(PreProcessorBCGroupDataItem* item) override;
 	void unsetBCGroupDataItem() override;
 	void applyColorMapSetting(const std::string& name) override;
-	void openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction dir, int index);
-	void addCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w);
-	void removeCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w);
+	void openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction dir, int index);
+	void addCrossSectionWindow(PreProcessorGridCrosssectionWindow* w);
+	void removeCrossSectionWindow(PreProcessorGridCrosssectionWindow* w);
 
 	bool isImportAvailable();
 	bool isExportAvailable();

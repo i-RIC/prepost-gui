@@ -46,6 +46,8 @@ public:
 	bool isCustomModified() const;
 	void setCustomModified(bool c);
 
+	void updateValueRange();
+
 	virtual void allocate() = 0;
 
 	virtual int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) = 0;

@@ -10,6 +10,7 @@ class ColorMapSettingContainerI;
 class ColorMapSettingEditDialog;
 class ColorMapSettingEditWidgetI;
 class ColorMapSettingToolBarWidget;
+class GridAttributeStringConverter;
 
 class GUICOREDLL_EXPORT v4Grid::AttributeDataProvider
 {
@@ -23,6 +24,7 @@ public:
 	virtual ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(const std::string& name, QWidget* parent) const = 0;
 	virtual ColorMapSettingEditDialog* createColorMapSettingEditDialog(const std::string& name, QWidget* parent) const = 0;
 	virtual ColorMapSettingToolBarWidget* createColorMapSettingToolbarWidget(const std::string& name, QWidget* parent) const = 0;
+	virtual GridAttributeStringConverter* createStringConverter(const std::string& name) const = 0;
 };
 
 #endif // V4GRID_ATTRIBUTEDATAPROVIDER_H

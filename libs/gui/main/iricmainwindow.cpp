@@ -66,6 +66,7 @@
 #include <misc/xmlsupport.h>
 #include <misc/ziparchive.h>
 #include <postbase/cfshapeexportwindowi.h>
+#include <post/crosssection/postcrosssectionwindowprojectdataitem.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/graph2dverification/graph2dverificationwindowprojectdataitem.h>
@@ -299,9 +300,9 @@ void iRICMainWindow::newProject(SolverDefinitionAbstract* solver)
 		return;
 	}
 
-	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(allPostProcessorsUpdated()), this, SIGNAL(allPostProcessorsUpdated()));
-	connect(m_projectData->mainfile()->postSolutionInfo(), SIGNAL(updated()), this, SLOT(updatePostActionStatus()));
-	connect(m_actionManager->openWorkFolderAction, SIGNAL(triggered()), m_projectData, SLOT(openWorkDirectory()));
+	connect(m_projectData->mainfile()->postSolutionInfo(), &PostSolutionInfo::allPostProcessorsUpdated, this, &iRICMainWindow::allPostProcessorsUpdated);
+	connect(m_projectData->mainfile()->postSolutionInfo(), &PostSolutionInfo::updated, this, &iRICMainWindow::updatePostActionStatus);
+	connect(m_actionManager->openWorkFolderAction, &QAction::triggered, m_projectData, &ProjectData::openWorkDirectory);
 
 	// show pre-processor window first.
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
@@ -1446,6 +1447,31 @@ void iRICMainWindow::create3dPostWindow()
 	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
 }
 
+void iRICMainWindow::createPostCrosssectionWindow()
+{
+	static int index = 1;
+	if (index == 10) {
+		index = 1;
+	}
+	auto posts = m_projectData->mainfile()->postProcessors();
+	auto item = m_postWindowFactory->factory("postcrosssectionwindow", posts, this);
+	auto item2 = dynamic_cast<PostCrosssectionWindowProjectDataItem*>(item);
+	bool ok = item2->setupInitialSetting();
+	if (! ok) {
+		item->window()->setParent(nullptr);
+		delete item;
+		return;
+	}
+	QMdiSubWindow* container = posts->add(item);
+	container->show();
+	container->setFocus();
+	connect(item->window(), SIGNAL(closeButtonClicked()), container, SLOT(close()));
+
+	item->window()->setupDefaultGeometry(index);
+	++index;
+	connect(container, SIGNAL(destroyed(QObject*)), m_actionManager, SLOT(updateWindowList()));
+}
+
 void iRICMainWindow::createGraph2dHybridWindow()
 {
 	static int index = 1;
@@ -1667,6 +1693,7 @@ void iRICMainWindow::updatePostActionStatus()
 		m_actionManager->windowCreateNew2dPostProcessorAction->setDisabled(true);
 		m_actionManager->windowCreateNew2dBirdEyePostProcessorAction->setDisabled(true);
 		m_actionManager->windowCreateNew3dPostProcessorAction->setDisabled(true);
+		m_actionManager->windowCreatePostCrosssectionWindowAction->setDisabled(true);
 		m_actionManager->windowCreateNewGraph2dHybridWindowAction->setDisabled(true);
 		m_actionManager->windowCreateNewGraph2dScatteredWindowAction->setDisabled(true);
 		m_actionManager->windowCreateVerificationDialogAction->setDisabled(true);
@@ -1678,6 +1705,7 @@ void iRICMainWindow::updatePostActionStatus()
 	m_actionManager->windowCreateNew2dPostProcessorAction->setEnabled(info->isDataAvailable2D());
 	m_actionManager->windowCreateNew2dBirdEyePostProcessorAction->setEnabled(info->isDataAvailable2D());
 	m_actionManager->windowCreateNew3dPostProcessorAction->setEnabled(info->isDataAvailable3D());
+	m_actionManager->windowCreatePostCrosssectionWindowAction->setEnabled(info->isDataAvailable2D() || info->isDataAvailable3D());
 	m_actionManager->windowCreateNewGraph2dHybridWindowAction->setEnabled(info->isDataAvailable());
 	m_actionManager->windowCreateNewGraph2dScatteredWindowAction->setEnabled(info->isDataAvailable());
 	m_actionManager->windowCreateVerificationDialogAction->setEnabled(info->isDataAvailable2D() && m_projectData->mainfile()->measuredDatas().size() > 0);

@@ -407,7 +407,6 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateAttributeBrowser(
 
 	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
-		auto stg = dynamic_cast<v4Structured2dGrid*> (gItem->grid()->grid());
 		vtkIdType i, j;
 		getIJIndex(cellid, &i, &j);
 		pre->propertyBrowser()->view()->setCellAttributes(i, j, polygon, atts);

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AbstractCrosssectionWindow</class>
+ <widget class="QWidget" name="AbstractCrosssectionWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>733</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Crosssection Window</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="crosssection.qrc">
+    <normaloff>:/libs/crosssection/images/iconRiverCrosssection.svg</normaloff>:/libs/crosssection/images/iconRiverCrosssection.svg</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="hSplitter">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="AbstractCrosssectionWindow::GraphicsView" name="graphicsView" native="true"/>
+     <widget class="QSplitter" name="vSplitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QTableView" name="settingTable"/>
+      <widget class="QTableView" name="editTable">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AbstractCrosssectionWindow::GraphicsView</class>
+   <extends>QWidget</extends>
+   <header>public/abstractcrosssectionwindow_graphicsview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="crosssection.qrc"/>
+ </resources>
+ <connections/>
+</ui>

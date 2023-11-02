@@ -939,6 +939,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDia
 		dimensions()->setCurrentIndex(currentIndex);
 	}
 	container->setMapped(true);
+	container->updateValueRange();
 	delete boolMap;
 
 	informValueRangeChange();
@@ -1374,25 +1375,22 @@ void PreProcessorGeoDataGroupDataItem::openCrossSectionWindow(GeoDataRiverSurvey
 
 void PreProcessorGeoDataGroupDataItem::updateCrossectionWindows()
 {
-	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it) {
-		GeoDataRiverSurveyCrosssectionWindow* w = (*w_it)->window();
-		w->updateRiverSurveys();
+	for (auto w : m_crosssectionWindows) {
+		w->window()->updateRiverSurveys();
 	}
 }
 
 void PreProcessorGeoDataGroupDataItem::toggleCrosssectionWindowsGridCreatingMode(bool gridMode, GeoDataRiverSurvey* rs)
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
-		GeoDataRiverSurveyCrosssectionWindow* w = (*it)->window();
-		w->toggleGridCreatingMode(gridMode, rs);
+	for (auto w : m_crosssectionWindows) {
+		w->window()->toggleGridCreatingMode(gridMode, rs);
 	}
 }
 
 void PreProcessorGeoDataGroupDataItem::informCtrlPointUpdateToCrosssectionWindows()
 {
-	for (auto it = m_crosssectionWindows.begin(); it != m_crosssectionWindows.end(); ++it) {
-		GeoDataRiverSurveyCrosssectionWindow* w = (*it)->window();
-		w->update();
+	for (auto w : m_crosssectionWindows) {
+		w->window()->update();
 	}
 }
 
@@ -1420,7 +1418,7 @@ bool PreProcessorGeoDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 	}
 
 	for (int i = 0; i < m_dimensions->selectWidgets().size(); ++i) {
-		GridAttributeDimensionSelectWidget* w = m_dimensions->selectWidgets().at(i);
+		auto w = m_dimensions->selectWidgets().at(i);
 		QAction* action = toolBar->addWidget(w);
 		action->setVisible(true);
 		added = true;
@@ -1434,7 +1432,7 @@ void PreProcessorGeoDataGroupDataItem::loadExternalData(const QString& /*filenam
 	const auto& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
-		GridAttributeDimensionContainer* cont = conts.at(i);
+		auto cont = conts.at(i);
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
 		cont->loadFromExternalFile(subDir.absoluteFilePath(fileName));
 	}
@@ -1445,7 +1443,7 @@ void PreProcessorGeoDataGroupDataItem::saveExternalData(const QString& /*filenam
 	const auto& conts = m_dimensions->containers();
 	QDir subDir(subPath());
 	for (int i = 0; i < conts.size(); ++i) {
-		GridAttributeDimensionContainer* cont = conts.at(i);
+		auto cont = conts.at(i);
 		QString fileName = QString("Dimension_%1.dat").arg(cont->name().c_str());
 		cont->saveToExternalFile(subDir.absoluteFilePath(fileName));
 	}

@@ -9,6 +9,7 @@ CONFIG += ordered
 SUBDIRS = \
 	tmsloader \
 	cs \
+	crosssection \
 	geoio \
 	misc \
 	triangle \

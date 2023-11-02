@@ -345,7 +345,7 @@ void PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow()
 	vtkIdType i, j;
 	sgrid->getPointIJIndex(index, &i, &j);
 
-	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::I, i);
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction::I, i);
 }
 
 void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
@@ -359,7 +359,7 @@ void PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow()
 	auto sgrid = dynamic_cast<v4Structured2dGrid*>(g->grid());
 	sgrid->getPointIJIndex(index, &i, &j);
 
-	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction::J, j);
 }
 
 void PreProcessorGridAttributeNodeDataItem::showPropertyDialog()

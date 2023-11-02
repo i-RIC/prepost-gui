@@ -1,4 +1,5 @@
 #include "../pre/gridcond/editwidget/gridattributerealoptioneditwidget.h"
+#include "../pre/gridcond/stringconverter/gridattributestringconverterenumerate.h"
 #include "../scalarstocolors/colormapenumeratefactory.h"
 #include "../scalarstocolors/colormapenumeratesettingcontainer.h"
 #include "solverdefinition.h"
@@ -21,6 +22,18 @@ GridAttributeEditWidget* SolverDefinitionGridAttributeRealOption::editWidget(QWi
 GridAttributeVariationEditWidget* SolverDefinitionGridAttributeRealOption::variationEditWidget(QWidget* /*parent*/)
 {
 	return nullptr;
+}
+
+GridAttributeStringConverter* SolverDefinitionGridAttributeRealOption::stringConverter() const
+{
+	auto converter = new GridAttributeStringConverterEnumerate();
+	auto origEnums = enumerations();
+	QMap<QVariant, QString> enums;
+	for (auto it = origEnums.begin(); it != origEnums.end(); ++it) {
+		enums.insert(QVariant(it.key()), it.value());
+	}
+	converter->setEnumerations(enums);
+	return converter;
 }
 
 void SolverDefinitionGridAttributeRealOption::setupColorMapSettingContainer(ColorMapSettingContainerI* c) const

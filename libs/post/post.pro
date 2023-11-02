@@ -7,6 +7,7 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS = \
+	crosssection \
 	post2d \
 	post2dbirdeye \
 	post3d \

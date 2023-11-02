@@ -44,6 +44,11 @@ ColorMapSettingToolBarWidget* v4SolutionGrid::AttributeDataProvider::createColor
 	return output(name)->createColorMapSettingToolbarWidget(parent);
 }
 
+GridAttributeStringConverter* v4SolutionGrid::AttributeDataProvider::createStringConverter(const std::string& name) const
+{
+	return output(name)->stringConverter();
+}
+
 SolverDefinitionGridOutput* v4SolutionGrid::AttributeDataProvider::output(const std::string& name) const
 {
 	QRegExp re("^(.+) \\(magnitude\\)$");

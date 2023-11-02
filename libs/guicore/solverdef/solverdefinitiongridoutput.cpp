@@ -2,6 +2,7 @@
 #include "../scalarstocolors/colormapfactoryi.h"
 #include "../scalarstocolors/colormapsettingcontaineri.h"
 #include "../scalarstocolors/colormapsettingeditdialog.h"
+#include "../pre/gridcond/stringconverter/gridattributestringconverterreal.h"
 #include "solverdefinitiongridoutput.h"
 #include "private/solverdefinitiongridoutput_impl.h"
 
@@ -105,6 +106,11 @@ ColorMapSettingEditDialog* SolverDefinitionGridOutput::createColorMapSettingEdit
 ColorMapSettingToolBarWidget* SolverDefinitionGridOutput::createColorMapSettingToolbarWidget(QWidget* parent) const
 {
 	return impl->m_colorMapFactory->createToolbarWidget(parent);
+}
+
+GridAttributeStringConverter* SolverDefinitionGridOutput::stringConverter() const
+{
+	return new GridAttributeStringConverterReal();
 }
 
 void SolverDefinitionGridOutput::setColorMapFactory(ColorMapFactoryI* factory)

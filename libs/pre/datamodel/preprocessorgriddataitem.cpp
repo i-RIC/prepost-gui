@@ -9,7 +9,7 @@
 #include "../preprocessorwindow.h"
 #include "../subwindow/gridbirdeyewindow/gridbirdeyewindow.h"
 #include "../subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.h"
-#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
 #include "preprocessorbcgroupdataitem.h"
 #include "preprocessorgeodatatopdataitem.h"
 #include "preprocessorgeodatagroupdataitem.h"
@@ -88,9 +88,10 @@ PreProcessorGridDataItem::Impl::~Impl()
 	delete m_generateAttMenu;
 }
 
-PreProcessorGridCrosssectionWindow2* PreProcessorGridDataItem::Impl::buildCrosssectionWindow()
+PreProcessorGridCrosssectionWindow* PreProcessorGridDataItem::Impl::buildCrosssectionWindow()
 {
-	auto window = new PreProcessorGridCrosssectionWindow2(m_item, m_item->mainWindow());
+	auto window = new PreProcessorGridCrosssectionWindow(m_item, m_item->mainWindow());
+
 	auto center = dynamic_cast<QMdiArea*> (m_item->iricMainWindow()->centralWidget());
 	auto container = center->addSubWindow(window);
 	container->setWindowIcon(window->windowIcon());
@@ -169,7 +170,7 @@ void PreProcessorGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		for (int i = 0; i < clist.size(); ++i) {
 			auto c = clist.at(i);
 			auto window = impl->buildCrosssectionWindow();
-			window->loadFromProjectMainFile(c);
+			window->internalWindow()->loadFromProjectMainFile(c);
 			auto container = dynamic_cast<QWidget*> (window->parent());
 			container->show();
 			addCrossSectionWindow(window);
@@ -213,7 +214,7 @@ void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeStartElement("CrossSectionWindows");
 	for (auto w : impl->m_crosssectionWindows) {
 		writer.writeStartElement("CrossSectionWindow");
-		w->saveToProjectMainFile(writer);
+		w->internalWindow()->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 	writer.writeEndElement();
@@ -258,7 +259,7 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	updateObjectBrowserTree();
 
 	for (auto w : impl->m_crosssectionWindows) {
-		w->applyTmpTargetSetting();
+		w->internalWindow()->applyTmpTargetSetting();
 	}
 
 	return IRIC_NO_ERROR;
@@ -451,6 +452,8 @@ v4InputGrid* PreProcessorGridDataItem::grid() const
 
 bool PreProcessorGridDataItem::setGrid(v4InputGrid* newGrid)
 {
+	newGrid->grid()->vtkData()->updateValueRangeSet();
+
 	delete impl->m_grid;
 	impl->m_grid = newGrid;
 	impl->m_grid->setGridDataItem(this);
@@ -613,6 +616,8 @@ void PreProcessorGridDataItem::informGridAttributeChangeAll()
 
 void PreProcessorGridDataItem::informGridAttributeChange(const std::string& name)
 {
+	impl->m_grid->attribute(name)->updateValueRange();
+
 	emit gridAttributeChanged(name);
 	for (auto w : impl->m_crosssectionWindows) {
 		w->update();
@@ -1267,27 +1272,27 @@ void PreProcessorGridDataItem::applyColorMapSetting(const std::string& name)
 		impl->m_birdEyeWindow->window()->updateGrid();
 	}
 	for (auto w : impl->m_crosssectionWindows) {
-		w->applyColorMapSetting(name);
+		w->internalWindow()->applyColorMapSetting(name);
 	}
 }
 
-void PreProcessorGridDataItem::openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction dir, int index)
+void PreProcessorGridDataItem::openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction dir, int index)
 {
 	auto window = impl->buildCrosssectionWindow();
 	auto container = dynamic_cast<QWidget*> (window->parent());
 
 	container->show();
 	container->setFocus();
-	window->setTarget(dir, index);
+	window->internalWindow()->setTarget(dir, index);
 	addCrossSectionWindow(window);
 }
 
-void PreProcessorGridDataItem::addCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w)
+void PreProcessorGridDataItem::addCrossSectionWindow(PreProcessorGridCrosssectionWindow* w)
 {
 	impl->m_crosssectionWindows.push_back(w);
 }
 
-void PreProcessorGridDataItem::removeCrossSectionWindow(PreProcessorGridCrosssectionWindow2* w)
+void PreProcessorGridDataItem::removeCrossSectionWindow(PreProcessorGridCrosssectionWindow* w)
 {
 	auto& windows = impl->m_crosssectionWindows;
 	for (auto it = windows.begin(); it != windows.end(); ++it) {

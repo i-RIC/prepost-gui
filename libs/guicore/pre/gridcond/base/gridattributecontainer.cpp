@@ -97,6 +97,23 @@ void GridAttributeContainer::setCustomModified(bool c)
 	m_isCustomModified = c;
 }
 
+void GridAttributeContainer::updateValueRange()
+{
+	auto data = grid()->grid()->vtkData();
+	auto pos = gridAttribute()->position();
+	if (pos == SolverDefinitionGridAttribute::Position::Node) {
+		data->updatePointValueRange(name());
+	} else if (pos == SolverDefinitionGridAttribute::Position::CellCenter) {
+		data->updateCellValueRange(name());
+	} else if (pos == SolverDefinitionGridAttribute::Position::IFace) {
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		sGrid->vtkIEdgeData()->updateCellValueRange(name());
+	} else if (pos == SolverDefinitionGridAttribute::Position::JFace) {
+		auto sGrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		sGrid->vtkJEdgeData()->updateCellValueRange(name());
+	}
+}
+
 void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
 	if (oldIndex == newIndex) {return;}
