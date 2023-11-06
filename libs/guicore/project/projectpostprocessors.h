@@ -25,8 +25,11 @@ public:
 	QStringList containedFiles() const override;
 
 	void loadFromXmlFile(const QDomNode& node, const QDir workDir);
-	void loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir);
+	void loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir, bool ignoreIndex);
 	void saveToXmlFile(QXmlStreamWriter& writer, const QDir workDir);
+
+	bool importFromXmlFile(const QDomNode& node, const QDir& workDir, QWidget* w);
+	bool exportToSingleXmlFile(QXmlStreamWriter& writer, QWidget* w);
 
 private:
 	// Never used.
