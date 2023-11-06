@@ -212,6 +212,7 @@ void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 {
 	double position[3];
 	double focalpoint[3];
+	double viewup[3];
 
 	// order based on vtkSynchronizedRenderers::RendererInfo::CopyTo()
 	// from ParaView v4.4.0
@@ -233,6 +234,12 @@ void ProjectDataItem::loadCamera(vtkCamera* camera, const QDomNode& node)
 
 	camera->SetFocalPoint(focalpoint);
 
+	viewup[0] = iRIC::getDoubleAttribute(node, "viewupX");
+	viewup[1] = iRIC::getDoubleAttribute(node, "viewupY");
+	viewup[2] = iRIC::getDoubleAttribute(node, "viewupZ");
+
+	camera->SetViewUp(viewup);
+
 	camera->SetRoll(iRIC::getDoubleAttribute(node, "roll"));
 	camera->SetParallelScale(iRIC::getDoubleAttribute(node, "parallelscale", 1));
 }
@@ -241,9 +248,11 @@ void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
 {
 	double position[3];
 	double focalpoint[3];
+	double viewup[3];
 
 	camera->GetPosition(position);
 	camera->GetFocalPoint(focalpoint);
+	camera->GetViewUp(viewup);
 
 	iRIC::setDoubleAttribute(writer, "positionX", position[0]);
 	iRIC::setDoubleAttribute(writer, "positionY", position[1]);
@@ -252,6 +261,10 @@ void ProjectDataItem::saveCamera(vtkCamera* camera, QXmlStreamWriter& writer)
 	iRIC::setDoubleAttribute(writer, "focalpointX", focalpoint[0]);
 	iRIC::setDoubleAttribute(writer, "focalpointY", focalpoint[1]);
 	iRIC::setDoubleAttribute(writer, "focalpointZ", focalpoint[2]);
+
+	iRIC::setDoubleAttribute(writer, "viewupX", viewup[0]);
+	iRIC::setDoubleAttribute(writer, "viewupY", viewup[1]);
+	iRIC::setDoubleAttribute(writer, "viewupZ", viewup[2]);
 
 	iRIC::setDoubleAttribute(writer, "roll", camera->GetRoll());
 	iRIC::setDoubleAttribute(writer, "parallelscale", camera->GetParallelScale());
