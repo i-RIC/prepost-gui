@@ -11,7 +11,7 @@
 #include <QXmlStreamWriter>
 
 MeasuredDataVectorGroupTopDataItem::MeasuredDataVectorGroupTopDataItem(GraphicsWindowDataItem* parent) :
-	GraphicsWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
+	GraphicsWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 	MeasuredData* md = dynamic_cast<MeasuredDataFileDataItem*>(parent)->measuredData();

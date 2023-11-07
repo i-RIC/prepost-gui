@@ -25,7 +25,7 @@
 #include <vtkActor2D.h>
 
 Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataItem(const std::string& target, Post2dWindowDataItem* p) :
-	Post2dWindowDataItem {tr("Arrow"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
+	Post2dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
 	m_actor {vtkActor::New()},
 	m_arrowLegendActor {vtkActor2D::New()},
 	m_colorLegendActor {vtkActor2D::New()},
