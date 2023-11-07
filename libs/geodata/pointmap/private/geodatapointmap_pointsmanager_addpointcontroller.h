@@ -17,6 +17,7 @@ public:
 	AddPointController(PointsManager* manager);
 	~AddPointController();
 
+	vtkActor* pointsActor() const;
 	void setZDepthForPoints(double z);
 
 	void addActorsToRenderer(vtkRenderer* renderer) override;

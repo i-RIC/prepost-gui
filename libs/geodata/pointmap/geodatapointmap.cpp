@@ -567,7 +567,7 @@ void GeoDataPointmap::updateActorSetting()
 		actor->GetProperty()->SetOpacity(impl->m_displaySetting.tinOpacity);
 		actorCollection()->AddItem(actor);
 
-		impl->m_pointsManager.selectedPointsActor()->GetProperty()->SetPointSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
+		impl->m_pointsManager.setSelectedPointsSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
 	} else {
 		auto mapper = cs->buildPointDataMapper(impl->m_tinManager.tin());
 		auto actor = impl->m_tinManager.tinActor();

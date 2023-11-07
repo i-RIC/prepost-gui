@@ -148,6 +148,13 @@ void GeoDataPointmap::PointsManager::setSelectionPolygonZDepth(double z)
 	m_selectPointPolygonController->setSelectionPolygonZDepth(z);
 }
 
+void GeoDataPointmap::PointsManager::setSelectedPointsSize(double size)
+{
+	m_selectedPointsActor->GetProperty()->SetPointSize(size);
+	m_addPointController->pointsActor()->GetProperty()->SetPointSize(size);
+	m_interpolatePointController->pointsActor()->GetProperty()->SetPointSize(size);
+}
+
 void GeoDataPointmap::PointsManager::setPoints(vtkPoints* points, vtkDoubleArray* values)
 {
 	m_points->Initialize();
