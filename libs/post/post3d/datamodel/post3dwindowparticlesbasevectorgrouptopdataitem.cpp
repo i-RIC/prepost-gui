@@ -11,7 +11,7 @@
 #include <unordered_map>
 
 Post3dWindowParticlesBaseVectorGroupTopDataItem::Post3dWindowParticlesBaseVectorGroupTopDataItem(Post3dWindowDataItem* parent) :
-	Post3dWindowDataItem(tr("Vector"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
+	Post3dWindowDataItem(tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent)
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
