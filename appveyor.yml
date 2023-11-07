@@ -101,8 +101,8 @@ before_build:
         Write-Output "Should be EE6EA1115B3C696A88BA2F1E89BD6F88C8E50DE2E7D25B21488F5B4BAFCCD205"
         Get-FileHash $env:GOOGLE_APPLICATION_CREDENTIALS
 
-        python -m pip install --upgrade pip
-        pip install google-cloud-translate
+        C:\Python311-x64\python.exe -m pip install --upgrade pip
+        C:\Python311-x64\python.exe -m pip install google-cloud-translate
 
         $dirs = Get-ChildItem -Attributes Directory | Where-Object { $_.Name -notmatch 'languages' }
         foreach ($dir in $dirs) {
@@ -111,7 +111,7 @@ before_build:
               Set-Location $lang.Parent
               mkdir output
               Rename-Item .\languages .\input
-              python "$topdir\tools\translate_ts.py"
+              C:\Python311-x64\python.exe "$topdir\tools\translate_ts.py"
               Rename-Item .\output .\languages
               Remove-Item -Recurse -Force .\input
           }
