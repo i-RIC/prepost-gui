@@ -43,7 +43,6 @@ PreProcessorWindow::~PreProcessorWindow()
 
 void PreProcessorWindow::init()
 {
-	setMinimumSize(300, 200);
 	setWindowTitle(tr("Pre-processing Window"));
 
 	// setup graphics view
