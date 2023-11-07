@@ -1317,6 +1317,7 @@ void GeoDataRiverSurvey::editModeMousePressEvent(QMouseEvent* event, PreProcesso
 			break;
 		}
 	}
+	impl->m_currentPoint = event->pos();
 	impl->m_dragStartPoint = event->pos();
 }
 
