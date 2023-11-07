@@ -32,18 +32,33 @@ TmsImageSetting buildSetting(const std::string& setting, const QString& caption,
 	return TmsImageSetting::buildFromQuery(query.toString(QUrl::FullyEncoded));
 }
 
+TmsImageSetting buildGoogleMapSetting(const std::string& url, const QString& caption)
+{
+	TmsImageSetting setting;
+
+	setting.setValue("tms", "xyz");
+	setting.setValue("url", url.c_str());
+	setting.setValue("caption", caption);
+	setting.setValue("active", "true");
+	setting.setValue("maxNativeZoom", "24");
+
+	return setting;
+}
+
 std::vector<TmsImageSetting> standardSettings()
 {
 	std::vector<TmsImageSetting> ret;
 
 	// Google Map
-	// ret.push_back(buildSetting("tms=googlemap&mapType=roadmap", TmsImageSettingManager::tr("Google Map (Road)")));
-	// ret.push_back(buildSetting("tms=googlemap&mapType=satellite", TmsImageSettingManager::tr("Google Map (Satellite)")));
-	// ret.push_back(buildSetting("tms=googlemap&mapType=hybrid", TmsImageSettingManager::tr("Google Map (Hybrid)")));
-	// ret.push_back(buildSetting("tms=googlemap&mapType=terrain", TmsImageSettingManager::tr("Google Map (Terrain)")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Maps")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Streets")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Satellite")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Satellite Hybrid")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=h&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Roads")));
+	ret.push_back(buildGoogleMapSetting("https://mt1.google.com/vt/lyrs=t&x={x}&y={y}&z={z}", TmsImageSettingManager::tr("Google Terrain")));
 
 	// Open Street Map
-	ret.push_back(buildSetting("tms=openstreetmap", TmsImageSettingManager::tr("Open Street Map")));
+	ret.push_back(buildSetting("tms=xyz&url=https://tile.openstreetmap.org/{z}/{x}/{y}.png&maxNativeZoom=24", TmsImageSettingManager::tr("Open Street Map"), true));
 
 	QSettings settings;
 	QString locale = settings.value("general/locale", QLocale::system().name()).value<QString>();
