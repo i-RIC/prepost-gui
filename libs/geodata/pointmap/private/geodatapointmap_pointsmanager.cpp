@@ -587,7 +587,7 @@ void GeoDataPointmap::PointsManager::remeshTinAndSwitchToTinEditMode()
 	InformationDialog::information(m_parent->preProcessorWindow(), GeoDataPointmap::tr("Information"),
 																 GeoDataPointmap::tr("Remesh TIN and when it is finished, switch to TIN Edit Mode."), "geodatapointmap_pointsmanager_remeshtin");
 	m_parent->remeshTin();
-	m_parent->toggleTinEditMode(true);
+	m_parent->toggleTinEditMode();
 }
 
 void GeoDataPointmap::PointsManager::setupSettings()

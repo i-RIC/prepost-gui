@@ -807,12 +807,9 @@ void GeoDataPointmap::mergePointmaps()
 	iRICUndoStack::instance().clear();
 }
 
-void GeoDataPointmap::togglePointsEditMode(bool on)
+void GeoDataPointmap::togglePointsEditMode()
 {
-	if (! on) {
-		impl->m_pointEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_pointEditModeAction->setChecked(true);
 	impl->m_tinEditModeAction->setChecked(false);
 	impl->m_polygonsEditModeAction->setChecked(false);
 
@@ -826,12 +823,9 @@ void GeoDataPointmap::togglePointsEditMode(bool on)
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::toggleTinEditMode(bool on)
+void GeoDataPointmap::toggleTinEditMode()
 {
-	if (! on) {
-		impl->m_tinEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_tinEditModeAction->setChecked(true);
 	impl->m_pointEditModeAction->setChecked(false);
 	impl->m_polygonsEditModeAction->setChecked(false);
 
@@ -845,12 +839,9 @@ void GeoDataPointmap::toggleTinEditMode(bool on)
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::togglePolyonsEditMode(bool on)
+void GeoDataPointmap::togglePolyonsEditMode()
 {
-	if (! on) {
-		impl->m_polygonsEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_polygonsEditModeAction->setChecked(true);
 	impl->m_pointEditModeAction->setChecked(false);
 	impl->m_tinEditModeAction->setChecked(false);
 
