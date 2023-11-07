@@ -3,24 +3,14 @@
 
 #include <misc/stringtool.h>
 
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QUrlQuery>
-
-TmsImageSetting::Impl::Impl(const std::string& setting) :
-	m_setting (setting)
-{
-	QUrlQuery query(setting.c_str());
-	m_caption = query.queryItemValue("caption");
-
-	auto active = query.queryItemValue("active");
-	m_isActive = (active == "true");
-}
+#include <QJsonObject>
+#include <QJsonParseError>
 
 TmsImageSetting::TmsImageSetting() :
-	TmsImageSetting("")
-{}
-
-TmsImageSetting::TmsImageSetting(const std::string& setting) :
-	impl {new Impl(setting)}
+	impl {new Impl {}}
 {}
 
 TmsImageSetting::TmsImageSetting(const TmsImageSetting& setting) :
@@ -41,53 +31,99 @@ TmsImageSetting& TmsImageSetting::operator=(const TmsImageSetting& setting)
 	return *this;
 }
 
-std::string TmsImageSetting::setting() const
+QString TmsImageSetting::setting() const
 {
-	QString activeStr;
-	if (impl->m_isActive) {
-		activeStr = "true";
-	} else {
-		activeStr = "false";
+	QJsonObject object;
+	for (const auto& pair : impl->m_settings) {
+		object.insert(pair.first.c_str(), pair.second);
 	}
-
-	QUrlQuery query(impl->m_setting.c_str());
-	query.removeQueryItem("active");
-	query.addQueryItem("active", activeStr);
-
-	return iRIC::toStr(query.toString(QUrl::FullyEncoded));
+	QJsonDocument doc(object);
+	return QString(doc.toJson());
 }
 
 QString TmsImageSetting::caption() const
 {
-	return impl->m_caption;
+	return value("caption");
 }
 
 bool TmsImageSetting::isActive() const
 {
-	return impl->m_isActive;
+	return value("active") == "true";
 }
 
 void TmsImageSetting::setIsActive(bool active)
 {
-	impl->m_isActive = active;
+	QString valueStr = "false";
+	if (active) {
+		valueStr = "true";
+	}
+	setValue("active", valueStr);
 }
 
 bool TmsImageSetting::isXYZ() const
 {
-	QUrlQuery query(impl->m_setting.c_str());
-	return query.queryItemValue("tms") == "xyz";
+	return value("tms") == "xyz";
 }
 
 QString TmsImageSetting::url() const
 {
-	QUrlQuery query(impl->m_setting.c_str());
-	return query.queryItemValue("url");
+	return value("url");
 }
 
 int TmsImageSetting::maxZoomLevel() const
 {
-	QUrlQuery query(impl->m_setting.c_str());
-	QString zoomLevel = query.queryItemValue("maxNativeZoom");
+	auto zoomLevel = value("maxNativeZoom");
 	if (zoomLevel.isNull()) {return 24;}
 	return zoomLevel.toInt();
+}
+
+QString TmsImageSetting::value(const std::string& key) const
+{
+	auto it = impl->m_settings.find(key);
+	if (it != impl->m_settings.end()) {
+		return it->second;
+	}
+
+	return "";
+}
+
+void TmsImageSetting::setValue(const std::string& key, const QString& value)
+{
+	auto it = impl->m_settings.find(key);
+	if (it != impl->m_settings.end()) {
+		it->second = value;
+	} else {
+		impl->m_settings.insert({key, value});
+	}
+}
+
+TmsImageSetting TmsImageSetting::buildFromQuery(const QString& setting)
+{
+	TmsImageSetting ret;
+
+	QUrlQuery query(setting);
+	auto items = query.queryItems();
+	for (auto it = items.begin(); it != items.end(); ++it) {
+		ret.setValue(iRIC::toStr(it->first), it->second);
+	}
+
+	return ret;
+}
+
+TmsImageSetting TmsImageSetting::buildFromString(const QString& setting)
+{
+	QJsonParseError error;
+	auto data = QJsonDocument::fromJson(setting.toUtf8(), &error);
+	if (error.error == QJsonParseError::NoError) {
+		// JSON
+		auto obj = data.object();
+		TmsImageSetting ret;
+		for (auto it = obj.begin(); it != obj.end(); ++it) {
+			ret.setValue(iRIC::toStr(it.key()), it.value().toString());
+		}
+		return ret;
+	} else {
+		// URL
+		return TmsImageSetting::buildFromQuery(setting);
+	}
 }

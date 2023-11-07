@@ -5,14 +5,12 @@
 
 #include <QString>
 
+#include <map>
+
 class TmsImageSetting::Impl
 {
 public:
-	Impl(const std::string& setting);
-
-	std::string m_setting;
-	QString m_caption;
-	bool m_isActive;
+	std::map<std::string, QString> m_settings;
 };
 
 #endif // TMSIMAGESETTING_IMPL_H

@@ -11,22 +11,27 @@ class GUICOREDLL_EXPORT TmsImageSetting
 {
 public:
 	TmsImageSetting();
-	TmsImageSetting(const std::string& setting);
 	TmsImageSetting(const TmsImageSetting& setting);
 
 	~TmsImageSetting();
 
 	TmsImageSetting& operator=(const TmsImageSetting& setting);
 
-	std::string setting() const;
+	QString setting() const;
+
 	QString caption() const;
+	bool isXYZ() const;
+	QString url() const;
+	int maxZoomLevel() const;
 
 	bool isActive() const;
 	void setIsActive(bool active);
 
-	bool isXYZ() const;
-	QString url() const;
-	int maxZoomLevel() const;
+	QString value(const std::string& key) const;
+	void setValue(const std::string& key, const QString& value);
+
+	static TmsImageSetting buildFromQuery(const QString& setting);
+	static TmsImageSetting buildFromString(const QString& setting);
 
 private:
 	class Impl;

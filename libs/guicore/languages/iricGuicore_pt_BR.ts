@@ -1857,19 +1857,19 @@ Do you really want to import this file?</source>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation>Google Map (Estrada)</translation>
+        <translation type="vanished">Google Map (Estrada)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation>Google Map ( Foto de satelite)</translation>
+        <translation type="vanished">Google Map ( Foto de satelite)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation>Google Map (Hibrido)</translation>
+        <translation type="vanished">Google Map (Hibrido)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation>Google Map (Terreno)</translation>
+        <translation type="vanished">Google Map (Terreno)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
@@ -1894,6 +1894,30 @@ Do you really want to import this file?</source>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
         <translation>Instituto de Pesquisa Geografica (fotografia)</translation>
+    </message>
+    <message>
+        <source>Google Maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Streets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Satellite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Satellite Hybrid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Roads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Terrain</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
