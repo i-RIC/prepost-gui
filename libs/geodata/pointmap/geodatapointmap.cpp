@@ -829,6 +829,10 @@ void GeoDataPointmap::toggleTinEditMode()
 	impl->m_pointEditModeAction->setChecked(false);
 	impl->m_polygonsEditModeAction->setChecked(false);
 
+
+	if (impl->m_activeController == &impl->m_pointsManager) {
+		rebuildTinFromPointsIfNeeded();
+	}
 	auto v = dataModel()->graphicsView();
 	impl->m_activeController->deactivate(v);
 	impl->m_activeController = &impl->m_tinManager;
