@@ -229,10 +229,9 @@ void TmsImageGroupDataItem::rebuildChildItems()
 	updateItemMap();
 
 	TmsImageSettingManager manager;
-	for (TmsImageSetting s : manager.settings()) {
+	for (const auto& s : manager.settings()) {
 		if (! s.isActive()) {continue;}
-
-		auto item = new TmsImageDataItem(s.setting(), s.caption(), this);
+		auto item = new TmsImageDataItem(iRIC::toStr(s.setting()), s.caption(), this);
 		m_childItems.push_back(item);
 	}
 	updateItemMap();
@@ -316,12 +315,16 @@ void TmsImageGroupDataItem::requestImage()
 	calcImageParameters(&center, &size, &scale, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
 
 	TmsImageSettingManager manager;
-	tmsloader::TmsRequest* request = manager.buildRequest(center, size, scale, impl->m_target);
+	auto setting = TmsImageSetting::buildFromString(impl->m_target.c_str());
+	tmsloader::TmsRequest* request = manager.buildRequest(center, size, scale, setting);
 	if (request == nullptr) {return;}
 
 	impl->m_tmsLoader.registerRequest(*request, &(impl->m_tmsRequestId));
 
 	delete request;
+
+	impl->m_actor->VisibilityOff();
+	renderGraphicsView();
 }
 
 void TmsImageGroupDataItem::assignActorZValues(const ZDepthRange& range)

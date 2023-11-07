@@ -2731,19 +2731,19 @@ Do you really want to import this file?</source>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation>Google Map (道路)</translation>
+        <translation type="vanished">Google Map (道路)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation>Google Map (衛星写真)</translation>
+        <translation type="vanished">Google Map (衛星写真)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation>Google Map (ハイブリッド)</translation>
+        <translation type="vanished">Google Map (ハイブリッド)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation>Google Map (地形)</translation>
+        <translation type="vanished">Google Map (地形)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
@@ -2780,6 +2780,30 @@ Do you really want to import this file?</source>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
         <translation>国土地理院 (写真)</translation>
+    </message>
+    <message>
+        <source>Google Maps</source>
+        <translation>Google Maps (Map)</translation>
+    </message>
+    <message>
+        <source>Google Streets</source>
+        <translation>Google Maps (Streets)</translation>
+    </message>
+    <message>
+        <source>Google Satellite</source>
+        <translation>Google Maps (Satellite)</translation>
+    </message>
+    <message>
+        <source>Google Satellite Hybrid</source>
+        <translation>Google Maps (Satellite Hybrid)</translation>
+    </message>
+    <message>
+        <source>Google Roads</source>
+        <translation>Google Maps (Roads)</translation>
+    </message>
+    <message>
+        <source>Google Terrain</source>
+        <translation>Google Maps (Terrain)</translation>
     </message>
 </context>
 <context>
