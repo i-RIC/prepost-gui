@@ -67,6 +67,7 @@ public:
 	void updateSelectionShapeData();
 	GeoDataRiverPathPoint* headPoint() const;
 	vtkStructuredGrid* backgroundGrid() const;
+	vtkCell* findBackgroundGridCell(double x, double y, double* weight) const;
 	void updateCrosssectionWindows();
 	void setColoredPoints(GeoDataRiverPathPoint* black);
 	void setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond);
