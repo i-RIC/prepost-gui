@@ -13,7 +13,24 @@
 
 #include <QPointF>
 
+#include <map>
+
 namespace {
+
+struct Point2D {
+	Point2D(double xx, double yy):
+		x {xx},
+		y {yy}
+	{}
+	bool operator<(const Point2D& p) const {
+		if (x != p.x) {return x < p.x;}
+
+		return y < p.y;
+	}
+
+	double x;
+	double y;
+};
 
 template <typename T>
 void freeMemory(T* memory)
@@ -63,14 +80,38 @@ void clearTrianglateio(triangulateio* io)
 	io->numberofedges = 0;
 }
 
-void addPointsAndSegments(triangulateio* in, int pOff, const QPointF& cOff, const geos::geom::LineString* ls)
+void addPointsAndSegments(triangulateio* in, std::map<Point2D, unsigned int>* pointMap, std::vector<int>* pointIdVec, int* pointCount, int* pOff, int* sOff, const QPointF& cOff, const geos::geom::LineString* ls)
 {
-	for (int i = 0; i < ls->getNumPoints() - 1; ++i) {
+	std::vector<int> pointIds;
+
+	for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
 		const auto& coord = ls->getCoordinateN(i);
-		*(in->pointlist + pOff + i * 2)     = coord.x - cOff.x();
-		*(in->pointlist + pOff + i * 2 + 1) = coord.y - cOff.y();
-		*(in->segmentlist + pOff + i * 2)     = pOff / 2 + i + 1;
-		*(in->segmentlist + pOff + i * 2 + 1) = pOff / 2 + (i + 1) % (ls->getNumPoints() - 1) + 1;
+		Point2D point(coord.x - cOff.x(), coord.y - cOff.y());
+		auto it = pointMap->find(point);
+		unsigned int pointId;
+		if (it == pointMap->end()) {
+			pointId = static_cast<int> (pointMap->size());
+			pointMap->insert({point, pointId});
+			pointIdVec->push_back(*pointCount);
+			*(in->pointlist + *pOff)     = point.x;
+			*(in->pointlist + *pOff + 1) = point.y;
+			*pOff += 2;
+		} else {
+			pointId = it->second;
+		}
+		pointIds.push_back(pointId);
+		*pointCount += 1;
+	}
+
+	std::vector<int> segmentVec;
+
+	for (int i = 0; i < static_cast<int> (pointIds.size()); ++i) {
+		*(in->segmentlist + *sOff)     = pointIds.at(i) + 1;
+		*(in->segmentlist + *sOff + 1) = pointIds.at((i + 1) % pointIds.size()) + 1;
+		segmentVec.push_back(pointIds.at(i) + 1);
+		segmentVec.push_back(pointIds.at((i + 1) % pointIds.size()) + 1);
+
+		*sOff += 2;
 	}
 }
 
@@ -107,14 +148,18 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 	QPointF offset(coord.x, coord.y);
 
 	// setup pointlist and segmentlist
+	pointCount = 0;
 	int pOff = 0;
-	addPointsAndSegments(&in, pOff, offset, eLS);
-	pOff += (eLS->getNumPoints() - 1) * 2;
+	int sOff = 0;
+	std::map<Point2D, unsigned int> pointMap;
+	std::vector<int> pointIdVec;
+
+	addPointsAndSegments(&in, &pointMap, &pointIdVec, &pointCount, &pOff, &sOff, offset, eLS);
 	for (int i = 0; i < pol->getNumInteriorRing(); ++i) {
 		const geos::geom::LineString* iLS = pol->getInteriorRingN(i);
-		addPointsAndSegments(&in, pOff, offset, iLS);
-		pOff += (iLS->getNumPoints() - 1) * 2;
+		addPointsAndSegments(&in, &pointMap, &pointIdVec, &pointCount, &pOff, &sOff, offset, iLS);
 	}
+	in.numberofpoints = pointIdVec.size();
 
 	// setup regionlist
 	geos::geom::Point* ip = pol->getInteriorPoint();
@@ -142,13 +187,15 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 	clearTrianglateio(&out);
 	char arg[] = "pQ";
 	::triangulate(&(arg[0]), &in, &out, nullptr);
-	freeTriangleInput(&in);
+	// freeTriangleInput(&in);
 
 	std::vector<unsigned int> ret;
 	ret.reserve(out.numberoftriangles * 3);
 	for (int i = 0; i < out.numberoftriangles; ++i) {
 		for (int j = 0; j < 3; ++j) {
-			ret.push_back(*(out.trianglelist + i * 3 + j) - 1);
+			int pointId = *(out.trianglelist + i * 3 + j) - 1;
+			ret.push_back(pointIdVec.at(pointId));
+			// ret.push_back(pointId);
 		}
 	}
 	freeTriangleOutput(&out);
