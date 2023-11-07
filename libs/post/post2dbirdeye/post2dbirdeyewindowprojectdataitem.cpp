@@ -43,7 +43,7 @@ Post2dBirdEyeWindowProjectDataItem::Post2dBirdEyeWindowProjectDataItem(ProjectDa
 
 void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	Post2dBirdEyeWindow* w = dynamic_cast<Post2dBirdEyeWindow*>(m_window);
+	auto w = dynamic_cast<Post2dBirdEyeWindow*>(m_window);
 
 	/// load background color
 	QColor col = ProjectDataItem::loadBackgroundColor(node, QColor(Qt::white));
@@ -51,12 +51,14 @@ void Post2dBirdEyeWindowProjectDataItem::doLoadFromProjectMainFile(const QDomNod
 	/// load Window settings
 	m_geometry.setWidget(w->parentWidget());
 	m_geometry.load(node);
+
 	/// load Camera settings
 	QDomNode cameraNode = iRIC::getChildNode(node, "Camera");
 	if (! cameraNode.isNull()) {
 		vtkCamera* camera = w->m_dataModel->graphicsView()->mainRenderer()->GetActiveCamera();
 		ProjectDataItem::loadCamera(camera, cameraNode);
 	}
+
 	/// load Object Browser settings
 	QDomNode modelNode = iRIC::getChildNode(node, "DataModel");
 	if (! modelNode.isNull()) {
