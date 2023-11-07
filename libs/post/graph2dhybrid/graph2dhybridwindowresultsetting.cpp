@@ -1284,6 +1284,7 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 {
 	QDomElement elem = node.toElement();
 	m_xAxisMode = static_cast<XAxisMode>(iRIC::getIntAttribute(node, "xAxisMode"));
+	m_xAxisTimeUnit = static_cast<XAxisTimeUnit> (iRIC::getIntAttribute(node, "xAxisTimeUnit"));
 	m_title = elem.attribute("title");
 	m_addIndicesToTitle = iRIC::getBooleanAttribute(node, "addIndicesToTitle");
 	m_timeValueType = static_cast<TimeValueType>(iRIC::getIntAttribute(node, "timeValueType"));
@@ -1384,6 +1385,7 @@ void Graph2dHybridWindowResultSetting::saveToProjectMainFile(QXmlStreamWriter& w
 {
 	// targetDatas
 	iRIC::setIntAttribute(writer, "xAxisMode", static_cast<int>(m_xAxisMode));
+	iRIC::setIntAttribute(writer, "xAxisTimeUnit", static_cast<int> (m_xAxisTimeUnit));
 	writer.writeAttribute("title", m_title);
 	iRIC::setBooleanAttribute(writer, "addIndicesToTitle", m_addIndicesToTitle);
 	iRIC::setIntAttribute(writer, "timeValueType", static_cast<int>(m_timeValueType));
