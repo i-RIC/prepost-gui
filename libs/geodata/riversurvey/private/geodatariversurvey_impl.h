@@ -14,9 +14,11 @@
 #include <QPixmap>
 
 class GeoDataRiverSurveyBackgroundGridCreateThread;
+class vtkPointSetGeos2dIndex;
 
 class vtkActor;
 class vtkActor2D;
+class vtkLabeledDataMapper;
 class vtkPolyData;
 class vtkStringArray;
 class vtkUnstructuredGrid;
@@ -171,6 +173,7 @@ public:
 
 	vtkSmartPointer<vtkStructuredGrid> m_backgroundGrid;
 	vtkActor* m_backgroundActor;
+	vtkPointSetGeos2dIndex* m_backgroundGridIndex;
 
 	QMenu* m_rightClickingMenu;
 	bool m_menuIsSetup;

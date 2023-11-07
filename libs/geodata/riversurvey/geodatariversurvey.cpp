@@ -36,6 +36,7 @@
 #include <guibase/polyline/polylinepushvertexcommand.h>
 #include <guibase/polyline/polylineremovevertexcommand.h>
 #include <guibase/polyline/polylineutil.h>
+#include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 #include <guicore/base/iricmainwindowinterface.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -611,6 +612,11 @@ GeoDataRiverPathPoint* GeoDataRiverSurvey::headPoint() const
 vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
 {
 	return impl->m_backgroundGrid;
+}
+
+vtkCell* GeoDataRiverSurvey::findBackgroundGridCell(double x, double y, double* weight) const
+{
+	return impl->m_backgroundGridIndex->findCell(x, y, weight);
 }
 
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)

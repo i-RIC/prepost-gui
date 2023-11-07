@@ -75,6 +75,10 @@ win32 {
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
 
+# geos
+
+LIBS += -lgeos
+
 # Input
 HEADERS += colortool.h \
            comboboxtool.h \
@@ -154,6 +158,8 @@ HEADERS += colortool.h \
            vtktool/vtklineactor.h \
            vtktool/vtklinesactor.h \
            vtktool/vtkparametricsplineutil.h \
+           vtktool/vtkpointsetgeos2dindex.h \
+           vtktool/vtkpointsetregionandcellsizefilter.h \
            vtktool/vtkpointsutil.h \
            vtktool/vtkpolydatalinesactor.h \
            vtktool/vtkpolydatamapperutil.h \
@@ -196,6 +202,7 @@ HEADERS += colortool.h \
            vtktool/private/vtklabel2dactor_impl.h \
            vtktool/private/vtklineactor_impl.h \
            vtktool/private/vtklinesactor_impl.h \
+           vtktool/private/vtkpointsetgeos2dindex_impl.h \
            vtktool/private/vtkpolygonactor_impl.h \
            vtktool/private/vtkpolygonsactor_impl.h \
            widget/private/itemselectingdialog_detail.h \
@@ -304,6 +311,8 @@ SOURCES += colortool.cpp \
            vtktool/vtklineactor.cpp \
            vtktool/vtklinesactor.cpp \
            vtktool/vtkparametricsplineutil.cpp \
+           vtktool/vtkpointsetgeos2dindex.cpp \
+           vtktool/vtkpointsetregionandcellsizefilter.cpp \
            vtktool/vtkpointsutil.cpp \
            vtktool/vtkpolydatalinesactor.cpp \
            vtktool/vtkpolydatamapperutil.cpp \
@@ -336,7 +345,8 @@ SOURCES += colortool.cpp \
            widget/sliderwithvalue.cpp \
            widget/transparencywidget.cpp \
            widget/waitdialog.cpp \
-           coordinates/private/coordinateseditdialogdelegate.cpp
+           coordinates/private/coordinateseditdialogdelegate.cpp \
+           vtktool/private/vtkpointsetgeos2dindex_impl.cpp
 RESOURCES += guibase.qrc
 TRANSLATIONS += languages/iricGuibase_ar_EG.ts \
                 languages/iricGuibase_bg_BG.ts \

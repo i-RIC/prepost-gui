@@ -4,6 +4,7 @@
 #include <geoio/polylineio.h>
 #include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
+#include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 #include <guicore/pre/base/preprocessorwindowinterface.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -82,6 +83,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_labelActor {vtkActor2D::New()},
 	m_backgroundGrid {vtkSmartPointer<vtkStructuredGrid>::New()},
 	m_backgroundActor {vtkActor::New()},
+	m_backgroundGridIndex {nullptr},
 	m_rightClickingMenu {nullptr},
 	m_menuIsSetup {false},
 	m_generateAction {new QAction(GeoDataRiverSurvey::tr("Generate Cross-Section Data"), rs)},
@@ -785,6 +787,8 @@ void GeoDataRiverSurvey::Impl::updateVtkNameLabelObjects()
 
 void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 {
+	delete m_backgroundGridIndex;
+	m_backgroundGridIndex = new vtkPointSetGeos2dIndex(m_backgroundGrid);
 }
 
 void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)
