@@ -37,6 +37,11 @@ int PostProcessorWindow::index() const
 	return m_index;
 }
 
+void PostProcessorWindow::setIndex(int index)
+{
+	m_index = index;
+}
+
 void PostProcessorWindow::applyOffset(double /*x_diff*/, double /*y_diff*/)
 {}
 

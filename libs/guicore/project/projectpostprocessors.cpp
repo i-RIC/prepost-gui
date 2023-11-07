@@ -5,12 +5,8 @@
 #include "../post/postprocessorwindowprojectdataitem.h"
 #include "projectdata.h"
 #include "projectpostprocessors.h"
-//#include "main/iricmainwindow.h"
-//#include "post/postprocessorwindow.h"
-//#include "post/postprocessorwindowfactory.h"
-//#include "post/postprocessorwindowprojectdataitem.h"
-//#include "projectdata.h"
 
+#include <guibase/widget/itemmultiselectingdialog.h>
 #include <misc/errormessage.h>
 
 #include <QDir>
@@ -37,10 +33,10 @@ ProjectPostProcessors::~ProjectPostProcessors()
 {
 	if (projectData()->mainWindow() == nullptr) {return;}
 	// remove all post processors from the MDI area of main window.
-	QMdiArea* area = dynamic_cast<QMdiArea*>(projectData()->mainWindow()->centralWidget());
+	auto area = dynamic_cast<QMdiArea*>(projectData()->mainWindow()->centralWidget());
 
-	for (auto it = m_postProcessorWindows.begin(); it != m_postProcessorWindows.end(); ++it) {
-		area->removeSubWindow((*it)->window()->parentWidget());
+	for (auto w : m_postProcessorWindows) {
+		area->removeSubWindow(w->window()->parentWidget());
 	}
 }
 
@@ -50,15 +46,15 @@ void ProjectPostProcessors::loadFromXmlFile(const QDomNode& node, const QDir wor
 	if (nodeName == "iRICPostProcessingSettings" || nodeName == "PostProcessors") {
 		QDomNode child = node.firstChild();
 		while (! child.isNull()) {
-			loadSingleWindowFromXmlFile(child, workDir);
+			loadSingleWindowFromXmlFile(child, workDir, false);
 			child = child.nextSibling();
 		}
 	} else if (nodeName == "PostProcessor") {
-		loadSingleWindowFromXmlFile(node, workDir);
+		loadSingleWindowFromXmlFile(node, workDir, false);
 	}
 }
 
-void ProjectPostProcessors::loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir)
+void ProjectPostProcessors::loadSingleWindowFromXmlFile(const QDomNode& node, const QDir workDir, bool ignoreIndex)
 {
 	QWidget* parentWindow = projectData()->mainWindow();
 
@@ -87,7 +83,11 @@ void ProjectPostProcessors::loadSingleWindowFromXmlFile(const QDomNode& node, co
 	if (di != nullptr) {
 		add(di);
 		try {
+			auto index = di->window()->index();
 			di->loadFromProjectMainFile(windowNode);
+			if (ignoreIndex) {
+				di->window()->setIndex(index);
+			}
 		} catch (ErrorMessage m) {
 			m_postProcessorWindows.removeOne(di);
 			delete di;
@@ -122,6 +122,85 @@ void ProjectPostProcessors::saveToXmlFile(QXmlStreamWriter& writer, const QDir w
 		writer2.writeEndDocument();
 		f.close();
 	}
+}
+
+bool ProjectPostProcessors::importFromXmlFile(const QDomNode& node, const QDir& workDir, QWidget* w)
+{
+	QWidget* parentWindow = projectData()->mainWindow();
+
+	std::vector<QString> items;
+	std::vector<QDomNode> nodes;
+	const auto& children = node.childNodes();
+	for (int i = 0; i < children.size(); ++i) {
+		auto child = children.at(i).toElement();
+		PostProcessorWindowProjectDataItem* di = nullptr;
+		auto ref = child.attribute("ref");
+		if (ref != "") {
+			// separate XML file
+			QString fileName = workDir.filePath(ref);
+			if (! QFile::exists(fileName)) {continue;}
+
+			QFile f(fileName);
+			QDomDocument doc;
+			bool ok = doc.setContent(&f);
+			if (! ok) {continue;}
+
+			di = m_factory->restore(doc.documentElement(), this, nullptr);
+		} else {
+			di = m_factory->restore(child, this, nullptr);
+		}
+		items.push_back(di->window()->windowTitle());
+		nodes.push_back(child);
+		delete di;
+	}
+
+	ItemMultiSelectingDialog dialog(parentWindow);
+	dialog.setItems(items);
+	dialog.checkAll();
+	dialog.setWindowTitle(tr("Select import target windows"));
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+	auto selectSettings = dialog.selectSettings();
+
+	for (int i = 0; i < selectSettings.size(); ++i) {
+		bool selected = selectSettings.at(i);
+		if (! selected) {continue;}
+
+		auto node = nodes.at(i);
+		loadSingleWindowFromXmlFile(node, workDir, true);
+	}
+
+	return true;
+}
+
+bool ProjectPostProcessors::exportToSingleXmlFile(QXmlStreamWriter& writer, QWidget* w)
+{
+	std::vector<QString> items;
+	for (auto w : m_postProcessorWindows) {
+		items.push_back(w->window()->windowTitle());
+	}
+
+	ItemMultiSelectingDialog dialog(w);
+	dialog.setItems(items);
+	dialog.checkAll();
+	dialog.setWindowTitle(tr("Select export target windows"));
+
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+	auto selectSettings = dialog.selectSettings();
+
+	for (int i = 0; i < m_postProcessorWindows.size(); ++i) {
+		bool selected = selectSettings.at(i);
+		if (! selected) {continue;}
+
+		auto w = m_postProcessorWindows.at(i);
+		writer.writeStartElement("PostProcessor");
+		w->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+
+	return true;
 }
 
 void ProjectPostProcessors::doLoadFromProjectMainFile(const QDomNode& node)

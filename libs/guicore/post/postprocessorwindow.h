@@ -25,6 +25,7 @@ public:
 
 	const QIcon& icon() const;
 	int index() const;
+	void setIndex(int index);
 	virtual void setupDefaultGeometry(int index) = 0;
 	virtual void applyOffset(double x_diff, double y_diff);
 
