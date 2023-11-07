@@ -6,7 +6,7 @@
 class GeoDataPointmap::TINManager::Actions
 {
 public:
-	Actions(TINManager* manager);
+	Actions(TINManager* manager, GeoDataPointmap* pointmap);
 
 	QAction* addBreakLineAction;
 	QAction* removeBreakLineAction;

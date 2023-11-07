@@ -567,7 +567,7 @@ void GeoDataPointmap::updateActorSetting()
 		actor->GetProperty()->SetOpacity(impl->m_displaySetting.tinOpacity);
 		actorCollection()->AddItem(actor);
 
-		impl->m_pointsManager.selectedPointsActor()->GetProperty()->SetPointSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
+		impl->m_pointsManager.setSelectedPointsSize((impl->m_displaySetting.tinPointSize + 2) * v->devicePixelRatioF());
 	} else {
 		auto mapper = cs->buildPointDataMapper(impl->m_tinManager.tin());
 		auto actor = impl->m_tinManager.tinActor();
@@ -807,12 +807,9 @@ void GeoDataPointmap::mergePointmaps()
 	iRICUndoStack::instance().clear();
 }
 
-void GeoDataPointmap::togglePointsEditMode(bool on)
+void GeoDataPointmap::togglePointsEditMode()
 {
-	if (! on) {
-		impl->m_pointEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_pointEditModeAction->setChecked(true);
 	impl->m_tinEditModeAction->setChecked(false);
 	impl->m_polygonsEditModeAction->setChecked(false);
 
@@ -826,15 +823,16 @@ void GeoDataPointmap::togglePointsEditMode(bool on)
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::toggleTinEditMode(bool on)
+void GeoDataPointmap::toggleTinEditMode()
 {
-	if (! on) {
-		impl->m_tinEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_tinEditModeAction->setChecked(true);
 	impl->m_pointEditModeAction->setChecked(false);
 	impl->m_polygonsEditModeAction->setChecked(false);
 
+
+	if (impl->m_activeController == &impl->m_pointsManager) {
+		rebuildTinFromPointsIfNeeded();
+	}
 	auto v = dataModel()->graphicsView();
 	impl->m_activeController->deactivate(v);
 	impl->m_activeController = &impl->m_tinManager;
@@ -845,12 +843,9 @@ void GeoDataPointmap::toggleTinEditMode(bool on)
 	renderGraphicsView();
 }
 
-void GeoDataPointmap::togglePolyonsEditMode(bool on)
+void GeoDataPointmap::togglePolyonsEditMode()
 {
-	if (! on) {
-		impl->m_polygonsEditModeAction->setChecked(true);
-		return;
-	}
+	impl->m_polygonsEditModeAction->setChecked(true);
 	impl->m_pointEditModeAction->setChecked(false);
 	impl->m_tinEditModeAction->setChecked(false);
 

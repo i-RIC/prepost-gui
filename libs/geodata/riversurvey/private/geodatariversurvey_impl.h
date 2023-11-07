@@ -14,13 +14,13 @@
 #include <QPixmap>
 
 class GeoDataRiverSurveyBackgroundGridCreateThread;
+class vtkPointSetGeos2dIndex;
 
 class vtkPointSetGeos2dIndex;
 
 class vtkActor;
 class vtkActor2D;
 class vtkLabeledDataMapper;
-class vtkPointSetGeos2dIndex;
 class vtkPolyData;
 class vtkStringArray;
 class vtkUnstructuredGrid;

@@ -25,6 +25,7 @@ public:
 
 	void setTinManager(TINManager* manager);
 	void setSelectionPolygonZDepth(double z);
+	void setSelectedPointsSize(double size);
 	void setPoints(vtkPoints* points, vtkDoubleArray* values);
 
 	void setZDepthForAddAndInterpolatePoints(double z);

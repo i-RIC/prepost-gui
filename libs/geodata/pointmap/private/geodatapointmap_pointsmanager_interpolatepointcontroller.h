@@ -18,6 +18,7 @@ public:
 	InterpolatePointController(PointsManager* manager);
 	~InterpolatePointController();
 
+	vtkActor* pointsActor() const;
 	void setZDepthForPoints(double z);
 
 	void addActorsToRenderer(vtkRenderer* renderer) override;

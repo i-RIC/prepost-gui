@@ -25,7 +25,7 @@
 #include <vtkLODActor.h>
 
 GeoDataPointmap::TINManager::TINManager(PointsManager* points, GeoDataPointmap* pointmap) :
-	m_actions {new Actions {this}},
+	m_actions {new Actions {this, pointmap}},
 	impl {new Impl {this, pointmap}}
 {
 	impl->m_pointsManager = points;

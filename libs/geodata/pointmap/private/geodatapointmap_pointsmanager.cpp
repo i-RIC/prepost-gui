@@ -148,6 +148,13 @@ void GeoDataPointmap::PointsManager::setSelectionPolygonZDepth(double z)
 	m_selectPointPolygonController->setSelectionPolygonZDepth(z);
 }
 
+void GeoDataPointmap::PointsManager::setSelectedPointsSize(double size)
+{
+	m_selectedPointsActor->GetProperty()->SetPointSize(size);
+	m_addPointController->pointsActor()->GetProperty()->SetPointSize(size);
+	m_interpolatePointController->pointsActor()->GetProperty()->SetPointSize(size);
+}
+
 void GeoDataPointmap::PointsManager::setPoints(vtkPoints* points, vtkDoubleArray* values)
 {
 	m_points->Initialize();
@@ -580,7 +587,7 @@ void GeoDataPointmap::PointsManager::remeshTinAndSwitchToTinEditMode()
 	InformationDialog::information(m_parent->preProcessorWindow(), GeoDataPointmap::tr("Information"),
 																 GeoDataPointmap::tr("Remesh TIN and when it is finished, switch to TIN Edit Mode."), "geodatapointmap_pointsmanager_remeshtin");
 	m_parent->remeshTin();
-	m_parent->toggleTinEditMode(true);
+	m_parent->toggleTinEditMode();
 }
 
 void GeoDataPointmap::PointsManager::setupSettings()

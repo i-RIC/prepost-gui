@@ -119,9 +119,9 @@ private slots:
 	void removeTrianglesWithLongEdgeEnd();
 
 	void mergePointmaps();
-	void togglePointsEditMode(bool on);
-	void toggleTinEditMode(bool on);
-	void togglePolyonsEditMode(bool on);
+	void togglePointsEditMode();
+	void toggleTinEditMode();
+	void togglePolyonsEditMode();
 
 private:
 	void updateActorSetting() override;
