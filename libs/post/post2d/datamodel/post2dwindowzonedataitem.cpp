@@ -75,6 +75,11 @@ void Post2dWindowZoneDataItem::setupActors()
 
 void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	QDomNode inputNode = iRIC::getChildNode(node, "InputGrid");
+	if (! inputNode.isNull()) {
+		m_inputGridDataItem->loadFromProjectMainFile(inputNode);
+	}
+
 	QDomNode resultNode = iRIC::getChildNode(node, "CalculationResult");
 	if (! resultNode.isNull()) {
 		m_resultDataItem->loadFromProjectMainFile(resultNode);
@@ -86,6 +91,14 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_zoneName.c_str());
+
+	writer.writeStartElement("InputGrid");
+	m_inputGridDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("CalculationResult");
+	m_resultDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
 }
 
 void Post2dWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
