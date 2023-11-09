@@ -167,6 +167,11 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		}
 
 		auto firstZone = file.ccBase()->zoneById(1);
+		if (firstZone == nullptr) {
+			QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
+			return false;
+		}		
+		
 		grid->loadFromCgnsFile(*firstZone);
 
 		// apply offset
