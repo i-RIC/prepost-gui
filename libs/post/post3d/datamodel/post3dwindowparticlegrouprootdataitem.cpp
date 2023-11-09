@@ -2,7 +2,7 @@
 #include "post3dwindowparticlegrouptopdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -13,7 +13,7 @@ Post3dWindowParticleGroupRootDataItem::Post3dWindowParticleGroupRootDataItem(Pos
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupMap();
 
 	for (auto pair : map) {
@@ -34,24 +34,29 @@ void Post3dWindowParticleGroupRootDataItem::update()
 	}
 }
 
+Post3dWindowZoneDataItem* Post3dWindowParticleGroupRootDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
+}
+
 void Post3dWindowParticleGroupRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	for (auto c : m_childItems) {
-		auto gItem = dynamic_cast<Post3dWindowParticleGroupTopDataItem*>(c);
-		QDomNode cNode = iRIC::getChildNodeWithAttribute(node, "ParticleGroup", "name", gItem->name().c_str());
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowParticleGroupTopDataItem*>(child);
+		QDomNode cNode = iRIC::getChildNodeWithAttribute(node, "ParticleGroup", "name", item->name().c_str());
 		if (! cNode.isNull()) {
-			gItem->loadFromProjectMainFile(cNode);
+			item->loadFromProjectMainFile(cNode);
 		}
 	}
 }
 
 void Post3dWindowParticleGroupRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (auto c : m_childItems) {
-		auto gItem = dynamic_cast<Post3dWindowParticleGroupTopDataItem*>(c);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowParticleGroupTopDataItem*>(child);
 		writer.writeStartElement("ParticleGroup");
-		writer.writeAttribute("name", gItem->name().c_str());
-		gItem->saveToProjectMainFile(writer);
+		writer.writeAttribute("name", item->name().c_str());
+		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }

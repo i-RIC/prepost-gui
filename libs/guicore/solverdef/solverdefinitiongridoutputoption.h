@@ -10,6 +10,8 @@ class SolverDefinitionGridOutputOption : public SolverDefinitionGridOutput, publ
 public:
 	SolverDefinitionGridOutputOption(const QDomElement& elem, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 
+	QVariant attributeBrowserValue(double value) const override;
+
 private:
 	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;
 };

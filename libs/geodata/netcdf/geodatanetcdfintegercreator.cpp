@@ -1,8 +1,10 @@
 #include "geodatanetcdfgdalintegerexporter.h"
 #include "geodatanetcdfgdalintegerimporter.h"
+#include "geodatanetcdfifacemappert.h"
 #include "geodatanetcdfinteger.h"
 #include "geodatanetcdfintegercreator.h"
 #include "geodatanetcdfintegerimporter.h"
+#include "geodatanetcdfjfacemappert.h"
 #include "geodatanetcdfncexporter.h"
 
 GeoDataNetcdfIntegerCreator::GeoDataNetcdfIntegerCreator() :
@@ -22,6 +24,10 @@ GeoData* GeoDataNetcdfIntegerCreator::create(ProjectDataItem* parent, SolverDefi
 		data->setMapper(new GeoDataNetcdfNodeMapperT<int, vtkIntArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 		data->setMapper(new GeoDataNetcdfCellMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		data->setMapper(new GeoDataNetcdfIFaceMapperT<int, vtkIntArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		data->setMapper(new GeoDataNetcdfJFaceMapperT<int, vtkIntArray>(this));
 	}
 	return data;
 }

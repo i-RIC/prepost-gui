@@ -1,4 +1,4 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "../project/projectmainfile.h"
@@ -15,6 +15,7 @@
 #include "postcontainer/postbaseiterativestringdatacontainer.h"
 #include "postcontainer/postbaseiterativevaluescontainer.h"
 #include "postcontainer/postcalculatedresult.h"
+#include "postcontainer/v4postzonedatacontainer.h"
 #include "postdataexportdialog.h"
 #include "postiterationsteps.h"
 #include "postsolutioninfo.h"
@@ -201,6 +202,19 @@ int PostSolutionInfo::setCurrentStep(unsigned int step)
 		qDebug("handleCurrentStepUpdate() for 3D: %d", time.elapsed());
 	}
 
+	for (auto c : m_v4ZoneContainers1D) {
+		auto z = f->base(1)->zone(c->zoneName());
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, m_disableCalculatedResult));
+	}
+	for (auto c : m_v4ZoneContainers2D) {
+		auto z = f->base(2)->zone(c->zoneName());
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, m_disableCalculatedResult));
+	}
+	for (auto c : m_v4ZoneContainers3D) {
+		auto z = f->base(3)->zone(c->zoneName());
+		errorOccured = errorOccured || (IRIC_NO_ERROR != c->loadFromCgnsFile(z, m_disableCalculatedResult));
+	}
+
 	qDebug("Loading result from CGNS file: %d", wholetime.elapsed());
 	// inform that the current step is updated.
 	emit currentStepUpdated();
@@ -327,6 +341,109 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataC
 	return true;
 }
 
+bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<PostCalculatedResult*> > *calculatedResults)
+{
+	auto file = cgnsFile()->solutionReader()->targetFile();
+
+	if (! file->baseExists(dimension)) {
+		clearContainers(containers);
+		containerNameMap->clear();
+		return true;
+	}
+
+	std::vector<std::string> zoneNames;
+	for (auto c : *containers) {
+		zoneNames.push_back(c->zoneName());
+	}
+
+	auto base = file->base(dimension);
+	std::vector<std::string> tmpZoneNames;
+
+	for (const auto& zName : base->zoneNames()) {
+		auto z = base->zone(zName);
+
+		bool solExists = false;
+		int ier = z->getSolutionExists(&solExists);
+		if (ier != IRIC_NO_ERROR) {return false;}
+
+		if (! solExists) {continue;}
+
+		tmpZoneNames.push_back(zName);
+	}
+
+	if (zoneNames == tmpZoneNames) {
+		// zone names are equal to those already read.
+		for (auto c : *containers) {
+			c->loadIfEmpty(base->zone(c->zoneName()));
+		}
+		return false;
+	}
+
+	zoneNames = tmpZoneNames;
+
+	// clear the current zone containers first.
+	// @TODO handle calculated results
+	/*
+	for (auto c : *containers) {
+		results->insert(c->zoneName(), c->detachCalculatedResult());
+	}
+	*/
+
+	clearContainers(containers);
+	containerNameMap->clear();
+	auto gtypes = projectData()->solverDefinition()->gridTypes();
+
+	for (const auto& zoneName : zoneNames) {
+		bool found = false;
+		auto zone = base->zone(zoneName);
+		if (zoneName == "iRICZone") {
+			for (auto gridType : gtypes) {
+				if (gridType->isPrimary() && ! (gridType->isOptional())) {
+					auto cont = new v4PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, false);
+					containers->push_back(cont);
+					containerNameMap->insert({zoneName, cont});
+					found = true;
+					break;
+				}
+			}
+		} else {
+			for (auto gridType : gtypes) {
+				if (zoneName.find(gridType->name()) != std::string::npos) {
+					auto cont = new v4PostZoneDataContainer(zoneName, gridType, this);
+					cont->loadFromCgnsFile(zone, false);
+					containers->push_back(cont);
+					containerNameMap->insert({zoneName, cont});
+					found = true;
+					break;
+				}
+			}
+		}
+		if (! found) {
+			// no appropriate gridtype found. use the dummy grid type.
+			auto cont = new v4PostZoneDataContainer(zoneName, projectData()->solverDefinition()->dummyGridType(), this);
+			cont->loadFromCgnsFile(zone, false);
+			containers->push_back(cont);
+			containerNameMap->insert({zoneName, cont});
+		}
+	}
+	// @todo handle calculated result
+	/*
+	std::vector<std::string> namesToRemove;
+	for (auto it = results->begin(); it != results->end(); ++it) {
+		auto c = containerNameMap->value(it.key(), nullptr);
+		if (c != nullptr) {
+			c->attachCalculatedResult(it.value());
+			namesToRemove.push_back(it.key());
+		}
+	}
+	for (auto name : namesToRemove) {
+		results->remove(name);
+	}
+	*/
+	return true;
+}
+
 bool PostSolutionInfo::setupBaseIterativeResults()
 {
 	clearBaseIterativeResults();
@@ -383,14 +500,20 @@ void PostSolutionInfo::clearBaseIterativeResults()
 void PostSolutionInfo::setupZoneDataContainers()
 {
 	bool ret;
+	// fix this
+	std::map<std::string, std::vector<PostCalculatedResult*> > dummy;
+
 	// setup 1D containers.
 	ret = innerSetupZoneDataContainers(1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
+	ret = innerSetupZoneDataContainers(1, &m_v4ZoneContainers1D, &m_v4ZoneContainerNameMap1D, &dummy);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
 	ret = innerSetupZoneDataContainers(2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
+	ret = innerSetupZoneDataContainers(2, &m_v4ZoneContainers2D, &m_v4ZoneContainerNameMap2D, &dummy);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
 	ret = innerSetupZoneDataContainers(3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
+	ret = innerSetupZoneDataContainers(3, &m_v4ZoneContainers3D, &m_v4ZoneContainerNameMap3D, &dummy);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
@@ -562,6 +685,67 @@ void PostSolutionInfo::closeCgnsFile()
 	emit zoneList1DUpdated();
 	emit zoneList2DUpdated();
 	emit zoneList3DUpdated();
+}
+
+const std::vector<v4PostZoneDataContainer*>& PostSolutionInfo::v4ZoneContainers1D() const
+{
+	return m_v4ZoneContainers1D;
+}
+
+const std::vector<v4PostZoneDataContainer*>& PostSolutionInfo::v4ZoneContainers2D() const
+{
+	return m_v4ZoneContainers2D;
+}
+
+const std::vector<v4PostZoneDataContainer*>& PostSolutionInfo::v4ZoneContainers3D() const
+{
+	return m_v4ZoneContainers3D;
+}
+
+const std::vector<v4PostZoneDataContainer*>& PostSolutionInfo::v4ZoneContainers(Dimension dim) const
+{
+	if (dim == Dimension::dim1D) {
+		return m_v4ZoneContainers1D;
+	} else if (dim == Dimension::dim2D) {
+		return m_v4ZoneContainers2D;
+	} else {
+		return m_v4ZoneContainers3D;
+	}
+}
+
+v4PostZoneDataContainer* PostSolutionInfo::v4ZoneContainer1D(const std::string& zoneName) const
+{
+	auto it = m_v4ZoneContainerNameMap1D.find(zoneName);
+	if (it == m_v4ZoneContainerNameMap1D.end()) {return nullptr;}
+
+	return it->second;
+}
+
+v4PostZoneDataContainer* PostSolutionInfo::v4ZoneContainer2D(const std::string& zoneName) const
+{
+	auto it = m_v4ZoneContainerNameMap2D.find(zoneName);
+	if (it == m_v4ZoneContainerNameMap2D.end()) {return nullptr;}
+
+	return it->second;
+}
+
+v4PostZoneDataContainer* PostSolutionInfo::v4ZoneContainer3D(const std::string& zoneName) const
+{
+	auto it = m_v4ZoneContainerNameMap3D.find(zoneName);
+	if (it == m_v4ZoneContainerNameMap3D.end()) {return nullptr;}
+
+	return it->second;
+}
+
+v4PostZoneDataContainer* PostSolutionInfo::v4ZoneContainer(Dimension dim, const std::string& zoneName) const
+{
+	if (dim == Dimension::dim1D) {
+		return v4ZoneContainer1D(zoneName);
+	} else if (dim == Dimension::dim2D) {
+		return v4ZoneContainer2D(zoneName);
+	} else {
+		return v4ZoneContainer3D(zoneName);
+	}
 }
 
 const QList<PostZoneDataContainer*>& PostSolutionInfo::zoneContainers1D() const
@@ -1036,16 +1220,35 @@ void PostSolutionInfo::clearContainers(QList<PostZoneDataContainer*>* conts)
 	conts->clear();
 }
 
+void PostSolutionInfo::clearContainers(std::vector<v4PostZoneDataContainer*>* conts)
+{
+	for (auto c : *conts) {
+		delete c;
+	}
+	conts->clear();
+}
+
 void PostSolutionInfo::applyOffset(double x_diff, double y_diff)
 {
-	for (auto c1 : m_zoneContainers1D) {
+	for (auto& c1 : m_zoneContainers1D) {
 		c1->applyOffset(x_diff, y_diff);
 	}
-	for (auto c2 : m_zoneContainers2D) {
+	for (auto& c2 : m_zoneContainers2D) {
 		c2->applyOffset(x_diff, y_diff);
 	}
-	for (auto c3 : m_zoneContainers3D) {
+	for (auto& c3 : m_zoneContainers3D) {
 		c3->applyOffset(x_diff, y_diff);
+	}
+
+	QPointF offset(x_diff, y_diff);
+	for (auto& c : m_v4ZoneContainers1D) {
+		c->applyOffset(offset);
+	}
+	for (auto& c : m_v4ZoneContainers2D) {
+		c->applyOffset(offset);
+	}
+	for (auto& c : m_v4ZoneContainers3D) {
+		c->applyOffset(offset);
 	}
 }
 

@@ -2,6 +2,10 @@
 #include "geodatapointmap_polygonsmanager.h"
 #include "geodatapointmap_polygonsnodemapper.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+
 GeoDataPointmap::PolygonsNodeMapper::PolygonsNodeMapper(QObject* parent) :
 	GeoDataNodeMapperT<double, vtkDoubleArray>("Pointmap node mapper with Polygons", parent)
 {}
@@ -11,7 +15,7 @@ GeoDataMapperSettingI* GeoDataPointmap::PolygonsNodeMapper::initialize(bool* /*b
 	return nullptr;
 }
 
-void GeoDataPointmap::PolygonsNodeMapper::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataPointmap::PolygonsNodeMapper::map(bool* boolMap, GeoDataMapperSettingI* /*s*/)
 {
 	auto pointmap = dynamic_cast<GeoDataPointmap*>(geoData());
 	pointmap->impl->m_polygonsManager.updatePolygonOrder();
@@ -24,12 +28,13 @@ void GeoDataPointmap::PolygonsNodeMapper::map(bool* boolMap, GeoDataMapperSettin
 		// @todo not implemented yet.
 
 	} else {
+		vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 		for (unsigned int i = 0; i < count; ++i) {
 			if (*(boolMap + i)) {continue;}
 
 			// not mapped yet.
 			double point[3];
-			GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+			vtkGrid->GetPoint(i, point);
 			double value;
 			bool ok = pointmap->mapWithPolygons(point[0], point[1], &value);
 			if (ok) {
@@ -41,5 +46,5 @@ void GeoDataPointmap::PolygonsNodeMapper::map(bool* boolMap, GeoDataMapperSettin
 	da->Modified();
 }
 
-void GeoDataPointmap::PolygonsNodeMapper::terminate(GeoDataMapperSettingI* s)
+void GeoDataPointmap::PolygonsNodeMapper::terminate(GeoDataMapperSettingI* /*s*/)
 {}

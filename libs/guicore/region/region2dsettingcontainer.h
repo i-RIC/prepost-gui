@@ -9,6 +9,8 @@
 #include <misc/enumcontainert.h>
 #include <misc/intcontainer.h>
 
+class v4Structured2dGrid;
+
 class GUICOREDLL_EXPORT Region2dSettingContainer : public CompositeContainer
 {
 public:
@@ -26,6 +28,9 @@ public:
 
 	vtkPointSet* buildNodeFilteredData(vtkPointSet* data);
 	vtkPointSet* buildCellFilteredData(vtkPointSet* data);
+	vtkPointSet* buildCellFilteredData(v4Structured2dGrid* grid);
+	vtkPointSet* buildIEdgeFilteredData(v4Structured2dGrid* grid);
+	vtkPointSet* buildJEdgeFilteredData(v4Structured2dGrid* grid);
 
 	EnumContainerT<Mode> mode;
 

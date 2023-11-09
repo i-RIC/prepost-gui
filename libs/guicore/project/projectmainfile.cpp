@@ -1,8 +1,8 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../postcontainer/postbaseiterativevaluescontainer.h"
 #include "../postcontainer/postsolutioninfo.h"
-#include "../pre/base/preprocessordatamodelinterface.h"
-#include "../pre/base/preprocessorwindowinterface.h"
+#include "../pre/base/preprocessordatamodeli.h"
+#include "../pre/base/preprocessorwindowi.h"
 #include "../solverdef/solverdefinitionabstract.h"
 #include "backgroundimageinfo.h"
 #include "measured/measureddata.h"
@@ -222,8 +222,6 @@ ProjectMainFile::~ProjectMainFile()
 {
 	impl->clearBackgroundImages();
 	impl->clearMeasuredDatas();
-
-	delete impl;
 }
 
 void ProjectMainFile::setModified(bool modified)

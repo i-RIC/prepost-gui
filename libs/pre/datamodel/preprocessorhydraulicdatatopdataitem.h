@@ -1,21 +1,21 @@
 #ifndef PREPROCESSORHYDRAULICDATATOPDATAITEM_H
 #define PREPROCESSORHYDRAULICDATATOPDATAITEM_H
 
-#include <guicore/pre/base/preprocessorhydraulicdatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatatopdataitemi.h>
 
-class PreProcessorHydraulicDataTopDataItem : public PreProcessorHydraulicDataTopDataItemInterface
+class PreProcessorHydraulicDataTopDataItem : public PreProcessorHydraulicDataTopDataItemI
 {
 public:
 	PreProcessorHydraulicDataTopDataItem(PreProcessorDataItem* parent);
 
-	QList<PreProcessorHydraulicDataGroupDataItemInterface*> groupDataItems() const override;
-	PreProcessorHydraulicDataGroupDataItemInterface* groupDataItem(const std::string& name) const override;
+	QList<PreProcessorHydraulicDataGroupDataItemI*> groupDataItems() const override;
+	PreProcessorHydraulicDataGroupDataItemI* groupDataItem(const std::string& name) const override;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	std::map<std::string, PreProcessorHydraulicDataGroupDataItemInterface*> m_itemNameMap;
+	std::map<std::string, PreProcessorHydraulicDataGroupDataItemI*> m_itemNameMap;
 };
 
 #endif // PREPROCESSORHYDRAULICDATATOPDATAITEM_H

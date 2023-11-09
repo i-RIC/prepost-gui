@@ -138,7 +138,7 @@ std::vector<QPointF> vtkPointsUtil::getEdgeOtherPoints(vtkPointSet* pointset, vt
 void vtkPointsUtil::setCoordinates(vtkPoints* points, const std::vector<QPointF>& coords)
 {
 	points->SetNumberOfPoints(coords.size());
-	for (vtkIdType i = 0; i < coords.size(); ++i) {
+	for (vtkIdType i = 0; i < static_cast<vtkIdType> (coords.size()); ++i) {
 		auto p = coords.at(i);
 		points->SetPoint(i, p.x(), p.y(), 0);
 	}

@@ -3,14 +3,14 @@
 
 #include "../../guicore_global.h"
 #include "../../datamodel/graphicswindowdataitem.h"
-#include "preprocessordatamodelinterface.h"
+#include "preprocessordatamodeli.h"
 
 #include <QList>
 
 class QIcon;
 class QAction;
 class MouseBoundingBox;
-class PreProcessorWindowInterface;
+class PreProcessorWindowI;
 
 class GUICOREDLL_EXPORT PreProcessorDataItem : public GraphicsWindowDataItem
 {
@@ -24,7 +24,7 @@ public:
 
 	~PreProcessorDataItem() override;
 
-	PreProcessorWindowInterface* preProcessorWindow() const;
+	PreProcessorWindowI* preProcessorWindow() const;
 
 protected slots:
 	void editCaption();
@@ -33,7 +33,7 @@ protected:
 	QAction* deleteAction() const;
 	MouseBoundingBox* mouseBoundingBox();
 	void copyStandardItem();
-	PreProcessorDataModelInterface* dataModel() const override;
+	PreProcessorDataModelI* dataModel() const override;
 
 public:
 	friend class GeoData;

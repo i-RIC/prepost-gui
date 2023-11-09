@@ -13,7 +13,7 @@ class GUICOREDLL_EXPORT GridAttributeBaseObject : public QObject
 
 public:
 	GridAttributeBaseObject(SolverDefinitionGridAttribute* cond, QObject* parent = nullptr);
-	virtual ~GridAttributeBaseObject();
+	~GridAttributeBaseObject();
 
 	SolverDefinitionGridAttribute* gridAttribute() const;
 

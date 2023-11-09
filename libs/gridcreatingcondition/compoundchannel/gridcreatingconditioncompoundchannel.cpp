@@ -23,12 +23,13 @@
 #include "private/gridcreatingconditioncompoundchannel_switchstatuscommand.h"
 
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -128,7 +129,7 @@ void GridCreatingConditionCompoundChannel::setupMenu()
 	m_menu->addAction(m_reverseCenterLineAction);
 	m_menu->addSeparator();
 
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(p->createAction());
 	m_rightClickingMenu->addSeparator();
@@ -147,7 +148,7 @@ bool GridCreatingConditionCompoundChannel::addToolBarButtons(QToolBar* tb)
 	return true;
 }
 
-void GridCreatingConditionCompoundChannel::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::informSelection(PreProcessorGraphicsViewI* v)
 {
 	switch (m_selectMode) {
 	case smPolygon:
@@ -163,7 +164,7 @@ void GridCreatingConditionCompoundChannel::informSelection(PreProcessorGraphicsV
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionCompoundChannel::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	switch (m_selectMode) {
 	case smPolygon:
@@ -179,12 +180,12 @@ void GridCreatingConditionCompoundChannel::informDeselection(PreProcessorGraphic
 	v->unsetCursor();
 }
 
-void GridCreatingConditionCompoundChannel::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 
@@ -199,10 +200,10 @@ void GridCreatingConditionCompoundChannel::keyPressEvent(QKeyEvent* event, PrePr
 	}
 }
 
-void GridCreatingConditionCompoundChannel::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCompoundChannel::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (m_status == stDefiningRegion && m_mouseEventMode == meDefining) {
 		definePolygon(true);
@@ -215,7 +216,7 @@ void GridCreatingConditionCompoundChannel::mouseDoubleClickEvent(QMouseEvent* /*
 	}
 }
 
-void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (m_status == stDefiningRegion || m_status == stDefiningLowWaterRegion) {
 		// defining a polygon
@@ -309,7 +310,7 @@ void GridCreatingConditionCompoundChannel::mouseMoveEvent(QMouseEvent* event, Pr
 	}
 }
 
-void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		// left click
@@ -510,7 +511,7 @@ void GridCreatingConditionCompoundChannel::mousePressEvent(QMouseEvent* event, P
 	}
 }
 
-void GridCreatingConditionCompoundChannel::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (m_mouseEventMode) {
@@ -550,7 +551,7 @@ void GridCreatingConditionCompoundChannel::mouseReleaseEvent(QMouseEvent* event,
 	}
 }
 
-void GridCreatingConditionCompoundChannel::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCompoundChannel::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_mouseEventMode) {
 	case meNormal:
@@ -953,7 +954,7 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	m_relaxation = dialog.relaxation();
 	m_iterations = dialog.iterations();
 
-	Grid* grid = createGrid();
+	auto grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;
@@ -1005,7 +1006,7 @@ void GridCreatingConditionCompoundChannel::initParams()
 	m_iterations = 30;
 }
 
-Grid* GridCreatingConditionCompoundChannel::createGrid()
+v4InputGrid* GridCreatingConditionCompoundChannel::createGrid()
 {
 	// first, setup the centerline.
 	int pointsNum = m_streamWiseDivision * BANKSUBDIV;
@@ -1035,7 +1036,7 @@ Grid* GridCreatingConditionCompoundChannel::createGrid()
 	return createGridCore(leftEdge, leftSpline, centerSpline, rightSpline, rightEdge);
 }
 
-Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge)
+v4InputGrid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge)
 {
 	int isize = m_streamWiseDivision + 1;
 	int jsize = m_leftDivision + m_rightDivision + m_centerDivision + 1;
@@ -1060,27 +1061,21 @@ Grid* GridCreatingConditionCompoundChannel::createGridCore(const GridCreatingCon
 		waitDialog.setProgress(n + 1);
 	}
 	waitDialog.hide();
-	Structured2DGrid* grid = new Structured2DGrid(nullptr);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
+
+	auto grid = new v4Structured2dGrid();
 	grid->setDimensions(isize, jsize);
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
 	for (int j = 0; j < jsize; ++j) {
 		for (int i = 0; i < isize; ++i) {
-			QPointF p = tmpGrid.point(i, j);
-			points->InsertNextPoint(p.x(), p.y(), 0);
+			grid->setPoint2d(i, j, tmpGrid.point(i, j));
 		}
 	}
-	grid->vtkGrid()->SetPoints(points);
-	points->Delete();
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid->gridAttributes()) {
-		c->allocate();
-	}
-	grid->setModified();
-	return grid;
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+	return ret;
 }
 
 void GridCreatingConditionCompoundChannel::setupInitialGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge)

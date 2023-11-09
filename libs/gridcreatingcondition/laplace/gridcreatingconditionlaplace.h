@@ -42,15 +42,15 @@ public:
 	void setupActors() override;
 	void setupMenu() override;
 
-	void informSelection(PreProcessorGraphicsViewInterface* v) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void informSelection(PreProcessorGraphicsViewI* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 

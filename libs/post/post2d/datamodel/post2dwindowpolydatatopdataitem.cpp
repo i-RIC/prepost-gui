@@ -1,8 +1,9 @@
+#include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowpolydatagroupdataitem.h"
 #include "post2dwindowpolydatatopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <misc/xmlsupport.h>
 
 #include <QDomNode>
@@ -13,7 +14,7 @@ Post2dWindowPolyDataTopDataItem::Post2dWindowPolyDataTopDataItem(Post2dWindowDat
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->polyDataMap();
 
 	for (auto pair : map) {
@@ -31,6 +32,16 @@ void Post2dWindowPolyDataTopDataItem::update()
 		auto gItem = dynamic_cast<Post2dWindowPolyDataGroupDataItem*>(c);
 		gItem->update();
 	}
+}
+
+Post2dWindowCalculationResultDataItem* Post2dWindowPolyDataTopDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*> (parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowPolyDataTopDataItem::zoneDataItem() const
+{
+	return resultDataItem()->zoneDataItem();
 }
 
 void Post2dWindowPolyDataTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)

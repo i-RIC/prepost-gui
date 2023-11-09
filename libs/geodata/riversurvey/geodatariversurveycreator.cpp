@@ -57,7 +57,7 @@ GeoData* GeoDataRiverSurveyCreator::restore(const QDomNode& node, ProjectDataIte
 bool GeoDataRiverSurveyCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
-	if (condition->position() == SolverDefinitionGridAttribute::CellCenter) {return false;}
+	if (condition->position() != SolverDefinitionGridAttribute::Position::Node) {return false;}
 	if (condition->isOption()) {return false;}
 	if (condition->dimensions().size() != 0) {return false;}
 	if (condition->isReferenceInformation()) {return false;}

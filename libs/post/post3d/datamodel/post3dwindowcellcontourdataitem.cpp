@@ -1,16 +1,10 @@
 #include "post3dwindowcellcontourdataitem.h"
 #include "post3dwindowcellcontourgroupdataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>u
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
-
-#include <QDomElement>
-#include <QDomNode>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkActor.h>
-#include <vtkRenderer.h>
 
 Post3dWindowCellContourDataItem::Post3dWindowCellContourDataItem(const QString& label, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.svg"), p),
@@ -82,11 +76,11 @@ void Post3dWindowCellContourDataItem::updateActorSettings()
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto data = groupDataItem()->data();
-	if (data == nullptr) {return;}
+	auto cont = groupDataItem()->data();
+	if (cont == nullptr) {return;}
 
-	auto grid = vtkStructuredGrid::SafeDownCast(data->data()->data());
-	auto extracted = m_setting.extractRegion(grid);
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid());
+	auto extracted = m_setting.extractRegion(grid->vtkConcreteData()->concreteData());
 
 	extracted->GetCellData()->SetActiveScalars(groupDataItem()->target().c_str());
 	auto mapper = groupDataItem()->m_colorMapSetting.buildCellDataMapper(extracted, false);

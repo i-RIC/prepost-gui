@@ -5,7 +5,9 @@
 #include "private/post2dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h"
 
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 #include <QSettings>
 
@@ -17,9 +19,7 @@ Post2dWindowNodeVectorParticleGroupStructuredDataItem::Post2dWindowNodeVectorPar
 }
 
 Post2dWindowNodeVectorParticleGroupStructuredDataItem::~Post2dWindowNodeVectorParticleGroupStructuredDataItem()
-{
-	delete impl;
-}
+{}
 
 void Post2dWindowNodeVectorParticleGroupStructuredDataItem::showPropertyDialog()
 {
@@ -47,12 +47,12 @@ vtkActor* Post2dWindowNodeVectorParticleGroupStructuredDataItem::setupActor(int 
 
 vtkPolyData* Post2dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto zoneContainer = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(zoneContainer->gridData()->grid());
 
 	const auto& pos = impl->m_setting.startPositions.at(i);
 
-	auto grid2 = pos.range.buildNodeFilteredData(grid);
+	auto grid2 = pos.range.buildNodeFilteredData(sGrid->vtkConcreteData()->concreteData());
 	auto grid3 = pos.skipOrSubdivide.buildSampledData(grid2, StructuredGridSkipOrSubdivideSettingContainer::Dimension::Two);
 	grid2->Delete();
 	auto filter = vtkSmartPointer<vtkGeometryFilter>::New();
@@ -68,10 +68,10 @@ vtkPolyData* Post2dWindowNodeVectorParticleGroupStructuredDataItem::newParticles
 
 vtkDataSet* Post2dWindowNodeVectorParticleGroupStructuredDataItem::getRegion()
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(cont->gridData()->grid());
 
-	return impl->m_setting.region.buildNodeFilteredData(grid);
+	return impl->m_setting.region.buildNodeFilteredData(sGrid->vtkConcreteData()->concreteData());
 }
 
 QDialog* Post2dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
@@ -105,10 +105,10 @@ void Post2dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 
 	impl->m_setting.startPositions.clear();
 
-	auto cont = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(cont->gridData()->grid());
 	int dim[3];
-	grid->GetDimensions(dim);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dim);
 
 	Setting::StartPosition pos;
 	pos.range.iMin = 0;

@@ -8,7 +8,10 @@
 #include "ui_post2dbirdeyewindowcellscalargroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/region/region2dsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
@@ -33,7 +36,7 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 
 	auto zoneItem = m_item->topDataItem()->zoneDataItem();
 	auto gridType = zoneItem->gridTypeDataItem()->gridType();
-	auto data = zoneItem->dataContainer()->data()->data();
+	auto data = zoneItem->v4DataContainer()->gridData()->grid()->vtkData()->data();
 
 	std::map<QString, std::string> nodeCaptionMap;
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetPointData())) {
@@ -50,7 +53,6 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 
 	std::map<QString, std::string> cellCaptionMap;
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(data->GetCellData())) {
-		if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 		auto caption = gridType->outputCaption(name);
 		cellCaptionMap.insert({caption, name});
 	}
@@ -62,8 +64,8 @@ Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::SettingEditWidget
 	ui->cellScalarComboBox->blockSignals(false);
 	if (m_cellValueNames.size() == 0) {ui->cellScalarRadioButton->setDisabled(true);}
 
-	auto container = zoneItem->dataContainer();
-	if (! container->IBCExists()) {
+	auto container = zoneItem->v4DataContainer();
+	if (! container->gridData()->ibcExists(v4SolutionGrid::Position::CellCenter)) {
 		ui->rangeWidget->disableActive();
 	}
 
@@ -175,7 +177,7 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleNodeSc
 		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
 
-	auto output = m_item->topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(name);
+	auto output = m_item->topDataItem()->zoneDataItem()->v4DataContainer()->gridType()->output(name);
 	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapEditWidget->setSetting(cs);
 	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);
@@ -191,7 +193,7 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellSc
 		cs->legendSetting()->copyOtherThanTitle(*oldSetting->legendSetting());
 	}
 
-	auto output = m_item->topDataItem()->zoneDataItem()->dataContainer()->gridType()->output(name);
+	auto output = m_item->topDataItem()->zoneDataItem()->v4DataContainer()->gridType()->output(name);
 	m_colorMapEditWidget = output->createColorMapSettingEditWidget(this);
 	m_colorMapEditWidget->setSetting(cs);
 	auto widget = new ColorMapSettingEditWidgetWithImportExportButton(m_colorMapEditWidget, this);

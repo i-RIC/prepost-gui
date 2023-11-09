@@ -7,11 +7,14 @@
 #include "private/post3dwindownodescalargroupdataitem_setsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
-#include <guicore/pre/grid/grid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -22,33 +25,6 @@
 #include <misc/opacitycontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-
-#include <QDomNode>
-#include <QList>
-#include <QMenu>
-#include <QStandardItem>
-#include <QUndoCommand>
-#include <QXmlStreamWriter>
-
-#include <vtkActor.h>
-#include <vtkActorCollection.h>
-#include <vtkAppendPolyData.h>
-#include <vtkCellData.h>
-#include <vtkCleanPolyData.h>
-#include <vtkClipPolyData.h>
-#include <vtkContourFilter.h>
-#include <vtkDelaunay2D.h>
-#include <vtkDoubleArray.h>
-#include <vtkExtractGrid.h>
-#include <vtkPointData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
-#include <vtkStructuredGridGeometryFilter.h>
-#include <vtkTextProperty.h>
 
 Post3dWindowNodeScalarGroupDataItem::Post3dWindowNodeScalarGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Isosurface"), QIcon(":/libs/guibase/images/iconPaper.svg"), p},
@@ -79,14 +55,14 @@ void Post3dWindowNodeScalarGroupDataItem::updateActorSettings()
 	m_isoSurfaceActor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto zoneDataItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
-	auto cont = zoneDataItem->dataContainer();
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return;}
-	vtkPointSet* ps = cont->data()->data();
+
+	vtkPointSet* ps = cont->gridData()->grid()->vtkData()->data();
 	if (ps == nullptr) {return;}
 	if (m_target == "") {return;}
 
-	auto caption = zoneDataItem->gridTypeDataItem()->gridType()->output(m_target)->caption();
+	auto caption = cont->gridType()->output(m_target)->caption();
 
 	m_standardItem->setText(caption);
 	m_standardItemCopy->setText(caption);
@@ -168,8 +144,8 @@ void Post3dWindowNodeScalarGroupDataItem::update()
 void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 {
 	// input data
-	PostZoneDataContainer* cont = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent())->dataContainer();
-	vtkPointSet* ps = cont->data()->data();
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
+	auto ps = cont->gridData()->grid()->vtkData()->data();
 
 	// extract interest volume
 	vtkSmartPointer<vtkExtractGrid> voi = vtkSmartPointer<vtkExtractGrid>::New();
@@ -193,6 +169,11 @@ void Post3dWindowNodeScalarGroupDataItem::setupIsosurfaceSetting()
 	m_actorCollection->AddItem(m_isoSurfaceActor);
 }
 
+Post3dWindowNodeScalarGroupTopDataItem* Post3dWindowNodeScalarGroupDataItem::topDataItem() const
+{
+	return dynamic_cast<Post3dWindowNodeScalarGroupTopDataItem*>(parent());
+}
+
 void Post3dWindowNodeScalarGroupDataItem::updateVisibility()
 {
 	bool ancientVisible = isAncientChecked();
@@ -208,15 +189,16 @@ void Post3dWindowNodeScalarGroupDataItem::updateVisibility(bool visible)
 
 QDialog* Post3dWindowNodeScalarGroupDataItem::propertyDialog(QWidget* p)
 {
-	Post3dWindowIsosurfaceSettingDialog* dialog = new Post3dWindowIsosurfaceSettingDialog(p);
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent()->parent());
+	auto dialog = new Post3dWindowIsosurfaceSettingDialog(p);
+	auto zItem = topDataItem()->zoneDataItem();
+	auto gtItem = zItem->gridTypeDataItem();
 	dialog->setGridTypeDataItem(gtItem);
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
+	auto cont = zItem->v4DataContainer();
 
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {return nullptr;}
+	if (cont == nullptr || cont->gridData() == nullptr) {return nullptr;}
 
 	dialog->setEnabled(true);
-	dialog->setZoneData(zItem->dataContainer());
+	dialog->setZoneData(cont);
 	dialog->setTarget(m_target);
 
 	// it's made enabled ALWAYS.
@@ -273,11 +255,12 @@ void Post3dWindowNodeScalarGroupDataItem::updateColorSetting()
 
 void Post3dWindowNodeScalarGroupDataItem::validateRange()
 {
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr)	{
+	auto zItem = topDataItem()->zoneDataItem();
+	auto cont = zItem->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr)	{
 		return;
 	}
-	auto g = vtkStructuredGrid::SafeDownCast(zItem->dataContainer()->data()->data());
+	auto g = dynamic_cast<v4Structured3dGrid*> (zItem->v4DataContainer()->gridData()->grid())->vtkConcreteData()->concreteData();
 	int dims[3];
 	g->GetDimensions(dims);
 	if (m_fullRange) {

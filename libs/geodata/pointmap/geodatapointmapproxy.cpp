@@ -9,7 +9,7 @@
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
-#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgridtypedataitemi.h>
 #include <misc/modifycommanddialog.h>
 #include <misc/zdepthrange.h>
 

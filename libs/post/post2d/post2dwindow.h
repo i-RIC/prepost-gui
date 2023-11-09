@@ -6,10 +6,10 @@
 #include <QVector2D>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
-#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <guicore/bgcolor/backgroundcoloreditvtki.h>
 #include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 #include <postbase/autoparticlewindowi.h>
 #include <postbase/cfshapeexportwindowi.h>
@@ -30,13 +30,13 @@ class Post2dWindowGraphicsView;
 class Post2dWindow :
 	public PostProcessorWindow,
 	public AdditionalMenuWindowI,
-	public WindowWithObjectBrowserInterface,
+	public WindowWithObjectBrowserI,
 	public WindowWithPropertyBrowser,
 	public WindowWithTmsI,
 	public CfShapeExportWindowI,
 	public ParticleExportWindowI,
 	public SVKmlExportWindowI,
-	public BackgroundColorEditVtkInterface,
+	public BackgroundColorEditVtkI,
 	public AutoParticleWindowI,
 	public WindowWithVtkGraphicsViewI
 {

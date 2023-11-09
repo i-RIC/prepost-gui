@@ -5,14 +5,15 @@
 
 #include <guicore/pre/geodata/geodatacellmappert.h>
 #include <guicore/pre/geodata/geodatamappersettingi.h>
-#include <misc/integerrangecontainer.h>
+#include <misc/rangecontainert.h>
 
 class GeoDataPolygonGroupCellMapperSetting : public GeoDataMapperSettingI
 {
 public:
 	GeoDataPolygonGroupCellMapperSetting() : GeoDataMapperSettingI() {}
 	~GeoDataPolygonGroupCellMapperSetting() override {}
-	IntegerRangeContainer ranges;
+
+	RangeContainerT<GeoDataPolygonGroupPolygon*> ranges;
 };
 
 template <class V, class DA>

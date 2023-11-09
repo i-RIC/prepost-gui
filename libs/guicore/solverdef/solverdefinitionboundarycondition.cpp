@@ -35,9 +35,7 @@ SolverDefinitionBoundaryCondition::SolverDefinitionBoundaryCondition(QDomElement
 {}
 
 SolverDefinitionBoundaryCondition::~SolverDefinitionBoundaryCondition()
-{
-	delete impl;
-}
+{}
 
 const std::string& SolverDefinitionBoundaryCondition::name() const
 {

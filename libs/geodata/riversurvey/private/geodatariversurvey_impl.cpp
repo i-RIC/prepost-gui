@@ -5,8 +5,8 @@
 #include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/vtktool/vtkpointsetgeos2dindex.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/stringtool.h>
@@ -980,7 +980,7 @@ void GeoDataRiverSurvey::Impl::editModeUpdateMouseEventMode()
 	}
 }
 
-void GeoDataRiverSurvey::Impl::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::Impl::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	if (m_mode == Mode::CreateMode) {
 		createModeUpdateMouseCursor(v);
@@ -989,7 +989,7 @@ void GeoDataRiverSurvey::Impl::updateMouseCursor(PreProcessorGraphicsViewInterfa
 	}
 }
 
-void GeoDataRiverSurvey::Impl::createModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::Impl::createModeUpdateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_createMouseEventMode) {
 	case CreateMouseEventMode::Normal:
@@ -1018,7 +1018,7 @@ void GeoDataRiverSurvey::Impl::createModeUpdateMouseCursor(PreProcessorGraphicsV
 	}
 }
 
-void GeoDataRiverSurvey::Impl::editModeUpdateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::Impl::editModeUpdateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_editMouseEventMode) {
 	case Impl::EditMouseEventMode::Normal:

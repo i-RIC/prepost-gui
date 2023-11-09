@@ -17,7 +17,7 @@ class ColorMapSettingEditDialog;
 class ColorMapSettingEditWidgetI;
 class ColorMapSettingToolBarWidget;
 class ColorTransferFunctionContainer;
-class Grid;
+class v4InputGrid;
 class GridAttributeContainer;
 class GridAttributeEditDialog;
 class GridAttributeEditNameAndValueDialog;
@@ -36,9 +36,11 @@ class QWidget;
 class GUICOREDLL_EXPORT SolverDefinitionGridAttribute : public SolverDefinitionNode
 {
 public:
-	enum Position {
+	enum class Position {
 		Node,           ///< Node (vertex)
-		CellCenter      ///< Cell center
+		CellCenter,     ///< Cell center
+		IFace,          ///< I-direction Edge
+		JFace           ///< J-direction Edge
 	};
 	SolverDefinitionGridAttribute();
 	SolverDefinitionGridAttribute(const QDomElement& elem, SolverDefinition* definition, Position pos, bool isOption, int order);
@@ -67,7 +69,7 @@ public:
 
 	/// @name Interface building functions
 	//@{
-	GridAttributeContainer* container(Grid* grid);
+	GridAttributeContainer* container(v4InputGrid* grid);
 
 	virtual GridAttributeStringConverter* stringConverter() const = 0;
 
@@ -94,10 +96,10 @@ protected:
 
 private:
 	virtual void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const;
-	virtual GridAttributeContainer* buildContainer(Grid* grid) = 0;
+	virtual GridAttributeContainer* buildContainer(v4InputGrid* grid) = 0;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

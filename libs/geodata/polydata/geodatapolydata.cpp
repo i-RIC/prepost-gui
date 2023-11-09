@@ -2,9 +2,9 @@
 #include "private/geodatapolydata_editnameandvaluecommand.h"
 #include "private/geodatapolydata_impl.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributeeditdialog.h>
 #include <guicore/pre/gridcond/base/gridattributeeditnameandvaluedialog.h>
@@ -66,7 +66,7 @@ void GeoDataPolyData::setVariantValue(const QVariant& v, bool disableInform)
 	impl->m_variantValues[index] = v;
 	updateScalarValues();
 	if (! disableInform) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
 		p->informValueRangeChange();
 		p->informDataChange();
 	}
@@ -106,7 +106,7 @@ void GeoDataPolyData::editValue()
 	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
 
 	auto dialog = m_gridAttribute->editDialog(preProcessorWindow());
-	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setLabel(tr("Please input new value in this %1.").arg(shapeName()));
 	i->setupEditWidget(dialog->widget());
@@ -129,7 +129,7 @@ void GeoDataPolyData::editNameAndValue()
 	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
 
 	auto dialog = m_gridAttribute->editNameAndValueDialog(preProcessorWindow());
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setName(caption());
 	i->setupEditWidget(dialog->widget());
@@ -144,19 +144,19 @@ void GeoDataPolyData::editNameAndValue()
 	delete dialog;
 }
 
-void GeoDataPolyData::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
+void GeoDataPolyData::handleDimensionCurrentIndexChange(int /*oldIndex*/, int /*newIndex*/)
 {
 	// @todo implement this!
 }
 
-void GeoDataPolyData::handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after)
+void GeoDataPolyData::handleDimensionValuesChange(const std::vector<QVariant>& /*before*/, const std::vector<QVariant>& /*after*/)
 {
 	// @todo implement this!
 }
 
 void GeoDataPolyData::editColorSetting()
 {
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
+	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->showPropertyDialog();
 }
 
 void GeoDataPolyData::setupValues()

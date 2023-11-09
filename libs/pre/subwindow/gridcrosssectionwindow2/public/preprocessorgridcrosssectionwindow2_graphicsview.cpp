@@ -9,11 +9,9 @@
 #include "../private/preprocessorgridcrosssectionwindow2_gridattributedisplaysettingcontainer.h"
 #include "../private/preprocessorgridcrosssectionwindow2_impl.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributerealcellcontainer.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
 #include <misc/mathsupport.h>
 #include <misc/xmlsupport.h>
 
@@ -101,7 +99,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::cameraFit()
 
 	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	auto grid = m_impl->grid();
-	extractGrid->SetInputData(grid->vtkGrid());
+	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
 	auto index = m_impl->m_controller->targetIndex();
 	if (m_impl->m_controller->targetDirection() == Direction::I) {
 		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
@@ -160,7 +158,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::cameraFit()
 	viewport()->update();
 }
 
-void PreProcessorGridCrosssectionWindow2::GraphicsView::paintEvent(QPaintEvent* event)
+void PreProcessorGridCrosssectionWindow2::GraphicsView::paintEvent(QPaintEvent* /*event*/)
 {
 	QPainter painter(viewport());
 	painter.setRenderHint(QPainter::Antialiasing);
@@ -188,7 +186,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::paintEvent(QPaintEvent* 
 
 	for (auto it = activeSettings.rbegin(); it != activeSettings.rend(); ++it) {
 		auto setting = *it;
-		int column = activeSettings.size() - 1 - (it - activeSettings.rbegin());
+		int column = static_cast<int> (activeSettings.size()) - 1 - (it - activeSettings.rbegin());
 
 		if (setting->mode == GridAttributeDisplaySettingContainer::Mode::AsElevation) {
 			ElevationChartController controller(this);
@@ -385,7 +383,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::mousePressEvent(QMouseEv
 	}
 }
 
-void PreProcessorGridCrosssectionWindow2::GraphicsView::mouseReleaseEvent(QMouseEvent* event)
+void PreProcessorGridCrosssectionWindow2::GraphicsView::mouseReleaseEvent(QMouseEvent* /*event*/)
 {
 	m_viewMouseEventMode = ViewMouseEventMode::Normal;
 	updateMouseCursor();
@@ -428,7 +426,7 @@ std::vector<double> PreProcessorGridCrosssectionWindow2::GraphicsView::setupNode
 
 	if (grid == nullptr) {return positions;}
 	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
-	extractGrid->SetInputData(grid->vtkGrid());
+	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
 	auto index = m_impl->m_controller->targetIndex();
 	if (m_impl->m_controller->targetDirection() == Direction::I) {
 		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);

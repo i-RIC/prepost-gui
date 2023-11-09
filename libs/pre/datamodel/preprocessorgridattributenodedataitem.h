@@ -5,24 +5,17 @@
 #include <guicore/named/namedgraphicwindowdataitem.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
 
-#include <vtkIdList.h>
-
-#include <QList>
-
 class ColorMapSettingContainerI;
 class ColorMapSettingToolBarWidgetController;
 class GridComplexConditionGroupEditDialog;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
 class PreProcessorGridAttributeNodeGroupDataItem;
-class PreProcessorGridCrosssectionWindowProjectDataItem;
+class PreProcessorGridDataItem;
 class PreProcessorGridTypeDataItem;
 class SolverDefinitionGridAttribute;
 class Structured2DGridCrosssectionEditCommand;
 
 class QAction;
-
-class vtkMapper;
-class vtkStructuredGrid;
 
 class PreProcessorGridAttributeNodeDataItem : public NamedGraphicWindowDataItem
 {
@@ -46,10 +39,6 @@ public:
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
 
-	void updateCrossectionWindows();
-	void requestCrosssectionWindowDelete(PreProcessorGridCrosssectionWindowProjectDataItem* item);
-	void unregisterCrosssectionWindow(PreProcessorGridCrosssectionWindowProjectDataItem* item);
-	void informSelectedVerticesChanged(const std::vector<vtkIdType>& vertices);
 	bool addToolBarButtons(QToolBar* toolbar) override;
 
 public slots:
@@ -67,8 +56,9 @@ private slots:
 
 private:
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
-	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
+	PreProcessorGeoDataGroupDataItemI* geoDataGroupDataItem() const;
 	PreProcessorGridAttributeNodeGroupDataItem* groupDataItem() const;
+	PreProcessorGridDataItem* gridDataItem() const;
 	void editVariation(GridAttributeVariationEditWidget::Mode mode, const QString& typeName);
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -89,8 +79,6 @@ private:
 	QAction* m_editRatioAction;
 	QAction* m_openXsectionWindowAction;
 	QAction* m_openVXsectionWindowAction;
-
-	QList<PreProcessorGridCrosssectionWindowProjectDataItem*> m_crosssectionWindows;
 
 	GridComplexConditionGroupEditDialog* m_groupEditDialog;
 

@@ -24,9 +24,7 @@ SolverDefinitionOutput::SolverDefinitionOutput(QDomElement elem, SolverDefinitio
 }
 
 SolverDefinitionOutput::~SolverDefinitionOutput()
-{
-	delete impl;
-}
+{}
 
 const std::string& SolverDefinitionOutput::name() const
 {

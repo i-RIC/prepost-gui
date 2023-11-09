@@ -21,6 +21,8 @@
 #include "datamodel/preprocessorgeodatagroupdataitem.h"
 #include "datamodel/preprocessorgeodatatopdataitem.h"
 #include "datamodel/preprocessorrootdataitem.h"
+#include "datamodel/public/preprocessorgriddataitem_selectedcellscontroller.h"
+#include "datamodel/public/preprocessorgriddataitem_selectednodescontroller.h"
 #include "factory/geodatafactorysetup.h"
 #include "preobjectbrowserview.h"
 #include "preprocessordatamodel.h"
@@ -31,9 +33,9 @@
 #include <dataitem/measureddata/measureddatapointgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgroupdataitem.h>
 #include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/misc/mouseboundingbox.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <guicore/pre/hydraulicdata/hydraulicdataimporter.h>
@@ -71,7 +73,7 @@
 #include <vector>
 
 PreProcessorDataModel::PreProcessorDataModel(PreProcessorWindow* w, ProjectDataItem* parent) :
-	PreProcessorDataModelInterface(w, parent)
+	PreProcessorDataModelI(w, parent)
 {
 	m_objectBrowserView = nullptr;
 	init();
@@ -85,9 +87,9 @@ PreProcessorDataModel::~PreProcessorDataModel()
 	m_objectBrowserView->blockSignals(false);
 }
 
-PreProcessorGraphicsViewInterface* PreProcessorDataModel::graphicsView() const
+PreProcessorGraphicsViewI* PreProcessorDataModel::graphicsView() const
 {
-	return dynamic_cast<PreProcessorGraphicsViewInterface*>(m_graphicsView);
+	return dynamic_cast<PreProcessorGraphicsViewI*>(m_graphicsView);
 }
 
 void PreProcessorDataModel::init()
@@ -124,7 +126,7 @@ bool PreProcessorDataModel::exportInputCondition(const QString& filename)
 
 bool PreProcessorDataModel::setupCgnsFilesIfNeeded(bool readgrid)
 {
-	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
+	auto root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 
 	QString cgnsFileForGrid;
 	QString* cgnsFilePointer = nullptr;
@@ -162,7 +164,7 @@ bool PreProcessorDataModel::isInputConditionSet()
 
 void PreProcessorDataModel::showCalcConditionDialog()
 {
-	iRICMainWindowInterface* mainW = iricMainWindow();
+	iRICMainWindowI* mainW = iricMainWindow();
 	bool solverRunning = mainW->isSolverRunning();
 	if (solverRunning) {
 		int ret = QMessageBox::warning(mainWindow(), tr("Warning"), tr("The solver is running. You can see the calculation condition settings, but can not overwrite."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Ok);
@@ -255,11 +257,11 @@ void PreProcessorDataModel::exportCalcCondition()
 	QString fname = QFileDialog::getSaveFileName(
 		projectData()->mainWindow(), tr("Select File to Export"), LastIODirectory::get(), tr("CGNS file (*.cgns);;YAML file (*.yml)"));
 	if (fname == "") {return;}
-	iRICMainWindowInterface* mainW = projectData()->mainWindow();
+	iRICMainWindowI* mainW = projectData()->mainWindow();
 	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(mainW->preProcessorWindow());
 	mainW->statusBar()->showMessage(tr("Exporting calculation condition..."));
 	if (pre->exportInputCondition(fname)) {
-		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		mainW->statusBar()->showMessage(tr("Calculation Condition is successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 		QFileInfo finfo(fname);
 		LastIODirectory::set(finfo.absolutePath());
 	} else {
@@ -436,11 +438,11 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	if (gti != nullptr) {
 		auto groups = gti->geoDataTop()->groupDataItems();
 		for (auto it = groups.begin(); it != groups.end(); ++it) {
-			PreProcessorGeoDataGroupDataItemInterface* groupDataitem = *it;
+			PreProcessorGeoDataGroupDataItemI* groupDataitem = *it;
 			QString condCaption = groupDataitem->condition()->caption();
 			condCaption.append("...");
 			auto action = new QAction(condCaption, colorMapMenu);
-			connect(action, &QAction::triggered, groupDataitem, &PreProcessorGeoDataGroupDataItemInterface::showPropertyDialog);
+			connect(action, &QAction::triggered, groupDataitem, &PreProcessorGeoDataGroupDataItemI::showPropertyDialog);
 			colorMapMenu->addAction(action);
 		}
 	} else {
@@ -461,7 +463,7 @@ void PreProcessorDataModel::setupGeoDataMenus()
 	m_geographicDataMenu->addAction(exportAllPolygonsAction);
 }
 
-QMenu* PreProcessorDataModel::setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemInterface* /*gcItem*/)
+QMenu* PreProcessorDataModel::setupGridCreationMenu(QMenu* parentMenu, PreProcessorGridCreatingConditionDataItemI* /*gcItem*/)
 {
 	QMenu* gridCreationMenu = new QMenu(tr("&Grid Creating Condition"), parentMenu);
 	connect(gridCreationMenu, &QMenu::aboutToShow, this, &PreProcessorDataModel::setupGridCreationMenuContent);
@@ -486,8 +488,8 @@ void PreProcessorDataModel::setupGridMenu()
 		// grid creating related menus.
 		// ----------------------------
 
-		PreProcessorGridCreatingConditionDataItemInterface* gcItem = nullptr;
-		gcItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(gItem->parent())->creatingConditionDataItem();
+		PreProcessorGridCreatingConditionDataItemI* gcItem = nullptr;
+		gcItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemI*>(gItem->parent())->creatingConditionDataItem();
 		m_gridMenu->addAction(gcItem->switchAction());
 		// grid creating condition menu
 		QMenu* creationMenu = setupGridCreationMenu(m_gridMenu, gcItem);
@@ -523,7 +525,7 @@ void PreProcessorDataModel::setupGridMenu()
 			dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(m_selectedItem);
 		gItem->setNodeDataItem(nItem);
 		if (nItem != nullptr) {
-			gItem->nodeEditAction()->setEnabled(gItem->selectedVertices().size() > 0);
+			gItem->nodeEditAction()->setEnabled(gItem->selectedNodesController()->selectedDataIds().size() > 0);
 			gItem->nodeEditAction()->disconnect();
 			connect(gItem->nodeEditAction(), SIGNAL(triggered()), nItem, SLOT(editValue()));
 			gItem->nodeDisplaySettingAction()->setEnabled(true);
@@ -539,7 +541,7 @@ void PreProcessorDataModel::setupGridMenu()
 			dynamic_cast<PreProcessorGridAttributeCellDataItem*>(m_selectedItem);
 		gItem->setCellDataItem(cItem);
 		if (cItem != nullptr) {
-			gItem->cellEditAction()->setEnabled(gItem->selectedCells().size() > 0);
+			gItem->cellEditAction()->setEnabled(gItem->selectedCellsController()->selectedDataIds().size() > 0);
 			gItem->cellEditAction()->disconnect();
 			connect(gItem->cellEditAction(), SIGNAL(triggered()), cItem, SLOT(editValue()));
 			gItem->cellDisplaySettingAction()->setEnabled(true);
@@ -589,7 +591,7 @@ void PreProcessorDataModel::setupMeasuredValuesMenu()
 	QAction* vectorAction = m_measuredValuesMenu->addAction(tr("&Arrows..."));
 	m_measuredValuesMenu->addSeparator();
 	QAction* importAction = m_measuredValuesMenu->addAction(QIcon(":/libs/guibase/images/iconImport.svg"), tr("&Import..."));
-	connect(importAction, &QAction::triggered, iricMainWindow(), &iRICMainWindowInterface::importMeasuredData);
+	connect(importAction, &QAction::triggered, iricMainWindow(), &iRICMainWindowI::importMeasuredData);
 
 	if (fitem == nullptr) {
 		pointAction->setDisabled(true);
@@ -619,10 +621,10 @@ PreProcessorGridDataItem* PreProcessorDataModel::getGridItem(GraphicsWindowDataI
 	// try to find the gridtype node that contains the current item.
 	PreProcessorGridTypeDataItem* gtItem = getGridTypeItem(item);
 	if (gtItem != nullptr) {
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
+		QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gtItem->conditions();
 		if (conds.count() > 0) {
 			// select the first one.
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* gagcItem = conds[0];
+			PreProcessorGridAndGridCreatingConditionDataItemI* gagcItem = conds[0];
 			return dynamic_cast<PreProcessorGridDataItem*>(gagcItem->gridDataItem());
 		}
 	}
@@ -631,10 +633,10 @@ PreProcessorGridDataItem* PreProcessorDataModel::getGridItem(GraphicsWindowDataI
 	QList<PreProcessorGridTypeDataItem*> gtItems = rItem->gridTypeDataItems();
 	for (auto gtIt = gtItems.begin(); gtIt != gtItems.end(); ++gtIt) {
 		PreProcessorGridTypeDataItem* gtItem = *gtIt;
-		QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gtItem->conditions();
+		QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gtItem->conditions();
 		if (conds.count() > 0) {
 			// select the first one.
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* gagcItem = conds[0];
+			PreProcessorGridAndGridCreatingConditionDataItemI* gagcItem = conds[0];
 			return dynamic_cast<PreProcessorGridDataItem*>(gagcItem->gridDataItem());
 		}
 	}
@@ -785,12 +787,12 @@ void PreProcessorDataModel::addGridImportMenu(QMenu* menu)
 
 bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
 	if (conds.count() == 0) {
 		// no menu available.
 		return false;
 	} else if (conds.count() == 1) {
-		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
 		if (alone) {
 			// this is the only existing grid.
 			if (! addGridCreatingConditionImportMenuForGrid(menu, di, tr("Gr&id Creating Condition"))) {
@@ -807,7 +809,7 @@ bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGridType(QMenu*
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("Grid Creating Condition"));
 		for (int i = 0; i < conds.count(); ++i) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
+			PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
 			if (addGridCreatingConditionImportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
@@ -822,7 +824,7 @@ bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGridType(QMenu*
 	}
 }
 
-bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
+bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
 	QAction* action = new QAction(cap, menu);
@@ -835,12 +837,12 @@ bool PreProcessorDataModel::addGridCreatingConditionImportMenuForGrid(QMenu* men
 
 bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
 	if (conds.count() == 0) {
 		// no menu available.
 		return false;
 	} else if (conds.count() == 1) {
-		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
 		if (alone) {
 			// this is the only existing grid.
 			if (! addGridCreatingConditionExportMenuForGrid(menu, di, tr("Gr&id Creating Condition"))) {
@@ -857,7 +859,7 @@ bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGridType(QMenu*
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("Gr&id Creating Condition"));
 		for (int i = 0; i < conds.count(); ++i) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
+			PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
 			if (addGridCreatingConditionExportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
@@ -872,7 +874,7 @@ bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGridType(QMenu*
 	}
 }
 
-bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
+bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
 	auto ccdi = dynamic_cast<PreProcessorGridCreatingConditionDataItem*>(di->creatingConditionDataItem());
@@ -886,12 +888,12 @@ bool PreProcessorDataModel::addGridCreatingConditionExportMenuForGrid(QMenu* men
 
 bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
 	if (conds.count() == 0) {
 		// no menu available.
 		return false;
 	} else if (conds.count() == 1) {
-		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
 		if (alone) {
 			// this is the only existing grid.
 			if (! addGridImportMenuForGrid(menu, di, tr("&Grid"))) {
@@ -908,7 +910,7 @@ bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcess
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("&Grid"));
 		for (int i = 0; i < conds.count(); ++i) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
+			PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
 			if (addGridImportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
@@ -923,7 +925,7 @@ bool PreProcessorDataModel::addGridImportMenuForGridType(QMenu* menu, PreProcess
 	}
 }
 
-bool PreProcessorDataModel::addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
+bool PreProcessorDataModel::addGridImportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
 	QAction* action = new QAction(cap, menu);
@@ -965,12 +967,12 @@ void PreProcessorDataModel::addGridExportMenu(QMenu* menu)
 
 bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt, bool alone)
 {
-	QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*> conds = gt->conditions();
+	QList<PreProcessorGridAndGridCreatingConditionDataItemI*> conds = gt->conditions();
 	if (conds.count() == 0) {
 		// no menu available.
 		return false;
 	} else if (conds.count() == 1) {
-		PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(0);
+		PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(0);
 		if (alone) {
 			// this is the only existing grid.
 			if (! addGridExportMenuForGrid(menu, di, tr("&Grid"))) {
@@ -987,7 +989,7 @@ bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcess
 		bool okExists = false;
 		QMenu* tMenu = menu->addMenu(tr("&Grid"));
 		for (int i = 0; i < conds.count(); ++i) {
-			PreProcessorGridAndGridCreatingConditionDataItemInterface* di = conds.at(i);
+			PreProcessorGridAndGridCreatingConditionDataItemI* di = conds.at(i);
 			QMenu* gMenu = tMenu->addMenu(di->caption());
 			if (addGridExportMenuForGrid(gMenu, di, di->caption())) {
 				okExists = true;
@@ -1002,7 +1004,7 @@ bool PreProcessorDataModel::addGridExportMenuForGridType(QMenu* menu, PreProcess
 	}
 }
 
-bool PreProcessorDataModel::addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemInterface* di, const QString& name)
+bool PreProcessorDataModel::addGridExportMenuForGrid(QMenu* menu, PreProcessorGridAndGridCreatingConditionDataItemI* di, const QString& name)
 {
 	QString cap = QString("%1...").arg(name);
 	PreProcessorGridDataItem* gdi = dynamic_cast<PreProcessorGridDataItem*>(di->gridDataItem());
@@ -1095,8 +1097,8 @@ void PreProcessorDataModel::setupHydraulicDataImportMenu(QMenu* menu)
 
 bool PreProcessorDataModel::setupGeoDataImportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
-	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
-	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	PreProcessorGeoDataTopDataItemI* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemI*> groups = topItem->groupDataItems();
 	if (groups.count() == 0) {
 		// no menu available.
 		return false;
@@ -1104,7 +1106,7 @@ bool PreProcessorDataModel::setupGeoDataImportMenuForGridType(QMenu* menu, PrePr
 		// there are multiple grids.
 		bool okExists = false;
 		for (int i = 0; i < groups.count(); ++i) {
-			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
+			PreProcessorGeoDataGroupDataItemI* gi = groups.at(i);
 			setupGeoDataImportMenuForGroup(menu, gi);
 			okExists = true;
 		}
@@ -1114,8 +1116,8 @@ bool PreProcessorDataModel::setupGeoDataImportMenuForGridType(QMenu* menu, PrePr
 
 bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
-	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
-	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	PreProcessorGeoDataTopDataItemI* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemI*> groups = topItem->groupDataItems();
 	if (groups.count() == 0) {
 		// no menu available.
 		return false;
@@ -1123,21 +1125,21 @@ bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGridType(QMenu* menu
 		// there are multiple grids.
 		bool okExists = false;
 		for (int i = 0; i < groups.count(); ++i) {
-			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
+			PreProcessorGeoDataGroupDataItemI* gi = groups.at(i);
 			okExists = setupGeoDataImportFromWebMenuForGroup(menu, gi) || okExists;
 		}
 		return okExists;
 	}
 }
 
-bool PreProcessorDataModel::setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataImportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemI* gt)
 {
 	PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gt);
 	item->addImportAction(menu);
 	return true;
 }
 
-bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataImportFromWebMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItemI* gt)
 {
 	PreProcessorGeoDataGroupDataItem* item = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gt);
 	item->addImportFromWebAction(menu);
@@ -1176,14 +1178,14 @@ void PreProcessorDataModel::setupGeoDataExportMenu(QMenu* menu)
 
 bool PreProcessorDataModel::setupGeoDataExportMenuForGridType(QMenu* menu, PreProcessorGridTypeDataItem* gt)
 {
-	PreProcessorGeoDataTopDataItemInterface* topItem = gt->geoDataTop();
-	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = topItem->groupDataItems();
+	PreProcessorGeoDataTopDataItemI* topItem = gt->geoDataTop();
+	QList<PreProcessorGeoDataGroupDataItemI*> groups = topItem->groupDataItems();
 	if (groups.count() == 0) {
 		// no menu available.
 		return false;
 	} else {
 		for (int i = 0; i < groups.count(); ++i) {
-			PreProcessorGeoDataGroupDataItemInterface* gi = groups.at(i);
+			PreProcessorGeoDataGroupDataItemI* gi = groups.at(i);
 			QString cap = gi->condition()->caption();
 			cap.append("...");
 			QAction* exportAction = menu->addAction(cap);
@@ -1197,9 +1199,9 @@ bool PreProcessorDataModel::setupGeoDataExportMenuForGridType(QMenu* menu, PrePr
 bool PreProcessorDataModel::setupGeoDataExportMenuForGroup(QMenu* menu, PreProcessorGeoDataGroupDataItem* gt)
 {
 	bool ok = false;
-	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
+	QList<PreProcessorGeoDataDataItemI*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
-		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
+		PreProcessorGeoDataDataItemI* item = datas.at(i);
 		QMenu* tmpmenu = menu->addMenu(item->standardItem()->text());
 		if (setupGeoDataExportMenuForItem(tmpmenu, item)) {
 			ok = true;
@@ -1210,11 +1212,11 @@ bool PreProcessorDataModel::setupGeoDataExportMenuForGroup(QMenu* menu, PreProce
 	return ok;
 }
 
-bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataItemInterface* gt)
+bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataItemI* gt)
 {
-	QList<PreProcessorGeoDataDataItemInterface*> datas = gt->geoDatas();
+	QList<PreProcessorGeoDataDataItemI*> datas = gt->geoDatas();
 	for (int i = 0; i < datas.count(); ++i) {
-		PreProcessorGeoDataDataItemInterface* item = datas.at(i);
+		PreProcessorGeoDataDataItemI* item = datas.at(i);
 		if (item->geoData()->exporters().size() > 0) {
 			return true;
 		}
@@ -1222,7 +1224,7 @@ bool PreProcessorDataModel::geoDataExportAvailable(PreProcessorGeoDataGroupDataI
 	return false;
 }
 
-bool PreProcessorDataModel::setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemInterface* gt)
+bool PreProcessorDataModel::setupGeoDataExportMenuForItem(QMenu* menu, PreProcessorGeoDataDataItemI* gt)
 {
 	return dynamic_cast<PreProcessorGeoDataDataItem*>(gt)->setupExportMenu(menu);
 }
@@ -1234,7 +1236,7 @@ void PreProcessorDataModel::setupGridCreationMenuContent()
 	// Add Grid Creation menu.
 	PreProcessorGridDataItem* gItem = getGridItem(m_selectedItem);
 	if (gItem == nullptr) {return;}
-	PreProcessorGridCreatingConditionDataItemInterface* gcItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(gItem->parent())->creatingConditionDataItem();
+	PreProcessorGridCreatingConditionDataItemI* gcItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemI*>(gItem->parent())->creatingConditionDataItem();
 	if (gcItem == nullptr) {return;}
 	QMenu* dummy = dynamic_cast<PreProcessorGridCreatingConditionDataItem*>(gcItem)->menu();
 	if (dummy == nullptr) {
@@ -1344,12 +1346,12 @@ void PreProcessorDataModel::informUnfocusRiverCrosssectionWindows()
 	QList<PreProcessorGridTypeDataItem*> gtItems = r->gridTypeDataItems();
 	for (auto it = gtItems.begin(); it != gtItems.end(); ++it) {
 		PreProcessorGridTypeDataItem* gtItem = *it;
-		QList<PreProcessorGeoDataGroupDataItemInterface*> gitems = gtItem->geoDataTop()->groupDataItems();
+		QList<PreProcessorGeoDataGroupDataItemI*> gitems = gtItem->geoDataTop()->groupDataItems();
 		for (auto it2 = gitems.begin(); it2 != gitems.end(); ++it2) {
-			PreProcessorGeoDataGroupDataItemInterface* gItem = *it2;
-			QList<PreProcessorGeoDataDataItemInterface*> geodatas = gItem->geoDatas();
+			PreProcessorGeoDataGroupDataItemI* gItem = *it2;
+			QList<PreProcessorGeoDataDataItemI*> geodatas = gItem->geoDatas();
 			for (auto it3 = geodatas.begin(); it3 != geodatas.end(); ++it3) {
-				PreProcessorGeoDataDataItemInterface* dItem = *it3;
+				PreProcessorGeoDataDataItemI* dItem = *it3;
 				GeoDataRiverSurvey* rs = dynamic_cast<GeoDataRiverSurvey*>(dItem->geoData());
 				if (rs != nullptr) {
 					rs->setColoredPoints(nullptr);
@@ -1379,7 +1381,7 @@ bool PreProcessorDataModel::checkMappingStatus()
 		if (!gridsExists) {continue;}
 
 		QStringList notMapped;
-		QList<PreProcessorGeoDataGroupDataItemInterface*> groupsToMap;
+		QList<PreProcessorGeoDataGroupDataItemI*> groupsToMap;
 		for (auto gItem : gtItem->geoDataTop()->groupDataItems()) {
 			if (gItem->condition()->isReferenceInformation()) {continue;}
 			QStringList geodatasNotMapped = dynamic_cast<PreProcessorGeoDataGroupDataItem*>(gItem)->getGeoDatasNotMapped();
@@ -1438,13 +1440,13 @@ bool PreProcessorDataModel::checkMappingStatus()
 	return ! mapExexuted;
 }
 
-PreProcessorGridTypeDataItemInterface* PreProcessorDataModel::gridTypeDataItem(const std::string& type) const
+PreProcessorGridTypeDataItemI* PreProcessorDataModel::gridTypeDataItem(const std::string& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	return root->gridTypeDataItem(type);
 }
 
-PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem() const
+PreProcessorGeoDataTopDataItemI* PreProcessorDataModel::geoDataTopDataItem() const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	auto items = root->gridTypeDataItems();
@@ -1453,7 +1455,7 @@ PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataIt
 	return tItem->geoDataTop();
 }
 
-PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataItem(const std::string& type) const
+PreProcessorGeoDataTopDataItemI* PreProcessorDataModel::geoDataTopDataItem(const std::string& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
@@ -1461,7 +1463,7 @@ PreProcessorGeoDataTopDataItemInterface* PreProcessorDataModel::geoDataTopDataIt
 	return tItem->geoDataTop();
 }
 
-PreProcessorHydraulicDataTopDataItemInterface* PreProcessorDataModel::hydraulicDataTopDataItem(const std::string& type) const
+PreProcessorHydraulicDataTopDataItemI* PreProcessorDataModel::hydraulicDataTopDataItem(const std::string& type) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	PreProcessorGridTypeDataItem* tItem = root->gridTypeDataItem(type);
@@ -1469,7 +1471,7 @@ PreProcessorHydraulicDataTopDataItemInterface* PreProcessorDataModel::hydraulicD
 	return tItem->hydraulicDataTop();
 }
 
-PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const
+PreProcessorGridAndGridCreatingConditionDataItemI* PreProcessorDataModel::getGridAndGridCreatingConditionDataItem(const std::string& typeName, const std::string& zoneName) const
 {
 	PreProcessorRootDataItem* root = dynamic_cast<PreProcessorRootDataItem*>(m_rootDataItem);
 	return root->gridTypeDataItem(typeName)->condition(zoneName);

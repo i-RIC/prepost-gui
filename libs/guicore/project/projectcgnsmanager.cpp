@@ -23,9 +23,7 @@ ProjectCgnsManager::ProjectCgnsManager(ProjectMainFile* mainFile) :
 {}
 
 ProjectCgnsManager::~ProjectCgnsManager()
-{
-	delete impl;
-}
+{}
 
 std::string ProjectCgnsManager::mainFileName() const
 {

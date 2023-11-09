@@ -5,7 +5,7 @@
 #include "geodatanetcdf_impl.h"
 
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <misc/stringtool.h>
 
 #include <vtkCellData.h>
@@ -99,7 +99,7 @@ template <class V, class DA>
 void GeoDataNetcdfT<V, DA>::doHandleDimensionCurrentIndexChange(int /*oldIndex*/, int newIndex)
 {
 	loadRasterData(newIndex);
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
+	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->informValueRangeChange();
 }
 
 template <class V, class DA>

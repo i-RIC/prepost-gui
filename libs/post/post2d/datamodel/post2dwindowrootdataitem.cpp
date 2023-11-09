@@ -13,7 +13,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -38,7 +38,7 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 	const auto& types = def->gridTypes();
 	// build grid type data items.
 	QList<Post2dWindowGridTypeDataItem*> gtitems;
-	const auto& conts = post->zoneContainers2D();
+	const auto& conts = post->v4ZoneContainers2D();
 	for (auto type : types) {
 		bool zoneExists = false;
 		for (auto c : conts) {

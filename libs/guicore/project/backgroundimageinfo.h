@@ -101,7 +101,7 @@ private:
 	class Setting;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 public:
 	friend class BackgroundImageInfoDialog;

@@ -21,6 +21,7 @@ public:
 	explicit ModifyCommandDialog(QWidget *parent = nullptr);
 	~ModifyCommandDialog();
 
+	ModifyCommandWidget* widget() const;
 	void setWidget(ModifyCommandWidget* widget);
 
 	void accept() override;

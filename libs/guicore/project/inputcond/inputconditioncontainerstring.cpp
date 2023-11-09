@@ -31,9 +31,7 @@ InputConditionContainerString::InputConditionContainerString(const InputConditio
 }
 
 InputConditionContainerString::~InputConditionContainerString()
-{
-	delete impl;
-}
+{}
 
 InputConditionContainerString& InputConditionContainerString::operator=(const InputConditionContainerString& i)
 {

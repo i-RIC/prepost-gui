@@ -4,8 +4,8 @@
 #include "geodatanetcdfproxy_impl.h"
 #include "ui_geodatanetcdfproxy_displaysettingwidget.h"
 
-#include <guicore/post/post2d/base/post2dwindowgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingcontainer.h>
 #include <guicore/scalarstocolors/delegatedcolormapsettingeditwidget.h>

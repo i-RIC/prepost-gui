@@ -24,7 +24,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::ElevationChartController
 	QPen pen(setting->elevationChartLineColor.value(), setting->elevationChartLineWidth);
 	painter->setPen(pen);
 
-	for (int i = 0; i < nodePositions.size() - 1; ++i) {
+	for (int i = 0; i < static_cast<int> (nodePositions.size()) - 1; ++i) {
 		QPointF p1(nodePositions.at(i), values.at(i).toDouble());
 		QPointF p2(nodePositions.at(i + 1), values.at(i + 1).toDouble());
 
@@ -48,7 +48,7 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::ElevationChartController
 		painter->setFont(setting->elevationChartIndexFont);
 		QFontMetrics metrics(setting->elevationChartIndexFont);
 
-		for (int i = 0; i < nodePositions.size(); ++i) {
+		for (int i = 0; i < static_cast<int> (nodePositions.size()); ++i) {
 			QPointF p1(nodePositions.at(i), values.at(i).toDouble());
 			auto p2 = matrix.map(p1) + QPointF(INDEX_HOFFSET, INDEX_VOFFSET);
 

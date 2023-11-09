@@ -3,10 +3,12 @@
 
 #include "../geodatanetcdfcellmappert.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsutil.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/pre/geodata/geodatamappersettingi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/doublemappingsetting.h>
-
-#include <vtkCell.h>
 
 #include <vector>
 
@@ -29,29 +31,21 @@ GeoDataMapperSettingI* GeoDataNetcdfCellMapperT<V, DA>::initialize(bool* boolMap
 	s->settings.reserve(count);
 	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
 	vtkStructuredGrid* tmpgrid = netcdf->grid();
+
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
+	double cellCenter[3];
 	for (unsigned int i = 0; i < count; ++i) {
 		if (*(boolMap + i)) {continue;}
 
-		// not mapped yet.
-		double point[3];
-		double pointCenter[3];
-		pointCenter[0] = pointCenter[1] = pointCenter[2] = 0;
-		vtkCell* cell = GeoDataCellMapperT<V, DA>::grid()->vtkGrid()->GetCell(i);
-		for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
-			GeoDataCellMapperT<V, DA>::grid()->vtkGrid()->GetPoint(cell->GetPointId(j), point);
-			for (int k = 0; k < 3; ++k) {
-				pointCenter[k] += point[k];
-			}
-		}
-		for (int k = 0; k < 3; ++k) {
-			pointCenter[k] /= cell->GetNumberOfPoints();
-		}
+		vtkCell* cell = vtkGrid->GetCell(i);
+		QPointF point = vtkPointsUtil::getCenter(cell);
+		cellCenter[0] = point.x(); cellCenter[1] = point.y(); cellCenter[2] = 0;
 		// investigate whether the point is inside one of the cells.
 		vtkIdType cellid;
 		double pcoords[4];
 		double weights[4];
 		int subid;
-		cellid = tmpgrid->FindCell(pointCenter, 0, 0, 1e-4, subid, pcoords, weights);
+		cellid = tmpgrid->FindCell(cellCenter, 0, 0, 1e-4, subid, pcoords, weights);
 		if (cellid >= 0) {
 			DoubleMappingSetting setting;
 			setting.target = i;

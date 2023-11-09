@@ -1,6 +1,6 @@
 #include "hydraulicdatariversurveywaterelevation_editcaptioncommand.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 
 HydraulicDataRiverSurveyWaterElevation::EditCaptionCommand::EditCaptionCommand(const QString& caption, HydraulicDataRiverSurveyWaterElevation* we) :
 	m_newCaption {caption},

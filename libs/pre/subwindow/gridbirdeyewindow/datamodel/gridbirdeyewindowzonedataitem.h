@@ -3,11 +3,11 @@
 
 #include "../gridbirdeyewindowdataitem.h"
 
-class Grid;
 class GridBirdEyeWindowGridShapeDataItem;
 class GridBirdEyeWindowGridTypeDataItem;
 class GridBirdEyeWindowCellScalarGroupTopDataItem;
 class GridBirdEyeWindowNodeScalarGroupTopDataItem;
+class v4InputGrid;
 class PreProcessorGridTypeDataItem;
 
 class GridBirdEyeWindowZoneDataItem : public GridBirdEyeWindowDataItem
@@ -25,7 +25,7 @@ public:
 	void update();
 
 	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
-	Grid* grid();
+	v4InputGrid* grid();
 	GridBirdEyeWindowGridShapeDataItem* gridShapeDataItem() const;
 	GridBirdEyeWindowNodeScalarGroupTopDataItem* scalarGroupTopDataItem() const;
 	GridBirdEyeWindowCellScalarGroupTopDataItem* cellScalarGroupTopDataItem() const;

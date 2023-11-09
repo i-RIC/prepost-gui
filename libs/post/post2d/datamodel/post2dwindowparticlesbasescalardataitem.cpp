@@ -10,8 +10,6 @@
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 
-#include <vtkActor2D.h>
-
 Post2dWindowParticlesBaseScalarDataItem::Post2dWindowParticlesBaseScalarDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent),
 	m_colorMapSetting {nullptr},
@@ -55,11 +53,15 @@ QDialog* Post2dWindowParticlesBaseScalarDataItem::propertyDialog(QWidget* parent
 	return groupDataItem()->propertyDialog(parent);
 }
 
-void Post2dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* /*v*/)
-{}
+void Post2dWindowParticlesBaseScalarDataItem::informSelection(VTKGraphicsView* v)
+{
+	groupDataItem()->informSelection(v);
+}
 
-void Post2dWindowParticlesBaseScalarDataItem::informDeselection(VTKGraphicsView* /*v*/)
-{}
+void Post2dWindowParticlesBaseScalarDataItem::informDeselection(VTKGraphicsView* v)
+{
+	groupDataItem()->informDeselection(v);
+}
 
 void Post2dWindowParticlesBaseScalarDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {

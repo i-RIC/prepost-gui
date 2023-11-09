@@ -8,8 +8,8 @@
 class SolverDefinitionGridComplexAttribute::Impl
 {
 public:
-	Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
-	void load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent);
+	Impl(const QDomElement& elem);
+	void load(const QDomElement& elem);
 
 	QDomElement m_element;
 	bool m_isGrouped;

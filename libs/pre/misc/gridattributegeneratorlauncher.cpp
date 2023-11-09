@@ -2,8 +2,7 @@
 #include "../datamodel/preprocessorgriddataitem.h"
 #include "../datamodel/preprocessorgridandgridcreatingconditiondataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -32,9 +31,9 @@ bool GridAttributeGeneratorLauncher::launchGenerator(PreProcessorGridDataItem* g
 		return false;
 	}
 
-	Grid* grid = gItem->grid();
-	QString generatorName = grid->gridAttribute(attName)->gridAttribute()->mapping();
-	QString generatorArgs = grid->gridAttribute(attName)->gridAttribute()->mappingArgs();
+	v4InputGrid* grid = gItem->grid();
+	QString generatorName = grid->attribute(attName)->gridAttribute()->mapping();
+	QString generatorArgs = grid->attribute(attName)->gridAttribute()->mappingArgs();
 	QDir genDir(iRICRootPath::get());
 	genDir.cdUp();
 	genDir.cdUp();
@@ -61,7 +60,7 @@ bool GridAttributeGeneratorLauncher::launchGenerator(PreProcessorGridDataItem* g
 	}  catch (...) {
 		return false;
 	}
-	gItem->grid()->setModified(true);
+	gItem->grid()->setIsModified(true);
 	QFile(fname).remove();
 
 	return true;

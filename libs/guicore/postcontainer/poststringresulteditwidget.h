@@ -10,7 +10,7 @@ class PostStringResultEditWidget;
 }
 
 class PostStringResult;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class GUICOREDLL_EXPORT PostStringResultEditWidget : public QWidget
 {
@@ -20,7 +20,7 @@ public:
 	explicit PostStringResultEditWidget(QWidget *parent = nullptr);
 	~PostStringResultEditWidget();
 
-	void setZoneDataContainer(PostZoneDataContainer* container);
+	void setZoneDataContainer(v4PostZoneDataContainer* container);
 
 	PostStringResult* stringResult() const;
 	void setStringResult(PostStringResult* result);
@@ -42,7 +42,7 @@ private:
 
 	PostStringResult* m_stringResult;
 	bool m_rejected;
-	PostZoneDataContainer* m_zoneDataContainer;
+	v4PostZoneDataContainer* m_zoneDataContainer;
 
 	Ui::PostStringResultEditWidget *ui;
 };

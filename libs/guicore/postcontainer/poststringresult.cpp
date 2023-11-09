@@ -112,12 +112,12 @@ void PostStringResult::copyValue(const PostStringResult& result)
 	updateFunction();
 }
 
-PostZoneDataContainer* PostStringResult::zoneDataContainer() const
+v4PostZoneDataContainer* PostStringResult::zoneDataContainer() const
 {
 	return m_container;
 }
 
-void PostStringResult::setZoneDataContainer(PostZoneDataContainer* container, QWidget* parent)
+void PostStringResult::setZoneDataContainer(v4PostZoneDataContainer* container, QWidget* parent)
 {
 	m_container = container;
 	bool fixed = false;

@@ -2,15 +2,19 @@
 #include "post3dwindowgridtypedataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
 namespace {
 
-PostZoneDataContainer* getContainerWithZoneType(const QList<PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
+v4PostZoneDataContainer* getContainerWithZoneType(const std::vector<v4PostZoneDataContainer*>& conts, SolverDefinitionGridType* gt)
 {
 	for (auto container : conts) {
 		if (container->gridType() == gt) {
@@ -139,11 +143,11 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 	}
 	m_zoneDatas.clear();
 
-	const auto& zones = postSolutionInfo()->zoneContainers3D();
+	const auto& zones = postSolutionInfo()->v4ZoneContainers3D();
 	int num = 0;
 	int zoneNum = 0;
 	for (auto cont : zones) {
-		if (cont->data() == nullptr) {continue;}
+		if (cont->gridData() == nullptr) {continue;}
 		if (cont->gridType() != m_gridType) {continue;}
 
 		auto zdata = new Post3dWindowZoneDataItem(cont->zoneName(), num++, this);
@@ -153,7 +157,7 @@ void Post3dWindowGridTypeDataItem::setupZoneDataItems()
 		++ zoneNum;
 	}
 
-	PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
+	v4PostZoneDataContainer* zCont = getContainerWithZoneType(zones, m_gridType);
 
 	if (zCont != nullptr) {
 		updateNodeValueRanges();
@@ -188,9 +192,9 @@ void Post3dWindowGridTypeDataItem::updateNodeValueRanges()
 	m_nodeValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		if (zItem->v4DataContainer() == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
+		merge(zItem->v4DataContainer()->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_nodeValueRanges);
 	}
 }
 
@@ -199,9 +203,9 @@ void Post3dWindowGridTypeDataItem::updateCellValueRanges()
 	m_cellValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
+		if (zItem->v4DataContainer() == nullptr) {continue;}
 
-		merge(zItem->dataContainer()->data()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
+		merge(zItem->v4DataContainer()->gridData()->grid()->vtkData()->valueRangeSet().cellDataValueRanges(), &m_cellValueRanges);
 	}
 }
 
@@ -210,15 +214,15 @@ void Post3dWindowGridTypeDataItem::updateParticleValueRanges()
 	m_particleValueRanges.clear();
 
 	for (auto zItem : m_zoneDatas) {
-		if (zItem->dataContainer() == nullptr) {continue;}
-		auto cont = zItem->dataContainer();
+		if (zItem->v4DataContainer() == nullptr) {continue;}
+		auto cont = zItem->v4DataContainer();
 
 		auto pData = cont->particleData();
 		if (pData != nullptr) {
-			merge(pData->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
+			merge(pData->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
 		}
 		for (const auto& pair : cont->particleGroupMap()) {
-			merge(pair.second->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
+			merge(pair.second->grid()->vtkData()->valueRangeSet().pointDataValueRanges(), &m_particleValueRanges);
 		}
 	}
 }

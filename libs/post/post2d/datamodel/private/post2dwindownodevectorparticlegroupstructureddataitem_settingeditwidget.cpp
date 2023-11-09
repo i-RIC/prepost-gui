@@ -4,7 +4,9 @@
 #include "ui_post2dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -25,11 +27,11 @@ Post2dWindowNodeVectorParticleGroupStructuredDataItem::SettingEditWidget::Settin
 
 	ui->particleSettingWidget->setProjectMainFile(m_item->projectData()->mainfile());
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(m_item->parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 
 	auto gtype = cont->gridType();
-	auto pd = grid->GetPointData();
+	auto pd = grid->vtkData()->data()->GetPointData();
 
 	std::unordered_map<std::string, QString> solutions;
 	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd)) {
@@ -40,9 +42,9 @@ Post2dWindowNodeVectorParticleGroupStructuredDataItem::SettingEditWidget::Settin
 	ui->particleSettingWidget->setSetting(&m_item->m_setting);
 
 	int dims[3];
-	grid->GetDimensions(dims);
+	grid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 	ui->regionWidget->setDimensions(dims[0], dims[1]);
-	if (! cont->IBCExists()) {
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		ui->regionWidget->disableActive();
 	}
 	ui->startPositionWidget->setDimensions(dims[0], dims[1]);

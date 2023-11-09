@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncreatorexternalprogram.h"
 #include "gridcreatingconditionexternalprogram.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiontranslator.h>
 #include <misc/errormessage.h>

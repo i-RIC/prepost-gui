@@ -1,8 +1,12 @@
+#include "../grid/v4structured2dgrid.h"
+#include "../grid/v4structured3dgrid.h"
+#include "../grid/v4unstructured2dgrid.h"
 #include "poststringresult.h"
 #include "poststringresultargument.h"
 #include "poststringresultargumenteditdialog.h"
 #include "poststringresulteditwidget.h"
-#include "postzonedatacontainer.h"
+#include "v4postzonedatacontainer.h"
+#include "v4solutiongrid.h"
 #include "ui_poststringresulteditwidget.h"
 
 #include <QMessageBox>
@@ -30,7 +34,7 @@ PostStringResultEditWidget::~PostStringResultEditWidget()
 	delete ui;
 }
 
-void PostStringResultEditWidget::setZoneDataContainer(PostZoneDataContainer* container)
+void PostStringResultEditWidget::setZoneDataContainer(v4PostZoneDataContainer* container)
 {
 	m_zoneDataContainer = container;
 	m_stringResult->setParent(container);
@@ -176,71 +180,29 @@ QString PostStringResultEditWidget::setupIndex(int row)
 	const auto& args = m_stringResult->arguments();
 	PostStringResultArgument* a = args.at(row);
 
-	auto data = m_zoneDataContainer->data()->data();
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	auto ust = vtkUnstructuredGrid::SafeDownCast(data);
-	int dim[3];
-	if (st != nullptr) {
-		st->GetDimensions(dim);
-	}
+	auto data = m_zoneDataContainer->gridData()->grid();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*> (data);
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*> (data);
+	auto uGrid = dynamic_cast<v4Unstructured2dGrid*> (data);
 
 	QStringList vals;
 	if (a->type() == PostStringResultArgument::Type::BaseIterative) {
 		return "";
-	} else if (a->type() == PostStringResultArgument::Type::GridNode) {
-		if (st != nullptr) {
-			vals.push_back(QString::number(a->i() + 1));
-			if (dim[1] > 1) {
-				vals.push_back(QString::number(a->j() + 1));
-				if (dim[2] > 1) {
-					vals.push_back(QString::number(a->k() + 1));
-				}
+	} else {
+		if (uGrid != nullptr) {
+			if (a->type() == PostStringResultArgument::Type::GridNode) {
+				vals.push_back(QString::number(a->index() + 1));
+			} else {
+				Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
 			}
-		} else if (ust != nullptr) {
-			vals.push_back(QString::number(a->index() + 1));
-		}
-	} else if (a->type() == PostStringResultArgument::Type::GridCell) {
-		if (st != nullptr) {
+		} else if (sGrid2d != nullptr) {
 			vals.push_back(QString::number(a->i() + 1));
-			if (dim[1] > 1) {
-				vals.push_back(QString::number(a->j() + 1));
-				if (dim[2] > 1) {
-					vals.push_back(QString::number(a->k() + 1));
-				}
-			}
-		} else if (ust != nullptr) {
-			vals.push_back(QString::number(a->index() + 1));
-		}
-	} else if (a->type() == PostStringResultArgument::Type::GridEdgeI) {
-		auto st = m_zoneDataContainer->iFaceData()->concreteData();
-		if (st != nullptr) {
-			st->GetDimensions(dim);
+			vals.push_back(QString::number(a->j() + 1));
+		} else if (sGrid3d != nullptr) {
 			vals.push_back(QString::number(a->i() + 1));
-			if (dim[1] > 1) {
-				vals.push_back(QString::number(a->j() + 1));
-				if (dim[2] > 1) {
-					vals.push_back(QString::number(a->k() + 1));
-				}
-			}
-		} else if (ust != nullptr) {
-			Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
+			vals.push_back(QString::number(a->j() + 1));
+			vals.push_back(QString::number(a->k() + 1));
 		}
-	} else if (a->type() == PostStringResultArgument::Type::GridEdgeJ) {
-		auto st = m_zoneDataContainer->jFaceData()->concreteData();
-		if (st != nullptr) {
-			st->GetDimensions(dim);
-			vals.push_back(QString::number(a->i() + 1));
-			if (dim[1] > 1) {
-				vals.push_back(QString::number(a->j() + 1));
-				if (dim[2] > 1) {
-					vals.push_back(QString::number(a->k() + 1));
-				}
-			}
-		} else if (ust != nullptr) {
-			Q_ASSERT_X(false, "PostStringResultEditWidget::setupIndex", "Invalid type for unstructured grid");
-		}
-	} else if (a->type() == PostStringResultArgument::Type::GridEdgeK) {
-		// @todo implement this
 	}
 	return vals.join(", ");
 }

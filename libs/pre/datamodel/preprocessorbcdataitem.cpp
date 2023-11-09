@@ -5,11 +5,15 @@
 #include "preprocessorgridandgridcreatingconditiondataitem.h"
 #include "preprocessorgriddataitem.h"
 #include "private/preprocessorbcdataitem_impl.h"
+#include "public/preprocessorgriddataitem_selectedcellscontroller.h"
+#include "public/preprocessorgriddataitem_selectededgescontroller.h"
+#include "public/preprocessorgriddataitem_selectednodescontroller.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/inputcond/inputconditionwidgetfilename.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
@@ -21,23 +25,6 @@
 #include <misc/opacitycontainer.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
-
-#include <QLocale>
-#include <QMenu>
-#include <QMouseEvent>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkActor2DCollection.h>
-#include <vtkCellArray.h>
-#include <vtkPolyData.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkTextMapper.h>
-#include <vtkTextProperty.h>
 
 #include <h5cgnsbase.h>
 #include <h5cgnsbc.h>
@@ -120,8 +107,8 @@ PreProcessorBCDataItem::PreProcessorBCDataItem(SolverDefinition* def, SolverDefi
 
 PreProcessorBCDataItem::~PreProcessorBCDataItem()
 {
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->grid();
-	if (g != 0) {g->setModified();}
+	auto g = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->grid();
+	if (g != nullptr) {g->setIsModified(true);}
 
 	renderer()->RemoveActor(impl->m_actor);
 	renderer()->RemoveActor2D(impl->m_nameActor);
@@ -228,12 +215,12 @@ void PreProcessorBCDataItem::updateElements()
 	if (tmpparent->grid() == nullptr) {return;}
 
 	auto d = impl->m_data;
-	auto grid = tmpparent->grid()->vtkGrid();
+	auto grid = tmpparent->grid()->grid()->vtkData()->data();
 	d->Reset();
 	d->SetPoints(grid->GetPoints());
 
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		vtkSmartPointer<vtkCellArray> ca = vtkSmartPointer<vtkCellArray>::New();
+		auto ca = vtkSmartPointer<vtkCellArray>::New();
 		for (auto index : impl->m_indices) {
 			ca->InsertNextCell(1, &index);
 		}
@@ -284,9 +271,9 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 	if (! impl->m_dialog->showName()) {return;}
 
 	double centerv[3] = {0, 0, 0};
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (tmpparent->grid() == 0) {return;}
-	vtkPointSet* pset = tmpparent->grid()->vtkGrid();
+	auto tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	if (tmpparent->grid() == nullptr) {return;}
+	vtkPointSet* pset = tmpparent->grid()->grid()->vtkData()->data();
 	vtkPoints* points = pset->GetPoints();
 	int pnum = 0;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
@@ -338,7 +325,7 @@ void PreProcessorBCDataItem::updateNameActorSettings()
 	impl->m_nameMapper->SetInput(iRIC::toStr(impl->m_dialog->caption()).c_str());
 
 	auto tprop = impl->m_nameMapper->GetTextProperty();
-	const auto& nameSetting = dynamic_cast<PreProcessorBCGroupDataItem*> (parent())->nameSetting();
+	const auto& nameSetting = groupDataItem()->nameSetting();
 	nameSetting.applySetting(tprop);
 
 	QColor color = impl->m_dialog->color();
@@ -360,54 +347,57 @@ void PreProcessorBCDataItem::setModified(bool modified)
 
 void PreProcessorBCDataItem::assignSelectedElements()
 {
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = groupDataItem()->gridDataItem();
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		const auto& selVertices = tmpparent->selectedVertices();
-		for (int i = 0; i < selVertices.size(); ++i) {
-			impl->m_indices.insert(selVertices[i]);
+		const auto& selVertices = gItem->selectedNodesController()->selectedDataIds();
+		for (auto id : selVertices) {
+			impl->m_indices.insert(id);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		const auto& selCells = tmpparent->selectedCells();
-		for (int i = 0; i < selCells.size(); ++i) {
-			impl->m_indices.insert(selCells[i]);
+		const auto& selCells = gItem->selectedCellsController()->selectedDataIds();
+		for (auto id : selCells) {
+			impl->m_indices.insert(id);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		const QVector<Edge>& selEdges = tmpparent->selectedEdges();
-		for (int i = 0; i < selEdges.count(); ++i) {
-			impl->m_edges.insert(selEdges[i]);
+		const auto& selEdges = gItem->selectedEdgesController()->selectedEdges();
+		for (const auto& edge : selEdges) {
+			impl->m_edges.insert(edge);
 		}
 	}
 	updateElements();
 	updateNameActorSettings();
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	gItem->grid()->setModified();
+
+	gItem->grid()->setIsModified(true);
 	renderGraphicsView();
 	impl->m_isCustomModified = true;
 }
 
 void PreProcessorBCDataItem::releaseSelectedElements()
 {
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = groupDataItem()->gridDataItem();
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		const auto& selVertices = tmpparent->selectedVertices();
-		for (int i = 0; i < selVertices.size(); ++i) {
-			impl->m_indices.remove(selVertices[i]);
+		for (vtkIdType v : gItem->selectedNodesController()->selectedDataIds()) {
+			auto it = impl->m_indices.find(v);
+			if (it != impl->m_indices.end()) {
+				impl->m_indices.erase(it);
+			}
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		const auto& selCells = tmpparent->selectedCells();
-		for (int i = 0; i < selCells.size(); ++i) {
-			impl->m_indices.remove(selCells[i]);
+		for (vtkIdType cellId : gItem->selectedCellsController()->selectedDataIds()) {
+			auto it = impl->m_indices.find(cellId);
+			if (it != impl->m_indices.end()) {
+				impl->m_indices.erase(it);
+			}
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		const QVector<Edge>& selEdges = tmpparent->selectedEdges();
-		for (int i = 0; i < selEdges.count(); ++i) {
-			impl->m_edges.remove(selEdges[i]);
+		const auto& selEdges = gItem->selectedEdgesController()->selectedEdges();
+		for (const auto& edge : selEdges) {
+			impl->m_edges.remove(edge);
 		}
 	}
 	updateElements();
 	updateNameActorSettings();
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	gItem->grid()->setModified();
+	gItem->grid()->setIsModified(true);
 	renderGraphicsView();
 	impl->m_isCustomModified = true;
 }
@@ -415,55 +405,71 @@ void PreProcessorBCDataItem::releaseSelectedElements()
 void PreProcessorBCDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (impl->m_definingBoundingBox) {
+		auto gItem = groupDataItem()->gridDataItem();
+
+		PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 		// drawing bounding box using mouse dragging.
 		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMouseMoveEvent(event, v);
+			controller = gItem->selectedNodesController();
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMouseMoveEvent(event, v);
+			controller = gItem->selectedCellsController();
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->edgeSelectingMouseMoveEvent(event, v);
+			controller = gItem->selectedEdgesController();
 		}
+		controller->handleMouseMoveEvent(event, v);
 	}
 }
 
 void PreProcessorBCDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	if (event->button() == Qt::LeftButton) {
+		auto gItem = groupDataItem()->gridDataItem();
+
 		// start drawing the mouse bounding box.
 		impl->m_definingBoundingBox = true;
+		PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->nodeSelectingMousePressEvent(event, v);
+			controller = gItem->selectedNodesController();
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->cellSelectingMousePressEvent(event, v);
+			controller = gItem->selectedCellsController();
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->edgeSelectingMousePressEvent(event, v);
+			controller = gItem->selectedEdgesController();
 		}
+		controller->handleMousePressEvent(event, v);
 	}
 }
 
 void PreProcessorBCDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	static QMenu* menu = nullptr;
-	PreProcessorGridDataItem* tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = groupDataItem()->gridDataItem();
 	if (event->button() == Qt::LeftButton) {
 		if (impl->m_definingBoundingBox) {
 			bool selected = false;
+			auto gItem = groupDataItem()->gridDataItem();
+			PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-				auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
-				tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
-				selected = (tmpparent->selectedVertices().size() > 0);
+				controller = gItem->selectedNodesController();
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-				tmpparent->cellSelectingMouseReleaseEvent(event, v);
-				selected = (tmpparent->selectedCells().size() > 0);
+				controller = gItem->selectedCellsController();
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-				tmpparent->edgeSelectingMouseReleaseEvent(event, v);
-				selected = (tmpparent->selectedEdges().size() > 0);
+				controller = gItem->selectedEdgesController();
 			}
+			controller->handleMouseReleaseEvent(event, v);
+
+			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
+				selected = (gItem->selectedNodesController()->selectedDataIds().size() > 0);
+			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
+				selected = (gItem->selectedCellsController()->selectedDataIds().size() > 0);
+			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
+				selected = (gItem->selectedEdgesController()->selectedEdges().size() > 0);
+			}
+
 			impl->m_assignAction->setEnabled(selected);
 			impl->m_releaseAction->setEnabled(selected);
 		}
 		impl->m_definingBoundingBox = false;
-		v->setCursor(tmpparent->normalCursor());
+		v->setCursor(gItem->normalCursor());
 	} else if (event->button() == Qt::RightButton) {
 		if (menu != nullptr) {delete menu;}
 		menu = new QMenu(projectData()->mainWindow());
@@ -480,26 +486,30 @@ void PreProcessorBCDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsVi
 
 void PreProcessorBCDataItem::keyPressEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = groupDataItem()->gridDataItem();
+	PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		gitem->nodeSelectingKeyPressEvent(event, v);
+		controller = gItem->selectedNodesController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		gitem->cellSelectingKeyPressEvent(event, v);
+		controller = gItem->selectedCellsController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		gitem->edgeSelectingKeyPressEvent(event, v);
+		controller = gItem->selectedEdgesController();
 	}
+	controller->handleKeyPressEvent(event, v);
 }
 
 void PreProcessorBCDataItem::keyReleaseEvent(QKeyEvent* event, VTKGraphicsView* v)
 {
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = groupDataItem()->gridDataItem();
+	PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		gitem->nodeSelectingKeyReleaseEvent(event, v);
+		controller = gItem->selectedNodesController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		gitem->cellSelectingKeyReleaseEvent(event, v);
+		controller = gItem->selectedCellsController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		gitem->cellSelectingKeyReleaseEvent(event, v);
+		controller = gItem->selectedEdgesController();
 	}
+	controller->handleKeyReleaseEvent(event, v);
 }
 
 void PreProcessorBCDataItem::addCustomMenuItems(QMenu* menu)
@@ -509,24 +519,30 @@ void PreProcessorBCDataItem::addCustomMenuItems(QMenu* menu)
 
 void PreProcessorBCDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
+	auto gItem = groupDataItem()->gridDataItem();
+	PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(true);
+		controller = gItem->selectedNodesController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(true);
+		controller = gItem->selectedCellsController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedEdgesVisibility(true);
+		controller = gItem->selectedEdgesController();
 	}
+	controller->setVisibility(true);
 }
 
 void PreProcessorBCDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
+	auto gItem = groupDataItem()->gridDataItem();
+	PreProcessorGridDataItem::SelectedDataController* controller = nullptr;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedPointsVisibility(false);
+		controller = gItem->selectedNodesController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedCellsVisibility(false);
+		controller = gItem->selectedCellsController();
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-		dynamic_cast<PreProcessorGridDataItem*>(parent()->parent())->setSelectedEdgesVisibility(false);
+		controller = gItem->selectedEdgesController();
 	}
+	controller->setVisibility(false);
 }
 
 void PreProcessorBCDataItem::handleStandardItemChange()
@@ -641,9 +657,9 @@ bool PreProcessorBCDataItem::showDialog()
 	int ret = d->exec();
 	if (ret == QDialog::Rejected) {return false;}
 
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 	if (gItem->grid() != nullptr) {
-		gItem->grid()->setModified();
+		gItem->grid()->setIsModified(true);
 	}
 
 	setName(d->caption());
@@ -669,29 +685,29 @@ void PreProcessorBCDataItem::clearPoints()
 	updateNameActorSettings();
 }
 
-void PreProcessorBCDataItem::assignIndices(const QSet<vtkIdType>& vertices)
+void PreProcessorBCDataItem::assignIndices(const std::unordered_set<vtkIdType>& vertices)
 {
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	if (gitem->grid() == nullptr) {return;}
+	auto gItem = groupDataItem()->gridDataItem();
+	if (gItem->grid() == nullptr) {return;}
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
 		impl->m_indices = vertices;
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 		impl->m_indices.clear();
-		QVector<vtkIdType> cells = gitem->getCellsFromVertices(vertices);
-		for (int i = 0; i < cells.count(); ++i) {
-			impl->m_indices.insert(cells.at(i));
+		auto cells = gItem->getCellsFromVertices(vertices);
+		for (vtkIdType cellId : cells) {
+			impl->m_indices.insert(cellId);
 		}
 	} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
 		impl->m_edges.clear();
-		const QVector<Edge> edges = gitem->getEdgesFromVertices(vertices);
-		for (int i = 0; i < edges.count(); ++i) {
-			impl->m_edges.insert(edges.at(i));
+		const auto edges = gItem->getEdgesFromVertices(vertices);
+		for (const auto& edge : edges) {
+			impl->m_edges.insert(edge);
 		}
 	}
 	updateElements();
 	updateNameActorSettings();
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	gItem->grid()->setModified();
+	
+	gItem->grid()->setIsModified(true);
 	impl->m_isCustomModified = false;
 }
 
@@ -705,7 +721,7 @@ bool PreProcessorBCDataItem::isValid() const
 	bool valid = true;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 			impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-		valid = impl->m_indices.count() > 0;
+		valid = impl->m_indices.size() > 0;
 	} else {
 		valid = impl->m_edges.count() > 0;
 	}
@@ -723,17 +739,17 @@ void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices
 {
 	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 
-	Structured2DGrid* sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (gitem->grid()->grid());
 	if (sgrid == nullptr) {
 		// unstructured grid.
 		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 				impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 			impl->m_indices.clear();
-			for (int i = 0; i < indices.size(); ++i) {
+			for (int i = 0; i < static_cast<int> (indices.size()); ++i) {
 				impl->m_indices.insert(indices[i] - 1);
 			}
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (int i = 0; i < indices.size() / 2; ++i) {
+			for (int i = 0; i < static_cast<int>(indices.size()) / 2; ++i) {
 				Edge e(indices[i * 2] - 1, indices[i * 2 + 1] - 1);
 				impl->m_edges.insert(e);
 			}
@@ -742,24 +758,24 @@ void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices
 		// structured grid.
 		impl->m_indices.clear();
 		if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode) {
-			for (int idx = 0; idx < indices.size() / 2; ++idx) {
+			for (int idx = 0; idx < static_cast<int> (indices.size()) / 2; ++idx) {
 				int i = indices[idx * 2];
 				int j = indices[idx * 2 + 1];
-				impl->m_indices.insert(sgrid->vertexIndex(i - 1, j - 1));
+				impl->m_indices.insert(sgrid->pointIndex(i - 1, j - 1));
 			}
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
-			for (int idx = 0; idx < indices.size() / 2; ++idx) {
+			for (int idx = 0; idx < static_cast<int> (indices.size()) / 2; ++idx) {
 				int i = indices[idx * 2];
 				int j = indices[idx * 2 + 1];
 				impl->m_indices.insert(sgrid->cellIndex(i - 1, j - 1));
 			}
 		} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-			for (int idx = 0; idx < indices.size() / 4; ++idx) {
+			for (int idx = 0; idx < static_cast<int> (indices.size()) / 4; ++idx) {
 				int i1 = indices[idx * 4];
 				int j1 = indices[idx * 4 + 1];
 				int i2 = indices[idx * 4 + 2];
 				int j2 = indices[idx * 4 + 3];
-				Edge e(sgrid->vertexIndex(i1 - 1, j1 - 1), sgrid->vertexIndex(i2 - 1, j2 - 1));
+				Edge e(sgrid->pointIndex(i1 - 1, j1 - 1), sgrid->pointIndex(i2 - 1, j2 - 1));
 				impl->m_edges.insert(e);
 			}
 		}
@@ -769,7 +785,8 @@ void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices
 void PreProcessorBCDataItem::buildIndices(std::vector<int>* indices)
 {
 	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
-	auto sgrid = dynamic_cast<Structured2DGrid*>(gitem->grid());
+	auto sgrid = dynamic_cast<v4Structured2dGrid*> (gitem->grid()->grid());
+
 	QVector<int> tmplist;
 	if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 			impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
@@ -800,10 +817,10 @@ void PreProcessorBCDataItem::buildIndices(std::vector<int>* indices)
 		indices->assign(tmplist.size() * 2, 0);
 		for (int idx = 0; idx < tmplist.size(); ++idx) {
 			int index = tmplist[idx];
-			unsigned int i, j;
+			vtkIdType i = 0, j = 0;
 			if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pNode ||
 					impl->m_condition->position() == SolverDefinitionBoundaryCondition::pEdge) {
-				sgrid->getIJIndex(index, &i, &j);
+				sgrid->getPointIJIndex(index, &i, &j);
 			} else if (impl->m_condition->position() == SolverDefinitionBoundaryCondition::pCell) {
 				sgrid->getCellIJIndex(index, &i, &j);
 			}
@@ -811,6 +828,11 @@ void PreProcessorBCDataItem::buildIndices(std::vector<int>* indices)
 			(*indices)[idx * 2 + 1] = j + 1;
 		}
 	}
+}
+
+PreProcessorBCGroupDataItem* PreProcessorBCDataItem::groupDataItem() const
+{
+	return dynamic_cast<PreProcessorBCGroupDataItem*> (parent());
 }
 
 QString PreProcessorBCDataItem::caption() const

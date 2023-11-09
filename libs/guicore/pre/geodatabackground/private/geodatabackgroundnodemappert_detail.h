@@ -3,6 +3,15 @@
 
 #include "../geodatabackgroundnodemappert.h"
 
+class GeoDataBackgroundNodeMapperSetting : public GeoDataMapperSettingI
+{
+public:
+	GeoDataBackgroundNodeMapperSetting() : GeoDataMapperSettingI() {}
+	~GeoDataBackgroundNodeMapperSetting() {}
+
+	IntegerRangeContainer ranges;
+};
+
 template <class V, class DA>
 GeoDataBackgroundNodeMapperT<V, DA>::GeoDataBackgroundNodeMapperT(GeoDataCreator* parent) :
 	GeoDataNodeMapperT<V, DA> ("Background node mapper", parent)
@@ -11,8 +20,8 @@ GeoDataBackgroundNodeMapperT<V, DA>::GeoDataBackgroundNodeMapperT(GeoDataCreator
 template <class V, class DA>
 GeoDataMapperSettingI* GeoDataBackgroundNodeMapperT<V, DA>::initialize(bool* boolMap)
 {
-	GeoDataBackgroundNodeMapperSetting* s = new GeoDataBackgroundNodeMapperSetting();
-	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
+	auto s = new GeoDataBackgroundNodeMapperSetting();
+	unsigned int count = GeoDataMapperT<V, DA>::container()->dataCount();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
@@ -28,10 +37,10 @@ template <class V, class DA>
 void GeoDataBackgroundNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	auto s2 = dynamic_cast<GeoDataBackgroundNodeMapperSetting*>(s);
-	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V>::container()->dataArray());
-	GeoDataBackground* background = dynamic_cast<GeoDataBackground* >(GeoDataMapper::geoData());
+	auto da = GeoDataMapperT<V, DA>::container()->dataArray();
+	auto background = dynamic_cast<GeoDataBackground* >(GeoDataMapper::geoData());
 	QVariant variantValue = background->variantValue();
-	V value = GeoDataMapperT<V>::fromVariant(variantValue);
+	V value = GeoDataMapperT<V, DA>::fromVariant(variantValue);
 	const auto& ranges = s2->ranges.ranges();
 	for (const auto& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {

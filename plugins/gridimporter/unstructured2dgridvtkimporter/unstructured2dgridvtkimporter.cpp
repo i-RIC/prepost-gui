@@ -1,6 +1,8 @@
 #include "unstructured2dgridvtkimporter.h"
 
-#include <guicore/pre/grid/unstructured2dgrid.h>
+#include <guibase/vtkpointsetextended/vtkunstructuredgridextended2d.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -15,7 +17,7 @@
 
 Unstructured2dGridVtkImporter::Unstructured2dGridVtkImporter() :
 	QObject {nullptr},
-	GridImporterInterface{}
+	GridImporterI{}
 {}
 
 QStringList Unstructured2dGridVtkImporter::fileDialogFilters() const
@@ -35,7 +37,7 @@ SolverDefinitionGridType::GridType Unstructured2dGridVtkImporter::supportedGridT
 	return SolverDefinitionGridType::gtUnstructured2DGrid;
 }
 
-bool Unstructured2dGridVtkImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool Unstructured2dGridVtkImporter::import(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
 	QString tempPath = QDir::tempPath();
 	QString tempFile = iRIC::getTempFileName(tempPath);
@@ -52,15 +54,12 @@ bool Unstructured2dGridVtkImporter::import(Grid* grid, const QString& filename, 
 	reader->SetFileName(iRIC::toStr(tempFile).c_str());
 	reader->Update();
 
-	Unstructured2DGrid* grid2d = dynamic_cast<Unstructured2DGrid*>(grid);
-	grid2d->vtkGrid()->DeepCopy(reader->GetOutput());
+	auto grid2d = dynamic_cast<v4Unstructured2dGrid*> (grid->grid());
+	grid2d->vtkConcreteData()->concreteData()->DeepCopy(reader->GetOutput());
 
 	QFile::remove(tempFile);
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid2d->gridAttributes()){
-		c->allocate();
-	}
+	grid->allocateAttributes();
 
 	return true;
 }

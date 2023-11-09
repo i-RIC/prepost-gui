@@ -1,13 +1,13 @@
 #ifndef PREPROCESSORGRIDCREATINGCONDITIONDATAITEM_H
 #define PREPROCESSORGRIDCREATINGCONDITIONDATAITEM_H
 
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 
 class GridCreatingCondition;
 class QAction;
-class Grid;
+class v4InputGrid;
 
-class PreProcessorGridCreatingConditionDataItem : public PreProcessorGridCreatingConditionDataItemInterface
+class PreProcessorGridCreatingConditionDataItem : public PreProcessorGridCreatingConditionDataItemI
 {
 	Q_OBJECT
 
@@ -18,7 +18,7 @@ public:
 	GridCreatingCondition* condition() const override;
 	void setCondition(GridCreatingCondition* condition) override;
 
-	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const override;
+	PreProcessorGridTypeDataItemI* gridTypeDataItem() const override;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
@@ -61,8 +61,8 @@ private slots:
 	void resetCondition();
 	void deleteCondition();
 	void createGrid();
-	void handleNewGrid(Grid* newgrid);
-	void handleTmpGrid(Grid* tmpgrid);
+	void handleNewGrid(v4InputGrid* newgrid);
+	void handleTmpGrid(v4InputGrid* tmpgrid);
 	void switchAlgorithm();
 
 	void importData();

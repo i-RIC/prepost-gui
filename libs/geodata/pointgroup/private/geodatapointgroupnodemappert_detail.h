@@ -9,14 +9,14 @@ GeoDataPointGroupNodeMapperT<V, DA>::GeoDataPointGroupNodeMapperT(GeoDataCreator
 {}
 
 template <class V, class DA>
-GeoDataMapperSettingI* GeoDataPointGroupNodeMapperT<V, DA>::initialize(bool* boolMap)
+GeoDataMapperSettingI* GeoDataPointGroupNodeMapperT<V, DA>::initialize(bool* /*boolMap*/)
 {
 	auto s = new GeoDataPointGroupNodeMapperSetting();
 	return s;
 }
 
 template <class V, class DA>
-void GeoDataPointGroupNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
+void GeoDataPointGroupNodeMapperT<V, DA>::map(bool* /*boolMap*/, GeoDataMapperSettingI* /*s*/)
 {}
 
 template <class V, class DA>

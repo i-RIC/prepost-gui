@@ -16,12 +16,16 @@ PRECOMPILED_HEADER = structured2dgridnaysgridimporter_pch.h
 
 # iricGuicore library
 
+unix {
+	LIBS += -L"../../../libs/guicore"
+}
 LIBS += -liricGuicore
 
 # VTK
 
 LIBS += \
-	-lvtkCommonCore-$${VTK_MAJ_MIN}
+	-lvtkCommonCore-$${VTK_MAJ_MIN} \
+	-lvtkCommonDataModel-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)

@@ -1,4 +1,4 @@
-#include "../base/preprocessorgeodatacomplexgroupdataiteminterface.h"
+#include "../base/preprocessorgeodatacomplexgroupdataitemi.h"
 #include "../complex/gridcomplexconditionwidget.h"
 #include "geodatabackgroundcomplex.h"
 
@@ -6,7 +6,7 @@ GeoDataBackgroundComplex::GeoDataBackgroundComplex(ProjectDataItem* d, GeoDataCr
 	GeoDataBackground(d, creator, att)
 {}
 
-void GeoDataBackgroundComplex::setItem(PreProcessorGeoDataComplexGroupDataItemInterface* item)
+void GeoDataBackgroundComplex::setItem(PreProcessorGeoDataComplexGroupDataItemI* item)
 {
 	m_item = item;
 }

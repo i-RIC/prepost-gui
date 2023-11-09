@@ -62,9 +62,7 @@ ProjectWorkspace::ProjectWorkspace(QWidget* parent) :
 }
 
 ProjectWorkspace::~ProjectWorkspace()
-{
-	delete impl;
-}
+{}
 
 std::vector<WorkfolderInfo*> ProjectWorkspace::workfolders() const
 {

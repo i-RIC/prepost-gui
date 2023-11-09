@@ -8,17 +8,11 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitionboundarycondition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
-
-#include <QMainWindow>
-#include <QMap>
-#include <QMenu>
-#include <QMessageBox>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
 
 PreProcessorBCSettingGroupDataItem::PreProcessorBCSettingGroupDataItem(PreProcessorDataItem* parent) :
 	PreProcessorDataItem {tr("Boundary Condition Setting"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
@@ -67,7 +61,7 @@ void PreProcessorBCSettingGroupDataItem::deleteSelected()
 	if (ret == QDialog::Rejected) {return;}
 
 	auto settings = dialog.selectSettings();
-	for (int i = 0; i < settings.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (settings.size()); ++i) {
 		if (settings.at(i)) {
 			// delete the item
 			delete items.at(i)->bcDataItem();
@@ -104,7 +98,7 @@ void PreProcessorBCSettingGroupDataItem::doLoadFromProjectMainFile(const QDomNod
 
 void PreProcessorBCSettingGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	for (int i = 0; i < m_childItems.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_childItems.size()); ++i) {
 		writer.writeStartElement("BoundaryConditionSetting");
 		m_childItems[i]->saveToProjectMainFile(writer);
 		writer.writeEndElement();
@@ -193,7 +187,7 @@ void PreProcessorBCSettingGroupDataItem::setupAddActions()
 {
 	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent());
 	auto gtype = gtItem->gridType();
-	for (int i = 0; i < gtype->boundaryConditions().size(); ++i) {
+	for (int i = 0; i < static_cast<int> (gtype->boundaryConditions().size()); ++i) {
 		auto bc = gtype->boundaryConditions().at(i);
 		QString str(tr("Add %1"));
 		QAction* addAction = new QAction(str.arg(bc->caption()), this);
@@ -240,7 +234,7 @@ void PreProcessorBCSettingGroupDataItem::executeMapping(bool noDraw)
 {
 	auto gccdItem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	auto gitem = gccdItem->gridDataItem();
-	Grid* grid = gitem->grid();
+	v4InputGrid* grid = gitem->grid();
 	if (grid == nullptr && ! noDraw) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("Mapping can not be executed when there is no grid."));
 		return;

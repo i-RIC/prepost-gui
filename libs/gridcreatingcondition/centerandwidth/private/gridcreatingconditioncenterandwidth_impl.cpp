@@ -1,6 +1,6 @@
 #include "gridcreatingconditioncenterandwidth_impl.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/mathsupport.h>
 
 #include <QAction>
@@ -84,7 +84,7 @@ GridCreatingConditionCenterAndWidth::Impl::~Impl()
 	m_previewMapper->Delete();
 }
 
-void GridCreatingConditionCenterAndWidth::Impl::updateMouseEventMode(const QPoint& pos, PreProcessorGraphicsViewInterface* view)
+void GridCreatingConditionCenterAndWidth::Impl::updateMouseEventMode(const QPoint& pos, PreProcessorGraphicsViewI* view)
 {
 	auto worldPos = view->viewportToWorld(pos);
 	double radius = view->stdRadius(iRIC::nearRadius());
@@ -129,7 +129,7 @@ void GridCreatingConditionCenterAndWidth::Impl::updateMouseEventMode(const QPoin
 	}
 }
 
-void GridCreatingConditionCenterAndWidth::Impl::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionCenterAndWidth::Impl::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 
 	switch (m_mouseEventMode) {

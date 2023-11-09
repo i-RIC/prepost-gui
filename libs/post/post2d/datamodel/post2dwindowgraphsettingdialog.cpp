@@ -24,7 +24,6 @@ Post2dWindowGraphSettingDialog::Post2dWindowGraphSettingDialog(QWidget *parent) 
 Post2dWindowGraphSettingDialog::~Post2dWindowGraphSettingDialog()
 {
 	delete ui;
-	delete impl;
 }
 
 void Post2dWindowGraphSettingDialog::setDimensions(int dimI, int dimJ)

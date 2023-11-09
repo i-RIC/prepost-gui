@@ -1,7 +1,7 @@
 #include "iricmainwindowexecuterwatcher.h"
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 
-iRICMainWindowExecuterWatcher::iRICMainWindowExecuterWatcher(ExecuterI* executer, iRICMainWindowInterface* w) :
+iRICMainWindowExecuterWatcher::iRICMainWindowExecuterWatcher(ExecuterI* executer, iRICMainWindowI* w) :
 	WaitDialogExecuterWatcher(executer, w),
 	m_mainWindow {w}
 {}

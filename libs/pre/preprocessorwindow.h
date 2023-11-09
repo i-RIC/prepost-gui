@@ -4,13 +4,13 @@
 #include "pre_global.h"
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/base/windowwithpropertybrowser.h>
 #include <guicore/base/windowwithtmsi.h>
-#include <guicore/base/windowwithzindexinterface.h>
+#include <guicore/base/windowwithzindexi.h>
 #include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/bgcolor/backgroundcoloreditvtkinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/bgcolor/backgroundcoloreditvtki.h>
 
 #include <QCloseEvent>
 #include <QByteArray>
@@ -24,20 +24,20 @@ class PrePropertyBrowser;
 class ProjectData;
 class ProjectDataItem;
 class PreProcessorWindowProjectDataItem;
-class PreProcessorDataModelInterface;
+class PreProcessorDataModelI;
 class PreProcessorDataModel;
 class PreProcessorWindowActionManager;
 class PreProcessorGraphicsView;
 
 /// PreProcessorWindow class implements the main window of pre-processor.
 class PREDLL_EXPORT PreProcessorWindow :
-	public PreProcessorWindowInterface,
+	public PreProcessorWindowI,
 	public AdditionalMenuWindowI,
-	public WindowWithObjectBrowserInterface,
+	public WindowWithObjectBrowserI,
 	public WindowWithTmsI,
 	public WindowWithPropertyBrowser,
-	public WindowWithZIndexInterface,
-	public BackgroundColorEditVtkInterface,
+	public WindowWithZIndexI,
+	public BackgroundColorEditVtkI,
 	public WindowWithVtkGraphicsViewI
 {
 	Q_OBJECT
@@ -86,7 +86,7 @@ public:
 	void informUnfocusRiverCrosssectionWindows();
 	bool isSetupCorrectly() const;
 	bool checkMappingStatus() override;
-	PreProcessorDataModelInterface* dataModel() const override;
+	PreProcessorDataModelI* dataModel() const override;
 	VTKGraphicsView* getVtkGraphicsView() const override;
 	bool setupCgnsFilesIfNeeded(bool readGrid);
 

@@ -3,9 +3,9 @@
 #include "private/solverconsolewindow_impl.h"
 #include "private/solverconsolewindow_setbackgroundcolorcommand.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectcgnsmanager.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -33,7 +33,7 @@ const int SOLVER_CANCEL_WAITTIME = 5;
 
 } // namespace
 
-SolverConsoleWindow::Impl::Impl(iRICMainWindowInterface* mainW, SolverConsoleWindow* w) :
+SolverConsoleWindow::Impl::Impl(iRICMainWindowI* mainW, SolverConsoleWindow* w) :
 	m_iricMainWindow {mainW},
 	m_process {nullptr},
 	m_window {w}
@@ -93,7 +93,7 @@ void SolverConsoleWindow::Impl::appendLogLine(const QString& line)
 
 // public interfaces
 
-SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowInterface* parent) :
+SolverConsoleWindow::SolverConsoleWindow(iRICMainWindowI* parent) :
 	QMainWindowWithSnapshot {parent},
 	impl {new Impl(parent, this)}
 {

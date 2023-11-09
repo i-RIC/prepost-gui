@@ -48,7 +48,7 @@ private slots:
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // TMSREGIONSELECTWIDGET_H

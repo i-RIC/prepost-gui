@@ -5,7 +5,10 @@
 #include "../geodatapolylinegroupcellmappert.h"
 #include "../geodatapolylinegrouppolyline.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpointsutil.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 
 template <class V, class DA>
 GeoDataPolyLineGroupCellMapperT<V, DA>::GeoDataPolyLineGroupCellMapperT(GeoDataCreator* parent) :
@@ -16,25 +19,26 @@ template <class V, class DA>
 GeoDataMapperSettingI* GeoDataPolyLineGroupCellMapperT<V, DA>::initialize(bool* boolMap)
 {
 	auto s = new GeoDataPolyLineGroupCellMapperSetting();
-	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
+	unsigned int count = GeoDataMapperT<V, DA>::container()->dataCount();
 	auto polylineGroup = dynamic_cast<GeoDataPolyLineGroup*> (GeoDataMapper::geoData());
 	polylineGroup->mergeEditTargetData();
 	polylineGroup->updateOrder();
 
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (*(boolMap + i)) {
 			s->ranges.add(nullptr);
 			continue;
 		}
 		// not mapped yet.
-		vtkCell* cell = GeoDataMapper::grid()->vtkGrid()->GetCell(i);
+		vtkCell* cell = vtkGrid->GetCell(i);
 		auto polygon = vtkPointsUtil::getPolygon(cell);
 		double xmin, xmax, ymin, ymax;
 		vtkPointsUtil::getBoundingBox(cell, &xmin, &xmax, &ymin, &ymax);
 		auto lines = polylineGroup->polyLinesInBoundingBox(xmin, xmax, ymin, ymax);
 
 		std::map<unsigned int, GeoDataPolyLineGroupPolyLine*> linesMap;
-		for (GeoDataPolyLineGroupPolyLine* l : lines) {
+		for (auto l : lines) {
 			if (l->intersectWithPolygon(polygon)) {
 				linesMap.insert({l->order(), l});
 			}
@@ -53,7 +57,7 @@ template <class V, class DA>
 void GeoDataPolyLineGroupCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	auto setting = dynamic_cast<GeoDataPolyLineGroupCellMapperSetting*> (s);
-	DA* da = dynamic_cast<DA*> (GeoDataMapperT<V>::container()->dataArray());
+	DA* da = dynamic_cast<DA*> (GeoDataMapperT<V, DA>::container()->dataArray());
 	const auto& lines = setting->ranges.data();
 	const auto& maxIndices = setting->ranges.maxIndices();
 	int rangeId = 0;
@@ -64,7 +68,7 @@ void GeoDataPolyLineGroupCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSet
 		if (line == nullptr) {
 			idx = maxIdx + 1;
 		} else {
-			V value = GeoDataMapperT<V>::fromVariant(line->value());
+			V value = GeoDataMapperT<V, DA>::fromVariant(line->value());
 			while (idx <= maxIdx) {
 				if (*(boolMap + idx) == false) {
 					da->SetValue(idx, value);

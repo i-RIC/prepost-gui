@@ -35,6 +35,7 @@ private slots:
 
 private:
 	void apply();
+	QUndoCommand* createModifyCommand(bool apply);
 
 	bool m_applied;
 	PreProcessorGridAttributeNodeGroupDataItem* m_item;

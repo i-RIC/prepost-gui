@@ -83,6 +83,11 @@ SolverDefinitionAbstract::SolverDefinitionAbstract(const QString& solverfolder, 
 	impl->load(solverfolder, locale);
 }
 
+SolverDefinitionAbstract::~SolverDefinitionAbstract()
+{
+	delete impl;
+}
+
 const QString& SolverDefinitionAbstract::folderName() const
 {
 	return impl->m_folderName;

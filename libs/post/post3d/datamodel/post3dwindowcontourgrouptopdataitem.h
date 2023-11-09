@@ -5,6 +5,8 @@
 
 #include <QMap>
 
+class Post3dWindowZoneDataItem;
+
 class Post3dWindowContourGroupTopDataItem : public Post3dWindowDataItem
 {
 	Q_OBJECT
@@ -15,6 +17,8 @@ public:
 	double zScale() const;
 	void innerUpdateZScale(double scale) override;
 	void update();
+
+	Post3dWindowZoneDataItem* zoneDataItem() const;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode&) override;

@@ -5,8 +5,8 @@
 #include "../public/geodatapoint_displaysettingwidget.h"
 #include "ui_geodatapointproxy_displaysettingwidget.h"
 
-#include <guicore/post/post2d/base/post2dwindowgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
 #include <misc/valuemodifycommandt.h>

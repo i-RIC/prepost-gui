@@ -138,7 +138,6 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowDataModel::getZoneDataItem()
 	// no appropriate zonedatatem found.
 	PostSolutionInfo* info = postSolutionInfo();
 	QList<PostZoneDataContainer*> containers = info->zoneContainers2D();
-	Post2dBirdEyeWindowZoneDataItem* zitem;
 	if (containers.count() == 0) {
 		// No zone container exists.
 		return nullptr;

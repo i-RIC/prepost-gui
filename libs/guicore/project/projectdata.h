@@ -8,7 +8,7 @@
 
 class QDir;
 class QLockFile;
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class ProjectMainFile;
 class SolverDefinition;
 class VersionNumber;
@@ -34,7 +34,7 @@ public:
 	/// File name of lock file (that is put just under the workfolder)
 	const static QString LOCKFILENAME;
 
-	ProjectData(const QString& workdir, iRICMainWindowInterface* parent);
+	ProjectData(const QString& workdir, iRICMainWindowI* parent);
 	virtual ~ProjectData();
 
 	/// Returns the absolute file path of a file included in the project data.
@@ -71,7 +71,7 @@ public:
 	QString masterCgnsFileName() const;
 	QString flushCopyCgnsFileName() const;
 	/// iRIC Main Window.
-	iRICMainWindowInterface* mainWindow() const {return m_mainWindow;}
+	iRICMainWindowI* mainWindow() const {return m_mainWindow;}
 	QString tmpFileName() const;
 	/// Move the work folder to the specified folder. Old folder is removed.
 	bool moveTo(const QString& newWorkFolder);
@@ -120,7 +120,7 @@ private:
 	/// Lock file
 	QLockFile* m_lockFile;
 	/// iRIC MainWindow
-	iRICMainWindowInterface* m_mainWindow;
+	iRICMainWindowI* m_mainWindow;
 	/// Post only mode (i. e. solver definition does not exist);
 	bool m_isPostOnlyMode;
 	/// True when solver is running

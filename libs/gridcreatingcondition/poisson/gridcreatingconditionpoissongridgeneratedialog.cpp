@@ -6,8 +6,8 @@ GridCreatingConditionPoissonGridGenerateDialog::GridCreatingConditionPoissonGrid
 	ui(new Ui::GridCreatingConditionPoissonGridGenerateDialog)
 {
 	ui->setupUi(this);
-	connect(ui->nISpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDI()));
-	connect(ui->nJSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDJ()));
+	connect<void (QSpinBox::*)(int)>(ui->nISpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionPoissonGridGenerateDialog::updateDI);
+	connect<void (QSpinBox::*)(int)>(ui->nJSpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionPoissonGridGenerateDialog::updateDJ);
 }
 
 GridCreatingConditionPoissonGridGenerateDialog::~GridCreatingConditionPoissonGridGenerateDialog()

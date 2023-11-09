@@ -4,7 +4,7 @@
 #include "geodatanetcdfimportersettingdialog.h"
 #include "private/geodatanetcdf_impl.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
@@ -78,7 +78,7 @@ const QStringList GeoDataNetcdfImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_groupDataItem = item;
 

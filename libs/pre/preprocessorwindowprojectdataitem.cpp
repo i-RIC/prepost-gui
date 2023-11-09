@@ -10,7 +10,7 @@
 
 #include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/propertybrowserview.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/xmlsupport.h>
 

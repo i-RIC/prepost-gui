@@ -2,11 +2,11 @@
 #define POST2DWINDOWGEODATADATAITEM_H
 
 #include <guicore/datamodel/geodataproxydataitem.h>
-#include <guicore/post/post2d/base/post2dwindowgeodatadataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgeodatadataitemi.h>
 
 class GeoDataProxy;
 
-class Post2dWindowGeoDataDataItem : public GeoDataProxyDataItem, public Post2dWindowGeoDataDataItemInterface
+class Post2dWindowGeoDataDataItem : public GeoDataProxyDataItem, public Post2dWindowGeoDataDataItemI
 {
 	Q_OBJECT
 

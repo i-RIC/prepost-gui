@@ -2,7 +2,7 @@
 #include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 
 Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem::Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parentWindow)
 	: ProjectDataItem(item)

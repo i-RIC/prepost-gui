@@ -4,15 +4,18 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guibase/vtkCustomStreamTracer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkstreamtracerutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -38,9 +41,9 @@ Post3dWindowNodeVectorParticleGroupDataItem::Post3dWindowNodeVectorParticleGroup
 
 	informGridUpdate();
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		auto caption = gt->vectorOutputCaption(name);
 		auto item = new Post3dWindowNodeVectorParticleDataItem(name, caption, this);
 		m_childItems.push_back(item);
@@ -68,10 +71,10 @@ void Post3dWindowNodeVectorParticleGroupDataItem::updateActorSetting()
 	clearParticleActors();
 	clearParticles();
 
-	auto cont = zoneDataItem()->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {return;}
 	if (m_setting.target == "") {return;}
-	vtkPointSet* ps = cont->data()->data();
+	vtkPointSet* ps = cont->gridData()->grid()->vtkData()->data();
 	vtkPointData* pd = ps->GetPointData();
 	if (pd->GetNumberOfArrays() == 0) {return;}
 
@@ -101,18 +104,16 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	if (m_standardItem->checkState() == Qt::Unchecked) {return;}
 	if (m_setting.target == "") {return;}
 
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	if (zoneContainer == nullptr) {return;}
-
+	auto cont = zoneDataItem()->v4DataContainer();
 	int currentStep = 0;
-	if (zoneContainer != nullptr) {
-		currentStep = zoneContainer->solutionInfo()->currentStep();
-	}
-	setupActors();
-	if (zoneContainer == nullptr || zoneContainer->data() == nullptr) {
+	if (cont == nullptr || cont->gridData()) {
 		resetParticles();
 		goto TIMEHANDLING;
 	}
+
+	currentStep = cont->solutionInfo()->currentStep();
+
+	setupActors();
 
 	if (currentStep != 0 && (currentStep == m_previousStep + 1 || projectData()->mainWindow()->continuousSnapshotInProgress())) {
 		addParticles();
@@ -124,9 +125,8 @@ void Post3dWindowNodeVectorParticleGroupDataItem::informGridUpdate()
 	assignActorZValues(m_zDepthRange);
 
 TIMEHANDLING:
-
 	m_previousStep = currentStep;
-	PostTimeSteps* tSteps = zoneContainer->solutionInfo()->timeSteps();
+	PostTimeSteps* tSteps = cont->solutionInfo()->timeSteps();
 	if (m_previousStep < tSteps->timesteps().count()) {
 		m_previousTime = tSteps->timesteps().at(m_previousStep);
 	} else {
@@ -158,9 +158,9 @@ bool Post3dWindowNodeVectorParticleGroupDataItem::isOutput() const
 	if (standardItem()->checkState() != Qt::Checked) {return false;}
 	if (m_setting.target == "") {return false;}
 
-	auto cont = dynamic_cast<Post3dWindowZoneDataItem*> (parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return false;}
-	if (cont->data() == nullptr) {return false;}
+	if (cont->gridData() == nullptr) {return false;}
 
 	return true;
 }
@@ -186,8 +186,8 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 		// continue
 	} else {
 		const auto& timeVals = m_setting.arbitraryTimes.value();
-		auto zoneContainer = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-		int s = zoneContainer->solutionInfo()->currentStep();
+		auto cont = zoneDataItem()->v4DataContainer();
+		int s = cont->solutionInfo()->currentStep();
 		bool found = std::binary_search(timeVals.begin(), timeVals.end(), s);
 		if (! found) {
 			add = false;
@@ -213,8 +213,8 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 		mapper->SetInputData(polyData);
 	}
 
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	unsigned int currentStep = zoneContainer->solutionInfo()->currentStep();
+	auto cont = zoneDataItem()->v4DataContainer();
+	unsigned int currentStep = cont->solutionInfo()->currentStep();
 	if (m_setting.timeMode == ParticleSettingContainer::TimeMode::Skip) {
 		m_nextStepToAddParticles = currentStep + m_setting.timeSamplingRate;
 	} else {
@@ -224,13 +224,13 @@ void Post3dWindowNodeVectorParticleGroupDataItem::resetParticles()
 
 void Post3dWindowNodeVectorParticleGroupDataItem::addParticles()
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	vtkPointSet* ps = zoneContainer->data()->data();
+	auto cont = zoneDataItem()->v4DataContainer();
+	vtkPointSet* ps = cont->gridData()->grid()->vtkData()->data();
 	ps->GetPointData()->SetActiveVectors(iRIC::toStr(m_setting.target).c_str());
 
-	int currentStep = zoneContainer->solutionInfo()->currentStep();
+	int currentStep = cont->solutionInfo()->currentStep();
 
-	PostTimeSteps* tSteps = zoneContainer->solutionInfo()->timeSteps();
+	PostTimeSteps* tSteps = cont->solutionInfo()->timeSteps();
 	QList<double> timeSteps = tSteps->timesteps();
 	double timeDiv = timeSteps[currentStep] - m_previousTime;
 
@@ -345,7 +345,7 @@ vtkPolyData* Post3dWindowNodeVectorParticleGroupDataItem::setupPolyDataFromPoint
 
 bool Post3dWindowNodeVectorParticleGroupDataItem::exportParticles(const QString& filePrefix, int fileIndex, double time)
 {
-	for (int i = 0; i < m_particles.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (m_particles.size()); ++i) {
 		QString tmpFile = projectData()->tmpFileName();
 
 		auto writer = vtkSmartPointer<vtkPolyDataWriter>::New();

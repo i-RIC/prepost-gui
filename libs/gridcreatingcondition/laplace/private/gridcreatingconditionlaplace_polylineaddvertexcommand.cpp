@@ -1,7 +1,7 @@
 #include "gridcreatingconditionlaplace_polylineaddvertexcommand.h"
 
 #include <guibase/polyline/polylinecontroller.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionLaplace::PolyLineAddVertexCommand::PolyLineAddVertexCommand(bool keyDown, PolyLineController* line, int edgeId, QPoint point, GridCreatingConditionLaplace* cond) :

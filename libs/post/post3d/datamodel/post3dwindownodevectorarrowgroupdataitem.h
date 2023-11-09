@@ -13,7 +13,7 @@
 class BoolContainerWidget;
 class ColorMapSettingContainerI;
 class Post3dWindowNodeVectorArrowTopDataItem;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class Post3dWindowNodeVectorArrowGroupDataItem : public Post3dWindowDataItem
 {
@@ -28,7 +28,7 @@ public:
 	const std::string& target() const;
 	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
 	const ArrowsSettingContainer& setting() const;
-	PostZoneDataContainer* data() const;
+	v4PostZoneDataContainer* data() const;
 
 	std::vector<Post3dWindowNodeVectorArrowDataItem::Setting> faceSettings();
 	void setFaceSettings(const std::vector<Post3dWindowNodeVectorArrowDataItem::Setting>& settings);

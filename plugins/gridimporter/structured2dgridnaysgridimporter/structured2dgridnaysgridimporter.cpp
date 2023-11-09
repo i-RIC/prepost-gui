@@ -3,9 +3,10 @@
 #include <float.h>
 #include <cmath>
 
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
 
 #include <QDataStream>
 #include <QFile>
@@ -14,11 +15,9 @@
 
 #include <vector>
 
-Structured2DGridNaysGridImporter::Structured2DGridNaysGridImporter()
-	: QObject(), GridImporterInterface()
-{
-
-}
+Structured2DGridNaysGridImporter::Structured2DGridNaysGridImporter() :
+	QObject(), GridImporterI()
+{}
 
 QString Structured2DGridNaysGridImporter::caption() const
 {
@@ -37,24 +36,24 @@ SolverDefinitionGridType::GridType Structured2DGridNaysGridImporter::supportedGr
 	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
-bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool Structured2DGridNaysGridImporter::import(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
 	// Show warning dialog first.
 	QMessageBox::warning(parent, tr("Warning"), tr("Cell flag values will not be loaded."), QMessageBox::Ok);
 
-	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
+	auto grid2d = dynamic_cast<v4Structured2dGrid*>(grid->grid());
 
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
 	QDataStream st(&f);
 	st.setByteOrder(QDataStream::LittleEndian);
 
-	GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
+	GridAttributeContainer* c = grid->attribute("Elevation");
 	if (c == 0){
 		// this grid does not have Elevation. Impossible to import.
 		return false;
 	}
-	GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
+	auto container = dynamic_cast<GridAttributeRealContainer*>(c);
 
 	int len, imax, jmax, kmax, obst;
 	// Load imax, jmax, kmax, and obst flag.
@@ -66,20 +65,9 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	// kmax == 2 always. data in k = 0 should be loaded.
 
 	grid2d->setDimensions(imax, jmax);
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate(imax * jmax);
+	grid->allocateAttributes();
 
-	points->InsertPoint(imax * jmax - 1, 0, 0, 0);
-	grid2d->vtkGrid()->SetPoints(points);
-
-	// allocate memory for all grid related conditions.
-	QList<GridAttributeContainer*>& clist = grid2d->gridAttributes();
-	for (GridAttributeContainer* c : clist){
-		c->allocate();
-	}
 	int gridsize = imax * jmax;
-
 	std::vector<double> x(gridsize);
 	std::vector<double> y(gridsize);
 	std::vector<double> z(gridsize);
@@ -121,11 +109,11 @@ bool Structured2DGridNaysGridImporter::import(Grid* grid, const QString& filenam
 	int offset = 0;
 	for (int j = 0; j < jmax; ++j){
 		for (int i = 0; i < imax; ++i){
-			unsigned int id = grid2d->vertexIndex(i, j);
-			points->InsertPoint(id, x[offset], y[offset], 0);
-			container->setValue(id, z[offset]);
+			grid2d->setPoint2d(i, j, QPointF(x[offset], y[offset]));
+			container->setValue(grid2d->pointIndex(i, j), z[offset]);
 			++offset;
 		}
 	}
+
 	return true;
 }

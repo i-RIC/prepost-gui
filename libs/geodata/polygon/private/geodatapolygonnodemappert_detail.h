@@ -14,17 +14,19 @@ template <class V, class DA>
 GeoDataMapperSettingI* GeoDataPolygonNodeMapperT<V, DA>::initialize(bool* boolMap)
 {
 	GeoDataPolygonNodeMapperSetting* s = new GeoDataPolygonNodeMapperSetting();
-	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
+	unsigned int count = GeoDataMapperT<V, DA>::container()->dataCount();
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapper::geoData());
 	vtkPointSet* pointSet = polygon->polyData();
 	double bounds[6];
 	pointSet->GetBounds(bounds);
 	double weights[3];
+
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
 			double point[3];
-			GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+			vtkGrid->GetPoint(i, point);
 			// investigate whether the point is inside the polygon.
 			bool in;
 			// first use bounds for checking.
@@ -66,9 +68,9 @@ template <class V, class DA>
 void GeoDataPolygonNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	GeoDataPolygonNodeMapperSetting* setting = dynamic_cast<GeoDataPolygonNodeMapperSetting*>(s);
-	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V>::container()->dataArray());
-	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V>::geoData());
-	V value = GeoDataMapperT<V>::fromVariant(polygon->variantValue());
+	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V, DA>::container()->dataArray());
+	auto polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V, DA>::geoData());
+	V value = GeoDataMapperT<V, DA>::fromVariant(polygon->variantValue());
 	const auto& ranges = setting->ranges.ranges();
 	for (const auto& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {

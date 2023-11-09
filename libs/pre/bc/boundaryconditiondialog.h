@@ -9,7 +9,7 @@ class QAbstractButton;
 class SolverDefinition;
 class QDomElement;
 class QLocale;
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 
 namespace Ui
 {
@@ -31,7 +31,7 @@ class BoundaryConditionDialog : public QDialog
 	Q_OBJECT
 
 public:
-	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowInterface* mw, QWidget* parent);
+	BoundaryConditionDialog(PreProcessorBCDataItem* dataitem, iRICMainWindowI* mw, QWidget* parent);
 	~BoundaryConditionDialog();
 
 	void setup(SolverDefinition* def, const QDomElement& elem, const QLocale& locale);

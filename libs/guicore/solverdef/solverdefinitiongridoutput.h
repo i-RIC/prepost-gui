@@ -30,6 +30,7 @@ public:
 
 	Position position() const;
 
+	virtual QVariant attributeBrowserValue(double value) const;
 	ColorMapSettingContainerI* createColorMapSettingContainer() const;
 	ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer() const;
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(QWidget* parent) const;
@@ -44,7 +45,7 @@ private:
 	virtual void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // SOLVERDEFINITIONGRIDOUTPUT_H

@@ -19,10 +19,13 @@
 #include <QPointF>
 #include <QVector>
 
+class GeoDataRiverSurvey;
+class v4InputGrid;
+class v4Structured15dGridWithCrossSection;
+class RiverGridCtrlSolver;
+
 class QAction;
 class QToolBar;
-class GeoDataRiverSurvey;
-class RiverGridCtrlSolver;
 
 class GridCreatingConditionRiverSurvey15D : public GridCreatingCondition
 {
@@ -56,17 +59,17 @@ public:
 	bool init() override;
 	void setupActors() override;
 	void setupMenu() override;
-	void informSelection(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/);
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void informSelection(PreProcessorGraphicsViewI* /*v*/) override;
+	void informDeselection(PreProcessorGraphicsViewI* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void enterEvent(QEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& /*range*/) override;
 	void showDialog(QWidget* parent);
@@ -100,7 +103,7 @@ private:
 	void selectCtrlZone(const QPointF& point, double width);
 	bool selectCtrlZone(GeoDataRiverPathPoint* p, GeoDataRiverPathPoint::CtrlZonePosition pos, const QPointF& point, double width);
 
-	void setupCrosssections(Grid* grid);
+	void setupCrosssections(v4InputGrid* grid);
 
 	void setupVtkContainers();
 	void updateShapeData();
@@ -109,8 +112,8 @@ private:
 	bool ctrlPointSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
 	bool ctrlPointXORSelectRegion(const QPointF& p0, const QPointF& v0, const QPointF& v1);
 
-	void processCtrlPoints(int* index, Grid* grid, GeoDataRiverPathPoint* p, int dataNum);
-	void appendCrossSectionToGrid(GeoDataRiverCrosssection& cs, Grid* grid, const QString& name);
+	void processCtrlPoints(int* index, v4Structured15dGridWithCrossSection* grid, GeoDataRiverPathPoint* p, int dataNum);
+	void appendCrossSectionToGrid(GeoDataRiverCrosssection& cs, v4Structured15dGridWithCrossSection* grid, const QString& name);
 
 	/// The pointdata, that has the positions of
 	/// River center, left bank, and right bank
@@ -186,6 +189,9 @@ private slots:
 	void handleDataChange();
 	void handleDataDestroy();
 
+private:
+	class DeleteCtrlPointCommand;
+
 public:
 	friend class GridCreatingConditionRiverSurvey15DPointAddDialog;
 	friend class GridCreatingConditionRiverSurvey15DPointRepositionDialog;
@@ -193,7 +199,6 @@ public:
 	friend class GridCreatingConditionRiverSurvey15DPointAddCommand;
 	friend class GridCreatingConditionCtrlPointRepositionCommand15D;
 	friend class GridCreatingConditionCtrlPointMoveCommand15D;
-	friend class GridCreatingConditionCtrlPointDeleteCommand15D;
 	friend class GridCreatingConditionCtrlPointRegionAddCommand15D;
 };
 

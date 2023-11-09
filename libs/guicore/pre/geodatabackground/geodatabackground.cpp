@@ -1,9 +1,9 @@
-#include "../base/preprocessorgeodatadataiteminterface.h"
-#include "../base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../base/preprocessorgeodatadataitemi.h"
+#include "../base/preprocessorgeodatagroupdataitemi.h"
 #include "../gridcond/base/gridattributeeditdialog.h"
 #include "geodatabackground.h"
 #include "geodatabackgroundeditdialog.h"
-#include "../base/preprocessorwindowinterface.h"
+#include "../base/preprocessorwindowi.h"
 #include "private/geodatabackground_editvaluecommand.h"
 
 #include <misc/iricundostack.h>
@@ -37,7 +37,7 @@ GeoDataBackground::GeoDataBackground(ProjectDataItem* d, GeoDataCreator* creator
 void GeoDataBackground::setupDataItem()
 {
 	// hide from object browser.
-	PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent());
+	PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(parent());
 	QStandardItem* pItem = item->standardItem()->parent();
 	pItem->takeRow(item->standardItem()->row());
 }
@@ -91,7 +91,7 @@ void GeoDataBackground::editValue()
 {
 	if (m_gridAttribute->isOption()) {
 		GridAttributeEditDialog* dialog = m_gridAttribute->editDialog(preProcessorWindow());
-		PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+		PreProcessorGeoDataGroupDataItemI* i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 		dialog->setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		dialog->setLabel(tr("Please input new default value."));
 		dialog->setVariantValue(m_customValue);
@@ -102,7 +102,7 @@ void GeoDataBackground::editValue()
 		delete dialog;
 	} else {
 		GeoDataBackgroundEditDialog dialog(preProcessorWindow());
-		PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+		PreProcessorGeoDataGroupDataItemI* i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 		dialog.setWindowTitle(QString(tr("Edit %1 default value")).arg(i->condition()->caption()));
 		GridAttributeEditWidget* widget = m_gridAttribute->editWidget(0);
 		dialog.setWidget(widget);
@@ -128,7 +128,7 @@ bool GeoDataBackground::getValueRange(double* min, double* max)
 
 QVariant GeoDataBackground::variantValue()
 {
-	PreProcessorGeoDataGroupDataItemInterface* gi = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* gi = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	double min, max;
 	gi->getValueRange(&min, &max);
 	if (m_type == Maximum) {

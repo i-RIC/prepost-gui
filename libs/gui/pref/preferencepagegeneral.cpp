@@ -3,8 +3,8 @@
 #include "preferencepagegeneral.h"
 #include "../misc/periodicalupdatechecker.h"
 
+#include <guicore/grid/v4gridutil.h>
 #include <guicore/project/projectworkspace.h>
-#include <guicore/pre/grid/grid.h>
 #include <solverconsole/solverconsolewindowprojectdataitem.h>
 #include <misc/iricundostack.h>
 #include <misc/pythonutil.h>
@@ -42,8 +42,8 @@ PreferencePageGeneral::PreferencePageGeneral(QWidget* parent) :
 	ui->checkIntervalSpinBox->setValue(checkInterval);
 
 	bool cullEnable = settings.value("general/cullcellenable", true).toBool();
-	int cullCellLimit = settings.value("general/cullcelllimit", Grid::MAX_DRAWCELLCOUNT).toInt();
-	int cullIndexLimit = settings.value("general/cullindexlimit", Grid::MAX_DRAWINDEXCOUNT).toInt();
+	int cullCellLimit = settings.value("general/cullcelllimit", v4GridUtil::DEFAULT_MAX_DRAW_CELL_COUNT).toInt();
+	int cullIndexLimit = settings.value("general/cullindexlimit", v4GridUtil::DEFAULT_MAX_DRAW_INDEX_COUNT).toInt();
 	ui->cullEnableCheckBox->setChecked(cullEnable);
 	ui->cullMaxNumberSpinBox->setValue(cullCellLimit);
 	ui->cullMaxIndexSpinBox->setValue(cullIndexLimit);

@@ -3,7 +3,7 @@
 #include "measureddatavectorgrouptopdataitem.h"
 #include "private/measureddatafiledataitem_impl.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/project/measured/measureddata.h>
@@ -98,7 +98,7 @@ void MeasuredDataFileDataItem::exportToFile()
 		MeasuredDataCsvExporter exporter;
 		exporter.exportData(fname, offset(), *(impl->m_measuredData));
 
-		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+		iricMainWindow()->statusBar()->showMessage(tr("Measured Data successfully exported to %1.").arg(QDir::toNativeSeparators(fname)), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 	} catch (ErrorMessage& message) {
 		QMessageBox::critical(iricMainWindow(), tr("Error"), message);
 	}

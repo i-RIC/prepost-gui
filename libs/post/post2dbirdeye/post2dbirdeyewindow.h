@@ -6,7 +6,7 @@
 #include <QVector2D>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/base/additionalmenuwindowi.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
 
 class QAction;
@@ -22,7 +22,7 @@ class Post2dBirdEyeWindowEditBackgroundColorCommand;
 class Post2dBirdEyeWindow :
 	public PostProcessorWindow,
 	public AdditionalMenuWindowI,
-	public WindowWithObjectBrowserInterface,
+	public WindowWithObjectBrowserI,
 	public WindowWithVtkGraphicsViewI
 {
 	Q_OBJECT

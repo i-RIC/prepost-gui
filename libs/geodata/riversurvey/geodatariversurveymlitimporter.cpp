@@ -263,7 +263,7 @@ const QStringList GeoDataRiverSurveyMlitImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* w)
+bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
 {
 	if (! readMlitRivFile(filename, &m_points, &m_with4Points, w)) {return false;}
 

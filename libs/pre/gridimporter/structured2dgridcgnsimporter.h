@@ -5,12 +5,11 @@
 
 class Structured2DGridCgnsImporter : public CgnsGridImporter
 {
-
 public:
 	Structured2DGridCgnsImporter();
 	SolverDefinitionGridType::GridType supportedGridType() const override;
 
-protected:
+private:
 	bool isZoneCompatible(const iRICLib::H5CgnsZone& zone) override;
 };
 

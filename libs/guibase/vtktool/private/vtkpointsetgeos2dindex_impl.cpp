@@ -22,7 +22,8 @@ vtkPointSetGeos2dIndex::Impl::~Impl()
 void vtkPointSetGeos2dIndex::Impl::buildIndex()
 {
 	std::unordered_set<unsigned int> ids;
-	for (unsigned int i = 0; i < m_data->GetNumberOfCells(); ++i) {
+	unsigned int numCells = m_data->GetNumberOfCells();
+	for (unsigned int i = 0; i < numCells; ++i) {
 		ids.insert(i);
 	}
 

@@ -1,3 +1,4 @@
+#include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowparticlesbasescalargroupdataitem.h"
@@ -11,9 +12,10 @@
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4particles2d.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -32,7 +34,7 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	auto caption = gt->vectorOutputCaption(target);
 
@@ -43,7 +45,7 @@ Post2dWindowParticlesBaseVectorGroupDataItem::Post2dWindowParticlesBaseVectorGro
 	m_setting.arrowsSetting.legend.imageSetting.setActor(m_legendActor);
 	m_setting.arrowsSetting.legend.imageSetting.controller()->setItem(this);
 
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->GetPointData())) {
+	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topDataItem()->particleData()->vtkData()->data()->GetPointData())) {
 		m_setting.arrowsSetting.colorTarget = name.c_str();
 		break;
 	}
@@ -139,12 +141,12 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::innerUpdate2Ds()
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
+	topDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearParticleResultAttributeBrowser();
+	topDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -160,7 +162,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::doHandleResize(QResizeEvent* 
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->update(event->pos(), v);
 	std::vector<ImageSettingContainer::Controller*> controllers;
 
 	auto& as = m_setting.arrowsSetting;
@@ -174,6 +176,8 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseMoveEvent(QMouseEvent* e
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+
+	topDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -195,7 +199,7 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mousePressEvent(QMouseEvent* 
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 	std::vector<ImageSettingContainer::Controller*> controllers;
 
 	auto& as = m_setting.arrowsSetting;
@@ -209,6 +213,8 @@ void Post2dWindowParticlesBaseVectorGroupDataItem::mouseReleaseEvent(QMouseEvent
 	}
 
 	ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+
+	topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseVectorGroupDataItem::addCustomMenuItems(QMenu* menu)

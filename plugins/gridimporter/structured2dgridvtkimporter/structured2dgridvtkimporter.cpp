@@ -1,6 +1,7 @@
 #include "structured2dgridvtkimporter.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -15,7 +16,7 @@
 
 Structured2dGridVtkImporter::Structured2dGridVtkImporter() :
 	QObject {nullptr},
-	GridImporterInterface{}
+	GridImporterI{}
 {}
 
 QStringList Structured2dGridVtkImporter::fileDialogFilters() const
@@ -35,7 +36,7 @@ SolverDefinitionGridType::GridType Structured2dGridVtkImporter::supportedGridTyp
 	return SolverDefinitionGridType::gtStructured2DGrid;
 }
 
-bool Structured2dGridVtkImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool Structured2dGridVtkImporter::import(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
 	QString tempPath = QDir::tempPath();
 	QString tempFile = iRIC::getTempFileName(tempPath);
@@ -52,16 +53,16 @@ bool Structured2dGridVtkImporter::import(Grid* grid, const QString& filename, co
 	reader->SetFileName(iRIC::toStr(tempFile).c_str());
 	reader->Update();
 
-	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
-	grid2d->vtkGrid()->DeepCopy(reader->GetOutput());
-	grid2d->setDimensionsFromVtkGrid();
+	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
+
+	auto importedGrid = reader->GetOutput();
+	int dims[3];
+	importedGrid->GetDimensions(dims);
+	grid2d->setDimensions(dims[0], dims[1]);
+	grid2d->vtkConcreteData()->concreteData()->DeepCopy(importedGrid);
 
 	QFile::remove(tempFile);
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid2d->gridAttributes()){
-		c->allocate();
-	}
-
+	grid->allocateAttributes();
 	return true;
 }

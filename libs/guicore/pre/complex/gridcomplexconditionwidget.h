@@ -19,7 +19,7 @@ namespace Ui
 }
 
 class InputConditionWidgetSet;
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class PreProcessorGridRelatedComplexConditionDataItem;
 
 class GUICOREDLL_EXPORT GridComplexConditionWidget : public QWidget
@@ -57,7 +57,7 @@ private:
 	Ui::GridComplexConditionWidget* ui;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

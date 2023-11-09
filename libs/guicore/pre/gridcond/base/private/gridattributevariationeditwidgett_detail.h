@@ -7,19 +7,19 @@
 
 #include <misc/iricundostack.h>
 
-template <class V>
-GridAttributeVariationEditWidgetT<V>::GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
+template <class V, class DA>
+GridAttributeVariationEditWidgetT<V, DA>::GridAttributeVariationEditWidgetT(QWidget* parent, SolverDefinitionGridAttributeT<V>* cond) :
 	GridAttributeVariationEditWidget {parent, cond},
 	m_value {0}
 {}
 
-template <class V>
-void GridAttributeVariationEditWidgetT<V>::applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem)
+template <class V, class DA>
+void GridAttributeVariationEditWidgetT<V, DA>::applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem)
 {
 	getValueFromInnerWidget();
 
-	GridAttributeContainerT<V>* c = dynamic_cast<GridAttributeContainerT<V>* >(container);
-	vtkDataArray* oldValues = c->dataArrayCopy();
+	auto c = dynamic_cast<GridAttributeContainerT<V, DA>* >(container);
+	DA* oldValues = c->dataArrayCopy();
 	V val = m_value;
 	for (vtkIdType id : indices) {
 		if (m_mode == Difference) {
@@ -28,7 +28,7 @@ void GridAttributeVariationEditWidgetT<V>::applyVariation(GridAttributeContainer
 			c->setValue(id, c->value(id) * val);
 		}
 	}
-	vtkDataArray* newValues = c->dataArrayCopy();
+	DA* newValues = c->dataArrayCopy();
 	iRICUndoStack::instance().push(new GridAttributeEditVariationCommand(c->dataArray()->GetName(), newValues, oldValues, atts, dItem));
 	oldValues->Delete();
 	newValues->Delete();

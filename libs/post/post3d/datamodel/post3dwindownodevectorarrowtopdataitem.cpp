@@ -4,7 +4,10 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -17,10 +20,10 @@ Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(P
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	auto gType = cont->gridType();
 
-	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data(iRICLib::H5CgnsZone::SolutionPosition::Node)->data()->GetPointData())) {
+	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		auto item = buildItem(val, gType);
 		m_childItems.push_back(item);
 	}
@@ -82,17 +85,17 @@ void Post3dWindowNodeVectorArrowTopDataItem::addCustomMenuItems(QMenu* menu)
 
 QDialog* Post3dWindowNodeVectorArrowTopDataItem::addDialog(QWidget* p)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return nullptr;
 	}
 
-	auto gType = zoneData->gridType();
+	auto gType = cont->gridType();
 
 	auto dialog = new ValueSelectDialog(p);
 	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(zoneData->data()->data()->GetPointData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		solutions.insert({sol, gType->output(sol)->caption()});
 	}
 	dialog->setValues(solutions);
@@ -103,12 +106,12 @@ QDialog* Post3dWindowNodeVectorArrowTopDataItem::addDialog(QWidget* p)
 
 void Post3dWindowNodeVectorArrowTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return;
 	}
 
-	auto gType = zoneData->gridType();
+	auto gType = cont->gridType();
 
 	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();

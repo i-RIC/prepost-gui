@@ -5,8 +5,8 @@
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -57,7 +57,7 @@ QVariant GeoDataPolyDataGroupShpImporter::readData(DBFHandle handle, int dataid,
 	return val;
 }
 
-bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPolyDataGroupShpImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto c = dynamic_cast<GeoDataPolyDataGroupCreator*> (creator());
 

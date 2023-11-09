@@ -5,7 +5,6 @@
 #include "gridbirdeyewindownodescalargrouptopdataitem.h"
 #include "gridbirdeyewindowzonedataitem.h"
 
-#include <guicore/pre/grid/grid.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
@@ -20,7 +19,6 @@ GridBirdEyeWindowZoneDataItem::GridBirdEyeWindowZoneDataItem(GraphicsWindowDataI
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto g = grid();
 	auto gridType = gridTypeDataItem()->gridType();
 
 	bool nodeAttributeExists = false;
@@ -109,7 +107,7 @@ void GridBirdEyeWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 	m_shapeDataItem->informDeselection(v);
 }
 
-Grid* GridBirdEyeWindowZoneDataItem::grid()
+v4InputGrid* GridBirdEyeWindowZoneDataItem::grid()
 {
 	auto model = dynamic_cast<GridBirdEyeWindowDataModel*> (dataModel());
 	return model->gridDataItem()->grid();

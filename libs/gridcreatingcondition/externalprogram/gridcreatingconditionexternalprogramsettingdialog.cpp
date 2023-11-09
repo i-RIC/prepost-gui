@@ -2,7 +2,7 @@
 
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/inputcond/inputconditioncontainerset.h>
 #include <guicore/project/inputcond/inputconditionwidgetset.h>
 #include <guicore/solverdef/solverdefinition.h>
@@ -19,7 +19,7 @@
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 
-GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowInterface* /*mainW*/, QWidget* parent) :
+GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowI* /*mainW*/, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
 {

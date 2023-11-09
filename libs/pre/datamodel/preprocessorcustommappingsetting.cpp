@@ -3,7 +3,6 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QDomNode>
 #include <QRegExp>
 
 PreProcessorCustomMappingSetting::PreProcessorCustomMappingSetting()

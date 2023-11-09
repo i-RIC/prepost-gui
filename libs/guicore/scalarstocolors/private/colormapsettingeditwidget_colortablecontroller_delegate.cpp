@@ -122,10 +122,10 @@ void ColorMapSettingEditWidget::ColorTableController::Delegate::setEditorData(QW
 
 			auto m = index.model();
 			if (index.column() == 0 && index.row() == s->colors.size() - 1) {
-				w->setMaximum(variantData(m->index(s->colors.size() - 1, 1)).toDouble());
+				w->setMaximum(variantData(m->index(static_cast<int> (s->colors.size()) - 1, 1)).toDouble());
 			} else if (index.column() == 1) {
 				if (index.row() == s->colors.size() - 1) {
-					w->setMinimum(variantData(m->index(s->colors.size() - 1, 0)).toDouble());
+					w->setMinimum(variantData(m->index(static_cast<int> (s->colors.size()) - 1, 0)).toDouble());
 				} else {
 					w->setMinimum(variantData(m->index(index.row() + 1, 1)).toDouble());
 				}

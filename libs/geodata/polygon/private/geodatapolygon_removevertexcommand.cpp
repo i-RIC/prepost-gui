@@ -2,7 +2,7 @@
 #include "geodatapolygon_removevertexcommand.h"
 #include "../geodatapolygonabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
 GeoDataPolygon::RemoveVertexCommand::RemoveVertexCommand(int vertexId, GeoDataPolygon* pol) :
 	GeoDataPolygon::ModifyAbstractPolygonCommand(pol->selectedPolygon(), pol, GeoDataPolygon::tr("Remove Polygon Vertex"))

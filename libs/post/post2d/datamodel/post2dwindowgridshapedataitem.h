@@ -5,7 +5,7 @@
 
 #include <guibase/gridshape/gridshapesettingcontainer.h>
 
-class Post2dWindowZoneDataItem;
+class Post2dWindowGridDataItemI;
 
 class Post2dWindowGridShapeDataItem : public Post2dWindowDataItem
 {
@@ -32,7 +32,8 @@ private:
 
 	void setupActors();
 	void updateActorSetting() override;
-	Post2dWindowZoneDataItem* zoneDataItem() const;
+
+	Post2dWindowGridDataItemI* gridDataItem() const;
 
 	GridShapeSettingContainer m_setting;
 

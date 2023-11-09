@@ -1,9 +1,11 @@
 #include "structured15dgridwithcrosssectionhecrasexporter.h"
-#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
-#include <guicore/pre/grid/structured15dgrid/structured15dgridwithcrosssectioncrosssection.h>
+
+#include <guicore/grid/v4structured15dgridwithcrosssection.h>
+#include <guicore/grid/v4structured15dgridwithcrosssectioncrosssection.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/complex/gridcomplexattributecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
 #include <guicore/pre/complex/gridcomplexconditiongroup.h>
 #include <guicore/project/inputcond/inputconditioncontainerreal.h>
 #include <guicore/project/inputcond/inputconditioncontainerset.h>
@@ -73,9 +75,9 @@ QStringList Structured15DGridWithCrossSectionHecRasExporter::fileDialogFilters()
 	return ret;
 }
 
-bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured15DGridWithCrossSectionHecRasExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
-	auto g = dynamic_cast<Structured15DGridWithCrossSection*>(grid);
+	auto g = dynamic_cast<v4Structured15dGridWithCrossSection*> (grid->grid());
 
 	QFile f(filename);
 	if (! f.open(QFile::WriteOnly | QIODevice::Text)){return false;}
@@ -93,13 +95,13 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 	o << "*" << endl;
 
 	double distance = 0;
-	auto att = dynamic_cast<GridComplexAttributeContainer*> (g->gridAttribute("Crosssection"));
+	auto att = dynamic_cast<GridComplexAttributeContainer*> (grid->attribute("Crosssection"));
 	const auto gsize = g->crossSections().size();
-	for (int i = 0; i < g->crossSections().size(); ++i) {
-		Structured15DGridWithCrossSectionCrossSection* cs = g->crossSections().at(gsize - 1 - i);
+	for (int i = 0; i < static_cast<int> (g->crossSections().size()); ++i) {
+		auto cs = g->crossSections().at(gsize - 1 - i);
 		if (i != 0) {
-			auto prev = g->vertex(gsize - i);
-			auto curr = g->vertex(gsize - 1 - i);
+			auto prev = g->point2d(gsize - i);
+			auto curr = g->point2d(gsize - 1 - i);
 			distance = iRIC::distance(prev, curr);
 		}
 		// X1 record
@@ -111,8 +113,8 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		o.setFieldWidth(8);
 		o << cs->altitudeInfo().size(); // number of points in cross section
 		o << 0; // left bank stationing (always 0)
-		double lb = cs->altitudeInfo().first().m_position;
-		double rb = cs->altitudeInfo().last().m_position;
+		double lb = cs->altitudeInfo().begin()->position;
+		double rb = cs->altitudeInfo().rbegin()->position;
 		o << rb - lb;  // right bank stationing
 		o << distance << distance << distance;
 		o.setFieldWidth(0);
@@ -149,7 +151,7 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 				const InputConditionContainerFunctional& n_h = n_h_it->second;
 				auto xvals = n_h.param();
 				auto nvals = n_h.value("NVAL");
-				for (int i = 1; i < xvals.size(); ++i) {
+				for (int i = 1; i < static_cast<int> (xvals.size()); ++i) {
 					pos_vec.push_back(xvals.at(i) - xvals.at(0));
 					n_vec.push_back(nvals.at(i));
 				}
@@ -159,7 +161,7 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 				const InputConditionContainerFunctional& n_h_v = n_h_v_it->second;
 				auto xvals = n_h_v.param();
 				auto nvals = n_h_v.value("BOTN");
-				for (int i = 1; i < xvals.size(); ++i) {
+				for (int i = 1; i < static_cast<int> (xvals.size()); ++i) {
 					pos_vec.push_back(xvals.at(i) - xvals.at(0));
 					n_vec.push_back(nvals.at(i));
 				}
@@ -182,7 +184,7 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		} else {
 			std::vector<double> pos_vec2, n_vec2;
 			int idx = 0;
-			while (idx < pos_vec.size()) {
+			while (idx < static_cast<int> (pos_vec.size())) {
 				if (idx < n_vec.size() - 1 && n_vec.at(idx) == n_vec.at(idx + 1)) {
 					++ idx;
 					continue;
@@ -230,25 +232,25 @@ bool Structured15DGridWithCrossSectionHecRasExporter::doExport(Grid* grid, const
 		// GR values
 		int row_idx = 0;
 		o.setRealNumberPrecision(1);
-		for (const Structured15DGridWithCrossSectionCrossSection::Altitude& alt : cs->altitudeInfo()) {
+		for (const auto& alt : cs->altitudeInfo()) {
 			if (row_idx == 0) {
 				o.setFieldWidth(0);
 				o << "GR";
 				o.setFieldWidth(6);
-				o << alt.m_height;
+				o << alt.height;
 				o.setFieldWidth(0);
 				o << " ";
 				o.setFieldWidth(7);
-				o << alt.m_position;
+				o << alt.position;
 			} else {
 				o.setFieldWidth(0);
 				o << " ";
 				o.setFieldWidth(7);
-				o << alt.m_height;
+				o << alt.height;
 				o.setFieldWidth(0);
 				o << " ";
 				o.setFieldWidth(7);
-				o << alt.m_position;
+				o << alt.position;
 			}
 			++ row_idx;
 

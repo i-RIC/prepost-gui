@@ -5,8 +5,10 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guibase/graphicsmisc.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
@@ -50,7 +52,7 @@ GridBirdEyeWindowZoneDataItem* GridBirdEyeWindowCellScalarGroupTopDataItem::zone
 QDialog* GridBirdEyeWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 {
 	auto zItem = zoneDataItem();
-	if (zItem->grid() == nullptr || zItem->grid()->vtkGrid() == nullptr) {
+	if (zItem->grid() == nullptr) {
 		return nullptr;
 	}
 
@@ -58,7 +60,7 @@ QDialog* GridBirdEyeWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 	auto gridType = model->gridTypeDataItem()->gridType();
 	std::unordered_map<std::string, QString> attributes;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->grid()->vtkGrid()->GetCellData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->grid()->grid()->vtkData()->data()->GetCellData())) {
 		attributes.insert({sol, gridType->gridAttributeCaption(sol)});
 	}
 
@@ -72,7 +74,7 @@ QDialog* GridBirdEyeWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 void GridBirdEyeWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
 	auto zItem = zoneDataItem();
-	if (zItem->grid() == nullptr || zItem->grid()->vtkGrid() == nullptr) {
+	if (zItem->grid() == nullptr) {
 		return;
 	}
 

@@ -1,7 +1,7 @@
 #ifndef POSTPROCESSORWINDOWFACTORY_H
 #define POSTPROCESSORWINDOWFACTORY_H
 
-#include <guicore/post/postprocessorwindowfactoryinterface.h>
+#include <guicore/post/postprocessorwindowfactoryi.h>
 #include <QObject>
 #include <QMap>
 
@@ -11,7 +11,7 @@ class QXmlStreamWriter;
 class ProjectDataItem;
 class PostProcessorWindowProjectDataItem;
 
-class PostProcessorWindowFactory : public QObject, public PostProcessorWindowFactoryInterface
+class PostProcessorWindowFactory : public QObject, public PostProcessorWindowFactoryI
 {
 	Q_OBJECT
 

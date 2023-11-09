@@ -12,7 +12,7 @@ GridCreatingCondition* GridCreatingConditionCreator::restore(const QDomNode& nod
 	return ret;
 }
 
-bool GridCreatingConditionCreator::checkAvailability(PreProcessorGridCreatingConditionDataItemInterface* /*ditem*/) const
+bool GridCreatingConditionCreator::checkAvailability(PreProcessorGridCreatingConditionDataItemI* /*ditem*/) const
 {
 	return true;
 }

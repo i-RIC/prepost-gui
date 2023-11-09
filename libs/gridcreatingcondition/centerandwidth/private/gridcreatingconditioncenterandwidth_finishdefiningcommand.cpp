@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncenterandwidth_finishdefiningcommand.h"
 #include "gridcreatingconditioncenterandwidth_impl.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 
 GridCreatingConditionCenterAndWidth::FinishDefiningCommand::FinishDefiningCommand(GridCreatingConditionCenterAndWidth* condition) :
 	QUndoCommand {GridCreatingConditionCenterAndWidth::tr("Finish Defining Polyline")},

@@ -3,6 +3,8 @@
 
 #include "post3dwindownodevectorparticlegroupdataitem.h"
 
+#include <memory>
+
 class Post3dWindowNodeVectorParticleGroupStructuredDataItem : public Post3dWindowNodeVectorParticleGroupDataItem
 {
 	Q_OBJECT
@@ -29,7 +31,7 @@ private:
 	void setDefaultValues();
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 };

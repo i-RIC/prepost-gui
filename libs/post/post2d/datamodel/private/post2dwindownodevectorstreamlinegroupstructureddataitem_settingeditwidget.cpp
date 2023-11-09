@@ -5,7 +5,9 @@
 
 #include <guibase/comboboxtool.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -23,12 +25,12 @@ Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::Sett
 	connect(ui->removeButton, &QPushButton::clicked, this, &SettingEditWidget::removeStartPosition);
 	connect(ui->startPositionListWidget, &QListWidget::currentRowChanged, this, &SettingEditWidget::handleCurrentStartPositionChanged);
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(m_item->parent())->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 	int dims[3];
-	grid->GetDimensions(dims);
+	sGrid->vtkConcreteData()->concreteData()->GetDimensions(dims);
 	ui->regionWidget->setDimensions(dims[0], dims[1]);
-	if (! cont->IBCExists()) {
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		ui->regionWidget->disableActive();
 	}
 	ui->startPositionWidget->setDimensions(dims[0], dims[1]);
@@ -136,9 +138,9 @@ void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget:
 	applyStartPosition(index);
 }
 
-void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setupSolutionComboBox(PostZoneDataContainer* zoneData)
+void Post2dWindowNodeVectorStreamlineGroupStructuredDataItem::SettingEditWidget::setupSolutionComboBox(v4PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->data()->GetPointData();
+	auto pd = zoneData->gridData()->grid()->vtkData()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

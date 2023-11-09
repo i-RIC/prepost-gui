@@ -3,7 +3,7 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
-#include <guicore/misc/valuerangecontainer.h>
+#include <misc/valuerangecontainer.h>
 
 #include <map>
 #include <unordered_map>
@@ -32,6 +32,10 @@ public:
 	const std::unordered_map<std::string, ValueRangeContainer>& nodeValueRanges() const;
 	const ValueRangeContainer& cellValueRange(const std::string& name) const;
 	const std::unordered_map<std::string, ValueRangeContainer>& cellValueRanges() const;
+	const ValueRangeContainer& iEdgeValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& iEdgeValueRanges() const;
+	const ValueRangeContainer& jEdgeValueRange(const std::string& name) const;
+	const std::unordered_map<std::string, ValueRangeContainer>& JEdgeValueRanges() const;
 
 	void setupZoneDataItems();
 	void update();
@@ -39,6 +43,8 @@ public:
 private:
 	void updateNodeValueRanges();
 	void updateCellValueRanges();
+	void updateIEdgeValueRanges();
+	void updateJEdgeValueRanges();
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -46,6 +52,8 @@ private:
 	SolverDefinitionGridType* m_gridType;
 	std::unordered_map<std::string, ValueRangeContainer> m_nodeValueRanges;
 	std::unordered_map<std::string, ValueRangeContainer> m_cellValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_iEdgeValueRanges;
+	std::unordered_map<std::string, ValueRangeContainer> m_jEdgeValueRanges;
 	ValueRangeContainer m_dummyRange;
 
 	std::vector<Post2dBirdEyeWindowZoneDataItem*> m_zoneDatas;

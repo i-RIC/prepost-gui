@@ -13,14 +13,13 @@
 
 #include <guibase/widget/itemmultiselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/image/imagesettingcontainer.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionselectwidget.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/pre/geodata/geodatafactory.h>
@@ -48,21 +47,6 @@
 #include <geodata/polygon/geodatapolygonshapeexporter.h>
 #include <geodata/riversurvey/geodatariversurveycrosssectionwindow.h>
 #include <geodata/riversurvey/geodatariversurveycrosssectionwindowprojectdataitem.h>
-
-#include <QApplication>
-#include <QDomNode>
-#include <QFileDialog>
-#include <QInputDialog>
-#include <QMdiArea>
-#include <QMdiSubWindow>
-#include <QMenu>
-#include <QMessageBox>
-#include <QSignalMapper>
-#include <QStandardItem>
-#include <QTextCodec>
-#include <QToolBar>
-#include <QXmlStreamWriter>
-#include <QtGlobal>
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
@@ -93,7 +77,7 @@ XmlAttributeContainer& PreProcessorGeoDataGroupDataItem::VariationSetting::opera
 }
 
 PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent) :
-	PreProcessorGeoDataGroupDataItemInterface {cond, parent},
+	PreProcessorGeoDataGroupDataItemI {cond, parent},
 	m_webImportAction {new QAction(QIcon(":/libs/guibase/images/iconImport.svg"), PreProcessorGeoDataGroupDataItem::tr("&Import Elevation from web..."), this)},
 	m_editVariationSettingAction {new QAction(PreProcessorGeoDataGroupDataItem::tr("Edit &Variation Setting..."), this)},
 	m_exportAllPolygonsAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), PreProcessorGeoDataGroupDataItem::tr("Export All Polygons..."), this)},
@@ -113,7 +97,7 @@ PreProcessorGeoDataGroupDataItem::PreProcessorGeoDataGroupDataItem(SolverDefinit
 	connect(m_deleteSelectedAction, &QAction::triggered, [=](bool) {deleteSelected();});
 	connect(m_deleteAllAction, &QAction::triggered, this, [=](bool) {deleteAll();});
 	connect(m_exportAllPolygonsAction, &QAction::triggered, [=](bool) {exportAllPolygons();});
-	connect(this, &PreProcessorGeoDataGroupDataItem::selectGeoData, dataModel(), &PreProcessorDataModelInterface::handleObjectBrowserSelection);
+	connect(this, &PreProcessorGeoDataGroupDataItem::selectGeoData, dataModel(), &PreProcessorDataModelI::handleObjectBrowserSelection);
 	connect(m_editVariationSettingAction, &QAction::triggered, [=](bool){editVariationSetting();});
 
 	// add dimensions container
@@ -299,7 +283,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 		return;
 	}
 
-	PreProcessorGeoDataDataItemInterface* item = nullptr;
+	PreProcessorGeoDataDataItemI* item = nullptr;
 	std::vector<int> failedIds;
 
 	WaitDialog* wDialog = nullptr;
@@ -438,7 +422,7 @@ void PreProcessorGeoDataGroupDataItem::doExport()
 	}
 }
 
-void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemInterface *geoData)
+void PreProcessorGeoDataGroupDataItem::addGeoData(PreProcessorGeoDataDataItemI *geoData)
 {
 	// the standarditem is set at the last position, so make it the first.
 	QList<QStandardItem*> takenItems = m_standardItem->takeRow(geoData->standardItem()->row());
@@ -495,7 +479,7 @@ void PreProcessorGeoDataGroupDataItem::showPropertyDialog()
 	showPropertyDialogModeless();
 }
 
-QDialog* PreProcessorGeoDataGroupDataItem::propertyDialog(QWidget* w)
+QDialog* PreProcessorGeoDataGroupDataItem::propertyDialog(QWidget* /*w*/)
 {
 	if (m_condition->isReferenceInformation()) {return nullptr;}
 
@@ -674,7 +658,7 @@ void PreProcessorGeoDataGroupDataItem::importGeoData(GeoDataImporter* importer, 
 		return;
 	}
 
-	PreProcessorGeoDataDataItemInterface* item = nullptr;
+	PreProcessorGeoDataDataItemI* item = nullptr;
 	std::vector<int> failedIds;
 
 	WaitDialog* wDialog = nullptr;
@@ -858,9 +842,9 @@ int PreProcessorGeoDataGroupDataItem::mappingCount() const
 	return dimCount * geodataCount;
 }
 
-void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* dialog)
+void PreProcessorGeoDataGroupDataItem::executeMapping(v4InputGrid* grid, WaitDialog* dialog)
 {
-	GridAttributeContainer* container = grid->gridAttribute(m_condition->name());
+	auto container = grid->attribute(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
@@ -873,7 +857,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			*(boolMap + i) = false;
 		}
 		for (auto child : m_childItems) {
-			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -887,7 +871,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		}
 		int idx = 0;
 		for (auto child : m_childItems) {
-			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -901,7 +885,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		// terminate
 		idx = 0;
 		for (auto child : m_childItems) {
-			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
@@ -916,7 +900,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			*(boolMap + i) = false;
 		}
 		for (auto child : m_childItems) {
-			auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->setTarget(grid, container, geodata);
@@ -930,7 +914,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 			}
 			int idx = 0;
 			for (auto child : m_childItems) {
-				auto item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+				auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 				GeoData* geodata = item->geoData();
 				GeoDataMapper* mapper = geodata->mapper();
 				mapper->setTarget(grid, container, geodata);
@@ -945,7 +929,7 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 		// terminate
 		int idx = 0;
 		for (auto child : m_childItems) {
-			auto* item = dynamic_cast<PreProcessorGeoDataDataItem*>(child);
+			auto item = dynamic_cast<PreProcessorGeoDataDataItem*> (child);
 			GeoData* geodata = item->geoData();
 			GeoDataMapper* mapper = geodata->mapper();
 			mapper->terminate(settings.at(idx));
@@ -960,9 +944,9 @@ void PreProcessorGeoDataGroupDataItem::executeMapping(Grid* grid, WaitDialog* di
 	informValueRangeChange();
 }
 
-void PreProcessorGeoDataGroupDataItem::setDefaultValue(Grid* grid)
+void PreProcessorGeoDataGroupDataItem::setDefaultValue(v4InputGrid* grid)
 {
-	GridAttributeContainer* container = grid->gridAttribute(m_condition->name());
+	auto container = grid->attribute(m_condition->name());
 	bool* boolMap;
 	int dataCount = container->dataCount();
 	boolMap = new bool[dataCount];
@@ -1044,11 +1028,11 @@ void PreProcessorGeoDataGroupDataItem::handleStandardItemChange()
 	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
 }
 
-const QList<PreProcessorGeoDataDataItemInterface*> PreProcessorGeoDataGroupDataItem::geoDatas() const
+const QList<PreProcessorGeoDataDataItemI*> PreProcessorGeoDataGroupDataItem::geoDatas() const
 {
-	QList<PreProcessorGeoDataDataItemInterface*> ret;
+	QList<PreProcessorGeoDataDataItemI*> ret;
 	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataDataItemInterface* item = dynamic_cast<PreProcessorGeoDataDataItemInterface*>(*it);
+		PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(*it);
 		ret.append(item);
 	}
 	return ret;
@@ -1179,7 +1163,7 @@ GridAttributeDimensionsContainer* PreProcessorGeoDataGroupDataItem::dimensions()
 	return m_dimensions;
 }
 
-PreProcessorGeoDataDataItemInterface* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()
+PreProcessorGeoDataDataItemI* PreProcessorGeoDataGroupDataItem::buildGeoDataDataItem()
 {
 	return new PreProcessorGeoDataDataItem(this);
 }

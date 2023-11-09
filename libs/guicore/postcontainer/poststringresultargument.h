@@ -11,7 +11,7 @@
 #include <misc/stringcontainer.h>
 
 class PostStringResult;
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class QJSValue;
 
@@ -103,7 +103,7 @@ private:
 	void fixEdgeKIndexIfNeeded(bool* fixed);
 
 	PostStringResult* result() const;
-	PostZoneDataContainer* zoneDataContainer() const;
+	v4PostZoneDataContainer* zoneDataContainer() const;
 
 	Setting m_setting;
 };

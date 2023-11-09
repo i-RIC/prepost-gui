@@ -3,6 +3,8 @@
 #include "geodatanetcdfncexporter.h"
 #include "geodatanetcdfgrayscalepngrealexporter.h"
 #include "geodatanetcdfgrayscalepngrealimporter.h"
+#include "geodatanetcdfifacemappert.h"
+#include "geodatanetcdfjfacemappert.h"
 #include "geodatanetcdfreal.h"
 #include "geodatanetcdfrealcreator.h"
 #include "geodatanetcdfrealimporter.h"
@@ -29,6 +31,10 @@ GeoData* GeoDataNetcdfRealCreator::create(ProjectDataItem* parent, SolverDefinit
 		data->setMapper(new GeoDataNetcdfNodeMapperT<double, vtkDoubleArray>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 		data->setMapper(new GeoDataNetcdfCellMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		data->setMapper(new GeoDataNetcdfIFaceMapperT<double, vtkDoubleArray>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		data->setMapper(new GeoDataNetcdfJFaceMapperT<double, vtkDoubleArray>(this));
 	}
 	return data;
 }

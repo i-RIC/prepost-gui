@@ -6,7 +6,7 @@
 #include "private/geodatariversurveyproxy_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgridtypedataitemi.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <misc/mathsupport.h>
 #include <misc/modifycommanddialog.h>

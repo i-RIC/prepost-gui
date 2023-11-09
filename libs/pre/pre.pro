@@ -309,10 +309,15 @@ HEADERS += pre_global.h \
            datamodel/preprocessorgeodatatopdataitem.h \
            datamodel/preprocessorgeodatavariationdataitem.h \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.h \
+           datamodel/preprocessorgridattributeabstractcelldataitem.h \
+           datamodel/preprocessorgridattributeabstractcellgroupdataitem.h \
            datamodel/preprocessorgridattributecelldataitem.h \
-           datamodel/preprocessorgridattributecelldisplaysettingdialog.h \
            datamodel/preprocessorgridattributecellgroupdataitem.h \
            datamodel/preprocessorgridattributecustommappingdialog.h \
+           datamodel/preprocessorgridattributeiedgedataitem.h \
+           datamodel/preprocessorgridattributeiedgegroupdataitem.h \
+           datamodel/preprocessorgridattributejedgedataitem.h \
+           datamodel/preprocessorgridattributejedgegroupdataitem.h \
            datamodel/preprocessorgridattributemappingsettingdataitem.h \
            datamodel/preprocessorgridattributemappingsettingtopdataitem.h \
            datamodel/preprocessorgridattributemappingsettingtopeditdialog.h \
@@ -358,16 +363,27 @@ HEADERS += pre_global.h \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.h \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.h \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.h \
-           datamodel/private/preprocessorgridattributecelldataitem_propertydialog.h \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.h \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.h \
            datamodel/private/preprocessorgridcreatingconditiondataitem_impl.h \
+           datamodel/private/preprocessorgriddataitem_cgnsexporter.h \
+           datamodel/private/preprocessorgriddataitem_cgnsimporter.h \
            datamodel/private/preprocessorgriddataitem_impl.h \
+           datamodel/private/preprocessorgriddataitem_projectimporter.h \
            datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.h \
            datamodel/private/preprocessorgridshapedataitem_positioneditdialog.h \
            datamodel/private/preprocessorgridshapedataitem_updatepointscommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.h \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.h \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectedabstractcellscontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectedcellscontroller.h \
+           datamodel/public/preprocessorgriddataitem_selecteddatacontroller.h \
+           datamodel/public/preprocessorgriddataitem_selecteddatawithidcontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectededgescontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectediedgescontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectedjedgescontroller.h \
+           datamodel/public/preprocessorgriddataitem_selectednodescontroller.h \
            subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowser.h \
            subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowserview.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.h \
@@ -378,11 +394,6 @@ HEADERS += pre_global.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.h \
            subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.h \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.h \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.h \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.h \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowtableview.h \
            subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.h \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.h \
@@ -420,6 +431,7 @@ HEADERS += pre_global.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updatecommand.h \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.h \
            subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.h \
+           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/private/structured15dgridwithcrosssectioncrosssectionwindow_editcommand.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_settingeditwidget.h \
@@ -433,7 +445,6 @@ HEADERS += pre_global.h \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindownodescalargroupdataitem_updatesettingcommand.h
 FORMS += bc/boundaryconditiondialog.ui \
          datamodel/preprocessorbcgroupsettingdialog.ui \
-         datamodel/preprocessorgridattributecelldisplaysettingdialog.ui \
          datamodel/preprocessorgridattributecustommappingdialog.ui \
          datamodel/preprocessorgridattributemappingsettingtopeditdialog.ui \
          datamodel/preprocessorgridattributetemplatemappingsettingdialog.ui \
@@ -441,11 +452,10 @@ FORMS += bc/boundaryconditiondialog.ui \
          misc/preprocessorlegendboxeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.ui \
          datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.ui \
-         datamodel/private/preprocessorgridattributecelldataitem_propertydialog.ui \
+         datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.ui \
          datamodel/private/preprocessorgridattributenodedataitem_propertydialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.ui \
          datamodel/private/preprocessorgridshapedataitem_positioneditdialog.ui \
-         subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.ui \
          subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.ui \
          subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.ui \
@@ -482,10 +492,15 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/preprocessorgeodatatopdataitem.cpp \
            datamodel/preprocessorgeodatavariationdataitem.cpp \
            datamodel/preprocessorgridandgridcreatingconditiondataitem.cpp \
+           datamodel/preprocessorgridattributeabstractcelldataitem.cpp \
+           datamodel/preprocessorgridattributeabstractcellgroupdataitem.cpp \
            datamodel/preprocessorgridattributecelldataitem.cpp \
-           datamodel/preprocessorgridattributecelldisplaysettingdialog.cpp \
            datamodel/preprocessorgridattributecellgroupdataitem.cpp \
            datamodel/preprocessorgridattributecustommappingdialog.cpp \
+           datamodel/preprocessorgridattributeiedgedataitem.cpp \
+           datamodel/preprocessorgridattributeiedgegroupdataitem.cpp \
+           datamodel/preprocessorgridattributejedgedataitem.cpp \
+           datamodel/preprocessorgridattributejedgegroupdataitem.cpp \
            datamodel/preprocessorgridattributemappingsettingdataitem.cpp \
            datamodel/preprocessorgridattributemappingsettingtopdataitem.cpp \
            datamodel/preprocessorgridattributemappingsettingtopeditdialog.cpp \
@@ -530,14 +545,25 @@ SOURCES += preobjectbrowser.cpp \
            datamodel/private/preprocessorbcgroupdataitem_setsettingcommand.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_colormapsettingeditdialog.cpp \
            datamodel/private/preprocessorgeodatagroupdataitem_variationsettingdialog.cpp \
-           datamodel/private/preprocessorgridattributecelldataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgridattributeabstractcelldataitem_propertydialog.cpp \
            datamodel/private/preprocessorgridattributenodedataitem_propertydialog.cpp \
+           datamodel/private/preprocessorgriddataitem_cgnsexporter.cpp \
+           datamodel/private/preprocessorgriddataitem_cgnsimporter.cpp \
+           datamodel/private/preprocessorgriddataitem_projectimporter.cpp \
            datamodel/private/preprocessorgridshapedataitem_positiondeltadialog.cpp \
            datamodel/private/preprocessorgridshapedataitem_positioneditdialog.cpp \
            datamodel/private/preprocessorgridshapedataitem_updatepointscommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingandrendercommand.cpp \
            datamodel/private/preprocessorgridtypedataitem_applycolormapsettingdialog.cpp \
            datamodel/private/preprocessorgridtypedataitem_toolbarwidgetcontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectedabstractcellscontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectedcellscontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selecteddatacontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selecteddatawithidcontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectededgescontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectediedgescontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectedjedgescontroller.cpp \
+           datamodel/public/preprocessorgriddataitem_selectednodescontroller.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowser.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyeobjectbrowserview.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindow.cpp \
@@ -548,11 +574,6 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowgriddataitem.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowprojectdataitem.cpp \
            subwindow/gridbirdeyewindow/gridbirdeyewindowsetting.cpp \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.cpp \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowdelegate.cpp \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowgraphicsview.cpp \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowprojectdataitem.cpp \
-           subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindowtableview.cpp \
            subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionaltitudemovedialog.cpp \
            subwindow/structured15dgridwithcrosssectioncrosssectionwindow/structured15dgridwithcrosssectioncrosssectionwindow.cpp \
@@ -590,6 +611,7 @@ SOURCES += preobjectbrowser.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updatecommand.cpp \
            subwindow/gridcrosssectionwindow2/private/preprocessorgridcrosssectionwindow2_updategraphicsviewcommand.cpp \
            subwindow/gridcrosssectionwindow2/public/preprocessorgridcrosssectionwindow2_graphicsview.cpp \
+           subwindow/structured15dgridwithcrosssectioncrosssectionwindow/private/structured15dgridwithcrosssectioncrosssectionwindow_editcommand.cpp \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_impl.cpp \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_setting.cpp \
            subwindow/gridbirdeyewindow/datamodel/private/gridbirdeyewindowcellscalargroupdataitem_settingeditwidget.cpp \

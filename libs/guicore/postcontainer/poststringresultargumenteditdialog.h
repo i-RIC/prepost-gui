@@ -11,7 +11,7 @@ namespace Ui {
 class PostStringResultArgumentEditDialog;
 }
 
-class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class PostStringResultArgumentEditDialog : public QDialog
 {
@@ -21,7 +21,7 @@ public:
 	explicit PostStringResultArgumentEditDialog(QWidget *parent = 0);
 	~PostStringResultArgumentEditDialog();
 
-	void setZoneDataContainer(PostZoneDataContainer* container);
+	void setZoneDataContainer(v4PostZoneDataContainer* container);
 	PostStringResultArgument* argument();
 	void setArgument(PostStringResultArgument* arg);
 
@@ -39,7 +39,7 @@ private:
 
 	PostStringResultArgument* m_argument;
 	bool m_rejected;
-	PostZoneDataContainer* m_zoneDataContainer;
+	v4PostZoneDataContainer* m_zoneDataContainer;
 
 	std::vector<PostStringResultArgument::Type> m_types;
 

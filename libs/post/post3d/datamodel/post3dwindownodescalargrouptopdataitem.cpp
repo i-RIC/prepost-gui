@@ -7,19 +7,11 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/datamodel/graphicswindowrootdataitem.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <misc/iricundostack.h>
 #include <misc/opacitycontainer.h>
-
-#include <QAction>
-#include <QDomNode>
-#include <QMenu>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkRenderer.h>
 
 Post3dWindowNodeScalarGroupTopDataItem::Post3dWindowNodeScalarGroupTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Isosurfaces"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -30,14 +22,18 @@ Post3dWindowNodeScalarGroupTopDataItem::Post3dWindowNodeScalarGroupTopDataItem(P
 }
 
 Post3dWindowNodeScalarGroupTopDataItem::~Post3dWindowNodeScalarGroupTopDataItem()
-{
-}
+{}
 
 void Post3dWindowNodeScalarGroupTopDataItem::setDefaultValues()
 {
 	m_isoValue = 0.0;
 	m_fullRange = true;
 	m_color = Qt::white;
+}
+
+Post3dWindowZoneDataItem* Post3dWindowNodeScalarGroupTopDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
 }
 
 void Post3dWindowNodeScalarGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -88,17 +84,18 @@ void Post3dWindowNodeScalarGroupTopDataItem::update()
 
 QDialog* Post3dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	Post3dWindowGridTypeDataItem* gtItem = dynamic_cast<Post3dWindowGridTypeDataItem*>(parent()->parent());
-	Post3dWindowZoneDataItem* zItem = dynamic_cast<Post3dWindowZoneDataItem*>(parent());
+	auto zItem = zoneDataItem();
+	auto gtItem = zItem->gridTypeDataItem();
+	auto cont = zItem->v4DataContainer();
 
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {return nullptr;}
+	if (cont == nullptr || cont->gridData() == nullptr) {return nullptr;}
 
-	Post3dWindowIsosurfaceSettingDialog* dialog = new Post3dWindowIsosurfaceSettingDialog(p);
+	auto dialog = new Post3dWindowIsosurfaceSettingDialog(p);
 	dialog->setGridTypeDataItem(gtItem);
 
 
 	dialog->setEnabled(true);
-	dialog->setZoneData(zItem->dataContainer());
+	dialog->setZoneData(cont);
 	dialog->setTarget(m_target);
 
 	// it's made enabled ALWAYS.
@@ -280,7 +277,7 @@ private:
 
 void Post3dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	Post3dWindowIsosurfaceSettingDialog* dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
+	auto dialog = dynamic_cast<Post3dWindowIsosurfaceSettingDialog*>(propDialog);
 	iRICUndoStack::instance().push(
 		new CreateCommand(
 			dialog->enabled(), dialog->target(),

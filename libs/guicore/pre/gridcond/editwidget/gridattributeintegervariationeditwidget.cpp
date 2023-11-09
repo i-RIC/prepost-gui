@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 
 GridAttributeIntegerVariationEditWidget::GridAttributeIntegerVariationEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
-	GridAttributeVariationEditWidgetT<int>(parent, cond)
+	GridAttributeVariationEditWidgetT<int, vtkIntArray>(parent, cond)
 {
 	m_widget = new IntegerNumberEditWidget(this);
 	QVBoxLayout* l = new QVBoxLayout();

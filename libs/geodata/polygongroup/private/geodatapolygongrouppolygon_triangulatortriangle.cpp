@@ -125,12 +125,12 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 
 	geos::geom::Polygon* pol = polygon->impl->m_polygon.get();
 	const geos::geom::LineString* eLS = pol->getExteriorRing();
-	pointCount += (eLS->getNumPoints() - 1);
-	segmentCount += (eLS->getNumPoints() - 1);
+	pointCount += (static_cast<int> (eLS->getNumPoints()) - 1);
+	segmentCount += (static_cast<int> (eLS->getNumPoints()) - 1);
 	for (int i = 0; i < pol->getNumInteriorRing(); ++i) {
 		const geos::geom::LineString* iLS = pol->getInteriorRingN(i);
-		pointCount += (iLS->getNumPoints() - 1);
-		segmentCount += (iLS->getNumPoints() - 1);
+		pointCount += (static_cast<int> (iLS->getNumPoints()) - 1);
+		segmentCount += (static_cast<int> (iLS->getNumPoints()) - 1);
 	}
 	triangulateio in;
 	clearTrianglateio(&in);
@@ -140,7 +140,7 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 	in.segmentlist = new int[segmentCount * 2];
 	in.numberofsegments = segmentCount;
 	in.holelist = new double[pol->getNumInteriorRing() * 2];
-	in.numberofholes = pol->getNumInteriorRing();
+	in.numberofholes = static_cast<int> (pol->getNumInteriorRing());
 	in.regionlist = new double[regionCount * 4];
 	in.numberofregions = regionCount;
 
@@ -159,7 +159,7 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 		const geos::geom::LineString* iLS = pol->getInteriorRingN(i);
 		addPointsAndSegments(&in, &pointMap, &pointIdVec, &pointCount, &pOff, &sOff, offset, iLS);
 	}
-	in.numberofpoints = pointIdVec.size();
+	in.numberofpoints = static_cast<int> (pointIdVec.size());
 
 	// setup regionlist
 	geos::geom::Point* ip = pol->getInteriorPoint();

@@ -6,14 +6,19 @@
 #include "structured15dgridwithcrosssectioncrosssectionwindow.h"
 #include "structured15dgridwithcrosssectioncrosssectionwindowdelegate.h"
 #include "structured15dgridwithcrosssectioncrosssectionwindowprojectdataitem.h"
+#include "private/structured15dgridwithcrosssectioncrosssectionwindow_editcommand.h"
 
-#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include <guicore/grid/v4structured15dgridwithcrosssection.h>
+#include <guicore/grid/v4structured15dgridwithcrosssectioncrosssection.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/iricundostack.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 
 #include <QComboBox>
 #include <QLabel>
 #include <QStandardItemModel>
+
+#include <algorithm>
 
 Structured15DGridWithCrossSectionCrossSectionWindow::Structured15DGridWithCrossSectionCrossSectionWindow(PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* pdi, QWidget* parent) :
 	QMainWindow(parent),
@@ -22,8 +27,8 @@ Structured15DGridWithCrossSectionCrossSectionWindow::Structured15DGridWithCrossS
 	ui->setupUi(this);
 
 	m_shapeItem = item;
-	PreProcessorNormal15DGridWithCrossSectionDataItem* di = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(item->parent());
-	m_grid = dynamic_cast<Structured15DGridWithCrossSection*>(di->grid());
+	auto di = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(item->parent());
+	m_grid = dynamic_cast<v4Structured15dGridWithCrossSection*> (di->grid()->grid());
 	m_settingUp = false;
 	m_projectDataItem = pdi;
 
@@ -92,13 +97,14 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 	m_blackLineComboBox->blockSignals(true);
 	m_blackLineComboBox->clear();
 
-	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it) {
-		m_blackLineComboBox->addItem((*it)->name());
+	for (auto cs : m_grid->crossSections()) {
+		m_blackLineComboBox->addItem(cs->name());
 	}
-	if (m_blackLineCrossSection != 0) {
-		int index = m_grid->crossSections().indexOf(m_blackLineCrossSection);
-		if (index != - 1) {
-			m_blackLineComboBox->setCurrentIndex(index);
+	if (m_blackLineCrossSection != nullptr) {
+
+		auto it = std::find(m_grid->crossSections().begin(), m_grid->crossSections().end(), m_blackLineCrossSection);
+		if (it != m_grid->crossSections().end()) {
+			m_blackLineComboBox->setCurrentIndex(it - m_grid->crossSections().begin());
 		} else {
 			// maybe this line is deleted.
 			m_projectDataItem->requestWindowClose();
@@ -109,7 +115,7 @@ bool Structured15DGridWithCrossSectionCrossSectionWindow::updateComboBoxes()
 	return true;
 }
 
-void Structured15DGridWithCrossSectionCrossSectionWindow::setTarget(Structured15DGridWithCrossSectionCrossSection* cs)
+void Structured15DGridWithCrossSectionCrossSectionWindow::setTarget(v4Structured15dGridWithCrossSectionCrossSection* cs)
 {
 	m_blackLineCrossSection = cs;
 	for (auto it = m_grid->crossSections().begin(); it != m_grid->crossSections().end(); ++it) {
@@ -119,17 +125,22 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setTarget(Structured15
 
 	m_blackLineComboBox->blockSignals(true);
 
-	int index = m_grid->crossSections().indexOf(cs);
-	if (index != - 1) {
-		m_blackLineComboBox->setCurrentIndex(index);
+	auto it = std::find(m_grid->crossSections().begin(), m_grid->crossSections().end(), cs);
+	if (it != m_grid->crossSections().end()) {
+		m_blackLineComboBox->setCurrentIndex(it - m_grid->crossSections().begin());
 	}
 
 	m_blackLineComboBox->blockSignals(false);
 
 	// set window title.
-	PreProcessorGridAndGridCreatingConditionDataItem* di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(m_projectDataItem->parent()->parent()->parent());
+	auto di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(m_projectDataItem->parent()->parent()->parent());
 	setWindowTitle(QString(tr("%1 : CrossSection %2").arg(di->standardItem()->text()).arg(m_blackLineCrossSection->name())));
 	setupData();
+}
+
+v4Structured15dGridWithCrossSectionCrossSection* Structured15DGridWithCrossSectionCrossSectionWindow::target() const
+{
+	return m_blackLineCrossSection;
 }
 
 struct SelectionRange {
@@ -138,6 +149,11 @@ struct SelectionRange {
 	int bottom;
 	int right;
 };
+
+QAction* Structured15DGridWithCrossSectionCrossSectionWindow::deleteAction() const
+{
+	return m_deleteAction;
+}
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 {
@@ -158,15 +174,15 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::setupData()
 	}
 
 	clear();
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& info = m_blackLineCrossSection->altitudeInfo();
+	auto& info = m_blackLineCrossSection->altitudeInfo();
 	int row = 0;
 
-	Structured15DGridWithCrossSectionCrossSection::Altitude alt;
+	v4Structured15dGridWithCrossSectionCrossSection::Altitude alt;
 	for (auto it = info.begin(); it != info.end(); ++it) {
 		alt = *it;
 		m_model->insertRow(row);
-		m_model->setData(m_model->index(row, 0), QVariant(alt.m_position));
-		m_model->setData(m_model->index(row, 1), QVariant(alt.m_height));
+		m_model->setData(m_model->index(row, 0), QVariant(alt.position));
+		m_model->setData(m_model->index(row, 1), QVariant(alt.height));
 		ui->tableView->setRowHeight(row, defaultRowHeight);
 		++row;
 	}
@@ -263,25 +279,29 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::cameraZoomOutY()
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::handleDataChange()
 {
-	if (m_settingUp) { return; }
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> before, after;
+	if (m_settingUp) {return;}
+
+	std::vector<v4Structured15dGridWithCrossSectionCrossSection::Altitude> before, after;
 	before = m_blackLineCrossSection->altitudeInfo();
+
 	syncData();
+
 	after = m_blackLineCrossSection->altitudeInfo();
-	iRICUndoStack::instance().push(new Structured15DGridCrossSectionEditCommand(false, tr("Edit Elevation Point"), after, before, this, m_shapeItem, true));
+	iRICUndoStack::instance().push(new EditCommand(false, tr("Edit Elevation Point"), after, before, this, m_shapeItem, true));
 }
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::syncData()
 {
 	// update the crosssection.
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& info = m_blackLineCrossSection->altitudeInfo();
+	auto& info = m_blackLineCrossSection->altitudeInfo();
 	info.clear();
 	for (int i = 0; i < m_model->rowCount(); ++i) {
-		Structured15DGridWithCrossSectionCrossSection::Altitude alt;
-		alt.m_position = m_model->data(m_model->index(i, 0)).toDouble();
-		alt.m_height = m_model->data(m_model->index(i, 1)).toDouble();
+		v4Structured15dGridWithCrossSectionCrossSection::Altitude alt;
+		alt.position = m_model->data(m_model->index(i, 0)).toDouble();
+		alt.height = m_model->data(m_model->index(i, 1)).toDouble();
 		info.push_back(alt);
 	}
+
 	updateView();
 }
 
@@ -293,7 +313,7 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::blackComboBoxChange(in
 
 void Structured15DGridWithCrossSectionCrossSectionWindow::deleteSelectedRows()
 {
-	QVector<Structured15DGridWithCrossSectionCrossSection::Altitude> before, after;
+	std::vector<v4Structured15dGridWithCrossSectionCrossSection::Altitude> before, after;
 	before = m_blackLineCrossSection->altitudeInfo();
 	QModelIndexList rows = m_selectionModel->selectedRows();
 	int removedRows = 0;
@@ -305,39 +325,6 @@ void Structured15DGridWithCrossSectionCrossSectionWindow::deleteSelectedRows()
 	}
 	syncData();
 	after = m_blackLineCrossSection->altitudeInfo();
-	iRICUndoStack::instance().push(new Structured15DGridCrossSectionEditCommand(false, tr("Edit Elevation Point"), after, before, this, m_shapeItem, true));
+	iRICUndoStack::instance().push(new EditCommand(false, tr("Edit Elevation Point"), after, before, this, m_shapeItem, true));
 	m_selectionModel->clear();
-}
-
-Structured15DGridCrossSectionEditCommand::Structured15DGridCrossSectionEditCommand(bool apply, const QString& title, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& after, const QVector<Structured15DGridWithCrossSectionCrossSection::Altitude>& before, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, bool tableaction)
-	: QUndoCommand(title)
-{
-	m_apply = apply;
-	m_before = before;
-	m_after = after;
-	m_window = w;
-	m_item = item;
-	m_tableaction = tableaction;
-	m_first = true;
-}
-
-void Structured15DGridCrossSectionEditCommand::redo()
-{
-	m_window->m_blackLineCrossSection->setAltitudeInfo(m_after);
-//	m_point->updateXSecInterpolators();
-	if (m_apply || (m_tableaction && m_first)) {
-		m_window->updateView();
-	} else {
-		m_item->updateCrossSectionWindows();
-	}
-	m_first = false;
-}
-
-void Structured15DGridCrossSectionEditCommand::undo()
-{
-	m_window->m_blackLineCrossSection->setAltitudeInfo(m_before);
-//	m_point->updateXSecInterpolators();
-	if (! m_apply) {
-		m_item->updateCrossSectionWindows();
-	}
 }

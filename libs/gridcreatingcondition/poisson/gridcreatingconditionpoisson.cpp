@@ -24,18 +24,20 @@
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/polyline/polylineutil.h>
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
 #include <misc/mathsupport.h>
@@ -74,7 +76,7 @@ const int SPLINE_FACTOR = 10;
 
 GeoDataRiverSurvey* findRiverSurveyData(GridCreatingCondition* cond)
 {
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(cond->parent()->parent()->parent());
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(cond->parent()->parent()->parent());
 	auto rtItem = gtItem->geoDataTop();
 
 	for (auto gItem : rtItem->groupDataItems()) {
@@ -294,7 +296,7 @@ void GridCreatingConditionPoisson::Impl::updateMouseEventMode(const QPoint& mous
 	}
 }
 
-void GridCreatingConditionPoisson::Impl::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::Impl::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_mouseEventMode) {
 	case MouseEventMode::Normal:
@@ -411,7 +413,7 @@ void GridCreatingConditionPoisson::Impl::exportLine(PolyLineController* line, co
 	PolylineIO::exportData(l, m_parent->preProcessorWindow());
 }
 
-Grid* GridCreatingConditionPoisson::Impl::createGrid()
+v4InputGrid* GridCreatingConditionPoisson::Impl::createGrid()
 {
 	int iMax = m_iDiv + 1;
 	int jMax = m_jDiv + 1;
@@ -423,14 +425,12 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 	std::vector<double> xVec(iMax * jMax);
 	std::vector<double> yVec(iMax * jMax);
 
-	Structured2DGrid* grid = new Structured2DGrid(nullptr);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_parent->m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
-
+	auto grid = new v4Structured2dGrid();
 	grid->setDimensions(iMax, jMax);
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate(iMax * jMax);
+
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_parent->m_conditionDataItem->parent()->parent());
+	auto inputGrid = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(inputGrid);
 
 	auto leftBankPoints = PolyLineUtil::buildSplinePoints(m_leftBankLineController.polyData()->GetPoints(), m_iDiv);
 	auto rightBankPoints = PolyLineUtil::buildSplinePoints(m_rightBankLineController.polyData()->GetPoints(), m_iDiv);
@@ -477,18 +477,13 @@ Grid* GridCreatingConditionPoisson::Impl::createGrid()
 
 //	SpringSolver::solve(&xVec, &yVec, iMax, jMax, 0.001, m_maxIterations);
 
-	for (int i = 0; i < xVec.size(); ++i) {
-		points->InsertNextPoint(xVec.at(i) + xOffset, yVec.at(i) + yOffset, 0);
+	for (vtkIdType i = 0; i < static_cast<vtkIdType> (xVec.size()); ++i) {
+		grid->setPoint2d(i, QPointF(xVec.at(i) + xOffset, yVec.at(i) + yOffset));
 	}
+	grid->pointsModified();
 
-	grid->vtkGrid()->SetPoints(points);
-	points->Delete();
-
-	for (GridAttributeContainer* c : grid->gridAttributes()) {
-		c->allocate();
-	}
-	grid->setModified();
-	return grid;
+	inputGrid->allocateAttributes();
+	return inputGrid;
 }
 
 // public interface
@@ -587,7 +582,7 @@ bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 	impl->m_jDiv = dialog.jDiv();
 	impl->m_maxIterations = dialog.maxIterations();
 
-	Grid* grid = impl->createGrid();
+	v4InputGrid* grid = impl->createGrid();
 	emit gridCreated(grid);
 
 	return true;
@@ -694,7 +689,7 @@ void GridCreatingConditionPoisson::setupMenu()
 	m_menu->addAction(m_conditionDataItem->exportAction());
 }
 
-void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewI* v)
 {
 	makeLineWideWithPoints(&(impl->m_centerLineController));
 	makeLineWideWithPoints(&(impl->m_centerLineSplineController));
@@ -707,7 +702,7 @@ void GridCreatingConditionPoisson::informSelection(PreProcessorGraphicsViewInter
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionPoisson::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	makeLineNarrowNoPoints(&(impl->m_centerLineController));
 	makeLineNarrowNoPoints(&(impl->m_centerLineSplineController));
@@ -720,12 +715,12 @@ void GridCreatingConditionPoisson::informDeselection(PreProcessorGraphicsViewInt
 	v->unsetCursor();
 }
 
-void GridCreatingConditionPoisson::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	impl->updateMouseCursor(v);
 }
 
-void GridCreatingConditionPoisson::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionPoisson::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (impl->m_mouseEventMode != Impl::MouseEventMode::Defining) {return;}
@@ -733,17 +728,17 @@ void GridCreatingConditionPoisson::keyPressEvent(QKeyEvent* event, PreProcessorG
 	impl->finishDefiningLine();
 }
 
-void GridCreatingConditionPoisson::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionPoisson::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionPoisson::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionPoisson::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_mouseEventMode == Impl::MouseEventMode::Defining) {
 		impl->finishDefiningLine();
 	}
 }
 
-void GridCreatingConditionPoisson::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case Impl::MouseEventMode::Normal:
@@ -770,7 +765,7 @@ void GridCreatingConditionPoisson::mouseMoveEvent(QMouseEvent* event, PreProcess
 	impl->m_previousPos = event->pos();
 }
 
-void GridCreatingConditionPoisson::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -807,7 +802,7 @@ void GridCreatingConditionPoisson::mousePressEvent(QMouseEvent* event, PreProces
 	impl->m_pressPos = event->pos();
 }
 
-void GridCreatingConditionPoisson::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionPoisson::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		impl->updateMouseEventMode(event->pos());

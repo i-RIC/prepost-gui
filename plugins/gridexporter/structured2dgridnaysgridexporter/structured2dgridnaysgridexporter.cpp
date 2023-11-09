@@ -1,20 +1,26 @@
 #include "structured2dgridnaysgridexporter.h"
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
+
 #include <QObject>
 #include <QFile>
 #include <QTextStream>
 
-Structured2DGridNaysGridExporter::Structured2DGridNaysGridExporter()
-	: QObject(), GridExporterInterface()
-{
-
-}
+Structured2DGridNaysGridExporter::Structured2DGridNaysGridExporter() :
+	QObject(), GridExporterI()
+{}
 
 QString Structured2DGridNaysGridExporter::caption() const
 {
 	return tr("RIC-Nays Grid file");
+}
+
+bool Structured2DGridNaysGridExporter::isGridTypeSupported(SolverDefinitionGridType::GridType gt) const
+{
+	return gt == SolverDefinitionGridType::gtStructured2DGrid;
 }
 
 QStringList Structured2DGridNaysGridExporter::fileDialogFilters() const
@@ -24,9 +30,9 @@ QStringList Structured2DGridNaysGridExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridNaysGridExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured2DGridNaysGridExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
-	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
+	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
 
 	QFile f(filename);
 	bool ret = f.open(QIODevice::WriteOnly);
@@ -37,15 +43,18 @@ bool Structured2DGridNaysGridExporter::doExport(Grid* grid, const QString& filen
 	QDataStream st(&f);
 	st.setByteOrder(QDataStream::LittleEndian);
 
-	GridAttributeContainer* c = grid2d->gridAttribute("Elevation");
+	auto c = grid->attribute("Elevation");
 	if (c == nullptr){
 		// this grid does not have Elevation. Impossible to export.
 		return false;
 	}
-	GridAttributeRealNodeContainer* container = dynamic_cast<GridAttributeRealNodeContainer*>(c);
+	auto container = dynamic_cast<GridAttributeRealContainer*>(c);
+	if (container->gridAttribute()->position() != SolverDefinitionGridAttribute::Position::Node) {return false;}
 
-	c = grid2d->gridAttribute("CellCondition");
-	GridAttributeIntegerCellContainer* cellcond = dynamic_cast<GridAttributeIntegerCellContainer*>(c);
+	c = grid->attribute("CellCondition");
+	auto cellcond = dynamic_cast<GridAttributeIntegerContainer*>(c);
+	if (cellcond->gridAttribute()->position() != SolverDefinitionGridAttribute::Position::CellCenter) {return false;}
+
 	bool cellcondexists = false;
 	if (cellcond != nullptr){
 		for (unsigned int i = 0; (! cellcondexists) && i < grid2d->dimensionI() - 1; ++i){
@@ -66,7 +75,7 @@ bool Structured2DGridNaysGridExporter::doExport(Grid* grid, const QString& filen
 	// write x coordinates. written twice (for k = 0 and 1).
 	for (int j = 0; j < 2; ++j){
 		for (int i = 0; i < datasize; ++i){
-			grid->vtkGrid()->GetPoint(i, v);
+			grid2d->vtkConcreteData()->concreteData()->GetPoint(i, v);
 			memcpy(dummybuffer, &(v[0]), 8);
 			st.writeRawData(dummybuffer, 8);
 		}
@@ -74,7 +83,7 @@ bool Structured2DGridNaysGridExporter::doExport(Grid* grid, const QString& filen
 	// write y coordinates. written twice (for k = 0 and 1).
 	for (int j = 0; j < 2; ++j){
 		for (int i = 0; i < datasize; ++i){
-			grid->vtkGrid()->GetPoint(i, v);
+			grid2d->vtkConcreteData()->concreteData()->GetPoint(i, v);
 			memcpy(dummybuffer, &(v[1]), 8);
 			st.writeRawData(dummybuffer, 8);
 		}

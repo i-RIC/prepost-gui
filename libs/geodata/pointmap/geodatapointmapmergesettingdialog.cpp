@@ -1,7 +1,7 @@
 #include "geodatapointmapmergesettingdialog.h"
 #include "ui_geodatapointmapmergesettingdialog.h"
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <guicore/pre/geodata/geodata.h>
 
 GeoDataPointmapMergeSettingDialog::GeoDataPointmapMergeSettingDialog(QWidget *parent) :
@@ -19,17 +19,17 @@ GeoDataPointmapMergeSettingDialog::~GeoDataPointmapMergeSettingDialog()
 	delete ui;
 }
 
-void GeoDataPointmapMergeSettingDialog::setItems(const std::vector<PreProcessorGeoDataDataItemInterface*>& items)
+void GeoDataPointmapMergeSettingDialog::setItems(const std::vector<PreProcessorGeoDataDataItemI*>& items)
 {
-	for (PreProcessorGeoDataDataItemInterface* item : items) {
+	for (PreProcessorGeoDataDataItemI* item : items) {
 		ui->listWidget->addItem(item->geoData()->caption());
 	}
 	m_items = items;
 }
 
-std::vector<PreProcessorGeoDataDataItemInterface*> GeoDataPointmapMergeSettingDialog::selectedItems() const
+std::vector<PreProcessorGeoDataDataItemI*> GeoDataPointmapMergeSettingDialog::selectedItems() const
 {
-	std::vector<PreProcessorGeoDataDataItemInterface*> ret;
+	std::vector<PreProcessorGeoDataDataItemI*> ret;
 	for (int i = 0; i < ui->listWidget->count(); ++i) {
 		auto item = ui->listWidget->item(i);
 		if (! item->isSelected()) {continue;}

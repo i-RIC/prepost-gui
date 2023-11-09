@@ -12,30 +12,17 @@
 #include <guibase/vtkCustomScalarBarActor.h>
 #include <guibase/graphicsmisc.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
-#include <guicore/solverdef/solverdefinitiongridattributerealnode.h>
+#include <guicore/solverdef/solverdefinitiongridattributereal.h>
 #include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
-
-#include <QDomDocument>
-#include <QDomElement>
-#include <QDomNode>
-#include <QIcon>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkColorTransferFunction.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkSphereSource.h>
-#include <vtkTextProperty.h>
 
 #include <iriclib_errorcodes.h>
 
@@ -46,7 +33,7 @@ namespace {
 
 PreProcessorGeoDataGroupDataItem* setupReferenceInformation(
 		std::vector<GraphicsWindowDataItem*>* children,
-		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemI*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
 {
@@ -60,38 +47,67 @@ void setupChildrenInGroups(
 		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
 		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector <GraphicsWindowDataItem*>* children,
-		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemI*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
 {
 	// node simple items
 	for (auto att : stdAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
 		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// node complex items
 	for (auto att : clxAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::Node) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::Node) {continue;}
 		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell simple items
 	for (auto att : stdAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
 	// cell complex items
 	for (auto att : clxAtts) {
-		if (att->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (att->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
 		children->push_back(i);
 		nameMap->insert({att->name(), i});
 	}
+	// iedge simple item
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
+		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+	// iedge complex item
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::IFace) {continue;}
+		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+	// jedge simple item
+	for (auto att : stdAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
+		auto i = new PreProcessorGeoDataGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+	// jedge complex item
+	for (auto att : clxAtts) {
+		if (att->position() != SolverDefinitionGridAttribute::Position::JFace) {continue;}
+		auto i = new PreProcessorGeoDataComplexGroupDataItem(att, parent);
+		children->push_back(i);
+		nameMap->insert({att->name(), i});
+	}
+
 	setupReferenceInformation(children, nameMap, refAtt, parent);
 }
 
@@ -99,7 +115,7 @@ void setupChildrenInOrder(
 		const std::vector<SolverDefinitionGridAttribute*>& stdAtts,
 		const std::vector<SolverDefinitionGridComplexAttribute*>& clxAtts,
 		std::vector<GraphicsWindowDataItem*>* children,
-		std::map<std::string, PreProcessorGeoDataGroupDataItemInterface*>* nameMap,
+		std::map<std::string, PreProcessorGeoDataGroupDataItemI*>* nameMap,
 		SolverDefinitionGridAttribute* refAtt,
 		PreProcessorDataItem* parent)
 {
@@ -149,7 +165,7 @@ void removeNonGroupedComplexAttributes(PreProcessorGeoDataTopDataItem* item)
 } // namespace
 
 PreProcessorGeoDataTopDataItem::PreProcessorGeoDataTopDataItem(PreProcessorDataItem* parent) :
-	PreProcessorGeoDataTopDataItemInterface {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	PreProcessorGeoDataTopDataItemI {tr("Geographic Data"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_referenceInformationAttribute {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
@@ -226,26 +242,26 @@ void PreProcessorGeoDataTopDataItem::buildReferenceInformationAttribute()
 	itemElem.setAttribute("caption", tr("Reference Information"));
 
 	auto solverDef = projectData()->solverDefinition();
-	m_referenceInformationAttribute = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, 10000);
+	m_referenceInformationAttribute = new SolverDefinitionGridAttributeReal(itemElem, solverDef, SolverDefinitionGridAttribute::Position::Node, false, 10000);
 	m_referenceInformationAttribute->setIsReferenceInformation(true);
 }
 
 SolverDefinitionGridType* PreProcessorGeoDataTopDataItem::gridType() const
 {
-	return dynamic_cast<PreProcessorGridTypeDataItemInterface*>(parent())->gridType();
+	return dynamic_cast<PreProcessorGridTypeDataItemI*>(parent())->gridType();
 }
 
-const QList<PreProcessorGeoDataGroupDataItemInterface*> PreProcessorGeoDataTopDataItem::groupDataItems() const
+const QList<PreProcessorGeoDataGroupDataItemI*> PreProcessorGeoDataTopDataItem::groupDataItems() const
 {
-	QList<PreProcessorGeoDataGroupDataItemInterface*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataGroupDataItemInterface* item = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(*it);
+	QList<PreProcessorGeoDataGroupDataItemI*> ret;
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(child);
 		ret.append(item);
 	}
 	return ret;
 }
 
-PreProcessorGeoDataGroupDataItemInterface* PreProcessorGeoDataTopDataItem::groupDataItem(const std::string& name) const
+PreProcessorGeoDataGroupDataItemI* PreProcessorGeoDataTopDataItem::groupDataItem(const std::string& name) const
 {
 	auto it = m_itemNameMap.find(name);
 	if (it == m_itemNameMap.end()) {return nullptr;}

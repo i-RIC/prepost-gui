@@ -2,14 +2,18 @@
 #define GRIDATTRIBUTECONTAINER_H
 
 #include "../../../guicore_global.h"
+
 #include "gridattributebaseobject.h"
-#include "../../grid/grid.h"
+#include "../../grid/v4inputgrid.h"
+
 #include <QObject>
 
 #include <vector>
 
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
 class GridAttributeDimensionsContainer;
+
+class vtkDataSetAttributes;
 
 namespace iRICLib {
 	class H5CgnsGridAttributes;
@@ -20,14 +24,20 @@ class GUICOREDLL_EXPORT GridAttributeContainer : public GridAttributeBaseObject
 	Q_OBJECT
 
 public:
-	GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond);
-	virtual ~GridAttributeContainer();
+	GridAttributeContainer(v4InputGrid* grid, SolverDefinitionGridAttribute* cond);
+	~GridAttributeContainer();
 
 	// basic properties
 	const std::string& name() const;
-	Grid* grid() const;
+	v4InputGrid* grid() const;
+
 	GridAttributeDimensionsContainer* dimensions() const;
-	virtual unsigned int dataCount() const = 0;
+	void setDimensions(GridAttributeDimensionsContainer* dims);
+
+	QString temporaryDir() const;
+	void setTemporaryDir(const QString& dir);
+
+	unsigned int dataCount() const;
 	virtual bool getValueRange(double* min, double* max) = 0;
 
 	bool mapped() const;
@@ -41,13 +51,12 @@ public:
 	virtual int loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts) = 0;
 	virtual int saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts) = 0;
 
-	void updateConnections();
-
 public slots:
 	void handleDimensionCurrentIndexChange(int oldIndex, int newIndex);
 	void handleDimensionValuesChange(const std::vector<QVariant>& before, const std::vector<QVariant>& after);
 
 protected:
+	vtkDataSetAttributes* vtkAttributes() const;
 	QString temporaryExternalFilename(int index) const;
 
 private:
@@ -55,9 +64,11 @@ private:
 	virtual bool saveToExternalFile(const QString& filename) = 0;
 	virtual void setModified() = 0;
 
+	v4InputGrid* m_grid;
+	GridAttributeDimensionsContainer* m_dimensions;
+	QString m_temporaryDir;
 	bool m_mapped;
 	bool m_isCustomModified;
-	Grid* m_grid;
 };
 
 #endif // GRIDATTRIBUTECONTAINER_H

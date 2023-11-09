@@ -1,9 +1,11 @@
+#include "../post2dwindowattributebrowsercontroller.h"
 #include "post2dwindowparticlesbasetopdataitem.h"
 #include "post2dwindowparticlesbasevectorgroupdataitem.h"
 #include "post2dwindowparticlesbasevectorgrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4particles2d.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -15,7 +17,7 @@ Post2dWindowParticlesBaseVectorGroupTopDataItem::Post2dWindowParticlesBaseVector
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->GetPointData())) {
+	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->vtkData()->data()->GetPointData())) {
 		auto item = new Post2dWindowParticlesBaseVectorGroupDataItem(name, this);
 		m_childItems.push_back(item);
 	}
@@ -49,22 +51,22 @@ void Post2dWindowParticlesBaseVectorGroupTopDataItem::update()
 
 void Post2dWindowParticlesBaseVectorGroupTopDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
+	topDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowParticlesBaseVectorGroupTopDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearParticleResultAttributeBrowser();
+	topDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowParticlesBaseVectorGroupTopDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseVectorGroupTopDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseVectorGroupTopDataItem::addCustomMenuItems(QMenu* menu)
@@ -131,5 +133,5 @@ Post2dWindowZoneDataItem* Post2dWindowParticlesBaseVectorGroupTopDataItem::zoneD
 
 vtkPolyData* Post2dWindowParticlesBaseVectorGroupTopDataItem::particleData() const
 {
-	return topDataItem()->particleData();
+	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
 }

@@ -3,7 +3,7 @@
 #include <guicore/pre/geodata/geodata.h>
 #include <guicore/pre/geodata/geodataimporter.h>
 
-iRICPython::GeoDataImporter::GeoDataImporter(::GeoDataImporter* importer, SolverDefinitionGridAttribute* att, PreProcessorGeoDataGroupDataItemInterface* groupItem) :
+iRICPython::GeoDataImporter::GeoDataImporter(::GeoDataImporter* importer, SolverDefinitionGridAttribute* att, PreProcessorGeoDataGroupDataItemI* groupItem) :
 	m_importer {importer},
 	m_att {att},
 	m_groupItem {groupItem}

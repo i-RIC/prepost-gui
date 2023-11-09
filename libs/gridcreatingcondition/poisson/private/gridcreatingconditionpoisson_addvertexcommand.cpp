@@ -1,7 +1,7 @@
 #include "gridcreatingconditionpoisson_addvertexcommand.h"
 #include "gridcreatingconditionpoisson_impl.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 #include <vtkPolyData.h>

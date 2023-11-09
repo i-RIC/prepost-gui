@@ -28,6 +28,7 @@ class Post3dWindowParticleGroupRootDataItem;
 class Post3dWindowParticlesTopDataItem;
 class PostStringResultDataItem;
 class PostZoneDataContainer;
+class v4PostZoneDataContainer;
 
 class Post3dWindowZoneDataItem : public Post3dWindowDataItem, public PostZoneDataItem
 {
@@ -41,7 +42,7 @@ public:
 	void informSelection(VTKGraphicsView*) override;
 	void informDeselection(VTKGraphicsView*) override;
 
-	PostZoneDataContainer* dataContainer() override;
+	v4PostZoneDataContainer* v4DataContainer() override;
 	int zoneNumber() const;
 	const std::string& zoneName() const;
 	void update();

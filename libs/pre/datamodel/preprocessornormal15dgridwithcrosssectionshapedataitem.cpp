@@ -3,11 +3,13 @@
 #include "preprocessorgriddataitem.h"
 #include "preprocessornormal15dgridwithcrosssectiondataitem.h"
 #include "preprocessornormal15dgridwithcrosssectionshapedataitem.h"
+#include "public/preprocessorgriddataitem_selectednodescontroller.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/structured15dgridwithcrosssection.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured15dgridwithcrosssection.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/projectdata.h>
 #include <misc/mathsupport.h>
 
@@ -63,12 +65,12 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::setupActors()
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informGridUpdate()
 {
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
+	v4InputGrid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g != nullptr) {
-		Structured15DGridWithCrossSection* grid = dynamic_cast<Structured15DGridWithCrossSection*>(g);
+		auto grid = dynamic_cast<v4Structured15dGridWithCrossSection*> (g->grid());
 
-		m_edgeMapper->SetInputData(grid->vtkGrid());
-		m_vertexMapper->SetInputData(grid->vertexGrid());
+		m_edgeMapper->SetInputData(grid->vtkData()->data());
+		m_vertexMapper->SetInputData(grid->pointsGrid());
 	}
 	updateActorSettings();
 }
@@ -84,7 +86,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActorSettings
 	}
 	m_actorCollection->RemoveAllItems();
 
-	Grid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
+	v4InputGrid* g = dynamic_cast<PreProcessorGridDataItem*>(parent())->grid();
 	if (g == nullptr) {
 		return;
 	}
@@ -107,7 +109,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informSelection(VTK
 {
 	m_edgeActor->GetProperty()->SetLineWidth(selectedLineWidth);
 	m_vertexActor->GetProperty()->SetPointSize(selectedPointSize);
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(true);
+	gridDataItem()->selectedNodesController()->setVisibility(true);
 	updateVisibility();
 }
 
@@ -115,7 +117,7 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::informDeselection(V
 {
 	m_edgeActor->GetProperty()->SetLineWidth(normalLineWidth);
 	m_vertexActor->GetProperty()->SetPointSize(normalPointSize);
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->setSelectedPointsVisibility(false);
+	gridDataItem()->selectedNodesController()->setVisibility(false);
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::assignActorZValues(const ZDepthRange& range)
@@ -133,13 +135,12 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateActionStatus(
 {
 	PreProcessorGridShapeDataItem::updateActionStatus();
 
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	m_openCrossSectionWindowAction->setEnabled(gItem->selectedVertices().size() > 0);
+	m_openCrossSectionWindowAction->setEnabled(gridDataItem()->selectedNodesController()->selectedDataIds().size() > 0);
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::openCrossSectionWindow()
 {
-	Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem* i = new Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem(this, preProcessorWindow());
+	auto i = new Structured15DGridWithCrossSectionCrossSectionWindowProjectDataItem(this, preProcessorWindow());
 	i->window()->setTarget(selectedCrossSection());
 	m_crosssectionWindows.append(i);
 	QMdiArea* cent = dynamic_cast<QMdiArea*>(iricMainWindow()->centralWidget());
@@ -149,26 +150,26 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::openCrossSectionWin
 	i->window()->cameraFit();
 }
 
-Structured15DGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCrossSectionShapeDataItem::selectedCrossSection()
+v4Structured15dGridWithCrossSectionCrossSection* PreProcessorNormal15DGridWithCrossSectionShapeDataItem::selectedCrossSection()
 {
-	auto item = dynamic_cast<PreProcessorNormal15DGridWithCrossSectionDataItem*>(parent());
-	auto g = dynamic_cast<Structured15DGridWithCrossSection*>(item->grid());
+	auto gItem = gridDataItem();
+	auto g = dynamic_cast<v4Structured15dGridWithCrossSection*>(gItem->grid()->grid());
 
-	if (item->selectedVertices().size() < 1) {return nullptr;}
+	if (gItem->selectedNodesController()->selectedDataIds().size() < 1) {return nullptr;}
 
-	vtkIdType index = item->selectedVertices().at(0);
+	vtkIdType index = gItem->selectedNodesController()->selectedDataIds().at(0);
 	auto it = g->crossSections().begin();
 	return *(it + index);
 }
 
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::updateCrossSectionWindows()
 {
-	for (auto w_it = m_crosssectionWindows.begin(); w_it != m_crosssectionWindows.end(); ++w_it) {
-		Structured15DGridWithCrossSectionCrossSectionWindow* w = (*w_it)->window();
-		bool ok = w->updateComboBoxes();
+	for (auto w : m_crosssectionWindows) {
+		auto w2 = w->window();
+		bool ok = w2->updateComboBoxes();
 		if (ok) {
-			w->setupData();
-			w->updateView();
+			w2->setupData();
+			w2->updateView();
 		}
 	}
 }
@@ -187,11 +188,10 @@ void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::requestCrossSection
 void PreProcessorNormal15DGridWithCrossSectionShapeDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
 	static QMenu* menu = nullptr;
-	auto tmpparent = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto gItem = gridDataItem();
 	if (event->button() == Qt::LeftButton) {
 		if (m_definingBoundingBox) {
-			auto v2 = dynamic_cast<VTK2DGraphicsView*> (v);
-			tmpparent->nodeSelectingMouseReleaseEvent(event, v2);
+			gItem->selectedNodesController()->handleMouseReleaseEvent(event, v);
 		}
 		m_definingBoundingBox = false;
 		m_draggingSelectedPoints = false;

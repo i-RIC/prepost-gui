@@ -1,13 +1,13 @@
 #ifndef PREPROCESSORHYDRAULICDATAGROUPDATAITEM_H
 #define PREPROCESSORHYDRAULICDATAGROUPDATAITEM_H
 
-#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
 
 #include <set>
 
 class HydraulicData;
 
-class PreProcessorHydraulicDataGroupDataItem : public PreProcessorHydraulicDataGroupDataItemInterface
+class PreProcessorHydraulicDataGroupDataItem : public PreProcessorHydraulicDataGroupDataItemI
 {
 	Q_OBJECT
 
@@ -15,7 +15,7 @@ public:
 	PreProcessorHydraulicDataGroupDataItem(HydraulicDataCreator* creator, PreProcessorDataItem* parent);
 
 	HydraulicDataCreator* creator() const override;
-	const QList<PreProcessorHydraulicDataDataItemInterface*> hydraulicDatas() const override;
+	const QList<PreProcessorHydraulicDataDataItemI*> hydraulicDatas() const override;
 	void moveUpItem(int index) override;
 	void moveDownItem(int index) override;
 	void deleteItem(int index) override;

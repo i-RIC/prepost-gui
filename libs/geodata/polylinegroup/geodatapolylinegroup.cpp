@@ -10,11 +10,11 @@
 #include <geodata/polyline/private/geodatapolyline_impl.h>
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
@@ -48,7 +48,7 @@ namespace {
 
 std::string VALUE = "value";
 
-GeoDataCreator* getPolyLineGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
+GeoDataCreator* getPolyLineGroupCreator(PreProcessorGeoDataDataItemI* geoData, SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
 	auto creators = factory.compatibleCreators(att);
@@ -281,9 +281,9 @@ QString GeoDataPolyLineGroup::captionForData(int number)
 	return tr("Line%1").arg(number);
 }
 
-GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface* d)
+GeoDataPolyDataGroup* GeoDataPolyLineGroup::createInstanceForCopy(PreProcessorGeoDataDataItemI* d)
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(d->parent());
 	return dynamic_cast<GeoDataPolyDataGroup*> (getPolyLineGroupCreator(d, gItem->condition())->create(d, gItem->condition()));
 }
 

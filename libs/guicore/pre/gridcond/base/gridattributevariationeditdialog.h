@@ -28,7 +28,7 @@ public:
 	void setWidget(GridAttributeVariationEditWidget* w);
 	void setLabel(const QString& label);
 
-	void applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem);
+	void applyVariation(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem);
 
 private:
 	GridAttributeVariationEditWidget* m_widget;

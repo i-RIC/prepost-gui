@@ -58,7 +58,7 @@ void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget:
 void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::scanAndSetDefault(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/)
 {}
 
-void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::applyValue(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemInterface* /*dItem*/)
+void GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::applyValue(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemI* /*dItem*/)
 {}
 
 QSize GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::EditWidget::sizeHint() const

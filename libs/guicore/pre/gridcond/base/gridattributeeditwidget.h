@@ -7,7 +7,7 @@
 class SolverDefinitionGridAttribute;
 class GridAttributeContainer;
 class vtkDataSetAttributes;
-class PreProcessorGridDataItemInterface;
+class PreProcessorGridDataItemI;
 
 class GUICOREDLL_EXPORT GridAttributeEditWidget : public QWidget
 {
@@ -26,7 +26,7 @@ public:
 	virtual void setVariantValue(const QVariant& v) = 0;
 
 	virtual void scanAndSetDefault(GridAttributeContainer* container, const std::vector<vtkIdType>& indices) = 0;
-	virtual void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemInterface* dItem) = 0;
+	virtual void applyValue(GridAttributeContainer* container, const std::vector<vtkIdType>& indices, vtkDataSetAttributes* atts, PreProcessorGridDataItemI* dItem) = 0;
 
 	QSize sizeHint() const override;
 	QSize minimumSizeHint() const override;
@@ -44,7 +44,7 @@ private:
 	virtual QWidget* editWidget() const = 0;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

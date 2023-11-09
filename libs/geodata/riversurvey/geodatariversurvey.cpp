@@ -37,16 +37,16 @@
 #include <guibase/polyline/polylineremovevertexcommand.h>
 #include <guibase/polyline/polylineutil.h>
 #include <guibase/vtktool/vtkpointsetgeos2dindex.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/misc/mouseboundingbox.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <guicore/project/colorsource.h>
 #include <guicore/project/projectdata.h>
@@ -170,11 +170,11 @@ void GeoDataRiverSurvey::setupMenu()
 
 void GeoDataRiverSurvey::setupDataItem()
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent());
 	auto childItems = gItem->childItems();
 	int rcount = 1;
 	for (GraphicsWindowDataItem* child : childItems) {
-		auto i = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (child);
+		auto i = dynamic_cast<PreProcessorGeoDataDataItemI*> (child);
 		if (dynamic_cast<GeoDataRiverSurvey*>(i->geoData()) != nullptr) {
 			++ rcount;
 		}
@@ -198,7 +198,7 @@ bool GeoDataRiverSurvey::addToolBarButtons(QToolBar* /*tb*/)
 	return true;
 }
 
-void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
+void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewI*)
 {
 	allActorsOff();
 	vtkActorCollection* col = actorCollection();
@@ -237,7 +237,7 @@ void GeoDataRiverSurvey::informSelection(PreProcessorGraphicsViewInterface*)
 	updateVisibilityWithoutRendering();
 }
 
-void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataRiverSurvey::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	allActorsOff();
 	vtkActorCollection* col = actorCollection();
@@ -295,12 +295,12 @@ void GeoDataRiverSurvey::allActorsOff()
 	impl->m_backgroundActor->VisibilityOff();
 }
 
-void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	impl->updateMouseCursor(v);
 }
 
-void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyPressEvent(event, v);
@@ -309,7 +309,7 @@ void GeoDataRiverSurvey::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsVie
 	}
 }
 
-void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeKeyReleaseEvent(event, v);
@@ -318,7 +318,7 @@ void GeoDataRiverSurvey::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsV
 	}
 }
 
-void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseDoubleClickEvent(event, v);
@@ -327,7 +327,7 @@ void GeoDataRiverSurvey::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorG
 	}
 }
 
-void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseMoveEvent(event, v);
@@ -336,7 +336,7 @@ void GeoDataRiverSurvey::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphics
 	}
 }
 
-void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMousePressEvent(event, v);
@@ -345,7 +345,7 @@ void GeoDataRiverSurvey::mousePressEvent(QMouseEvent* event, PreProcessorGraphic
 	}
 }
 
-void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (impl->m_mode == Impl::Mode::CreateMode) {
 		createModeMouseReleaseEvent(event, v);
@@ -615,7 +615,10 @@ vtkStructuredGrid* GeoDataRiverSurvey::backgroundGrid() const
 
 vtkCell* GeoDataRiverSurvey::findBackgroundGridCell(double x, double y, double* weight) const
 {
-	return impl->m_backgroundGridIndex->findCell(x, y, weight);
+	vtkIdType cellId = impl->m_backgroundGridIndex->findCell(x, y, 0, weight);
+	if (cellId < 0) {return nullptr;}
+
+	return impl->m_backgroundGrid->GetCell(cellId);
 }
 
 void GeoDataRiverSurvey::updateZDepthRangeItemCount(ZDepthRange& range)
@@ -657,9 +660,9 @@ void GeoDataRiverSurvey::generateData()
 	std::vector<GeoDataPointmap*> pointMapDataList;
 	std::vector<QString> pointMapDataNameList;
 
-	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent())->childItems();
+	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent())->childItems();
 	for (int i = 0; i < childItems.size(); ++i) {
-		auto c = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (childItems.at(i));
+		auto c = dynamic_cast<PreProcessorGeoDataDataItemI*> (childItems.at(i));
 		auto geoData = c->geoData();
 		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
 		if (pointMapData == nullptr) {continue;}
@@ -1043,7 +1046,7 @@ void GeoDataRiverSurvey::addNewPoint()
 	dialog->show();
 }
 
-void GeoDataRiverSurvey::createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (impl->m_createMouseEventMode != Impl::CreateMouseEventMode::Defining) {return;}
@@ -1051,17 +1054,17 @@ void GeoDataRiverSurvey::createModeKeyPressEvent(QKeyEvent* event, PreProcessorG
 	finishDefiningLine();
 }
 
-void GeoDataRiverSurvey::createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GeoDataRiverSurvey::createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_createMouseEventMode == Impl::CreateMouseEventMode::Defining) {
 		finishDefiningLine();
 	}
 }
 
-void GeoDataRiverSurvey::createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_createMouseEventMode) {
 	case Impl::CreateMouseEventMode::Normal:
@@ -1089,7 +1092,7 @@ void GeoDataRiverSurvey::createModeMouseMoveEvent(QMouseEvent* event, PreProcess
 	impl->m_currentPoint = event->pos();
 }
 
-void GeoDataRiverSurvey::createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_createMouseEventMode) {
@@ -1122,7 +1125,7 @@ void GeoDataRiverSurvey::createModeMousePressEvent(QMouseEvent* event, PreProces
 	impl->m_currentPoint = event->pos();
 }
 
-void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		impl->createModeUpdateMouseEventMode(event->pos());
@@ -1139,7 +1142,7 @@ void GeoDataRiverSurvey::createModeMouseReleaseEvent(QMouseEvent* event, PreProc
 	}
 }
 
-void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_editMouseEventMode) {
 	case Impl::EditMouseEventMode::Normal:
@@ -1161,7 +1164,7 @@ void GeoDataRiverSurvey::editModeKeyPressEvent(QKeyEvent* event, PreProcessorGra
 	}
 }
 
-void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_editMouseEventMode) {
 	case Impl::EditMouseEventMode::Normal:
@@ -1183,7 +1186,7 @@ void GeoDataRiverSurvey::editModeKeyReleaseEvent(QKeyEvent* event, PreProcessorG
 	}
 }
 
-void GeoDataRiverSurvey::editModeMouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeMouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	GeoDataRiverPathPoint* selP = singleSelectedPoint();
 	if (selP == nullptr) {
@@ -1193,7 +1196,7 @@ void GeoDataRiverSurvey::editModeMouseDoubleClickEvent(QMouseEvent* event, PrePr
 	openCrossSectionWindow();
 }
 
-void GeoDataRiverSurvey::editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeMouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if ((impl->m_editMouseEventMode == Impl::EditMouseEventMode::AddingExtension || impl->m_editMouseEventMode == Impl::EditMouseEventMode::Inserting) && impl->m_leftButtonDown) {
 		graphicsView()->emitWorldPosition(event->x(), event->y());
@@ -1261,7 +1264,7 @@ void GeoDataRiverSurvey::editModeMouseMoveEvent(QMouseEvent* event, PreProcessor
 	}
 }
 
-void GeoDataRiverSurvey::editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeMousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_editMouseEventMode) {
@@ -1321,7 +1324,7 @@ void GeoDataRiverSurvey::editModeMousePressEvent(QMouseEvent* event, PreProcesso
 	impl->m_dragStartPoint = event->pos();
 }
 
-void GeoDataRiverSurvey::editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataRiverSurvey::editModeMouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_editMouseEventMode) {
@@ -1429,7 +1432,7 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 	}
 	impl->m_gridThread->finishBGGridCopy();
 	impl->updateVtkBackgroundObjects();
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
+	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->informValueRangeChange();
 }
 
 void GeoDataRiverSurvey::showInitialDialog()
@@ -1459,25 +1462,25 @@ void GeoDataRiverSurvey::updateInterpolators()
 
 void GeoDataRiverSurvey::openCrossSectionWindow()
 {
-	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	gItem->openCrossSectionWindow(this, singleSelectedPoint()->name());
 }
 
 void GeoDataRiverSurvey::updateCrosssectionWindows()
 {
-	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	gItem->updateCrossectionWindows();
 }
 
 void GeoDataRiverSurvey::toggleCrosssectionWindowsGridCreatingMode(bool gridMode)
 {
-	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	gItem->toggleCrosssectionWindowsGridCreatingMode(gridMode, this);
 }
 
 void GeoDataRiverSurvey::informCtrlPointUpdateToCrosssectionWindows()
 {
-	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	gItem->informCtrlPointUpdateToCrosssectionWindows();
 }
 
@@ -1507,9 +1510,9 @@ void GeoDataRiverSurvey::mapPointsData()
 	std::vector<GeoDataPointmap*> pointMapDataList;
 	std::vector<QString> pointMapDataNameList;
 
-	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent())->childItems();
+	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent())->childItems();
 	for (int i = 0; i < childItems.size(); ++i) {
-		auto c = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (childItems.at(i));
+		auto c = dynamic_cast<PreProcessorGeoDataDataItemI*> (childItems.at(i));
 		auto geoData = c->geoData();
 		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
 		if (pointMapData == nullptr) {continue;}
@@ -1572,7 +1575,7 @@ void GeoDataRiverSurvey::mapPointsData()
 
 void GeoDataRiverSurvey::generatePointMap()
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
 	GeoDataCreator* creator = gItem->getPointMapCreator();
 	if (creator == nullptr) {return;}
 
@@ -1610,12 +1613,12 @@ void GeoDataRiverSurvey::setColoredPoints(GeoDataRiverPathPoint* black)
 	renderGraphicsView();
 }
 
-void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyInterface* cond)
+void GeoDataRiverSurvey::setGridCreatingCondition(GridCreatingConditionRiverSurveyI* cond)
 {
 	impl->m_gridCreatingCondition = cond;
 }
 
-GridCreatingConditionRiverSurveyInterface* GeoDataRiverSurvey::gridCreatingCondition() const
+GridCreatingConditionRiverSurveyI* GeoDataRiverSurvey::gridCreatingCondition() const
 {
 	return impl->m_gridCreatingCondition;
 }

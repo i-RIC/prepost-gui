@@ -3,7 +3,7 @@
 
 #include "../post3dwindowdataitem.h"
 
-#include <QMap>
+class Post3dWindowZoneDataItem;
 
 class Post3dWindowCellContourGroupTopDataItem : public Post3dWindowDataItem
 {
@@ -24,6 +24,8 @@ private:
 
 	QDialog* addDialog(QWidget* p) override;
 	void handleAddDialogAccepted(QDialog* propDialog) override;
+
+	Post3dWindowZoneDataItem* zoneDataItem() const;
 
 	double m_zScale;
 

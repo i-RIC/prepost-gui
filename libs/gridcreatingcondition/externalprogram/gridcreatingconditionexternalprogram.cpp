@@ -2,16 +2,16 @@
 #include "gridcreatingconditionexternalprogramsettingdialog.h"
 
 #include <guibase/widget/waitdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/grid/v4inputgridio.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/filesystemfunction.h>
 #include <misc/mathsupport.h>
 #include <misc/pythonutil.h>
@@ -43,7 +43,7 @@ GridCreatingConditionExternalProgram::GridCreatingConditionExternalProgram(const
 {
 	setFilename("gridcreate.cgn");
 
-	auto p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent);
+	auto p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent);
 	m_rightClickingMenu->addAction(p->createAction());
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(p->clearAction());
@@ -148,10 +148,9 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		return false;
 	}
 
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	SolverDefinitionGridType* gType = gtItem->gridType();
-	// Create grid.
-	Grid* grid = gType->createEmptyGrid();
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto gType = gtItem->gridType();
+	v4InputGrid* grid = nullptr;
 
 	// load create grid from cgnsfile. it is always loaded from the first zone in the first base.
 	try {
@@ -167,18 +166,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		}
 
 		auto firstZone = file.ccBase()->zoneById(1);
-		grid->loadFromCgnsFile(*firstZone);
-
-		// apply offset
-		auto o = offset();
-		auto points = grid->vtkGrid()->GetPoints();
-		for (vtkIdType i = 0; i < points->GetNumberOfPoints(); ++i) {
-			double v[3];
-			points->GetPoint(i, v);
-			v[0] -= o.x();
-			v[1] -= o.y();
-			points->SetPoint(i, v);
-		}
+		grid = v4InputGridIO::load(*firstZone, gType, offset(), &ier);
 	}  catch (...) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
 		return false;
@@ -206,7 +194,7 @@ void GridCreatingConditionExternalProgram::clear()
 	dialog.save();
 }
 
-void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (event->button() == Qt::RightButton) {
 		// right click
@@ -214,7 +202,7 @@ void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, P
 	}
 }
 
-void GridCreatingConditionExternalProgram::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionExternalProgram::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {

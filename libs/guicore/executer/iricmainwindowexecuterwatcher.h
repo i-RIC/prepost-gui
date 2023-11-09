@@ -5,17 +5,17 @@
 
 #include <guibase/executer/waitdialogexecuterwatcher.h>
 
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 
 class GUICOREDLL_EXPORT iRICMainWindowExecuterWatcher : public WaitDialogExecuterWatcher
 {
 public:
-	iRICMainWindowExecuterWatcher(ExecuterI* executer, iRICMainWindowInterface* w);
+	iRICMainWindowExecuterWatcher(ExecuterI* executer, iRICMainWindowI* w);
 
 	void execute() override;
 
 private:
-	iRICMainWindowInterface* m_mainWindow;
+	iRICMainWindowI* m_mainWindow;
 };
 
 #endif // IRICMAINWINDOWEXECUTERWATCHER_H

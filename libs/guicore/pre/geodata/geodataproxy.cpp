@@ -1,7 +1,7 @@
 #include "../../datamodel/geodataproxydataitem.h"
-#include "../../base/iricmainwindowinterface.h"
-#include "../../post/post2d/base/post2dwindowgeodatadataiteminterface.h"
-#include "../../post/post2d/base/post2dwindowgridtypedataiteminterface.h"
+#include "../../base/iricmainwindowi.h"
+#include "../../post/post2d/base/post2dwindowgeodatadataitemi.h"
+#include "../../post/post2d/base/post2dwindowgridtypedataitemi.h"
 #include "geodata.h"
 #include "geodataproxy.h"
 
@@ -113,7 +113,7 @@ void GeoDataProxy::showPropertyDialogModeless()
 	QDialog* propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	propDialog->setAttribute(Qt::WA_DeleteOnClose);
-	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
 
 	iricMainWindow()->enterModelessDialogMode();
 
@@ -152,14 +152,14 @@ QDialog* GeoDataProxy::propertyDialog(QWidget*)
 void GeoDataProxy::handlePropertyDialogAccepted(QDialog*)
 {}
 
-Post2dWindowGeoDataDataItemInterface* GeoDataProxy::geoDataDataItem() const
+Post2dWindowGeoDataDataItemI* GeoDataProxy::geoDataDataItem() const
 {
-	return dynamic_cast<Post2dWindowGeoDataDataItemInterface*> (parent());
+	return dynamic_cast<Post2dWindowGeoDataDataItemI*> (parent());
 }
 
-Post2dWindowGridTypeDataItemInterface* GeoDataProxy::gridTypeDataItem() const
+Post2dWindowGridTypeDataItemI* GeoDataProxy::gridTypeDataItem() const
 {
-	return dynamic_cast<Post2dWindowGridTypeDataItemInterface*>(parent()->parent()->parent()->parent());
+	return dynamic_cast<Post2dWindowGridTypeDataItemI*>(parent()->parent()->parent()->parent());
 }
 
 void GeoDataProxy::applyColorMapSetting()

@@ -4,6 +4,7 @@
 #include "post3dwindowzonedataitem.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4particles3d.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
@@ -15,7 +16,7 @@ Post3dWindowParticlesBaseVectorGroupTopDataItem::Post3dWindowParticlesBaseVector
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->GetPointData())) {
+	for (auto name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(topDataItem()->particleData()->vtkConcreteData()->concreteData()->GetPointData())) {
 		auto item = new Post3dWindowParticlesBaseVectorGroupDataItem(name, this);
 		m_childItems.push_back(item);
 	}
@@ -106,5 +107,5 @@ Post3dWindowZoneDataItem* Post3dWindowParticlesBaseVectorGroupTopDataItem::zoneD
 
 vtkPolyData* Post3dWindowParticlesBaseVectorGroupTopDataItem::particleData() const
 {
-	return topDataItem()->particleData();
+	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
 }

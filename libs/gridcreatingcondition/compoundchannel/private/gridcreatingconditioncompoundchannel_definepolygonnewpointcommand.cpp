@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncompoundchannel_definepolygonnewpointcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::DefinePolygonNewPointCommand::DefinePolygonNewPointCommand(bool keyDown, const QPoint& point, GridCreatingConditionCompoundChannel* cond) :

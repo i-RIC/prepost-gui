@@ -9,28 +9,21 @@
 class GridComplexConditionGroup;
 class SolverDefinitionGridComplexAttribute;
 
-class GUICOREDLL_EXPORT GridComplexAttributeContainer : public GridAttributeContainerT<int>
+class PreProcessorGeoDataComplexGroupDataItemI;
+
+class GUICOREDLL_EXPORT GridComplexAttributeContainer : public GridAttributeContainerT<int, vtkIntArray>
 {
 public:
-	GridComplexAttributeContainer(Grid* grid, SolverDefinitionGridComplexAttribute* cond);
-	virtual ~GridComplexAttributeContainer();
+	GridComplexAttributeContainer(v4InputGrid* grid, SolverDefinitionGridComplexAttribute* cond);
+	~GridComplexAttributeContainer();
 
-	unsigned int dataCount() const override;
-
-	int value(unsigned int index) const override;
-	void setValue(unsigned int index, int value) override;
-
-	void allocate() override;
-
-	vtkIntArray* dataArray() const override;
-	vtkIntArray* dataArrayCopy() const override;
-	void setModified() override;
-	bool getValueRange(double* min, double* max) override;
-
+	void setDataItem(PreProcessorGeoDataComplexGroupDataItemI* dataItem);
 	std::vector<GridComplexConditionGroup*> groups() const;
 
 private:
 	SolverDefinitionGridComplexAttribute* gridAttribute() const;
+
+	PreProcessorGeoDataComplexGroupDataItemI* m_dataItem;
 };
 
 #endif // GRIDRELATEDCOMPLEXCONDITIONCONTAINER_H

@@ -1,7 +1,7 @@
 #include "geodatariversurvey_editcrosssectioncommand.h"
 #include "../geodatariversurveycrosssectionwindow.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 
 #include <QItemSelectionModel>
 #include <QStandardItemModel>

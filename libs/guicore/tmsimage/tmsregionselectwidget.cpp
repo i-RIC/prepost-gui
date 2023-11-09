@@ -99,9 +99,7 @@ TmsRegionSelectWidget::TmsRegionSelectWidget(QWidget* parent) :
 }
 
 TmsRegionSelectWidget::~TmsRegionSelectWidget()
-{
-	delete impl;
-}
+{}
 
 void TmsRegionSelectWidget::paintEvent(QPaintEvent *)
 {

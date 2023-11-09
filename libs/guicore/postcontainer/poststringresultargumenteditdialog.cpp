@@ -1,17 +1,18 @@
+#include "../grid/v4structured2dgrid.h"
+#include "../grid/v4structured3dgrid.h"
+#include "../grid/v4unstructured2dgrid.h"
 #include "postsolutioninfo.h"
 #include "poststringresultargument.h"
 #include "poststringresultargumenteditdialog.h"
-#include "postzonedatacontainer.h"
+#include "v4postzonedatacontainer.h"
+#include "v4solutiongrid.h"
 #include "ui_poststringresultargumenteditdialog.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
 #include <misc/stringtool.h>
 
 #include <QMessageBox>
-
-#include <vtkCellData.h>
-#include <vtkPointData.h>
-#include <vtkStructuredGrid.h>
-#include <vtkUnstructuredGrid.h>
 
 #include <algorithm>
 
@@ -54,7 +55,7 @@ PostStringResultArgumentEditDialog::~PostStringResultArgumentEditDialog()
 	delete ui;
 }
 
-void PostStringResultArgumentEditDialog::setZoneDataContainer(PostZoneDataContainer* container)
+void PostStringResultArgumentEditDialog::setZoneDataContainer(v4PostZoneDataContainer* container)
 {
 	m_zoneDataContainer = container;
 
@@ -64,26 +65,24 @@ void PostStringResultArgumentEditDialog::setZoneDataContainer(PostZoneDataContai
 		ui->positionComboBox->addItem(tr("Global"));
 	}
 
-	if (container->data()->data()->GetPointData()->GetNumberOfArrays() > 0) {
+	if (container->gridData()->grid()->vtkData()->data()->GetPointData()->GetNumberOfArrays() > 0) {
 		m_types.push_back(PostStringResultArgument::Type::GridNode);
 		ui->positionComboBox->addItem(tr("Node"));
 	}
 	bool cellDataExists = false;
-	auto cd = container->data()->data()->GetCellData();
+	auto cd = container->gridData()->grid()->vtkData()->data()->GetCellData();
 	for (int i = 0; i < cd->GetNumberOfArrays(); ++i) {
-		const char* name = cd->GetArrayName(i);
-		if (PostZoneDataContainer::hasInputDataPrefix(name)) {continue;}
 		cellDataExists = true;
 	}
 	if (cellDataExists) {
 		m_types.push_back(PostStringResultArgument::Type::GridCell);
 		ui->positionComboBox->addItem(tr("Cell"));
 	}
-	if (container->edgeIScalarValueExists()) {
+	if (container->gridData()->scalarValueExists(v4SolutionGrid::Position::IFace)) {
 		m_types.push_back(PostStringResultArgument::Type::GridEdgeI);
 		ui->positionComboBox->addItem(tr("EdgeI"));
 	}
-	if (container->edgeJScalarValueExists()) {
+	if (container->gridData()->scalarValueExists(v4SolutionGrid::Position::JFace)) {
 		m_types.push_back(PostStringResultArgument::Type::GridEdgeJ);
 		ui->positionComboBox->addItem(tr("EdgeJ"));
 	}
@@ -124,15 +123,11 @@ void PostStringResultArgumentEditDialog::handlePositionChange()
 	auto type = m_types.at(idx);
 
 	ui->resultNameComboBox->clear();
-	auto data = m_zoneDataContainer->data()->data();
+	auto grid = m_zoneDataContainer->gridData()->grid();
 	auto si = m_zoneDataContainer->solutionInfo();
-	auto st = vtkStructuredGrid::SafeDownCast(data);
-	auto ust = vtkStructuredGrid::SafeDownCast(data);
-
-	int dim[3];
-	if (st != nullptr) {
-		st->GetDimensions(dim);
-	}
+	auto uGrid = dynamic_cast<v4Unstructured2dGrid*> (grid);
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
 
 	if (type == PostStringResultArgument::Type::BaseIterative) {
 		ui->resultNameComboBox->clear();
@@ -147,87 +142,103 @@ void PostStringResultArgumentEditDialog::handlePositionChange()
 		disableSpinBox(ui->kSpinBox);
 		disableSpinBox(ui->indexSpinBox);
 	} else if (type == PostStringResultArgument::Type::GridNode) {
-		auto pd = data->GetPointData();
+		auto pd = grid->vtkData()->data()->GetPointData();
 		setupComboBoxWithNames(pd, ui->resultNameComboBox);
-		if (st != nullptr) {
-			// dim[0] > 1 always.
-			ui->iSpinBox->setMaximum(dim[0]);
-			ui->iSpinBox->setEnabled(true);
-			if (dim[1] > 1) {
-				ui->jSpinBox->setMaximum(dim[1]);
-				ui->jSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->jSpinBox);
-			}
-			if (dim[2] > 1) {
-				ui->kSpinBox->setMaximum(dim[2]);
-				ui->kSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->kSpinBox);
-			}
-			disableSpinBox(ui->indexSpinBox);
-		} else if (ust != nullptr) {
-			ui->indexSpinBox->setMaximum(ust->GetNumberOfPoints());
+
+		if (uGrid != nullptr) {
+			ui->indexSpinBox->setMaximum(uGrid->nodeCount());
 			ui->indexSpinBox->setEnabled(true);
 			disableSpinBox(ui->iSpinBox);
 			disableSpinBox(ui->jSpinBox);
 			disableSpinBox(ui->kSpinBox);
+		} else if (sGrid2d != nullptr) {
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid2d->dimensionI());
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid2d->dimensionJ());
+			disableSpinBox(ui->kSpinBox);
+			disableSpinBox(ui->indexSpinBox);
+		} else if (sGrid3d != nullptr) {
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid3d->dimensionI());
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid3d->dimensionJ());
+			ui->kSpinBox->setEnabled(true);
+			ui->kSpinBox->setMaximum(sGrid3d->dimensionK());
+			disableSpinBox(ui->indexSpinBox);
 		}
 	} else if (type == PostStringResultArgument::Type::GridCell) {
-		auto cd = data->GetCellData();
+		auto cd = grid->vtkData()->data()->GetCellData();
 		setupComboBoxWithNames(cd, ui->resultNameComboBox);
-		if (st != nullptr) {
-			// dim[0] > 2 always.
-			ui->iSpinBox->setMaximum(dim[0] - 1);
-			ui->iSpinBox->setEnabled(true);
-			if (dim[1] > 1) {
-				ui->jSpinBox->setMaximum(dim[1] - 1);
-				ui->jSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->jSpinBox);
-			}
-			if (dim[2] > 1) {
-				ui->kSpinBox->setMaximum(dim[2] - 1);
-				ui->kSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->kSpinBox);
-			}
-			disableSpinBox(ui->indexSpinBox);
-		} else if (ust != nullptr) {
-			ui->indexSpinBox->setMaximum(ust->GetNumberOfCells());
+		if (uGrid != nullptr) {
 			ui->indexSpinBox->setEnabled(true);
+			ui->indexSpinBox->setMaximum(uGrid->cellCount());
 			disableSpinBox(ui->iSpinBox);
 			disableSpinBox(ui->jSpinBox);
 			disableSpinBox(ui->kSpinBox);
+		} else if (sGrid2d != nullptr) {
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid2d->dimensionI() - 1);
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid2d->dimensionJ() - 1);
+			disableSpinBox(ui->kSpinBox);
+			disableSpinBox(ui->indexSpinBox);
+		} else if (sGrid3d != nullptr) {
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid3d->dimensionI() - 1);
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid3d->dimensionJ() - 1);
+			ui->kSpinBox->setEnabled(true);
+			ui->kSpinBox->setMaximum(sGrid3d->dimensionK() - 1);
+			disableSpinBox(ui->indexSpinBox);
 		}
 	} else if (type == PostStringResultArgument::Type::GridEdgeI) {
-		auto ed = m_zoneDataContainer->iFaceData()->data()->GetPointData();
-		setupComboBoxWithNames(ed, ui->resultNameComboBox);
-		if (st != nullptr) {
-			ui->iSpinBox->setMaximum(dim[0]);
+		if (sGrid2d != nullptr) {
+			setupComboBoxWithNames(sGrid2d->vtkIEdgeData()->data()->GetCellData(), ui->resultNameComboBox);
 			ui->iSpinBox->setEnabled(true);
-			if (dim[1] > 1) {
-				ui->jSpinBox->setMaximum(dim[1] - 1);
-				ui->jSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->jSpinBox);
-			}
+			ui->iSpinBox->setMaximum(sGrid2d->dimensionI());
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid2d->dimensionJ() - 1);
 			disableSpinBox(ui->kSpinBox);
+			disableSpinBox(ui->indexSpinBox);
+		} else if (sGrid3d != nullptr) {
+			setupComboBoxWithNames(sGrid3d->vtkIFaceData()->data()->GetCellData(), ui->resultNameComboBox);
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid3d->dimensionI());
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid3d->dimensionJ() - 1);
+			ui->kSpinBox->setEnabled(true);
+			ui->kSpinBox->setMaximum(sGrid3d->dimensionK() - 1);
 			disableSpinBox(ui->indexSpinBox);
 		}
 	} else if (type == PostStringResultArgument::Type::GridEdgeJ) {
-		auto ed = m_zoneDataContainer->jFaceData()->data()->GetPointData();
-		setupComboBoxWithNames(ed, ui->resultNameComboBox);
-		if (st != nullptr) {
-			if (dim[0] > 1) {
-				ui->iSpinBox->setMaximum(dim[0] - 1);
-				ui->iSpinBox->setEnabled(true);
-			} else {
-				disableSpinBox(ui->iSpinBox);
-			}
-			ui->jSpinBox->setMaximum(dim[1]);
+		if (sGrid2d != nullptr) {
+			setupComboBoxWithNames(sGrid2d->vtkJEdgeData()->data()->GetCellData(), ui->resultNameComboBox);
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid2d->dimensionI() - 1);
 			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid2d->dimensionJ());
 			disableSpinBox(ui->kSpinBox);
+			disableSpinBox(ui->indexSpinBox);
+		} else if (sGrid3d != nullptr) {
+			setupComboBoxWithNames(sGrid3d->vtkJFaceData()->data()->GetCellData(), ui->resultNameComboBox);
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid3d->dimensionI() - 1);
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid3d->dimensionJ());
+			ui->kSpinBox->setEnabled(true);
+			ui->kSpinBox->setMaximum(sGrid3d->dimensionK() - 1);
+			disableSpinBox(ui->indexSpinBox);
+		}
+	} else if (type == PostStringResultArgument::Type::GridEdgeK) {
+		if (sGrid3d != nullptr) {
+			setupComboBoxWithNames(sGrid3d->vtkJFaceData()->data()->GetCellData(), ui->resultNameComboBox);
+			ui->iSpinBox->setEnabled(true);
+			ui->iSpinBox->setMaximum(sGrid3d->dimensionI() - 1);
+			ui->jSpinBox->setEnabled(true);
+			ui->jSpinBox->setMaximum(sGrid3d->dimensionJ() - 1);
+			ui->kSpinBox->setEnabled(true);
+			ui->kSpinBox->setMaximum(sGrid3d->dimensionK());
 			disableSpinBox(ui->indexSpinBox);
 		}
 	}

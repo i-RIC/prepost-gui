@@ -2,7 +2,7 @@
 #include "geodatapolyline_removevertexcommand.h"
 #include "../geodatapolylineimplpolyline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
 GeoDataPolyLine::RemoveVertexCommand::RemoveVertexCommand(int vertexId, GeoDataPolyLine* pol) :
 	GeoDataPolyLine::ModifyAbstractPolyLineCommand(pol, GeoDataPolyLine::tr("Remove PolyLine Vertex"))

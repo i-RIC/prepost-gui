@@ -12,10 +12,10 @@
 #include <geoio/polygonutil.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/modifycommandandrenderdialog.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatafactory.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
@@ -46,7 +46,7 @@ namespace {
 
 std::string VALUE = "value";
 
-GeoDataCreator* getPolygonGroupCreator(PreProcessorGeoDataDataItemInterface* geoData, SolverDefinitionGridAttribute* att)
+GeoDataCreator* getPolygonGroupCreator(PreProcessorGeoDataDataItemI* geoData, SolverDefinitionGridAttribute* att)
 {
 	const auto& factory = GeoDataFactory::instance();
 	auto creators = factory.compatibleCreators(att);
@@ -272,9 +272,9 @@ QString GeoDataPolygonGroup::captionForData(int number)
 	return tr("Polygon%1").arg(number);
 }
 
-GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeoDataDataItemInterface *d)
+GeoDataPolyDataGroup* GeoDataPolygonGroup::createInstanceForCopy(PreProcessorGeoDataDataItemI *d)
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(d->parent());
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(d->parent());
 	return dynamic_cast<GeoDataPolyDataGroup*> (getPolygonGroupCreator(d, gItem->condition())->create(d, gItem->condition()));
 }
 

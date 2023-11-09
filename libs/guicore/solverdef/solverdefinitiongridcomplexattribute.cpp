@@ -8,33 +8,28 @@
 
 #include <misc/xmlsupport.h>
 
-SolverDefinitionGridComplexAttribute::Impl::Impl(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent)
+SolverDefinitionGridComplexAttribute::Impl::Impl(const QDomElement& elem)
 {
-	load(elem, parent);
+	load(elem);
 }
 
-void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, SolverDefinitionGridComplexAttribute* parent)
+void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem)
 {
 	QDomElement defNode = iRIC::getChildNode(elem, "Definition").toElement();
-	if (defNode.attribute("position") == "cell") {
-		parent->setPosition(CellCenter);
-	}
 	m_element = defNode;
 	m_isGrouped = ! (defNode.attribute("grouped") == "false");
 }
 
-SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, int order) :
-	SolverDefinitionGridAttributeInteger {node, solverDef, Node, false, order},
-	impl {new Impl {node, this}}
+SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, Position pos, int order) :
+	SolverDefinitionGridAttributeInteger {node, solverDef, pos, false, order},
+	impl {new Impl {node}}
 {
 	setColorMapFactory(new ColorMapEnumerateFactory());
 	setVariantDefaultValue(QVariant(1));
 }
 
 SolverDefinitionGridComplexAttribute::~SolverDefinitionGridComplexAttribute()
-{
-	delete impl;
-}
+{}
 
 const QDomElement& SolverDefinitionGridComplexAttribute::element() const
 {
@@ -73,7 +68,7 @@ bool SolverDefinitionGridComplexAttribute::isGrouped() const
 	return impl->m_isGrouped;
 }
 
-GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(Grid* grid)
+GridAttributeContainer* SolverDefinitionGridComplexAttribute::buildContainer(v4InputGrid* grid)
 {
 	return new GridComplexAttributeContainer(grid, this);
 }

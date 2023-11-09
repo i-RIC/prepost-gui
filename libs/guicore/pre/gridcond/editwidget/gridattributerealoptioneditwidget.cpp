@@ -4,7 +4,7 @@
 #include <QVBoxLayout>
 
 GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond) :
-	GridAttributeEditWidgetT<double>(parent, cond)
+	GridAttributeEditWidgetT<double, vtkDoubleArray>(parent, cond)
 {
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);
@@ -17,7 +17,6 @@ GridAttributeRealOptionEditWidget::GridAttributeRealOptionEditWidget(QWidget* pa
 
 GridAttributeRealOptionEditWidget::~GridAttributeRealOptionEditWidget()
 {}
-
 
 const QMap<double, QString>& GridAttributeRealOptionEditWidget::enumerations() const
 {

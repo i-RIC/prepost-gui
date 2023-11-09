@@ -3,9 +3,11 @@
 
 #include "../base/gridattributeeditwidgett.h"
 
+#include <vtkDoubleArray.h>
+
 class RealNumberEditWidget;
 
-class GridAttributeRealEditWidget : public GridAttributeEditWidgetT<double>
+class GridAttributeRealEditWidget : public GridAttributeEditWidgetT<double, vtkDoubleArray>
 {
 public:
 	GridAttributeRealEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<double>* cond);

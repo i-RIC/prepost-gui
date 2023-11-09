@@ -3,7 +3,7 @@
 #include <geoio/polygonutil.h>
 #include <geodata/polydatagroup/geodatapolydatagroupcreator.h>
 #include <geodata/polygon/geodatapolygon.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/geodata/geodatamapper.h>
 
 #include <QAction>

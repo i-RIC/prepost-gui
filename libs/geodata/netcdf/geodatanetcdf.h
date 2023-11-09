@@ -89,7 +89,7 @@ public:
 	int outputDimensions(int ncid, const std::vector<int>& varIds);
 	vtkStructuredGrid* grid() const;
 	void updateActorSetting() override;
-	void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v) override;
+	void viewOperationEndedGlobal(PreProcessorGraphicsViewI* v) override;
 	virtual double thresholdValue() const = 0;
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;

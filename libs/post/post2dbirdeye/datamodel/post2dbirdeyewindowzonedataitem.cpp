@@ -5,7 +5,8 @@
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
 
@@ -18,22 +19,22 @@ Post2dBirdEyeWindowZoneDataItem::Post2dBirdEyeWindowZoneDataItem(const std::stri
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dataContainer();
+	auto grid = v4DataContainer()->gridData();
 	m_shapeDataItem = new Post2dBirdEyeWindowGridShapeDataItem(this);
 
-	if (cont->scalarValueExists()) {
+	if (grid->scalarValueExists(v4SolutionGrid::Position::Node)) {
 		m_scalarGroupTopDataItem = new Post2dBirdEyeWindowNodeScalarGroupTopDataItem(this);
 	}
 
-	if (cont->cellScalarValueExists()) {
+	if (grid->scalarValueExists(v4SolutionGrid::Position::CellCenter)) {
 		m_cellScalarGroupTopDataItem = new Post2dBirdEyeWindowCellScalarGroupTopDataItem(this);
 	}
 
 	m_childItems.push_back(m_shapeDataItem);
-	if (cont->scalarValueExists()) {
+	if (m_scalarGroupTopDataItem != nullptr) {
 		m_childItems.push_back(m_scalarGroupTopDataItem);
 	}
-	if (cont->cellScalarValueExists()) {
+	if (m_cellScalarGroupTopDataItem != nullptr) {
 		m_childItems.push_back(m_cellScalarGroupTopDataItem);
 	}
 }
@@ -92,9 +93,9 @@ void Post2dBirdEyeWindowZoneDataItem::informDeselection(VTKGraphicsView* v)
 	m_shapeDataItem->informDeselection(v);
 }
 
-PostZoneDataContainer* Post2dBirdEyeWindowZoneDataItem::dataContainer()
+v4PostZoneDataContainer* Post2dBirdEyeWindowZoneDataItem::v4DataContainer()
 {
-	return postSolutionInfo()->zoneContainer2D(m_zoneName);
+	return postSolutionInfo()->v4ZoneContainer2D(m_zoneName);
 }
 
 int Post2dBirdEyeWindowZoneDataItem::zoneNumber() const
@@ -110,19 +111,13 @@ std::string Post2dBirdEyeWindowZoneDataItem::zoneName() const
 void Post2dBirdEyeWindowZoneDataItem::update()
 {
 	QTime time;
-	time.start();
 	m_shapeDataItem->update();
-	qDebug("Grid shape: %d", time.elapsed());
 
 	if (m_scalarGroupTopDataItem != nullptr) {
-		time.restart();
 		m_scalarGroupTopDataItem->update();
-		qDebug("Contour shape: %d", time.elapsed());
 	}
 	if (m_cellScalarGroupTopDataItem != nullptr) {
-		time.restart();
 		m_cellScalarGroupTopDataItem->update();
-		qDebug("Cell Contour shape: %d", time.elapsed());
 	}
 }
 

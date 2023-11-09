@@ -7,7 +7,7 @@
 
 class QComboBox;
 
-class GridAttributeIntegerOptionEditWidget : public GridAttributeEditWidgetT<int>
+class GridAttributeIntegerOptionEditWidget : public GridAttributeEditWidgetT<int, vtkIntArray>
 {
 
 public:

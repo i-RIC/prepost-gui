@@ -8,9 +8,8 @@ class Structured15DGridWithCrossSectionProjectImporter : public ProjectGridImpor
 
 public:
 	Structured15DGridWithCrossSectionProjectImporter();
-	SolverDefinitionGridType::GridType supportedGridType() const;
 
-protected:
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 	CgnsGridImporter* getCgnsImporter() override;
 };
 

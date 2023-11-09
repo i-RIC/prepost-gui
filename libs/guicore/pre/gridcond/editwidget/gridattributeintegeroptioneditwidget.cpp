@@ -4,7 +4,7 @@
 #include <QVBoxLayout>
 
 GridAttributeIntegerOptionEditWidget::GridAttributeIntegerOptionEditWidget(QWidget* parent, SolverDefinitionGridAttributeT<int>* cond) :
-	GridAttributeEditWidgetT<int>(parent, cond)
+	GridAttributeEditWidgetT<int, vtkIntArray>(parent, cond)
 {
 	m_widget = new QComboBox(this);
 	m_widget->setSizeAdjustPolicy(QComboBox::AdjustToContents);

@@ -38,9 +38,7 @@ InputConditionContainerReal::InputConditionContainerReal(const InputConditionCon
 }
 
 InputConditionContainerReal::~InputConditionContainerReal()
-{
-	delete impl;
-}
+{}
 
 InputConditionContainerReal& InputConditionContainerReal::operator=(const InputConditionContainerReal& i)
 {

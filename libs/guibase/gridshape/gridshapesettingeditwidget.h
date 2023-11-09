@@ -3,7 +3,7 @@
 
 #include "../guibase_global.h"
 
-#include <QWidget>
+#include <misc/modifycommandwidget.h>
 
 namespace Ui {
 class GridShapeSettingEditWidget;
@@ -11,7 +11,7 @@ class GridShapeSettingEditWidget;
 
 class GridShapeSettingContainer;
 
-class GUIBASEDLL_EXPORT GridShapeSettingEditWidget : public QWidget
+class GUIBASEDLL_EXPORT GridShapeSettingEditWidget : public ModifyCommandWidget
 {
 	Q_OBJECT
 
@@ -26,7 +26,7 @@ public:
 	void setSetting(GridShapeSettingContainer* setting);
 	void setSetting(const GridShapeSettingContainer& setting);
 
-	QUndoCommand* createModifyCommand(bool allowMerge) const;
+	QUndoCommand* createModifyCommand(bool allowMerge) override;
 
 private slots:
 	void handleOutlineOnlyClick();

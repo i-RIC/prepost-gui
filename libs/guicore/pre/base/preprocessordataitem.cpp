@@ -1,5 +1,5 @@
 #include "preprocessordataitem.h"
-#include "preprocessorwindowinterface.h"
+#include "preprocessorwindowi.h"
 
 #include <guibase/objectbrowserview.h>
 
@@ -47,12 +47,12 @@ void PreProcessorDataItem::copyStandardItem()
 	m_standardItemCopy = m_standardItem->clone();
 }
 
-PreProcessorWindowInterface* PreProcessorDataItem::preProcessorWindow() const
+PreProcessorWindowI* PreProcessorDataItem::preProcessorWindow() const
 {
-	return dynamic_cast<PreProcessorWindowInterface*>(mainWindow());
+	return dynamic_cast<PreProcessorWindowI*>(mainWindow());
 }
 
-PreProcessorDataModelInterface* PreProcessorDataItem::dataModel() const
+PreProcessorDataModelI* PreProcessorDataItem::dataModel() const
 {
-	return dynamic_cast<PreProcessorDataModelInterface*>(GraphicsWindowDataItem::dataModel());
+	return dynamic_cast<PreProcessorDataModelI*>(GraphicsWindowDataItem::dataModel());
 }

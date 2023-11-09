@@ -109,7 +109,7 @@ void GridComplexConditionGroupRealEditWidget::setMode(Mode mode)
 	GridAttributeVariationEditWidget::setMode(mode);
 }
 
-void GridComplexConditionGroupRealEditWidget::applyVariation(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemInterface* /*dItem*/)
+void GridComplexConditionGroupRealEditWidget::applyVariation(GridAttributeContainer* /*container*/, const std::vector<vtkIdType>& /*indices*/, vtkDataSetAttributes* /*atts*/, PreProcessorGridDataItemI* /*dItem*/)
 {}
 
 void GridComplexConditionGroupRealEditWidget::applyVariation(const std::vector<vtkIdType>& indices, const std::vector<GridComplexConditionGroup*>& groups)

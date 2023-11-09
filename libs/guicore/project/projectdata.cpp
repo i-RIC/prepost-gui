@@ -1,6 +1,6 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../postcontainer/postsolutioninfo.h"
-#include "../pre/base/preprocessorwindowinterface.h"
+#include "../pre/base/preprocessorwindowi.h"
 #include "../solverdef/solverdefinitiongridattribute.h"
 #include "../solverdef/solverdefinitiongridtype.h"
 #include "projectcgnsmanager.h"
@@ -36,7 +36,7 @@ namespace {
 
 const QString ProjectData::LOCKFILENAME = "lock";
 
-ProjectData::ProjectData(const QString& workdir, iRICMainWindowInterface* parent) :
+ProjectData::ProjectData(const QString& workdir, iRICMainWindowI* parent) :
 	QObject(parent),
 	m_workDirectory {workdir},
 	m_folderProject {false},

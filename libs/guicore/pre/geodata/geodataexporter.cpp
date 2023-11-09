@@ -10,9 +10,7 @@ GeoDataExporter::GeoDataExporter(const QString &caption, GeoDataCreator* creator
 }
 
 GeoDataExporter::~GeoDataExporter()
-{
-	delete impl;
-}
+{}
 
 const QString& GeoDataExporter::caption() const
 {

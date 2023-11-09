@@ -1,19 +1,24 @@
 #include "propertybrowserattribute.h"
 
-PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, double val)
+PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, double val) :
+	name {n}
 {
-	name = n;
 	value = val;
 }
 
-PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, int val)
+PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, int val) :
+	name {n}
 {
-	name = n;
 	value = val;
 }
 
-PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, const QString& val)
+PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, const QString& val) :
+	name {n}
 {
-	name = n;
 	value = val;
 }
+
+PropertyBrowserAttribute::PropertyBrowserAttribute(const QString& n, const QVariant& val) :
+	name {n},
+	value {val}
+{}

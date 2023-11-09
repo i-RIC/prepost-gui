@@ -5,8 +5,8 @@
 #include <cs/coordinatesystem.h>
 #include <cs/coordinatesystembuilder.h>
 #include <cs/coordinatesystemselectdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/filesystemfunction.h>
@@ -54,7 +54,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importData(GeoData* data, int /*inde
 	return true;
 }
 
-bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGrayscalePngRealImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	if (condition->dimensions().size() > 0) {
 		QMessageBox::warning(w, tr("Warning"), tr("Grayscale 16bit PNG files can be imported for grid conditions without dimensions."));
@@ -254,7 +254,7 @@ bool GeoDataNetcdfGrayscalePngRealImporter::importMeta(GeoDataNetcdfReal* netcdf
 }
 
 
-bool GeoDataNetcdfGrayscalePngRealImporter::setCs(PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataNetcdfGrayscalePngRealImporter::setCs(PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto csb = item->iricMainWindow()->coordinateSystemBuilder();
 

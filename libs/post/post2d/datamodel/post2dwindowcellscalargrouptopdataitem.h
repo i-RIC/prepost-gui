@@ -1,37 +1,19 @@
 #ifndef POST2DWINDOWCELLSCALARGROUPTOPDATAITEM_H
 #define POST2DWINDOWCELLSCALARGROUPTOPDATAITEM_H
 
-#include "../post2dwindowdataitem.h"
+#include "post2dwindowabstractcellscalargrouptopdataitem.h"
 
-class Post2dWindowCellScalarGroupDataItem;
-class Post2dWindowZoneDataItem;
-
-class Post2dWindowCellScalarGroupTopDataItem : public Post2dWindowDataItem
+class Post2dWindowCellScalarGroupTopDataItem : public Post2dWindowAbstractCellScalarGroupTopDataItem
 {
 	Q_OBJECT
+
 public:
 	Post2dWindowCellScalarGroupTopDataItem(Post2dWindowDataItem* parent);
-	~Post2dWindowCellScalarGroupTopDataItem();
-
-	void updateZDepthRangeItemCount() override;
-	void update();
-	Post2dWindowZoneDataItem* zoneDataItem() const;
-	bool hasTransparentPart() override;
-
-	void informSelection(VTKGraphicsView* v) override;
-	void informDeselection(VTKGraphicsView* v) override;
-	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 private:
-	void addCustomMenuItems(QMenu* menu) override;
-	QDialog* addDialog(QWidget* parent) override;
-	void handleAddDialogAccepted(QDialog* propDialog) override;
-
-	void doLoadFromProjectMainFile(const QDomNode& node) override;
-	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
-
-	friend class Post2dWindowCellScalarGroupDataItem;
+	void getIJIndex(vtkIdType idx, vtkIdType* i, vtkIdType* j) const override;
+	vtkPointSetExtended* data() const override;
+	Post2dWindowAbstractCellScalarGroupDataItem* createChild(const std::string& target) override;
 };
 
 #endif // POST2DWINDOWCELLSCALARGROUPTOPDATAITEM_H

@@ -1,7 +1,7 @@
 #include "geodatariversurvey_mousemoveextensioncommand.h"
 #include "../geodatariversurveybackgroundgridcreatethread.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GeoDataRiverSurvey::MouseMoveExtensionCommand::MouseMoveExtensionCommand(bool left, QPoint to, GeoDataRiverSurvey* data) :
@@ -9,7 +9,7 @@ GeoDataRiverSurvey::MouseMoveExtensionCommand::MouseMoveExtensionCommand(bool le
 	m_left {left},
 	m_rs {data}
 {
-	PreProcessorGraphicsViewInterface* gview = data->graphicsView();
+	PreProcessorGraphicsViewI* gview = data->graphicsView();
 	double toX, toY;
 	toX = to.x();
 	toY = to.y();

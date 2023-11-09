@@ -1,6 +1,9 @@
 #include "geodatapointmap_tincellmapper.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/pre/geodata/geodatamappersettingi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/doublemappingsetting.h>
 
 namespace {
@@ -54,6 +57,7 @@ GeoDataMapperSettingI* GeoDataPointmap::TinCellMapper::initialize(bool* boolMap)
 		double bounds[6];
 		tin->GetBounds(bounds);
 
+		vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 		for (unsigned int i = 0; i < count; ++i) {
 			if (*(boolMap + i)) {continue;}
 
@@ -61,9 +65,9 @@ GeoDataMapperSettingI* GeoDataPointmap::TinCellMapper::initialize(bool* boolMap)
 			double point[3];
 			double pointCenter[3];
 			pointCenter[0] = pointCenter[1] = pointCenter[2] = 0;
-			vtkCell* cell = grid()->vtkGrid()->GetCell(i);
+			vtkCell* cell = vtkGrid->GetCell(i);
 			for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
-				GeoDataMapper::grid()->vtkGrid()->GetPoint(cell->GetPointId(j), point);
+				vtkGrid->GetPoint(cell->GetPointId(j), point);
 				for (int k = 0; k < 3; ++k) {
 					pointCenter[k] += point[k];
 				}

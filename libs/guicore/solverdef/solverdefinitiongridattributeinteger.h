@@ -10,6 +10,9 @@ class GUICOREDLL_EXPORT SolverDefinitionGridAttributeInteger : public SolverDefi
 public:
 	SolverDefinitionGridAttributeInteger(const QDomElement& elem, SolverDefinition* solverDef, Position pos, bool isOption, int order);
 
+	GridAttributeEditWidget* editWidget(QWidget* parent) override;
+	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
 	GridAttributeStringConverter* stringConverter() const override;
 	int fromVariant(const QVariant& v) const override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;

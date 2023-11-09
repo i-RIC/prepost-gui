@@ -1,7 +1,7 @@
 #include "gridcreatingconditioncompoundchannel_movepolygonvertexcommand.h"
 #include "../gridcreatingconditioncompoundchannelabstractpolygon.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionCompoundChannel::MovePolygonVertexCommand::MovePolygonVertexCommand(bool keyDown, const QPoint& from, const QPoint& to, vtkIdType vertexId, GridCreatingConditionCompoundChannel* cond) :

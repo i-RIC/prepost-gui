@@ -4,7 +4,7 @@
 #include "geodatapolydatagrouppolydata.h"
 #include "ui_geodatapolydatagroupcopysettingdialog.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/gridcond/base/gridattributestringconverter.h>
 
@@ -36,7 +36,7 @@ GeoDataPolyDataGroupCopySettingDialog::GeoDataPolyDataGroupCopySettingDialog(Geo
 		m_model->setHeaderData(1, Qt::Horizontal, orig->gridAttribute()->caption());
 		m_model->setHeaderData(2, Qt::Horizontal, copy->gridAttribute()->caption());
 
-		auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (orig->parent()->parent());
+		auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (orig->parent()->parent());
 		auto origAtt = m_originalData->gridAttribute();
 		auto converter = origAtt->stringConverter();
 		i->setupStringConverter(converter);
@@ -50,7 +50,7 @@ GeoDataPolyDataGroupCopySettingDialog::GeoDataPolyDataGroupCopySettingDialog(Geo
 	// set name and default value
 	QVariant defaultVal = copy->gridAttribute()->variantDefaultValue();
 	auto copyAtt = copy->gridAttribute();
-	auto geoDataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (copy->parent()->parent());
+	auto geoDataGroup = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (copy->parent()->parent());
 	auto adata = copy->allData();
 	for (int i = 0; i < adata.size(); ++i) {
 		auto data = adata.at(i);

@@ -3,19 +3,19 @@
 
 #include "iricpython_api.h"
 
-class PreProcessorGeoDataDataItemInterface;
+class PreProcessorGeoDataDataItemI;
 
 namespace iRICPython {
 
 class IRICPYTHON_API GeoData
 {
 public:
-	GeoData(PreProcessorGeoDataDataItemInterface* dataItem);
+	GeoData(PreProcessorGeoDataDataItemI* dataItem);
 
-	PreProcessorGeoDataDataItemInterface* geoDataItem() const;
+	PreProcessorGeoDataDataItemI* geoDataItem() const;
 
 private:
-	PreProcessorGeoDataDataItemInterface* m_geoDataItem;
+	PreProcessorGeoDataDataItemI* m_geoDataItem;
 };
 
 } // iRICPython

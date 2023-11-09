@@ -46,6 +46,8 @@ QString GeoDataPointmapRealCreator::defaultCaption(unsigned int index) const
 bool GeoDataPointmapRealCreator::isCompatibleWith(SolverDefinitionGridAttribute* condition) const
 {
 	if (dynamic_cast<SolverDefinitionGridAttributeT<double>* >(condition) == nullptr) {return false;}
+	if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {return false;}
+	if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {return false;}
 	if (condition->dimensions().size() > 0) {return false;}
 	if (condition->isReferenceInformation()) {return false;}
 	return true;

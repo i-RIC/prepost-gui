@@ -10,7 +10,7 @@
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -28,7 +28,7 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 
 	impl->m_target = target;
 
-	auto gType = zoneDataItem()->dataContainer()->gridType();
+	auto gType = data()->gridType();
 	auto caption = gType->outputCaption(target);
 
 	SolverDefinitionGridOutput* output = nullptr;
@@ -71,8 +71,6 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 Post3dWindowContourGroupDataItem::~Post3dWindowContourGroupDataItem()
 {
 	renderer()->RemoveActor2D(impl->m_legendActor);
-
-	delete impl;
 }
 
 void Post3dWindowContourGroupDataItem::update()
@@ -156,9 +154,9 @@ Post3dWindowZoneDataItem* Post3dWindowContourGroupDataItem::zoneDataItem() const
 	return dynamic_cast<Post3dWindowZoneDataItem*>(parent()->parent());
 }
 
-PostZoneDataContainer* Post3dWindowContourGroupDataItem::data() const
+v4PostZoneDataContainer* Post3dWindowContourGroupDataItem::data() const
 {
-	return zoneDataItem()->dataContainer();
+	return zoneDataItem()->v4DataContainer();
 }
 
 std::vector<Post3dWindowFaceSettingContainer> Post3dWindowContourGroupDataItem::faces() const

@@ -166,7 +166,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveynodemapper.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
-           gridcreatingconditionriversurveyinterface.h \
+           gridcreatingconditionriversurveyi.h \
            private/geodatariversurvey_addextensioncommand.h \
            private/geodatariversurvey_changeselectioncommand.h \
            private/geodatariversurvey_deleteriverpathpointcommand.h \

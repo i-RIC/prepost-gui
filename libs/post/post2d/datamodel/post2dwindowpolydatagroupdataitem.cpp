@@ -1,16 +1,22 @@
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowpolydatagroupdataitem.h"
+#include "post2dwindowpolydatatopdataitem.h"
 #include "post2dwindowpolydatavaluedataitem.h"
 #include "post2dwindowzonedataitem.h"
+#include "private/post2dwindowpolydatagroupdataitem_attributebrowsercontroller.h"
+#include "private/post2dwindowpolydatagroupdataitem_impl.h"
 #include "private/post2dwindowpolydatagroupdataitem_settingeditwidget.h"
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
+#include <guicore/base/propertybrowser.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4polydata2d.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -21,29 +27,40 @@
 #include <misc/valuemodifycommandt.h>
 #include <postbase/polydata/polydatasettingtoolbarwidget.h>
 
-#include <QMenu>
-#include <QMouseEvent>
-#include <QStandardItem>
+Post2dWindowPolyDataGroupDataItem::Impl::Impl(Post2dWindowPolyDataGroupDataItem* item) :
+	m_actor {vtkActor::New()},
+	m_legendActor {vtkActor2D::New()},
+	m_showAttributeBrowserAction {new QAction {Post2dWindowPolyDataGroupDataItem::tr("Show Attribute Browser"), item}},
+	m_attributeBrowserController {new AttributeBrowserController {item}},
+	m_setting {},
+	m_colorMapSettings {},
+	m_polyDataToolBarWidget {new PolyDataSettingToolBarWidget(item->mainWindow())}
+{
+	connect(m_showAttributeBrowserAction, &QAction::triggered, item, &Post2dWindowPolyDataGroupDataItem::showAttributeBrowser);
+}
 
-#include <vtkActor.h>
-#include <vtkActor2D.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
+Post2dWindowPolyDataGroupDataItem::Impl::~Impl()
+{
+	m_actor->Delete();
+	m_legendActor->Delete();
+
+	for (const auto& pair : m_colorMapSettings) {
+		delete pair.second;
+	}
+	delete m_attributeBrowserController;
+}
 
 Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::string& name, Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {name.c_str(), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
-	m_actor {vtkActor::New()},
-	m_legendActor {vtkActor2D::New()},
-	m_setting {},
-	m_polyDataToolBarWidget {new PolyDataSettingToolBarWidget(mainWindow())}
+	impl {new Impl {this}}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 
 	SolverDefinitionGridType* gt = cont->gridType();
 
-	for (const auto& name : vtkDataSetAttributesTool::getArrayNames(cont->polyData(name)->data()->GetCellData())) {
+	for (const auto& name : vtkDataSetAttributesTool::getArrayNames(cont->polyData(name)->grid()->vtkData()->data()->GetCellData())) {
 		auto item = new Post2dWindowPolyDataValueDataItem(name, gt->outputCaption(name), this);
 		m_childItems.push_back(item);
 		auto output = gt->output(name);
@@ -51,21 +68,21 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 		auto caption = output->caption();
 		cs->valueCaption = caption;
 		cs->legendSetting()->setTitle(caption);
-		m_colorMapSettings.insert({name, cs});
+		impl->m_colorMapSettings.insert({name, cs});
 	}
 
-	m_polyDataToolBarWidget->hide();
-	m_polyDataToolBarWidget->setColorMapSettings(m_colorMapSettings);
-	m_polyDataToolBarWidget->setSetting(&m_setting);
+	impl->m_polyDataToolBarWidget->hide();
+	impl->m_polyDataToolBarWidget->setColorMapSettings(impl->m_colorMapSettings);
+	impl->m_polyDataToolBarWidget->setSetting(&impl->m_setting);
 
-	connect(m_polyDataToolBarWidget, &PolyDataSettingToolBarWidget::updated, [=]() {
+	connect(impl->m_polyDataToolBarWidget, &PolyDataSettingToolBarWidget::updated, [=]() {
 		auto com = new MergeSupportedListCommand(iRIC::generateCommandId("ArrowModify"), false);
-		auto newSetting = m_polyDataToolBarWidget->modifiedSetting();
-		com->addCommand(new ValueModifyCommmand<PolyDataSetting>(iRIC::generateCommandId("PolyDataSetting"), false, newSetting, &m_setting));
+		auto newSetting = impl->m_polyDataToolBarWidget->modifiedSetting();
+		com->addCommand(new ValueModifyCommmand<PolyDataSetting>(iRIC::generateCommandId("PolyDataSetting"), false, newSetting, &impl->m_setting));
 
 		if (newSetting.mapping == PolyDataSetting::Mapping::Value) {
-			auto cm = m_colorMapSettings.at(iRIC::toStr(newSetting.value));
-			com->addCommand(new ColorMapSettingModifyCommand(m_polyDataToolBarWidget->modifiedColorMapSetting(), cm));
+			auto cm = impl->m_colorMapSettings.at(iRIC::toStr(newSetting.value));
+			com->addCommand(new ColorMapSettingModifyCommand(impl->m_polyDataToolBarWidget->modifiedColorMapSetting(), cm));
 		}
 		pushUpdateActorSettingCommand(com, this);
 	});
@@ -76,15 +93,8 @@ Post2dWindowPolyDataGroupDataItem::Post2dWindowPolyDataGroupDataItem(const std::
 Post2dWindowPolyDataGroupDataItem::~Post2dWindowPolyDataGroupDataItem()
 {
 	auto r = renderer();
-	r->RemoveActor(m_actor);
-	r->RemoveActor2D(m_legendActor);
-
-	m_actor->Delete();;
-	m_legendActor->Delete();
-
-	for (const auto& pair : m_colorMapSettings) {
-		delete pair.second;
-	}
+	r->RemoveActor(impl->m_actor);
+	r->RemoveActor2D(impl->m_legendActor);
 }
 
 std::string Post2dWindowPolyDataGroupDataItem::name() const
@@ -94,28 +104,38 @@ std::string Post2dWindowPolyDataGroupDataItem::name() const
 
 std::string Post2dWindowPolyDataGroupDataItem::target() const
 {
-	return std::string(m_setting.value);
+	return std::string(impl->m_setting.value);
 }
 
 void Post2dWindowPolyDataGroupDataItem::setTarget(const std::string& target)
 {
 	NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
-	m_setting.value = target.c_str();
-	if (m_setting.value == "") {
-		m_setting.mapping = PolyDataSetting::Mapping::Arbitrary;
+	impl->m_setting.value = target.c_str();
+	if (impl->m_setting.value == "") {
+		impl->m_setting.mapping = PolyDataSetting::Mapping::Arbitrary;
 	} else {
-		m_setting.mapping = PolyDataSetting::Mapping::Value;
+		impl->m_setting.mapping = PolyDataSetting::Mapping::Value;
 	}
-	emit m_setting.updated();
+	emit impl->m_setting.updated();
 
 	updateActorSetting();
+}
+
+Post2dWindowAttributeBrowserController* Post2dWindowPolyDataGroupDataItem::attributeBrowserController() const
+{
+	return impl->m_attributeBrowserController;
+}
+
+QAction* Post2dWindowPolyDataGroupDataItem::showAttributeBrowserAction() const
+{
+	return impl->m_showAttributeBrowserAction;
 }
 
 void Post2dWindowPolyDataGroupDataItem::setupActors()
 {
 	auto r = renderer();
-	r->AddActor(m_actor);
-	r->AddActor2D(m_legendActor);
+	r->AddActor(impl->m_actor);
+	r->AddActor2D(impl->m_legendActor);
 
 	updateActorSetting();
 }
@@ -123,7 +143,7 @@ void Post2dWindowPolyDataGroupDataItem::setupActors()
 void Post2dWindowPolyDataGroupDataItem::update()
 {
 	auto gtItem = zoneDataItem()->gridTypeDataItem();
-	for (const auto& pair : m_colorMapSettings) {
+	for (const auto& pair : impl->m_colorMapSettings) {
 		auto range = gtItem->polyDataValueRange(pair.first);
 		pair.second->setAutoValueRange(range);
 	}
@@ -133,39 +153,39 @@ void Post2dWindowPolyDataGroupDataItem::update()
 
 void Post2dWindowPolyDataGroupDataItem::updateActorSetting()
 {
-	m_actor->VisibilityOff();
-	m_legendActor->VisibilityOff();
+	impl->m_actor->VisibilityOff();
+	impl->m_legendActor->VisibilityOff();
 
 	m_actorCollection->RemoveAllItems();
 	m_actor2DCollection->RemoveAllItems();
 
-	auto data = polyData();
-	if (data == nullptr) {return;}
+	if (polyData() == nullptr) {return;}
+	auto data = polyData()->vtkConcreteData()->concreteData();
 
-	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
+	if (impl->m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
 		auto mapper = vtkPolyDataMapperUtil::createWithScalarVisibilityOff();
 		mapper->SetInputData(data);
-		m_actor->SetMapper(mapper);
+		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();;
 
-		m_actor->GetProperty()->SetColor(m_setting.color);
+		impl->m_actor->GetProperty()->SetColor(impl->m_setting.color);
 	} else {
-		auto value = iRIC::toStr(m_setting.value);
+		auto value = iRIC::toStr(impl->m_setting.value);
 		data->GetCellData()->SetActiveScalars(value.c_str());
-		auto cs = m_colorMapSettings.at(value);
+		auto cs = impl->m_colorMapSettings.at(value);
 		auto mapper = cs->buildCellDataMapper(data, false);
-		m_actor->SetMapper(mapper);
+		impl->m_actor->SetMapper(mapper);
 		mapper->Delete();
 
 		auto is = cs->legendSetting()->imgSetting();
-		is->setActor(m_legendActor);
+		is->setActor(impl->m_legendActor);
 		is->controller()->setItem(this);
 		is->apply(dataModel()->graphicsView());
 	}
 	auto v = dataModel()->graphicsView();
-	m_actor->GetProperty()->SetLineWidth(m_setting.lineWidth * v->devicePixelRatioF());
-	m_actor->GetProperty()->SetOpacity(m_setting.opacity);
-	m_actorCollection->AddItem(m_actor);
+	impl->m_actor->GetProperty()->SetLineWidth(impl->m_setting.lineWidth * v->devicePixelRatioF());
+	impl->m_actor->GetProperty()->SetOpacity(impl->m_setting.opacity);
+	m_actorCollection->AddItem(impl->m_actor);
 
 	updateCheckState();
 	updateVisibilityWithoutRendering();
@@ -194,17 +214,17 @@ void Post2dWindowPolyDataGroupDataItem::updateZDepthRangeItemCount()
 
 void Post2dWindowPolyDataGroupDataItem::assignActorZValues(const ZDepthRange& range)
 {
-	m_actor->SetPosition(0, 0, range.min());
+	impl->m_actor->SetPosition(0, 0, range.min());
 }
 
-void Post2dWindowPolyDataGroupDataItem::informSelection(VTKGraphicsView* v)
+void Post2dWindowPolyDataGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initPolyDataResultAttributeBrowser();
+	attributeBrowserController()->initialize();
 }
 
-void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* v)
+void Post2dWindowPolyDataGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearPolyDataResultAttributeBrowser();
+	attributeBrowserController()->clear();
 }
 
 void Post2dWindowPolyDataGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -222,7 +242,7 @@ void Post2dWindowPolyDataGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGr
 		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(event, v);
 	}
 
-	zoneDataItem()->updatePolyDataResultAttributeBrowser(name(), event->pos(), v);
+	attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowPolyDataGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -240,22 +260,21 @@ void Post2dWindowPolyDataGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VT
 		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(event, v);
 	}
 
-	zoneDataItem()->fixPolyDataResultAttributeBrowser(name(), event->pos(), v);
+	attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowPolyDataGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* a = zoneDataItem()->showAttributeBrowserActionForPolyDataResult();
-	menu->addAction(a);
+	menu->addAction(impl->m_showAttributeBrowserAction);
 }
 
 bool Post2dWindowPolyDataGroupDataItem::addToolBarButtons(QToolBar* toolBar)
 {
-	m_polyDataToolBarWidget->setParent(toolBar);
-	m_polyDataToolBarWidget->setEnabled(true);
-	m_polyDataToolBarWidget->show();
+	impl->m_polyDataToolBarWidget->setParent(toolBar);
+	impl->m_polyDataToolBarWidget->setEnabled(true);
+	impl->m_polyDataToolBarWidget->show();
 
-	toolBar->addWidget(m_polyDataToolBarWidget);
+	toolBar->addWidget(impl->m_polyDataToolBarWidget);
 
 	return true;
 }
@@ -268,17 +287,24 @@ void Post2dWindowPolyDataGroupDataItem::handleNamedItemChange(NamedGraphicWindow
 	pushRenderCommand(cmd, this, true);
 }
 
+void Post2dWindowPolyDataGroupDataItem::showAttributeBrowser()
+{
+	attributeBrowserController()->initialize();
+	auto w = dynamic_cast<Post2dWindow*>(mainWindow());
+	w->propertyBrowser()->show();
+}
+
 void Post2dWindowPolyDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_setting.load(node);
+	impl->m_setting.load(node);
 	auto childNodes = node.childNodes();
 	for (int i = 0; i < childNodes.size(); ++i) {
 		auto child = childNodes.at(i);
 		if (child.nodeName() == "ColorMapSetting") {
 			auto elem = child.toElement();
 			auto name = iRIC::toStr(elem.attribute("name"));
-			auto it = m_colorMapSettings.find(name);
-			if (it == m_colorMapSettings.end()) {continue;}
+			auto it = impl->m_colorMapSettings.find(name);
+			if (it == impl->m_colorMapSettings.end()) {continue;}
 
 			it->second->load(child);
 		}
@@ -290,9 +316,9 @@ void Post2dWindowPolyDataGroupDataItem::doLoadFromProjectMainFile(const QDomNode
 
 void Post2dWindowPolyDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	m_setting.save(writer);
+	impl->m_setting.save(writer);
 
-	for (const auto& pair : m_colorMapSettings) {
+	for (const auto& pair : impl->m_colorMapSettings) {
 		writer.writeStartElement("ColorMapSetting");
 		writer.writeAttribute("name", pair.first.c_str());
 		pair.second->save(writer);
@@ -302,34 +328,39 @@ void Post2dWindowPolyDataGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter
 
 ColorMapSettingContainerI* Post2dWindowPolyDataGroupDataItem::activeSetting() const
 {
-	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {return nullptr;}
+	if (impl->m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {return nullptr;}
 
-	return m_colorMapSettings.at(iRIC::toStr(m_setting.value));
+	return impl->m_colorMapSettings.at(iRIC::toStr(impl->m_setting.value));
 }
 
 Post2dWindowGridTypeDataItem* Post2dWindowPolyDataGroupDataItem::gridTypeDataItem() const
 {
-	return dynamic_cast<Post2dWindowGridTypeDataItem*> (zoneDataItem()->parent());
+	return zoneDataItem()->gridTypeDataItem();
 }
 
 Post2dWindowZoneDataItem* Post2dWindowPolyDataGroupDataItem::zoneDataItem() const
 {
-	return dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent());
+	return topDataItem()->zoneDataItem();
 }
 
-vtkPolyData* Post2dWindowPolyDataGroupDataItem::polyData() const
+Post2dWindowPolyDataTopDataItem* Post2dWindowPolyDataGroupDataItem::topDataItem() const
 {
-	auto cont = zoneDataItem()->dataContainer();
+	return dynamic_cast<Post2dWindowPolyDataTopDataItem*> (parent());
+}
+
+v4PolyData2d* Post2dWindowPolyDataGroupDataItem::polyData() const
+{
+	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return nullptr;}
 
-	return cont->polyData(name())->concreteData();
+	return dynamic_cast<v4PolyData2d*> (cont->polyData(name())->grid());
 }
 
 void Post2dWindowPolyDataGroupDataItem::updateCheckState()
 {
-	if (m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
+	if (impl->m_setting.mapping == PolyDataSetting::Mapping::Arbitrary) {
 		NamedGraphicsWindowDataItemTool::checkItemWithName("", m_childItems, true);
-	} else if (m_setting.mapping == PolyDataSetting::Mapping::Value) {
-		NamedGraphicsWindowDataItemTool::checkItemWithName(m_setting.value, m_childItems, true);
+	} else if (impl->m_setting.mapping == PolyDataSetting::Mapping::Value) {
+		NamedGraphicsWindowDataItemTool::checkItemWithName(impl->m_setting.value, m_childItems, true);
 	}
 }

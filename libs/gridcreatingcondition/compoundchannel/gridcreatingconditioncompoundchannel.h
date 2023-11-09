@@ -100,16 +100,16 @@ public:
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* /*parent*/) override;
-	void informSelection(PreProcessorGraphicsViewInterface* v) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void informSelection(PreProcessorGraphicsViewI* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* /*v*/) override;
+	void keyPressEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseMoveEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 	void definePolygon(bool doubleClick);
@@ -131,7 +131,7 @@ private slots:
 	void reverseCenterLine();
 
 private:
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void doApplyOffset(double x, double y) override;
@@ -144,8 +144,8 @@ private:
 	bool activePolygonHasFourVertices();
 	bool activePolylineHasThreeVertices();
 	void initParams();
-	Grid* createGrid();
-	Grid* createGridCore(const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge);
+	v4InputGrid* createGrid();
+	v4InputGrid* createGridCore(const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge);
 	void setupInitialGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge);
 	void applyConstraintToGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, const GridCreatingConditionCompoundChannelSpline& leftEdge, const GridCreatingConditionCompoundChannelSpline& leftBank, const GridCreatingConditionCompoundChannelSpline& centerLine, const GridCreatingConditionCompoundChannelSpline& rightBank, const GridCreatingConditionCompoundChannelSpline& rightEdge);
 	void relaxGrid(GridCreatingConditionCompoundChannelTemporaryGrid& grid, double relax);

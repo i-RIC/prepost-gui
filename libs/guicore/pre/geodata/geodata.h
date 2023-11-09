@@ -13,15 +13,15 @@ class GeoDataCreator;
 class GeoDataImporter;
 class GeoDataExporter;
 class GeoDataMapper;
-class PreProcessorWindowInterface;
-class PreProcessorDataModelInterface;
-class PreProcessorGeoDataTopDataItemInterface;
-class PreProcessorGeoDataGroupDataItemInterface;
-class PreProcessorGeoDataDataItemInterface;
-class PreProcessorGraphicsViewInterface;
-class PreProcessorGridTypeDataItemInterface;
-class PreProcessorHydraulicDataTopDataItemInterface;
-class PreProcessorHydraulicDataGroupDataItemInterface;
+class PreProcessorWindowI;
+class PreProcessorDataModelI;
+class PreProcessorGeoDataTopDataItemI;
+class PreProcessorGeoDataGroupDataItemI;
+class PreProcessorGeoDataDataItemI;
+class PreProcessorGraphicsViewI;
+class PreProcessorGridTypeDataItemI;
+class PreProcessorHydraulicDataTopDataItemI;
+class PreProcessorHydraulicDataGroupDataItemI;
 class ZDepthRange;
 class MouseBoundingBox;
 class GeoDataProxy;
@@ -88,19 +88,19 @@ public:
 
 	virtual void handleStandardItemChange();
 	virtual void handleStandardItemDoubleClicked();
-	virtual void informSelection(PreProcessorGraphicsViewInterface* v);
-	virtual void informDeselection(PreProcessorGraphicsViewInterface* v);
+	virtual void informSelection(PreProcessorGraphicsViewI* v);
+	virtual void informDeselection(PreProcessorGraphicsViewI* v);
 
-	virtual void viewOperationEnded(PreProcessorGraphicsViewInterface* v);
-	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v);
+	virtual void viewOperationEnded(PreProcessorGraphicsViewI* v);
+	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewI* v);
 
-	virtual void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
-	virtual void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
+	virtual void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
 
-	virtual void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	virtual void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	virtual void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
-	virtual void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v);
+	virtual void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	virtual void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	virtual void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
+	virtual void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v);
 
 	virtual void addCustomMenuItems(QMenu* menu);
 
@@ -145,14 +145,14 @@ protected:
 	virtual void updateFilename() {}
 	virtual void updateActorSetting();
 
-	PreProcessorWindowInterface* preProcessorWindow();
-	PreProcessorGraphicsViewInterface* graphicsView();
-	PreProcessorGeoDataTopDataItemInterface* geoDataTopDataItem() const;
-	PreProcessorGeoDataGroupDataItemInterface* geoDataGroupDataItem() const;
-	PreProcessorGeoDataDataItemInterface* geoDataDataItem() const;
-	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const;
-	PreProcessorHydraulicDataTopDataItemInterface* hydraulicDataTopDataItem() const;
-	PreProcessorHydraulicDataGroupDataItemInterface* hydraulicDataGroupDataItem(const std::string& name) const;
+	PreProcessorWindowI* preProcessorWindow();
+	PreProcessorGraphicsViewI* graphicsView();
+	PreProcessorGeoDataTopDataItemI* geoDataTopDataItem() const;
+	PreProcessorGeoDataGroupDataItemI* geoDataGroupDataItem() const;
+	PreProcessorGeoDataDataItemI* geoDataDataItem() const;
+	PreProcessorGridTypeDataItemI* gridTypeDataItem() const;
+	PreProcessorHydraulicDataTopDataItemI* hydraulicDataTopDataItem() const;
+	PreProcessorHydraulicDataGroupDataItemI* hydraulicDataGroupDataItem(const std::string& name) const;
 	void pushCommand(QUndoCommand* com);
 	void pushRenderCommand(QUndoCommand* com);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com);
@@ -160,7 +160,7 @@ protected:
 	void showPropertyDialogModeless();
 
 	MouseBoundingBox* mouseBoundingBox();
-	PreProcessorDataModelInterface* dataModel() const;
+	PreProcessorDataModelI* dataModel() const;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;

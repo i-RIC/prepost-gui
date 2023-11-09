@@ -7,7 +7,7 @@
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
-#include <guicore/post/post2d/base/post2dwindowgridtypedataiteminterface.h>
+#include <guicore/post/post2d/base/post2dwindowgridtypedataitemi.h>
 #include <misc/modifycommanddialog.h>
 #include <misc/zdepthrange.h>
 

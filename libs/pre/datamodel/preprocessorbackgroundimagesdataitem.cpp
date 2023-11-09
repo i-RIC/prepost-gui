@@ -5,22 +5,11 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/project/backgroundimageinfo.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <misc/qttool.h>
-
-#include <QMenu>
-#include <QMessageBox>
-#include <QMainWindow>
-#include <QStandardItem>
-
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-
-#include <algorithm>
-#include <unordered_map>
 
 PreProcessorBackgroundImagesDataItem::PreProcessorBackgroundImagesDataItem(GraphicsWindowDataItem* parent) :
 	PreProcessorDataItem {tr("Background Images"), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},

@@ -3,19 +3,19 @@
 
 #include "../geodatamappert.h"
 
-template <class V>
-GeoDataMapperT<V>::GeoDataMapperT(const QString& caption, QObject* parent) :
+template <class V, class DA>
+GeoDataMapperT<V, DA>::GeoDataMapperT(const QString& caption, QObject* parent) :
 	GeoDataMapper {caption, parent}
 {}
 
-template <class V>
-GridAttributeContainerT<V>* GeoDataMapperT<V>::container() const
+template <class V, class DA>
+GridAttributeContainerT<V, DA>* GeoDataMapperT<V, DA>::container() const
 {
-	return dynamic_cast<GridAttributeContainerT<V>* >(GeoDataMapper::container());
+	return dynamic_cast<GridAttributeContainerT<V, DA>* >(GeoDataMapper::container());
 }
 
-template <class V>
-V GeoDataMapperT<V>::fromVariant(const QVariant& val) const
+template <class V, class DA>
+V GeoDataMapperT<V, DA>::fromVariant(const QVariant& val) const
 {
 	SolverDefinitionGridAttribute* c = geoData()->gridAttribute();
 	SolverDefinitionGridAttributeT<V>* cond = dynamic_cast<SolverDefinitionGridAttributeT<V>* >(c);

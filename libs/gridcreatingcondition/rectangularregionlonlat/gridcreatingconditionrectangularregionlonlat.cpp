@@ -1,12 +1,13 @@
 #include "gridcreatingconditionrectangularregionlonlat.h"
 #include "gridcreatingconditionrectangularregionlonlatsettingdialog.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/informationdialog.h>
@@ -79,7 +80,7 @@ bool GridCreatingConditionRectangularRegionLonLat::ready() const
 
 void GridCreatingConditionRectangularRegionLonLat::setupMenu()
 {
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 
 	m_rightClickingMenu = new QMenu();
 	m_rightClickingMenu->addAction(p->createAction());
@@ -132,7 +133,7 @@ void GridCreatingConditionRectangularRegionLonLat::setupActors()
 	updateVisibilityWithoutRendering();
 }
 
-void GridCreatingConditionRectangularRegionLonLat::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRectangularRegionLonLat::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (m_mouseEventMode != meDragging) {return;}
 	if (event->modifiers() == Qt::ControlModifier) { return; }
@@ -141,7 +142,7 @@ void GridCreatingConditionRectangularRegionLonLat::mouseMoveEvent(QMouseEvent* e
 	createRectangularRegionFromMouse();
 }
 
-void GridCreatingConditionRectangularRegionLonLat::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionRectangularRegionLonLat::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (event->button() == Qt::LeftButton) {
 		if (m_mouseEventMode == meNormal) {
@@ -154,7 +155,7 @@ void GridCreatingConditionRectangularRegionLonLat::mousePressEvent(QMouseEvent* 
 	}
 }
 
-void GridCreatingConditionRectangularRegionLonLat::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRectangularRegionLonLat::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		if (m_mouseEventMode == meDragging) {
@@ -271,14 +272,23 @@ bool GridCreatingConditionRectangularRegionLonLat::createGrid(double xmin, doubl
 	xmax -= off.x();
 	ymin -= off.y();
 	ymax -= off.y();
-	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
+
+	auto grid = createGridInner(xmin, xmax, ymin, ymax, step);
+
 	if (grid == nullptr) {return false;}
 	m_xMin = xmin;
 	m_xMax = xmax;
 	m_yMin = ymin;
 	m_yMax = ymax;
 	m_stepSize = step;
-	emit gridCreated(grid);
+
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+	emit gridCreated(ret);
+
 	iRICUndoStack::instance().clear();
 	return true;
 }
@@ -291,7 +301,7 @@ void GridCreatingConditionRectangularRegionLonLat::previewGrid(double xmin, doub
 	ymin -= off.y();
 	ymax -= off.y();
 	createRectangularRegion(xmin, xmax, ymin, ymax);
-	Structured2DGrid* grid = createGridInner(xmin, xmax, ymin, ymax, step);
+	auto grid = createGridInner(xmin, xmax, ymin, ymax, step);
 	if (grid == nullptr) {return;}
 
 	if (m_previewGrid != nullptr) {
@@ -300,18 +310,16 @@ void GridCreatingConditionRectangularRegionLonLat::previewGrid(double xmin, doub
 	m_previewGrid = grid;
 	actorCollection()->RemoveItem(m_previewActor);
 
-	vtkStructuredGrid* sgrid = m_previewGrid->vtkGrid();
+	vtkStructuredGrid* sgrid = m_previewGrid->vtkConcreteData()->concreteData();
 	m_previewActor->GetMapper()->SetInputDataObject(sgrid);
 	actorCollection()->AddItem(m_previewActor);
 
 	updateVisibility();
 }
 
-Structured2DGrid* GridCreatingConditionRectangularRegionLonLat::createGridInner(double xmin, double xmax, double ymin, double ymax, double stepSize)
+v4Structured2dGrid* GridCreatingConditionRectangularRegionLonLat::createGridInner(double xmin, double xmax, double ymin, double ymax, double stepSize)
 {
-	Structured2DGrid* grid = new Structured2DGrid(nullptr);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
+	auto grid = new v4Structured2dGrid();
 
 	unsigned int imax = floor((xmax - xmin) / stepSize);
 	unsigned int jmax = floor((ymax - ymin) / stepSize);
@@ -324,22 +332,15 @@ Structured2DGrid* GridCreatingConditionRectangularRegionLonLat::createGridInner(
 		QMessageBox::warning(dataModel()->mainWindow(), tr("Warning"), tr("The maximum number of grid nodes is %1.").arg(MAXGRIDSIZE));
 		return nullptr;
 	}
+
 	grid->setDimensions(imax, jmax);
-	vtkPoints* points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate((imax - 1) * (jmax - 1));
 	for (unsigned int j = 0; j < jmax; j++) {
 		for (unsigned int i = 0; i < imax; i++) {
-			points->InsertPoint(imax * j + i, xmin + stepSize * i, ymin + stepSize * j, 0.);
+			grid->setPoint2d(i, j, QPointF(xmin + stepSize * i, ymin + stepSize * j));
 		}
 	}
-	grid->vtkGrid()->SetPoints(points);
 
-	// allocate memory for all grid related conditions.
-	for (GridAttributeContainer* c : grid->gridAttributes()) {
-		c->allocate();
-	}
-	grid->setModified();
+	grid->pointsModified();
 	return grid;
 }
 
@@ -354,12 +355,12 @@ void GridCreatingConditionRectangularRegionLonLat::hidePreviewGrid()
 	m_previewGrid = nullptr;
 }
 
-void GridCreatingConditionRectangularRegionLonLat::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRectangularRegionLonLat::informSelection(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionRectangularRegionLonLat::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRectangularRegionLonLat::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	v->unsetCursor();
 }
@@ -378,7 +379,7 @@ void GridCreatingConditionRectangularRegionLonLat::clear()
 	}
 }
 
-void GridCreatingConditionRectangularRegionLonLat::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionRectangularRegionLonLat::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	v->setCursor(Qt::CrossCursor);
 }

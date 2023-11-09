@@ -3,7 +3,10 @@
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindownodevectorarrowgroupunstructureddataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 
 Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::Post2dWindowNodeVectorArrowGroupUnstructuredDataItem(const std::string& name, Post2dWindowDataItem* p) :
@@ -28,12 +31,12 @@ QDialog* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::propertyDialog(QW
 
 vtkPointSet* Post2dWindowNodeVectorArrowGroupUnstructuredDataItem::buildFilteredData()
 {
-	auto dc = topDataItem()->zoneDataItem()->dataContainer();
+	auto dc = topDataItem()->zoneDataItem()->v4DataContainer();
 	if (dc == nullptr) {return nullptr;}
-	auto data = dc->data();
+	auto data = dc->gridData();
 	if (data == nullptr) {return nullptr;}
 
-	auto data2 = data->data();
+	auto data2 = data->grid()->vtkData()->data();
 	auto clippedData = m_regionSetting.buildNodeFilteredData(data2);
 
 	m_setting.updateStandardValueIfNeeded(clippedData->GetPointData());

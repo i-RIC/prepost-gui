@@ -1,5 +1,4 @@
 #include "../misc/cgnsutil.h"
-#include "../pre/grid/structured2dgrid.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "../project/projectmainfile.h"
@@ -16,6 +15,7 @@
 #include <cs/coordinatesystem.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpointsetregionandcellsizefilter.h>
+#include <guicore/grid/v4gridutil.h>
 #include <misc/filesystemfunction.h>
 #include <misc/rectregion.h>
 #include <misc/stringtool.h>
@@ -530,7 +530,7 @@ bool PostZoneDataContainer::loadCellFlagData(iRICLib::H5CgnsZone *zone)
 
 	for (auto it = conds.begin(); it != conds.end(); ++it) {
 		const SolverDefinitionGridAttribute* cond = *it;
-		if (cond->position() != SolverDefinitionGridAttribute::CellCenter) {continue;}
+		if (cond->position() != SolverDefinitionGridAttribute::Position::CellCenter) {continue;}
 		if (! cond->isOption()) {continue;}
 
 		const SolverDefinitionGridAttributeInteger* icond = dynamic_cast<const SolverDefinitionGridAttributeInteger*>(cond);
@@ -995,7 +995,7 @@ vtkPolyData* PostZoneDataContainer::filteredDataStructured(vtkStructuredGrid* da
 
 	bool cullEnable;
 	int cullCellLimit, cullIndexLimit;
-	Grid::getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
+	v4GridUtil::getCullSetting(&cullEnable, &cullCellLimit, &cullIndexLimit);
 
 	RectRegion region(xmin, xmax, ymin, ymax);
 

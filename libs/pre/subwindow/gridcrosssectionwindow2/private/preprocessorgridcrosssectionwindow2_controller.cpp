@@ -1,10 +1,11 @@
+#include "../../../datamodel/preprocessorgriddataitem.h"
+#include "../public/preprocessorgridcrosssectionwindow2_graphicsview.h"
 #include "preprocessorgridcrosssectionwindow2_controller.h"
 #include "preprocessorgridcrosssectionwindow2_edittablecontroller.h"
 #include "preprocessorgridcrosssectionwindow2_impl.h"
-#include "../public/preprocessorgridcrosssectionwindow2_graphicsview.h"
 #include "ui_preprocessorgridcrosssectionwindow2_controller.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
 
 PreProcessorGridCrosssectionWindow2::Controller::Controller(Impl* impl, QWidget *parent) :
 	QWidget(parent),

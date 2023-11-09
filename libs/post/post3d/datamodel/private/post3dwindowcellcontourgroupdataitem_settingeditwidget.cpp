@@ -2,7 +2,9 @@
 #include "post3dwindowcellcontourgroupdataitem_settingeditwidget.h"
 #include "ui_post3dwindowcellcontourgroupdataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidget.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
 #include <misc/mergesupportedlistcommand.h>
@@ -21,8 +23,8 @@ Post3dWindowCellContourGroupDataItem::SettingEditWidget::SettingEditWidget(Post3
 
 	m_colorMapWidget->setSetting(&item->m_colorMapSetting);
 
-	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
-	ui->rangeListWidget->setDimensions(grid->GetDimensions());
+	auto grid = dynamic_cast<v4Structured3dGrid*> (m_item->data()->gridData()->grid());
+	ui->rangeListWidget->setDimensions(grid->vtkConcreteData()->concreteData()->GetDimensions());
 	ui->rangeListWidget->setRanges(item->ranges());
 }
 

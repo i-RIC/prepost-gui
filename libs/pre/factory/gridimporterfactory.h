@@ -7,21 +7,21 @@
 #include <QObject>
 #include <QList>
 
-class GridImporterInterface;
+class GridImporterI;
 
 class PREDLL_EXPORT GridImporterFactory : public QObject
 {
 
 public:
 	virtual ~GridImporterFactory();
-	const QList<GridImporterInterface*> list(const SolverDefinitionGridType& gt) const;
+	const QList<GridImporterI*> list(const SolverDefinitionGridType& gt) const;
 	static void init();
 	static GridImporterFactory& instance();
 
 private:
 	// Constructor is private
 	GridImporterFactory();
-	QList<GridImporterInterface*> m_importerList;
+	QList<GridImporterI*> m_importerList;
 
 	static GridImporterFactory* m_instance;
 };

@@ -1,16 +1,23 @@
+#include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
+#include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorarrowgroupdataitem.h"
 #include "post2dwindownodevectorarrowgrouptopdataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindownodevectorarrowgroupdataitem_updateactorsettingcommand.h"
 
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/widget/boolcontainerwidget.h>
 #include <guicore/arrows/arrowssettingtoolbarwidget.h>
+#include <guicore/grid/v4grid2d.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -33,7 +40,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
-	auto cont = topDataItem()->zoneDataItem()->dataContainer();
+	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
 	auto caption = gt->vectorOutputCaption(target);
 	standardItem()->setText(caption);
@@ -41,7 +48,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	m_setting.target = target.c_str();
 	m_setting.legend.title = caption;
 
-	for (const auto& pair : cont->data()->valueRangeSet().pointDataValueRanges()) {
+	for (const auto& pair : cont->gridData()->grid()->vtkData()->valueRangeSet().pointDataValueRanges()) {
 		createOrUpdateColorMapsSetting(gt, pair.first, pair.second);
 	}
 
@@ -226,12 +233,12 @@ void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	topDataItem()->zoneDataItem()->initNodeResultAttributeBrowser();
+	topDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	topDataItem()->zoneDataItem()->clearNodeResultAttributeBrowser();
+	topDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -255,7 +262,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	topDataItem()->zoneDataItem()->updateNodeResultAttributeBrowser(event->pos(), v);
+	topDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->update(event->pos(), v);
 	if (m_setting.target == "") {return;}
 
 	std::vector<ImageSettingContainer::Controller*> controllers;
@@ -296,7 +303,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mousePressEvent(QMouseEvent* even
 
 void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	topDataItem()->zoneDataItem()->fixNodeResultAttributeBrowser(event->pos(), v);
+	topDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->fix(event->pos(), v);
 	if (m_setting.target == "") {return;}
 
 	std::vector<ImageSettingContainer::Controller*> controllers;
@@ -317,8 +324,7 @@ void Post2dWindowNodeVectorArrowGroupDataItem::mouseReleaseEvent(QMouseEvent* ev
 
 void Post2dWindowNodeVectorArrowGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = topDataItem()->zoneDataItem()->showAttributeBrowserActionForNodeResult();
-	menu->addAction(abAction);
+	menu->addAction(topDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->showAttributeBrowserAction());
 }
 
 bool Post2dWindowNodeVectorArrowGroupDataItem::addToolBarButtons(QToolBar* toolBar)

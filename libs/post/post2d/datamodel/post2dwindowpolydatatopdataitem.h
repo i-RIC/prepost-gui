@@ -3,7 +3,8 @@
 
 #include "../post2dwindowdataitem.h"
 
-class Post2dWindowPolyDataGroupDataItem;
+class Post2dWindowCalculationResultDataItem;
+class Post2dWindowZoneDataItem;
 
 class Post2dWindowPolyDataTopDataItem : public Post2dWindowDataItem
 {
@@ -14,6 +15,9 @@ public:
 	~Post2dWindowPolyDataTopDataItem() override;
 
 	void update();
+
+	Post2dWindowCalculationResultDataItem* resultDataItem() const;
+	Post2dWindowZoneDataItem* zoneDataItem() const;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

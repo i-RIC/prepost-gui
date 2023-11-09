@@ -7,8 +7,8 @@
 #include <dataitem/measureddata/measureddatavectorgrouptopdataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guibase/widget/itemmultiselectingdialog.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <guicore/project/measured/measureddata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>

@@ -3,15 +3,15 @@
 #include "../factory/hydraulicdatafactory.h"
 
 #include <guicore/pre/hydraulicdata/hydraulicdatacreator.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorhydraulicdatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorhydraulicdatagroupdataitemi.h>
 #include <misc/stringtool.h>
 
 #include <QDomNode>
 #include <QXmlStreamWriter>
 
 PreProcessorHydraulicDataTopDataItem::PreProcessorHydraulicDataTopDataItem(PreProcessorDataItem* parent) :
-	PreProcessorHydraulicDataTopDataItemInterface (parent)
+	PreProcessorHydraulicDataTopDataItemI (parent)
 {
 	setSubPath("hydraulicdata");
 	auto& factory = HydraulicDataFactory::instance();
@@ -22,16 +22,16 @@ PreProcessorHydraulicDataTopDataItem::PreProcessorHydraulicDataTopDataItem(PrePr
 	}
 }
 
-QList<PreProcessorHydraulicDataGroupDataItemInterface*> PreProcessorHydraulicDataTopDataItem::groupDataItems() const
+QList<PreProcessorHydraulicDataGroupDataItemI*> PreProcessorHydraulicDataTopDataItem::groupDataItems() const
 {
-	QList<PreProcessorHydraulicDataGroupDataItemInterface*> ret;
+	QList<PreProcessorHydraulicDataGroupDataItemI*> ret;
 	for (auto child : m_childItems) {
-		ret.push_back(dynamic_cast<PreProcessorHydraulicDataGroupDataItemInterface*> (child));
+		ret.push_back(dynamic_cast<PreProcessorHydraulicDataGroupDataItemI*> (child));
 	}
 	return ret;
 }
 
-PreProcessorHydraulicDataGroupDataItemInterface* PreProcessorHydraulicDataTopDataItem::groupDataItem(const std::string& name) const
+PreProcessorHydraulicDataGroupDataItemI* PreProcessorHydraulicDataTopDataItem::groupDataItem(const std::string& name) const
 {
 	auto it = m_itemNameMap.find(name);
 	if (it == m_itemNameMap.end()) {return nullptr;}

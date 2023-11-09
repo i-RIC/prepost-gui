@@ -29,7 +29,7 @@ public:
 
 	bool m_hideSetting;
 
-	QSet<vtkIdType> m_indices;
+	std::unordered_set<vtkIdType> m_indices;
 	QSet<Edge> m_edges;
 
 	BoundaryConditionDialog* m_dialog;

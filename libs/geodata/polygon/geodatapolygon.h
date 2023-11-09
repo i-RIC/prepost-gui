@@ -73,16 +73,16 @@ public:
 
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;
-	void informSelection(PreProcessorGraphicsViewInterface* v) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
+	void informSelection(PreProcessorGraphicsViewI* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
 	void addCustomMenuItems(QMenu* menu) override;
-	void viewOperationEnded(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void viewOperationEnded(PreProcessorGraphicsViewI* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
 
@@ -143,7 +143,7 @@ private:
 	void setSelectMode(SelectMode mode);
 
 	bool checkCondition();
-	void updateMouseCursor(PreProcessorGraphicsViewInterface* v);
+	void updateMouseCursor(PreProcessorGraphicsViewI* v);
 	void updateScalarValues() override;
 	void updateActorSetting() override;
 	bool selectObject(QPoint point);

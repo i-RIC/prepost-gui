@@ -3,19 +3,20 @@
 
 #include "../pre_global.h"
 
-#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
 
-class Grid;
-class GridImporterInterface;
+class v4InputGrid;
+class GridImporterI;
 class PreProcessorGridCreatingConditionDataItem;
 class PreProcessorBCGroupDataItem;
 class PreProcessorBCSettingGroupDataItem;
 class PreProcessorGridAttributeMappingSettingTopDataItem;
 class PreProcessorGridDataItem;
+class PreProcessorGridTypeDataItem;
 
 class QAction;
 
-class PREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemInterface
+class PREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemI
 {
 	Q_OBJECT
 
@@ -24,17 +25,17 @@ public:
 
 	const QString& caption() const override;
 	const std::string& zoneName() const override;
-	PreProcessorGridCreatingConditionDataItemInterface* creatingConditionDataItem() const override;
+	PreProcessorGridCreatingConditionDataItemI* creatingConditionDataItem() const override;
 	PreProcessorBCSettingGroupDataItem* bcSettingGroupDataItem() const;
 	PreProcessorBCGroupDataItem* bcGroupDataItem() const;
 	PreProcessorGridAttributeMappingSettingTopDataItem* mappingSettingDataItem() const;
 	void addCustomMenuItems(QMenu* menu) override;
-	PreProcessorGridDataItemInterface* gridDataItem() const override;
+	PreProcessorGridDataItemI* gridDataItem() const override;
 	bool isDeletable() const override;
 	void handleStandardItemChange() override;
 	bool isGridEdited() const  override;
 	void setGridEdited() override;
-	void setupGridDataItem(Grid* grid);
+	void setupGridDataItem(v4InputGrid* grid);
 	int loadFromCgnsFile() override;
 
 	bool importGridFromCgnsFile(const QString& filename);
@@ -50,17 +51,18 @@ protected:
 	void saveExternalData(const QString&) override;
 
 private:
-	bool importFromImporter(GridImporterInterface* importer, const QString& filename, const QString& selectedFilter);
+	bool importFromImporter(GridImporterI* importer, const QString& filename, const QString& selectedFilter);
+	PreProcessorGridTypeDataItem* gridTypeDataItem() const;
 
 	QAction* m_deleteAction;
 	QString m_caption;
 	std::string m_zoneName;
 
-	PreProcessorGridCreatingConditionDataItemInterface* m_creatingConditionDataItem;
+	PreProcessorGridCreatingConditionDataItemI* m_creatingConditionDataItem;
 	PreProcessorBCSettingGroupDataItem* m_bcSettingGroupDataItem;
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 	PreProcessorGridAttributeMappingSettingTopDataItem* m_mappingSettingDataItem;
-	PreProcessorGridDataItemInterface* m_gridDataItem;
+	PreProcessorGridDataItem* m_gridDataItem;
 };
 
 #endif // PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEM_H

@@ -8,7 +8,7 @@
 class QDir;
 class QMdiSubWindow;
 class PostProcessorWindowProjectDataItem;
-class PostProcessorWindowFactoryInterface;
+class PostProcessorWindowFactoryI;
 
 class GUICOREDLL_EXPORT ProjectPostProcessors : public ProjectDataItem
 {
@@ -20,7 +20,7 @@ public:
 	QMdiSubWindow* add(PostProcessorWindowProjectDataItem* newitem);
 	void requestDelete(PostProcessorWindowProjectDataItem* item);
 	int windowCount() const;
-	void setFactory(PostProcessorWindowFactoryInterface* factory);
+	void setFactory(PostProcessorWindowFactoryI* factory);
 	void applyOffset(double x_diff, double y_diff);
 	QStringList containedFiles() const override;
 
@@ -37,7 +37,7 @@ private:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	QList<PostProcessorWindowProjectDataItem*> m_postProcessorWindows;
-	PostProcessorWindowFactoryInterface* m_factory;
+	PostProcessorWindowFactoryI* m_factory;
 };
 
 #endif // PROJECTPOSTPROCESSORS_H

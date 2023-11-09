@@ -18,7 +18,7 @@ namespace iRICLib {
 
 class BackgroundImageInfo;
 class CoordinateSystem;
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class MeasuredData;
 class PostSolutionInfo;
 class ProjectCgnsManager;
@@ -187,7 +187,7 @@ private:
 	void loadDom(QDomDocument& doc);
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

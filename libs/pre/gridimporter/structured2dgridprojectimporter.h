@@ -8,9 +8,8 @@ class Structured2DGridProjectImporter : public ProjectGridImporter
 
 public:
 	Structured2DGridProjectImporter();
-	SolverDefinitionGridType::GridType supportedGridType() const override;
 
-protected:
+	SolverDefinitionGridType::GridType supportedGridType() const override;
 	CgnsGridImporter* getCgnsImporter() override;
 };
 

@@ -1,7 +1,9 @@
 #include "gridlandxmlexporter.h"
 
 #include <guibase/landxmlutil.h>
-#include <guicore/pre/grid/grid.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
@@ -41,14 +43,14 @@ QStringList GridLandXmlExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool GridLandXmlExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* cs, QWidget* parent)
+bool GridLandXmlExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* cs, QWidget* parent)
 {
 	QFile file(filename);
 	if (! file.open(QIODevice::WriteOnly)) {
 		QMessageBox::critical(parent, tr("Error"), tr("Error occured while exporting to %1").arg(QDir::toNativeSeparators(filename)));
 		return false;
 	}
-	auto vtkGrid = grid->vtkGrid();
+	auto vtkGrid = grid->grid()->vtkData()->data();
 
 	QXmlStreamWriter writer(&file);
 	writer.writeStartDocument("1.0");

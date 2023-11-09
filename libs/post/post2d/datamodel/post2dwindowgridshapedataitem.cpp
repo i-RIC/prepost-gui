@@ -1,10 +1,16 @@
 #include "../post2dwindowgraphicsview.h"
+#include "post2dwindowcalculationresultdataitem.h"
+#include "post2dwindowgriddataitemi.h"
 #include "post2dwindowgridshapedataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowgridshapedataitem_settingeditwidget.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid2d.h>
+#include <guicore/grid/v4gridutil.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 
 Post2dWindowGridShapeDataItem::Post2dWindowGridShapeDataItem(Post2dWindowDataItem* parent) :
@@ -43,34 +49,15 @@ void Post2dWindowGridShapeDataItem::update()
 
 void Post2dWindowGridShapeDataItem::updateActorSetting()
 {
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-
-	auto data = cont->data()->data();
-	m_setting.update(actorCollection(), actor2DCollection(), data, data, cont->labelData(), iRIC::toStr(PostZoneDataContainer::labelName));
+	auto grid2d = gridDataItem()->grid();
+	m_setting.update(actorCollection(), actor2DCollection(), grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
 
 	updateVisibilityWithoutRendering();
-
-/*
-	m_setting.outlineActor()->VisibilityOff();
-	m_setting.wireframeActor()->VisibilityOff();
-
-	auto z = zoneDataItem();
-	auto cont = z->dataContainer();
-	if (cont == nullptr || cont->data() == nullptr) {return;}
-
-	auto filterdData = z->filteredData();
-	if (filterdData == nullptr) {return;}
-
-	m_setting.update(actorCollection(), actor2DCollection(), filterdData, filterdData, cont->labelData(), iRIC::toStr(PostZoneDataContainer::labelName));
-
-	updateVisibilityWithoutRendering();
-*/
 }
 
-Post2dWindowZoneDataItem* Post2dWindowGridShapeDataItem::zoneDataItem() const
+Post2dWindowGridDataItemI* Post2dWindowGridShapeDataItem::gridDataItem() const
 {
-	return dynamic_cast<Post2dWindowZoneDataItem*> (parent());
+	return dynamic_cast<Post2dWindowGridDataItemI*> (parent());
 }
 
 void Post2dWindowGridShapeDataItem::doLoadFromProjectMainFile(const QDomNode& node)

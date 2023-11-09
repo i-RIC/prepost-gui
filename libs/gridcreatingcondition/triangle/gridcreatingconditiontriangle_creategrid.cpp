@@ -5,13 +5,15 @@
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 
 #include <guibase/widget/waitdialog.h>
-#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/unstructured2dgrid.h>
+#include <guicore/grid/v4unstructured2dgrid.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricrootpath.h>
 #include <misc/stringtool.h>
 #include <triangle/triangleexecutethread.h>
@@ -98,7 +100,7 @@ int findOrAddPointAndGetId(double x, double y, std::multimap<double, PointWithId
 void setupPointsAndSegments(const geos::geom::LineString* str, std::vector<double>* points, std::vector<int>* segments, std::multimap<double, PointWithId>* pointMap)
 {
 	geos::geom::Point* p = nullptr;
-	for (int j = 0; j < str->getNumPoints() - 1; ++j) {
+	for (int j = 0; j < static_cast<int> (str->getNumPoints()) - 1; ++j) {
 		p = str->getPointN(j);
 		segments->push_back(findOrAddPointAndGetId(p->getX(), p->getY(), pointMap, points));
 		p = str->getPointN(j + 1);
@@ -113,7 +115,7 @@ void setupPointsAndSegments(geos::geom::Geometry* geom, std::vector<double>* poi
 	std::multimap<double, PointWithId> pointMap;
 
 	if (strs != nullptr) {
-		for (int i = 0; i < strs->getNumGeometries(); ++i) {
+		for (int i = 0; i < static_cast<int> (strs->getNumGeometries()); ++i) {
 			auto str = dynamic_cast<const geos::geom::LineString*> (strs->getGeometryN(i));
 			setupPointsAndSegments(str, points, segments, &pointMap);
 		}
@@ -244,7 +246,7 @@ void setupTriangleInput(GridCreatingConditionTriangleGridRegionPolygon* regionPo
 
 TriangleExecuteThread* setupTriangleThread(bool angleConstraint, double angle,
 																					 bool areaConstraint, bool hasRemeshPolygon,
-																					 PreProcessorGridAndGridCreatingConditionDataItemInterface* dataItemInterface,
+																					 PreProcessorGridAndGridCreatingConditionDataItemI* dataItemInterface,
 																					 ProjectData* projectData)
 {
 	QString args("p");
@@ -349,11 +351,11 @@ void freeOutputIO(triangulateio out)
 	}
 }
 
-void setupGridFromTriangleOutput(triangulateio out, const QPointF offset, Unstructured2DGrid* grid)
+void setupGridFromTriangleOutput(triangulateio out, const QPointF offset, v4Unstructured2dGrid* grid)
 {
-	auto points = vtkSmartPointer<vtkPoints>::New();
+	vtkUnstructuredGrid* vtkGrid = grid->vtkConcreteData()->concreteData();
+	auto points = vtkGrid->GetPoints();
 	points->Allocate(out.numberofpoints);
-	points->SetDataTypeToDouble();
 	for (int i = 0; i < out.numberofpoints; ++i) {
 		double v[3];
 		v[0] = *(out.pointlist + i * 2) + offset.x();
@@ -361,37 +363,28 @@ void setupGridFromTriangleOutput(triangulateio out, const QPointF offset, Unstru
 		v[2] = 0;
 		points->InsertNextPoint(v);
 	}
-	grid->vtkGrid()->SetPoints(points);
 
-	grid->vtkGrid()->Allocate(out.numberoftriangles);
+	vtkGrid->Allocate(out.numberoftriangles);
+	vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
 	for (int i = 0; i < out.numberoftriangles; ++i) {
 		vtkIdType id1, id2, id3;
-		vtkSmartPointer<vtkTriangle> tri = vtkSmartPointer<vtkTriangle>::New();
 		id1 = *(out.trianglelist + i * 3) - 1;
 		id2 = *(out.trianglelist + i * 3 + 1) - 1;
 		id3 = *(out.trianglelist + i * 3 + 2) - 1;
 		tri->GetPointIds()->SetId(0, id1);
 		tri->GetPointIds()->SetId(1, id2);
 		tri->GetPointIds()->SetId(2, id3);
-		grid->vtkGrid()->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
+		vtkGrid->InsertNextCell(tri->GetCellType(), tri->GetPointIds());
 	}
-
-	// allocate memory for all grid related conditions.
-	QList<GridAttributeContainer*>& clist = grid->gridAttributes();
-	for (GridAttributeContainer* container: clist) {
-		container->allocate();
-	}
-	grid->setModified();
-	grid->vtkGrid()->BuildLinks();
+	vtkGrid->Modified();
+	vtkGrid->BuildLinks();
 }
 
 } // namespace
 
-Grid* GridCreatingConditionTriangle::createGrid()
+v4InputGrid* GridCreatingConditionTriangle::createGrid()
 {
-	Unstructured2DGrid* grid = new Unstructured2DGrid(nullptr);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
+	auto grid = new v4Unstructured2dGrid();
 
 	triangulateio in, out;
 
@@ -400,7 +393,7 @@ Grid* GridCreatingConditionTriangle::createGrid()
 
 	clearOutputIO(&out);
 
-	auto di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemInterface*>(m_conditionDataItem->parent());
+	auto di = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItemI*>(m_conditionDataItem->parent());
 	QString polyFileName = QString("%1.poly").arg(di->zoneName().c_str());
 
 	TriangleExecuteThread* thread = setupTriangleThread(
@@ -449,6 +442,11 @@ Grid* GridCreatingConditionTriangle::createGrid()
 	setupGridFromTriangleOutput(out, offset, grid);
 	freeOutputIO(out);
 
-	return grid;
+	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto ret = new v4InputGrid(gt->gridType(), grid);
+	gt->gridType()->buildGridAttributes(ret);
+
+	ret->allocateAttributes();
+	return ret;
 }
 

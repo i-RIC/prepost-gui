@@ -6,6 +6,7 @@
 #include <unordered_set>
 
 class ColorMapSettingContainerI;
+class v4Particles3d;
 class Post3dWindowParticlesBaseScalarGroupDataItem;
 class Post3dWindowParticlesBaseVectorGroupTopDataItem;
 class Post3dWindowZoneDataItem;
@@ -28,7 +29,7 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 
-	virtual vtkPolyData* particleData() const = 0;
+	virtual v4Particles3d* particleData() const = 0;
 	virtual Post3dWindowZoneDataItem* zoneDataItem() const = 0;
 
 private:

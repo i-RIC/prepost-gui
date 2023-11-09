@@ -1,8 +1,13 @@
 #include "structured2dgridnayscsvimporter.h"
-#include <guicore/pre/grid/structured2dgrid.h>
+
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainert.h>
 #include <guicore/pre/gridcreatingcondition/gridcreatingcondition.h>
 #include <misc/stringtool.h>
+
+#include <vtkDoubleArray.h>
+#include <vtkIntArray.h>
 
 #include <QObject>
 #include <QFile>
@@ -22,15 +27,15 @@ struct AttributeData {
 	ValueType valueType;
 	Position position;
 
-	GridAttributeContainerT<double>* realContainer = nullptr;
-	GridAttributeContainerT<int>* intContainer = nullptr;
+	GridAttributeContainerT<double, vtkDoubleArray>* realContainer = nullptr;
+	GridAttributeContainerT<int, vtkIntArray>* intContainer = nullptr;
 };
 
 
 } // namespace
 
 Structured2DGridNaysCSVImporter::Structured2DGridNaysCSVImporter() :
-	GridImporterInterface(), QObject()
+	GridImporterI(), QObject()
 {}
 
 QString Structured2DGridNaysCSVImporter::caption() const
@@ -50,9 +55,9 @@ QStringList Structured2DGridNaysCSVImporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
+bool Structured2DGridNaysCSVImporter::import(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, QWidget* parent)
 {
-	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
+	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
 
 	QFile f(filename);
 	if (f.open(QFile::ReadOnly | QFile::Truncate | QIODevice::Text)){
@@ -91,7 +96,7 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 			QStringRef typeFlag(&n, 0, 1);
 
 			AttributeData data;
-			auto att = grid2d->gridAttribute(iRIC::toStr(name.toString()));
+			auto att = grid->attribute(iRIC::toStr(name.toString()));
 			if (att == nullptr) {
 				data.valid = false;
 				attData.push_back(data);
@@ -99,17 +104,17 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 				continue;
 			}
 
-			if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Node && typeFlag == "N") {
+			if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::Node && typeFlag == "N") {
 				data.position = AttributeData::Node;
-			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::CellCenter && typeFlag == "C") {
+			} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter && typeFlag == "C") {
 				data.position = AttributeData::Cell;
 			} else {
 				data.valid = false;
 				attData.push_back(data);
 				continue;
 			}
-			auto realAtt = dynamic_cast<GridAttributeContainerT<double>* > (att);
-			auto intAtt = dynamic_cast<GridAttributeContainerT<int>* > (att);
+			auto realAtt = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (att);
+			auto intAtt = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (att);
 			if (realAtt != nullptr) {
 				data.valueType = AttributeData::Real;
 				data.realContainer = realAtt;
@@ -120,17 +125,9 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 			attData.push_back(data);
 		}
 
-		vtkPoints* points = vtkPoints::New();
-		points->SetDataTypeToDouble();
-		points->Allocate(imax * jmax);
-		points->InsertPoint(imax * jmax - 1, 0, 0, 0);
-		grid2d->vtkGrid()->SetPoints(points);
-
 		// allocate memory for all grid related conditions.
-		QList<GridAttributeContainer*>& clist = grid2d->gridAttributes();
-		for (auto it = clist.begin(); it != clist.end(); ++it){
-			(*it)->allocate();
-		}
+		grid->allocateAttributes();
+
 		for (int k = 0; k < kmax; ++k){
 			for (int j = 0; j < jmax; ++j){
 				for (int i = 0; i < imax; ++i){
@@ -144,9 +141,8 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 
 					iss >> dummyi >> dummyj >> dummyk >> x >> y >> z;
 
-					if (k == 1){continue;}
-					unsigned int id = grid2d->vertexIndex(i, j);
-					points->InsertPoint(id, x, y, 0);
+					if (k == 1) {continue;}
+					grid2d->setPoint2d(i, j, QPointF(x, y));
 
 					for (const AttributeData& data : attData) {
 						if (! data.valid) {
@@ -155,9 +151,10 @@ bool Structured2DGridNaysCSVImporter::import(Grid* grid, const QString& filename
 							iss >> dummy;
 							continue;
 						}
+						unsigned int id;
 						if (data.position == AttributeData::Cell && (i == imax - 1 || j == jmax - 1)) {continue;}
 						if (data.position == AttributeData::Node) {
-							id = grid2d->vertexIndex(i, j);
+							id = grid2d->pointIndex(i, j);
 						} else {
 							id = grid2d->cellIndex(i, j);
 						}

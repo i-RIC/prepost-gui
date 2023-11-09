@@ -2,7 +2,7 @@
 #include "gridcreatingconditiontriangleremeshdialog.h"
 #include "gridcreatingconditiontriangleremeshpolygon.h"
 
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/iricundostack.h>
 #include <misc/mathsupport.h>
 

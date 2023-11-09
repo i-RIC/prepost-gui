@@ -3,7 +3,8 @@
 #include "geodatapointmap_templatecellmapper.h"
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/doublemappingsetting.h>
 #include <misc/mathsupport.h>
 
@@ -36,7 +37,7 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateCellMapper::initialize(bool* boo
 {
 	auto s = new ::Setting();
 	auto pointmap = dynamic_cast<GeoDataPointmap*>(geoData());
-	auto grid2d = dynamic_cast<Structured2DGrid*>(GeoDataMapper::grid());
+	auto grid2d = dynamic_cast<v4Structured2dGrid*>(GeoDataMapper::grid()->grid());
 	if (grid2d == nullptr) {return s;}
 	if (container()->gridAttribute()->isOption()) {
 		// @todo not implemented yet.
@@ -50,22 +51,23 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateCellMapper::initialize(bool* boo
 		auto ms = pointmap->impl->m_mappingSetting;
 
 		unsigned int count = grid2d->cellCount();
+		vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 		for (unsigned int index = 0; index < count; ++index) {
 			if (*(boolMap + index)) {continue;}
-			unsigned int i, j;
+			vtkIdType i, j;
 			grid2d->getCellIJIndex(index, &i, &j);
 
 			bool found = false;
-			QPointF vec2d = grid2d->vertex(i, j);
+			QPointF vec2d = grid2d->point2d(i, j);
 			QPointF iVec(0, 0);
 			QPointF jVec(0, 0);
 
-			iVec += grid2d->vertex(i + 1, j) - grid2d->vertex(i, j);
-			iVec += grid2d->vertex(i + 1, j + 1) - grid2d->vertex(i, j + 1);
+			iVec += grid2d->point2d(i + 1, j) - grid2d->point2d(i, j);
+			iVec += grid2d->point2d(i + 1, j + 1) - grid2d->point2d(i, j + 1);
 			iVec /= 2;
 
-			jVec += grid2d->vertex(i, j + 1) - grid2d->vertex(i, j);
-			jVec += grid2d->vertex(i + 1, j + 1) - grid2d->vertex(i + 1, j);
+			jVec += grid2d->point2d(i, j + 1) - grid2d->point2d(i, j);
+			jVec += grid2d->point2d(i + 1, j + 1) - grid2d->point2d(i + 1, j);
 			jVec /= 2;
 
 			double iDist = iRIC::length(iVec);
@@ -91,9 +93,9 @@ GeoDataMapperSettingI* GeoDataPointmap::TemplateCellMapper::initialize(bool* boo
 			double point[3];
 			double pointCenter[3];
 			pointCenter[0] = pointCenter[1] = pointCenter[2] = 0;
-			vtkCell* cell = grid()->vtkGrid()->GetCell(index);
+			vtkCell* cell = vtkGrid->GetCell(index);
 			for (int j = 0; j < cell->GetNumberOfPoints(); ++j) {
-				GeoDataMapper::grid()->vtkGrid()->GetPoint(cell->GetPointId(j), point);
+				vtkGrid->GetPoint(cell->GetPointId(j), point);
 				for (int k = 0; k < 3; ++k) {
 					pointCenter[k] += point[k];
 				}

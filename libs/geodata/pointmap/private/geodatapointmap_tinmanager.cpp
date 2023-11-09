@@ -13,10 +13,10 @@
 #include "geodatapointmap_tinmanager_tinbuilder.h"
 
 #include <guibase/vtktool/vtkpointsetgeos2dindex.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/iricundostack.h>
 #include <misc/mouseeventcontroller.h>
 
@@ -176,7 +176,8 @@ void GeoDataPointmap::TINManager::setNeedRebuild(bool needed)
 vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weights)
 {
 	if (impl->m_index == nullptr) {return nullptr;}
-	return impl->m_index->findCell(x, y, weights);
+	vtkIdType cellId = impl->m_index->findCell(x, y, 0, weights);
+	return impl->m_tin->GetCell(cellId);
 }
 
 bool GeoDataPointmap::TINManager::checkIfBreakLinesHasIntersections() const
@@ -469,7 +470,7 @@ void GeoDataPointmap::TINManager::showRemoveTrianglesSettingDialog()
 {
 	auto dialog = new RemoveTrianglesSettingDialog(this, impl->m_parent->preProcessorWindow());
 	dialog->setAttribute(Qt::WA_DeleteOnClose);
-	connect(dialog, &QObject::destroyed, impl->m_parent->iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(dialog, &QObject::destroyed, impl->m_parent->iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
 
 	impl->m_parent->iricMainWindow()->enterModelessDialogMode();
 

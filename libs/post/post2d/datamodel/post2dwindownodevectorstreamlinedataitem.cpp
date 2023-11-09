@@ -1,14 +1,11 @@
+#include "../post2dwindowattributebrowsercontroller.h"
+#include "post2dwindowcalculationresultdataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorstreamlinedataitem.h"
 #include "post2dwindownodevectorstreamlinegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
-#include <QAction>
 #include <QMenu>
-#include <QMouseEvent>
-
-#include <vtkStructuredGrid.h>
 
 Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataItem(const std::string& name, const QString& caption, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(name, caption, parent)
@@ -17,14 +14,14 @@ Post2dWindowNodeVectorStreamlineDataItem::Post2dWindowNodeVectorStreamlineDataIt
 Post2dWindowNodeVectorStreamlineDataItem::~Post2dWindowNodeVectorStreamlineDataItem()
 {}
 
-void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView*)
+void Post2dWindowNodeVectorStreamlineDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initNodeResultAttributeBrowser();
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->initialize();
 }
 
-void Post2dWindowNodeVectorStreamlineDataItem::informDeselection(VTKGraphicsView*)
+void Post2dWindowNodeVectorStreamlineDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearNodeResultAttributeBrowser();
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -34,18 +31,17 @@ void Post2dWindowNodeVectorStreamlineDataItem::mousePressEvent(QMouseEvent* even
 
 void Post2dWindowNodeVectorStreamlineDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	groupDataItem()->mouseReleaseEvent(event, v);
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	groupDataItem()->mouseMoveEvent(event, v);
+	groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent()->parent())->showAttributeBrowserActionForNodeResult();
-	menu->addAction(abAction);
+	menu->addAction(groupDataItem()->resultDataItem()->nodeScalarGroupTopDataItem()->showAttributeBrowserAction());
 }
 
 void Post2dWindowNodeVectorStreamlineDataItem::showPropertyDialog()
@@ -56,11 +52,6 @@ void Post2dWindowNodeVectorStreamlineDataItem::showPropertyDialog()
 QDialog* Post2dWindowNodeVectorStreamlineDataItem::propertyDialog(QWidget* parent)
 {
 	return groupDataItem()->propertyDialog(parent);
-}
-
-Post2dWindowZoneDataItem* Post2dWindowNodeVectorStreamlineDataItem::zoneDataItem() const
-{
-	return dynamic_cast<Post2dWindowZoneDataItem*> (parent()->parent());
 }
 
 Post2dWindowNodeVectorStreamlineGroupDataItem* Post2dWindowNodeVectorStreamlineDataItem::groupDataItem() const

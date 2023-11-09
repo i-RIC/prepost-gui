@@ -15,6 +15,12 @@ SolverDefinitionGridOutputOption::SolverDefinitionGridOutputOption(const QDomEle
 	}
 }
 
+QVariant SolverDefinitionGridOutputOption::attributeBrowserValue(double value) const
+{
+	auto intValue = static_cast<int> (value);
+	return enumerations().value(intValue, "");
+}
+
 void SolverDefinitionGridOutputOption::setupColorMapSettingContainer(ColorMapSettingContainerI* c) const
 {
 	auto c2 = dynamic_cast<ColorMapEnumerateSettingContainer*> (c);

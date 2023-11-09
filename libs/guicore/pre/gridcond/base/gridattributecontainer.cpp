@@ -1,19 +1,24 @@
-#include "../../../pre/base/preprocessorgriddataiteminterface.h"
-#include "../../../pre/base/preprocessorgridtypedataiteminterface.h"
-#include "../../../pre/base/preprocessorgeodatagroupdataiteminterface.h"
-#include "../../../pre/base/preprocessorgeodatatopdataiteminterface.h"
+#include "../../../pre/base/preprocessorgriddataitemi.h"
+#include "../../../pre/base/preprocessorgridtypedataitemi.h"
+#include "../../../pre/base/preprocessorgeodatagroupdataitemi.h"
+#include "../../../pre/base/preprocessorgeodatatopdataitemi.h"
 #include "../../../solverdef/solverdefinitiongridattribute.h"
+#include "../../../grid/v4grid.h"
+#include "../../../grid/v4structured2dgrid.h"
 #include "gridattributecontainer.h"
 #include "gridattributedimensioncontainer.h"
 #include "gridattributedimensionscontainer.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
 #include <misc/filesystemfunction.h>
 
 #include <QDir>
 
-GridAttributeContainer::GridAttributeContainer(Grid* grid, SolverDefinitionGridAttribute* cond) :
-	GridAttributeBaseObject(cond, grid),
+GridAttributeContainer::GridAttributeContainer(v4InputGrid* grid, SolverDefinitionGridAttribute* cond) :
+	GridAttributeBaseObject(cond),
 	m_grid {grid},
+	m_dimensions {nullptr},
+	m_temporaryDir {},
 	m_mapped {false},
 	m_isCustomModified {false}
 {}
@@ -26,22 +31,49 @@ const std::string& GridAttributeContainer::name() const
 	return gridAttribute()->name();
 }
 
-Grid* GridAttributeContainer::grid() const
+v4InputGrid* GridAttributeContainer::grid() const
 {
 	return m_grid;
 }
 
 GridAttributeDimensionsContainer* GridAttributeContainer::dimensions() const
 {
-	ProjectDataItem* item = m_grid->parent();
-	if (item == 0) {return nullptr;}
-	item = item->parent();
-	if (item == 0) {return nullptr;}
-	item = item->parent();
-	if (item == 0) {return nullptr;}
-	PreProcessorGridTypeDataItemInterface* gtItem =
-		dynamic_cast<PreProcessorGridTypeDataItemInterface*>(item);
-	return gtItem->geoDataTop()->groupDataItem(name())->dimensions();
+	return m_dimensions;
+}
+
+void GridAttributeContainer::setDimensions(GridAttributeDimensionsContainer* dims)
+{
+	m_dimensions = dims;
+	connect<void (GridAttributeDimensionsContainer::*)(int, int)>(dims, &GridAttributeDimensionsContainer::currentIndexChanged, this, &GridAttributeContainer::handleDimensionCurrentIndexChange);
+	for (auto cont : dims->containers()) {
+		connect<void (GridAttributeDimensionContainer::*)(const std::vector<QVariant>&, const std::vector<QVariant>&)>(cont, &GridAttributeDimensionContainer::valuesChanged, this, &GridAttributeContainer::handleDimensionValuesChange);
+	}
+}
+
+QString GridAttributeContainer::temporaryDir() const
+{
+	return m_temporaryDir;
+}
+
+void GridAttributeContainer::setTemporaryDir(const QString& dir)
+{
+	m_temporaryDir = dir;
+}
+
+unsigned int GridAttributeContainer::dataCount() const
+{
+	if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::Node) {
+		return grid()->grid()->nodeCount();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		return grid()->grid()->cellCount();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		return sgrid->iEdgeCount();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		return sgrid->jEdgeCount();
+	}
+	return 0; // this never happens. only for avoiding compiler warning
 }
 
 bool GridAttributeContainer::mapped() const
@@ -65,49 +97,50 @@ void GridAttributeContainer::setCustomModified(bool c)
 	m_isCustomModified = c;
 }
 
-void GridAttributeContainer::updateConnections()
-{
-	GridAttributeDimensionsContainer* dims = dimensions();
-	// avoid duplication
-	disconnect(dims, SIGNAL(currentIndexChanged(int, int)), this, SLOT(handleDimensionCurrentIndexChange(int, int)));
-	connect(dims, SIGNAL(currentIndexChanged(int,int)), this, SLOT(handleDimensionCurrentIndexChange(int,int)));
-	for (auto cont : dims->containers()) {
-		// avoid duplication
-		disconnect(cont, SIGNAL(valuesChanged(std::vector<QVariant>, std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>, std::vector<QVariant>)));
-		connect(cont, SIGNAL(valuesChanged(std::vector<QVariant>, std::vector<QVariant>)), this, SLOT(handleDimensionValuesChange(std::vector<QVariant>, std::vector<QVariant>)));
-	}
-}
-
 void GridAttributeContainer::handleDimensionCurrentIndexChange(int oldIndex, int newIndex)
 {
 	if (oldIndex == newIndex) {return;}
 
 	QString fname = temporaryExternalFilename(oldIndex);
+
 	QFileInfo finfo(fname);
 	iRIC::mkdirRecursively(finfo.absolutePath());
 	saveToExternalFile(fname);
+
 	fname = temporaryExternalFilename(newIndex);
 	loadFromExternalFile(fname);
 	setModified();
-	PreProcessorGridDataItemInterface* gItem =
-		dynamic_cast<PreProcessorGridDataItemInterface*>(m_grid->parent());
-	gItem->updateSimplifiedGrid();
+
+	emit m_grid->grid()->changed();
 }
 
 void GridAttributeContainer::handleDimensionValuesChange(const std::vector<QVariant> & /*before*/, const std::vector<QVariant> & /*after*/)
 {
 	QString fname = temporaryExternalFilename(dimensions()->currentIndex());
 	saveToExternalFile(fname);
+}
 
-	// @todo not implemented yet!
+vtkDataSetAttributes* GridAttributeContainer::vtkAttributes() const
+{
+	if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::Node) {
+		return grid()->grid()->vtkData()->data()->GetPointData();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+		return grid()->grid()->vtkData()->data()->GetCellData();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		return sgrid->vtkIEdgeData()->data()->GetCellData();
+	} else if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		auto sgrid = dynamic_cast<v4Structured2dGrid*> (grid()->grid());
+		return sgrid->vtkJEdgeData()->data()->GetCellData();
+	}
+	return nullptr; // this never happens. only for avoiding compiler warning
 }
 
 QString GridAttributeContainer::temporaryExternalFilename(int index) const
 {
-	ProjectDataItem* item = m_grid->parent();
-	PreProcessorGridDataItemInterface* gItem = dynamic_cast<PreProcessorGridDataItemInterface*>(item);
 	QString format("%1_%2.dat");
 	QString filename = format.arg(gridAttribute()->name().c_str()).arg(index + 1);
-	QDir subDir(gItem->subPath());
+
+	QDir subDir(m_temporaryDir);
 	return subDir.absoluteFilePath(filename);
 }

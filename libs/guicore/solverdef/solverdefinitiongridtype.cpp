@@ -1,27 +1,15 @@
-#include "../pre/grid/grid.h"
-#include "../pre/grid/structured15dgridwithcrosssection.h"
-#include "../pre/grid/structured2dgrid.h"
-#include "../pre/grid/unstructured2dgrid.h"
+#include "../pre/grid/v4inputgrid.h"
+#include "../grid/v4structured15dgridwithcrosssection.h"
+#include "../grid/v4structured2dgrid.h"
+#include "../grid/v4unstructured2dgrid.h"
 #include "../project/inputcond/inputconditionwidget.h"
 #include "solverdefinition.h"
 #include "solverdefinitionboundarycondition.h"
 #include "solverdefinitiongridattribute.h"
-#include "solverdefinitiongridattributeintegercell.h"
-#include "solverdefinitiongridattributeintegeriface.h"
-#include "solverdefinitiongridattributeintegerjface.h"
-#include "solverdefinitiongridattributeintegernode.h"
-#include "solverdefinitiongridattributeintegeroptioncell.h"
-#include "solverdefinitiongridattributeintegeroptioniface.h"
-#include "solverdefinitiongridattributeintegeroptionjface.h"
-#include "solverdefinitiongridattributeintegeroptionnode.h"
-#include "solverdefinitiongridattributerealcell.h"
-#include "solverdefinitiongridattributerealiface.h"
-#include "solverdefinitiongridattributerealjface.h"
-#include "solverdefinitiongridattributerealnode.h"
-#include "solverdefinitiongridattributerealoptioncell.h"
-#include "solverdefinitiongridattributerealoptioniface.h"
-#include "solverdefinitiongridattributerealoptionjface.h"
-#include "solverdefinitiongridattributerealoptionnode.h"
+#include "solverdefinitiongridattributeinteger.h"
+#include "solverdefinitiongridattributeintegeroption.h"
+#include "solverdefinitiongridattributereal.h"
+#include "solverdefinitiongridattributerealoption.h"
 #include "solverdefinitiongridcomplexattribute.h"
 #include "solverdefinitiongridoutput.h"
 #include "solverdefinitiongridoutputoption.h"
@@ -113,7 +101,7 @@ void SolverDefinitionGridType::Impl::load(const QDomElement& elem, SolverDefinit
 	setupGridAttributes(grcElem, solverDef, translator);
 	// setup boundary conditions;
 	setupBoundaryConditions(elem, solverDef);
-	m_emptyGrid = createEmptyGrid();
+	m_emptyGrid = createEmptyGrid(m_defaultGridType);
 }
 
 void SolverDefinitionGridType::Impl::setGridType(const QDomElement& elem)
@@ -153,70 +141,34 @@ void SolverDefinitionGridType::Impl::setupGridAttributes(const QDomElement& elem
 			QDomElement itemElem = itemNode.toElement();
 			QDomElement defElem = defNode.toElement();
 
+			SolverDefinitionGridAttribute::Position pos = SolverDefinitionGridAttribute::Position::Node;
+			if (defElem.attribute("position") == "cell") {
+				pos = SolverDefinitionGridAttribute::Position::CellCenter;
+			} else if (defElem.attribute("position") == "iface") {
+				pos = SolverDefinitionGridAttribute::Position::IFace;
+			} else if (defElem.attribute("position") == "jface") {
+				pos = SolverDefinitionGridAttribute::Position::JFace;
+			}
+
 			if (defElem.attribute("valueType") == "complex") {
 				// Complex condition
-				SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, order);
+				SolverDefinitionGridComplexAttribute* c = new SolverDefinitionGridComplexAttribute(itemElem, solverDef, pos, order);
 				m_gridComplexAttributes.push_back(c);
 				m_gridComplexAttributeNameMap.insert({c->name(), c});
 				++ order;
 			} else {
 				SolverDefinitionGridAttribute* c = nullptr;
-				QString pos = defElem.attribute("position");
-				if (defElem.attribute("position") == "cell") {
-					if (defElem.attribute("valueType") == "integer") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeIntegerOptionCell(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeIntegerCell(itemElem, solverDef, order);
-						}
-					} else if (defElem.attribute("valueType") == "real") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeRealOptionCell(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeRealCell(itemElem, solverDef, order);
-						}
+				if (defElem.attribute("valueType") == "integer") {
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeIntegerOption(itemElem, solverDef, pos, order);
+					} else {
+						c = new SolverDefinitionGridAttributeInteger(itemElem, solverDef, pos, false, order);
 					}
-				} else if (defElem.attribute("position") == "iface") {
-					if (defElem.attribute("valueType") == "integer") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeIntegerOptionIFace(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeIntegerIFace(itemElem, solverDef, order);
-						}
-					} else if (defElem.attribute("valueType") == "real") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeRealOptionIFace(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeRealIFace(itemElem, solverDef, order);
-						}
-					}
-				} else if (defElem.attribute("position") == "jface") {
-					if (defElem.attribute("valueType") == "integer") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeIntegerOptionJFace(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeIntegerJFace(itemElem, solverDef, order);
-						}
-					} else if (defElem.attribute("valueType") == "real") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeRealOptionJFace(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeRealJFace(itemElem, solverDef, order);
-						}
-					}
-				} else if (defElem.attribute("position") == "node") {
-					if (defElem.attribute("valueType") == "integer") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeIntegerOptionNode(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeIntegerNode(itemElem, solverDef, order);
-						}
-					} else if (defElem.attribute("valueType") == "real") {
-						if (InputConditionWidget::hasEnums(defElem)) {
-							c = new SolverDefinitionGridAttributeRealOptionNode(itemElem, solverDef, order);
-						} else {
-							c = new SolverDefinitionGridAttributeRealNode(itemElem, solverDef, order);
-						}
+				} else if (defElem.attribute("valueType") == "real") {
+					if (InputConditionWidget::hasEnums(defElem)) {
+						c = new SolverDefinitionGridAttributeRealOption(itemElem, solverDef, pos, order);
+					} else {
+						c = new SolverDefinitionGridAttributeReal(itemElem, solverDef, pos, false, order);
 					}
 				}
 				if (c != nullptr) {
@@ -257,20 +209,20 @@ void SolverDefinitionGridType::Impl::setupBoundaryConditions(const QDomElement& 
 	}
 }
 
-void SolverDefinitionGridType::Impl::buildGridAttributes(Grid* grid) const
+void SolverDefinitionGridType::Impl::buildGridAttributes(v4InputGrid* grid) const
 {
 	for (auto cond : m_gridAttributes) {
-		grid->addGridAttribute(cond->container(grid));
+		grid->addAttribute(cond->container(grid));
 	}
 	for (auto cond : m_gridComplexAttributes) {
-		grid->addGridAttribute(cond->container(grid));
+		grid->addAttribute(cond->container(grid));
 	}
 }
 
-Grid* SolverDefinitionGridType::Impl::createEmptyGrid()
+v4InputGrid* SolverDefinitionGridType::Impl::createEmptyGrid(GridType gridType)
 {
-	Grid* ret = nullptr;
-	switch (m_defaultGridType) {
+	v4Grid* grid = nullptr;
+	switch (gridType) {
 	case gtNormal1DGrid:
 		// @todo not implemented yet.
 		break;
@@ -278,20 +230,21 @@ Grid* SolverDefinitionGridType::Impl::createEmptyGrid()
 		// @todo not implemented yet.
 		break;
 	case gtNormal1_5DGridWithCrosssection:
-		ret = new Structured15DGridWithCrossSection(nullptr);
+		grid = new v4Structured15dGridWithCrossSection();
 		break;
 	case gtStructured2DGrid:
-		ret = new Structured2DGrid(nullptr);
+		grid = new v4Structured2dGrid();
 		break;
 	case gtUnstructured2DGrid:
-		ret = new Unstructured2DGrid(nullptr);
+		grid = new v4Unstructured2dGrid();
 		break;
 	case gtUnknownGrid:
 		break;
 	}
-	if (ret != nullptr) {
-		buildGridAttributes(ret);
-	}
+	if (grid == nullptr) {return nullptr;}
+
+	auto ret = new v4InputGrid(m_parent, grid);
+	buildGridAttributes(ret);
 	return ret;
 }
 
@@ -308,9 +261,7 @@ SolverDefinitionGridType::SolverDefinitionGridType(QDomElement node, SolverDefin
 {}
 
 SolverDefinitionGridType::~SolverDefinitionGridType()
-{
-	delete impl;
-}
+{}
 
 const std::vector<SolverDefinitionGridAttribute*>& SolverDefinitionGridType::gridAttributes() const
 {
@@ -454,48 +405,24 @@ bool SolverDefinitionGridType::post() const
 	return impl->m_post;
 }
 
-void SolverDefinitionGridType::buildGridAttributes(Grid* grid) const
+void SolverDefinitionGridType::buildGridAttributes(v4InputGrid* grid) const
 {
 	impl->buildGridAttributes(grid);
 }
 
-Grid* SolverDefinitionGridType::emptyGrid() const
+v4InputGrid* SolverDefinitionGridType::emptyGrid() const
 {
 	return impl->m_emptyGrid;
 }
 
-Grid* SolverDefinitionGridType::createEmptyGrid()
+v4InputGrid* SolverDefinitionGridType::createEmptyGrid()
 {
 	return createEmptyGrid(impl->m_defaultGridType);
 }
 
-Grid* SolverDefinitionGridType::createEmptyGrid(GridType type)
+v4InputGrid* SolverDefinitionGridType::createEmptyGrid(GridType type)
 {
-	Grid* ret = 0;
-	switch (type)
-	{
-	case gtNormal1DGrid:
-		// @todo not implemented yet.
-		break;
-	case gtNormal1_5DGrid:
-		// @todo not implemented yet.
-		break;
-	case gtNormal1_5DGridWithCrosssection:
-		ret = new Structured15DGridWithCrossSection(0);
-		break;
-	case gtStructured2DGrid:
-		ret = new Structured2DGrid(0);
-		break;
-	case gtUnstructured2DGrid:
-		ret = new Unstructured2DGrid(0);
-		break;
-	case gtUnknownGrid:
-		break;
-	}
-	if (ret != 0){
-		buildGridAttributes(ret);
-	}
-	return ret;
+	return impl->createEmptyGrid(type);
 }
 
 QString SolverDefinitionGridType::gridAttributeCaption(const std::string& name) const

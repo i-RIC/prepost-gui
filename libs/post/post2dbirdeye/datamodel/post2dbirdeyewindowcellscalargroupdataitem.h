@@ -3,6 +3,8 @@
 
 #include "../post2dbirdeyewindowdataitem.h"
 
+#include <memory>
+
 class ColorMapSettingContainerI;
 class Post2dBirdEyeWindowCellScalarDataItem;
 class Post2dBirdEyeWindowCellScalarGroupTopDataItem;
@@ -47,7 +49,7 @@ private:
 	ColorMapSettingContainerI* activeColorMapSetting() const;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 
 	class Setting;
 	class SettingEditWidget;

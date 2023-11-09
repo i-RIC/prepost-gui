@@ -49,7 +49,7 @@ private:
 	void doApplyOffset(double x, double y) override;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #endif // MEASUREDDATA_H

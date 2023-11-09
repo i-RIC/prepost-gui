@@ -9,14 +9,16 @@
 
 #include <guibase/graphicsmisc.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
 #include <guicore/datamodel/vtkgraphicsview.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
@@ -95,9 +97,9 @@ void GridBirdEyeWindowNodeScalarGroupDataItem::updateActorSetting()
 	m_actor2DCollection->RemoveAllItems();
 
 	auto grid = topDataItem()->zoneDataItem()->grid();
-	if (grid == nullptr || grid->vtkGrid() == nullptr) {return;}
+	if (grid == nullptr) {return;}
 
-	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(grid->vtkGrid());
+	auto filtered = impl->m_setting.regionSetting.buildNodeFilteredData(grid->grid()->vtkData()->data());
 	filtered->GetPointData()->SetActiveScalars(impl->m_elevationTarget.c_str());
 
 	auto warp = vtkSmartPointer<vtkWarpScalar>::New();

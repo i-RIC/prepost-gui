@@ -1,11 +1,11 @@
 #ifndef PREPROCESSORGEODATAVARIATIONDATAITEM_H
 #define PREPROCESSORGEODATAVARIATIONDATAITEM_H
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 
 class PreProcessorGeoDataGroupDataItem;
 
-class PreProcessorGeoDataVariationDataItem : public PreProcessorGeoDataGroupDataItemInterface
+class PreProcessorGeoDataVariationDataItem : public PreProcessorGeoDataGroupDataItemI
 {
 public:
 	PreProcessorGeoDataVariationDataItem(PreProcessorGeoDataGroupDataItem* item);
@@ -17,10 +17,10 @@ public:
 	void setupStringConverter(GridAttributeStringConverter* converter) override;
 	void setupEditWidget(GridAttributeEditWidget* widget) override;
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
-	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
+	const QList<PreProcessorGeoDataDataItemI*> geoDatas() const override;
 	GridAttributeDimensionsContainer* dimensions() const override;
-	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
-	void addGeoData(PreProcessorGeoDataDataItemInterface *geoData) override;
+	PreProcessorGeoDataDataItemI* buildGeoDataDataItem() override;
+	void addGeoData(PreProcessorGeoDataDataItemI *geoData) override;
 	GeoDataCreator* getPointMapCreator() override;
 
 	void openCrossSectionWindow(GeoDataRiverSurvey* rs, const QString& crosssection) override;

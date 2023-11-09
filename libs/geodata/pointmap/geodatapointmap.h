@@ -93,13 +93,13 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 
 	void addCustomMenuItems(QMenu* menu) override;
-	void informDeselection(PreProcessorGraphicsViewInterface* v) override;
-	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
-	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v) override;
+	void informDeselection(PreProcessorGraphicsViewI* v) override;
+	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;
 	QStringList containedFiles() const override;
 
 	QVector<vtkIdType> selectedVertices();

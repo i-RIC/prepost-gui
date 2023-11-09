@@ -1,10 +1,10 @@
-#include "../post2dwindowzonedataitem.h"
+#include "../post2dwindowgriddataitemi.h"
 #include "post2dwindowgridshapedataitem_settingeditwidget.h"
 #include "ui_post2dwindowgridshapedataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
-
-#include <vtkStructuredGrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 Post2dWindowGridShapeDataItem::SettingEditWidget::SettingEditWidget(Post2dWindowGridShapeDataItem* item, QWidget *parent) :
 	ModifyCommandWidget {parent},
@@ -13,13 +13,13 @@ Post2dWindowGridShapeDataItem::SettingEditWidget::SettingEditWidget(Post2dWindow
 {
 	ui->setupUi(this);
 
-	auto grid = item->zoneDataItem()->dataContainer()->data()->data();
-	auto sgrid = vtkStructuredGrid::SafeDownCast(grid);
-	if (sgrid == nullptr) {
+	ui->shapeEditWidget->setSetting(&item->m_setting);
+
+	auto grid = item->gridDataItem()->grid();
+	auto sGrid = dynamic_cast<v4Structured2dGrid*>(grid);
+	if (sGrid == nullptr) {
 		ui->shapeEditWidget->hideShape();
 	}
-
-	ui->shapeEditWidget->setSetting(&item->m_setting);
 }
 
 Post2dWindowGridShapeDataItem::SettingEditWidget::~SettingEditWidget()

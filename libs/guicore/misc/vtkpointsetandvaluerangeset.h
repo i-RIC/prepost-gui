@@ -3,7 +3,7 @@
 
 #include "../guicore_global.h"
 
-#include "vtkpointsetvaluerangeset.h"
+#include <guibase/vtktool/vtkpointsetvaluerangeset.h>
 
 class vtkPointSet;
 

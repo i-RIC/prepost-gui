@@ -2,16 +2,10 @@
 #include "post3dwindowcontourgroupdataitem.h"
 #include "private/post3dwindowcontourgroupdataitem_impl.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
-
-#include <QDomElement>
-#include <QDomNode>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkActor.h>
-#include <vtkRenderer.h>
 
 Post3dWindowContourDataItem::Post3dWindowContourDataItem(const QString& label, Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(label, QIcon(":/libs/guibase/images/iconPaper.svg"), p),
@@ -88,15 +82,15 @@ void Post3dWindowContourDataItem::updateActorSetting()
 	m_actor->VisibilityOff();
 	m_actorCollection->RemoveAllItems();
 
-	auto data = groupDataItem()->data();
-	if (data == nullptr) {return;}
+	auto cont = groupDataItem()->data();
+	if (cont == nullptr) {return;}
 
-	auto grid = vtkStructuredGrid::SafeDownCast(data->data()->data());
-	auto face = m_setting.extractFace(grid);
+	auto grid = dynamic_cast<v4Structured3dGrid*>(cont->gridData()->grid());
+	auto face = m_setting.extractFace(grid->vtkConcreteData()->concreteData());
 
 	face->GetPointData()->SetActiveScalars(groupDataItem()->target().c_str());
 
-	auto impl = groupDataItem()->impl;
+	auto impl = groupDataItem()->impl.get();
 
 	impl->m_setting.contourSetting.setColorMapSetting(impl->m_setting.colorMapSetting);
 	auto face2 = impl->m_setting.contourSetting.buildFilteredData(face);

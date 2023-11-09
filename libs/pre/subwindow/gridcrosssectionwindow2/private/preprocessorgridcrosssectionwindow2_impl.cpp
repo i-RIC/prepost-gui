@@ -7,9 +7,10 @@
 #include "ui_preprocessorgridcrosssectionwindow2.h"
 
 #include <guibase/widget/realnumbereditwidget.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
-#include <guicore/pre/grid/structured2dgrid.h>
 
 #include <QDockWidget>
 
@@ -177,9 +178,12 @@ PreProcessorGridCrosssectionWindow2::GraphicsView* PreProcessorGridCrosssectionW
 	return m_window->ui->graphicsView;
 }
 
-Structured2DGrid* PreProcessorGridCrosssectionWindow2::Impl::grid() const
+v4Structured2dGrid* PreProcessorGridCrosssectionWindow2::Impl::grid() const
 {
-	return dynamic_cast<Structured2DGrid*> (m_gridDataItem->grid());
+	auto g = m_gridDataItem->grid();
+	if (g == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Structured2dGrid*> (g->grid());
 }
 
 void PreProcessorGridCrosssectionWindow2::Impl::updateAspectRatioEdit()

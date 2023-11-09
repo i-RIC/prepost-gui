@@ -4,7 +4,7 @@
 #include "../pre_global.h"
 
 #include <guibase/scalarbarsetting.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/stringcontainer.h>
@@ -15,18 +15,18 @@ class PreProcessorGeoDataDataItem;
 class PreProcessorGridTypeDataItem;
 class PreProcessorScalarBarLegendBoxSettingDialog;
 class GridAttributeEditWidget;
-class Grid;
 class GeoDataImporter;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class GeoDataRiverSurveyCrosssectionWindowProjectDataItem;
+class v4InputGrid;
 class WaitDialog;
 
 class QMenu;
 class QModelIndex;
 class QSignalMapper;
 
-class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDataGroupDataItemInterface
+class PREDLL_EXPORT PreProcessorGeoDataGroupDataItem : public PreProcessorGeoDataGroupDataItemI
 {
 	Q_OBJECT
 
@@ -55,9 +55,9 @@ public:
 	bool colorBarShouldBeVisible() const;
 
 	int mappingCount() const;
-	void executeMapping(Grid* grid, WaitDialog* dialog);
+	void executeMapping(v4InputGrid* grid, WaitDialog* dialog);
 
-	void setDefaultValue(Grid* grid);
+	void setDefaultValue(v4InputGrid* grid);
 	void informValueRangeChange();
 	void informDataChange();
 	bool getValueRange(double* min, double* max) override;
@@ -70,14 +70,14 @@ public:
 
 	void clearDimensionsIfNoDataExists();
 
-	const QList<PreProcessorGeoDataDataItemInterface*> geoDatas() const override;
+	const QList<PreProcessorGeoDataDataItemI*> geoDatas() const override;
 	bool addImportAction(QMenu* menu);
 	bool addImportFromWebAction(QMenu* menu);
 	QStringList getGeoDatasNotMapped();
 	void addCopyPolygon(GeoDataPolygon* polygon) override;
-	void addGeoData(PreProcessorGeoDataDataItemInterface *geoData) override;
+	void addGeoData(PreProcessorGeoDataDataItemI *geoData) override;
 	GridAttributeDimensionsContainer* dimensions() const override;
-	PreProcessorGeoDataDataItemInterface* buildGeoDataDataItem() override;
+	PreProcessorGeoDataDataItemI* buildGeoDataDataItem() override;
 	GeoDataCreator* getPointMapCreator() override;
 
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;

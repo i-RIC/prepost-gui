@@ -3,6 +3,10 @@
 
 #include "../geodatanetcdfnodemappert.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+
 #include <vector>
 
 class GeoDataNetcdfNodeMapperSetting : public GeoDataMapperSettingI
@@ -23,12 +27,14 @@ GeoDataMapperSettingI* GeoDataNetcdfNodeMapperT<V, DA>::initialize(bool* boolMap
 	unsigned int count = GeoDataNodeMapperT<V, DA>::container()->dataCount();
 	GeoDataNetcdfT<V, DA>* netcdf = dynamic_cast<GeoDataNetcdfT<V, DA>* >(GeoDataMapper::geoData());
 	vtkStructuredGrid* tmpgrid = netcdf->grid();
+
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (*(boolMap + i)) {continue;}
 
 		// not mapped yet.
 		double point[3];
-		GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+		vtkGrid->GetPoint(i, point);
 		// investigate whether the point is inside one of the cells.
 		vtkIdType cellid;
 		double pcoords[4];

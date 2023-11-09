@@ -1,3 +1,4 @@
+#include "../post2dwindowattributebrowsercontroller.h"
 #include "../post2dwindowgraphicsview.h"
 #include "post2dwindowgridtypedataitem.h"
 #include "post2dwindowparticlesbasescalardataitem.h"
@@ -11,9 +12,10 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4particles2d.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -31,10 +33,10 @@ Post2dWindowParticlesBaseScalarGroupDataItem::Post2dWindowParticlesBaseScalarGro
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	auto topItem = topDataItem();
-	auto cont = topItem->zoneDataItem()->dataContainer();
+	auto cont = topItem->zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();
 
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->vtkData()->data()->GetPointData())){
 		auto item = new Post2dWindowParticlesBaseScalarDataItem(name, gt->outputCaption(name), this);
 		m_childItems.push_back(item);
 	}
@@ -131,12 +133,12 @@ std::unordered_map<std::string, ColorMapSettingContainerI*> Post2dWindowParticle
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->initParticleResultAttributeBrowser(particleData());
+	topDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	zoneDataItem()->clearParticleResultAttributeBrowser();
+	topDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
@@ -154,7 +156,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::mouseMoveEvent(QMouseEvent* e
 		s->legendSetting()->imgSetting()->controller()->handleMouseMoveEvent(this, event, v);
 	}
 
-	zoneDataItem()->updateParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -172,7 +174,7 @@ void Post2dWindowParticlesBaseScalarGroupDataItem::mouseReleaseEvent(QMouseEvent
 		s->legendSetting()->imgSetting()->controller()->handleMouseReleaseEvent(this, event, v);
 	}
 
-	zoneDataItem()->fixParticleResultAttributeBrowser(event->pos(), v);
+	topDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::addCustomMenuItems(QMenu* menu)
@@ -349,7 +351,7 @@ Post2dWindowParticlesBaseScalarDataItem* Post2dWindowParticlesBaseScalarGroupDat
 
 vtkPolyData* Post2dWindowParticlesBaseScalarGroupDataItem::particleData() const
 {
-	return topDataItem()->particleData();
+	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::updateCheckState()

@@ -21,35 +21,30 @@ vtkPointSet* vtkPointSetGeos2dIndex::data() const
 	return impl->m_data;
 }
 
-vtkCell* vtkPointSetGeos2dIndex::findCell(double x, double y, double* weights)
+vtkIdType vtkPointSetGeos2dIndex::findCell(double x, double y, double radius, double* weights)
 {
-	auto env = new geos::geom::Envelope(x, x, y, y);
+	auto env = new geos::geom::Envelope(x - radius, x + radius, y - radius, y + radius);
 	std::vector<void*> ret;
 	impl->m_qTree->query(env, ret);
 	delete env;
 
-	double point[3], closestPoint[3], pcoords[3], dist;
-	double bounds[6];
+	double point[3], closestPoint[3], pcoords[3], dist2;
 	int subId;
 
 	point[0] = x;
 	point[1] = y;
 	point[2] = 0;
 
+	double radius2 = radius * radius;
 	for (void* vptr : ret) {
 		vtkIdType cellId = reinterpret_cast<vtkIdType> (vptr);
-		impl->m_data->GetCellBounds(cellId, bounds);
-
-		if (point[0] < bounds[0]) {continue;}
-		if (point[0] > bounds[1]) {continue;}
-		if (point[1] < bounds[2]) {continue;}
-		if (point[1] > bounds[3]) {continue;}
-
 		vtkCell* cell = impl->m_data->GetCell(cellId);
-		if (1 == cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist, weights)) {
-			return cell;
-		}
+		int result = cell->EvaluatePosition(point, closestPoint, subId, pcoords, dist2, weights);
+		if (result != 1) {continue;}
+		if (dist2 > radius2) {continue;}
+
+		return cellId;
 	}
 
-	return nullptr;
+	return -1;
 }

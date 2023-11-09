@@ -24,10 +24,10 @@
 #include "private/gridcreatingconditiontriangle_removepolygonvertexcommand.h"
 #include "private/gridcreatingconditiontriangle_removepolylinevertexcommand.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/errormessage.h>
 #include <misc/informationdialog.h>
@@ -265,7 +265,7 @@ void GridCreatingConditionTriangle::setupMenu()
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_deleteAction);
 	m_rightClickingMenu->addSeparator();
-	PreProcessorGridCreatingConditionDataItemInterface* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	PreProcessorGridCreatingConditionDataItemI* p = dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 	m_rightClickingMenu->addAction(p->createAction());
 }
 
@@ -300,7 +300,7 @@ void GridCreatingConditionTriangle::setColor(const QColor& color)
 	setColor(color.red() / 255.0, color.green() / 255.0, color.blue() / 255.0);
 }
 
-void GridCreatingConditionTriangle::informSelection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::informSelection(PreProcessorGraphicsViewI* v)
 {
 	switch (m_selectMode) {
 	case smPolygon:
@@ -316,7 +316,7 @@ void GridCreatingConditionTriangle::informSelection(PreProcessorGraphicsViewInte
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionTriangle::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	switch (m_selectMode) {
 	case smPolygon:
@@ -336,12 +336,12 @@ void GridCreatingConditionTriangle::informDeselection(PreProcessorGraphicsViewIn
 	v->unsetCursor();
 }
 
-void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (m_mouseEventMode != meDefining) {return;}
@@ -353,10 +353,10 @@ void GridCreatingConditionTriangle::keyPressEvent(QKeyEvent* event, PreProcessor
 	}
 }
 
-void GridCreatingConditionTriangle::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionTriangle::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (m_mouseEventMode != meDefining) {return;}
 
@@ -367,7 +367,7 @@ void GridCreatingConditionTriangle::mouseDoubleClickEvent(QMouseEvent* /*event*/
 	}
 }
 
-void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (m_mouseEventMode) {
 	case meNormal:
@@ -423,7 +423,7 @@ void GridCreatingConditionTriangle::mouseMoveEvent(QMouseEvent* event, PreProces
 	}
 }
 
-void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 
@@ -542,7 +542,7 @@ void GridCreatingConditionTriangle::mousePressEvent(QMouseEvent* event, PreProce
 	}
 }
 
-void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (m_mouseEventMode) {
@@ -579,7 +579,7 @@ void GridCreatingConditionTriangle::mouseReleaseEvent(QMouseEvent* event, PrePro
 	}
 }
 
-void GridCreatingConditionTriangle::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionTriangle::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (m_mouseEventMode) {
 	case meNormal:
@@ -1053,7 +1053,7 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	m_areaConstraint = dialog.areaConstraint();
 	m_area = dialog.area();
 
-	Grid* grid = createGrid();
+	auto grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
 	return true;

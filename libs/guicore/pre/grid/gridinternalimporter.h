@@ -2,23 +2,19 @@
 #define GRIDINTERNALIMPORTER_H
 
 #include "../../guicore_global.h"
-#include "gridimporterinterface.h"
+#include "gridimporteri.h"
 #include <QObject>
 
-class Grid;
 class ProjectData;
 
-class GUICOREDLL_EXPORT GridInternalImporter : public QObject, public GridImporterInterface
+class GUICOREDLL_EXPORT GridInternalImporter : public QObject, public GridImporterI
 {
 	Q_OBJECT
-	Q_INTERFACES(GridImporterInterface)
+	Q_INTERFACES(GridImporterI)
 
 public:
 	GridInternalImporter();
 	virtual ~GridInternalImporter() {}
-
-protected:
-	ProjectData* getProjectData(Grid* g);
 };
 
 #endif // GRIDINTERNALIMPORTER_H

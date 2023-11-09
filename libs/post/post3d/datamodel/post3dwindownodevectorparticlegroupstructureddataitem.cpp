@@ -5,7 +5,9 @@
 #include "private/post3dwindownodevectorparticlegroupstructureddataitem_settingeditwidget.h"
 
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 
 #include <QSettings>
 
@@ -17,9 +19,7 @@ Post3dWindowNodeVectorParticleGroupStructuredDataItem::Post3dWindowNodeVectorPar
 }
 
 Post3dWindowNodeVectorParticleGroupStructuredDataItem::~Post3dWindowNodeVectorParticleGroupStructuredDataItem()
-{
-	delete impl;
-}
+{}
 
 void Post3dWindowNodeVectorParticleGroupStructuredDataItem::showPropertyDialog()
 {
@@ -47,8 +47,8 @@ vtkActor* Post3dWindowNodeVectorParticleGroupStructuredDataItem::setupActor(int 
 
 vtkPolyData* Post3dWindowNodeVectorParticleGroupStructuredDataItem::newParticles(int i)
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 
 	const auto& pos = impl->m_setting.startPositions.at(i);
 
@@ -68,15 +68,15 @@ vtkPolyData* Post3dWindowNodeVectorParticleGroupStructuredDataItem::newParticles
 
 vtkDataSet* Post3dWindowNodeVectorParticleGroupStructuredDataItem::getRegion()
 {
-	auto zoneContainer = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(zoneContainer->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 	grid->Register(nullptr);
 	return grid;
 }
 
 QDialog* Post3dWindowNodeVectorParticleGroupStructuredDataItem::propertyDialog(QWidget* p)
 {
-	if (zoneDataItem()->dataContainer() == nullptr) {return nullptr;}
+	if (zoneDataItem()->v4DataContainer() == nullptr) {return nullptr;}
 
 	auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, p);
 	auto widget = new SettingEditWidget(this, dialog);
@@ -107,8 +107,8 @@ void Post3dWindowNodeVectorParticleGroupStructuredDataItem::setDefaultValues()
 
 	impl->m_setting.startPositions.clear();
 
-	auto cont = zoneDataItem()->dataContainer();
-	auto grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto grid = dynamic_cast<v4Structured3dGrid*> (cont->gridData()->grid())->vtkConcreteData()->concreteData();
 	int dim[3];
 	grid->GetDimensions(dim);
 

@@ -14,6 +14,7 @@
 #include <QColor>
 
 class NamedGraphicWindowDataItem;
+class Post3dWindowNodeScalarGroupTopDataItem;
 
 class vtkLODActor;
 class vtkActor;
@@ -60,10 +61,10 @@ protected:
 	void updateColorSetting();
 	void validateRange();
 
-
 private:
 	void setDefaultValues();
 	void setupIsosurfaceSetting();
+	Post3dWindowNodeScalarGroupTopDataItem* topDataItem() const;
 
 	std::string m_target;
 	bool m_fullRange;

@@ -22,10 +22,10 @@
 #include <dataitem/axis2d/axis2ddataitem.h>
 #include <dataitem/distancemeasure/distancemeasuregroupdataitem.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgriddataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -172,7 +172,7 @@ void PreProcessorRootDataItem::setupStandardModel(QStandardItemModel* model)
 
 			// GridCreatingCondition, Grid are added as top item.
 			PreProcessorGridAndGridCreatingConditionDataItem* citem = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(*(item->conditions().begin()));
-			PreProcessorGridCreatingConditionDataItemInterface* gccitem = citem->creatingConditionDataItem();
+			PreProcessorGridCreatingConditionDataItemI* gccitem = citem->creatingConditionDataItem();
 			citem->standardItem()->takeChild(gccitem->standardItem()->row());
 			model->appendRow(gccitem->standardItem());
 

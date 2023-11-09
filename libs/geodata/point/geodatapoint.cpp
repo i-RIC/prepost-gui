@@ -9,10 +9,10 @@
 #include "public/geodatapoint_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/pre/geodata/private/geodata_propertydialog.h>
@@ -139,12 +139,12 @@ bool GeoDataPoint::addToolBarButtons(QToolBar* /*parent*/)
 	return false;
 }
 
-void GeoDataPoint::informSelection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::informSelection(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GeoDataPoint::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	v->unsetCursor();
 }
@@ -154,12 +154,12 @@ void GeoDataPoint::addCustomMenuItems(QMenu* menu)
 	menu->addAction(m_editNameAction);
 }
 
-void GeoDataPoint::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GeoDataPoint::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meNormal:
@@ -183,7 +183,7 @@ void GeoDataPoint::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewIn
 	}
 }
 
-void GeoDataPoint::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -205,7 +205,7 @@ void GeoDataPoint::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI
 	}
 }
 
-void GeoDataPoint::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -331,7 +331,7 @@ void GeoDataPoint::setMouseEventMode(MouseEventMode mode)
 	impl->m_mouseEventMode = mode;
 }
 
-void GeoDataPoint::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataPoint::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meBeforeDefining:

@@ -29,9 +29,7 @@ SolverDefinitionGridAttributeDimension::SolverDefinitionGridAttributeDimension(c
 {}
 
 SolverDefinitionGridAttributeDimension::~SolverDefinitionGridAttributeDimension()
-{
-	delete impl;
-}
+{}
 
 const std::string& SolverDefinitionGridAttributeDimension::name() const
 {

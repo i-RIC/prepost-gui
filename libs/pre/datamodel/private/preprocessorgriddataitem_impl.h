@@ -25,11 +25,7 @@ public:
 
 	PreProcessorGridCrosssectionWindow2* buildCrosssectionWindow();
 
-	Grid* m_grid;
-
-	std::vector<vtkIdType> m_selectedVertices;
-	std::vector<vtkIdType> m_selectedCells;
-	QVector<Edge> m_selectedEdges;
+	v4InputGrid* m_grid;
 
 	PreProcessorGridAttributeNodeDataItem* m_nodeDataItem;
 	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
@@ -41,20 +37,11 @@ public:
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;
 	vtkSmartPointer<vtkActor> m_regionActor;
 
-	vtkSmartPointer<vtkPolyData> m_selectedVerticesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_selectedVerticesMapper;
-	vtkSmartPointer<vtkActor> m_selectedVerticesActor;
-
-	vtkSmartPointer<vtkExtractCells> m_selectedCellsGrid;
-	vtkSmartPointer<vtkDataSetMapper> m_selectedCellsMapper;
-	vtkSmartPointer<vtkActor> m_selectedCellsActor;
-
-	vtkSmartPointer<vtkDataSetMapper> m_selectedCellsLinesMapper;
-	vtkSmartPointer<vtkActor> m_selectedCellsLinesActor;
-
-	vtkSmartPointer<vtkPolyData> m_selectedEdgesPolyData;
-	vtkSmartPointer<vtkPolyDataMapper> m_selectedEdgesMapper;
-	vtkSmartPointer<vtkActor> m_selectedEdgesActor;
+	SelectedNodesController* m_selectedNodesController;
+	SelectedCellsController* m_selectedCellsController;
+	SelectedIEdgesController* m_selectedIEdgesController;
+	SelectedJEdgesController* m_selectedJEdgesController;
+	SelectedEdgesController* m_selectedEdgesController;
 
 	QPixmap m_addPixmap;
 	QCursor m_addCursor;

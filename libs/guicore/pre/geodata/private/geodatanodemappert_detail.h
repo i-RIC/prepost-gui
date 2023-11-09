@@ -5,17 +5,11 @@
 
 template <class V, class DA>
 GeoDataNodeMapperT<V, DA>::GeoDataNodeMapperT(const QString& caption, QObject* parent) :
-	GeoDataMapperT<V> (caption, parent)
+	GeoDataMapperT<V, DA> (caption, parent)
 {}
 
 template <class V, class DA>
 GeoDataNodeMapperT<V, DA>::~GeoDataNodeMapperT()
 {}
-
-template <class V, class DA>
-GridAttributeNodeContainerT<V, DA>* GeoDataNodeMapperT<V, DA>::container() const
-{
-	return dynamic_cast<GridAttributeNodeContainerT<V, DA>* >(GeoDataMapperT<V>::container());
-}
 
 #endif // GEODATANODEMAPPERT_DETAIL_H

@@ -11,9 +11,11 @@
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/grid/v4particles3d.h>
+#include <guicore/grid/v4particles3d.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontainer.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
@@ -31,10 +33,10 @@ Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGro
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
 	auto topItem = topDataItem();
-	auto cont = topItem->zoneDataItem()->dataContainer();
+	auto cont = topItem->zoneDataItem()->v4DataContainer();
 	auto gt = cont->gridType();
 
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->GetPointData())){
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(topItem->particleData()->vtkData()->data()->GetPointData())){
 		auto item = new Post3dWindowParticlesBaseScalarDataItem(name, gt->outputCaption(name), this);
 		m_childItems.push_back(item);
 	}
@@ -324,7 +326,7 @@ Post3dWindowParticlesBaseScalarDataItem* Post3dWindowParticlesBaseScalarGroupDat
 
 vtkPolyData* Post3dWindowParticlesBaseScalarGroupDataItem::particleData() const
 {
-	return topDataItem()->particleData();
+	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
 }
 
 void Post3dWindowParticlesBaseScalarGroupDataItem::updateCheckState()

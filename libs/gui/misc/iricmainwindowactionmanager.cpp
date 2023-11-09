@@ -6,7 +6,7 @@
 #include <guibase/irictoolbar.h>
 #include <guibase/objectbrowser.h>
 #include <guicore/base/propertybrowser.h>
-#include <guicore/base/windowwithobjectbrowserinterface.h>
+#include <guicore/base/windowwithobjectbrowseri.h>
 #include <guicore/post/postprocessorwindow.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
@@ -1034,7 +1034,7 @@ void iRICMainWindowActionManager::updateCameraConnections(QWidget* w)
 
 void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
-	WindowWithObjectBrowserInterface* window = dynamic_cast<WindowWithObjectBrowserInterface*>(w);
+	WindowWithObjectBrowserI* window = dynamic_cast<WindowWithObjectBrowserI*>(w);
 	viewObjectBrowserAction->disconnect();
 	if (window == nullptr) {
 		viewObjectBrowserAction->setDisabled(true);

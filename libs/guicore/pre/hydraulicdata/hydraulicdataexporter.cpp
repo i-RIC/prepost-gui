@@ -11,9 +11,7 @@ HydraulicDataExporter::HydraulicDataExporter(const QString& caption, HydraulicDa
 }
 
 HydraulicDataExporter::~HydraulicDataExporter()
-{
-	delete impl;
-}
+{}
 
 const QString& HydraulicDataExporter::caption() const
 {

@@ -32,7 +32,6 @@ PostBaseIterativeValuesContainer::~PostBaseIterativeValuesContainer()
 	impl->m_io->save();
 
 	clear();
-	delete impl;
 }
 
 QString PostBaseIterativeValuesContainer::filename() const

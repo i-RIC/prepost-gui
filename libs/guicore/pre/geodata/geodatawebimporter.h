@@ -11,8 +11,8 @@
 class GeoData;
 class GeoDataCreator;
 class SolverDefinitionGridAttribute;
-class PreProcessorGeoDataDataItemInterface;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataDataItemI;
+class PreProcessorGeoDataGroupDataItemI;
 
 class GUICOREDLL_EXPORT GeoDataWebImporter : public QObject
 {
@@ -23,16 +23,16 @@ public:
 	QString caption() const;
 	virtual bool isCompatibleWith(SolverDefinitionGridAttribute* condition) const;
 
-	PreProcessorGeoDataDataItemInterface* import(SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	PreProcessorGeoDataDataItemI* import(SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	/// Initializes this class to prepare for importing the geodata from the specified file.
-	bool importInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	bool importInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 	GeoDataCreator* creator() const;
 
 	/// Import the geodata into data.
 	virtual bool importData(GeoData* data, int index, QWidget* w) = 0;
 
 protected:
-	virtual bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w);
+	virtual bool doInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 private:
 	std::string m_name;

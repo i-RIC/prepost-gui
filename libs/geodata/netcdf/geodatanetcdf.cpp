@@ -6,11 +6,11 @@
 
 #include <cs/coordinatesystem.h>
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionintegercontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
@@ -941,7 +941,7 @@ void GeoDataNetcdf::updateActorSetting()
 	emit updateActorSettingExecuted();
 }
 
-void GeoDataNetcdf::viewOperationEndedGlobal(PreProcessorGraphicsViewInterface* v)
+void GeoDataNetcdf::viewOperationEndedGlobal(PreProcessorGraphicsViewI* v)
 {
 	double xmin, xmax, ymin, ymax;
 	v->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);

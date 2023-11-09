@@ -2,8 +2,8 @@
 #include "geodataimporter.h"
 #include "private/geodataimporter_impl.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 GeoDataImporter::GeoDataImporter(const std::string& name, const QString& caption, GeoDataCreator* creator) :
 	QObject {creator},
@@ -14,9 +14,7 @@ GeoDataImporter::GeoDataImporter(const std::string& name, const QString& caption
 }
 
 GeoDataImporter::~GeoDataImporter()
-{
-	delete impl;
-}
+{}
 
 std::string GeoDataImporter::name() const
 {
@@ -28,7 +26,7 @@ QString GeoDataImporter::caption() const
 	return impl->m_caption;
 }
 
-PreProcessorGeoDataDataItemInterface* GeoDataImporter::import(const QString& filename, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+PreProcessorGeoDataDataItemI* GeoDataImporter::import(const QString& filename, const QString& selectedFilter, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	int count;
 	bool ok = importInit(filename, selectedFilter, &count, condition, item, w);
@@ -64,7 +62,7 @@ QString GeoDataImporter::selectedFilter() const
 	return impl->m_selectedFilter;
 }
 
-bool GeoDataImporter::importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataImporter::importInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	impl->m_filename = filename;
 	impl->m_selectedFilter = selectedFilter;
@@ -72,7 +70,7 @@ bool GeoDataImporter::importInit(const QString& filename, const QString& selecte
 	return doInit(filename, selectedFilter, count, condition, item, w);
 }
 
-bool GeoDataImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* /*w*/)
+bool GeoDataImporter::doInit(const QString& /*filename*/, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* /*w*/)
 {
 	return true;
 }

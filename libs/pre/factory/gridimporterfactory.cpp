@@ -6,7 +6,7 @@
 #include "../gridimporter/unstructured2dgridprojectimporter.h"
 #include "gridimporterfactory.h"
 
-#include <guicore/pre/grid/gridimporterinterface.h>
+#include <guicore/pre/grid/gridimporteri.h>
 #include <misc/iricrootpath.h>
 
 #include <QApplication>
@@ -64,11 +64,11 @@ GridImporterFactory::GridImporterFactory()
 			}
 			QPluginLoader loader(pluginDir.absoluteFilePath(fileName));
 			QObject* plugin = loader.instance();
-			GridImporterInterface* importer = 0;
+			GridImporterI* importer = nullptr;
 			if (! plugin) {
 				goto LOADERROR;
 			}
-			importer = qobject_cast<GridImporterInterface*> (plugin);
+			importer = qobject_cast<GridImporterI*> (plugin);
 			if (! importer) {
 				delete plugin;
 				goto LOADERROR;
@@ -93,15 +93,15 @@ GridImporterFactory::~GridImporterFactory()
 	m_importerList.clear();
 }
 
-const QList<GridImporterInterface*> GridImporterFactory::list(const SolverDefinitionGridType& gt) const
+const QList<GridImporterI*> GridImporterFactory::list(const SolverDefinitionGridType& gt) const
 {
-	QList<GridImporterInterface*> ret;
+	QList<GridImporterI*> ret;
 
 	auto types = gt.availableGridTypes();
-	for (GridImporterInterface* iface : m_importerList) {
-		for (SolverDefinitionGridType::GridType gt : types) {
-			if (iface->supportedGridType() == gt) {
-				ret.append(iface);
+	for (auto importer : m_importerList) {
+		for (auto gt : types) {
+			if (importer->supportedGridType() == gt) {
+				ret.append(importer);
 				break;
 			}
 		}

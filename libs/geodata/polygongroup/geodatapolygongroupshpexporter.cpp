@@ -19,7 +19,7 @@ GeoDataPolygonGroupShpExporter::GeoDataPolygonGroupShpExporter(GeoDataCreator* c
 	GeoDataExporter {tr("ESRI Shapefile"), creator}
 {}
 
-bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& filename, const QString& selectedFilter, QWidget* w, ProjectData* pd)
+bool GeoDataPolygonGroupShpExporter::doExport(GeoData* data, const QString& filename, const QString& /*selectedFilter*/, QWidget* /*w*/, ProjectData* pd)
 {
 	auto group = dynamic_cast<GeoDataPolygonGroup*>(data);
 	group->mergeEditTargetData();

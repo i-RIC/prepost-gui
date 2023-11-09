@@ -15,10 +15,6 @@ PreProcessorUnstructured2dGridDataItem::PreProcessorUnstructured2dGridDataItem(P
 {
 	m_shapeDataItem = new PreProcessorUnstructured2dGridShapeDataItem(this);
 	m_childItems.push_back(m_shapeDataItem);
-	m_nodeGroupDataItem = new PreProcessorGridAttributeNodeGroupDataItem(this);
-	m_childItems.push_back(m_nodeGroupDataItem);
-	m_cellGroupDataItem = new PreProcessorGridAttributeCellGroupDataItem(this);
-	m_childItems.push_back(m_cellGroupDataItem);
 
 	setupMenu();
 	updateObjectBrowserTree();

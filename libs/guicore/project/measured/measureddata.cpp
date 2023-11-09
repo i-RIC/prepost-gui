@@ -1,4 +1,4 @@
-#include "../../base/iricmainwindowinterface.h"
+#include "../../base/iricmainwindowi.h"
 #include "measureddata.h"
 #include "private/measureddata_impl.h"
 
@@ -35,9 +35,7 @@ MeasuredData::MeasuredData(ProjectDataItem* parent) :
 {}
 
 MeasuredData::~MeasuredData()
-{
-	delete impl;
-}
+{}
 
 const QString& MeasuredData::name() const
 {

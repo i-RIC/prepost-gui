@@ -1,7 +1,9 @@
 #include "structured2dgridnayscsvexporter.h"
-#include <guicore/pre/grid/structured2dgrid.h>
-#include <guicore/pre/gridcond/container/gridattributerealnodecontainer.h>
-#include <guicore/pre/gridcond/container/gridattributeintegercellcontainer.h>
+
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/gridcond/container/gridattributerealcontainer.h>
+#include <guicore/pre/gridcond/container/gridattributeintegercontainer.h>
 
 #include <QObject>
 #include <QFile>
@@ -21,8 +23,8 @@ struct AttributeData
 	std::vector<int> intValues;
 };
 
-template <typename V>
-std::vector<V> buildNodeAttributeValues(GridAttributeContainerT<V>* c)
+template <typename V, typename DA>
+std::vector<V> buildNodeAttributeValues(GridAttributeContainerT<V, DA>* c)
 {
 	std::vector<V> ret;
 	ret.reserve(c->dataCount());
@@ -32,12 +34,12 @@ std::vector<V> buildNodeAttributeValues(GridAttributeContainerT<V>* c)
 	return ret;
 }
 
-template <typename V>
-std::vector<V> buildCellAttributeValues(GridAttributeContainerT<V>* c)
+template <typename V, typename DA>
+std::vector<V> buildCellAttributeValues(GridAttributeContainerT<V, DA>* c)
 {
 	std::vector<V> ret;
 	ret.reserve(c->dataCount());
-	auto grid = dynamic_cast<Structured2DGrid*> (c->grid());
+	auto grid = dynamic_cast<v4Structured2dGrid*> (c->grid()->grid());
 	for (int j = 0; j < grid->dimensionJ() - 1; ++j) {
 		for (int i = 0; i < grid->dimensionI() - 1; ++i) {
 			ret.push_back(c->value(grid->cellIndex(i, j)));
@@ -55,11 +57,11 @@ AttributeData buildNodeAttributeValues(GridAttributeContainer* c)
 {
 	AttributeData ret;
 	ret.name = QString("N_%1").arg(c->name().c_str());
-	auto realC = dynamic_cast<GridAttributeContainerT<double>* > (c);
-	auto intC = dynamic_cast<GridAttributeContainerT<int>* > (c);
+	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
+	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
 	if (realC != nullptr) {
 		ret.valueType = AttributeData::Real;
-		ret.realValues = buildNodeAttributeValues(realC);
+		ret.realValues =  buildNodeAttributeValues(realC);
 	} else {
 		ret.valueType = AttributeData::Int;
 		ret.intValues = buildNodeAttributeValues(intC);
@@ -71,8 +73,8 @@ AttributeData buildCellAttributeValues(GridAttributeContainer* c)
 {
 	AttributeData ret;
 	ret.name = QString("C_%1").arg(c->name().c_str());
-	auto realC = dynamic_cast<GridAttributeContainerT<double>* > (c);
-	auto intC = dynamic_cast<GridAttributeContainerT<int>* > (c);
+	auto realC = dynamic_cast<GridAttributeContainerT<double, vtkDoubleArray>* > (c);
+	auto intC = dynamic_cast<GridAttributeContainerT<int, vtkIntArray>* > (c);
 	if (realC != nullptr) {
 		ret.valueType = AttributeData::Real;
 		ret.realValues = buildCellAttributeValues(realC);
@@ -109,9 +111,9 @@ QStringList Structured2DGridNaysCSVExporter::fileDialogFilters() const
 	return ret;
 }
 
-bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
+bool Structured2DGridNaysCSVExporter::doExport(v4InputGrid* grid, const QString& filename, const QString& /*selectedFilter*/, CoordinateSystem* /*cs*/, QWidget* /*parent*/)
 {
-	Structured2DGrid* grid2d = dynamic_cast<Structured2DGrid*>(grid);
+	auto grid2d = dynamic_cast<v4Structured2dGrid*> (grid->grid());
 	int imax = grid2d->dimensionI();
 	int jmax = grid2d->dimensionJ();
 	int kmax = 1;
@@ -121,11 +123,11 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 
 	std::vector<AttributeData> attributeData;
 
-	for (GridAttributeContainer* c : grid2d->gridAttributes()) {
-		if (c->gridAttribute()->position() == SolverDefinitionGridAttribute::Node) {
-			attributeData.push_back(buildNodeAttributeValues(c));
-		} else {
-			attributeData.push_back(buildCellAttributeValues(c));
+	for (auto att : grid->attributes()) {
+		if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::Node) {
+			attributeData.push_back(buildNodeAttributeValues(att));
+		} else if (att->gridAttribute()->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
+			attributeData.push_back(buildCellAttributeValues(att));
 		}
 	}
 
@@ -145,8 +147,8 @@ bool Structured2DGridNaysCSVExporter::doExport(Grid* grid, const QString& filena
 			for (int i = 0; i < imax; i++){
 				o << scientific;
 				o << i << "," << j << "," << k << ","
-					<< grid2d->vertex(i, j).x() << ","
-					<< grid2d->vertex(i, j).y() << ","
+					<< grid2d->point2d(i, j).x() << ","
+					<< grid2d->point2d(i, j).y() << ","
 					<< 0;
 				for (const AttributeData& data : attributeData) {
 					if (data.valueType == AttributeData::Real) {

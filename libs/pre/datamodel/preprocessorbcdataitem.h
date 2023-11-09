@@ -4,17 +4,17 @@
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <misc/edge.h>
 
-#include <QString>
-#include <QColor>
-#include <QSet>
+#include <unordered_set>
 
-class Grid;
 class OpacityContainer;
+class PreProcessorBCGroupDataItem;
 class SolverDefinition;
 class SolverDefinitionBoundaryCondition;
 class VTKGraphicsView;
 
 class QAction;
+class QColor;
+class QString;
 
 namespace iRICLib {
 	class H5CgnsZone;
@@ -60,7 +60,7 @@ public:
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
 	void clearPoints();
-	void assignIndices(const QSet<vtkIdType>& vertices);
+	void assignIndices(const std::unordered_set<vtkIdType>& vertices);
 	bool isCustomModified() const;
 	QString caption() const;
 	void setMapped(bool mapped);
@@ -92,6 +92,7 @@ private:
 	int buildNumber() const;
 	void setupIndicesAndEdges(const std::vector<int> indices);
 	void buildIndices(std::vector<int>* indices);
+	PreProcessorBCGroupDataItem* groupDataItem() const;
 
 	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

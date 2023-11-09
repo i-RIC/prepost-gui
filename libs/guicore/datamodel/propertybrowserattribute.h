@@ -13,6 +13,7 @@ public:
 	PropertyBrowserAttribute(const QString& n, double val);
 	PropertyBrowserAttribute(const QString& n, int val);
 	PropertyBrowserAttribute(const QString& n, const QString& val);
+	PropertyBrowserAttribute(const QString& n, const QVariant& val);
 
 	QString name;
 	QVariant value;

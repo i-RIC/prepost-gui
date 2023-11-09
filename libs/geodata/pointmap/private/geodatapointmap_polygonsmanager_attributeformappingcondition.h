@@ -16,7 +16,7 @@ public:
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 
 private:
-	GridAttributeContainer* buildContainer(Grid* grid) override;
+	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
 
 	class StringConverter;
 	class EditWidget;

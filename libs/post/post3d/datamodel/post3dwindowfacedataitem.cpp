@@ -2,9 +2,12 @@
 #include "post3dwindowfacedataitem.h"
 #include "post3dwindowzonedataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guicore/datamodel/graphicswindowdataitem.h>
 #include <guicore/datamodel/graphicswindowdataitemstandarditemchangecommand.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
@@ -50,8 +53,8 @@ private:
 
 Post3dWindowFaceDataItem::Post3dWindowFaceDataItem(const QString& label, GraphicsWindowDataItem* p) :
 	Post3dWindowDataItem {label, QIcon(":/libs/guibase/images/iconPaper.svg"), p},
-	m_actor {nullptr},
-	m_dataOK {false}
+	m_dataOK {false},
+	m_actor {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
@@ -62,10 +65,11 @@ void Post3dWindowFaceDataItem::update()
 {
 	m_dataOK = false;
 	if (m_actor != nullptr) {m_actor->VisibilityOff();}
-	Post3dWindowZoneDataItem* zdi = getZoneDataItem();
-	PostZoneDataContainer* cont = zdi->dataContainer();
+	auto zdi = getZoneDataItem();
+	auto cont = zdi->v4DataContainer();
 	if (cont == nullptr) {return;}
-	vtkPointSet* pd = cont->data()->data();
+
+	vtkPointSet* pd = cont->gridData()->grid()->vtkData()->data();
 	if (pd == nullptr) {return;}
 	m_dataOK = true;
 

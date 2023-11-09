@@ -10,8 +10,9 @@
 #include "private/preprocessorgridtypedataitem_applycolormapsettingdialog.h"
 #include "private/preprocessorgridtypedataitem_toolbarwidgetcontroller.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/grid/grid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
@@ -24,14 +25,8 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QAction>
-#include <QDomNode>
-#include <QMenu>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
 PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridType* type, GraphicsWindowDataItem* parent) :
-	PreProcessorGridTypeDataItemInterface {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
+	PreProcessorGridTypeDataItemI {type->caption(), QIcon(":/libs/guibase/images/iconFolder.svg"), parent},
 	m_gridType {type},
 	m_geoDataTop {nullptr}
 {
@@ -57,7 +52,7 @@ PreProcessorGridTypeDataItem::PreProcessorGridTypeDataItem(SolverDefinitionGridT
 		} else {
 			zonename = nextChildZonename();
 		}
-		PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(zonename, nextChildCaption(), this);
+		auto cond = new PreProcessorGridAndGridCreatingConditionDataItem(zonename, nextChildCaption(), this);
 		m_conditions.append(cond);
 		m_childItems.push_back(cond);
 	}
@@ -91,22 +86,22 @@ SolverDefinitionGridType* PreProcessorGridTypeDataItem::gridType() const
 	return m_gridType;
 }
 
-PreProcessorGeoDataTopDataItemInterface* PreProcessorGridTypeDataItem::geoDataTop() const
+PreProcessorGeoDataTopDataItemI* PreProcessorGridTypeDataItem::geoDataTop() const
 {
 	return m_geoDataTop;
 }
 
-PreProcessorHydraulicDataTopDataItemInterface* PreProcessorGridTypeDataItem::hydraulicDataTop() const
+PreProcessorHydraulicDataTopDataItemI* PreProcessorGridTypeDataItem::hydraulicDataTop() const
 {
 	return m_hydraulicDataTop;
 }
 
-const QList<PreProcessorGridAndGridCreatingConditionDataItemInterface*>& PreProcessorGridTypeDataItem::conditions() const
+const QList<PreProcessorGridAndGridCreatingConditionDataItemI*>& PreProcessorGridTypeDataItem::conditions() const
 {
 	return m_conditions;
 }
 
-PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeDataItem::condition(const std::string& zonename) const
+PreProcessorGridAndGridCreatingConditionDataItemI* PreProcessorGridTypeDataItem::condition(const std::string& zonename) const
 {
 	for (auto cond : m_conditions) {
 		if (cond->zoneName() == zonename) {return cond;}
@@ -114,7 +109,7 @@ PreProcessorGridAndGridCreatingConditionDataItemInterface* PreProcessorGridTypeD
 	return nullptr;
 }
 
-bool PreProcessorGridTypeDataItem::isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemInterface * /*child*/) const
+bool PreProcessorGridTypeDataItem::isChildDeletable(const PreProcessorGridAndGridCreatingConditionDataItemI * /*child*/) const
 {
 	// if this gridtype is not optional and there is only one
 	// condition, this item is not deletable.
@@ -137,13 +132,13 @@ void PreProcessorGridTypeDataItem::addCustomMenuItems(QMenu* menu)
 
 void PreProcessorGridTypeDataItem::addNewCondition()
 {
-	PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
+	auto cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
 	// In case there is only one grid type, add the grid creating condition item as root item.
 	int row = standardItem()->row();
 	if (row == - 1) {
 		standardItem()->takeRow(cond->standardItem()->row());
 		// find the background image row.
-		PreProcessorRootDataItem* rootItem = dynamic_cast<PreProcessorRootDataItem*>(parent());
+		auto rootItem = dynamic_cast<PreProcessorRootDataItem*>(parent());
 		int imgRow = rootItem->backgroundImagesDataItem()->standardItem()->row();
 		dataModel()->itemModel()->insertRow(imgRow, cond->standardItem());
 	}
@@ -313,7 +308,7 @@ void PreProcessorGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 				}
 			}
 			if (! found) {
-				PreProcessorGridAndGridCreatingConditionDataItem* cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
+				auto cond = new PreProcessorGridAndGridCreatingConditionDataItem(nextChildZonename(), nextChildCaption(), this);
 				cond->loadFromProjectMainFile(c);
 				int row = standardItem()->row();
 				if (row == - 1) {
@@ -413,13 +408,13 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 	valueExist = i->getValueRange(&min, &max);
 
 	// check grid values.
-	for (auto it = m_conditions.begin(); it != m_conditions.end(); ++it) {
-		Grid* g = (*it)->gridDataItem()->grid();
+	for (auto cond : m_conditions) {
+		v4InputGrid* g = cond->gridDataItem()->grid();
 		if (g != nullptr) {
-			GridAttributeContainer* c = g->gridAttribute(name);
-			if (c == nullptr) {continue;}
+			auto att = g->attribute(name);
+			if (att == nullptr) {continue;}
 			double tmpmin, tmpmax;
-			if (c->getValueRange(&tmpmin, &tmpmax)) {
+			if (att->getValueRange(&tmpmin, &tmpmax)) {
 				if (tmpmin < min || (! valueExist)) {min = tmpmin;}
 				if (tmpmax > max || (! valueExist)) {max = tmpmax;}
 				valueExist = true;

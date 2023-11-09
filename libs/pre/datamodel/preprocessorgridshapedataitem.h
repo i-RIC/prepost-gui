@@ -2,8 +2,7 @@
 #define PREPROCESSORGRIDSHAPEDATAITEM_H
 
 #include <guicore/pre/base/preprocessordataitem.h>
-#include <guibase/xyaxisdisplaysettingdialog.h>
-#include <guibase/widget/gridshapeeditdialog.h>
+#include <guibase/gridshape/gridshapesettingcontainer.h>
 
 #include <vtkSmartPointer.h>
 #include <vtkPoints.h>
@@ -27,7 +26,7 @@ public:
 	void handleStandardItemDoubleClicked() override;
 	void mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
-	virtual void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
+	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
@@ -49,7 +48,7 @@ protected:
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	vtkSmartPointer<vtkPoints> m_pointsBeforeDragging;
 
-	GridShapeEditDialog::Setting m_setting;
+	GridShapeSettingContainer m_setting;
 
 	bool m_definingBoundingBox;
 	bool m_draggingSelectedPoints;

@@ -4,7 +4,10 @@
 #include "../geodatapolygoncellmappert.h"
 #include "../geodatapolygoncellmappersetting.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtktool/vtkpointsutil.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 
 #include <vtkCell.h>
 
@@ -17,17 +20,19 @@ template <class V, class DA>
 GeoDataMapperSettingI* GeoDataPolygonCellMapperT<V, DA>::initialize(bool* boolMap)
 {
 	GeoDataPolygonCellMapperSetting* s = new GeoDataPolygonCellMapperSetting();
-	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
+	unsigned int count = GeoDataMapperT<V, DA>::container()->dataCount();
 	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapper::geoData());
 	vtkPointSet* pointSet = polygon->polyData();
 	double bounds[6];
 	pointSet->GetBounds(bounds);
 	double weights[3];
+
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (! *(boolMap + i)) {
 			// not mapped yet.
 			// get grid cell.
-			vtkCell* cell = GeoDataMapper::grid()->vtkGrid()->GetCell(i);
+			vtkCell* cell = vtkGrid->GetCell(i);
 			double point[3];
 			QPointF center = vtkPointsUtil::getCenter(cell);
 			point[0] = center.x();
@@ -73,9 +78,9 @@ template <class V, class DA>
 void GeoDataPolygonCellMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	GeoDataPolygonCellMapperSetting* setting = dynamic_cast<GeoDataPolygonCellMapperSetting*>(s);
-	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V>::container()->dataArray());
-	GeoDataPolygon* polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V>::geoData());
-	V value = GeoDataMapperT<V>::fromVariant(polygon->variantValue());
+	DA* da = dynamic_cast<DA*>(GeoDataMapperT<V, DA>::container()->dataArray());
+	auto polygon = dynamic_cast<GeoDataPolygon* >(GeoDataMapperT<V, DA>::geoData());
+	V value = GeoDataMapperT<V, DA>::fromVariant(polygon->variantValue());
 	const auto& ranges = setting->ranges.ranges();
 	for (const auto& r : ranges) {
 		for (unsigned int j = r.from; j <= r.to; ++j) {

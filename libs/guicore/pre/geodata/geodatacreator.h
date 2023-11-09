@@ -52,7 +52,7 @@ public:
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

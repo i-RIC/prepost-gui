@@ -4,9 +4,12 @@
 #include "post2dbirdeyewindowzonedataitem.h"
 
 #include <guibase/objectbrowserview.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -18,8 +21,8 @@ Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGrou
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	auto elevName = iRIC::toStr(cont->elevationName());
+	auto cont = zoneDataItem()->v4DataContainer();
+	auto elevName = cont->gridData()->elevationName(v4SolutionGrid::Position::Node);
 
 	if (elevName.size() != 0) {
 		auto item = new Post2dBirdEyeWindowNodeScalarGroupDataItem(elevName, this);
@@ -46,15 +49,15 @@ Post2dBirdEyeWindowZoneDataItem* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::
 
 QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 {
-	auto zItem = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent());
-	if (zItem->dataContainer() == nullptr || zItem->dataContainer()->data() == nullptr) {
+	auto zItem = zoneDataItem();
+	if (zItem->v4DataContainer() == nullptr || zItem->v4DataContainer()->gridData() == nullptr) {
 		return nullptr;
 	}
 
-	auto gType = zItem->dataContainer()->gridType();
+	auto gType = zItem->v4DataContainer()->gridType();
 	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->dataContainer()->data()->data()->GetPointData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 
@@ -67,8 +70,8 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 
 void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = dynamic_cast<Post2dBirdEyeWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return;
 	}
 

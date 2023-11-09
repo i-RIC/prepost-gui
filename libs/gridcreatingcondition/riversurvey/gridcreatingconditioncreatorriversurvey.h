@@ -14,7 +14,7 @@ public:
 
 	SolverDefinitionGridType::GridType gridType() const override;
 	GridCreatingCondition* create(ProjectDataItem* parent) override;
-	bool checkAvailability(PreProcessorGridCreatingConditionDataItemInterface*) const override;
+	bool checkAvailability(PreProcessorGridCreatingConditionDataItemI*) const override;
 };
 
 #endif // GRIDCREATINGCONDITIONCREATORCENTERANDWIDTH_H

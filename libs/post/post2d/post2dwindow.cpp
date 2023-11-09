@@ -1,3 +1,4 @@
+#include "datamodel/post2dwindowcalculationresultdataitem.h"
 #include "datamodel/post2dwindowgridtypedataitem.h"
 #include "datamodel/post2dwindownodescalargroupdataitem.h"
 #include "datamodel/post2dwindownodescalargrouptopdataitem.h"
@@ -166,7 +167,7 @@ ObjectBrowser* Post2dWindow::objectBrowser() const
 
 void Post2dWindow::editBackgroundColor()
 {
-	BackgroundColorEditInterface::editBackgroundColor(this);
+	BackgroundColorEditI::editBackgroundColor(this);
 }
 
 void Post2dWindow::editZScale()
@@ -178,7 +179,7 @@ bool Post2dWindow::exportParticles(const QString& filePrefix, int fileIndex, dou
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	auto zItem = rItem->zoneDataItem(iRIC::toStr(zoneName));
-	auto pItem = zItem->particleDataItem();
+	auto pItem = zItem->resultDataItem()->particleGroupDataItem();
 	return pItem->exportParticles(filePrefix, fileIndex, time);
 }
 
@@ -190,7 +191,7 @@ QList<QString> Post2dWindow::particleDrawingZones()
 	for (int i = 0; i < gtItems.count(); ++i) {
 		auto gtItem = gtItems.at(i);
 		for (auto zItem : gtItem->zoneDatas()) {
-			auto pItem = zItem->particleDataItem();
+			auto pItem = zItem->resultDataItem()->particleGroupDataItem();
 			if (pItem == nullptr) {continue;}
 
 			if (pItem->standardItem()->checkState() == Qt::Checked && pItem->target() != "") {
@@ -204,7 +205,7 @@ QList<QString> Post2dWindow::particleDrawingZones()
 bool Post2dWindow::checkShapeExportCondition(const std::string& zoneName) const
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zoneName)->resultDataItem()->nodeScalarGroupTopDataItem();
 	auto scalars = sItem->scalarsDrawnInDiscreteMode();
 	if (scalars.size() == 0) {
 		QMessageBox::warning(window(), tr("Error"), tr("No contour is drawn in \"Discrete Mode\"."));
@@ -232,7 +233,7 @@ bool Post2dWindow::checkShapeExportCondition(const std::string& zoneName) const
 bool Post2dWindow::checkKmlExportCondition(const std::string& zoneName) const
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zoneName)->resultDataItem()->nodeScalarGroupTopDataItem();
 	auto scalars = sItem->scalarsDrawnInDiscreteMode();
 	if (scalars.size() == 0) {
 		QMessageBox::warning(window(), tr("Error"), tr("No Contour Figure is drawn now."));
@@ -255,21 +256,21 @@ bool Post2dWindow::checkKmlExportCondition(const std::string& zoneName) const
 bool Post2dWindow::exportKMLHeader(QXmlStreamWriter& writer, const std::string& zonename)
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zonename)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zonename)->resultDataItem()->nodeScalarGroupTopDataItem();
 	return sItem->exportKMLHeader(writer, m_exportScalarName);
 }
 
 bool Post2dWindow::exportKMLFooter(QXmlStreamWriter& writer, const std::string& zoneName)
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zoneName)->resultDataItem()->nodeScalarGroupTopDataItem();
 	return sItem->exportKMLFooter(writer, m_exportScalarName);
 }
 
 bool Post2dWindow::exportKMLForTimestep(QXmlStreamWriter& writer, int index, double time, const std::string& zoneName, bool oneShot)
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zoneName)->resultDataItem()->nodeScalarGroupTopDataItem();
 	return sItem->exportKMLForTimestep(writer, m_exportScalarName, index, time, oneShot);
 }
 
@@ -279,7 +280,7 @@ bool Post2dWindow::isAutoParticleOutput() const
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
 	for (auto tItem : rItem->gridTypeDataItems()) {
 		for (auto zItem : tItem->zoneDatas()) {
-			auto pItem = zItem->particleDataItem();
+			auto pItem = zItem->resultDataItem()->particleGroupDataItem();
 			if (pItem == nullptr) {continue;}
 
 			output = output || pItem->isOutput();
@@ -296,7 +297,7 @@ void Post2dWindow::updateTmsList()
 bool Post2dWindow::exportContourFigureToShape(const QString& filePrefix, int index, double time, const std::string& zoneName)
 {
 	auto rItem = dynamic_cast<Post2dWindowRootDataItem*>(m_dataModel->m_rootDataItem);
-	auto sItem = rItem->zoneDataItem(zoneName)->scalarGroupTopDataItem();
+	auto sItem = rItem->zoneDataItem(zoneName)->resultDataItem()->nodeScalarGroupTopDataItem();
 	QString filePrefix2 = filePrefix;
 	filePrefix2.append(QString("%1.shp").arg(index));
 	return sItem->exportContourFigureToShape(m_exportScalarName, filePrefix2, time);
@@ -311,7 +312,7 @@ std::vector<std::string> Post2dWindow::discreteColorDrawingZones()
 		auto zItems = gtItems.at(i)->zoneDatas();
 		for (int j = 0; j < zItems.size(); ++j) {
 			auto zItem = zItems.at(j);
-			auto sItem = zItem->scalarGroupTopDataItem();
+			auto sItem = zItem->resultDataItem()->nodeScalarGroupTopDataItem();
 			for (auto item : sItem->childItems()) {
 				auto ditem = dynamic_cast<Post2dWindowNodeScalarGroupDataItem*>(item);
 				if (ditem->standardItem()->checkState() != Qt::Checked) {continue;}

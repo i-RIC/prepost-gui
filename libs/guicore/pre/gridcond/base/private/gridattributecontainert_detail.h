@@ -12,25 +12,41 @@
 #include <QFile>
 #include <QFileInfo>
 
+#include <vtkDataSetAttributes.h>
+
 #include <h5cgnsgridattributes.h>
 #include <h5cgnszone.h>
 #include <iriclib_errorcodes.h>
 
-template <class V>
-GridAttributeContainerT<V>::GridAttributeContainerT(Grid* grid, SolverDefinitionGridAttributeT<V>* cond) :
+template <class V, class DA>
+GridAttributeContainerT<V, DA>::GridAttributeContainerT(v4InputGrid* grid, SolverDefinitionGridAttributeT<V>* cond) :
 	GridAttributeContainer(grid, cond)
+{
+	addArrayIfNeeded();
+}
+
+template <class V, class DA>
+GridAttributeContainerT<V, DA>::~GridAttributeContainerT()
 {}
 
-template <class V>
-GridAttributeContainerT<V>::~GridAttributeContainerT()
-{}
+template <class V, class DA>
+V GridAttributeContainerT<V, DA>::value(unsigned int index) const
+{
+	return dataArray()->GetValue(index);
+}
 
-template <class V>
-int GridAttributeContainerT<V>::loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts)
+template <class V, class DA>
+void GridAttributeContainerT<V, DA>::setValue(unsigned int index, V value)
+{
+	dataArray()->SetValue(index, value);
+}
+
+template <class V, class DA>
+int GridAttributeContainerT<V, DA>::loadFromCgnsFile(const iRICLib::H5CgnsGridAttributes& atts)
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
 	int ier = 0;
-	if (dims == 0 || dims->containers().size() == 0) {
+	if (dims == nullptr || dims->containers().size() == 0) {
 		ier = loadFromCgnsFileForIndex(atts, 0);
 	} else {
 		for (int index = 0; index <= dims->maxIndex(); ++index) {
@@ -50,8 +66,8 @@ int GridAttributeContainerT<V>::loadFromCgnsFile(const iRICLib::H5CgnsGridAttrib
 	return ier;
 }
 
-template <class V>
-int GridAttributeContainerT<V>::loadFromCgnsFileForIndex(const iRICLib::H5CgnsGridAttributes& atts, int index)
+template <class V, class DA>
+int GridAttributeContainerT<V, DA>::loadFromCgnsFileForIndex(const iRICLib::H5CgnsGridAttributes& atts, int index)
 {
 	std::vector<V> buffer;
 	int ier = atts.readFunctional(name(), index + 1, &buffer);
@@ -72,8 +88,8 @@ int GridAttributeContainerT<V>::loadFromCgnsFileForIndex(const iRICLib::H5CgnsGr
 	return IRIC_NO_ERROR;
 }
 
-template <class V>
-int GridAttributeContainerT<V>::saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts)
+template <class V, class DA>
+int GridAttributeContainerT<V, DA>::saveToCgnsFile(iRICLib::H5CgnsGridAttributes* atts)
 {
 	GridAttributeDimensionsContainer* dims = dimensions();
 
@@ -97,8 +113,8 @@ int GridAttributeContainerT<V>::saveToCgnsFile(iRICLib::H5CgnsGridAttributes* at
 	}
 }
 
-template <class V>
-int GridAttributeContainerT<V>::saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttributes* atts, int index)
+template <class V, class DA>
+int GridAttributeContainerT<V, DA>::saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttributes* atts, int index)
 {
 	int ier;
 	auto count = dataCount();
@@ -112,14 +128,41 @@ int GridAttributeContainerT<V>::saveToCgnsFileForIndex(iRICLib::H5CgnsGridAttrib
 	return IRIC_NO_ERROR;
 }
 
-template <class V>
-void GridAttributeContainerT<V>::setModified()
+template <class V, class DA>
+DA* GridAttributeContainerT<V, DA>::dataArray() const
+{
+	return DA::SafeDownCast(vtkAttributes()->GetArray(name().c_str()));
+}
+
+template <class V, class DA>
+DA* GridAttributeContainerT<V, DA>::dataArrayCopy() const
+{
+	DA* copy = DA::New();
+	copy->DeepCopy(dataArray());
+	return copy;
+}
+
+template <class V, class DA>
+void GridAttributeContainerT<V, DA>::allocate()
+{
+	addArrayIfNeeded();
+
+	auto da = dataArray();
+	auto count = dataCount();
+	da->Allocate(count);
+	for (unsigned int i = 0; i < count; ++i) {
+		da->InsertNextValue(0);
+	}
+}
+
+template <class V, class DA>
+void GridAttributeContainerT<V, DA>::setModified()
 {
 	dataArray()->Modified();
 }
 
-template <class V>
-bool GridAttributeContainerT<V>::loadFromExternalFile(const QString& filename)
+template <class V, class DA>
+bool GridAttributeContainerT<V, DA>::loadFromExternalFile(const QString& filename)
 {
 	QFile f(filename);
 	bool ok = f.open(QIODevice::ReadOnly);
@@ -136,8 +179,8 @@ bool GridAttributeContainerT<V>::loadFromExternalFile(const QString& filename)
 	return true;
 }
 
-template <class V>
-bool GridAttributeContainerT<V>::saveToExternalFile(const QString& filename)
+template <class V, class DA>
+bool GridAttributeContainerT<V, DA>::saveToExternalFile(const QString& filename)
 {
 	QFile f(filename);
 	bool ok = f.open(QIODevice::WriteOnly);
@@ -153,14 +196,34 @@ bool GridAttributeContainerT<V>::saveToExternalFile(const QString& filename)
 	return true;
 }
 
-template <class V>
-bool GridAttributeContainerT<V>::getValueRange(double* min, double* max)
+template <class V, class DA>
+bool GridAttributeContainerT<V, DA>::getValueRange(double* min, double* max)
 {
 	double range[2];
 	dataArray()->GetRange(range);
 	*min = range[0];
 	*max = range[1];
 	return true;
+}
+
+template <class V, class DA>
+void GridAttributeContainerT<V, DA>::addArrayIfNeeded()
+{
+	bool needed = false;
+	auto a = vtkAttributes()->GetArray(name().c_str());
+	if (a == nullptr) {
+		needed = true;
+	} else {
+		auto da = DA::SafeDownCast(a);
+		needed = (da == nullptr);
+	}
+
+	if (needed) {
+		DA* da = DA::New();
+		da->SetName(name().c_str());
+		vtkAttributes()->AddArray(da);
+		da->Delete();
+	}
 }
 
 #endif // GRIDATTRIBUTECONTAINERT_DETAIL_H

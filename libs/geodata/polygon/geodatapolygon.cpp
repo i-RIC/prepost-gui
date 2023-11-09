@@ -16,12 +16,12 @@
 #include "public/geodatapolygon_displaysettingwidget.h"
 
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatatopdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
@@ -230,7 +230,7 @@ void GeoDataPolygon::setSelectMode(SelectMode mode)
 	impl->m_selectMode = mode;
 }
 
-void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::informSelection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_regionPolygon->setActive(true);
 	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
@@ -246,7 +246,7 @@ void GeoDataPolygon::informSelection(PreProcessorGraphicsViewInterface* v)
 	updateMouseCursor(v);
 }
 
-void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewI* v)
 {
 	impl->m_regionPolygon->setActive(false);
 	for (int i = 0; i < impl->m_holePolygons.size(); ++i) {
@@ -260,12 +260,12 @@ void GeoDataPolygon::informDeselection(PreProcessorGraphicsViewInterface* v)
 	v->unsetCursor();
 }
 
-void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::viewOperationEnded(PreProcessorGraphicsViewI* v)
 {
 	updateMouseCursor(v);
 }
 
-void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (! iRIC::isEnterKey(event->key())) {return;}
 	if (impl->m_mouseEventMode != meDefining) {return;}
@@ -274,10 +274,10 @@ void GeoDataPolygon::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInt
 	definePolygon(false);
 }
 
-void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolygon::keyReleaseEvent(QKeyEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {}
 
-void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/)
+void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/)
 {
 	if (impl->m_mouseEventMode != meDefining) {return;}
 	if (impl->m_selectMode != smPolygon) {return;}
@@ -285,7 +285,7 @@ void GeoDataPolygon::mouseDoubleClickEvent(QMouseEvent* /*event*/, PreProcessorG
 	definePolygon(true);
 }
 
-void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meNormal:
@@ -333,7 +333,7 @@ void GeoDataPolygon::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsView
 	}
 }
 
-void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 
@@ -437,7 +437,7 @@ void GeoDataPolygon::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVie
 	}
 }
 
-void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	if (event->button() == Qt::LeftButton) {
 		switch (impl->m_mouseEventMode) {
@@ -473,7 +473,7 @@ void GeoDataPolygon::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsV
 	}
 }
 
-void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GeoDataPolygon::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	switch (impl->m_mouseEventMode) {
 	case meNormal:
@@ -1443,11 +1443,11 @@ GeoDataProxy* GeoDataPolygon::getProxy()
 
 void GeoDataPolygon::copy()
 {
-	PreProcessorGeoDataGroupDataItemInterface* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
-	PreProcessorGeoDataTopDataItemInterface* tItem = dynamic_cast<PreProcessorGeoDataTopDataItemInterface*>(gItem->parent());
+	PreProcessorGeoDataGroupDataItemI* gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent()->parent());
+	PreProcessorGeoDataTopDataItemI* tItem = dynamic_cast<PreProcessorGeoDataTopDataItemI*>(gItem->parent());
 
-	QList<PreProcessorGeoDataGroupDataItemInterface*> groups = tItem->groupDataItems();
-	QList<PreProcessorGeoDataGroupDataItemInterface*> targetGroups;
+	QList<PreProcessorGeoDataGroupDataItemI*> groups = tItem->groupDataItems();
+	QList<PreProcessorGeoDataGroupDataItemI*> targetGroups;
 	QStringList items;
 	for (int i = 0; i < groups.count(); ++i) {
 		if (groups[i] == gItem) {continue;}
@@ -1460,7 +1460,7 @@ void GeoDataPolygon::copy()
 		// canceled.
 		return;
 	}
-	PreProcessorGeoDataGroupDataItemInterface* targetGroup = targetGroups[items.indexOf(item)];
+	PreProcessorGeoDataGroupDataItemI* targetGroup = targetGroups[items.indexOf(item)];
 	// create a polygon to targetGroup, and set the polygon shape.
 	targetGroup->addCopyPolygon(this);
 }

@@ -2,7 +2,7 @@
 #include "../../../project/projectdataitem.h"
 #include "../../../solverdef/solverdefinitiongridattribute.h"
 #include "../../../solverdef/solverdefinitiongridattributedimension.h"
-#include "../../base/preprocessorgeodatagroupdataiteminterface.h"
+#include "../../base/preprocessorgeodatagroupdataitemi.h"
 #include "gridattributecontainer.h"
 #include "gridattributedimensionscontainer.h"
 #include "private/gridattributedimensionscontainer_impl.h"
@@ -31,7 +31,6 @@ GridAttributeDimensionsContainer::~GridAttributeDimensionsContainer()
 	for (auto w : impl->m_selectWidgets) {
 		delete w;
 	}
-	delete impl;
 }
 
 const std::vector<GridAttributeDimensionContainer *>& GridAttributeDimensionsContainer::containers() const
@@ -145,8 +144,8 @@ void GridAttributeDimensionsContainer::handleIndexChange(bool noDraw)
 	emit currentIndexChanged(impl->m_currentIndex, newIndex);
 	impl->m_currentIndex = newIndex;
 
-	PreProcessorGeoDataGroupDataItemInterface* gItem =
-		dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent());
+	PreProcessorGeoDataGroupDataItemI* gItem =
+		dynamic_cast<PreProcessorGeoDataGroupDataItemI*>(parent());
 	if (gItem != nullptr && ! noDraw) {
 		gItem->renderGraphicsView();
 	}

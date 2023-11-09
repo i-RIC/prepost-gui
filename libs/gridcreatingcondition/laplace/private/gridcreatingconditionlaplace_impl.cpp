@@ -22,11 +22,11 @@
 #include "../gridcreatingconditionlaplacebuildbanklinesdialog.h"
 
 #include <guibase/vtktool/vtkparametricsplineutil.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/pre/gridcond/base/gridattributecontainer.h>
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
@@ -35,20 +35,6 @@
 #include <misc/linearinterpolator.h>
 #include <misc/mathsupport.h>
 #include <misc/splineinterpolator.h>
-
-#include <vtkActor.h>
-#include <vtkActor2DCollection.h>
-#include <vtkDataSetMapper.h>
-#include <vtkPolyData.h>
-#include <vtkProperty.h>
-#include <vtkRenderer.h>
-#include <vtkTextProperty.h>
-
-#include <QAction>
-#include <QMenu>
-#include <QMessageBox>
-
-#include <algorithm>
 
 namespace {
 
@@ -455,7 +441,7 @@ GridCreatingConditionLaplace::Impl::~Impl()
 	delete m_buildThread;
 }
 
-Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
+v4Structured2dGrid* GridCreatingConditionLaplace::Impl::createGrid()
 {
 	if (m_editMode == EditMode::CenterLineOnly) {
 		QMessageBox::warning(m_condition->preProcessorWindow(), GridCreatingConditionLaplace::tr("Warning"), GridCreatingConditionLaplace::tr("Please build left bank and right bank lines before creating grid."));
@@ -475,24 +461,14 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 		jMax += div - 1;
 	}
 
-	auto grid = new Structured2DGrid(nullptr);
-	auto gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*> (m_condition->m_conditionDataItem->parent()->parent());
-	gt->gridType()->buildGridAttributes(grid);
-	grid->setDimensions(iMax, jMax);
-
-	auto points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate(iMax * jMax);
-	for (int idx = 0; idx < iMax * jMax; ++idx) {
-		points->InsertNextPoint(0, 0, 0);
-	}
+	auto grid = new v4Structured2dGrid();
 
 	// Set CtrlPoints
 	int jIdx = 0;
 	for (int j = 0; j < m_ctrlPointCountJ; ++j) {
 		int iIdx = 0;
 		for (int i = 0; i < m_ctrlPointCountI; ++i) {
-			setGridPoint(points, ctrlPoint(i, j), iIdx, jIdx, iMax);
+			grid->setPoint2d(iIdx, jIdx, ctrlPoint(i, j));
 			if (i == m_ctrlPointCountI - 1) {break;}
 			iIdx += m_divCountsStreamWise.at(i);
 		}
@@ -506,10 +482,9 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 		int iIdx = 0;
 		for (int i = 0; i < m_ctrlPointCountI - 1; ++i) {
 			auto line = edgeLineStreamWiseForDivisionPreview(i, j).polyLine();
-			for (int k = 1; k < line.size() - 1; ++k) {
+			for (int k = 1; k < static_cast<int> (line.size()) - 1; ++k) {
 				const auto& p = line.at(k);
-				int idx = iIdx + k + jIdx * iMax;
-				points->SetPoint(idx, p.x(), p.y(), 0);
+				grid->setPoint2d(iIdx + k, jIdx, p);
 			}
 			if (i == m_ctrlPointCountI - 1) {break;}
 			iIdx += m_divCountsStreamWise.at(i);
@@ -523,10 +498,9 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 		jIdx = 0;
 		for (int j = 0; j < m_ctrlPointCountJ - 1; ++j) {
 			auto line = edgeLineCrossSectionForDivisionPreview(i, j).polyLine();
-			for (int k = 1; k < line.size() - 1; ++k) {
+			for (int k = 1; k < static_cast<int> (line.size()) - 1; ++k) {
 				const auto& p = line.at(k);
-				int idx = iIdx + (k + jIdx) * iMax;
-				points->SetPoint(idx, p.x(), p.y(), 0);
+				grid->setPoint2d(iIdx, k + jIdx, p);
 			}
 			if (j == m_ctrlPointCountJ - 1) {break;}
 			jIdx += m_divCountsCrossSection.at(j);
@@ -543,11 +517,12 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 			auto edgeLineStreamWise2 = edgeLineStreamWiseForDivisionPreview(i, j + 1).polyLine();
 			auto edgeLineCrossSection1 = edgeLineCrossSectionForDivisionPreview(i, j).polyLine();
 			auto edgeLineCrossSection2 = edgeLineCrossSectionForDivisionPreview(i + 1, j).polyLine();
+
 			auto subPoints = buildSubGrid(edgeLineStreamWise1, edgeLineStreamWise2, edgeLineCrossSection1, edgeLineCrossSection2, subRegionPoissonParameter(i, j));
 			int idx = 0;
 			for (int jj = 0; jj < m_divCountsCrossSection[j] - 1; ++jj) {
 				for (int ii = 0; ii < m_divCountsStreamWise[i] - 1; ++ii) {
-					setGridPoint(points, subPoints.at(idx), ii + iOffset, jj + jOffset, iMax);
+					grid->setPoint2d(ii + iOffset, jj + jOffset, subPoints.at(idx));
 					++idx;
 				}
 			}
@@ -556,37 +531,24 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createGrid()
 		jOffset += m_divCountsCrossSection.at(j);
 	}
 
-	grid->vtkGrid()->SetPoints(points);
-	points->Delete();
-
-	for (auto c : grid->gridAttributes()) {
-		c->allocate();
-	}
-	grid->setModified();
+	grid->pointsModified();
 	return grid;
 }
 
-Structured2DGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i, int j)
+v4Structured2dGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i, int j)
 {
 	int iMax = m_divCountsStreamWise[i] + 1;
 	int jMax = m_divCountsCrossSection[j] + 1;
 
-	auto grid = new Structured2DGrid(nullptr);
+	auto grid = new v4Structured2dGrid();
 	grid->setDimensions(iMax, jMax);
-
-	auto points = vtkPoints::New();
-	points->SetDataTypeToDouble();
-	points->Allocate(iMax * jMax);
-	for (int idx = 0; idx < iMax * jMax; ++idx) {
-		points->InsertNextPoint(0, 0, 0);
-	}
 
 	// Set CtrlPoints
 	int jIdx = 0;
 	for (int jj = 0; jj < 2; ++jj) {
 		int iIdx = 0;
 		for (int ii = 0; ii < 2; ++ii) {
-			setGridPoint(points, ctrlPoint(i + ii, j + jj), iIdx, jIdx, iMax);
+			grid->setPoint2d(iIdx, jIdx, ctrlPoint(i + ii, j + jj));
 			iIdx += m_divCountsStreamWise.at(i);
 		}
 		jIdx += m_divCountsCrossSection.at(j);
@@ -596,10 +558,9 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i,
 	jIdx = 0;
 	for (int jj = 0; jj < 2; ++jj) {
 		auto line = edgeLineStreamWiseForDivisionPreview(i, j + jj).polyLine();
-		for (int k = 1; k < line.size() - 1; ++k) {
+		for (int k = 1; k < static_cast<int> (line.size()) - 1; ++k) {
 			const auto& p = line.at(k);
-			int idx = k + jIdx * iMax;
-			points->SetPoint(idx, p.x(), p.y(), 0);
+			grid->setPoint2d(k, jIdx, p);
 		}
 		jIdx += m_divCountsCrossSection.at(j);
 	}
@@ -607,10 +568,9 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i,
 	int iIdx = 0;
 	for (int ii = 0; ii < 2; ++ii) {
 		auto line = edgeLineCrossSectionForDivisionPreview(i + ii, j).polyLine();
-		for (int k = 1; k < line.size() - 1; ++k) {
+		for (int k = 1; k < static_cast<int> (line.size()) - 1; ++k) {
 			const auto& p = line.at(k);
-			int idx = iIdx + k * iMax;
-			points->SetPoint(idx, p.x(), p.y(), 0);
+			grid->setPoint2d(iIdx, k, p);
 		}
 		iIdx += m_divCountsStreamWise.at(i);
 	}
@@ -619,13 +579,12 @@ Structured2DGrid* GridCreatingConditionLaplace::Impl::createSubRegionGrid(int i,
 	int idx = 0;
 	for (int jj = 0; jj < m_divCountsCrossSection[j] - 1; ++jj) {
 		for (int ii = 0; ii < m_divCountsStreamWise[i] - 1; ++ii) {
-			setGridPoint(points, m_previewGridPoints.at(idx), ii + 1, jj + 1, iMax);
+			grid->setPoint2d(ii + 1, jj + 1, m_previewGridPoints.at(idx));
 			++idx;
 		}
 	}
-	grid->vtkGrid()->SetPoints(points);
-	points->Delete();
-	grid->setModified();
+	grid->pointsModified();
+
 	return grid;
 }
 
@@ -652,20 +611,20 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(con
 	q0 = setupRatios(lenCrossSection1);
 	q1 = setupRatios(lenCrossSection2);
 
-	int isize = edgeLineStreamWise1.size();
-	int jsize = edgeLineCrossSection1.size();
+	int isize = static_cast<int> (edgeLineStreamWise1.size());
+	int jsize = static_cast<int> (edgeLineCrossSection1.size());
 
 	TmpGrid grid(isize, jsize);
 	TmpGrid newGrid(isize, jsize);
 	TmpGrid ratioGrid(isize, jsize);
 
-	for (int j = 0; j < edgeLineCrossSection1.size(); ++j) {
+	for (int j = 0; j < static_cast<int> (edgeLineCrossSection1.size()); ++j) {
 		grid.x(0, j) = edgeLineCrossSection1.at(j).x();
 		grid.y(0, j) = edgeLineCrossSection1.at(j).y();
 		grid.x(isize - 1, j) = edgeLineCrossSection2.at(j).x();
 		grid.y(isize - 1, j) = edgeLineCrossSection2.at(j).y();
 	}
-	for (int i = 0; i < edgeLineStreamWise1.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (edgeLineStreamWise1.size()); ++i) {
 		grid.x(i, 0) = edgeLineStreamWise1.at(i).x();
 		grid.y(i, 0) = edgeLineStreamWise1.at(i).y();
 		grid.x(i, jsize - 1) = edgeLineStreamWise2.at(i).x();
@@ -673,10 +632,10 @@ std::vector<QPointF> GridCreatingConditionLaplace::Impl::buildSubGridByRatio(con
 	}
 
 	// initialize the grid
-	for (int j = 1; j < edgeLineCrossSection1.size() - 1; ++j) {
+	for (int j = 1; j < static_cast<int> (edgeLineCrossSection1.size()) - 1; ++j) {
 		double r_c = (lenCrossSection1[j] / lenCrossSection1.back() + lenCrossSection2[j] / lenCrossSection2.back()) * 0.5;
 		double s = j / static_cast<double>(jsize);
-		for (int i = 1; i < edgeLineStreamWise1.size() - 1; ++i) {
+		for (int i = 1; i < static_cast<int> (edgeLineStreamWise1.size()) - 1; ++i) {
 			double r_s = (lenStreamWise1[i] / lenStreamWise1.back() + lenStreamWise2[i] / lenStreamWise2.back()) * 0.5;
 			double r = i / static_cast<double>(isize);
 
@@ -1557,7 +1516,7 @@ bool GridCreatingConditionLaplace::Impl::isNewEdgeFinishReady()
 	}
 }
 
-void GridCreatingConditionLaplace::Impl::updateMouseCursor(PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::Impl::updateMouseCursor(PreProcessorGraphicsViewI* v)
 {
 	if (m_editMode == EditMode::CenterLineOnly) {
 		switch (m_centerLineOnlyMouseEventMode) {
@@ -1715,7 +1674,7 @@ void GridCreatingConditionLaplace::Impl::buildBankLines()
 	iRICUndoStack::instance().clear();
 }
 
-void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::Impl::addNewEdge(const QPoint &pos, PreProcessorGraphicsViewI* v)
 {
 	double x = pos.x();
 	double y = pos.y();
@@ -2208,7 +2167,7 @@ void GridCreatingConditionLaplace::Impl::pushCenterLineUpdateLabelsAndSplineComm
 	m_condition->pushRenderCommand(new CenterLineUpdateLabelsAndSplineCommand(comm, this));
 }
 
-void GridCreatingConditionLaplace::Impl::pushNewEdgeStartDefinitionCommand(bool keyDown, const QPoint& pos, PreProcessorGraphicsViewInterface* v)
+void GridCreatingConditionLaplace::Impl::pushNewEdgeStartDefinitionCommand(bool keyDown, const QPoint& pos, PreProcessorGraphicsViewI* v)
 {
 	if (keyDown) {
 		double x = pos.x();

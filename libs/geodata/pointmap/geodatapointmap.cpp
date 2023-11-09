@@ -13,14 +13,14 @@
 
 #include <geodata/polygongroup/geodatapolygongroup.h>
 #include <guibase/polygon/polygonpushvertexcommand.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessordataitem.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridtypedataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
@@ -102,19 +102,19 @@ bool GeoDataPointmap::getValueRange(double* min, double* max)
 GeoDataMapper* GeoDataPointmap::mapper() const
 {
 	if (impl->m_mappingSetting.mappingMode == MappingSetting::MappingMode::TIN) {
-		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Node) {
+		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Position::Node) {
 			return &impl->m_tinNodeMapper;
 		} else {
 			return &impl->m_tinCellMapper;
 		}
 	} else if (impl->m_mappingSetting.mappingMode == MappingSetting::MappingMode::Template) {
-		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Node) {
+		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Position::Node) {
 			return &impl->m_templateNodeMapper;
 		} else {
 			return &impl->m_templateCellMapper;
 		}
 	} else if (impl->m_mappingSetting.mappingMode == MappingSetting::MappingMode::Polygons) {
-		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Node) {
+		if (m_gridAttribute->position() == SolverDefinitionGridAttribute::Position::Node) {
 			return &impl->m_polygonsNodeMapper;
 		} else {
 			return &impl->m_polygonsCellMapper;
@@ -605,7 +605,7 @@ void GeoDataPointmap::addCustomMenuItems(QMenu* menu)
 
 void GeoDataPointmap::openDisplaySettingDialog()
 {
-	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->showPropertyDialog();
+	dynamic_cast<PreProcessorGeoDataDataItemI*>(parent())->showPropertyDialog();
 }
 
 void GeoDataPointmap::openMappingSettingDialog()
@@ -621,7 +621,7 @@ void GeoDataPointmap::openMappingSettingDialog()
 	iRICUndoStack::instance().clear();
 }
 
-void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleMousePressEvent(event, v);
 
@@ -630,7 +630,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 		m_dragStartPoint = event->pos();
 	}
 }
-void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleMouseReleaseEvent(event, v);
 
@@ -652,27 +652,27 @@ QStringList GeoDataPointmap::containedFiles() const
 	return ret;
 }
 
-void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleMouseMoveEvent(event, v);
 }
 
-void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleMouseDoubleClickEvent(event, v);
 }
 
-void GeoDataPointmap::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	impl->m_pointsManager.clearSelection();
 }
 
-void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleKeyPressEvent(event, v);
 }
 
-void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)
 {
 	impl->m_activeController->handleKeyReleaseEvent(event, v);
 }
@@ -721,11 +721,11 @@ void GeoDataPointmap::removeTrianglesWithLongEdgeEnd()
 
 void GeoDataPointmap::mergePointmaps()
 {
-	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*> (parent()->parent());
-	std::vector<PreProcessorGeoDataDataItemInterface*> dataToMerge;
+	auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent());
+	std::vector<PreProcessorGeoDataDataItemI*> dataToMerge;
 
 	for (auto item : gItem->childItems()) {
-		auto p = dynamic_cast<PreProcessorGeoDataDataItemInterface*> (item);
+		auto p = dynamic_cast<PreProcessorGeoDataDataItemI*> (item);
 		auto geoData = p->geoData();
 		if (geoData == this) {continue;}
 

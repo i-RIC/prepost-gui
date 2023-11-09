@@ -1,7 +1,7 @@
 #ifndef PREPROCESSORGEODATADATAITEM_H
 #define PREPROCESSORGEODATADATAITEM_H
 
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 #include <QSignalMapper>
 
 class ColorMapSettingContainerI;
@@ -11,7 +11,7 @@ class GeoData;
 class QSignalMapper;
 class QAction;
 
-class PreProcessorGeoDataDataItem : public PreProcessorGeoDataDataItemInterface
+class PreProcessorGeoDataDataItem : public PreProcessorGeoDataDataItemI
 {
 	Q_OBJECT
 
@@ -19,7 +19,7 @@ public:
 	PreProcessorGeoDataDataItem(PreProcessorDataItem* parent);
 	~PreProcessorGeoDataDataItem();
 
-	PreProcessorGeoDataGroupDataItemInterface* groupDataItem() const override;
+	PreProcessorGeoDataGroupDataItemI* groupDataItem() const override;
 	GeoData* geoData() const override;
 	void setGeoData(GeoData* geodata) override;
 

@@ -1,8 +1,8 @@
 #include "geodatacreator.h"
 #include "geodatawebimporter.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
-#include <guicore/pre/base/preprocessorgeodatadataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatadataitemi.h>
 
 GeoDataWebImporter::GeoDataWebImporter(const std::string& name, const QString& caption, GeoDataCreator* creator) :
 	QObject {creator},
@@ -30,7 +30,7 @@ GeoDataCreator* GeoDataWebImporter::creator() const
 	return dynamic_cast<GeoDataCreator*>(parent());
 }
 
-PreProcessorGeoDataDataItemInterface* GeoDataWebImporter::import(SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+PreProcessorGeoDataDataItemI* GeoDataWebImporter::import(SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	int count;
 	bool ok = importInit(&count, condition, item, w);
@@ -51,13 +51,13 @@ PreProcessorGeoDataDataItemInterface* GeoDataWebImporter::import(SolverDefinitio
 	return ret;
 }
 
-bool GeoDataWebImporter::importInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataWebImporter::importInit(int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	*count = 1;
 	return doInit(count, condition, item, w);
 }
 
-bool GeoDataWebImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* /*item*/, QWidget* /*w*/)
+bool GeoDataWebImporter::doInit(int* /*count*/, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* /*w*/)
 {
 	return true;
 }

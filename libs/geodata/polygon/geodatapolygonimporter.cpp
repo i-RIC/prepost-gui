@@ -4,7 +4,7 @@
 #include "geodatapolygonimporter.h"
 #include "geodatapolygonimportersettingdialog.h"
 
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/pre/gridcond/base/gridattributeeditwidget.h>
 #include <guicore/pre/geodata/geodatacreator.h>
 #include <misc/errormessage.h>
@@ -130,7 +130,7 @@ const QStringList GeoDataPolygonImporter::acceptableExtensions()
 	return ret;
 }
 
-bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPolygonImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	std::string fname = iRIC::toStr(filename);
 	SHPHandle shph = SHPOpen(fname.c_str(), "rb");

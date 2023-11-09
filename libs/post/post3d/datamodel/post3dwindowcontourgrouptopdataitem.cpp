@@ -4,7 +4,10 @@
 
 #include <guibase/objectbrowserview.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -35,6 +38,11 @@ void Post3dWindowContourGroupTopDataItem::update()
 	}
 }
 
+Post3dWindowZoneDataItem* Post3dWindowContourGroupTopDataItem::zoneDataItem() const
+{
+	return dynamic_cast<Post3dWindowZoneDataItem*> (parent());
+}
+
 void Post3dWindowContourGroupTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNodeList children = node.childNodes();
@@ -53,10 +61,10 @@ void Post3dWindowContourGroupTopDataItem::doLoadFromProjectMainFile(const QDomNo
 void Post3dWindowContourGroupTopDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	// contours
-	for (auto item : m_childItems) {
-		auto item2 = dynamic_cast<Post3dWindowContourGroupDataItem*> (item);
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<Post3dWindowContourGroupDataItem*> (child);
 		writer.writeStartElement("ContourGroup");
-		writer.writeAttribute("target", item2->target().c_str());
+		writer.writeAttribute("target", item->target().c_str());
 		item->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
@@ -69,17 +77,17 @@ void Post3dWindowContourGroupTopDataItem::addCustomMenuItems(QMenu* menu)
 
 QDialog* Post3dWindowContourGroupTopDataItem::addDialog(QWidget* p)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return nullptr;
 	}
 
-	auto gType = zoneData->gridType();
+	auto gType = cont->gridType();
 
 	auto dialog = new ValueSelectDialog(p);
 	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zoneData->data()->data()->GetPointData())) {
+	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		solutions.insert({sol, gType->outputCaption(sol)});
 	}
 	dialog->setValues(solutions);
@@ -90,12 +98,10 @@ QDialog* Post3dWindowContourGroupTopDataItem::addDialog(QWidget* p)
 
 void Post3dWindowContourGroupTopDataItem::handleAddDialogAccepted(QDialog* propDialog)
 {
-	auto zoneData = dynamic_cast<Post3dWindowZoneDataItem*>(parent())->dataContainer();
-	if (zoneData == nullptr || zoneData->data() == nullptr) {
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr || cont->gridData() == nullptr) {
 		return;
 	}
-
-	auto gType = zoneData->gridType();
 
 	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();

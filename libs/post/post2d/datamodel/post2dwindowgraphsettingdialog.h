@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -40,7 +41,7 @@ private:
 	Ui::Post2dWindowGraphSettingDialog *ui;
 
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

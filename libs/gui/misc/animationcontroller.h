@@ -2,7 +2,7 @@
 #define ANIMATIONCONTROLLER_H
 
 #include <guicore/solverdef/solverdefinition.h>
-#include <guicore/base/animationcontrollerinterface.h>
+#include <guicore/base/animationcontrolleri.h>
 
 #include <QList>
 #include <QObject>
@@ -19,7 +19,7 @@ class QWidget;
 
 /// AnimationContoller controls which timestep (or iteration process) to
 /// display on post-processing windows.
-class AnimationController : public AnimationControllerInterface
+class AnimationController : public AnimationControllerI
 {
 	Q_OBJECT
 

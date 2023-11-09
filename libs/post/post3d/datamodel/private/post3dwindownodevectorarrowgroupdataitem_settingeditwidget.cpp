@@ -2,7 +2,9 @@
 #include "post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 #include "ui_post3dwindownodevectorarrowgroupdataitem_settingeditwidget.h"
 
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4structured3dgrid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/scalarstocolors/colormapsettingmodifycommand.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -26,7 +28,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 		connect(pair.second->legendSetting()->imgSetting(), &ImageSettingContainer::updated, this, &SettingEditWidget::updateColorMapImageSetting);
 	}
 
-	auto grid = vtkStructuredGrid::SafeDownCast(m_item->data()->data()->data());
+	auto grid = dynamic_cast<v4Structured3dGrid*>(m_item->data()->gridData()->grid())->vtkConcreteData()->concreteData();
 	grid->GetDimensions(m_gridDimensions);
 	ui->faceSettingWidget->setDimensions(grid->GetDimensions());
 
@@ -130,8 +132,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::removeFace()
 	if (m_settings.size() == 0) {
 		clearWidgets();
 		return;
-	} else if (row >= m_settings.size()) {
-		row = m_settings.size() - 1;
+	} else if (row >= static_cast<int> (m_settings.size())) {
+		row = static_cast<int> (m_settings.size()) - 1;
 	}
 	ui->faceListWidget->setCurrentRow(row);
 }

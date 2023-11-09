@@ -6,8 +6,8 @@
 #include <cs/coordinatesystemconvertdialog.h>
 #include <cs/coordinatesystemconverter.h>
 #include <cs/gdalutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 
@@ -219,7 +219,7 @@ bool GeoDataPolyLineGroupCsvImporter::importData(GeoData* data, int index, QWidg
 }
 
 
-bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
+bool GeoDataPolyLineGroupCsvImporter::doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	if (projectCs == nullptr) {return true;}

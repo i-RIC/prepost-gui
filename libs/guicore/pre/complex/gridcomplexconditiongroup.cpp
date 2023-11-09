@@ -67,9 +67,7 @@ GridComplexConditionGroup::GridComplexConditionGroup(SolverDefinition* def, cons
 {}
 
 GridComplexConditionGroup::~GridComplexConditionGroup()
-{
-	delete impl;
-}
+{}
 
 int GridComplexConditionGroup::load(const iRICLib::H5CgnsConditionGroup& group)
 {

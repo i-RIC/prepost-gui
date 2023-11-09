@@ -2,9 +2,9 @@
 #define PREPROCESSORGRAPHICSVIEW_H
 
 #include <guicore/datamodel/vtk2dgraphicsview.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 
-class PreProcessorGraphicsView : public PreProcessorGraphicsViewInterface
+class PreProcessorGraphicsView : public PreProcessorGraphicsViewI
 {
 
 public:

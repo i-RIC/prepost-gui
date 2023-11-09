@@ -3,10 +3,11 @@
 
 #include <QDialog>
 
-class QAbstractButton;
-class Structured15DGridWithCrossSectionCrossSection;
+class v4Structured15dGridWithCrossSectionCrossSection;
 class Structured15DGridWithCrossSectionCrossSectionWindow;
 class PreProcessorNormal15DGridWithCrossSectionShapeDataItem;
+
+class QAbstractButton;
 
 namespace Ui
 {
@@ -18,7 +19,7 @@ class Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog : public Q
 	Q_OBJECT
 
 public:
-	explicit Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog(Structured15DGridWithCrossSectionCrossSection* cross, int from, int to, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parent);
+	explicit Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog(v4Structured15dGridWithCrossSectionCrossSection* cross, int from, int to, Structured15DGridWithCrossSectionCrossSectionWindow* w, PreProcessorNormal15DGridWithCrossSectionShapeDataItem* item, QWidget* parent);
 	~Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog();
 
 public slots:
@@ -30,8 +31,6 @@ private slots:
 	void handleButtonClick(QAbstractButton* button);
 
 private:
-	Ui::Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog* ui;
-
 	void setLimits();
 	void doReset();
 	void apply();
@@ -46,9 +45,11 @@ private:
 	int m_to;
 
 	Structured15DGridWithCrossSectionCrossSectionWindow* m_window;
-	Structured15DGridWithCrossSectionCrossSection* m_cross;
+	v4Structured15dGridWithCrossSectionCrossSection* m_cross;
 	PreProcessorNormal15DGridWithCrossSectionShapeDataItem* m_shapeItem;
 	bool m_applyed;
+
+	Ui::Structured15DGridWithCrossSectionCrossSectionAltitudeMoveDialog* ui;
 };
 
 #endif // STRUCTURED15DGRIDWITHCROSSSECTIONCROSSSECTIONALTITUDEMOVEDIALOG_H

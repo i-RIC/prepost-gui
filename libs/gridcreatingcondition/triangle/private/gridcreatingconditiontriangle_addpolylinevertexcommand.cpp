@@ -1,7 +1,7 @@
 #include "gridcreatingconditiontriangle_addpolylinevertexcommand.h"
 #include "../gridcreatingconditiontriangleabstractline.h"
 
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
 #include <misc/qundocommandhelper.h>
 
 GridCreatingConditionTriangle::AddPolyLineVertexCommand::AddPolyLineVertexCommand(bool keyDown, vtkIdType edgeId, QPoint point, GridCreatingConditionTriangle* pol) :

@@ -1,14 +1,19 @@
+#include "../post2dwindowattributebrowsercontroller.h"
+#include "post2dwindowcalculationresultdataitem.h"
 #include "post2dwindowgridtypedataitem.h"
+#include "post2dwindownodescalargrouptopdataitem.h"
 #include "post2dwindownodevectorstreamlinedataitem.h"
 #include "post2dwindownodevectorstreamlinegroupdataitem.h"
 #include "post2dwindowzonedataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkdatasetattributestool.h>
+#include <guicore/grid/v4grid.h>
 #include <guicore/misc/targeted/targeteditemsettargetcommandtool.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/solverdef/solverdefinitiongridoutput.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
@@ -43,9 +48,9 @@ Post2dWindowNodeVectorStreamlineGroupDataItem::Post2dWindowNodeVectorStreamlineG
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->data()->data()->GetPointData())) {
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
 		auto caption = gt->vectorOutputCaption(name);
 		auto item = new Post2dWindowNodeVectorStreamlineDataItem(name, caption, this);
 		m_childItems.push_back(item);
@@ -76,10 +81,10 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::updateActorSetting()
 
 	clearActors();
 
-	PostZoneDataContainer* cont = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->dataContainer();
+	auto cont = zoneDataItem()->v4DataContainer();
 	if (cont == nullptr) {return;}
 
-	vtkPointSet* ps = cont->data()->data();
+	vtkPointSet* ps = cont->gridData()->grid()->vtkData()->data();
 	if (ps == nullptr) {return;}
 	if (m_setting.target == "") {return;}
 
@@ -140,28 +145,27 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::setupStreamTracer(vtkStreamT
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->initNodeResultAttributeBrowser();
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->initialize();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::informDeselection(VTKGraphicsView* /*v*/)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->clearNodeResultAttributeBrowser();
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->clear();
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->updateNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->update(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	dynamic_cast<Post2dWindowZoneDataItem*>(parent())->fixNodeResultAttributeBrowser(QPoint(event->x(), event->y()), v);
+	resultDataItem()->nodeScalarGroupTopDataItem()->attributeBrowserController()->fix(event->pos(), v);
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	QAction* abAction = dynamic_cast<Post2dWindowZoneDataItem*>(parent())->showAttributeBrowserActionForNodeResult();
-	menu->addAction(abAction);
+	menu->addAction(resultDataItem()->nodeScalarGroupTopDataItem()->showAttributeBrowserAction());
 }
 
 void Post2dWindowNodeVectorStreamlineGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -191,4 +195,14 @@ void Post2dWindowNodeVectorStreamlineGroupDataItem::clearActors()
 	}
 	m_actorCollection->RemoveAllItems();
 	m_streamlineActors.clear();
+}
+
+Post2dWindowCalculationResultDataItem* Post2dWindowNodeVectorStreamlineGroupDataItem::resultDataItem() const
+{
+	return dynamic_cast<Post2dWindowCalculationResultDataItem*>(parent());
+}
+
+Post2dWindowZoneDataItem* Post2dWindowNodeVectorStreamlineGroupDataItem::zoneDataItem() const
+{
+	return resultDataItem()->zoneDataItem();
 }

@@ -12,7 +12,7 @@
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 #include "private/graphicswindowdataitem_updateactorsettingcommand.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <misc/iricundostack.h>
 #include <misc/qttool.h>
 #include <memory>
@@ -741,7 +741,7 @@ void GraphicsWindowDataItem::showPropertyDialogModeless()
 	QDialog* propDialog = propertyDialog(mainWindow());
 	if (propDialog == nullptr) {return;}
 	propDialog->setAttribute(Qt::WA_DeleteOnClose);
-	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(propDialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
 
 	iricMainWindow()->enterModelessDialogMode();
 

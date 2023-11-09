@@ -7,7 +7,7 @@
 
 #include <cs/coordinatesystem.h>
 #include <cs/webmercatorutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/datamodel/graphicswindowdatamodel.h>
@@ -187,8 +187,6 @@ TmsImageGroupDataItem::TmsImageGroupDataItem(GraphicsWindowDataItem* parent) :
 TmsImageGroupDataItem::~TmsImageGroupDataItem()
 {
 	renderer()->RemoveActor(impl->m_actor);
-
-	delete impl;
 }
 
 std::string TmsImageGroupDataItem::target() const

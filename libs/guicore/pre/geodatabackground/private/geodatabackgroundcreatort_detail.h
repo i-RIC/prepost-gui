@@ -3,8 +3,10 @@
 
 #include "../geodatabackgroundcreatort.h"
 #include "../geodatabackground.h"
-#include "../geodatabackgroundnodemappert.h"
 #include "../geodatabackgroundcellmappert.h"
+#include "../geodatabackgroundifacemappert.h"
+#include "../geodatabackgroundjfacemappert.h"
+#include "../geodatabackgroundnodemappert.h"
 
 template <class V, class DA>
 GeoDataBackgroundCreatorT<V, DA>::GeoDataBackgroundCreatorT(const QString& typeName) :
@@ -19,6 +21,10 @@ GeoData* GeoDataBackgroundCreatorT<V, DA>::create(ProjectDataItem* parent, Solve
 		geodata->setMapper(new GeoDataBackgroundNodeMapperT<V, DA>(this));
 	} else if (condition->position() == SolverDefinitionGridAttribute::Position::CellCenter) {
 		geodata->setMapper(new GeoDataBackgroundCellMapperT<V, DA>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::IFace) {
+		geodata->setMapper(new GeoDataBackgroundIFaceMapperT<V, DA>(this));
+	} else if (condition->position() == SolverDefinitionGridAttribute::Position::JFace) {
+		geodata->setMapper(new GeoDataBackgroundJFaceMapperT<V, DA>(this));
 	}
 	return geodata;
 }

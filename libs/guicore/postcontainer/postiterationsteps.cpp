@@ -1,4 +1,4 @@
-#include "../base/iricmainwindowinterface.h"
+#include "../base/iricmainwindowi.h"
 #include "../project/projectcgnsfile.h"
 #include "../project/projectdata.h"
 #include "postiterationsteps.h"

@@ -13,7 +13,7 @@
 #include "post3dwindowgraphicsview.h"
 
 #include <guibase/objectbrowserview.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/project/projectdata.h>

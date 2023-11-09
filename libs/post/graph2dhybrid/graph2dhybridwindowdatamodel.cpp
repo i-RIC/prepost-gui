@@ -27,16 +27,16 @@
 #include <geodata/polylinegroup/geodatapolylinegrouppolyline.h>
 #include <gridcreatingcondition/riversurvey/gridcreatingconditionriversurvey.h>
 #include <guibase/objectbrowserview.h>
-#include <guicore/base/animationcontrollerinterface.h>
-#include <guicore/base/iricmainwindowinterface.h>
+#include <guicore/base/animationcontrolleri.h>
+#include <guicore/base/iricmainwindowi.h>
 #include <guicore/post/postzoneselectingdialog.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/posttimesteps.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectmainfile.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
@@ -908,7 +908,7 @@ void Graph2dHybridWindowDataModel::markerSettiing()
 
 void Graph2dHybridWindowDataModel::exportCsv()
 {
-	iRICMainWindowInterface* mainW = projectData()->mainWindow();
+	iRICMainWindowI* mainW = projectData()->mainWindow();
 	QString iodir = LastIODirectory::get();
 	if (mainW->isSolverRunning()) {
 		mainW->warnSolverRunning();
@@ -923,7 +923,7 @@ void Graph2dHybridWindowDataModel::exportCsv()
 		QMessageBox::critical(mainW, tr("Error"), tr("Saving %1 failed.").arg(QDir::toNativeSeparators(fname)));
 		return;
 	}
-	mainW->statusBar()->showMessage(tr("CSV file successfully exported."), iRICMainWindowInterface::STATUSBAR_DISPLAYTIME);
+	mainW->statusBar()->showMessage(tr("CSV file successfully exported."), iRICMainWindowI::STATUSBAR_DISPLAYTIME);
 	QFileInfo finfo(fname);
 	LastIODirectory::set(finfo.absolutePath());
 }
@@ -1518,8 +1518,8 @@ void Graph2dHybridWindowDataModel::addKPMarkers()
 {
 	QList<Graph2dWindowMarkerSetting::Graph2dWindowMarkerSettingItem> items;
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = 0;
-	PreProcessorGridAndGridCreatingConditionDataItemInterface* citem = 0;
-	PreProcessorGridCreatingConditionDataItemInterface* condItem = 0;
+	PreProcessorGridAndGridCreatingConditionDataItemI* citem = 0;
+	PreProcessorGridCreatingConditionDataItemI* condItem = 0;
 	GridCreatingCondition* cond = 0;
 	GridCreatingConditionRiverSurvey* condrs = 0;
 

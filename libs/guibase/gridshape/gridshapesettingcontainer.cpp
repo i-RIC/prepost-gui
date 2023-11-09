@@ -97,17 +97,23 @@ void GridShapeSettingContainer::update(vtkActorCollection* col, vtkActor2DCollec
 	auto sgrid = vtkStructuredGrid::SafeDownCast(outlineGrid);
 	if (sgrid != nullptr) {
 		if (shape == Shape::Wireframe) {
+			if (wireframeGrid != nullptr) {
+				updateWireframeActor(wireframeGrid);
+				col->AddItem(m_wireframeActor);
+			}
+		}
+		if (outlineGrid != nullptr) {
+			updateOutlineActor(sgrid);
+			col->AddItem(m_outlineActor);
+		}
+	} else {
+		if (wireframeGrid != nullptr) {
 			updateWireframeActor(wireframeGrid);
 			col->AddItem(m_wireframeActor);
 		}
-		updateOutlineActor(sgrid);
-		col->AddItem(m_outlineActor);
-	} else {
-		updateWireframeActor(wireframeGrid);
-		col->AddItem(m_wireframeActor);
 	}
 
-	if (indexVisible) {
+	if (indexVisible && labelGrid != nullptr) {
 		updateIndexActor(labelGrid, labelName);
 		col2d->AddItem(m_indexActor);
 	}

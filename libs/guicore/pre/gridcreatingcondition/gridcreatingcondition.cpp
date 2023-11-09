@@ -1,7 +1,7 @@
 #include "../base/preprocessordataitem.h"
-#include "../base/preprocessorgraphicsviewinterface.h"
-#include "../base/preprocessorgridcreatingconditiondataiteminterface.h"
-#include "../base/preprocessorwindowinterface.h"
+#include "../base/preprocessorgraphicsviewi.h"
+#include "../base/preprocessorgridcreatingconditiondataitemi.h"
+#include "../base/preprocessorwindowi.h"
 #include "gridcreatingcondition.h"
 #include "gridcreatingconditioncreator.h"
 
@@ -21,7 +21,7 @@ const QString GridCreatingCondition::XML_FILENAME = "condition.xml";
 
 GridCreatingCondition::GridCreatingCondition(ProjectDataItem* parent, GridCreatingConditionCreator* creator) :
 	ProjectDataItem("gridcreatingcondition.dat", parent),
-	m_conditionDataItem {dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent)},
+	m_conditionDataItem {dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent)},
 	m_creator {creator},
 	m_menu {new QMenu(tr("&Grid Creating Condition"), 0)}
 {
@@ -106,14 +106,14 @@ QMenu* GridCreatingCondition::menu() const
 	return m_menu;
 }
 
-PreProcessorWindowInterface* GridCreatingCondition::preProcessorWindow() const
+PreProcessorWindowI* GridCreatingCondition::preProcessorWindow() const
 {
 	return dynamic_cast<PreProcessorDataItem*>(parent())->preProcessorWindow();
 }
 
-PreProcessorGraphicsViewInterface* GridCreatingCondition::graphicsView() const
+PreProcessorGraphicsViewI* GridCreatingCondition::graphicsView() const
 {
-	return dynamic_cast<PreProcessorGraphicsViewInterface*>(preProcessorWindow()->centralWidget());
+	return dynamic_cast<PreProcessorGraphicsViewI*>(preProcessorWindow()->centralWidget());
 }
 
 vtkRenderer* GridCreatingCondition::renderer()
@@ -136,12 +136,12 @@ void GridCreatingCondition::updateZDepthRangeItemCount(ZDepthRange& range)
 	range.setItemCount(0);
 }
 
-PreProcessorGridCreatingConditionDataItemInterface* GridCreatingCondition::gccDataItem() const
+PreProcessorGridCreatingConditionDataItemI* GridCreatingCondition::gccDataItem() const
 {
-	return dynamic_cast<PreProcessorGridCreatingConditionDataItemInterface*>(parent());
+	return dynamic_cast<PreProcessorGridCreatingConditionDataItemI*>(parent());
 }
 
-PreProcessorDataModelInterface* GridCreatingCondition::dataModel() const
+PreProcessorDataModelI* GridCreatingCondition::dataModel() const
 {
 	return gccDataItem()->dataModel();
 }

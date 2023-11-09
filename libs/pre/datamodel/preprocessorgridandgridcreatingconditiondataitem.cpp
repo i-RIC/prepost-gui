@@ -1,7 +1,6 @@
-#include "../gridimporter/cgnsgridimporter.h"
-#include "../gridimporter/projectgridimporter.h"
 #include "../factory/gridimporterfactory.h"
 #include "../factory/preprocessorgriddataitemfactory.h"
+#include "../gridimporter/cgnsgridimporter.h"
 #include "../misc/preprocessorgridattributemappingmode.h"
 #include "../preprocessorwindow.h"
 #include "preprocessorbcgroupdataitem.h"
@@ -20,12 +19,12 @@
 #include "preprocessorstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
 
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/grid/gridimporterinterface.h>
-#include <guicore/pre/grid/grid.h>
-#include <guicore/pre/grid/gridcgnsestimater.h>
-#include <guicore/pre/base/preprocessordatamodelinterface.h>
-#include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
+#include <guicore/pre/base/preprocessorgraphicsviewi.h>
+#include <guicore/pre/grid/gridimporteri.h>
+#include <guicore/pre/grid/v4inputgrid.h>
+#include <guicore/pre/grid/v4inputgridio.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectmainfile.h>
@@ -36,20 +35,6 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
-#include <QApplication>
-#include <QAction>
-#include <QDir>
-#include <QDomElement>
-#include <QFileDialog>
-#include <QMenu>
-#include <QMessageBox>
-#include <QRegExp>
-#include <QStandardItem>
-#include <QXmlStreamWriter>
-
-#include <vtkStructuredGrid.h>
-#include <vtkUnstructuredGrid.h>
-
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <h5cgnszone.h>
@@ -58,7 +43,7 @@
 #include <typeinfo>
 
 PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zoneName, const QString& caption, PreProcessorDataItem* p) :
-	PreProcessorGridAndGridCreatingConditionDataItemInterface {caption, p},
+	PreProcessorGridAndGridCreatingConditionDataItemI {caption, p},
 	m_caption {caption},
 	m_zoneName (zoneName),
 	m_bcSettingGroupDataItem {nullptr},
@@ -124,7 +109,7 @@ const std::string& PreProcessorGridAndGridCreatingConditionDataItem::zoneName() 
 	return m_zoneName;
 }
 
-PreProcessorGridCreatingConditionDataItemInterface* PreProcessorGridAndGridCreatingConditionDataItem::creatingConditionDataItem() const
+PreProcessorGridCreatingConditionDataItemI* PreProcessorGridAndGridCreatingConditionDataItem::creatingConditionDataItem() const
 {
 	return m_creatingConditionDataItem;
 }
@@ -151,7 +136,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu*
 	gtItem->addCustomMenuItems(menu);
 }
 
-PreProcessorGridDataItemInterface* PreProcessorGridAndGridCreatingConditionDataItem::gridDataItem() const
+PreProcessorGridDataItemI* PreProcessorGridAndGridCreatingConditionDataItem::gridDataItem() const
 {
 	return m_gridDataItem;
 }
@@ -169,30 +154,31 @@ void PreProcessorGridAndGridCreatingConditionDataItem::handleStandardItemChange(
 
 bool PreProcessorGridAndGridCreatingConditionDataItem::isGridEdited() const
 {
-	Grid* g = m_gridDataItem->grid();
+	v4InputGrid* g = m_gridDataItem->grid();
 	if (g == nullptr) {return m_gridDataItem->gridIsDeleted();}
 	return g->isModified();
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::setGridEdited()
 {
-	Grid* g = m_gridDataItem->grid();
+	v4InputGrid* g = m_gridDataItem->grid();
 	if (g == nullptr) {return;}
-	g->setModified();
+
+	g->setIsModified(true);
 }
 
-void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* grid)
+void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4InputGrid* grid)
 {
 	if (grid == nullptr) {return;}
 
-	PreProcessorGridDataItem* gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
+	auto gridItem = PreProcessorGridDataItemFactory::factory(grid, this);
 	if (m_gridDataItem != nullptr && typeid(*m_gridDataItem).name() == typeid(*gridItem).name()) {
 		delete gridItem;
 		return;
 	}
 
 	if (m_gridDataItem != nullptr) {
-		PreProcessorGridDataItemInterface* tmpItem = m_gridDataItem;
+		PreProcessorGridDataItemI* tmpItem = m_gridDataItem;
 		tmpItem->unsetBCGroupDataItem();
 		auto it = std::find(m_childItems.begin(), m_childItems.end(), tmpItem);
 		if (it != m_childItems.end()) {m_childItems.erase(it);}
@@ -210,7 +196,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
 
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
 	SolverDefinitionGridType* gt = gtItem->gridType();
 	QStandardItem* prevItem = 0;
 	if (gt->boundaryConditions().size() > 0) {
@@ -221,14 +207,15 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(Grid* g
 	QStandardItem* targetParent = prevItem->parent();
 	QStandardItem* gItem = gridItem->standardItem();
 	int prevRow = prevItem->row();
-	if (targetParent != 0) {
+	if (targetParent != nullptr) {
 		targetParent->insertRow(prevRow + 1, gItem);
 	} else {
 		// add as root node
 		prevItem->model()->insertRow(prevRow + 1, gItem);
 	}
 
-	connect(gridItem, SIGNAL(gridAttributeChanged(std::string)), gtItem, SLOT(changeValueRange(std::string)));
+	connect(gridItem, &PreProcessorGridDataItem::gridAttributeChanged, gtItem, &PreProcessorGridTypeDataItem::changeValueRange);
+
 	updateItemMap();
 	updateZDepthRange();
 	qApp->processEvents();
@@ -240,7 +227,9 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
 	if (zone == nullptr) {return IRIC_NO_ERROR;}
 
-	Grid* grid = GridCgnsEstimater::buildGrid(*zone, nullptr);
+	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
+	int ier;
+	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem->gridType(), offset(), &ier);
 	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
 	setupGridDataItem(grid);
 	delete grid;
@@ -292,13 +281,11 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(Q
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::saveExternalData(const QString&)
-{
-
-}
+{}
 
 void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	iRICMainWindowI* mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()){
 		mw->warnSolverRunning();
 		return;
@@ -314,66 +301,48 @@ void PreProcessorGridAndGridCreatingConditionDataItem::deleteGridAndCondition()
 	iRICUndoStack::instance().clear();
 }
 
-bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridImporterInterface* importer, const QString& filename, const QString& selectedFilter)
+bool PreProcessorGridAndGridCreatingConditionDataItem::importFromImporter(GridImporterI* importer, const QString& filename, const QString& selectedFilter)
 {
 	// create new empty grid.
-	SolverDefinitionGridType::GridType gt = importer->supportedGridType();
-	Grid* importedGrid = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType()->createEmptyGrid(gt);
-	importedGrid->setZoneName(zoneName());
+	auto gt = importer->supportedGridType();
+	v4InputGrid* importedGrid = gridTypeDataItem()->gridType()->createEmptyGrid(gt);
 	setupGridDataItem(importedGrid);
 
 	// now, import grid data.
-	bool ret = true;
-
 	auto gridItem = dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem);
-	importedGrid->setParent(gridItem);
+	importedGrid->setGridDataItem(gridItem);
 
-	auto projImporter = dynamic_cast<ProjectGridImporter*> (importer);
-	if (projImporter != nullptr) {
-		// In case of Project file, import both grid and boundary condition.
-		projImporter->setGridDataItem(gridItem);
-		return projImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-	}
+	return m_gridDataItem->importFromImporter(importedGrid, importer, filename, selectedFilter);
+}
 
-	auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
-	if (cgnsImporter != nullptr) {
-		// In case of CGNS file, import both grid and boundary condition.
-		cgnsImporter->setGridDataItem(gridItem);
-		return cgnsImporter->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-	}
-
-	ret = importer->import(importedGrid, filename, selectedFilter, projectData()->mainWindow());
-	if (ret) {
-		gridItem->setGrid(importedGrid);
-	}
-	return ret;
+PreProcessorGridTypeDataItem* PreProcessorGridAndGridCreatingConditionDataItem::gridTypeDataItem() const
+{
+	return dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 {
-	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
+	iRICMainWindowI* mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()){
 		mw->warnSolverRunning();
 		return;
 	}
 	QString dir = LastIODirectory::get();
 	QSet<QString> filters;
-	QMap<QString, QList<GridImporterInterface*> > importers;
+	QMap<QString, QList<GridImporterI*> > importers;
 
-	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
-	QList<GridImporterInterface*> importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
+	auto gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	auto importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
 
-	QList<GridImporterInterface*>::const_iterator it;
-	for (it = importerList.begin(); it != importerList.end(); ++it) {
-		QStringList flist = (*it)->fileDialogFilters();
-		for (QStringList::iterator fit = flist.begin(); fit != flist.end(); ++fit) {
-			filters.insert(*fit);
-			if (! importers.contains(*fit)) {
-				QList<GridImporterInterface*> emptyList;
-				importers.insert(*fit, emptyList);
+	for (auto importer : importerList) {
+		for (auto filter : importer->fileDialogFilters()) {
+			filters.insert(filter);
+			if (! importers.contains(filter)) {
+				QList<GridImporterI*> emptyList;
+				importers.insert(filter, emptyList);
 			}
-			QList<GridImporterInterface*>& imps = importers[*fit];
-			imps.append(*it);
+			auto& imps = importers[filter];
+			imps.append(importer);
 		}
 	}
 	QRegExp re("\\((.+)\\)");
@@ -393,7 +362,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	QString selectedFilter;
 	QString filename = QFileDialog::getOpenFileName(projectData()->mainWindow(), tr("Select file to import"), dir, filterList.join(";;"), &selectedFilter);
 	if (filename.isNull()){return;}
-	QList<GridImporterInterface*> impsForFilter;
+	QList<GridImporterI*> impsForFilter;
 	if (importers.find(selectedFilter) != importers.end()) {
 		impsForFilter = importers[selectedFilter];
 	} else {
@@ -409,7 +378,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	}
 	bool ret = false;
 	for (int i = 0; i < impsForFilter.size(); ++i) {
-		GridImporterInterface* importer = impsForFilter.at(i);
+		auto importer = impsForFilter.at(i);
 		ret = importFromImporter(importer, filename, selectedFilter);
 		if (ret) {break;}
 	}
@@ -422,27 +391,27 @@ void PreProcessorGridAndGridCreatingConditionDataItem::importGrid()
 	}
 
 	// import succeeded.
-	m_gridDataItem->grid()->setModified();
+	m_gridDataItem->grid()->setIsModified(true);
 
 	QFileInfo finfo(filename);
 	LastIODirectory::set(finfo.absolutePath());
 	dataModel()->graphicsView()->cameraFit();
 
 	mainWindow()->setFocus();
-	dynamic_cast<PreProcessorGridDataItem*> (m_gridDataItem)->informGridChange();
+	m_gridDataItem->informGridChange();
 }
 
 bool PreProcessorGridAndGridCreatingConditionDataItem::importGridFromCgnsFile(const QString& filename)
 {
-	PreProcessorGridTypeDataItem* gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	auto gTypeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
 	auto importerList = GridImporterFactory::instance().list(*(gTypeItem->gridType()));
 
 	for (auto importer : importerList) {
+		// try only CgnsImpoter
 		auto cgnsImporter = dynamic_cast<CgnsGridImporter*> (importer);
 		if (cgnsImporter == nullptr) {continue;}
 
 		auto filters = cgnsImporter->fileDialogFilters();
-		cgnsImporter->setDisableWarning(true);
 		bool ok = importFromImporter(importer, filename, filters.first());
 		if (ok) {
 			dataModel()->graphicsView()->cameraFit();
@@ -466,6 +435,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 			}
 		}
 	}
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	gItem->updateSimplifiedGrid(dataModel()->graphicsView());
 	gItem->informGridAttributeChangeAll();
 }

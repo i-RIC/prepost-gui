@@ -33,8 +33,8 @@ private slots:
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& /*node*/) override {}
 	void doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/) override {}
-	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
-	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewInterface* /*v*/) override;
+	void mousePressEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
+	void mouseReleaseEvent(QMouseEvent* /*event*/, PreProcessorGraphicsViewI* /*v*/) override;
 
 	SolverDefinition* m_definition;
 	std::string m_name;

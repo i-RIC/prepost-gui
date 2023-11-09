@@ -5,7 +5,7 @@
 
 #include <guicore/pre/geodata/geodatamappersettingi.h>
 #include <guicore/pre/geodata/geodatanodemappert.h>
-#include <misc/integerrangecontainer.h>
+#include <misc/rangecontainert.h>
 
 class GeoDataPolyLineGroupNodeMapperSetting : public GeoDataMapperSettingI
 {

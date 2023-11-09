@@ -8,7 +8,7 @@
 
 class PostSolutionInfo;
 class PostProcessorWindowProjectDataItem;
-class PreProcessorGeoDataGroupDataItemInterface;
+class PreProcessorGeoDataGroupDataItemI;
 class ProjectData;
 
 /// Abstract Post processor window
@@ -35,7 +35,7 @@ public slots:
 
 protected:
 	PostSolutionInfo* postSolutionInfo();
-	PreProcessorGeoDataGroupDataItemInterface* refDataGroupDataItem();
+	PreProcessorGeoDataGroupDataItemI* refDataGroupDataItem();
 
 	PostProcessorWindowProjectDataItem* m_projectDataItem;
 	int m_index;

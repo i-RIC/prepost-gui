@@ -7,8 +7,8 @@
 class ColorMapSettingContainerI;
 class GeoData;
 class GraphicsWindowDataModel;
-class Post2dWindowGeoDataDataItemInterface;
-class Post2dWindowGridTypeDataItemInterface;
+class Post2dWindowGeoDataDataItemI;
+class Post2dWindowGridTypeDataItemI;
 class ZDepthRange;
 
 class QDialog;
@@ -40,8 +40,8 @@ public:
 	virtual QDialog* propertyDialog(QWidget* parent);
 	virtual void handlePropertyDialogAccepted(QDialog* propDialog);
 
-	Post2dWindowGeoDataDataItemInterface* geoDataDataItem() const;
-	Post2dWindowGridTypeDataItemInterface* gridTypeDataItem() const;
+	Post2dWindowGeoDataDataItemI* geoDataDataItem() const;
+	Post2dWindowGridTypeDataItemI* gridTypeDataItem() const;
 	void applyColorMapSetting();
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 

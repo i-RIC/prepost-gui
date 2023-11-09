@@ -19,11 +19,12 @@ template <class V, class DA>
 GeoDataMapperSettingI* GeoDataPolygonGroupNodeMapperT<V, DA>::initialize(bool* boolMap)
 {
 	auto s = new GeoDataPolygonGroupNodeMapperSetting();
-	unsigned int count = GeoDataMapperT<V>::container()->dataCount();
+	unsigned int count = GeoDataMapperT<V, DA>::container()->dataCount();
 	auto polygonGroup = dynamic_cast<GeoDataPolygonGroup*> (GeoDataMapper::geoData());
 	polygonGroup->mergeEditTargetData();
 	polygonGroup->updateOrder();
 
+	vtkPointSet* vtkGrid = GeoDataMapper::grid()->grid()->vtkData()->data();
 	for (unsigned int i = 0; i < count; ++i) {
 		if (*(boolMap + i)) {
 			s->ranges.add(nullptr);
@@ -31,7 +32,7 @@ GeoDataMapperSettingI* GeoDataPolygonGroupNodeMapperT<V, DA>::initialize(bool* b
 		}
 		// not mapped yet.
 		double point[3];
-		GeoDataMapper::grid()->vtkGrid()->GetPoint(i, point);
+		vtkGrid->GetPoint(i, point);
 		auto pols = polygonGroup->polygonsInBoundingBox(point[0] - TINY_DOUBLE, point[0] + TINY_DOUBLE, point[1] - TINY_DOUBLE, point[1] + TINY_DOUBLE);
 
 		std::map<unsigned int, GeoDataPolygonGroupPolygon*> polsMap;
@@ -54,7 +55,7 @@ template <class V, class DA>
 void GeoDataPolygonGroupNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSettingI* s)
 {
 	auto setting = dynamic_cast<GeoDataPolygonGroupNodeMapperSetting*> (s);
-	DA* da = dynamic_cast<DA*> (GeoDataMapperT<V>::container()->dataArray());
+	DA* da = dynamic_cast<DA*> (GeoDataMapperT<V, DA>::container()->dataArray());
 	const auto& polys = setting->ranges.data();
 	const auto& maxIndices = setting->ranges.maxIndices();
 	int rangeId = 0;
@@ -65,7 +66,7 @@ void GeoDataPolygonGroupNodeMapperT<V, DA>::map(bool* boolMap, GeoDataMapperSett
 		if (pol == nullptr) {
 			idx = maxIdx + 1;
 		} else {
-			V value = GeoDataMapperT<V>::fromVariant(pol->value());
+			V value = GeoDataMapperT<V, DA>::fromVariant(pol->value());
 			while (idx <= maxIdx) {
 				if (*(boolMap + idx) == false) {
 					da->SetValue(idx, value);

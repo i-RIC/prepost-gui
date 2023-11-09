@@ -1,7 +1,10 @@
 #include "geodatapointmaptemplatenodemapper.h"
 #include "geodatapointmap.h"
 
-#include <guicore/pre/grid/structured2dgrid.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <misc/mathsupport.h>
 
 namespace {
@@ -20,7 +23,7 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapper::initialize(bool* boolM
 {
 	GeoDataPointmapTemplateNodeMapperSetting* s = new GeoDataPointmapTemplateNodeMapperSetting();
 	auto pointmap = dynamic_cast<GeoDataPointmap*>(geoData());
-	auto grid2d = dynamic_cast<Structured2DGrid*>(GeoDataMapper::grid());
+	auto grid2d = dynamic_cast<v4Structured2dGrid*>(GeoDataMapper::grid()->grid());
 	if (grid2d == nullptr) {return s;}
 	if (container()->gridAttribute()->isOption()) {
 		// @todo not implemented yet.
@@ -34,12 +37,12 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapper::initialize(bool* boolM
 		unsigned int count = grid2d->nodeCount();
 		for (unsigned int index = 0; index < count; ++index) {
 			if (*(boolMap + index)) {continue;}
-			unsigned int i, j;
-			grid2d->getIJIndex(index, &i, &j);
+			vtkIdType i, j;
+			grid2d->getPointIJIndex(index, &i, &j);
 
 			bool found = false;
 			// get the grid node coordinates.
-			QPointF vec2d = grid2d->vertex(i, j);
+			QPointF vec2d = grid2d->point2d(i, j);
 			double p[3];
 			QPointF vecI;
 			QPointF vecJ;
@@ -51,10 +54,10 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapper::initialize(bool* boolM
 			p[2] = 0;
 
 			if (i != 0) {
-				ivecs.push_back(vec2d - grid2d->vertex(i - 1, j));
+				ivecs.push_back(vec2d - grid2d->point2d(i - 1, j));
 			}
 			if (i != grid2d->dimensionI() - 1) {
-				ivecs.push_back(grid2d->vertex(i + 1, j) - vec2d);
+				ivecs.push_back(grid2d->point2d(i + 1, j) - vec2d);
 			}
 			for (int k = 0; k < ivecs.count(); ++k) {
 				vecI += ivecs[k];
@@ -62,10 +65,10 @@ GeoDataMapperSettingI* GeoDataPointmapTemplateNodeMapper::initialize(bool* boolM
 			vecI /= ivecs.count();
 
 			if (j != 0) {
-				jvecs.push_back(vec2d - grid2d->vertex(i, j - 1));
+				jvecs.push_back(vec2d - grid2d->point2d(i, j - 1));
 			}
 			if (j != grid2d->dimensionJ() - 1) {
-				jvecs.push_back(grid2d->vertex(i, j + 1) - vec2d);
+				jvecs.push_back(grid2d->point2d(i, j + 1) - vec2d);
 			}
 			for (int k = 0; k < jvecs.count(); ++k) {
 				vecJ += jvecs[k];

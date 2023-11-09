@@ -24,7 +24,7 @@ GeoDataPointGroup::DisplaySettingWidget::~DisplaySettingWidget()
 	delete ui;
 }
 
-QUndoCommand* GeoDataPointGroup::DisplaySettingWidget::createModifyCommand(bool apply)
+QUndoCommand* GeoDataPointGroup::DisplaySettingWidget::createModifyCommand(bool /*apply*/)
 {
 	return new ValueModifyCommmand<DisplaySetting>(iRIC::generateCommandId("GeoDataPointGroup::PropertyDialog::Basic"), true, setting(), m_displaySetting);
 }

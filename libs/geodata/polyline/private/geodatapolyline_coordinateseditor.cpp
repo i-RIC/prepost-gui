@@ -4,8 +4,8 @@
 
 #include <guibase/coordinates/coordinatesedit.h>
 #include <guibase/vtktool/vtkpointsutil.h>
-#include <guicore/base/iricmainwindowinterface.h>
-#include <guicore/pre/base/preprocessorwindowinterface.h>
+#include <guicore/base/iricmainwindowi.h>
+#include <guicore/pre/base/preprocessorwindowi.h>
 #include <misc/iricundostack.h>
 
 #include <vtkPolyLine.h>

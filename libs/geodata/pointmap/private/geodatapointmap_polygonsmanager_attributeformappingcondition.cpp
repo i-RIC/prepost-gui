@@ -26,7 +26,7 @@ GeoData* GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::buildBa
 	return nullptr;
 }
 
-GridAttributeContainer* GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::buildContainer(Grid* /*grid*/)
+GridAttributeContainer* GeoDataPointmap::PolygonsManager::AttributeForMappingCondition::buildContainer(v4InputGrid* /*grid*/)
 {
 	return nullptr;
 }

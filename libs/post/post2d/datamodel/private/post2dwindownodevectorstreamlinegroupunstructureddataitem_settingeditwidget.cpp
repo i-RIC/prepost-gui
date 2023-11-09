@@ -4,8 +4,11 @@
 #include "ui_post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget.h"
 
 #include <guibase/comboboxtool.h>
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkdatasetattributestool.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/grid/v4grid.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/mergesupportedlistcommand.h>
 #include <misc/qundocommandhelper.h>
@@ -23,10 +26,10 @@ Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidget::Se
 	connect(ui->removeButton, &QPushButton::clicked, this, &SettingEditWidget::removeStartPosition);
 	connect(ui->startPositionListWidget, &QListWidget::currentRowChanged, this, &SettingEditWidget::handleCurrentStartPositionChanged);
 
-	auto cont = dynamic_cast<Post2dWindowZoneDataItem*>(m_item->parent())->dataContainer();
+	auto cont = m_item->zoneDataItem()->v4DataContainer();
 	ui->regionWidget->hideCustom();
 
-	if (! cont->IBCExists()) {
+	if (! cont->gridData()->ibcExists(v4SolutionGrid::Position::Node)) {
 		ui->regionWidget->disableActive();
 	}
 	setupSolutionComboBox(cont);
@@ -152,9 +155,9 @@ void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidge
 	m_item->renderGraphicsView();
 }
 
-void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidget::setupSolutionComboBox(PostZoneDataContainer* zoneData)
+void Post2dWindowNodeVectorStreamlineGroupUnstructuredDataItem::SettingEditWidget::setupSolutionComboBox(v4PostZoneDataContainer* zoneData)
 {
-	vtkPointData* pd = zoneData->data()->data()->GetPointData();
+	auto pd = zoneData->gridData()->grid()->vtkData()->data()->GetPointData();
 	SolverDefinitionGridType* gt = zoneData->gridType();
 
 	m_solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(pd);

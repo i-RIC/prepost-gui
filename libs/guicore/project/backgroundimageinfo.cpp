@@ -1,10 +1,10 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#include "../base/iricmainwindowinterface.h"
-#include "../pre/base/preprocessordatamodelinterface.h"
-#include "../pre/base/preprocessorgraphicsviewinterface.h"
-#include "../pre/base/preprocessorwindowinterface.h"
+#include "../base/iricmainwindowi.h"
+#include "../pre/base/preprocessordatamodeli.h"
+#include "../pre/base/preprocessorgraphicsviewi.h"
+#include "../pre/base/preprocessorwindowi.h"
 #include "addiblegcptablemodel.h"
 #include "backgroundimageinfo.h"
 #include "backgroundimageinfodialog.h"
@@ -38,9 +38,7 @@ BackgroundImageInfo::BackgroundImageInfo(const QString& filename, ProjectDataIte
 }
 
 BackgroundImageInfo::~BackgroundImageInfo()
-{
-	delete impl;
-}
+{}
 
 void BackgroundImageInfo::initializePosition(const QString& originalFileName)
 {

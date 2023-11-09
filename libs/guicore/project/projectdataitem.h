@@ -6,7 +6,7 @@
 #include <QObject>
 #include <QDataStream>
 
-class iRICMainWindowInterface;
+class iRICMainWindowI;
 class ProjectData;
 
 class QColor;
@@ -71,10 +71,12 @@ public:
 
 	/// @name Utility functions
 	//@{
+	/// Project data
+	virtual ProjectData* projectData() const;
 	/// Parent item
 	ProjectDataItem* parent() const;
 	/// iRIC main window
-	iRICMainWindowInterface* iricMainWindow() const;
+	iRICMainWindowI* iricMainWindow() const;
 	//@}
 
 protected:
@@ -82,8 +84,6 @@ protected:
 	//@{
 	/// Set this project modified
 	virtual void setModified(bool modified = true);
-	/// Project data
-	virtual ProjectData* projectData() const;
 	/// Load filename from project.xml
 	void loadFilename(const QDomNode& node);
 	/// Save filename into project.xml
@@ -138,7 +138,7 @@ public:
 
 private:
 	class Impl;
-	Impl* impl;
+	std::unique_ptr<Impl> impl;
 };
 
 #ifdef _DEBUG

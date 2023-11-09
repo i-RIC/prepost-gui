@@ -10,8 +10,8 @@ class Post2dWindowParticlesTopDataItem : public Post2dWindowParticlesBaseTopData
 public:
 	Post2dWindowParticlesTopDataItem(Post2dWindowDataItem* parent);
 
-	vtkPolyData* particleData() const override;
-	Post2dWindowZoneDataItem* zoneDataItem() const override;
+	v4Particles2d* particleData() const override;
+	Post2dWindowCalculationResultDataItem* resultDataItem() const override;
 };
 
 #endif // POST2DWINDOWPARTICLESTOPDATAITEM_H
