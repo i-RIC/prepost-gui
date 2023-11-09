@@ -143,8 +143,6 @@ public:
 	int showCoordinateSystemDialog(bool forceSelect = false);
 
 public slots:
-	void exportCurrentCgnsFile();
-
 	void addBackgroundImage();
 	void moveUpImage(const QModelIndex& index);
 	void moveDownImage(const QModelIndex& index);

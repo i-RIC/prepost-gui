@@ -151,8 +151,6 @@ public slots:
 	bool saveProjectAsFile();
 	/// Save current project. Show a dialog to select foldername.
 	bool saveProjectAsFolder();
-	/// Export current cgns file.
-	void exportCurrentCgnsFile();
 	/// Export Calculation result into VTK files.
 	void exportCalculationResult();
 	/// Export Particles into VTK files.

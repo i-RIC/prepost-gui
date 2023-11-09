@@ -839,21 +839,9 @@ bool iRICMainWindow::saveProject(const QString& filename, bool folder)
 		ret = mainfile->saveExceptCGNS();
 	} else {
 		auto pre = dynamic_cast<PreProcessorWindow*>(m_preProcessorWindow);
-		auto gridEdited = pre->projectDataItem()->isGridEdited();
-		auto hasResult = m_projectData->mainfile()->postSolutionInfo()->hasResults();
+		int ier = mainfile->saveToCgnsFile();
+		ret = (ier == IRIC_NO_ERROR);
 
-		if (gridEdited && hasResult) {
-			int ret = QMessageBox::warning(m_preProcessorWindow, tr("Warning"), tr("The grids are edited or deleted. When you save, the calculation result is discarded."), QMessageBox::Ok | QMessageBox::Cancel, QMessageBox::Cancel);
-			if (ret == QMessageBox::Cancel) {return false;}
-		}
-
-		if (gridEdited || (! hasResult)) {
-			int ier = mainfile->saveToCgnsFile();
-			ret = (ier == IRIC_NO_ERROR);
-		} else {
-			int ier = mainfile->updateCgnsFileOtherThanGrids();
-			ret = (ier == IRIC_NO_ERROR);
-		}
 		if (ret) {ret = mainfile->saveExceptCGNS();}
 		if (ret) {mainfile->setModified(false);}
 	}
@@ -1401,16 +1389,6 @@ void iRICMainWindow::handleCgnsSwitch()
 	connect(m_solverConsoleWindow, SIGNAL(solverStarted()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverStart()));
 	connect(m_solverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(checkCgnsStepsUpdate()));
 	connect(m_solverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverFinish()));
-}
-
-void iRICMainWindow::exportCurrentCgnsFile()
-{
-	if (isSolverRunning()) {
-		warnSolverRunning();
-		return;
-	}
-	// export the current CGNS file.
-	m_projectData->mainfile()->exportCurrentCgnsFile();
 }
 
 void iRICMainWindow::setCurrentStep(unsigned int newstep)
