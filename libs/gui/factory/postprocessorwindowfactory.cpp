@@ -23,39 +23,20 @@ PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QS
 		m_windowCount.insert(name, 0);
 	}
 	int c = (++ m_windowCount[name]);
-	if (name == "post2dwindow") {
-		return new Post2dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "post2dbirdeyewindow") {
-		return new Post2dBirdEyeWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "post3dwindow") {
-		return new Post3dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "graph2dhybridwindow") {
-		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "graph2dscatteredwindow") {
-		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
-	} else if (name == "graph2dverificationwindow") {
-		return new Graph2dVerificationWindowProjectDataItem(parent, c, parentwindow);
-	}
-	return 0;
+
+	return factory(name, c, parent, parentwindow);
 }
 
-PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow) const
+PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow, bool ignoreIndex)
 {
-	int c = node.toElement().attribute("index").toInt();
-	if (node.toElement().attribute("type") == "post2dwindow") {
-		return new Post2dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "post2dbirdeyewindow") {
-		return new Post2dBirdEyeWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "post3dwindow") {
-		return new Post3dWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "graph2dhybridwindow") {
-		return new Graph2dHybridWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "graph2dscatteredwindow") {
-		return new Graph2dScatteredWindowProjectDataItem(parent, c, parentwindow);
-	} else if (node.toElement().attribute("type") == "graph2dverificationwindow") {
-		return new Graph2dVerificationWindowProjectDataItem(parent, c, parentwindow);
+	auto name = node.toElement().attribute("type");
+	int index = node.toElement().attribute("index").toInt();
+
+	if (ignoreIndex) {
+		return factory(name, parent, parentwindow);
+	} else {
+		return factory(name, index, parent, parentwindow);
 	}
-	return 0;
 }
 
 void PostProcessorWindowFactory::resetWindowCounts()
@@ -84,4 +65,22 @@ void PostProcessorWindowFactory::saveWindowCounts(QXmlStreamWriter& writer)
 		iRIC::setIntAttribute(writer, "value", val);
 		writer.writeEndElement();
 	}
+}
+
+PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QString& name, int index, ProjectDataItem* parent, QWidget* parentwindow)
+{
+	if (name == "post2dwindow") {
+		return new Post2dWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "post2dbirdeyewindow") {
+		return new Post2dBirdEyeWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "post3dwindow") {
+		return new Post3dWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "graph2dhybridwindow") {
+		return new Graph2dHybridWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "graph2dscatteredwindow") {
+		return new Graph2dScatteredWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "graph2dverificationwindow") {
+		return new Graph2dVerificationWindowProjectDataItem(parent, index, parentwindow);
+	}
+	return nullptr;
 }

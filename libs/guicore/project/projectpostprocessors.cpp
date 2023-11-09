@@ -71,12 +71,12 @@ void ProjectPostProcessors::loadSingleWindowFromXmlFile(const QDomNode& node, co
 			QDomDocument doc;
 			bool ok = doc.setContent(&f);
 			if (ok) {
-				di = m_factory->restore(doc.documentElement(), this, parentWindow);
+				di = m_factory->restore(doc.documentElement(), this, parentWindow, ignoreIndex);
 				windowNode = doc.documentElement();
 			}
 		}
 	} else {
-		di = m_factory->restore(node, this, parentWindow);
+		di = m_factory->restore(node, this, parentWindow, ignoreIndex);
 		windowNode = node;
 	}
 
@@ -145,9 +145,9 @@ bool ProjectPostProcessors::importFromXmlFile(const QDomNode& node, const QDir& 
 			bool ok = doc.setContent(&f);
 			if (! ok) {continue;}
 
-			di = m_factory->restore(doc.documentElement(), this, nullptr);
+			di = m_factory->restore(doc.documentElement(), this, nullptr, false);
 		} else {
-			di = m_factory->restore(child, this, nullptr);
+			di = m_factory->restore(child, this, nullptr, false);
 		}
 		items.push_back(di->window()->windowTitle());
 		nodes.push_back(child);
