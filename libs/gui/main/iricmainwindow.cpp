@@ -1391,16 +1391,6 @@ void iRICMainWindow::handleCgnsSwitch()
 	connect(m_solverConsoleWindow, SIGNAL(solverFinished()), m_projectData->mainfile()->postSolutionInfo(), SLOT(informSolverFinish()));
 }
 
-void iRICMainWindow::exportCurrentCgnsFile()
-{
-	if (isSolverRunning()) {
-		warnSolverRunning();
-		return;
-	}
-	// export the current CGNS file.
-	m_projectData->mainfile()->exportCurrentCgnsFile();
-}
-
 void iRICMainWindow::setCurrentStep(unsigned int newstep)
 {
 	if (m_projectData != nullptr) {
