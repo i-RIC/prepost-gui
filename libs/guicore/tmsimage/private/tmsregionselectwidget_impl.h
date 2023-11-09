@@ -1,6 +1,7 @@
 #ifndef TMSREGIONSELECTWIDGET_IMPL_H
 #define TMSREGIONSELECTWIDGET_IMPL_H
 
+#include "../tmsimagesetting.h"
 #include "../tmsregionselectwidget.h"
 #include <tmsloader/tmsloader.h>
 
@@ -41,7 +42,7 @@ public:
 	QPointF m_pointLonLat1;
 	QPointF m_pointLonLat2;
 
-	std::string m_mapSetting;
+	TmsImageSetting m_mapSetting;
 	int m_requestId;
 	tmsloader::TmsLoader m_loader;
 

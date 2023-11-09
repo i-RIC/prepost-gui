@@ -1840,22 +1840,6 @@ Do you really want to import this file?</source>
 <context>
     <name>TmsImageSettingManager</name>
     <message>
-        <source>Google Map (Road)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Google Map (Satellite)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Google Map (Hybrid)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Google Map (Terrain)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open Street Map</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1877,6 +1861,30 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>GSI (Ortho images) (Japan only)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Streets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Satellite</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Satellite Hybrid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Roads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Google Terrain</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
