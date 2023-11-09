@@ -17,12 +17,13 @@ public:
 
 	std::string mainFileName() const;
 	std::string mainFileFullName() const;
-	std::string backupFileName() const;
-	std::string backupFileFullName() const;
+	std::string inputFileName() const;
+	std::string inputFileFullName() const;
 
-	bool backupFileExists() const;
+	bool inputFileExists() const;
 	bool separateResultExists() const;
 	bool deleteResultFolder();
+	void copyInputFileToMainFile();
 
 	QStringList containedFiles() const;
 

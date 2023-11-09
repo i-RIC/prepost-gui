@@ -5,6 +5,7 @@
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
 
+#include <QFile>
 #include <QDir>
 
 #include <h5cgnsfileseparatesolutionutil.h>
@@ -14,7 +15,7 @@
 namespace {
 
 const QString MAIN_FILENAME = "Case1.cgn";
-const QString BACKUP_FILENAME = "Case1_input.cgn";
+const QString INPUT_FILENAME = "Case1_input.cgn";
 
 } // namespace
 
@@ -36,20 +37,20 @@ std::string ProjectCgnsManager::mainFileFullName() const
 	return iRIC::toStr(dir.absoluteFilePath(MAIN_FILENAME));
 }
 
-std::string ProjectCgnsManager::backupFileName() const
+std::string ProjectCgnsManager::inputFileName() const
 {
-	return iRIC::toStr(BACKUP_FILENAME);
+	return iRIC::toStr(INPUT_FILENAME);
 }
 
-std::string ProjectCgnsManager::backupFileFullName() const
+std::string ProjectCgnsManager::inputFileFullName() const
 {
 	QDir dir(impl->m_mainFile->workDirectory());
-	return iRIC::toStr(dir.absoluteFilePath(BACKUP_FILENAME));
+	return iRIC::toStr(dir.absoluteFilePath(INPUT_FILENAME));
 }
 
-bool ProjectCgnsManager::backupFileExists() const
+bool ProjectCgnsManager::inputFileExists() const
 {
-	QFile file(backupFileFullName().c_str());
+	QFile file(inputFileFullName().c_str());
 	return file.exists();
 }
 
@@ -74,6 +75,12 @@ bool ProjectCgnsManager::deleteResultFolder()
 	if (! resultDir.exists()) {return true;}
 
 	return iRIC::rmdirRecursively(resultFolder);
+}
+
+void ProjectCgnsManager::copyInputFileToMainFile()
+{
+	QFile f(inputFileFullName().c_str());
+	f.copy(mainFileFullName().c_str());
 }
 
 QStringList ProjectCgnsManager::containedFiles() const
