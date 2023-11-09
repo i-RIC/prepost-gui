@@ -125,15 +125,16 @@ void Post2dWindowZoneDataItem::update(bool noParticle)
 	dataModel()->graphicsView()->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 
 	auto v4Cont = v4DataContainer();
+	if (v4Cont != nullptr) {
+		auto ig = v4Cont->inputGridData();
+		if (ig != nullptr) {
+			auto grid2d_input = dynamic_cast<v4Grid2d*> (ig->grid());
+			grid2d_input->updateFilteredData(xmin, xmax, ymin, ymax);
+		}
 
-	auto ig = v4Cont->inputGridData();
-	if (ig != nullptr) {
-		auto grid2d_input = dynamic_cast<v4Grid2d*> (ig->grid());
-		grid2d_input->updateFilteredData(xmin, xmax, ymin, ymax);
+		auto grid2d_result = dynamic_cast<v4Grid2d*> (v4Cont->gridData()->grid());
+		grid2d_result->updateFilteredData(xmin, xmax, ymin, ymax);
 	}
-
-	auto grid2d_result = dynamic_cast<v4Grid2d*> (v4Cont->gridData()->grid());
-	grid2d_result->updateFilteredData(xmin, xmax, ymin, ymax);
 
 	if (m_inputGridDataItem != nullptr) {
 		m_inputGridDataItem->update();
