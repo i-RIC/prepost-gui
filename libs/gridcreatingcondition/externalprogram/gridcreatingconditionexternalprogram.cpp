@@ -166,6 +166,11 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		}
 
 		auto firstZone = file.ccBase()->zoneById(1);
+		if (firstZone == nullptr) {
+			QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));
+			return false;
+		}
+
 		grid = v4InputGridIO::load(*firstZone, gType, offset(), &ier);
 	}  catch (...) {
 		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("Grid Creation failed."));

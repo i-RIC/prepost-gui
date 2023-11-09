@@ -50,7 +50,11 @@ void Post2dWindowGridShapeDataItem::update()
 void Post2dWindowGridShapeDataItem::updateActorSetting()
 {
 	auto grid2d = gridDataItem()->grid();
-	m_setting.update(actorCollection(), actor2DCollection(), grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
+	if (grid2d == nullptr) {
+		m_setting.update(actorCollection(), actor2DCollection(), nullptr, nullptr, nullptr, v4GridUtil::LABEL_NAME);
+	} else {
+		m_setting.update(actorCollection(), actor2DCollection(), grid2d->vtkData()->data(), grid2d->vtkFilteredData(), grid2d->vtkFilteredIndexData(), v4GridUtil::LABEL_NAME);
+	}
 
 	updateVisibilityWithoutRendering();
 }

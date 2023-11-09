@@ -75,6 +75,11 @@ void Post2dWindowZoneDataItem::setupActors()
 
 void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	QDomNode inputNode = iRIC::getChildNode(node, "InputGrid");
+	if (! inputNode.isNull()) {
+		m_inputGridDataItem->loadFromProjectMainFile(inputNode);
+	}
+
 	QDomNode resultNode = iRIC::getChildNode(node, "CalculationResult");
 	if (! resultNode.isNull()) {
 		m_resultDataItem->loadFromProjectMainFile(resultNode);
@@ -86,6 +91,14 @@ void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_zoneName.c_str());
+
+	writer.writeStartElement("InputGrid");
+	m_inputGridDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("CalculationResult");
+	m_resultDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
 }
 
 void Post2dWindowZoneDataItem::addCustomMenuItems(QMenu* /*menu*/)
@@ -112,15 +125,16 @@ void Post2dWindowZoneDataItem::update(bool noParticle)
 	dataModel()->graphicsView()->getDrawnRegion(&xmin, &xmax, &ymin, &ymax);
 
 	auto v4Cont = v4DataContainer();
+	if (v4Cont != nullptr) {
+		auto ig = v4Cont->inputGridData();
+		if (ig != nullptr) {
+			auto grid2d_input = dynamic_cast<v4Grid2d*> (ig->grid());
+			grid2d_input->updateFilteredData(xmin, xmax, ymin, ymax);
+		}
 
-	auto ig = v4Cont->inputGridData();
-	if (ig != nullptr) {
-		auto grid2d_input = dynamic_cast<v4Grid2d*> (ig->grid());
-		grid2d_input->updateFilteredData(xmin, xmax, ymin, ymax);
+		auto grid2d_result = dynamic_cast<v4Grid2d*> (v4Cont->gridData()->grid());
+		grid2d_result->updateFilteredData(xmin, xmax, ymin, ymax);
 	}
-
-	auto grid2d_result = dynamic_cast<v4Grid2d*> (v4Cont->gridData()->grid());
-	grid2d_result->updateFilteredData(xmin, xmax, ymin, ymax);
 
 	if (m_inputGridDataItem != nullptr) {
 		m_inputGridDataItem->update();

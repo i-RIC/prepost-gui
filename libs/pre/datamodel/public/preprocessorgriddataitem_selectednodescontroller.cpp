@@ -46,7 +46,7 @@ PreProcessorGridDataItem::SelectedNodesController::~SelectedNodesController()
 
 void PreProcessorGridDataItem::SelectedNodesController::handleDataUpdate()
 {
-	if (m_item->impl->m_grid != nullptr) {
+	if (m_item->impl->m_grid == nullptr) {
 		m_selectedData->Initialize();
 	} else {
 		m_selectedData->SetPoints(m_item->impl->m_grid->grid()->vtkData()->data()->GetPoints());

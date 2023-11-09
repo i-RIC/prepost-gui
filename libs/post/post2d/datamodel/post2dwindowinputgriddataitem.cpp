@@ -68,12 +68,18 @@ Post2dWindowInputGridDataItem::~Post2dWindowInputGridDataItem()
 
 v4InputGrid* Post2dWindowInputGridDataItem::inputGrid() const
 {
-	return zoneDataItem()->v4DataContainer()->inputGridData();
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr) {return nullptr;}
+
+	return cont->inputGridData();
 }
 
 v4Grid2d* Post2dWindowInputGridDataItem::grid() const
 {
-	return dynamic_cast<v4Grid2d*> (inputGrid()->grid());
+	auto iGrid = inputGrid();
+	if (iGrid == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Grid2d*> (iGrid->grid());
 }
 
 Post2dWindowZoneDataItem* Post2dWindowInputGridDataItem::zoneDataItem() const

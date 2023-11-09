@@ -155,7 +155,10 @@ void Post2dWindowCalculationResultDataItem::update(bool noParticle)
 
 v4Grid2d* Post2dWindowCalculationResultDataItem::grid() const
 {
-	return dynamic_cast<v4Grid2d*> (zoneDataItem()->v4DataContainer()->gridData()->grid());
+	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr) {return nullptr;}
+
+	return dynamic_cast<v4Grid2d*> (cont->gridData()->grid());
 }
 
 Post2dWindowZoneDataItem* Post2dWindowCalculationResultDataItem::zoneDataItem() const

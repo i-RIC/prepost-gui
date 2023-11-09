@@ -19,12 +19,13 @@ public:
 	/// Constructor
 	PostProcessorWindowFactory(QObject* parent);
 	PostProcessorWindowProjectDataItem* factory(const QString& name, ProjectDataItem* parent, QWidget* parentwindow) override;
-	PostProcessorWindowProjectDataItem* restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow) const override;
+	PostProcessorWindowProjectDataItem* restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow, bool ignoreIndex) override;
 	void loadWindowCounts(const QDomNode& node);
 	void saveWindowCounts(QXmlStreamWriter& writer);
 	void resetWindowCounts();
 
 private:
+	PostProcessorWindowProjectDataItem* factory(const QString& name, int index, ProjectDataItem* parent, QWidget* parentwindow);
 	QMap<QString, int> m_windowCount;
 };
 

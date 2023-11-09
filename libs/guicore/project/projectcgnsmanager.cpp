@@ -79,8 +79,13 @@ bool ProjectCgnsManager::deleteResultFolder()
 
 void ProjectCgnsManager::copyInputFileToMainFile()
 {
-	QFile f(inputFileFullName().c_str());
-	f.copy(mainFileFullName().c_str());
+	QFile mainFile(mainFileFullName().c_str());
+	if (mainFile.exists()) {
+		mainFile.remove();
+	}
+
+	QFile inputFile(inputFileFullName().c_str());
+	inputFile.copy(mainFileFullName().c_str());
 }
 
 QStringList ProjectCgnsManager::containedFiles() const
