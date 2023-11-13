@@ -43,9 +43,9 @@ if ($isLinux) {
     $TOOL_IDS += @(
         "mingw"
         "mingw90"
-        "openssl_src"
-        "openssl_x64"        
-        "openssl_x86"
+        # "openssl_src"
+        # "openssl_x64"        
+        # "openssl_x86"
         "qt3dstudio_runtime"
         "qt3dstudio_runtime_210"
         "vcredist"
