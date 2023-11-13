@@ -5,7 +5,6 @@
 
 #include <memory>
 
-class PostStringResultDataItem;
 class Post2dWindowGridShapeDataItem;
 class Post2dWindowCellScalarGroupTopDataItem;
 class Post2dWindowGraphGroupDataItem;
@@ -18,6 +17,7 @@ class Post2dWindowNodeVectorStreamlineGroupDataItem;
 class Post2dWindowParticleGroupRootDataItem;
 class Post2dWindowParticlesTopDataItem;
 class Post2dWindowPolyDataTopDataItem;
+class Post2dWindowStringResultDataItem;
 class Post2dWindowZoneDataItem;
 
 class Post2dWindowCalculationResultDataItem : public Post2dWindowGridDataItemI
@@ -47,7 +47,7 @@ public:
 	Post2dWindowParticlesTopDataItem* particlesDataItem() const;
 	Post2dWindowParticleGroupRootDataItem* particleGroupRootDataItem() const;
 	Post2dWindowPolyDataTopDataItem* polyDataDataItem() const;
-	PostStringResultDataItem* stringDataItem() const;
+	Post2dWindowStringResultDataItem* stringDataItem() const;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;

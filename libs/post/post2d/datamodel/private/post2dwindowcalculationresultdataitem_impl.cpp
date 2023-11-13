@@ -1,7 +1,6 @@
 #include "../post2dwindowpolydatatopdataitem.h"
+#include "../post2dwindowstringresultdataitem.h"
 #include "post2dwindowcalculationresultdataitem_impl.h"
-
-#include <postbase/string/poststringresultdataitem.h>
 
 Post2dWindowCalculationResultDataItem::Impl::Impl(Post2dWindowCalculationResultDataItem* item) :
 	m_gridShapeDataItem {nullptr},

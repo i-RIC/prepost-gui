@@ -26,7 +26,7 @@ class Post3dWindowNodeVectorStreamlineGroupDataItem;
 class Post3dWindowNodeVectorParticleGroupDataItem;
 class Post3dWindowParticleGroupRootDataItem;
 class Post3dWindowParticlesTopDataItem;
-class PostStringResultDataItem;
+class Post3dWindowStringResultDataItem;
 class PostZoneDataContainer;
 class v4PostZoneDataContainer;
 
@@ -56,7 +56,7 @@ public:
 	Post3dWindowNodeVectorStreamlineGroupDataItem* streamlineGroupDataItem() const;
 	Post3dWindowNodeVectorParticleGroupDataItem* particleGroupDataItem() const;
 	Post3dWindowParticlesTopDataItem* particlesDataItem() const;
-	PostStringResultDataItem* stringDataItem() const;
+	Post3dWindowStringResultDataItem* stringDataItem() const;
 
 protected:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
@@ -72,7 +72,7 @@ private:
 	Post3dWindowNodeVectorParticleGroupDataItem* m_particleGroupDataItem;
 	Post3dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post3dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
-	PostStringResultDataItem* m_stringDataItem;
+	Post3dWindowStringResultDataItem* m_stringDataItem;
 
 	std::string m_zoneName;
 	int m_zoneNumber;

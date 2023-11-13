@@ -134,6 +134,7 @@ HEADERS += post3d_global.h \
            datamodel/post3dwindowparticlesbasevectorgrouptopdataitem.h \
            datamodel/post3dwindowparticlestopdataitem.h \
            datamodel/post3dwindowrootdataitem.h \
+           datamodel/post3dwindowstringresultdataitem.h \
            datamodel/post3dwindowsurfacegroupdataitem.h \
            datamodel/post3dwindowzonedataitem.h \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setrangescommand.h \
@@ -222,6 +223,7 @@ SOURCES += post3dobjectbrowser.cpp \
            datamodel/post3dwindowparticlesbasevectorgrouptopdataitem.cpp \
            datamodel/post3dwindowparticlestopdataitem.cpp \
            datamodel/post3dwindowrootdataitem.cpp \
+           datamodel/post3dwindowstringresultdataitem.cpp \
            datamodel/post3dwindowsurfacegroupdataitem.cpp \
            datamodel/post3dwindowzonedataitem.cpp \
            datamodel/private/post3dwindowcellcontourgroupdataitem_setrangescommand.cpp \

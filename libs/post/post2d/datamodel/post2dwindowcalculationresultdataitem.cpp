@@ -13,6 +13,7 @@
 #include "post2dwindowparticlegrouprootdataitem.h"
 #include "post2dwindowparticlestopdataitem.h"
 #include "post2dwindowpolydatatopdataitem.h"
+#include "post2dwindowstringresultdataitem.h"
 #include "post2dwindowzonedataitem.h"
 #include "private/post2dwindowcalculationresultdataitem_impl.h"
 
@@ -20,7 +21,6 @@
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/xmlsupport.h>
-#include <postbase/string/poststringresultdataitem.h>
 
 Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Post2dWindowDataItem* parent) :
 	Post2dWindowGridDataItemI {tr("Calculation Result"), parent},
@@ -80,7 +80,7 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 		impl->m_polyDataDataItem = new Post2dWindowPolyDataTopDataItem(this);
 	}
 
-	impl->m_stringDataItem = new PostStringResultDataItem(this);
+	impl->m_stringDataItem = new Post2dWindowStringResultDataItem(this);
 
 	addChildItem(impl->m_gridShapeDataItem);
 	addChildItem(impl->m_arrowGroupDataItem);
@@ -226,7 +226,7 @@ Post2dWindowPolyDataTopDataItem* Post2dWindowCalculationResultDataItem::polyData
 	return impl->m_polyDataDataItem;
 }
 
-PostStringResultDataItem* Post2dWindowCalculationResultDataItem::stringDataItem() const
+Post2dWindowStringResultDataItem* Post2dWindowCalculationResultDataItem::stringDataItem() const
 {
 	return impl->m_stringDataItem;
 }

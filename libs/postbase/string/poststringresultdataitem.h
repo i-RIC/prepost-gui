@@ -14,6 +14,7 @@
 #include <QImage>
 
 class PostStringResult;
+class PostZoneDataItem;
 
 class vtkActor2D;
 class vtkQImageToImageSource;
@@ -75,6 +76,8 @@ private:
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
+
+	virtual PostZoneDataItem* zoneDataItem() const = 0;
 
 	PostStringResult* m_stringResult;
 	Setting m_setting;

@@ -12,6 +12,7 @@
 #include "post3dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post3dwindowparticlegrouprootdataitem.h"
 #include "post3dwindowparticlestopdataitem.h"
+#include "post3dwindowstringresultdataitem.h"
 #include "post3dwindowzonedataitem.h"
 
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -20,7 +21,6 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/xmlsupport.h>
-#include <postbase/string/poststringresultdataitem.h>
 
 #include <QAction>
 #include <QDomNode>
@@ -76,7 +76,7 @@ Post3dWindowZoneDataItem::Post3dWindowZoneDataItem(const std::string& zoneName, 
 		m_particleGroupRootDataItem = new Post3dWindowParticleGroupRootDataItem(this);
 	}
 
-	m_stringDataItem = new PostStringResultDataItem(this);
+	m_stringDataItem = new Post3dWindowStringResultDataItem(this);
 
 	m_childItems.push_back(m_shapeDataItem);
 
@@ -164,7 +164,7 @@ Post3dWindowParticlesTopDataItem* Post3dWindowZoneDataItem::particlesDataItem() 
 	return m_particlesDataItem;
 }
 
-PostStringResultDataItem* Post3dWindowZoneDataItem::stringDataItem() const
+Post3dWindowStringResultDataItem* Post3dWindowZoneDataItem::stringDataItem() const
 {
 	return m_stringDataItem;
 }

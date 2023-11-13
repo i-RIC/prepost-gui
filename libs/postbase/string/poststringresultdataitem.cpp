@@ -104,7 +104,6 @@ PostStringResultDataItem::~PostStringResultDataItem()
 void PostStringResultDataItem::setupActors()
 {
 	m_actor = vtkActor2D::New();
-	m_image = QImage(":/libs/guicore/images/logo.png");
 
 	m_imageToImage = vtkQImageToImageSource::New();
 	m_imageToImage->SetQImage(&m_image);
@@ -190,10 +189,7 @@ void PostStringResultDataItem::updateMouseCursor(VTKGraphicsView* v)
 
 void PostStringResultDataItem::update()
 {
-	// TODO FIX THIS
-	return;
-
-	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
+	auto zItem = zoneDataItem();
 	auto c = zItem->v4DataContainer();
 	if (c == nullptr) {
 		m_actor->VisibilityOff();
@@ -328,7 +324,7 @@ void PostStringResultDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphics
 
 QDialog* PostStringResultDataItem::propertyDialog(QWidget* w)
 {
-	auto zItem = dynamic_cast<PostZoneDataItem*> (parent());
+	auto zItem = zoneDataItem();
 	auto c = zItem->v4DataContainer();
 	if (c == nullptr) {return nullptr;}
 

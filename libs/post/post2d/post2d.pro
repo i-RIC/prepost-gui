@@ -199,6 +199,7 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindowpolydatatopdataitem.h \
            datamodel/post2dwindowpolydatavaluedataitem.h \
            datamodel/post2dwindowrootdataitem.h \
+           datamodel/post2dwindowstringresultdataitem.h \
            datamodel/post2dwindowzonedataitem.h \
            datamodel/private/post2dwindowabstractcellscalargroupdataitem_impl.h \
            datamodel/private/post2dwindowabstractcellscalargroupdataitem_setting.h \
@@ -351,6 +352,7 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindowpolydatatopdataitem.cpp \
            datamodel/post2dwindowpolydatavaluedataitem.cpp \
            datamodel/post2dwindowrootdataitem.cpp \
+           datamodel/post2dwindowstringresultdataitem.cpp \
            datamodel/post2dwindowzonedataitem.cpp \
            datamodel/private/post2dwindowabstractcellscalargroupdataitem_impl.cpp \
            datamodel/private/post2dwindowabstractcellscalargroupdataitem_setting.cpp \

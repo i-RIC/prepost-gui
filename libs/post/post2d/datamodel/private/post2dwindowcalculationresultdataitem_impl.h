@@ -21,7 +21,7 @@ public:
 	Post2dWindowParticlesTopDataItem* m_particlesDataItem;
 	Post2dWindowParticleGroupRootDataItem* m_particleGroupRootDataItem;
 	Post2dWindowPolyDataTopDataItem* m_polyDataDataItem;
-	PostStringResultDataItem* m_stringDataItem;
+	Post2dWindowStringResultDataItem* m_stringDataItem;
 
 private:
 	Post2dWindowCalculationResultDataItem* m_item;
