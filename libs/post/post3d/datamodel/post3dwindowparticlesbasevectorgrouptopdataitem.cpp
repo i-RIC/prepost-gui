@@ -107,5 +107,8 @@ Post3dWindowZoneDataItem* Post3dWindowParticlesBaseVectorGroupTopDataItem::zoneD
 
 vtkPolyData* Post3dWindowParticlesBaseVectorGroupTopDataItem::particleData() const
 {
-	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
+	auto pd = topDataItem()->particleData();
+	if (pd == nullptr) {return nullptr;}
+
+	return pd->vtkConcreteData()->concreteData();
 }

@@ -73,7 +73,7 @@ void Post2dWindowDataModel::init()
 	connect(m_graphicsView, SIGNAL(worldPositionChangedForStatusBar(QPointF)), mainWindow(), SIGNAL(worldPositionChangedForStatusBar(QPointF)));
 
 	// setup the basic itemModel structure.
-	Post2dWindowRootDataItem* root = new Post2dWindowRootDataItem(dynamic_cast<Post2dWindow*>(mainWindow()), this);
+	auto root = new Post2dWindowRootDataItem(dynamic_cast<Post2dWindow*>(mainWindow()), this);
 	m_rootDataItem = root;
 	root->setZDepthRange(m_dataRange);
 	root->setupStandardModel(m_itemModel);

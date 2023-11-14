@@ -62,6 +62,8 @@ void Post3dWindow::setupDefaultGeometry(int index)
 	parent->move(index * 30, index * 30);
 	parent->resize(700, 500);
 	restoreState(m_initialState);
+
+	cameraFit();
 }
 
 QPixmap Post3dWindow::snapshot() const

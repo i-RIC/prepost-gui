@@ -351,7 +351,10 @@ Post2dWindowParticlesBaseScalarDataItem* Post2dWindowParticlesBaseScalarGroupDat
 
 vtkPolyData* Post2dWindowParticlesBaseScalarGroupDataItem::particleData() const
 {
-	return topDataItem()->particleData()->vtkConcreteData()->concreteData();
+	auto pd = topDataItem()->particleData();
+	if (pd == nullptr) {return nullptr;}
+
+	return pd->vtkConcreteData()->concreteData();
 }
 
 void Post2dWindowParticlesBaseScalarGroupDataItem::updateCheckState()

@@ -186,7 +186,7 @@ void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleNodeSc
 
 void Post2dBirdEyeWindowCellScalarGroupDataItem::SettingEditWidget::handleCellScalarChange(int index)
 {
-	auto name = m_nodeValueNames.at(index);
+	auto name = m_cellValueNames.at(index);
 	auto cs = m_item->impl->m_colorMapSettings.find(name)->second;
 	if (m_colorMapEditWidget != nullptr) {
 		auto oldSetting = m_colorMapEditWidget->setting();

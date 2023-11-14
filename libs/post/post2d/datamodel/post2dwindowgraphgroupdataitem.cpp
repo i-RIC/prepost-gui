@@ -237,6 +237,8 @@ void Post2dWindowGraphGroupDataItem::update()
 	if (impl->m_setting.graphTarget == "") {return;}
 
 	auto cont = zoneDataItem()->v4DataContainer();
+	if (cont == nullptr) {return;}
+
 	auto sGrid = dynamic_cast<v4Structured2dGrid*> (cont->gridData()->grid());
 	auto basePoints = sGrid->vtkData()->data()->GetPoints();
 

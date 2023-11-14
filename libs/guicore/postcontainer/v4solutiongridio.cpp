@@ -209,7 +209,7 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroups3d(So
 	if (*ier != IRIC_NO_ERROR) {return empty;}
 
 	for (const auto& groupName : groupNames) {
-		auto particles = new v4Particles2d();
+		auto particles = new v4Particles3d();
 		auto polyData = particles->vtkConcreteData()->concreteData();
 
 		int numParticles;
@@ -221,7 +221,7 @@ std::map<std::string, v4SolutionGrid*> v4SolutionGridIO::loadParticleGroups3d(So
 		if (*ier != IRIC_NO_ERROR) {return empty;}
 		*ier = pSol->readCoordinatesY(groupName, &dataY);
 		if (*ier != IRIC_NO_ERROR) {return empty;}
-		*ier = pSol->readCoordinatesY(groupName, &dataZ);
+		*ier = pSol->readCoordinatesZ(groupName, &dataZ);
 		if (*ier != IRIC_NO_ERROR) {return empty;}
 
 		auto points = polyData->GetPoints();

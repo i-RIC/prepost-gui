@@ -73,6 +73,8 @@ void Post2dWindow::setupDefaultGeometry(int index)
 	parent->resize(700, 500);
 	m_propertyBrowser->hide();
 	restoreState(m_initialState);
+
+	cameraFit();
 }
 
 QPixmap Post2dWindow::snapshot() const

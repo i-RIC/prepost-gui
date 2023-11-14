@@ -41,7 +41,7 @@ Post2dWindowNodeVectorArrowGroupDataItem::Post2dWindowNodeVectorArrowGroupDataIt
 	setupStandardItem(Checked, NotReorderable, Deletable);
 
 	auto cont = topDataItem()->zoneDataItem()->v4DataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
+	auto gt = cont->gridType();
 	auto caption = gt->vectorOutputCaption(target);
 	standardItem()->setText(caption);
 
