@@ -1,12 +1,14 @@
 #include "particledatasetting.h"
 
+const int ParticleDataSetting::DEFAULT_SIZE = 3;
+
 ParticleDataSetting::ParticleDataSetting() :
 	CompositeContainer({&mapping, &color, &value, &opacity, &particleSize}),
 	mapping {"mapping", Mapping::Arbitrary},
 	color {"color", Qt::black},
 	value {"value", ""},
 	opacity {"opacity", 100},
-	particleSize {"size", 3}
+	particleSize {"size", DEFAULT_SIZE}
 {}
 
 ParticleDataSetting::ParticleDataSetting(const ParticleDataSetting& setting) :
