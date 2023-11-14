@@ -6,6 +6,8 @@
 #include <QObject>
 #include <QDataStream>
 
+#include <memory>
+
 class iRICMainWindowI;
 class ProjectData;
 

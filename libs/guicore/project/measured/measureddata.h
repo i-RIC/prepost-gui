@@ -4,6 +4,7 @@
 #include "../../guicore_global.h"
 #include "../projectdataitem.h"
 
+#include <memory>
 #include <string>
 #include <vector>
 
