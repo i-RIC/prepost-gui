@@ -1549,7 +1549,7 @@ void iRICMainWindow::updateWindowList()
 
 void iRICMainWindow::showPreferenceDialog()
 {
-	PreferenceDialog dialog;
+	PreferenceDialog dialog(this);
 	dialog.exec();
 
 	setupNetworkProxy();
