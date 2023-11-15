@@ -13,6 +13,8 @@
 class POSTBASEDLL_EXPORT ParticleDataSetting : public CompositeContainer
 {
 public:
+	static const int DEFAULT_SIZE;
+
 	enum class Mapping {
 		Value,
 		Arbitrary

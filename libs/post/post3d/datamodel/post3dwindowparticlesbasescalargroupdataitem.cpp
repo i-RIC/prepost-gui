@@ -20,6 +20,8 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
 
+#include <QSettings>
+
 Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGroupDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem(tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p),
 	m_actor {vtkActor::New()},
@@ -29,6 +31,10 @@ Post3dWindowParticlesBaseScalarGroupDataItem::Post3dWindowParticlesBaseScalarGro
 	m_toolBarWidgetController {new ToolBarWidgetController(m_colorMapToolBarWidget, this)}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
+
+	QSettings settings;
+	m_setting.color = settings.value("graphics/particle_color", QColor(Qt::black)).value<QColor>();
+	m_setting.particleSize = settings.value("graphics/particle_size", ParticleDataSetting::DEFAULT_SIZE).toInt();
 
 	auto topItem = topDataItem();
 	auto cont = topItem->zoneDataItem()->dataContainer();
