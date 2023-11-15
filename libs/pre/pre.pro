@@ -159,12 +159,12 @@ unix {
 }
 LIBS += -liricGccExternalprogram
 
-# iricGccGridcombine
+# # iricGccGridcombine (removed 2023-11-15)
 
-unix {
-	LIBS += -L"../gridcreatingcondition/gridcombine"
-}
-LIBS += -liricGccGridcombine
+# unix {
+# 	LIBS += -L"../gridcreatingcondition/gridcombine"
+# }
+# LIBS += -liricGccGridcombine
 
 # iricGccGridgenerator
 
