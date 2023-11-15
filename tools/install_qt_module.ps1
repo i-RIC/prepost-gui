@@ -3,12 +3,14 @@
 
 $QT_INSTALL_DIR = "C:\Qt"
 #$QT_ROOT_URL = 'https://download.qt.io/online/qtsdkrepository/windows_x86/desktop'
-$QT_ROOT_URL = 'http://qt.mirror.constant.com/online/qtsdkrepository/windows_x86/desktop'
+#$QT_ROOT_URL = 'http://qt.mirror.constant.com/online/qtsdkrepository/windows_x86/desktop'
+$QT_ROOT_URL = 'https://mirrors.ocf.berkeley.edu/qt/online/qtsdkrepository/windows_x86/desktop'
+
 
 if ($isLinux) {
-    $QT_ROOT_URL = 'http://qt.mirror.constant.com/online/qtsdkrepository/linux_x64/desktop'
+    $QT_ROOT_URL = 'https://mirrors.ocf.berkeley.edu/qt/online/qtsdkrepository/linux_x64/desktop'
 } elseif ($isMacOS) {
-    $QT_ROOT_URL = 'http://qt.mirror.constant.com/online/qtsdkrepository/mac_x64/desktop'
+    $QT_ROOT_URL = 'https://mirrors.ocf.berkeley.edu/qt/online/qtsdkrepository/mac_x64/desktop'
 }
 
 $TOOL_IDS = @(
