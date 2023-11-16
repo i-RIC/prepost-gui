@@ -166,12 +166,12 @@ LIBS += -liricGccExternalprogram
 # }
 # LIBS += -liricGccGridcombine
 
-# iricGccGridgenerator
+# # iricGccGridgenerator
 
-unix {
-	LIBS += -L"../gridcreatingcondition/gridgenerator"
-}
-LIBS += -liricGccGridgenerator
+# unix {
+# 	LIBS += -L"../gridcreatingcondition/gridgenerator"
+# }
+# LIBS += -liricGccGridgenerator
 
 # iricGccLaplace
 
