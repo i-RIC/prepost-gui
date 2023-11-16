@@ -468,8 +468,8 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricGccCenterandwidth.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccCompoundchannel.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccExternalprogram.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGccGridcombine.dll
-  ${PREPOST_GUI}/libdlls/Release/iricGccGridgenerator.dll
+#   ${PREPOST_GUI}/libdlls/Release/iricGccGridcombine.dll
+#   ${PREPOST_GUI}/libdlls/Release/iricGccGridgenerator.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccLaplace.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccPoisson.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccRectangularregion.dll
