@@ -74,7 +74,7 @@ private slots:
 	void toggleRectSelectMode(bool on);
 	void togglePolygonSelectMode(bool on);
 	void toggleAddPointsMode(bool on);
-	void toggleInterpolatePointsMode(bool on);
+	// void toggleInterpolatePointsMode(bool on);
 	void editSelectedPoints();
 	void deleteSelectedPoints();
 	void filterSelectedPoints();

@@ -8,7 +8,7 @@ GeoDataPointmap::PointsManager::Actions::Actions(PointsManager* manager) :
 	selectionModeRectAction {new QAction(GeoDataPointmap::tr("Select points with Rectangle Region"), manager)},
 	selectionModePolygonAction {new QAction(GeoDataPointmap::tr("Select Points With &Polygon"), manager)},
 	addPointsAction {new QAction(GeoDataPointmap::tr("&Add New Point"), manager)},
-	interpolatePointsAction {new QAction(GeoDataPointmap::tr("&Interpolate Points"), manager)},
+	// interpolatePointsAction {new QAction(GeoDataPointmap::tr("&Interpolate Points"), manager)},
 	editSelectedPointsAction {new QAction(GeoDataPointmap::tr("&Edit Selected Points..."), manager)},
 	deleteSelectedPointsAction {new QAction(GeoDataPointmap::tr("Delete Selected P&oints"), manager)},
 	filterSelectedPointsAction {new QAction(GeoDataPointmap::tr("&Filter selected points"), manager)},
@@ -28,8 +28,8 @@ GeoDataPointmap::PointsManager::Actions::Actions(PointsManager* manager) :
 	addPointsAction->setCheckable(true);
 	connect(addPointsAction, &QAction::triggered, manager, &PointsManager::toggleAddPointsMode);
 
-	interpolatePointsAction->setCheckable(true);
-	connect(interpolatePointsAction, &QAction::triggered, manager, &PointsManager::toggleInterpolatePointsMode);
+	// interpolatePointsAction->setCheckable(true);
+	// connect(interpolatePointsAction, &QAction::triggered, manager, &PointsManager::toggleInterpolatePointsMode);
 
 	connect(editSelectedPointsAction, &QAction::triggered, [=](bool) {manager->editSelectedPoints();});
 	connect(deleteSelectedPointsAction, &QAction::triggered, [=](bool) {manager->deleteSelectedPoints();});
@@ -41,7 +41,7 @@ GeoDataPointmap::PointsManager::Actions::Actions(PointsManager* manager) :
 	checkableActions.push_back(selectionModeRectAction);
 	checkableActions.push_back(selectionModePolygonAction);
 	checkableActions.push_back(addPointsAction);
-	checkableActions.push_back(interpolatePointsAction);
+	// checkableActions.push_back(interpolatePointsAction);
 }
 
 GeoDataPointmap::PointsManager::Actions::~Actions()
