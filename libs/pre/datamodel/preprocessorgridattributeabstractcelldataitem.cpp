@@ -195,11 +195,11 @@ void PreProcessorGridAttributeAbstractCellDataItem::mouseReleaseEvent(QMouseEven
 		bool cellSelected = selectedDataController()->selectedDataIds().size() > 0;
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(cellSelected);
-		bool nonGroupedComplex = false;
+		bool groupedComplex = false;
 		auto ccond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
-		if (ccond != nullptr) {nonGroupedComplex = ccond->isGrouped();}
+		if (ccond != nullptr) {groupedComplex = ccond->isGrouped();}
 
-		if (! m_condition->isOption() || nonGroupedComplex) {
+		if (! m_condition->isOption() && ! groupedComplex) {
 			menu->addAction(m_editDifferenceAction);
 			m_editDifferenceAction->setEnabled(cellSelected);
 			menu->addAction(m_editRatioAction);
