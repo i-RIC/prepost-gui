@@ -237,11 +237,11 @@ void PreProcessorGridAttributeNodeDataItem::mouseReleaseEvent(QMouseEvent* event
 		bool vertexSelected = (tmpparent->selectedVertices().count() > 0);
 		menu->addAction(m_editValueAction);
 		m_editValueAction->setEnabled(vertexSelected);
-		bool nonGroupedComplex = false;
+		bool groupedComplex = false;
 		auto ccond = dynamic_cast<SolverDefinitionGridComplexAttribute*>(m_condition);
-		if (ccond != nullptr) {nonGroupedComplex = ccond->isGrouped();}
+		if (ccond != nullptr) {groupedComplex = ccond->isGrouped();}
 
-		if (! m_condition->isOption() || nonGroupedComplex) {
+		if (! m_condition->isOption() && ! groupedComplex) {
 			menu->addAction(m_editDifferenceAction);
 			m_editDifferenceAction->setEnabled(vertexSelected);
 			menu->addAction(m_editRatioAction);
