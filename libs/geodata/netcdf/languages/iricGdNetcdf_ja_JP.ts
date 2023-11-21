@@ -215,6 +215,10 @@
         <source>GeoTiff files(*.tif *.tiff)</source>
         <translation>GeoTiff ファイル (*.tif *.tiff)</translation>
     </message>
+    <message>
+        <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
+        <translation>ファイル名に ASCII文字以外の文字が含まれています。ファイルを移動するか名前を変更してください。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>

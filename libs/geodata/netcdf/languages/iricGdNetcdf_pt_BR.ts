@@ -207,6 +207,14 @@
         <source>GeoTiff files(*.tif *.tiff)</source>
         <translation>Arquivos GeoTiff (*.tif *.tiff)</translation>
     </message>
+    <message>
+        <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
