@@ -173,6 +173,14 @@
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
