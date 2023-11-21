@@ -7,6 +7,7 @@
 #include <guicore/project/projectdata.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
+#include <misc/fileremover.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
@@ -47,6 +48,7 @@ bool CgnsGridImporter::import(Grid* grid, const QString& filename, const QString
 	auto projectData = getProjectData(grid);
 	auto tmpName = projectData->tmpFileName();
 	QFile::copy(filename, tmpName);
+	FileRemover remover(tmpName);
 
 	try {
 		iRICLib::H5CgnsFile file(iRIC::toStr(tmpName), iRICLib::H5CgnsFile::Mode::OpenReadOnly);
