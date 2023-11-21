@@ -37,13 +37,10 @@ private slots:
 	void handleListWidgetSelectChange(int current);
 	void handleListWidgetItemChange(QListWidgetItem *item);
 
-	void editGoogleMapsKey();
-
 private:
 	void updateList();
 
 	std::vector<TmsImageSetting> m_settings;
-	std::string m_googleMapsApiKey;
 
 	Ui::PreferencePageTms *ui;
 };
