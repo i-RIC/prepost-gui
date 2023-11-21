@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>파일 이름에 ASCII가 아닌 문자가 포함되어 있습니다. 파일을 이동하거나 이름을 변경하세요.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>열리는 %1 실패한.</translation>
     </message>
 </context>
 <context>

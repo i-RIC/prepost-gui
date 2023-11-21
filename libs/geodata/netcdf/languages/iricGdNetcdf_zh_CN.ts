@@ -213,11 +213,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>文件名包含非 ASCII 字符。请移动或重命名该文件。</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>开幕 %1 失败的。</translation>
     </message>
 </context>
 <context>
