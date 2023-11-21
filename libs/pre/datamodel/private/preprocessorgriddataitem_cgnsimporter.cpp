@@ -9,12 +9,15 @@
 #include <guicore/project/projectcgnsfile.h>
 #include <guicore/project/projectdata.h>
 #include <guicore/solverdef/solverdefinition.h>
+#include <misc/fileremover.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 #include <iriclib_errorcodes.h>
+
+#include <memory>
 
 PreProcessorGridDataItem::CgnsImporter::CgnsImporter(PreProcessorGridDataItem* item) :
 	m_item {item}
@@ -24,12 +27,14 @@ bool PreProcessorGridDataItem::CgnsImporter::importGrid(const QString& fileName,
 {
 	QString cgnsName = fileName;
 	QString tmpName;
+	std::unique_ptr<FileRemover> remover;
 
 	auto projectData = m_item->projectData();
 	if (! iRIC::isAscii(fileName)) {
 		tmpName = projectData->tmpFileName();
 		QFile::copy(fileName, tmpName);
 		cgnsName = tmpName;
+		remover.reset(new FileRemover(tmpName));
 	}
 
 	try {
