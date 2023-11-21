@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -379,8 +381,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
-        <translation type="vanished">Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα σημείου σύννεφου. Εάν θέλετε να προσαρμόσετε ξανά τη θέση της διατομής και τα δεδομένα συμπλέγματος σημείου χάρτη, μπορείτε να χρησιμοποιήσετε "Δεδομένα σύννεφου σημείου χάρτη"</translation>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα σημείου σύννεφου. Εάν θέλετε να προσαρμόσετε ξανά τη θέση της διατομής και τα δεδομένα συμπλέγματος σημείου χάρτη, μπορείτε να χρησιμοποιήσετε &quot;Δεδομένα σύννεφου σημείου χάρτη&quot;</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -392,14 +394,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα νέφους σημείου. Εάν θέλετε να προσαρμόσετε ξανά τη θέση διατομής και να αντιστοιχίσετε δεδομένα νέφους σημείου, μπορείτε να χρησιμοποιήσετε τα "Δεδομένα σύννεφο σημείου χάρτη"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα νέφους σημείου. Εάν θέλετε να προσαρμόσετε ξανά τη θέση διατομής και να αντιστοιχίσετε δεδομένα νέφους σημείου, μπορείτε να χρησιμοποιήσετε τα &quot;Δεδομένα σύννεφο σημείου χάρτη&quot;</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα νέφους σημείου. Σε κάποια περιοχή, τα δεδομένα δεν υπήρχαν στα δεδομένα νέφους σημείων και η τιμή 0 αντιστοιχίστηκε για αυτά τα σημεία. Εάν θέλετε να προσαρμόσετε ξανά τη θέση διατομής και να αντιστοιχίσετε δεδομένα νέφους σημείου, μπορείτε να χρησιμοποιήσετε τα "Δεδομένα σύννεφο σημείου χάρτη"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Τα δεδομένα διατομής δημιουργούνται χρησιμοποιώντας δεδομένα νέφους σημείου. Σε κάποια περιοχή, τα δεδομένα δεν υπήρχαν στα δεδομένα νέφους σημείων και η τιμή 0 αντιστοιχίστηκε για αυτά τα σημεία. Εάν θέλετε να προσαρμόσετε ξανά τη θέση διατομής και να αντιστοιχίσετε δεδομένα νέφους σημείου, μπορείτε να χρησιμοποιήσετε τα &quot;Δεδομένα σύννεφο σημείου χάρτη&quot;</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -411,7 +413,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -621,8 +623,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Οι ρυθμίσεις ανύψωσης και κλίσης δεν είναι έγκυρες.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Όταν καθορίζετε το ύψος του τελικού σημείου, δεν μπορεί να είναι ίδιο με το σημείο εκκίνησης. Εάν θέλετε να σχεδιάσετε οριζόντια γραμμή, επιλέξτε "Καθορισμός οριζόντιας απόστασης".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Όταν καθορίζετε το ύψος του τελικού σημείου, δεν μπορεί να είναι ίδιο με το σημείο εκκίνησης. Εάν θέλετε να σχεδιάσετε οριζόντια γραμμή, επιλέξτε &quot;Καθορισμός οριζόντιας απόστασης&quot;.</translation>
     </message>
 </context>
 <context>
@@ -852,8 +854,8 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
-        <translation>Επεξεργαστείτε την διατομή κάνοντας κλικ με το ποντίκι. Ολοκληρώστε την επεξεργασία κάνοντας διπλό κλικ ή πατώντας το πλήκτρο επιστροφής. Μπορείτε να επεξεργαστείτε με ακρίβεια την τομή εισάγοντας τιμές από το παράθυρο διαλόγου. Εισαγάγετε τη λειτουργία επεξεργασίας διαλόγου από την επιλογή "Επεξεργασία από το διάλογο" στο δεξί κλικ στο μενού.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+        <translation>Επεξεργαστείτε την διατομή κάνοντας κλικ με το ποντίκι. Ολοκληρώστε την επεξεργασία κάνοντας διπλό κλικ ή πατώντας το πλήκτρο επιστροφής. Μπορείτε να επεξεργαστείτε με ακρίβεια την τομή εισάγοντας τιμές από το παράθυρο διαλόγου. Εισαγάγετε τη λειτουργία επεξεργασίας διαλόγου από την επιλογή &quot;Επεξεργασία από το διάλογο&quot; στο δεξί κλικ στο μενού.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1045,40 +1047,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Λάθος</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή LX δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή LX δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή LY δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή LY δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή RX δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή RX δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή RY δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή RY δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Ο αριθμός πόντων δεν είναι έγκυρος</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Ο αριθμός πόντων δεν είναι έγκυρος</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 γραμμή %2 "%3": Μη έγκυρη τιμή ευρετηρίου</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Μη έγκυρη τιμή ευρετηρίου</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 γραμμή %2 : δεδομένα διατομής για %3 όχι αρκετά</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή απόστασης δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή απόστασης δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 γραμμή %2 "%3": Η τιμή ανύψωσης δεν είναι έγκυρη</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 γραμμή %2 &quot;%3&quot;: Η τιμή ανύψωσης δεν είναι έγκυρη</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1117,8 +1119,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Γραμμή %2 : Σφάλμα ανάγνωσης. Χρειάζεται τουλάχιστον δύο τιμές.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Γραμμή %2 : Σφάλμα ανάγνωσης. Όχι πραγματική τιμή αριθμού "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Γραμμή %2 : Σφάλμα ανάγνωσης. Όχι πραγματική τιμή αριθμού &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1244,36 +1246,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Γραμμή %2 : Το KP δεν είναι είσοδος</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Γραμμή %2 "%3": Η τιμή LX δεν είναι έγκυρη</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Γραμμή %2 &quot;%3&quot;: Η τιμή LX δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Γραμμή %2 "%3": Η τιμή LY δεν είναι έγκυρη</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Γραμμή %2 &quot;%3&quot;: Η τιμή LY δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Γραμμή %2 "%3": Η τιμή RX δεν είναι έγκυρη</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Γραμμή %2 &quot;%3&quot;: Η τιμή RX δεν είναι έγκυρη</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Γραμμή %2 "%3": Η τιμή RY δεν είναι έγκυρη</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Γραμμή %2 &quot;%3&quot;: Η τιμή RY δεν είναι έγκυρη</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Δεν βρέθηκαν δεδομένα δείκτη απόστασης. Θα αγνοηθεί.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 γραμμή %2 : "%3": Τα δεδομένα επισήμανσης δεν είναι έγκυρα.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 γραμμή %2 : &quot;%3&quot;: Τα δεδομένα επισήμανσης δεν είναι έγκυρα.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 γραμμή %2 : "%3": Τα δεδομένα απόστασης δεν είναι έγκυρα.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 γραμμή %2 : &quot;%3&quot;: Τα δεδομένα απόστασης δεν είναι έγκυρα.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 γραμμή %2 : "%3": Τα υψομετρικά δεδομένα δεν είναι έγκυρα.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 γραμμή %2 : &quot;%3&quot;: Τα υψομετρικά δεδομένα δεν είναι έγκυρα.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1310,6 +1312,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>There is not cross section data. Maybe you selected a wrong folder.</source>
         <translation>Δεν υπάρχουν δεδομένα διατομής. Ίσως επιλέξατε λάθος φάκελο.</translation>
+    </message>
+    <message>
+        <source>%1 line 1: Header does not contain enough data.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1387,8 +1393,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Ορατός</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Μπορείτε να προσαρμόσετε το χρώμα χρησιμοποιώντας την καρτέλα Χάρτης χρώματος.&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση:&lt;/span&gt; Μπορείτε να προσαρμόσετε το χρώμα χρησιμοποιώντας την καρτέλα Χάρτης χρώματος.&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
