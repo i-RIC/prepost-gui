@@ -20,6 +20,7 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
+#include <misc/errormessage.h>
 
 #if defined(_MSC_VER)
 // disable macro redefinition warnings
@@ -1361,6 +1362,10 @@ void Graph2dHybridWindowResultSetting::loadFromProjectMainFile(const QDomNode& n
 			}
 		}
 	}
+	if (m_targetDataTypeInfo == nullptr) {
+		throw ErrorMessage("No solution found.");
+	}
+
 	Q_ASSERT(m_targetDataTypeInfo != nullptr);
 	m_targetDatas.clear();
 	QDomNode datasNode = iRIC::getChildNode(node, "TargetDatas");
