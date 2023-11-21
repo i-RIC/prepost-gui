@@ -116,6 +116,10 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 	}
 	point->crossSectionFileName = fName;
 	int linenum = 2;
+	if (tokens.size() < 7) {
+		QMessageBox::critical(w, GeoDataRiverSurveyMlitImporter::tr("Error"), GeoDataRiverSurveyMlitImporter::tr("%1 line 1: Header does not contain enough data.").arg(fName));
+		return false;
+	}
 	int pointCount = tokens.at(6).toInt();
 
 	std::vector<int> indices;
