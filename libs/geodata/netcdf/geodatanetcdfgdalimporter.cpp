@@ -135,9 +135,14 @@ bool GeoDataNetcdfGdalImporter::setMode(SolverDefinitionGridAttribute* condition
 
 bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemInterface* item, QWidget* w)
 {
+	if (! iRIC::isAscii(filename)) {
+		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
+		return false;
+	}
+
 	auto dataset = (GDALDataset*)(GDALOpen(iRIC::toStr(filename).c_str(), GA_ReadOnly));
 	if (dataset == NULL) {
-		// failed opening.
+		QMessageBox::critical(w, tr("Error"), tr("Opening %1 failed.").arg(QDir::toNativeSeparators(filename)));
 		return false;
 	}
 
@@ -162,6 +167,11 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
 	if (timeContainer->values().size() != 0) {
 		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
+		return false;
+	}
+
+	if (! iRIC::isAscii(filename)) {
+		QMessageBox::critical(w, tr("Error"), tr("The file name contains non-ASCII characters. Please move or rename the file."));
 		return false;
 	}
 
