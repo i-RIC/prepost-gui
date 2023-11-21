@@ -479,8 +479,9 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 		if (ret == QMessageBox::Yes) {
 			m_mappingSettingDataItem->executeMapping();
 			m_bcSettingGroupDataItem->executeMapping(true);
+			m_gridDataItem->updateSimplifiedGrid();
 		}
 	}
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
 	gItem->informGridAttributeChangeAll();
 }
