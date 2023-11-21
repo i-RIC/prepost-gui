@@ -31,6 +31,11 @@ GeoDataPointmap::PointsManager::AddPointController::AddPointController(PointsMan
 GeoDataPointmap::PointsManager::AddPointController::~AddPointController()
 {}
 
+vtkActor* GeoDataPointmap::PointsManager::AddPointController::pointsActor() const
+{
+	return m_pointsController.pointsActor();
+}
+
 void GeoDataPointmap::PointsManager::AddPointController::setZDepthForPoints(double z)
 {
 	m_pointsController.pointsActor()->SetPosition(0, 0, z);
@@ -120,7 +125,7 @@ void GeoDataPointmap::PointsManager::AddPointController::updateMouseCursor(VTK2D
 void GeoDataPointmap::PointsManager::AddPointController::finish()
 {
 	auto w = m_manager->m_parent->preProcessorWindow();
-	if (m_pointsController.polyLine().size() <= 2) {
+	if (m_pointsController.polyLine().size() < 2) {
 		int ret = QMessageBox::information(w, GeoDataPointmap::tr("Warning"),
 																			 GeoDataPointmap::tr("You must select one known point, and define at least one location for added points. "
 																			"Do you want to retry, or cancel the operation?"), QMessageBox::Retry | QMessageBox::Cancel, QMessageBox::Cancel);

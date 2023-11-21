@@ -118,6 +118,11 @@ GeoDataPointmap::PointsManager::InterpolatePointController::InterpolatePointCont
 GeoDataPointmap::PointsManager::InterpolatePointController::~InterpolatePointController()
 {}
 
+vtkActor* GeoDataPointmap::PointsManager::InterpolatePointController::pointsActor() const
+{
+	return m_pointsController.pointsActor();
+}
+
 void GeoDataPointmap::PointsManager::InterpolatePointController::setZDepthForPoints(double z)
 {
 	m_pointsController.pointsActor()->SetPosition(0, 0, z);
