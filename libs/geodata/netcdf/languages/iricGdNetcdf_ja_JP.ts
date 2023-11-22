@@ -177,6 +177,14 @@
         <source>Time series raster data is already imported. If you want to import other data, please delete the data already imported first.</source>
         <translation>時系列ラスターデータが既にインポートされています。別のデータをインポートしたい場合は、先に既にインポートされているデータを削除してください。</translation>
     </message>
+    <message>
+        <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
+        <translation>ファイル名に ASCII文字以外の文字が含まれています。ファイルを移動するか名前を変更してください。</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataNetcdfGrayscalePngRealExporter</name>
