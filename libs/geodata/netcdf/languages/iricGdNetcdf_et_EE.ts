@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faili nimi sisaldab mitte-ASCII märke. Palun teisaldage või nimetage fail ümber.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Avamine %1 ebaõnnestunud.</translation>
     </message>
 </context>
 <context>

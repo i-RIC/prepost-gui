@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>A fájlnév nem ASCII karaktereket tartalmaz. Kérjük, helyezze át vagy nevezze át a fájlt.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyítás %1 nem sikerült.</translation>
     </message>
 </context>
 <context>

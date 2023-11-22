@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nom du fichier contient des caractères non-ASCII. Veuillez déplacer ou renommer le fichier.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouverture %1 échoué.</translation>
     </message>
 </context>
 <context>
