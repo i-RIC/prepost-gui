@@ -837,7 +837,7 @@ void GeoDataPointmap::setupMenu()
 	m_menu->addAction(m_editPointsExportAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_addPointAction);
-	m_menu->addAction(m_interpolatePointAction);
+	// m_menu->addAction(m_interpolatePointAction);
 	m_menu->addSeparator();
 	m_menu->addAction(m_editPointsDeleteAction);
 	m_menu->addAction(m_editPointsLessThanAction);
@@ -863,7 +863,7 @@ void GeoDataPointmap::setupMenu()
 	m_rightClickingMenu->addAction(m_editPointsExportAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_addPointAction);
-	m_rightClickingMenu->addAction(m_interpolatePointAction);
+	// m_rightClickingMenu->addAction(m_interpolatePointAction);
 	m_rightClickingMenu->addSeparator();
 	m_rightClickingMenu->addAction(m_editPointsDeleteAction);
 	m_rightClickingMenu->addAction(m_editPointsLessThanAction);
@@ -889,7 +889,7 @@ bool GeoDataPointmap::addToolBarButtons(QToolBar* tb)
 	tb->addAction(m_selectionModePolygon);
 	tb->addSeparator();
 	tb->addAction(m_addPointAction);
-	tb->addAction(m_interpolatePointAction);
+	// tb->addAction(m_interpolatePointAction);
 	tb->addSeparator();
 	tb->addAction(m_addBreakLineAction);
 	tb->addAction(m_removeBreakLineAction);
