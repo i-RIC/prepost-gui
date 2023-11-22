@@ -9,6 +9,7 @@ public:
 	Impl();
 	~Impl();
 
+	void addCalculatedResultArrays();
 	void clearParticleDataAndPolyData();
 
 	std::string m_zoneName;
@@ -19,6 +20,8 @@ public:
 	v4SolutionGrid* m_particleData;
 	std::map<std::string, v4SolutionGrid*> m_particleGroupMap;
 	std::map<std::string, v4SolutionGrid*> m_polyDataMap;
+
+	std::vector<v4PostCalculatedResult*> m_calculatedResults;
 };
 
 #endif // V4POSTZONEDATACONTAINER_IMPL_H

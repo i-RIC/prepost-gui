@@ -251,6 +251,7 @@ HEADERS += guicore_global.h \
            post/postprocessorwindowprojectdataitem.h \
            post/postzonedataitem.h \
            post/postzoneselectingdialog.h \
+           post/v4postzoneselectingdialog.h \
            postcontainer/postabstractsteps.h \
            postcontainer/postbaseiterativedatacontainer.h \
            postcontainer/postbaseiterativeintegerdatacontainer.h \
@@ -278,6 +279,11 @@ HEADERS += guicore_global.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
+           postcontainer/v4postcalculatedresult.h \
+           postcontainer/v4postcalculatedresultargument.h \
+           postcontainer/v4postcalculatedresultargumenteditdialog.h \
+           postcontainer/v4postcalculatedresulteditdialog.h \
+           postcontainer/v4postcalculatedresultlistdialog.h \
            postcontainer/v4postzonedatacontainer.h \
            postcontainer/v4solutiongrid.h \
            postcontainer/v4solutiongridio.h \
@@ -411,6 +417,7 @@ HEADERS += guicore_global.h \
            postcontainer/private/postzonedatacontainer_particlegrouploader.h \
            postcontainer/private/postzonedatacontainer_particleloader.h \
            postcontainer/private/postzonedatacontainer_polydataloader.h \
+           postcontainer/private/v4postcalculatedresulteditdialog_tabledelegate.h \
            postcontainer/private/v4postzonedatacontainer_impl.h \
            postcontainer/private/v4solutiongrid_attributedataprovider.h \
            postcontainer/private/v4solutiongrid_impl.h \
@@ -702,6 +709,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          misc/coordinatesystemdisplaywidget.ui \
          misc/mousepositionwidget.ui \
          post/postzoneselectingdialog.ui \
+         post/v4postzoneselectingdialog.ui \
          postcontainer/postbaseselectingdialog.ui \
          postcontainer/postcalculatedresultargumenteditdialog.ui \
          postcontainer/postcalculatedresulteditdialog.ui \
@@ -709,6 +717,9 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          postcontainer/postdataexportdialog.ui \
          postcontainer/poststringresultargumenteditdialog.ui \
          postcontainer/poststringresulteditwidget.ui \
+         postcontainer/v4postcalculatedresultargumenteditdialog.ui \
+         postcontainer/v4postcalculatedresulteditdialog.ui \
+         postcontainer/v4postcalculatedresultlistdialog.ui \
          project/backgroundimageinfodialog.ui \
          project/backgroundimageinfogeoreferencedialog.ui \
          project/offsetsettingdialog.ui \
@@ -818,6 +829,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            post/postprocessorwindowprojectdataitem.cpp \
            post/postzonedataitem.cpp \
            post/postzoneselectingdialog.cpp \
+           post/v4postzoneselectingdialog.cpp \
            postcontainer/postabstractsteps.cpp \
            postcontainer/postbaseiterativedatacontainer.cpp \
            postcontainer/postbaseiterativeintegerdatacontainer.cpp \
@@ -845,6 +857,11 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \
+           postcontainer/v4postcalculatedresult.cpp \
+           postcontainer/v4postcalculatedresultargument.cpp \
+           postcontainer/v4postcalculatedresultargumenteditdialog.cpp \
+           postcontainer/v4postcalculatedresulteditdialog.cpp \
+           postcontainer/v4postcalculatedresultlistdialog.cpp \
            postcontainer/v4postzonedatacontainer.cpp \
            postcontainer/v4solutiongrid.cpp \
            postcontainer/v4solutiongridio.cpp \
@@ -958,6 +975,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/private/postzonedatacontainer_particlegrouploader.cpp \
            postcontainer/private/postzonedatacontainer_particleloader.cpp \
            postcontainer/private/postzonedatacontainer_polydataloader.cpp \
+           postcontainer/private/v4postcalculatedresulteditdialog_tabledelegate.cpp \
            postcontainer/private/v4postzonedatacontainer_impl.cpp \
            postcontainer/private/v4solutiongrid_attributedataprovider.cpp \
            pre/base/preprocessordataitem.cpp \

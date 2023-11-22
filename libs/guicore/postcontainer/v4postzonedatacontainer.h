@@ -9,6 +9,7 @@ namespace iRICLib {
 } // namespace
 
 class v4InputGrid;
+class v4PostCalculatedResult;
 class SolverDefinitionGridType;
 class v4SolutionGrid;
 
@@ -39,8 +40,8 @@ public:
 
 	void applyOffset(const QPointF& offset);
 
-	// std::vector<PostCalculatedResult*>& calculatedResults();
-	// const std::vector<PostCalculatedResult*>& calculatedResults() const;
+	std::vector<v4PostCalculatedResult*>& calculatedResults();
+	const std::vector<v4PostCalculatedResult*>& calculatedResults() const;
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
