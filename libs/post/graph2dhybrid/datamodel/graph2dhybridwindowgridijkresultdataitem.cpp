@@ -219,13 +219,27 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenter(vtkStructu
 
 	double distance = 0;
 	double oldp[3];
+	double p[3];
 	extractedGrid->GetPoint(0, oldp);
+	extractedGrid->GetPoint(1, p);
+	QVector3D dPrev(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
+
+	oldp[0] = p[0]; oldp[1] = p[1]; oldp[2] = p[2];
+
 	for (int i = 0; i < numT; ++i) {
 		// X value setting
-		double p[3];
-		extractedGrid->GetPoint(i + 1, p);
-		QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
-		distance = distance + d.length() / 2;
+		if (i == 0) {
+			distance = 0;
+		} else {
+			extractedGrid->GetPoint(i + 1, p);
+			QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
+			distance = distance + (dPrev.length() + d.length()) / 2;
+
+			oldp[0] = p[0];
+			oldp[1] = p[1];
+			oldp[2] = p[2];
+			dPrev = d;
+		}
 
 		// y value
 		double value = 0;
@@ -237,11 +251,9 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenter(vtkStructu
 			v = da->GetTuple3(i);
 			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
 		}
-		m_xValues.append(distance); m_yValues.append(value);
 
-		oldp[0] = p[0];
-		oldp[1] = p[1];
-		oldp[2] = p[2];
+		m_xValues.append(distance);
+		m_yValues.append(value);
 	}
 }
 
