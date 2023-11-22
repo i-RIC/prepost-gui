@@ -55,37 +55,37 @@ bool GridAttributeContainerT<V>::loadFromCgnsFileForIndex(int fn, int B, int Z, 
 	cgsize_t count = dataCount();
 	ier = cg_goto(fn, B, "Zone_t", Z, "GridConditions", 0, name().c_str(), 0, "end");
 	QString aName = arrayNameForIndex(index);
-	if (ier != 0) {return false;}
+	if (ier == 0) {
+		// the corresponding node found.
+		// Find "Value" array.
+		int narrays;
+		cg_narrays(&narrays);
+		for (int i = 1; i <= narrays; ++i) {
+			char arrayName[ProjectCgnsFile::BUFFERLEN];
+			DataType_t dt;
+			int dataDimension;
+			cgsize_t dimensionVector[3];
+			cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
 
-	// the corresponding node found.
-	// Find "Value" array.
-	int narrays;
-	cg_narrays(&narrays);
-	for (int i = 1; i <= narrays; ++i) {
-		char arrayName[ProjectCgnsFile::BUFFERLEN];
-		DataType_t dt;
-		int dataDimension;
-		cgsize_t dimensionVector[3];
-		cg_array_info(i, arrayName, &dt, &dataDimension, dimensionVector);
+			if (dataDimension != 1 || dimensionVector[0] != count) { continue; }
 
-		if (dataDimension != 1 || dimensionVector[0] != count) {continue;}
-
-		if (dt == dataType() && QString(arrayName) == aName) {
-			std::vector<V> data(count, 0);
-			ier = cg_array_read(i, data.data());
-			for (cgsize_t j = 0; j < count; ++j) {
-				setValue(j, data[j]);
+			if (dt == dataType() && QString(arrayName) == aName) {
+				std::vector<V> data(count, 0);
+				ier = cg_array_read(i, data.data());
+				for (cgsize_t j = 0; j < count; ++j) {
+					setValue(j, data[j]);
+				}
+				found = true;
+				break;
+			} else if (dt == RealSingle && dataType() == RealDouble && QString(arrayName) == aName) {
+				std::vector<float> data(count, 0);
+				ier = cg_array_read(i, data.data());
+				for (cgsize_t j = 0; j < count; ++j) {
+					setValue(j, data[j]);
+				}
+				found = true;
+				break;
 			}
-			found = true;
-			break;
-		} else if (dt == RealSingle && dataType() == RealDouble && QString(arrayName) == aName) {
-			std::vector<float> data(count, 0);
-			ier = cg_array_read(i, data.data());
-			for (cgsize_t j = 0; j < count; ++j) {
-				setValue(j, data[j]);
-			}
-			found = true;
-			break;
 		}
 	}
 	if (! found) {
