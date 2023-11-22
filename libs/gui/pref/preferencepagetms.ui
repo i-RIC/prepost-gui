@@ -100,47 +100,8 @@
      </item>
     </layout>
    </item>
-   <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QPushButton" name="googleMapsButton">
-       <property name="text">
-        <string>&amp;Input Google Maps API key</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="googleMapsHintLabel">
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../guibase/guibase.qrc">:/libs/guibase/images/iconQuestion.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
   </layout>
  </widget>
- <resources>
-  <include location="../../guibase/guibase.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
