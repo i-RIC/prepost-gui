@@ -20,9 +20,6 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 	void updateValues() override;
-	void updateValuesVertex(vtkStructuredGrid* extractedGrid);
-	void updateValuesCellCenter(vtkStructuredGrid* extractedGrid);
-	void updateValuesCellCenterStepWise(vtkStructuredGrid* extractedGrid);
 
 private:
 	QString m_physVal;

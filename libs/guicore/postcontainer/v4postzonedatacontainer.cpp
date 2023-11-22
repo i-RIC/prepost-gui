@@ -3,6 +3,7 @@
 #include "../pre/grid/v4inputgridio.h"
 #include "v4solutiongrid.h"
 #include "v4solutiongridio.h"
+#include "v4postcalculatedresult.h"
 #include "v4postzonedatacontainer.h"
 #include "private/v4postzonedatacontainer_impl.h"
 
@@ -110,6 +111,11 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool di
 		impl->m_particleGroupMap = v4SolutionGridIO::loadParticleGroups3d(gridType(), zone, offset(), &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
+
+	if (! disableCalculatedResult) {
+		impl->addCalculatedResultArrays();
+	}
+
 	return IRIC_NO_ERROR;
 }
 
@@ -133,29 +139,33 @@ void v4PostZoneDataContainer::applyOffset(const QPointF& offset)
 	}
 }
 
+std::vector<v4PostCalculatedResult*>& v4PostZoneDataContainer::calculatedResults()
+{
+	return impl->m_calculatedResults;
+}
+
+const std::vector<v4PostCalculatedResult*>& v4PostZoneDataContainer::calculatedResults() const
+{
+	return impl->m_calculatedResults;
+}
+
 void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	/*
 	for (int i = 0; i < node.childNodes().size(); ++i) {
 		auto childNode = node.childNodes().at(i);
 		if (childNode.nodeName() == "SimpleOperationResult") {
-			auto cr = new PostCalculatedResult(this);
+			auto cr = new v4PostCalculatedResult(this);
 			cr->loadFromProjectMainFile(childNode);
-			m_calculatedResults.push_back(cr);
+			impl->m_calculatedResults.push_back(cr);
 		}
 	}
-	*/
 }
 
 void v4PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	/*
-	writer.writeAttribute("name", m_zoneName.c_str());
-
-	for (auto result : m_calculatedResults) {
+	for (auto result : impl->m_calculatedResults) {
 		writer.writeStartElement("SimpleOperationResult");
 		result->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
-	*/
 }
