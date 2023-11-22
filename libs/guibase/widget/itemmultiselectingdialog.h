@@ -25,7 +25,7 @@ public:
 	void setItems(const std::vector<QString>& items);
 	std::vector<bool> selectSettings() const;
 
-private slots:
+public slots:
 	void checkAll();
 
 private:

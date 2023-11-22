@@ -1009,7 +1009,7 @@ bool ProjectMainFile::importVisGraphSetting(const QString filename)
 	QString solverVersion = elem.attribute("solverVersion");
 	VersionNumber vn(solverVersion);
 
-	impl->m_postProcessors->loadFromXmlFile(doc.documentElement(), workDir);
+	impl->m_postProcessors->importFromXmlFile(doc.documentElement(), workDir, iricMainWindow());
 
 	return true;
 }
@@ -1038,12 +1038,16 @@ bool ProjectMainFile::exportVisGraphSetting(const QString filename)
 	w.writeStartElement("iRICPostProcessingSettings");
 	w.writeAttribute("solverName", impl->m_solverName.c_str());
 	w.writeAttribute("solverVersion", impl->m_solverVersion.toString());
-	impl->m_postProcessors->saveToXmlFile(w, workDir);
+	bool exported = impl->m_postProcessors->exportToSingleXmlFile(w, iricMainWindow());
 	w.writeEndElement();
 	w.writeEndDocument();
 	f.close();
 
-	return true;
+	if (! exported) {
+		f.remove();
+	}
+
+	return exported;
 }
 
 CoordinateSystem* ProjectMainFile::coordinateSystem() const
