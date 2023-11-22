@@ -17,7 +17,7 @@ public:
 	QAction* selectionModePolygonAction;
 
 	QAction* addPointsAction;
-	QAction* interpolatePointsAction;
+	// QAction* interpolatePointsAction;
 
 	QAction* editSelectedPointsAction;
 	QAction* deleteSelectedPointsAction;
