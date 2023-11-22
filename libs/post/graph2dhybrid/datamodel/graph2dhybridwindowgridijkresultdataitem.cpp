@@ -7,44 +7,75 @@
 #include "graph2dhybridwindowresultdataitem.h"
 #include "graph2dhybridwindowresultgroupdataitem.h"
 
+#include <guibase/vtkpointsetextended/vtkpolydataextended2d.h>
+#include <guibase/vtkpointsetextended/vtkpolydataextended3d.h>
+#include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/v4structured3dgrid.h>
 #include <guicore/postcontainer/posttimesteps.h>
-#include <guicore/postcontainer/postzonedatacontainer.h>
+#include <guicore/postcontainer/v4postzonedatacontainer.h>
+#include <guicore/postcontainer/v4solutiongrid.h>
 #include <misc/stringtool.h>
 #include <misc/stringtool.h>
-
-#include <QPen>
-#include <QStandardItem>
-#include <QVector3D>
 
 #include <vtkCellData.h>
 #include <vtkDoubleArray.h>
-#include <vtkExtractGrid.h>
 #include <vtkPointData.h>
-#include <vtkSmartPointer.h>
-#include <vtkStructuredGrid.h>
 
 #include <cmath>
 #include <qwt_plot_curve.h>
 
-Graph2dHybridWindowGridIJKResultDataItem::Graph2dHybridWindowGridIJKResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent)
-	: Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent)
+namespace {
+
+struct Point3D {
+	Point3D():
+		Point3D {0, 0, 0}
+	{}
+	Point3D(double xx, double yy, double zz):
+		x {xx}, y {yy}, z {zz}
+	{}
+	Point3D(double* p) :
+		x {*(p)}, y {*(p + 1)}, z {*(p + 2)}
+	{}
+
+	double x;
+	double y;
+	double z;
+};
+
+Point3D getCenter(vtkCell* cell)
+{
+	double v[3], p[3];
+	for (int i = 0; i < 3; ++i) {
+		v[i] = 0;
+	}
+
+	auto points = cell->GetPoints();
+	int num_p = cell->GetNumberOfPoints();
+	for (int i = 0; i < num_p; ++i) {
+		points->GetPoint(i, p);
+		for (int j = 0; j < 3; ++j) {
+			v[j] += p[j];
+		}
+	}
+	return Point3D(v[0] / num_p, v[1] / num_p, v[2] / num_p);
+}
+
+} // namespace
+
+Graph2dHybridWindowGridIJKResultDataItem::Graph2dHybridWindowGridIJKResultDataItem(const Graph2dHybridWindowResultSetting::Setting& setting, int index, Graph2dWindowDataItem* parent) :
+	Graph2dHybridWindowResultDataItem(setting.caption(), index, setting, parent)
 {
 	m_physVal = setting.name().c_str();
 }
 
 Graph2dHybridWindowGridIJKResultDataItem::~Graph2dHybridWindowGridIJKResultDataItem()
-{
-}
+{}
 
 void Graph2dHybridWindowGridIJKResultDataItem::doLoadFromProjectMainFile(const QDomNode& /*node*/)
-{
-
-}
+{}
 
 void Graph2dHybridWindowGridIJKResultDataItem::doSaveToProjectMainFile(QXmlStreamWriter& /*writer*/)
-{
-
-}
+{}
 
 void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 {
@@ -54,207 +85,214 @@ void Graph2dHybridWindowGridIJKResultDataItem::updateValues()
 	const Graph2dHybridWindowResultSetting& s = dataModel()->setting();
 	Graph2dHybridWindowResultSetting::DataTypeInfo* info = s.targetDataTypeInfo();
 
-	PostSolutionInfo* postInfo = dataModel()->postSolutionInfo();
-	PostZoneDataContainer* cont = postInfo->zoneContainer(info->dimension, info->zoneName);
-	if (cont == 0) {return;}
+	auto postInfo = dataModel()->postSolutionInfo();
+	auto cont = postInfo->v4ZoneContainer(info->dimension, info->zoneName);
+	if (cont == nullptr) {return;}
 
-	vtkStructuredGrid* grid;
-	switch (info->gridLocation) {
-	case iRICLib::H5CgnsZone::SolutionPosition::Node: case iRICLib::H5CgnsZone::SolutionPosition::Cell:
-		grid = vtkStructuredGrid::SafeDownCast(cont->data()->data());
-		break;
-	case iRICLib::H5CgnsZone::SolutionPosition::IFace:
-		grid = cont->iFaceData()->concreteData();	// use IFaceCenter grid
-		break;
-	case iRICLib::H5CgnsZone::SolutionPosition::JFace:
-		grid = cont->jFaceData()->concreteData();	// use JFaceCenter grid
-		break;
-	default:
-		Q_ASSERT_X(false, "Graph2dHybridWindowGridIJKResultDataItem::updateValues", "Invalid GridLocation");
-		break;
-	}
-	int dimension[3];
-	grid->GetDimensions(dimension);
+	auto grid = cont->gridData()->grid();
+	auto sGrid2d = dynamic_cast<v4Structured2dGrid*> (grid);
+	auto sGrid3d = dynamic_cast<v4Structured3dGrid*> (grid);
 
-	vtkSmartPointer<vtkExtractGrid> extract = vtkSmartPointer<vtkExtractGrid>::New();
-	extract->SetInputData(grid);
-	switch (s.xAxisMode()) {
-	case Graph2dHybridWindowResultSetting::xaI:
-		extract->SetVOI(0, dimension[0], s.gridJ(), s.gridJ(), s.gridK(), s.gridK());
-		break;
-	case Graph2dHybridWindowResultSetting::xaJ:
-		extract->SetVOI(s.gridI(), s.gridI(), 0, dimension[1], s.gridK(), s.gridK());
-		break;
-	case Graph2dHybridWindowResultSetting::xaK:
-		extract->SetVOI(s.gridI(), s.gridI(), s.gridJ(), s.gridJ(), 0, dimension[2]);
-		break;
-	default:
-		break;
-	}
-	extract->Update();
-
-	vtkSmartPointer<vtkStructuredGrid> extractedGrid = extract->GetOutput();
+	vtkDataSetAttributes* atts = nullptr;
+	std::vector<Point3D> points;
+	std::vector<vtkIdType> ids;
 	if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Node) {
-		updateValuesVertex(extractedGrid);
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid2d->dimensionI(); ++i) {
+					ids.push_back(sGrid2d->pointIndex(i, s.gridJ()));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid3d->dimensionI(); ++i) {
+					ids.push_back(sGrid3d->pointIndex(i, s.gridJ(), s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid2d->dimensionJ(); ++j) {
+					ids.push_back(sGrid2d->pointIndex(s.gridI(), j));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid3d->dimensionJ(); ++j) {
+					ids.push_back(sGrid3d->pointIndex(s.gridI(), j, s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+			for (vtkIdType k = 0; k < sGrid3d->dimensionK(); ++k) {
+				ids.push_back(sGrid3d->pointIndex(s.gridI(), s.gridJ(), k));
+			}
+		}
+		for (auto id : ids) {
+			points.push_back(Point3D(grid->vtkData()->data()->GetPoint(id)));
+		}
+		atts = grid->vtkData()->data()->GetPointData();
 	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::Cell) {
-		updateValuesCellCenter(extractedGrid);
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid2d->dimensionI() - 1; ++i) {
+					ids.push_back(sGrid2d->cellIndex(i, s.gridJ()));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid3d->dimensionI() - 1; ++i) {
+					ids.push_back(sGrid3d->cellIndex(i, s.gridJ(), s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid2d->dimensionJ() - 1; ++j) {
+					ids.push_back(sGrid2d->cellIndex(s.gridI(), j));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid3d->dimensionJ() - 1; ++j) {
+					ids.push_back(sGrid3d->cellIndex(s.gridI(), j, s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+			for (vtkIdType k = 0; k < sGrid3d->dimensionK() - 1; ++k) {
+				ids.push_back(sGrid3d->cellIndex(s.gridI(), s.gridJ(), k));
+			}
+		}
+		for (auto id : ids) {
+			points.push_back(getCenter(grid->vtkData()->data()->GetCell(id)));
+		}
+		atts = grid->vtkData()->data()->GetCellData();
 	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::IFace) {
-		updateValuesVertex(extractedGrid);
-	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
-		updateValuesVertex(extractedGrid);
-	}
-}
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid2d->dimensionI(); ++i) {
+					ids.push_back(sGrid2d->iEdgeIndex(i, s.gridJ()));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid3d->dimensionI(); ++i) {
+					ids.push_back(sGrid3d->iFaceIndex(i, s.gridJ(), s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid2d->dimensionJ() - 1; ++j) {
+					ids.push_back(sGrid2d->iEdgeIndex(s.gridI(), j));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid3d->dimensionJ() - 1; ++j) {
+					ids.push_back(sGrid3d->iFaceIndex(s.gridI(), j, s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+			for (vtkIdType k = 0; k < sGrid3d->dimensionK() - 1; ++k) {
+				ids.push_back(sGrid3d->iFaceIndex(s.gridI(), s.gridJ(), k));
+			}
+		}
 
-void Graph2dHybridWindowGridIJKResultDataItem::updateValuesVertex(vtkStructuredGrid* extractedGrid)
-{
-	vtkDataArray* da = extractedGrid->GetPointData()->GetArray(iRIC::toStr(m_physVal).c_str());
-	if (da == 0) {
-		// no data found.
+		if (sGrid2d != nullptr) {
+			for (auto id : ids) {
+				points.push_back(getCenter(sGrid2d->vtkIEdgeData()->data()->GetCell(id)));
+			}
+			atts = sGrid2d->vtkIEdgeData()->data()->GetCellData();
+		} else if (sGrid3d != nullptr) {
+			for (auto id : ids) {
+				points.push_back(getCenter(sGrid3d->vtkIFaceData()->data()->GetCell(id)));
+			}
+			atts = sGrid3d->vtkIFaceData()->data()->GetCellData();
+		}
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::JFace) {
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid2d->dimensionI() - 1; ++i) {
+					ids.push_back(sGrid2d->jEdgeIndex(i, s.gridJ()));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid3d->dimensionI() - 1; ++i) {
+					ids.push_back(sGrid3d->jFaceIndex(i, s.gridJ(), s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+			if (sGrid2d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid2d->dimensionJ(); ++j) {
+					ids.push_back(sGrid2d->jEdgeIndex(s.gridI(), j));
+				}
+			} else if (sGrid3d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid3d->dimensionJ(); ++j) {
+					ids.push_back(sGrid3d->jFaceIndex(s.gridI(), j, s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+			for (vtkIdType k = 0; k < sGrid3d->dimensionK() - 1; ++k) {
+				ids.push_back(sGrid3d->jFaceIndex(s.gridI(), s.gridJ(), k));
+			}
+		}
+
+		if (sGrid2d != nullptr) {
+			for (auto id : ids) {
+				points.push_back(getCenter(sGrid2d->vtkJEdgeData()->data()->GetCell(id)));
+			}
+			atts = sGrid2d->vtkJEdgeData()->data()->GetCellData();
+		} else if (sGrid3d != nullptr) {
+			for (auto id : ids) {
+				points.push_back(getCenter(sGrid3d->vtkJFaceData()->data()->GetCell(id)));
+			}
+			atts = sGrid3d->vtkJFaceData()->data()->GetCellData();
+		}
+	} else if (info->gridLocation == iRICLib::H5CgnsZone::SolutionPosition::KFace) {
+		if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaI) {
+			if (sGrid3d != nullptr) {
+				for (vtkIdType i = 0; i < sGrid3d->dimensionI() - 1; ++i) {
+					ids.push_back(sGrid3d->kFaceIndex(i, s.gridJ(), s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaJ) {
+			if (sGrid3d != nullptr) {
+				for (vtkIdType j = 0; j < sGrid3d->dimensionJ() - 1; ++j) {
+					ids.push_back(sGrid3d->kFaceIndex(s.gridI(), j, s.gridK()));
+				}
+			}
+		} else if (s.xAxisMode() == Graph2dHybridWindowResultSetting::xaK) {
+			for (vtkIdType k = 0; k < sGrid3d->dimensionK(); ++k) {
+				ids.push_back(sGrid3d->kFaceIndex(s.gridI(), s.gridJ(), k));
+			}
+		}
+
+		if (sGrid3d != nullptr) {
+			for (auto id : ids) {
+				points.push_back(getCenter(sGrid3d->vtkKFaceData()->data()->GetCell(id)));
+			}
+			atts = sGrid3d->vtkKFaceData()->data()->GetCellData();
+		}
+	}
+
+	m_xValues.assign(ids.size(), 0);
+	m_yValues.assign(ids.size(), 0);
+
+	vtkDataArray* data = atts->GetArray(iRIC::toStr(m_physVal).c_str());
+	if (data == nullptr) {
 		return;
 	}
-	int numT = da->GetNumberOfTuples();
-	Q_ASSERT(extractedGrid->GetNumberOfPoints() == numT);
-
-	m_xValues.assign(numT, 0);
-	m_yValues.assign(numT, 0);
 
 	double distance = 0;
-	double oldp[3];
-	for (int i = 0; i < numT; ++i) {
-		// X value setting
-		double p[3];
-		extractedGrid->GetPoint(i, p);
+	Point3D oldP;
+	for (int i = 0; i < static_cast<int>(ids.size()); ++i) {
+		vtkIdType id = ids.at(i);
+		Point3D p = points.at(i);
 		if (i == 0) {
-			oldp[0] = p[0];
-			oldp[1] = p[1];
-			oldp[2] = p[2];
-		} else {
-			QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
-			distance = distance + d.length();
+			oldP = p;
 		}
-		// x value
+		auto dx = p.x - oldP.x;
+		auto dy = p.y - oldP.y;
+		auto dz = p.z - oldP.z;
+		distance = distance + std::sqrt(dx * dx + dy * dy + dz * dz);
+
 		m_xValues[i] = distance;
-		// y value
 		double value = 0;
-		if (da->GetNumberOfComponents() == 1) {
-			value = da->GetTuple1(i);
-		} else if (da->GetNumberOfComponents() == 3) {
-			double* v;
-			v = da->GetTuple3(i);
+		if (data->GetNumberOfComponents() == 1) {
+			value = data->GetTuple1(id);
+		} else if (data->GetNumberOfComponents() == 3) {
+			double* v = data->GetTuple3(id);
 			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
 		}
 		m_yValues[i] = value;
-		oldp[0] = p[0];
-		oldp[1] = p[1];
-		oldp[2] = p[2];
+
+		oldP = p;
 	}
 }
-
-void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenterStepWise(vtkStructuredGrid* extractedGrid)
-{
-	vtkDataArray* da = extractedGrid->GetCellData()->GetArray(iRIC::toStr(m_physVal).c_str());
-	if (da == 0) {
-		// no data found.
-		return;
-	}
-	int numT = da->GetNumberOfTuples();
-	Q_ASSERT(extractedGrid->GetNumberOfPoints() - 1 == numT);
-	m_xValues.clear(); m_xValues.reserve(numT * 2);
-	m_yValues.clear(); m_yValues.reserve(numT * 2);
-
-	double distance = 0;
-	double oldp[3];
-	double previous_value;
-	int npts = extractedGrid->GetNumberOfPoints();
-	for (int i = 0; i < npts; ++i) {
-		// X value setting
-		double p[3];
-		extractedGrid->GetPoint(i, p);
-		if (i == 0) {
-			oldp[0] = p[0];
-			oldp[1] = p[1];
-			oldp[2] = p[2];
-		} else {
-			QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
-			distance = distance + d.length();
-		}
-
-		// y value
-		double value = 0;
-		if (da->GetNumberOfComponents() == 1) {
-			value = da->GetTuple1(i);
-		} else if (da->GetNumberOfComponents() == 3) {
-			double* v;
-			v = da->GetTuple3(i);
-			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
-		}
-
-		if (i == 0) {
-			m_xValues.push_back(distance); m_yValues.push_back(value);
-		} else if (i == npts - 1) {
-			m_xValues.push_back(distance); m_yValues.push_back(previous_value);
-		} else {
-			m_xValues.push_back(distance); m_yValues.push_back(previous_value);
-			m_xValues.push_back(distance); m_yValues.push_back(value);
-		}
-
-		previous_value = value;
-		oldp[0] = p[0];
-		oldp[1] = p[1];
-		oldp[2] = p[2];
-	}
-}
-
-void Graph2dHybridWindowGridIJKResultDataItem::updateValuesCellCenter(vtkStructuredGrid* extractedGrid)
-{
-	vtkDataArray* da = extractedGrid->GetCellData()->GetArray(iRIC::toStr(m_physVal).c_str());
-	if (da == 0) {
-		// no data found.
-		return;
-	}
-	int numT = da->GetNumberOfTuples();
-	Q_ASSERT(extractedGrid->GetNumberOfPoints() - 1 == numT);
-	m_xValues.clear(); m_xValues.reserve(numT);
-	m_yValues.clear(); m_yValues.reserve(numT);
-
-	double distance = 0;
-	double oldp[3];
-	double p[3];
-	extractedGrid->GetPoint(0, oldp);
-	extractedGrid->GetPoint(1, p);
-	QVector3D dPrev(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
-
-	oldp[0] = p[0]; oldp[1] = p[1]; oldp[2] = p[2];
-
-	for (int i = 0; i < numT; ++i) {
-		// X value setting
-		if (i == 0) {
-			distance = 0;
-		} else {
-			extractedGrid->GetPoint(i + 1, p);
-			QVector3D d(p[0] - oldp[0], p[1] - oldp[1], p[2] - oldp[2]);
-			distance = distance + (dPrev.length() + d.length()) / 2;
-
-			oldp[0] = p[0]; oldp[1] = p[1]; oldp[2] = p[2];
-			dPrev = d;
-		}
-
-		// y value
-		double value = 0;
-		if (da->GetNumberOfComponents() == 1) {
-			value = da->GetTuple1(i);
-		}
-		else if (da->GetNumberOfComponents() == 3) {
-			double* v;
-			v = da->GetTuple3(i);
-			value = std::sqrt(*v * *v + *(v + 1) * *(v + 1) + *(v + 2) * *(v + 2));
-		}
-
-		m_xValues.push_back(distance);
-		m_yValues.push_back(value);
-	}
-}
-
 
 Graph2dHybridWindowResultCopyDataItem* Graph2dHybridWindowGridIJKResultDataItem::copy(Graph2dHybridWindowResultCopyGroupDataItem* p)
 {
