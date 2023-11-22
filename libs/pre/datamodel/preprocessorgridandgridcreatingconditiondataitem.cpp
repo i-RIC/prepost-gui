@@ -464,8 +464,9 @@ void PreProcessorGridAndGridCreatingConditionDataItem::informGridCreation()
 			if (m_bcSettingGroupDataItem != nullptr) {
 				m_bcSettingGroupDataItem->executeMapping(true);
 			}
+			m_gridDataItem->updateSimplifiedGrid();
 		}
 	}
-	PreProcessorGridDataItem* gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
+	auto gItem = dynamic_cast<PreProcessorGridDataItem*>(m_gridDataItem);
 	gItem->informGridAttributeChangeAll();
 }
