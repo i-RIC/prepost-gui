@@ -13,6 +13,7 @@
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/stringtool.h>
+#include <misc/valuechangert.h>
 
 #include <vtkActor2D.h>
 #include <vtkAppendPolyData.h>
@@ -82,6 +83,38 @@ Post3dWindowNodeVectorArrowGroupDataItem::~Post3dWindowNodeVectorArrowGroupDataI
 void Post3dWindowNodeVectorArrowGroupDataItem::update()
 {
 	updateActorSetting();
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::updateLegendsVisibility()
+{
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+
+	m_actor2DCollection->RemoveAllItems();
+	m_legendActor->VisibilityOff();
+	for (auto& pair : m_colorMapSettings) {
+		pair.second->legendSetting()->imgSetting()->actor()->VisibilityOff();
+	}
+
+	bool visible = false;
+	if (standardItem()->checkState() == Qt::Checked) {
+		for (auto child : m_childItems) {
+			visible = visible || child->standardItem()->checkState() == Qt::Checked;
+		}
+	}
+	auto v = dataModel()->graphicsView();
+	if (visible) {
+		m_setting.legend.imageSetting.apply(v);
+		m_actor2DCollection->AddItem(m_legendActor);
+	}
+	for (auto cm : activeColorMaps()) {
+		cm->legendSetting()->imgSetting()->apply(v);
+		m_actor2DCollection->AddItem(cm->legendSetting()->imgSetting()->actor());
+	}
+
+	updateVisibilityWithoutRendering();
 }
 
 const std::string& Post3dWindowNodeVectorArrowGroupDataItem::target() const
@@ -240,13 +273,10 @@ QDialog* Post3dWindowNodeVectorArrowGroupDataItem::propertyDialog(QWidget* p)
 
 void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 {
-	m_legendActor->VisibilityOff();
-	for (auto actor : m_colorMapActors) {
-		actor->VisibilityOff();
+	if (m_childItems.size() == 0) {
+		updateLegendsVisibility();
+		return;
 	}
-	m_actor2DCollection->RemoveAllItems();
-
-	if (m_childItems.size() == 0) {return;}
 
 	// update shape and color setting with that of the first face;
 	auto firstSetting = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*>(m_childItems.at(0))->setting().arrow;
@@ -272,16 +302,18 @@ void Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting()
 
 	m_setting.updateStandardValueIfNeeded(mergedData->GetOutput()->GetPointData());
 
-	auto v = dataModel()->graphicsView();
-	m_setting.legend.imageSetting.apply(v);
-	for (const auto cm : activeColorMaps()) {
-		cm->legendSetting()->imgSetting()->apply(v);
-	}
-
 	for (auto child : m_childItems) {
 		auto item = dynamic_cast<Post3dWindowNodeVectorArrowDataItem*> (child);
 		item->update();
 	}
+
+	updateLegendsVisibility();
+}
+
+void Post3dWindowNodeVectorArrowGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+	updateLegendsVisibility();
 }
 
 Post3dWindowNodeVectorArrowTopDataItem* Post3dWindowNodeVectorArrowGroupDataItem::topDataItem() const

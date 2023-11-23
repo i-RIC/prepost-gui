@@ -58,6 +58,7 @@ private:
 
 	void setupActors();
 	void updateActorSetting() override;
+	void updateVisibility(bool visible) override;
 	Post3dWindowNodeVectorArrowGroupDataItem* groupDataItem() const;
 
 	vtkActor* m_actor;
