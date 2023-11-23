@@ -241,6 +241,8 @@ void Post3dWindowNodeVectorArrowDataItem::updateVisibility(bool visible)
 
 	auto v = isAncientChecked() && isChecked();
 	m_arrowsToolBarWidget->setEnabled(v);
+
+	groupDataItem()->updateLegendsVisibility();
 }
 
 Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowDataItem::groupDataItem() const

@@ -24,6 +24,7 @@ public:
 	~Post3dWindowNodeVectorArrowGroupDataItem();
 
 	void update();
+	void updateLegendsVisibility();
 
 	const std::string& target() const;
 	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;

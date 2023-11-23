@@ -14,6 +14,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/valuechangert.h>
 
 #include <vtkActor2D.h>
 
@@ -29,7 +30,6 @@ Post3dWindowCellContourGroupDataItem::Post3dWindowCellContourGroupDataItem(const
 	renderer()->AddActor2D(m_legendActor);
 
 	m_colorMapSetting.legend.imageSetting.setActor(m_legendActor);
-	m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
 	m_colorMapSetting.legend.title = data()->gridType()->outputCaption(target);
 	m_colorMapSetting.setAutoValueRange(valueRange());
 
@@ -55,6 +55,31 @@ Post3dWindowCellContourGroupDataItem::~Post3dWindowCellContourGroupDataItem()
 void Post3dWindowCellContourGroupDataItem::update()
 {
 	updateActorSetting();
+}
+
+void Post3dWindowCellContourGroupDataItem::updateColorMapVisibility()
+{
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+
+	auto actor = m_colorMapSetting.legend.imageSetting.actor();
+	m_actor2DCollection->RemoveItem(actor);
+	actor->VisibilityOff();
+
+	bool visible = false;
+	if (standardItem()->checkState() == Qt::Checked) {
+		for (auto child : m_childItems) {
+			visible = visible || child->standardItem()->checkState() == Qt::Checked;
+		}
+	}
+	if (visible) {
+		auto v = dataModel()->graphicsView();
+		m_colorMapSetting.legend.imageSetting.apply(v);
+		m_actor2DCollection->AddItem(actor);
+		updateVisibilityWithoutRendering();
+	}
 }
 
 const std::string& Post3dWindowCellContourGroupDataItem::target() const
@@ -119,7 +144,14 @@ void Post3dWindowCellContourGroupDataItem::updateActorSetting()
 		auto item = dynamic_cast<Post3dWindowCellContourDataItem*> (child);
 		item->update();
 	}
+	updateColorMapVisibility();
 	updateVisibilityWithoutRendering();
+}
+
+void Post3dWindowCellContourGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+	updateColorMapVisibility();
 }
 
 const ValueRangeContainer& Post3dWindowCellContourGroupDataItem::valueRange() const
@@ -175,17 +207,17 @@ void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWin
 
 void Post3dWindowCellContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(this, event, v);
 }
 
 void Post3dWindowCellContourGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

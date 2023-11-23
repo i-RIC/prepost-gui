@@ -21,6 +21,7 @@ public:
 	~Post3dWindowContourGroupDataItem();
 
 	void update();
+	void updateColorMapVisibility();
 
 	const std::string& target() const;
 
@@ -34,6 +35,7 @@ private:
 	QDialog* propertyDialog(QWidget* p) override;
 
 	void updateActorSetting() override;
+	void updateVisibility(bool visible) override;
 
 	const ValueRangeContainer& valueRange() const;
 	Post3dWindowZoneDataItem* zoneDataItem() const;

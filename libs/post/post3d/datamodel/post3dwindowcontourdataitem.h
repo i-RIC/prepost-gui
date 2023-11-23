@@ -40,6 +40,7 @@ private:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
 	QDialog* propertyDialog(QWidget* p) override;
+	void updateVisibility(bool visible) override;
 
 	vtkActor* m_actor;
 
