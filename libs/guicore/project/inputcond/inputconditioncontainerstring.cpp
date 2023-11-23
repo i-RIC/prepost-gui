@@ -105,7 +105,7 @@ QVariant InputConditionContainerString::variantValue() const
 	return QVariant(impl->m_value);
 }
 
-void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const QDir&)
+void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const QDir& /*dir*/)
 {
 	if (doc[name()]) {
 		impl->m_value = doc[name()].as<std::string>().c_str();
@@ -114,9 +114,21 @@ void InputConditionContainerString::importFromYaml(const YAML::Node& doc, const 
 	}
 }
 
-void InputConditionContainerString::exportToYaml(QTextStream* stream, const QDir&)
+void InputConditionContainerString::exportToYaml(QTextStream* stream, const QDir& /*dir*/)
 {
 	*stream << name().c_str() << ": " << impl->m_value << "\t#[string] " << caption() << "\r\n";
+}
+
+void InputConditionContainerString::importFromString(const QString& value, const QDir&  /*dir*/)
+{
+	impl->m_value = value;
+	emit valueChanged(impl->m_value);
+	emit valueChanged();
+}
+
+void InputConditionContainerString::exportToString(QString* value, const QDir& /*dir*/)
+{
+	*value = impl->m_value;
 }
 
 void InputConditionContainerString::setup(const QDomNode& defNode)

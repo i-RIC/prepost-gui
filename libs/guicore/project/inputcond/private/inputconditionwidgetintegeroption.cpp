@@ -14,13 +14,16 @@
 #include <QSignalBlocker>
 #include <QVariant>
 
-InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont) : InputConditionWidget(defnode)
+InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont, bool noStretch) :
+	InputConditionWidget(defnode)
 {
 	// add nominations;
 	QList<QDomNode> noms = getEnums(defnode);
 	m_comboBox = new QComboBox(this);
 	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->addWidget(m_comboBox, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);
@@ -43,13 +46,13 @@ InputConditionWidgetIntegerOption::InputConditionWidgetIntegerOption(QDomNode de
 		QDomNodeList children = enumsNode.childNodes();
 		for (int i = 0; i < children.count(); ++i) {
 			QDomNode subEnums = children.at(i);
-			if (subEnums.nodeName() != "SubEnumerations") { continue; }
+			if (subEnums.nodeName() != "SubEnumerations") {continue;}
 			// create unique name to lookup list
 			QString name = subEnumerationsName(subEnums, m_subEnumerations.size());
 			QDomNodeList nodes = subEnums.childNodes();
 			for (int n = 0; n < nodes.size(); ++n) {
 				QDomNode enumNode = nodes.at(n);
-				if (enumNode.nodeName() != "Enumeration") { continue; }
+				if (enumNode.nodeName() != "Enumeration") {continue;}
 				QDomElement enumElem = enumNode.toElement();
 				int value = enumElem.attribute("value").toInt();
 				QString caption = t.translate(enumElem.attribute("caption"));
@@ -99,8 +102,8 @@ QString InputConditionWidgetIntegerOption::subEnumerationsName(const QDomNode& s
 
 void InputConditionWidgetIntegerOption::activateSubEnumerations(const QString& name)
 {
-	std::map< QString, std::list< std::pair<QString, QVariant> > >::iterator it = m_subEnumerations.find(name);
-	if (it == m_subEnumerations.end()) { return; }
+	std::map<QString, std::list<std::pair<QString, QVariant> > >::iterator it = m_subEnumerations.find(name);
+	if (it == m_subEnumerations.end()) {return;}
 
 	const QSignalBlocker blocker(m_comboBox);
 	m_comboBox->clear();

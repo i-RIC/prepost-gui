@@ -6,7 +6,7 @@
 class InputConditionWidgetCgnsGridEdgeJRealResult : public InputConditionWidgetCgnsResult
 {
 public:
-	InputConditionWidgetCgnsGridEdgeJRealResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file);
+	InputConditionWidgetCgnsGridEdgeJRealResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file, bool noStretch);
 
 private:
 	QStringList getEnums() const override;

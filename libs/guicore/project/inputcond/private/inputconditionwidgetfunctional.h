@@ -16,7 +16,7 @@ class InputConditionWidgetFunctional : public InputConditionWidget
 	Q_OBJECT
 
 public:
-	InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont);
+	InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont, bool noStretch);
 	~InputConditionWidgetFunctional();
 
 	void setCaption(const QString& caption);

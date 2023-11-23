@@ -6,13 +6,15 @@
 #include <QCheckBox>
 #include <QHBoxLayout>
 
-InputConditionWidgetCheckbox::InputConditionWidgetCheckbox(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont) :
+InputConditionWidgetCheckbox::InputConditionWidgetCheckbox(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont, bool noStretch) :
 	InputConditionWidget(defnode),
 	m_checkBox {new QCheckBox(this)}
 {
 	auto layout = new QHBoxLayout(this);
 	layout->addWidget(m_checkBox);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);
 

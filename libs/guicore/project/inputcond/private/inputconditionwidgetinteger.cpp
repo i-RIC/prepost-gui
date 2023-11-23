@@ -8,7 +8,7 @@
 #include <QDomElement>
 #include <QHBoxLayout>
 
-InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerInteger* cont, const InputConditionContainerSet& /*cs*/) :
+InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerInteger* cont, const InputConditionContainerSet& /*cs*/, bool noStretch) :
 	InputConditionWidget(defnode)
 {
 	m_spinBox = new IntegerNumberEditWidget(this);
@@ -16,7 +16,9 @@ InputConditionWidgetInteger::InputConditionWidgetInteger(QDomNode defnode, const
 	m_spinBox->setAlignment(Qt::AlignRight);
 
 	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->addWidget(m_spinBox, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);

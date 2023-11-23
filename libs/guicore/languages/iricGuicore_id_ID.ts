@@ -1473,6 +1473,54 @@ Parse error %2 at %3, column %4</source>
         <source>Name has to consist of only English characters.</source>
         <translation>Nama harus terdiri dari karakter bahasa Inggris saja.</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Impor (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Ekspor (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished">Mengalihkan</translation>
+    </message>
+    <message>
+        <source>Columns %1 are ignored. Expected names are %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished">Pilih file untuk diimpor</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Kesalahan</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nama</translation>
+    </message>
+    <message>
+        <source>Switch to Table view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to List view</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -1708,6 +1756,18 @@ Do you really want to import this file?</source>
     <message>
         <source>Opening the CGNS file failed.</source>
         <translation>Gagal membuka file CGNS.</translation>
+    </message>
+    <message>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Sunting</translation>
     </message>
 </context>
 <context>
@@ -1973,6 +2033,18 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Tidak ada data untuk diimpor.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetSet</name>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished">Terjadi kesalahan saat memuat file definisi pemecah. %1 : %2</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Kesalahan</translation>
     </message>
 </context>
 <context>

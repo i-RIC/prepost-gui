@@ -14,7 +14,7 @@ public:
 	Q_OBJECT
 
 public:
-	InputConditionWidgetCheckbox(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
+	InputConditionWidgetCheckbox(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont, bool noStretch);
 
 	void addTooltip(const QString& tooltip) override;
 

@@ -14,7 +14,7 @@ class InputConditionWidgetIntegerOption : public InputConditionWidget
 	Q_OBJECT
 
 public:
-	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont);
+	InputConditionWidgetIntegerOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerInteger* cont, bool noStretch);
 
 	void addTooltip(const QString& tooltip) override;
 

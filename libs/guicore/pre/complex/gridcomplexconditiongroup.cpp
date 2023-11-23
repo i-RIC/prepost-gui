@@ -1,12 +1,17 @@
 #include "gridcomplexconditiongroup.h"
 #include "private/gridcomplexconditiongroup_impl.h"
 #include "../../project/inputcond/inputconditionpage.h"
+#include "../../project/inputcond/inputconditionwidget.h"
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
+
+#include <misc/stringtool.h>
 
 #include <QDomElement>
 
 #include <iriclib_errorcodes.h>
+
+#include <unordered_map>
 
 GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& elem) :
 	m_page {nullptr},
@@ -23,9 +28,27 @@ GridComplexConditionGroup::Impl::Impl(SolverDefinition* def, const QDomElement& 
 	m_isDefault.setName("_isdefault");
 
 	m_containerSet.setup(elem, *def, t, true);
+	m_containerSetBackup.setup(elem, *def, t, true);
 	m_widgetSet.setup(elem, m_containerSet, *def, t, true);
+	m_tableWidgetSet.setup(elem, m_containerSet, *def, t, true, true);
 
-	m_page = new InputConditionPage(elem, &m_widgetSet, t, nullptr);
+	auto names = widgetNames(elem);
+	for (const auto& name : names) {
+		auto w = m_tableWidgetSet.widget(name);
+		m_tableWidgets.push_back(w);
+
+		QWidget* label = nullptr;
+		auto labelName = QString("%0_caption").arg(name.c_str());
+		auto l = m_tableWidgetSet.widget(iRIC::toStr(labelName));
+		if (l != nullptr) {
+			label = l;
+		}
+		m_tableLabels.push_back(label);
+	}
+
+	std::unordered_map<std::string, QPushButton*> emptyButtons;
+
+	m_page = new InputConditionPage(elem, &m_widgetSet, emptyButtons, t, nullptr);
 }
 
 GridComplexConditionGroup::Impl::~Impl()
@@ -33,6 +56,29 @@ GridComplexConditionGroup::Impl::~Impl()
 	m_widgetSet.clear();
 	m_containerSet.clear();
 	delete m_page;
+}
+
+std::vector<std::string> GridComplexConditionGroup::Impl::widgetNames(const QDomElement& elem)
+{
+	std::vector<std::string> ret;
+	widgetNamesRec(elem, &ret);
+
+	return ret;
+}
+
+void GridComplexConditionGroup::Impl::widgetNamesRec(const QDomElement& elem, std::vector<std::string>* names)
+{
+	if (elem.nodeName() == "Item") {
+		names->push_back(iRIC::toStr(elem.attribute("name")));
+	} else {
+		auto children = elem.childNodes();
+		for (int i = 0; i < children.size(); ++i) {
+			auto c = children.at(i);
+			if (c.nodeType() != QDomNode::NodeType::ElementNode) {continue;}
+
+			widgetNamesRec(c.toElement(), names);
+		}
+	}
 }
 
 // public interfaces
@@ -60,6 +106,22 @@ GridComplexConditionGroup::Setting::Setting(Setting&& s) :
 GridComplexConditionGroup::Setting::~Setting()
 {
 	delete containerSet;
+}
+
+GridComplexConditionGroup::Setting GridComplexConditionGroup::Setting::copy() const
+{
+	Setting ret(*this);
+	return ret;
+}
+
+GridComplexConditionGroup::Setting& GridComplexConditionGroup::Setting::operator=(const Setting& setting)
+{
+	caption = setting.caption;
+	color = setting.color;
+	isDefault = setting.isDefault;
+	containerSet->copyValues(setting.containerSet);
+
+	return *this;
 }
 
 GridComplexConditionGroup::GridComplexConditionGroup(SolverDefinition* def, const QDomElement& elem) :
@@ -110,9 +172,24 @@ QWidget* GridComplexConditionGroup::widget() const
 	return impl->m_page;
 }
 
+const std::vector<QWidget*>& GridComplexConditionGroup::tableLabels() const
+{
+	return impl->m_tableLabels;
+}
+
+const std::vector<QWidget*>& GridComplexConditionGroup::tableWidgets() const
+{
+	return impl->m_tableWidgets;
+}
+
 InputConditionContainerSet* GridComplexConditionGroup::containerSet() const
 {
 	return &(impl->m_containerSet);
+}
+
+std::vector<std::string> GridComplexConditionGroup::widgetNames(const QDomElement& elem)
+{
+	return Impl::widgetNames(elem);
 }
 
 QString GridComplexConditionGroup::caption() const
@@ -122,7 +199,12 @@ QString GridComplexConditionGroup::caption() const
 
 void GridComplexConditionGroup::setCaption(const QString& caption)
 {
+	auto oldCaption = impl->m_caption.value();
 	impl->m_caption.setValue(caption);
+
+	if (oldCaption != caption) {
+		emit captionChanged(caption);
+	}
 }
 
 QColor GridComplexConditionGroup::color() const
@@ -132,7 +214,12 @@ QColor GridComplexConditionGroup::color() const
 
 void GridComplexConditionGroup::setColor(const QColor& color)
 {
+	auto oldColor = impl->m_color.value();
 	impl->m_color.setValue(color.name());
+
+	if (oldColor != color.name()) {
+		emit colorChanged(color);
+	}
 }
 
 bool GridComplexConditionGroup::isDefault() const
@@ -142,7 +229,13 @@ bool GridComplexConditionGroup::isDefault() const
 
 void GridComplexConditionGroup::setIsDefault(bool isDefault)
 {
-	impl->m_isDefault.setValue(isDefault ? 1 : 0);
+	int oldIsDefault = impl->m_isDefault.value();
+	int intIsDefault = isDefault ? 1 : 0;
+	impl->m_isDefault.setValue(intIsDefault);
+
+	if (oldIsDefault != intIsDefault) {
+		emit isDefaultChanged(isDefault);
+	}
 }
 
 GridComplexConditionGroup::Setting GridComplexConditionGroup::setting() const
@@ -154,6 +247,24 @@ GridComplexConditionGroup::Setting GridComplexConditionGroup::setting() const
 	setting.containerSet = impl->m_containerSet.clone();
 
 	return setting;
+}
+
+void GridComplexConditionGroup::backup()
+{
+	impl->m_captionBackup = impl->m_caption;
+	impl->m_colorBackup = impl->m_color;
+	impl->m_isDefaultBackup = impl->m_isDefault;
+
+	impl->m_containerSetBackup.copyValues(&impl->m_containerSet);
+}
+
+void GridComplexConditionGroup::restore()
+{
+	impl->m_caption = impl->m_captionBackup;
+	impl->m_color = impl->m_colorBackup;
+	impl->m_isDefault = impl->m_isDefaultBackup;
+
+	impl->m_containerSet.copyValues(&impl->m_containerSetBackup);
 }
 
 void GridComplexConditionGroup::setSetting(const Setting& setting)

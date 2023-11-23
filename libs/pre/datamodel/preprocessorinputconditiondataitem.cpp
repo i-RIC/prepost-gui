@@ -55,19 +55,19 @@ void PreProcessorInputConditionDataItem::doSaveToProjectMainFile(QXmlStreamWrite
 int PreProcessorInputConditionDataItem::loadFromCgnsFile()
 {
 	auto cgnsFile = projectData()->mainfile()->cgnsFile();
-	return m_dialog->load(*(cgnsFile->ccBase()->ccGroup()));
+	return m_dialog->load(*(cgnsFile->ccBase()->ccGroup()), cgnsFile->ccBase()->gccTop());
 }
 
 int PreProcessorInputConditionDataItem::saveToCgnsFile()
 {
 	auto cgnsFile = projectData()->mainfile()->cgnsFile();
-	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup(), cgnsFile->ccBase()->gccTop());
 }
 
 int PreProcessorInputConditionDataItem::updateCgnsFileOtherThanGrids()
 {
 	auto cgnsFile = projectData()->mainfile()->cgnsFile();
-	return m_dialog->save(cgnsFile->ccBase()->ccGroup());
+	return m_dialog->save(cgnsFile->ccBase()->ccGroup(), cgnsFile->ccBase()->gccTop());
 }
 
 void PreProcessorInputConditionDataItem::showDialog(bool readonly)

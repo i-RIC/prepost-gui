@@ -8,7 +8,7 @@
 #include <QHBoxLayout>
 #include <QMessageBox>
 
-InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defNode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerReal* cont) :
+InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defNode, const SolverDefinitionTranslator& /*t*/, InputConditionContainerReal* cont, bool noStretch) :
 	InputConditionWidget(defNode),
 	m_container {cont},
 	m_lineEdit {new RealNumberEditWidget(this)}
@@ -17,7 +17,9 @@ InputConditionWidgetReal::InputConditionWidgetReal(QDomNode defNode, const Solve
 	m_lineEdit->setAlignment(Qt::AlignRight);
 
 	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->addWidget(m_lineEdit, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);

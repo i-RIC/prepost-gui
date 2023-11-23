@@ -20,14 +20,14 @@ InputConditionPageContainer::~InputConditionPageContainer()
 	}
 }
 
-void InputConditionPageContainer::setup(const QDomElement& elem, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)
+void InputConditionPageContainer::setup(const QDomElement& elem, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t)
 {
 	ws->clearLabelAndImageCount();
 
 	QDomNodeList children = elem.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomNode child = children.item(i);
-		InputConditionPage* p = new InputConditionPage(child, ws, t, this);
+		InputConditionPage* p = new InputConditionPage(child, ws, complexButtons, t, this);
 		p->hide();
 		m_pages.insert(p->name(), p);
 	}

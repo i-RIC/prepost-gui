@@ -1469,6 +1469,54 @@ Parse error %2 at %3, column %4</source>
         <source>Name has to consist of only English characters.</source>
         <translation>名称只能包含英文字符</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">进口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">出口 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished">转变</translation>
+    </message>
+    <message>
+        <source>Columns %1 are ignored. Expected names are %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished">选择要导入的文件</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to Table view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to List view</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -1706,6 +1754,18 @@ Do you really want to import this file?</source>
     <message>
         <source>Opening the CGNS file failed.</source>
         <translation>打开 CGNS 文件失败。</translation>
+    </message>
+    <message>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">编辑</translation>
     </message>
 </context>
 <context>
@@ -1973,6 +2033,19 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>无导入数据</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetSet</name>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished">加载求解器定义文件时发生错误。
+%1:%2</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
     </message>
 </context>
 <context>

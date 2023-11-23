@@ -13,7 +13,7 @@ class InputConditionWidgetRealOption : public InputConditionWidget
 	Q_OBJECT
 
 public:
-	InputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont);
+	InputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont, bool noStretch);
 
 	void addTooltip(const QString& tooltip) override;
 

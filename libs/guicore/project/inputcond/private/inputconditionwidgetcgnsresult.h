@@ -16,7 +16,7 @@ class InputConditionWidgetCgnsResult : public InputConditionWidget
 	Q_OBJECT
 
 public:
-	InputConditionWidgetCgnsResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file);
+	InputConditionWidgetCgnsResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file, bool noStretch);
 
 	void addTooltip(const QString& tooltip) override;
 

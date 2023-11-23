@@ -8,7 +8,6 @@
 #include <misc/xmlsupport.h>
 
 #include <QDir>
-#include <QDomDocument>
 #include <QDomNode>
 #include <QMessageBox>
 #include <QPushButton>
@@ -31,25 +30,16 @@ GridComplexConditionWidget::GridComplexConditionWidget(QWidget* parent) :
 	ui->setupUi(this);
 	setHidden(true);
 
-	connect(ui->nameEdit, SIGNAL(textChanged(QString)), this, SIGNAL(captionChanged(QString)));
-	connect(ui->isDefaultCheckBox, SIGNAL(toggled(bool)), this, SIGNAL(defaultChecked(bool)));
-	connect(ui->isDefaultCheckBox, SIGNAL(toggled(bool)), this, SLOT(handleDefaultCheck(bool)));
+	connect(ui->nameEdit, &QLineEdit::textChanged, this, &GridComplexConditionWidget::captionChanged);
+	connect(ui->nameEdit, &QLineEdit::textChanged, this, &GridComplexConditionWidget::handleCaptionEdit);
+	connect(ui->colorWidget, &ColorEditWidget::colorChanged, this, &GridComplexConditionWidget::handleColorEdit);
+	connect(ui->isDefaultCheckBox, &QCheckBox::toggled, this, &GridComplexConditionWidget::defaultChecked);
+	connect(ui->isDefaultCheckBox, &QCheckBox::toggled, this, &GridComplexConditionWidget::handleDefaultCheck);
 }
 
 GridComplexConditionWidget::~GridComplexConditionWidget()
 {
 	delete ui;
-	if (impl->m_group != nullptr) {
-		auto w = impl->m_group->widget();
-		w->setParent(nullptr);
-		w->hide();
-	}
-}
-
-void GridComplexConditionWidget::setup(SolverDefinition* def, const QDomElement& elem)
-{
-	impl->m_group = new GridComplexConditionGroup(def, elem);
-	setWidget(impl->m_group->widget());
 }
 
 QString GridComplexConditionWidget::caption() const
@@ -83,32 +73,50 @@ void GridComplexConditionWidget::setIsDefault(bool def)
 	ui->isDefaultCheckBox->setDisabled(def);
 }
 
+void GridComplexConditionWidget::hideWidgetsNotForCalculationCondition()
+{
+	ui->isDefaultCheckBox->hide();
+	ui->colorLabel->hide();
+	ui->colorWidget->hide();
+}
+
 GridComplexConditionGroup* GridComplexConditionWidget::group()
 {
-	impl->m_group->setCaption(ui->nameEdit->text());
-	impl->m_group->setColor(ui->colorWidget->color());
-	impl->m_group->setIsDefault(ui->isDefaultCheckBox->isChecked());
-
 	return impl->m_group;
 }
 
 void GridComplexConditionWidget::setGroup(GridComplexConditionGroup* group)
 {
+	impl->m_group = group;
+
 	if (group != nullptr){
 		ui->nameEdit->setText(group->caption());
 		ui->colorWidget->setColor(group->color());
 		ui->isDefaultCheckBox->setChecked(group->isDefault());
 		auto w = group->widget();
-		w->show();
 		setWidget(w);
-	}
+		w->show();
 
-	delete impl->m_group;
-	impl->m_group = group;
+		connect(group, &GridComplexConditionGroup::captionChanged, this, &GridComplexConditionWidget::setCaption);
+		connect(group, &GridComplexConditionGroup::colorChanged, this, &GridComplexConditionWidget::setColor);
+		connect(group, &GridComplexConditionGroup::isDefaultChanged, this, &GridComplexConditionWidget::setIsDefault);
+	}
+}
+
+void GridComplexConditionWidget::handleCaptionEdit(const QString caption)
+{
+	impl->m_group->setCaption(caption);
+}
+
+void GridComplexConditionWidget::handleColorEdit(const QColor& color)
+{
+	impl->m_group->setColor(color);
 }
 
 void GridComplexConditionWidget::handleDefaultCheck(bool checked)
 {
+	impl->m_group->setIsDefault(checked);
+
 	if (checked) {
 		ui->isDefaultCheckBox->setEnabled(false);
 	}

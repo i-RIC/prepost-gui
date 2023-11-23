@@ -6,7 +6,7 @@
 class InputConditionWidgetCgnsBaseIterativeRealResult : public InputConditionWidgetCgnsResult
 {
 public:
-	InputConditionWidgetCgnsBaseIterativeRealResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file);
+	InputConditionWidgetCgnsBaseIterativeRealResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file, bool noStretch);
 
 private:
 	QStringList getEnums() const override;

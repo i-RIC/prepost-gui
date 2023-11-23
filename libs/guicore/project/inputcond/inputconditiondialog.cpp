@@ -1,5 +1,6 @@
 #include "ui_inputconditiondialog.h"
 
+#include "../../pre/complex/gridcomplexconditiondialog.h"
 #include "../../solverdef/solverdefinition.h"
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "../projectcgnsfile.h"
@@ -11,6 +12,7 @@
 #include "private/inputconditioncgnsfile.h"
 #include "private/inputconditioncgnsfileselectdialog.h"
 
+#include <misc/errormessage.h>
 #include <misc/fileremover.h>
 #include <misc/filesystemfunction.h>
 #include <misc/stringtool.h>
@@ -26,6 +28,7 @@
 
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
+#include <h5cgnsgridcomplexconditiontop.h>
 #include <iriclib_errorcodes.h>
 
 InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QLocale& locale, QWidget* parent) :
@@ -39,12 +42,9 @@ InputConditionDialog::InputConditionDialog(SolverDefinition* solverDef, const QL
 	ui {new Ui::InputConditionDialog}
 {
 	ui->setupUi(this);
-	connect(m_containerSet, SIGNAL(modified()), this, SLOT(setModified()));
-	// create connections.
-	connect(ui->m_pageList, SIGNAL(selectChanged(QString)),
-					ui->m_pageContainer, SLOT(pageSelected(QString)));
-	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)),
-					this, SLOT(handleButtonClick(QAbstractButton*)));
+	connect(m_containerSet, &InputConditionContainerSet::modified, this, &InputConditionDialog::setModified);
+	connect(ui->m_pageList, &InputConditionPageList::selectChanged, ui->m_pageContainer, &InputConditionPageContainer::pageSelected);
+	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &InputConditionDialog::handleButtonClick);
 
 	setup(*solverDef, locale);
 
@@ -94,14 +94,60 @@ void InputConditionDialog::setup(const SolverDefinition& def, const QLocale& loc
 	m_containerSetBackup = m_containerSet->clone();
 	// setup WidgetSet.
 	m_widgetSet->setup(condNode, *m_containerSet, def, t);
+
+	// setup complexDialogs
+	setupComplexDialogs(condNode, t);
+
 	// setup PageList.
 	ui->m_pageList->setup(condNode.toElement(), t);
 	// setup PageContainer.
-	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, t);
+	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, m_complexDialogOpenButtons, t);
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
 }
 
+void InputConditionDialog::setupComplexDialogs(const QDomNode& node, const SolverDefinitionTranslator& t)
+{
+	setupComplexDialogsRec(node, t);
+}
+
+void InputConditionDialog::setupComplexDialogsRec(const QDomNode& node, const SolverDefinitionTranslator& t)
+{
+	if (node.nodeType() != QDomNode::ElementNode) {return;}
+
+	auto elem = node.toElement();
+	if (elem.nodeName() == "Item") {
+		auto defNode = iRIC::getChildNode(elem, "Definition");
+		if (defNode.isNull()) {return;}
+
+		auto defElem = defNode.toElement();
+		if (defElem.attribute("valueType") == "complex") {
+			// found complex type definition
+			auto name = elem.attribute("name");
+
+			if (name.isEmpty()) {
+				throw ErrorMessage(tr("name attribute is not defined for \"Item\" element"));
+			}
+
+			auto nameStr = iRIC::toStr(name);
+			auto dialog = new GridComplexConditionDialog(m_solverDefinition, defElem, this);
+			dialog->setWindowTitle(tr("Edit %1").arg(t.translate(elem.attribute("caption"))));
+			dialog->setCalculationConditionMode(true);
+
+			m_complexDialogs.insert({nameStr, dialog});
+
+			auto button = new QPushButton(tr("Edit"), this);
+			connect(button, &QPushButton::clicked, dialog, &GridComplexConditionDialog::exec);
+			m_complexDialogOpenButtons.insert({nameStr, button});
+		}
+	} else {
+		auto children = elem.childNodes();
+		for (int i = 0; i < children.length(); ++i) {
+			auto c = children.item(i);
+			setupComplexDialogsRec(c, t);
+		}
+	}
+}
 
 void InputConditionDialog::setFileName(const QString& fileName)
 {
@@ -113,11 +159,19 @@ void InputConditionDialog::setWorkFolder(const QString& workFolder)
 	m_workFolder = workFolder;
 }
 
-int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
+int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group, iRICLib::H5CgnsGridComplexConditionTop* top)
 {
 	int ier = m_containerSet->load(group);
 	if (ier != IRIC_NO_ERROR) {return ier;}
 	m_containerSetBackup->copyValues(m_containerSet);
+
+	for (auto& pair : m_complexDialogs) {
+		pair.second->clear();
+		if (! top->groupExists(pair.first)) {continue;}
+
+		ier = pair.second->loadFromCgnsFile(top->group(pair.first));
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
 
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
@@ -126,10 +180,17 @@ int InputConditionDialog::load(const iRICLib::H5CgnsConditionGroup& group)
 	return IRIC_NO_ERROR;
 }
 
-int InputConditionDialog::save(iRICLib::H5CgnsConditionGroup* group)
+int InputConditionDialog::save(iRICLib::H5CgnsConditionGroup* group, iRICLib::H5CgnsGridComplexConditionTop* top)
 {
 	int ier = m_containerSet->save(group);
 	if (ier != IRIC_NO_ERROR) {return ier;}
+
+	for (auto& pair : m_complexDialogs) {
+		auto group = top->group(pair.first);
+		ier = pair.second->saveToCgnsFile(group);
+		if (ier != IRIC_NO_ERROR) {return ier;}
+	}
+
 	m_containerSetBackup->copyValues(m_containerSet);
 	m_modified = false;
 
@@ -190,7 +251,17 @@ bool InputConditionDialog::importFromCgns(const QString& filename)
 
 bool InputConditionDialog::importFromYaml(const QString& filename)
 {
-	return m_containerSet->importFromYaml(filename);
+	bool ok = m_containerSet->importFromYaml(filename);
+	if (! ok) {return false;}
+
+	QFileInfo finfo(filename);
+	for (const auto& pair : m_complexDialogs) {
+		auto csvName = finfo.dir().absoluteFilePath(QString("%1.csv").arg(pair.first.c_str()));
+		ok = pair.second->importFromCsvFile(csvName, this);
+		if (! ok) {return false;}
+	}
+
+	return true;
 }
 
 bool InputConditionDialog::exportToCgns(const QString& filename)
@@ -227,7 +298,17 @@ bool InputConditionDialog::exportToCgns(const QString& filename)
 
 bool InputConditionDialog::exportToYaml(const QString& filename)
 {
-	return m_containerSet->exportToYaml(filename);
+	bool ok = m_containerSet->exportToYaml(filename);
+	if (! ok) {return false;}
+
+	QFileInfo finfo(filename);
+	for (const auto& pair : m_complexDialogs) {
+		auto csvName = finfo.dir().absoluteFilePath(QString("%1.csv").arg(pair.first.c_str()));
+		ok = pair.second->exportToCsvFile(csvName);
+		if (! ok) {return false;}
+	}
+
+	return true;
 }
 
 void InputConditionDialog::handleButtonClick(QAbstractButton* button)
@@ -242,6 +323,13 @@ void InputConditionDialog::reset()
 	int ret = QMessageBox::warning(this, tr("Warning"), tr("Are you sure you want to reset all calculation conditions to default values?"), QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 	if (ret == QMessageBox::No) {return;}
 	m_containerSet->reset();
+}
+
+int InputConditionDialog::exec()
+{
+	m_containerSetBackup->copyValues(m_containerSet);
+
+	return QDialog::exec();
 }
 
 void InputConditionDialog::accept()
@@ -290,7 +378,7 @@ void InputConditionDialog::checkImportSourceUpdate()
 	bool ok = true;
 	try {
 		iRICLib::H5CgnsFile cgnsFile(iRIC::toStr(m_fileName), iRICLib::H5CgnsFile::Mode::OpenModify);
-		int ier = save(cgnsFile.ccBase()->ccGroup());
+		int ier = save(cgnsFile.ccBase()->ccGroup(), cgnsFile.ccBase()->gccTop());
 		ok = (ier == IRIC_NO_ERROR);
 	}  catch (...) {
 		ok = false;

@@ -1473,6 +1473,54 @@ Parse error %2 at %3, column %4</source>
         <source>Name has to consist of only English characters.</source>
         <translation>이름은 영문자로만 구성되어야 합니다.</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">내보내다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished">스위치</translation>
+    </message>
+    <message>
+        <source>Columns %1 are ignored. Expected names are %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished">가져올 파일 선택</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">이름</translation>
+    </message>
+    <message>
+        <source>Switch to Table view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to List view</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -1708,6 +1756,18 @@ Do you really want to import this file?</source>
     <message>
         <source>Opening the CGNS file failed.</source>
         <translation>CGNS 파일을 열지 못했습니다.</translation>
+    </message>
+    <message>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">편집하다</translation>
     </message>
 </context>
 <context>
@@ -1973,6 +2033,18 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>가져올 데이터가 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetSet</name>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished">솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 : %2</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
     </message>
 </context>
 <context>

@@ -128,6 +128,8 @@ void InputConditionContainerSet::setupContaner(const QDomNode& itemNode, const S
 				m_functionals.insert(std::make_pair(parameterName, InputConditionContainerFunctional(parameterName, parameterCaption, defNode, def.folder())));
 				m_containers.insert(std::make_pair(parameterName, &(m_functionals[parameterName])));
 				connect(&(m_functionals[parameterName]), SIGNAL(valueChanged()), this, SIGNAL(modified()));
+			} else if (valuetype == "complex") {
+				// silently ignore
 			} else {
 				throw(ErrorMessage(tr("Wrong valueType \"%1\" is set.").arg(valuetype)));
 			}

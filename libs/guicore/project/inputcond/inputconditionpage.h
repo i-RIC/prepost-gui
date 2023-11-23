@@ -5,6 +5,9 @@
 
 #include <QString>
 #include <QWidget>
+
+#include <unordered_map>
+
 class QDomNode;
 class InputConditionWidgetSet;
 class SolverDefinitionTranslator;
@@ -19,18 +22,18 @@ class GUICOREDLL_EXPORT InputConditionPage : public QWidget
 
 public:
 	InputConditionPage(QWidget* parent);
-	InputConditionPage(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t, QWidget* parent);
+	InputConditionPage(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t, QWidget* parent);
 
 	const QString& name() const;
 
 private:
-	void load(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	QLayout* loadAuto(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	QLayout* loadSimple(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	QLayout* loadCustom(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	QObject* loadRec(const QDomNode& node, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	void loadBL(QBoxLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
-	void loadGL(QGridLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t);
+	void load(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	QLayout* loadAuto(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	QLayout* loadSimple(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	QLayout* loadCustom(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	QObject* loadRec(const QDomNode& node, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	void loadBL(QBoxLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
+	void loadGL(QGridLayout* l, const QDomNodeList& list, InputConditionWidgetSet* ws, const std::unordered_map<std::string, QPushButton*>& complexButtons, const SolverDefinitionTranslator& t);
 
 	QString m_name;
 };

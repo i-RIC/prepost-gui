@@ -75,6 +75,8 @@ public:
 
 	void importFromYaml(const YAML::Node& doc, const QDir& dir) override;
 	void exportToYaml(QTextStream* stream, const QDir& dir) override;
+	void importFromString(const QString& value, const QDir& dir) override;
+	void exportToString(QString* value, const QDir& dir) override;
 
 	bool loadDataFromCsvFile(const QString& filename);
 	bool saveDataToCsvFile(const QString& filename);

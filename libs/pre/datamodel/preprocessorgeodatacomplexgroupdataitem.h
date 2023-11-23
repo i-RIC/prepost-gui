@@ -4,6 +4,7 @@
 #include "preprocessorgeodatagroupdataitem.h"
 #include <guicore/project/projectdata.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 
 #include <QColor>
 
@@ -18,7 +19,7 @@ class PreProcessorGeoDataComplexGroupDataItem : public PreProcessorGeoDataGroupD
 	Q_OBJECT
 
 public:
-	PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
+	PreProcessorGeoDataComplexGroupDataItem(SolverDefinitionGridComplexAttribute* cond, PreProcessorDataItem* parent);
 	~PreProcessorGeoDataComplexGroupDataItem();
 
 	int loadFromCgnsFile() override;
@@ -47,14 +48,10 @@ protected:
 
 private:
 	void updateColorMap();
-	void createDefaultGroup();
-	void clearGroups();
 
 	bool m_isCustomModified;
-	QColor m_undefinedColor;
 
 	ColorMapSettingToolBarWidgetController* m_toolBarWidgetController;
-	std::vector<GridComplexConditionGroup*> m_groups;
 	GridComplexConditionDialog* m_dialog;
 
 	QAction* m_editGroupAction;

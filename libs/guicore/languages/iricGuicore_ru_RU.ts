@@ -1473,6 +1473,54 @@ Parse error %2 at %3, column %4</source>
         <source>Name has to consist of only English characters.</source>
         <translation>Имя должно состоять только из английских символов.</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Импортировать (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Экспорт (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation type="unfinished">Выключатель</translation>
+    </message>
+    <message>
+        <source>Columns %1 are ignored. Expected names are %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation type="unfinished">Выберите файл для импорта</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ошибка</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Имя</translation>
+    </message>
+    <message>
+        <source>Switch to Table view</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Switch to List view</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -1708,6 +1756,18 @@ Do you really want to import this file?</source>
     <message>
         <source>Opening the CGNS file failed.</source>
         <translation>Не удалось открыть файл CGNS.</translation>
+    </message>
+    <message>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Редактировать</translation>
     </message>
 </context>
 <context>
@@ -1973,6 +2033,18 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>Нет данных для импорта.</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetSet</name>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation type="unfinished">Ошибка при загрузке файла определения решателя. %1 : %2</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Ошибка</translation>
     </message>
 </context>
 <context>
