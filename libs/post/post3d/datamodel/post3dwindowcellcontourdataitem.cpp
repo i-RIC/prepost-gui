@@ -126,3 +126,10 @@ bool Post3dWindowCellContourDataItem::addToolBarButtons(QToolBar* toolBar)
 {
 	return groupDataItem()->addToolBarButtons(toolBar);
 }
+
+void Post3dWindowCellContourDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	groupDataItem()->updateColorMapVisibility();
+}
