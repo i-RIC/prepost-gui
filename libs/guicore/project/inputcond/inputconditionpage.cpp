@@ -130,8 +130,8 @@ QObject* InputConditionPage::loadRec(const QDomNode& node, InputConditionWidgetS
 		std::string lName = iRIC::toStr(InputConditionWidgetSet::labelName(node));
 		return ws->widget(lName);
 	} else if (nodeName == "Image"){
-		std::string itemName = iRIC::toStr(elem.attribute("src"));
-		return ws->widget(itemName);
+		std::string iName = iRIC::toStr(InputConditionWidgetSet::imageName(node));
+		return ws->widget(iName);
 	} else if (nodeName == "GroupBox") {
 		QString caption = t.translate(elem.attribute("caption"));
 		QGroupBox* g = new QGroupBox(caption, this);
