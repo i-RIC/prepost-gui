@@ -30,6 +30,7 @@ public:
 	void toggleReadOnly(bool readonly);
 
 	static QString labelName(const QDomNode& itemNode);
+	static QString imageName(const QDomNode& itemNode);
 
 private:
 	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);
