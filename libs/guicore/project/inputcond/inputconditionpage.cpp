@@ -63,7 +63,13 @@ QLayout* InputConditionPage::loadAuto(const QDomNode& node, InputConditionWidget
 		QDomNode child = items.item(i);
 		if (child.nodeName() == "Output") {continue;}
 
-		simple = simple && (child.nodeName() == "Item" || child.nodeName() == "GroupBox");
+		auto name = child.nodeName();
+		simple = simple && (
+					name == "Item" ||
+					name == "GroupBox" ||
+					name == "Image" ||
+					name == "Label"
+		);
 	}
 	if (simple) {
 		return loadSimple(node, ws, t);
@@ -79,11 +85,18 @@ QLayout* InputConditionPage::loadSimple(const QDomNode& node, InputConditionWidg
 	QDomElement elem;
 	for (int i = 0; i < items.length(); ++i) {
 		elem = items.item(i).toElement();
-		if (elem.nodeName() == "Item") {
+		auto nodeName = elem.nodeName();
+		if (nodeName == "Item") {
 			std::string lname = iRIC::toStr(InputConditionWidgetSet::labelName(elem));
 			std::string itemname = iRIC::toStr(elem.attribute("name"));
 			layout->addRow(ws->widget(lname), ws->widget(itemname));
-		} else if (elem.nodeName() == "GroupBox") {
+		} else if (nodeName == "Label") {
+			std::string lName = iRIC::toStr(InputConditionWidgetSet::labelName(node));
+			layout->addRow(ws->widget(lName));
+		} else if (nodeName == "Image") {
+			std::string itemName = iRIC::toStr(elem.attribute("src"));
+			layout->addRow(ws->widget(itemName));
+		} else if (nodeName == "GroupBox") {
 			QString caption = t.translate(elem.attribute("caption"));
 			QGroupBox* g = new QGroupBox(caption, this);
 			QLayout* layout2 = loadAuto(elem, ws, t);
