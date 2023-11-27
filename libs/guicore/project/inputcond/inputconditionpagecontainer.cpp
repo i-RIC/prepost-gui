@@ -1,5 +1,6 @@
 #include "inputconditionpage.h"
 #include "inputconditionpagecontainer.h"
+#include "inputconditionwidgetset.h"
 
 #include <QDomElement>
 #include <QHBoxLayout>
@@ -21,6 +22,8 @@ InputConditionPageContainer::~InputConditionPageContainer()
 
 void InputConditionPageContainer::setup(const QDomElement& elem, InputConditionWidgetSet* ws, const SolverDefinitionTranslator& t)
 {
+	ws->clearLabelAndImageCount();
+
 	QDomNodeList children = elem.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomNode child = children.item(i);
