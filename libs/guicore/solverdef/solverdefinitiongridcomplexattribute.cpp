@@ -26,7 +26,9 @@ void SolverDefinitionGridComplexAttribute::Impl::load(const QDomElement& elem, S
 SolverDefinitionGridComplexAttribute::SolverDefinitionGridComplexAttribute(QDomElement node, SolverDefinition* solverDef, int order) :
 	SolverDefinitionGridAttributeInteger {node, solverDef, Node, false, order},
 	impl {new Impl {node, this}}
-{}
+{
+	setVariantDefaultValue(QVariant(1));
+}
 
 SolverDefinitionGridComplexAttribute::~SolverDefinitionGridComplexAttribute()
 {

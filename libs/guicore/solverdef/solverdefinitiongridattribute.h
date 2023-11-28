@@ -81,6 +81,7 @@ public:
 	//@}
 protected:
 	void setPosition(Position pos);
+	void setVariantDefaultValue(const QVariant& v);
 
 	ColorTransferFunctionContainer* createColorTransferFunctionContainer(ProjectDataItem* d);
 	LookupTableContainer* createLookupTableContainer(ProjectDataItem* d) const;

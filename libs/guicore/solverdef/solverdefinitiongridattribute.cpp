@@ -208,6 +208,11 @@ void SolverDefinitionGridAttribute::setPosition(Position pos)
 	impl->m_position = pos;
 }
 
+void SolverDefinitionGridAttribute::setVariantDefaultValue(const QVariant& v)
+{
+	impl->m_variantDefaultValue = v;
+}
+
 ColorTransferFunctionContainer* SolverDefinitionGridAttribute::createColorTransferFunctionContainer(ProjectDataItem* d)
 {
 	return new ColorTransferFunctionContainer(d);
