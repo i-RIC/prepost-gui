@@ -390,13 +390,13 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	//
 	//
 
-	if (dim >= 2) {
+	if (dim == 2) {
 		m_edgeIData->data()->SetPoints(points);
 		m_edgeJData->data()->SetPoints(points);
 
 		auto iface_points = vtkSmartPointer<vtkPoints>::New();
 		iface_points->SetDataTypeToDouble();
-		for (int k = 0; k < NVertexK - 1; ++k) {
+		for (int k = 0; k < NVertexK; ++k) {
 			for (int j = 0; j < (NVertexJ - 1); ++j) {
 				for (int i = 0; i < NVertexI; ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
@@ -413,7 +413,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 
 		auto jface_points = vtkSmartPointer<vtkPoints>::New();
 		jface_points->SetDataTypeToDouble();
-		for (int k = 0; k < NVertexK - 1; ++k) {
+		for (int k = 0; k < NVertexK; ++k) {
 			for (int j = 0; j < NVertexJ; ++j) {
 				for (int i = 0; i < (NVertexI - 1); ++i) {
 					int idx1 = i + NVertexI * (j + NVertexJ * k);
