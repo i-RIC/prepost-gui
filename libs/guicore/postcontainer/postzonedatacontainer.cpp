@@ -390,7 +390,7 @@ bool PostZoneDataContainer::loadStructuredGrid(iRICLib::H5CgnsZone* zone)
 	//
 	//
 
-	if (dim >= 2) {
+	if (dim == 2) {
 		m_edgeIData->data()->SetPoints(points);
 		m_edgeJData->data()->SetPoints(points);
 
