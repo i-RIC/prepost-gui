@@ -54,8 +54,10 @@ InputConditionWidgetSet::~InputConditionWidgetSet()
 void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
 {
 	// build widgets first.
+	clearLabelAndImageCount();
 	buildWidgets(condNode, cset, def, t, forBC);
 	// build dependencies between the widgets.
+	clearLabelAndImageCount();
 	buildDeps(condNode, cset, forBC);
 }
 
@@ -230,9 +232,10 @@ void InputConditionWidgetSet::buildLabel(QDomNode& itemNode, const SolverDefinit
 void InputConditionWidgetSet::buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t)
 {
 	auto itemElem = itemNode.toElement();
+	auto name = iRIC::toStr(imageName(itemNode));
 	auto src = iRIC::toStr(itemElem.attribute("src"));
 	auto widget = new InputConditionWidgetImage(itemElem, t, def.folder());
-	m_widgets.insert(src, widget);
+	m_widgets.insert(name, widget);
 }
 
 void InputConditionWidgetSet::buildDeps(const QDomNode& ccNode, InputConditionContainerSet& cset, bool forBC)
@@ -382,8 +385,8 @@ void InputConditionWidgetSet::buildDepsLabel(const QDomNode& labelNode, InputCon
 
 void InputConditionWidgetSet::buildDepsImage(const QDomNode& imageNode, InputConditionContainerSet& cset)
 {
-	auto imageName = iRIC::toStr(imageNode.toElement().attribute("src"));
-	auto img = dynamic_cast<InputConditionWidgetImage*> (this->widget(imageName));
+	auto iName = iRIC::toStr(imageName(imageNode));
+	auto img = dynamic_cast<InputConditionWidgetImage*> (this->widget(iName));
 
 	auto children = imageNode.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
@@ -445,15 +448,47 @@ void InputConditionWidgetSet::toggleReadOnly(bool readonly)
 	}
 }
 
+void InputConditionWidgetSet::clearLabelAndImageCount()
+{
+	m_labelCountByCaption.clear();
+	m_imageCountBySrc.clear();
+}
+
 QString InputConditionWidgetSet::labelName(const QDomNode& itemNode)
 {
 	auto itemElem = itemNode.toElement();
 	if (itemElem.attributes().contains("name")) {
 		return itemElem.attribute("name") + "_caption";
 	} else if (itemElem.attributes().contains("caption")){
-		return "caption_" + itemElem.attribute("caption");
+		auto cap = itemElem.attribute("caption");
+		auto it = m_labelCountByCaption.find(cap);
+		if (it == m_labelCountByCaption.end()) {
+			auto pair = m_labelCountByCaption.insert({cap, 0});
+			it = pair.first;
+		}
+		++ it->second;
+
+		return QString("caption_%1_%2").arg(cap).arg(it->second);
 	} else {
 		return "caption_default";
+	}
+}
+
+QString InputConditionWidgetSet::imageName(const QDomNode& itemNode)
+{
+	auto itemElem = itemNode.toElement();
+	if (itemElem.attributes().contains("name")) {
+		return QString("image_") + itemElem.attribute("name");
+	} else {
+		auto src = itemElem.attribute("src");
+		auto it = m_imageCountBySrc.find(src);
+		if (it == m_imageCountBySrc.end()) {
+			auto pair = m_imageCountBySrc.insert({src, 0});
+			it = pair.first;
+		}
+		++ it->second;
+
+		return QString("image_%1_%2").arg(src).arg(it->second);
 	}
 }
 

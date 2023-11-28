@@ -6,6 +6,7 @@
 #include <QVector>
 
 #include <string>
+#include <unordered_map>
 
 class QWidget;
 class QDomNode;
@@ -28,8 +29,10 @@ public:
 	bool checkImportSourceUpdate();
 	void clear();
 	void toggleReadOnly(bool readonly);
+	void clearLabelAndImageCount();
 
-	static QString labelName(const QDomNode& itemNode);
+	QString labelName(const QDomNode& itemNode);
+	QString imageName(const QDomNode& itemNode);
 
 private:
 	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);
@@ -53,6 +56,9 @@ private:
 
 	QMap<std::string, InputConditionCgnsFile*> m_cgnsFiles;
 	QMap<std::string, InputConditionWidget*> m_widgets;
+
+	std::unordered_map<QString, int> m_labelCountByCaption;
+	std::unordered_map<QString, int> m_imageCountBySrc;
 
 public:
 	friend class InputConditionDialog;
