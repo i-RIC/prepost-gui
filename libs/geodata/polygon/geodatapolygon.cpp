@@ -1394,10 +1394,10 @@ void GeoDataPolygon::setBCSettingMode(bool mode)
 	impl->m_bcSettingMode = mode;
 }
 
-geos::geom::Polygon* GeoDataPolygon::getGeosPolygon(const QPointF& offset)
+geos::geom::Polygon* GeoDataPolygon::getGeosPolygon()
 {
 	setupTriangleThread();
-	return impl->m_triangleThread->getGeosPolygon(this, offset);
+	return impl->m_triangleThread->getGeosPolygon(this);
 }
 
 void GeoDataPolygon::setupTriangleThread()

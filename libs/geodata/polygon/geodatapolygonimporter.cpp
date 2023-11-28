@@ -215,7 +215,7 @@ bool GeoDataPolygonImporter::importData(GeoData* data, int index, QWidget* w)
 		for (int i = 0; i < holes.size(); ++i){
 			poly->addHolePolygon(holes.at(i));
 		}
-		geos::geom::Polygon* polygon = poly->getGeosPolygon(QPointF(0, 0));
+		geos::geom::Polygon* polygon = poly->getGeosPolygon();
 		delete polygon;
 	} catch (geos::util::GEOSException&){
 		InformationDialog::warning(w, tr("Warning"), warningMessage, "polygon_import_warn");

@@ -97,7 +97,7 @@ public:
 
 	void addHolePolygon(const QPolygonF& p);
 	vtkPolyData* polyData() const;
-	geos::geom::Polygon* getGeosPolygon(const QPointF& offset = QPointF(0, 0));
+	geos::geom::Polygon* getGeosPolygon();
 
 	GeoDataProxy* getProxy() override;
 	void copyShape(GeoDataPolygon* polygon);
