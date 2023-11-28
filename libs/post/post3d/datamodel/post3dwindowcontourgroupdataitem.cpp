@@ -16,6 +16,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinitiongridoutput.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
+#include <misc/valuechangert.h>
 
 #include <vtkActor2D.h>
 
@@ -30,7 +31,6 @@ Post3dWindowContourGroupDataItem::Post3dWindowContourGroupDataItem(const std::st
 
 	renderer()->AddActor2D(impl->m_legendActor);
 	impl->m_colorMapSetting.legend.imageSetting.setActor(impl->m_legendActor);
-	impl->m_colorMapSetting.legend.imageSetting.controller()->setItem(this);
 	impl->m_colorMapSetting.legend.title = caption;
 	impl->m_colorMapSetting.setAutoValueRange(valueRange());
 
@@ -64,6 +64,32 @@ void Post3dWindowContourGroupDataItem::update()
 {
 	updateActorSetting();
 }
+
+void Post3dWindowContourGroupDataItem::updateColorMapVisibility()
+{
+	static bool updating = false;
+	if (updating) {return;}
+
+	ValueChangerT<bool> updatingChanger(&updating, true);
+
+	auto actor = impl->m_colorMapSetting.legend.imageSetting.actor();
+	m_actor2DCollection->RemoveItem(actor);
+	actor->VisibilityOff();
+
+	bool visible = false;
+	if (standardItem()->checkState() == Qt::Checked) {
+		for (auto child : m_childItems) {
+			visible = visible || child->standardItem()->checkState() == Qt::Checked;
+		}
+	}
+	if (visible) {
+		auto v = dataModel()->graphicsView();
+		impl->m_colorMapSetting.legend.imageSetting.apply(v);
+		m_actor2DCollection->AddItem(actor);
+		updateVisibilityWithoutRendering();
+	}
+}
+
 
 const std::string& Post3dWindowContourGroupDataItem::target() const
 {
@@ -129,7 +155,14 @@ void Post3dWindowContourGroupDataItem::updateActorSetting()
 		auto item = dynamic_cast<Post3dWindowContourDataItem*> (child);
 		item->update();
 	}
+	updateColorMapVisibility();
 	updateVisibilityWithoutRendering();
+}
+
+void Post3dWindowContourGroupDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+	updateColorMapVisibility();
 }
 
 const ValueRangeContainer& Post3dWindowContourGroupDataItem::valueRange() const
@@ -185,17 +218,17 @@ void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFa
 
 void Post3dWindowContourGroupDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseMoveEvent(this, event, v);
 }
 
 void Post3dWindowContourGroupDataItem::mousePressEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMousePressEvent(this, event, v);
 }
 
 void Post3dWindowContourGroupDataItem::mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v)
 {
-	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(event, v);
+	impl->m_colorMapSetting.legend.imageSetting.controller()->handleMouseReleaseEvent(this, event, v);
 }
 
 void Post3dWindowContourGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)

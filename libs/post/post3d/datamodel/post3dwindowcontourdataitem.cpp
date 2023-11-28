@@ -149,3 +149,10 @@ QDialog* Post3dWindowContourDataItem::propertyDialog(QWidget* p)
 {
 	return groupDataItem()->propertyDialog(p);
 }
+
+void Post3dWindowContourDataItem::updateVisibility(bool visible)
+{
+	GraphicsWindowDataItem::updateVisibility(visible);
+
+	groupDataItem()->updateColorMapVisibility();
+}

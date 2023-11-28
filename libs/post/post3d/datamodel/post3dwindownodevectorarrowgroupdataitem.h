@@ -24,6 +24,7 @@ public:
 	~Post3dWindowNodeVectorArrowGroupDataItem();
 
 	void update();
+	void updateLegendsVisibility();
 
 	const std::string& target() const;
 	ColorMapSettingContainerI* colorMapSetting(const std::string& name) const;
@@ -48,6 +49,7 @@ private:
 	QDialog* propertyDialog(QWidget* p) override;
 
 	void updateActorSetting() override;
+	void updateVisibility(bool visible) override;
 	Post3dWindowNodeVectorArrowTopDataItem* topDataItem() const;
 	std::unordered_set<ColorMapSettingContainerI*> activeColorMaps() const;
 
