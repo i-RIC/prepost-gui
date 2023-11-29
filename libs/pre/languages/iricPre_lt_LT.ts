@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Importuojant tinklelį įvyko klaida.</translation>
+        <translation type="vanished">Importuojant tinklelį įvyko klaida.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Šis CGNS failas sukurtas %1 versija %2. Tai nesuderinama su dabartiniu sprendėju. Galbūt bus importuota tik tam tikra tinklo dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
+        <translation type="vanished">Šis CGNS failas sukurtas %1 versija %2. Tai nesuderinama su dabartiniu sprendėju. Galbūt bus importuota tik tam tikra tinklo dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Šiame CGNS faile nėra informacijos apie sprendėjus. Negalime patikrinti, ar šis CGNS failas yra suderinamas su sprendėju. Jei jis nesuderinamas, galbūt bus importuota tik tam tikra tinklelio dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
+        <translation type="vanished">Šiame CGNS faile nėra informacijos apie sprendėjus. Negalime patikrinti, ar šis CGNS failas yra suderinamas su sprendėju. Jei jis nesuderinamas, galbūt bus importuota tik tam tikra tinklelio dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Šiame faile nėra tinklelio, kurį būtų galima importuoti.</translation>
+        <translation type="vanished">Šiame faile nėra tinklelio, kurį būtų galima importuoti.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Pasirinkite tinklelį</translation>
+        <translation type="vanished">Pasirinkite tinklelį</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Pasirinkite tinklelį, kurį norite importuoti.</translation>
+        <translation type="vanished">Pasirinkite tinklelį, kurį norite importuoti.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Tinklelio vaizdas iš paukščio skrydžio</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 po to, kai jie buvo redaguoti paskutinį kartą, nėra susieti. Ar norite dabar atlikti kartografavimą?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Ribinės būklės nustatymas "%1"nėra susietas po paskutinio redagavimo. Ar norite vykdyti susiejimą dabar?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Ribinės būklės nustatymas &quot;%1&quot;nėra susietas po paskutinio redagavimo. Ar norite vykdyti susiejimą dabar?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Pastaba: kai įgalintas variantas, sukuriamas variantas pavadinimu „Numatytasis“ ir visi geografiniai duomenys perkeliami į jį. Galite pridėti, pervardyti, pašalinti variantus iš "Objektų naršyklės". Galite perkelti, kopijuoti geografinius duomenis iš vieno varianto į kitą. Tinklelio atributo duomenys, sukurti iš varianto, kurį pasirinkote su „Variantas, kurį reikia perduoti sprendėjui“, perduodami sprendėjui. Galite paruošti kelis variantus, perjungti, kuriuos perduoti sprendėjui, ir įsitikinti skirtumo poveikiu.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Pastaba: kai įgalintas variantas, sukuriamas variantas pavadinimu „Numatytasis“ ir visi geografiniai duomenys perkeliami į jį. Galite pridėti, pervardyti, pašalinti variantus iš &quot;Objektų naršyklės&quot;. Galite perkelti, kopijuoti geografinius duomenis iš vieno varianto į kitą. Tinklelio atributo duomenys, sukurti iš varianto, kurį pasirinkote su „Variantas, kurį reikia perduoti sprendėjui“, perduodami sprendėjui. Galite paruošti kelis variantus, perjungti, kuriuos perduoti sprendėjui, ir įsitikinti skirtumo poveikiu.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Redaguoti vertę...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Eksportuoti...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Sukurkite taškų debesies duomenis</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Redaguokite reikšmę nurodydami skirtumą...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Redaguoti vertę nurodant santykį...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Įspėjimas</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Redaguoti %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Įveskite naują reikšmę %1 pasirinktose tinklelio ląstelėse.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">skirtumas</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">santykis</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Topografijos failas (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Eksportuoti kaip topografijos duomenis</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Atidarant failą įvyko klaida.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Tinklelio būklė sėkmingai eksportuota į %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Klaida</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informacija</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 sukurtas.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Taikyti %1 į %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Įveskite %1 apie %2 pasirinktose tinklelio ląstelėse.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Tinklelio langelio atributo rodymo nustatymas</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Linijos plotis:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importuoti (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Eksportuoti (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Rodyti atributų naršyklę</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Ląstelių atributų keitimas</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Redaguoti vertę...</translation>
+        <translation type="vanished">Redaguoti vertę...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Pasirinkite tik vieną mazgą.</translation>
+        <translation type="vanished">Pasirinkite tik vieną mazgą.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Redaguoti %1</translation>
+        <translation type="vanished">Redaguoti %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Įveskite naują reikšmę %1 pasirinktose tinklelio ląstelėse.</translation>
+        <translation type="vanished">Įveskite naują reikšmę %1 pasirinktose tinklelio ląstelėse.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Redaguokite reikšmę nurodydami skirtumą...</translation>
+        <translation type="vanished">Redaguokite reikšmę nurodydami skirtumą...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Redaguoti vertę nurodant santykį...</translation>
+        <translation type="vanished">Redaguoti vertę nurodant santykį...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>skirtumas</translation>
+        <translation type="vanished">skirtumas</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>santykis</translation>
+        <translation type="vanished">santykis</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Taikyti %1 į %2</translation>
+        <translation type="vanished">Taikyti %1 į %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Įveskite %1 apie %2 pasirinktose tinklelio ląstelėse.</translation>
+        <translation type="vanished">Įveskite %1 apie %2 pasirinktose tinklelio ląstelėse.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Eksportuoti...</translation>
+        <translation type="vanished">Eksportuoti...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topografijos failas (*.tpo)</translation>
+        <translation type="vanished">Topografijos failas (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Eksportuoti kaip topografijos duomenis</translation>
+        <translation type="vanished">Eksportuoti kaip topografijos duomenis</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Atidarant failą įvyko klaida.</translation>
+        <translation type="vanished">Atidarant failą įvyko klaida.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Tinklelio būklė sėkmingai eksportuota į %1.</translation>
+        <translation type="vanished">Tinklelio būklė sėkmingai eksportuota į %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informacija</translation>
+        <translation type="vanished">Informacija</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 sukurtas.</translation>
+        <translation type="vanished">%1 sukurtas.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Sukurkite taškų debesies duomenis</translation>
+        <translation type="vanished">Sukurkite taškų debesies duomenis</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Tinklelio langelio atributo rodymo nustatymas (%1)</translation>
+        <translation type="vanished">Tinklelio langelio atributo rodymo nustatymas (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Tinklelio langelio atributo rodymo nustatymas</translation>
+        <translation type="vanished">Tinklelio langelio atributo rodymo nustatymas</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importuoti (&amp;I)...</translation>
+        <translation type="vanished">Importuoti (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksportuoti (&amp;E)...</translation>
+        <translation type="vanished">Eksportuoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Spalvų žemėlapis (šis nustatymas bendras su geografiniais duomenimis)</translation>
+        <translation type="vanished">Spalvų žemėlapis (šis nustatymas bendras su geografiniais duomenimis)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialogas</translation>
+        <translation type="vanished">Dialogas</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributas</translation>
+        <translation type="vanished">Atributas</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Spalva</translation>
+        <translation type="vanished">Spalva</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Rodyti atributų naršyklę</translation>
+        <translation type="vanished">Rodyti atributų naršyklę</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Ląstelių atributų keitimas</translation>
+        <translation type="vanished">Ląstelių atributų keitimas</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,7 +1435,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Vykdyti (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Šie atributai nebuvo susieti, nes tinklelio generatoriaus išvesties vertės jiems. Jei norite priverstinai susieti jų geografinius duomenis, sukurkite žemėlapį rankiniu būdu naudodami meniu „Tinklelis“ -&gt; „Atributų atvaizdavimas“ -&gt; „Vykdyti“.</translation>
     </message>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Geografinių duomenų kartografavimas baigtas</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Tinklelio atributas "%1"redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Tinklelio atributas &quot;%1&quot;redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Ribinė sąlyga "%1"redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Ribinė sąlyga &quot;%1&quot;redaguojama ranka. Kai vykdysite kartografavimą, visi jūsų atlikti pakeitimai bus atmesti. Ar tikrai norite vykdyti susiejimą?</translation>
     </message>
 </context>
 <context>
@@ -1324,19 +1479,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automatinis</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LT" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sukūrus tinklelį, jūsų paklaus, ar kiekvieną kartą vykdyti atributų atvaizdavimą. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LT&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta pavadinimas = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sukūrus tinklelį, jūsų paklaus, ar kiekvieną kartą vykdyti atributų atvaizdavimą. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rankinis</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Atributų susiejimas vykdomas tik rankiniu būdu pasirinkus meniu „Vykdyti“.</translation>
     </message>
     <message>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>Pagrindinis langas</translation>
+        <translation type="vanished">Pagrindinis langas</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Kryptis:</translation>
+        <translation type="vanished">Kryptis:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Juoda linija:</translation>
+        <translation type="vanished">Juoda linija:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Raudona linija:</translation>
+        <translation type="vanished">Raudona linija:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Mėlyna linija:</translation>
+        <translation type="vanished">Mėlyna linija:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Nėra duomenų)</translation>
+        <translation type="vanished">(Nėra duomenų)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Tinklelio skerspjūvis (%1): J = %2</translation>
+        <translation type="vanished">Tinklelio skerspjūvis (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Tinklelio skerspjūvis (%1): Aš = %2</translation>
+        <translation type="vanished">Tinklelio skerspjūvis (%1): Aš = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Spalvų žemėlapio nustatymas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba:&lt;/span&gt; spalvų nustatymui redaguoti naudokite skirtuką Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redaguoti (&amp;E)...</translation>
+        <translation type="vanished">Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Kairiojo kranto pusė</translation>
+        <translation type="vanished">Kairiojo kranto pusė</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Dešiniojo kranto pusė</translation>
+        <translation type="vanished">Dešiniojo kranto pusė</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Redaguoti %1</translation>
+        <translation type="vanished">Redaguoti %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Įveskite naują reikšmę %1 pasirinktuose tinklelio mazguose.</translation>
+        <translation type="vanished">Įveskite naują reikšmę %1 pasirinktuose tinklelio mazguose.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Nustatykite „Scalarbar“ (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Atidarykite paukščio skrydžio langą (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>Generuoti %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Šis CGNS failas sukurtas %1 versija %2. Tai nesuderinama su dabartiniu sprendėju. Galbūt bus importuota tik tam tikra tinklo dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Šiame CGNS faile nėra informacijos apie sprendėjus. Negalime patikrinti, ar šis CGNS failas yra suderinamas su sprendėju. Jei jis nesuderinamas, galbūt bus importuota tik tam tikra tinklelio dalis. Ar tikrai norite importuoti tinklelį iš šio failo?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Tinklelio formos nustatymas</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Ekrano nustatymas (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Tinklelio formos nustatymas</translation>
     </message>
 </context>
 <context>

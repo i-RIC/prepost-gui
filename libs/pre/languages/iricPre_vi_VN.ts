@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Đã xảy ra lỗi khi nhập lưới.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi nhập lưới.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Tệp CGNS này được tạo cho %1 phiên bản %2. Nó không tương thích với bộ giải hiện tại. Có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
+        <translation type="vanished">Tệp CGNS này được tạo cho %1 phiên bản %2. Nó không tương thích với bộ giải hiện tại. Có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Tệp CGNS này không có thông tin về bộ giải. Chúng tôi không thể kiểm tra xem tệp CGNS này có tương thích với bộ giải hay không. Nếu nó không tương thích, có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
+        <translation type="vanished">Tệp CGNS này không có thông tin về bộ giải. Chúng tôi không thể kiểm tra xem tệp CGNS này có tương thích với bộ giải hay không. Nếu nó không tương thích, có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Tệp này không chứa lưới có thể được nhập.</translation>
+        <translation type="vanished">Tệp này không chứa lưới có thể được nhập.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Chọn lưới</translation>
+        <translation type="vanished">Chọn lưới</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Chọn lưới để nhập.</translation>
+        <translation type="vanished">Chọn lưới để nhập.</translation>
     </message>
 </context>
 <context>
@@ -119,8 +121,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
-        <translation>Cửa sổ Grid Bird's-Eye View</translation>
+        <source>Grid Bird&apos;s-Eye View Window</source>
+        <translation>Cửa sổ Grid Bird&apos;s-Eye View</translation>
     </message>
 </context>
 <context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 không được ánh xạ sau khi chúng được chỉnh sửa lần cuối. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Cài đặt điều kiện ranh giới "%1"không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Cài đặt điều kiện ranh giới &quot;%1&quot;không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Lưu ý: Khi biến thể được bật, biến thể có tên "Mặc định" sẽ được tạo và tất cả dữ liệu địa lý được chuyển đến đó. Bạn có thể thêm, đổi tên, xóa các biến thể khỏi "Trình duyệt đối tượng". Bạn có thể di chuyển, sao chép dữ liệu địa lý giữa các biến thể. Dữ liệu thuộc tính lưới được tạo từ biến thể mà bạn chọn với "Biến thể để chuyển tới bộ giải" sẽ được chuyển tới bộ giải. Bạn có thể chuẩn bị nhiều biến thể, chuyển đổi biến thể nào để chuyển sang bộ giải và đảm bảo hiệu quả của sự khác biệt.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Lưu ý: Khi biến thể được bật, biến thể có tên &quot;Mặc định&quot; sẽ được tạo và tất cả dữ liệu địa lý được chuyển đến đó. Bạn có thể thêm, đổi tên, xóa các biến thể khỏi &quot;Trình duyệt đối tượng&quot;. Bạn có thể di chuyển, sao chép dữ liệu địa lý giữa các biến thể. Dữ liệu thuộc tính lưới được tạo từ biến thể mà bạn chọn với &quot;Biến thể để chuyển tới bộ giải&quot; sẽ được chuyển tới bộ giải. Bạn có thể chuẩn bị nhiều biến thể, chuyển đổi biến thể nào để chuyển sang bộ giải và đảm bảo hiệu quả của sự khác biệt.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Chỉnh sửa giá trị...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Xuất khẩu...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Tạo dữ liệu đám mây điểm</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Chỉnh sửa giá trị bằng cách chỉ định sự khác biệt...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Chỉnh sửa giá trị bằng cách chỉ định tỷ lệ...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Chỉnh sửa %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Nhập giá trị mới của %1 tại các ô lưới đã chọn.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">Sự khác biệt</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">tỉ lệ</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Tệp địa hình (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Xuất dưới dạng dữ liệu địa hình</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Đã xảy ra lỗi khi mở tệp.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Đã xuất thành công tình trạng lưới sang %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Thông tin</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 được tạo ra.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Ứng dụng %1 đến %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Nhập %1 của %2 tại các ô lưới đã chọn.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">Cài đặt hiển thị thuộc tính ô lưới</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Bản đồ màu (Cài đặt này phổ biến với Dữ liệu địa lý)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Chiều rộng dòng:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Nhập khẩu (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Xuất khẩu (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Hiển thị trình duyệt thuộc tính</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Thay đổi thuộc tính ô</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Chỉnh sửa giá trị...</translation>
+        <translation type="vanished">Chỉnh sửa giá trị...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Vui lòng chỉ chọn một nút.</translation>
+        <translation type="vanished">Vui lòng chỉ chọn một nút.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Chỉnh sửa %1</translation>
+        <translation type="vanished">Chỉnh sửa %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Nhập giá trị mới của %1 tại các ô lưới đã chọn.</translation>
+        <translation type="vanished">Nhập giá trị mới của %1 tại các ô lưới đã chọn.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Chỉnh sửa giá trị bằng cách chỉ định sự khác biệt...</translation>
+        <translation type="vanished">Chỉnh sửa giá trị bằng cách chỉ định sự khác biệt...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Chỉnh sửa giá trị bằng cách chỉ định tỷ lệ...</translation>
+        <translation type="vanished">Chỉnh sửa giá trị bằng cách chỉ định tỷ lệ...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>Sự khác biệt</translation>
+        <translation type="vanished">Sự khác biệt</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>tỉ lệ</translation>
+        <translation type="vanished">tỉ lệ</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Ứng dụng %1 đến %2</translation>
+        <translation type="vanished">Ứng dụng %1 đến %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Nhập %1 của %2 tại các ô lưới đã chọn.</translation>
+        <translation type="vanished">Nhập %1 của %2 tại các ô lưới đã chọn.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Xuất khẩu...</translation>
+        <translation type="vanished">Xuất khẩu...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Tệp địa hình (*.tpo)</translation>
+        <translation type="vanished">Tệp địa hình (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Xuất dưới dạng dữ liệu địa hình</translation>
+        <translation type="vanished">Xuất dưới dạng dữ liệu địa hình</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Đã xảy ra lỗi khi mở tệp.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Đã xuất thành công tình trạng lưới sang %1.</translation>
+        <translation type="vanished">Đã xuất thành công tình trạng lưới sang %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Thông tin</translation>
+        <translation type="vanished">Thông tin</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 được tạo ra.</translation>
+        <translation type="vanished">%1 được tạo ra.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Tạo dữ liệu đám mây điểm</translation>
+        <translation type="vanished">Tạo dữ liệu đám mây điểm</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Cài đặt hiển thị thuộc tính ô lưới (%1)</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính ô lưới (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Cài đặt hiển thị thuộc tính ô lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính ô lưới</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Nhập khẩu (&amp;I)...</translation>
+        <translation type="vanished">Nhập khẩu (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Xuất khẩu (&amp;E)...</translation>
+        <translation type="vanished">Xuất khẩu (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Bản đồ màu (Cài đặt này phổ biến với Dữ liệu địa lý)</translation>
+        <translation type="vanished">Bản đồ màu (Cài đặt này phổ biến với Dữ liệu địa lý)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Hộp thoại</translation>
+        <translation type="vanished">Hộp thoại</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Thuộc tính</translation>
+        <translation type="vanished">Thuộc tính</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Màu sắc</translation>
+        <translation type="vanished">Màu sắc</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Hiển thị trình duyệt thuộc tính</translation>
+        <translation type="vanished">Hiển thị trình duyệt thuộc tính</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Thay đổi thuộc tính ô</translation>
+        <translation type="vanished">Thay đổi thuộc tính ô</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Hành hình (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu "Lưới" -&gt; "Ánh xạ thuộc tính" -&gt; "Thực thi".</translation>
+        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu &quot;Lưới&quot; -&gt; &quot;Ánh xạ thuộc tính&quot; -&gt; &quot;Thực thi&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Lập bản đồ dữ liệu địa lý đã hoàn thành</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Thuộc tính lưới "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Thuộc tính lưới &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Điều kiện biên "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Điều kiện biên &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Tự động</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Thủ công</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu "Thực thi" theo cách thủ công.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu &quot;Thực thi&quot; theo cách thủ công.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>Cửa sổ chính</translation>
+        <translation type="vanished">Cửa sổ chính</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Phương hướng:</translation>
+        <translation type="vanished">Phương hướng:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Đường đen:</translation>
+        <translation type="vanished">Đường đen:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Vạch kẻ màu đỏ:</translation>
+        <translation type="vanished">Vạch kẻ màu đỏ:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Đường màu xanh lam:</translation>
+        <translation type="vanished">Đường màu xanh lam:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Không có dữ liệu)</translation>
+        <translation type="vanished">(Không có dữ liệu)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Giao cắt lưới (%1): J = %2</translation>
+        <translation type="vanished">Giao cắt lưới (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Giao cắt lưới (%1): Tôi = %2</translation>
+        <translation type="vanished">Giao cắt lưới (%1): Tôi = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Cài đặt bản đồ màu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Sử dụng tab Bản đồ màu để chỉnh sửa cài đặt màu&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý:&lt;/span&gt; Sử dụng tab Bản đồ màu để chỉnh sửa cài đặt màu&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Chỉnh sửa (&amp;E)...</translation>
+        <translation type="vanished">Chỉnh sửa (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Bờ bên trái</translation>
+        <translation type="vanished">Bờ bên trái</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Bờ bên phải</translation>
+        <translation type="vanished">Bờ bên phải</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Chỉnh sửa %1</translation>
+        <translation type="vanished">Chỉnh sửa %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Nhập giá trị mới của %1 tại các nút lưới đã chọn.</translation>
+        <translation type="vanished">Nhập giá trị mới của %1 tại các nút lưới đã chọn.</translation>
     </message>
 </context>
 <context>
@@ -2210,8 +2365,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Thiết lập thanh vô hướng (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
-        <translation>Mở cửa sổ Bird's-Eye View (&amp;B)</translation>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <translation>Mở cửa sổ Bird&apos;s-Eye View (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>Phát ra %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Tệp CGNS này được tạo cho %1 phiên bản %2. Nó không tương thích với bộ giải hiện tại. Có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Tệp CGNS này không có thông tin về bộ giải. Chúng tôi không thể kiểm tra xem tệp CGNS này có tương thích với bộ giải hay không. Nếu nó không tương thích, có thể chỉ một số phần của lưới sẽ được nhập. Bạn có thực sự muốn nhập lưới từ tệp này không?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Cài đặt hình dạng lưới</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Thiết lập màn hình (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Cài đặt hình dạng lưới</translation>
     </message>
 </context>
 <context>

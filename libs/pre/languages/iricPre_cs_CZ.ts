@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Při importu mřížky došlo k chybě.</translation>
+        <translation type="vanished">Při importu mřížky došlo k chybě.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Tento soubor CGNS je vytvořen pro %1 verze %2. Není kompatibilní s aktuálním řešičem. Možná bude importována pouze nějaká část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
+        <translation type="vanished">Tento soubor CGNS je vytvořen pro %1 verze %2. Není kompatibilní s aktuálním řešičem. Možná bude importována pouze nějaká část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Tento soubor CGNS nemá informace o řešiteli. Nemůžeme zkontrolovat, zda je tento soubor CGNS kompatibilní s řešičem. Pokud není kompatibilní, možná bude importována pouze některá část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
+        <translation type="vanished">Tento soubor CGNS nemá informace o řešiteli. Nemůžeme zkontrolovat, zda je tento soubor CGNS kompatibilní s řešičem. Pokud není kompatibilní, možná bude importována pouze některá část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Tento soubor neobsahuje mřížku, kterou lze importovat.</translation>
+        <translation type="vanished">Tento soubor neobsahuje mřížku, kterou lze importovat.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Vyberte mřížku</translation>
+        <translation type="vanished">Vyberte mřížku</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Vyberte mřížku pro import.</translation>
+        <translation type="vanished">Vyberte mřížku pro import.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Mřížka Pohled z ptačí perspektivy</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 nejsou mapovány poté, co byly naposledy upraveny. Chcete nyní provést mapování?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Nastavení okrajových podmínek "%1"není mapováno poté, co bylo naposledy upraveno. Chcete nyní provést mapování?"</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Nastavení okrajových podmínek &quot;%1&quot;není mapováno poté, co bylo naposledy upraveno. Chcete nyní provést mapování?&quot;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Poznámka: Když je varianta povolena, vytvoří se varianta s názvem „Výchozí“ a do ní se přesunou všechna geografická data. Můžete přidávat, přejmenovávat a odstraňovat varianty z "Prohlížeče objektů". Mezi variantami můžete přesouvat a kopírovat geografická data. Data atributu mřížky vytvořená z varianty, kterou vyberete pomocí "Variace k předání řešiteli" se předají řešiteli. Můžete připravit více variant, přepnout, které předat řešiteli, a ujistit se, že rozdíl bude mít efekt.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Poznámka: Když je varianta povolena, vytvoří se varianta s názvem „Výchozí“ a do ní se přesunou všechna geografická data. Můžete přidávat, přejmenovávat a odstraňovat varianty z &quot;Prohlížeče objektů&quot;. Mezi variantami můžete přesouvat a kopírovat geografická data. Data atributu mřížky vytvořená z varianty, kterou vyberete pomocí &quot;Variace k předání řešiteli&quot; se předají řešiteli. Můžete připravit více variant, přepnout, které předat řešiteli, a ujistit se, že rozdíl bude mít efekt.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Upravit hodnotu...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Vývozní...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Generujte data mračna bodů</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Upravit hodnotu zadáním rozdílu...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Upravit hodnotu zadáním poměru...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Upravit %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Zadejte novou hodnotu %1 ve vybraných buňkách mřížky.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">rozdíl</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">poměr</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Topografický soubor (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Exportovat jako topografická data</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Při otevírání souboru došlo k chybě.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Mřížka byla úspěšně exportována do %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informace</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 vygenerováno.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Aplikovat %1 na %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Zadejte %1 z %2 ve vybraných buňkách mřížky.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Mapa barev (Toto nastavení je společné pro geografická data)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Šířka čáry:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Vývozní (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Zobrazit prohlížeč atributů</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Změna atributu buňky</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Upravit hodnotu...</translation>
+        <translation type="vanished">Upravit hodnotu...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Vyberte prosím pouze jeden uzel.</translation>
+        <translation type="vanished">Vyberte prosím pouze jeden uzel.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Upravit %1</translation>
+        <translation type="vanished">Upravit %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Zadejte novou hodnotu %1 ve vybraných buňkách mřížky.</translation>
+        <translation type="vanished">Zadejte novou hodnotu %1 ve vybraných buňkách mřížky.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Upravit hodnotu zadáním rozdílu...</translation>
+        <translation type="vanished">Upravit hodnotu zadáním rozdílu...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Upravit hodnotu zadáním poměru...</translation>
+        <translation type="vanished">Upravit hodnotu zadáním poměru...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>rozdíl</translation>
+        <translation type="vanished">rozdíl</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>poměr</translation>
+        <translation type="vanished">poměr</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Aplikovat %1 na %2</translation>
+        <translation type="vanished">Aplikovat %1 na %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Zadejte %1 z %2 ve vybraných buňkách mřížky.</translation>
+        <translation type="vanished">Zadejte %1 z %2 ve vybraných buňkách mřížky.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Vývozní...</translation>
+        <translation type="vanished">Vývozní...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topografický soubor (*.tpo)</translation>
+        <translation type="vanished">Topografický soubor (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Exportovat jako topografická data</translation>
+        <translation type="vanished">Exportovat jako topografická data</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Při otevírání souboru došlo k chybě.</translation>
+        <translation type="vanished">Při otevírání souboru došlo k chybě.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Mřížka byla úspěšně exportována do %1.</translation>
+        <translation type="vanished">Mřížka byla úspěšně exportována do %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informace</translation>
+        <translation type="vanished">Informace</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 vygenerováno.</translation>
+        <translation type="vanished">%1 vygenerováno.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Generujte data mračna bodů</translation>
+        <translation type="vanished">Generujte data mračna bodů</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Nastavení zobrazení atributu buňky mřížky (%1)</translation>
+        <translation type="vanished">Nastavení zobrazení atributu buňky mřížky (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Nastavení zobrazení atributu buňky mřížky</translation>
+        <translation type="vanished">Nastavení zobrazení atributu buňky mřížky</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Vývozní (&amp;E)...</translation>
+        <translation type="vanished">Vývozní (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Mapa barev (Toto nastavení je společné pro geografická data)</translation>
+        <translation type="vanished">Mapa barev (Toto nastavení je společné pro geografická data)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atribut</translation>
+        <translation type="vanished">Atribut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Barva</translation>
+        <translation type="vanished">Barva</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Zobrazit prohlížeč atributů</translation>
+        <translation type="vanished">Zobrazit prohlížeč atributů</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Změna atributu buňky</translation>
+        <translation type="vanished">Změna atributu buňky</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,7 +1435,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Vykonat (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Následující atributy nebyly namapovány, protože pro ně byly výstupní hodnoty generátoru mřížky. Pokud pro ně chcete násilně mapovat geografická data, namapujte je prosím ručně pomocí nabídky „Mřížka“ -&gt; „Mapování atributů“ -&gt; „Spustit“.</translation>
     </message>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Mapování geografických dat dokončeno</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mřížky "%1"je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?"</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mřížky &quot;%1&quot;je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?&quot;</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Okrajová podmínka "%1"je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?"</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Okrajová podmínka &quot;%1&quot;je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?&quot;</translation>
     </message>
 </context>
 <context>
@@ -1324,19 +1479,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; When the grid is created, you are asked asked whether mapování atributů provádět pokaždé. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; When the grid is created, you are asked asked whether mapování atributů provádět pokaždé. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuál</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Mapování atributů se provádí pouze tehdy, když ručně vyberete nabídku „Provést“.</translation>
     </message>
     <message>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>Hlavní okno</translation>
+        <translation type="vanished">Hlavní okno</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>Panel nástrojů</translation>
+        <translation type="vanished">Panel nástrojů</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Směr:</translation>
+        <translation type="vanished">Směr:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Černá čára:</translation>
+        <translation type="vanished">Černá čára:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Červená čára:</translation>
+        <translation type="vanished">Červená čára:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Modrá čára:</translation>
+        <translation type="vanished">Modrá čára:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Žádná data)</translation>
+        <translation type="vanished">(Žádná data)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Mřížkový průřez (%1): J = %2</translation>
+        <translation type="vanished">Mřížkový průřez (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Mřížkový průřez (%1): I = %2</translation>
+        <translation type="vanished">Mřížkový průřez (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Nastavení barevné mapy</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; K úpravě nastavení barev použijte kartu Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; K úpravě nastavení barev použijte kartu Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Upravit (&amp;E)...</translation>
+        <translation type="vanished">Upravit (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Levý břeh</translation>
+        <translation type="vanished">Levý břeh</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Pravý břeh</translation>
+        <translation type="vanished">Pravý břeh</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Upravit %1</translation>
+        <translation type="vanished">Upravit %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Zadejte novou hodnotu %1 ve vybraných uzlech mřížky.</translation>
+        <translation type="vanished">Zadejte novou hodnotu %1 ve vybraných uzlech mřížky.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Nastavte Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Otevřete okno pohledu z ptačí perspektivy (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>generovat %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Tento soubor CGNS je vytvořen pro %1 verze %2. Není kompatibilní s aktuálním řešičem. Možná bude importována pouze nějaká část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Tento soubor CGNS nemá informace o řešiteli. Nemůžeme zkontrolovat, zda je tento soubor CGNS kompatibilní s řešičem. Pokud není kompatibilní, možná bude importována pouze některá část mřížky. Opravdu chcete importovat mřížku z tohoto souboru?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Nastavení tvaru mřížky</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Nastavení zobrazení (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Nastavení tvaru mřížky</translation>
     </message>
 </context>
 <context>

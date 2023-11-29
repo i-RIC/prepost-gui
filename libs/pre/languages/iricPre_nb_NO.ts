@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Det oppsto en feil under import av rutenettet.</translation>
+        <translation type="vanished">Det oppsto en feil under import av rutenettet.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Denne CGNS -filen er opprettet for %1 versjon %2. Den er ikke kompatibel med den nåværende løseren. Kanskje bare en del av nettet vil bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
+        <translation type="vanished">Denne CGNS -filen er opprettet for %1 versjon %2. Den er ikke kompatibel med den nåværende løseren. Kanskje bare en del av nettet vil bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Denne CGNS -filen har ikke informasjon om løsere. Vi kan ikke kontrollere om denne CGNS -filen er kompatibel med løseren. Hvis det ikke er kompatibelt, vil kanskje bare en del av nettet bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
+        <translation type="vanished">Denne CGNS -filen har ikke informasjon om løsere. Vi kan ikke kontrollere om denne CGNS -filen er kompatibel med løseren. Hvis det ikke er kompatibelt, vil kanskje bare en del av nettet bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Denne filen inneholder ikke rutenett som kan importeres.</translation>
+        <translation type="vanished">Denne filen inneholder ikke rutenett som kan importeres.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Velg rutenett</translation>
+        <translation type="vanished">Velg rutenett</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Velg rutenett for å importere.</translation>
+        <translation type="vanished">Velg rutenett for å importere.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Rutenett for fugleperspektiv</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 blir ikke kartlagt etter at de ble redigert sist. Vil du utføre kartlegging nå?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Grensetilstandsinnstilling "%1"er ikke kartlagt etter at det ble redigert sist. Vil du utføre kartlegging nå?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Grensetilstandsinnstilling &quot;%1&quot;er ikke kartlagt etter at det ble redigert sist. Vil du utføre kartlegging nå?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Merk: Når variant er aktivert, opprettes variant kalt "Standard", og alle geografiske data flyttes til den. Du kan legge til, gi nytt navn, fjerne varianter fra "Object Browser". Du kan flytte, kopiere geografiske data mellom varianter. Rutenettattributtdataene som er opprettet fra varianten som du velger med "Variasjon for å overføre til løser" sendes til løser. Du kan forberede flere varianter, bytte hvilken som skal overføres til løseren, og forsikre deg om effekten av forskjellen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Merk: Når variant er aktivert, opprettes variant kalt &quot;Standard&quot;, og alle geografiske data flyttes til den. Du kan legge til, gi nytt navn, fjerne varianter fra &quot;Object Browser&quot;. Du kan flytte, kopiere geografiske data mellom varianter. Rutenettattributtdataene som er opprettet fra varianten som du velger med &quot;Variasjon for å overføre til løser&quot; sendes til løser. Du kan forberede flere varianter, bytte hvilken som skal overføres til løseren, og forsikre deg om effekten av forskjellen.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Rediger verdi...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Eksport...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Generer punktsky -data</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Rediger verdi ved å angi forskjell...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Rediger verdi ved å angi forhold...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advarsel</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Redigere %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Skriv inn den nye verdien av %1 på de valgte rutenettcellene.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">forskjell</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">forhold</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Topografisk fil (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Eksporter som topografidata</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Det oppsto en feil under åpning av filen.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Rutenettet ble eksportert til %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Feil</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informasjon</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 generert.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Søke om %1 til %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Skriv inn %1 av %2 på de valgte rutenettcellene.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Fargekart (denne innstillingen er vanlig med geografiske data)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Linje bredde:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Import (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Eksport (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Vis attributtleser</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Celleattributtendring</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Rediger verdi...</translation>
+        <translation type="vanished">Rediger verdi...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Velg bare en node.</translation>
+        <translation type="vanished">Velg bare en node.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Redigere %1</translation>
+        <translation type="vanished">Redigere %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Skriv inn den nye verdien av %1 på de valgte rutenettcellene.</translation>
+        <translation type="vanished">Skriv inn den nye verdien av %1 på de valgte rutenettcellene.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Rediger verdi ved å angi forskjell...</translation>
+        <translation type="vanished">Rediger verdi ved å angi forskjell...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Rediger verdi ved å angi forhold...</translation>
+        <translation type="vanished">Rediger verdi ved å angi forhold...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>forskjell</translation>
+        <translation type="vanished">forskjell</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>forhold</translation>
+        <translation type="vanished">forhold</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Søke om %1 til %2</translation>
+        <translation type="vanished">Søke om %1 til %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Skriv inn %1 av %2 på de valgte rutenettcellene.</translation>
+        <translation type="vanished">Skriv inn %1 av %2 på de valgte rutenettcellene.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Eksport...</translation>
+        <translation type="vanished">Eksport...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topografisk fil (*.tpo)</translation>
+        <translation type="vanished">Topografisk fil (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Eksporter som topografidata</translation>
+        <translation type="vanished">Eksporter som topografidata</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Det oppsto en feil under åpning av filen.</translation>
+        <translation type="vanished">Det oppsto en feil under åpning av filen.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Rutenettet ble eksportert til %1.</translation>
+        <translation type="vanished">Rutenettet ble eksportert til %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informasjon</translation>
+        <translation type="vanished">Informasjon</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 generert.</translation>
+        <translation type="vanished">%1 generert.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Generer punktsky -data</translation>
+        <translation type="vanished">Generer punktsky -data</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Visningsinnstilling for rutenettcelleattributt (%1)</translation>
+        <translation type="vanished">Visningsinnstilling for rutenettcelleattributt (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Visningsinnstilling for rutenettcelleattributt</translation>
+        <translation type="vanished">Visningsinnstilling for rutenettcelleattributt</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Import (&amp;I)...</translation>
+        <translation type="vanished">Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Eksport (&amp;E)...</translation>
+        <translation type="vanished">Eksport (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Fargekart (denne innstillingen er vanlig med geografiske data)</translation>
+        <translation type="vanished">Fargekart (denne innstillingen er vanlig med geografiske data)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialog</translation>
+        <translation type="vanished">Dialog</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Egenskap</translation>
+        <translation type="vanished">Egenskap</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Farge</translation>
+        <translation type="vanished">Farge</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Vis attributtleser</translation>
+        <translation type="vanished">Vis attributtleser</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Celleattributtendring</translation>
+        <translation type="vanished">Celleattributtendring</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Henrette (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Følgende attributter ble ikke kartlagt, fordi nettverksgeneratorens utgangsverdier for dem. Hvis du vil kartlegge geografiske data for dem med makt, kan du kartlegge manuelt med menyen "Rutenett" -&gt; "Attributt kartlegging" -&gt; "Utfør".</translation>
+        <translation>Følgende attributter ble ikke kartlagt, fordi nettverksgeneratorens utgangsverdier for dem. Hvis du vil kartlegge geografiske data for dem med makt, kan du kartlegge manuelt med menyen &quot;Rutenett&quot; -&gt; &quot;Attributt kartlegging&quot; -&gt; &quot;Utfør&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kartlegging av geografiske data er fullført</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Rutenettattributtet "%1"redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Rutenettattributtet &quot;%1&quot;redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Grensetilstanden "%1"redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Grensetilstanden &quot;%1&quot;redigeres for hånd. Når du utfører kartlegging, blir alle endringene du har gjort, forkastet. Vil du virkelig utføre kartlegging?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // NO" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Når rutenettet er opprettet, blir du spurt om for å utføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // NO&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Når rutenettet er opprettet, blir du spurt om for å utføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Håndbok</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attributtkartlegging utføres bare når du manuelt velger "Utfør" -menyen.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attributtkartlegging utføres bare når du manuelt velger &quot;Utfør&quot; -menyen.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>MainWindow</translation>
+        <translation type="vanished">MainWindow</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>verktøylinje</translation>
+        <translation type="vanished">verktøylinje</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Retning:</translation>
+        <translation type="vanished">Retning:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Svart linje:</translation>
+        <translation type="vanished">Svart linje:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Rød linje:</translation>
+        <translation type="vanished">Rød linje:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Blå linje:</translation>
+        <translation type="vanished">Blå linje:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Ingen data)</translation>
+        <translation type="vanished">(Ingen data)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Tverrsnitt av rutenett (%1): J = %2</translation>
+        <translation type="vanished">Tverrsnitt av rutenett (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Tverrsnitt av rutenett (%1): I = %2</translation>
+        <translation type="vanished">Tverrsnitt av rutenett (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Fargekartinnstilling</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Merk:&lt;/span&gt; Bruk Colormap-fanen for å redigere fargeinnstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Merk:&lt;/span&gt; Bruk Colormap-fanen for å redigere fargeinnstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redigere (&amp;E)...</translation>
+        <translation type="vanished">Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Venstre bredd</translation>
+        <translation type="vanished">Venstre bredd</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Høyre bredd</translation>
+        <translation type="vanished">Høyre bredd</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Redigere %1</translation>
+        <translation type="vanished">Redigere %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Skriv inn den nye verdien av %1 på de valgte rutenettet.</translation>
+        <translation type="vanished">Skriv inn den nye verdien av %1 på de valgte rutenettet.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Sett opp skalarlinje (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Åpne fugleperspektiv (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>generere %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Denne CGNS -filen er opprettet for %1 versjon %2. Den er ikke kompatibel med den nåværende løseren. Kanskje bare en del av nettet vil bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Denne CGNS -filen har ikke informasjon om løsere. Vi kan ikke kontrollere om denne CGNS -filen er kompatibel med løseren. Hvis det ikke er kompatibelt, vil kanskje bare en del av nettet bli importert. Vil du virkelig importere rutenett fra denne filen?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Innstilling for rutenettform</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Skjerminnstilling (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Innstilling for rutenettform</translation>
     </message>
 </context>
 <context>

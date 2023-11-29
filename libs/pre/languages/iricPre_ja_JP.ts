@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -69,11 +71,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>格子のインポート中にエラーが発生しました。</translation>
+        <translation type="vanished">格子のインポート中にエラーが発生しました。</translation>
     </message>
     <message>
         <source>There is no grid that can be imported.</source>
@@ -82,30 +84,30 @@
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>この CGNSファイルは、 %1 %2 用のもので、現在のソルバーと互換性がありません。続行すると、格子の属性は一部のみインポートされる可能性があります。
+        <translation type="vanished">この CGNSファイルは、 %1 %2 用のもので、現在のソルバーと互換性がありません。続行すると、格子の属性は一部のみインポートされる可能性があります。
 このファイルから格子をインポートしますか?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
+        <translation type="vanished">この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
 この CGNS ファイルから格子をインポートしますか?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>このファイルには、インポートできるグリッドが含まれていません。</translation>
+        <translation type="vanished">このファイルには、インポートできるグリッドが含まれていません。</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>グリッドを選択</translation>
+        <translation type="vanished">グリッドを選択</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>インポートするグリッドを選択します。</translation>
+        <translation type="vanished">インポートするグリッドを選択します。</translation>
     </message>
 </context>
 <context>
@@ -129,7 +131,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>格子 鳥瞰図</translation>
     </message>
     <message>
@@ -862,8 +864,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>境界条件設定 "%1" を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>境界条件設定 &quot;%1&quot; を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1149,13 +1151,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>備考:
 
 バリエーションを有効にすると、「デフォルト」という名前のバリエーションが作成され、すべての地理情報がそのバリエーションに移動されます。
@@ -1218,42 +1220,18 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
-    <name>PreProcessorGridAttributeCellDataItem</name>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
         <translation>値の編集...</translation>
     </message>
     <message>
-        <source>Edit value by specifying variation...</source>
-        <translation type="vanished">変化量を指定して値を編集...</translation>
+        <source>Export...</source>
+        <translation>エクスポート...</translation>
     </message>
     <message>
-        <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">格子セル属性の表示設定</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation>警告</translation>
-    </message>
-    <message>
-        <source>Please select only one node.</source>
-        <translation>格子点をひとつだけ選択して下さい。</translation>
-    </message>
-    <message>
-        <source>Edit %1</source>
-        <translation>%1 の編集</translation>
-    </message>
-    <message>
-        <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>選択された格子セルでの、新しい %1 の値を入力してください。</translation>
-    </message>
-    <message>
-        <source>Apply variation to %1</source>
-        <translation type="vanished">%1 に変化量を適用</translation>
-    </message>
-    <message>
-        <source>Input the variation of %1 at the selected grid nodes.</source>
-        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
+        <source>Generate point cloud data</source>
+        <translation>このデータから点群データを生成</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
@@ -1264,28 +1242,32 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>比を指定して値を編集...</translation>
     </message>
     <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation>格子%1属性表示設定 (%2)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation>セルを一つだけ選択して下さい。</translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation>%1 の編集</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation>選択された格子セルでの、新しい %1 の値を入力してください。</translation>
+    </message>
+    <message>
         <source>difference</source>
         <translation>変化量</translation>
     </message>
     <message>
         <source>ratio</source>
         <translation>比</translation>
-    </message>
-    <message>
-        <source>Apply %1 to %2</source>
-        <translation>%1 を %2 に適用</translation>
-    </message>
-    <message>
-        <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>選択されたセルにおける %2 の %1 を入力してください。</translation>
-    </message>
-    <message>
-        <source>Export...</source>
-        <translation>エクスポート...</translation>
-    </message>
-    <message>
-        <source>Generate points data</source>
-        <translation type="vanished">このデータから点群データを生成</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
@@ -1316,19 +1298,27 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>%1 が生成されました。</translation>
     </message>
     <message>
-        <source>Generate point cloud data</source>
-        <translation>このデータから点群データを生成</translation>
+        <source>Apply %1 to %2</source>
+        <translation>%1 を %2 に適用</translation>
     </message>
     <message>
-        <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>格子セル属性の表示設定 (%1)</translation>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation>選択されたセルにおける %2 の %1 を入力してください。</translation>
     </message>
 </context>
 <context>
-    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
         <translation>格子セル属性の表示設定</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation>カラーマップ (この設定は地理情報と共通です)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation>線幅:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1338,24 +1328,161 @@ The grid attribute data created from the variation that you select with "Variati
         <source>&amp;Export...</source>
         <translation>エクスポート(&amp;E)...</translation>
     </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation>属性ブラウザの表示</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation>セル属性の変更</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="vanished">値の編集...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying variation...</source>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="vanished">格子セル属性の表示設定</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="vanished">警告</translation>
+    </message>
+    <message>
+        <source>Please select only one node.</source>
+        <translation type="vanished">格子点をひとつだけ選択して下さい。</translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="vanished">%1 の編集</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="vanished">選択された格子セルでの、新しい %1 の値を入力してください。</translation>
+    </message>
+    <message>
+        <source>Apply variation to %1</source>
+        <translation type="vanished">%1 に変化量を適用</translation>
+    </message>
+    <message>
+        <source>Input the variation of %1 at the selected grid nodes.</source>
+        <translation type="vanished">選択された格子点での、%1 の変化量を入力してください。</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="vanished">変化量を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="vanished">比を指定して値を編集...</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="vanished">変化量</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="vanished">比</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="vanished">%1 を %2 に適用</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="vanished">選択されたセルにおける %2 の %1 を入力してください。</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="vanished">エクスポート...</translation>
+    </message>
+    <message>
+        <source>Generate points data</source>
+        <translation type="vanished">このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="vanished">地勢データ (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="vanished">地勢データとしてエクスポート</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="vanished">ファイルを開く時にエラーが発生しました。</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="vanished">格子属性は %1 にエクスポートされました。</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="vanished">エラー</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="vanished">情報</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="vanished">%1 が生成されました。</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="vanished">このデータから点群データを生成</translation>
+    </message>
+    <message>
+        <source>Grid Cell Attribute Display Setting (%1)</source>
+        <translation type="vanished">格子セル属性の表示設定 (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation>セル</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="vanished">格子セル属性の表示設定</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="vanished">インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="vanished">エクスポート(&amp;E)...</translation>
+    </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>カラーマップ (この設定は地理情報と共通です)</translation>
+        <translation type="vanished">カラーマップ (この設定は地理情報と共通です)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>ダイアログ</translation>
+        <translation type="vanished">ダイアログ</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>属性</translation>
+        <translation type="vanished">属性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>色</translation>
+        <translation type="vanished">色</translation>
     </message>
 </context>
 <context>
@@ -1366,11 +1493,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>属性ブラウザの表示</translation>
+        <translation type="vanished">属性ブラウザの表示</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>セル属性の変更</translation>
+        <translation type="vanished">セル属性の変更</translation>
     </message>
 </context>
 <context>
@@ -1401,6 +1528,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation>エッジ (I方向)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation>エッジ (I方向) 属性</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation>エッジ (J方向)</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation>エッジ (J方向) 属性</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1411,9 +1566,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>実行(&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>以下の属性は、格子生成アルゴリズムが出力した値の上書きを避けるため、マッピングされませんでした。もし強制的に地理情報をマッピングしたい場合、"格子" -&gt; "属性のマッピング" -&gt; "実行" メニューを使ってマッピングして下さい。
+        <translation>以下の属性は、格子生成アルゴリズムが出力した値の上書きを避けるため、マッピングされませんでした。もし強制的に地理情報をマッピングしたい場合、&quot;格子&quot; -&gt; &quot;属性のマッピング&quot; -&gt; &quot;実行&quot; メニューを使ってマッピングして下さい。
 </translation>
     </message>
     <message>
@@ -1425,12 +1580,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation type="vanished">地理情報データ %2 の次元 %1 には値がありません。マッピングを開始できません。</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">格子属性 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">境界条件 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1445,12 +1600,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>地形データマッピングの完了</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>格子属性 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>境界条件 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
 </context>
 <context>
@@ -1468,24 +1623,24 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>自動</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;格子を生成すると、格子属性のマッピングを実行するか毎回尋ねられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;格子を生成すると、格子属性のマッピングを実行するか毎回尋ねられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手動</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>格子属性のマッピングは、手動で "実行" メニューを選択した時のみ実行されます。</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>格子属性のマッピングは、手動で &quot;実行&quot; メニューを選択した時のみ実行されます。</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1812,39 +1967,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>メインウィンドウ</translation>
+        <translation type="vanished">メインウィンドウ</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>ツールバー</translation>
+        <translation type="vanished">ツールバー</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>方向:</translation>
+        <translation type="vanished">方向:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>黒線: </translation>
+        <translation type="vanished">黒線: </translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>赤線: </translation>
+        <translation type="vanished">赤線: </translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>青線: </translation>
+        <translation type="vanished">青線: </translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(なし)</translation>
+        <translation type="vanished">(なし)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>格子断面 (%1) J = %2</translation>
+        <translation type="vanished">格子断面 (%1) J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>格子断面 (%1) I = %2</translation>
+        <translation type="vanished">格子断面 (%1) I = %2</translation>
     </message>
 </context>
 <context>
@@ -2273,8 +2428,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>カラーマップ設定</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2293,23 +2448,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編集(&amp;E)...</translation>
+        <translation type="vanished">編集(&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸側</translation>
+        <translation type="vanished">左岸側</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸側</translation>
+        <translation type="vanished">右岸側</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>%1 の編集</translation>
+        <translation type="vanished">%1 の編集</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>選択された格子点での、新しい %1 の値を入力してください。</translation>
+        <translation type="vanished">選択された格子点での、新しい %1 の値を入力してください。</translation>
     </message>
 </context>
 <context>
@@ -2399,7 +2554,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">凡例の設定(&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>鳥瞰図ウィンドウを開く(&amp;B)</translation>
     </message>
     <message>
@@ -2421,6 +2576,18 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>%1 の生成</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation>この CGNSファイルは、 %1 %2 用のもので、現在のソルバーと互換性がありません。続行すると、格子の属性は一部のみインポートされる可能性があります。
+このファイルから格子をインポートしますか?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation>この CGNS ファイルはソルバー情報を持っていないため、現在使用しているソルバーと互換性があるか確認できません。互換性のない CGNS ファイルから格子を読み込んだ場合、格子の属性の一部のみがインポートされることがあります。
+この CGNS ファイルから格子をインポートしますか?</translation>
     </message>
 </context>
 <context>
@@ -3053,6 +3220,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>格子形状設定</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -3065,6 +3239,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>表示設定(&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation>格子形状設定</translation>
     </message>
 </context>
 <context>
