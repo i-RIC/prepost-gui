@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -23,7 +25,7 @@
     </message>
     <message>
         <source>Delete less than value:</source>
-        <translation type="vanished">Supprimer moins que la valeur :</translation>
+        <translation type="vanished">Supprimer moins que la valeur&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -46,7 +48,7 @@
     </message>
     <message>
         <source>Add New Interp Line Point</source>
-        <translation type="vanished">Ajouter un nouveau point de ligne d'interp</translation>
+        <translation type="vanished">Ajouter un nouveau point de ligne d&apos;interp</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -54,7 +56,7 @@
     </message>
     <message>
         <source>Break line have to have no intersection with other break lines.</source>
-        <translation>La ligne de rupture ne doit pas avoir d'intersection avec d'autres lignes de rupture.</translation>
+        <translation>La ligne de rupture ne doit pas avoir d&apos;intersection avec d&apos;autres lignes de rupture.</translation>
     </message>
     <message>
         <source>Remeshing TINs...</source>
@@ -66,7 +68,7 @@
     </message>
     <message>
         <source>When you switch to this mode, you have to remesh TINs. Do you want to remesh now?</source>
-        <translation type="vanished">Lorsque vous passez à ce mode, vous devez remailler les TIN. Voulez-vous remailler maintenant ?</translation>
+        <translation type="vanished">Lorsque vous passez à ce mode, vous devez remailler les TIN. Voulez-vous remailler maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>&amp;Add New Point</source>
@@ -74,11 +76,11 @@
     </message>
     <message>
         <source>&amp;Interpolate Points</source>
-        <translation>Interpoler des points (&amp;I)</translation>
+        <translation type="vanished">Interpoler des points (&amp;I)</translation>
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation>Réglage de l'affichage (&amp;S)...</translation>
+        <translation>Réglage de l&apos;affichage (&amp;S)...</translation>
     </message>
     <message>
         <source>Select point</source>
@@ -130,7 +132,7 @@
     </message>
     <message>
         <source>Are you sure you want to remove this break line?</source>
-        <translation>Voulez-vous vraiment supprimer cette ligne de rupture ?</translation>
+        <translation>Voulez-vous vraiment supprimer cette ligne de rupture&#xa0;?</translation>
     </message>
     <message>
         <source>Polygon must have three vertices at least.</source>
@@ -142,7 +144,7 @@
     </message>
     <message>
         <source>When you add break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="vanished">Lorsque vous ajoutez une ligne de rupture, vous devez basculer pour afficher les wireframes. Voulez-vous passer à l'affichage des wireframes maintenant ?</translation>
+        <translation type="vanished">Lorsque vous ajoutez une ligne de rupture, vous devez basculer pour afficher les wireframes. Voulez-vous passer à l&apos;affichage des wireframes maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>Break line can be defined by mouse-clicking on the points between which you want to add break line. Finish defining by double clicking, or pressing return key.</source>
@@ -150,7 +152,7 @@
     </message>
     <message>
         <source>When you remove break line, you have to switch to show wireframes. Do you want to switch to show wireframes now?</source>
-        <translation type="vanished">Lorsque vous supprimez la ligne de rupture, vous devez passer à l'affichage des wireframes. Voulez-vous passer à l'affichage des wireframes maintenant ?</translation>
+        <translation type="vanished">Lorsque vous supprimez la ligne de rupture, vous devez passer à l&apos;affichage des wireframes. Voulez-vous passer à l&apos;affichage des wireframes maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>Click on the break line you want to remove.</source>
@@ -158,19 +160,19 @@
     </message>
     <message>
         <source>Are you sure you want to remove ALL break lines?</source>
-        <translation>Voulez-vous vraiment supprimer TOUTES les lignes de rupture ?</translation>
+        <translation>Voulez-vous vraiment supprimer TOUTES les lignes de rupture&#xa0;?</translation>
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Lorsque vous souhaitez supprimer des triangles avec des bords longs, vous devez basculer la méthode d'affichage sur Wireframe ou Surface. Si vous appuyez sur le bouton OK, la méthode d'affichage passe à filaire</translation>
+        <translation type="vanished">Lorsque vous souhaitez supprimer des triangles avec des bords longs, vous devez basculer la méthode d&apos;affichage sur Wireframe ou Surface. Si vous appuyez sur le bouton OK, la méthode d&apos;affichage passe à filaire</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">Lorsque vous modifiez des points, vous devez passer à l'affichage des points. Voulez-vous passer aux points d'affichage maintenant ?</translation>
+        <translation type="vanished">Lorsque vous modifiez des points, vous devez passer à l&apos;affichage des points. Voulez-vous passer aux points d&apos;affichage maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>When you delete points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">Lorsque vous supprimez des points, vous devez passer à l'affichage des points. Voulez-vous passer aux points d'affichage maintenant ?</translation>
+        <translation type="vanished">Lorsque vous supprimez des points, vous devez passer à l&apos;affichage des points. Voulez-vous passer aux points d&apos;affichage maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>You can not delete points used for break lines.</source>
@@ -194,7 +196,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation type="vanished">Une erreur s'est produite lors de l'exportation vers %1.</translation>
+        <translation type="vanished">Une erreur s&apos;est produite lors de l&apos;exportation vers %1.</translation>
     </message>
     <message>
         <source>Delete points less than %1</source>
@@ -206,7 +208,7 @@
     </message>
     <message>
         <source>When you interpolate points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">Lorsque vous interpolez des points, vous devez passer aux points d'affichage. Voulez-vous passer aux points d'affichage maintenant ?</translation>
+        <translation type="vanished">Lorsque vous interpolez des points, vous devez passer aux points d&apos;affichage. Voulez-vous passer aux points d&apos;affichage maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>To interpolate points, select existing points by mouse-clicking, use Alt to define path between known points, and finish by double-clicking or pressing return key.</source>
@@ -214,11 +216,11 @@
     </message>
     <message>
         <source>When you add points, you have to switch to show points. Do you want to switch to show points now?</source>
-        <translation type="vanished">Lorsque vous ajoutez des points, vous devez passer à l'affichage des points. Voulez-vous passer aux points d'affichage maintenant ?</translation>
+        <translation type="vanished">Lorsque vous ajoutez des points, vous devez passer à l&apos;affichage des points. Voulez-vous passer aux points d&apos;affichage maintenant&#xa0;?</translation>
     </message>
     <message>
         <source>To add new points, select an existing point first. The value at that point will be used as the default value for new points. Then, click at any position you want to add points, and finish by double-clicking of pressing return key.</source>
-        <translation>Pour ajouter de nouveaux points, sélectionnez d'abord un point existant. La valeur à ce point sera utilisée comme valeur par défaut pour les nouveaux points. Ensuite, cliquez à n'importe quelle position à laquelle vous souhaitez ajouter des points et terminez en double-cliquant ou en appuyant sur la touche retour.</translation>
+        <translation>Pour ajouter de nouveaux points, sélectionnez d&apos;abord un point existant. La valeur à ce point sera utilisée comme valeur par défaut pour les nouveaux points. Ensuite, cliquez à n&apos;importe quelle position à laquelle vous souhaitez ajouter des points et terminez en double-cliquant ou en appuyant sur la touche retour.</translation>
     </message>
     <message>
         <source>Remove triangles with long edge</source>
@@ -229,8 +231,8 @@
         <translation type="vanished">Fusionner...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Il n'y a pas d'autres données à fusionner dans "%1" grouper.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Il n&apos;y a pas d&apos;autres données à fusionner dans &quot;%1&quot; grouper.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -238,7 +240,7 @@
     </message>
     <message>
         <source>You must select one known point, and define at least one location for added points. Do you want to retry, or cancel the operation?</source>
-        <translation>Vous devez sélectionner un point connu et définir au moins un emplacement pour les points ajoutés. Voulez-vous réessayer ou annuler l'opération ?</translation>
+        <translation>Vous devez sélectionner un point connu et définir au moins un emplacement pour les points ajoutés. Voulez-vous réessayer ou annuler l&apos;opération&#xa0;?</translation>
     </message>
     <message>
         <source>Add Points</source>
@@ -250,7 +252,7 @@
     </message>
     <message>
         <source>To interpolate points, you must specify more than two points, and the last point should be existing point. Do you want to retry, or cancel the operation?</source>
-        <translation>Pour interpoler des points, vous devez spécifier plus de deux points, et le dernier point doit être un point existant. Voulez-vous réessayer ou annuler l'opération ?</translation>
+        <translation>Pour interpoler des points, vous devez spécifier plus de deux points, et le dernier point doit être un point existant. Voulez-vous réessayer ou annuler l&apos;opération&#xa0;?</translation>
     </message>
     <message>
         <source>P&amp;oint Cloud Data</source>
@@ -274,11 +276,11 @@
     </message>
     <message>
         <source>Failed to open %1.</source>
-        <translation>Impossible d'ouvrir %1.</translation>
+        <translation>Impossible d&apos;ouvrir %1.</translation>
     </message>
     <message>
         <source>Remesh TIN and when it is finished, switch to TIN Edit Mode.</source>
-        <translation>Remesh TIN et quand il est terminé, passez en mode d'édition TIN.</translation>
+        <translation>Remesh TIN et quand il est terminé, passez en mode d&apos;édition TIN.</translation>
     </message>
     <message>
         <source>Selection Mode</source>
@@ -302,19 +304,19 @@
     </message>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Paramètre d'affichage du nuage de points</translation>
+        <translation>Paramètre d&apos;affichage du nuage de points</translation>
     </message>
     <message>
         <source>&amp;Points Edit Mode</source>
-        <translation>Mode d'édition des points (&amp;P)</translation>
+        <translation>Mode d&apos;édition des points (&amp;P)</translation>
     </message>
     <message>
         <source>&amp;TIN Edit Mode</source>
-        <translation>Mode d'édition du TIN (&amp;T)</translation>
+        <translation>Mode d&apos;édition du TIN (&amp;T)</translation>
     </message>
     <message>
         <source>&amp;Polygons Edit Mode</source>
-        <translation>Mode d'édition des polygones (&amp;P)</translation>
+        <translation>Mode d&apos;édition des polygones (&amp;P)</translation>
     </message>
     <message>
         <source>Remove triangles with long edge setting</source>
@@ -340,7 +342,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation>L'incrément d'interpolation doit être supérieur à 0 et inférieur à la longueur de la ligne d'interpolation</translation>
+        <translation>L&apos;incrément d&apos;interpolation doit être supérieur à 0 et inférieur à la longueur de la ligne d&apos;interpolation</translation>
     </message>
 </context>
 <context>
@@ -367,7 +369,7 @@
     </message>
     <message>
         <source>Delete greater than value:</source>
-        <translation type="vanished">Supprimer la valeur supérieure à :</translation>
+        <translation type="vanished">Supprimer la valeur supérieure à&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -409,15 +411,15 @@
     <name>GeoDataPointmapInterpolatePoints</name>
     <message>
         <source>Interpolate Increment</source>
-        <translation type="vanished">Interpoler l'incrément</translation>
+        <translation type="vanished">Interpoler l&apos;incrément</translation>
     </message>
     <message>
         <source>Interpolation Setting</source>
-        <translation type="vanished">Paramètre d'interpolation</translation>
+        <translation type="vanished">Paramètre d&apos;interpolation</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation type="vanished">Incrément d'interpolation :</translation>
+        <translation type="vanished">Incrément d&apos;interpolation&#xa0;:</translation>
     </message>
     <message>
         <source>Line Length:</source>
@@ -432,7 +434,7 @@
     </message>
     <message>
         <source>Interpolation increment must be greater 0 and less than interpolation line length</source>
-        <translation type="vanished">L'incrément d'interpolation doit être supérieur à 0 et inférieur à la longueur de la ligne d'interpolation</translation>
+        <translation type="vanished">L&apos;incrément d&apos;interpolation doit être supérieur à 0 et inférieur à la longueur de la ligne d&apos;interpolation</translation>
     </message>
 </context>
 <context>
@@ -447,7 +449,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>Une erreur s'est produite lors de l'exportation vers %1</translation>
+        <translation>Une erreur s&apos;est produite lors de l&apos;exportation vers %1</translation>
     </message>
     <message>
         <source>LandXML file (*.xml)</source>
@@ -466,7 +468,7 @@
     </message>
     <message>
         <source>Parse error %1 at line %2 column %3</source>
-        <translation>Erreur d'analyse %1 à la ligne %2 colonne %3</translation>
+        <translation>Erreur d&apos;analyse %1 à la ligne %2 colonne %3</translation>
     </message>
     <message>
         <source>LandXML File (*.xml)</source>
@@ -496,7 +498,7 @@
     <name>GeoDataPointmapProxy</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation>Paramètre d'affichage du nuage de points</translation>
+        <translation>Paramètre d&apos;affichage du nuage de points</translation>
     </message>
 </context>
 <context>
@@ -533,7 +535,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>Une erreur s'est produite lors de l'exportation vers %1.</translation>
+        <translation>Une erreur s&apos;est produite lors de l&apos;exportation vers %1.</translation>
     </message>
     <message>
         <source>Point Cloud Data (DEM etc.)</source>
@@ -548,7 +550,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Une erreur d'ouverture de fichier s'est produite lors de l'ouverture %1.</translation>
+        <translation>Une erreur d&apos;ouverture de fichier s&apos;est produite lors de l&apos;ouverture %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -567,7 +569,7 @@
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Si vous souhaitez filtrer l'ensemble de données, spécifiez une valeur supérieure à 1.</translation>
+        <translation>Si vous souhaitez filtrer l&apos;ensemble de données, spécifiez une valeur supérieure à 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
@@ -582,11 +584,11 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Une erreur d'ouverture de fichier s'est produite lors de l'ouverture %1.</translation>
+        <translation>Une erreur d&apos;ouverture de fichier s&apos;est produite lors de l&apos;ouverture %1.</translation>
     </message>
     <message>
         <source>Not enough header lines found in the file.</source>
-        <translation>Pas assez de lignes d'en-tête trouvées dans le fichier.</translation>
+        <translation>Pas assez de lignes d&apos;en-tête trouvées dans le fichier.</translation>
     </message>
     <message>
         <source>Line %1: %2</source>
@@ -625,12 +627,12 @@
         <translation>Aucun délimiteur spécifié</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Pas assez de valeurs pour lire "%1"."%1" la colonne est %2 mais %3 valeurs saisies.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Pas assez de valeurs pour lire &quot;%1&quot;.&quot;%1&quot; la colonne est %2 mais %3 valeurs saisies.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Une erreur s'est produite lors de la lecture "%1" valeur. "%1" la valeur doit être un nombre réel, mais "%2" spécifié.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Une erreur s&apos;est produite lors de la lecture &quot;%1&quot; valeur. &quot;%1&quot; la valeur doit être un nombre réel, mais &quot;%2&quot; spécifié.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -649,7 +651,7 @@
     <name>GeoDataPointmapRealTextImporter_SettingDialog</name>
     <message>
         <source>Import Setting</source>
-        <translation>Paramètre d'importation</translation>
+        <translation>Paramètre d&apos;importation</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -697,11 +699,11 @@
     </message>
     <message>
         <source>Quote character:</source>
-        <translation>Caractère de citation :</translation>
+        <translation>Caractère de citation&#xa0;:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -709,7 +711,7 @@
     </message>
     <message>
         <source>Escape character:</source>
-        <translation>Caractère d'échappement:</translation>
+        <translation>Caractère d&apos;échappement:</translation>
     </message>
     <message>
         <source>\</source>
@@ -717,15 +719,15 @@
     </message>
     <message>
         <source>Record options</source>
-        <translation>Options d'enregistrement</translation>
+        <translation>Options d&apos;enregistrement</translation>
     </message>
     <message>
         <source>Header lines to ignore</source>
-        <translation>Lignes d'en-tête à ignorer</translation>
+        <translation>Lignes d&apos;en-tête à ignorer</translation>
     </message>
     <message>
         <source>First header line contains field names</source>
-        <translation>La première ligne d'en-tête contient les noms de champs</translation>
+        <translation>La première ligne d&apos;en-tête contient les noms de champs</translation>
     </message>
     <message>
         <source>Select fields</source>
@@ -737,7 +739,7 @@
     </message>
     <message>
         <source>Y:</source>
-        <translation>Y :</translation>
+        <translation>Y&#xa0;:</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -749,7 +751,7 @@
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation>Taux de saut :</translation>
+        <translation>Taux de saut&#xa0;:</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -761,7 +763,7 @@
     </message>
     <message>
         <source>The character to escape quote characters in quoted text. You can specify only one character.</source>
-        <translation>Le caractère d'échappement des guillemets dans le texte entre guillemets. Vous ne pouvez spécifier qu'un seul caractère.</translation>
+        <translation>Le caractère d&apos;échappement des guillemets dans le texte entre guillemets. Vous ne pouvez spécifier qu&apos;un seul caractère.</translation>
     </message>
     <message>
         <source>When you want to skip lines in the file, please specify values larger than 1. For example, if you input 2, every other line is imported.</source>
@@ -780,11 +782,11 @@
     <name>GeoDataPointmapRepresentationDialog</name>
     <message>
         <source>Display Setting</source>
-        <translation type="vanished">Réglage de l'affichage</translation>
+        <translation type="vanished">Réglage de l&apos;affichage</translation>
     </message>
     <message>
         <source>Display Method</source>
-        <translation type="vanished">Méthode d'affichage</translation>
+        <translation type="vanished">Méthode d&apos;affichage</translation>
     </message>
     <message>
         <source>Points</source>
@@ -800,7 +802,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">Taille des points :</translation>
+        <translation type="vanished">Taille des points&#xa0;:</translation>
     </message>
     <message>
         <source>Hide Break Lines</source>
@@ -838,7 +840,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Une erreur d'ouverture de fichier s'est produite lors de l'ouverture %1.</translation>
+        <translation>Une erreur d&apos;ouverture de fichier s&apos;est produite lors de l&apos;ouverture %1.</translation>
     </message>
     <message>
         <source>solid</source>
@@ -910,26 +912,26 @@
     </message>
     <message>
         <source>Region to import data is not selected yet. Please left drag on the map to select area.</source>
-        <translation>La région pour importer les données n'est pas encore sélectionnée. Veuillez faire glisser la souris sur la carte pour sélectionner la zone.</translation>
+        <translation>La région pour importer les données n&apos;est pas encore sélectionnée. Veuillez faire glisser la souris sur la carte pour sélectionner la zone.</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapWebImporterSettingManager</name>
     <message>
         <source>USGS elevation tiles (SRTM)</source>
-        <translation>Tuiles d'élévation USGS (SRTM)</translation>
+        <translation>Tuiles d&apos;élévation USGS (SRTM)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5A)</source>
-        <translation>Tuiles d'élévation GSI (DEM5A)</translation>
+        <translation>Tuiles d&apos;élévation GSI (DEM5A)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM5B)</source>
-        <translation>Tuiles d'élévation GSI (DEM5B)</translation>
+        <translation>Tuiles d&apos;élévation GSI (DEM5B)</translation>
     </message>
     <message>
         <source>GSI elevation tiles (DEM10B)</source>
-        <translation>Tuiles d'élévation GSI (DEM10B)</translation>
+        <translation>Tuiles d&apos;élévation GSI (DEM10B)</translation>
     </message>
 </context>
 <context>
@@ -956,7 +958,7 @@
     </message>
     <message>
         <source>Data size:</source>
-        <translation>Taille des données :</translation>
+        <translation>Taille des données&#xa0;:</translation>
     </message>
     <message>
         <source>XX kB (XXXX points)</source>
@@ -999,7 +1001,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taille des points :</translation>
+        <translation>Taille des points&#xa0;:</translation>
     </message>
     <message>
         <source>Wireframe</source>
@@ -1014,8 +1016,8 @@
         <translation>Surface</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque :&lt;/span&gt; en "mode de modification des points", ce paramètre est ignoré et les données TIN sont toujours affichés sous forme de points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Remarque&#xa0;:&lt;/span&gt; en &quot;mode de modification des points&quot;, ce paramètre est ignoré et les données TIN sont toujours affichés sous forme de points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1054,7 +1056,7 @@
     </message>
     <message>
         <source>TIN created from points are used for mapping. Grid attribute values defined at grid nodes or cells are calculated as weighted average of the values defined at the nodes of the triangle that containes the node (or cell center).</source>
-        <translation>Les TIN créés à partir de points sont utilisés pour la cartographie. Les valeurs d'attribut de grille définies au niveau des nœuds ou des cellules de la grille sont calculées comme une moyenne pondérée des valeurs définies aux nœuds du triangle qui contient le nœud (ou le centre de la cellule).</translation>
+        <translation>Les TIN créés à partir de points sont utilisés pour la cartographie. Les valeurs d&apos;attribut de grille définies au niveau des nœuds ou des cellules de la grille sont calculées comme une moyenne pondérée des valeurs définies aux nœuds du triangle qui contient le nœud (ou le centre de la cellule).</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1062,7 +1064,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Find points that are near to the grid nodes, regarding the grid cell shapes, and use the values at those points for interpolation.&lt;/p&gt;&lt;p&gt;This algorithm can be use only for structured grids.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trouvez des points proches des nœuds de la grille, en ce qui concerne les formes des cellules de la grille, et utilisez les valeurs à ces points pour l'interpolation.&lt;/p&gt;&lt;p&gt;Cet algorithme peut être utiliser uniquement pour les grilles structurées.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Trouvez des points proches des nœuds de la grille, en ce qui concerne les formes des cellules de la grille, et utilisez les valeurs à ces points pour l&apos;interpolation.&lt;/p&gt;&lt;p&gt;Cet algorithme peut être utiliser uniquement pour les grilles structurées.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Detail...</source>
@@ -1070,11 +1072,11 @@
     </message>
     <message>
         <source>Change the mapping algorithm for each area defined with polygons</source>
-        <translation>Modifier l'algorithme de mappage pour chaque zone définie avec des polygones</translation>
+        <translation>Modifier l&apos;algorithme de mappage pour chaque zone définie avec des polygones</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Define areas as polygons, and specify the algorithm to map values at grid nodes or cell centers from values defined at points.&lt;/p&gt;&lt;p&gt;User can select from below:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Map minimum value of points within circle&lt;/li&gt;&lt;li&gt;Map maximum value of points within circle&lt;/li&gt;&lt;li&gt;Map weighted average value of points within circle&lt;/li&gt;&lt;li&gt;Map value from TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définissez les zones en tant que polygones et spécifiez l'algorithme pour mapper les valeurs aux nœuds de grille ou aux centres de cellule à partir des valeurs définies aux points.&lt;/p&gt;&lt;p&gt;L'utilisateur peut sélectionner ci-dessous : &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Carte de la valeur minimale des points dans le cercle&lt;/li&gt;&lt;li&gt;Carte de la valeur maximale des points dans le cercle&lt;/li&gt;&lt;li&gt;Carte de la valeur moyenne pondérée des points dans le cercle&lt;/li&gt; &lt;li&gt;Valeur de carte du TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Définissez les zones en tant que polygones et spécifiez l&apos;algorithme pour mapper les valeurs aux nœuds de grille ou aux centres de cellule à partir des valeurs définies aux points.&lt;/p&gt;&lt;p&gt;L&apos;utilisateur peut sélectionner ci-dessous&#xa0;: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Carte de la valeur minimale des points dans le cercle&lt;/li&gt;&lt;li&gt;Carte de la valeur maximale des points dans le cercle&lt;/li&gt;&lt;li&gt;Carte de la valeur moyenne pondérée des points dans le cercle&lt;/li&gt; &lt;li&gt;Valeur de carte du TIN&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1097,19 +1099,19 @@
     </message>
     <message>
         <source>Stream-wise length[m]:</source>
-        <translation>Longueur du flux [m] :</translation>
+        <translation>Longueur du flux [m]&#xa0;:</translation>
     </message>
     <message>
         <source>Cross-stream width[m]:</source>
-        <translation>Largeur transversale[m] :</translation>
+        <translation>Largeur transversale[m]&#xa0;:</translation>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'extensions de modèle :</translation>
+        <translation>Nombre d&apos;extensions de modèle&#xa0;:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation>Exposant de pondération :</translation>
+        <translation>Exposant de pondération&#xa0;:</translation>
     </message>
 </context>
 <context>
@@ -1140,7 +1142,7 @@
     </message>
     <message>
         <source>Y:</source>
-        <translation>Y :</translation>
+        <translation>Y&#xa0;:</translation>
     </message>
     <message>
         <source>Value:</source>
@@ -1190,15 +1192,15 @@
     <name>GeoDataPointmap_PointsManager_InterpolatePointController_SettingDialog</name>
     <message>
         <source>Interpolation Setting</source>
-        <translation>Paramètre d'interpolation</translation>
+        <translation>Paramètre d&apos;interpolation</translation>
     </message>
     <message>
         <source>Interpolate Increment</source>
-        <translation>Incrément d'interpolation</translation>
+        <translation>Incrément d&apos;interpolation</translation>
     </message>
     <message>
         <source>Interpolation Increment:</source>
-        <translation>Incrément d'interpolation :</translation>
+        <translation>Incrément d&apos;interpolation&#xa0;:</translation>
     </message>
     <message>
         <source>Line Length:</source>
@@ -1233,15 +1235,15 @@
     </message>
     <message>
         <source>Weighting Exponent k:</source>
-        <translation>Exposant de pondération k :</translation>
+        <translation>Exposant de pondération k&#xa0;:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; est utilisé comme poids lors du calcul de la moyenne pondérée des valeurs. r est la distance entre le point et le nœud ou le centre de la cellule, auquel la valeur est mappée.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; est utilisé comme poids lors du calcul de la moyenne pondérée des valeurs. r est la distance entre le point et le nœud ou le centre de la cellule, auquel la valeur est mappée.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
-        <translation>Rayon du cercle pour rechercher des points :</translation>
+        <translation>Rayon du cercle pour rechercher des points&#xa0;:</translation>
     </message>
     <message>
         <source>m</source>
@@ -1256,7 +1258,7 @@
     <name>GeoDataPointmap_PropertyDialog</name>
     <message>
         <source>Point Cloud Display Setting</source>
-        <translation type="vanished">Paramètre d'affichage du nuage de points</translation>
+        <translation type="vanished">Paramètre d&apos;affichage du nuage de points</translation>
     </message>
     <message>
         <source>Basic</source>
@@ -1272,7 +1274,7 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="vanished">Taille des points :</translation>
+        <translation type="vanished">Taille des points&#xa0;:</translation>
     </message>
     <message>
         <source>Wireframe</source>
@@ -1287,8 +1289,8 @@
         <translation type="vanished">Surface</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque :&lt;/span&gt; en "mode de modification des points", ce paramètre est ignoré et les données TIN sont toujours affichés sous forme de points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Remarque&#xa0;:&lt;/span&gt; en &quot;mode de modification des points&quot;, ce paramètre est ignoré et les données TIN sont toujours affichés sous forme de points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1331,11 +1333,11 @@
     </message>
     <message>
         <source>Threshold edge length:</source>
-        <translation>Longueur d'arête seuil :</translation>
+        <translation>Longueur d&apos;arête seuil&#xa0;:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque&lt;/span&gt; : Lorsque &amp;quot;Aperçuquot ; cliquez sur le bouton, les triangles qui seront supprimés sont peints en gris.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Remarque&lt;/span&gt;&#xa0;: Lorsque &amp;quot;Aperçuquot&#xa0;; cliquez sur le bouton, les triangles qui seront supprimés sont peints en gris.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1350,11 +1352,11 @@
     </message>
     <message>
         <source>Limit edge length:</source>
-        <translation type="vanished">Limiter la longueur du bord :</translation>
+        <translation type="vanished">Limiter la longueur du bord&#xa0;:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Remarque&lt;/span&gt; : Lorsque vous cliquez sur le bouton Appliquer, les triangles qui seront supprimés seront peints en noir gris.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Remarque&lt;/span&gt;&#xa0;: Lorsque vous cliquez sur le bouton Appliquer, les triangles qui seront supprimés seront peints en noir gris.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>
