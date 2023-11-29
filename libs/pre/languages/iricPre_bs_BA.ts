@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Mreža Izgled iz ptičje perspektive</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 se ne mapiraju nakon što su zadnji put uređivane. Želite li sada izvršiti mapiranje?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Postavljanje graničnog stanja &quot;%1&quot;nije mapiran nakon što je zadnji put uređen. Želite li sada izvršiti mapiranje?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Postavljanje graničnog stanja "%1"nije mapiran nakon što je zadnji put uređen. Želite li sada izvršiti mapiranje?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Napomena: Kada je varijacija omogućena, kreira se varijacija pod nazivom &quot;Default&quot; i svi geografski podaci se premeštaju u nju. Možete dodati, preimenovati, ukloniti varijacije iz &quot;Object Browser&quot;. Možete premještati, kopirati geografske podatke između varijacija. Podaci o atributu mreže kreirani iz varijacije koju odaberete pomoću &quot;Varijacija za prolazak rješavaču&quot; prosljeđuju se rješavaču. Možete pripremiti više varijacija, prebaciti koje ćete proslijediti rješavaču i osigurati učinak razlike.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Napomena: Kada je varijacija omogućena, kreira se varijacija pod nazivom "Default" i svi geografski podaci se premeštaju u nju. Možete dodati, preimenovati, ukloniti varijacije iz "Object Browser". Možete premještati, kopirati geografske podatke između varijacija. Podaci o atributu mreže kreirani iz varijacije koju odaberete pomoću "Varijacija za prolazak rješavaču" prosljeđuju se rješavaču. Možete pripremiti više varijacija, prebaciti koje ćete proslijediti rješavaču i osigurati učinak razlike.</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">Uredi vrijednost...</translation>
+        <translation>Uredi vrijednost...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Izvezi...</translation>
+        <translation>Izvezi...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">Generirajte podatke iz oblaka točaka</translation>
+        <translation>Generirajte podatke oblaka tačaka</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">Uredite vrijednost navođenjem razlike...</translation>
+        <translation>Uredite vrijednost navođenjem razlike...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">Uredite vrijednost navođenjem omjera...</translation>
+        <translation>Uredite vrijednost navođenjem omjera...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid %1 Postavka prikaza atributa (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Upozorenje</translation>
+        <translation>Upozorenje</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Molimo odaberite samo jednu ćeliju.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">Uredi %1</translation>
+        <translation>Uredi %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">Unesite novu vrijednost za %1 na odabranim ćelijama mreže.</translation>
+        <translation>Unesite novu vrijednost %1 na odabranim ćelijama mreže.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">razlika</translation>
+        <translation>razlika</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">odnos</translation>
+        <translation>odnos</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Topografska datoteka (*.tpo)</translation>
+        <translation>Topografski fajl (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Izvezi kao podatke o topografiji</translation>
+        <translation>Izvoz kao topografski podaci</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Došlo je do greške pri otvaranju datoteke.</translation>
+        <translation>Došlo je do greške prilikom otvaranja datoteke.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Stanje mreže uspješno je izvezeno u %1.</translation>
+        <translation>Stanje mreže je uspješno izvezeno u %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Greška</translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacije</translation>
+        <translation>Informacije</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 generirano.</translation>
+        <translation>%1 generisano.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">Prijavite se %1 to %2</translation>
+        <translation>Prijavite se %1 to %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">Unesite %1 of %2 na odabranim ćelijama mreže.</translation>
+        <translation>Unesite %1 of %2 na odabranim ćelijama mreže.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Postavka prikaza atributa ćelije mreže</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Mapa boja (Ova postavka je uobičajena s geografskim podacima)</translation>
+        <translation>Mapa boja (Ova postavka je uobičajena s geografskim podacima)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Širina linije:</translation>
+        <translation>Širina linije:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Uvoz (&amp;I)...</translation>
+        <translation>Uvoz (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Izvoz (&amp;E)...</translation>
+        <translation>Izvoz (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">Prikaži preglednik atributa</translation>
+        <translation>Prikaži preglednik atributa</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">Promjena atributa ćelije</translation>
+        <translation>Promjena atributa ćelije</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cell</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ivica (I-smjer)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributi ivice (I-smjer).</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ivica (J-smjer)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributi ivice (J-smjer).</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Izvršiti (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Sljedeći atributi nisu mapirani jer za njih izlazne vrijednosti generatora mreže. Ako želite nasilno preslikati geografske podatke za njih, ručno ih mapirajte pomoću izbornika &quot;Mreža&quot; -&gt; &quot;Mapiranje atributa&quot; -&gt; &quot;Izvrši&quot;.</translation>
+        <translation>Sljedeći atributi nisu mapirani jer za njih izlazne vrijednosti generatora mreže. Ako želite nasilno preslikati geografske podatke za njih, ručno ih mapirajte pomoću izbornika "Mreža" -&gt; "Mapiranje atributa" -&gt; "Izvrši".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Mapiranje geografskih podataka je završeno</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mreže &quot;%1&quot;se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mreže "%1"se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Granični uvjet &quot;%1&quot;se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Granični uvjet "%1"se ručno uređuje. Kada izvršite mapiranje, sve izmjene koje ste unijeli bit će odbačene. Želite li zaista izvršiti mapiranje?</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Automatski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta naziv = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kada je mreža kreirana, bićete upitani da li da biste svaki put izvršili mapiranje atributa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta naziv = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kada je mreža kreirana, bićete upitani da li da biste svaki put izvršili mapiranje atributa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Priručnik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Mapiranje atributa izvodi se samo ako ručno odaberete izbornik &quot;Izvrši&quot;.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Mapiranje atributa izvodi se samo ako ručno odaberete izbornik "Izvrši".</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Colormap Setting</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Napomena:&lt;/span&gt; Koristite karticu Colormap za uređivanje postavki boja&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena:&lt;/span&gt; Koristite karticu Colormap za uređivanje postavki boja&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Postavite Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Otvorite prozor iz ptičje perspektive (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Ova CGNS datoteka je stvorena za %1 verzija %2. Nije kompatibilan sa trenutnim rješavačem. Možda će se samo neki dio mreže uvesti. Zaista želite uvesti mrežu iz ove datoteke?</translation>
+        <translation>Ova CGNS datoteka je kreirana za %1 verzija %2. Nije kompatibilan sa trenutnim rješavačem. Možda će samo neki dio mreže biti uvezen. Da li zaista želite da uvezete mrežu iz ove datoteke?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Ova CGNS datoteka nema informacije o rješavanju. Ne možemo provjeriti je li ova CGNS datoteka kompatibilna sa rješavačem. Ako nije kompatibilan, možda će se uvesti samo neki dio mreže. Zaista želite uvesti mrežu iz ove datoteke?</translation>
+        <translation>Ova CGNS datoteka nema informacije o rješavaču. Ne možemo provjeriti da li je ova CGNS datoteka kompatibilna sa rješavačem. Ako nije kompatibilan, možda će samo neki dio mreže biti uvezen. Da li zaista želite da uvezete mrežu iz ove datoteke?</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Podešavanje oblika mreže</translation>
+        <translation>Podešavanje oblika mreže</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Podešavanje oblika mreže</translation>
+        <translation>Podešavanje oblika mreže</translation>
     </message>
 </context>
 <context>

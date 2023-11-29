@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Izgara Kuş Bakışı Penceresi</translation>
     </message>
 </context>
@@ -715,7 +713,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="vanished">Skalarbar&apos;ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Import</source>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 son kez düzenlendikten sonra eşlenmezler. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Sınır Koşul Ayarı &quot;%1&quot; son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Sınır Koşul Ayarı "%1" son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -868,7 +866,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="vanished">Web&apos;den içe aktar (&amp;I)...</translation>
+        <translation type="vanished">Web'den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -884,7 +882,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="vanished">Skalarbar&apos;ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -1001,7 +999,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Web&apos;den Yüksekliği İçe Aktar (&amp;I)...</translation>
+        <translation>Web'den Yüksekliği İçe Aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Not: Varyasyon etkinleştirildiğinde, &quot;Varsayılan&quot; adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. &quot;Nesne Tarayıcı&quot;dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. &quot;Çözücüye geçmek için varyasyon&quot; ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Not: Varyasyon etkinleştirildiğinde, "Varsayılan" adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. "Nesne Tarayıcı"dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. "Çözücüye geçmek için varyasyon" ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">Değeri düzenle...</translation>
+        <translation>Değeri düzenle...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">İhracat...</translation>
+        <translation>İhracat...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">Nokta bulutu verileri oluşturun</translation>
+        <translation>Nokta bulutu verileri oluştur</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">Farkı belirterek değeri düzenleyin...</translation>
+        <translation>Farkı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">Oranı belirterek değeri düzenleyin...</translation>
+        <translation>Oranı belirterek değeri düzenleyin...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kafes %1 Öznitelik Görüntüleme Ayarı (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen yalnızca bir hücre seçin.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">Düzenlemek %1</translation>
+        <translation>Düzenlemek %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">Yeni değerini girin %1 seçilen ızgara hücrelerinde.</translation>
+        <translation>Yeni değerini girin %1 seçilen ızgara hücrelerinde.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">fark</translation>
+        <translation>fark</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">oran</translation>
+        <translation>oran</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Topografya Dosyası (*.tpo)</translation>
+        <translation>Topografya Dosyası (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Topografya Verisi Olarak Dışa Aktar</translation>
+        <translation>Topografya Verisi Olarak Dışa Aktarma</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Dosya açılırken hata oluştu.</translation>
+        <translation>Dosya açılırken hata oluştu.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Izgara koşulu başarıyla dışa aktarıldı %1.</translation>
+        <translation>Izgara durumu başarıyla şuraya aktarıldı: %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Bilgi</translation>
+        <translation>Bilgi</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 oluşturuldu.</translation>
+        <translation>%1 oluşturuldu.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">Uygulamak %1 ile %2</translation>
+        <translation>Uygula %1 ile %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">Girin %1 ile ilgili %2 seçilen ızgara hücrelerinde.</translation>
+        <translation>Giriş %1 ile ilgili %2 seçilen ızgara hücrelerinde.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Izgara Hücresi Öznitelik Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Renk Haritası (Bu ayar, Coğrafi Verilerde ortaktır)</translation>
+        <translation>Renk Haritası (Bu ayar Coğrafi Verilerde ortaktır)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Hat genişliği:</translation>
+        <translation>Hat genişliği:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">İçe aktarmak (&amp;I)...</translation>
+        <translation>İçe aktarmak (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">İhracat (&amp;E)...</translation>
+        <translation>İhracat (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">Özellik Tarayıcısını Göster</translation>
+        <translation>Özellik Tarayıcısını Göster</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">Hücre Özelliği Değişikliği</translation>
+        <translation>Hücre Özellik Değişikliği</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Hücre</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar (I yönü)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar (I yönü) nitelikleri</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar (J yönü)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Kenar (J yönü) nitelikleri</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Uygulamak (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen &quot;Izgara&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; menüsü ile manuel olarak haritalayın.</translation>
+        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen "Izgara" -&gt; "Attributes Mapping" -&gt; "Execute" menüsü ile manuel olarak haritalayın.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Coğrafi verilerin eşlenmesi tamamlandı</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ızgara özelliği &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ızgara özelliği "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sınır koşulu &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sınır koşulu "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Oto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuel</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Nitelik eşleme, yalnızca &quot;Yürüt&quot; menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Nitelik eşleme, yalnızca "Yürüt" menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1500,11 +1498,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">TIN&apos;lerle Eşleme</translation>
+        <translation type="vanished">TIN'lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN&apos;ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
+        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -2251,8 +2249,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Başlık Rengi</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2357,7 +2355,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Skalar Çubuğu Ayarla (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Kuşbakışı Görünüm Penceresini Aç (&amp;B)</translation>
     </message>
     <message>
@@ -2387,12 +2385,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Bu CGNS dosyası, %1 versiyon %2. Mevcut çözücü ile uyumlu değil. Belki şebekenin sadece bir kısmı ithal edilecektir. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
+        <translation>Bu CGNS dosyası şunun için oluşturulmuştur: %1 versiyon %2. Mevcut çözücüyle uyumlu değil. Belki şebekenin sadece bir kısmı ithal edilecektir. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Bu CGNS dosyası çözücü bilgisine sahip değildir. Bu CGNS dosyasının çözücü ile uyumlu olup olmadığını kontrol edemiyoruz. Uyumlu değilse, belki de şebekenin yalnızca bir kısmı içe aktarılacaktır. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
+        <translation>Bu CGNS dosyası çözücü bilgisi içermiyor. Bu CGNS dosyasının çözücüyle uyumlu olup olmadığını kontrol edemiyoruz. Uyumlu değilse ızgaranın yalnızca bir kısmı içe aktarılabilir. Bu dosyadan ızgarayı gerçekten içe aktarmak istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -2744,7 +2742,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Izgara Şekli Ayarı</translation>
+        <translation>Izgara Şekli Ayarı</translation>
     </message>
 </context>
 <context>
@@ -2766,7 +2764,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Izgara Şekli Ayarı</translation>
+        <translation>Izgara Şekli Ayarı</translation>
     </message>
 </context>
 <context>

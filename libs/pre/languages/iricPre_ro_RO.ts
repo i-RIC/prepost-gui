@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Fereastră cu vedere la ochi a grilei</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 nu sunt mapate după ce au fost editate ultima dată. Doriți să executați maparea acum?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Setarea stării limită &quot;%1&quot;nu este mapat după ce a fost editat ultima dată. Doriți să executați maparea acum?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Setarea stării limită "%1"nu este mapat după ce a fost editat ultima dată. Doriți să executați maparea acum?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,13 +1046,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>Notă: Când variația este activată, este creată varianta numită „Implicit” și toate datele geografice sunt mutate în aceasta. Puteți adăuga, redenumi, elimina variații din „Browser de obiecte”. Puteți muta, copia date geografice între variații. Datele atributelor de grilă create din variația pe care o selectați cu „Variație de transmis la rezolvator” sunt transmise solutorului. Puteți pregăti mai multe variante, puteți schimba pe care să le transmiteți solutorului și vă asigurați că efectul diferenței.</translation>
     </message>
 </context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">Editați valoarea...</translation>
+        <translation>Editați valoarea...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Export...</translation>
+        <translation>Export...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">Generați date cloud de puncte</translation>
+        <translation>Generați date nor de puncte</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">Editați valoarea specificând diferența...</translation>
+        <translation>Editați valoarea specificând diferența...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">Editați valoarea specificând raportul...</translation>
+        <translation>Editați valoarea specificând raportul...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Grilă %1 Setare de afișare a atributelor (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să selectați o singură celulă.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">Editați | × %1</translation>
+        <translation>Editați | × %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">Introduceți noua valoare a %1 la celulele de grilă selectate.</translation>
+        <translation>Introduceți noua valoare a %1 la celulele grilei selectate.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">diferență</translation>
+        <translation>diferență</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">raport</translation>
+        <translation>raport</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Fișier de topografie (*.tpo)</translation>
+        <translation>Fișier de topografie (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Exportați ca date de topografie</translation>
+        <translation>Exportați ca date de topografie</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">A apărut o eroare la deschiderea fișierului.</translation>
+        <translation>A apărut o eroare la deschiderea fișierului.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Starea grilei a fost exportată cu succes în %1.</translation>
+        <translation>Condiția rețelei a fost exportată cu succes la %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">informație</translation>
+        <translation>informație</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 generat.</translation>
+        <translation>%1 generate.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">aplica %1 la %2</translation>
+        <translation>aplica %1 la %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">Introduceți fișierul %1 de %2 la celulele de grilă selectate.</translation>
+        <translation>Introduceți %1 de %2 la celulele grilei selectate.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Setarea de afișare a atributului celulei grilă</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Harta de culori (Această setare este comună cu datele geografice)</translation>
+        <translation>Harta de culori (Această setare este comună cu datele geografice)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Lățimea liniei:</translation>
+        <translation>Lățimea liniei:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Import (&amp;I)...</translation>
+        <translation>Import (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Export (&amp;E)...</translation>
+        <translation>Export (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">Afișați browserul cu atribute</translation>
+        <translation>Afișați browserul de atribute</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">Schimbarea atributului celulei</translation>
+        <translation>Modificarea atributului celulei</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Celulă</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Marginea (direcția I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributele marginii (direcția I).</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Marginea (direcția J)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atributele marginii (direcția J).</translation>
     </message>
 </context>
 <context>
@@ -1435,7 +1433,7 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>A executa (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
         <translation>Următoarele atribute nu au fost mapate, deoarece valorile de ieșire ale generatorului de rețea pentru acestea. Dacă doriți să mapați datele geografice pentru ele forțat, vă rugăm să cartografiați manual cu meniul „Grilă” -&gt; „Atributele mapare” -&gt; „Executare”.</translation>
     </message>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Cartarea datelor geografice s-a încheiat</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atributul grilă &quot;%1&quot;este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atributul grilă "%1"este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Condiția la limită &quot;%1&quot;este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Condiția la limită "%1"este editat manual. Când executați maparea, toate modificările pe care le-ați făcut vor fi eliminate. Sigur doriți să executați maparea?</translation>
     </message>
 </context>
 <context>
@@ -1479,19 +1477,19 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Când grila este creată, sunteți întrebat dacă pentru a executa maparea atributelor de fiecare dată. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Când grila este creată, sunteți întrebat dacă pentru a executa maparea atributelor de fiecare dată. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
         <translation>Maparea atributelor se execută numai atunci când selectați manual meniul „Executare”.</translation>
     </message>
     <message>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Setarea hărții de culori</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notă:&lt;/span&gt; utilizați fila Hartă de culori pentru a edita setările de culoare&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă:&lt;/span&gt; utilizați fila Hartă de culori pentru a edita setările de culoare&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Configurați Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Deschideți fereastra cu vedere panoramică (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Acest fișier CGNS este creat pentru %1 versiune %2. Nu este compatibil cu soluția de curent. Poate că doar o parte a grilei va fi importată. Doriți cu adevărat să importați grila din acest fișier?</translation>
+        <translation>Acest fișier CGNS este creat pentru %1 versiune %2. Nu este compatibil cu solutorul curent. Poate doar o parte din grilă va fi importată. Chiar doriți să importați grila din acest fișier?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Acest fișier CGNS nu are informații despre soluționare. Nu putem verifica dacă acest fișier CGNS este compatibil cu soluția. Dacă nu este compatibil, poate fi importată doar o parte a grilei. Doriți cu adevărat să importați grila din acest fișier?</translation>
+        <translation>Acest fișier CGNS nu are informații de rezolvare. Nu putem verifica dacă acest fișier CGNS este compatibil cu soluția. Dacă nu este compatibil, poate doar o parte a rețelei va fi importată. Chiar doriți să importați grila din acest fișier?</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Setarea formei grilei</translation>
+        <translation>Setarea formei grilei</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Setarea formei grilei</translation>
+        <translation>Setarea formei grilei</translation>
     </message>
 </context>
 <context>

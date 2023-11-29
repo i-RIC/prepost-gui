@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Ruudukko Lintuperspektiivi-ikkuna</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 ei kartoiteta edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Rajaolosuhteiden asetus &quot;%1&quot;ei ole kartoitettu edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Rajaolosuhteiden asetus "%1"ei ole kartoitettu edellisen muokkauksen jälkeen. Haluatko suorittaa kartoituksen nyt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Huomautus: Kun muunnelma on käytössä, &quot;Oletus&quot;-niminen muunnelma luodaan ja kaikki maantieteelliset tiedot siirretään siihen. Voit lisätä, nimetä uudelleen ja poistaa muunnelmia &quot;Objektiselaimesta&quot;. Voit siirtää, kopioida maantieteellisiä tietoja muunnelmien välillä. &quot;Ratkaisijalle välitettävä muunnelma&quot; -vaihtoehdolla valitusta muunnelmasta luodut ruudukon attribuuttitiedot välitetään ratkaisijalle. Voit valmistella useita muunnelmia, vaihtaa ne välitettäväksi ratkaisijalle ja varmistaa eron vaikutuksen.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Huomautus: Kun muunnelma on käytössä, "Oletus"-niminen muunnelma luodaan ja kaikki maantieteelliset tiedot siirretään siihen. Voit lisätä, nimetä uudelleen ja poistaa muunnelmia "Objektiselaimesta". Voit siirtää, kopioida maantieteellisiä tietoja muunnelmien välillä. "Ratkaisijalle välitettävä muunnelma" -vaihtoehdolla valitusta muunnelmasta luodut ruudukon attribuuttitiedot välitetään ratkaisijalle. Voit valmistella useita muunnelmia, vaihtaa ne välitettäväksi ratkaisijalle ja varmistaa eron vaikutuksen.</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">Muokkaa arvoa...</translation>
+        <translation>Muokkaa arvoa...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Viedä...</translation>
+        <translation>Viedä...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">Luo pistepilvetietoja</translation>
+        <translation>Luo pistepilvitietoja</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">Muokkaa arvoa määrittämällä ero...</translation>
+        <translation>Muokkaa arvoa määrittämällä ero...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">Muokkaa arvoa määrittämällä suhde...</translation>
+        <translation>Muokkaa arvoa määrittämällä suhde...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukko %1 Attribuutin näyttöasetus (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varoitus</translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse vain yksi solu.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">Muokata %1</translation>
+        <translation>Muokata %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">Syötä uusi arvo %1 valituissa ruudukon soluissa.</translation>
+        <translation>Syötä uusi arvo %1 valituissa ruudukon soluissa.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">ero</translation>
+        <translation>ero</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">suhde</translation>
+        <translation>suhde</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">Topografiatiedosto (*.tpo)</translation>
+        <translation>Topografiatiedosto (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Vie topografiatiedoiksi</translation>
+        <translation>Vie topografiatietona</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Virhe avattaessa tiedostoa.</translation>
+        <translation>Tiedostoa avattaessa tapahtui virhe.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Ruudukkoehdon vieminen kohteeseen onnistui %1.</translation>
+        <translation>Verkkotilan vienti onnistui %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Tiedot</translation>
+        <translation>Tiedot</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 syntynyt.</translation>
+        <translation>%1 luotu.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">Käytä %1 kohteeseen %2</translation>
+        <translation>Käytä %1 to %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">Syötä %1 / %2 valituissa ruudukon soluissa.</translation>
+        <translation>Syötä %1 / %2 valituissa ruudukon soluissa.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruudukkosolun attribuuttien näyttöasetus</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Värikartta (Tämä asetus on yleinen maantieteellisten tietojen kanssa)</translation>
+        <translation>Värikartta (Tämä asetus on yleinen maantieteellisten tietojen kanssa)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Viivan leveys:</translation>
+        <translation>Viivan leveys:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Tuonti (&amp;I)...</translation>
+        <translation>Tuonti (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Viedä (&amp;E)...</translation>
+        <translation>Viedä (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">Näytä ominaisuuksien selain</translation>
+        <translation>Näytä ominaisuusselain</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">Solumääritteen muutos</translation>
+        <translation>Solun attribuutin muutos</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Cell</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge (I-suunta)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge (I-suunta) -attribuutit</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Reuna (J-suunta)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Edge (J-suunta) -attribuutit</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Suorittaa (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Seuraavia määritteitä ei kartoitettu, koska niiden ruudukkogeneraattorin lähtöarvot. Jos haluat kartoittaa niiden maantieteelliset tiedot väkisin, kartoita manuaalisesti valikosta &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Seuraavia määritteitä ei kartoitettu, koska niiden ruudukkogeneraattorin lähtöarvot. Jos haluat kartoittaa niiden maantieteelliset tiedot väkisin, kartoita manuaalisesti valikosta "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Maantieteellisten tietojen kartoitus on valmis</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Ruudukon määrite &quot;%1&quot;muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Ruudukon määrite "%1"muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Rajaehto &quot;%1&quot;muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Rajaehto "%1"muokataan käsin. Kun suoritat kartoituksen, kaikki tekemäsi muutokset hylätään. Haluatko todella suorittaa kartoituksen?</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // FI&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kun ruudukko luodaan, sinulta kysytään, onko suorittaa attribuuttien kartoitus aina. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // FI" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;metanimi = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kun ruudukko luodaan, sinulta kysytään, onko suorittaa attribuuttien kartoitus aina. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuaalinen</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Määritteiden kartoitus suoritetaan vain, kun valitset manuaalisesti &quot;Suorita&quot; -valikon.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Määritteiden kartoitus suoritetaan vain, kun valitset manuaalisesti "Suorita" -valikon.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2090,7 +2088,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Vaa&apos;at</translation>
+        <translation>Vaa'at</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Värikartan asetus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa:&lt;/span&gt; Käytä Colormap-välilehteä väriasetusten muokkaamiseen.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa:&lt;/span&gt; Käytä Colormap-välilehteä väriasetusten muokkaamiseen.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Määritä Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Avaa lintuperspektiivi-ikkuna (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Tämä CGNS -tiedosto on luotu %1 versio %2. Se ei ole yhteensopiva nykyisen ratkaisijan kanssa. Ehkä vain osa verkosta tuodaan. Haluatko todella tuoda ruudukon tästä tiedostosta?</translation>
+        <translation>Tämä CGNS-tiedosto on luotu %1 versio %2. Se ei ole yhteensopiva nykyisen ratkaisijan kanssa. Ehkä vain osa ruudukosta tuodaan. Haluatko todella tuoda ruudukon tästä tiedostosta?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">Tässä CGNS -tiedostossa ei ole ratkaisutietoja. Emme voi tarkistaa, onko tämä CGNS -tiedosto yhteensopiva ratkaisijan kanssa. Jos se ei ole yhteensopiva, ehkä vain osa ruudukosta tuodaan. Haluatko todella tuoda ruudukon tästä tiedostosta?</translation>
+        <translation>Tässä CGNS-tiedostossa ei ole ratkaisijatietoja. Emme voi tarkistaa, onko tämä CGNS-tiedosto yhteensopiva ratkaisijan kanssa. Jos se ei ole yhteensopiva, ehkä vain osa ruudukosta tuodaan. Haluatko todella tuoda ruudukon tästä tiedostosta?</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Ruudukon muodon asetus</translation>
+        <translation>Ruudukon muodon asetus</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Ruudukon muodon asetus</translation>
+        <translation>Ruudukon muodon asetus</translation>
     </message>
 </context>
 <context>

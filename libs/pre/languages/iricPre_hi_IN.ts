@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>ग्रिड बर्ड्स-आई व्यू विंडो</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 पिछली बार संपादित किए जाने के बाद मैप नहीं किया जाता है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>सीमा शर्त सेटिंग &quot;%1&quot; पिछली बार संपादित होने के बाद मैप नहीं किया गया है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>सीमा शर्त सेटिंग "%1" पिछली बार संपादित होने के बाद मैप नहीं किया गया है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>नोट: जब वेरिएशन सक्षम होता है, तो &quot;डिफ़ॉल्ट&quot; नाम का वेरिएशन बनाया जाता है, और सभी भौगोलिक डेटा को उसमें ले जाया जाता है। आप &quot;ऑब्जेक्ट ब्राउज़र&quot; से विविधताएं जोड़ सकते हैं, नाम बदल सकते हैं, हटा सकते हैं। आप विविधताओं के बीच भौगोलिक डेटा को स्थानांतरित, कॉपी कर सकते हैं। आपके द्वारा &quot;सॉल्वर को पास करने के लिए वेरिएशन&quot; के साथ चुने गए वेरिएशन से बनाया गया ग्रिड एट्रिब्यूट डेटा सॉल्वर को दिया जाता है। आप कई विविधताएं तैयार कर सकते हैं, जो सॉल्वर को पास करने के लिए स्विच कर सकते हैं और अंतर के प्रभाव को सुनिश्चित कर सकते हैं।</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>नोट: जब वेरिएशन सक्षम होता है, तो "डिफ़ॉल्ट" नाम का वेरिएशन बनाया जाता है, और सभी भौगोलिक डेटा को उसमें ले जाया जाता है। आप "ऑब्जेक्ट ब्राउज़र" से विविधताएं जोड़ सकते हैं, नाम बदल सकते हैं, हटा सकते हैं। आप विविधताओं के बीच भौगोलिक डेटा को स्थानांतरित, कॉपी कर सकते हैं। आपके द्वारा "सॉल्वर को पास करने के लिए वेरिएशन" के साथ चुने गए वेरिएशन से बनाया गया ग्रिड एट्रिब्यूट डेटा सॉल्वर को दिया जाता है। आप कई विविधताएं तैयार कर सकते हैं, जो सॉल्वर को पास करने के लिए स्विच कर सकते हैं और अंतर के प्रभाव को सुनिश्चित कर सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">मान संपादित करें...</translation>
+        <translation>मान संपादित करें...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">निर्यात...</translation>
+        <translation>निर्यात करना...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">पॉइंट क्लाउड डेटा जेनरेट करें</translation>
+        <translation>पॉइंट क्लाउड डेटा जेनरेट करें</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">अंतर निर्दिष्ट करके मान संपादित करें...</translation>
+        <translation>अंतर निर्दिष्ट करके मान संपादित करें...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">अनुपात निर्दिष्ट करके मान संपादित करें...</translation>
+        <translation>अनुपात निर्दिष्ट करके मान संपादित करें...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्रिड %1 विशेषता प्रदर्शन सेटिंग (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">चेतावनी</translation>
+        <translation>चेतावनी</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>कृपया केवल एक सेल चुनें.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">संपादित करें %1</translation>
+        <translation>संपादन करना %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">का नया मान इनपुट करें %1 चयनित ग्रिड कोशिकाओं पर।</translation>
+        <translation>का नया मान इनपुट करें %1 चयनित ग्रिड कोशिकाओं पर.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">अंतर</translation>
+        <translation>अंतर</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">अनुपात</translation>
+        <translation>अनुपात</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">स्थलाकृति फ़ाइल (*.tpo)</translation>
+        <translation>स्थलाकृति फ़ाइल (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">स्थलाकृति डेटा के रूप में निर्यात करें</translation>
+        <translation>स्थलाकृति डेटा के रूप में निर्यात करें</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">फ़ाइल खोलते समय त्रुटि हुई.</translation>
+        <translation>फ़ाइल खोलते समय त्रुटि उत्पन्न हुई.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">ग्रिड स्थिति को सफलतापूर्वक निर्यात किया गया %1.</translation>
+        <translation>ग्रिड स्थिति को सफलतापूर्वक निर्यात किया गया %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">जानकारी</translation>
+        <translation>जानकारी</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 उत्पन्न।</translation>
+        <translation>%1 उत्पन्न.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">लागू करना %1 प्रति %2</translation>
+        <translation>आवेदन करना %1 को %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">इनपुट करें %1 का %2 चयनित ग्रिड कोशिकाओं पर।</translation>
+        <translation>इनपुट करें %1 का %2 चयनित ग्रिड कोशिकाओं पर.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">ग्रिड सेल विशेषता प्रदर्शन सेटिंग</translation>
+        <translation>ग्रिड सेल विशेषता प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Colormap (यह सेटिंग भौगोलिक डेटा के साथ सामान्य है)</translation>
+        <translation>Colormap (यह सेटिंग भौगोलिक डेटा के साथ सामान्य है)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">रेखा की चौडाई:</translation>
+        <translation>रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">आयात (&amp;I)...</translation>
+        <translation>आयात (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">निर्यात (&amp;E)...</translation>
+        <translation>निर्यात (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">विशेषता ब्राउज़र दिखाएं</translation>
+        <translation>विशेषता ब्राउज़र दिखाएँ</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">सेल विशेषता परिवर्तन</translation>
+        <translation>सेल गुण परिवर्तन</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>कक्ष</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>किनारा (आई-दिशा)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>किनारा (आई-दिशा) विशेषताएँ</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>किनारा (जे-दिशा)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>किनारा (जे-दिशा) विशेषताएँ</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>निष्पादित करना (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>निम्नलिखित विशेषताओं को मैप नहीं किया गया था, क्योंकि उनके लिए ग्रिड जनरेटर आउटपुट मान। यदि आप उनके लिए जबरदस्ती भौगोलिक डेटा मैप करना चाहते हैं, तो कृपया मेनू &quot;ग्रिड&quot; -&gt; &quot;एट्रिब्यूट्स मैपिंग&quot; -&gt; &quot;एक्ज़ीक्यूट&quot; के साथ मैन्युअल रूप से मैप करें।</translation>
+        <translation>निम्नलिखित विशेषताओं को मैप नहीं किया गया था, क्योंकि उनके लिए ग्रिड जनरेटर आउटपुट मान। यदि आप उनके लिए जबरदस्ती भौगोलिक डेटा मैप करना चाहते हैं, तो कृपया मेनू "ग्रिड" -&gt; "एट्रिब्यूट्स मैपिंग" -&gt; "एक्ज़ीक्यूट" के साथ मैन्युअल रूप से मैप करें।</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>भौगोलिक डेटा का मानचित्रण समाप्त</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ग्रिड विशेषता &quot;%1&quot; हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ग्रिड विशेषता "%1" हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>सीमा की स्थिति &quot;%1&quot; हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>सीमा की स्थिति "%1" हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>ऑटो</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 12 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; जब ग्रिड बनाया जाता है, तो आपसे पूछा जाता है कि क्या एट्रिब्यूट मैपिंग को हर बार निष्पादित करने के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप: 12 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; जब ग्रिड बनाया जाता है, तो आपसे पूछा जाता है कि क्या एट्रिब्यूट मैपिंग को हर बार निष्पादित करने के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>हाथ से किया हुआ</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>विशेषता मानचित्रण केवल तभी निष्पादित होता है जब आप मैन्युअल रूप से &quot;निष्पादित करें&quot; मेनू का चयन करते हैं।</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>विशेषता मानचित्रण केवल तभी निष्पादित होता है जब आप मैन्युअल रूप से "निष्पादित करें" मेनू का चयन करते हैं।</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>कलरमैप सेटिंग</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; रंग सेटिंग संपादित करने के लिए Colormap टैब का उपयोग करें&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; रंग सेटिंग संपादित करने के लिए Colormap टैब का उपयोग करें&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">स्केलरबार सेट करें (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>बर्ड्स-आई व्यू विंडो खोलें (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">यह सीजीएनएस फ़ाइल के लिए बनाई गई है %1 संस्करण %2. यह वर्तमान सॉल्वर के साथ संगत नहीं है। हो सकता है कि ग्रिड का केवल कुछ हिस्सा ही आयात किया जाएगा। क्या आप वाकई इस फ़ाइल से ग्रिड आयात करना चाहते हैं?</translation>
+        <translation>यह CGNS फ़ाइल के लिए बनाई गई है %1 संस्करण %2. यह वर्तमान सॉल्वर के साथ संगत नहीं है. शायद ग्रिड का कुछ हिस्सा ही आयात किया जाएगा. क्या आप सचमुच इस फ़ाइल से ग्रिड आयात करना चाहते हैं?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">इस सीजीएनएस फाइल में सॉल्वर की जानकारी नहीं है। हम यह जांच नहीं सकते कि यह सीजीएनएस फाइल सॉल्वर के अनुकूल है या नहीं। यदि यह संगत नहीं है, तो शायद ग्रिड का केवल कुछ हिस्सा ही आयात किया जाएगा। क्या आप वाकई इस फ़ाइल से ग्रिड आयात करना चाहते हैं?</translation>
+        <translation>इस सीजीएनएस फ़ाइल में सॉल्वर जानकारी नहीं है। हम यह जांच नहीं कर सकते कि यह सीजीएनएस फ़ाइल सॉल्वर के साथ संगत है या नहीं। यदि यह संगत नहीं है, तो शायद ग्रिड का केवल कुछ हिस्सा ही आयात किया जाएगा। क्या आप सचमुच इस फ़ाइल से ग्रिड आयात करना चाहते हैं?</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">ग्रिड आकार सेटिंग</translation>
+        <translation>ग्रिड आकार सेटिंग</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">ग्रिड आकार सेटिंग</translation>
+        <translation>ग्रिड आकार सेटिंग</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>نافذة عرض عين الطائر الشبكي</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 لم يتم تعيينها بعد تعديلها في المرة الأخيرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>إعداد حالة الحدود &quot;%1&quot;لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>إعداد حالة الحدود "%1"لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى &quot;افتراضي&quot; ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من &quot;Object Browser&quot;. يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام &quot;التباين للتمرير إلى الحل&quot; إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى "افتراضي" ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من "Object Browser". يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام "التباين للتمرير إلى الحل" إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">تحرير القيمة...</translation>
+        <translation>تعديل القيمة...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">يصدر...</translation>
+        <translation>يصدّر...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">إنشاء بيانات سحابة النقطة</translation>
+        <translation>توليد بيانات سحابة نقطة</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">تحرير القيمة بتحديد الاختلاف...</translation>
+        <translation>تحرير القيمة عن طريق تحديد الفرق...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">تحرير القيمة بتحديد النسبة...</translation>
+        <translation>تحرير القيمة عن طريق تحديد النسبة...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>شبكة %1 إعداد عرض السمة (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">تحذير</translation>
+        <translation>تحذير</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>الرجاء تحديد خلية واحدة فقط.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">يحرر %1</translation>
+        <translation>يحرر %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">أدخل القيمة الجديدة لـ %1 في خلايا الشبكة المحددة.</translation>
+        <translation>أدخل القيمة الجديدة لـ %1 في خلايا الشبكة المحددة.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">فرق</translation>
+        <translation>اختلاف</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">نسبة</translation>
+        <translation>نسبة</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">ملف الطبوغرافيا (*.tpo)</translation>
+        <translation>ملف الطبوغرافيا (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">تصدير كبيانات طبوغرافية</translation>
+        <translation>تصدير كبيانات الطبوغرافيا</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">حدث خطأ أثناء فتح الملف.</translation>
+        <translation>حدث خطأ أثناء فتح الملف.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">تم تصدير حالة الشبكة بنجاح إلى %1.</translation>
+        <translation>تم تصدير حالة الشبكة بنجاح إلى %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">معلومة</translation>
+        <translation>معلومة</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 ولدت.</translation>
+        <translation>%1 ولدت.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">تطبيق %1 إلى %2</translation>
+        <translation>يتقدم %1 ل %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">أدخل ملف %1 من %2 في خلايا الشبكة المحددة.</translation>
+        <translation>أدخل %1 ل %2 في خلايا الشبكة المحددة.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">إعداد عرض سمة خلية الشبكة</translation>
+        <translation>إعداد عرض سمات خلية الشبكة</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">خريطة الألوان (هذا الإعداد شائع مع البيانات الجغرافية)</translation>
+        <translation>Colormap (هذا الإعداد شائع مع البيانات الجغرافية)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">عرض الخط:</translation>
+        <translation>عرض الخط:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">يستورد (&amp;I)...</translation>
+        <translation>يستورد (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>يصدّر (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">إظهار مستعرض السمات</translation>
+        <translation>إظهار متصفح السمات</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">تغيير سمة الخلية</translation>
+        <translation>تغيير سمة الخلية</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>خلية</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>الحافة (اتجاه I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>سمات الحافة (اتجاه I).</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>الحافة (اتجاه J)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>سمات الحافة (اتجاه J).</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>ينفذ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة &quot;الشبكة&quot; -&gt; &quot;تعيين السمات&quot; -&gt; &quot;تنفيذ&quot;.</translation>
+        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة "الشبكة" -&gt; "تعيين السمات" -&gt; "تنفيذ".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>تم الانتهاء من تعيين البيانات الجغرافية</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>سمة الشبكة &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>سمة الشبكة "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>شرط الحدود &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>شرط الحدود "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>آلي</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>كتيب</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة &quot;تنفيذ&quot; يدويًا.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة "تنفيذ" يدويًا.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>إعداد خريطة الألوان</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">إعداد Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>افتح نافذة عرض عين الطائر (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">تم إنشاء ملف CGNS هذا من أجل %1 إصدار %2. إنه غير متوافق مع الحل الحالي. ربما سيتم استيراد جزء من الشبكة فقط. هل تريد حقًا استيراد الشبكة من هذا الملف؟</translation>
+        <translation>تم إنشاء ملف CGNS هذا لـ %1 إصدار %2. إنه غير متوافق مع الحل الحالي. ربما سيتم استيراد جزء فقط من الشبكة. هل تريد حقًا استيراد الشبكة من هذا الملف؟</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">لا يحتوي ملف CGNS هذا على معلومات حلال. لا يمكننا التحقق مما إذا كان ملف CGNS هذا متوافقًا مع الحل. إذا لم يكن متوافقًا ، فربما يتم استيراد جزء من الشبكة فقط. هل تريد حقًا استيراد الشبكة من هذا الملف؟</translation>
+        <translation>لا يحتوي ملف CGNS هذا على معلومات الحل. لا يمكننا التحقق مما إذا كان ملف CGNS هذا متوافقًا مع أداة الحل. إذا لم يكن متوافقًا، فربما سيتم استيراد جزء فقط من الشبكة. هل تريد حقًا استيراد الشبكة من هذا الملف؟</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">إعداد شكل الشبكة</translation>
+        <translation>إعداد شكل الشبكة</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">إعداد شكل الشبكة</translation>
+        <translation>إعداد شكل الشبكة</translation>
     </message>
 </context>
 <context>

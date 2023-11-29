@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>Jendela Pemandangan Mata Burung Grid</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Pengaturan Kondisi Batas &quot;%1&quot; tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Pengaturan Kondisi Batas "%1" tidak dipetakan setelah diedit terakhir kali. Apakah Anda ingin menjalankan pemetaan sekarang?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Catatan: Saat variasi diaktifkan, variasi bernama &quot;Default&quot; dibuat, dan semua data geografis dipindahkan ke situ. Anda dapat menambah, mengganti nama, menghapus variasi dari &quot;Browser Objek&quot;. Anda dapat memindahkan, menyalin data geografis antar variasi. Data atribut kisi yang dibuat dari variasi yang Anda pilih dengan &quot;Variasi untuk diteruskan ke pemecah&quot; diteruskan ke pemecah. Anda dapat menyiapkan beberapa variasi, beralih mana yang akan diteruskan ke pemecah, dan memastikan efek perbedaannya.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Catatan: Saat variasi diaktifkan, variasi bernama "Default" dibuat, dan semua data geografis dipindahkan ke situ. Anda dapat menambah, mengganti nama, menghapus variasi dari "Browser Objek". Anda dapat memindahkan, menyalin data geografis antar variasi. Data atribut kisi yang dibuat dari variasi yang Anda pilih dengan "Variasi untuk diteruskan ke pemecah" diteruskan ke pemecah. Anda dapat menyiapkan beberapa variasi, beralih mana yang akan diteruskan ke pemecah, dan memastikan efek perbedaannya.</translation>
     </message>
 </context>
 <context>
@@ -1112,121 +1110,121 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeAbstractCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation type="unfinished">Sunting nilai...</translation>
+        <translation>Sunting nilai...</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation type="unfinished">Ekspor...</translation>
+        <translation>Ekspor...</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation type="unfinished">Hasilkan data cloud titik</translation>
+        <translation>Hasilkan data titik cloud</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation type="unfinished">Edit nilai dengan menentukan perbedaan...</translation>
+        <translation>Edit nilai dengan menentukan perbedaan...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation type="unfinished">Edit nilai dengan menentukan rasio...</translation>
+        <translation>Edit nilai dengan menentukan rasio...</translation>
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation type="unfinished"></translation>
+        <translation>jaringan %1 Pengaturan Tampilan Atribut (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Peringatan</translation>
+        <translation>Peringatan</translation>
     </message>
     <message>
         <source>Please select only one cell.</source>
-        <translation type="unfinished"></translation>
+        <translation>Silakan pilih hanya satu sel.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation type="unfinished">Sunting %1</translation>
+        <translation>Sunting %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation type="unfinished">Masukkan nilai baru dari %1 pada sel grid yang dipilih.</translation>
+        <translation>Masukkan nilai baru dari %1 pada sel grid yang dipilih.</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation type="unfinished">perbedaan</translation>
+        <translation>perbedaan</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation type="unfinished">perbandingan</translation>
+        <translation>perbandingan</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation type="unfinished">File Topografi (*.tpo)</translation>
+        <translation>File Topografi (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation type="unfinished">Ekspor sebagai Data Topografi</translation>
+        <translation>Ekspor sebagai Data Topografi</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="unfinished">Terjadi kesalahan saat membuka file.</translation>
+        <translation>Terjadi kesalahan saat membuka file.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="unfinished">Kondisi kisi berhasil diekspor ke %1.</translation>
+        <translation>Kondisi jaringan berhasil diekspor ke %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kesalahan</translation>
+        <translation>Kesalahan</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informasi</translation>
+        <translation>Informasi</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation type="unfinished">%1 dihasilkan.</translation>
+        <translation>%1 dihasilkan.</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation type="unfinished">Berlaku %1 ke %2</translation>
+        <translation>Menerapkan %1 ke %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation type="unfinished">Masukkan %1 dari %2 pada sel grid yang dipilih.</translation>
+        <translation>Masukkan %1 dari %2 pada sel grid yang dipilih.</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="unfinished">Pengaturan Tampilan Atribut Sel Grid</translation>
+        <translation>Pengaturan Tampilan Atribut Sel Grid</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation type="unfinished">Colormap (Pengaturan ini umum dengan Data Geografis)</translation>
+        <translation>Peta Warna (Pengaturan ini umum pada Data Geografis)</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation type="unfinished">Lebar Garis:</translation>
+        <translation>Lebar Garis:</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished">Impor (&amp;I)...</translation>
+        <translation>Impor (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished">Ekspor (&amp;E)...</translation>
+        <translation>Ekspor (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation type="unfinished">Tampilkan Browser Atribut</translation>
+        <translation>Tampilkan Browser Atribut</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation type="unfinished">Perubahan Atribut Sel</translation>
+        <translation>Perubahan Atribut Sel</translation>
     </message>
 </context>
 <context>
@@ -1321,7 +1319,7 @@ The grid attribute data created from the variation that you select with &quot;Va
     </message>
     <message>
         <source>Cell</source>
-        <translation type="unfinished"></translation>
+        <translation>Sel</translation>
     </message>
 </context>
 <context>
@@ -1400,28 +1398,28 @@ The grid attribute data created from the variation that you select with &quot;Va
     <name>PreProcessorGridAttributeIEdgeDataItem</name>
     <message>
         <source>Edge (I-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tepi (arah I)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
     <message>
         <source>Edge (I-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut tepi (arah I).</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tepi (arah J)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
     <message>
         <source>Edge (J-direction) attributes</source>
-        <translation type="unfinished"></translation>
+        <translation>Atribut tepi (arah J).</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Menjalankan (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Atribut berikut tidak dipetakan, karena nilai keluaran generator grid untuk atribut tersebut. Jika Anda ingin memetakan data geografis untuk mereka secara paksa, silakan petakan secara manual dengan menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
+        <translation>Atribut berikut tidak dipetakan, karena nilai keluaran generator grid untuk atribut tersebut. Jika Anda ingin memetakan data geografis untuk mereka secara paksa, silakan petakan secara manual dengan menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Pemetaan data geografis selesai</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut kisi &quot;%1&quot; diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut kisi "%1" diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Kondisi batas&quot;%1&quot; diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Kondisi batas"%1" diedit dengan tangan. Saat Anda menjalankan pemetaan, semua modifikasi yang Anda buat akan dibuang. Apakah Anda benar-benar ingin menjalankan pemetaan?</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Mobil</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Saat kisi dibuat, Anda akan ditanya apakah untuk mengeksekusi Pemetaan Atribut setiap saat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Saat kisi dibuat, Anda akan ditanya apakah untuk mengeksekusi Pemetaan Atribut setiap saat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Pemetaan atribut dijalankan hanya ketika Anda memilih menu &quot;Jalankan&quot; secara manual.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Pemetaan atribut dijalankan hanya ketika Anda memilih menu "Jalankan" secara manual.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Pengaturan Peta Warna</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan:&lt;/span&gt; Gunakan tab Colormap untuk mengedit pengaturan warna&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan:&lt;/span&gt; Gunakan tab Colormap untuk mengedit pengaturan warna&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2365,7 +2363,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Mengatur Skalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Buka Jendela Pemandangan Mata Burung (&amp;B)</translation>
     </message>
     <message>
@@ -2391,12 +2389,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">File CGNS ini dibuat untuk %1 Versi: kapan %2. Ini tidak kompatibel dengan pemecah saat ini. Mungkin hanya sebagian dari grid yang akan diimpor. Apakah Anda benar-benar ingin mengimpor kisi dari file ini?</translation>
+        <translation>File CGNS ini dibuat untuk %1 Versi: kapan %2. Ini tidak kompatibel dengan pemecah saat ini. Mungkin hanya sebagian jaringan saja yang akan diimpor. Apakah Anda benar-benar ingin mengimpor grid dari file ini?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="unfinished">File CGNS ini tidak memiliki informasi pemecah masalah. Kami tidak dapat memeriksa apakah file CGNS ini kompatibel dengan solver. Jika tidak kompatibel, mungkin hanya sebagian dari grid yang akan diimpor. Apakah Anda benar-benar ingin mengimpor kisi dari file ini?</translation>
+        <translation>File CGNS ini tidak memiliki informasi pemecah. Kami tidak dapat memeriksa apakah file CGNS ini kompatibel dengan pemecahnya. Jika tidak kompatibel, mungkin hanya sebagian jaringan yang akan diimpor. Apakah Anda benar-benar ingin mengimpor grid dari file ini?</translation>
     </message>
 </context>
 <context>
@@ -2748,7 +2746,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorStructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Pengaturan Bentuk Kisi</translation>
+        <translation>Pengaturan Bentuk Kotak</translation>
     </message>
 </context>
 <context>
@@ -2770,7 +2768,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorUnstructured2dGridShapeDataItem</name>
     <message>
         <source>Grid Shape Setting</source>
-        <translation type="unfinished">Pengaturan Bentuk Kisi</translation>
+        <translation>Pengaturan Bentuk Kotak</translation>
     </message>
 </context>
 <context>
