@@ -3,6 +3,7 @@ TEMPLATE = lib
 INCLUDEPATH += ..
 
 DEFINES += GEOIO_LIBRARY
+DEFINES += ANSI_DECLARATORS
 
 QT += widgets
 
@@ -26,13 +27,20 @@ unix {
 }
 LIBS += -liricMisc
 
+# iricTriangle
+
+unix {
+        LIBS += -L"../../triangle"
+}
+LIBS += -liricTriangle
+
 ######################
 # External libraries #
 ######################
 
 # shapelib
 
-win32{
+win32 {
 	LIBS += -lshapelib_i
 }
 
@@ -44,6 +52,12 @@ win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
 	LIBS += -L$(SolutionDir)/libdlls/$(Configuration)
 }
+
+# VTK
+
+LIBS += \
+	-lvtkCommonCore-6.1 \
+	-lvtkCommonDataModel-6.1
 
 # Input
 HEADERS += geoio_global.h \
