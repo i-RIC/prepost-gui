@@ -6,6 +6,7 @@
 #include "geodatapolygonregionpolygon.h"
 #include "geodatapolygontrianglethread.h"
 
+#include <geoio/polygonutil.h>
 #include <misc/stringtool.h>
 #include <triangle/triangle.h>
 
@@ -33,122 +34,33 @@ namespace {
 
 const static int TRIANGLE_WAITTIME_MSEC = 200;
 
-void freeTriangleInput(triangulateio* in)
+geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, const geos::geom::GeometryFactory* f)
 {
-	delete in->pointlist;
-	delete in->segmentlist;
-	delete in->regionlist;
-	delete in->holelist;
-}
-
-template <typename T>
-void freeMemory(T* memory)
-{
-	if (memory == NULL) {return;}
-	trifree(memory);
-}
-
-void freeTriangleOutput(triangulateio* out)
-{
-	freeMemory(out->pointlist);
-	freeMemory(out->trianglelist);
-}
-
-void clearTrianglateio(triangulateio* io)
-{
-	io->pointlist = NULL;
-	io->pointattributelist = NULL;
-	io->pointmarkerlist = NULL;
-	io->numberofpoints = 0;
-	io->numberofpointattributes = 0;
-	io->trianglelist = NULL;
-	io->triangleattributelist = NULL;
-	io->trianglearealist = NULL;
-	io->neighborlist = NULL;
-	io->numberoftriangles = 0;
-	io->numberofcorners = 0;
-	io->numberoftriangleattributes = 0;
-	io->segmentlist = NULL;
-	io->segmentmarkerlist = NULL;
-	io->numberofsegments = 0;
-	io->holelist = NULL;
-	io->numberofholes = 0;
-	io->regionlist = NULL;
-	io->numberofregions = 0;
-	io->edgelist = NULL;
-	io->edgemarkerlist = NULL;
-	io->normlist = NULL;
-	io->numberofedges = 0;
-}
-
-struct Point2D {
-	Point2D(double xx, double yy):
-		x {xx},
-		y {yy}
-	{}
-	bool operator<(const Point2D& p) const {
-		if (x != p.x) {return x < p.x;}
-
-		return y < p.y;
+	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
+	QPolygonF regionPol = pol->polygon();
+	if (regionPol.size() < 4) {
+		return nullptr;
 	}
 
-	double x;
-	double y;
-};
+	geos::geom::CoordinateSequence* cs = csf->create(regionPol.size() , 2);
 
-void addPointsAndSegments(triangulateio* in, std::map<Point2D, unsigned int>* pointMap, std::vector<int>* pointIdVec, int* pointCount, int* pOff, int* sOff, const QPointF& cOff, const geos::geom::LineString* ls)
-{
-	std::vector<int> pointIds;
-
-	for (int i = 0; i < static_cast<int> (ls->getNumPoints()) - 1; ++i) {
-		const auto& coord = ls->getCoordinateN(i);
-		Point2D point(coord.x - cOff.x(), coord.y - cOff.y());
-		auto it = pointMap->find(point);
-		unsigned int pointId;
-		if (it == pointMap->end()) {
-			pointId = static_cast<int> (pointMap->size());
-			pointMap->insert({point, pointId});
-			pointIdVec->push_back(*pointCount);
-			*(in->pointlist + *pOff)     = point.x;
-			*(in->pointlist + *pOff + 1) = point.y;
-			*pOff += 2;
-		} else {
-			pointId = it->second;
-		}
-		pointIds.push_back(pointId);
-		*pointCount += 1;
+	for (int i = 0; i < regionPol.size(); ++i) {
+		QPointF p = regionPol.at(i);
+		geos::geom::Coordinate c(p.x(), p.y(), 0);
+		cs->setAt(c, i);
 	}
-
-	std::vector<int> segmentVec;
-
-	for (int i = 0; i < static_cast<int> (pointIds.size()); ++i) {
-		*(in->segmentlist + *sOff)     = pointIds.at(i) + 1;
-		*(in->segmentlist + *sOff + 1) = pointIds.at((i + 1) % pointIds.size()) + 1;
-		segmentVec.push_back(pointIds.at(i) + 1);
-		segmentVec.push_back(pointIds.at((i + 1) % pointIds.size()) + 1);
-
-		*sOff += 2;
-	}
+	return f->createLinearRing(cs);
 }
 
 } // namespace
-
-bool operator<(const QPointF& p1, const QPointF& p2)
-{
-	if (p1.x() != p2.x()) {
-		return p1.x() < p2.x();
-	}
-	return p1.y() < p2.y();
-}
 
 GeoDataPolygonTriangleThread* GeoDataPolygonTriangleThread::m_thread = 0;
 
 void GeoDataPolygonTriangleThread::addJob(GeoDataPolygon *polygon, bool noDraw)
 {
 	QMutexLocker locker(&m_mutex);
-	std::list<Job>::iterator it;
-	for (it = m_jobQueue.begin(); it != m_jobQueue.end(); ++it) {
-		if (it->targetPolygon == polygon && it->noDraw == noDraw) {return;}
+	for (const auto& job : m_jobQueue) {
+		if (job.targetPolygon == polygon && job.noDraw == noDraw) {return;}
 	}
 
 	if (m_currentJob != nullptr && m_currentJob->targetPolygon == polygon && m_currentJob->noDraw == noDraw) {
@@ -257,110 +169,27 @@ void GeoDataPolygonTriangleThread::resetTimer()
 	m_timeToStartJob = curr.addMSecs(TRIANGLE_WAITTIME_MSEC);
 }
 
-void GeoDataPolygonTriangleThread::setupTriangleInput(triangulateio* in, std::vector<int>* pointIdVec, GeoDataPolygon* p, QPointF* offset)
+geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(GeoDataPolygon* pol)
 {
-	int pointCount = 0;
-	int segmentCount = 0;
-	int regionCount = 1;
-
-	*offset = p->regionPolygon()->polygon().boundingRect().topLeft();
-	geos::geom::Polygon* resultPol = getGeosPolygon(p, *offset);
-	if (resultPol->isEmpty()){
-		throw geos::util::GEOSException("No polygon specified");
+	geos::geom::LinearRing* regionRing = createLinearRing(pol->regionPolygon(), m_geomFactory);
+	if (regionRing == nullptr || regionRing->getNumPoints() < 4) {
+		delete regionRing;
+		return nullptr;
 	}
-
-	const geos::geom::LineString* eLS = resultPol->getExteriorRing();
-
-	pointCount += (eLS->getNumPoints() - 1);
-	segmentCount += (eLS->getNumPoints() - 1);
-	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
-		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
-		pointCount += (iLS->getNumPoints() - 1);
-		segmentCount += (iLS->getNumPoints() - 1);
-	}
-	clearTrianglateio(in);
-
-	in->pointlist = new double[pointCount * 2];
-	in->numberofpoints = pointCount;
-	in->segmentlist = new int[segmentCount * 2];
-	in->numberofsegments = segmentCount;
-	in->holelist = new double[p->holePolygons().size() * 2];
-	in->numberofholes = p->holePolygons().size();
-	in->regionlist = new double[regionCount * 4];
-	in->numberofregions = regionCount;
-
-	pointCount = 0;
-	int pOff = 0;
-	int sOff = 0;
-	std::map<Point2D, unsigned int> pointMap;
-
-	const auto& coord = eLS->getCoordinateN(0);
-	QPointF cOff(0, 0);
-
-	addPointsAndSegments(in, &pointMap, pointIdVec, &pointCount, &pOff, &sOff, cOff, eLS);
-	geos::geom::Point* ip = resultPol->getInteriorPoint();
-	QPointF innerP(ip->getX(), ip->getY());
-	*(in->regionlist)	 = innerP.x();
-	*(in->regionlist + 1) = innerP.y();
-	*(in->regionlist + 2) = 0;
-	*(in->regionlist + 3) = resultPol->getEnvelope()->getArea();
-	std::vector<GeoDataPolygonAbstractPolygon*> emptyHoles;
-	for (int i = 0; i < resultPol->getNumInteriorRing(); ++i){
-		const geos::geom::LineString* iLS = resultPol->getInteriorRingN(i);
-		addPointsAndSegments(in, &pointMap, pointIdVec, &pointCount, &pOff, &sOff, cOff, iLS);
-
-		innerP = polygonInnerPoint(p->holePolygons().at(i), emptyHoles, *offset);
-		*(in->holelist + i * 2	) = innerP.x();
-		*(in->holelist + i * 2 + 1) = innerP.y();
-	}
-	in->numberofpoints = pointIdVec->size();
-
-	delete resultPol;
-}
-
-geos::geom::LinearRing* createLinearRing(GeoDataPolygonAbstractPolygon* pol, const QPointF& offset, const geos::geom::GeometryFactory* f)
-{
-	const geos::geom::CoordinateSequenceFactory* csf = f->getCoordinateSequenceFactory();
-	QPolygonF regionPol = pol->polygon(- offset);
-	geos::geom::CoordinateSequence* cs = csf->create(regionPol.size() , 2);
-
-	std::set<QPointF> points;
-
-	for (unsigned int i = 0; i < regionPol.size(); ++i) {
-		QPointF p = regionPol.at(i);
-		geos::geom::Coordinate c(p.x(), p.y(), 0);
-		cs->setAt(c, i);
-
-		if (i == regionPol.size() - 1) {continue;}
-
-		points.insert(p);
-	}
-	return f->createLinearRing(cs);
-}
-
-geos::geom::Polygon* GeoDataPolygonTriangleThread::getGeosPolygon(GeoDataPolygon* pol, const QPointF& offset)
-{
-	geos::geom::LinearRing* regionRing = createLinearRing(pol->regionPolygon(), offset, m_geomFactory);
 	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
 	for (GeoDataPolygonAbstractPolygon* h : pol->holePolygons()) {
-		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
+		auto holeRing = createLinearRing(h, m_geomFactory);
+		if (holeRing == nullptr || holeRing->getNumPoints() < 4) {
+			delete regionRing;
+			for (auto h : *holesVec) {
+				delete h;
+			}
+			return nullptr;
+		}
+
+		holesVec->push_back(holeRing);
 	}
 	return m_geomFactory->createPolygon(regionRing, holesVec);
-}
-
-QPointF GeoDataPolygonTriangleThread::polygonInnerPoint(GeoDataPolygonAbstractPolygon* region, const std::vector<GeoDataPolygonAbstractPolygon*>& holes, const QPointF& offset)
-{
-	geos::geom::LinearRing* regionRing = createLinearRing(region, offset, m_geomFactory);
-	std::vector<geos::geom::Geometry*>* holesVec = new std::vector<geos::geom::Geometry*> ();
-	for (int i = 0; i < holes.size(); ++i) {
-		GeoDataPolygonAbstractPolygon* h = holes.at(i);
-		holesVec->push_back(createLinearRing(h, offset, m_geomFactory));
-	}
-	geos::geom::Polygon* poly = m_geomFactory->createPolygon(regionRing, holesVec);
-	geos::geom::Point* ip = poly->getInteriorPoint();
-	QPointF ret(ip->getX(), ip->getY());
-	delete poly;
-	return ret;
 }
 
 GeoDataPolygonTriangleThread::GeoDataPolygonTriangleThread()
@@ -383,62 +212,45 @@ GeoDataPolygonTriangleThread::~GeoDataPolygonTriangleThread()
 
 void GeoDataPolygonTriangleThread::runTriangle()
 {
-	m_mutex.lock();
-	GeoDataPolygon* p = m_currentJob->targetPolygon;
-	p->polyData()->Reset();
-	p->polyData()->Modified();
+	QMutexLocker locker(&m_mutex);
 
-	QPointF offset;
-	triangulateio in, out;
-	std::vector<int> pointIdVec;
-
-	try {
-		setupTriangleInput(&in, &pointIdVec, p, &offset);
-		m_mutex.unlock();
-	} catch (geos::util::GEOSException&) {
-		m_mutex.unlock();
+	auto p = getGeosPolygon(m_currentJob->targetPolygon);
+	if (p == nullptr) {
 		return;
 	}
+	std::vector<QPointF> points;
+	std::vector<unsigned int> indices;
 
-	char arg[] = "pQ";
-	clearTrianglateio(&out);
-	triangulate(&(arg[0]), &in, &out, 0);
+	PolygonUtil::triangulate(p, &points, &indices);
 
-	// free memory
-	freeTriangleInput(&in);
-	// copy the result to VTK containers.
-	vtkPoints* points = vtkPoints::New();
-
-	points->SetDataTypeToDouble();
-	points->Allocate(out.numberofpoints);
-	for (int i = 0; i < out.numberofpoints; ++i){
-		double v[3];
-		v[0] = *(out.pointlist + i * 2	) + offset.x();
-		v[1] = *(out.pointlist + i * 2 + 1) + offset.y();
-		v[2] = 0;
-		points->InsertNextPoint(v);
-	}
 	m_isOutputting = true;
 
-	vtkCellArray* ca = vtkCellArray::New();
+	// copy the result to VTK containers.
+	auto vPoints = vtkPoints::New();
 
+	vPoints->SetDataTypeToDouble();
+	vPoints->Allocate(points.size());
+	for (int i = 0; i < points.size(); ++i){
+		double v[3];
+		const auto& p = points.at(i);
+		v[0] = p.x();
+		v[1] = p.y();
+		v[2] = 0;
+		vPoints->InsertNextPoint(v);
+	}
+	vtkCellArray* ca = vtkCellArray::New();
 	vtkIdType ids[3];
-	for (int i = 0; i < out.numberoftriangles; ++i){
+	for (int i = 0; i < static_cast<int> (indices.size()) / 3; ++i){
 		for (int j = 0; j < 3; ++j) {
-			auto pointId = *(out.trianglelist + i * 3 + j) - 1;
+			auto pointId = indices.at(i * 3 + j);
 			ids[j] = pointId;
 		}
 		ca->InsertNextCell(3, ids);
 	}
-	m_mutex.lock();
-
-	freeTriangleOutput(&out);
 
 	m_isOutputting = false;
 	if (! (m_abort || m_canceled)) {
-		emit shapeUpdated(m_currentJob->targetPolygon, points, ca, m_currentJob->noDraw);
+		emit shapeUpdated(m_currentJob->targetPolygon, vPoints, ca, m_currentJob->noDraw);
 	}
 	m_currentJob = nullptr;
-
-	m_mutex.unlock();
 }
