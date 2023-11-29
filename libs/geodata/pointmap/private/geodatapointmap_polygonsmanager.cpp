@@ -164,6 +164,8 @@ void GeoDataPointmap::PolygonsManager::addActionsToMenu(QMenu* menu)
 	sortMenu->addAction(m_polygonGroup->moveUpAction());
 	sortMenu->addAction(m_polygonGroup->moveDownAction());
 	sortMenu->addAction(m_polygonGroup->moveToBottomAction());
+	menu->addSeparator();
+	menu->addAction(m_polygonGroup->deleteAction());
 }
 
 void GeoDataPointmap::PolygonsManager::activate(VTK2DGraphicsView* v)

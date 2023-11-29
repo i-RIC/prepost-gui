@@ -541,8 +541,6 @@ void GeoDataPointmap::updateMenu(QMenu* menu)
 	menu->addAction(impl->m_mergeAction);
 	menu->addAction(impl->m_mappingSettingAction);
 	menu->addAction(impl->m_displaySettingAction);
-	menu->addSeparator();
-	menu->addAction(deleteAction());
 }
 
 void GeoDataPointmap::updateActorSetting()
