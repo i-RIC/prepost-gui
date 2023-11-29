@@ -491,6 +491,19 @@ void Post2dWindowGridTypeDataItem::updatePolyDataValueRanges()
 
 void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	// load colormap data
+	QDomNode cmNode = iRIC::getChildNode(node, "ColormapSettings");
+	if (! cmNode.isNull()){
+		for (int i = 0; i < cmNode.childNodes().count(); ++i) {
+			QDomElement elem = cmNode.childNodes().at(i).toElement();
+			std::string name = iRIC::toStr(elem.attribute("name"));
+			auto it = m_colorMapSettingContainers.find(name);
+			if (it != m_colorMapSettingContainers.end()) {
+				it->second->load(elem);
+			}
+		}
+	}
+
 	QDomNode rNode = iRIC::getChildNode(node, "GeoData");
 	if (! rNode.isNull() && m_geoDataItem != nullptr) {
 		m_geoDataItem->loadFromProjectMainFile(rNode);
@@ -513,6 +526,16 @@ void Post2dWindowGridTypeDataItem::doLoadFromProjectMainFile(const QDomNode& nod
 void Post2dWindowGridTypeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_gridType->name().c_str());
+
+	// write colormap data.
+	writer.writeStartElement("ColormapSettings");
+	for (const auto& pair : m_colorMapSettingContainers) {
+		writer.writeStartElement("ColormapSetting");
+		writer.writeAttribute("name", pair.first.c_str());
+		pair.second->save(writer);
+		writer.writeEndElement();
+	}
+	writer.writeEndElement();
 
 	if (m_geoDataItem != nullptr) {
 		writer.writeStartElement("GeoData");
