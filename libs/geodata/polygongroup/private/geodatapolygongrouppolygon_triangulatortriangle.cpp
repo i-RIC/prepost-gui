@@ -162,12 +162,18 @@ std::vector<unsigned int> GeoDataPolygonGroupPolygon::TriangulatorTriangle::tria
 	in.numberofpoints = pointIdVec.size();
 
 	// setup regionlist
-	geos::geom::Point* ip = pol->getInteriorPoint();
-	*(in.regionlist + 0) = ip->getX() - offset.x();
-	*(in.regionlist + 1) = ip->getY() - offset.y();
-	*(in.regionlist + 2) = 0;
-	*(in.regionlist + 3) = pol->getEnvelope()->getArea();
-	delete ip;
+	geos::geom::Point* ip = nullptr;
+	try {
+		ip = pol->getInteriorPoint();
+		*(in.regionlist + 0) = ip->getX() - offset.x();
+		*(in.regionlist + 1) = ip->getY() - offset.y();
+		*(in.regionlist + 2) = 0;
+		*(in.regionlist + 3) = pol->getEnvelope()->getArea();
+		delete ip;
+	} catch (...) {
+		std::vector<unsigned int> ret;
+		return ret;
+	}
 
 	// setup holelist
 	auto f = geos::geom::GeometryFactory::getDefaultInstance();

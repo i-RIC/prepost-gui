@@ -23,6 +23,8 @@
 #include <QPointF>
 #include <QPolygonF>
 
+#include <memory>
+
 using namespace geos::geom;
 
 namespace {
@@ -103,7 +105,18 @@ bool GeoDataPolygonGroupPolygon::isInside(const QPointF& point) const
 	Coordinate coord(point.x(), point.y());
 	auto p = std::unique_ptr<geos::geom::Point>(f->createPoint(coord));
 
-	return (pol->contains(p.get()));
+	if (pol->isValid()) {
+		return (pol->contains(p.get()));
+	} else {
+		std::vector<geos::geom::Geometry*> emptyHoles;
+		std::unique_ptr<geos::geom::Polygon> tmpPol(f->createPolygon(*dynamic_cast<const geos::geom::LinearRing*> (pol->getExteriorRing()), emptyHoles));
+		if (tmpPol->isValid()) {
+			return tmpPol->contains(p.get());
+		} else {
+			auto bbox = pol->getExteriorRing()->getBoundary();
+			return bbox->contains(p.get());
+		}
+	}
 }
 
 geos::geom::Polygon* GeoDataPolygonGroupPolygon::geosPolygon() const
