@@ -141,6 +141,8 @@ void Post3dWindowNodeVectorArrowGroupDataItem::doLoadFromProjectMainFile(const Q
 			auto label = QString("Face%1").arg(idx);
 			auto item = new Post3dWindowNodeVectorArrowDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
+			connect(item, &Post3dWindowNodeVectorArrowDataItem::destroyed, this, &Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting);
+
 			m_childItems.push_back(item);
 			++ idx;
 		}
@@ -183,6 +185,7 @@ void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector
 		auto item = new Post3dWindowNodeVectorArrowDataItem(label, this);
 		item->setSetting(s);
 		item->updateZScale(tItem->zScale());
+		connect(item, &Post3dWindowNodeVectorArrowDataItem::destroyed, this, &Post3dWindowNodeVectorArrowGroupDataItem::updateActorSetting);
 
 		m_childItems.push_back(item);
 		++ idx;

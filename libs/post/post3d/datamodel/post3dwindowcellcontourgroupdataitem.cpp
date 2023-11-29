@@ -103,6 +103,8 @@ void Post3dWindowCellContourGroupDataItem::doLoadFromProjectMainFile(const QDomN
 			QString label = childElem.attribute("label");
 			auto item = new Post3dWindowCellContourDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
+			connect(item, &Post3dWindowCellContourDataItem::destroyed, this, &Post3dWindowCellContourGroupDataItem::updateActorSetting);
+
 			m_childItems.push_back(item);
 		}
 	}
@@ -194,6 +196,7 @@ void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWin
 		auto item = new Post3dWindowCellContourDataItem(label, this);
 		item->setSetting(range);
 		item->updateZScale(tItem->zScale());
+		connect(item, &Post3dWindowCellContourDataItem::destroyed, this, &Post3dWindowCellContourGroupDataItem::updateActorSetting);
 
 		m_childItems.push_back(item);
 		++ idx;
