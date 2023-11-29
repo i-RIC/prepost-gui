@@ -43,7 +43,7 @@ LIBS += -liricTriangle
 
 # shapelib
 
-win32{
+win32 {
 	LIBS += -lshapelib_i
 }
 
