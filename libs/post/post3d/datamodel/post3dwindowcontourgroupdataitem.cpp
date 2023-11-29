@@ -125,6 +125,8 @@ void Post3dWindowContourGroupDataItem::doLoadFromProjectMainFile(const QDomNode&
 			QString label = childElem.attribute("label");
 			auto item = new Post3dWindowContourDataItem(label, this);
 			item->loadFromProjectMainFile(childElem);
+			connect(item, &Post3dWindowContourDataItem::destroyed, this, &Post3dWindowContourGroupDataItem::updateActorSetting);
+
 			m_childItems.push_back(item);
 		}
 	}
@@ -216,6 +218,7 @@ void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFa
 		auto item = new Post3dWindowContourDataItem(label, this);
 		item->setSetting(face);
 		item->updateZScale(tItem->zScale());
+		connect(item, &Post3dWindowContourDataItem::destroyed, this, &Post3dWindowContourGroupDataItem::updateActorSetting);
 
 		m_childItems.push_back(item);
 		++ idx;
