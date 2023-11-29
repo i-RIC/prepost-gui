@@ -9,6 +9,7 @@ GeoDataPointmap::DisplaySettingWidget::DisplaySettingWidget(QWidget *parent) :
 	ModifyCommandWidget {parent},
 	m_displaySetting {nullptr},
 	m_colorMapWidget {nullptr},
+	m_polygonColorMapWidget {nullptr},
 	ui(new Ui::GeoDataPointmap_DisplaySettingWidget)
 {
 	ui->setupUi(this);
@@ -27,6 +28,8 @@ QUndoCommand* GeoDataPointmap::DisplaySettingWidget::createModifyCommand(bool ap
 	if (m_colorMapWidget != nullptr) {
 		command->addCommand(m_colorMapWidget->createModifyCommand(apply));
 	}
+	command->addCommand(m_polygonColorMapWidget->createModifyCommand(apply));
+
 	return command;
 }
 
@@ -87,4 +90,10 @@ void GeoDataPointmap::DisplaySettingWidget::setColorMapWidget(ModifyCommandWidge
 {
 	m_colorMapWidget = widget;
 	ui->colorMapWidget->setWidget(widget);
+}
+
+void GeoDataPointmap::DisplaySettingWidget::setPolygonColorMapWidget(ModifyCommandWidget* widget)
+{
+	m_polygonColorMapWidget = widget;
+	ui->polygonColorMapWidget->setWidget(widget);
 }

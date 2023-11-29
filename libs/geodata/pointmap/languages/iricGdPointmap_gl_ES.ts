@@ -346,6 +346,29 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap::PolygonsManager</name>
+    <message>
+        <source>Mapping Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">TIN</translation>
+    </message>
+    <message>
+        <source>Maximum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighted Average</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapDelPtsGreaterThanDialog</name>
     <message>
         <source>Delete Points</source>
@@ -1042,6 +1065,14 @@
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
         <translation>Mapa de cores (esta configuración é común para todos os elementos do mesmo grupo de datos xeográficos)</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for Mapping setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -378,6 +378,29 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap::PolygonsManager</name>
+    <message>
+        <source>Mapping Setting</source>
+        <translation>マッピング設定</translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation>TIN</translation>
+    </message>
+    <message>
+        <source>Maximum</source>
+        <translation>最大値</translation>
+    </message>
+    <message>
+        <source>Minimum</source>
+        <translation>最小値</translation>
+    </message>
+    <message>
+        <source>Weighted Average</source>
+        <translation>重み付け平均</translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
@@ -1185,6 +1208,14 @@
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
         <translation>カラーマップ (この設定は同じ地理情報グループ内の全要素で共通です)</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Colormap for Mapping setting</source>
+        <translation>マッピング設定のカラーマップ</translation>
     </message>
 </context>
 <context>

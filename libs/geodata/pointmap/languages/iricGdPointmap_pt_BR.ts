@@ -358,6 +358,29 @@
     </message>
 </context>
 <context>
+    <name>GeoDataPointmap::PolygonsManager</name>
+    <message>
+        <source>Mapping Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TIN</source>
+        <translation type="unfinished">LATA</translation>
+    </message>
+    <message>
+        <source>Maximum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimum</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weighted Average</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>GeoDataPointmapAddPointDialog</name>
     <message>
         <source>Add Points</source>
@@ -1109,6 +1132,14 @@
     <message>
         <source>Colormap (This setting is the common for all items in the same geographic data group)</source>
         <translation>Colormap (Esta configuração é comum para todos os itens no mesmo grupo de dados geográficos)</translation>
+    </message>
+    <message>
+        <source>Colormap</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap for Mapping setting</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

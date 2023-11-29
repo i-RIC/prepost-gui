@@ -20,6 +20,8 @@ class EnumLoaderT : public EnumLoader
 public:
 	virtual ~EnumLoaderT();
 
+	void addEnumeration(V value, const std::string& english, const QString& caption);
+
 	const QMap<V, QString>& enumerations() const;
 	const QMap<V, std::string>& englishEnumerations() const;
 	QMap<QVariant, QString> variantEnumerations() const override;

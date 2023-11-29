@@ -6,6 +6,7 @@
 #include <guibase/vtktool/vtkpolydatamapperutil.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/pre/base/preprocessordatamodelinterface.h>
+#include <guicore/pre/base/preprocessorgeodatagroupdataiteminterface.h>
 #include <guicore/pre/base/preprocessorgraphicsviewinterface.h>
 
 #include <vtkActor.h>
@@ -160,7 +161,8 @@ void GeoDataPolygonAbstractPolygon::setZDepthRange(double /*min*/, double max)
 
 void GeoDataPolygonAbstractPolygon::updateScalarValues()
 {
-	double val = impl->m_parent->variantValue().toDouble();
+	auto att = impl->m_parent->geoDataGroupDataItem()->condition();
+	double val = att->colorMapValue(impl->m_parent->variantValue()).toDouble();
 	impl->m_linesScalarValues->Reset();
 	for (int i = 0; i < impl->m_polygonController.linesPolyData()->GetNumberOfLines(); ++i) {
 		impl->m_linesScalarValues->InsertNextValue(val);
