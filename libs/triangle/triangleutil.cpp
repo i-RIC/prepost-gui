@@ -1,3 +1,5 @@
+#define REAL double
+
 #include "triangle.h"
 #include "triangleutil.h"
 
