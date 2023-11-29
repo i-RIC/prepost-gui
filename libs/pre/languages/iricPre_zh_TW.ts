@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>導入網格時出錯。</translation>
+        <translation type="vanished">導入網格時出錯。</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>這個 CGNS 文件是為 %1 版本 %2.它與當前的求解器不兼容。也許只有一部分網格會被導入。您真的要從此文件導入網格嗎？</translation>
+        <translation type="vanished">這個 CGNS 文件是為 %1 版本 %2.它與當前的求解器不兼容。也許只有一部分網格會被導入。您真的要從此文件導入網格嗎？</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>此 CGNS 文件沒有求解器信息。我們無法檢查此 CGNS 文件是否與求解器兼容。如果不兼容，可能只會導入網格的一部分。您真的要從此文件導入網格嗎？</translation>
+        <translation type="vanished">此 CGNS 文件沒有求解器信息。我們無法檢查此 CGNS 文件是否與求解器兼容。如果不兼容，可能只會導入網格的一部分。您真的要從此文件導入網格嗎？</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>該文件不包含可以導入的網格。</translation>
+        <translation type="vanished">該文件不包含可以導入的網格。</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>選擇網格</translation>
+        <translation type="vanished">選擇網格</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>選擇要導入的網格。</translation>
+        <translation type="vanished">選擇要導入的網格。</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>網格鳥瞰窗口</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 上次編輯後未映射。是否要立即執行映射？</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>邊界條件設置"%1" 上次編輯後沒有映射。現在要執行映射嗎？</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>邊界條件設置&quot;%1&quot; 上次編輯後沒有映射。現在要執行映射嗎？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,13 +1048,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>注意：啟用變體後，將創建名為“默認”的變體，並且所有地理數據都將移至該變體。您可以從“對象瀏覽器”中添加、重命名、刪除變體。您可以在變體之間移動、複製地理數據。從您使用“傳遞給求解器的變化”選擇的變化創建的網格屬性數據被傳遞給求解器。您可以準備多個變體，切換將哪個傳遞給求解器，並確保差異的效果。</translation>
     </message>
 </context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">編輯值...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">出口...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">生成點雲數據</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">通過指定差異來編輯值...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">通過指定比率編輯值...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">編輯 %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">輸入新的值 %1 在選定的網格單元格處。</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">區別</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">比率</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">地形文件 (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">導出為地形數據</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">打開文件時出錯。</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">網格條件成功導出到 %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">錯誤</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 生成。</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">申請 %1 到 %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">輸入 %1 的 %2 在選定的網格單元格處。</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">色彩圖（此設置與地理數據相同）</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">行寬：</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">進口 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">出口 (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">顯示屬性瀏覽器</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">細胞屬性變化</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>編輯值...</translation>
+        <translation type="vanished">編輯值...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>請僅選擇一個節點。</translation>
+        <translation type="vanished">請僅選擇一個節點。</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>編輯 %1</translation>
+        <translation type="vanished">編輯 %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>輸入新的值 %1 在選定的網格單元格處。</translation>
+        <translation type="vanished">輸入新的值 %1 在選定的網格單元格處。</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>通過指定差異來編輯值...</translation>
+        <translation type="vanished">通過指定差異來編輯值...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>通過指定比率編輯值...</translation>
+        <translation type="vanished">通過指定比率編輯值...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>區別</translation>
+        <translation type="vanished">區別</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>比率</translation>
+        <translation type="vanished">比率</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>申請 %1 到 %2</translation>
+        <translation type="vanished">申請 %1 到 %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>輸入 %1 的 %2 在選定的網格單元格處。</translation>
+        <translation type="vanished">輸入 %1 的 %2 在選定的網格單元格處。</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>出口...</translation>
+        <translation type="vanished">出口...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>地形文件 (*.tpo)</translation>
+        <translation type="vanished">地形文件 (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>導出為地形數據</translation>
+        <translation type="vanished">導出為地形數據</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>打開文件時出錯。</translation>
+        <translation type="vanished">打開文件時出錯。</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>網格條件成功導出到 %1.</translation>
+        <translation type="vanished">網格條件成功導出到 %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>信息</translation>
+        <translation type="vanished">信息</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 生成。</translation>
+        <translation type="vanished">%1 生成。</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>生成點雲數據</translation>
+        <translation type="vanished">生成點雲數據</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>網格單元格屬性顯示設置（ %1 )</translation>
+        <translation type="vanished">網格單元格屬性顯示設置（ %1 )</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>網格單元格屬性顯示設置</translation>
+        <translation type="vanished">網格單元格屬性顯示設置</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>進口 (&amp;I)...</translation>
+        <translation type="vanished">進口 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>出口 (&amp;E)...</translation>
+        <translation type="vanished">出口 (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>色彩圖（此設置與地理數據相同）</translation>
+        <translation type="vanished">色彩圖（此設置與地理數據相同）</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>對話</translation>
+        <translation type="vanished">對話</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>屬性</translation>
+        <translation type="vanished">屬性</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>顏色</translation>
+        <translation type="vanished">顏色</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>顯示屬性瀏覽器</translation>
+        <translation type="vanished">顯示屬性瀏覽器</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>細胞屬性變化</translation>
+        <translation type="vanished">細胞屬性變化</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,7 +1435,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>執行 (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>以下屬性未映射，因為網格生成器為它們輸出值。如果要強制為其映射地理數據，請通過菜單“網格”-&gt;“屬性映射”-&gt;“執行”手動映射。</translation>
     </message>
@@ -1301,11 +1456,11 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>繪製地理數據完成</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>網格屬性“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>邊界條件“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
 </context>
@@ -1324,19 +1479,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>汽車</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手動的</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>只有當您手動選擇“執行”菜單時才會執行屬性映射。</translation>
     </message>
     <message>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>主窗口</translation>
+        <translation type="vanished">主窗口</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>工具欄</translation>
+        <translation type="vanished">工具欄</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>方向：</translation>
+        <translation type="vanished">方向：</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>黑線：</translation>
+        <translation type="vanished">黑線：</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>紅線：</translation>
+        <translation type="vanished">紅線：</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>藍線：</translation>
+        <translation type="vanished">藍線：</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>（沒有數據）</translation>
+        <translation type="vanished">（沒有數據）</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>網格橫截面 (%1): J = %2</translation>
+        <translation type="vanished">網格橫截面 (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>網格橫截面 (%1): 我 = %2</translation>
+        <translation type="vanished">網格橫截面 (%1): 我 = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>顏色映射設置</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;使用Colormap選項卡編輯顏色設置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;使用Colormap選項卡編輯顏色設置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編輯 (&amp;E)...</translation>
+        <translation type="vanished">編輯 (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸</translation>
+        <translation type="vanished">左岸</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸</translation>
+        <translation type="vanished">右岸</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>編輯 %1</translation>
+        <translation type="vanished">編輯 %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>輸入新的值 %1 在選定的網格節點。</translation>
+        <translation type="vanished">輸入新的值 %1 在選定的網格節點。</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">設置標量條 (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>打開鳥瞰視窗 (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>產生 %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">這個 CGNS 文件是為 %1 版本 %2.它與當前的求解器不兼容。也許只有一部分網格會被導入。您真的要從此文件導入網格嗎？</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">此 CGNS 文件沒有求解器信息。我們無法檢查此 CGNS 文件是否與求解器兼容。如果不兼容，可能只會導入網格的一部分。您真的要從此文件導入網格嗎？</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">網格形狀設置</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>顯示設定 (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">網格形狀設置</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Hiba történt a rács importálása során.</translation>
+        <translation type="vanished">Hiba történt a rács importálása során.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Ez a CGNS fájl erre készült %1 változat %2. Nem kompatibilis az aktuális megoldóval. Lehet, hogy csak a rács egy részét importálják. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
+        <translation type="vanished">Ez a CGNS fájl erre készült %1 változat %2. Nem kompatibilis az aktuális megoldóval. Lehet, hogy csak a rács egy részét importálják. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Ez a CGNS -fájl nem tartalmaz megoldási információkat. Nem tudjuk ellenőrizni, hogy ez a CGNS fájl kompatibilis -e a megoldóval. Ha nem kompatibilis, akkor lehet, hogy csak a rács egy részét importálja. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
+        <translation type="vanished">Ez a CGNS -fájl nem tartalmaz megoldási információkat. Nem tudjuk ellenőrizni, hogy ez a CGNS fájl kompatibilis -e a megoldóval. Ha nem kompatibilis, akkor lehet, hogy csak a rács egy részét importálja. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Ez a fájl nem tartalmaz importálható rácsot.</translation>
+        <translation type="vanished">Ez a fájl nem tartalmaz importálható rácsot.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Válassza ki a rácsot</translation>
+        <translation type="vanished">Válassza ki a rácsot</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Válassza ki az importálni kívánt rácsot.</translation>
+        <translation type="vanished">Válassza ki az importálni kívánt rácsot.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Rács Madártávlatos ablak</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 a legutóbbi szerkesztés után nem kerülnek feltérképezésre. Most szeretné végrehajtani a leképezést?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Határfeltétel beállítása "%1"nincs feltérképezve a legutóbbi szerkesztés után. Szeretné most végrehajtani a leképezést?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Határfeltétel beállítása &quot;%1&quot;nincs feltérképezve a legutóbbi szerkesztés után. Szeretné most végrehajtani a leképezést?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Megjegyzés: Ha a változat engedélyezve van, a rendszer létrehozza az "Alapértelmezett" nevű változatot, és az összes földrajzi adatot áthelyezi ebbe. Hozzáadhat, átnevezhet és eltávolíthat változatokat az "Object Browser"-ből. A földrajzi adatokat áthelyezheti, másolhatja a változatok között. A „Megoldónak átadandó variáció” beállítással kiválasztott változatból létrehozott rácsattribútumadatok átadásra kerülnek a megoldónak. Több variációt is elkészíthet, átállíthatja, hogy melyiket adja át a megoldónak, és ellenőrizze a különbség hatását.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Megjegyzés: Ha a változat engedélyezve van, a rendszer létrehozza az &quot;Alapértelmezett&quot; nevű változatot, és az összes földrajzi adatot áthelyezi ebbe. Hozzáadhat, átnevezhet és eltávolíthat változatokat az &quot;Object Browser&quot;-ből. A földrajzi adatokat áthelyezheti, másolhatja a változatok között. A „Megoldónak átadandó variáció” beállítással kiválasztott változatból létrehozott rácsattribútumadatok átadásra kerülnek a megoldónak. Több variációt is elkészíthet, átállíthatja, hogy melyiket adja át a megoldónak, és ellenőrizze a különbség hatását.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Érték szerkesztése...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Export...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Pontfelhő -adatok generálása</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Érték szerkesztése a különbség megadásával...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Érték szerkesztése arány megadásával...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Figyelem</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Szerkesztés %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Adja meg a (z) új értékét %1 a kiválasztott rácscelláknál.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">különbség</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">hányados</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Topográfiai fájl (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Exportálás topográfiai adatként</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Hiba történt a fájl megnyitásakor.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">A rácsfeltétel sikeresen exportálva ide: %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Hiba</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Információ</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 generált.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Alkalmaz %1 nak nek %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Írja be a %1 nak,-nek %2 a kiválasztott rácscelláknál.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Színtérkép (Ez a beállítás a földrajzi adatoknál közös)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Vonalvastagság:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importálás (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Export (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Attribútum böngésző megjelenítése</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Cellatulajdonságok módosítása</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Érték szerkesztése...</translation>
+        <translation type="vanished">Érték szerkesztése...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Kérjük, csak egy csomópontot válasszon.</translation>
+        <translation type="vanished">Kérjük, csak egy csomópontot válasszon.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Szerkesztés %1</translation>
+        <translation type="vanished">Szerkesztés %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Adja meg a (z) új értékét %1 a kiválasztott rácscelláknál.</translation>
+        <translation type="vanished">Adja meg a (z) új értékét %1 a kiválasztott rácscelláknál.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Érték szerkesztése a különbség megadásával...</translation>
+        <translation type="vanished">Érték szerkesztése a különbség megadásával...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Érték szerkesztése arány megadásával...</translation>
+        <translation type="vanished">Érték szerkesztése arány megadásával...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>különbség</translation>
+        <translation type="vanished">különbség</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>hányados</translation>
+        <translation type="vanished">hányados</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Alkalmaz %1 nak nek %2</translation>
+        <translation type="vanished">Alkalmaz %1 nak nek %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Írja be a %1 nak,-nek %2 a kiválasztott rácscelláknál.</translation>
+        <translation type="vanished">Írja be a %1 nak,-nek %2 a kiválasztott rácscelláknál.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Export...</translation>
+        <translation type="vanished">Export...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topográfiai fájl (*.tpo)</translation>
+        <translation type="vanished">Topográfiai fájl (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Exportálás topográfiai adatként</translation>
+        <translation type="vanished">Exportálás topográfiai adatként</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Hiba történt a fájl megnyitásakor.</translation>
+        <translation type="vanished">Hiba történt a fájl megnyitásakor.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>A rácsfeltétel sikeresen exportálva ide: %1.</translation>
+        <translation type="vanished">A rácsfeltétel sikeresen exportálva ide: %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Információ</translation>
+        <translation type="vanished">Információ</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 generált.</translation>
+        <translation type="vanished">%1 generált.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Pontfelhő -adatok generálása</translation>
+        <translation type="vanished">Pontfelhő -adatok generálása</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Rács cella attribútum megjelenítési beállítása (%1)</translation>
+        <translation type="vanished">Rács cella attribútum megjelenítési beállítása (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Rács cella attribútum megjelenítési beállítása</translation>
+        <translation type="vanished">Rács cella attribútum megjelenítési beállítása</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importálás (&amp;I)...</translation>
+        <translation type="vanished">Importálás (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Export (&amp;E)...</translation>
+        <translation type="vanished">Export (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Színtérkép (Ez a beállítás a földrajzi adatoknál közös)</translation>
+        <translation type="vanished">Színtérkép (Ez a beállítás a földrajzi adatoknál közös)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Párbeszéd</translation>
+        <translation type="vanished">Párbeszéd</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Tulajdonság</translation>
+        <translation type="vanished">Tulajdonság</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Szín</translation>
+        <translation type="vanished">Szín</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Attribútum böngésző megjelenítése</translation>
+        <translation type="vanished">Attribútum böngésző megjelenítése</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Cellatulajdonságok módosítása</translation>
+        <translation type="vanished">Cellatulajdonságok módosítása</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Végrehajtás (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>A következő attribútumok nem lettek leképezve, mert rácsgenerátor kimeneti értékei vannak rájuk. Ha erőszakkal szeretné leképezni a földrajzi adatokat, kérjük, manuálisan térképezze le a "Rács" -&gt; "Attribútumleképezés" -&gt; "Végrehajtás" menüben.</translation>
+        <translation>A következő attribútumok nem lettek leképezve, mert rácsgenerátor kimeneti értékei vannak rájuk. Ha erőszakkal szeretné leképezni a földrajzi adatokat, kérjük, manuálisan térképezze le a &quot;Rács&quot; -&gt; &quot;Attribútumleképezés&quot; -&gt; &quot;Végrehajtás&quot; menüben.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>A földrajzi adatok feltérképezése befejeződött</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A rács attribútum "%1"kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A rács attribútum &quot;%1&quot;kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A határfeltétel "%1"kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A határfeltétel &quot;%1&quot;kézzel szerkesztik. Amikor leképezést hajt végre, az összes módosítást elveti. Valóban végrehajtani szeretné a leképezést?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automatikus</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // HU" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; A rács létrehozásakor a rendszer megkérdezi, hogy hogy minden alkalommal végrehajtsa az attribútumleképezést. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // HU&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta név = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; A rács létrehozásakor a rendszer megkérdezi, hogy hogy minden alkalommal végrehajtsa az attribútumleképezést. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Kézikönyv</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Az attribútumleképezés csak akkor hajtódik végre, ha manuálisan választja ki a "Végrehajtás" menüt.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Az attribútumleképezés csak akkor hajtódik végre, ha manuálisan választja ki a &quot;Végrehajtás&quot; menüt.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>MainWindow</translation>
+        <translation type="vanished">MainWindow</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Irány:</translation>
+        <translation type="vanished">Irány:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Fekete vonal:</translation>
+        <translation type="vanished">Fekete vonal:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Piros vonal:</translation>
+        <translation type="vanished">Piros vonal:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Kék vonal:</translation>
+        <translation type="vanished">Kék vonal:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Nincs adat)</translation>
+        <translation type="vanished">(Nincs adat)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Rács keresztmetszete (%1): J = %2</translation>
+        <translation type="vanished">Rács keresztmetszete (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Rács keresztmetszete (%1): I = %2</translation>
+        <translation type="vanished">Rács keresztmetszete (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Színtérkép beállítása</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés:&lt;/span&gt; A színbeállítások szerkesztéséhez használja a Colormap lapot&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Megjegyzés:&lt;/span&gt; A színbeállítások szerkesztéséhez használja a Colormap lapot&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Szerkesztés (&amp;E)...</translation>
+        <translation type="vanished">Szerkesztés (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Bal part</translation>
+        <translation type="vanished">Bal part</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Jobb parti oldal</translation>
+        <translation type="vanished">Jobb parti oldal</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Szerkesztés %1</translation>
+        <translation type="vanished">Szerkesztés %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Adja meg a (z) új értékét %1 a kiválasztott rácscsomópontoknál.</translation>
+        <translation type="vanished">Adja meg a (z) új értékét %1 a kiválasztott rácscsomópontoknál.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Scalarbar beállítása (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Nyissa meg a Madártávlat ablakot (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>generál %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Ez a CGNS fájl erre készült %1 változat %2. Nem kompatibilis az aktuális megoldóval. Lehet, hogy csak a rács egy részét importálják. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Ez a CGNS -fájl nem tartalmaz megoldási információkat. Nem tudjuk ellenőrizni, hogy ez a CGNS fájl kompatibilis -e a megoldóval. Ha nem kompatibilis, akkor lehet, hogy csak a rács egy részét importálja. Valóban importálni szeretné a rácsot ebből a fájlból?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Rács alakjának beállítása</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Kijelző beállítás (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Rács alakjának beállítása</translation>
     </message>
 </context>
 <context>

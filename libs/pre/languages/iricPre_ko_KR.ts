@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>그리드를 가져오는 동안 오류가 발생했습니다.</translation>
+        <translation type="vanished">그리드를 가져오는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>이 CGNS 파일은 %1 버전 %2. 현재 솔버와 호환되지 않습니다. 그리드의 일부만 가져올 수도 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
+        <translation type="vanished">이 CGNS 파일은 %1 버전 %2. 현재 솔버와 호환되지 않습니다. 그리드의 일부만 가져올 수도 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>이 CGNS 파일에는 솔버 정보가 없습니다. 이 CGNS 파일이 솔버와 호환되는지 확인할 수 없습니다. 호환되지 않는 경우 그리드의 일부만 가져올 수 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
+        <translation type="vanished">이 CGNS 파일에는 솔버 정보가 없습니다. 이 CGNS 파일이 솔버와 호환되는지 확인할 수 없습니다. 호환되지 않는 경우 그리드의 일부만 가져올 수 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>이 파일에는 가져올 수 있는 그리드가 없습니다.</translation>
+        <translation type="vanished">이 파일에는 가져올 수 있는 그리드가 없습니다.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>그리드 선택</translation>
+        <translation type="vanished">그리드 선택</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>가져올 그리드를 선택합니다.</translation>
+        <translation type="vanished">가져올 그리드를 선택합니다.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>그리드 조감도 창</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 마지막으로 편집한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>경계 조건 설정 "%1"는 저번에 수정한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>경계 조건 설정 &quot;%1&quot;는 저번에 수정한 후 매핑되지 않습니다. 지금 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>참고: 변형이 활성화되면 "Default"라는 변형이 생성되고 모든 지리적 데이터가 여기로 이동됩니다. "개체 브라우저"에서 변형을 추가, 이름 바꾸기, 제거할 수 있습니다. 변형 간에 지리적 데이터를 이동하고 복사할 수 있습니다. "솔버에 전달하는 변형"에서 선택한 변형에서 생성된 그리드 속성 데이터가 솔버에 전달됩니다. 여러 변형을 준비하고 솔버에 전달할 변형을 전환하고 차이의 효과를 확인할 수 있습니다.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>참고: 변형이 활성화되면 &quot;Default&quot;라는 변형이 생성되고 모든 지리적 데이터가 여기로 이동됩니다. &quot;개체 브라우저&quot;에서 변형을 추가, 이름 바꾸기, 제거할 수 있습니다. 변형 간에 지리적 데이터를 이동하고 복사할 수 있습니다. &quot;솔버에 전달하는 변형&quot;에서 선택한 변형에서 생성된 그리드 속성 데이터가 솔버에 전달됩니다. 여러 변형을 준비하고 솔버에 전달할 변형을 전환하고 차이의 효과를 확인할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">값 수정...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">내 보내다...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">포인트 클라우드 데이터 생성</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">차이를 지정하여 값 편집...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">비율을 지정하여 값 편집...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">편집하다 %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">의 새 값을 입력하십시오. %1 선택한 그리드 셀에서</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">차이점</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">비율</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">지형 파일 (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">지형 데이터로 내보내기</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">파일을 여는 동안 오류가 발생했습니다.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">그리드 조건을 다음으로 성공적으로 내보냈습니다. %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">정보</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 생성.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">적용하다 %1 에게 %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">입력 %1 NS %2 선택한 그리드 셀에서</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished">그리드 셀 속성 표시 설정</translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">컬러맵(이 설정은 지리적 데이터와 공통임)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">수입 (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">속성 브라우저 표시</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">셀 속성 변경</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>값 수정...</translation>
+        <translation type="vanished">값 수정...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>노드를 하나만 선택하십시오.</translation>
+        <translation type="vanished">노드를 하나만 선택하십시오.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>편집하다 %1</translation>
+        <translation type="vanished">편집하다 %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>의 새 값을 입력하십시오. %1 선택한 그리드 셀에서</translation>
+        <translation type="vanished">의 새 값을 입력하십시오. %1 선택한 그리드 셀에서</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>차이를 지정하여 값 편집...</translation>
+        <translation type="vanished">차이를 지정하여 값 편집...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>비율을 지정하여 값 편집...</translation>
+        <translation type="vanished">비율을 지정하여 값 편집...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>차이점</translation>
+        <translation type="vanished">차이점</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>비율</translation>
+        <translation type="vanished">비율</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>적용하다 %1 에게 %2</translation>
+        <translation type="vanished">적용하다 %1 에게 %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>입력 %1 NS %2 선택한 그리드 셀에서</translation>
+        <translation type="vanished">입력 %1 NS %2 선택한 그리드 셀에서</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>내 보내다...</translation>
+        <translation type="vanished">내 보내다...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>지형 파일 (*.tpo)</translation>
+        <translation type="vanished">지형 파일 (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>지형 데이터로 내보내기</translation>
+        <translation type="vanished">지형 데이터로 내보내기</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>파일을 여는 동안 오류가 발생했습니다.</translation>
+        <translation type="vanished">파일을 여는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>그리드 조건을 다음으로 성공적으로 내보냈습니다. %1.</translation>
+        <translation type="vanished">그리드 조건을 다음으로 성공적으로 내보냈습니다. %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>정보</translation>
+        <translation type="vanished">정보</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 생성.</translation>
+        <translation type="vanished">%1 생성.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>포인트 클라우드 데이터 생성</translation>
+        <translation type="vanished">포인트 클라우드 데이터 생성</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>그리드 셀 속성 표시 설정(%1)</translation>
+        <translation type="vanished">그리드 셀 속성 표시 설정(%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>그리드 셀 속성 표시 설정</translation>
+        <translation type="vanished">그리드 셀 속성 표시 설정</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>수입 (&amp;I)...</translation>
+        <translation type="vanished">수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>내보내다 (&amp;E)...</translation>
+        <translation type="vanished">내보내다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>컬러맵(이 설정은 지리적 데이터와 공통임)</translation>
+        <translation type="vanished">컬러맵(이 설정은 지리적 데이터와 공통임)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>대화</translation>
+        <translation type="vanished">대화</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>기인하다</translation>
+        <translation type="vanished">기인하다</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>색상</translation>
+        <translation type="vanished">색상</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>속성 브라우저 표시</translation>
+        <translation type="vanished">속성 브라우저 표시</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>셀 속성 변경</translation>
+        <translation type="vanished">셀 속성 변경</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>실행하다 (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>그리드 생성기가 해당 속성에 대한 값을 출력하므로 다음 속성이 매핑되지 않았습니다. 강제로 지리 데이터를 매핑하려면 "Grid" -&gt; "Attributes Mapping" -&gt; "Execute" 메뉴를 사용하여 수동으로 매핑하십시오.</translation>
+        <translation>그리드 생성기가 해당 속성에 대한 값을 출력하므로 다음 속성이 매핑되지 않았습니다. 강제로 지리 데이터를 매핑하려면 &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; 메뉴를 사용하여 수동으로 매핑하십시오.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>지리 데이터 매핑 완료</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>그리드 속성 "%1"는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>그리드 속성 &quot;%1&quot;는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>경계 조건 "%1"는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>경계 조건 &quot;%1&quot;는 손으로 수정했습니다. 매핑을 실행하면 수정한 내용이 모두 삭제됩니다. 매핑을 실행하시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>자동</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI 고딕'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;격자가 생성되면 속성 매핑을 매번 실행합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;메타 이름 =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { 공백: 미리 포장; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI 고딕&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;격자가 생성되면 속성 매핑을 매번 실행합니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>설명서</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>속성 매핑은 "실행" 메뉴를 수동으로 선택한 경우에만 실행됩니다.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>속성 매핑은 &quot;실행&quot; 메뉴를 수동으로 선택한 경우에만 실행됩니다.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>메인 윈도우</translation>
+        <translation type="vanished">메인 윈도우</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>도구 모음</translation>
+        <translation type="vanished">도구 모음</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>방향:</translation>
+        <translation type="vanished">방향:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>검은 선:</translation>
+        <translation type="vanished">검은 선:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>레드 라인:</translation>
+        <translation type="vanished">레드 라인:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>파란색 선:</translation>
+        <translation type="vanished">파란색 선:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(데이터 없음)</translation>
+        <translation type="vanished">(데이터 없음)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>그리드 단면(%1): J = %2</translation>
+        <translation type="vanished">그리드 단면(%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>그리드 단면(%1): 나는 = %2</translation>
+        <translation type="vanished">그리드 단면(%1): 나는 = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>컬러맵 설정</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; 색상 설정을 편집하려면 색상표 탭을 사용하십시오.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고:&lt;/span&gt; 색상 설정을 편집하려면 색상표 탭을 사용하십시오.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>편집하다 (&amp;E)...</translation>
+        <translation type="vanished">편집하다 (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>왼쪽 은행 측면</translation>
+        <translation type="vanished">왼쪽 은행 측면</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>오른쪽 은행 쪽</translation>
+        <translation type="vanished">오른쪽 은행 쪽</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>편집하다 %1</translation>
+        <translation type="vanished">편집하다 %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>의 새 값을 입력하십시오. %1 선택한 그리드 노드에서</translation>
+        <translation type="vanished">의 새 값을 입력하십시오. %1 선택한 그리드 노드에서</translation>
     </message>
 </context>
 <context>
@@ -2210,7 +2365,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">스칼라바 설정 (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>조감도 창 열기 (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>생성하다 %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">이 CGNS 파일은 %1 버전 %2. 현재 솔버와 호환되지 않습니다. 그리드의 일부만 가져올 수도 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">이 CGNS 파일에는 솔버 정보가 없습니다. 이 CGNS 파일이 솔버와 호환되는지 확인할 수 없습니다. 호환되지 않는 경우 그리드의 일부만 가져올 수 있습니다. 이 파일에서 그리드를 가져오시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">그리드 모양 설정</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>디스플레이 설정 (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">그리드 모양 설정</translation>
     </message>
 </context>
 <context>

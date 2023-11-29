@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την εισαγωγή πλέγματος.</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά την εισαγωγή πλέγματος.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Αυτό το αρχείο CGNS έχει δημιουργηθεί για %1 εκδοχή %2 Το Δεν είναι συμβατό με τον τρέχοντα επιλυτή. Maybeσως μόνο ένα μέρος του δικτύου να εισαχθεί. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
+        <translation type="vanished">Αυτό το αρχείο CGNS έχει δημιουργηθεί για %1 εκδοχή %2 Το Δεν είναι συμβατό με τον τρέχοντα επιλυτή. Maybeσως μόνο ένα μέρος του δικτύου να εισαχθεί. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Αυτό το αρχείο CGNS δεν διαθέτει πληροφορίες επίλυσης. Δεν μπορούμε να ελέγξουμε αν αυτό το αρχείο CGNS είναι συμβατό με τον επιλυτή. Εάν δεν είναι συμβατό, ίσως εισαχθεί μόνο ένα μέρος του πλέγματος. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
+        <translation type="vanished">Αυτό το αρχείο CGNS δεν διαθέτει πληροφορίες επίλυσης. Δεν μπορούμε να ελέγξουμε αν αυτό το αρχείο CGNS είναι συμβατό με τον επιλυτή. Εάν δεν είναι συμβατό, ίσως εισαχθεί μόνο ένα μέρος του πλέγματος. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Αυτό το αρχείο δεν περιέχει πλέγμα που μπορεί να εισαχθεί.</translation>
+        <translation type="vanished">Αυτό το αρχείο δεν περιέχει πλέγμα που μπορεί να εισαχθεί.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Επιλέξτε πλέγμα</translation>
+        <translation type="vanished">Επιλέξτε πλέγμα</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Επιλέξτε πλέγμα για εισαγωγή.</translation>
+        <translation type="vanished">Επιλέξτε πλέγμα για εισαγωγή.</translation>
     </message>
 </context>
 <context>
@@ -119,8 +121,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
-        <translation>Παράθυρο Grid Bird's-Eye View</translation>
+        <source>Grid Bird&apos;s-Eye View Window</source>
+        <translation>Παράθυρο Grid Bird&apos;s-Eye View</translation>
     </message>
 </context>
 <context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 δεν αντιστοιχίζονται μετά την τελευταία επεξεργασία τους. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Ορισμός συνθήκης ορίων "%1"δεν αντιστοιχίζεται μετά την τελευταία επεξεργασία. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Ορισμός συνθήκης ορίων &quot;%1&quot;δεν αντιστοιχίζεται μετά την τελευταία επεξεργασία. Θέλετε να εκτελέσετε αντιστοίχιση τώρα;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Σημείωση: Όταν είναι ενεργοποιημένη η παραλλαγή, δημιουργείται η παραλλαγή με το όνομα "Προεπιλογή" και όλα τα γεωγραφικά δεδομένα μετακινούνται σε αυτήν. Μπορείτε να προσθέσετε, να μετονομάσετε, να αφαιρέσετε παραλλαγές από το "Object Browser". Μπορείτε να μετακινήσετε, να αντιγράψετε γεωγραφικά δεδομένα μεταξύ των παραλλαγών. Τα δεδομένα χαρακτηριστικού πλέγματος που δημιουργήθηκαν από την παραλλαγή που επιλέγετε με "Παραλλαγή για μετάβαση στον λύτη" μεταβιβάζονται στον λύτη. Μπορείτε να προετοιμάσετε πολλές παραλλαγές, να αλλάξετε τις οποίες θα μεταβιβάσετε στον λύτη και να βεβαιωθείτε για το αποτέλεσμα της διαφοράς.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Σημείωση: Όταν είναι ενεργοποιημένη η παραλλαγή, δημιουργείται η παραλλαγή με το όνομα &quot;Προεπιλογή&quot; και όλα τα γεωγραφικά δεδομένα μετακινούνται σε αυτήν. Μπορείτε να προσθέσετε, να μετονομάσετε, να αφαιρέσετε παραλλαγές από το &quot;Object Browser&quot;. Μπορείτε να μετακινήσετε, να αντιγράψετε γεωγραφικά δεδομένα μεταξύ των παραλλαγών. Τα δεδομένα χαρακτηριστικού πλέγματος που δημιουργήθηκαν από την παραλλαγή που επιλέγετε με &quot;Παραλλαγή για μετάβαση στον λύτη&quot; μεταβιβάζονται στον λύτη. Μπορείτε να προετοιμάσετε πολλές παραλλαγές, να αλλάξετε τις οποίες θα μεταβιβάσετε στον λύτη και να βεβαιωθείτε για το αποτέλεσμα της διαφοράς.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Επεξεργασία τιμής...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Εξαγωγή...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Δημιουργία δεδομένων σημειακού νέφους</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Επεξεργασία τιμής καθορίζοντας τη διαφορά...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Επεξεργασία τιμής καθορίζοντας αναλογία...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Επεξεργασία %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Εισαγάγετε τη νέα τιμή του %1 στα επιλεγμένα κελιά πλέγματος.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">διαφορά</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">αναλογία</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Αρχείο Τοπογραφίας (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Εξαγωγή ως δεδομένα τοπογραφίας</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Η κατάσταση πλέγματος εξήχθη με επιτυχία σε %1 Το</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Λάθος</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Πληροφορίες</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 δημιουργούνται.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Ισχύουν %1 προς το %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Εισαγάγετε το %1 του %2 στα επιλεγμένα κελιά πλέγματος.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Χρωματικός χάρτης (Αυτή η ρύθμιση είναι κοινή με τα γεωγραφικά δεδομένα)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Πλάτος γραμμής:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Εισαγωγή (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Εξαγωγή (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Εμφάνιση προγράμματος περιήγησης χαρακτηριστικών</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Αλλαγή χαρακτηριστικού κυψέλης</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Επεξεργασία τιμής...</translation>
+        <translation type="vanished">Επεξεργασία τιμής...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Επιλέξτε μόνο έναν κόμβο.</translation>
+        <translation type="vanished">Επιλέξτε μόνο έναν κόμβο.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Επεξεργασία %1</translation>
+        <translation type="vanished">Επεξεργασία %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Εισαγάγετε τη νέα τιμή του %1 στα επιλεγμένα κελιά πλέγματος.</translation>
+        <translation type="vanished">Εισαγάγετε τη νέα τιμή του %1 στα επιλεγμένα κελιά πλέγματος.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Επεξεργασία τιμής καθορίζοντας τη διαφορά...</translation>
+        <translation type="vanished">Επεξεργασία τιμής καθορίζοντας τη διαφορά...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Επεξεργασία τιμής καθορίζοντας αναλογία...</translation>
+        <translation type="vanished">Επεξεργασία τιμής καθορίζοντας αναλογία...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>διαφορά</translation>
+        <translation type="vanished">διαφορά</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>αναλογία</translation>
+        <translation type="vanished">αναλογία</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Ισχύουν %1 προς το %2</translation>
+        <translation type="vanished">Ισχύουν %1 προς το %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Εισαγάγετε το %1 του %2 στα επιλεγμένα κελιά πλέγματος.</translation>
+        <translation type="vanished">Εισαγάγετε το %1 του %2 στα επιλεγμένα κελιά πλέγματος.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Εξαγωγή...</translation>
+        <translation type="vanished">Εξαγωγή...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Αρχείο Τοπογραφίας (*.tpo)</translation>
+        <translation type="vanished">Αρχείο Τοπογραφίας (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Εξαγωγή ως δεδομένα τοπογραφίας</translation>
+        <translation type="vanished">Εξαγωγή ως δεδομένα τοπογραφίας</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Η κατάσταση πλέγματος εξήχθη με επιτυχία σε %1 Το</translation>
+        <translation type="vanished">Η κατάσταση πλέγματος εξήχθη με επιτυχία σε %1 Το</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Πληροφορίες</translation>
+        <translation type="vanished">Πληροφορίες</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 δημιουργούνται.</translation>
+        <translation type="vanished">%1 δημιουργούνται.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Δημιουργία δεδομένων σημειακού νέφους</translation>
+        <translation type="vanished">Δημιουργία δεδομένων σημειακού νέφους</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κυψελών πλέγματος (%1)</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης χαρακτηριστικών κυψελών πλέγματος (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Ρύθμιση εμφάνισης χαρακτηριστικών κελιών πλέγματος</translation>
+        <translation type="vanished">Ρύθμιση εμφάνισης χαρακτηριστικών κελιών πλέγματος</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Εισαγωγή (&amp;I)...</translation>
+        <translation type="vanished">Εισαγωγή (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Εξαγωγή (&amp;E)...</translation>
+        <translation type="vanished">Εξαγωγή (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Χρωματικός χάρτης (Αυτή η ρύθμιση είναι κοινή με τα γεωγραφικά δεδομένα)</translation>
+        <translation type="vanished">Χρωματικός χάρτης (Αυτή η ρύθμιση είναι κοινή με τα γεωγραφικά δεδομένα)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Διάλογος</translation>
+        <translation type="vanished">Διάλογος</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Χαρακτηριστικό</translation>
+        <translation type="vanished">Χαρακτηριστικό</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Χρώμα</translation>
+        <translation type="vanished">Χρώμα</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Εμφάνιση προγράμματος περιήγησης χαρακτηριστικών</translation>
+        <translation type="vanished">Εμφάνιση προγράμματος περιήγησης χαρακτηριστικών</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Αλλαγή χαρακτηριστικού κυψέλης</translation>
+        <translation type="vanished">Αλλαγή χαρακτηριστικού κυψέλης</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Εκτέλεση (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Τα ακόλουθα χαρακτηριστικά δεν αντιστοιχίστηκαν, επειδή οι τιμές εξόδου γεννήτριας πλέγματος γι 'αυτές. Εάν θέλετε να αντιστοιχίσετε τα γεωγραφικά δεδομένα με τη βία, παρακαλούμε χαρτογραφήστε με το μενού "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".</translation>
+        <translation>Τα ακόλουθα χαρακτηριστικά δεν αντιστοιχίστηκαν, επειδή οι τιμές εξόδου γεννήτριας πλέγματος γι &apos;αυτές. Εάν θέλετε να αντιστοιχίσετε τα γεωγραφικά δεδομένα με τη βία, παρακαλούμε χαρτογραφήστε με το μενού &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Η αντιστοίχιση γεωγραφικών δεδομένων ολοκληρώθηκε</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Το χαρακτηριστικό πλέγματος "%1"επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Το χαρακτηριστικό πλέγματος &quot;%1&quot;επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Η οριακή κατάσταση "%1"επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Η οριακή κατάσταση &quot;%1&quot;επεξεργάζεται με το χέρι. Όταν εκτελείτε την αντιστοίχιση, όλες οι τροποποιήσεις που κάνατε θα απορριφθούν. Θέλετε πραγματικά να εκτελέσετε αντιστοίχιση;</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Αυτο</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Όταν δημιουργηθεί το πλέγμα, θα ερωτηθείτε αν για εκτέλεση αντιστοίχισης χαρακτηριστικών κάθε φορά. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Όταν δημιουργηθεί το πλέγμα, θα ερωτηθείτε αν για εκτέλεση αντιστοίχισης χαρακτηριστικών κάθε φορά. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Εγχειρίδιο</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Η αντιστοίχιση χαρακτηριστικών εκτελείται μόνο όταν επιλέγετε μη αυτόματα το μενού "Εκτέλεση".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Η αντιστοίχιση χαρακτηριστικών εκτελείται μόνο όταν επιλέγετε μη αυτόματα το μενού &quot;Εκτέλεση&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>MainWindow</translation>
+        <translation type="vanished">MainWindow</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Κατεύθυνση:</translation>
+        <translation type="vanished">Κατεύθυνση:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Μαύρη γραμμή:</translation>
+        <translation type="vanished">Μαύρη γραμμή:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Κόκκινη γραμμή:</translation>
+        <translation type="vanished">Κόκκινη γραμμή:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Μπλε γραμμή:</translation>
+        <translation type="vanished">Μπλε γραμμή:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Χωρίς δεδομένα)</translation>
+        <translation type="vanished">(Χωρίς δεδομένα)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Διατομή πλέγματος (%1): J = %2</translation>
+        <translation type="vanished">Διατομή πλέγματος (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Διατομή πλέγματος (%1): I = %2</translation>
+        <translation type="vanished">Διατομή πλέγματος (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Ρύθμιση χρωματικού χάρτη</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση:&lt;/span&gt; Χρησιμοποιήστε την καρτέλα Χάρτης χρώματος για να επεξεργαστείτε τη ρύθμιση χρώματος&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση:&lt;/span&gt; Χρησιμοποιήστε την καρτέλα Χάρτης χρώματος για να επεξεργαστείτε τη ρύθμιση χρώματος&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Επεξεργασία (&amp;E)...</translation>
+        <translation type="vanished">Επεξεργασία (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Αριστερή όχθη</translation>
+        <translation type="vanished">Αριστερή όχθη</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Δεξιά όχθη</translation>
+        <translation type="vanished">Δεξιά όχθη</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Επεξεργασία %1</translation>
+        <translation type="vanished">Επεξεργασία %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Εισαγάγετε τη νέα τιμή του %1 στους επιλεγμένους κόμβους πλέγματος.</translation>
+        <translation type="vanished">Εισαγάγετε τη νέα τιμή του %1 στους επιλεγμένους κόμβους πλέγματος.</translation>
     </message>
 </context>
 <context>
@@ -2206,8 +2361,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Ρύθμιση Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
-        <translation>Ανοίξτε το παράθυρο Bird's-Eye View (&amp;B)</translation>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <translation>Ανοίξτε το παράθυρο Bird&apos;s-Eye View (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>Παράγω %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Αυτό το αρχείο CGNS έχει δημιουργηθεί για %1 εκδοχή %2 Το Δεν είναι συμβατό με τον τρέχοντα επιλυτή. Maybeσως μόνο ένα μέρος του δικτύου να εισαχθεί. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Αυτό το αρχείο CGNS δεν διαθέτει πληροφορίες επίλυσης. Δεν μπορούμε να ελέγξουμε αν αυτό το αρχείο CGNS είναι συμβατό με τον επιλυτή. Εάν δεν είναι συμβατό, ίσως εισαχθεί μόνο ένα μέρος του πλέγματος. Θέλετε πραγματικά να εισαγάγετε πλέγμα από αυτό το αρχείο;</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Ρύθμιση σχήματος πλέγματος</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Ρύθμιση οθόνης (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Ρύθμιση σχήματος πλέγματος</translation>
     </message>
 </context>
 <context>

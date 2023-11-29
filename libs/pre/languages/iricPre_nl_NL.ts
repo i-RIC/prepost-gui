@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Er is een fout opgetreden bij het importeren van het raster.</translation>
+        <translation type="vanished">Er is een fout opgetreden bij het importeren van het raster.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Dit CGNS-bestand is gemaakt voor: %1 versie %2. Het is niet compatibel met de huidige oplosser. Misschien wordt slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
+        <translation type="vanished">Dit CGNS-bestand is gemaakt voor: %1 versie %2. Het is niet compatibel met de huidige oplosser. Misschien wordt slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Dit CGNS-bestand heeft geen oplosserinformatie. We kunnen niet controleren of dit CGNS-bestand compatibel is met de solver. Als het niet compatibel is, wordt misschien slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
+        <translation type="vanished">Dit CGNS-bestand heeft geen oplosserinformatie. We kunnen niet controleren of dit CGNS-bestand compatibel is met de solver. Als het niet compatibel is, wordt misschien slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Dit bestand bevat geen raster dat kan worden geïmporteerd.</translation>
+        <translation type="vanished">Dit bestand bevat geen raster dat kan worden geïmporteerd.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Selecteer raster</translation>
+        <translation type="vanished">Selecteer raster</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Selecteer raster om te importeren.</translation>
+        <translation type="vanished">Selecteer raster om te importeren.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Raster Vogelvluchtvenster</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 worden niet toegewezen nadat ze de laatste keer zijn bewerkt. Wilt u de mapping nu uitvoeren?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Grensvoorwaarde instellen "%1" wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Grensvoorwaarde instellen &quot;%1&quot; wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Opmerking: wanneer variatie is ingeschakeld, wordt variatie met de naam "Standaard" gemaakt en worden alle geografische gegevens daarnaartoe verplaatst. U kunt variaties toevoegen, hernoemen en verwijderen uit "Objectbrowser". U kunt geografische gegevens tussen variaties verplaatsen en kopiëren. De rasterattribuutgegevens die zijn gemaakt op basis van de variatie die u selecteert met "Variatie om door te geven aan oplosser" worden doorgegeven aan oplosser. U kunt meerdere variaties voorbereiden, schakelen welke u wilt doorgeven aan de oplosser en het effect van het verschil controleren.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Opmerking: wanneer variatie is ingeschakeld, wordt variatie met de naam &quot;Standaard&quot; gemaakt en worden alle geografische gegevens daarnaartoe verplaatst. U kunt variaties toevoegen, hernoemen en verwijderen uit &quot;Objectbrowser&quot;. U kunt geografische gegevens tussen variaties verplaatsen en kopiëren. De rasterattribuutgegevens die zijn gemaakt op basis van de variatie die u selecteert met &quot;Variatie om door te geven aan oplosser&quot; worden doorgegeven aan oplosser. U kunt meerdere variaties voorbereiden, schakelen welke u wilt doorgeven aan de oplosser en het effect van het verschil controleren.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Waarde bewerken...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Exporteren...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Puntenwolkgegevens genereren</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Bewerk waarde door verschil op te geven...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Bewerk waarde door verhouding op te geven...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Waarschuwing</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Bewerking %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Voer de nieuwe waarde van. in %1 bij de geselecteerde rastercellen.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">verschil</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">verhouding</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Topografiebestand (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Exporteren als topografische gegevens</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Er is een fout opgetreden bij het openen van het bestand.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Rastervoorwaarde succesvol geëxporteerd naar %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informatie</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 gegenereerd.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Van toepassing zijn %1 tot %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Voer de in %1 van %2 bij de geselecteerde rastercellen.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Kleurenkaart (deze instelling is gebruikelijk bij geografische gegevens)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importeren (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Exporteren (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Attribuutbrowser tonen</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Wijziging celkenmerk</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Waarde bewerken...</translation>
+        <translation type="vanished">Waarde bewerken...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Selecteer slechts één knooppunt.</translation>
+        <translation type="vanished">Selecteer slechts één knooppunt.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Bewerking %1</translation>
+        <translation type="vanished">Bewerking %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Voer de nieuwe waarde van. in %1 bij de geselecteerde rastercellen.</translation>
+        <translation type="vanished">Voer de nieuwe waarde van. in %1 bij de geselecteerde rastercellen.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Bewerk waarde door verschil op te geven...</translation>
+        <translation type="vanished">Bewerk waarde door verschil op te geven...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Bewerk waarde door verhouding op te geven...</translation>
+        <translation type="vanished">Bewerk waarde door verhouding op te geven...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>verschil</translation>
+        <translation type="vanished">verschil</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>verhouding</translation>
+        <translation type="vanished">verhouding</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Van toepassing zijn %1 tot %2</translation>
+        <translation type="vanished">Van toepassing zijn %1 tot %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Voer de in %1 van %2 bij de geselecteerde rastercellen.</translation>
+        <translation type="vanished">Voer de in %1 van %2 bij de geselecteerde rastercellen.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Exporteren...</translation>
+        <translation type="vanished">Exporteren...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topografiebestand (*.tpo)</translation>
+        <translation type="vanished">Topografiebestand (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Exporteren als topografische gegevens</translation>
+        <translation type="vanished">Exporteren als topografische gegevens</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Er is een fout opgetreden bij het openen van het bestand.</translation>
+        <translation type="vanished">Er is een fout opgetreden bij het openen van het bestand.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Rastervoorwaarde succesvol geëxporteerd naar %1.</translation>
+        <translation type="vanished">Rastervoorwaarde succesvol geëxporteerd naar %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Informatie</translation>
+        <translation type="vanished">Informatie</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 gegenereerd.</translation>
+        <translation type="vanished">%1 gegenereerd.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Puntenwolkgegevens genereren</translation>
+        <translation type="vanished">Puntenwolkgegevens genereren</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Weergave-instelling rastercelkenmerk (%1)</translation>
+        <translation type="vanished">Weergave-instelling rastercelkenmerk (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Weergave-instelling voor rastercelkenmerk</translation>
+        <translation type="vanished">Weergave-instelling voor rastercelkenmerk</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importeren (&amp;I)...</translation>
+        <translation type="vanished">Importeren (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exporteren (&amp;E)...</translation>
+        <translation type="vanished">Exporteren (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Kleurenkaart (deze instelling is gebruikelijk bij geografische gegevens)</translation>
+        <translation type="vanished">Kleurenkaart (deze instelling is gebruikelijk bij geografische gegevens)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Dialoogvenster</translation>
+        <translation type="vanished">Dialoogvenster</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Attribuut</translation>
+        <translation type="vanished">Attribuut</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Kleur</translation>
+        <translation type="vanished">Kleur</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Attribuutbrowser tonen</translation>
+        <translation type="vanished">Attribuutbrowser tonen</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Wijziging celkenmerk</translation>
+        <translation type="vanished">Wijziging celkenmerk</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>uitvoeren (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu "Raster" -&gt; "Attributentoewijzing" -&gt; "Uitvoeren".</translation>
+        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu &quot;Raster&quot; -&gt; &quot;Attributentoewijzing&quot; -&gt; &quot;Uitvoeren&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Geografische gegevens in kaart brengen voltooid</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Het rasterkenmerk "%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Het rasterkenmerk &quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>De randvoorwaarde"%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>De randvoorwaarde&quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handmatig</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu "Uitvoeren" handmatig selecteert.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu &quot;Uitvoeren&quot; handmatig selecteert.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1345,11 +1500,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">In kaart brengen met FIN's</translation>
+        <translation type="vanished">In kaart brengen met FIN&apos;s</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">TIN's die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
+        <translation type="vanished">TIN&apos;s die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>Hoofd venster</translation>
+        <translation type="vanished">Hoofd venster</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>werkbalk</translation>
+        <translation type="vanished">werkbalk</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Richting:</translation>
+        <translation type="vanished">Richting:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Zwarte lijn:</translation>
+        <translation type="vanished">Zwarte lijn:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Rode lijn:</translation>
+        <translation type="vanished">Rode lijn:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Blauwe lijn:</translation>
+        <translation type="vanished">Blauwe lijn:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Geen informatie)</translation>
+        <translation type="vanished">(Geen informatie)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Raster doorsnede (%1): J = %2</translation>
+        <translation type="vanished">Raster doorsnede (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Raster doorsnede (%1): ik = %2</translation>
+        <translation type="vanished">Raster doorsnede (%1): ik = %2</translation>
     </message>
 </context>
 <context>
@@ -2096,8 +2251,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Titel kleur</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; Gebruik het tabblad Colormap om de kleurinstelling te bewerken&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; Gebruik het tabblad Colormap om de kleurinstelling te bewerken&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2108,23 +2263,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Bewerking (&amp;E)...</translation>
+        <translation type="vanished">Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Linkeroeverzijde</translation>
+        <translation type="vanished">Linkeroeverzijde</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Rechteroever:</translation>
+        <translation type="vanished">Rechteroever:</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Bewerking %1</translation>
+        <translation type="vanished">Bewerking %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Voer de nieuwe waarde van. in %1 op de geselecteerde rasterknooppunten.</translation>
+        <translation type="vanished">Voer de nieuwe waarde van. in %1 op de geselecteerde rasterknooppunten.</translation>
     </message>
 </context>
 <context>
@@ -2202,7 +2357,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Scalarbar instellen (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Vogelvluchtvenster openen (&amp;B)</translation>
     </message>
     <message>
@@ -2228,6 +2383,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>genereren %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Dit CGNS-bestand is gemaakt voor: %1 versie %2. Het is niet compatibel met de huidige oplosser. Misschien wordt slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Dit CGNS-bestand heeft geen oplosserinformatie. We kunnen niet controleren of dit CGNS-bestand compatibel is met de solver. Als het niet compatibel is, wordt misschien slechts een deel van het raster geïmporteerd. Wilt u het raster echt uit dit bestand importeren?</translation>
     </message>
 </context>
 <context>
@@ -2576,6 +2741,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Instelling rastervorm</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2588,6 +2760,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Beeldscherm instelling (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Instelling rastervorm</translation>
     </message>
 </context>
 <context>

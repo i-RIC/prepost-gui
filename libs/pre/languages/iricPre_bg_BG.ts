@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>При импортирането на мрежата възникна грешка.</translation>
+        <translation type="vanished">При импортирането на мрежата възникна грешка.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Този CGNS файл е създаден за %1 версия %2. Той не е съвместим с текущия решател. Може би само част от мрежата ще бъде внесена. Наистина ли искате да импортирате решетка от този файл?</translation>
+        <translation type="vanished">Този CGNS файл е създаден за %1 версия %2. Той не е съвместим с текущия решател. Може би само част от мрежата ще бъде внесена. Наистина ли искате да импортирате решетка от този файл?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Този CGNS файл няма информация за решаване. Не можем да проверим дали този CGNS файл е съвместим с решавача. Ако не е съвместим, може би само част от мрежата ще бъде импортирана. Наистина ли искате да импортирате решетка от този файл?</translation>
+        <translation type="vanished">Този CGNS файл няма информация за решаване. Не можем да проверим дали този CGNS файл е съвместим с решавача. Ако не е съвместим, може би само част от мрежата ще бъде импортирана. Наистина ли искате да импортирате решетка от този файл?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Този файл не съдържа мрежа, която може да бъде импортирана.</translation>
+        <translation type="vanished">Този файл не съдържа мрежа, която може да бъде импортирана.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Изберете мрежа</translation>
+        <translation type="vanished">Изберете мрежа</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Изберете мрежа за импортиране.</translation>
+        <translation type="vanished">Изберете мрежа за импортиране.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Прозорец за изглед на птичи очи с мрежа</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не са картографирани след последното им редактиране. Искате ли да изпълните картографиране сега?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Настройка на гранични условия "%1"не е картографиран след последното редактиране. Искате ли да извършите картографиране сега?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Настройка на гранични условия &quot;%1&quot;не е картографиран след последното редактиране. Искате ли да извършите картографиране сега?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Забележка: Когато вариантът е активиран, се създава вариант с име „По подразбиране“ и всички географски данни се преместват към него. Можете да добавяте, преименувате, премахвате варианти от "Object Browser". Можете да местите, копирате географски данни между вариантите. Данните за атрибутите на мрежата, създадени от варианта, който сте избрали с „Вариация за предаване на решаващия инструмент“, се предават на решаващия инструмент. Можете да подготвите множество варианти, да превключите кои да предадете на решаващия инструмент и да се уверите в ефекта от разликата.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Забележка: Когато вариантът е активиран, се създава вариант с име „По подразбиране“ и всички географски данни се преместват към него. Можете да добавяте, преименувате, премахвате варианти от &quot;Object Browser&quot;. Можете да местите, копирате географски данни между вариантите. Данните за атрибутите на мрежата, създадени от варианта, който сте избрали с „Вариация за предаване на решаващия инструмент“, се предават на решаващия инструмент. Можете да подготвите множество варианти, да превключите кои да предадете на решаващия инструмент и да се уверите в ефекта от разликата.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Редактиране на стойността...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Експортиране...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Генерирайте данни от облака от точки</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Редактирайте стойността, като посочите разликата...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Редактирайте стойността, като посочите съотношение...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Внимание</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">редактиране %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Въведете новата стойност на %1 в избраните решетъчни клетки.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">разлика</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">съотношение</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Топографски файл (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Експортиране като топографски данни</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Възникна грешка при отваряне на файла.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Условието на мрежата е успешно експортирано в %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Грешка</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Информация</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 генерирани.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Приложи %1 да се %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Въведете %1 на %2 в избраните решетъчни клетки.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Цветна карта (тази настройка е обичайна за географските данни)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Ширина на линията:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Показване на браузъра на атрибутите</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Промяна на атрибута на клетката</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Редактиране на стойността...</translation>
+        <translation type="vanished">Редактиране на стойността...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Внимание</translation>
+        <translation type="vanished">Внимание</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Моля, изберете само един възел.</translation>
+        <translation type="vanished">Моля, изберете само един възел.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>редактиране %1</translation>
+        <translation type="vanished">редактиране %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Въведете новата стойност на %1 в избраните решетъчни клетки.</translation>
+        <translation type="vanished">Въведете новата стойност на %1 в избраните решетъчни клетки.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Редактирайте стойността, като посочите разликата...</translation>
+        <translation type="vanished">Редактирайте стойността, като посочите разликата...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Редактирайте стойността, като посочите съотношение...</translation>
+        <translation type="vanished">Редактирайте стойността, като посочите съотношение...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>разлика</translation>
+        <translation type="vanished">разлика</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>съотношение</translation>
+        <translation type="vanished">съотношение</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Приложи %1 да се %2</translation>
+        <translation type="vanished">Приложи %1 да се %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Въведете %1 на %2 в избраните решетъчни клетки.</translation>
+        <translation type="vanished">Въведете %1 на %2 в избраните решетъчни клетки.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Експортиране...</translation>
+        <translation type="vanished">Експортиране...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Топографски файл (*.tpo)</translation>
+        <translation type="vanished">Топографски файл (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Експортиране като топографски данни</translation>
+        <translation type="vanished">Експортиране като топографски данни</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Възникна грешка при отваряне на файла.</translation>
+        <translation type="vanished">Възникна грешка при отваряне на файла.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Условието на мрежата е успешно експортирано в %1.</translation>
+        <translation type="vanished">Условието на мрежата е успешно експортирано в %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Грешка</translation>
+        <translation type="vanished">Грешка</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Информация</translation>
+        <translation type="vanished">Информация</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 генерирани.</translation>
+        <translation type="vanished">%1 генерирани.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Генерирайте данни от облака от точки</translation>
+        <translation type="vanished">Генерирайте данни от облака от точки</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Настройка на дисплея на атрибута на клетката на мрежата (%1)</translation>
+        <translation type="vanished">Настройка на дисплея на атрибута на клетката на мрежата (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Настройка на дисплея на атрибута на клетката на мрежата</translation>
+        <translation type="vanished">Настройка на дисплея на атрибута на клетката на мрежата</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Импортиране (&amp;I)...</translation>
+        <translation type="vanished">Импортиране (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Експортиране (&amp;E)...</translation>
+        <translation type="vanished">Експортиране (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Цветна карта (тази настройка е обичайна за географските данни)</translation>
+        <translation type="vanished">Цветна карта (тази настройка е обичайна за географските данни)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Диалог</translation>
+        <translation type="vanished">Диалог</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Атрибут</translation>
+        <translation type="vanished">Атрибут</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Цвят</translation>
+        <translation type="vanished">Цвят</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Показване на браузъра на атрибутите</translation>
+        <translation type="vanished">Показване на браузъра на атрибутите</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Промяна на атрибута на клетката</translation>
+        <translation type="vanished">Промяна на атрибута на клетката</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Изпълни (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Следните атрибути не са картографирани, защото изходните стойности на генератора на мрежата за тях. Ако искате да картографирате географски данни за тях принудително, моля, съпоставете ръчно с меню "Решетка" -&gt; "Съпоставяне на атрибути" -&gt; "Изпълнение".</translation>
+        <translation>Следните атрибути не са картографирани, защото изходните стойности на генератора на мрежата за тях. Ако искате да картографирате географски данни за тях принудително, моля, съпоставете ръчно с меню &quot;Решетка&quot; -&gt; &quot;Съпоставяне на атрибути&quot; -&gt; &quot;Изпълнение&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картографирането на географски данни приключи</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибутът на мрежата "%1"се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибутът на мрежата &quot;%1&quot;се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Граничното условие "%1"се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Граничното условие &quot;%1&quot;се редактира на ръка. Когато изпълнявате картографиране, всички направени от вас промени ще бъдат изхвърлени. Наистина ли искате да изпълните картографиране?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Автоматичен</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Когато мрежата е създадена, ще бъдете попитани дали за да изпълнявате картографиране на атрибути всеки път. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета име = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {бяло пространство: предварително пренасяне; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Когато мрежата е създадена, ще бъдете попитани дали за да изпълнявате картографиране на атрибути всеки път. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Ръководство</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Съпоставянето на атрибутите се изпълнява само когато ръчно изберете менюто "Изпълнение".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Съпоставянето на атрибутите се изпълнява само когато ръчно изберете менюто &quot;Изпълнение&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>MainWindow</translation>
+        <translation type="vanished">MainWindow</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Посока:</translation>
+        <translation type="vanished">Посока:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Черна линия:</translation>
+        <translation type="vanished">Черна линия:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Червена линия:</translation>
+        <translation type="vanished">Червена линия:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Синя линия:</translation>
+        <translation type="vanished">Синя линия:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Няма данни)</translation>
+        <translation type="vanished">(Няма данни)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Мрежово напречно сечение (%1): J = %2</translation>
+        <translation type="vanished">Мрежово напречно сечение (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Мрежово напречно сечение (%1): I = %2</translation>
+        <translation type="vanished">Мрежово напречно сечение (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Настройка на цветна карта</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Използвайте раздела Colormap, за да редактирате цветовата настройка&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Забележка:&lt;/span&gt; Използвайте раздела Colormap, за да редактирате цветовата настройка&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>редактиране (&amp;E)...</translation>
+        <translation type="vanished">редактиране (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Ляв бряг</translation>
+        <translation type="vanished">Ляв бряг</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>От дясната страна на брега</translation>
+        <translation type="vanished">От дясната страна на брега</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>редактиране %1</translation>
+        <translation type="vanished">редактиране %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Въведете новата стойност на %1 в избраните възли на мрежата.</translation>
+        <translation type="vanished">Въведете новата стойност на %1 в избраните възли на мрежата.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Настройка на скаларна лента (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Отворете прозореца за изглед на птичи поглед (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>Генериране %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Този CGNS файл е създаден за %1 версия %2. Той не е съвместим с текущия решател. Може би само част от мрежата ще бъде внесена. Наистина ли искате да импортирате решетка от този файл?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Този CGNS файл няма информация за решаване. Не можем да проверим дали този CGNS файл е съвместим с решавача. Ако не е съвместим, може би само част от мрежата ще бъде импортирана. Наистина ли искате да импортирате решетка от този файл?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Настройка на формата на мрежата</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Настройка на дисплея (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Настройка на формата на мрежата</translation>
     </message>
 </context>
 <context>

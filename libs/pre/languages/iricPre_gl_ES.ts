@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -65,37 +67,37 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation>Produciuse un erro ao importar a reixa.</translation>
+        <translation type="vanished">Produciuse un erro ao importar a reixa.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Este ficheiro CGNS está creado para %1 versión %2. Non é compatible co solucionador actual. Quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
+        <translation type="vanished">Este ficheiro CGNS está creado para %1 versión %2. Non é compatible co solucionador actual. Quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Este ficheiro CGNS non ten información de solucionador. Non podemos comprobar se este ficheiro CGNS é compatible co solucionador. Se non é compatible, quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
+        <translation type="vanished">Este ficheiro CGNS non ten información de solucionador. Non podemos comprobar se este ficheiro CGNS é compatible co solucionador. Se non é compatible, quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
     </message>
     <message>
         <source>This file does not contain grid that can be imported.</source>
-        <translation>Este ficheiro non contén grade que se poida importar.</translation>
+        <translation type="vanished">Este ficheiro non contén grade que se poida importar.</translation>
     </message>
     <message>
         <source>Select grid</source>
-        <translation>Seleccione cuadrícula</translation>
+        <translation type="vanished">Seleccione cuadrícula</translation>
     </message>
     <message>
         <source>Select grid to import.</source>
-        <translation>Seleccione a cuadrícula para importar.</translation>
+        <translation type="vanished">Seleccione a cuadrícula para importar.</translation>
     </message>
 </context>
 <context>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Xanela de vista de cuadrícula</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 non se mapean despois de editalos a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuración da condición límite "%1"non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración da condición límite &quot;%1&quot;non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1046,14 +1048,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: Cando a variación está activada, créase unha variación chamada "Predeterminada" e todos os datos xeográficos móvense a ela. Podes engadir, renomear ou eliminar variacións do "Navegador de obxectos". Pode mover, copiar datos xeográficos entre variacións. Os datos do atributo de grade creados a partir da variación que selecciona con "Variación para pasar ao solucionador" pásanse ao solucionador. Podes preparar varias variacións, cambiar cales pasar ao solucionador e asegurarte de que o efecto da diferenza.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: Cando a variación está activada, créase unha variación chamada &quot;Predeterminada&quot; e todos os datos xeográficos móvense a ela. Podes engadir, renomear ou eliminar variacións do &quot;Navegador de obxectos&quot;. Pode mover, copiar datos xeográficos entre variacións. Os datos do atributo de grade creados a partir da variación que selecciona con &quot;Variación para pasar ao solucionador&quot; pásanse ao solucionador. Podes preparar varias variacións, cambiar cales pasar ao solucionador e asegurarte de que o efecto da diferenza.</translation>
     </message>
 </context>
 <context>
@@ -1107,10 +1109,131 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem</name>
+    <message>
+        <source>Edit value...</source>
+        <translation type="unfinished">Editar valor...</translation>
+    </message>
+    <message>
+        <source>Export...</source>
+        <translation type="unfinished">Exportar...</translation>
+    </message>
+    <message>
+        <source>Generate point cloud data</source>
+        <translation type="unfinished">Xera datos na nube de puntos</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying difference...</source>
+        <translation type="unfinished">Edite o valor especificando a diferenza...</translation>
+    </message>
+    <message>
+        <source>Edit value by specifying ratio...</source>
+        <translation type="unfinished">Edite o valor especificando a relación...</translation>
+    </message>
+    <message>
+        <source>Grid %1 Attribute Display Setting (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Please select only one cell.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation type="unfinished">Editar %1</translation>
+    </message>
+    <message>
+        <source>Input the new value of %1 at the selected grid cells.</source>
+        <translation type="unfinished">Introduza o novo valor de %1 nas celas da grade seleccionadas.</translation>
+    </message>
+    <message>
+        <source>difference</source>
+        <translation type="unfinished">diferenza</translation>
+    </message>
+    <message>
+        <source>ratio</source>
+        <translation type="unfinished">relación</translation>
+    </message>
+    <message>
+        <source>Topography File (*.tpo)</source>
+        <translation type="unfinished">Ficheiro de topografía (*.tpo)</translation>
+    </message>
+    <message>
+        <source>Export as Topography Data</source>
+        <translation type="unfinished">Exportar como datos de topografía</translation>
+    </message>
+    <message>
+        <source>Error occured while opening the file.</source>
+        <translation type="unfinished">Produciuse un erro ao abrir o ficheiro.</translation>
+    </message>
+    <message>
+        <source>Grid condition successfully exported to %1.</source>
+        <translation type="unfinished">Condición da rede exportada correctamente a %1.</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Información</translation>
+    </message>
+    <message>
+        <source>%1 generated.</source>
+        <translation type="unfinished">%1 xerado.</translation>
+    </message>
+    <message>
+        <source>Apply %1 to %2</source>
+        <translation type="unfinished">Solicitar %1 a %2</translation>
+    </message>
+    <message>
+        <source>Input the %1 of %2 at the selected grid cells.</source>
+        <translation type="unfinished">Introduza o %1 de %2 nas celas da grade seleccionadas.</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
+    <message>
+        <source>Grid Cell Attribute Display Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Colormap (This setting is common with Geographic Data)</source>
+        <translation type="unfinished">Mapa de cores (esta configuración é común con Datos xeográficos)</translation>
+    </message>
+    <message>
+        <source>Line Width:</source>
+        <translation type="unfinished">Ancho de liña:</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished">Importar (&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished">Exportar (&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
+    <message>
+        <source>Show Attribute Browser</source>
+        <translation type="unfinished">Mostrar navegador de atributos</translation>
+    </message>
+    <message>
+        <source>Cell Attribute Change</source>
+        <translation type="unfinished">Cambio de atributo de cela</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeCellDataItem</name>
     <message>
         <source>Edit value...</source>
-        <translation>Editar valor...</translation>
+        <translation type="vanished">Editar valor...</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
@@ -1118,117 +1241,121 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>Please select only one node.</source>
-        <translation>Seleccione só un nodo.</translation>
+        <translation type="vanished">Seleccione só un nodo.</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Editar %1</translation>
+        <translation type="vanished">Editar %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid cells.</source>
-        <translation>Introduza o novo valor de %1 nas celas da grade seleccionadas.</translation>
+        <translation type="vanished">Introduza o novo valor de %1 nas celas da grade seleccionadas.</translation>
     </message>
     <message>
         <source>Edit value by specifying difference...</source>
-        <translation>Edite o valor especificando a diferenza...</translation>
+        <translation type="vanished">Edite o valor especificando a diferenza...</translation>
     </message>
     <message>
         <source>Edit value by specifying ratio...</source>
-        <translation>Edite o valor especificando a relación...</translation>
+        <translation type="vanished">Edite o valor especificando a relación...</translation>
     </message>
     <message>
         <source>difference</source>
-        <translation>diferenza</translation>
+        <translation type="vanished">diferenza</translation>
     </message>
     <message>
         <source>ratio</source>
-        <translation>relación</translation>
+        <translation type="vanished">relación</translation>
     </message>
     <message>
         <source>Apply %1 to %2</source>
-        <translation>Solicitar %1 a %2</translation>
+        <translation type="vanished">Solicitar %1 a %2</translation>
     </message>
     <message>
         <source>Input the %1 of %2 at the selected grid cells.</source>
-        <translation>Introduza o %1 de %2 nas celas da grade seleccionadas.</translation>
+        <translation type="vanished">Introduza o %1 de %2 nas celas da grade seleccionadas.</translation>
     </message>
     <message>
         <source>Export...</source>
-        <translation>Exportar...</translation>
+        <translation type="vanished">Exportar...</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Ficheiro de topografía (*.tpo)</translation>
+        <translation type="vanished">Ficheiro de topografía (*.tpo)</translation>
     </message>
     <message>
         <source>Export as Topography Data</source>
-        <translation>Exportar como datos de topografía</translation>
+        <translation type="vanished">Exportar como datos de topografía</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>Produciuse un erro ao abrir o ficheiro.</translation>
+        <translation type="vanished">Produciuse un erro ao abrir o ficheiro.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>Condición da rede exportada correctamente a %1.</translation>
+        <translation type="vanished">Condición da rede exportada correctamente a %1.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation>Información</translation>
+        <translation type="vanished">Información</translation>
     </message>
     <message>
         <source>%1 generated.</source>
-        <translation>%1 xerado.</translation>
+        <translation type="vanished">%1 xerado.</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
-        <translation>Xera datos na nube de puntos</translation>
+        <translation type="vanished">Xera datos na nube de puntos</translation>
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation>Configuración de visualización de atributos de cela da cuadrícula (%1)</translation>
+        <translation type="vanished">Configuración de visualización de atributos de cela da cuadrícula (%1)</translation>
+    </message>
+    <message>
+        <source>Cell</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuración de visualización de atributos de cela da cuadrícula</translation>
+        <translation type="vanished">Configuración de visualización de atributos de cela da cuadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation>Importar (&amp;I)...</translation>
+        <translation type="vanished">Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation>Exportar (&amp;E)...</translation>
+        <translation type="vanished">Exportar (&amp;E)...</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
-        <translation>Mapa de cores (esta configuración é común con Datos xeográficos)</translation>
+        <translation type="vanished">Mapa de cores (esta configuración é común con Datos xeográficos)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeCellDisplaySettingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation>Diálogo</translation>
+        <translation type="vanished">Diálogo</translation>
     </message>
     <message>
         <source>Attribute</source>
-        <translation>Atributo</translation>
+        <translation type="vanished">Atributo</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation>Cor</translation>
+        <translation type="vanished">Cor</translation>
     </message>
 </context>
 <context>
@@ -1239,11 +1366,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Mostrar navegador de atributos</translation>
+        <translation type="vanished">Mostrar navegador de atributos</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Cambio de atributo de cela</translation>
+        <translation type="vanished">Cambio de atributo de cela</translation>
     </message>
 </context>
 <context>
@@ -1270,6 +1397,34 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
 </context>
 <context>
+    <name>PreProcessorGridAttributeIEdgeDataItem</name>
+    <message>
+        <source>Edge (I-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeIEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (I-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeDataItem</name>
+    <message>
+        <source>Edge (J-direction)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridAttributeJEdgeGroupDataItem</name>
+    <message>
+        <source>Edge (J-direction) attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridAttributeMappingSettingTopDataItem</name>
     <message>
         <source>Execute mapping</source>
@@ -1280,9 +1435,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú "Reixa" -&gt; "Asignación de atributos" -&gt; "Executar".</translation>
+        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú &quot;Reixa&quot; -&gt; &quot;Asignación de atributos&quot; -&gt; &quot;Executar&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1301,12 +1456,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Rematou o mapeado de datos xeográficos</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>O atributo da grade "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>O atributo da grade &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A condición límite "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A condición límite &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
 </context>
 <context>
@@ -1324,20 +1479,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automático</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú "Executar".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú &quot;Executar&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1631,39 +1786,39 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindow</name>
     <message>
         <source>MainWindow</source>
-        <translation>Xanela Principal</translation>
+        <translation type="vanished">Xanela Principal</translation>
     </message>
     <message>
         <source>toolBar</source>
-        <translation>toolBar</translation>
+        <translation type="vanished">toolBar</translation>
     </message>
     <message>
         <source>Direction: </source>
-        <translation>Dirección:</translation>
+        <translation type="vanished">Dirección:</translation>
     </message>
     <message>
         <source>Black line: </source>
-        <translation>Liña negra:</translation>
+        <translation type="vanished">Liña negra:</translation>
     </message>
     <message>
         <source>Red line: </source>
-        <translation>Liña vermella:</translation>
+        <translation type="vanished">Liña vermella:</translation>
     </message>
     <message>
         <source>Blue line: </source>
-        <translation>Liña azul:</translation>
+        <translation type="vanished">Liña azul:</translation>
     </message>
     <message>
         <source>(No data)</source>
-        <translation>(Sen datos)</translation>
+        <translation type="vanished">(Sen datos)</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): J = %2</source>
-        <translation>Sección transversal da cuadrícula (%1): J = %2</translation>
+        <translation type="vanished">Sección transversal da cuadrícula (%1): J = %2</translation>
     </message>
     <message>
         <source>Grid Crosssection (%1): I = %2</source>
-        <translation>Sección transversal da cuadrícula (%1): I = %2</translation>
+        <translation type="vanished">Sección transversal da cuadrícula (%1): I = %2</translation>
     </message>
 </context>
 <context>
@@ -2092,8 +2247,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>Configuración do mapa de cores</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Use a pestana Mapa de cores para editar a configuración da cor&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; Use a pestana Mapa de cores para editar a configuración da cor&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2112,23 +2267,23 @@ This algorithm can be used only for structured grids.</source>
     <name>PreProcessorGridCrosssectionWindowGraphicsView</name>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editar (&amp;E)...</translation>
+        <translation type="vanished">Editar (&amp;E)...</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
-        <translation>Marxe esquerda</translation>
+        <translation type="vanished">Marxe esquerda</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Marxe dereita</translation>
+        <translation type="vanished">Marxe dereita</translation>
     </message>
     <message>
         <source>Edit %1</source>
-        <translation>Editar %1</translation>
+        <translation type="vanished">Editar %1</translation>
     </message>
     <message>
         <source>Input the new value of %1 at the selected grid nodes.</source>
-        <translation>Introduza o novo valor de %1 nos nodos de grade seleccionados.</translation>
+        <translation type="vanished">Introduza o novo valor de %1 nos nodos de grade seleccionados.</translation>
     </message>
 </context>
 <context>
@@ -2206,7 +2361,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Configurar a barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Abre a xanela de vista de paxaro (&amp;B)</translation>
     </message>
     <message>
@@ -2232,6 +2387,16 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Generate %1</source>
         <translation>Xerar %1</translation>
+    </message>
+    <message>
+        <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Este ficheiro CGNS está creado para %1 versión %2. Non é compatible co solucionador actual. Quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
+    </message>
+    <message>
+        <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
+Do you really want to import grid from this file?</source>
+        <translation type="unfinished">Este ficheiro CGNS non ten información de solucionador. Non podemos comprobar se este ficheiro CGNS é compatible co solucionador. Se non é compatible, quizais só se importe algunha parte da grade. Desexa realmente importar a grella deste ficheiro?</translation>
     </message>
 </context>
 <context>
@@ -2580,6 +2745,13 @@ This algorithm can be used only for structured grids.</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorStructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Configuración da forma de reixa</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorUnstructured2dGridDataItem</name>
     <message>
         <source>&amp;Select vertices</source>
@@ -2592,6 +2764,13 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>Dis&amp;play Setting...</source>
         <translation>Configuración da pantalla (&amp;P)...</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorUnstructured2dGridShapeDataItem</name>
+    <message>
+        <source>Grid Shape Setting</source>
+        <translation type="unfinished">Configuración da forma de reixa</translation>
     </message>
 </context>
 <context>
