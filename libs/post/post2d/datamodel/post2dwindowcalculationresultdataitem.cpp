@@ -244,8 +244,8 @@ void Post2dWindowCalculationResultDataItem::doLoadFromProjectMainFile(const QDom
 	}
 
 	QDomNode scalarCellNode = iRIC::getChildNode(node, "ScalarCellV4");
-	if (! scalarCellNode.isNull() && impl->m_nodeScalarGroupTopDataItem != nullptr) {
-		impl->m_nodeScalarGroupTopDataItem->loadFromProjectMainFile(scalarCellNode);
+	if (! scalarCellNode.isNull() && impl->m_cellScalarGroupTopDataItem != nullptr) {
+		impl->m_cellScalarGroupTopDataItem->loadFromProjectMainFile(scalarCellNode);
 	}
 
 	QDomNode scalarIEdgeNode = iRIC::getChildNode(node, "ScalarEdgeIV4");
