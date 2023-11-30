@@ -465,6 +465,9 @@ void v4SolutionGridIO::loadUnstructured2dGrid(v4Unstructured2dGrid* grid, iRICLi
 	if (zone->nodeSolutionExists() && zone->nodeSolution() != nullptr) {
 		*ier = CgnsUtil::loadScalarData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData(), IBC);
 		if (*ier != IRIC_NO_ERROR) {return;}
+
+		*ier = CgnsUtil::loadVectorData(zone->nodeSolution(), grid->vtkData()->data()->GetPointData());
+		if (*ier != IRIC_NO_ERROR) {return;}
 	}
 	if (zone->cellSolutionExists() && zone->cellSolution() != nullptr) {
 		*ier = CgnsUtil::loadScalarData(zone->cellSolution(), grid->vtkData()->data()->GetCellData(), IBC);
