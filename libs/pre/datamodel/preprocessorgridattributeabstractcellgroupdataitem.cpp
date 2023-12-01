@@ -145,21 +145,27 @@ void PreProcessorGridAttributeAbstractCellGroupDataItem::updateActorSetting()
 	}
 	m_opacityWidget->setEnabled(true);
 
-	auto cs = gridTypeDataItem()->colorMapSetting(m_target);
+	auto cond = activeChildItem()->condition();
+	if (cond->isDirection()) {
+		// delegate to child
+		activeChildItem()->updateActorSetting();
+	} else {
+		auto cs = gridTypeDataItem()->colorMapSetting(m_target);
 
-	auto filteredGrid = filteredData();
-	vtkCellData* data = filteredGrid->GetCellData();
-	data->SetActiveScalars(m_target.c_str());
+		auto filteredGrid = filteredData();
+		vtkCellData* data = filteredGrid->GetCellData();
+		data->SetActiveScalars(m_target.c_str());
 
-	auto mapper = cs->buildCellDataMapper(filteredGrid, false);
-	m_actor->SetMapper(mapper);
-	mapper->Delete();
+		auto mapper = cs->buildCellDataMapper(filteredGrid, false);
+		m_actor->SetMapper(mapper);
+		mapper->Delete();
 
-	m_actor->GetProperty()->SetOpacity(m_opacity);
-	m_actor->GetProperty()->SetLineWidth(m_lineWidth);
+		m_actor->GetProperty()->SetOpacity(m_opacity);
+		m_actor->GetProperty()->SetLineWidth(m_lineWidth);
 
-	m_actorCollection->AddItem(m_actor);
-	updateVisibilityWithoutRendering();
+		m_actorCollection->AddItem(m_actor);
+		updateVisibilityWithoutRendering();
+	}
 }
 
 void PreProcessorGridAttributeAbstractCellGroupDataItem::informDataChange(const std::string& name)

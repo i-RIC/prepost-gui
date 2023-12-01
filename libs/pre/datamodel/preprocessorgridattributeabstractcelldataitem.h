@@ -3,6 +3,7 @@
 
 #include "preprocessorgriddataitem.h"
 
+#include <guicore/direction/directionsettingcontainer.h>
 #include <guicore/named/namedgraphicwindowdataitem.h>
 #include <misc/boolcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
@@ -17,6 +18,7 @@ class SolverDefinitionGridAttribute;
 
 class QAction;
 
+class vtkActor;
 class vtkMapper;
 class vtkStructuredGrid;
 
@@ -35,6 +37,8 @@ public:
 	void keyPressEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void keyReleaseEvent(QKeyEvent*, VTKGraphicsView*) override;
 	void addCustomMenuItems(QMenu* menu) override;
+	void updateZDepthRangeItemCount() override;
+	void assignActorZValues(const ZDepthRange& range) override;
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
 	SolverDefinitionGridAttribute* condition() const;
@@ -42,6 +46,7 @@ public:
 	bool addToolBarButtons(QToolBar* toolbar) override;
 	ColorMapSettingContainerI* colorMapSettingContainer() const;
 	ColorMapSettingToolBarWidgetController* colorMapSettingToolBarWidgetController() const;
+	void updateActorSetting() override;
 
 public slots:
 	void showPropertyDialog() override;
@@ -73,6 +78,8 @@ private:
 	virtual PreProcessorGridDataItem::SelectedDataWithIdController* selectedDataController() const = 0;
 	virtual QString positionCaption() const = 0;
 
+	DirectionSettingContainer m_directionSetting;
+	vtkActor* m_directionActor;
 	SolverDefinitionGridAttribute* m_condition;
 
 	BoolContainer m_isCustomModified;

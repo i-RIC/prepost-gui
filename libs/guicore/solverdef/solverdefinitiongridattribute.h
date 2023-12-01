@@ -57,6 +57,7 @@ public:
 	const QVariant& variantMinimumValue() const;
 	Position position() const;
 	bool isOption() const;
+	bool isDirection() const;
 	const QString& mapping() const;
 	const QString& mappingArgs() const;
 	int order() const;

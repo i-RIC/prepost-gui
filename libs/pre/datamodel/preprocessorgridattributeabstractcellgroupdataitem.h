@@ -62,6 +62,7 @@ public:
 	bool colorBarShouldBeVisible(const std::string& name) const;
 
 	virtual vtkPointSetExtended* data() const = 0;
+	virtual vtkPointSet* filteredData() const = 0;
 
 public slots:
 	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
@@ -77,7 +78,6 @@ private:
 
 	virtual SolverDefinitionGridAttribute::Position definitionPosition() const = 0;
 	virtual PreProcessorGridAttributeAbstractCellDataItem* createChild(SolverDefinitionGridAttribute* att) = 0;
-	virtual vtkPointSet* filteredData() const = 0;
 	virtual void getIJIndex(vtkIdType cellId, vtkIdType* i, vtkIdType* j) const = 0;
 
 	std::string m_target;

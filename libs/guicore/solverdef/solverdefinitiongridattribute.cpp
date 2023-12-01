@@ -49,6 +49,7 @@ void SolverDefinitionGridAttribute::Impl::load(const QDomElement& elem, SolverDe
 	QDomNode defNode = iRIC::getChildNode(elem, "Definition");
 	if (! defNode.isNull()) {
 		QDomElement e = defNode.toElement();
+		m_isDirection = iRIC::getBooleanAttribute(e, "direction");
 		m_variantDefaultValue = e.attribute("default", "");
 		m_variantMaximumValue = e.attribute("max", "");
 		m_variantMinimumValue = e.attribute("min", "");
@@ -132,6 +133,11 @@ SolverDefinitionGridAttribute::Position SolverDefinitionGridAttribute::position(
 bool SolverDefinitionGridAttribute::isOption() const
 {
 	return impl->m_isOption;
+}
+
+bool SolverDefinitionGridAttribute::isDirection() const
+{
+	return impl->m_isDirection;
 }
 
 const QString& SolverDefinitionGridAttribute::mapping() const
