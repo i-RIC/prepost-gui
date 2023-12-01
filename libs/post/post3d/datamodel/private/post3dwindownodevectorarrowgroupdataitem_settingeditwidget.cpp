@@ -52,7 +52,7 @@ Post3dWindowNodeVectorArrowGroupDataItem::SettingEditWidget::SettingEditWidget(P
 	}
 
 	QList<int> sizes;
-	sizes << 1 << 4 << 5;
+	sizes << 1 << 1000;
 	ui->facesSplitter->setSizes(sizes);
 }
 
