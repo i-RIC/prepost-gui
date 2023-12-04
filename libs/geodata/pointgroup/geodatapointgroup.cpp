@@ -132,9 +132,10 @@ void GeoDataPointGroup::updateVtkObjects()
 	pointValues->SetName(VALUE.c_str());
 
 	vtkIdType id = 0;
+	auto att = gridAttribute();
 	for (auto it = data().rbegin(); it != data().rend(); ++it) {
 		auto point = dynamic_cast<GeoDataPointGroupPoint*> (*it);
-		double v = point->value().toDouble();
+		double v = att->colorMapValue(point->value()).toDouble();
 		auto p = point->point();
 		impl->m_vtkPoints->InsertNextPoint(p.x(), p.y(), 0);
 		points->InsertNextCell(1, &id);
@@ -301,7 +302,7 @@ GeoDataPolyData* GeoDataPointGroup::createEditTargetData()
 	point->setVariantValue(gridAttribute()->variantDefaultValue());
 
 	point->assignActorZValues(depthRange());
-	connect(point, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
+	connect(point, &GeoDataPoint::nameAndValueEdited, [=]() {updateAttributeBrowser();});
 
 	return point;
 }

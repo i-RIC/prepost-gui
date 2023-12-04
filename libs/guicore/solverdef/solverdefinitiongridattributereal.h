@@ -8,6 +8,7 @@
 class GUICOREDLL_EXPORT SolverDefinitionGridAttributeReal : public SolverDefinitionGridAttributeT<double>
 {
 public:
+	SolverDefinitionGridAttributeReal();
 	SolverDefinitionGridAttributeReal(const QDomElement& elem, SolverDefinition* solverDef, Position pos, bool isOption, int order);
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;

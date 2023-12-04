@@ -3,9 +3,9 @@
 
 #include "geodatapointmap_polygonsmanager.h"
 
-#include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridattributeinteger.h>
 
-class GeoDataPointmap::PolygonsManager::AttributeForMappingCondition : public SolverDefinitionGridAttribute
+class GeoDataPointmap::PolygonsManager::AttributeForMappingCondition : public SolverDefinitionGridAttributeInteger
 {
 public:
 	AttributeForMappingCondition();
@@ -13,13 +13,15 @@ public:
 	GridAttributeStringConverter* stringConverter() const override;
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+	QVariant colorMapValue(const QVariant& v) const override;
 	GeoData* buildBackgroundGeoData(ProjectDataItem* parent) override;
 
 private:
 	GridAttributeContainer* buildContainer(v4InputGrid* grid) override;
+	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;
 
-	class StringConverter;
 	class EditWidget;
+	class StringConverter;
 };
 
 #endif // GEODATAPOINTMAP_POLYGONSMANAGER_ATTRIBUTEFORMAPPINGCONDITION_H

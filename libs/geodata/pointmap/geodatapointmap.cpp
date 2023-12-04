@@ -7,13 +7,13 @@
 #include "private/geodatapointmap_impl.h"
 #include "private/geodatapointmap_mappingsettingdialog.h"
 #include "private/geodatapointmap_modifycommand.h"
-// #include "private/geodatapointmap_triangleswithlongedgeremover.h"
 #include "private/geodatapointmap_tinmanager_breakline.h"
 #include "public/geodatapointmap_displaysettingwidget.h"
 
 #include <geodata/polygongroup/geodatapolygongroup.h>
 #include <guibase/polygon/polygonpushvertexcommand.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/image/imagesettingcontainer.h>
 #include <guicore/pre/base/preprocessordataitem.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
@@ -22,6 +22,7 @@
 #include <guicore/pre/base/preprocessorgridtypedataitemi.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/project/projectdata.h>
+#include <guicore/scalarstocolors/colormaplegendsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
@@ -32,6 +33,7 @@
 #include <misc/qpointfcompare.h>
 #include <misc/stringtool.h>
 #include <misc/versionnumber.h>
+#include <misc/xmlsupport.h>
 #include <misc/zdepthrange.h>
 #include <triangle/triangle.h>
 #include <triangle/triangleexecutethread.h>
@@ -345,6 +347,11 @@ void GeoDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)
 	impl->m_tinManager.load(node);
 	impl->m_displaySetting.load(node);
 	impl->m_mappingSetting.load(node);
+
+	auto mcmNode = iRIC::getChildNode(node, "MappingColorMap");
+	if (! mcmNode.isNull()) {
+		impl->m_polygonsManager.polygonsColorMap()->load(mcmNode);
+	}
 }
 
 void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -356,6 +363,10 @@ void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	impl->m_tinManager.save(writer);
 	impl->m_displaySetting.save(writer);
 	impl->m_mappingSetting.save(writer);
+
+	writer.writeStartElement("MappingColorMap");
+	impl->m_polygonsManager.polygonsColorMap()->save(writer);
+	writer.writeEndElement();
 }
 
 bool GeoDataPointmap::getTinValueAt(double x, double y, double* value)
@@ -514,6 +525,13 @@ QDialog* GeoDataPointmap::propertyDialog(QWidget* parent)
 
 		widget->setColorMapWidget(colorMapWidget2);
 	}
+
+	auto polygonColorMapWidget = impl->m_polygonsManager.attribute()->createColorMapSettingEditWidget(widget);
+	auto polygonColorMap = impl->m_polygonsManager.polygonsColorMap();
+	polygonColorMapWidget->setSetting(polygonColorMap);
+	auto polygonColorMapWidget2 = new ColorMapSettingEditWidgetWithImportExportButton(polygonColorMapWidget, widget);
+	widget->setPolygonColorMapWidget(polygonColorMapWidget2);
+
 	dialog->setWidget(widget);
 	dialog->setWindowTitle(tr("Point Cloud Display Setting"));
 	dialog->resize(900, 700);
@@ -541,8 +559,6 @@ void GeoDataPointmap::updateMenu(QMenu* menu)
 	menu->addAction(impl->m_mergeAction);
 	menu->addAction(impl->m_mappingSettingAction);
 	menu->addAction(impl->m_displaySettingAction);
-	menu->addSeparator();
-	menu->addAction(deleteAction());
 }
 
 void GeoDataPointmap::updateActorSetting()
@@ -623,7 +639,15 @@ void GeoDataPointmap::openMappingSettingDialog()
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	impl->m_activeController->handleMousePressEvent(event, v);
+	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
+	controller->handleMousePressEvent(event, v);
+	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+		impl->m_activeController->handleMousePressEvent(event, v);
+	} else {
+		std::vector<ImageSettingContainer::Controller*> controllers;
+		controllers.push_back(controller);
+		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+	}
 
 	if (event->button() == Qt::RightButton) {
 		// right click
@@ -632,7 +656,16 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 }
 void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	impl->m_activeController->handleMouseReleaseEvent(event, v);
+
+	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
+	controller->handleMouseReleaseEvent(event, v);
+	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+		impl->m_activeController->handleMouseReleaseEvent(event, v);
+	} else {
+		std::vector<ImageSettingContainer::Controller*> controllers;
+		controllers.push_back(controller);
+		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+	}
 
 	if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
@@ -654,7 +687,15 @@ QStringList GeoDataPointmap::containedFiles() const
 
 void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
 {
-	impl->m_activeController->handleMouseMoveEvent(event, v);
+	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
+	controller->handleMouseMoveEvent(event, v, true);
+	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+		impl->m_activeController->handleMouseMoveEvent(event, v);
+	} else {
+		std::vector<ImageSettingContainer::Controller*> controllers;
+		controllers.push_back(controller);
+		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+	}
 }
 
 void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v)
@@ -665,6 +706,12 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 void GeoDataPointmap::informDeselection(PreProcessorGraphicsViewI* /*v*/)
 {
 	impl->m_pointsManager.clearSelection();
+}
+
+void GeoDataPointmap::handleResize(QResizeEvent* event, PreProcessorGraphicsViewI* v)
+{
+	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
+	controller->handleResize(event, v);
 }
 
 void GeoDataPointmap::keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v)

@@ -14,6 +14,13 @@ EnumLoaderT<V>::~EnumLoaderT()
 {}
 
 template <class V>
+void EnumLoaderT<V>::addEnumeration(V value, const std::string& english, const QString& caption)
+{
+	m_englishEnumerations.insert(value, english);
+	m_enumerations.insert(value, caption);
+}
+
+template <class V>
 const QMap<V, QString>& EnumLoaderT<V>::enumerations() const
 {
 	return m_enumerations;

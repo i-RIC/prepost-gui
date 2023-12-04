@@ -144,12 +144,11 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 	bool itemTested = false;
 
 	auto item = m_controller->item();
-    if (item != nullptr) {
-		bool itemTested = true;
+	if (item != nullptr) {
 		if (item->isAncientChecked() && item->isChecked()) {
 			visible = true;
 		}
-    }
+	}
 	for (auto item : m_controller->items()) {
 		itemTested = true;
 		if (! item->isAncientChecked()) {continue;}

@@ -7,8 +7,12 @@
 
 class GeoDataPolygonGroup;
 
+class vtkActor2D;
+
 class GeoDataPointmap::PolygonsManager : public QObject, public MouseEventController
 {
+	Q_OBJECT
+
 public:
 	PolygonsManager(PointsManager* pm, TINManager* tm, GeoDataPointmap* pointmap);
 	~PolygonsManager();
@@ -19,7 +23,10 @@ public:
 
 	void updatePolygonOrder();
 	bool map(double x, double y, double* value);
+
+	SolverDefinitionGridAttribute* attribute() const;
 	GeoDataPolygonGroup* polygonGroup() const;
+	ColorMapSettingContainerI* polygonsColorMap() const;
 
 	void addActionsToMenu(QMenu* menu) override;
 
@@ -35,9 +42,17 @@ public:
 
 private:
 	class AttributeForMappingCondition;
-	AttributeForMappingCondition* m_attribute;
+	class GeoDataDataItem;
+	class GeoDataGroupDataItem;
+	class GeoDataTopDataItem;
+	class GridTypeDataItem;
+	class RootDataItem;
 
-	GeoDataPolygonGroup* m_polygonGroup;
+	AttributeForMappingCondition* m_attribute;
+	RootDataItem* m_rootDataItem;
+	ColorMapSettingContainerI* m_polygonsColorMap;
+	vtkActor2D* m_polygonsColorMapActor;
+
 	PointsManager* m_pointsManager;
 	TINManager* m_tinManager;
 	GeoDataPointmap* m_parent;

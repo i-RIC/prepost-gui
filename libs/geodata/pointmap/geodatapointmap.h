@@ -94,6 +94,7 @@ public:
 
 	void addCustomMenuItems(QMenu* menu) override;
 	void informDeselection(PreProcessorGraphicsViewI* v) override;
+	void handleResize(QResizeEvent* event, PreProcessorGraphicsViewI* v) override;
 	void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
 	void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v) override;
 	void mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewI* v) override;

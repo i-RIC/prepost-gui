@@ -53,7 +53,7 @@ public:
 	bool isChecked() const;
 	virtual bool isAncientChecked() const;
 
-	QMainWindow* mainWindow() const;
+	virtual QMainWindow* mainWindow() const;
 
 	virtual void loadFromProjectMainFile(const QDomNode& node) override;
 	virtual void saveToProjectMainFile(QXmlStreamWriter& writer) override;
@@ -119,6 +119,7 @@ public:
 	void loadCheckState(const QDomNode& node);
 	void renderGraphicsView();
 	virtual void updateVisibilityWithoutRendering();
+	void addChildItem(GraphicsWindowDataItem* child);
 	void applyOffset(double x, double y);
 	void pushCommand(QUndoCommand* com, GraphicsWindowDataItem *item = nullptr);
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
@@ -147,13 +148,13 @@ protected:
 	virtual bool myHasTransparentPart() const;
 	virtual void doViewOperationEndedGlobal(VTKGraphicsView* v);
 	virtual void doHandleResize(QResizeEvent* event, VTKGraphicsView* v);
+	virtual bool customVisibility() const;
 
 	/// Build an instance of some class that inherits QGraphicsItem.
 	void saveCheckState(QXmlStreamWriter& writer);
 	void loadExpandState(const QDomNode& node);
 	void saveExpandState(QXmlStreamWriter& writer);
 	virtual QPointF getOffset();
-	void addChildItem(GraphicsWindowDataItem* child);
 	void clearChildItems();
 
 	void showPropertyDialogModal();
