@@ -13,6 +13,9 @@ class GeoDataCreator;
 class GeoDataImporter;
 class GeoDataExporter;
 class GeoDataMapper;
+class GeoDataProxy;
+class GridAttributeDimensionsContainer;
+class MouseBoundingBox;
 class PreProcessorWindowI;
 class PreProcessorDataModelI;
 class PreProcessorGeoDataTopDataItemI;
@@ -23,8 +26,6 @@ class PreProcessorGridTypeDataItemI;
 class PreProcessorHydraulicDataTopDataItemI;
 class PreProcessorHydraulicDataGroupDataItemI;
 class ZDepthRange;
-class MouseBoundingBox;
-class GeoDataProxy;
 
 class vtkRenderer;
 class vtkActorCollection;
@@ -35,10 +36,10 @@ class QDialog;
 class QKeyEvent;
 class QMenu;
 class QUndoCommand;
-class QToolBar;
 class QMouseEvent;
+class QResizeEvent;
+class QToolBar;
 class QWidget;
-class GridAttributeDimensionsContainer;
 
 #include <h5cgnsgeographicdatagroup.h>
 
@@ -93,6 +94,8 @@ public:
 
 	virtual void viewOperationEnded(PreProcessorGraphicsViewI* v);
 	virtual void viewOperationEndedGlobal(PreProcessorGraphicsViewI* v);
+
+	virtual void handleResize(QResizeEvent* event, PreProcessorGraphicsViewI* v);
 
 	virtual void keyPressEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);
 	virtual void keyReleaseEvent(QKeyEvent* event, PreProcessorGraphicsViewI* v);

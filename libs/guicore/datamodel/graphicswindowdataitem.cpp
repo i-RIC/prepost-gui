@@ -321,7 +321,7 @@ void GraphicsWindowDataItem::updateVisibility(bool visible)
 {
 	bool my_visible = true;
 	if (m_standardItem == nullptr) {
-		my_visible = true;
+		my_visible = customVisibility();
 	} else if (m_standardItem->isCheckable()) {
 		switch (m_standardItem->checkState()) {
 		case Qt::Checked:
@@ -689,6 +689,11 @@ void GraphicsWindowDataItem::doViewOperationEndedGlobal(VTKGraphicsView* )
 
 void GraphicsWindowDataItem::doHandleResize(QResizeEvent*, VTKGraphicsView*)
 {}
+
+bool GraphicsWindowDataItem::customVisibility() const
+{
+	return true;
+}
 
 void GraphicsWindowDataItem::pushCommand(QUndoCommand* com, GraphicsWindowDataItem* item)
 {

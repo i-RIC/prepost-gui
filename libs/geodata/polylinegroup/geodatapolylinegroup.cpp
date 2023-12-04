@@ -141,9 +141,11 @@ void GeoDataPolyLineGroup::updateVtkObjects()
 	edgeValues->SetName(VALUE.c_str());
 
 	vtkIdType offset = 0;
+
+	auto att = gridAttribute();
 	for (auto it = data().rbegin(); it != data().rend(); ++it) {
 		auto line = dynamic_cast<GeoDataPolyLineGroupPolyLine*> (*it);
-		double v = line->value().toDouble();
+		double v = att->colorMapValue(line->value()).toDouble();
 		for (const QPointF& p : line->points()) {
 			impl->m_points->InsertNextPoint(p.x(), p.y(), 0);
 		}
@@ -364,7 +366,7 @@ GeoDataPolyData* GeoDataPolyLineGroup::createEditTargetData()
 	line->setVariantValue(gridAttribute()->variantDefaultValue());
 
 	line->assignActorZValues(depthRange());
-	connect(line, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
+	connect(line, &GeoDataPolyLine::nameAndValueEdited, [=]() {updateAttributeBrowser();});
 
 	return line;
 }

@@ -104,6 +104,11 @@ const QString& SolverDefinitionGridAttribute::caption() const
 	return impl->m_caption;
 }
 
+void SolverDefinitionGridAttribute::setCaption(const QString& cap)
+{
+	impl->m_caption = cap;
+}
+
 const QVariant& SolverDefinitionGridAttribute::variantDefaultValue() const
 {
 	return impl->m_variantDefaultValue;
@@ -191,6 +196,11 @@ GridAttributeVariationEditDialog* SolverDefinitionGridAttribute::variationEditDi
 	auto widget = variationEditWidget(dialog);
 	dialog->setWidget(widget);
 	return dialog;
+}
+
+QVariant SolverDefinitionGridAttribute::colorMapValue(const QVariant& value) const
+{
+	return value;
 }
 
 ColorMapSettingContainerI* SolverDefinitionGridAttribute::createColorMapSettingContainer() const

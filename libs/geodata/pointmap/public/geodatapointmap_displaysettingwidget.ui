@@ -456,6 +456,25 @@
        </item>
       </layout>
      </widget>
+     <widget class="QWidget" name="polygonColorTab">
+      <attribute name="title">
+       <string>Colormap for Mapping setting</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <widget class="QGroupBox" name="polygonColormapGroupBox">
+         <property name="title">
+          <string>Colormap</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QWidgetContainer" name="polygonColorMapWidget" native="true"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
@@ -575,6 +594,22 @@
     <hint type="destinationlabel">
      <x>429</x>
      <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showPolygonsCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>polygonColormapGroupBox</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>416</x>
+     <y>251</y>
     </hint>
    </hints>
   </connection>

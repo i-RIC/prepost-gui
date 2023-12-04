@@ -128,9 +128,12 @@ void GeoDataPolygonGroup::updateVtkObjects()
 	triValues->SetName(VALUE.c_str());
 
 	vtkIdType offset = 0;
+
+	auto att = gridAttribute();
 	for (auto it = data().rbegin(); it != data().rend(); ++it) {
 		auto pol = dynamic_cast<GeoDataPolygonGroupPolygon*> (*it);
-		double v = pol->value().toDouble();
+
+		double v = att->colorMapValue(pol->value()).toDouble();
 		for (const QPointF& p : pol->points()) {
 			impl->m_points->InsertNextPoint(p.x(), p.y(), 0);
 		}
@@ -180,9 +183,10 @@ void GeoDataPolygonGroup::updateSelectedDataVtkObjects()
 	auto sData = selectedData();
 	if (sData.size() == 0) {return;}
 
+	auto att = geoDataGroupDataItem()->condition();
 	for (auto d : sData) {
 		auto pol = dynamic_cast<GeoDataPolygonGroupPolygon*> (d);
-		double v = pol->value().toDouble();
+		double v = att->colorMapValue(pol->value()).toDouble();
 		auto offset = pol->indexOffset();
 		vtkIdType pts[2];
 		for (unsigned int idx = 0; idx < pol->points().size(); ++idx) {
@@ -357,7 +361,7 @@ GeoDataPolyData* GeoDataPolygonGroup::createEditTargetData()
 	polygon->informSelection(dataModel()->graphicsView());
 
 	polygon->assignActorZValues(depthRange());
-	connect(polygon, SIGNAL(nameAndValueEdited()), this, SLOT(updateAttributeBrowser()));
+	connect(polygon, &GeoDataPolygon::nameAndValueEdited, [=](){updateAttributeBrowser();});
 
 	return polygon;
 }

@@ -25,10 +25,12 @@ public:
 
 	void setSetting(DisplaySetting* setting);
 	void setColorMapWidget(ModifyCommandWidget* widget);
+	void setPolygonColorMapWidget(ModifyCommandWidget* widget);
 
 private:
 	DisplaySetting* m_displaySetting;
 	ModifyCommandWidget* m_colorMapWidget;
+	ModifyCommandWidget* m_polygonColorMapWidget;
 
 	Ui::GeoDataPointmap_DisplaySettingWidget *ui;
 };

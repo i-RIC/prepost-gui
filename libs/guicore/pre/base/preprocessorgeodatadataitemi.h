@@ -10,6 +10,9 @@ class PreProcessorGeoDataGroupDataItemI;
 class PreProcessorGeoDataDataItemI : public PreProcessorDataItem
 {
 public:
+	PreProcessorGeoDataDataItemI(GraphicsWindowDataItem* parent) :
+		PreProcessorDataItem(parent)
+	{}
 	PreProcessorGeoDataDataItemI(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent) :
 		PreProcessorDataItem(itemlabel, icon, parent)
 	{}
