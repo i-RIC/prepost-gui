@@ -161,8 +161,14 @@ void GeoDataPolygonAbstractPolygon::setZDepthRange(double /*min*/, double max)
 
 void GeoDataPolygonAbstractPolygon::updateScalarValues()
 {
-	auto att = impl->m_parent->geoDataGroupDataItem()->condition();
-	double val = att->colorMapValue(impl->m_parent->variantValue()).toDouble();
+	auto geoDataGroup = impl->m_parent->geoDataGroupDataItem();
+	double val = 0;
+	if (geoDataGroup != nullptr) {
+		auto att = geoDataGroup->condition();
+		val = att->colorMapValue(impl->m_parent->variantValue()).toDouble();
+	} else {
+		val = impl->m_parent->variantValue().toDouble();
+	}
 	impl->m_linesScalarValues->Reset();
 	for (int i = 0; i < impl->m_polygonController.linesPolyData()->GetNumberOfLines(); ++i) {
 		impl->m_linesScalarValues->InsertNextValue(val);
