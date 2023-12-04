@@ -76,7 +76,7 @@ void Post2dWindowZoneDataItem::setupActors()
 void Post2dWindowZoneDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode inputNode = iRIC::getChildNode(node, "InputGrid");
-	if (! inputNode.isNull()) {
+	if (! inputNode.isNull() && m_inputGridDataItem != nullptr) {
 		m_inputGridDataItem->loadFromProjectMainFile(inputNode);
 	}
 
@@ -92,9 +92,11 @@ void Post2dWindowZoneDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	writer.writeAttribute("name", m_zoneName.c_str());
 
-	writer.writeStartElement("InputGrid");
-	m_inputGridDataItem->saveToProjectMainFile(writer);
-	writer.writeEndElement();
+	if (m_inputGridDataItem != nullptr) {
+		writer.writeStartElement("InputGrid");
+		m_inputGridDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
 
 	writer.writeStartElement("CalculationResult");
 	m_resultDataItem->saveToProjectMainFile(writer);

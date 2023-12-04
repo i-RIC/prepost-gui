@@ -265,7 +265,9 @@ void Post2dWindowGridTypeDataItem::updateColorBarVisibility(const std::string& a
 	if (m_geoDataItem == nullptr) {return;}
 
 	auto gItem = m_geoDataItem->groupDataItem(attName);
-	visible = visible || gItem->colorBarShouldBeVisible();
+	if (gItem != nullptr) {
+		visible = visible || gItem->colorBarShouldBeVisible();
+	}
 
 	for (auto zone : m_zoneDatas) {
 		auto gItem = zone->inputGridDataItem();
