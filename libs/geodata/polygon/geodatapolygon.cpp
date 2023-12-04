@@ -1339,13 +1339,19 @@ void GeoDataPolygon::addHolePolygon(const QPolygonF& p)
 
 void GeoDataPolygon::updateScalarValues()
 {
-	auto att = geoDataGroupDataItem()->condition();
 	auto numPolys = impl->m_polyData->GetNumberOfPolys();
 	impl->m_scalarValues->Reset();
 
-	double doubleval = att->colorMapValue(variantValue()).toDouble();
+	double val = 0;
+	auto geoDataGroup = geoDataGroupDataItem();
+	if (geoDataGroup != nullptr) {
+		auto att = geoDataGroup->condition();
+		val = att->colorMapValue(variantValue()).toDouble();
+	} else {
+		val = variantValue().toDouble();
+	}
 	for (int i = 0; i < numPolys; ++i) {
-		impl->m_scalarValues->InsertNextValue(doubleval);
+		impl->m_scalarValues->InsertNextValue(val);
 	}
 	impl->m_scalarValues->Modified();
 	impl->m_regionPolygon->updateScalarValues();
