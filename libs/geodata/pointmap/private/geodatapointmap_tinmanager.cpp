@@ -177,6 +177,8 @@ vtkCell* GeoDataPointmap::TINManager::findCell(double x, double y, double* weigh
 {
 	if (impl->m_index == nullptr) {return nullptr;}
 	vtkIdType cellId = impl->m_index->findCell(x, y, 0, weights);
+	if (cellId == -1) {return nullptr;}
+
 	return impl->m_tin->GetCell(cellId);
 }
 
