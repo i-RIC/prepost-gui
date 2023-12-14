@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Löser auswählen</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Wenn Sie ein neues Projekt erstellen, müssen Sie den für die Berechnung zu verwendenden Solver auswählen. Bitte wählen Sie einen Solver aus und drücken Sie die Schaltfläche "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Wenn Sie ein neues Projekt erstellen, müssen Sie den für die Berechnung zu verwendenden Solver auswählen. Bitte wählen Sie einen Solver aus und drücken Sie die Schaltfläche &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Sind Sie sicher, dass Sie löschen möchten " %1 „?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Sind Sie sicher, dass Sie löschen möchten &quot; %1 „?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Fehler beim Laden der Solver-Definitionsdatei im Ordner "%1". Dieser Solver wird ignoriert. %2</translation>
+        <translation>Fehler beim Laden der Solver-Definitionsdatei im Ordner &quot;%1&quot;. Dieser Solver wird ignoriert. %2</translation>
     </message>
 </context>
 <context>
@@ -1908,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dieses Projekt scheint von einem anderen iRIC-GUI-Fenster geöffnet zu werden. Sie können einen Projektordner nicht von mehreren GUI-Fenstern aus öffnen.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Das geöffnete Projekt wird nicht in das Arbeitsverzeichnis kopiert und Sie müssen die Änderungen, die Sie an diesem Projekt vornehmen, speichern. Wenn Sie das aktuelle Projekt behalten möchten, speichern Sie es bitte zuerst in einem anderen Projekt.</translation>
     </message>
     <message>
@@ -2068,8 +2070,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Das derzeit aktive Unterfenster unterstützt das Exportieren von Konturfiguren nicht.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie "Anzeigeeinstellungen" auf "Konturfigur" um, nicht auf "Farbsaum" oder "Isolinien".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Um eine Formdatei zu exportieren, schalten Sie &quot;Anzeigeeinstellungen&quot; auf &quot;Konturfigur&quot; um, nicht auf &quot;Farbsaum&quot; oder &quot;Isolinien&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2209,7 +2211,7 @@ Option -&gt; Preferences</source>
         <translation>Einstellungsdatei (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Um die Shape-Datei zu exportieren, schalten Sie den Farbmodus auf „Discrete Mode“ um.</translation>
     </message>
     <message>
@@ -2221,7 +2223,7 @@ Option -&gt; Preferences</source>
         <translation>Wählen Sie ein Raster aus, um Formdateien zu exportieren.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>Im „Discrete Mode“ wird keine Kontur gezeichnet.</translation>
     </message>
 </context>
@@ -2569,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2596,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Neues 2D-Nachbearbeitungsfenster öffnen</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Neues 2D Bird's-Eye Nachbearbeitungsfenster öffnen</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Neues 2D Bird&apos;s-Eye Nachbearbeitungsfenster öffnen</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2718,6 +2720,10 @@ Option -&gt; Preferences</source>
     <message>
         <source>Copy &amp;Camera Setting...</source>
         <translation>Kameraeinstellung kopieren (&amp;C)...</translation>
+    </message>
+    <message>
+        <source>Open new Crosssection Window</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
