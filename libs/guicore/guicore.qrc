@@ -8,5 +8,7 @@
         <file>images/cursorImageRotate.png</file>
         <file>images/cursorImageZoom.png</file>
         <file>images/logo.png</file>
+        <file>images/dirs_1to8.png</file>
+        <file>images/dirs_1to128.png</file>
     </qresource>
 </RCC>

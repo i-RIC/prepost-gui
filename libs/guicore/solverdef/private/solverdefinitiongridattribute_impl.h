@@ -23,6 +23,7 @@ public:
 	QString m_caption;
 	std::string m_englishCaption;
 	bool m_isOption {false};
+	bool m_isDirection;
 	QVariant m_variantDefaultValue;
 	QVariant m_variantMaximumValue;
 	QVariant m_variantMinimumValue;

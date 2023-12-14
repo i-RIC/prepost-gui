@@ -10,6 +10,8 @@
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/widget/opacitycontainerwidget.h>
 #include <guicore/base/iricmainwindowi.h>
+#include <guicore/datamodel/graphicswindowdataitemupdateactorsettingdialog.h>
+#include <guicore/direction/directionsettingeditwidget.h>
 #include <guicore/image/imagesettingcontainer.h>
 #include <guicore/pre/base/preprocessorgeodatacomplexgroupdataitemi.h>
 #include <guicore/pre/base/preprocessorgeodatadataitemi.h>
@@ -38,14 +40,20 @@
 #include <misc/qwidgetcontainer.h>
 #include <misc/tpoexporter.h>
 #include <misc/valuechangert.h>
+#include <misc/xmlsupport.h>
 
 #include <iriclib_errorcodes.h>
 
+#include <vtkPolyDataMapper.h>
+
 PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstractCellDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
 	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
+	m_directionSetting {},
+	m_directionActor {vtkActor::New()},
 	m_condition {cond},
 	m_isCustomModified {"isCustomModified", false},
-	m_definingBoundingBox {false}
+	m_definingBoundingBox {false},
+	m_colorMapToolBarWidgetController {nullptr}
 {
 	m_editValueAction = new QAction(PreProcessorGridAttributeAbstractCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
@@ -72,10 +80,17 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 	}
 
 	m_colorMapToolBarWidgetController = gridTypeDataItem()->createToolBarWidgetController(cond->name(), mainWindow());
+
+	m_directionActor->GetProperty()->LightingOff();
+	renderer()->AddActor(m_directionActor);
 }
 
 PreProcessorGridAttributeAbstractCellDataItem::~PreProcessorGridAttributeAbstractCellDataItem()
-{}
+{
+	renderer()->RemoveActor(m_directionActor);
+
+	m_directionActor->Delete();
+}
 
 QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* p)
 {
@@ -84,26 +99,41 @@ QDialog* PreProcessorGridAttributeAbstractCellDataItem::propertyDialog(QWidget* 
 		return nullptr;
 	}
 
-	auto setting = colorMapSettingContainer();
-	if (setting == nullptr) {return nullptr;}
+	if (m_condition->isDirection()) {
+		auto dialog = new GraphicsWindowDataItemUpdateActorSettingDialog(this, mainWindow());
+		dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
+		auto widget = new DirectionSettingEditWidget(dialog);
+		widget->setSetting(&m_directionSetting);
+		dialog->setWidget(widget);
 
-	auto gItem = groupDataItem();
-	auto dialog = new PropertyDialog(gItem, p);
-	dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
-	auto widget = m_condition->createColorMapSettingEditWidget(dialog);
-	widget->setSetting(setting);
-	dialog->setWidget(widget);
+		return dialog;
+	} else {
+		auto setting = colorMapSettingContainer();
+		if (setting == nullptr) {return nullptr;}
 
-	dialog->setLineWidth(gItem->lineWidth());
-	dialog->setOpacity(gItem->opacity());
-	dialog->resize(900, 700);
+		auto gItem = groupDataItem();
+		auto dialog = new PropertyDialog(gItem, p);
+		dialog->setWindowTitle(tr("Grid %1 Attribute Display Setting (%2)").arg(positionCaption()).arg(condition()->caption()));
+		auto widget = m_condition->createColorMapSettingEditWidget(dialog);
+		widget->setSetting(setting);
+		dialog->setWidget(widget);
 
-	return dialog;
+		dialog->setLineWidth(gItem->lineWidth());
+		dialog->setOpacity(gItem->opacity());
+		dialog->resize(900, 700);
+
+		return dialog;
+	}
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_isCustomModified.load(node);
+
+	auto dirNode = iRIC::getChildNode(node, "Direction");
+	if (! dirNode.isNull()) {
+		return m_directionSetting.load(dirNode);
+	}
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -113,6 +143,12 @@ void PreProcessorGridAttributeAbstractCellDataItem::doSaveToProjectMainFile(QXml
 		auto cont = g->attribute(m_condition->name());
 		m_isCustomModified = cont->isCustomModified();
 		m_isCustomModified.save(writer);
+	}
+
+	if (m_condition->isDirection()) {
+		writer.writeStartElement("Direction");
+		m_directionSetting.save(writer);
+		writer.writeEndElement();
 	}
 }
 
@@ -127,13 +163,41 @@ int PreProcessorGridAttributeAbstractCellDataItem::loadFromCgnsFile()
 	return IRIC_NO_ERROR;
 }
 
-void PreProcessorGridAttributeAbstractCellDataItem::updateVisibility(bool /*visible*/)
+void PreProcessorGridAttributeAbstractCellDataItem::updateVisibility(bool visible)
 {
+	GraphicsWindowDataItem::updateVisibility(visible);
+
 	static bool updating = false;
 	if (updating) {return;}
 
 	ValueChangerT<bool> updatingChanger(&updating, true);
 	gridTypeDataItem()->updateColorBarVisibility(condition()->name());
+}
+
+void PreProcessorGridAttributeAbstractCellDataItem::updateActorSetting()
+{
+	m_directionActor->VisibilityOff();
+	m_actorCollection->RemoveAllItems();
+
+	if (m_condition->isDirection()) {
+		auto data = groupDataItem()->filteredData();
+		data->GetCellData()->SetActiveScalars(m_condition->name().c_str());
+
+		auto view = dataModel()->graphicsView();
+		auto polyData = m_directionSetting.buildDirectionPolygonData(data, m_condition, view);
+		auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
+		mapper->ScalarVisibilityOff();
+		mapper->SetInputData(polyData);
+		m_directionActor->SetMapper(mapper);
+		polyData->Delete();
+
+		m_directionActor->GetProperty()->SetColor(m_directionSetting.color);
+		m_directionActor->GetProperty()->SetOpacity(m_directionSetting.opacity);
+		m_directionActor->GetProperty()->SetLineWidth(m_directionSetting.lineWidth);
+
+		m_actorCollection->AddItem(m_directionActor);
+		updateVisibilityWithoutRendering();
+	}
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::mouseMoveEvent(QMouseEvent* event, VTKGraphicsView* v)
@@ -393,6 +457,16 @@ void PreProcessorGridAttributeAbstractCellDataItem::generatePointMap()
 void PreProcessorGridAttributeAbstractCellDataItem::showPropertyDialog()
 {
 	showPropertyDialogModeless();
+}
+
+void PreProcessorGridAttributeAbstractCellDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount(1);
+}
+
+void PreProcessorGridAttributeAbstractCellDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	m_directionActor->SetPosition(0, 0, range.min());
 }
 
 void PreProcessorGridAttributeAbstractCellDataItem::informSelection(VTKGraphicsView* /*v*/)

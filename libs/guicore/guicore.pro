@@ -210,6 +210,8 @@ HEADERS += guicore_global.h \
            datamodel/vtkgraphicsview.h \
            datamodel/vtkgraphicsviewscalewidget.h \
            datamodel/windowwithvtkgraphicsviewi.h \
+           direction/directionsettingcontainer.h \
+           direction/directionsettingeditwidget.h \
            executer/iricmainwindowexecuterwatcher.h \
            filter/generalfilteringsettingcontainer.h \
            filter/generalfilteringsettingeditwidget.h \
@@ -700,6 +702,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          datamodel/propertybrowserview.ui \
          datamodel/vtk2dgraphicsviewanglewidget.ui \
          datamodel/vtkgraphicsviewscalewidget.ui \
+         direction/directionsettingeditwidget.ui \
          filter/generalfilteringsettingeditwidget.ui \
          filter/structured2dfilteringsettingeditwidget.ui \
          filter/structured3dfilteringsettingeditwidget.ui \
@@ -791,6 +794,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/vtk3dgraphicsview.cpp \
            datamodel/vtkgraphicsview.cpp \
            datamodel/vtkgraphicsviewscalewidget.cpp \
+           direction/directionsettingcontainer.cpp \
+           direction/directionsettingeditwidget.cpp \
            executer/iricmainwindowexecuterwatcher.cpp \
            filter/generalfilteringsettingcontainer.cpp \
            filter/generalfilteringsettingeditwidget.cpp \
