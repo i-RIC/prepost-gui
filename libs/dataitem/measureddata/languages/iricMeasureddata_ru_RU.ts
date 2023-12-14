@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -128,6 +130,21 @@
     </message>
 </context>
 <context>
+    <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Форма</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
@@ -162,11 +179,11 @@
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>Стрелка</translation>
+        <translation type="vanished">Стрелка</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Изменение физической ценности стрелы</translation>
+        <translation type="vanished">Изменение физической ценности стрелы</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
@@ -174,7 +191,11 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation>Настройка отображения стрелок</translation>
+        <translation type="vanished">Настройка отображения стрелок</translation>
+    </message>
+    <message>
+        <source>Arrows Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -189,6 +210,13 @@
     <message>
         <source>Form</source>
         <translation>Форма</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -485,8 +487,8 @@
         <translation>Grafik penceresi kurulumu başarısız. Hesaplama sonucu düzgün yüklenmemiş.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Bu işlev, aşağıdaki koşullar sağlandığında kullanılabilir: &lt;ul&gt;&lt;li&gt;İki boyutlu yapılandırılmış ızgara sonucu için grafik çizilir.&lt;/li&gt;&lt;li&gt;X ekseni ızgarada I yönüdür.&lt;/li &gt;&lt;li&gt;Kılavuz, "Kesit verilerinden ızgara oluştur" algoritması kullanılarak oluşturulur&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Bu işlev, aşağıdaki koşullar sağlandığında kullanılabilir: &lt;ul&gt;&lt;li&gt;İki boyutlu yapılandırılmış ızgara sonucu için grafik çizilir.&lt;/li&gt;&lt;li&gt;X ekseni ızgarada I yönüdür.&lt;/li &gt;&lt;li&gt;Kılavuz, &quot;Kesit verilerinden ızgara oluştur&quot; algoritması kullanılarak oluşturulur&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -580,8 +582,8 @@
         <translation>Hata</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>İlk sütunun başlığı "X" olmalıdır</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>İlk sütunun başlığı &quot;X&quot; olmalıdır</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -660,8 +662,8 @@
         <translation>Hata</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation>İlk sütunun başlığı "X" olmalıdır</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation>İlk sütunun başlığı &quot;X&quot; olmalıdır</translation>
     </message>
     <message>
         <source>Warning</source>

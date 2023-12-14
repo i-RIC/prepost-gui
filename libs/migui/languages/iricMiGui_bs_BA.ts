@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Možete koristiti samo ASCII znakove.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Folder "%1" već postoji.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Folder &quot;%1&quot; već postoji.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projekat je uspješno sačuvan na %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Došlo je do greške prilikom pripreme podataka za model u "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Došlo je do greške prilikom pripreme podataka za model u &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Nije pronađen nijedan postojeći folder projekta u "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Nije pronađen nijedan postojeći folder projekta u &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Projekat je izmijenjen. Želite li uštedjeti?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>spremanje "%1" nije uspjelo. Uvjerite se da drugi program otvara datoteku i pokušajte ponovo.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>spremanje &quot;%1&quot; nije uspjelo. Uvjerite se da drugi program otvara datoteku i pokušajte ponovo.</translation>
     </message>
 </context>
 <context>

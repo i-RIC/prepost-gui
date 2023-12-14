@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 4 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 4 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
     </message>
 </context>
 <context>

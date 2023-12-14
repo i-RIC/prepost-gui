@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>Menunjukkan</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Warna:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan: Anda hanya dapat menggunakan karakter ASCII untuk Nama.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Node definisi tidak disimpan</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>NilaiTipe salah "%1" sudah diatur.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>NilaiTipe salah &quot;%1&quot; sudah diatur.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Kondisi salahTipe "%1" sudah diatur.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Kondisi salahTipe &quot;%1&quot; sudah diatur.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>Informasi</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan "Ctrl + C" dan "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Anda dapat menyalin dan menempelkan nilainya, dengan pintasan &quot;Ctrl + C&quot; dan &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2004,8 +2017,8 @@ Do you really want to import this file?</source>
         <translation>Terjadi kesalahan saat membuka file.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Dua kolom pertama harus "X" dan "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Dua kolom pertama harus &quot;X&quot; dan &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>Definisi variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>Turun (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>Definisi keluaran</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" teks -decoration: underline; color:#0000ff;"&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">Kondisi Pembuatan Grid</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Kondisi Pembuatan Grid</translation>
+        <translation type="vanished">Kondisi Pembuatan Grid</translation>
     </message>
 </context>
 <context>
@@ -2746,15 +2766,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>Ekspor file CGNS</translation>
+        <translation type="vanished">Ekspor file CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>berkas CGNS (*.cgns)</translation>
+        <translation type="vanished">berkas CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>Mengekspor file CGNS gagal. File yang ditentukan dikunci oleh proses lain.</translation>
+        <translation type="vanished">Mengekspor file CGNS gagal. File yang ditentukan dikunci oleh proses lain.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Terjadi kesalahan saat membuka %1. iRIC mencoba menyelamatkan data dari %2.</translation>
+        <translation type="vanished">Terjadi kesalahan saat membuka %1. iRIC mencoba menyelamatkan data dari %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: tidak ada file tersebut.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Ruang kerja "%1" memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Ruang kerja &quot;%1&quot; memiliki %2 folder proyek yang tampaknya tidak digunakan lagi. Apakah Anda ingin menghapusnya?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+        <translation type="vanished">Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
+        <translation type="vanished">Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
+        <translation type="vanished">Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Sel di mana ujung-ujungnya berpotongan</translation>
+        <translation type="vanished">* Sel di mana ujung-ujungnya berpotongan</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Tidak ada</translation>
+        <translation type="vanished">Tidak ada</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Sel di mana rasio aspek tepi sel melebihi %1</translation>
+        <translation type="vanished">* Sel di mana rasio aspek tepi sel melebihi %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Rasio aspek</translation>
+        <translation type="vanished">I, J, Rasio aspek</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Panjang tepi terlalu kecil</translation>
+        <translation type="vanished">Panjang tepi terlalu kecil</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Sel di mana sudut simpul sel di bawah %1</translation>
+        <translation type="vanished">* Sel di mana sudut simpul sel di bawah %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>Saya, J, Sudut</translation>
+        <translation type="vanished">Saya, J, Sudut</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
+        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Variasi</translation>
+        <translation type="vanished">I, J, Variasi</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
+        <translation type="vanished">* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>Nomor pembuatan nomor versi tidak ditentukan.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Kesalahan</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">Terjadi kesalahan: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">Memeriksa argumen untuk %1 gagal. Argumen tidak valid: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">Edit Variabel Hasil Operasi Sederhana</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">Hasil Perhitungan:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">Nama variabel:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">Nilai untuk pengujian:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Peringatan</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">Nama variabel tidak dimasukkan.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">Nama variabel ini sudah digunakan</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">Edit Hasil Operasi Sederhana</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nama:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">Posisi:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">Hasil perhitungan untuk input</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Menambahkan (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Menghapus (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">Definisi variabel</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">Tes</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat menguji definisi dengan mengklik ini. Jika terjadi kesalahan saat menguraikan definisi, pesan kesalahan akan ditampilkan. Ketika definisi berhasil diuraikan, nilai dihitung menggunakan &amp;quot;Nilai untuk pengujianquot; untuk setiap input ditampilkan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">Nama hasil</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">Nama variabel</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">Nilai untuk pengujian</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">simpul jaringan</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Sel kisi</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Partikel</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Peringatan</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">Nama tidak dimasukkan.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">Nama ini sudah digunakan</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Anda yakin ingin menghapus %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">Daftar Hasil Operasi Sederhana</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nama</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posisi</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">Ke atas (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">Turun (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Catatan&lt;/span&gt;: Urutan dalam daftar penting. Dalam definisi, Anda dapat menggunakan nilai perhitungan operasi sederhana sebagai variabel, yang muncul sebelumnya dalam daftar.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Menambahkan (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Sunting (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Menghapus (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Peringatan</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Anda yakin ingin menghapus %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">simpul jaringan</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Sel kisi</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Partikel</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dialog</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Jenis kisi:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">Wilayah: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">Garis tepi berpotongan dengan sel lain dalam kisi ini.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Rasio aspek sel kisi melebihi nilai batas %1 dalam lebih dari satu sel.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">Variasi panjang tepi sel kisi melebihi nilai batas (arah I: %1, arah-J: %2 ) di lebih dari satu sel.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Sudut tepi sel kisi jatuh di bawah nilai batas %1 dalam lebih dari satu sel.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* Sel di mana ujung-ujungnya berpotongan</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">Tidak ada</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* Sel di mana rasio aspek tepi sel melebihi %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, Rasio aspek</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">Panjang tepi terlalu kecil</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* Sel di mana sudut simpul sel di bawah %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">Saya, J, Sudut</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* Sel di mana variasi panjang sel sepanjang arah-i melebihi %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">I, J, Variasi</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* Sel di mana variasi panjang sel sepanjang arah j melebihi %1</translation>
     </message>
 </context>
 </TS>

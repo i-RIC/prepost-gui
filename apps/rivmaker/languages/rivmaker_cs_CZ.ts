@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>Datum vydání: 28. 4. 2021</translation>
+        <translation type="vanished">Datum vydání: 28. 4. 2021</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">Datum vydání: 28. 4. 2021 {2023/8/29?}</translation>
     </message>
 </context>
 <context>
@@ -184,7 +194,7 @@
         <translation>Průřez zatím není definován.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation>Neplatný název pro průřez. Název by měl být „X1“, „X2“,... nebo „XS1“, „XS2“,...</translation>
     </message>
 </context>

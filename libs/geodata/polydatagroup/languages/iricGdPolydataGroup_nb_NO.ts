@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nb_NO">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Er du sikker på at du vil slette de valgte %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Det er ingen andre data å flette inn "%1"gruppe.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Det er ingen andre data å flette inn &quot;%1&quot;gruppe.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>

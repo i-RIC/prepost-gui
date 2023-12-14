@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -29,8 +31,8 @@
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>Zutabean %1, balioa "%2"sekzio gurutzatua"%3"baliogabea da. Balioa ez da kontuan hartzen.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>Zutabean %1, balioa &quot;%2&quot;sekzio gurutzatua&quot;%3&quot;baliogabea da. Balioa ez da kontuan hartzen.</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>Data de publicació: 28/4/2021</translation>
+        <translation type="vanished">Data de publicació: 28/4/2021</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">Data de publicació: 28/4/2021 {2023/8/29?}</translation>
     </message>
 </context>
 <context>
@@ -105,14 +115,14 @@
     <name>ChartGraphicsView</name>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d'aspecte (V / H): 1 / %1</translation>
+        <translation>Relació d&apos;aspecte (V / H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation>Barra d'eines de visualització</translation>
+        <translation>Barra d&apos;eines de visualització</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -124,15 +134,15 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation>Veure la barra d'eines</translation>
+        <translation>Veure la barra d&apos;eines</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Correcció de la relació d'aspecte</translation>
+        <translation>Correcció de la relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
@@ -140,7 +150,7 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relació d'aspecte (V / H): 1 /</translation>
+        <translation>Relació d&apos;aspecte (V / H): 1 /</translation>
     </message>
 </context>
 <context>
@@ -184,8 +194,8 @@
         <translation>La secció transversal encara no està definida.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>El nom de la secció transversal no és vàlid. El nom ha de ser "X1", "X2",... o "XS1", "XS2",...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>El nom de la secció transversal no és vàlid. El nom ha de ser &quot;X1&quot;, &quot;X2&quot;,... o &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
     </message>
 </context>
 <context>
@@ -322,7 +332,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
@@ -367,7 +377,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -382,7 +392,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -426,7 +436,7 @@
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation>Punts d'elevació</translation>
+        <translation>Punts d&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -437,7 +447,7 @@
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation>Punts d'elevació</translation>
+        <translation>Punts d&apos;elevació</translation>
     </message>
     <message>
         <source>Size</source>
@@ -498,7 +508,7 @@
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation>Apte per a dades en què la densitat de punts és gairebé la mateixa en tota l'àrea</translation>
+        <translation>Apte per a dades en què la densitat de punts és gairebé la mateixa en tota l&apos;àrea</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -522,7 +532,7 @@
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'expansions de plantilla:</translation>
+        <translation>Nombre d&apos;expansions de plantilla:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -570,7 +580,7 @@
     <name>ObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
@@ -597,7 +607,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -634,7 +644,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -649,7 +659,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -674,11 +684,11 @@
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation>Per suprimir una secció transversal, seleccioneu-la al Navegador d'objectes.</translation>
+        <translation>Per suprimir una secció transversal, seleccioneu-la al Navegador d&apos;objectes.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation>Per editar les coordenades de la secció transversal, seleccioneu-la al Navegador d'objectes.</translation>
+        <translation>Per editar les coordenades de la secció transversal, seleccioneu-la al Navegador d&apos;objectes.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
@@ -733,7 +743,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
 </context>
 <context>
@@ -748,7 +758,7 @@
     </message>
     <message>
         <source>%1 could not be opened.</source>
-        <translation>%1 no s'ha pogut obrir.</translation>
+        <translation>%1 no s&apos;ha pogut obrir.</translation>
     </message>
     <message>
         <source>CSV File name to export</source>
@@ -939,11 +949,11 @@
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation>Barra d'eines principal (&amp;M)</translation>
+        <translation>Barra d&apos;eines principal (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation>Barra d'estat (&amp;S)</translation>
+        <translation>Barra d&apos;estat (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
@@ -971,11 +981,11 @@
     </message>
     <message>
         <source>Focus Main Window</source>
-        <translation>Finestra principal d'enfocament</translation>
+        <translation>Finestra principal d&apos;enfocament</translation>
     </message>
     <message>
         <source>Focus Vertical Crosssection Window</source>
-        <translation>Finestra de secció transversal d'enfocament vertical</translation>
+        <translation>Finestra de secció transversal d&apos;enfocament vertical</translation>
     </message>
     <message>
         <source>Open Crosssection Window</source>
@@ -987,7 +997,7 @@
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation>Barra d'eines de Windows (&amp;W)</translation>
+        <translation>Barra d&apos;eines de Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
@@ -1019,7 +1029,7 @@
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation>Barra d'eines de llista de finestres</translation>
+        <translation>Barra d&apos;eines de llista de finestres</translation>
     </message>
     <message>
         <source>Open project file</source>
@@ -1039,7 +1049,7 @@
     </message>
     <message>
         <source>Saving project file to %1 failed.</source>
-        <translation>S'està desant el fitxer de projecte a %1 fracassat.</translation>
+        <translation>S&apos;està desant el fitxer de projecte a %1 fracassat.</translation>
     </message>
     <message>
         <source>Save project file</source>
@@ -1063,7 +1073,7 @@
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation>S'ha produït un error en obrir el fitxer del projecte.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer del projecte.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
@@ -1071,7 +1081,7 @@
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
-        <translation>Dades de l'enquesta fluvial com a fitxers CSV...</translation>
+        <translation>Dades de l&apos;enquesta fluvial com a fitxers CSV...</translation>
     </message>
     <message>
         <source>Export as CSV files...</source>
@@ -1135,7 +1145,7 @@
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation>Finestra de vista d'elevació</translation>
+        <translation>Finestra de vista d&apos;elevació</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
@@ -1187,7 +1197,7 @@
     </message>
     <message>
         <source>Data for checked Check Boxes are exported.</source>
-        <translation>S'exporten les dades de les caselles de selecció marcades.</translation>
+        <translation>S&apos;exporten les dades de les caselles de selecció marcades.</translation>
     </message>
     <message>
         <source>Save CSV file</source>
@@ -1218,7 +1228,7 @@
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation>Configuració de visualització de la finestra de vista d'elevació</translation>
+        <translation>Configuració de visualització de la finestra de vista d&apos;elevació</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -1278,7 +1288,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation>Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Scales font</source>
@@ -1347,7 +1357,7 @@
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation>Eina d'edició WSE</translation>
+        <translation>Eina d&apos;edició WSE</translation>
     </message>
 </context>
 <context>

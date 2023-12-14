@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Sie können nur ASCII-Zeichen verwenden.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Ordner "%1" ist bereits vorhanden.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Ordner &quot;%1&quot; ist bereits vorhanden.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projekt erfolgreich gespeichert %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Beim Vorbereiten der Daten für das Modell ist ein Fehler aufgetreten in „ %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Beim Vorbereiten der Daten für das Modell ist ein Fehler aufgetreten in „ %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Kein vorhandener Projektordner gefunden in „ %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Kein vorhandener Projektordner gefunden in „ %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Das Projekt wird geändert. Möchten Sie sparen?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Sparen“ %1 " fehlgeschlagen. Bitte stellen Sie sicher, dass ein anderes Programm die Datei öffnet, und versuchen Sie es erneut.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Sparen“ %1 &quot; fehlgeschlagen. Bitte stellen Sie sicher, dass ein anderes Programm die Datei öffnet, und versuchen Sie es erneut.</translation>
     </message>
 </context>
 <context>

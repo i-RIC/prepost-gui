@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -21,8 +23,8 @@
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>Trong cột dành cho %1, giá trị "%2"cho mặt cắt ngang"%3"không hợp lệ. Giá trị bị bỏ qua.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>Trong cột dành cho %1, giá trị &quot;%2&quot;cho mặt cắt ngang&quot;%3&quot;không hợp lệ. Giá trị bị bỏ qua.</translation>
     </message>
     <message>
         <source>Information</source>

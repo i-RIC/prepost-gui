@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
@@ -151,7 +153,7 @@
     </message>
     <message>
         <source>Graph window setup fail. Calculation result is not loaded properly.</source>
-        <translation>L'impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
+        <translation>L&apos;impostazione della finestra del grafico non è riuscita. Il risultato del calcolo non è caricato correttamente.</translation>
     </message>
     <message>
         <source>Export CSV file</source>

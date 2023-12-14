@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -218,8 +220,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Борбордон чекитке чейинки аралык</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>"Сол жээк" - төмөн жагына бурулганда, сиз сол жакта көргөн банк.</translation>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>&quot;Сол жээк&quot; - төмөн жагына бурулганда, сиз сол жакта көргөн банк.</translation>
     </message>
 </context>
 </TS>

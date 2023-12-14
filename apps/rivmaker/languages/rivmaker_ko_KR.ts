@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>리브메이커 2.0.3</translation>
+        <translation type="vanished">리브메이커 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>발매일: 2021년 4월 28일</translation>
+        <translation type="vanished">발매일: 2021년 4월 28일</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">리브메이커 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">발매일: 2021년 4월 28일 {2023/8/29?}</translation>
     </message>
 </context>
 <context>
@@ -184,8 +194,8 @@
         <translation>단면은 아직 정의되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>단면 이름이 잘못되었습니다. 이름은 "X1", "X2",... 또는 "XS1", "XS2",...여야 합니다.</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>단면 이름이 잘못되었습니다. 이름은 &quot;X1&quot;, &quot;X2&quot;,... 또는 &quot;XS1&quot;, &quot;XS2&quot;,...여야 합니다.</translation>
     </message>
 </context>
 <context>

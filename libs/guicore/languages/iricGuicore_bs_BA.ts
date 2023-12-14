@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>Show</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Boja:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Napomena: Za Ime možete koristiti samo ASCII znakove.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Napomena: Za Ime možete koristiti samo ASCII znakove.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Čvor definicije nije pohranjen</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Pogrešan valueType "%1"je postavljeno.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Pogrešan valueType &quot;%1&quot;je postavljeno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Pogrešan uslovTip "%1"je postavljeno.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Pogrešan uslovTip &quot;%1&quot;je postavljeno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>Datoteka %1 se ažurira nakon uvoza u stanje izračuna %2. Želite li uvesti ažuriranu datoteku?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Vrijednosti možete kopirati i zalijepiti prečicom "Ctrl + C" i "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Vrijednosti možete kopirati i zalijepiti prečicom &quot;Ctrl + C&quot; i &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2008,8 +2021,8 @@ Do you really want to import this file?</source>
         <translation>Došlo je do greške pri otvaranju datoteke.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Prve dvije kolone moraju biti "X" i "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Prve dvije kolone moraju biti &quot;X&quot; i &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>Definicija varijable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>Dolje (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Napomena &lt;/span&gt;: Redoslijed na listi je važan. U definiciji možete koristiti vrijednost izračuna jednostavnih operacija kao varijablu, koja se pojavljuje ranije na listi. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Napomena &lt;/span&gt;: Redoslijed na listi je važan. U definiciji možete koristiti vrijednost izračuna jednostavnih operacija kao varijablu, koja se pojavljuje ranije na listi. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>Definicija izlaza</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">Uslov za stvaranje mreže</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Uslov za stvaranje mreže</translation>
+        <translation type="vanished">Uslov za stvaranje mreže</translation>
     </message>
 </context>
 <context>
@@ -2742,15 +2762,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>Izvezite CGNS datoteku</translation>
+        <translation type="vanished">Izvezite CGNS datoteku</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>CGNS datoteku (*.cgns)</translation>
+        <translation type="vanished">CGNS datoteku (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>Izvoz CGNS datoteke nije uspio. Određena datoteka se zaključava drugim procesom.</translation>
+        <translation type="vanished">Izvoz CGNS datoteke nije uspio. Određena datoteka se zaključava drugim procesom.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Došlo je do greške prilikom otvaranja %1. iRIC pokušava spasiti podatke iz %2.</translation>
+        <translation type="vanished">Došlo je do greške prilikom otvaranja %1. iRIC pokušava spasiti podatke iz %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: nema takve datoteke.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Radni prostor "%1" ima %2 fascikle projekta za koje se čini da se više ne koriste. Želite li ih ukloniti?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Radni prostor &quot;%1&quot; ima %2 fascikle projekta za koje se čini da se više ne koriste. Želite li ih ukloniti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Rubna linija presijeca se s onom druge ćelije u ovoj mreži.</translation>
+        <translation type="vanished">Rubna linija presijeca se s onom druge ćelije u ovoj mreži.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Omjer dimenzija ćelije mreže prelazi graničnu vrijednost %1 u više ćelija.</translation>
+        <translation type="vanished">Omjer dimenzija ćelije mreže prelazi graničnu vrijednost %1 u više ćelija.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Varijacije duljine rubova ćelije mreže prelaze granične vrijednosti (I-smjer: %1, J-smjer: %2 ) u više ćelija.</translation>
+        <translation type="vanished">Varijacije duljine rubova ćelije mreže prelaze granične vrijednosti (I-smjer: %1, J-smjer: %2 ) u više ćelija.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Kut ruba ćelije mreže pada ispod granične vrijednosti %1 u više ćelija.</translation>
+        <translation type="vanished">Kut ruba ćelije mreže pada ispod granične vrijednosti %1 u više ćelija.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Ćelije gdje se rubovi sijeku</translation>
+        <translation type="vanished">* Ćelije gdje se rubovi sijeku</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Ne postoji</translation>
+        <translation type="vanished">Ne postoji</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Ćelije u kojima omjer stranica ivica ćelija prelazi %1</translation>
+        <translation type="vanished">* Ćelije u kojima omjer stranica ivica ćelija prelazi %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Omjer slike</translation>
+        <translation type="vanished">I, J, Omjer slike</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Dužina ruba premala</translation>
+        <translation type="vanished">Dužina ruba premala</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Ćelije gdje je ugao vrha ćelije ispod %1</translation>
+        <translation type="vanished">* Ćelije gdje je ugao vrha ćelije ispod %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>I, J, Ugao</translation>
+        <translation type="vanished">I, J, Ugao</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Ćelije u kojima prelaze varijacije dužine ćelije duž i-smjera %1</translation>
+        <translation type="vanished">* Ćelije u kojima prelaze varijacije dužine ćelije duž i-smjera %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Varijacija</translation>
+        <translation type="vanished">I, J, Varijacija</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Ćelije kod kojih je veća dužina ćelije u smjeru j %1</translation>
+        <translation type="vanished">* Ćelije kod kojih je veća dužina ćelije u smjeru j %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>Broj verzije broja verzije nije naveden.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Greška</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">Došlo je do greške: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">Provjera argumenta za %1 nije uspjelo. Nevažeći argumenti: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">Uredi varijablu rezultata jednostavnog rada</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">Rezultat proračuna:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">Naziv varijable:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">Vrijednost za testiranje:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">Ime varijable se ne unosi.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">Ovaj naziv varijable je već korišten</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">Uredite rezultat jednostavne operacije</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Ime:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">Pozicija:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">Rezultati proračuna za ulaz</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Dodati (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Izbriši (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">Definicija varijable</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Varijablu možete definirati jezikom JavaScript. Molimo pogledajte &lt;ahref=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; ovdje &lt;/span&gt; &lt;/a&gt; za detalje. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">Test</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Možete testirati definiciju klikom na ovo. Ako dođe do greške prilikom raščlanjivanja definicije, prikazuje se poruka o grešci. Kada se definicija uspješno raščlani, vrijednost je izračunata pomoću &amp; quot; Vrijednost za testiranjequot; za svaki ulaz je prikazan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">Naziv rezultata</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">Naziv promenljive</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">Vrijednost za testiranje</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Mrežni čvor</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Mrežna ćelija</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Čestica</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">Ime se ne unosi.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">Ovaj naziv se već koristi</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Jeste li sigurni da želite izbrisati %1 ??</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">Lista rezultata jednostavne operacije</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Ime</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozicija</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">Gore (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">Dolje (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Napomena &lt;/span&gt;: Redoslijed na listi je važan. U definiciji možete koristiti vrijednost izračuna jednostavnih operacija kao varijablu, koja se pojavljuje ranije na listi. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Dodati (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Uredi (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Izbriši (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Jeste li sigurni da želite izbrisati %1 ??</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Mrežni čvor</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Mrežna ćelija</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Čestica</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Dijalog</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Vrsta mreže:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">Regija: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">Rubna linija presijeca se s onom druge ćelije u ovoj mreži.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Omjer dimenzija ćelije mreže prelazi graničnu vrijednost %1 u više ćelija.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">Varijacije duljine rubova ćelije mreže prelaze granične vrijednosti (I-smjer: %1, J-smjer: %2 ) u više ćelija.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Kut ruba ćelije mreže pada ispod granične vrijednosti %1 u više ćelija.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* Ćelije gdje se rubovi sijeku</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">Ne postoji</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* Ćelije u kojima omjer stranica ivica ćelija prelazi %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, Omjer slike</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">Dužina ruba premala</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* Ćelije gdje je ugao vrha ćelije ispod %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">I, J, Ugao</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* Ćelije u kojima prelaze varijacije dužine ćelije duž i-smjera %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">I, J, Varijacija</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* Ćelije kod kojih je veća dužina ćelije u smjeru j %1</translation>
     </message>
 </context>
 </TS>

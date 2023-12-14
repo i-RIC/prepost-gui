@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>Mostrar</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Cor:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação: você pode usar apenas caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação: você pode usar apenas caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>O nó de definição não é armazenado</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>ValueType errado "%1"está definido.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>ValueType errado &quot;%1&quot;está definido.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Wrong conditionType "%1"está definido.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Wrong conditionType &quot;%1&quot;está definido.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>Arquivo %1 é atualizado após importado para a condição de cálculo %2. Quer importar o arquivo atualizado?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Você pode copiar e colar os valores, com o atalho "Ctrl + C" e "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Você pode copiar e colar os valores, com o atalho &quot;Ctrl + C&quot; e &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2008,8 +2021,8 @@ Do you really want to import this file?</source>
         <translation>Ocorreu um erro ao abrir o arquivo.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>As primeiras duas colunas devem ser "X" e "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>As primeiras duas colunas devem ser &quot;X&quot; e &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>Definição de variável</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>Baixa (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Observação &lt;/span&gt;: a ordem na lista é importante. Na definição, você pode usar o valor de cálculos de operação simples como uma variável, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Observação &lt;/span&gt;: a ordem na lista é importante. Na definição, você pode usar o valor de cálculos de operação simples como uma variável, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>Definição de saída</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">Condição de criação de grade</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Condição de criação de grade</translation>
+        <translation type="vanished">Condição de criação de grade</translation>
     </message>
 </context>
 <context>
@@ -2742,15 +2762,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>Exportar arquivo CGNS</translation>
+        <translation type="vanished">Exportar arquivo CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>Arquivo CGNS (*.cgns)</translation>
+        <translation type="vanished">Arquivo CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>A exportação do arquivo CGNS falhou. O arquivo especificado está bloqueado por outro processo.</translation>
+        <translation type="vanished">A exportação do arquivo CGNS falhou. O arquivo especificado está bloqueado por outro processo.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Ocorreu um erro ao abrir %1. iRIC tenta salvar dados de %2.</translation>
+        <translation type="vanished">Ocorreu um erro ao abrir %1. iRIC tenta salvar dados de %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: arquivo inexistente.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Área de trabalho "%1" tem %2 pastas do projeto que parecem não ser mais usadas. Você quer removê-los?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Área de trabalho &quot;%1&quot; tem %2 pastas do projeto que parecem não ser mais usadas. Você quer removê-los?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Uma linha de borda se cruza com a de outra célula nesta grade.</translation>
+        <translation type="vanished">Uma linha de borda se cruza com a de outra célula nesta grade.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>A proporção da célula da grade excede o valor limite %1 em mais de uma célula.</translation>
+        <translation type="vanished">A proporção da célula da grade excede o valor limite %1 em mais de uma célula.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>A variação dos comprimentos das bordas da célula da grade excede os valores limite (direção I: %1, Direção J: %2 ) em mais de uma célula.</translation>
+        <translation type="vanished">A variação dos comprimentos das bordas da célula da grade excede os valores limite (direção I: %1, Direção J: %2 ) em mais de uma célula.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>O ângulo da borda da célula da grade está abaixo do valor limite %1 em mais de uma célula.</translation>
+        <translation type="vanished">O ângulo da borda da célula da grade está abaixo do valor limite %1 em mais de uma célula.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Células onde as bordas se cruzam</translation>
+        <translation type="vanished">* Células onde as bordas se cruzam</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Não existe</translation>
+        <translation type="vanished">Não existe</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Células onde a proporção de aspecto das bordas das células excede %1</translation>
+        <translation type="vanished">* Células onde a proporção de aspecto das bordas das células excede %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, proporção de aspecto</translation>
+        <translation type="vanished">I, J, proporção de aspecto</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Comprimento da borda muito pequeno</translation>
+        <translation type="vanished">Comprimento da borda muito pequeno</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Células onde o ângulo do vértice da célula está abaixo %1</translation>
+        <translation type="vanished">* Células onde o ângulo do vértice da célula está abaixo %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>I, J, Angle</translation>
+        <translation type="vanished">I, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Células onde a variação do comprimento da célula ao longo da direção i excede %1</translation>
+        <translation type="vanished">* Células onde a variação do comprimento da célula ao longo da direção i excede %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Variação</translation>
+        <translation type="vanished">I, J, Variação</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Células onde a variação do comprimento da célula ao longo da direção j excede %1</translation>
+        <translation type="vanished">* Células onde a variação do comprimento da célula ao longo da direção j excede %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>O número de compilação do número da versão não foi especificado.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">Ocorreu um erro: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">Verificando argumento para %1 fracassado. Argumentos inválidos: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">Editar Variável de Resultado de Operação Simples</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">Resultado do cálculo:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">Nome variável:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">Valor para teste:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">O nome da variável não é inserido.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">Este nome de variável já é usado</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">Editar Resultado de Operação Simples</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Nome:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">Posição:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">Resultados de cálculo para entrada</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Adicionar (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Excluir (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">Definição de variável</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">Teste</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode testar a definição clicando aqui. Se ocorrer um erro ao analisar a definição, a mensagem de erro será exibida. Quando a definição é analisada com êxito, o valor calculado usando o &amp; quot; Valor para testequot; para cada entrada é mostrado. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">Nome do resultado</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">Nome variável</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">Valor para teste</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Nó de grade</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Célula de grade</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Partícula</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">O nome não é inserido.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">Este nome já é usado</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Tem certeza de que deseja excluir %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">Lista de resultados de operação simples</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nome</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Posição</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">Acima (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">Baixa (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Observação &lt;/span&gt;: a ordem na lista é importante. Na definição, você pode usar o valor de cálculos de operação simples como uma variável, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Adicionar (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Editar (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Excluir (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Tem certeza de que deseja excluir %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Nó de grade</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Célula de grade</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Partícula</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Diálogo</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Tipo de grade:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">Região: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">Uma linha de borda se cruza com a de outra célula nesta grade.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">A proporção da célula da grade excede o valor limite %1 em mais de uma célula.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">A variação dos comprimentos das bordas da célula da grade excede os valores limite (direção I: %1, Direção J: %2 ) em mais de uma célula.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">O ângulo da borda da célula da grade está abaixo do valor limite %1 em mais de uma célula.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* Células onde as bordas se cruzam</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">Não existe</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* Células onde a proporção de aspecto das bordas das células excede %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, proporção de aspecto</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">Comprimento da borda muito pequeno</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* Células onde o ângulo do vértice da célula está abaixo %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">I, J, Angle</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* Células onde a variação do comprimento da célula ao longo da direção i excede %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">I, J, Variação</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* Células onde a variação do comprimento da célula ao longo da direção j excede %1</translation>
     </message>
 </context>
 </TS>

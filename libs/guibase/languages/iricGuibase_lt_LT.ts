@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Pasirinkite importuojamą tinklelį</translation>
+        <translation type="vanished">Pasirinkite importuojamą tinklelį</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Pasirinkite, kurį tinklelį importuoti</translation>
+        <translation type="vanished">Pasirinkite, kurį tinklelį importuoti</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Nurodykite skaičių formatą printf formatu. Pavyzdžiui: " %5.2f "už 3.141592 -&gt; 3.14" %4.2e "12300 -&gt; 1,23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Nurodykite skaičių formatą printf formatu. Pavyzdžiui: &quot; %5.2f &quot;už 3.141592 -&gt; 3.14&quot; %4.2e &quot;12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

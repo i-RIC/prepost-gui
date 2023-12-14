@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -128,6 +130,21 @@
     </message>
 </context>
 <context>
+    <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Formulari</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Mida del punt:</translation>
+    </message>
+</context>
+<context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
@@ -155,18 +172,18 @@
     </message>
     <message>
         <source>For value range, max value is smaller than min value.</source>
-        <translation type="vanished">Per a l'interval de valors, el valor màxim és inferior al valor mínim.</translation>
+        <translation type="vanished">Per a l&apos;interval de valors, el valor màxim és inferior al valor mínim.</translation>
     </message>
 </context>
 <context>
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>Fletxa</translation>
+        <translation type="vanished">Fletxa</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Fletxa Canvi de valor físic</translation>
+        <translation type="vanished">Fletxa Canvi de valor físic</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
@@ -174,7 +191,11 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation>Configuració de visualització de fletxes</translation>
+        <translation type="vanished">Configuració de visualització de fletxes</translation>
+    </message>
+    <message>
+        <source>Arrows Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -189,6 +210,13 @@
     <message>
         <source>Form</source>
         <translation>Formulari</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

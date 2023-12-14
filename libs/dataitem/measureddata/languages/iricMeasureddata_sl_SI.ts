@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -128,6 +130,21 @@
     </message>
 </context>
 <context>
+    <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Oblika</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation type="unfinished">Velikost točke:</translation>
+    </message>
+</context>
+<context>
     <name>MeasuredDataPointSettingDialog</name>
     <message>
         <source>Scalar Setting</source>
@@ -162,11 +179,11 @@
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>Puščica</translation>
+        <translation type="vanished">Puščica</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>Puščica Sprememba fizične vrednosti</translation>
+        <translation type="vanished">Puščica Sprememba fizične vrednosti</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
@@ -174,7 +191,11 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation>Nastavitev prikaza puščic</translation>
+        <translation type="vanished">Nastavitev prikaza puščic</translation>
+    </message>
+    <message>
+        <source>Arrows Display Setting (%1)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -189,6 +210,13 @@
     <message>
         <source>Form</source>
         <translation>Oblika</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

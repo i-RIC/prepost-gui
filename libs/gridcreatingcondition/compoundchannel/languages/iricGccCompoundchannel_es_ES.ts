@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -11,11 +13,11 @@
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Proximo, define region de canal de agua baja. Canal de agua puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
+        <translation>Proximo, define linea de centro de la cuadricula. Linea de centro de la cuadricula puede ser definido como poligono con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Add New Polygon Point</source>
@@ -79,7 +81,7 @@
     </message>
     <message>
         <source>Please define grid creating region. Grid creating region can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando "Enter".</translation>
+        <translation>Define la condicion de crear region. Region de crear cuadricula puede ser definido como poligono con mouse-clic. Termina definando cone doble clic, or presionando &quot;Enter&quot;.</translation>
     </message>
     <message>
         <source>Generating grid...</source>

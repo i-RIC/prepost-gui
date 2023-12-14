@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>È possibile utilizzare solo caratteri ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Cartella "%1" esiste già.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Cartella &quot;%1&quot; esiste già.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Progetto salvato con successo in %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Si è verificato un errore durante la preparazione dei dati per il modello in "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Si è verificato un errore durante la preparazione dei dati per il modello in &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Nessuna cartella di progetto esistente trovata in "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Nessuna cartella di progetto esistente trovata in &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -226,7 +228,7 @@
     </message>
     <message>
         <source>%1 already exists. Please select another folder.</source>
-        <translation>%1 esiste già. Seleziona un'altra cartella.</translation>
+        <translation>%1 esiste già. Seleziona un&apos;altra cartella.</translation>
     </message>
     <message>
         <source>Select project file to open</source>
@@ -241,8 +243,8 @@
         <translation>Il progetto viene modificato. Vuoi salvare?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Salvataggio "%1" non riuscito. Assicurati che un altro programma stia aprendo il file e riprova.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Salvataggio &quot;%1&quot; non riuscito. Assicurati che un altro programma stia aprendo il file e riprova.</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>本当に選択した%1を削除していいですか?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>"%1" グループにはマージできるデータがありません。</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>&quot;%1&quot; グループにはマージできるデータがありません。</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>

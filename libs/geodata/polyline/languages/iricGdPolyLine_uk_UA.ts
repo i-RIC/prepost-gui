@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolyLine</name>
@@ -140,7 +142,7 @@
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
-        <translation>Ім'я встановлюється автоматично (наприклад, Polyline1)</translation>
+        <translation>Ім&apos;я встановлюється автоматично (наприклад, Polyline1)</translation>
     </message>
     <message>
         <source>Value</source>

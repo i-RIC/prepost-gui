@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>Releasedatum: 2021/4/28</translation>
+        <translation type="vanished">Releasedatum: 2021/4/28</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">Releasedatum: 2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -184,8 +194,8 @@
         <translation>Dwarsdoorsnede is nog niet gedefinieerd.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>Ongeldige naam voor doorsnede. De naam moet "X1", "X2",... of "XS1", "XS2",... zijn.</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>Ongeldige naam voor doorsnede. De naam moet &quot;X1&quot;, &quot;X2&quot;,... of &quot;XS1&quot;, &quot;XS2&quot;,... zijn.</translation>
     </message>
 </context>
 <context>
@@ -682,7 +692,7 @@
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation>De basislijn moet lang genoeg zijn om de omvang van HWM's te dekken</translation>
+        <translation>De basislijn moet lang genoeg zijn om de omvang van HWM&apos;s te dekken</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -73,7 +75,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data. Are you sure you want to delete this item?</source>
-        <translation>En suprimir aquest element, també s'eliminarà qualsevol finestra de gràfic associada amb aquestes dades. Esteu segur que voleu suprimir aquest element?</translation>
+        <translation>En suprimir aquest element, també s&apos;eliminarà qualsevol finestra de gràfic associada amb aquestes dades. Esteu segur que voleu suprimir aquest element?</translation>
     </message>
 </context>
 <context>
@@ -88,7 +90,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1.</source>
-        <translation>S'ha produït un error en exportar a %1.</translation>
+        <translation>S&apos;ha produït un error en exportar a %1.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>
@@ -107,71 +109,71 @@
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir-se %1</translation>
+        <translation>S&apos;ha produït un error en obrir-se %1</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading header line. Header should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. La capçalera ha de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>S'ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser "%2", però"%3" és donat.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>S&apos;ha produït un error en llegir la línia de capçalera. Columna %1 hauria de ser &quot;%2&quot;, però&quot;%3&quot; és donat.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
-        <translation>S'ha produït un error en llegir la línia %1. No hi ha dades.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. No hi ha dades.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Line should have two points at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. La línia ha de tenir almenys dos punts.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. La línia ha de tenir almenys dos punts.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Assegureu-vos que el fitxer està desat a la codificació UTF-8.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 5 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades han de tenir almenys 5 columnes.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Data should have 6 columns at least.</source>
-        <translation>S'ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
+        <translation>S&apos;ha produït un error en llegir la línia %1. Les dades haurien de tenir almenys 6 columnes.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "tapa" a la línia %1. "tapa" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;tapa&quot; a la línia %1. &quot;tapa&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "vid" a la línia %1. "vid" hauria de ser un valor enter però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;vid&quot; a la línia %1. &quot;vid&quot; hauria de ser un valor enter però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "x" a la línia %1. "x" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;x&quot; a la línia %1. &quot;x&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "y" a la línia %1. "y" hauria de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;y&quot; a la línia %1. &quot;y&quot; hauria de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>S'ha produït un error en llegir el valor "valor" a la línia %1. "valor" ha de ser un valor real, però "%2"s'especifica.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>S&apos;ha produït un error en llegir el valor &quot;valor&quot; a la línia %1. &quot;valor&quot; ha de ser un valor real, però &quot;%2&quot;s&apos;especifica.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "nom" hauria de ser el mateix per a les línies on els valors de "tapa" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;nom&quot; hauria de ser el mateix per a les línies on els valors de &quot;tapa&quot; són els mateixos.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>S'ha produït un error en llegir la línia %1. "valor" hauria de ser el mateix per a les línies on els valors de "tapa" són els mateixos.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>S&apos;ha produït un error en llegir la línia %1. &quot;valor&quot; hauria de ser el mateix per a les línies on els valors de &quot;tapa&quot; són els mateixos.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>

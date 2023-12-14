@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>發布日期：2021/4/28</translation>
+        <translation type="vanished">發布日期：2021/4/28</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">發布日期：2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -184,7 +194,7 @@
         <translation>橫截面尚未定義。</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation>橫截面名稱無效。名稱應為“X1”、“X2”、...或“XS1”、“XS2”、...</translation>
     </message>
 </context>

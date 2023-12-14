@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>ASCII karaktereak soilik erabil ditzakezu.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Karpeta "%1" dagoeneko existitzen da.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Karpeta &quot;%1&quot; dagoeneko existitzen da.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Proiektua ondo gorde da %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Errore bat gertatu da eredurako datuak prestatzean "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Errore bat gertatu da eredurako datuak prestatzean &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Ez da lehendik dagoen proiektuko karpetarik aurkitu "-n %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Ez da lehendik dagoen proiektuko karpetarik aurkitu &quot;-n %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Proiektua aldatzen da. Gorde nahi al duzu?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Gordetzen"%1" huts egin du. Mesedez, ziurtatu beste programa bat fitxategia irekitzen ari dela eta saiatu berriro.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Gordetzen&quot;%1&quot; huts egin du. Mesedez, ziurtatu beste programa bat fitxategia irekitzen ari dela eta saiatu berriro.</translation>
     </message>
 </context>
 <context>

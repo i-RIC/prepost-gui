@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Anda hanya dapat menggunakan karakter ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>map"%1" sudah ada.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>map&quot;%1&quot; sudah ada.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Proyek berhasil disimpan ke %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Terjadi kesalahan saat menyiapkan data untuk model di "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Terjadi kesalahan saat menyiapkan data untuk model di &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Peringatan</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Tidak ditemukan folder proyek di "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Tidak ditemukan folder proyek di &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Proyek ini dimodifikasi. Apakah Anda ingin menyimpan?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Menyimpan "%1" gagal. Pastikan program lain membuka file tersebut, dan coba lagi.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Menyimpan &quot;%1&quot; gagal. Pastikan program lain membuka file tersebut, dan coba lagi.</translation>
     </message>
 </context>
 <context>

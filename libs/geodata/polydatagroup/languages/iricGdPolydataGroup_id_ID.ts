@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="id_ID">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Apakah Anda yakin ingin menghapus yang dipilih? %1 S?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Tidak ada data lain untuk digabungkan dalam "%1"kelompok.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Tidak ada data lain untuk digabungkan dalam &quot;%1&quot;kelompok.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>

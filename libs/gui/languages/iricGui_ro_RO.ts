@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>AnimationController</name>
@@ -791,7 +793,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Selectați Solver</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Când creați un proiect nou, trebuie să selectați soluția de rezolvat pe care să o utilizați pentru calcul. Selectați un rezolvator și apăsați butonul „OK”.</translation>
     </message>
 </context>
@@ -1352,11 +1354,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Introduceți cheia API Google Maps (&amp;I)</translation>
+        <translation type="vanished">Introduceți cheia API Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform are acum nevoie de cheie API pentru a utiliza Google Maps prin iRIC. Vă rugăm să obțineți propria cheie API Google Maps și să introduceți aici, pentru a utiliza imaginile Google Maps ca imagini de fundal pe pre-procesor și pe Windows 2D Post-Processing. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform are acum nevoie de cheie API pentru a utiliza Google Maps prin iRIC. Vă rugăm să obțineți propria cheie API Google Maps și să introduceți aici, pentru a utiliza imaginile Google Maps ca imagini de fundal pe pre-procesor și pe Windows 2D Post-Processing. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1364,11 +1366,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Introduceți cheia API Google Maps</translation>
+        <translation type="vanished">Introduceți cheia API Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>Cheie API:</translation>
+        <translation type="vanished">Cheie API:</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Ești sigur că vrei să ștergi "%1"?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Ești sigur că vrei să ștergi &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar " %1 Acest rezolvator este ignorat. %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definiție a solverului în dosar &quot; %1 Acest rezolvator este ignorat. %2</translation>
     </message>
 </context>
 <context>
@@ -1908,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Acest proiect pare a fi deschis de o altă fereastră GUI iRIC. Nu puteți deschide un folder de proiect din mai multe ferestre GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Proiectul deschis nu este copiat în directorul de lucru și veți fi obligat să salvați modificările aduse acestui proiect. Dacă doriți să păstrați proiectul curent, vă rugăm să îl salvați mai întâi într-un alt proiect.</translation>
     </message>
     <message>
@@ -2068,7 +2070,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Sub-fereastra activă în prezent nu acceptă exportarea conturului.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Pentru a exporta fișierul de formă, comutați „Setare afișaj” la „Figura contur”, nu „Franjuri de culoare” sau „Izolate”.</translation>
     </message>
     <message>
@@ -2125,7 +2127,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>Grilele sunt editate sau șterse. Când salvați, rezultatul calculului este eliminat.</translation>
+        <translation type="vanished">Grilele sunt editate sau șterse. Când salvați, rezultatul calculului este eliminat.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
@@ -2209,7 +2211,7 @@ Option -&gt; Preferences</source>
         <translation>Fișier de setare (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">Pentru a exporta fișierul de formă, comutați modul Culoare la „Mod discret”.</translation>
     </message>
     <message>
@@ -2221,7 +2223,7 @@ Option -&gt; Preferences</source>
         <translation>Selectați grila pentru a exporta fișiere de formă.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>Nu este desenat niciun contur în „Modul discret”.</translation>
     </message>
 </context>
@@ -2569,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2596,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Deschideți o nouă fereastră de post-procesare 2D</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird's-Eye</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Deschideți o nouă fereastră de post-procesare 2D Bird&apos;s-Eye</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

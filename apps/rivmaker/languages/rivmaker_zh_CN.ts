@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AboutDialog</name>
@@ -27,11 +29,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>发布日期：2021/4/28</translation>
+        <translation type="vanished">发布日期：2021/4/28</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">发布日期：2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -188,15 +198,15 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...</source>
-        <translation type="vanished">无效的横截面名称。 名称应该为 "X1", "X2", ...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...</source>
+        <translation type="vanished">无效的横截面名称。 名称应该为 &quot;X1&quot;, &quot;X2&quot;, ...</translation>
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
         <translation>横截面未定义</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
         <translation>横截面名称无效。名称应为“X1”、“X2”、...或“XS1”、“XS2”、...</translation>
     </message>
 </context>

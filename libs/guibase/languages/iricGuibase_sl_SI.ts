@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Izberite mrežo za uvoz</translation>
+        <translation type="vanished">Izberite mrežo za uvoz</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Izberite, katero mrežo želite uvoziti</translation>
+        <translation type="vanished">Izberite, katero mrežo želite uvoziti</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Določite obliko številke v obliki printf. Na primer: " %5.2f "za 3.141592 -&gt; 3.14" %4.2e "za 12300 -&gt; 1,23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Določite obliko številke v obliki printf. Na primer: &quot; %5.2f &quot;za 3.141592 -&gt; 3.14&quot; %4.2e &quot;za 12300 -&gt; 1,23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -96,7 +98,7 @@
     <name>MeasuredDataPointGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Display Setting</source>
@@ -125,6 +127,21 @@
     <message>
         <source>Colormap</source>
         <translation>カラーマップ</translation>
+    </message>
+    <message>
+        <source>Point Size:</source>
+        <translation>点のサイズ:</translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation>色:</translation>
     </message>
     <message>
         <source>Point Size:</source>
@@ -166,11 +183,11 @@
     <name>MeasuredDataVectorGroupDataItem</name>
     <message>
         <source>Arrow</source>
-        <translation>ベクトル</translation>
+        <translation type="vanished">ベクトル</translation>
     </message>
     <message>
         <source>Arrow Physical Value Change</source>
-        <translation>ベクトル 物理量変更</translation>
+        <translation type="vanished">ベクトル 物理量変更</translation>
     </message>
     <message>
         <source>Update Arrow Setting</source>
@@ -178,7 +195,11 @@
     </message>
     <message>
         <source>Arrows Display Setting</source>
-        <translation>ベクトルの表示設定</translation>
+        <translation type="vanished">ベクトルの表示設定</translation>
+    </message>
+    <message>
+        <source>Arrows Display Setting (%1)</source>
+        <translation>ベクトル表示設定 (%1)</translation>
     </message>
 </context>
 <context>
@@ -192,7 +213,14 @@
     <name>MeasuredDataVectorGroupDataItem_SettingEditWidget</name>
     <message>
         <source>Form</source>
-        <translation />
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>MeasuredDataVectorGroupTopDataItem</name>
+    <message>
+        <source>Arrows</source>
+        <translation>ベクトル</translation>
     </message>
 </context>
 <context>

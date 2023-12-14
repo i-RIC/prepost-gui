@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>आप केवल ASCII वर्णों का उपयोग कर सकते हैं.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>फ़ोल्डर "%1" पहले से ही मौजूद है।</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>फ़ोल्डर &quot;%1&quot; पहले से ही मौजूद है।</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>प्रोजेक्ट सफलतापूर्वक सहेजा गया %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>"में मॉडल के लिए डेटा तैयार करते समय त्रुटि उत्पन्न हुई %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>&quot;में मॉडल के लिए डेटा तैयार करते समय त्रुटि उत्पन्न हुई %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>चेतावनी</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>"में कोई मौजूदा प्रोजेक्ट फ़ोल्डर नहीं मिला %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>&quot;में कोई मौजूदा प्रोजेक्ट फ़ोल्डर नहीं मिला %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>परियोजना संशोधित है. क्या आप को बचाना चाहते हैं?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>सहेजा जा रहा है"%1"विफल। कृपया सुनिश्चित करें कि अन्य प्रोग्राम फ़ाइल खोल रहा है, और पुनः प्रयास करें।</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>सहेजा जा रहा है&quot;%1&quot;विफल। कृपया सुनिश्चित करें कि अन्य प्रोग्राम फ़ाइल खोल रहा है, और पुनः प्रयास करें।</translation>
     </message>
 </context>
 <context>

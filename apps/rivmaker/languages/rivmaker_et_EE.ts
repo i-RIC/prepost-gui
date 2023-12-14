@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>rivmaker 2.0.3</translation>
+        <translation type="vanished">rivmaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>Ilmumiskuupäev: 28.04.2021</translation>
+        <translation type="vanished">Ilmumiskuupäev: 28.04.2021</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">rivmaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">Ilmumiskuupäev: 28.04.2021 {2023/8/29?}</translation>
     </message>
 </context>
 <context>
@@ -184,8 +194,8 @@
         <translation>Ristlõige pole veel määratletud.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>Ristlõike vale nimi. Nimi peaks olema "X1", "X2",... või "XS1", "XS2",...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>Ristlõike vale nimi. Nimi peaks olema &quot;X1&quot;, &quot;X2&quot;,... või &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
     </message>
 </context>
 <context>

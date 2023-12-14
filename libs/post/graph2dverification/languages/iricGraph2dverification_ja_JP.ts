@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>Graph2dVerificationSettingDialog</name>
@@ -363,7 +365,7 @@
     </message>
     <message>
         <source>TextLabel</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Setting...</source>
@@ -557,7 +559,7 @@
         <translation>実測値 (%1)</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from river survey data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from river survey data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation type="vanished">この機能は、以下の条件を満たすときのみ使用できます。 &lt;ul&gt;&lt;li&gt;二次元構造格子の計算結果を描画している&lt;/li&gt;&lt;li&gt;X軸を、格子のI方向に設定している&lt;/li&gt;&lt;li&gt;格子を、「河川測量データから作成」アルゴリズムで作成した&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
@@ -652,8 +654,8 @@
         <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation type="vanished">最初の列のタイトルは "X" でなくてはなりません。</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation type="vanished">最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -697,8 +699,8 @@
         <translation type="vanished">エラー</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
-        <translation type="vanished">最初の列のタイトルは "X" でなくてはなりません。</translation>
+        <source>The title of the first column has to be &quot;X&quot;</source>
+        <translation type="vanished">最初の列のタイトルは &quot;X&quot; でなくてはなりません。</translation>
     </message>
     <message>
         <source>Warning</source>

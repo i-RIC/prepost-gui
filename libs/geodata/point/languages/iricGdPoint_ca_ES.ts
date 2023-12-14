@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GeoDataPoint</name>
@@ -54,7 +56,7 @@
     <name>GeoDataPoint::DisplaySettingWidget</name>
     <message>
         <source>Select image file</source>
-        <translation>Seleccioneu el fitxer d'imatge</translation>
+        <translation>Seleccioneu el fitxer d&apos;imatge</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png)</source>
@@ -114,7 +116,7 @@
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>Imatges d'icones</translation>
+        <translation>Imatges d&apos;icones</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -130,7 +132,7 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Quan l'amplada o l'alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l'amplada o l'alçada sigui igual a la mida màxima.</translation>
+        <translation>Quan l&apos;amplada o l&apos;alçada de la imatge importada és més gran que la mida màxima, la imatge es redueix automàticament perquè l&apos;amplada o l&apos;alçada sigui igual a la mida màxima.</translation>
     </message>
     <message>
         <source>Color</source>

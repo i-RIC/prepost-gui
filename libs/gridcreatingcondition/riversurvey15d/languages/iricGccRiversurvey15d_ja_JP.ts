@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -240,7 +242,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>河川中心点からの距離</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>「左岸」は、下流方向を向いた時に左側に見える岸です。</translation>
     </message>
 </context>

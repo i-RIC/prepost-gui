@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Chọn bộ giải</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Khi bạn tạo một dự án mới, bạn phải chọn bộ giải để sử dụng để tính toán. Vui lòng chọn một bộ giải và nhấn nút &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1352,11 +1354,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Nhập khóa API Google Maps (&amp;I)</translation>
+        <translation type="vanished">Nhập khóa API Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform hiện cần có khóa API để sử dụng Google Maps thông qua iRIC. Vui lòng nhận khóa API Google Maps của riêng bạn và đầu vào tại đây, để sử dụng hình ảnh Google Maps làm hình nền trên Bộ xử lý trước và trên Windows Xử lý hậu 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform hiện cần có khóa API để sử dụng Google Maps thông qua iRIC. Vui lòng nhận khóa API Google Maps của riêng bạn và đầu vào tại đây, để sử dụng hình ảnh Google Maps làm hình nền trên Bộ xử lý trước và trên Windows Xử lý hậu 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1364,11 +1366,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Nhập khóa API Google Maps</translation>
+        <translation type="vanished">Nhập khóa API Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>Mã API:</translation>
+        <translation type="vanished">Mã API:</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Bạn có chắc chắn muốn xóa "%1"?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Bạn có chắc chắn muốn xóa &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục "%1". Bộ giải này bị bỏ qua. %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa bộ giải trong thư mục &quot;%1&quot;. Bộ giải này bị bỏ qua. %2</translation>
     </message>
 </context>
 <context>
@@ -1904,7 +1906,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Dự án này dường như được mở bởi một cửa sổ iRIC GUI khác. Bạn không thể mở một thư mục dự án từ nhiều cửa sổ GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Dự án đã mở không được sao chép vào thư mục công việc và bạn sẽ buộc phải lưu các sửa đổi bạn thực hiện cho dự án này. Nếu bạn muốn giữ lại dự án hiện tại, trước tiên hãy lưu nó vào một dự án khác.</translation>
     </message>
     <message>
@@ -1977,7 +1979,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>Các lưới được chỉnh sửa hoặc xóa. Khi bạn lưu, kết quả tính toán sẽ bị loại bỏ.</translation>
+        <translation type="vanished">Các lưới được chỉnh sửa hoặc xóa. Khi bạn lưu, kết quả tính toán sẽ bị loại bỏ.</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -2072,8 +2074,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Cửa sổ phụ hiện đang hoạt động không hỗ trợ xuất hình đường viền.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển "Cài đặt hiển thị" thành "Hình đường viền", không phải "Viền màu" hoặc "Đường viền".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển &quot;Cài đặt hiển thị&quot; thành &quot;Hình đường viền&quot;, không phải &quot;Viền màu&quot; hoặc &quot;Đường viền&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2209,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>Tập tin cài đặt (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành "Chế độ rời rạc".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Để xuất tệp hình dạng, hãy chuyển Chế độ màu thành &quot;Chế độ rời rạc&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2221,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>Chọn lưới để xuất tệp hình dạng.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Không có đường viền nào được vẽ trong "Chế độ rời rạc".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Không có đường viền nào được vẽ trong &quot;Chế độ rời rạc&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2569,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2596,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Mở cửa sổ xử lý hậu kỳ 2D mới</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird's-Eye mới</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Mở cửa sổ xử lý hậu kỳ 2D Bird&apos;s-Eye mới</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

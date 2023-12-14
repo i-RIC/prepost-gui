@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Csak ASCII karaktereket használhat.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Mappa "%1" már létezik.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Mappa &quot;%1&quot; már létezik.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>A projekt sikeresen elmentve ide %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Hiba történt az adatok előkészítése során a következőben: "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Hiba történt az adatok előkészítése során a következőben: &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Figyelem</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Nem található meglévő projektmappa itt: "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Nem található meglévő projektmappa itt: &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>A projekt módosul. Meg akarsz menteni?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Mentés "%1" sikertelen. Győződjön meg arról, hogy más program nyitja meg a fájlt, és próbálja újra.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Mentés &quot;%1&quot; sikertelen. Győződjön meg arról, hogy más program nyitja meg a fájlt, és próbálja újra.</translation>
     </message>
 </context>
 <context>

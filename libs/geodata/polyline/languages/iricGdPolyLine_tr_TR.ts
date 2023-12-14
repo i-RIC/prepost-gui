@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GeoDataPolyLine</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex'i Kaldır (&amp;R)</translation>
+        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>Edit &amp;Coordinates...</source>
@@ -63,7 +65,7 @@
     </message>
     <message>
         <source>Move PolyLine</source>
-        <translation>PolyLine'ı Taşı</translation>
+        <translation>PolyLine&apos;ı Taşı</translation>
     </message>
     <message>
         <source>Move PolyLine Vertex</source>
@@ -75,7 +77,7 @@
     </message>
     <message>
         <source>Remove PolyLine Vertex</source>
-        <translation>PolyLine Vertex'i kaldırın</translation>
+        <translation>PolyLine Vertex&apos;i kaldırın</translation>
     </message>
     <message>
         <source>Line Display Setting</source>

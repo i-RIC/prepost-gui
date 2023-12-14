@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -379,7 +381,7 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
         <translation type="vanished">Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu klona datus, varat izmantot opciju “Kartes punktu mākoņa dati”.</translation>
     </message>
     <message>
@@ -392,14 +394,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot "Kartes punktu mākoņa datus".</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot &quot;Kartes punktu mākoņa datus&quot;.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Dažos reģionos dati nepastāvēja punktu mākoņa datos, un šiem punktiem tika kartēta vērtība 0. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot "Kartes punktu mākoņa datus".</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation>Šķērsgriezuma dati tiek ģenerēti, izmantojot punktu mākoņa datus. Dažos reģionos dati nepastāvēja punktu mākoņa datos, un šiem punktiem tika kartēta vērtība 0. Ja vēlaties vēlreiz pielāgot šķērsgriezuma pozīciju un kartes punktu mākoņa datus, varat izmantot &quot;Kartes punktu mākoņa datus&quot;.</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -411,7 +413,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -621,8 +623,8 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Paaugstinājuma un slīpuma iestatījumi nav derīgi.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
-        <translation>Norādot beigu punkta pacēlumu, tas nevar būt vienāds ar sākuma punktu. Ja vēlaties novilkt horizontālu līniju, lūdzu, izvēlieties "Norādīt horizontālo attālumu".</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
+        <translation>Norādot beigu punkta pacēlumu, tas nevar būt vienāds ar sākuma punktu. Ja vēlaties novilkt horizontālu līniju, lūdzu, izvēlieties &quot;Norādīt horizontālo attālumu&quot;.</translation>
     </message>
 </context>
 <context>
@@ -852,7 +854,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>Rediģējiet šķērsgriezumu, noklikšķinot ar peli. Pabeidziet rediģēšanu, veicot dubultklikšķi vai nospiežot atgriešanās taustiņu. Jūs varat precīzi rediģēt šķērsgriezumu, ievadot vērtības dialoglodziņā. Lūdzu, ievadiet dialoga rediģēšanas režīmu no izvēlnes Rediģēt no dialoga, noklikšķinot ar peles labo pogu.</translation>
     </message>
     <message>
@@ -1045,40 +1047,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Kļūda</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 līnija %2 "%3": LX vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: LX vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 līnija %2 "%3": LY vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: LY vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 līnija %2 "%3": RX vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: RX vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 līnija %2 "%3": RY vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: RY vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 līnija %2 "%3": Punktu skaits nav derīgs</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: Punktu skaits nav derīgs</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 līnija %2 "%3": Nederīga indeksa vērtība</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: Nederīga indeksa vērtība</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 līnija %2 : šķērsgriezuma dati par %3 nepietiekami</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 līnija %2 "%3": Attāluma vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: Attāluma vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 līnija %2 "%3": Augstuma vērtība nav derīga</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 līnija %2 &quot;%3&quot;: Augstuma vērtība nav derīga</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1117,8 +1119,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Līnija %2 : Lasīšanas kļūda. Nepieciešamas vismaz divas vērtības.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Līnija %2 : Lasīšanas kļūda. Nav reālā skaitļa vērtība "%3".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Līnija %2 : Lasīšanas kļūda. Nav reālā skaitļa vērtība &quot;%3&quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1244,36 +1246,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Līnija %2 : KP netiek ievadīts</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Līnija %2 "%3": LX vērtība nav derīga</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Līnija %2 &quot;%3&quot;: LX vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Līnija %2 "%3": LY vērtība nav derīga</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Līnija %2 &quot;%3&quot;: LY vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Līnija %2 "%3": RX vērtība nav derīga</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Līnija %2 &quot;%3&quot;: RX vērtība nav derīga</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Līnija %2 "%3": RY vērtība nav derīga</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Līnija %2 &quot;%3&quot;: RY vērtība nav derīga</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Attāluma marķiera dati nav atrasti. Tiks ignorēts.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 līnija %2 : "%3": Karodziņa dati nav derīgi.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 līnija %2 : &quot;%3&quot;: Karodziņa dati nav derīgi.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 līnija %2 : "%3": Attāluma dati nav derīgi.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 līnija %2 : &quot;%3&quot;: Attāluma dati nav derīgi.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 līnija %2 : "%3": Augstuma dati nav derīgi.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 līnija %2 : &quot;%3&quot;: Augstuma dati nav derīgi.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1313,7 +1315,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>%1 line 1: Header does not contain enough data.</source>
-        <translation>%1 1. rindiņa: galvenē nav pietiekami daudz datu.</translation>
+        <translation>%1 1.&#xa0;rindiņa: galvenē nav pietiekami daudz datu.</translation>
     </message>
 </context>
 <context>
@@ -1391,8 +1393,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Redzams</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Varat pielāgot krāsu, izmantojot cilni Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Varat pielāgot krāsu, izmantojot cilni Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
@@ -1420,10 +1422,17 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
 </context>
 <context>
+    <name>GridCreatingConditionRiverSurveyI</name>
+    <message>
+        <source>Move Control Points</source>
+        <translation type="unfinished">Pārvietot kontroles punktus</translation>
+    </message>
+</context>
+<context>
     <name>GridCreatingConditionRiverSurveyInterface</name>
     <message>
         <source>Move Control Points</source>
-        <translation>Pārvietot kontroles punktus</translation>
+        <translation type="vanished">Pārvietot kontroles punktus</translation>
     </message>
 </context>
 </TS>

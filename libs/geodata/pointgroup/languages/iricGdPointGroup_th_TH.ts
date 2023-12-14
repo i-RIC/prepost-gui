@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว ส่วนหัวควรมีอย่างน้อย 4 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว คอลัมน์ %1 ควรจะเป็น "%2", แต่ "%3" มอบให้</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว คอลัมน์ %1 ควรจะเป็น &quot;%2&quot;, แต่ &quot;%3&quot; มอบให้</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. ข้อมูลควรมีอย่างน้อย 4 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "x" ในบรรทัด %1. "x" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;x&quot; ในบรรทัด %1. &quot;x&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "y" ในบรรทัด %1. "y" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;y&quot; ในบรรทัด %1. &quot;y&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "ค่า" ในบรรทัด %1. "ค่า" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;ค่า&quot; ในบรรทัด %1. &quot;ค่า&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
     </message>
 </context>
 <context>

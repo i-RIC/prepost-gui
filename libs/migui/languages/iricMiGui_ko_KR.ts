@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>ASCII 문자만 사용할 수 있습니다.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>폴더 "%1" 이미 존재 함.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>폴더 &quot;%1&quot; 이미 존재 함.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>프로젝트가 다음 위치에 성공적으로 저장되었습니다. %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>'에서 모델에 대한 데이터를 준비하는 동안 오류가 발생했습니다. %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>&apos;에서 모델에 대한 데이터를 준비하는 동안 오류가 발생했습니다. %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>경고</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>"에 기존 프로젝트 폴더가 없습니다. %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>&quot;에 기존 프로젝트 폴더가 없습니다. %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>프로젝트가 수정되었습니다. 저장하시겠습니까?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>저장 중 "%1" 실패했습니다. 다른 프로그램이 파일을 열고 있는지 확인한 후 다시 시도하십시오.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>저장 중 &quot;%1&quot; 실패했습니다. 다른 프로그램이 파일을 열고 있는지 확인한 후 다시 시도하십시오.</translation>
     </message>
 </context>
 <context>

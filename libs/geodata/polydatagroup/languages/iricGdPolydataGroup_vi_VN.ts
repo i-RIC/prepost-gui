@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -30,8 +32,8 @@
         <translation>Bạn có chắc chắn muốn xóa các mục đã chọn không %1 NS?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Không có dữ liệu nào khác để hợp nhất trong "%1" tập đoàn.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Không có dữ liệu nào khác để hợp nhất trong &quot;%1&quot; tập đoàn.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>

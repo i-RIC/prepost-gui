@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>Specify a rectangular region where to create a grid, and the cell width. The cell width is used for both X-direction and Y-direction. The coordinate system isLongitude-Latitude system.</source>
-        <translation>Especifiqueu una regió rectangular on crear una quadrícula i l'amplada de la cel·la. L'amplada de la cel·la s'utilitza tant en direcció X com en direcció Y. El sistema de coordenades és el sistema de longitud-latitud.</translation>
+        <translation>Especifiqueu una regió rectangular on crear una quadrícula i l&apos;amplada de la cel·la. L&apos;amplada de la cel·la s&apos;utilitza tant en direcció X com en direcció Y. El sistema de coordenades és el sistema de longitud-latitud.</translation>
     </message>
 </context>
 <context>

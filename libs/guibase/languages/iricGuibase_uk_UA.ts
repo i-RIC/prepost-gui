@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Виберіть сітку для імпорту</translation>
+        <translation type="vanished">Виберіть сітку для імпорту</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Виберіть, яку сітку імпортувати</translation>
+        <translation type="vanished">Виберіть, яку сітку імпортувати</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Укажіть формат числа у форматі printf. Наприклад: " %5.2f "для 3.141592 -&gt; 3.14" %4.2e "для 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Укажіть формат числа у форматі printf. Наприклад: &quot; %5.2f &quot;для 3.141592 -&gt; 3.14&quot; %4.2e &quot;для 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -837,7 +839,7 @@
     </message>
     <message>
         <source>Courier</source>
-        <translation>Кур'єр</translation>
+        <translation>Кур&apos;єр</translation>
     </message>
     <message>
         <source>Times</source>

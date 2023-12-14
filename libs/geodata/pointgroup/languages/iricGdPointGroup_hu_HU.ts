@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>Hiba történt a fejléc olvasása közben. A fejlécnek legalább 4 oszlopot kell tartalmaznia.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Hiba történt a fejléc olvasása közben. Oszlop %1 kellene "%2", de "%3" adott.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Hiba történt a fejléc olvasása közben. Oszlop %1 kellene &quot;%2&quot;, de &quot;%3&quot; adott.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Hiba történt a sor olvasása közben %1. Az adatoknak legalább 4 oszlopból kell állniuk.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "x" érték sorban történő olvasása közben %1. Az "x" valós érték, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;x&quot; érték sorban történő olvasása közben %1. Az &quot;x&quot; valós érték, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "y" érték sorban történő olvasása közben %1. Az "y" valós érték, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;y&quot; érték sorban történő olvasása közben %1. Az &quot;y&quot; valós érték, de &quot;%2&quot;van megadva.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Hiba történt az "érték" érték sorban történő olvasása közben %1. Az "érték" valós értéknek kell lennie, de "%2"van megadva.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Hiba történt az &quot;érték&quot; érték sorban történő olvasása közben %1. Az &quot;érték&quot; valós értéknek kell lennie, de &quot;%2&quot;van megadva.</translation>
     </message>
 </context>
 <context>

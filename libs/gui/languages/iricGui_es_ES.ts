@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Seleccionar Solucionador</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón "Aceptar".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Cuando crea un nuevo proyecto, debe seleccionar el solucionador que se utilizará para el cálculo. Seleccione un solucionador y presione el botón &quot;Aceptar&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1352,11 +1354,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Ingrese la clave API de Google Maps (&amp;I)</translation>
+        <translation type="vanished">Ingrese la clave API de Google Maps (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ahora necesita una clave API para usar Google Maps a través de iRIC. Obtenga su propia clave de API de Google Maps e ingrese aquí, para usar imágenes de Google Maps como imágenes de fondo en el preprocesador y en las ventanas de posprocesamiento 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform ahora necesita una clave API para usar Google Maps a través de iRIC. Obtenga su propia clave de API de Google Maps e ingrese aquí, para usar imágenes de Google Maps como imágenes de fondo en el preprocesador y en las ventanas de posprocesamiento 2D. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1364,11 +1366,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Introduzca la clave de API de Google Maps</translation>
+        <translation type="vanished">Introduzca la clave de API de Google Maps</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>Clave API:</translation>
+        <translation type="vanished">Clave API:</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Estas seguro que quieres borrarlo "%1"?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Estas seguro que quieres borrarlo &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta "%1". Este solucionador se ignora. %2</translation>
+        <translation>Se produjo un error al cargar el archivo de definición del solucionador en la carpeta &quot;%1&quot;. Este solucionador se ignora. %2</translation>
     </message>
 </context>
 <context>
@@ -1904,7 +1906,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Este proyecto parece estar abierto por otra ventana de la GUI de iRIC. No puede abrir una carpeta de proyecto desde varias ventanas GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>El proyecto abierto no se copia en el directorio de trabajo y se verá obligado a guardar las modificaciones que realice en este proyecto. Si desea conservar el proyecto actual, guárdelo primero en otro proyecto.</translation>
     </message>
     <message>
@@ -1977,7 +1979,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>Las cuadrículas se editan o eliminan. Cuando guarda, el resultado del cálculo se descarta.</translation>
+        <translation type="vanished">Las cuadrículas se editan o eliminan. Cuando guarda, el resultado del cálculo se descarta.</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -2072,8 +2074,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>La subventana actualmente activa no admite la exportación de figuras de contorno.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Para exportar un archivo de forma, cambie "Configuración de pantalla" a "Figura de contorno", no "Franja de color" o "Isolíneas".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Para exportar un archivo de forma, cambie &quot;Configuración de pantalla&quot; a &quot;Figura de contorno&quot;, no &quot;Franja de color&quot; o &quot;Isolíneas&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2209,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>Archivo de configuración (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Para exportar un archivo de forma, cambie el modo de color a "Modo discreto".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Para exportar un archivo de forma, cambie el modo de color a &quot;Modo discreto&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2221,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>Seleccione cuadrícula para exportar archivos de formas.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>No se dibuja ningún contorno en "Modo discreto".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>No se dibuja ningún contorno en &quot;Modo discreto&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2596,7 +2598,7 @@ Option -&gt; Preferences</source>
         <translation>Abrir Ventana 2D Post-Procesamiento Nueva</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>Abrir nueva ventana de posprocesamiento a vista de pájaro 2D</translation>
     </message>
     <message>

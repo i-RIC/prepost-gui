@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -122,8 +124,8 @@
         <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Tiêu đề phải có ít nhất 6 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là "%2", nhưng "%3" được đưa ra.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng tiêu đề. Cột %1 nên là &quot;%2&quot;, nhưng &quot;%3&quot; được đưa ra.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -146,32 +148,32 @@
         <translation>Đã xảy ra lỗi khi đọc dòng %1. Dữ liệu phải có ít nhất 6 cột.</translation>
     </message>
     <message>
-        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "nắp" trong dòng %1. "lid" phải là giá trị số nguyên nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;nắp&quot; trong dòng %1. &quot;lid&quot; phải là giá trị số nguyên nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "vid" trong dòng %1. "vid" phải là giá trị số nguyên nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;vid&quot; trong dòng %1. &quot;vid&quot; phải là giá trị số nguyên nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "x" trong dòng %1. "x" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;x&quot; trong dòng %1. &quot;x&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "y" trong dòng %1. "y" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;y&quot; trong dòng %1. &quot;y&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Đã xảy ra lỗi khi đọc giá trị "value" trong dòng %1. "giá trị" phải là giá trị thực nhưng "%2" được quy định.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Đã xảy ra lỗi khi đọc giá trị &quot;value&quot; trong dòng %1. &quot;giá trị&quot; phải là giá trị thực nhưng &quot;%2&quot; được quy định.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng %1. "name" phải giống nhau đối với các dòng có giá trị "lid" giống nhau.</translation>
+        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng %1. &quot;name&quot; phải giống nhau đối với các dòng có giá trị &quot;lid&quot; giống nhau.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
-        <translation>Đã xảy ra lỗi khi đọc dòng %1. "giá trị" phải giống nhau đối với các dòng có giá trị "nắp" giống nhau.</translation>
+        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <translation>Đã xảy ra lỗi khi đọc dòng %1. &quot;giá trị&quot; phải giống nhau đối với các dòng có giá trị &quot;nắp&quot; giống nhau.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>

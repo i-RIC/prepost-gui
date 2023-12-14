@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -485,7 +487,7 @@
         <translation>Ошибка настройки окна графика. Результат расчета загружен неправильно.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
         <translation>Эту функцию можно использовать, если выполняются следующие условия: &lt;ul&gt; &lt;li&gt; Рисуется график для результата двумерной структурированной сетки. &lt;/li&gt; &lt;li&gt; Ось X - это I-направление в сетке. &lt;/ Li &gt; &lt;li&gt; Сетка создается с использованием алгоритма «Создать сетку из данных сечения» &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
@@ -580,7 +582,7 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>Заголовок первого столбца должен быть «X».</translation>
     </message>
     <message>
@@ -660,7 +662,7 @@
         <translation>Ошибка</translation>
     </message>
     <message>
-        <source>The title of the first column has to be "X"</source>
+        <source>The title of the first column has to be &quot;X&quot;</source>
         <translation>Заголовок первого столбца должен быть «X».</translation>
     </message>
     <message>

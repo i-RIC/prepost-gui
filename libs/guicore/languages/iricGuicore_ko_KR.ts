@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>보여 주다</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>색상:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>정의 노드가 저장되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>잘못된 값 유형 "%1"가 설정되어 있습니다.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>잘못된 값 유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>잘못된 조건유형 "%1"가 설정되어 있습니다.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>잘못된 조건유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>정보</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>단축키 "Ctrl + C" 및 "Ctrl + V"를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>단축키 &quot;Ctrl + C&quot; 및 &quot;Ctrl + V&quot;를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2004,8 +2017,8 @@ Do you really want to import this file?</source>
         <translation>파일을 여는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>처음 두 열은 "X"와 "Y"여야 합니다.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>처음 두 열은 &quot;X&quot;와 &quot;Y&quot;여야 합니다.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>변수의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2179,7 +2192,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 &quot;테스트를 위한 값&quot;을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>아래에 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>출력의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">그리드 생성 조건</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>그리드 생성 조건</translation>
+        <translation type="vanished">그리드 생성 조건</translation>
     </message>
 </context>
 <context>
@@ -2746,15 +2766,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>CGNS 파일 내보내기</translation>
+        <translation type="vanished">CGNS 파일 내보내기</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>CGNS 파일 (*.cgns)</translation>
+        <translation type="vanished">CGNS 파일 (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>CGNS 파일 내보내기에 실패했습니다. 지정된 파일이 다른 프로세스에 의해 잠겨 있습니다.</translation>
+        <translation type="vanished">CGNS 파일 내보내기에 실패했습니다. 지정된 파일이 다른 프로세스에 의해 잠겨 있습니다.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>여는 중 오류가 발생했습니다. %1. iRIC에서 데이터 복구 시도 %2.</translation>
+        <translation type="vanished">여는 중 오류가 발생했습니다. %1. iRIC에서 데이터 복구 시도 %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: 해당 파일이 없습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>작업 공간 "%1" 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>작업 공간 &quot;%1&quot; 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>경계선은 이 그리드의 다른 셀과 교차합니다.</translation>
+        <translation type="vanished">경계선은 이 그리드의 다른 셀과 교차합니다.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>그리드 셀의 종횡비가 한계값을 초과함 %1 하나 이상의 셀에서.</translation>
+        <translation type="vanished">그리드 셀의 종횡비가 한계값을 초과함 %1 하나 이상의 셀에서.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>그리드 셀 가장자리 길이의 변화가 한계 값을 초과합니다(I-방향: %1, J 방향: %2 ) 둘 이상의 셀에 있습니다.</translation>
+        <translation type="vanished">그리드 셀 가장자리 길이의 변화가 한계 값을 초과합니다(I-방향: %1, J 방향: %2 ) 둘 이상의 셀에 있습니다.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>그리드 셀 가장자리의 각도가 한계 값 아래로 떨어짐 %1 하나 이상의 셀에서.</translation>
+        <translation type="vanished">그리드 셀 가장자리의 각도가 한계 값 아래로 떨어짐 %1 하나 이상의 셀에서.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* 모서리가 교차하는 셀</translation>
+        <translation type="vanished">* 모서리가 교차하는 셀</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>존재하지 않음</translation>
+        <translation type="vanished">존재하지 않음</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* 셀 가장자리의 종횡비가 초과되는 셀 %1</translation>
+        <translation type="vanished">* 셀 가장자리의 종횡비가 초과되는 셀 %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, 종횡비</translation>
+        <translation type="vanished">I, J, 종횡비</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>가장자리 길이가 너무 작음</translation>
+        <translation type="vanished">가장자리 길이가 너무 작음</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* 셀 꼭짓점의 각도가 아래에 있는 셀 %1</translation>
+        <translation type="vanished">* 셀 꼭짓점의 각도가 아래에 있는 셀 %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>I, J, 각도</translation>
+        <translation type="vanished">I, J, 각도</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* i-방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
+        <translation type="vanished">* i-방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, 변형</translation>
+        <translation type="vanished">I, J, 변형</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* j 방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
+        <translation type="vanished">* j 방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>버전 번호의 빌드 번호가 지정되지 않았습니다.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">문제 발생: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">인수 확인 중 %1 실패한. 잘못된 인수: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">단순 연산 결과 변수 편집</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">계산 결과:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">변수 이름:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">테스트 가치:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">변수 이름이 입력되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">이 변수 이름은 이미 사용 중입니다.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">단순 작업 결과 편집</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">이름:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">위치:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">입력에 대한 계산 결과</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">추가하다 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">삭제 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">변수의 정의</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">시험</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 &quot;테스트를 위한 값&quot;을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">결과 이름</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">변수 이름</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">테스트 가치</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">그리드 노드</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">그리드 셀</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">입자</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">이름이 입력되지 않았습니다.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">이미 사용 중인 이름입니다.</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">삭제 하시겠습니까 %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">단순 작업 결과 목록</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">이름</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">위치</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">위로 (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">아래에 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">추가하다 (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">편집하다 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">삭제 (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">삭제 하시겠습니까 %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">그리드 노드</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">그리드 셀</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">입자</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">대화</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">그리드 유형:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">지역: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">경계선은 이 그리드의 다른 셀과 교차합니다.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">그리드 셀의 종횡비가 한계값을 초과함 %1 하나 이상의 셀에서.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">그리드 셀 가장자리 길이의 변화가 한계 값을 초과합니다(I-방향: %1, J 방향: %2 ) 둘 이상의 셀에 있습니다.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">그리드 셀 가장자리의 각도가 한계 값 아래로 떨어짐 %1 하나 이상의 셀에서.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* 모서리가 교차하는 셀</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">존재하지 않음</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* 셀 가장자리의 종횡비가 초과되는 셀 %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, 종횡비</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">가장자리 길이가 너무 작음</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* 셀 꼭짓점의 각도가 아래에 있는 셀 %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">I, J, 각도</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* i-방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">I, J, 변형</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* j 방향에 따른 셀 길이의 변화가 초과하는 셀 %1</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Seleziona la griglia da importare</translation>
+        <translation type="vanished">Seleziona la griglia da importare</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Seleziona quale griglia importare</translation>
+        <translation type="vanished">Seleziona quale griglia importare</translation>
     </message>
 </context>
 <context>
@@ -521,7 +523,7 @@
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualizzazione dell'etichetta</translation>
+        <translation>Visualizzazione dell&apos;etichetta</translation>
     </message>
     <message>
         <source>Number of labels :</source>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Specificare il formato del numero in formato printf. Per esempio: " %5.2f" per 3.141592 --&gt; 3.14" %4.2e" per 12300 --&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Specificare il formato del numero in formato printf. Per esempio: &quot; %5.2f&quot; per 3.141592 --&gt; 3.14&quot; %4.2e&quot; per 12300 --&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>
@@ -571,7 +573,7 @@
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation>Se specifichi 1, l'altezza della barra dei colori è uguale all'altezza della finestra.</translation>
+        <translation>Se specifichi 1, l&apos;altezza della barra dei colori è uguale all&apos;altezza della finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -637,7 +639,7 @@
     </message>
     <message>
         <source>Show actual time</source>
-        <translation>Mostra l'ora attuale</translation>
+        <translation>Mostra l&apos;ora attuale</translation>
     </message>
     <message>
         <source>Elapsed time format</source>
@@ -661,7 +663,7 @@
     </message>
     <message>
         <source>Actual time format</source>
-        <translation>Formato dell'ora reale</translation>
+        <translation>Formato dell&apos;ora reale</translation>
     </message>
     <message>
         <source>yyyy/mm/dd HH:MM:SS</source>
@@ -689,7 +691,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can use following symbols to define custom time format:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Year: YYYY, YY&lt;/li&gt;&lt;li&gt;Month: M, MM, MMM, MMMM (MMM for Jan etc., MMMM for January etc.)&lt;/li&gt;&lt;li&gt;Day: d, dd, ddd, dddd (ddd for Mon etc., dddd for Monday etc.)&lt;/li&gt;&lt;li&gt;Hour: H, HH, h, hh (h, hh for AM / PM display)&lt;/li&gt;&lt;li&gt;Minute: m, mm&lt;/li&gt;&lt;li&gt;Second: s, ss&lt;/li&gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi utilizzare i seguenti simboli per definire il formato dell'ora personalizzato:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Anno: AAAA, AA&lt;/li&gt;&lt;li&gt;Mese: M, MM, MMM, MMMM (MMM per gennaio ecc., MMMM per gennaio ecc.)&lt;/li&gt;&lt;li&gt;Giorno: gg, gg, gg, gggg (gg per lun ecc., gggg per lunedì ecc.)&lt;/li &gt;&lt;li&gt;Ora: H, HH, h, hh (h, hh per visualizzazione AM / PM)&lt;/li&gt;&lt;li&gt;Minuti: m, mm&lt;/li&gt;&lt;li&gt;Secondo: s, ss&lt;/li &gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puoi utilizzare i seguenti simboli per definire il formato dell&apos;ora personalizzato:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Anno: AAAA, AA&lt;/li&gt;&lt;li&gt;Mese: M, MM, MMM, MMMM (MMM per gennaio ecc., MMMM per gennaio ecc.)&lt;/li&gt;&lt;li&gt;Giorno: gg, gg, gg, gggg (gg per lun ecc., gggg per lunedì ecc.)&lt;/li &gt;&lt;li&gt;Ora: H, HH, h, hh (h, hh per visualizzazione AM / PM)&lt;/li&gt;&lt;li&gt;Minuti: m, mm&lt;/li&gt;&lt;li&gt;Secondo: s, ss&lt;/li &gt;&lt;li&gt;AM / PM: A, a&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Show Time Zone</source>
@@ -736,7 +738,7 @@
     <name>XYAxisDisplaySettingDialog</name>
     <message>
         <source>Axis Display Setting</source>
-        <translation>Impostazione di visualizzazione dell'asse</translation>
+        <translation>Impostazione di visualizzazione dell&apos;asse</translation>
     </message>
     <message>
         <source>X-Axis</source>

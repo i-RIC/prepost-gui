@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Du kan kun bruge ASCII-tegn.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Mappe"%1" eksisterer allerede.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Mappe&quot;%1&quot; eksisterer allerede.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projektet blev gemt til %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Der opstod en fejl under forberedelse af data til model i "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Der opstod en fejl under forberedelse af data til model i &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Ingen eksisterende projektmappe fundet i "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Ingen eksisterende projektmappe fundet i &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Projektet er ændret. Vil du gemme?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Gemmer"%1" mislykkedes. Sørg for, at et andet program åbner filen, og prøv igen.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Gemmer&quot;%1&quot; mislykkedes. Sørg for, at et andet program åbner filen, og prøv igen.</translation>
     </message>
 </context>
 <context>

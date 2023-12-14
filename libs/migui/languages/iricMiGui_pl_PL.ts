@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Można używać wyłącznie znaków ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Teczka "%1" już istnieje.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Teczka &quot;%1&quot; już istnieje.</translation>
     </message>
 </context>
 <context>
@@ -205,15 +207,15 @@
         <translation>Projekt został pomyślnie zapisany w %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Wystąpił błąd podczas przygotowywania danych dla modelu w „ %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Wystąpił błąd podczas przygotowywania danych dla modelu w „ %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
         <translation>Nie znaleziono istniejącego folderu projektu w „ %1 „.</translation>
     </message>
     <message>
@@ -241,8 +243,8 @@
         <translation>Projekt jest modyfikowany. Czy chcesz zapisać?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Oszczędzanie” %1 " nie powiodło się. Upewnij się, że inny program otwiera plik i spróbuj ponownie.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Oszczędzanie” %1 &quot; nie powiodło się. Upewnij się, że inny program otwiera plik i spróbuj ponownie.</translation>
     </message>
 </context>
 <context>

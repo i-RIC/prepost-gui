@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Импорттоо үчүн торду тандаңыз</translation>
+        <translation type="vanished">Импорттоо үчүн торду тандаңыз</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Кайсы торду импорттой турганыңызды тандаңыз</translation>
+        <translation type="vanished">Кайсы торду импорттой турганыңызды тандаңыз</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Printf форматындагы сан форматын көрсөтүңүз. Мисалы: " %5.2f "үчүн 3.141592 -&gt; 3.14" %4.2e "үчүн 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Printf форматындагы сан форматын көрсөтүңүз. Мисалы: &quot; %5.2f &quot;үчүн 3.141592 -&gt; 3.14&quot; %4.2e &quot;үчүн 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

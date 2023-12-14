@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>आयात करने के लिए ग्रिड का चयन करें</translation>
+        <translation type="vanished">आयात करने के लिए ग्रिड का चयन करें</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>कृपया चुनें कि किस ग्रिड को आयात करना है</translation>
+        <translation type="vanished">कृपया चुनें कि किस ग्रिड को आयात करना है</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>प्रिंटफ प्रारूप में संख्या प्रारूप निर्दिष्ट करें। उदाहरण के लिए: " %5.2f" 3.141592 के लिए -&gt; 3.14 " %4.2e" 12300 के लिए -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>प्रिंटफ प्रारूप में संख्या प्रारूप निर्दिष्ट करें। उदाहरण के लिए: &quot; %5.2f&quot; 3.141592 के लिए -&gt; 3.14 &quot; %4.2e&quot; 12300 के लिए -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

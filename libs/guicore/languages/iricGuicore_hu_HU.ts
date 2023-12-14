@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>Előadás</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Szín:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Megjegyzés: A névhez csak ASCII-karaktereket használhat.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Megjegyzés: A névhez csak ASCII-karaktereket használhat.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>A definíciós csomópont nincs tárolva</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Rossz valueType "%1"van beállítva.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Rossz valueType &quot;%1&quot;van beállítva.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Hibás állapot típusa "%1"van beállítva.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Hibás állapot típusa &quot;%1&quot;van beállítva.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>Fájl %1 a számítási feltételbe történő importálás után frissül %2. Importálni szeretné a frissített fájlt?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Másolhatja és beillesztheti az értékeket a "Ctrl + C" és "Ctrl + V" billentyűkombinációval</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Másolhatja és beillesztheti az értékeket a &quot;Ctrl + C&quot; és &quot;Ctrl + V&quot; billentyűkombinációval</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2008,8 +2021,8 @@ Do you really want to import this file?</source>
         <translation>Hiba történt a fájl megnyitásakor.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Az első két oszlopnak "X" és "Y" -nak kell lennie.</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Az első két oszlopnak &quot;X&quot; és &quot;Y&quot; -nak kell lennie.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>A változó meghatározása</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "szöveget -dekoráció: aláhúzás; color:#0000ff; "&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;szöveget -dekoráció: aláhúzás; color:#0000ff; &quot;&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>Le (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Megjegyzés &lt;/span&gt;: A lista sorrendje fontos. A definícióban az egyszerű műveleti számítások értékét használhatja változóként, amely a lista elején található. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Megjegyzés &lt;/span&gt;: A lista sorrendje fontos. A definícióban az egyszerű műveleti számítások értékét használhatja változóként, amely a lista elején található. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>A kimenet meghatározása</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "szöveget -dekoráció: aláhúzás; color:#0000ff; "&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;szöveget -dekoráció: aláhúzás; color:#0000ff; &quot;&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">Rács létrehozásának feltétele</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Rács létrehozásának feltétele</translation>
+        <translation type="vanished">Rács létrehozásának feltétele</translation>
     </message>
 </context>
 <context>
@@ -2742,15 +2762,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>CGNS fájl exportálása</translation>
+        <translation type="vanished">CGNS fájl exportálása</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>CGNS fájl (*.cgns)</translation>
+        <translation type="vanished">CGNS fájl (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>A CGNS fájl exportálása sikertelen. A megadott fájlt más folyamat zárolja.</translation>
+        <translation type="vanished">A CGNS fájl exportálása sikertelen. A megadott fájlt más folyamat zárolja.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Hiba történt a nyitás során %1. Az iRIC megpróbálja kimenteni az adatokat %2.</translation>
+        <translation type="vanished">Hiba történt a nyitás során %1. Az iRIC megpróbálja kimenteni az adatokat %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: Nincs ilyen fájl.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Munkaterület "%1" van %2 projektmappákat, amelyeket úgy tűnik, már nem használnak. Eltávolítja őket?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Munkaterület &quot;%1&quot; van %2 projektmappákat, amelyeket úgy tűnik, már nem használnak. Eltávolítja őket?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Egy élvonal metszi ezt a rács másik celláját.</translation>
+        <translation type="vanished">Egy élvonal metszi ezt a rács másik celláját.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>A rácscellák képaránya meghaladja a határértéket %1 több sejtben.</translation>
+        <translation type="vanished">A rácscellák képaránya meghaladja a határértéket %1 több sejtben.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>A rácscellák széleinek változása meghaladja a határértékeket (I-irány: %1, J-irány: %2 ) több cellában.</translation>
+        <translation type="vanished">A rácscellák széleinek változása meghaladja a határértékeket (I-irány: %1, J-irány: %2 ) több cellában.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>A rács cella élének szöge a határérték alá esik %1 több sejtben.</translation>
+        <translation type="vanished">A rács cella élének szöge a határérték alá esik %1 több sejtben.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Az élek metszéspontjában lévő cellák</translation>
+        <translation type="vanished">* Az élek metszéspontjában lévő cellák</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Nem létezik</translation>
+        <translation type="vanished">Nem létezik</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Azok a cellák, ahol a cellaélek képaránya meghaladja %1</translation>
+        <translation type="vanished">* Azok a cellák, ahol a cellaélek képaránya meghaladja %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Képarány</translation>
+        <translation type="vanished">I, J, Képarány</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Az él hossza túl kicsi</translation>
+        <translation type="vanished">Az él hossza túl kicsi</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Azok a cellák, ahol a cellacsúcs szöge alatta van %1</translation>
+        <translation type="vanished">* Azok a cellák, ahol a cellacsúcs szöge alatta van %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>Én, J, Angle</translation>
+        <translation type="vanished">Én, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Azok a sejtek, ahol a sejthossz eltérése meghaladja az i irányt %1</translation>
+        <translation type="vanished">* Azok a sejtek, ahol a sejthossz eltérése meghaladja az i irányt %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>Én, J, variáció</translation>
+        <translation type="vanished">Én, J, variáció</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Azok a sejtek, ahol a sejthossz j-irányú eltérése meghaladja %1</translation>
+        <translation type="vanished">* Azok a sejtek, ahol a sejthossz j-irányú eltérése meghaladja %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>A verziószám verziószáma nincs megadva.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Hiba</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">Hiba lépett fel: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">Ellenőrző érv %1 nem sikerült. Érvénytelen érvek: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">Egyszerű működés eredményváltozójának szerkesztése</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">Számítási eredmény:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">Változó neve:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">A teszt értéke:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Figyelem</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">A változó neve nincs megadva.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">Ez a változónév már használatban van</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">Egyszerű művelet eredményének szerkesztése</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Név:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">Pozíció:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">Számítási eredmények a bemenethez</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Hozzáadás (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Töröl (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">A változó meghatározása</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;szöveget -dekoráció: aláhúzás; color:#0000ff; &quot;&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">Teszt</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A definíciót erre kattintva tesztelheti. Ha hiba lép fel a definíció értelmezése közben, a hibaüzenet jelenik meg. A definíció sikeres elemzése után az &amp; quot; Value for testingquot; minden bemenethez megjelenik. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">Eredmény neve</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">Változó név</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">Érték a teszteléshez</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Rács csomópont</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Rács cella</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Részecske</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Figyelem</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">A név nincs megadva.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">Ezt a nevet már használják</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Biztos vagy benne, hogy törölni akarod %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">Egyszerű működés eredménylistája</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Név</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Pozíció</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">Fel (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">Le (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Megjegyzés &lt;/span&gt;: A lista sorrendje fontos. A definícióban az egyszerű műveleti számítások értékét használhatja változóként, amely a lista elején található. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Hozzáadás (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Szerkesztés (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Töröl (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Figyelem</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Biztos vagy benne, hogy törölni akarod %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Rács csomópont</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Rács cella</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Részecske</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Párbeszéd</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Rács típusa:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">Vidék: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">Egy élvonal metszi ezt a rács másik celláját.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">A rácscellák képaránya meghaladja a határértéket %1 több sejtben.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">A rácscellák széleinek változása meghaladja a határértékeket (I-irány: %1, J-irány: %2 ) több cellában.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">A rács cella élének szöge a határérték alá esik %1 több sejtben.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* Az élek metszéspontjában lévő cellák</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">Nem létezik</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* Azok a cellák, ahol a cellaélek képaránya meghaladja %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, Képarány</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">Az él hossza túl kicsi</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* Azok a cellák, ahol a cellacsúcs szöge alatta van %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">Én, J, Angle</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* Azok a sejtek, ahol a sejthossz eltérése meghaladja az i irányt %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">Én, J, variáció</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* Azok a sejtek, ahol a sejthossz j-irányú eltérése meghaladja %1</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -13,7 +15,7 @@
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation>La forma de la quadrícula es defineix automàticament mitjançant dades de secció transversal. Podeu especificar el número de divisió de quadrícula afegint punts de control de creació de quadrícula al centre del riu. Nota: aquest algorisme només està disponible quan es carreguen les dades de la secció transversal. Canvieu-ne l'algorisme després d'importar les dades de la secció transversal.</translation>
+        <translation>La forma de la quadrícula es defineix automàticament mitjançant dades de secció transversal. Podeu especificar el número de divisió de quadrícula afegint punts de control de creació de quadrícula al centre del riu. Nota: aquest algorisme només està disponible quan es carreguen les dades de la secció transversal. Canvieu-ne l&apos;algorisme després d&apos;importar les dades de la secció transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
@@ -207,7 +209,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation>Valor de posició dels punts d'elevació:</translation>
+        <translation>Valor de posició dels punts d&apos;elevació:</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
@@ -218,8 +220,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Distància del punt central</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>"Marge esquerre" és el marge que es veu al costat esquerre, quan es gira en direcció aigües avall.</translation>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>&quot;Marge esquerre&quot; és el marge que es veu al costat esquerre, quan es gira en direcció aigües avall.</translation>
     </message>
 </context>
 </TS>

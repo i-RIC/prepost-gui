@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>คุณสามารถใช้ได้เฉพาะอักขระ ASCII</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>โฟลเดอร์ "%1" มีอยู่แล้ว.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>โฟลเดอร์ &quot;%1&quot; มีอยู่แล้ว.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>บันทึกโครงการไปที่เรียบร้อยแล้ว %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>เกิดข้อผิดพลาดขณะเตรียมข้อมูลสำหรับโมเดลใน "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>เกิดข้อผิดพลาดขณะเตรียมข้อมูลสำหรับโมเดลใน &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>คำเตือน</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>ไม่พบโฟลเดอร์โครงการที่มีอยู่ใน "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>ไม่พบโฟลเดอร์โครงการที่มีอยู่ใน &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>โครงการได้รับการแก้ไข คุณต้องการที่จะบันทึก?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>กำลังบันทึก "%1" ล้มเหลว โปรดตรวจสอบให้แน่ใจว่าโปรแกรมอื่นกำลังเปิดไฟล์อยู่ แล้วลองอีกครั้ง</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>กำลังบันทึก &quot;%1&quot; ล้มเหลว โปรดตรวจสอบให้แน่ใจว่าโปรแกรมอื่นกำลังเปิดไฟล์อยู่ แล้วลองอีกครั้ง</translation>
     </message>
 </context>
 <context>

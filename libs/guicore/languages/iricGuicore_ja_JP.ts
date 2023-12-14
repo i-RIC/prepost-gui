@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -428,12 +430,12 @@
         <translation type="vanished">Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation type="vanished">不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation type="vanished">不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation type="vanished">不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation type="vanished">不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -601,6 +603,17 @@ Do you really want to import this file?</source>
     <message>
         <source>String has to consist of only English characters.</source>
         <translation type="vanished">文字列には、英数字と記号しか使用できません。</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation>インポートする格子の選択</translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation>インポートする格子を選択してください</translation>
     </message>
 </context>
 <context>
@@ -1888,8 +1901,8 @@ Parse error %2 at %3, column %4</source>
         <translation>色:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考: 名前には ASCII 文字のみ使用できます。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考: 名前には ASCII 文字のみ使用できます。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2091,12 +2104,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definition 要素が見つかりません</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>不正な valueType "%1" が指定されました。</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>不正な valueType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>不正な conditionType "%1" が指定されました。</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>不正な conditionType &quot;%1&quot; が指定されました。</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -2399,8 +2412,8 @@ Do you really want to import this file?</source>
         <translation>情報</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>ショートカットキー "Ctrl + C", "Ctrl + V" によって、値をコピー＆ペーストできます。</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>ショートカットキー &quot;Ctrl + C&quot;, &quot;Ctrl + V&quot; によって、値をコピー＆ペーストできます。</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2531,8 +2544,8 @@ Do you really want to import this file?</source>
         <translation>ファイルを開く時にエラーが発生しました。</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>最初の2つの列は "X",  "Y" でなくてはいけません。</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>最初の2つの列は &quot;X&quot;,  &quot;Y&quot; でなくてはいけません。</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2790,7 +2803,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation />
+        <translation></translation>
     </message>
     <message>
         <source>Value for testing:</source>
@@ -2840,12 +2853,12 @@ Do you really want to import this file?</source>
         <translation>変数の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://readthedocs.org/"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://readthedocs.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2856,7 +2869,7 @@ Do you really want to import this file?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the "Value for testing" for each input is shown.</source>
+        <source>You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the vallue calculated using the &quot;Value for testing&quot; for each input is shown.</source>
         <translation type="vanished">このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。</translation>
     </message>
     <message>
@@ -2927,8 +2940,8 @@ Do you really want to import this file?</source>
         <translation>下へ (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -3313,8 +3326,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3400,8 +3413,8 @@ Do you really want to import this file?</source>
         <translation>出力の定義</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href="https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3474,10 +3487,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
-    <name>PreProcessorGridCreatingConditionDataItemInterface</name>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
         <translation>格子生成条件</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCreatingConditionDataItemInterface</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="vanished">格子生成条件</translation>
     </message>
 </context>
 <context>
@@ -3568,15 +3588,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>CNGS ファイルのエクスポート</translation>
+        <translation type="vanished">CNGS ファイルのエクスポート</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>CGNS ファイル (*.cgns)</translation>
+        <translation type="vanished">CGNS ファイル (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>CGNS ファイルのエクスポートが失敗しました。指定されたファイルは、他のプロセスが使用中です。</translation>
+        <translation type="vanished">CGNS ファイルのエクスポートが失敗しました。指定されたファイルは、他のプロセスが使用中です。</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -3656,7 +3676,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>%1 を開けませんでした。iRIC は %2 からのデータの復元を試みます。</translation>
+        <translation type="vanished">%1 を開けませんでした。iRIC は %2 からのデータの復元を試みます。</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -3676,6 +3696,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation> : そのようなファイルはありません。</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation>インポート対象ウィンドウの選択</translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation>エクスポート対象のウィンドウの選択</translation>
     </message>
 </context>
 <context>
@@ -3708,8 +3739,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>ワークスペース %1" には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>ワークスペース %1&quot; には、もう使われていないと思われるプロジェクトフォルダが %2 あります。削除しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -4049,59 +4080,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>格子線が、他のセルの格子線と交差しています。</translation>
+        <translation type="vanished">格子線が、他のセルの格子線と交差しています。</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
+        <translation type="vanished">辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
+        <translation type="vanished">セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
+        <translation type="vanished">格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* 格子線が交差しているセル</translation>
+        <translation type="vanished">* 格子線が交差しているセル</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>ありません</translation>
+        <translation type="vanished">ありません</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* 辺のアスペクト比が %1 以上のセル</translation>
+        <translation type="vanished">* 辺のアスペクト比が %1 以上のセル</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, アスペクト比</translation>
+        <translation type="vanished">I, J, アスペクト比</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>辺の長さが小さすぎます</translation>
+        <translation type="vanished">辺の長さが小さすぎます</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* セルの頂点の角度が %1 以下になっているセル</translation>
+        <translation type="vanished">* セルの頂点の角度が %1 以下になっているセル</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>I, J, 角度</translation>
+        <translation type="vanished">I, J, 角度</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
+        <translation type="vanished">セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, 変化率</translation>
+        <translation type="vanished">I, J, 変化率</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
+        <translation type="vanished">セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
 </context>
 <context>
@@ -4361,6 +4392,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>バージョン番号のビルド番号が指定されていません。</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation>エラーが発生しました: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation>%1 の引数に問題があります。問題がある引数: %2</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation>簡易演算結果の変数の編集</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation>計算結果:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation>変数名:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation>テスト用の値:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation>変数名が入力されていません。</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation>この変数名は既に使われています。</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation>簡易演算結果の編集</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>名前:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation>位置:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation>入力として使う計算結果</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation>追加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation>削除(&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation>変数の定義</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;変数を、 JavaScript 言語で定義できます。詳しくは、&lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;こちら&lt;/span&gt;&lt;/a&gt;を参照してください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation>テスト</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;このボタンを押すと、定義が正しいかテストできます。もし定義の読み込みでエラーが発生すると、エラーメッセージが表示されます。定義の読み込みが成功すると、「テスト用の値」を用いて値が計算され、表示されます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation>----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation>計算結果名</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation>変数名</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation>テスト用の値</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation>格子点</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation>格子セル</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation>格子エッジ (I方向)</translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation>格子エッジ (J方向)</translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation>格子エッジ (k方向)</translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation>パーティクル</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation>名前が入力されていません</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation>この名前は既に使われています</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation>本当に %1 を削除していいですか?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation>簡易演算結果一覧</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation>上へ (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation>下へ (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注釈&lt;/span&gt;: リスト上の順番は重要です。変数の定義に置いて、リストで上にある項目は、ソルバが出力する変数と同じように使用できます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation>追加 (&amp;A)</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation>編集 (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation>削除(&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation>本当に %1 を削除していいですか?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation>格子点</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation>格子セル</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation>格子エッジ (I方向)</translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation>格子エッジ (J方向)</translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation>格子エッジ (k方向)</translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation>パーティクル</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation>格子種類:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation>領域(&amp;R):</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation>格子線が、他のセルの格子線と交差しています。</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation>辺の長さのアスペクト比が、しきい値 %1 を超えているセルがあります。</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation>セルの辺の長さの変化率が、しきい値 (I方向:%1, J方向: %2) を超えているセルがあります。</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation>格子の頂点の角度が、しきい値 %1 を下回っているセルがあります。</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation>* 格子線が交差しているセル</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation>ありません</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation>* 辺のアスペクト比が %1 以上のセル</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation>I, J, アスペクト比</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation>辺の長さが小さすぎます</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation>* セルの頂点の角度が %1 以下になっているセル</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation>I, J, 角度</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation>セルの辺のI方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation>I, J, 変化率</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation>セルの辺のJ方向の長さの変化率が、しきい値 %1 を超えているセル</translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>AboutDialog</name>
@@ -19,11 +21,19 @@
     </message>
     <message>
         <source>rivmaker 2.0.3</source>
-        <translation>RivMaker 2.0.3</translation>
+        <translation type="vanished">RivMaker 2.0.3</translation>
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation>Data di rilascio: 28/4/2021</translation>
+        <translation type="vanished">Data di rilascio: 28/4/2021</translation>
+    </message>
+    <message>
+        <source>rivmaker 2.0.5</source>
+        <translation type="unfinished">RivMaker 2.0.5</translation>
+    </message>
+    <message>
+        <source>Release Date: 2023/8/29</source>
+        <translation type="unfinished">Data di rilascio: 28/4/2021 {2023/8/29?}</translation>
     </message>
 </context>
 <context>
@@ -184,8 +194,8 @@
         <translation>La sezione trasversale non è ancora definita.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
-        <translation>Nome non valido per la sezione trasversale. Il nome dovrebbe essere "X1", "X2",... o "XS1", "XS2",...</translation>
+        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
+        <translation>Nome non valido per la sezione trasversale. Il nome dovrebbe essere &quot;X1&quot;, &quot;X2&quot;,... o &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
     </message>
 </context>
 <context>
@@ -461,7 +471,7 @@
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation>Punti di elevazione dell'acqua</translation>
+        <translation>Punti di elevazione dell&apos;acqua</translation>
     </message>
 </context>
 <context>
@@ -494,11 +504,11 @@
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation>TIN viene utilizzato per l'interpolazione nelle sezioni trasversali</translation>
+        <translation>TIN viene utilizzato per l&apos;interpolazione nelle sezioni trasversali</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
-        <translation>Adatto per dati in cui la densità dei punti è quasi la stessa in tutta l'area</translation>
+        <translation>Adatto per dati in cui la densità dei punti è quasi la stessa in tutta l&apos;area</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -859,7 +869,7 @@
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation>Elevazione della superficie dell'acqua (&amp;W)...</translation>
+        <translation>Elevazione della superficie dell&apos;acqua (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
@@ -875,7 +885,7 @@
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation>Elevazione della superficie dell'acqua (&amp;W)</translation>
+        <translation>Elevazione della superficie dell&apos;acqua (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
@@ -1019,7 +1029,7 @@
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation>Barra degli strumenti dell'elenco delle finestre</translation>
+        <translation>Barra degli strumenti dell&apos;elenco delle finestre</translation>
     </message>
     <message>
         <source>Open project file</source>
@@ -1135,7 +1145,7 @@
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation>Finestra di visualizzazione dell'elevazione</translation>
+        <translation>Finestra di visualizzazione dell&apos;elevazione</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
@@ -1373,7 +1383,7 @@
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation>Punti di elevazione dell'acqua</translation>
+        <translation>Punti di elevazione dell&apos;acqua</translation>
     </message>
 </context>
 </TS>

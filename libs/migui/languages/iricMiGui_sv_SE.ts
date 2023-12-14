@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Du kan bara använda ASCII-tecken.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Mapp "%1" existerar redan.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Mapp &quot;%1&quot; existerar redan.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Projektet har sparats till %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Ett fel uppstod när data förbereddes för modellen i "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Ett fel uppstod när data förbereddes för modellen i &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Varning</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Ingen befintlig projektmapp hittades i "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Ingen befintlig projektmapp hittades i &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Projektet är modifierat. Vill du spara?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Sparar"%1" misslyckades. Se till att andra program öppnar filen och försök igen.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Sparar&quot;%1&quot; misslyckades. Se till att andra program öppnar filen och försök igen.</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -29,8 +31,8 @@
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
-        <translation>Үстүндө %1, мааниси "%2"кесилиш үчүн"%3"жараксыз. Мааниге көңүл бурулбайт.</translation>
+        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
+        <translation>Үстүндө %1, мааниси &quot;%2&quot;кесилиш үчүн&quot;%3&quot;жараксыз. Мааниге көңүл бурулбайт.</translation>
     </message>
     <message>
         <source>Information</source>

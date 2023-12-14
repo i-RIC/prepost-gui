@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GeoDataPolyData</name>
     <message>
         <source>Edit &amp;Name</source>
-        <translation>Змінити ім'я (&amp;N)</translation>
+        <translation>Змінити ім&apos;я (&amp;N)</translation>
     </message>
     <message>
         <source>Edit &amp;Value...</source>
@@ -27,7 +29,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Edit %1 value</source>

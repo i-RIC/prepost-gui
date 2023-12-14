@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>Post2dBirdEyeObjectBrowser</name>
@@ -9,8 +11,8 @@
 <context>
     <name>Post2dBirdEyeWindow</name>
     <message>
-        <source>Bird's-Eye Post-processing (2D): %1</source>
-        <translation>Post-processing Bird's Eye (2D): %1</translation>
+        <source>Bird&apos;s-Eye Post-processing (2D): %1</source>
+        <translation>Post-processing Bird&apos;s Eye (2D): %1</translation>
     </message>
     <message>
         <source>Background Color</source>

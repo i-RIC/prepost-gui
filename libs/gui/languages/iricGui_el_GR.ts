@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>AnimationController</name>
@@ -791,8 +793,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>Επιλέξτε Επίλυση</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί "OK".</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>Όταν δημιουργείτε ένα νέο έργο, πρέπει να επιλέξετε τον επιλυτή που θα χρησιμοποιήσετε για τον υπολογισμό. Επιλέξτε έναν επιλυτή και πατήστε το κουμπί &quot;OK&quot;.</translation>
     </message>
 </context>
 <context>
@@ -1352,11 +1354,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Εισαγάγετε το κλειδί API των Χαρτών Google (&amp;I)</translation>
+        <translation type="vanished">Εισαγάγετε το κλειδί API των Χαρτών Google (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Η Πλατφόρμα Χαρτών Google χρειάζεται τώρα κλειδί API για τη χρήση των Χαρτών Google μέσω του iRIC. Αποκτήστε το δικό σας κλειδί API και εισαγωγή Google Maps εδώ, για να χρησιμοποιήσετε τις εικόνες των Χαρτών Google ως εικόνες φόντου στον Προεπεξεργαστή και στα Windows 2D Post-Processing. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Η Πλατφόρμα Χαρτών Google χρειάζεται τώρα κλειδί API για τη χρήση των Χαρτών Google μέσω του iRIC. Αποκτήστε το δικό σας κλειδί API και εισαγωγή Google Maps εδώ, για να χρησιμοποιήσετε τις εικόνες των Χαρτών Google ως εικόνες φόντου στον Προεπεξεργαστή και στα Windows 2D Post-Processing. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1364,11 +1366,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Εισαγωγή κλειδιού API Χαρτών Google</translation>
+        <translation type="vanished">Εισαγωγή κλειδιού API Χαρτών Google</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>Κλειδί API:</translation>
+        <translation type="vanished">Κλειδί API:</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε "%1";</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Είστε βέβαιοι ότι θέλετε να διαγράψετε &quot;%1&quot;;</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο "%1". Αυτός ο επιλυτής αγνοείται. %2</translation>
+        <translation>Παρουσιάστηκε σφάλμα κατά τη φόρτωση του αρχείου ορισμού επίλυσης στο φάκελο &quot;%1&quot;. Αυτός ο επιλυτής αγνοείται. %2</translation>
     </message>
 </context>
 <context>
@@ -1908,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Αυτό το έργο φαίνεται να ανοίγει από ένα άλλο παράθυρο iRIC GUI. Δεν μπορείτε να ανοίξετε ένα φάκελο έργου από πολλά παράθυρα GUI.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Το έργο που ανοίξατε δεν αντιγράφεται στον κατάλογο εργασίας και θα αναγκαστείτε να αποθηκεύσετε τις τροποποιήσεις που κάνετε σε αυτό το έργο. Εάν θέλετε να διατηρήσετε το τρέχον έργο, αποθηκεύστε το πρώτα σε άλλο έργο.</translation>
     </message>
     <message>
@@ -2068,8 +2070,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Το τρέχον ενεργό υπο-παράθυρο δεν υποστηρίζει εξαγωγή σχήματος περιγράμματος.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε "Ρύθμιση οθόνης" σε "Σχήμα περιγράμματος" και όχι "Χρώμα περιθωρίου" ή "Ισολίνες".</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε &quot;Ρύθμιση οθόνης&quot; σε &quot;Σχήμα περιγράμματος&quot; και όχι &quot;Χρώμα περιθωρίου&quot; ή &quot;Ισολίνες&quot;.</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shapefiles</source>
@@ -2125,7 +2127,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>Τα πλέγματα επεξεργάζονται ή διαγράφονται. Όταν αποθηκεύετε, το αποτέλεσμα υπολογισμού απορρίπτεται.</translation>
+        <translation type="vanished">Τα πλέγματα επεξεργάζονται ή διαγράφονται. Όταν αποθηκεύετε, το αποτέλεσμα υπολογισμού απορρίπτεται.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
@@ -2209,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>Ρύθμιση αρχείου (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε "Διακριτή λειτουργία".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Για εξαγωγή αρχείου σχήματος, αλλάξτε τη λειτουργία χρώματος σε &quot;Διακριτή λειτουργία&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2221,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>Επιλέξτε πλέγμα για εξαγωγή αρχείων σχήματος.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Δεν σχεδιάζεται περίγραμμα στη "Διακριτή λειτουργία".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Δεν σχεδιάζεται περίγραμμα στη &quot;Διακριτή λειτουργία&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2569,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2596,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Άνοιγμα νέου παραθύρου 2D μετά την επεξεργασία</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Άνοιγμα νέου παραθύρου 2D Bird's-Eye Post-Processing</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Άνοιγμα νέου παραθύρου 2D Bird&apos;s-Eye Post-Processing</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

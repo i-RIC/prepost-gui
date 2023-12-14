@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>AsciiOnlyLineEdit</name>
@@ -36,11 +38,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation>Välj rutnät som ska importeras</translation>
+        <translation type="vanished">Välj rutnät som ska importeras</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation>Välj vilket rutnät som ska importeras</translation>
+        <translation type="vanished">Välj vilket rutnät som ska importeras</translation>
     </message>
 </context>
 <context>
@@ -533,9 +535,9 @@
     </message>
     <message>
         <source>Specify the number format in printf format. For example:
-   "%5.2f" for 3.141592 --&gt; 3.14
-   "%4.2e" for 12300  --&gt; 1.23e+004</source>
-        <translation>Ange nummerformatet i printf -format. Till exempel: " %5.2f "för 3.141592 -&gt; 3.14" %4.2e "för 12300 -&gt; 1.23e+004</translation>
+   &quot;%5.2f&quot; for 3.141592 --&gt; 3.14
+   &quot;%4.2e&quot; for 12300  --&gt; 1.23e+004</source>
+        <translation>Ange nummerformatet i printf -format. Till exempel: &quot; %5.2f &quot;för 3.141592 -&gt; 3.14&quot; %4.2e &quot;för 12300 -&gt; 1.23e+004</translation>
     </message>
     <message>
         <source>Orientation :</source>

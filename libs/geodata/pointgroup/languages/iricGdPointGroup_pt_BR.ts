@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPointGroup</name>
@@ -140,8 +142,8 @@
         <translation>Ocorreu um erro ao ler a linha do cabeçalho. O cabeçalho deve ter pelo menos 4 colunas.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
-        <translation>Ocorreu um erro ao ler a linha do cabeçalho. Coluna %1 deveria estar "%2", mas "%3" é dada.</translation>
+        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <translation>Ocorreu um erro ao ler a linha do cabeçalho. Coluna %1 deveria estar &quot;%2&quot;, mas &quot;%3&quot; é dada.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -156,16 +158,16 @@
         <translation>Ocorreu um erro ao ler a linha %1. Os dados devem ter pelo menos 4 colunas.</translation>
     </message>
     <message>
-        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "x" na linha %1. "x" deve ser o valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;x&quot; na linha %1. &quot;x&quot; deve ser o valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "y" na linha %1. "y" deve ser um valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;y&quot; na linha %1. &quot;y&quot; deve ser um valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
     <message>
-        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
-        <translation>Ocorreu um erro ao ler o valor "valor" na linha %1. "valor" deve ser valor real, mas "%2" é especificado.</translation>
+        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <translation>Ocorreu um erro ao ler o valor &quot;valor&quot; na linha %1. &quot;valor&quot; deve ser valor real, mas &quot;%2&quot; é especificado.</translation>
     </message>
 </context>
 <context>

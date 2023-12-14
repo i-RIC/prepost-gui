@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -218,7 +220,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Atstumas nuo centro taško</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>„Kairysis krantas“ yra krantas, kurį matote kairėje pusėje, kai pasukate pasroviui.</translation>
     </message>
 </context>

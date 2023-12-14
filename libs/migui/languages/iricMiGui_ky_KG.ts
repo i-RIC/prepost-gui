@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Сиз ASCII символдорун гана колдоно аласыз.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Папка "%1" мурунтан эле бар.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Папка &quot;%1&quot; мурунтан эле бар.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Долбоор ийгиликтүү сакталды %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Моделге берилиштерди даярдоодо ката кетти "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Моделге берилиштерди даярдоодо ката кетти &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Эскертүү</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Учурдагы долбоордун папкасы жок "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Учурдагы долбоордун папкасы жок &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Долбоор өзгөртүлгөн. Сиз сактагыңыз келеби?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Сактоо "%1" ишке ашкан жок. Башка программа файлды ачып жатканын текшерип, кайра аракет кылыңыз.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Сактоо &quot;%1&quot; ишке ашкан жок. Башка программа файлды ачып жатканын текшерип, кайра аракет кылыңыз.</translation>
     </message>
 </context>
 <context>

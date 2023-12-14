@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Bạn chỉ có thể sử dụng các ký tự ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Thư mục "%1" đã tồn tại.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Thư mục &quot;%1&quot; đã tồn tại.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Dự án đã được lưu thành công vào %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Đã xảy ra lỗi khi chuẩn bị dữ liệu cho mô hình trong "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Đã xảy ra lỗi khi chuẩn bị dữ liệu cho mô hình trong &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Không tìm thấy thư mục dự án hiện có trong "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Không tìm thấy thư mục dự án hiện có trong &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Dự án được sửa đổi. Bạn có muốn lưu không?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Tiết kiệm "%1" không thành công. Hãy đảm bảo rằng chương trình khác đang mở tệp và thử lại.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Tiết kiệm &quot;%1&quot; không thành công. Hãy đảm bảo rằng chương trình khác đang mở tệp và thử lại.</translation>
     </message>
 </context>
 <context>

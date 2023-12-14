@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>SolverConsoleWindow</name>
@@ -15,7 +17,7 @@
     </message>
     <message>
         <source>The following problems found in the grid(s). Do you really want to run the solver with this grid?</source>
-        <translation>Les problèmes suivants trouvés dans la ou les grilles. Voulez-vous vraiment exécuter le solveur avec cette grille ?</translation>
+        <translation>Les problèmes suivants trouvés dans la ou les grilles. Voulez-vous vraiment exécuter le solveur avec cette grille&#xa0;?</translation>
     </message>
     <message>
         <source>The simulation has result</source>
@@ -39,7 +41,7 @@
     </message>
     <message>
         <source>We recommend that you save the project before starting the solver. Do you want to save?</source>
-        <translation>Nous vous recommandons d'enregistrer le projet avant de lancer le solveur. Voulez-vous enregistrer?</translation>
+        <translation>Nous vous recommandons d&apos;enregistrer le projet avant de lancer le solveur. Voulez-vous enregistrer?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -47,7 +49,7 @@
     </message>
     <message>
         <source>Solver executable file %1 does not exists.</source>
-        <translation>Fichier exécutable du solveur %1 N'existe pas.</translation>
+        <translation>Fichier exécutable du solveur %1 N&apos;existe pas.</translation>
     </message>
     <message>
         <source>Confirm Solver Termination</source>
@@ -55,7 +57,7 @@
     </message>
     <message>
         <source>Do you really want to kill the solver?</source>
-        <translation>Voulez-vous vraiment tuer le solveur ?</translation>
+        <translation>Voulez-vous vraiment tuer le solveur&#xa0;?</translation>
     </message>
     <message>
         <source>Solver Finished</source>
@@ -67,7 +69,7 @@
     </message>
     <message>
         <source>The solver finished abnormally.</source>
-        <translation>Le solveur s'est terminé de manière anormale.</translation>
+        <translation>Le solveur s&apos;est terminé de manière anormale.</translation>
     </message>
     <message>
         <source>Solver Console</source>
@@ -87,15 +89,15 @@
     </message>
     <message>
         <source>%1 seconds have passed, but the solver do not end. Do you want to kill the solver?</source>
-        <translation>%1 secondes se sont écoulées, mais le solveur ne se termine pas. Voulez-vous tuer le solveur ?</translation>
+        <translation>%1 secondes se sont écoulées, mais le solveur ne se termine pas. Voulez-vous tuer le solveur&#xa0;?</translation>
     </message>
     <message>
         <source>Background Color</source>
-        <translation>Couleur de l'arrière plan</translation>
+        <translation>Couleur de l&apos;arrière plan</translation>
     </message>
     <message>
         <source>Background Color Setting</source>
-        <translation>Réglage de la couleur d'arrière-plan</translation>
+        <translation>Réglage de la couleur d&apos;arrière-plan</translation>
     </message>
 </context>
 <context>
@@ -122,7 +124,7 @@
     </message>
     <message>
         <source>Exporting solver console log failed.</source>
-        <translation>Échec de l'exportation du journal de la console du solveur.</translation>
+        <translation>Échec de l&apos;exportation du journal de la console du solveur.</translation>
     </message>
 </context>
 </TS>

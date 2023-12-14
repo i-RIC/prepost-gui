@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>AnimationController</name>
@@ -791,7 +793,7 @@ This wizard will generate or update translation files for solver definition file
         <translation>Veldu leysir</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
         <translation>Þegar þú býrð til nýtt verkefni þarftu að velja lausnina til að nota til útreikninga. Vinsamlegast veldu lausn og ýttu á „OK“ hnappinn.</translation>
     </message>
 </context>
@@ -1352,11 +1354,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>Sláðu inn Google Maps API lykil (&amp;I)</translation>
+        <translation type="vanished">Sláðu inn Google Maps API lykil (&amp;I)</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform þarf nú API lykil til að nota Google kort í gegnum iRIC. Fáðu þinn eigin Google Maps API lykil og innslátt hér til að nota Google kortamyndir sem bakgrunnsmyndir á forvinnslu og í 2D eftirvinnslu Windows. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Google Maps Platform þarf nú API lykil til að nota Google kort í gegnum iRIC. Fáðu þinn eigin Google Maps API lykil og innslátt hér til að nota Google kortamyndir sem bakgrunnsmyndir á forvinnslu og í 2D eftirvinnslu Windows. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1364,11 +1366,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>Sláðu inn Google Maps API lykil</translation>
+        <translation type="vanished">Sláðu inn Google Maps API lykil</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>API lykill:</translation>
+        <translation type="vanished">API lykill:</translation>
     </message>
 </context>
 <context>
@@ -1483,8 +1485,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
-        <translation>Ertu viss um að þú viljir eyða "%1"?</translation>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
+        <translation>Ertu viss um að þú viljir eyða &quot;%1&quot;?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1728,9 +1730,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 ". Þessi lausnarmaður er hunsaður. %2</translation>
+        <translation>Villa kom upp við að hlaða skilgreiningarskrár lausnar í möppu “ %1 &quot;. Þessi lausnarmaður er hunsaður. %2</translation>
     </message>
 </context>
 <context>
@@ -1908,7 +1910,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Þetta verkefni virðist vera opnað með öðrum iRIC GUI glugga. Þú getur ekki opnað verkefnamöppu úr mörgum GUI gluggum.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>Opna verkefnið er ekki afritað í vinnuskrá og þú neyðist til að vista þær breytingar sem þú gerir á þessu verkefni. Ef þú vilt halda núverandi verkefni skaltu vista það í öðru verkefni fyrst.</translation>
     </message>
     <message>
@@ -2068,7 +2070,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>Núverandi virkur undirgluggi styður ekki útflutning útlínutölu.</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
         <translation type="vanished">Til að flytja lögun úr skrá, skiptu „Skjástilling“ í „útlínuríki“, ekki „litabrún“ eða „einangrun“.</translation>
     </message>
     <message>
@@ -2125,7 +2127,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>Ristunum er breytt eða eytt. Þegar þú vistar er útreikningsniðurstaðan fargað.</translation>
+        <translation type="vanished">Ristunum er breytt eða eytt. Þegar þú vistar er útreikningsniðurstaðan fargað.</translation>
     </message>
     <message>
         <source>Current working directory (%1) contains non-ASCII characters. Before starting a new project, change working directory from the following menu: 
@@ -2209,8 +2211,8 @@ Option -&gt; Preferences</source>
         <translation>Stillingarskrá (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
-        <translation type="vanished">Til að flytja út formskrá skaltu skipta um litastillingu yfir í "Staðan háttur".</translation>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
+        <translation type="vanished">Til að flytja út formskrá skaltu skipta um litastillingu yfir í &quot;Staðan háttur&quot;.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2221,8 +2223,8 @@ Option -&gt; Preferences</source>
         <translation>Veldu rist til að flytja út formskrár.</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
-        <translation>Engin útlínur er teiknaður í "Stöðugum ham".</translation>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
+        <translation>Engin útlínur er teiknaður í &quot;Stöðugum ham&quot;.</translation>
     </message>
 </context>
 <context>
@@ -2569,7 +2571,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2596,8 +2598,8 @@ Option -&gt; Preferences</source>
         <translation>Opnaðu nýjan 2D eftirvinnslu glugga</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
-        <translation>Opnaðu nýjan 2D Bird's-Eye eftirvinnslu glugga</translation>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
+        <translation>Opnaðu nýjan 2D Bird&apos;s-Eye eftirvinnslu glugga</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>

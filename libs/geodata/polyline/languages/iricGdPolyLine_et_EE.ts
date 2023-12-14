@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataPolyLine</name>
@@ -55,11 +57,11 @@
     </message>
     <message>
         <source>Edit PolyLine Coordinates</source>
-        <translation>Muutke PolyLine'i koordinaate</translation>
+        <translation>Muutke PolyLine&apos;i koordinaate</translation>
     </message>
     <message>
         <source>Finish Defining PolyLine</source>
-        <translation>Lõpeta PolyLine'i määratlemine</translation>
+        <translation>Lõpeta PolyLine&apos;i määratlemine</translation>
     </message>
     <message>
         <source>Move PolyLine</source>

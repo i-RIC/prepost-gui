@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPolygon</name>
@@ -200,7 +202,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Carica dall'attributo del file Shape</translation>
+        <translation>Carica dall&apos;attributo del file Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
@@ -238,7 +240,7 @@
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>

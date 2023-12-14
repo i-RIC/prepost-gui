@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -237,7 +239,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>距中心点的距离</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>“左岸”是当您转向下游方向时，您在左侧看到的岸。</translation>
     </message>
 </context>

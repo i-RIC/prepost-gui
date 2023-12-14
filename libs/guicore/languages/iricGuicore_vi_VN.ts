@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>Chỉ</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Màu sắc:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý: Bạn chỉ có thể sử dụng các ký tự ASCII cho Tên.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Nút định nghĩa không được lưu trữ</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Giá trị sai %1 "được thiết lập.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Giá trị sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Điều kiện sai %1 "được thiết lập.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Điều kiện sai %1 &quot;được thiết lập.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>Thông tin</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt "Ctrl + C" và "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Bạn có thể sao chép và dán các giá trị bằng phím tắt &quot;Ctrl + C&quot; và &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2004,8 +2017,8 @@ Do you really want to import this file?</source>
         <translation>Đã xảy ra lỗi khi mở tệp.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Hai cột đầu tiên phải là "X" và "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Hai cột đầu tiên phải là &quot;X&quot; và &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>Định nghĩa về biến</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>Xuống (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>Định nghĩa đầu ra</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href="http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = " -decoration: underline; color: # 0000ff; "&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">Điều kiện tạo lưới</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>Điều kiện tạo lưới</translation>
+        <translation type="vanished">Điều kiện tạo lưới</translation>
     </message>
 </context>
 <context>
@@ -2746,15 +2766,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>Xuất tệp CGNS</translation>
+        <translation type="vanished">Xuất tệp CGNS</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>Tệp CGNS (*.cgns)</translation>
+        <translation type="vanished">Tệp CGNS (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>Xuất tệp CGNS không thành công. Tệp được chỉ định bị khóa bởi quá trình khác.</translation>
+        <translation type="vanished">Xuất tệp CGNS không thành công. Tệp được chỉ định bị khóa bởi quá trình khác.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>Xảy ra lỗi khi mở %1. iRIC cố gắng cứu dữ liệu từ %2.</translation>
+        <translation type="vanished">Xảy ra lỗi khi mở %1. iRIC cố gắng cứu dữ liệu từ %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: không có tập tin.</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Không gian làm việc "%1" có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Không gian làm việc &quot;%1&quot; có %2 thư mục dự án dường như không được sử dụng nữa. Bạn có muốn xóa chúng không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Một đường cạnh giao với đường cạnh của một ô khác trong lưới này.</translation>
+        <translation type="vanished">Một đường cạnh giao với đường cạnh của một ô khác trong lưới này.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>Tỷ lệ co của ô lưới vượt quá giá trị giới hạn %1 trong nhiều ô.</translation>
+        <translation type="vanished">Tỷ lệ co của ô lưới vượt quá giá trị giới hạn %1 trong nhiều ô.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>Sự biến đổi của độ dài cạnh ô lưới vượt quá giá trị giới hạn (hướng I: %1, Hướng J: %2 ) trong nhiều ô.</translation>
+        <translation type="vanished">Sự biến đổi của độ dài cạnh ô lưới vượt quá giá trị giới hạn (hướng I: %1, Hướng J: %2 ) trong nhiều ô.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>Góc của cạnh ô lưới giảm xuống dưới giá trị giới hạn %1 trong nhiều ô.</translation>
+        <translation type="vanished">Góc của cạnh ô lưới giảm xuống dưới giá trị giới hạn %1 trong nhiều ô.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* Các ô nơi các cạnh giao nhau</translation>
+        <translation type="vanished">* Các ô nơi các cạnh giao nhau</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>Không tồn tại</translation>
+        <translation type="vanished">Không tồn tại</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Các ô mà tỷ lệ co của các cạnh ô vượt quá %1</translation>
+        <translation type="vanished">* Các ô mà tỷ lệ co của các cạnh ô vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Tỷ lệ co</translation>
+        <translation type="vanished">I, J, Tỷ lệ co</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>Chiều dài cạnh quá nhỏ</translation>
+        <translation type="vanished">Chiều dài cạnh quá nhỏ</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Các ô có góc của đỉnh ô bên dưới %1</translation>
+        <translation type="vanished">* Các ô có góc của đỉnh ô bên dưới %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>I, J, Góc</translation>
+        <translation type="vanished">I, J, Góc</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng i vượt quá %1</translation>
+        <translation type="vanished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng i vượt quá %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>I, J, Biến thể</translation>
+        <translation type="vanished">I, J, Biến thể</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng j vượt quá %1</translation>
+        <translation type="vanished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng j vượt quá %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>Số bản dựng của số phiên bản không được chỉ định.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">Xuất hiện lỗi: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">Kiểm tra đối số cho %1 thất bại. Đối số không hợp lệ: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">Chỉnh sửa biến kết quả hoạt động đơn giản</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">Kết quả tính toán:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">Tên biến:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">Giá trị để thử nghiệm:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">Tên biến không phải là đầu vào.</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">Tên biến này đã được sử dụng</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">Chỉnh sửa Kết quả Thao tác Đơn giản</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Tên:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">Chức vụ:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">Kết quả tính toán cho đầu vào</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Thêm vào (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Xóa bỏ (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">Định nghĩa về biến</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">Thử nghiệm</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể kiểm tra định nghĩa bằng cách nhấp vào đây. Nếu lỗi xảy ra trong khi phân tích cú pháp định nghĩa, thông báo lỗi sẽ được hiển thị. Khi định nghĩa được phân tích cú pháp thành công, giá trị được tính bằng cách sử dụng &amp; quot; Giá trị cho testingquot; cho mỗi đầu vào được hiển thị. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">Tên kết quả</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">Tên biến</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">Giá trị để thử nghiệm</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Nút lưới</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Ô lưới</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Hạt</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">Tên không phải là đầu vào.</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">Tên này đã được sử dụng</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Bạn có chắc chắn muốn xóa %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">Danh sách kết quả hoạt động đơn giản</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Tên</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">Chức vụ</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">Hướng lên (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">Xuống (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Lưu ý &lt;/span&gt;: Thứ tự trong danh sách rất quan trọng. Trong định nghĩa, bạn có thể sử dụng giá trị của các phép tính hoạt động đơn giản như một biến, xuất hiện trước đó trong danh sách. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">Thêm vào (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">Chỉnh sửa (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">Xóa bỏ (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">Bạn có chắc chắn muốn xóa %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">Nút lưới</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">Ô lưới</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">Hạt</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">Hộp thoại</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">Loại lưới:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">Khu vực: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">Một đường cạnh giao với đường cạnh của một ô khác trong lưới này.</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Tỷ lệ co của ô lưới vượt quá giá trị giới hạn %1 trong nhiều ô.</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">Sự biến đổi của độ dài cạnh ô lưới vượt quá giá trị giới hạn (hướng I: %1, Hướng J: %2 ) trong nhiều ô.</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">Góc của cạnh ô lưới giảm xuống dưới giá trị giới hạn %1 trong nhiều ô.</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* Các ô nơi các cạnh giao nhau</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">Không tồn tại</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* Các ô mà tỷ lệ co của các cạnh ô vượt quá %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">I, J, Tỷ lệ co</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">Chiều dài cạnh quá nhỏ</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* Các ô có góc của đỉnh ô bên dưới %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">I, J, Góc</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng i vượt quá %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">I, J, Biến thể</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* Các ô mà sự thay đổi của chiều dài ô dọc theo hướng j vượt quá %1</translation>
     </message>
 </context>
 </TS>

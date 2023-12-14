@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -333,6 +335,17 @@
     <message>
         <source>Show</source>
         <translation>प्रदर्शन</translation>
+    </message>
+</context>
+<context>
+    <name>CgnsZoneSelectDialog</name>
+    <message>
+        <source>Select grid to import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select which grid to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1495,8 +1508,8 @@ Parse error %2 at %3, column %4</source>
         <translation>रंग:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें: आप नाम के लिए केवल ASCII वर्णों का उपयोग कर सकते हैं।&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
 </context>
 <context>
@@ -1602,12 +1615,12 @@ Parse error %2 at %3, column %4</source>
         <translation>परिभाषा नोड संग्रहीत नहीं है</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>गलत मान प्रकार "%1"सेट किया गया है।</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>गलत मान प्रकार &quot;%1&quot;सेट किया गया है।</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>गलत स्थिति प्रकार "%1"सेट है।</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>गलत स्थिति प्रकार &quot;%1&quot;सेट है।</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1878,8 +1891,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल %1 गणना की स्थिति में आयात करने के बाद अद्यतन किया जाता है %2. क्या आप अद्यतन की गई फ़ाइल आयात करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>आप शॉर्टकट "Ctrl + C" और "Ctrl + V" के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>आप शॉर्टकट &quot;Ctrl + C&quot; और &quot;Ctrl + V&quot; के साथ मानों को कॉपी और पेस्ट कर सकते हैं</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2008,8 +2021,8 @@ Do you really want to import this file?</source>
         <translation>फ़ाइल खोलते समय त्रुटि हुई.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>पहले दो कॉलम "X" और "Y" होने चाहिए।</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>पहले दो कॉलम &quot;X&quot; और &quot;Y&quot; होने चाहिए।</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2170,8 +2183,8 @@ Do you really want to import this file?</source>
         <translation>चर की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2249,8 +2262,8 @@ Do you really want to import this file?</source>
         <translation>नीचे (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2611,8 +2624,8 @@ Do you really want to import this file?</source>
         <translation>आउटपुट की परिभाषा</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;"&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2685,10 +2698,17 @@ Do you really want to import this file?</source>
     </message>
 </context>
 <context>
+    <name>PreProcessorGridCreatingConditionDataItemI</name>
+    <message>
+        <source>Grid Creating Condition</source>
+        <translation type="unfinished">ग्रिड बनाने की स्थिति</translation>
+    </message>
+</context>
+<context>
     <name>PreProcessorGridCreatingConditionDataItemInterface</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation>ग्रिड बनाने की स्थिति</translation>
+        <translation type="vanished">ग्रिड बनाने की स्थिति</translation>
     </message>
 </context>
 <context>
@@ -2742,15 +2762,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Export CGNS file</source>
-        <translation>निर्यात CGNS फ़ाइल</translation>
+        <translation type="vanished">निर्यात CGNS फ़ाइल</translation>
     </message>
     <message>
         <source>CGNS file (*.cgns)</source>
-        <translation>सीजीएनएस फ़ाइल (*.cgns)</translation>
+        <translation type="vanished">सीजीएनएस फ़ाइल (*.cgns)</translation>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation>सीजीएनएस फ़ाइल निर्यात करना विफल रहा। निर्दिष्ट फ़ाइल अन्य प्रक्रिया द्वारा बंद कर दी गई है।</translation>
+        <translation type="vanished">सीजीएनएस फ़ाइल निर्यात करना विफल रहा। निर्दिष्ट फ़ाइल अन्य प्रक्रिया द्वारा बंद कर दी गई है।</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
@@ -2830,7 +2850,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation>खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
+        <translation type="vanished">खोलते समय त्रुटि हुई %1. iRIC डेटा को बचाने का प्रयास करता है %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
@@ -2850,6 +2870,17 @@ Do you really want to import this file?</source>
     <message>
         <source> : no such file.</source>
         <translation>: ऐसी कोई दस्तावेज।</translation>
+    </message>
+</context>
+<context>
+    <name>ProjectPostProcessors</name>
+    <message>
+        <source>Select import target windows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select export target windows</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2878,8 +2909,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>कार्यक्षेत्र "%1" है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>कार्यक्षेत्र &quot;%1&quot; है %2 प्रोजेक्ट फ़ोल्डर जो अब उपयोग नहीं किए जा रहे हैं। क्या आप उन्हें हटाना चाहते हैं?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3111,59 +3142,59 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>इस ग्रिड में एक किनारे की रेखा दूसरे सेल के साथ प्रतिच्छेद करती है।</translation>
+        <translation type="vanished">इस ग्रिड में एक किनारे की रेखा दूसरे सेल के साथ प्रतिच्छेद करती है।</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>ग्रिड सेल का पक्षानुपात सीमा मान से अधिक है %1 एक से अधिक सेल में।</translation>
+        <translation type="vanished">ग्रिड सेल का पक्षानुपात सीमा मान से अधिक है %1 एक से अधिक सेल में।</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>ग्रिड सेल किनारे की लंबाई की भिन्नता सीमा मानों से अधिक है (I-दिशा: %1, जे-दिशा: %2 ) एक से अधिक सेल में।</translation>
+        <translation type="vanished">ग्रिड सेल किनारे की लंबाई की भिन्नता सीमा मानों से अधिक है (I-दिशा: %1, जे-दिशा: %2 ) एक से अधिक सेल में।</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>ग्रिड सेल एज का कोण सीमा मान से नीचे आता है %1 एक से अधिक सेल में।</translation>
+        <translation type="vanished">ग्रिड सेल एज का कोण सीमा मान से नीचे आता है %1 एक से अधिक सेल में।</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation>* कोशिकाएँ जहाँ किनारे प्रतिच्छेद करते हैं</translation>
+        <translation type="vanished">* कोशिकाएँ जहाँ किनारे प्रतिच्छेद करते हैं</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation>मौजूद नहीं</translation>
+        <translation type="vanished">मौजूद नहीं</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* सेल जहां सेल किनारों का पहलू अनुपात अधिक है %1</translation>
+        <translation type="vanished">* सेल जहां सेल किनारों का पहलू अनुपात अधिक है %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>मैं, जे, पहलू अनुपात</translation>
+        <translation type="vanished">मैं, जे, पहलू अनुपात</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation>किनारे की लंबाई बहुत छोटी</translation>
+        <translation type="vanished">किनारे की लंबाई बहुत छोटी</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* कोशिकाएँ जहाँ कोशिका के शीर्ष का कोण नीचे होता है %1</translation>
+        <translation type="vanished">* कोशिकाएँ जहाँ कोशिका के शीर्ष का कोण नीचे होता है %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation>मैं, जे, कोण</translation>
+        <translation type="vanished">मैं, जे, कोण</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation>* वे कोशिकाएँ जहाँ i-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
+        <translation type="vanished">* वे कोशिकाएँ जहाँ i-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation>मैं, जे, भिन्नता</translation>
+        <translation type="vanished">मैं, जे, भिन्नता</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation>* वे कोशिकाएँ जहाँ j-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
+        <translation type="vanished">* वे कोशिकाएँ जहाँ j-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
     </message>
 </context>
 <context>
@@ -3399,6 +3430,296 @@ Do you really want to import this file?</source>
     <message>
         <source>Build number of the version number is not specified.</source>
         <translation>संस्करण संख्या की बिल्ड संख्या निर्दिष्ट नहीं है।</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResult</name>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error occured: %1</source>
+        <translation type="unfinished">त्रुटि हुई: %1</translation>
+    </message>
+    <message>
+        <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
+        <translation type="unfinished">के लिए तर्क की जाँच कर रहा है %1 अनुत्तीर्ण होना। अमान्य तर्क: %2.</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultArgumentEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result Variable</source>
+        <translation type="unfinished">सरल ऑपरेशन परिणाम चर संपादित करें</translation>
+    </message>
+    <message>
+        <source>Calculation Result:</source>
+        <translation type="unfinished">गणना परिणाम:</translation>
+    </message>
+    <message>
+        <source>Variable name:</source>
+        <translation type="unfinished">चर का नाम:</translation>
+    </message>
+    <message>
+        <source>Value for testing:</source>
+        <translation type="unfinished">परीक्षण के लिए मूल्य:</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>Variable name is not input.</source>
+        <translation type="unfinished">परिवर्तनीय नाम इनपुट नहीं है।</translation>
+    </message>
+    <message>
+        <source>This variable name is already used</source>
+        <translation type="unfinished">यह चर नाम पहले ही प्रयोग किया जा चुका है</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultEditDialog</name>
+    <message>
+        <source>Edit Simple Operation Result</source>
+        <translation type="unfinished">सरल ऑपरेशन परिणाम संपादित करें</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">नाम:</translation>
+    </message>
+    <message>
+        <source>Position:</source>
+        <translation type="unfinished">पद:</translation>
+    </message>
+    <message>
+        <source>Calculation results for input</source>
+        <translation type="unfinished">इनपुट के लिए गणना परिणाम</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">जोड़ें (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">हटाएं (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Definition of variable</source>
+        <translation type="unfinished">चर की परिभाषा</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Test</source>
+        <translation type="unfinished">परीक्षण</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप इस पर क्लिक करके परिभाषा की जांच कर सकते हैं। यदि परिभाषा को पार्स करते समय त्रुटि होती है, तो त्रुटि संदेश दिखाया जाता है। जब परिभाषा को सफलतापूर्वक पार्स किया जाता है, तो मूल्य की गणना &amp;quot;परीक्षण के लिए मूल्यquot; का उपयोग करके की जाती है; प्रत्येक इनपुट के लिए दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+    </message>
+    <message>
+        <source>----</source>
+        <translation type="unfinished">----</translation>
+    </message>
+    <message>
+        <source>Result name</source>
+        <translation type="unfinished">परिणाम का नाम</translation>
+    </message>
+    <message>
+        <source>Variable name</source>
+        <translation type="unfinished">चर का नाम</translation>
+    </message>
+    <message>
+        <source>Value for testing</source>
+        <translation type="unfinished">परीक्षण के लिए मूल्य</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">ग्रिड नोड</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">ग्रिड सेल</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">कण</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>Name is not input.</source>
+        <translation type="unfinished">नाम इनपुट नहीं है।</translation>
+    </message>
+    <message>
+        <source>This name is already used</source>
+        <translation type="unfinished">यह नाम पहले ही प्रयोग किया जा चुका है</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostCalculatedResultListDialog</name>
+    <message>
+        <source>Simple Operation Result List</source>
+        <translation type="unfinished">सरल ऑपरेशन परिणाम सूची</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">नाम</translation>
+    </message>
+    <message>
+        <source>Position</source>
+        <translation type="unfinished">पद</translation>
+    </message>
+    <message>
+        <source>&amp;Up</source>
+        <translation type="unfinished">यूपी (&amp;U)</translation>
+    </message>
+    <message>
+        <source>&amp;Down</source>
+        <translation type="unfinished">नीचे (&amp;D)</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें&lt;/span&gt;: सूची में क्रम महत्वपूर्ण है। परिभाषा में, आप एक चर के रूप में सरल ऑपरेशन गणनाओं के मूल्य का उपयोग कर सकते हैं, जो पहले सूची में दिखाई देता है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&amp;Add...</source>
+        <translation type="unfinished">जोड़ें (&amp;A)...</translation>
+    </message>
+    <message>
+        <source>&amp;Edit...</source>
+        <translation type="unfinished">संपादित करें (&amp;E)...</translation>
+    </message>
+    <message>
+        <source>&amp;Delete</source>
+        <translation type="unfinished">हटाएं (&amp;D)</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to delete %1?</source>
+        <translation type="unfinished">क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
+    </message>
+    <message>
+        <source>Grid node</source>
+        <translation type="unfinished">ग्रिड नोड</translation>
+    </message>
+    <message>
+        <source>Grid cell</source>
+        <translation type="unfinished">ग्रिड सेल</translation>
+    </message>
+    <message>
+        <source>Grid iEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid jEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid kEdge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Particle</source>
+        <translation type="unfinished">कण</translation>
+    </message>
+</context>
+<context>
+    <name>v4PostZoneSelectingDialog</name>
+    <message>
+        <source>Dialog</source>
+        <translation type="unfinished">संवाद</translation>
+    </message>
+    <message>
+        <source>Grid Type:</source>
+        <translation type="unfinished">ग्रिड प्रकार:</translation>
+    </message>
+    <message>
+        <source>&amp;Region:</source>
+        <translation type="unfinished">क्षेत्र: (&amp;R)</translation>
+    </message>
+</context>
+<context>
+    <name>v4Structured2dGrid</name>
+    <message>
+        <source>An edge line intersects with that of another cell in this grid.</source>
+        <translation type="unfinished">इस ग्रिड में एक किनारे की रेखा दूसरे सेल के साथ प्रतिच्छेद करती है।</translation>
+    </message>
+    <message>
+        <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
+        <translation type="unfinished">ग्रिड सेल का पक्षानुपात सीमा मान से अधिक है %1 एक से अधिक सेल में।</translation>
+    </message>
+    <message>
+        <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
+        <translation type="unfinished">ग्रिड सेल किनारे की लंबाई की भिन्नता सीमा मानों से अधिक है (I-दिशा: %1, जे-दिशा: %2 ) एक से अधिक सेल में।</translation>
+    </message>
+    <message>
+        <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
+        <translation type="unfinished">ग्रिड सेल एज का कोण सीमा मान से नीचे आता है %1 एक से अधिक सेल में।</translation>
+    </message>
+    <message>
+        <source>* Cells where edges intersect</source>
+        <translation type="unfinished">* कोशिकाएँ जहाँ किनारे प्रतिच्छेद करते हैं</translation>
+    </message>
+    <message>
+        <source>Not exist</source>
+        <translation type="unfinished">मौजूद नहीं</translation>
+    </message>
+    <message>
+        <source>* Cells where aspect ratio of cell edges exceed %1</source>
+        <translation type="unfinished">* सेल जहां सेल किनारों का पहलू अनुपात अधिक है %1</translation>
+    </message>
+    <message>
+        <source>I, J, Aspect ratio</source>
+        <translation type="unfinished">मैं, जे, पहलू अनुपात</translation>
+    </message>
+    <message>
+        <source>Edge length too small</source>
+        <translation type="unfinished">किनारे की लंबाई बहुत छोटी</translation>
+    </message>
+    <message>
+        <source>* Cells where angle of cell vertex is below %1</source>
+        <translation type="unfinished">* कोशिकाएँ जहाँ कोशिका के शीर्ष का कोण नीचे होता है %1</translation>
+    </message>
+    <message>
+        <source>I, J, Angle</source>
+        <translation type="unfinished">मैं, जे, कोण</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along i-direction exceed %1</source>
+        <translation type="unfinished">* वे कोशिकाएँ जहाँ i-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
+    </message>
+    <message>
+        <source>I, J, Variation</source>
+        <translation type="unfinished">मैं, जे, भिन्नता</translation>
+    </message>
+    <message>
+        <source>* Cells where variation of cell length along j-direction exceed %1</source>
+        <translation type="unfinished">* वे कोशिकाएँ जहाँ j-दिशा के साथ कोशिका की लंबाई में भिन्नता होती है %1</translation>
     </message>
 </context>
 </TS>

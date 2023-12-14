@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>AnimationController</name>
@@ -793,8 +795,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>选择解算器</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
-        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按"OK"按钮。</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
+        <translation>创建新项目时，必须选择用于计算的求解器。 请选择一个求解器，然后按&quot;OK&quot;按钮。</translation>
     </message>
 </context>
 <context>
@@ -1355,11 +1357,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>&amp;Input Google Maps API key</source>
-        <translation>&amp;输入Google Maps API密钥</translation>
+        <translation type="vanished">&amp;输入Google Maps API密钥</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform now need API key to use Google Maps through iRIC. Please get your own Google Maps API key and input here, to use Google Maps images as background images on Pre-processor and on 2D Post-Processing Windows.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform现在需要API密钥才能通过iRIC使用Google Maps。 请获取您自己的Google Maps API密钥并在此处输入，以将Google Maps图像用作背景图像在预处理器和2D后处理Windows上。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Google Maps Platform现在需要API密钥才能通过iRIC使用Google Maps。 请获取您自己的Google Maps API密钥并在此处输入，以将Google Maps图像用作背景图像在预处理器和2D后处理Windows上。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Background Image (Internet) Edit</source>
@@ -1367,11 +1369,11 @@ Do you want to launch iRIC Maintainance?</source>
     </message>
     <message>
         <source>Input Google Maps API Key</source>
-        <translation>输入Google Maps API密钥</translation>
+        <translation type="vanished">输入Google Maps API密钥</translation>
     </message>
     <message>
         <source>API Key: </source>
-        <translation>API 密钥:</translation>
+        <translation type="vanished">API 密钥:</translation>
     </message>
 </context>
 <context>
@@ -1486,7 +1488,7 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete "%1"?</source>
+        <source>Are you sure you want to delete &quot;%1&quot;?</source>
         <translation>你确定你要删除 ” %1 “？</translation>
     </message>
     <message>
@@ -1731,9 +1733,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>警告</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
+        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
 %2</source>
-        <translation>在文件夹"%1"中加载求解器定义文件时发生错误。 该求解器将被忽略。
+        <translation>在文件夹&quot;%1&quot;中加载求解器定义文件时发生错误。 该求解器将被忽略。
 %2</translation>
     </message>
 </context>
@@ -2063,7 +2065,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>该项目似乎已由另一个iRIC GUI窗口打开。 您无法从多个GUI窗口打开项目文件夹。</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>已打开的项目不会复制到工作目录中，并且您将被迫保存对此项目所做的修改。 如果要保留当前项目，请先将其保存到另一个项目</translation>
     </message>
     <message>
@@ -2136,7 +2138,7 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
     </message>
     <message>
         <source>The grids are edited or deleted. When you save, the calculation result is discarded.</source>
-        <translation>网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
+        <translation type="vanished">网格被编辑或删除。 保存后，计算结果将被丢弃</translation>
     </message>
     <message>
         <source>Ready</source>
@@ -2231,8 +2233,8 @@ iRIC可以模拟从科罗拉多河到尼罗河的河流。</translation>
         <translation>当前活动的子窗口不支持导出轮廓图。</translation>
     </message>
     <message>
-        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
-        <translation type="vanished">要导出形状文件，请切换 "显示设置" 到 "轮廓图像", 不是 "彩色条纹" 或 "等值线"</translation>
+        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
+        <translation type="vanished">要导出形状文件，请切换 &quot;显示设置&quot; 到 &quot;轮廓图像&quot;, 不是 &quot;彩色条纹&quot; 或 &quot;等值线&quot;</translation>
     </message>
     <message>
         <source>Export contour figure to ESRI Shape files</source>
@@ -2377,7 +2379,7 @@ Option -&gt; Preferences</source>
         <translation>设定文件 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
         <translation type="vanished">要导出形状文件，请将颜色模式切换为“离散模式”。</translation>
     </message>
     <message>
@@ -2389,7 +2391,7 @@ Option -&gt; Preferences</source>
         <translation>选择网格以导出形状文件。</translation>
     </message>
     <message>
-        <source>No contour is drawn in "Discrete Mode".</source>
+        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
         <translation>在“离散模式”下不绘制轮廓。</translation>
     </message>
 </context>
@@ -2768,7 +2770,7 @@ Option -&gt; Preferences</source>
         <translation>打开新的2D后处理窗口</translation>
     </message>
     <message>
-        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
         <translation>打开新的2D鸟瞰后处理窗口</translation>
     </message>
     <message>

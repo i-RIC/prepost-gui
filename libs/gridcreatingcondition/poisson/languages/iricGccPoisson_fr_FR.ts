@@ -1,13 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation>Créer une forme de grille en résolvant l'équation de Poisson</translation>
+        <translation>Créer une forme de grille en résolvant l&apos;équation de Poisson</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation>Vous pouvez créer une forme de grille lisse en résolvant l'équation de Poisson.</translation>
+        <translation>Vous pouvez créer une forme de grille lisse en résolvant l&apos;équation de Poisson.</translation>
     </message>
 </context>
 <context>
@@ -70,11 +72,11 @@
     </message>
     <message>
         <source>Grid region not defined yet.</source>
-        <translation>La région de la grille n'est pas encore définie.</translation>
+        <translation>La région de la grille n&apos;est pas encore définie.</translation>
     </message>
     <message>
         <source>Center Line is not defined yet.</source>
-        <translation>La ligne médiane n'est pas encore définie.</translation>
+        <translation>La ligne médiane n&apos;est pas encore définie.</translation>
     </message>
     <message>
         <source>Center line</source>
@@ -156,7 +158,7 @@
     </message>
     <message>
         <source>Hint: Left bank and Right bank lines are created as line that consists of points that are away from center line to direction perpendicular to the center line.</source>
-        <translation>Astuce : Les lignes de rive gauche et de rive droite sont créées sous forme de ligne composée de points éloignés de la ligne médiane vers la direction perpendiculaire à la ligne médiane.</translation>
+        <translation>Astuce&#xa0;: Les lignes de rive gauche et de rive droite sont créées sous forme de ligne composée de points éloignés de la ligne médiane vers la direction perpendiculaire à la ligne médiane.</translation>
     </message>
 </context>
 <context>
@@ -167,11 +169,11 @@
     </message>
     <message>
         <source>Number of Control Cross Sections:</source>
-        <translation>Nombre de coupes transversales de contrôle :</translation>
+        <translation>Nombre de coupes transversales de contrôle&#xa0;:</translation>
     </message>
     <message>
         <source>Hints: Control Cross Sections are the cross sections whose center points are used as the center line of the grid.</source>
-        <translation>Conseils : Les sections transversales de contrôle sont les sections transversales dont les points centraux sont utilisés comme ligne centrale de la grille.</translation>
+        <translation>Conseils&#xa0;: Les sections transversales de contrôle sont les sections transversales dont les points centraux sont utilisés comme ligne centrale de la grille.</translation>
     </message>
 </context>
 <context>
@@ -186,7 +188,7 @@
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation>Nombre maximum d'itérations :</translation>
+        <translation>Nombre maximum d&apos;itérations&#xa0;:</translation>
     </message>
 </context>
 </TS>

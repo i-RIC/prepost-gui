@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Yalnızca ASCII karakterlerini kullanabilirsiniz.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Dosya "%1" zaten var.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Dosya &quot;%1&quot; zaten var.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Proje başarıyla şuraya kaydedildi: %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>" modelindeki veriler hazırlanırken hata oluştu %1 "</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>&quot; modelindeki veriler hazırlanırken hata oluştu %1 &quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Uyarı</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>" içinde mevcut bir proje klasörü bulunamadı %1 ".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>&quot; içinde mevcut bir proje klasörü bulunamadı %1 &quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Proje değiştirildi. Kaydetmek istiyor musun?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Kaydediliyor "%1" başarısız oldu. Lütfen dosyayı başka bir programın açtığından emin olun ve tekrar deneyin.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Kaydediliyor &quot;%1&quot; başarısız oldu. Lütfen dosyayı başka bir programın açtığından emin olun ve tekrar deneyin.</translation>
     </message>
 </context>
 <context>

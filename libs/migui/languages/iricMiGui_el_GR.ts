@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Μπορείτε να χρησιμοποιήσετε μόνο χαρακτήρες ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Ντοσιέ "%1" υπάρχει ήδη.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Ντοσιέ &quot;%1&quot; υπάρχει ήδη.</translation>
     </message>
 </context>
 <context>
@@ -205,16 +207,16 @@
         <translation>Το έργο αποθηκεύτηκε με επιτυχία στο %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Παρουσιάστηκε σφάλμα κατά την προετοιμασία δεδομένων για το μοντέλο στο "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Παρουσιάστηκε σφάλμα κατά την προετοιμασία δεδομένων για το μοντέλο στο &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Προειδοποίηση</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Δεν βρέθηκε υπάρχων φάκελος έργου στο "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Δεν βρέθηκε υπάρχων φάκελος έργου στο &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -241,8 +243,8 @@
         <translation>Το έργο τροποποιείται. Θέλετε να αποθηκεύσετε;</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Αποθήκευση "%1" απέτυχε. Βεβαιωθείτε ότι άλλο πρόγραμμα ανοίγει το αρχείο και δοκιμάστε ξανά.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Αποθήκευση &quot;%1&quot; απέτυχε. Βεβαιωθείτε ότι άλλο πρόγραμμα ανοίγει το αρχείο και δοκιμάστε ξανά.</translation>
     </message>
 </context>
 <context>

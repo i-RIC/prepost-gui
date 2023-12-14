@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>ConnectionAddDialog</name>
@@ -75,8 +77,8 @@
         <translation>Vous ne pouvez utiliser que des caractères ASCII.</translation>
     </message>
     <message>
-        <source>Folder "%1" already exists.</source>
-        <translation>Dossier "%1" existe déjà.</translation>
+        <source>Folder &quot;%1&quot; already exists.</source>
+        <translation>Dossier &quot;%1&quot; existe déjà.</translation>
     </message>
 </context>
 <context>
@@ -87,7 +89,7 @@
     </message>
     <message>
         <source>Target Folder:</source>
-        <translation>Dossier cible :</translation>
+        <translation>Dossier cible&#xa0;:</translation>
     </message>
     <message>
         <source>Mode</source>
@@ -142,7 +144,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>Barre d'outils</translation>
+        <translation>Barre d&apos;outils</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -198,27 +200,27 @@
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation>Économie %1 échoué. Veuillez vous assurer que d'autres programmes ouvrent le fichier et réessayez.</translation>
+        <translation>Économie %1 échoué. Veuillez vous assurer que d&apos;autres programmes ouvrent le fichier et réessayez.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
         <translation>Projet enregistré avec succès dans %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in "%1"</source>
-        <translation>Une erreur s'est produite lors de la préparation des données pour le modèle dans "%1"</translation>
+        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <translation>Une erreur s&apos;est produite lors de la préparation des données pour le modèle dans &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <source>No existing project folder found in "%1".</source>
-        <translation>Aucun dossier de projet existant trouvé dans "%1".</translation>
+        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <translation>Aucun dossier de projet existant trouvé dans &quot;%1&quot;.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer cette connexion ?</translation>
+        <translation>Êtes-vous sûr de vouloir supprimer cette connexion&#xa0;?</translation>
     </message>
     <message>
         <source>Select folder to save project</source>
@@ -241,8 +243,8 @@
         <translation>Le projet est modifié. Voulez-vous économiser?</translation>
     </message>
     <message>
-        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Sauvegarde "%1" a échoué. Veuillez vous assurer qu'un autre programme ouvre le fichier et réessayez.</translation>
+        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Sauvegarde &quot;%1&quot; a échoué. Veuillez vous assurer qu&apos;un autre programme ouvre le fichier et réessayez.</translation>
     </message>
 </context>
 <context>
@@ -273,11 +275,11 @@
     </message>
     <message>
         <source>Input model</source>
-        <translation>Modèle d'entrée</translation>
+        <translation>Modèle d&apos;entrée</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation>Valeur d'entrée</translation>
+        <translation>Valeur d&apos;entrée</translation>
     </message>
 </context>
 </TS>
