@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige importimiseks ruudustik</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige imporditav võrk</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Värv:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus. Nime jaoks saate kasutada ainult ASCII-märke.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus. Nime jaoks saate kasutada ainult ASCII-märke.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitsioonisõlme ei salvestata</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Vale väärtustüüp &quot;%1&quot;on seatud.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Vale väärtustüüp "%1"on seatud.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Vale seisunditüüp &quot;%1&quot;on seatud.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Vale seisunditüüp "%1"on seatud.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>Fail %1 värskendatakse pärast arvutusseisundisse importimist %2. Kas soovite värskendatud faili importida?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Väärtusi saate kopeerida ja kleepida kiirklahvidega "Ctrl + C" ja "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2021,8 +2019,8 @@ Do you really want to import this file?</source>
         <translation>Faili avamisel ilmnes viga.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Esimesed kaks veergu peavad olema &quot;X&quot; ja &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Esimesed kaks veergu peavad olema "X" ja "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Muutuja määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Alla (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Väljundi määratlus</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -kaunistus: allajoonitud; värv:#0000ff; "&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Võrgu loomise tingimus</translation>
+        <translation>Võrgu loomise tingimus</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige impordi sihtaknad</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Valige ekspordi sihtaknad</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Tööruum &quot;%1&quot;on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Tööruum "%1"on %2 projekti kaustad, mida ei näi enam kasutavat. Kas soovite need eemaldada?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3306,19 +3304,19 @@ Do you really want to import this file?</source>
     <name>TmsImageSettingManager</name>
     <message>
         <source>Google Map (Road)</source>
-        <translation type="vanished">Google&apos;i kaart (maantee)</translation>
+        <translation type="vanished">Google'i kaart (maantee)</translation>
     </message>
     <message>
         <source>Google Map (Satellite)</source>
-        <translation type="vanished">Google&apos;i kaart (satelliit)</translation>
+        <translation type="vanished">Google'i kaart (satelliit)</translation>
     </message>
     <message>
         <source>Google Map (Hybrid)</source>
-        <translation type="vanished">Google&apos;i kaart (hübriid)</translation>
+        <translation type="vanished">Google'i kaart (hübriid)</translation>
     </message>
     <message>
         <source>Google Map (Terrain)</source>
-        <translation type="vanished">Google&apos;i kaart (maastik)</translation>
+        <translation type="vanished">Google'i kaart (maastik)</translation>
     </message>
     <message>
         <source>Open Street Map</source>
@@ -3350,15 +3348,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Google Streets</source>
-        <translation>Google&apos;i tänavad</translation>
+        <translation>Google'i tänavad</translation>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation>Google&apos;i satelliit</translation>
+        <translation>Google'i satelliit</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
-        <translation>Google&apos;i satelliithübriid</translation>
+        <translation>Google'i satelliithübriid</translation>
     </message>
     <message>
         <source>Google Roads</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Ilmnes viga: %1</translation>
+        <translation>Ilmnes viga: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Kontrolliv argument %1 ebaõnnestus. Sobimatud argumendid: %2.</translation>
+        <translation>Argumendi kontrollimine %1 ebaõnnestunud. Kehtetud argumendid: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Muuda lihtsa toimingu tulemi muutujat</translation>
+        <translation>Redigeerige lihtsa toimingu tulemuse muutujat</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Arvutamise tulemus:</translation>
+        <translation>Arvutuse tulemus:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Muutuja nimi:</translation>
+        <translation>Muutuja nimi:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Testimise väärtus:</translation>
+        <translation>Testimise väärtus:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Muutuja nime ei sisestata.</translation>
+        <translation>Muutuja nime ei sisestata.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">See muutuja nimi on juba kasutusel</translation>
+        <translation>See muutuja nimi on juba kasutusel</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Muuda lihtsa toimingu tulemust</translation>
+        <translation>Redigeeri lihtsat operatsiooni tulemust</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nimi:</translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Positsioon:</translation>
+        <translation>Asukoht:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Arvutamistulemused sisendi jaoks</translation>
+        <translation>Sisestuse arvutustulemused</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Lisama (&amp;A)...</translation>
+        <translation>Lisama (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Kustuta (&amp;D)</translation>
+        <translation>Kustuta (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Muutuja määratlus</translation>
+        <translation>Muutuja definitsioon</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Muutuja saab määrata JavaScripti keelega. Palun vaadake &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -kaunistus: allajoonitud; värv:#0000ff; &quot;&gt; siin &lt;/span&gt; &lt;/a&gt; leiate üksikasju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Muutuja saate määratleda JavaScripti keelega. Vaadake teksti &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -dekoratsioon: allajoonitud; color:#0000ff;"&gt;üksikasjade vaatamiseks&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Test</translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Määratlust saate testida, klõpsates sellel. Kui määratluse sõelumisel ilmneb tõrge, kuvatakse veateade. Kui definitsioon on edukalt sõelutud, arvutatakse väärtus, kasutades &amp; quot; Value for testingquot; kuvatakse iga sisendi jaoks. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definitsiooni saate testida, klõpsates sellel. Kui definitsiooni sõelumisel ilmneb tõrge, kuvatakse veateade. Kui definitsiooni sõelumine õnnestus, arvutatakse väärtus, kasutades &amp;quot;Väärtus testimiseksquot; kuvatakse iga sisendi jaoks.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Tulemuse nimi</translation>
+        <translation>Tulemuse nimi</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Muutuja nimi</translation>
+        <translation>Muutuja nimi</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Väärtus testimiseks</translation>
+        <translation>Testimise väärtus</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Võrgusõlm</translation>
+        <translation>Võrgusõlm</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Võrgurakk</translation>
+        <translation>Võrgulahter</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Osake</translation>
+        <translation>Osake</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Nime ei sisestata.</translation>
+        <translation>Nime ei sisestata.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">See nimi on juba kasutusel</translation>
+        <translation>See nimi on juba kasutusel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Kas olete kindel, et soovite kustutada %1 ?</translation>
+        <translation>Kas soovite kindlasti kustutada? %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Lihtne toimingute tulemuste loend</translation>
+        <translation>Lihtsate toimingute tulemuste loend</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nimi</translation>
+        <translation>Nimi</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>positsioon</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Üles (&amp;U)</translation>
+        <translation>Üles (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Alla (&amp;D)</translation>
+        <translation>Alla (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Märkus &lt;/span&gt;: loendi järjekord on oluline. Definitsioonis saate muutujana kasutada lihtsate toimingute arvutuste väärtust, mis on loendis varem. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus&lt;/span&gt;: järjekord loendis on oluline. Definitsioonis saate muutujana kasutada lihtsate operatsioonide arvutuste väärtust, mis kuvatakse loendis varem.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Lisama (&amp;A)...</translation>
+        <translation>Lisama (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Muuda (&amp;E)...</translation>
+        <translation>Muuda (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Kustuta (&amp;D)</translation>
+        <translation>Kustuta (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Hoiatus</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Kas olete kindel, et soovite kustutada %1 ?</translation>
+        <translation>Kas soovite kindlasti kustutada? %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Võrgusõlm</translation>
+        <translation>Võrgusõlm</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Võrgurakk</translation>
+        <translation>Võrgulahter</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Osake</translation>
+        <translation>Osake</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialoog</translation>
+        <translation>Dialoog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Võrgu tüüp:</translation>
+        <translation>Võrgu tüüp:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Piirkond: (&amp;R)</translation>
+        <translation>Piirkond: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Servajoon lõikub selle ruudustiku teise lahtri omaga.</translation>
+        <translation>Servajoon lõikub selle ruudustiku teise lahtri omaga.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Võrguelemendi kuvasuhe ületab piirväärtuse %1 rohkem kui ühes lahtris.</translation>
+        <translation>Võrgustiku lahtri kuvasuhe ületab piirväärtust %1 rohkem kui ühes lahtris.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Võrguraku servade pikkuste varieerumine ületab piirväärtusi (I-suund: %1, J-suund: %2 ) rohkem kui ühes lahtris.</translation>
+        <translation>Võrgustiku lahtri servade pikkuste kõikumine ületab piirväärtusi (I-suund: %1, J-suund: %2 ) rohkem kui ühes lahtris.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Võrgu lahtri serva nurk langeb alla piirväärtuse %1 rohkem kui ühes lahtris.</translation>
+        <translation>Võrgustiku lahtri serva nurk langeb alla piirväärtuse %1 rohkem kui ühes lahtris.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Lahtrid, kus servad ristuvad</translation>
+        <translation>* Lahtrid, kus servad lõikuvad</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Ei eksisteeri</translation>
+        <translation>Ei eksisteeri</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Lahtrid, mille lahtrite servade kuvasuhe ületab %1</translation>
+        <translation>* Lahtrid, kus lahtri servade kuvasuhe ületab %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, kuvasuhe</translation>
+        <translation>I, J, kuvasuhe</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Servade pikkus liiga väike</translation>
+        <translation>Serva pikkus liiga väike</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Lahtrid, kus raku tipu nurk on allpool %1</translation>
+        <translation>* Lahtrid, kus raku tipu nurk on allpool %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Mina, J, nurk</translation>
+        <translation>I, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Rakud, mille raku pikkuse varieerumine piki i-suunda ületab %1</translation>
+        <translation>* Rakud, mille lahtri pikkuse varieerumine i-suunas ületab %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">Mina, J, Variatsioon</translation>
+        <translation>I, J, variatsioon</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Rakud, mille raku pikkuse varieerumine piki j-suunda ületab %1</translation>
+        <translation>* Rakud, mille lahtri pikkuse varieerumine j-suunas ületab %1</translation>
     </message>
 </context>
 </TS>

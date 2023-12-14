@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -487,8 +485,8 @@
         <translation>Graafiakna seadistamine ebaõnnestus. Arvutamistulemus pole õigesti laaditud.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>Seda funktsiooni saab kasutada, kui on täidetud järgmised tingimused: &lt;ul&gt; &lt;li&gt; Joonistatakse kahemõõtmelise struktureeritud ruudustiku graafik. &lt;/li&gt; &lt;li&gt; X-telg on ruudustiku I-suund. &lt;/Li &gt; &lt;li&gt; Võrk luuakse algoritmi &quot;Loo ristlõikeandmetest ruudustik&quot; abil &lt;/li&gt; &lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>Seda funktsiooni saab kasutada, kui on täidetud järgmised tingimused: &lt;ul&gt; &lt;li&gt; Joonistatakse kahemõõtmelise struktureeritud ruudustiku graafik. &lt;/li&gt; &lt;li&gt; X-telg on ruudustiku I-suund. &lt;/Li &gt; &lt;li&gt; Võrk luuakse algoritmi "Loo ristlõikeandmetest ruudustik" abil &lt;/li&gt; &lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>Viga</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Esimese veeru pealkiri peab olema &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Esimese veeru pealkiri peab olema "X"</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -662,8 +660,8 @@
         <translation>Viga</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>Esimese veeru pealkiri peab olema &quot;X&quot;</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>Esimese veeru pealkiri peab olema "X"</translation>
     </message>
     <message>
         <source>Warning</source>

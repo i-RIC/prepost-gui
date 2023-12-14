@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite tinklelį, kurį norite importuoti</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite, kurį tinklelį importuoti</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Spalva:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba: pavadinimui galite naudoti tik ASCII simbolius.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Apibrėžimo mazgas nesaugomas</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Neteisingas valueType &quot;%1&quot;yra nustatytas.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Neteisingas valueType "%1"yra nustatytas.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Klaidinga būklėTipas &quot;%1&quot;yra nustatytas.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Klaidinga būklėTipas "%1"yra nustatytas.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,7 +1889,7 @@ Do you really want to import this file?</source>
         <translation>Failas %1 yra atnaujinamas importavus į skaičiavimo sąlygas %2. Ar norite importuoti atnaujintą failą?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Galite nukopijuoti ir įklijuoti vertes naudodami sparčiuosius klavišus „Ctrl + C“ ir „Ctrl + V“</translation>
     </message>
     <message>
@@ -2021,7 +2019,7 @@ Do you really want to import this file?</source>
         <translation>Atidarant failą įvyko klaida.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>Pirmieji du stulpeliai turi būti „X“ ir „Y“.</translation>
     </message>
     <message>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Išvesties apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "tekstą -dekoracija: pabraukta; spalva:#0000ff; "&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Tinklelio kūrimo sąlyga</translation>
+        <translation>Tinklelio kūrimo sąlygos</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite importuoti tikslinius langus</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Pasirinkite eksportuoti tikslinius langus</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Darbo vieta &quot;%1&quot;turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Darbo vieta "%1"turi %2 projekto aplankai, kurie, panašu, daugiau nebenaudojami. Ar norite juos pašalinti?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Klaida</translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Įvyko klaida: %1</translation>
+        <translation>Įvyko klaida: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Tikrinamas argumentas %1 nepavyko. Neteisingi argumentai: %2.</translation>
+        <translation>Tikrinamas argumentas už %1 nepavyko. Netinkami argumentai: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Redaguoti paprastų operacijų rezultatų kintamąjį</translation>
+        <translation>Redaguoti paprastos operacijos rezultato kintamąjį</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Skaičiavimo rezultatas:</translation>
+        <translation>Skaičiavimo rezultatas:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Kintamojo pavadinimas:</translation>
+        <translation>Kintamojo pavadinimas:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Vertė bandymui:</translation>
+        <translation>Vertė bandymui:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Kintamojo pavadinimas neįvedamas.</translation>
+        <translation>Kintamojo pavadinimas neįvestas.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Šis kintamojo pavadinimas jau naudojamas</translation>
+        <translation>Šis kintamojo pavadinimas jau naudojamas</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Redaguoti paprastos operacijos rezultatą</translation>
+        <translation>Redaguoti paprastos operacijos rezultatą</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Vardas:</translation>
+        <translation>Vardas:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Pozicija:</translation>
+        <translation>Padėtis:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Įvesties skaičiavimo rezultatai</translation>
+        <translation>Įvesties skaičiavimo rezultatai</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Papildyti (&amp;A)...</translation>
+        <translation>Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Ištrinti (&amp;D)</translation>
+        <translation>Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Kintamojo apibrėžimas</translation>
+        <translation>Kintamojo apibrėžimas</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Kintamąjį galite apibrėžti naudodami „JavaScript“ kalbą. Žr. tekstą &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" -dekoracija: pabraukite; spalva:#0000ff;"&gt;čia&lt;/span&gt;&lt;/a&gt; daugiau informacijos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Bandymas</translation>
+        <translation>Testas</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite patikrinti apibrėžimą spustelėję šį. Jei analizuojant apibrėžimą įvyksta klaida, rodomas klaidos pranešimas. Sėkmingai išanalizavus apibrėžimą, reikšmė, apskaičiuota naudojant &amp; quot; Value for testingquot; rodomas kiekvienas įvestis. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Galite patikrinti apibrėžimą spustelėdami tai. Jei analizuojant apibrėžimą įvyksta klaida, rodomas klaidos pranešimas. Kai apibrėžimas sėkmingai išanalizuotas, vertė apskaičiuojama naudojant &amp;quot;Testingquot; rodoma kiekvienai įvestiei.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Rezultato pavadinimas</translation>
+        <translation>Rezultato pavadinimas</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Kintamasis pavadinimas</translation>
+        <translation>Kintamojo pavadinimas</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Vertė bandymams</translation>
+        <translation>Vertė bandymui</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Tinklelio mazgas</translation>
+        <translation>Tinklelio mazgas</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Tinklelio ląstelė</translation>
+        <translation>Tinklelio ląstelė</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelis iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelis kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Dalelė</translation>
+        <translation>Dalelė</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Vardas neįvedamas.</translation>
+        <translation>Vardas neįvestas.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Šis pavadinimas jau naudojamas</translation>
+        <translation>Šis pavadinimas jau naudojamas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
+        <translation>Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Paprastų operacijų rezultatų sąrašas</translation>
+        <translation>Paprastų operacijų rezultatų sąrašas</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">vardas</translation>
+        <translation>vardas</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Padėtis</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Aukštyn (&amp;U)</translation>
+        <translation>Aukštyn (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Žemyn (&amp;D)</translation>
+        <translation>Žemyn (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Pastaba &lt;/span&gt;: svarbi tvarka sąraše. Apibrėžime galite naudoti paprastų operacijų skaičiavimų vertę kaip kintamąjį, kuris rodomas anksčiau sąraše. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Pastaba&lt;/span&gt;: tvarka sąraše yra svarbi. Apibrėžime kaip kintamąjį galite naudoti paprastų operacijų skaičiavimų reikšmę, kuri sąraše rodoma anksčiau.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Papildyti (&amp;A)...</translation>
+        <translation>Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Redaguoti (&amp;E)...</translation>
+        <translation>Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Ištrinti (&amp;D)</translation>
+        <translation>Ištrinti (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Įspėjimas</translation>
+        <translation>Įspėjimas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
+        <translation>Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Tinklelio mazgas</translation>
+        <translation>Tinklelio mazgas</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Tinklelio ląstelė</translation>
+        <translation>Tinklelio ląstelė</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelis iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Tinklelis kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Dalelė</translation>
+        <translation>Dalelė</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogas</translation>
+        <translation>Dialogas</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tinklelio tipas:</translation>
+        <translation>Tinklelio tipas:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Regionas: (&amp;R)</translation>
+        <translation>Regionas: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Krašto linija susikerta su kitos šios tinklelio ląstelės.</translation>
+        <translation>Krašto linija kertasi su kito šio tinklelio langelio linija.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Tinklelio kampo santykis viršija ribinę vertę %1 daugiau nei vienoje ląstelėje.</translation>
+        <translation>Tinklelio langelio kraštinių santykis viršija ribinę vertę %1 daugiau nei vienoje ląstelėje.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Tinklelio ląstelių kraštų ilgio kitimas viršija ribines vertes (I kryptis: %1, J kryptis: %2 ) daugiau nei vienoje ląstelėje.</translation>
+        <translation>Tinklelio langelio kraštų ilgio kitimas viršija ribines vertes (I kryptis: %1, J kryptis: %2 ) daugiau nei vienoje ląstelėje.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Tinklelio kampo kampas nukrenta žemiau ribinės vertės %1 daugiau nei vienoje ląstelėje.</translation>
+        <translation>Tinklelio langelio krašto kampas nukrenta žemiau ribinės vertės %1 daugiau nei vienoje ląstelėje.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Ląstelės, kuriose susikerta kraštai</translation>
+        <translation>* Ląstelės, kuriose kraštai susikerta</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Neegzistuoja</translation>
+        <translation>Neegzistuoja</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Ląstelės, kurių langelių kraštinių santykis viršija %1</translation>
+        <translation>* Ląstelės, kurių kraštinių santykis viršija %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, formato koeficientas</translation>
+        <translation>I, J, kraštinių santykis</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Krašto ilgis per mažas</translation>
+        <translation>Krašto ilgis per mažas</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Ląstelės, kuriose ląstelių viršūnės kampas yra žemiau %1</translation>
+        <translation>* Ląstelės, kuriose ląstelės viršūnės kampas yra žemiau %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Aš, J, Angle</translation>
+        <translation>Aš, J, kampas</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Ląstelės, kuriose ląstelių ilgio kitimas išilgai i krypties viršija %1</translation>
+        <translation>* Ląstelės, kuriose ląstelės ilgio pokytis i kryptimi viršija %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">Aš, J, Variacija</translation>
+        <translation>Aš, J, Variacija</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Ląstelės, kuriose ląstelių ilgio kitimas j kryptimi viršija %1</translation>
+        <translation>* Ląstelės, kuriose ląstelės ilgio pokytis j kryptimi viršija %1</translation>
     </message>
 </context>
 </TS>

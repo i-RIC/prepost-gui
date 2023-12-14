@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GeoDataPointGroup</name>
@@ -142,8 +140,8 @@
         <translation>Башкы сапты окуп жатканда ката кетти. Аталышта жок дегенде 4 тилке болушу керек.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Башкы сапты окуп жатканда ката кетти. Колонна %1 болушу керек &quot;%2&quot;, бирок&quot;%3&quot; берилген.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Башкы сапты окуп жатканда ката кетти. Колонна %1 болушу керек "%2", бирок"%3" берилген.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -158,16 +156,16 @@
         <translation>Сапты окуу учурунда ката кетти %1. Маалыматтар жок дегенде 4 мамычадан турушу керек.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;X&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;x&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>"X" маанисин сапта окуп жатканда ката кетти %1. "x" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Y&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;y&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>"Y" маанисин сапта окуп жатканда ката кетти %1. "y" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>&quot;Value&quot; маанисин сапта окуп жатканда ката кетти %1. &quot;баалуулук&quot; чыныгы баалуулук болушу керек, бирок &quot;%2&quot;деп көрсөтүлгөн.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>"Value" маанисин сапта окуп жатканда ката кетти %1. "баалуулук" чыныгы баалуулук болушу керек, бирок "%2"деп көрсөтүлгөн.</translation>
     </message>
 </context>
 <context>

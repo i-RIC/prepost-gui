@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Voit käyttää vain ASCII-merkkejä.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Kansio &quot;%1&quot; on jo olemassa.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Kansio "%1" on jo olemassa.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Projekti tallennettu onnistuneesti kohteeseen %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Tapahtui virhe valmisteltaessa tietoja mallille kohteessa &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Tapahtui virhe valmisteltaessa tietoja mallille kohteessa "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Olemassa olevaa projektikansiota ei löytynyt kohteesta &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Olemassa olevaa projektikansiota ei löytynyt kohteesta "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Projektia muutetaan. Haluatko säästää?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Tallentaa &quot;%1&quot; epäonnistui. Varmista, että toinen ohjelma avaa tiedostoa, ja yritä uudelleen.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Tallentaa "%1" epäonnistui. Varmista, että toinen ohjelma avaa tiedostoa, ja yritä uudelleen.</translation>
     </message>
 </context>
 <context>

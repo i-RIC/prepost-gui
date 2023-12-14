@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>DBFItemSelectDialog</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Please select item to import.</source>
-        <translation>Seleccioneu l&apos;element per importar.</translation>
+        <translation>Seleccioneu l'element per importar.</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>File type can not be recongnized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Select file to export</source>

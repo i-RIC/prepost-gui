@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
         <source>Water Elevation</source>
-        <translation>Élévation de l&apos;eau</translation>
+        <translation>Élévation de l'eau</translation>
     </message>
 </context>
 <context>
@@ -16,15 +14,15 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Une erreur d&apos;ouverture de fichier s&apos;est produite lors de l&apos;ouverture %1.</translation>
+        <translation>Une erreur d'ouverture de fichier s'est produite lors de l'ouverture %1.</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avertissement</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Dans la colonne pour %1, la valeur &quot;%2&quot; pour la coupe transversale &quot;%3&quot; n&apos;est pas valide. La valeur est ignorée.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Dans la colonne pour %1, la valeur "%2" pour la coupe transversale "%3" n'est pas valide. La valeur est ignorée.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -36,7 +34,7 @@
     </message>
     <message>
         <source>The number of items must be the same in every line.</source>
-        <translation>Le nombre d&apos;éléments doit être le même sur chaque ligne.</translation>
+        <translation>Le nombre d'éléments doit être le même sur chaque ligne.</translation>
     </message>
     <message>
         <source>CSV file (*.csv)</source>

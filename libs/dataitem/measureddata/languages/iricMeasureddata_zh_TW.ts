@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -133,15 +131,15 @@
     <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">形式</translation>
+        <translation>形式</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>顏色：</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">點大小：</translation>
+        <translation>點大小：</translation>
     </message>
 </context>
 <context>
@@ -195,7 +193,7 @@
     </message>
     <message>
         <source>Arrows Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭顯示設定（ %1 ）</translation>
     </message>
 </context>
 <context>
@@ -216,7 +214,7 @@
     <name>MeasuredDataVectorGroupTopDataItem</name>
     <message>
         <source>Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>箭頭</translation>
     </message>
 </context>
 <context>

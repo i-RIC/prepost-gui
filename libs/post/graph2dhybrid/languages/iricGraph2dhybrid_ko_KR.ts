@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>Graph2dHybridSettingDialog</name>
@@ -487,8 +485,8 @@
         <translation>그래프 창 설정에 실패했습니다. 계산 결과가 제대로 로드되지 않습니다.</translation>
     </message>
     <message>
-        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm &quot;Create grid from from cross-section data&quot;&lt;/li&gt;&lt;/ul&gt;</source>
-        <translation>&lt;ul&gt;&lt;li&gt;2차원 구조의 격자 결과에 대한 그래프가 그려집니다.&lt;/li&gt;&lt;li&gt;X축은 격자에서 I 방향입니다.&lt;/li &gt;&lt;li&gt;그리드는 &quot;단면 데이터에서 그리드 생성&quot; 알고리즘을 사용하여 생성됩니다.&lt;/li&gt;&lt;/ul&gt;</translation>
+        <source>This function can be used when the following conditions are satisfied: &lt;ul&gt;&lt;li&gt;Graph for two-dimensional structured grid result is drawn.&lt;/li&gt;&lt;li&gt;X-axis is I-direction in the grid.&lt;/li&gt;&lt;li&gt;The grid is created using the algorithm "Create grid from from cross-section data"&lt;/li&gt;&lt;/ul&gt;</source>
+        <translation>&lt;ul&gt;&lt;li&gt;2차원 구조의 격자 결과에 대한 그래프가 그려집니다.&lt;/li&gt;&lt;li&gt;X축은 격자에서 I 방향입니다.&lt;/li &gt;&lt;li&gt;그리드는 "단면 데이터에서 그리드 생성" 알고리즘을 사용하여 생성됩니다.&lt;/li&gt;&lt;/ul&gt;</translation>
     </message>
 </context>
 <context>
@@ -582,8 +580,8 @@
         <translation>오류</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>첫 번째 열의 제목은 &quot;X&quot;여야 합니다.</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>첫 번째 열의 제목은 "X"여야 합니다.</translation>
     </message>
     <message>
         <source>The number of data of %1 and %2 mismatch. Data %1 is skipped.</source>
@@ -662,8 +660,8 @@
         <translation>오류</translation>
     </message>
     <message>
-        <source>The title of the first column has to be &quot;X&quot;</source>
-        <translation>첫 번째 열의 제목은 &quot;X&quot;여야 합니다.</translation>
+        <source>The title of the first column has to be "X"</source>
+        <translation>첫 번째 열의 제목은 "X"여야 합니다.</translation>
     </message>
     <message>
         <source>Warning</source>

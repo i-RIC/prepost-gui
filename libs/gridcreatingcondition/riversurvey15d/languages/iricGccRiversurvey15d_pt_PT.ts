@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_PT">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Distância do ponto central</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Margem esquerda&quot; é a margem que você vê no lado esquerdo, quando vira para a direção a jusante.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Margem esquerda" é a margem que você vê no lado esquerdo, quando vira para a direção a jusante.</translation>
     </message>
 </context>
 </TS>

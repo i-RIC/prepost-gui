@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,7 +119,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
+        <source>Grid Bird's-Eye View Window</source>
         <translation>نافذة عرض عين الطائر الشبكي</translation>
     </message>
 </context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 لم يتم تعيينها بعد تعديلها في المرة الأخيرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>إعداد حالة الحدود &quot;%1&quot;لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>إعداد حالة الحدود "%1"لم يتم تعيينه بعد تحريره آخر مرة. هل تريد تنفيذ التعيين الآن؟</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1048,14 +1046,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى &quot;افتراضي&quot; ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من &quot;Object Browser&quot;. يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام &quot;التباين للتمرير إلى الحل&quot; إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>ملاحظة: عند تمكين التباين ، يتم إنشاء التباين المسمى "افتراضي" ، ويتم نقل جميع البيانات الجغرافية إليه. يمكنك إضافة أو إعادة تسمية أو إزالة الاختلافات من "Object Browser". يمكنك نقل ونسخ البيانات الجغرافية بين الاختلافات. يتم تمرير بيانات سمة الشبكة التي تم إنشاؤها من التباين الذي تحدده باستخدام "التباين للتمرير إلى الحل" إلى الحل. يمكنك إعداد أشكال متعددة ، وتبديلها إلى المحلل ، والتأكد من تأثير الاختلاف.</translation>
     </message>
 </context>
 <context>
@@ -1435,9 +1433,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>ينفذ (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة &quot;الشبكة&quot; -&gt; &quot;تعيين السمات&quot; -&gt; &quot;تنفيذ&quot;.</translation>
+        <translation>لم يتم تعيين السمات التالية ، لأن قيم خرج مولد الشبكة لها. إذا كنت ترغب في تعيين البيانات الجغرافية لهم بالقوة ، يرجى التعيين يدويًا باستخدام القائمة "الشبكة" -&gt; "تعيين السمات" -&gt; "تنفيذ".</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1456,12 +1454,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>تم الانتهاء من تعيين البيانات الجغرافية</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>سمة الشبكة &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>سمة الشبكة "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>شرط الحدود &quot;%1&quot;يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>شرط الحدود "%1"يتم تحريره يدويًا. عند تنفيذ التعيين ، سيتم تجاهل جميع التعديلات التي أجريتها. هل تريد حقًا تنفيذ التعيين؟</translation>
     </message>
 </context>
 <context>
@@ -1479,20 +1477,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>آلي</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛&quot;&gt; &lt;p style = &quot;margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ &quot;&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p، li {white-space: pre-wrap؛ } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'؛ font-size: 9pt؛ font-weight: 400؛ font-style: normal؛"&gt; &lt;p style = "margin -top: 12px؛ margin-bottom: 12px؛ margin-left: 0px؛ margin-right: 0px؛ -qt-block-indent: 0؛ text-indent: 0px؛ "&gt; عند إنشاء الشبكة ، يتم سؤالك عما إذا لتنفيذ تعيين السمات في كل مرة. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>كتيب</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة &quot;تنفيذ&quot; يدويًا.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>يتم تنفيذ تعيين السمات فقط عند تحديد قائمة "تنفيذ" يدويًا.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2247,8 +2245,8 @@ This algorithm can be used only for structured grids.</source>
         <translation>إعداد خريطة الألوان</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; استخدم علامة التبويب Colormap لتعديل إعداد اللون &lt;/ p&gt; &lt;/body&gt; &lt;/ html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2361,7 +2359,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">إعداد Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>افتح نافذة عرض عين الطائر (&amp;B)</translation>
     </message>
     <message>

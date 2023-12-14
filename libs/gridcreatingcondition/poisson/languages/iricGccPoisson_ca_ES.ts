@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation>Creeu una forma de quadrícula que resol l&apos;equació de Poisson</translation>
+        <translation>Creeu una forma de quadrícula que resol l'equació de Poisson</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation>Podeu crear una forma de quadrícula suau resolent l&apos;equació de Poisson.</translation>
+        <translation>Podeu crear una forma de quadrícula suau resolent l'equació de Poisson.</translation>
     </message>
 </context>
 <context>
@@ -124,7 +122,7 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>No s&apos;han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
+        <translation>No s'han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
     </message>
 </context>
 <context>
@@ -188,7 +186,7 @@
     </message>
     <message>
         <source>Max number of iteration:</source>
-        <translation>Nombre màxim d&apos;iteració:</translation>
+        <translation>Nombre màxim d'iteració:</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Hoiatus</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Veerus jaoks %1, väärtus &quot;%2&quot;ristlõike jaoks&quot;%3&quot;on kehtetu. Väärtust ignoreeritakse.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Veerus jaoks %1, väärtus "%2"ristlõike jaoks"%3"on kehtetu. Väärtust ignoreeritakse.</translation>
     </message>
     <message>
         <source>Information</source>

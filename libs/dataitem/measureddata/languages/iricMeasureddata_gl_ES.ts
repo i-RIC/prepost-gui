@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -133,15 +131,15 @@
     <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Formulario</translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cor:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Tamaño do punto:</translation>
+        <translation>Tamaño do punto:</translation>
     </message>
 </context>
 <context>
@@ -195,7 +193,7 @@
     </message>
     <message>
         <source>Arrows Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de visualización de frechas (%1)</translation>
     </message>
 </context>
 <context>
@@ -216,7 +214,7 @@
     <name>MeasuredDataVectorGroupTopDataItem</name>
     <message>
         <source>Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>Frechas</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu inportatzeko sareta</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Mesedez, hautatu zein sare inportatu nahi duzun</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Kolore:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra: ASCII karaktereak soilik erabil ditzakezu Izenarako.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definizio nodoa ez da gordetzen</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Balio mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Balio mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Egoera mota okerra &quot;%1&quot;ezarrita dago.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Egoera mota okerra "%1"ezarrita dago.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>Fitxategia %1 Kalkulu-baldintzara inportatu ondoren eguneratzen da %2. Eguneratutako fitxategia inportatu nahi duzu?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Balioak kopiatu eta itsatsi ditzakezu, &quot;Ctrl + C&quot; eta &quot;Ctrl + V&quot; lasterbideekin.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Balioak kopiatu eta itsatsi ditzakezu, "Ctrl + C" eta "Ctrl + V" lasterbideekin.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2021,8 +2019,8 @@ Do you really want to import this file?</source>
         <translation>Errorea gertatu da fitxategia irekitzean.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Lehenengo bi zutabeek &quot;X&quot; eta &quot;Y&quot; izan behar dute.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Lehenengo bi zutabeek "X" eta "Y" izan behar dute.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Aldagaiaren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Behera (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Irteeraren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Sareta sortzeko baldintza</translation>
+        <translation>Sarea sortzea baldintza</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu inportatu helburuko leihoak</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Hautatu esportatu helburuko leihoak</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Laneko eremua &quot;%1&quot;du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Laneko eremua "%1"du %2 badirudi gehiago erabiltzen ez diren proiektuen karpetak. Kendu nahi dituzu?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errorea</translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Errorea gertatu da: %1</translation>
+        <translation>Errorea gertatu da: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Argumentua egiaztatzen %1 huts egin du. Argudio baliogabeak: %2.</translation>
+        <translation>Argudioa egiaztatzea %1 huts egin zuen. Argumentu baliogabeak: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Editatu eragiketa sinplearen emaitza aldagaia</translation>
+        <translation>Editatu eragiketa sinplearen emaitza aldagaia</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Kalkuluaren emaitza:</translation>
+        <translation>Kalkuluaren emaitza:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Aldagaiaren izena:</translation>
+        <translation>Aldagaiaren izena:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Probarako balioa:</translation>
+        <translation>Proba egiteko balioa:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Izen aldakorra ez da idazten.</translation>
+        <translation>Aldagaiaren izena ez da sartzen.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Aldagai izen hau dagoeneko erabiltzen da</translation>
+        <translation>Aldagai-izen hau dagoeneko erabiltzen da</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Editatu eragiketa sinplearen emaitza</translation>
+        <translation>Editatu eragiketa sinplearen emaitza</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Izena:</translation>
+        <translation>Izena:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Kargua:</translation>
+        <translation>Posizioa:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Sarrerako kalkuluaren emaitzak</translation>
+        <translation>Sarrerarako kalkulu-emaitzak</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Gehitu (&amp;A)...</translation>
+        <translation>Gehitu (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Ezabatu (&amp;D)</translation>
+        <translation>Ezabatu (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Aldagaiaren definizioa</translation>
+        <translation>Aldagaiaren definizioa</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aldagaia JavaScript hizkuntzarekin defini dezakezu. Ikusi &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -dekorazioa: azpimarra; kolorea:#0000ff;"&gt;hemen&lt;/span&gt;&lt;/a&gt; xehetasunetarako.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Proba</translation>
+        <translation>Proba</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Definizioa proban klik eginez gero. Definizioa analizatzean errorea gertatzen bada, errore-mezua agertzen da. Definizioa behar bezala analizatzen denean, &amp; quot; Probarako balioaquot; sarrera bakoitzerako agertzen da. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Definizioa probatu dezakezu hau sakatuta. Definizioa analizatzean errorea gertatzen bada, errore-mezua agertuko da. Definizioa ondo analizatzen denean, &amp;quot;Probetarako balioaquot; sarrera bakoitzeko erakusten da.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Emaitzaren izena</translation>
+        <translation>Emaitza izena</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Izen aldakorra</translation>
+        <translation>Aldagaiaren izena</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Probarako balioa</translation>
+        <translation>Proba egiteko balioa</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Sareta nodo</translation>
+        <translation>Sare-nodoa</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Sareta zelula</translation>
+        <translation>Sare-gelaxka</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Partikula</translation>
+        <translation>Partikula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Izena ez da idazten.</translation>
+        <translation>Izena ez da sartzen.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Izen hau dagoeneko erabiltzen da</translation>
+        <translation>Izen hau dagoeneko erabiltzen da</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ziur zaude ezabatu nahi duzula %1 ?</translation>
+        <translation>Ziur ezabatu nahi duzula %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Eragiketa sinplearen emaitzen zerrenda</translation>
+        <translation>Eragiketa sinplearen emaitzen zerrenda</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Izena</translation>
+        <translation>Izena</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posizioa</translation>
+        <translation>Posizioa</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Gora (&amp;U)</translation>
+        <translation>Gora (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Behera (&amp;D)</translation>
+        <translation>Behera (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Oharra &lt;/span&gt;: zerrendako ordena garrantzitsua da. Definizioan, eragiketen kalkulu sinpleen balioa erabil dezakezu zerrendan lehen agertzen den aldagai gisa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra&lt;/span&gt;: garrantzitsua da zerrendako ordena. Definizioan, eragiketa sinpleen kalkuluen balioa aldagai gisa erabil dezakezu, zerrendan lehenago agertzen dena.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Gehitu (&amp;A)...</translation>
+        <translation>Gehitu (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Editatu (&amp;E)...</translation>
+        <translation>Editatu (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Ezabatu (&amp;D)</translation>
+        <translation>Ezabatu (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Abisua</translation>
+        <translation>Abisua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ziur zaude ezabatu nahi duzula %1 ?</translation>
+        <translation>Ziur ezabatu nahi duzula %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Sareta nodo</translation>
+        <translation>Sare-nodoa</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Sareta zelula</translation>
+        <translation>Sare-gelaxka</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Partikula</translation>
+        <translation>Partikula</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Elkarrizketa</translation>
+        <translation>Elkarrizketa</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Sareta mota:</translation>
+        <translation>Sare mota:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Eskualdea: (&amp;R)</translation>
+        <translation>Eskualdea: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Ertz lerro bat sare honetako beste gelaxka batekin ebakitzen da.</translation>
+        <translation>Ertz-lerro bat sare honetako beste gelaxka batekin ebakitzen da.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Sarearen gelaxkaren itxura erlazioak muga-balioa gainditzen du %1 zelula batean baino gehiagotan.</translation>
+        <translation>Sare-gelaxkaren aspektu-erlazioak muga-balioa gainditzen du %1 gelaxka batean baino gehiagotan.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Sareta gelaxken ertzaren luzeren aldaketak muga-balioak gainditzen ditu (I norabidea: %1, J norabidea: %2 ) gelaxka batean baino gehiagotan.</translation>
+        <translation>Sarearen gelaxken ertzaren luzerak muga-balioak gainditzen ditu (I-noranzkoa: %1, J norabidea: %2 ) gelaxka batean baino gehiagotan.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Sarearen gelaxkaren ertzaren angelua muga-balioaren azpitik dago %1 zelula batean baino gehiagotan.</translation>
+        <translation>Sare-gelaxkaren ertzaren angelua muga-balioaren azpitik jaisten da %1 gelaxka batean baino gehiagotan.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Ertzak gurutzatzen diren gelaxkak</translation>
+        <translation>* Ertzak gurutzatzen diren gelaxkak</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Ez da existitzen</translation>
+        <translation>Ez existitzen</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Gelaxken ertzaren itxura erlazioa gainditzen duten gelaxkak %1</translation>
+        <translation>* Gelaxken ertzen aspektu-erlazioak gainditzen dituzten gelaxkak %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, Aspektu erlazioa</translation>
+        <translation>I, J, Aspektu-erlazioa</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Ertz luzera txikiegia</translation>
+        <translation>Ertzaren luzera txikiegia</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Zelulen erpinaren angelua beherago dagoen gelaxkak %1</translation>
+        <translation>* Zelula-erpinaren angelua azpian dagoen gelaxkak %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Nik, J, Angle</translation>
+        <translation>I, J, Angelu</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* I-norabidean gelaxkaren luzeraren aldakuntza gainditzen duten gelaxkak %1</translation>
+        <translation>* Zelula-luzeraren aldakuntzak i-noranzkoan gainditzen duten gelaxkak %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">I, J, Aldaketa</translation>
+        <translation>I, J, Aldakuntza</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* J norabidean zehar gelaxkaren luzeraren aldakuntza gainditzen duten gelaxkak %1</translation>
+        <translation>* Zelula-luzeraren aldakuntza j-noranzkoan gainditzen duten gelaxkak %1</translation>
     </message>
 </context>
 </TS>

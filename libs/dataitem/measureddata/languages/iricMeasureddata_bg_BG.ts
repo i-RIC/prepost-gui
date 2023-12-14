@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>MeasuredDataFileDataItem</name>
@@ -133,15 +131,15 @@
     <name>MeasuredDataPointGroupDataItem_ToolBarWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">форма</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished"></translation>
+        <translation>цвят:</translation>
     </message>
     <message>
         <source>Point Size:</source>
-        <translation type="unfinished">Размер на точката:</translation>
+        <translation>Размер на точката:</translation>
     </message>
 </context>
 <context>
@@ -195,7 +193,7 @@
     </message>
     <message>
         <source>Arrows Display Setting (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка на дисплея със стрелки (%1)</translation>
     </message>
 </context>
 <context>
@@ -216,7 +214,7 @@
     <name>MeasuredDataVectorGroupTopDataItem</name>
     <message>
         <source>Arrows</source>
-        <translation type="unfinished"></translation>
+        <translation>Стрелки</translation>
     </message>
 </context>
 <context>

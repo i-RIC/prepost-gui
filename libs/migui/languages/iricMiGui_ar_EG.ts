@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>يمكنك استخدام أحرف ASCII فقط.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>مجلد &quot;%1&quot; موجود أصلا.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>مجلد "%1" موجود أصلا.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>تم حفظ المشروع بنجاح في %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>حدث خطأ أثناء إعداد البيانات للنموذج في &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>حدث خطأ أثناء إعداد البيانات للنموذج في "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>تحذير</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>لم يتم العثور على مجلد مشروع موجود في &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>لم يتم العثور على مجلد مشروع موجود في "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>تم تعديل المشروع. هل تريد حفظ؟</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>إنقاذ &quot;%1&quot;فشل. الرجاء التأكد من قيام برنامج آخر بفتح الملف، ثم حاول مرة أخرى.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>إنقاذ "%1"فشل. الرجاء التأكد من قيام برنامج آخر بفتح الملف، ثم حاول مرة أخرى.</translation>
     </message>
 </context>
 <context>

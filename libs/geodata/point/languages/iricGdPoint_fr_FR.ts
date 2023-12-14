@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPoint</name>
@@ -49,7 +47,7 @@
     </message>
     <message>
         <source>Point Display Setting</source>
-        <translation>Réglage de l&apos;affichage des points</translation>
+        <translation>Réglage de l'affichage des points</translation>
     </message>
 </context>
 <context>
@@ -112,11 +110,11 @@
     </message>
     <message>
         <source>Point Size:</source>
-        <translation>Taille des points&#xa0;:</translation>
+        <translation>Taille des points :</translation>
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>Images d&apos;icônes</translation>
+        <translation>Images d'icônes</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Lorsque la largeur ou la hauteur de l&apos;image importée est supérieure à la taille maximale, l&apos;image est automatiquement réduite de sorte que la largeur ou la hauteur devienne égale à la taille maximale.</translation>
+        <translation>Lorsque la largeur ou la hauteur de l'image importée est supérieure à la taille maximale, l'image est automatiquement réduite de sorte que la largeur ou la hauteur devienne égale à la taille maximale.</translation>
     </message>
     <message>
         <source>Color</source>

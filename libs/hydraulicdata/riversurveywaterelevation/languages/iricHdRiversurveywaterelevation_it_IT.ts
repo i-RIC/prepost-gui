@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
     <message>
         <source>Water Elevation</source>
-        <translation>Elevazione dell&apos;acqua</translation>
+        <translation>Elevazione dell'acqua</translation>
     </message>
 </context>
 <context>
@@ -24,15 +22,15 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
+        <translation>Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avvertimento</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>Nella colonna per %1, il valore &quot;%2&quot;per sezione trasversale&quot;%3&quot; non è valido. Il valore viene ignorato.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>Nella colonna per %1, il valore "%2"per sezione trasversale"%3" non è valido. Il valore viene ignorato.</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Você pode usar apenas caracteres ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Pasta &quot;%1&quot; já existe.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Pasta "%1" já existe.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Projeto salvo com sucesso em %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Ocorreu um erro ao preparar os dados para o modelo em &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Ocorreu um erro ao preparar os dados para o modelo em "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Nenhuma pasta de projeto existente encontrada em &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Nenhuma pasta de projeto existente encontrada em "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>O projeto é modificado. Você quer salvar?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Salvando &quot;%1&quot;falhou. Certifique-se de que outro programa esteja abrindo o arquivo e tente novamente.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Salvando "%1"falhou. Certifique-se de que outro programa esteja abrindo o arquivo e tente novamente.</translation>
     </message>
 </context>
 <context>

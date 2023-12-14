@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">rivmaker 2.0.5</translation>
+        <translation>Rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Ngày phát hành: 28/4/2021 {2023/8/29?}</translation>
+        <translation>Ngày phát hành: 29/8/2023</translation>
     </message>
 </context>
 <context>
@@ -194,8 +192,8 @@
         <translation>Mặt cắt ngang chưa được xác định.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Tên không hợp lệ cho mặt cắt ngang. Tên phải là &quot;X1&quot;, &quot;X2&quot;,... hoặc &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Tên không hợp lệ cho mặt cắt ngang. Tên phải là "X1", "X2",... hoặc "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

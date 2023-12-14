@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Můžete použít pouze znaky ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>složka &quot;%1&quot; již existuje.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>složka "%1" již existuje.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Projekt byl úspěšně uložen do %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Došlo k chybě při přípravě dat pro model v &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Došlo k chybě při přípravě dat pro model v "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Varování</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Nebyla nalezena žádná existující složka projektu v &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Nebyla nalezena žádná existující složka projektu v "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Projekt je upraven. Chcete ušetřit?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Ukládání &quot;%1&quot; se nezdařilo. Ujistěte se, že soubor otevírá jiný program, a zkuste to znovu.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Ukládání "%1" se nezdařilo. Ujistěte se, že soubor otevírá jiný program, a zkuste to znovu.</translation>
     </message>
 </context>
 <context>

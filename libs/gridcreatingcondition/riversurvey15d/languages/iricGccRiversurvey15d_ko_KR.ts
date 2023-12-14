@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>중심점으로부터의 거리</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;왼쪽 제방&quot;은 하류 방향으로 회전할 때 왼쪽에 보이는 제방입니다.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"왼쪽 제방"은 하류 방향으로 회전할 때 왼쪽에 보이는 제방입니다.</translation>
     </message>
 </context>
 </TS>

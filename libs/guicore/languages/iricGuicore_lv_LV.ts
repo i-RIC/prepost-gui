@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet importējamo režģi</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, atlasiet, kuru režģi importēt</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Krāsa:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme. Nosaukumam varat izmantot tikai ASCII rakstzīmes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme. Nosaukumam varat izmantot tikai ASCII rakstzīmes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definīcijas mezgls netiek saglabāts</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Nepareizs valueType &quot;%1&quot;ir iestatīts.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Nepareizs valueType "%1"ir iestatīts.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Nepareizs stāvoklisTips &quot;%1&quot;ir iestatīts.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Nepareizs stāvoklisTips "%1"ir iestatīts.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>Fails %1 tiek atjaunināts pēc importēšanas aprēķina stāvoklī %2. Vai vēlaties importēt atjaunināto failu?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Varat kopēt un ielīmēt vērtības, izmantojot saīsni &quot;Ctrl + C&quot; un &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Varat kopēt un ielīmēt vērtības, izmantojot saīsni "Ctrl + C" un "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2021,8 +2019,8 @@ Do you really want to import this file?</source>
         <translation>Atverot failu, radās kļūda.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Pirmajām divām kolonnām jābūt &quot;X&quot; un &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Pirmajām divām kolonnām jābūt "X" un "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Mainīgā definīcija</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Uz leju (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Piezīme &lt;/span&gt;: secība sarakstā ir svarīga. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas parādīta iepriekš sarakstā. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Piezīme &lt;/span&gt;: secība sarakstā ir svarīga. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas parādīta iepriekš sarakstā. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Izlaides definīcija</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Režģa izveides nosacījums</translation>
+        <translation>Režģa izveides nosacījums</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet importēšanas mērķa logus</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlasiet eksporta mērķa logus</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Darbvieta &quot;%1&quot;ir %2 projektu mapes, kuras, šķiet, vairs netiek izmantotas. Vai vēlaties tos noņemt?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Darbvieta "%1"ir %2 projektu mapes, kuras, šķiet, vairs netiek izmantotas. Vai vēlaties tos noņemt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -2983,7 +2981,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Size: 1024 x 768</source>
-        <translation>Izmērs: 1024&#xa0;x&#xa0;768</translation>
+        <translation>Izmērs: 1024 x 768</translation>
     </message>
     <message>
         <source>Size: %1</source>
@@ -3080,7 +3078,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Min:</source>
-        <translation type="vanished">J&#xa0;min:</translation>
+        <translation type="vanished">J min:</translation>
     </message>
     <message>
         <source>J Max:</source>
@@ -3103,7 +3101,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>J Min:</source>
-        <translation>J&#xa0;min:</translation>
+        <translation>J min:</translation>
     </message>
     <message>
         <source>J Max:</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kļūda</translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Radās kļūda: %1</translation>
+        <translation>Radās kļūda: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Tiek pārbaudīts arguments %1 neizdevās. Nederīgi argumenti: %2.</translation>
+        <translation>Pārbauda argumentu par %1 neizdevās. Nederīgi argumenti: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Rediģēt vienkāršas darbības rezultātu mainīgo</translation>
+        <translation>Rediģēt vienkāršās darbības rezultāta mainīgo</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Aprēķina rezultāts:</translation>
+        <translation>Aprēķina rezultāts:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Mainīgā nosaukums:</translation>
+        <translation>Mainīgā nosaukums:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Pārbaudes vērtība:</translation>
+        <translation>Pārbaudes vērtība:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Brīdinājums</translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Mainīgā nosaukums netiek ievadīts.</translation>
+        <translation>Mainīgā nosaukums netiek ievadīts.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Šis mainīgā nosaukums jau ir izmantots</translation>
+        <translation>Šis mainīgā nosaukums jau ir izmantots</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Rediģēt vienkāršas darbības rezultātu</translation>
+        <translation>Rediģēt vienkāršās darbības rezultātu</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Vārds:</translation>
+        <translation>Vārds:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Pozīcija:</translation>
+        <translation>Pozīcija:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Ievades aprēķinu rezultāti</translation>
+        <translation>Aprēķinu rezultāti ievadei</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Pievienot (&amp;A)...</translation>
+        <translation>Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Dzēst (&amp;D)</translation>
+        <translation>Dzēst (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Mainīgā definīcija</translation>
+        <translation>Mainīgā definīcija</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Varat definēt mainīgo, izmantojot JavaScript valodu. Lūdzu, skatiet &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" tekstu -decoration: pasvītrot; color:#0000ff;"&gt;šeit&lt;/span&gt;&lt;/a&gt; sīkākai informācijai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Pārbaude</translation>
+        <translation>Pārbaude</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Jūs varat pārbaudīt definīciju, noklikšķinot uz šīs. Ja definīcijas parsēšanas laikā rodas kļūda, tiek parādīts kļūdas ziņojums. Kad definīcija ir veiksmīgi parsēta, vērtība, kas aprēķināta, izmantojot &amp; quot; Value for testingquot; tiek parādīta katra ievade. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Varat pārbaudīt definīciju, noklikšķinot uz šīs. Ja definīcijas parsēšanas laikā rodas kļūda, tiek parādīts kļūdas ziņojums. Kad definīcija ir veiksmīgi parsēta, vērtība tiek aprēķināta, izmantojot &amp;quot;Vērtība testēšanaiquot; tiek parādīts katrai ievadei.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Rezultāta nosaukums</translation>
+        <translation>Rezultāta nosaukums</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Mainīgā nosaukums</translation>
+        <translation>Mainīgais nosaukums</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Vērtība testēšanai</translation>
+        <translation>Pārbaudes vērtība</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Režģa mezgls</translation>
+        <translation>Režģa mezgls</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Režģa šūna</translation>
+        <translation>Režģa šūna</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģis iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Daļiņa</translation>
+        <translation>Daļiņa</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Brīdinājums</translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Nosaukums netiek ievadīts.</translation>
+        <translation>Vārds nav ievadīts.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Šis nosaukums jau ir izmantots</translation>
+        <translation>Šis nosaukums jau ir izmantots</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Vai tiešām vēlaties dzēst? %1 ?</translation>
+        <translation>Vai tiešām vēlaties dzēst? %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Vienkāršas darbības rezultātu saraksts</translation>
+        <translation>Vienkāršu darbību rezultātu saraksts</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Vārds</translation>
+        <translation>Vārds</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozīcija</translation>
+        <translation>Pozīcija</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Uz augšu (&amp;U)</translation>
+        <translation>Uz augšu (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Uz leju (&amp;D)</translation>
+        <translation>Uz leju (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Piezīme &lt;/span&gt;: secība sarakstā ir svarīga. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas parādīta iepriekš sarakstā. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme&lt;/span&gt;. Svarīga ir secība sarakstā. Definīcijā kā mainīgo varat izmantot vienkāršu darbību aprēķinu vērtību, kas sarakstā ir redzama iepriekš.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Pievienot (&amp;A)...</translation>
+        <translation>Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Rediģēt (&amp;E)...</translation>
+        <translation>Rediģēt (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Dzēst (&amp;D)</translation>
+        <translation>Dzēst (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Brīdinājums</translation>
+        <translation>Brīdinājums</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Vai tiešām vēlaties dzēst? %1 ?</translation>
+        <translation>Vai tiešām vēlaties dzēst? %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Režģa mezgls</translation>
+        <translation>Režģa mezgls</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Režģa šūna</translation>
+        <translation>Režģa šūna</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Režģis iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Daļiņa</translation>
+        <translation>Daļiņa</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialogs</translation>
+        <translation>Dialogs</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Režģa tips:</translation>
+        <translation>Režģa veids:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Novads: (&amp;R)</translation>
+        <translation>Novads: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Malu līnija krustojas ar citas šīs režģa šūnas līniju.</translation>
+        <translation>Malas līnija krustojas ar citas šūnas līniju šajā režģī.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Režģa elementa malu attiecība pārsniedz robežvērtību %1 vairāk nekā vienā šūnā.</translation>
+        <translation>Režģa šūnas malu attiecība pārsniedz robežvērtību %1 vairāk nekā vienā šūnā.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Režģa šūnu malu garumu variācijas pārsniedz robežvērtības (I virziens: %1, J-virziens: %2 ) vairāk nekā vienā šūnā.</translation>
+        <translation>Režģa šūnu malu garuma izmaiņas pārsniedz robežvērtības (I virziens: %1, J-virziens: %2 ) vairāk nekā vienā šūnā.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Režģa šūnas malas leņķis nokrītas zem robežvērtības %1 vairāk nekā vienā šūnā.</translation>
+        <translation>Režģa šūnas malas leņķis ir zem robežvērtības %1 vairāk nekā vienā šūnā.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Šūnas, kur malas krustojas</translation>
+        <translation>* Šūnas, kurās malas krustojas</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Neeksistē</translation>
+        <translation>Neeksistē</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Šūnas, kur šūnu malu malu attiecība pārsniedz %1</translation>
+        <translation>* Šūnas, kurās šūnu malu malu attiecība pārsniedz %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, malu attiecība</translation>
+        <translation>I, J, malu attiecība</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Malu garums ir pārāk mazs</translation>
+        <translation>Pārāk mazs malas garums</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Šūnas, kur šūnu virsotnes leņķis ir zemāks %1</translation>
+        <translation>* Šūnas, kurās šūnas virsotnes leņķis ir zemāks %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Es, J, Angle</translation>
+        <translation>Es, J, leņķis</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Šūnas, kurās šūnu garuma variācijas gar i-virzienu pārsniedz %1</translation>
+        <translation>* Šūnas, kurās šūnas garuma izmaiņas i virzienā pārsniedz %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">Es, J, variācija</translation>
+        <translation>I, J, Variācija</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Šūnas, kurās šūnu garuma izmaiņas j virzienā pārsniedz %1</translation>
+        <translation>* Šūnas, kurās šūnas garuma izmaiņas j virzienā pārsniedz %1</translation>
     </message>
 </context>
 </TS>

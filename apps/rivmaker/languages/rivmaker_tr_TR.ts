@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">Rivmaker 2.0.5</translation>
+        <translation>Rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Çıkış Tarihi: 2023/8/29</translation>
+        <translation>Yayın Tarihi: 2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -66,7 +64,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
+        <translation>Vertex'i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
@@ -194,8 +192,8 @@
         <translation>Kesit henüz tanımlanmadı.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Kesit için geçersiz ad. Ad &quot;X1&quot;, &quot;X2&quot;,... veya &quot;XS1&quot;, &quot;XS2&quot;,... olmalıdır.</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Kesit için geçersiz ad. Ad "X1", "X2",... veya "XS1", "XS2",... olmalıdır.</translation>
     </message>
 </context>
 <context>
@@ -249,11 +247,11 @@
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation>SVG&apos;yi dışa aktar (&amp;S)...</translation>
+        <translation>SVG'yi dışa aktar (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation>CSV&apos;yi dışa aktar (&amp;C)...</translation>
+        <translation>CSV'yi dışa aktar (&amp;C)...</translation>
     </message>
     <message>
         <source>WSE</source>
@@ -692,7 +690,7 @@
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation>Temel hat, HWM&apos;lerin kapsamlarını kapsayacak kadar uzun olmalıdır</translation>
+        <translation>Temel hat, HWM'lerin kapsamlarını kapsayacak kadar uzun olmalıdır</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
@@ -714,7 +712,7 @@
     </message>
     <message>
         <source>Calculating initial WSE for Cross-section %1 failed</source>
-        <translation>Kesit için ilk WSE&apos;nin hesaplanması %1 arızalı</translation>
+        <translation>Kesit için ilk WSE'nin hesaplanması %1 arızalı</translation>
     </message>
 </context>
 <context>
@@ -905,7 +903,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
+        <translation>Vertex'i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit Coordinates...</source>
@@ -1181,7 +1179,7 @@
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation>CSV&apos;ye aktar (&amp;E)</translation>
+        <translation>CSV'ye aktar (&amp;E)</translation>
     </message>
     <message>
         <source>Save SVG file</source>
@@ -1217,11 +1215,11 @@
     </message>
     <message>
         <source>Export &amp;SVG...</source>
-        <translation>SVG&apos;yi dışa aktar (&amp;S)...</translation>
+        <translation>SVG'yi dışa aktar (&amp;S)...</translation>
     </message>
     <message>
         <source>Export &amp;CSV...</source>
-        <translation>CSV&apos;yi dışa aktar (&amp;C)...</translation>
+        <translation>CSV'yi dışa aktar (&amp;C)...</translation>
     </message>
 </context>
 <context>
@@ -1368,7 +1366,7 @@
     </message>
     <message>
         <source>&amp;Export to CSV</source>
-        <translation>CSV&apos;ye aktar (&amp;E)</translation>
+        <translation>CSV'ye aktar (&amp;E)</translation>
     </message>
     <message>
         <source>Name</source>

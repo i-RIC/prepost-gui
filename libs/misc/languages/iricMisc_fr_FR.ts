@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>InformationDialog</name>
@@ -45,11 +43,11 @@
     <name>SlowmotionSpeedEditDialog</name>
     <message>
         <source>Animation Speed Setting</source>
-        <translation>Réglage de la vitesse d&apos;animation</translation>
+        <translation>Réglage de la vitesse d'animation</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Intervalle d&apos;animation en secondes&#xa0;:</translation>
+        <translation>Intervalle d'animation en secondes :</translation>
     </message>
 </context>
 <context>

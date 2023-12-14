@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -109,7 +107,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>When you want to add division points near river center or upper side, please specify value more than 1.</source>
-        <translation>Nehir merkezine veya yukarısına yakın bölme noktaları eklemek istediğinizde, lütfen 1&apos;den büyük bir değer belirtin.</translation>
+        <translation>Nehir merkezine veya yukarısına yakın bölme noktaları eklemek istediğinizde, lütfen 1'den büyük bir değer belirtin.</translation>
     </message>
 </context>
 <context>
@@ -178,7 +176,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>When you want to assign more division points near river center or upper side, please specify value more than 1.</source>
-        <translation>Nehir merkezi veya yukarısı yakınında daha fazla bölünme noktası atamak istediğinizde, lütfen 1&apos;den büyük bir değer belirtin.</translation>
+        <translation>Nehir merkezi veya yukarısı yakınında daha fazla bölünme noktası atamak istediğinizde, lütfen 1'den büyük bir değer belirtin.</translation>
     </message>
 </context>
 <context>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Merkez noktasından uzaklık</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Sol sahil&quot;, mansap yönüne döndüğünüzde sol tarafta gördüğünüz banktır.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Sol sahil", mansap yönüne döndüğünüzde sol tarafta gördüğünüz banktır.</translation>
     </message>
 </context>
 </TS>

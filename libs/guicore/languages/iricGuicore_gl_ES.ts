@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione a cuadrícula para importar</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione que grade importar</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Cor:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota: só podes usar caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota: só podes usar caracteres ASCII para Nome.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>O nodo de definición non se almacena</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Tipo de valor incorrecto &quot;%1&quot;está configurado.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Tipo de valor incorrecto "%1"está configurado.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Tipo de condición incorrecto &quot;%1&quot;está configurado.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Tipo de condición incorrecto "%1"está configurado.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>Ficheiro %1 actualízase despois de importalo á condición de cálculo %2. ¿Quere importar o ficheiro actualizado?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Pode copiar e pegar os valores co atallo &quot;Ctrl + C&quot; e &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Pode copiar e pegar os valores co atallo "Ctrl + C" e "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2021,8 +2019,8 @@ Do you really want to import this file?</source>
         <translation>Produciuse un erro ao abrir o ficheiro.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>As dúas primeiras columnas deben ser &quot;X&quot; e &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>As dúas primeiras columnas deben ser "X" e "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Definición de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; para máis detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para máis detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Abaixo (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: A orde na lista é importante. Na definición, pode usar o valor dos cálculos de operacións simples como variable, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: A orde na lista é importante. Na definición, pode usar o valor dos cálculos de operacións simples como variable, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Definición de saída</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; para máis detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; para máis detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Condición de creación de cuadrícula</translation>
+        <translation>Condición de creación de cuadrícula</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione importar as fiestras de destino</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione as ventás de destino de exportación</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Espazo de traballo &quot;%1&quot;ten %2 cartafoles de proxectos que parece que xa non se usan. ¿Queres eliminalos?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espazo de traballo "%1"ten %2 cartafoles de proxectos que parece que xa non se usan. ¿Queres eliminalos?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Produciuse un erro: %1</translation>
+        <translation>Produciuse un erro: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Verificación do argumento para %1 fallou. Argumentos non válidos: %2.</translation>
+        <translation>Comprobando o argumento para %1 fallou. Argumentos non válidos: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Editar variable de resultado de operación simple</translation>
+        <translation>Editar a variable de resultado da operación sinxela</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Resultado do cálculo:</translation>
+        <translation>Resultado do cálculo:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Nome da variable:</translation>
+        <translation>Nome da variable:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Valor para a proba:</translation>
+        <translation>Valor para a proba:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Non se introduce o nome da variable.</translation>
+        <translation>Non se introduce o nome da variable.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Este nome de variable xa se usa</translation>
+        <translation>Este nome de variable xa se usa</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Editar resultado da operación simple</translation>
+        <translation>Editar o resultado da operación sinxela</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nome:</translation>
+        <translation>Nome:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Posición:</translation>
+        <translation>Posición:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Resultados do cálculo para a entrada</translation>
+        <translation>Resultados do cálculo para a entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Engadir (&amp;A)...</translation>
+        <translation>Engadir (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Eliminar (&amp;D)</translation>
+        <translation>Eliminar (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Definición de variable</translation>
+        <translation>Definición de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; para máis detalles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podes definir a variable coa linguaxe JavaScript. Consulte &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoración: subliñado; color:#0000ff;"&gt;aquí&lt;/span&gt;&lt;/a&gt; para máis detalles.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Proba</translation>
+        <translation>Proba</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podes probar a definición facendo clic nesta. Se se produce un erro ao analizar a definición, móstrase a mensaxe de erro. Cando a definición se analiza correctamente, o valor calculado usando o &amp; quot; Valor para probarquot; para cada entrada móstrase. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podes probar a definición facendo clic nesta. Se se produce un erro ao analizar a definición, móstrase a mensaxe de erro. Cando a definición se analiza correctamente, o valor calcúlase mediante o &amp;quot;Valor para probarquot; para cada entrada móstrase.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Nome do resultado</translation>
+        <translation>Nome do resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Nome da variable</translation>
+        <translation>Nome da variable</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Valor para a proba</translation>
+        <translation>Valor para probar</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Nodo de grade</translation>
+        <translation>Nodo de reixa</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Célula de rede</translation>
+        <translation>Celda de cuadrícula</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Partícula</translation>
+        <translation>Partícula</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Non se introduce o nome.</translation>
+        <translation>Non se introduce o nome.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Este nome xa se usa</translation>
+        <translation>Este nome xa se usa</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Seguro que queres eliminar %1 ?</translation>
+        <translation>Seguro que queres eliminar %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Lista de resultados de operacións sinxelas</translation>
+        <translation>Lista de resultados de operacións sinxelas</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nome</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Posición</translation>
+        <translation>Posición</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Arriba (&amp;U)</translation>
+        <translation>Arriba (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Abaixo (&amp;D)</translation>
+        <translation>Abaixo (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: A orde na lista é importante. Na definición, pode usar o valor dos cálculos de operacións simples como variable, que aparece anteriormente na lista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: a orde na lista é importante. Na definición, pode usar o valor dos cálculos de operacións simples como unha variable, que aparece anteriormente na lista.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Engadir (&amp;A)...</translation>
+        <translation>Engadir (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Editar (&amp;E)...</translation>
+        <translation>Editar (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Eliminar (&amp;D)</translation>
+        <translation>Eliminar (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Aviso</translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Seguro que queres eliminar %1 ?</translation>
+        <translation>Seguro que queres eliminar %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Nodo de grade</translation>
+        <translation>Nodo de reixa</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Célula de rede</translation>
+        <translation>Celda de cuadrícula</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Partícula</translation>
+        <translation>Partícula</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Diálogo</translation>
+        <translation>Diálogo</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tipo de rede:</translation>
+        <translation>Tipo de reixa:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Rexión: (&amp;R)</translation>
+        <translation>Rexión: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Unha liña de bordo cruza coa doutra cela desta grade.</translation>
+        <translation>Unha liña de bordo crúzase coa doutra cela desta cuadrícula.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">A relación de aspecto da cela da rede excede o valor límite %1 en máis dunha cela.</translation>
+        <translation>A relación de aspecto da cela da grella supera o valor límite %1 en máis dunha cela.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">A variación das lonxitudes dos bordos das celas da reixa superan os valores límite (dirección I: %1, Dirección J: %2 ) en máis dunha cela.</translation>
+        <translation>A variación das lonxitudes dos bordos das celas da grella supera os valores límite (dirección I: %1, Dirección J: %2 ) en máis dunha cela.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">O ángulo do bordo da cela da reixa cae por baixo do valor límite %1 en máis dunha cela.</translation>
+        <translation>O ángulo do bordo da cela da grella está por debaixo do valor límite %1 en máis dunha cela.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Celas onde se cortan os bordos</translation>
+        <translation>* Celas onde se cruzan as beiras</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Non existe</translation>
+        <translation>Non existe</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Celas nas que a relación de aspecto dos bordos das celas supera %1</translation>
+        <translation>* Celas onde a relación de aspecto dos bordos das celas supera %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, Relación de aspecto</translation>
+        <translation>I, J, Relación de aspecto</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">A lonxitude do bordo é demasiado pequena</translation>
+        <translation>A lonxitude do bordo é demasiado pequena</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Celas onde o ángulo do vértice celular está debaixo %1</translation>
+        <translation>* Celas onde o ángulo do vértice da cela está por debaixo %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Eu, J, Angle</translation>
+        <translation>I, J, Ángulo</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Celas onde a variación da lonxitude da cela ao longo da dirección i excede %1</translation>
+        <translation>* Celas onde a variación da lonxitude da cela ao longo da dirección i supera %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">I, J, Variación</translation>
+        <translation>I, J, Variación</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Celas onde a variación da lonxitude da cela ao longo da dirección j excede %1</translation>
+        <translation>* Celas onde a variación da lonxitude da cela ao longo da dirección j supera %1</translation>
     </message>
 </context>
 </TS>

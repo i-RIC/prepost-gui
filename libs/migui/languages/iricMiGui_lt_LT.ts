@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="lt_LT">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Galite naudoti tik ASCII simbolius.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Aplankas &quot;%1&quot; jau egzistuoja.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Aplankas "%1" jau egzistuoja.</translation>
     </message>
 </context>
 <context>
@@ -207,7 +205,7 @@
         <translation>Projektas sėkmingai išsaugotas %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <source>Error occured while preparing data for model in "%1"</source>
         <translation>Ruošiant duomenis modeliui įvyko klaida %1 “</translation>
     </message>
     <message>
@@ -215,8 +213,8 @@
         <translation>Įspėjimas</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Nėra esamo projekto aplanko &quot; %1 “.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Nėra esamo projekto aplanko " %1 “.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Projektas modifikuojamas. Ar norite sutaupyti?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Išsaugomas &quot; %1 Nepavyko. Įsitikinkite, kad failą atidaro kita programa, ir bandykite dar kartą.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Išsaugomas " %1 Nepavyko. Įsitikinkite, kad failą atidaro kita programa, ir bandykite dar kartą.</translation>
     </message>
 </context>
 <context>

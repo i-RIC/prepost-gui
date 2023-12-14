@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataPointGroup</name>
@@ -142,8 +140,8 @@
         <translation>حدث خطأ أثناء قراءة سطر العنوان. يجب أن يحتوي الرأس على 4 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون &quot;%2&quot;، لكن &quot;%3&quot; معطى.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>حدث خطأ أثناء قراءة سطر العنوان. عمودي %1 يجب ان يكون "%2"، لكن "%3" معطى.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -158,16 +156,16 @@
         <translation>حدث خطأ أثناء قراءة السطر %1. يجب أن تحتوي البيانات على 4 أعمدة على الأقل.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;x&quot; في السطر %1. يجب أن تكون &quot;x&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "x" في السطر %1. يجب أن تكون "x" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;y&quot; في السطر %1. يجب أن تكون &quot;y&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "y" في السطر %1. يجب أن تكون "y" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>حدث خطأ أثناء قراءة قيمة &quot;القيمة&quot; في السطر %1. يجب أن تكون &quot;القيمة&quot; قيمة حقيقية ولكن &quot;%2&quot; محدد.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>حدث خطأ أثناء قراءة قيمة "القيمة" في السطر %1. يجب أن تكون "القيمة" قيمة حقيقية ولكن "%2" محدد.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -128,8 +126,8 @@
         <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว ส่วนหัวควรมีอย่างน้อย 6 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว คอลัมน์ %1 ควรจะเป็น &quot;%2&quot;, แต่ &quot;%3&quot; มอบให้</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัดส่วนหัว คอลัมน์ %1 ควรจะเป็น "%2", แต่ "%3" มอบให้</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -152,32 +150,32 @@
         <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. ข้อมูลควรมีอย่างน้อย 6 คอลัมน์</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;pid&quot; ในบรรทัด %1. &quot;pid&quot; ควรเป็นค่าจำนวนเต็ม แต่ &quot;%2&quot; ถูกระบุ</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "pid" ในบรรทัด %1. "pid" ควรเป็นค่าจำนวนเต็ม แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;vid&quot; ในบรรทัด %1. &quot;vid&quot; ควรเป็นค่าจำนวนเต็ม แต่ &quot;%2&quot; ถูกระบุ</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "vid" ในบรรทัด %1. "vid" ควรเป็นค่าจำนวนเต็ม แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;x&quot; ในบรรทัด %1. &quot;x&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "x" ในบรรทัด %1. "x" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;y&quot; ในบรรทัด %1. &quot;y&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "y" ในบรรทัด %1. "y" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านค่า &quot;ค่า&quot; ในบรรทัด %1. &quot;ค่า&quot; ควรเป็นค่าจริง แต่ &quot;%2&quot; ถูกระบุ</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านค่า "ค่า" ในบรรทัด %1. "ค่า" ควรเป็นค่าจริง แต่ "%2" ถูกระบุ</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. &quot;name&quot; ควรเหมือนกันสำหรับบรรทัดที่ค่า &quot;pid&quot; เหมือนกัน</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. "name" ควรเหมือนกันสำหรับบรรทัดที่ค่า "pid" เหมือนกัน</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. &quot;value&quot; ควรเหมือนกันสำหรับบรรทัดที่ค่า &quot;pid&quot; เหมือนกัน</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>เกิดข้อผิดพลาดขณะอ่านบรรทัด %1. "value" ควรเหมือนกันสำหรับบรรทัดที่ค่า "pid" เหมือนกัน</translation>
     </message>
 </context>
 <context>

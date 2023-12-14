@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -128,8 +126,8 @@
         <translation>Ett fel uppstod när rubriken skulle läsas. Rubrik bör ha minst 6 kolumner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Ett fel uppstod när rubriken skulle läsas. Kolumn %1 borde vara &quot;%2&quot;, men&quot;%3&quot; är given.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Ett fel uppstod när rubriken skulle läsas. Kolumn %1 borde vara "%2", men"%3" är given.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -152,32 +150,32 @@
         <translation>Ett fel uppstod när raden lästes %1. Data bör ha minst sex kolumner.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;pid&quot; -värdet i raden %1. &quot;pid&quot; ska vara heltal men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "pid" -värdet i raden %1. "pid" ska vara heltal men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;vid&quot; -värdet i raden %1. &quot;vid&quot; ska vara heltal men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "vid" -värdet i raden %1. "vid" ska vara heltal men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;x&quot; -värdet i raden %1. &quot;x&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "x" -värdet i raden %1. "x" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;y&quot; -värdet i raden %1. &quot;y&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "y" -värdet i raden %1. "y" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Ett fel uppstod vid läsning av &quot;värde&quot; -värdet i raden %1. &quot;värde&quot; ska vara verkligt värde men &quot;%2&quot; är specificerad.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Ett fel uppstod vid läsning av "värde" -värdet i raden %1. "värde" ska vara verkligt värde men "%2" är specificerad.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Ett fel uppstod när raden lästes %1. &quot;namn&quot; bör vara samma för rader där &quot;pid&quot; -värden är desamma.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
+        <translation>Ett fel uppstod när raden lästes %1. "namn" bör vara samma för rader där "pid" -värden är desamma.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
-        <translation>Ett fel uppstod när raden lästes %1. &quot;värde&quot; bör vara samma för rader där &quot;pid&quot; -värdena är desamma.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
+        <translation>Ett fel uppstod när raden lästes %1. "värde" bör vara samma för rader där "pid" -värdena är desamma.</translation>
     </message>
 </context>
 <context>

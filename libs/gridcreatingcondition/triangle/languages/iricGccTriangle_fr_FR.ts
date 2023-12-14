@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorTriangle</name>
     <message>
         <source>Create grid from polygon shape</source>
-        <translation>Créer une grille à partir d&apos;une forme de polygone</translation>
+        <translation>Créer une grille à partir d'une forme de polygone</translation>
     </message>
     <message>
         <source>Please define a polygon as the region to create grid.You can additionally define holes and refinement areas as restrictions.</source>
@@ -160,11 +158,11 @@
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation>Voulez-vous vraiment supprimer ce polygone&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer ce polygone ?</translation>
     </message>
     <message>
         <source>Are you sure you want to remove this line?</source>
-        <translation>Voulez-vous vraiment supprimer cette ligne&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer cette ligne ?</translation>
     </message>
     <message>
         <source>Grid region polygon have to consists of more than three vertices.</source>
@@ -172,7 +170,7 @@
     </message>
     <message>
         <source>Grid region polygon shape is invalid.</source>
-        <translation>La forme du polygone de la région de la grille n&apos;est pas valide.</translation>
+        <translation>La forme du polygone de la région de la grille n'est pas valide.</translation>
     </message>
     <message>
         <source>Remesh polygon have to consists of more than three vertices</source>
@@ -180,11 +178,11 @@
     </message>
     <message>
         <source>Remesh polygon shape is invalid.</source>
-        <translation>La forme du polygone de remaillage n&apos;est pas valide.</translation>
+        <translation>La forme du polygone de remaillage n'est pas valide.</translation>
     </message>
     <message>
         <source>Remesh polygon have to be inside grid region.</source>
-        <translation>Le polygone de maillage doit être à l&apos;intérieur de la région de la grille.</translation>
+        <translation>Le polygone de maillage doit être à l'intérieur de la région de la grille.</translation>
     </message>
     <message>
         <source>Hole polygon have to consists of more than three vertices</source>
@@ -192,15 +190,15 @@
     </message>
     <message>
         <source>Hole polygon shape is invalid.</source>
-        <translation>La forme du polygone du trou n&apos;est pas valide.</translation>
+        <translation>La forme du polygone du trou n'est pas valide.</translation>
     </message>
     <message>
         <source>Hole polygon have to be inside grid region.</source>
-        <translation>Le polygone de trou doit être à l&apos;intérieur de la région de la grille.</translation>
+        <translation>Le polygone de trou doit être à l'intérieur de la région de la grille.</translation>
     </message>
     <message>
         <source>Remesh polygons and hole polygons can not have intersections.</source>
-        <translation>Les polygones de maillage et les polygones de trous ne peuvent pas avoir d&apos;intersections.</translation>
+        <translation>Les polygones de maillage et les polygones de trous ne peuvent pas avoir d'intersections.</translation>
     </message>
     <message>
         <source>Break line have to consists of more more than two vertices</source>
@@ -235,7 +233,7 @@
     <name>GridCreatingConditionTriangleAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation>Veuillez spécifier un polygone fermé&#xa0;!</translation>
+        <translation>Veuillez spécifier un polygone fermé !</translation>
     </message>
 </context>
 <context>
@@ -246,15 +244,15 @@
     </message>
     <message>
         <source>Enter maximum area for cells inside refinement polygon.</source>
-        <translation>Entrez la superficie maximale des cellules à l&apos;intérieur du polygone de raffinement.</translation>
+        <translation>Entrez la superficie maximale des cellules à l'intérieur du polygone de raffinement.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: super&#xa0;;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: super ;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -280,7 +278,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Specify minimum angle for cell vertices</source>
-        <translation>Spécifier l&apos;angle minimum pour les sommets des cellules</translation>
+        <translation>Spécifier l'angle minimum pour les sommets des cellules</translation>
     </message>
     <message>
         <source>By specifying minimum angle, you can avoid generating thin and long triangle cells.</source>
@@ -292,7 +290,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>When polygon has vertices that has smaller angle than the value above, the condition is not applyed to the cells that include those vertices.</source>
-        <translation>Lorsque le polygone a des sommets qui ont un angle plus petit que la valeur ci-dessus, la condition n&apos;est pas appliquée aux cellules qui incluent ces sommets.</translation>
+        <translation>Lorsque le polygone a des sommets qui ont un angle plus petit que la valeur ci-dessus, la condition n'est pas appliquée aux cellules qui incluent ces sommets.</translation>
     </message>
     <message>
         <source>Specify maximum area for cells</source>
@@ -303,12 +301,12 @@ p, li { white-space: pre-wrap; }
         <translation>En spécifiant de petites valeurs, vous pouvez générer des grilles fines.</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;m&lt;span style=&quot; vertical-align: super&#xa0;;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align:super;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;m&lt;span style=" vertical-align: super ;"&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

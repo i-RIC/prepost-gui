@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegionLonLat</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Specify a rectangular region where to create a grid, and the cell width. The cell width is used for both X-direction and Y-direction. The coordinate system isLongitude-Latitude system.</source>
-        <translation>Specificare un&apos;area rettangolare in cui creare una griglia e la larghezza della cella. La larghezza della cella viene utilizzata sia per la direzione X che per la direzione Y. Il sistema di coordinate è il sistema Longitudine-Latitudine.</translation>
+        <translation>Specificare un'area rettangolare in cui creare una griglia e la larghezza della cella. La larghezza della cella viene utilizzata sia per la direzione X che per la direzione Y. Il sistema di coordinate è il sistema Longitudine-Latitudine.</translation>
     </message>
 </context>
 <context>
@@ -28,7 +26,7 @@
     </message>
     <message>
         <source>Please define grid region by mouse-dragging.</source>
-        <translation>Definisci l&apos;area della griglia trascinando il mouse.</translation>
+        <translation>Definisci l'area della griglia trascinando il mouse.</translation>
     </message>
 </context>
 <context>

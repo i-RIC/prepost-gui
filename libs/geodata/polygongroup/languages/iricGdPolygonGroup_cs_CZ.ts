@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataPolygonGroup</name>
@@ -128,8 +126,8 @@
         <translation>Při čtení řádku záhlaví došlo k chybě. Záhlaví by mělo mít alespoň 6 sloupců.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Při čtení řádku záhlaví došlo k chybě. Sloupec %1 mělo by &quot;%2&quot;, ale &quot;%3&quot; je dáno.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Při čtení řádku záhlaví došlo k chybě. Sloupec %1 mělo by "%2", ale "%3" je dáno.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -152,31 +150,31 @@
         <translation>Při čtení řádku došlo k chybě %1. Data by měla mít alespoň 6 sloupců.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;pid&quot; value in line %1. &quot;pid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Při čtení hodnoty &quot;pid&quot; v řádku došlo k chybě %1. &quot;pid&quot; by měla být celočíselná hodnota, ale &quot; %2 “je specifikováno.</translation>
+        <source>Error occured while reading "pid" value in line %1. "pid" should be integer value but "%2" is specified.</source>
+        <translation>Při čtení hodnoty "pid" v řádku došlo k chybě %1. "pid" by měla být celočíselná hodnota, ale " %2 “je specifikováno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Při čtení hodnoty &quot;vid&quot; v řádku došlo k chybě %1. „vid“ by mělo mít celočíselnou hodnotu, ale „ %2 “je specifikováno.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Při čtení hodnoty "vid" v řádku došlo k chybě %1. „vid“ by mělo mít celočíselnou hodnotu, ale „ %2 “je specifikováno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Při čtení hodnoty &quot;x&quot; v řádku došlo k chybě %1. „x“ by mělo být skutečnou hodnotou, ale „ %2 “je specifikováno.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Při čtení hodnoty "x" v řádku došlo k chybě %1. „x“ by mělo být skutečnou hodnotou, ale „ %2 “je specifikováno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
         <translation>Při čtení hodnoty „y“ v řádku došlo k chybě %1. „y“ by mělo být skutečnou hodnotou, ale „ %2 “je specifikováno.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Při čtení hodnoty &quot;hodnoty&quot; v řádku došlo k chybě %1. „hodnota“ by měla být skutečná hodnota, ale „ %2 “je specifikováno.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Při čtení hodnoty "hodnoty" v řádku došlo k chybě %1. „hodnota“ by měla být skutečná hodnota, ale „ %2 “je specifikováno.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "pid" values are the same.</source>
         <translation>Při čtení řádku došlo k chybě %1. „název“ by měl být stejný pro řádky, kde jsou hodnoty „pid“ stejné.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;pid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "pid" values are the same.</source>
         <translation>Při čtení řádku došlo k chybě %1. „hodnota“ by měla být stejná pro řádky, kde jsou hodnoty „pid“ stejné.</translation>
     </message>
 </context>

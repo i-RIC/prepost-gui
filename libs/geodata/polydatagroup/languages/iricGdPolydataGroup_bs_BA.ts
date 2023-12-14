@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -32,8 +30,8 @@
         <translation>Jeste li sigurni da želite izbrisati odabrano %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Nema drugih podataka za spajanje &quot;%1&quot; grupa.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Nema drugih podataka za spajanje "%1" grupa.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>

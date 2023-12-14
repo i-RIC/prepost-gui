@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Puteți utiliza doar caractere ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Folder &quot;%1&quot; deja exista.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Folder "%1" deja exista.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Proiectul a fost salvat cu succes în %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>A apărut o eroare la pregătirea datelor pentru modelul din &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>A apărut o eroare la pregătirea datelor pentru modelul din "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Nu s-a găsit niciun folder de proiect existent în „ %1 &quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Nu s-a găsit niciun folder de proiect existent în „ %1 ".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Proiectul este modificat. Dorești să salvezi?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Salvare &quot;%1&quot; a eșuat. Asigurați-vă că alt program deschide fișierul și încercați din nou.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Salvare "%1" a eșuat. Asigurați-vă că alt program deschide fișierul și încercați din nou.</translation>
     </message>
 </context>
 <context>

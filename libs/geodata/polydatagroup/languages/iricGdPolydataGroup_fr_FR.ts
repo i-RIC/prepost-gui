@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPolyDataGroup</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation>%1 Navigateur d&apos;attributs de groupe</translation>
+        <translation>%1 Navigateur d'attributs de groupe</translation>
     </message>
     <message>
         <source>Edit name</source>
@@ -32,8 +30,8 @@
         <translation>Êtes-vous sûr de vouloir supprimer la sélection %1 s?</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Il n&apos;y a pas d&apos;autres données à fusionner dans &quot;%1&quot; grouper.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Il n'y a pas d'autres données à fusionner dans "%1" grouper.</translation>
     </message>
     <message>
         <source>Edit name and value of polydatas</source>
@@ -65,7 +63,7 @@
     </message>
     <message>
         <source>Show Attribute &amp;Browser</source>
-        <translation>Afficher le navigateur d&apos;attributs (&amp;B)</translation>
+        <translation>Afficher le navigateur d'attributs (&amp;B)</translation>
     </message>
     <message>
         <source>Move to top</source>
@@ -105,14 +103,14 @@
     </message>
     <message>
         <source>Display &amp;Setting...</source>
-        <translation>Paramètre d&apos;affichage (&amp;S)...</translation>
+        <translation>Paramètre d'affichage (&amp;S)...</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupAttributeBrowser</name>
     <message>
         <source>PolyData Group Attribute Browser</source>
-        <translation>Navigateur d&apos;attributs de groupe PolyData</translation>
+        <translation>Navigateur d'attributs de groupe PolyData</translation>
     </message>
     <message>
         <source>Name</source>
@@ -128,11 +126,11 @@
     </message>
     <message>
         <source>Sort toolbar</source>
-        <translation>Barre d&apos;outils de tri</translation>
+        <translation>Barre d'outils de tri</translation>
     </message>
     <message>
         <source>%1 Group Attribute Browser</source>
-        <translation>%1 Navigateur d&apos;attributs de groupe</translation>
+        <translation>%1 Navigateur d'attributs de groupe</translation>
     </message>
 </context>
 <context>
@@ -211,7 +209,7 @@
     </message>
     <message>
         <source>The shape type contained in this shape file is not %1.</source>
-        <translation>Le type de forme contenu dans ce fichier de forme n&apos;est pas %1.</translation>
+        <translation>Le type de forme contenu dans ce fichier de forme n'est pas %1.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -223,14 +221,14 @@
     </message>
     <message>
         <source>%1 Group Import Setting</source>
-        <translation>%1 Paramètre d&apos;importation de groupe</translation>
+        <translation>%1 Paramètre d'importation de groupe</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPolyDataGroupShpImporterSettingDialog</name>
     <message>
         <source>PolyData Import Setting</source>
-        <translation>Paramètre d&apos;importation de polydonnées</translation>
+        <translation>Paramètre d'importation de polydonnées</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -242,7 +240,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Charger à partir de l&apos;attribut du fichier Shape</translation>
+        <translation>Charger à partir de l'attribut du fichier Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. PolyData1)</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Varning</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>I kolumnen för %1, värdet &quot;%2&quot;för tvärsnitt&quot;%3&quot;är ogiltigt. Värdet ignoreras.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>I kolumnen för %1, värdet "%2"för tvärsnitt"%3"är ogiltigt. Värdet ignoreras.</translation>
     </message>
     <message>
         <source>Information</source>

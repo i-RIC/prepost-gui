@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Вы можете использовать только символы ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Папка &quot;%1&quot; уже существует.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Папка "%1" уже существует.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Проект успешно сохранен в %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Произошла ошибка при подготовке данных для модели в &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Произошла ошибка при подготовке данных для модели в "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Предупреждение</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Не найдена существующая папка проекта в &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Не найдена существующая папка проекта в "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Проект модифицирован. Вы хотите сохранить?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Сохранение &quot;%1&quot; не удалось. Убедитесь, что файл открывается другой программой, и повторите попытку.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Сохранение "%1" не удалось. Убедитесь, что файл открывается другой программой, и повторите попытку.</translation>
     </message>
 </context>
 <context>

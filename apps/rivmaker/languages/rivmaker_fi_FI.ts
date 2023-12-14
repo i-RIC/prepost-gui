@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">rivmaker 2.0.5</translation>
+        <translation>rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Julkaisupäivä: 28.4.2021 {2023/8/29?}</translation>
+        <translation>Julkaisupäivä: 29.8.2023</translation>
     </message>
 </context>
 <context>
@@ -194,8 +192,8 @@
         <translation>Poikkileikkausta ei ole vielä määritelty.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Poikkileikkauksen nimi on virheellinen. Nimen tulee olla &quot;X1&quot;, &quot;X2&quot;,... tai &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Poikkileikkauksen nimi on virheellinen. Nimen tulee olla "X1", "X2",... tai "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
@@ -320,7 +318,7 @@
     </message>
     <message>
         <source>Scales</source>
-        <translation>Vaa&apos;at</translation>
+        <translation>Vaa'at</translation>
     </message>
     <message>
         <source>Font:</source>
@@ -1276,7 +1274,7 @@
     </message>
     <message>
         <source>Scales</source>
-        <translation>Vaa&apos;at</translation>
+        <translation>Vaa'at</translation>
     </message>
     <message>
         <source>Font:</source>

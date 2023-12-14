@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>ConnectionAddDialog</name>
@@ -40,7 +38,7 @@
     </message>
     <message>
         <source>Solver</source>
-        <translation>Розв&apos;язувач</translation>
+        <translation>Розв'язувач</translation>
     </message>
 </context>
 <context>
@@ -77,8 +75,8 @@
         <translation>Ви можете використовувати лише символи ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>папка &quot;%1&quot; вже існує.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>папка "%1" вже існує.</translation>
     </message>
 </context>
 <context>
@@ -128,7 +126,7 @@
     </message>
     <message>
         <source>Connections</source>
-        <translation>Зв&apos;язки</translation>
+        <translation>Зв'язки</translation>
     </message>
     <message>
         <source>&amp;Visualize...</source>
@@ -207,16 +205,16 @@
         <translation>Проект успішно збережено в %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Сталася помилка під час підготовки даних для моделі в &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Сталася помилка під час підготовки даних для моделі в "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>УВАГА</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Не знайдено існуючої папки проекту в &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Не знайдено існуючої папки проекту в "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Проект змінено. Ви хочете заощадити?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Збереження&quot;%1&quot; не вдалося. Переконайтеся, що файл відкриває інша програма, і повторіть спробу.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Збереження"%1" не вдалося. Переконайтеся, що файл відкриває інша програма, і повторіть спробу.</translation>
     </message>
 </context>
 <context>
@@ -255,7 +253,7 @@
     </message>
     <message>
         <source>Solver</source>
-        <translation>Розв&apos;язувач</translation>
+        <translation>Розв'язувач</translation>
     </message>
     <message>
         <source>Description</source>

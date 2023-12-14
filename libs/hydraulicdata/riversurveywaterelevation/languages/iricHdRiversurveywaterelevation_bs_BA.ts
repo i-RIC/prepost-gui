@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bs_BA">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Upozorenje</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>U koloni za %1, vrijednost &quot;%2&quot;za poprečni presjek&quot;%3&quot;nije važeći. Vrijednost se zanemaruje.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>U koloni za %1, vrijednost "%2"za poprečni presjek"%3"nije važeći. Vrijednost se zanemaruje.</translation>
     </message>
     <message>
         <source>Information</source>

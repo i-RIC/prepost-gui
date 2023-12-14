@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte mřížku pro import</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte mřížku, kterou chcete importovat</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Barva:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka: Pro jméno můžete použít pouze znaky ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka: Pro jméno můžete použít pouze znaky ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definiční uzel není uložen</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Špatná hodnotaTyp &quot; %1 “je nastaveno.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Špatná hodnotaTyp " %1 “je nastaveno.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Špatný stavTyp &quot; %1 “je nastaveno.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Špatný stavTyp " %1 “je nastaveno.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,7 +1889,7 @@ Do you really want to import this file?</source>
         <translation>Soubor %1 se aktualizuje po importu do podmínky výpočtu %2. Chcete importovat aktualizovaný soubor?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Hodnoty můžete zkopírovat a vložit pomocí klávesové zkratky „Ctrl + C“ a „Ctrl + V“</translation>
     </message>
     <message>
@@ -2021,7 +2019,7 @@ Do you really want to import this file?</source>
         <translation>Při otevírání souboru došlo k chybě.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>První dva sloupce musí být „X“ a „Y“.</translation>
     </message>
     <message>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Definice proměnné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2192,7 +2190,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí &quot;Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí "Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Dolů (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Definice výstupu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Podmínka vytváření mřížky</translation>
+        <translation>Podmínka vytvoření mřížky</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte cílová okna importu</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte cílová okna exportu</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Pracovní prostor &quot;%1&quot;má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Pracovní prostor "%1"má %2 složky projektu, které se zdají být již nepoužívány. Chcete je odstranit?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Vyskytla se chyba: %1</translation>
+        <translation>Vyskytla se chyba: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Kontrolní argument pro %1 neuspěl. Neplatné argumenty: %2.</translation>
+        <translation>Kontrolní argument pro %1 nepodařilo. Neplatné argumenty: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Upravit proměnnou výsledku jednoduché operace</translation>
+        <translation>Upravit proměnnou výsledku jednoduché operace</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Výsledek výpočtu:</translation>
+        <translation>Výsledek výpočtu:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Název proměnné:</translation>
+        <translation>Název proměnné:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Hodnota pro testování:</translation>
+        <translation>Hodnota pro testování:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Název proměnné není zadán.</translation>
+        <translation>Název proměnné se nezadává.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Tento název proměnné je již použit</translation>
+        <translation>Tento název proměnné je již použit</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Upravit výsledek jednoduché operace</translation>
+        <translation>Upravit výsledek jednoduché operace</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Název:</translation>
+        <translation>Název:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Pozice:</translation>
+        <translation>Pozice:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Výsledky výpočtu pro vstup</translation>
+        <translation>Výsledky výpočtu pro vstup</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Přidat (&amp;A)...</translation>
+        <translation>Přidat (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Vymazat (&amp;D)</translation>
+        <translation>Vymazat (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Definice proměnné</translation>
+        <translation>Definice proměnné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Proměnnou můžete definovat pomocí jazyka JavaScript. Viz &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;detaily&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Test</translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Definici můžete vyzkoušet kliknutím na toto tlačítko. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočtená pomocí &quot;Hodnota pro testováníquot; pro každý vstup je zobrazen. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Můžete otestovat definici kliknutím na toto. Pokud při analýze definice dojde k chybě, zobrazí se chybová zpráva. Když je definice úspěšně analyzována, hodnota vypočítaná pomocí "Hodnoty pro testování"; pro každý vstup se zobrazí.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Název výsledku</translation>
+        <translation>Název výsledku</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Proměnný název</translation>
+        <translation>Název proměnné</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Hodnota pro testování</translation>
+        <translation>Hodnota pro testování</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Síťový uzel</translation>
+        <translation>Uzel mřížky</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Mřížková buňka</translation>
+        <translation>Buňka mřížky</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Částice</translation>
+        <translation>Částice</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Jméno není zadáno.</translation>
+        <translation>Jméno není zadáno.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Tento název je již použit</translation>
+        <translation>Tento název se již používá</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Jste si jistí, že to chcete smazat %1 ?</translation>
+        <translation>Jste si jistí, že to chcete smazat %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Seznam výsledků jednoduché operace</translation>
+        <translation>Seznam výsledků jednoduché operace</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">název</translation>
+        <translation>název</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Pozice</translation>
+        <translation>Pozice</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Nahoru (&amp;U)</translation>
+        <translation>Nahoru (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Dolů (&amp;D)</translation>
+        <translation>Dolů (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Poznámka &lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete použít hodnotu výpočtů jednoduchých operací jako proměnnou, která se objeví dříve v seznamu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka&lt;/span&gt;: Pořadí v seznamu je důležité. V definici můžete jako proměnnou použít hodnotu výpočtů jednoduchých operací, která se objeví dříve v seznamu.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Přidat (&amp;A)...</translation>
+        <translation>Přidat (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Upravit (&amp;E)...</translation>
+        <translation>Upravit (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Vymazat (&amp;D)</translation>
+        <translation>Vymazat (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varování</translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Jste si jistí, že to chcete smazat %1 ?</translation>
+        <translation>Jste si jistí, že to chcete smazat %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Síťový uzel</translation>
+        <translation>Uzel mřížky</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Mřížková buňka</translation>
+        <translation>Buňka mřížky</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Mřížka kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Částice</translation>
+        <translation>Částice</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Typ mřížky:</translation>
+        <translation>Typ mřížky:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Kraj: (&amp;R)</translation>
+        <translation>Kraj: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Okrajová čára se protíná s čárou jiné buňky v této mřížce.</translation>
+        <translation>Okrajová čára se protíná s čárou jiné buňky v této mřížce.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Poměr stran buňky mřížky překračuje mezní hodnotu %1 ve více než jedné buňce.</translation>
+        <translation>Poměr stran buňky mřížky překračuje mezní hodnotu %1 ve více než jedné buňce.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Variace délek okrajů buněk mřížky překračují mezní hodnoty (směr I: %1 Směr J: %2 ) ve více než jedné buňce.</translation>
+        <translation>Změny délek okrajů buněk mřížky překračují mezní hodnoty (směr I: %1, směr J: %2 ) ve více než jedné buňce.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Úhel okraje buňky mřížky klesne pod mezní hodnotu %1 ve více než jedné buňce.</translation>
+        <translation>Úhel okraje buňky mřížky klesne pod mezní hodnotu %1 ve více než jedné buňce.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Buňky, kde se hrany protínají</translation>
+        <translation>* Buňky, kde se hrany protínají</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Neexistuje</translation>
+        <translation>Neexistuje</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Buňky, kde poměr stran okrajů buněk přesahuje %1</translation>
+        <translation>* Buňky, kde poměr stran přesahuje okraje buněk %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, poměr stran</translation>
+        <translation>I, J, Poměr stran</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Délka okraje příliš malá</translation>
+        <translation>Délka okraje je příliš malá</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Buňky, kde je úhel vrcholu buňky níže %1</translation>
+        <translation>* Buňky, kde je úhel vrcholu buňky níže %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Já, J, Úhel</translation>
+        <translation>Já, J, Angle</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Buňky, kde kolísá délka buňky ve směru i %1</translation>
+        <translation>* Buňky, kde odchylky délky buňky ve směru i přesahují %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">I, J, variace</translation>
+        <translation>I, J, Variace</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Buňky, kde kolísá délka buňky ve směru j %1</translation>
+        <translation>* Buňky, kde odchylky délky buňky ve směru j přesahují %1</translation>
     </message>
 </context>
 </TS>

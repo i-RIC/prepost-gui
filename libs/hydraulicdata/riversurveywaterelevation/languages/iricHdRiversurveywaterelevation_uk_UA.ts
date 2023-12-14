@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -31,8 +29,8 @@
         <translation>Увага</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>У графі за %1, значення &quot;%2&quot;для перерізу&quot;%3&quot;є недійсним. Значення ігнорується.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>У графі за %1, значення "%2"для перерізу"%3"є недійсним. Значення ігнорується.</translation>
     </message>
     <message>
         <source>Information</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,7 +75,7 @@
         <translation>您只能使用 ASCII 字符。</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
+        <source>Folder "%1" already exists.</source>
         <translation>文件夹 ” %1 “ 已经存在。</translation>
     </message>
 </context>
@@ -207,7 +205,7 @@
         <translation>项目成功保存到 %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
+        <source>Error occured while preparing data for model in "%1"</source>
         <translation>为“中的模型准备数据时发生错误” %1 ”</translation>
     </message>
     <message>
@@ -215,7 +213,7 @@
         <translation>警告</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
+        <source>No existing project folder found in "%1".</source>
         <translation>在“中找不到现有的项目文件夹” %1 ”。</translation>
     </message>
     <message>
@@ -243,8 +241,8 @@
         <translation>项目已修改。你想保存吗？</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>保存” %1 &quot; 失败。请确保其他程序正在打开该文件，然后重试。</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>保存” %1 " 失败。请确保其他程序正在打开该文件，然后重试。</translation>
     </message>
 </context>
 <context>

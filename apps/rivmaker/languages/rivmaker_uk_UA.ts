@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">rivmaker 2.0.5</translation>
+        <translation>rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Дата випуску: 28.04.2021 {2023/8/29?}</translation>
+        <translation>Дата випуску: 2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -194,8 +192,8 @@
         <translation>Поперечний переріз ще не визначений.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Недійсна назва перетину. Назва має бути &quot;X1&quot;, &quot;X2&quot;,... або &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Недійсна назва перетину. Назва має бути "X1", "X2",... або "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
@@ -399,7 +397,7 @@
     <name>CrossSectionsExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation>Введіть ім&apos;я файлу для експорту</translation>
+        <translation>Введіть ім'я файлу для експорту</translation>
     </message>
 </context>
 <context>
@@ -666,7 +664,7 @@
     <name>PolyLineExporter</name>
     <message>
         <source>Input file name to export</source>
-        <translation>Введіть ім&apos;я файлу для експорту</translation>
+        <translation>Введіть ім'я файлу для експорту</translation>
     </message>
 </context>
 <context>
@@ -762,7 +760,7 @@
     </message>
     <message>
         <source>CSV File name to export</source>
-        <translation>Ім&apos;я файлу CSV для експорту</translation>
+        <translation>Ім'я файлу CSV для експорту</translation>
     </message>
     <message>
         <source>CSV file(*.csv)</source>
@@ -1029,7 +1027,7 @@
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation>Панель інструментів &quot;Список вікон&quot;</translation>
+        <translation>Панель інструментів "Список вікон"</translation>
     </message>
     <message>
         <source>Open project file</source>

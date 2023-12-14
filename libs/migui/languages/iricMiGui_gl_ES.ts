@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Só pode usar caracteres ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Cartafol &quot;%1&quot; xa existe.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Cartafol "%1" xa existe.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>O proxecto gardouse correctamente en %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Produciuse un erro ao preparar os datos para o modelo en &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Produciuse un erro ao preparar os datos para o modelo en "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Non se atopou ningún cartafol do proxecto existente en &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Non se atopou ningún cartafol do proxecto existente en "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>O proxecto está modificado. Queres gardar?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Gardando &quot;%1&quot; fallou. Asegúrate de que outro programa está abrindo o ficheiro e téntao de novo.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Gardando "%1" fallou. Asegúrate de que outro programa está abrindo o ficheiro e téntao de novo.</translation>
     </message>
 </context>
 <context>

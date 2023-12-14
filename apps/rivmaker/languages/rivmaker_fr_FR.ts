@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>AboutDialog</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Copyright: USGS</source>
-        <translation>Droits d&apos;auteur&#xa0;: USGS</translation>
+        <translation>Droits d'auteur : USGS</translation>
     </message>
     <message>
         <source>rivmaker 2.0.2</source>
@@ -25,15 +23,15 @@
     </message>
     <message>
         <source>Release Date: 2021/4/28</source>
-        <translation type="vanished">Date de sortie&#xa0;: 2021/4/28</translation>
+        <translation type="vanished">Date de sortie : 2021/4/28</translation>
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">rivmaker 2.0.5</translation>
+        <translation>Rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Date de sortie&#xa0;: 2023/8/29</translation>
+        <translation>Date de sortie : 2023/8/29</translation>
     </message>
 </context>
 <context>
@@ -86,11 +84,11 @@
     </message>
     <message>
         <source>Base line is not defined yet.</source>
-        <translation>La ligne de base n&apos;est pas encore définie.</translation>
+        <translation>La ligne de base n'est pas encore définie.</translation>
     </message>
     <message>
         <source>Point can not be deleted when there are only two points.</source>
-        <translation>Le point ne peut pas être supprimé lorsqu&apos;il n&apos;y a que deux points.</translation>
+        <translation>Le point ne peut pas être supprimé lorsqu'il n'y a que deux points.</translation>
     </message>
 </context>
 <context>
@@ -115,14 +113,14 @@
     <name>ChartGraphicsView</name>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Rapport d&apos;aspect (V/H): 1 / %1</translation>
+        <translation>Rapport d'aspect (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>ChartWindow</name>
     <message>
         <source>Display ToolBar</source>
-        <translation>Afficher la barre d&apos;outils</translation>
+        <translation>Afficher la barre d'outils</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -134,11 +132,11 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Ratio d&apos;aspect</translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>View ToolBar</source>
-        <translation>Afficher la barre d&apos;outils</translation>
+        <translation>Afficher la barre d'outils</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
@@ -150,7 +148,7 @@
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Rapport d&apos;aspect (V/H): 1 /</translation>
+        <translation>Rapport d'aspect (V/H): 1 /</translation>
     </message>
 </context>
 <context>
@@ -161,7 +159,7 @@
     </message>
     <message>
         <source>It is not a real value</source>
-        <translation>Ce n&apos;est pas une vraie valeur</translation>
+        <translation>Ce n'est pas une vraie valeur</translation>
     </message>
 </context>
 <context>
@@ -191,11 +189,11 @@
     </message>
     <message>
         <source>Cross Section is not defined yet.</source>
-        <translation>La section transversale n&apos;est pas encore définie.</translation>
+        <translation>La section transversale n'est pas encore définie.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Nom non valide pour la section transversale. Le nom doit être &quot;X1&quot;, &quot;X2&quot;,... ou &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nom non valide pour la section transversale. Le nom doit être "X1", "X2",... ou "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>
@@ -272,7 +270,7 @@
     <name>CrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Cross Section Window Display Setting</source>
-        <translation>Paramètre d&apos;affichage de la fenêtre de coupe</translation>
+        <translation>Paramètre d'affichage de la fenêtre de coupe</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -332,7 +330,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Ratio d&apos;aspect</translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>Cross Section Points</source>
@@ -436,7 +434,7 @@
     <name>ElevationPoints</name>
     <message>
         <source>Elevation Points</source>
-        <translation>Points d&apos;élévation</translation>
+        <translation>Points d'élévation</translation>
     </message>
 </context>
 <context>
@@ -447,7 +445,7 @@
     </message>
     <message>
         <source>Elevation Points</source>
-        <translation>Points d&apos;élévation</translation>
+        <translation>Points d'élévation</translation>
     </message>
     <message>
         <source>Size</source>
@@ -471,7 +469,7 @@
     </message>
     <message>
         <source>Water Elevation Points</source>
-        <translation>Points d&apos;élévation de l&apos;eau</translation>
+        <translation>Points d'élévation de l'eau</translation>
     </message>
 </context>
 <context>
@@ -504,7 +502,7 @@
     </message>
     <message>
         <source>TIN is used for interpolation at CrossSections</source>
-        <translation>Le TIN est utilisé pour l&apos;interpolation aux sections transversales</translation>
+        <translation>Le TIN est utilisé pour l'interpolation aux sections transversales</translation>
     </message>
     <message>
         <source>Appropriate for data in which the density of points are almost the same in whole area</source>
@@ -532,11 +530,11 @@
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d&apos;extensions de modèles&#xa0;:</translation>
+        <translation>Nombre d'extensions de modèles :</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
-        <translation>Exposant de pondération&#xa0;:</translation>
+        <translation>Exposant de pondération :</translation>
     </message>
 </context>
 <context>
@@ -565,7 +563,7 @@
     </message>
     <message>
         <source>Y: </source>
-        <translation>Y&#xa0;:</translation>
+        <translation>Y :</translation>
     </message>
     <message>
         <source>X: ------</source>
@@ -573,14 +571,14 @@
     </message>
     <message>
         <source>Y: ------</source>
-        <translation>Y&#xa0;: ------</translation>
+        <translation>Y : ------</translation>
     </message>
 </context>
 <context>
     <name>ObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navigateur d&apos;objets</translation>
+        <translation>Navigateur d'objets</translation>
     </message>
 </context>
 <context>
@@ -684,15 +682,15 @@
     </message>
     <message>
         <source>To delete a Cross Section, select it at Object Browser.</source>
-        <translation>Pour supprimer une coupe transversale, sélectionnez-la dans le navigateur d&apos;objets.</translation>
+        <translation>Pour supprimer une coupe transversale, sélectionnez-la dans le navigateur d'objets.</translation>
     </message>
     <message>
         <source>To edit Cross Section coordinates, select it at Object Browser.</source>
-        <translation>Pour modifier les coordonnées de la section transversale, sélectionnez-la dans le navigateur d&apos;objets.</translation>
+        <translation>Pour modifier les coordonnées de la section transversale, sélectionnez-la dans le navigateur d'objets.</translation>
     </message>
     <message>
         <source>Base line should be long enough to cover extents of HWMs</source>
-        <translation>La ligne de base doit être suffisamment longue pour couvrir l&apos;étendue des HWM</translation>
+        <translation>La ligne de base doit être suffisamment longue pour couvrir l'étendue des HWM</translation>
     </message>
     <message>
         <source>Not all Cross Sections cross Base line</source>
@@ -750,7 +748,7 @@
     <name>RivExporter</name>
     <message>
         <source>Input File name to export</source>
-        <translation>Nom du fichier d&apos;entrée à exporter</translation>
+        <translation>Nom du fichier d'entrée à exporter</translation>
     </message>
     <message>
         <source>Error</source>
@@ -817,7 +815,7 @@
     </message>
     <message>
         <source>&amp;River Survey Data</source>
-        <translation>Données d&apos;enquête sur la rivière (&amp;R)</translation>
+        <translation>Données d'enquête sur la rivière (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;View</source>
@@ -833,7 +831,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>barre d&apos;outils</translation>
+        <translation>barre d'outils</translation>
     </message>
     <message>
         <source>&amp;New Project...</source>
@@ -869,7 +867,7 @@
     </message>
     <message>
         <source>&amp;Water Surface Elevation...</source>
-        <translation>Élévation de la surface de l&apos;eau (&amp;W)...</translation>
+        <translation>Élévation de la surface de l'eau (&amp;W)...</translation>
     </message>
     <message>
         <source>&amp;Background Image...</source>
@@ -877,7 +875,7 @@
     </message>
     <message>
         <source>&amp;SAC GUI Input File...</source>
-        <translation>Fichier d&apos;entrée de l&apos;interface graphique SAC (&amp;S)...</translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (&amp;S)...</translation>
     </message>
     <message>
         <source>&amp;Elevation</source>
@@ -885,11 +883,11 @@
     </message>
     <message>
         <source>&amp;Water Surface Elevation</source>
-        <translation>Élévation de la surface de l&apos;eau (&amp;W)</translation>
+        <translation>Élévation de la surface de l'eau (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;SAC GUI Input File</source>
-        <translation>Fichier d&apos;entrée de l&apos;interface graphique SAC (&amp;S)</translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Create...</source>
@@ -945,15 +943,15 @@
     </message>
     <message>
         <source>&amp;River Survey Data...</source>
-        <translation>Données d&apos;enquête sur la rivière (&amp;R)...</translation>
+        <translation>Données d'enquête sur la rivière (&amp;R)...</translation>
     </message>
     <message>
         <source>&amp;Main Toolbar</source>
-        <translation>Barre d&apos;outils principale (&amp;M)</translation>
+        <translation>Barre d'outils principale (&amp;M)</translation>
     </message>
     <message>
         <source>&amp;Windows Toolbar</source>
-        <translation>Barre d&apos;outils Windows (&amp;W)</translation>
+        <translation>Barre d'outils Windows (&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Mapping Setting...</source>
@@ -985,7 +983,7 @@
     </message>
     <message>
         <source>&amp;Status Bar</source>
-        <translation>Barre d&apos;état (&amp;S)</translation>
+        <translation>Barre d'état (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Open &amp;New Crosssection Window</source>
@@ -1053,7 +1051,7 @@
     </message>
     <message>
         <source>No data to export exists</source>
-        <translation>Aucune donnée à exporter n&apos;existe</translation>
+        <translation>Aucune donnée à exporter n'existe</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1065,7 +1063,7 @@
     </message>
     <message>
         <source>Opening project file failed.</source>
-        <translation>L&apos;ouverture du fichier de projet a échoué.</translation>
+        <translation>L'ouverture du fichier de projet a échoué.</translation>
     </message>
     <message>
         <source>The project data is modified. Do you want to save?</source>
@@ -1073,11 +1071,11 @@
     </message>
     <message>
         <source>Window List Toolbar</source>
-        <translation>Barre d&apos;outils de la liste des fenêtres</translation>
+        <translation>Barre d'outils de la liste des fenêtres</translation>
     </message>
     <message>
         <source>Cross Section Window can not be opened when no Cross Section is defined.</source>
-        <translation>La fenêtre de coupe ne peut pas être ouverte si aucune coupe n&apos;est définie.</translation>
+        <translation>La fenêtre de coupe ne peut pas être ouverte si aucune coupe n'est définie.</translation>
     </message>
     <message>
         <source>River Survey Data as CSV files...</source>
@@ -1112,11 +1110,11 @@
     <name>SACGUIImporter</name>
     <message>
         <source>Select SAC GUI input file</source>
-        <translation>Sélectionnez le fichier d&apos;entrée de l&apos;interface graphique SAC</translation>
+        <translation>Sélectionnez le fichier d'entrée de l'interface graphique SAC</translation>
     </message>
     <message>
         <source>SAC GUI input file (*.txt *.csv)</source>
-        <translation>Fichier d&apos;entrée de l&apos;interface graphique SAC (*.txt *.csv)</translation>
+        <translation>Fichier d'entrée de l'interface graphique SAC (*.txt *.csv)</translation>
     </message>
 </context>
 <context>
@@ -1145,7 +1143,7 @@
     <name>VerticalCrossSectionWindow</name>
     <message>
         <source>Elevation View Window</source>
-        <translation>Fenêtre de vue d&apos;élévation</translation>
+        <translation>Fenêtre de vue d'élévation</translation>
     </message>
     <message>
         <source>&amp;Reset zoom</source>
@@ -1228,7 +1226,7 @@
     <name>VerticalCrossSectionWindowDisplaySettingDialog</name>
     <message>
         <source>Elevation View Window Display Setting</source>
-        <translation>Paramètre d&apos;affichage de la fenêtre de vue d&apos;élévation</translation>
+        <translation>Paramètre d'affichage de la fenêtre de vue d'élévation</translation>
     </message>
     <message>
         <source>Grid</source>
@@ -1288,7 +1286,7 @@
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Ratio d&apos;aspect</translation>
+        <translation>Ratio d'aspect</translation>
     </message>
     <message>
         <source>Scales font</source>
@@ -1357,7 +1355,7 @@
     <name>VerticalCrossSectionWindowElevationsDockWidget</name>
     <message>
         <source>WSE Edit Tool</source>
-        <translation>Outil d&apos;édition WSE</translation>
+        <translation>Outil d'édition WSE</translation>
     </message>
 </context>
 <context>
@@ -1383,7 +1381,7 @@
     <name>WaterSurfaceElevationPoints</name>
     <message>
         <source>Water Elevation Points</source>
-        <translation>Points d&apos;élévation de l&apos;eau</translation>
+        <translation>Points d'élévation de l'eau</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>HydraulicDataRiverSurveyWaterElevationCreator</name>
@@ -24,15 +22,15 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
+        <translation>S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Advertiment</translation>
     </message>
     <message>
-        <source>In the column for %1, the value &quot;%2&quot; for cross section &quot;%3&quot; is invalid. The value is ignored.</source>
-        <translation>A la columna per a %1, el valor &quot;%2&quot;per a la secció transversal&quot;%3&quot;no és vàlid. El valor s&apos;ignora.</translation>
+        <source>In the column for %1, the value "%2" for cross section "%3" is invalid. The value is ignored.</source>
+        <translation>A la columna per a %1, el valor "%2"per a la secció transversal"%3"no és vàlid. El valor s'ignora.</translation>
     </message>
     <message>
         <source>Information</source>

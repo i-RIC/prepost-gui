@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPolyLine</name>
@@ -81,7 +79,7 @@
     </message>
     <message>
         <source>Line Display Setting</source>
-        <translation>Paramètre d&apos;affichage de ligne</translation>
+        <translation>Paramètre d'affichage de ligne</translation>
     </message>
 </context>
 <context>
@@ -111,7 +109,7 @@
     </message>
     <message>
         <source>The shape type contained in this shape file is not polyline.</source>
-        <translation>Le type de forme contenu dans ce fichier de forme n&apos;est pas une polyligne.</translation>
+        <translation>Le type de forme contenu dans ce fichier de forme n'est pas une polyligne.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -126,7 +124,7 @@
     <name>GeoDataPolyLineImporterSettingDialog</name>
     <message>
         <source>PolyLine Import Setting</source>
-        <translation>Paramètre d&apos;importation de polyligne</translation>
+        <translation>Paramètre d'importation de polyligne</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -138,7 +136,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Charger à partir de l&apos;attribut du fichier Shape</translation>
+        <translation>Charger à partir de l'attribut du fichier Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polyline1)</source>
@@ -165,7 +163,7 @@
     <name>GeoDataPolyLineProxy</name>
     <message>
         <source>Line Display Setting</source>
-        <translation>Paramètre d&apos;affichage de ligne</translation>
+        <translation>Paramètre d'affichage de ligne</translation>
     </message>
 </context>
 <context>

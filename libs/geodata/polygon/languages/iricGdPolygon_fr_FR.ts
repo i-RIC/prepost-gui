@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GeoDataPolygon</name>
@@ -85,7 +83,7 @@
     </message>
     <message>
         <source>Are you sure you want to remove this polygon?</source>
-        <translation>Voulez-vous vraiment supprimer ce polygone&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer ce polygone ?</translation>
     </message>
     <message>
         <source>Please define polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -113,7 +111,7 @@
     </message>
     <message>
         <source>Polygon Display Setting</source>
-        <translation>Paramètre d&apos;affichage du polygone</translation>
+        <translation>Paramètre d'affichage du polygone</translation>
     </message>
 </context>
 <context>
@@ -162,7 +160,7 @@
     </message>
     <message>
         <source>The shape type contained in this shape file is not polygon.</source>
-        <translation>Le type de forme contenu dans ce fichier de forme n&apos;est pas un polygone.</translation>
+        <translation>Le type de forme contenu dans ce fichier de forme n'est pas un polygone.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
@@ -179,7 +177,7 @@
 - Lines of polygon intersect each other
 - Hole polygon is outside of region polygon
 - Polygon passes the same point several times</source>
-        <translation>%1 Le polygone ne peut pas être importé. Un polygone comme ci-dessous ne peut pas être importé : - Il a moins de trois points - Il n&apos;est pas fermé - Les lignes de polygone se coupent - Le polygone de trou est en dehors du polygone de région - Le polygone passe plusieurs fois au même point</translation>
+        <translation>%1 Le polygone ne peut pas être importé. Un polygone comme ci-dessous ne peut pas être importé : - Il a moins de trois points - Il n'est pas fermé - Les lignes de polygone se coupent - Le polygone de trou est en dehors du polygone de région - Le polygone passe plusieurs fois au même point</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -190,7 +188,7 @@
     <name>GeoDataPolygonImporterSettingDialog</name>
     <message>
         <source>Polygon Import Setting</source>
-        <translation>Paramètre d&apos;importation de polygones</translation>
+        <translation>Paramètre d'importation de polygones</translation>
     </message>
     <message>
         <source>Encoding:</source>
@@ -202,7 +200,7 @@
     </message>
     <message>
         <source>Load from Shape file attribute</source>
-        <translation>Charger à partir de l&apos;attribut du fichier Shape</translation>
+        <translation>Charger à partir de l'attribut du fichier Shape</translation>
     </message>
     <message>
         <source>Name is set automatically (ex. Polygon1)</source>
@@ -229,7 +227,7 @@
     <name>GeoDataPolygonProxy</name>
     <message>
         <source>Polygon Display Setting</source>
-        <translation>Paramètre d&apos;affichage du polygone</translation>
+        <translation>Paramètre d'affichage du polygone</translation>
     </message>
 </context>
 <context>

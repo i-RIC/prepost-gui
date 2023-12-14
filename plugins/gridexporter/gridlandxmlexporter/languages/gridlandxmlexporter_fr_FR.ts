@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridLandXmlExporter</name>
@@ -13,7 +11,7 @@
     </message>
     <message>
         <source>Error occured while exporting to %1</source>
-        <translation>Une erreur s&apos;est produite lors de l&apos;exportation vers %1</translation>
+        <translation>Une erreur s'est produite lors de l'exportation vers %1</translation>
     </message>
 </context>
 <context>

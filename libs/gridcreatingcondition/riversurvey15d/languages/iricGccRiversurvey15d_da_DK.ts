@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Afstand fra centrum</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Venstre bred&quot; er den bank, du ser på venstre side, når du drejer nedstrøms.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Venstre bred" er den bank, du ser på venstre side, når du drejer nedstrøms.</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть сітку для імпорту</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть, яку сітку імпортувати</translation>
     </message>
 </context>
 <context>
@@ -1235,7 +1233,7 @@ Parse error %2 at %3, column %4</source>
     <name>GeoData</name>
     <message>
         <source>Edit &amp;Name...</source>
-        <translation>Змінити ім&apos;я (&amp;N)...</translation>
+        <translation>Змінити ім'я (&amp;N)...</translation>
     </message>
 </context>
 <context>
@@ -1389,7 +1387,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>TextLabel</source>
@@ -1493,7 +1491,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Колір:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примітка. Для імені можна використовувати лише символи ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка. Для імені можна використовувати лише символи ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Вузол визначення не зберігається</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Неправильний тип значення &quot;%1&quot;встановлено.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Неправильний тип значення "%1"встановлено.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Неправильний тип Тип &quot;%1&quot;встановлено.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Неправильний тип Тип "%1"встановлено.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1655,7 +1653,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver.</source>
-        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв&apos;язувачем.</translation>
+        <translation>Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв'язувачем.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>Файл %1 оновлюється після імпорту до стану розрахунку %2. Ви хочете імпортувати оновлений файл?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Ви можете скопіювати та вставити значення за допомогою ярликів &quot;Ctrl + C&quot; та &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Ви можете скопіювати та вставити значення за допомогою ярликів "Ctrl + C" та "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2021,8 +2019,8 @@ Do you really want to import this file?</source>
         <translation>Під час відкриття файлу сталася помилка.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Перші два стовпці мають бути &quot;X&quot; та &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Перші два стовпці мають бути "X" та "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2160,7 +2158,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Position:</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Визначення змінної</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2228,7 +2226,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>Ім&apos;я не вводиться.</translation>
+        <translation>Ім'я не вводиться.</translation>
     </message>
     <message>
         <source>This name is already used</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2574,7 +2572,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Ім&apos;я змінної порожнє.</translation>
+        <translation>Ім'я змінної порожнє.</translation>
     </message>
 </context>
 <context>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Визначення результату</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color:#0000ff; "&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Умова створення сітки</translation>
+        <translation>Умова створення сітки</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть цільові вікна імпорту</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Виберіть цільові вікна експорту</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Робоча область &quot;%1&quot;має %2 папки проекту, які, здається, більше не використовуються. Ви хочете їх видалити?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Робоча область "%1"має %2 папки проекту, які, здається, більше не використовуються. Ви хочете їх видалити?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">Сталася помилка: %1</translation>
+        <translation>Сталася помилка: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Перевірка аргументу для %1 не вдалося. Недійсні аргументи: %2.</translation>
+        <translation>Перевірка аргументу для %1 не вдалося. Недійсні аргументи: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Редагувати змінну результату простої операції</translation>
+        <translation>Редагувати змінну результату простої операції</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Результат розрахунку:</translation>
+        <translation>Результат розрахунку:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Назва змінної:</translation>
+        <translation>Ім'я змінної:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Значення для тестування:</translation>
+        <translation>Значення для тестування:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>УВАГА</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Назва змінної не вводиться.</translation>
+        <translation>Ім'я змінної не вводиться.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Ця назва змінної вже використовується</translation>
+        <translation>Ця назва змінної вже використовується</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Редагувати простий результат операції</translation>
+        <translation>Редагувати результат простої операції</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Ім&apos;я:</translation>
+        <translation>Ім'я:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Посада:</translation>
+        <translation>Посада:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Результати розрахунків для введення</translation>
+        <translation>Результати розрахунків для введення</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Додати (&amp;A)...</translation>
+        <translation>додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Видалити (&amp;D)</translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Визначення змінної</translation>
+        <translation>Визначення змінної</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете визначити змінну за допомогою мови JavaScript. Див. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; тут &lt;/span&gt; &lt;/a&gt; для деталей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ви можете визначити змінну за допомогою мови JavaScript. Перегляньте &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;тут&lt;/span&gt;&lt;/a&gt; для детальної інформації.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Тестування</translation>
+        <translation>Тест</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Ви можете перевірити визначення, натиснувши це. Якщо під час розбору визначення виникає помилка, відображається повідомлення про помилку. Коли визначення успішно розбирається, значення обчислюється за допомогою &amp; quot; Значення для тестуванняquot; для кожного входу показано. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ви можете перевірити визначення, натиснувши тут. Якщо під час аналізу визначення виникає помилка, відображається повідомлення про помилку. Коли визначення проаналізовано успішно, значення, обчислене за допомогою &amp;quot;Значення для тестуванняquot; для кожного введення.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Назва результату</translation>
+        <translation>Назва результату</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Назва змінної</translation>
+        <translation>Ім'я змінної</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Значення для тестування</translation>
+        <translation>Значення для тестування</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Вузол сітки</translation>
+        <translation>Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Ячейка сітки</translation>
+        <translation>Комірка сітки</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Частинка</translation>
+        <translation>частинка</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>УВАГА</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Ім&apos;я не вводиться.</translation>
+        <translation>Ім'я не вводиться.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Ця назва вже використовується</translation>
+        <translation>Ця назва вже використовується</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1 ?</translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Список простих операцій</translation>
+        <translation>Простий список результатів операції</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Назва</translation>
+        <translation>Ім'я</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Позиція</translation>
+        <translation>Позиція</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Вгору (&amp;U)</translation>
+        <translation>вгору (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Вниз (&amp;D)</translation>
+        <translation>вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Примітка &lt;/span&gt;: Порядок у списку важливий. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше у списку. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка&lt;/span&gt;: важливий порядок у списку. У визначенні ви можете використовувати значення обчислень простих операцій як змінну, яка з’являється раніше в списку.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Додати (&amp;A)...</translation>
+        <translation>додати (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Редагувати (&amp;E)...</translation>
+        <translation>Редагувати (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Видалити (&amp;D)</translation>
+        <translation>Видалити (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>УВАГА</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">Ви впевнені, що хочете видалити %1 ?</translation>
+        <translation>Ви впевнені, що хочете видалити %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Вузол сітки</translation>
+        <translation>Вузол сітки</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Ячейка сітки</translation>
+        <translation>Комірка сітки</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Сітка kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Частинка</translation>
+        <translation>частинка</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Діалог</translation>
+        <translation>Діалог</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Тип сітки:</translation>
+        <translation>Тип сітки:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Регіон: (&amp;R)</translation>
+        <translation>регіон: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">Крайова лінія перетинається з лінією іншої комірки в цій сітці.</translation>
+        <translation>Лінія краю перетинає лінію іншої клітинки в цій сітці.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Співвідношення осередків сітки перевищує граничне значення %1 у більш ніж одній клітині.</translation>
+        <translation>Співвідношення сторін клітинки сітки перевищує граничне значення %1 в більш ніж одній клітинці.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Зміна довжини країв осередків сітки перевищує граничні значення (напрямок I: %1, Напрямок J: %2 ) у декількох клітинках.</translation>
+        <translation>Варіації довжин країв комірок сітки перевищують граничні значення (I-напрямок: %1, J-напрямок: %2 ) у більш ніж одній клітинці.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Кут краю осередку сітки опускається нижче граничного значення %1 у більш ніж одній клітині.</translation>
+        <translation>Кут краю комірки сітки опускається нижче граничного значення %1 в більш ніж одній клітинці.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Клітинки, де краї перетинаються</translation>
+        <translation>* Клітини, де перетинаються краї</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Не існує</translation>
+        <translation>Не існує</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Клітинки, де співвідношення сторін країв комірки перевищує %1</translation>
+        <translation>* Клітинки, де співвідношення сторін країв комірок перевищує %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, Співвідношення сторін</translation>
+        <translation>I, J, співвідношення сторін</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Занадто мала довжина краю</translation>
+        <translation>Замала довжина краю</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Клітинки, де кут вершини комірки нижче %1</translation>
+        <translation>* Клітини, у яких кут вершини клітинки нижче %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">I, J, Кут</translation>
+        <translation>I, J, кут</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Клітини, де зміна довжини комірки вздовж напрямку i перевищує %1</translation>
+        <translation>* Клітини, де зміна довжини клітини вздовж i-напрямку перевищує %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">I, J, Варіація</translation>
+        <translation>I, J, варіація</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Клітинки, де зміна довжини комірки вздовж напрямку j перевищує %1</translation>
+        <translation>* Клітини, де зміна довжини клітини вздовж j-напрямку перевищує %1</translation>
     </message>
 </context>
 </TS>

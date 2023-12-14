@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Uporabljate lahko samo znake ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Mapa &quot;%1&quot; že obstaja.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Mapa "%1" že obstaja.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Projekt uspešno shranjen v %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Med pripravo podatkov za model v &quot; je prišlo do napake %1 &quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Med pripravo podatkov za model v " je prišlo do napake %1 "</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Opozorilo</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Ni obstoječe projektne mape v &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Ni obstoječe projektne mape v "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Projekt je spremenjen. Želite prihraniti?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Shranjevanje &quot;%1&quot; ni uspelo. Preverite, ali drug program odpira datoteko, in poskusite znova.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Shranjevanje "%1" ni uspelo. Preverite, ali drug program odpira datoteko, in poskusite znova.</translation>
     </message>
 </context>
 <context>

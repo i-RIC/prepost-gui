@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Cảnh báo</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa của trình tạo lưới trong thư mục &quot;%1&quot;. Người tạo lưới này bị bỏ qua. %2</translation>
+        <translation>Đã xảy ra lỗi khi tải tệp định nghĩa của trình tạo lưới trong thư mục "%1". Người tạo lưới này bị bỏ qua. %2</translation>
     </message>
 </context>
 <context>

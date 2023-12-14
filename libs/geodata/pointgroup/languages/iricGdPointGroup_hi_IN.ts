@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPointGroup</name>
@@ -142,8 +140,8 @@
         <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। हैडर में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए &quot;%2&quot;, लेकिन &quot;%3&quot; दिया हुआ है।</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>हेडर लाइन पढ़ते समय त्रुटि हुई। स्तंभ %1 होना चाहिए "%2", लेकिन "%3" दिया हुआ है।</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. Make sure the file is saved in UTF-8 encoding.</source>
@@ -158,16 +156,16 @@
         <translation>लाइन पढ़ते समय त्रुटि हुई %1. डेटा में कम से कम 4 कॉलम होने चाहिए।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;x&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;x&quot; वास्तविक मान होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "x" मान पढ़ते समय त्रुटि हुई %1. "x" वास्तविक मान होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;y&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;y&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "y" मान पढ़ते समय त्रुटि हुई %1. "y" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>पंक्ति में &quot;मान&quot; मान पढ़ते समय त्रुटि हुई %1. &quot;मूल्य&quot; वास्तविक मूल्य होना चाहिए लेकिन &quot;%2&quot; निर्दिष्ट किया जाता है।</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>पंक्ति में "मान" मान पढ़ते समय त्रुटि हुई %1. "मूल्य" वास्तविक मूल्य होना चाहिए लेकिन "%2" निर्दिष्ट किया जाता है।</translation>
     </message>
 </context>
 <context>

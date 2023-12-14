@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">Rivmaker 2.0.5</translation>
+        <translation>Rivmaker 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Veröffentlichungsdatum: 2023/8/29</translation>
+        <translation>Erscheinungsdatum: 29.08.2023</translation>
     </message>
 </context>
 <context>
@@ -194,8 +192,8 @@
         <translation>Querschnitt ist noch nicht definiert.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Ungültiger Name für Querschnitt. Der Name sollte &quot;X1&quot;, &quot;X2&quot;,... oder &quot;XS1&quot;, &quot;XS2&quot;,... lauten.</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Ungültiger Name für Querschnitt. Der Name sollte "X1", "X2",... oder "XS1", "XS2",... lauten.</translation>
     </message>
 </context>
 <context>

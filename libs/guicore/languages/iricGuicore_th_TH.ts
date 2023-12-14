@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกตารางที่จะนำเข้า</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>โปรดเลือกตารางที่จะนำเข้า</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>สี:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ: คุณสามารถใช้ได้เฉพาะอักขระ ASCII สำหรับชื่อเท่านั้น&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ: คุณสามารถใช้ได้เฉพาะอักขระ ASCII สำหรับชื่อเท่านั้น&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>โหนดนิยามไม่ถูกเก็บไว้</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>ค่าผิดประเภท &quot;%1&quot; ถูกตั้งค่า</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ค่าผิดประเภท "%1" ถูกตั้งค่า</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>เงื่อนไขผิดประเภท &quot;%1&quot;ถูกตั้งค่า</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>เงื่อนไขผิดประเภท "%1"ถูกตั้งค่า</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,8 +1889,8 @@ Do you really want to import this file?</source>
         <translation>ข้อมูล</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด &quot;Ctrl + C&quot; และ &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>คุณสามารถคัดลอกและวางค่าด้วยปุ่มลัด "Ctrl + C" และ "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2017,8 +2015,8 @@ Do you really want to import this file?</source>
         <translation>เกิดข้อผิดพลาดขณะเปิดไฟล์</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>สองคอลัมน์แรกต้องเป็น &quot;X&quot; และ &quot;Y&quot;</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>สองคอลัมน์แรกต้องเป็น "X" และ "Y"</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>ความหมายของตัวแปร</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>ลง (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>ความหมายของผลลัพธ์</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">เงื่อนไขการสร้างกริด</translation>
+        <translation>เงื่อนไขการสร้างกริด</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกหน้าต่างเป้าหมายการนำเข้า</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>เลือกหน้าต่างเป้าหมายการส่งออก</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>พื้นที่ทำงาน &quot;%1&quot; มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>พื้นที่ทำงาน "%1" มี %2 โฟลเดอร์โครงการที่ดูเหมือนจะไม่ได้ใช้อีกต่อไป คุณต้องการลบออกหรือไม่</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">ข้อผิดพลาด</translation>
+        <translation>ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">เกิดข้อผิดพลาด: %1</translation>
+        <translation>เกิดข้อผิดพลาด: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">กำลังตรวจสอบอาร์กิวเมนต์สำหรับ %1 ล้มเหลว. อาร์กิวเมนต์ไม่ถูกต้อง: %2.</translation>
+        <translation>กำลังตรวจสอบอาร์กิวเมนต์สำหรับ %1 ล้มเหลว. อาร์กิวเมนต์ไม่ถูกต้อง: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">แก้ไขตัวแปรผลการดำเนินการอย่างง่าย</translation>
+        <translation>แก้ไขตัวแปรผลลัพธ์การดำเนินการอย่างง่าย</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">ผลการคำนวณ:</translation>
+        <translation>ผลการคำนวณ:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">ชื่อตัวแปร:</translation>
+        <translation>ชื่อตัวแปร:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">ค่าสำหรับการทดสอบ:</translation>
+        <translation>ค่าสำหรับการทดสอบ:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">คำเตือน</translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">ไม่ได้ป้อนชื่อตัวแปร</translation>
+        <translation>ไม่ได้ป้อนชื่อตัวแปร</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">มีการใช้ชื่อตัวแปรนี้แล้ว</translation>
+        <translation>ชื่อตัวแปรนี้ถูกใช้ไปแล้ว</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">แก้ไขผลการดำเนินการอย่างง่าย</translation>
+        <translation>แก้ไขผลการดำเนินงานอย่างง่าย</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">ชื่อ:</translation>
+        <translation>ชื่อ:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">ตำแหน่ง:</translation>
+        <translation>ตำแหน่ง:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">ผลการคำนวณอินพุต</translation>
+        <translation>ผลการคำนวณสำหรับการป้อนข้อมูล</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)...</translation>
+        <translation>เพิ่ม (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">ลบ (&amp;D)</translation>
+        <translation>ลบ (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">ความหมายของตัวแปร</translation>
+        <translation>ความหมายของตัวแปร</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;"&gt;ที่นี่&lt;/span&gt;&lt;/a&gt; เพื่อดูรายละเอียด&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">ทดสอบ</translation>
+        <translation>ทดสอบ</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถทดสอบคำจำกัดความได้โดยคลิกที่นี่ หากเกิดข้อผิดพลาดขณะแยกวิเคราะห์คำจำกัดความ ข้อความแสดงข้อผิดพลาดจะปรากฏขึ้น เมื่อแยกวิเคราะห์คำจำกัดความสำเร็จ ค่าที่คำนวณโดยใช้ปุ่ม &amp;quot;ค่าสำหรับการทดสอบquot; สำหรับแต่ละอินพุตจะแสดงขึ้น&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถทดสอบคำจำกัดความได้โดยคลิกที่นี่ หากเกิดข้อผิดพลาดขณะแยกวิเคราะห์คำจำกัดความ ข้อความแสดงข้อผิดพลาดจะปรากฏขึ้น เมื่อแยกวิเคราะห์คำจำกัดความสำเร็จ ค่าจะคำนวณโดยใช้ &amp;quot;ค่าสำหรับการทดสอบquot; สำหรับแต่ละอินพุตจะปรากฏขึ้น&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">ชื่อผลลัพธ์</translation>
+        <translation>ชื่อผลลัพธ์</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">ชื่อตัวแปร</translation>
+        <translation>ชื่อตัวแปร</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">คุ้มค่าสำหรับการทดสอบ</translation>
+        <translation>มูลค่าสำหรับการทดสอบ</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">โหนดกริด</translation>
+        <translation>โหนดกริด</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">เซลล์กริด</translation>
+        <translation>กริดเซลล์</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>กริด iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>ตาราง jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>ตาราง kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">อนุภาค</translation>
+        <translation>อนุภาค</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">คำเตือน</translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">ไม่ได้ใส่ชื่อ</translation>
+        <translation>ไม่ได้ป้อนชื่อ</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">ชื่อนี้ถูกใช้ไปแล้ว</translation>
+        <translation>ชื่อนี้ถูกใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
+        <translation>คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">รายการผลการดำเนินการอย่างง่าย</translation>
+        <translation>รายการผลการดำเนินงานอย่างง่าย</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">ชื่อ</translation>
+        <translation>ชื่อ</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">ตำแหน่ง</translation>
+        <translation>ตำแหน่ง</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">ขึ้น (&amp;U)</translation>
+        <translation>ขึ้น (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">ลง (&amp;D)</translation>
+        <translation>ลง (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปร ซึ่งปรากฏก่อนหน้าในรายการ&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;หมายเหตุ&lt;/span&gt;: ลำดับในรายการมีความสำคัญ ในคำจำกัดความ คุณสามารถใช้ค่าของการคำนวณการดำเนินการอย่างง่ายเป็นตัวแปรที่ปรากฏก่อนหน้าในรายการได้&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">เพิ่ม (&amp;A)...</translation>
+        <translation>เพิ่ม (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">แก้ไข (&amp;E)...</translation>
+        <translation>แก้ไข (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">ลบ (&amp;D)</translation>
+        <translation>ลบ (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">คำเตือน</translation>
+        <translation>คำเตือน</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
+        <translation>คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">โหนดกริด</translation>
+        <translation>โหนดกริด</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">เซลล์กริด</translation>
+        <translation>กริดเซลล์</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>กริด iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>ตาราง jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>ตาราง kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">อนุภาค</translation>
+        <translation>อนุภาค</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">ไดอะล็อก</translation>
+        <translation>กล่องโต้ตอบ</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">ประเภทกริด:</translation>
+        <translation>ประเภทกริด:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">ภาค: (&amp;R)</translation>
+        <translation>ภูมิภาค: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">เส้นขอบตัดกับเซลล์อื่นในตารางนี้</translation>
+        <translation>เส้นขอบตัดกับเซลล์อื่นในตารางนี้</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">อัตราส่วนภาพของเซลล์กริดเกินค่าขีดจำกัด %1 ในเซลล์มากกว่าหนึ่งเซลล์</translation>
+        <translation>อัตราส่วนกว้างยาวของเซลล์กริดเกินค่าจำกัด %1 ในมากกว่าหนึ่งเซลล์</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">การเปลี่ยนแปลงของความยาวขอบเซลล์กริดเกินค่าจำกัด (ทิศทาง I: %1, ทิศทาง J: %2 ) ในเซลล์มากกว่าหนึ่งเซลล์</translation>
+        <translation>การเปลี่ยนแปลงของความยาวขอบเซลล์กริดเกินค่าจำกัด (ทิศทาง I: %1, ทิศทาง J: %2 ) ในมากกว่าหนึ่งเซลล์</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">มุมของขอบเซลล์กริดต่ำกว่าค่าจำกัด %1 ในเซลล์มากกว่าหนึ่งเซลล์</translation>
+        <translation>มุมของขอบเซลล์ตารางอยู่ต่ำกว่าค่าขีดจำกัด %1 ในมากกว่าหนึ่งเซลล์</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* เซลล์ที่ขอบตัดกัน</translation>
+        <translation>* เซลล์ที่ขอบตัดกัน</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">ไม่มีอยู่จริง</translation>
+        <translation>ไม่มีอยู่จริง</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* เซลล์ที่มีอัตราส่วนกว้างยาวของขอบเซลล์เกิน %1</translation>
+        <translation>* เซลล์ที่มีอัตราส่วนกว้างยาวของขอบเซลล์เกิน %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">ฉัน, เจ, อัตราส่วนภาพ</translation>
+        <translation>I, J, อัตราส่วนภาพ</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">ความยาวของขอบเล็กเกินไป</translation>
+        <translation>ความยาวขอบเล็กเกินไป</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* เซลล์ที่มุมของจุดยอดเซลล์อยู่ด้านล่าง %1</translation>
+        <translation>* เซลล์ที่มีมุมของจุดยอดเซลล์อยู่ด้านล่าง %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">ฉัน, เจ, แองเกิล</translation>
+        <translation>ฉัน เจ แองเกิล</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* เซลล์ที่การเปลี่ยนแปลงของความยาวเซลล์ตามทิศทาง i เกิน %1</translation>
+        <translation>* เซลล์ที่ความแปรผันของความยาวเซลล์ตามทิศทาง i เกิน %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">ฉัน, เจ, การเปลี่ยนแปลง</translation>
+        <translation>ฉัน, เจ, การเปลี่ยนแปลง</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* เซลล์ที่การเปลี่ยนแปลงของความยาวเซลล์ตามทิศทาง j เกิน %1</translation>
+        <translation>* เซลล์ที่ความแปรผันของความยาวเซลล์ตามทิศทาง j เกิน %1</translation>
     </message>
 </context>
 </TS>

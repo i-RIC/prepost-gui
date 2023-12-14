@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -341,11 +339,11 @@
     <name>CgnsZoneSelectDialog</name>
     <message>
         <source>Select grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectați grila de importat</translation>
     </message>
     <message>
         <source>Please select which grid to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Vă rugăm să selectați ce grilă să importați</translation>
     </message>
 </context>
 <context>
@@ -1508,8 +1506,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Culoare:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1615,12 +1613,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Nodul de definiție nu este stocat</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>ValueType greșit &quot;%1&quot;este setat.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>ValueType greșit "%1"este setat.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Stare greșită Tip &quot;%1&quot;este setat.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Stare greșită Tip "%1"este setat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1891,7 +1889,7 @@ Do you really want to import this file?</source>
         <translation>Fişier %1 este actualizat după import în condiția de calcul %2. Doriți să importați fișierul actualizat?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Puteți copia și lipi valorile, cu comanda rapidă „Ctrl + C” și „Ctrl + V”</translation>
     </message>
     <message>
@@ -2021,7 +2019,7 @@ Do you really want to import this file?</source>
         <translation>A apărut o eroare la deschiderea fișierului.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>Primele două coloane trebuie să fie „X” și „Y”.</translation>
     </message>
     <message>
@@ -2183,8 +2181,8 @@ Do you really want to import this file?</source>
         <translation>Definiția variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2262,8 +2260,8 @@ Do you really want to import this file?</source>
         <translation>Jos (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2624,8 +2622,8 @@ Do you really want to import this file?</source>
         <translation>Definiția output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2701,7 +2699,7 @@ Do you really want to import this file?</source>
     <name>PreProcessorGridCreatingConditionDataItemI</name>
     <message>
         <source>Grid Creating Condition</source>
-        <translation type="unfinished">Starea de creare a grilei</translation>
+        <translation>Condiție de creare a rețelei</translation>
     </message>
 </context>
 <context>
@@ -2876,11 +2874,11 @@ Do you really want to import this file?</source>
     <name>ProjectPostProcessors</name>
     <message>
         <source>Select import target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectați ferestrele țintă de import</translation>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectați ferestrele țintă de export</translation>
     </message>
 </context>
 <context>
@@ -2909,8 +2907,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Spațiu de lucru &quot;%1&quot;are %2 foldere de proiect care par să nu mai fie folosite. Doriți să le eliminați?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Spațiu de lucru "%1"are %2 foldere de proiect care par să nu mai fie folosite. Doriți să le eliminați?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3436,290 +3434,290 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResult</name>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation type="unfinished">A aparut o eroare: %1</translation>
+        <translation>A aparut o eroare: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation type="unfinished">Verificarea argumentului pentru %1 a eșuat. Argumente nevalide: %2.</translation>
+        <translation>Verificarea argumentului pentru %1 a eșuat. Argumente nevalide: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation type="unfinished">Editați variația rezultatului operației simple</translation>
+        <translation>Editați variabila rezultat al operației simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
-        <translation type="unfinished">Rezultatul calculului:</translation>
+        <translation>Rezultatul calculului:</translation>
     </message>
     <message>
         <source>Variable name:</source>
-        <translation type="unfinished">Numele variabilei:</translation>
+        <translation>Numele variabilei:</translation>
     </message>
     <message>
         <source>Value for testing:</source>
-        <translation type="unfinished">Valoare pentru testare:</translation>
+        <translation>Valoare pentru testare:</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation type="unfinished">Numele variabilei nu este introdus.</translation>
+        <translation>Numele variabilei nu este introdus.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation type="unfinished">Acest nume de variabilă este deja utilizat</translation>
+        <translation>Acest nume de variabilă este deja folosit</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation type="unfinished">Editați rezultatul operației simple</translation>
+        <translation>Editați rezultatul operației simple</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Nume:</translation>
+        <translation>Nume:</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation type="unfinished">Poziţie:</translation>
+        <translation>Poziţie:</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation type="unfinished">Rezultatele calculului pentru intrare</translation>
+        <translation>Rezultatele calculului pentru intrare</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Adăuga (&amp;A)...</translation>
+        <translation>Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Șterge (&amp;D)</translation>
+        <translation>Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Definition of variable</source>
-        <translation type="unfinished">Definiția variable</translation>
+        <translation>Definiţia variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți defini variabila cu limbajul JavaScript. Consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decor: subliniere; culoare:#0000ff;"&gt;aici&lt;/span&gt;&lt;/a&gt; pentru detalii.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation type="unfinished">Test</translation>
+        <translation>Test</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți testa definiția făcând clic pe aceasta. Dacă apare o eroare în timpul analizei definiției, este afișat mesajul de eroare. Când definiția este analizată cu succes, valoarea calculată utilizând „Valoarea pentru testarequot; pentru fiecare intrare este afișat. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți testa definiția făcând clic pe aceasta. Dacă apare o eroare în timpul analizării definiției, este afișat mesajul de eroare. Când definiția este analizată cu succes, valoarea calculată utilizând „Valoare pentru testare”; pentru fiecare intrare este afișată.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
-        <translation type="unfinished">----</translation>
+        <translation>----</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation type="unfinished">Numele rezultatului</translation>
+        <translation>Numele rezultatului</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation type="unfinished">Numele variabilei</translation>
+        <translation>Nume variabilă</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation type="unfinished">Valoare pentru testare</translation>
+        <translation>Valoare pentru testare</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Nodul grilei</translation>
+        <translation>Nod grilă</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Celulă grilă</translation>
+        <translation>Celula grilă</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grilă iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Particulă</translation>
+        <translation>Particulă</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation type="unfinished">Numele nu este introdus.</translation>
+        <translation>Numele nu este introdus.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation type="unfinished">Acest nume este deja folosit</translation>
+        <translation>Acest nume este deja folosit</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">ești sigur că vrei să ștergi %1 ?</translation>
+        <translation>ești sigur că vrei să ștergi %1 ?</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation type="unfinished">Lista rezultatelor operației simple</translation>
+        <translation>Lista rezultatelor operațiunii simple</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nume</translation>
+        <translation>Nume</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation type="unfinished">Poziţie</translation>
+        <translation>Poziţie</translation>
     </message>
     <message>
         <source>&amp;Up</source>
-        <translation type="unfinished">Sus (&amp;U)</translation>
+        <translation>Sus (&amp;U)</translation>
     </message>
     <message>
         <source>&amp;Down</source>
-        <translation type="unfinished">Jos (&amp;D)</translation>
+        <translation>Jos (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă&lt;/span&gt;: ordinea în listă este importantă. În definiție, puteți utiliza valoarea calculelor operaționale simple ca variabilă, care apare mai devreme în listă.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation type="unfinished">Adăuga (&amp;A)...</translation>
+        <translation>Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation type="unfinished">Editați | × (&amp;E)...</translation>
+        <translation>Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation type="unfinished">Șterge (&amp;D)</translation>
+        <translation>Șterge (&amp;D)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertizare</translation>
+        <translation>Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation type="unfinished">ești sigur că vrei să ștergi %1 ?</translation>
+        <translation>ești sigur că vrei să ștergi %1 ?</translation>
     </message>
     <message>
         <source>Grid node</source>
-        <translation type="unfinished">Nodul grilei</translation>
+        <translation>Nod grilă</translation>
     </message>
     <message>
         <source>Grid cell</source>
-        <translation type="unfinished">Celulă grilă</translation>
+        <translation>Celula grilă</translation>
     </message>
     <message>
         <source>Grid iEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grilă iEdge</translation>
     </message>
     <message>
         <source>Grid jEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid jEdge</translation>
     </message>
     <message>
         <source>Grid kEdge</source>
-        <translation type="unfinished"></translation>
+        <translation>Grid kEdge</translation>
     </message>
     <message>
         <source>Particle</source>
-        <translation type="unfinished">Particulă</translation>
+        <translation>Particulă</translation>
     </message>
 </context>
 <context>
     <name>v4PostZoneSelectingDialog</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished">Dialog</translation>
+        <translation>Dialog</translation>
     </message>
     <message>
         <source>Grid Type:</source>
-        <translation type="unfinished">Tipul grilei:</translation>
+        <translation>Tip grilă:</translation>
     </message>
     <message>
         <source>&amp;Region:</source>
-        <translation type="unfinished">Regiune: (&amp;R)</translation>
+        <translation>Regiune: (&amp;R)</translation>
     </message>
 </context>
 <context>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="unfinished">O linie de margine se intersectează cu cea a altei celule din această grilă.</translation>
+        <translation>O linie de margine se intersectează cu cea a unei alte celule din această grilă.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Raportul de aspect al celulei de rețea depășește valoarea limită %1 în mai multe celule.</translation>
+        <translation>Raportul de aspect al celulei grilei depășește valoarea limită %1 în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation type="unfinished">Variația lungimilor marginii celulei de rețea depășește valorile limită (direcția I: %1, Direcția J: %2 ) în mai multe celule.</translation>
+        <translation>Variația lungimii marginilor celulei grilei depășește valorile limită (direcția I: %1, direcția J: %2 ) în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation type="unfinished">Unghiul marginii celulei grilei scade sub valoarea limită %1 în mai multe celule.</translation>
+        <translation>Unghiul marginii celulei grilei scade sub valoarea limită %1 în mai mult de o celulă.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
-        <translation type="unfinished">* Celulele unde marginile se intersectează</translation>
+        <translation>* Celulele unde marginile se intersectează</translation>
     </message>
     <message>
         <source>Not exist</source>
-        <translation type="unfinished">Nu exista</translation>
+        <translation>Nu exista</translation>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="unfinished">* Celule în care raportul de aspect al marginilor celulei depășește %1</translation>
+        <translation>* Celule în care raportul de aspect al marginilor celulei depășește %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="unfinished">I, J, Raport de aspect</translation>
+        <translation>I, J, raport de aspect</translation>
     </message>
     <message>
         <source>Edge length too small</source>
-        <translation type="unfinished">Lungimea muchiei este prea mică</translation>
+        <translation>Lungimea muchiei prea mică</translation>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="unfinished">* Celulele unde unghiul vertexului celular este mai jos %1</translation>
+        <translation>* Celule în care unghiul vârfului celulei este mai jos %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
-        <translation type="unfinished">Eu, J, Angle</translation>
+        <translation>I, J, Unghi</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along i-direction exceed %1</source>
-        <translation type="unfinished">* Celule în care variația lungimii celulei de-a lungul direcției i depășește %1</translation>
+        <translation>* Celule în care variația lungimii celulei de-a lungul direcției i depășește %1</translation>
     </message>
     <message>
         <source>I, J, Variation</source>
-        <translation type="unfinished">Eu, J, Variație</translation>
+        <translation>I, J, Variație</translation>
     </message>
     <message>
         <source>* Cells where variation of cell length along j-direction exceed %1</source>
-        <translation type="unfinished">* Celule în care variația lungimii celulei de-a lungul direcției j depășește %1</translation>
+        <translation>* Celulele în care variația lungimii celulei de-a lungul direcției j depășește %1</translation>
     </message>
 </context>
 </TS>

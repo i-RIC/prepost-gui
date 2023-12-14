@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Можете да използвате само ASCII знаци.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>папка &quot;%1&quot; вече съществува.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>папка "%1" вече съществува.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Проектът е запазен успешно в %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Възникна грешка при подготовката на данни за модел в &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Възникна грешка при подготовката на данни за модел в "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Внимание</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Няма открита съществуваща папка на проекта в &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Няма открита съществуваща папка на проекта в "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Проектът е модифициран. Искате ли да спестите?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Запазване &quot;%1&quot; е неуспешно. Моля, уверете се, че друга програма отваря файла, и опитайте отново.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Запазване "%1" е неуспешно. Моля, уверете се, че друга програма отваря файла, и опитайте отново.</translation>
     </message>
 </context>
 <context>

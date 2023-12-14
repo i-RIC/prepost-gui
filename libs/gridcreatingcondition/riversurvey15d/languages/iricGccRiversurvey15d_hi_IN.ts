@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>केंद्र बिंदु से दूरी</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;लेफ्ट बैंक&quot; वह बैंक है जिसे आप बाईं ओर देखते हैं, जब आप डाउनस्ट्रीम दिशा की ओर मुड़ते हैं।</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"लेफ्ट बैंक" वह बैंक है जिसे आप बाईं ओर देखते हैं, जब आप डाउनस्ट्रीम दिशा की ओर मुड़ते हैं।</translation>
     </message>
 </context>
 </TS>

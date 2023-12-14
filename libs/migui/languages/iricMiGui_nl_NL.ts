@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>U kunt alleen ASCII-tekens gebruiken.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Map &quot;%1&quot; bestaat al.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Map "%1" bestaat al.</translation>
     </message>
 </context>
 <context>
@@ -200,23 +198,23 @@
     </message>
     <message>
         <source>Saving %1 failed. Please make sure other programs are opening the file, and try again.</source>
-        <translation>Besparing %1 mislukt. Zorg ervoor dat andere programma&apos;s het bestand openen en probeer het opnieuw.</translation>
+        <translation>Besparing %1 mislukt. Zorg ervoor dat andere programma's het bestand openen en probeer het opnieuw.</translation>
     </message>
     <message>
         <source>Project successfully saved to %1</source>
         <translation>Project succesvol opgeslagen in %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Er is een fout opgetreden bij het voorbereiden van gegevens voor het model in &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Er is een fout opgetreden bij het voorbereiden van gegevens voor het model in "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Geen bestaande projectmap gevonden in &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Geen bestaande projectmap gevonden in "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Het project is aangepast. Wil je bewaren?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Opslaan &quot;%1&quot; mislukt. Zorg ervoor dat een ander programma het bestand opent en probeer het opnieuw.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Opslaan "%1" mislukt. Zorg ervoor dat een ander programma het bestand opent en probeer het opnieuw.</translation>
     </message>
 </context>
 <context>

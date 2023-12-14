@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Només podeu utilitzar caràcters ASCII.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Carpeta &quot;%1&quot; ja existeix.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Carpeta "%1" ja existeix.</translation>
     </message>
 </context>
 <context>
@@ -120,7 +118,7 @@
     </message>
     <message>
         <source>Add &amp;Existing...</source>
-        <translation>Afegeix l&apos;existent (&amp;E)...</translation>
+        <translation>Afegeix l'existent (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Remove...</source>
@@ -144,7 +142,7 @@
     </message>
     <message>
         <source>toolBar</source>
-        <translation>barra d&apos;eines</translation>
+        <translation>barra d'eines</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
@@ -207,16 +205,16 @@
         <translation>Projecte desat correctament a %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>S&apos;ha produït un error en preparar les dades per al model a &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>S'ha produït un error en preparar les dades per al model a "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Avís</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>No s&apos;ha trobat cap carpeta de projecte existent a &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>No s'ha trobat cap carpeta de projecte existent a "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Es modifica el projecte. Vols estalviar?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Guardant &quot;%1&quot; ha fallat. Assegureu-vos que un altre programa estigui obrint el fitxer i torneu-ho a provar.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Guardant "%1" ha fallat. Assegureu-vos que un altre programa estigui obrint el fitxer i torneu-ho a provar.</translation>
     </message>
 </context>
 <context>
@@ -275,11 +273,11 @@
     </message>
     <message>
         <source>Input model</source>
-        <translation>Model d&apos;entrada</translation>
+        <translation>Model d'entrada</translation>
     </message>
     <message>
         <source>Input value</source>
-        <translation>Valor d&apos;entrada</translation>
+        <translation>Valor d'entrada</translation>
     </message>
 </context>
 </TS>

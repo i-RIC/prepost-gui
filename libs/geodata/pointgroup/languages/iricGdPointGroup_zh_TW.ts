@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>GeoDataPointGroup</name>
@@ -142,7 +140,7 @@
         <translation>讀取標題行時出錯。標題至少應有 4 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
         <translation>讀取標題行時出錯。柱子 %1 應該 ” %2 “， 但 ” %3 “ 給出。</translation>
     </message>
     <message>
@@ -158,15 +156,15 @@
         <translation>讀取行時出錯 %1.數據至少應有 4 列。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
         <translation>讀取行中的“x”值時出錯 %1. “x”應該是真實值，但“ %2 ”的規定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
         <translation>在線讀取“y”值時發生錯誤 %1. “y”應該是真正的價值，但“ %2 ”的規定。</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
         <translation>在線讀取“值”值時發生錯誤 %1. “價值”應該是真正的價值，但“ %2 ”的規定。</translation>
     </message>
 </context>

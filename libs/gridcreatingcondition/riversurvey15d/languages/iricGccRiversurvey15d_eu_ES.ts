@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,8 +218,8 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Erdigunetik distantzia</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Ezkerreko ertza&quot; ezkerreko aldean ikusten duzun bankua da, ibaian behera norabidean jotzen duzunean.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Ezkerreko ertza" ezkerreko aldean ikusten duzun bankua da, ibaian behera norabidean jotzen duzunean.</translation>
     </message>
 </context>
 </TS>

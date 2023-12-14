@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -33,11 +31,11 @@
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation>La définition des conditions de création de la grille n&apos;est pas encore terminée.</translation>
+        <translation>La définition des conditions de création de la grille n'est pas encore terminée.</translation>
     </message>
     <message>
         <source>Grid center line is not defined yet. Please click in the main region to define the grid center line.</source>
-        <translation>La ligne centrale de la grille n&apos;est pas encore définie. Veuillez cliquer dans la région principale pour définir la ligne centrale de la grille.</translation>
+        <translation>La ligne centrale de la grille n'est pas encore définie. Veuillez cliquer dans la région principale pour définir la ligne centrale de la grille.</translation>
     </message>
     <message>
         <source>The maximum number of grid nodes is %1.</source>
@@ -89,7 +87,7 @@
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Paramètre d&apos;affichage</translation>
+        <translation>Paramètre d'affichage</translation>
     </message>
 </context>
 <context>
@@ -115,11 +113,11 @@
     <name>GridCreatingConditionCreatorCenterAndWidth</name>
     <message>
         <source>Create grid from polygonal line and width</source>
-        <translation>Créer une grille à partir d&apos;une ligne et d&apos;une largeur polygonales</translation>
+        <translation>Créer une grille à partir d'une ligne et d'une largeur polygonales</translation>
     </message>
     <message>
         <source>First, please define polygonal line, by mouse-clicking. The polygonal line is used as the center line of the grid. Then, you define the width, division number of grid in I direction and J direction.</source>
-        <translation>Tout d&apos;abord, veuillez définir une ligne polygonale en cliquant avec la souris. La ligne polygonale est utilisée comme ligne centrale de la grille. Ensuite, vous définissez la largeur, le numéro de division de la grille dans la direction I et la direction J.</translation>
+        <translation>Tout d'abord, veuillez définir une ligne polygonale en cliquant avec la souris. La ligne polygonale est utilisée comme ligne centrale de la grille. Ensuite, vous définissez la largeur, le numéro de division de la grille dans la direction I et la direction J.</translation>
     </message>
 </context>
 </TS>

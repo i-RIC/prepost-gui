@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>AboutDialog</name>
@@ -29,11 +27,11 @@
     </message>
     <message>
         <source>rivmaker 2.0.5</source>
-        <translation type="unfinished">fabricante de agujeros 2.0.5</translation>
+        <translation>fabricante de riv 2.0.5</translation>
     </message>
     <message>
         <source>Release Date: 2023/8/29</source>
-        <translation type="unfinished">Fecha de lanzamiento: 2023/8/29</translation>
+        <translation>Fecha de lanzamiento: 29/8/2023</translation>
     </message>
 </context>
 <context>
@@ -194,8 +192,8 @@
         <translation>La sección transversal aún no está definida.</translation>
     </message>
     <message>
-        <source>Invalid name for cross section. The name should be &quot;X1&quot;, &quot;X2&quot;, ...&#x3000;or &quot;XS1&quot;, &quot;XS2&quot;, ...</source>
-        <translation>Nombre no válido para sección transversal. El nombre debe ser &quot;X1&quot;, &quot;X2&quot;,... o &quot;XS1&quot;, &quot;XS2&quot;,...</translation>
+        <source>Invalid name for cross section. The name should be "X1", "X2", ...　or "XS1", "XS2", ...</source>
+        <translation>Nombre no válido para sección transversal. El nombre debe ser "X1", "X2",... o "XS1", "XS2",...</translation>
     </message>
 </context>
 <context>

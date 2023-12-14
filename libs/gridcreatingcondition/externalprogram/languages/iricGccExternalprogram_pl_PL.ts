@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Ostrzeżenie</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Wystąpił błąd podczas ładowania pliku definicji kreatora siatki w folderze &quot;%1&quot;. Ten twórca siatki jest ignorowany. %2</translation>
+        <translation>Wystąpił błąd podczas ładowania pliku definicji kreatora siatki w folderze "%1". Ten twórca siatki jest ignorowany. %2</translation>
     </message>
 </context>
 <context>

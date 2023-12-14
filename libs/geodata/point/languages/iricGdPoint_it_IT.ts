@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GeoDataPoint</name>
@@ -93,7 +91,7 @@
     </message>
     <message>
         <source>Use Setting of Pre-Processing Window</source>
-        <translation>Utilizzare l&apos;impostazione della finestra di pre-elaborazione</translation>
+        <translation>Utilizzare l'impostazione della finestra di pre-elaborazione</translation>
     </message>
 </context>
 <context>
@@ -116,7 +114,7 @@
     </message>
     <message>
         <source>Icon Images</source>
-        <translation>Immagini dell&apos;icona</translation>
+        <translation>Immagini dell'icona</translation>
     </message>
     <message>
         <source>&amp;Import image</source>
@@ -132,7 +130,7 @@
     </message>
     <message>
         <source>When the width or height of the imported image is larger than Max size, the image is automatically shrinked so that the width or height becomes equal to the max size.</source>
-        <translation>Quando la larghezza o l&apos;altezza dell&apos;immagine importata è maggiore di Dimensione massima, l&apos;immagine viene automaticamente ridotta in modo che la larghezza o l&apos;altezza diventi uguale alla dimensione massima.</translation>
+        <translation>Quando la larghezza o l'altezza dell'immagine importata è maggiore di Dimensione massima, l'immagine viene automaticamente ridotta in modo che la larghezza o l'altezza diventi uguale alla dimensione massima.</translation>
     </message>
     <message>
         <source>Color</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>ConnectionAddDialog</name>
@@ -77,8 +75,8 @@
         <translation>Þú getur aðeins notað ASCII stafi.</translation>
     </message>
     <message>
-        <source>Folder &quot;%1&quot; already exists.</source>
-        <translation>Mappa&quot;%1&quot; er þegar til.</translation>
+        <source>Folder "%1" already exists.</source>
+        <translation>Mappa"%1" er þegar til.</translation>
     </message>
 </context>
 <context>
@@ -207,16 +205,16 @@
         <translation>Verkefni var vistað í %1</translation>
     </message>
     <message>
-        <source>Error occured while preparing data for model in &quot;%1&quot;</source>
-        <translation>Villa kom upp við undirbúning gagna fyrir líkan í &quot;%1&quot;</translation>
+        <source>Error occured while preparing data for model in "%1"</source>
+        <translation>Villa kom upp við undirbúning gagna fyrir líkan í "%1"</translation>
     </message>
     <message>
         <source>Warning</source>
         <translation>Viðvörun</translation>
     </message>
     <message>
-        <source>No existing project folder found in &quot;%1&quot;.</source>
-        <translation>Engin núverandi verkefnismappa fannst í &quot;%1&quot;.</translation>
+        <source>No existing project folder found in "%1".</source>
+        <translation>Engin núverandi verkefnismappa fannst í "%1".</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this connection?</source>
@@ -243,8 +241,8 @@
         <translation>Verkefnið er breytt. Viltu spara?</translation>
     </message>
     <message>
-        <source>Saving &quot;%1&quot; failed. Please make sure other program is opening the file, and try again.</source>
-        <translation>Vistar&quot;%1&quot; mistókst. Gakktu úr skugga um að annað forrit sé að opna skrána og reyndu aftur.</translation>
+        <source>Saving "%1" failed. Please make sure other program is opening the file, and try again.</source>
+        <translation>Vistar"%1" mistókst. Gakktu úr skugga um að annað forrit sé að opna skrána og reyndu aftur.</translation>
     </message>
 </context>
 <context>
