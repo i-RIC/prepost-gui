@@ -14,14 +14,16 @@
 #include <QStringList>
 #include <QVariant>
 
-InputConditionWidgetCgnsResult::InputConditionWidgetCgnsResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file) :
+InputConditionWidgetCgnsResult::InputConditionWidgetCgnsResult(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerString* cont, InputConditionCgnsFile* file, bool noStretch) :
 	InputConditionWidget(defnode),
 	m_comboBox {new QComboBox {this}},
 	m_cgnsFile {file},
 	m_translator {&t}
 {
 	auto layout = new QHBoxLayout(this);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->addWidget(m_comboBox, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);

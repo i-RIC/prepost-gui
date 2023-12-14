@@ -12,13 +12,16 @@
 #include <QHBoxLayout>
 #include <QVariant>
 
-InputConditionWidgetRealOption::InputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont) : InputConditionWidget(defnode)
+InputConditionWidgetRealOption::InputConditionWidgetRealOption(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerReal* cont, bool noStretch) :
+	InputConditionWidget(defnode)
 {
 	// add nominations;
 	QList<QDomNode> noms = getEnums(defnode);
 	m_comboBox = new QComboBox(this);
 	QHBoxLayout* layout = new QHBoxLayout(this);
-	layout->addStretch(1);
+	if (! noStretch) {
+		layout->addStretch(1);
+	}
 	layout->addWidget(m_comboBox, 1);
 	layout->setMargin(InputConditionWidget::margin);
 	setLayout(layout);

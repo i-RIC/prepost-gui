@@ -397,6 +397,19 @@ void InputConditionContainerFunctional::exportToYaml(QTextStream* stream, const 
 	saveDataToCsvFile(dir.absoluteFilePath(filename));
 }
 
+void InputConditionContainerFunctional::importFromString(const QString& value, const QDir& dir)
+{
+	QString filename = value;
+	loadDataFromCsvFile(dir.absoluteFilePath(filename));
+}
+
+void InputConditionContainerFunctional::exportToString(QString* value, const QDir& dir)
+{
+	QString filename = QString("%1.csv").arg(name().c_str());
+	*value = filename;
+	saveDataToCsvFile(dir.absoluteFilePath(filename));
+}
+
 bool InputConditionContainerFunctional::loadDataFromCsvFile(const QString& filename)
 {
 	removeAllValues();

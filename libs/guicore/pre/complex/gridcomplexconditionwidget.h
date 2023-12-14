@@ -30,16 +30,12 @@ public:
 	GridComplexConditionWidget(QWidget* parent = nullptr);
 	~GridComplexConditionWidget();
 
-	void setup(SolverDefinition* def, const QDomElement& elem);
-
 	QString caption() const;
-	void setCaption(const QString& caption);
 
 	QColor color() const;
-	void setColor(const QColor& color);
 
 	bool isDefault() const;
-	void setIsDefault(bool def);
+	void hideWidgetsNotForCalculationCondition();
 
 	GridComplexConditionGroup* group();
 	void setGroup(GridComplexConditionGroup* group);
@@ -48,7 +44,14 @@ signals:
 	void captionChanged(const QString& caption);
 	void defaultChecked(bool checked);
 
+public slots:
+	void setCaption(const QString& caption);
+	void setColor(const QColor& color);
+	void setIsDefault(bool def);
+
 private slots:
+	void handleCaptionEdit(const QString caption);
+	void handleColorEdit(const QColor& color);
 	void handleDefaultCheck(bool checked);
 
 private:

@@ -8,14 +8,16 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 
-InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont) :
+InputConditionWidgetFunctional::InputConditionWidgetFunctional(QDomNode defnode, const SolverDefinitionTranslator& t, InputConditionContainerFunctional* cont, bool noStretch) :
 	InputConditionWidget(defnode),
 	m_container {cont}
 {
 	QPushButton* button = new QPushButton(QString(tr("Edit")), this);
 	button->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	QHBoxLayout* l = new QHBoxLayout(0);
-	l->addStretch(1);
+	if (! noStretch) {
+		l->addStretch(1);
+	}
 	l->addWidget(button, 0);
 	l->setMargin(InputConditionWidget::margin);
 	setLayout(l);

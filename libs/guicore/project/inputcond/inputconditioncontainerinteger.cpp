@@ -99,7 +99,7 @@ QVariant InputConditionContainerInteger::variantValue() const
 	return QVariant(impl->m_value);
 }
 
-void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir&)
+void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const QDir& /*dir*/)
 {
 	if (doc[name()]) {
 		impl->m_value = doc[name()].as<int>();
@@ -108,9 +108,21 @@ void InputConditionContainerInteger::importFromYaml(const YAML::Node& doc, const
 	}
 }
 
-void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir&)
+void InputConditionContainerInteger::exportToYaml(QTextStream* stream, const QDir& /*dir*/)
 {
 	*stream << name().c_str() << ": " << impl->m_value << "\t#[integer] " << caption() << "\r\n";
+}
+
+void InputConditionContainerInteger::importFromString(const QString& value, const QDir& /*dir*/)
+{
+	impl->m_value = value.toInt();
+	emit valueChanged(impl->m_value);
+	emit valueChanged();
+}
+
+void InputConditionContainerInteger::exportToString(QString* value, const QDir& /*dir*/)
+{
+	*value = QString::number(impl->m_value);
 }
 
 void InputConditionContainerInteger::setup(const QDomNode& defNode)

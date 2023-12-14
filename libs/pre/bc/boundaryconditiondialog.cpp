@@ -72,7 +72,9 @@ void BoundaryConditionDialog::setup(SolverDefinition* def, const QDomElement& el
 	// setup WidgetSet.
 	m_widgetSet->setup(elem, *m_containerSet, *def, t, true);
 
-	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, t, this);
+	std::unordered_map<std::string, QPushButton*> emptyButtons;
+
+	InputConditionPage* page = new InputConditionPage(elem, m_widgetSet, emptyButtons, t, this);
 	QVBoxLayout* layout = new QVBoxLayout(this);
 	layout->setMargin(0);
 	layout->addWidget(page);

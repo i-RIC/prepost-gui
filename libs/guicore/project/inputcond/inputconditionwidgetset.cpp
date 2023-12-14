@@ -3,6 +3,7 @@
 #include "../../solverdef/solverdefinitiontranslator.h"
 #include "inputconditioncontainerset.h"
 #include "inputconditiondependency.h"
+#include "inputconditionwidget.h"
 #include "inputconditionwidgetfilename.h"
 #include "inputconditionwidgetset.h"
 
@@ -51,11 +52,11 @@ InputConditionWidgetSet::~InputConditionWidgetSet()
 	clear();
 }
 
-void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
+void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC, bool noStretch)
 {
 	// build widgets first.
 	clearLabelAndImageCount();
-	buildWidgets(condNode, cset, def, t, forBC);
+	buildWidgets(condNode, cset, def, t, forBC, noStretch);
 	// build dependencies between the widgets.
 	clearLabelAndImageCount();
 	buildDeps(condNode, cset, forBC);
@@ -63,7 +64,7 @@ void InputConditionWidgetSet::setup(const QDomNode& condNode, InputConditionCont
 
 InputConditionWidget* InputConditionWidgetSet::widget(const std::string& name) const
 {
-	return m_widgets.value(name);
+	return m_widgets.value(name, nullptr);
 }
 
 bool InputConditionWidgetSet::checkImportSourceUpdate()
@@ -83,26 +84,26 @@ void InputConditionWidgetSet::clear()
 	m_widgets.clear();
 }
 
-void InputConditionWidgetSet::buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC)
+void InputConditionWidgetSet::buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC, bool noStretch)
 {
 	if (forBC) {
-		buildWidgetsCustom(condNode, cset, def, t);
+		buildWidgetsCustom(condNode, cset, def, t, noStretch);
 	} else {
 		QDomNodeList pages = condNode.childNodes();
 		for (int i = 0; i < pages.length(); ++i) {
 			QDomNode page = pages.item(i);
-			buildWidgetsCustom(page, cset, def, t);
+			buildWidgetsCustom(page, cset, def, t, noStretch);
 		}
 	}
 }
 
-void InputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch)
 {
 	// get Content Node.
-	buildWidgetsCustomRec(contNode, cset, def, t);
+	buildWidgetsCustomRec(contNode, cset, def, t, noStretch);
 }
 
-void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch)
 {
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.length(); ++i) {
@@ -110,7 +111,7 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 		if (c.nodeType() == QDomNode::ElementNode) {
 			if (c.nodeName() == "Item") {
 				// build item.
-				buildWidget(c, cset, def, t);
+				buildWidget(c, cset, def, t, noStretch);
 				if (c.toElement().attributes().contains("caption")) {
 					buildLabel(c, t);
 				}
@@ -121,103 +122,113 @@ void InputConditionWidgetSet::buildWidgetsCustomRec(const QDomNode& node, InputC
 				buildLabel(c, t);
 			} else {
 				// search item recursively.
-				buildWidgetsCustomRec(c, cset, def, t);
+				buildWidgetsCustomRec(c, cset, def, t, noStretch);
 			}
 		}
 	}
 }
 
-void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t)
+void InputConditionWidgetSet::buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch)
 {
 	// get the name;
 	QDomElement itemElem = itemNode.toElement();
 	std::string parameterName = iRIC::toStr(itemElem.attribute("name"));
 	QString parameterCaption = t.translate(itemElem.attribute("caption"));
-	// get the definition node;
-	QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
-	if (defNode.isNull()) {
-		// this item doesn't contain "Definition" Node!".
-		throw(ErrorMessage("Definition node does not exist!"));
-	}
-	QDomElement defElem = defNode.toElement();
-	QString type = defElem.attribute("conditionType", "");
-	// setup container depending on the type
-	InputConditionWidget* widget = nullptr;
-	if (type == "functional") {
-		auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
-		if (! parameterCaption.isNull()) {
-			w->setCaption(parameterCaption);
+	try {
+		// get the definition node;
+		QDomNode defNode = iRIC::getChildNode(itemNode, "Definition");
+		if (defNode.isNull()) {
+			// this item doesn't contain "Definition" Node!".
+			throw(ErrorMessage("Definition node does not exist!"));
 		}
-		widget = w;
-		m_widgets.insert(parameterName, widget);
-	} else if (type == "constant" || type == "") {
-		QString valuetype = defElem.attribute("valueType");
-		std::string cgnsFile = iRIC::toStr(defElem.attribute("cgnsFile"));
-		if (valuetype == "integer") {
-			if (defElem.attribute("checkBox", "false") == "true") {
-				widget = new InputConditionWidgetCheckbox(defNode, t, &(cset.integer(parameterName)));
-			} else if (InputConditionWidget::hasEnums(defNode)) {
-				widget = new InputConditionWidgetIntegerOption(defNode, t, &(cset.integer(parameterName)));
-			} else {
-				widget = new InputConditionWidgetInteger(defNode, t, &(cset.integer(parameterName)), cset);
-			}
-		} else if (valuetype == "real") {
-			if (InputConditionWidget::hasEnums(defNode)) {
-				widget = new InputConditionWidgetRealOption(defNode, t, &(cset.real(parameterName)));
-			} else {
-				widget = new InputConditionWidgetReal(defNode, t, &(cset.real(parameterName)));
-			}
-		} else if (valuetype == "string") {
-			widget = new InputConditionWidgetString(defNode, t, &(cset.string(parameterName)), def.abstract().absoluteFolderName());
-		} else if (valuetype == "filename" || valuetype == "filename_all") {
-			widget = new InputConditionWidgetFilename(defNode, t, &(cset.string(parameterName)));
-		} else if (valuetype == "foldername") {
-			widget = new InputConditionWidgetFoldername(defNode, t, &(cset.string(parameterName)));
-		} else if (valuetype == "functional") {
-			auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)));
+		QDomElement defElem = defNode.toElement();
+		QString type = defElem.attribute("conditionType", "");
+		// setup container depending on the type
+		InputConditionWidget* widget = nullptr;
+		if (type == "functional") {
+			auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)), noStretch);
 			if (! parameterCaption.isNull()) {
 				w->setCaption(parameterCaption);
 			}
 			widget = w;
-		} else if (valuetype == "cgns_filename") {
-			widget = new InputConditionWidgetCgnsFile(defNode, t, &(cset.string(parameterName)), getCgnsFile(parameterName));
-		} else if (valuetype == "result_gridNodeInteger") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridNodeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridNodeReal") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridNodeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridCellInteger") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridCellIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridCellReal") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridCellRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridEdgeIInteger") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridEdgeIIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridEdgeIReal") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridEdgeIRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridEdgeJInteger") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridEdgeJIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_gridEdgeJReal") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsGridEdgeJRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_baseIterativeInteger") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsBaseIterativeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
-		} else if (valuetype == "result_baseIterativeReal") {
-			if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
-			widget = new InputConditionWidgetCgnsBaseIterativeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile));
+			m_widgets.insert(parameterName, widget);
+		} else if (type == "constant" || type == "") {
+			QString valuetype = defElem.attribute("valueType");
+			std::string cgnsFile = iRIC::toStr(defElem.attribute("cgnsFile"));
+			if (valuetype == "complex") {
+				// silently ignore
+			} else if (valuetype == "integer") {
+				if (defElem.attribute("checkBox", "false") == "true") {
+					widget = new InputConditionWidgetCheckbox(defNode, t, &(cset.integer(parameterName)), noStretch);
+				} else if (InputConditionWidget::hasEnums(defNode)) {
+					widget = new InputConditionWidgetIntegerOption(defNode, t, &(cset.integer(parameterName)), noStretch);
+				} else {
+					widget = new InputConditionWidgetInteger(defNode, t, &(cset.integer(parameterName)), cset, noStretch);
+				}
+			} else if (valuetype == "real") {
+				if (InputConditionWidget::hasEnums(defNode)) {
+					widget = new InputConditionWidgetRealOption(defNode, t, &(cset.real(parameterName)), noStretch);
+				} else {
+					widget = new InputConditionWidgetReal(defNode, t, &(cset.real(parameterName)), noStretch);
+				}
+			} else if (valuetype == "string") {
+				widget = new InputConditionWidgetString(defNode, t, &(cset.string(parameterName)), def.abstract().absoluteFolderName());
+			} else if (valuetype == "filename" || valuetype == "filename_all") {
+				widget = new InputConditionWidgetFilename(defNode, t, &(cset.string(parameterName)));
+			} else if (valuetype == "foldername") {
+				widget = new InputConditionWidgetFoldername(defNode, t, &(cset.string(parameterName)));
+			} else if (valuetype == "functional") {
+				auto w = new InputConditionWidgetFunctional(defNode, t, &(cset.functional(parameterName)), noStretch);
+				if (! parameterCaption.isNull()) {
+					w->setCaption(parameterCaption);
+				}
+				widget = w;
+			} else if (valuetype == "cgns_filename") {
+				widget = new InputConditionWidgetCgnsFile(defNode, t, &(cset.string(parameterName)), getCgnsFile(parameterName));
+			} else if (valuetype == "result_gridNodeInteger") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridNodeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridNodeReal") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridNodeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridCellInteger") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridCellIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridCellReal") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridCellRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridEdgeIInteger") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridEdgeIIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridEdgeIReal") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridEdgeIRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridEdgeJInteger") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridEdgeJIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_gridEdgeJReal") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsGridEdgeJRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_baseIterativeInteger") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsBaseIterativeIntegerResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else if (valuetype == "result_baseIterativeReal") {
+				if (cgnsFile.size() == 0) {throw (ErrorMessage(QString("cgnsFile attribute is not set for %1").arg(parameterName.c_str())));}
+				widget = new InputConditionWidgetCgnsBaseIterativeRealResult(defNode, t, &(cset.string(parameterName)), getCgnsFile(cgnsFile), noStretch);
+			} else {
+				throw(ErrorMessage("Wrong valueType is set."));
+			}
+			if (widget != nullptr) {
+				addTooltip(widget, itemNode, t);
+				m_widgets.insert(parameterName, widget);
+			}
 		} else {
 			throw(ErrorMessage("Wrong conditionType is set."));
 		}
-		addTooltip(widget, itemNode, t);
-		m_widgets.insert(parameterName, widget);
-	} else {
-		throw(ErrorMessage("Wrong conditionType is set."));
+	} catch (ErrorMessage& e) {
+		QString msg(tr("Error occured while loading solver definition file.\n%1: %2"));
+		QMessageBox::critical(nullptr, tr("Error"), msg.arg(parameterName.c_str()).arg(e));
+		throw;
 	}
 }
 
@@ -433,8 +444,7 @@ void InputConditionWidgetSet::addTooltip(InputConditionWidget* widget, QDomNode 
 
 void InputConditionWidgetSet::toggleReadOnly(bool readonly)
 {
-	for (auto it = m_widgets.begin(); it != m_widgets.end(); ++it) {
-		InputConditionWidget* w = it.value();
+	for (auto w : m_widgets) {
 		w->toggleReadOnly(readonly);
 	}
 

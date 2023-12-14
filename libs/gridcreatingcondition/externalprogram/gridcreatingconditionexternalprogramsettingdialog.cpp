@@ -19,6 +19,8 @@
 #include <h5cgnsbase.h>
 #include <h5cgnsfile.h>
 
+#include <unordered_map>
+
 GridCreatingConditionExternalProgramSettingDialog::GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowI* /*mainW*/, QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionExternalProgramSettingDialog)
@@ -59,7 +61,8 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 	// setup PageList.
 	ui->m_pageList->setup(condNode.toElement(), t);
 	// setup PageContainer.
-	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, t);
+	std::unordered_map<std::string, QPushButton*> emptyButtons;
+	ui->m_pageContainer->setup(condNode.toElement(), m_widgetSet, emptyButtons, t);
 	// select the first page.
 	ui->m_pageList->selectFirstItem();
 

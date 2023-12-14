@@ -20,6 +20,7 @@ HEADERS += anms.h \
            boolcontainer.h \
            colorcontainer.h \
            compositecontainer.h \
+           csviohelper.h \
            doublecontainer.h \
            doublemappingsetting.h \
            dvector.h \
@@ -122,6 +123,7 @@ SOURCES += anms.cpp \
            boolcontainer.cpp \
            colorcontainer.cpp \
            compositecontainer.cpp \
+           csviohelper.cpp \
            doublecontainer.cpp \
            errormessage.cpp \
            fileremover.cpp \

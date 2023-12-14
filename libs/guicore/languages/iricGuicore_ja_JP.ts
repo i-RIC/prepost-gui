@@ -1866,6 +1866,54 @@ Parse error %2 at %3, column %4</source>
         <source>Name has to consist of only English characters.</source>
         <translation>名前には、英数字と記号しか使用できません。</translation>
     </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+    <message>
+        <source>Switch</source>
+        <translation>切り替え</translation>
+    </message>
+    <message>
+        <source>Columns %1 are ignored. Expected names are %2</source>
+        <translation>列 %1 は無視されます。入力として想定されていた列の名前は %2 です。</translation>
+    </message>
+    <message>
+        <source>Select file to import</source>
+        <translation>インポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>CSV file (*.csv)</source>
+        <translation>CSVファイル (*.csv)</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>Opening %1 failed.</source>
+        <translation>%1 を開けませんでした。</translation>
+    </message>
+    <message>
+        <source>Select file to export</source>
+        <translation>エクスポートするファイルの選択</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名前</translation>
+    </message>
+    <message>
+        <source>Switch to Table view</source>
+        <translation>表形式に切り替え</translation>
+    </message>
+    <message>
+        <source>Switch to List view</source>
+        <translation>リスト形式に切り替え</translation>
+    </message>
 </context>
 <context>
     <name>GridComplexConditionGroupEditDialog</name>
@@ -2200,6 +2248,18 @@ Do you really want to import this file?</source>
         <source>Opening the CGNS file failed.</source>
         <translation>CGNSファイルを開けませんでした。</translation>
     </message>
+    <message>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>&quot;Item&quot; 要素に属性 name が定義されていません</translation>
+    </message>
+    <message>
+        <source>Edit %1</source>
+        <translation>%1 の編集</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>編集</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionPageList</name>
@@ -2496,6 +2556,19 @@ Do you really want to import this file?</source>
     <message>
         <source>No data to import.</source>
         <translation>インポートするデータがありません。</translation>
+    </message>
+</context>
+<context>
+    <name>InputConditionWidgetSet</name>
+    <message>
+        <source>Error occured while loading solver definition file.
+%1: %2</source>
+        <translation>ソルバー定義ファイルの読み込み中にエラーが発生しました。
+%1: %2</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
     </message>
 </context>
 <context>

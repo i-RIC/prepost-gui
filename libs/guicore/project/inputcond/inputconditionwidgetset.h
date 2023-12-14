@@ -3,6 +3,7 @@
 
 #include "../../guicore_global.h"
 #include <QMap>
+#include <QObject>
 #include <QVector>
 
 #include <string>
@@ -16,14 +17,15 @@ class InputConditionWidget;
 class SolverDefinition;
 class SolverDefinitionTranslator;
 
-class GUICOREDLL_EXPORT InputConditionWidgetSet
+class GUICOREDLL_EXPORT InputConditionWidgetSet : public QObject
 {
+	Q_OBJECT
 
 public:
 	InputConditionWidgetSet();
 	~InputConditionWidgetSet();
 
-	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC = false);
+	void setup(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC = false, bool noStretch = false);
 	InputConditionWidget* widget(const std::string& name) const;
 
 	bool checkImportSourceUpdate();
@@ -35,10 +37,10 @@ public:
 	QString imageName(const QDomNode& itemNode);
 
 private:
-	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC);
-	void buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
-	void buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
-	void buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t);
+	void buildWidgets(const QDomNode& condNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool forBC, bool noStretch);
+	void buildWidgetsCustom(const QDomNode& contNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch);
+	void buildWidgetsCustomRec(const QDomNode& node, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch);
+	void buildWidget(QDomNode& itemNode, InputConditionContainerSet& cset, const SolverDefinition& def, const SolverDefinitionTranslator& t, bool noStretch);
 	void buildLabel(QDomNode& itemNode, const SolverDefinitionTranslator& t);
 	void buildImage(QDomNode& itemNode, const SolverDefinition& def, const SolverDefinitionTranslator& t);
 	void buildDeps(const QDomNode&, InputConditionContainerSet& cset, bool forBC);

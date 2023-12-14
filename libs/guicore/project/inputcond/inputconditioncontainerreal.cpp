@@ -102,7 +102,7 @@ QVariant InputConditionContainerReal::variantValue() const
 	return QVariant(impl->m_value);
 }
 
-void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QDir&)
+void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QDir& /*dir*/)
 {
 	if (doc[name()]) {
 		impl->m_value = doc[name()].as<double>();
@@ -111,7 +111,7 @@ void InputConditionContainerReal::importFromYaml(const YAML::Node& doc, const QD
 	}
 }
 
-void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir&)
+void InputConditionContainerReal::exportToYaml(QTextStream* stream, const QDir& /*dir*/)
 {
 	*stream << name().c_str() << ": " << impl->m_value << "\t#[real] " << caption() << "\r\n";
 }
@@ -121,6 +121,18 @@ void InputConditionContainerReal::setup(const QDomNode& defNode)
 	QDomElement e = defNode.toElement();
 	impl->m_default = e.attribute("default", "0").toDouble();
 	impl->m_value = impl->m_default;
+}
+
+void InputConditionContainerReal::importFromString(const QString& value, const QDir& /*dir*/)
+{
+	impl->m_value = value.toDouble();
+	emit valueChanged(impl->m_value);
+	emit valueChanged();
+}
+
+void InputConditionContainerReal::exportToString(QString* value, const QDir& /*dir*/)
+{
+	*value = QString::number(impl->m_value, 'g', 10);
 }
 
 void InputConditionContainerReal::copyValues(const InputConditionContainerReal& i)

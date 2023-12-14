@@ -41,6 +41,8 @@ public:
 
 	virtual void importFromYaml(const YAML::Node& doc, const QDir& dir) = 0;
 	virtual void exportToYaml(QTextStream* stream, const QDir& dir) = 0;
+	virtual void importFromString(const QString& value, const QDir& dir) = 0;
+	virtual void exportToString(QString* value, const QDir& dir) = 0;
 
 signals:
 	void valueChanged();
