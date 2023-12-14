@@ -72,7 +72,7 @@ int GridAttributeContainerT<V, DA>::loadFromCgnsFileForIndex(const iRICLib::H5Cg
 	std::vector<V> buffer;
 	int ier = atts.readFunctional(name(), index + 1, &buffer);
 	if (ier == IRIC_NO_ERROR) {
-		for (unsigned int i = 0; i < buffer.size(); ++i) {
+		for (unsigned int i = 0; i < dataCount() && i < buffer.size(); ++i) {
 			setValue(i, buffer[i]);
 		}
 	} else {
