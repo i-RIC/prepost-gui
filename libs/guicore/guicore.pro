@@ -248,6 +248,8 @@ HEADERS += guicore_global.h \
            misc/vtkpointsetandvaluerangesett.h \
            named/namedgraphicswindowdataitemtool.h \
            named/namedgraphicwindowdataitem.h \
+           named/namedqstringgraphicswindowdataitemtool.h \
+           named/namedqstringgraphicwindowdataitem.h \
            post/postprocessorwindow.h \
            post/postprocessorwindowfactoryi.h \
            post/postprocessorwindowprojectdataitem.h \
@@ -398,6 +400,9 @@ HEADERS += guicore_global.h \
            misc/targeted/targeteditemi.h \
            misc/targeted/targeteditemsettargetcommand.h \
            misc/targeted/targeteditemsettargetcommandtool.h \
+           misc/targeted/targetedqstringitemi.h \
+           misc/targeted/targetedqstringitemsettargetcommand.h \
+           misc/targeted/targetedqstringitemsettargetcommandtool.h \
            postcontainer/exporter/postzonedatacsvexporter.h \
            postcontainer/exporter/postzonedataexporter.h \
            postcontainer/exporter/postzonedatashapeexporter.h \
@@ -829,6 +834,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            misc/vtkpointsetandvaluerangeset.cpp \
            named/namedgraphicswindowdataitemtool.cpp \
            named/namedgraphicwindowdataitem.cpp \
+           named/namedqstringgraphicswindowdataitemtool.cpp \
+           named/namedqstringgraphicwindowdataitem.cpp \
            post/postprocessorwindow.cpp \
            post/postprocessorwindowfactoryi.cpp \
            post/postprocessorwindowprojectdataitem.cpp \
@@ -963,6 +970,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            image/public/imagesettingcontainer_imagebuilder.cpp \
            misc/targeted/targeteditemsettargetcommand.cpp \
            misc/targeted/targeteditemsettargetcommandtool.cpp \
+           misc/targeted/targetedqstringitemsettargetcommand.cpp \
+           misc/targeted/targetedqstringitemsettargetcommandtool.cpp \
            postcontainer/exporter/postzonedatacsvexporter.cpp \
            postcontainer/exporter/postzonedatashapeexporter.cpp \
            postcontainer/exporter/postzonedatatpoexporter.cpp \

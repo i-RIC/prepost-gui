@@ -24,7 +24,7 @@ public:
 	vtkSmartPointer<vtkTexture> m_texture;
 	vtkSmartPointer<vtkQImageToImageSource> m_imgToImg;
 
-	std::string m_target;
+	QString m_target;
 	tmsloader::TmsLoader m_tmsLoader;
 	QImage m_image;
 	int m_tmsRequestId;

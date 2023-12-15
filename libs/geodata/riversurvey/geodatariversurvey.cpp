@@ -395,6 +395,7 @@ void GeoDataRiverSurvey::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 		mode = "edit";
 	}
 	writer.writeAttribute("mode", mode);
+	impl->m_displaySetting.save(writer);
 
 	int lMode = 0;
 	if (RiverSplineSolver::linearMode()) {
