@@ -1,6 +1,8 @@
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "ui_gridcreatingconditionpoissongridgeneratedialog.h"
 
+#include <QPushButton>
+
 GridCreatingConditionPoissonGridGenerateDialog::GridCreatingConditionPoissonGridGenerateDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionPoissonGridGenerateDialog)
@@ -8,6 +10,8 @@ GridCreatingConditionPoissonGridGenerateDialog::GridCreatingConditionPoissonGrid
 	ui->setupUi(this);
 	connect(ui->nISpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDI()));
 	connect(ui->nJSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDJ()));
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionPoissonGridGenerateDialog::~GridCreatingConditionPoissonGridGenerateDialog()

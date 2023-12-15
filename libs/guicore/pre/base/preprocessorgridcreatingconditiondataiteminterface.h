@@ -19,6 +19,7 @@ public:
 
 	virtual GridCreatingCondition* condition() const = 0;
 	virtual void setCondition(GridCreatingCondition* condition) = 0;
+	virtual bool confirmOverwriteIfNeeded(QWidget* parent) = 0;
 
 	virtual PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const = 0;
 

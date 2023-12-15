@@ -39,8 +39,11 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 	showDialog(parent);
 	if (! m_isAccepted) {return false;}
 
-	Structured2DGrid* grid = new Structured2DGrid(0);
-	PreProcessorGridTypeDataItemInterface* gt = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
+	auto grid = new Structured2DGrid(nullptr);
+	auto gt = m_conditionDataItem->gridTypeDataItem();
 	gt->gridType()->buildGridAttributes(grid);
 
 	grid->setDimensions(m_iMax, m_jMax);

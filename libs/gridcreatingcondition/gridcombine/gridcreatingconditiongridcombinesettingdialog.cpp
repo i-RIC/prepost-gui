@@ -15,6 +15,7 @@ GridCreatingConditionGridCombineSettingDialog::GridCreatingConditionGridCombineS
 	ui(new Ui::GridCreatingConditionGridCombineSettingDialog)
 {
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionGridCombineSettingDialog::~GridCreatingConditionGridCombineSettingDialog()

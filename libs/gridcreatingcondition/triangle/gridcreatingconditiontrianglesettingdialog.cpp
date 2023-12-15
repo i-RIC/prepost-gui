@@ -7,6 +7,8 @@ GridCreatingConditionTriangleSettingDialog::GridCreatingConditionTriangleSetting
 	ui(new Ui::GridCreatingConditionTriangleSettingDialog)
 {
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
+
 	ui->angleSpinBox->setValue(30);
 	ui->areaEdit->setValue(1000);
 }

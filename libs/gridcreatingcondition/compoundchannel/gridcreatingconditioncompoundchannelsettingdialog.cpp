@@ -9,9 +9,8 @@ GridCreatingConditionCompoundChannelSettingDialog::GridCreatingConditionCompound
 	ui(new Ui::GridCreatingConditionCompoundChannelSettingDialog)
 {
 	ui->setupUi(this);
-//	ui->optimizationGroupBox->setVisible(false);
-//	adjustSize();
-//	connect(ui->detailButton, SIGNAL(clicked()), this, SLOT(toggleDetailCondition()));
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionCompoundChannelSettingDialog::~GridCreatingConditionCompoundChannelSettingDialog()

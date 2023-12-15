@@ -138,8 +138,11 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 	showDialog(parent);
 	if (! impl->m_isAccepted) {return false;}
 
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	Grid* grid = createGrid();
-	if (grid == 0) {return false;}
+	if (grid == nullptr) {return false;}
 	impl->m_isGridCreated = true;
 
 	emit gridCreated(grid);

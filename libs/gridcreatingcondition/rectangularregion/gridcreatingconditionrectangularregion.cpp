@@ -49,10 +49,10 @@ GridCreatingConditionRectangularRegion::~GridCreatingConditionRectangularRegion(
 	delete m_rightClickingMenu;
 }
 
-bool GridCreatingConditionRectangularRegion::create(QWidget* /*parent*/)
+bool GridCreatingConditionRectangularRegion::create(QWidget* parent)
 {
 	auto off = offset();
-	GridCreatingConditionRectangularRegionSettingDialog* dialog = new GridCreatingConditionRectangularRegionSettingDialog(this, preProcessorWindow());
+	auto dialog = new GridCreatingConditionRectangularRegionSettingDialog(this, preProcessorWindow());
 	dialog->setXMin(m_xMin + off.x());
 	dialog->setXMax(m_xMax + off.x());
 	dialog->setYMin(m_yMin + off.y());

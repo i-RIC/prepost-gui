@@ -79,6 +79,8 @@ private:
 	MouseEventMode m_mouseEventMode;
 	QPoint m_dragStartPoint;
 	QMenu* m_rightClickingMenu;
+
+	friend class GridCreatingConditionRectangularRegionSettingDialog;
 };
 
 #endif // GRIDCREATINGCONDITIONRECTANGULARREGION_H

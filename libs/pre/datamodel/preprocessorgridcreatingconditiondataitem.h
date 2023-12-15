@@ -17,6 +17,7 @@ public:
 
 	GridCreatingCondition* condition() const override;
 	void setCondition(GridCreatingCondition* condition) override;
+	bool confirmOverwriteIfNeeded(QWidget* parent) override;
 
 	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const override;
 

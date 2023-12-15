@@ -946,6 +946,10 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	if (QDialog::Rejected == dialog.exec()) {
 		return false;
 	}
+
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	m_streamWiseDivision = dialog.streamWiseDivision();
 	m_leftDivision = dialog.leftDivision();
 	m_rightDivision = dialog.rightDivision();

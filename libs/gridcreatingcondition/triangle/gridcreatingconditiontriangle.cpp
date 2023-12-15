@@ -1048,6 +1048,10 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	if (QDialog::Rejected == dialog.exec()) {
 		return false;
 	}
+
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	m_angleConstraint = dialog.angleConstraint();
 	m_angle = dialog.angle();
 	m_areaConstraint = dialog.areaConstraint();

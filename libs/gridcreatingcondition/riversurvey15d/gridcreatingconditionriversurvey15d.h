@@ -189,6 +189,7 @@ private slots:
 public:
 	friend class GridCreatingConditionRiverSurvey15DPointAddDialog;
 	friend class GridCreatingConditionRiverSurvey15DPointRepositionDialog;
+	friend class GridCreatingConditionRiverSurvey15DRegionDialog;
 	friend class GridCreatingConditionCreatorRiverSurvey15D;
 	friend class GridCreatingConditionRiverSurvey15DPointAddCommand;
 	friend class GridCreatingConditionCtrlPointRepositionCommand15D;

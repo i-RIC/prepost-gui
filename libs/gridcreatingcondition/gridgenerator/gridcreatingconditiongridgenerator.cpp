@@ -72,6 +72,9 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	if (result == QDialog::Rejected) {
 		return false;
 	}
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	j_chn = dialog->channelShape();
 	j_fix = dialog->floodChannel();
 	j_bar = dialog->bedShape();

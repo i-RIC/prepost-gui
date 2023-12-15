@@ -88,6 +88,22 @@ void PreProcessorGridCreatingConditionDataItem::setCondition(GridCreatingConditi
 	impl->m_condition = condition;
 }
 
+bool PreProcessorGridCreatingConditionDataItem::confirmOverwriteIfNeeded(QWidget* w)
+{
+	auto gag = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
+	auto gItem = gag->gridDataItem();
+	if (gItem->grid() == nullptr) {return true;}
+
+	int ret = QMessageBox::warning(
+				dataModel()->mainWindow(),
+				tr("Warning"),
+				tr("This operation will discard the grid that already exists. Are you sure?"),
+				QMessageBox::Yes | QMessageBox::No,
+				QMessageBox::No);
+
+	return ret == QMessageBox::Yes;
+}
+
 PreProcessorGridTypeDataItemInterface* PreProcessorGridCreatingConditionDataItem::gridTypeDataItem() const
 {
 	return dynamic_cast<PreProcessorGridTypeDataItemInterface*> (parent()->parent());
@@ -166,25 +182,14 @@ void PreProcessorGridCreatingConditionDataItem::innerUpdate2Ds()
 void PreProcessorGridCreatingConditionDataItem::createGrid()
 {
 	if (impl->m_condition == nullptr) {return;}
-	PreProcessorGridAndGridCreatingConditionDataItem* tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
-	PreProcessorGridDataItemInterface* gridDataItem = tmp_parent->gridDataItem();
+	auto tmp_parent = dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*>(parent());
 	// this operation is not possible while the solver is running.
 	iRICMainWindowInterface* mw = dataModel()->iricMainWindow();
 	if (mw->isSolverRunning()) {
 		mw->warnSolverRunning();
 		return;
 	}
-	if (gridDataItem->grid() != nullptr) {
-		if (QMessageBox::No == QMessageBox::warning(
-					dataModel()->mainWindow(),
-					tr("Warning"),
-					tr("This operation will discard the grid that already exists. Are you sure?"),
-					QMessageBox::Yes | QMessageBox::No,
-					QMessageBox::No)) {
-			// The user said no to confirm dialog, so abort.
-			return;
-		}
-	}
+
 	// each algorithmn can select whether to show dialog or not.
 	bool ok = impl->m_condition->create(preProcessorWindow());
 	if (! ok) {return;}

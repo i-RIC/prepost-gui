@@ -208,6 +208,7 @@ public:
 	friend class GridCreatingConditionRiverSurveyPointAddDialog;
 	friend class GridCreatingConditionRiverSurveyPointRepositionDialog;
 	friend class GridCreatingConditionRiverSurveyPointMoveDialog;
+	friend class GridCreatingConditionRiverSurveyRegionDialog;
 	friend class GridCreatingConditionCreatorRiverSurvey;
 	friend class GridCreatingConditionRiverSurveyPointAddCommand;
 	friend class GridCreatingConditionCtrlPointRepositionCommand;

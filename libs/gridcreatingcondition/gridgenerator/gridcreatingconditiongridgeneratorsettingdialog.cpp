@@ -2,12 +2,16 @@
 
 #include "gridcreatingconditiongridgeneratorsettingdialog.h"
 
+#include <QPushButton>
+
 GridCreatingConditionGridGeneratorSettingDialog::GridCreatingConditionGridGeneratorSettingDialog(QWidget* parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionGridGeneratorSettingDialog)
 {
 	ui->setupUi(this);
 	ui->singleSectionRadioButton->setChecked(true);
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionGridGeneratorSettingDialog::~GridCreatingConditionGridGeneratorSettingDialog()
