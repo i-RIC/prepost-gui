@@ -7,7 +7,7 @@
 
 ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	CompositeContainer({&visible, &direction, &barAutoWidth, &barWidth, &barAlign,
-										 &title, &autoNumberOfLabels, &numberOfLabels, &labelFormat, &titleFont, &labelFont,
+										 &title, &autoNumberOfLabels, &numberOfLabels, &labelSkipRate, &labelFormat, &titleFont, &labelFont,
 										 &titleColor, &labelColor, &backgroundColor, &backgroundOpacity, &showBorder, &imageSetting}),
 	visible {"visible", true},
 	direction {"direction", Direction::Vertical},
@@ -17,6 +17,7 @@ ColorMapLegendSettingContainer::ColorMapLegendSettingContainer() :
 	title {"title"},
 	autoNumberOfLabels {"autoNumberOfLabels", true},
 	numberOfLabels {"numberOfLabels"},
+	labelSkipRate {"labelSkipRate", 1},
 	labelFormat {"labelFormat", "%5.2f"},
 	titleFont {"titleFont", QFont("MS UI Gothic", 14)},
 	labelFont {"labelFont", QFont("MS UI Gothic", 11)},

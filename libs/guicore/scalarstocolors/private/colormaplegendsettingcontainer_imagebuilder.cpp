@@ -263,6 +263,8 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildDiscreteVertical(QPainte
 	painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, val2);
 
 	for (int i = 0; i < cols.size(); ++i) {
+		if ((i + 1) % s.labelSkipRate != 0) {continue;}
+
 		QString val = QString::asprintf(f.c_str(), cols.at(i).value.value());
 		auto rect = metrics.boundingRect(val);
 
@@ -459,6 +461,8 @@ void ColorMapLegendSettingContainer::ImageBuilder::buildDiscreteHorizontal(QPain
 	painter->drawText(textRect, Qt::AlignCenter | Qt::AlignVCenter, val2);
 
 	for (int i = 0; i < cols.size(); ++i) {
+		if ((i + 1) % s.labelSkipRate != 0) {continue;}
+
 		QString val = QString::asprintf(f.c_str(), cols.at(i).value.value());
 		auto rect = metrics.boundingRect(val);
 		double left = barLeftStart - maxLabelWidth / 2 + barWidth * (i + 1);

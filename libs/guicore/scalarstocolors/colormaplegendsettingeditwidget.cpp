@@ -43,6 +43,7 @@ ColorMapLegendSettingContainer ColorMapLegendSettingEditWidget::setting() const
 	ret.labelFormat = ui->labelFormatEdit->text();
 	ret.autoNumberOfLabels = ui->numLabelsAutoCheckBox->isChecked();
 	ret.numberOfLabels = ui->numLabelsSpinBox->value();
+	ret.labelSkipRate = ui->labelSkipRateSpinBox->value();
 	ret.titleFont = ui->titleFontWidget->font();
 	ret.labelFont = ui->labelFontWidget->font();
 	ret.titleColor = ui->titleColorWidget->color();
@@ -66,7 +67,7 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 		s = setting.colorMapSetting()->legend;
 		s.visible = setting.visible;
 	} else {
-		s = setting;
+		s.copyWithColorMap(setting);
 	}
 
 	ui->visibleCheckBox->setChecked(s.visible);
@@ -88,6 +89,7 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 	ui->labelFormatEdit->setText(s.labelFormat);
 	ui->numLabelsAutoCheckBox->setChecked(s.autoNumberOfLabels);
 	ui->numLabelsSpinBox->setValue(s.numberOfLabels);
+	ui->labelSkipRateSpinBox->setValue(s.labelSkipRate);
 	ui->titleFontWidget->setFont(s.titleFont);
 	ui->labelFontWidget->setFont(s.labelFont);
 	ui->titleColorWidget->setColor(s.titleColor);
@@ -101,6 +103,7 @@ void ColorMapLegendSettingEditWidget::setSetting(const ColorMapLegendSettingCont
 
 	updateAutoNumberOfLabels();
 	updateNumberOfLabelsIfNeeded();
+	updateLabelNumberWidgetVisibility();
 }
 
 void ColorMapLegendSettingEditWidget::updateAutoNumberOfLabels()
@@ -125,6 +128,27 @@ void ColorMapLegendSettingEditWidget::updateNumberOfLabelsIfNeeded()
 		++ numCols;
 	}
 	ui->numLabelsSpinBox->setValue(numCols);
+}
+
+void ColorMapLegendSettingEditWidget::updateLabelNumberWidgetVisibility()
+{
+	if (m_colorMapSetting == nullptr) {return;}
+
+	if (m_colorMapSetting->transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
+		ui->numLabelsLabel->setVisible(true);
+		ui->numLabelsAutoCheckBox->setVisible(true);
+		ui->numLabelsSpinBox->setVisible(true);
+
+		ui->skipRateLabel->setVisible(false);
+		ui->labelSkipRateSpinBox->setVisible(false);
+	} else if (m_colorMapSetting->transitionMode == ColorMapSettingContainer::TransitionMode::Discrete) {
+		ui->numLabelsLabel->setVisible(false);
+		ui->numLabelsAutoCheckBox->setVisible(false);
+		ui->numLabelsSpinBox->setVisible(false);
+
+		ui->skipRateLabel->setVisible(true);
+		ui->labelSkipRateSpinBox->setVisible(true);
+	}
 }
 
 void ColorMapLegendSettingEditWidget::setDisableOtherThanVisible(bool disabled)

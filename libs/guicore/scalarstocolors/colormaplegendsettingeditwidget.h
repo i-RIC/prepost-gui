@@ -25,6 +25,7 @@ public:
 
 	void updateAutoNumberOfLabels();
 	void updateNumberOfLabelsIfNeeded();
+	void updateLabelNumberWidgetVisibility();
 	void setDisableOtherThanVisible(bool disabled);
 
 private slots:
