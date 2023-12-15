@@ -37,6 +37,11 @@ GeoDataPointmap::PolygonsManager::~PolygonsManager()
 	delete m_polygonGroup;
 }
 
+void GeoDataPointmap::PolygonsManager::mergeEditTargetPolygon()
+{
+	polygonGroup()->mergeEditTargetData();
+}
+
 void GeoDataPointmap::PolygonsManager::updatePolygonsActorSettings() const
 {
 	const auto& setting = m_parent->impl->m_displaySetting;

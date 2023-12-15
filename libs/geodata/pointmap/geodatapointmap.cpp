@@ -408,6 +408,11 @@ bool GeoDataPointmap::rebuildTinFromPoints(bool allowCancel)
 	return impl->m_tinManager.rebuildTinFromPoints(allowCancel);
 }
 
+void GeoDataPointmap::mergeEditTargetPolygon()
+{
+	impl->m_polygonsManager.mergeEditTargetPolygon();
+}
+
 void GeoDataPointmap::buildPointsFromTIN()
 {
 	auto points = impl->m_tinManager.tin()->GetPoints();
