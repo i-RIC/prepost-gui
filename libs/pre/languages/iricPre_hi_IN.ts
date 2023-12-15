@@ -1781,7 +1781,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Show Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>ग्रिड निर्माण की स्थिति दिखाएँ (&amp;S)...</translation>
     </message>
 </context>
 <context>

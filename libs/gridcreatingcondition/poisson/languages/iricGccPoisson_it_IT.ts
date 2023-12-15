@@ -1,15 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
     <message>
         <source>Create grid shape solving Poisson equation</source>
-        <translation>Crea la forma della griglia risolvendo l&apos;equazione di Poisson</translation>
+        <translation>Crea la forma della griglia risolvendo l'equazione di Poisson</translation>
     </message>
     <message>
         <source>You can create smooth grid shape solving poisson equation.</source>
-        <translation>È possibile creare una forma a griglia liscia risolvendo l&apos;equazione di Poisson.</translation>
+        <translation>È possibile creare una forma a griglia liscia risolvendo l'equazione di Poisson.</translation>
     </message>
 </context>
 <context>
@@ -192,7 +190,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea griglia (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="es_ES">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -77,7 +75,7 @@
     </message>
     <message>
         <source>Please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando &quot;Enter&quot;.</translation>
+        <translation>Define linea del centro de cuadricula. Linea del centro de cuadricula puede ser definando como linea poligonal con mouse-clic. Termina definando con doble-clic, o presionando "Enter".</translation>
     </message>
     <message>
         <source>Edit Center Line Coordinates</source>
@@ -112,7 +110,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear cuadrícula (&amp;C)</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -220,7 +218,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>创建网格 (&amp;C)</translation>
     </message>
 </context>
 </TS>

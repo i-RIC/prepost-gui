@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -28,11 +26,11 @@
     </message>
     <message>
         <source>Please select an edge line inside the region when you want to join regions.</source>
-        <translation>Selecteer een randlijn binnen de regio wanneer u regio&apos;s wilt samenvoegen.</translation>
+        <translation>Selecteer een randlijn binnen de regio wanneer u regio's wilt samenvoegen.</translation>
     </message>
     <message>
         <source>Are you sure you want to join the regions divided by the selected edge?</source>
-        <translation>Weet u zeker dat u de regio&apos;s wilt samenvoegen die zijn gedeeld door de geselecteerde rand?</translation>
+        <translation>Weet u zeker dat u de regio's wilt samenvoegen die zijn gedeeld door de geselecteerde rand?</translation>
     </message>
     <message>
         <source>Are you sure you want to clear division setting?</source>

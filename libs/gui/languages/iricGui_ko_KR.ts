@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>AnimationController</name>
@@ -793,8 +791,8 @@ This wizard will generate or update translation files for solver definition file
         <translation>솔버 선택</translation>
     </message>
     <message>
-        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press &quot;OK&quot; button.</source>
-        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 &quot;확인&quot; 버튼을 누르십시오.</translation>
+        <source>When you create a new project, you have to select the solver to use for calculation. Please select a solver, and press "OK" button.</source>
+        <translation>새 프로젝트를 생성할 때 계산에 사용할 솔버를 선택해야 합니다. 솔버를 선택하고 "확인" 버튼을 누르십시오.</translation>
     </message>
 </context>
 <context>
@@ -1485,8 +1483,8 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>경고</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete &quot;%1&quot;?</source>
-        <translation>삭제 하시겠습니까 &quot;%1&quot;?</translation>
+        <source>Are you sure you want to delete "%1"?</source>
+        <translation>삭제 하시겠습니까 "%1"?</translation>
     </message>
     <message>
         <source>Are you sure you want to reset to default settings?</source>
@@ -1730,9 +1728,9 @@ Do you want to launch iRIC Maintainance?</source>
         <translation>경고</translation>
     </message>
     <message>
-        <source>Error occured while loading solver definition file in folder &quot;%1&quot;. This solver is ignored.
+        <source>Error occured while loading solver definition file in folder "%1". This solver is ignored.
 %2</source>
-        <translation>&quot; 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 &quot;. 이 솔버는 무시됩니다. %2</translation>
+        <translation>" 폴더에서 솔버 정의 파일을 로드하는 동안 오류가 발생했습니다. %1 ". 이 솔버는 무시됩니다. %2</translation>
     </message>
 </context>
 <context>
@@ -1906,7 +1904,7 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>이 프로젝트는 다른 iRIC GUI 창에서 열려 있는 것 같습니다. 여러 GUI 창에서 프로젝트 폴더를 열 수 없습니다.</translation>
     </message>
     <message>
-        <source>The opened project is not copied to work directory, and you&apos;ll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
+        <source>The opened project is not copied to work directory, and you'll be forced to save the modifications you make to this project. If you want to keep the current project, please save it to another project first.</source>
         <translation>열려 있는 프로젝트는 작업 디렉터리에 복사되지 않으며 이 프로젝트에 대한 수정 사항을 강제로 저장해야 합니다. 현재 프로젝트를 유지하려면 먼저 다른 프로젝트에 저장하십시오.</translation>
     </message>
     <message>
@@ -2074,8 +2072,8 @@ iRIC can simulate rivers from Colorado River to the Nile.</source>
         <translation>현재 활성화된 하위 창은 윤곽 도형 내보내기를 지원하지 않습니다.</translation>
     </message>
     <message>
-        <source>To export shape file, switch &quot;Display setting&quot; to &quot;Contour Figure&quot;, not &quot;Color Fringe&quot; or &quot;Isolines&quot;.</source>
-        <translation type="vanished">모양 파일을 내보내려면 &quot;표시 설정&quot;을 &quot;색상 프린지&quot; 또는 &quot;등각선&quot;이 아닌 &quot;윤곽 그림&quot;으로 전환하십시오.</translation>
+        <source>To export shape file, switch "Display setting" to "Contour Figure", not "Color Fringe" or "Isolines".</source>
+        <translation type="vanished">모양 파일을 내보내려면 "표시 설정"을 "색상 프린지" 또는 "등각선"이 아닌 "윤곽 그림"으로 전환하십시오.</translation>
     </message>
     <message>
         <source>Export contour figure</source>
@@ -2211,8 +2209,8 @@ Option -&gt; Preferences</source>
         <translation>설정 파일 (*.vgsetting *.xml)</translation>
     </message>
     <message>
-        <source>To export shape file, switch Color mode to &quot;Discrete Mode&quot;.</source>
-        <translation type="vanished">모양 파일을 내보내려면 색상 모드를 &quot;불연속 모드&quot;로 전환하십시오.</translation>
+        <source>To export shape file, switch Color mode to "Discrete Mode".</source>
+        <translation type="vanished">모양 파일을 내보내려면 색상 모드를 "불연속 모드"로 전환하십시오.</translation>
     </message>
     <message>
         <source>Select Grid</source>
@@ -2223,8 +2221,8 @@ Option -&gt; Preferences</source>
         <translation>모양 파일을 내보내려면 그리드를 선택하십시오.</translation>
     </message>
     <message>
-        <source>No contour is drawn in &quot;Discrete Mode&quot;.</source>
-        <translation>&quot;불연속 모드&quot;에서는 컨투어가 그려지지 않습니다.</translation>
+        <source>No contour is drawn in "Discrete Mode".</source>
+        <translation>"불연속 모드"에서는 컨투어가 그려지지 않습니다.</translation>
     </message>
 </context>
 <context>
@@ -2571,7 +2569,7 @@ Option -&gt; Preferences</source>
     <message>
         <source>&amp;Stop</source>
         <comment>stop solver</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>&amp;Solver Information...</source>
@@ -2598,8 +2596,8 @@ Option -&gt; Preferences</source>
         <translation>새 2D 후처리 창 열기</translation>
     </message>
     <message>
-        <source>Open new 2D Bird&apos;s-Eye Post-Processing Window</source>
-        <translation>새 2D Bird&apos;s-Eye 후처리 창 열기</translation>
+        <source>Open new 2D Bird's-Eye Post-Processing Window</source>
+        <translation>새 2D Bird's-Eye 후처리 창 열기</translation>
     </message>
     <message>
         <source>Open new 3D Post-Processing Window</source>
@@ -2723,7 +2721,7 @@ Option -&gt; Preferences</source>
     </message>
     <message>
         <source>Open new Crosssection Window</source>
-        <translation type="unfinished"></translation>
+        <translation>새 횡단면 창 열기</translation>
     </message>
 </context>
 </TS>

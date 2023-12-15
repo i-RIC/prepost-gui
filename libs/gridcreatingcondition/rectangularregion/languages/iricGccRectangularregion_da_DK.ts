@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GridCreatingConditionCreatorRectangularRegion</name>
@@ -51,7 +49,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Opret gitter (&amp;C)</translation>
     </message>
 </context>
 </TS>

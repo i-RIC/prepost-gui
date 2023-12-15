@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -179,7 +177,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>그리드 생성 (&amp;C)</translation>
     </message>
 </context>
 <context>

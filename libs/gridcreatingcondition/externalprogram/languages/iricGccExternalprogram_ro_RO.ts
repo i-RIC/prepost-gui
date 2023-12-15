@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Avertizare</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>A apărut o eroare la încărcarea fișierului de definire a creatorului de grilă în dosar &quot; %1 Acest creator de grilă este ignorat. %2</translation>
+        <translation>A apărut o eroare la încărcarea fișierului de definire a creatorului de grilă în dosar " %1 Acest creator de grilă este ignorat. %2</translation>
     </message>
 </context>
 <context>

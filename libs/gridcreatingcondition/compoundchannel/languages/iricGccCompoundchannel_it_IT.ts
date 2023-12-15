@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -49,11 +47,11 @@
     </message>
     <message>
         <source>Low water channel region have to be inside grid region.</source>
-        <translation>La regione del canale con acqua bassa deve trovarsi all&apos;interno della regione della griglia.</translation>
+        <translation>La regione del canale con acqua bassa deve trovarsi all'interno della regione della griglia.</translation>
     </message>
     <message>
         <source>Center line have to be inside low water channel region.</source>
-        <translation>La linea centrale deve trovarsi all&apos;interno della regione del canale di acqua bassa.</translation>
+        <translation>La linea centrale deve trovarsi all'interno della regione del canale di acqua bassa.</translation>
     </message>
     <message>
         <source>Insert Polygon Vertex</source>
@@ -117,7 +115,7 @@
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Quindi, definire la regione del canale di acqua bassa. Il canale d&apos;acqua può essere definito come poligono facendo clic con il mouse. Termina la definizione facendo doppio clic o premendo il tasto Invio.</translation>
+        <translation>Quindi, definire la regione del canale di acqua bassa. Il canale d'acqua può essere definito come poligono facendo clic con il mouse. Termina la definizione facendo doppio clic o premendo il tasto Invio.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -179,7 +177,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea griglia (&amp;C)</translation>
     </message>
 </context>
 <context>

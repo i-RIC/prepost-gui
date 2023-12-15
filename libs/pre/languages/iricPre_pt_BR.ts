@@ -1853,7 +1853,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Show Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar condição de criação de grade (&amp;S)...</translation>
     </message>
 </context>
 <context>

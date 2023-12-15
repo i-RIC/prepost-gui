@@ -1781,7 +1781,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>&amp;Show Grid Creating Condition...</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra condizione di creazione della griglia (&amp;S)...</translation>
     </message>
 </context>
 <context>

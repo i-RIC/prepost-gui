@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,12 +218,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Khoảng cách từ điểm trung tâm</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Bờ trái&quot; là bờ bạn nhìn thấy ở phía bên trái, khi bạn rẽ sang hướng hạ lưu.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Bờ trái" là bờ bạn nhìn thấy ở phía bên trái, khi bạn rẽ sang hướng hạ lưu.</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Tạo lưới (&amp;C)</translation>
     </message>
 </context>
 </TS>
