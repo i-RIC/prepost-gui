@@ -1025,6 +1025,14 @@ Parse error %2 at %3, column %4</source>
         <source>Draw border</source>
         <translation>枠線を描画</translation>
     </message>
+    <message>
+        <source>Skip rate</source>
+        <translation type="vanished">間引き</translation>
+    </message>
+    <message>
+        <source>Skip rate:</source>
+        <translation>間引き:</translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>

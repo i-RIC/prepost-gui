@@ -745,6 +745,10 @@ Parse error %2 at %3, column %4</source>
         <source>Draw border</source>
         <translation>Dibujar borde</translation>
     </message>
+    <message>
+        <source>Skip rate:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ColorMapSettingEditDialog</name>

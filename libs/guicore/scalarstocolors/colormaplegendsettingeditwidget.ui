@@ -177,7 +177,7 @@
           <item row="2" column="0">
            <widget class="QLabel" name="skipRateLabel">
             <property name="text">
-             <string>Skip rate</string>
+             <string>Skip rate:</string>
             </property>
            </widget>
           </item>
