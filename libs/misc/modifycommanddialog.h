@@ -24,8 +24,15 @@ public:
 	ModifyCommandWidget* widget() const;
 	void setWidget(ModifyCommandWidget* widget);
 
+	void showImportButton();
+	void showExportButton();
+
 	void accept() override;
 	void reject() override;
+
+signals:
+	void importClicked();
+	void exportClicked();
 
 private slots:
 	void handleButtonClick(QAbstractButton* button);

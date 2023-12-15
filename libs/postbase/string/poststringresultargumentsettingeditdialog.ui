@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PostStringResultArgumentEditDialog</class>
- <widget class="QDialog" name="PostStringResultArgumentEditDialog">
+ <class>PostStringResultArgumentSettingEditDialog</class>
+ <widget class="QDialog" name="PostStringResultArgumentSettingEditDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>316</width>
-    <height>274</height>
+    <width>343</width>
+    <height>272</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Edit String Result Argument</string>
+   <string>Label Input Setting</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -211,7 +211,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>5</height>
+       <height>0</height>
       </size>
      </property>
     </spacer>
@@ -233,7 +233,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>PostStringResultArgumentEditDialog</receiver>
+   <receiver>PostStringResultArgumentSettingEditDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -249,7 +249,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>PostStringResultArgumentEditDialog</receiver>
+   <receiver>PostStringResultArgumentSettingEditDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

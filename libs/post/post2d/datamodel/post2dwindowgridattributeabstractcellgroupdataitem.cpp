@@ -59,7 +59,7 @@ Post2dWindowGridAttributeAbstractCellGroupDataItem::Post2dWindowGridAttributeAbs
 {
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
-	connect(impl->m_showAttributeBrowserAction, SIGNAL(triggered()), this, SLOT(showAttributeBrowser()));
+	connect(impl->m_showAttributeBrowserAction, &QAction::triggered, this, &Post2dWindowGridAttributeAbstractCellGroupDataItem::showAttributeBrowser);
 
 	impl->m_actor->GetProperty()->SetLighting(false);
 	impl->m_actor->GetProperty()->SetLineWidth(5);

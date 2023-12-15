@@ -11,6 +11,7 @@ int OUTER_MARGIN = 12;
 int INNER_MARGIN = 10;
 int COLOR_VALUE_MARGIN = 10;
 int LABEL_MARGIN = 5;
+int STD_COLOR_WIDTH = 30;
 
 } // namespace
 
@@ -52,6 +53,70 @@ bool ColorMapLegendSettingContainer::ImageBuilder::build(QImage* image)
 		buildHorizontal(&painter, image, s);
 	}
 	return true;
+}
+
+QSize ColorMapLegendSettingContainer::ImageBuilder::autoSize() const
+{
+	int width, height;
+
+	ColorMapLegendSettingContainer s;
+	if (m_setting->delegateMode()) {
+		s = m_setting->colorMapSetting()->legend;
+		s.visible = m_setting->visible;
+	} else {
+		s = *m_setting;
+	}
+	s.setColorMapSetting(m_setting->colorMapSetting());
+
+	if (s.direction == Direction::Vertical) {
+		QFontMetrics titleMetrics(s.titleFont);
+		int title_width = titleMetrics.width(s.title);
+		int value_width = 0;
+
+		auto cs = s.colorMapSetting();
+		auto cols = cs->getColors();
+		auto f = iRIC::toStr(s.labelFormat.value());
+		QFontMetrics labelMetrics(s.labelFont);
+		for (const auto& c : cols) {
+			QString val = QString::asprintf(f.c_str(), c.value.value());
+			value_width = std::max(value_width, labelMetrics.width(val));
+		}
+		value_width += LABEL_MARGIN + COLOR_VALUE_MARGIN;
+		if (s.barAutoWidth) {
+			value_width += STD_COLOR_WIDTH;
+		} else {
+			value_width += s.barWidth;
+		}
+
+		int content_width = std::max(title_width, value_width);
+		width = content_width + OUTER_MARGIN * 2;
+		if (s.colorMapSetting()->transitionMode == ColorMapSettingContainer::TransitionMode::Continuous) {
+			height = OUTER_MARGIN * 2 + INNER_MARGIN + titleMetrics.height() + (labelMetrics.height() + 2) * cols.size();
+		} else {
+			height = OUTER_MARGIN * 2 + INNER_MARGIN + titleMetrics.height() + (labelMetrics.height() + 2) * (cols.size() + 1);
+		}
+	} else if (s.direction == Direction::Horizontal) {
+		QFontMetrics titleMetrics(s.titleFont);
+		int title_width = titleMetrics.width(s.title);
+
+		int value_width = 0;
+
+		auto cs = s.colorMapSetting();
+		auto cols = cs->getColors();
+		auto f = iRIC::toStr(s.labelFormat.value());
+		QFontMetrics labelMetrics(s.labelFont);
+		for (const auto& c : cols) {
+			QString val = QString::asprintf(f.c_str(), c.value.value());
+			value_width = std::max(value_width, labelMetrics.width(val));
+		}
+		int value_total_width = (value_width + LABEL_MARGIN) * cols.size();
+
+		int content_width = std::max(title_width, value_total_width);
+		width = content_width + OUTER_MARGIN * 2;
+		height = OUTER_MARGIN * 2 + INNER_MARGIN + titleMetrics.height() + labelMetrics.height() + s.barWidth;
+	}
+
+	return QSize(width, height);
 }
 
 void ColorMapLegendSettingContainer::ImageBuilder::buildVertical(QPainter* painter, QImage* image, const ColorMapLegendSettingContainer& s)

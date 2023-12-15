@@ -17,10 +17,11 @@
 #include <vtkQImageToImageSource.h>
 
 ImageSettingContainer::ImageSettingContainer() :
-	CompositeContainer({&position, &horizontalMargin, &verticalMargin, &width, &height}),
+	CompositeContainer({&position, &horizontalMargin, &verticalMargin, &autoSize, &width, &height}),
 	position {"position", Position::TopLeft},
 	horizontalMargin {"horizontalMarginRatio", 0},
 	verticalMargin {"verticalMarginRatio", 0},
+	autoSize {"autoSize", false},
 	width {"width", 100},
 	height {"height", 100},
 	m_actor {nullptr},
@@ -65,6 +66,11 @@ void ImageSettingContainer::setActor(vtkActor2D* actor)
 {
 	m_actor = actor;
 	m_actor->VisibilityOff();
+}
+
+ImageSettingContainer::ImageBuilder* ImageSettingContainer::imageBuilder() const
+{
+	return m_imageBuilder;
 }
 
 void ImageSettingContainer::setImageBuilder(ImageBuilder* builder)
@@ -163,7 +169,17 @@ void ImageSettingContainer::apply(const QSize& size, VTKGraphicsView* v) const
 		item->actor2DCollection()->RemoveItem(m_actor);
 	}
 
-	QImage canvasImage(int(m_setting->width * v->devicePixelRatioF()), int(m_setting->height * v->devicePixelRatioF()), QImage::Format::Format_ARGB32);
+	int w, h;
+	if (m_setting->autoSize) {
+		QSize size = m_imageBuilder->autoSize();
+		w = size.width();
+		h = size.height();
+	} else {
+		w = m_setting->width;
+		h = m_setting->height;
+	}
+
+	QImage canvasImage(int(w * v->devicePixelRatioF()), int(h * v->devicePixelRatioF()), QImage::Format::Format_ARGB32);
 	canvasImage.setDevicePixelRatio(v->devicePixelRatioF());
 	canvasImage.fill(Qt::transparent);
 
@@ -215,26 +231,36 @@ ImageSettingContainer::Controller* ImageSettingContainer::controller()
 QRect ImageSettingContainer::rect(const QSize& size, VTKGraphicsView* view) const
 {
 	QRect ret;
+	int w, h;
+
+	if (m_setting->autoSize) {
+		QSize size = m_imageBuilder->autoSize();
+		w = size.width();
+		h = size.height();
+	} else {
+		w = m_setting->width;
+		h = m_setting->height;
+	}
 
 	Position pos = position.value();
 
 	if (pos == Position::Top || pos == Position::TopLeft || pos == Position::TopRight) {
 		ret.setTop(verticalMargin * size.height() * view->devicePixelRatioF());
 	} else if (pos == Position::Bottom || pos == Position::BottomLeft || pos == Position::BottomRight) {
-		ret.setTop((size.height() - verticalMargin * size.height() - height) * view->devicePixelRatioF());
+		ret.setTop((size.height() - verticalMargin * size.height() - h) * view->devicePixelRatioF());
 	} else {
-		ret.setTop((size.height() / 2 - height / 2) * view->devicePixelRatioF());
+		ret.setTop((size.height() / 2 - h / 2) * view->devicePixelRatioF());
 	}
 	if (pos == Position::Left || pos == Position::TopLeft || pos == Position::BottomLeft) {
 		ret.setLeft(horizontalMargin * size.width() * view->devicePixelRatioF());
 	} else if (pos == Position::Right || pos == Position::TopRight || pos == Position::BottomRight) {
-		ret.setLeft((size.width() - horizontalMargin * size.width() - width) * view->devicePixelRatioF());
+		ret.setLeft((size.width() - horizontalMargin * size.width() - w) * view->devicePixelRatioF());
 	} else {
-		ret.setLeft((size.width() / 2 - width / 2) * view->devicePixelRatioF());
+		ret.setLeft((size.width() / 2 - w / 2) * view->devicePixelRatioF());
 	}
 
-	ret.setWidth(width * view->devicePixelRatioF());
-	ret.setHeight(height * view->devicePixelRatioF());
+	ret.setWidth(w * view->devicePixelRatioF());
+	ret.setHeight(h * view->devicePixelRatioF());
 
 	return ret;
 }

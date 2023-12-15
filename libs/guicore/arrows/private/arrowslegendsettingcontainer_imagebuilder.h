@@ -10,6 +10,7 @@ public:
 	ImageBuilder(ArrowsLegendSettingContainer* setting);
 
 	bool build(QImage* image) override;
+	QSize autoSize() const override;
 
 private:
 	ArrowsLegendSettingContainer* m_setting;

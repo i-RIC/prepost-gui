@@ -62,6 +62,7 @@ void ColorMapEnumerateLegendSettingEditWidget::setSetting(const ColorMapEnumerat
 	} else {
 		s = setting;
 	}
+	s.setColorMapSetting(setting.colorMapSetting());
 
 	ui->visibleCheckBox->setChecked(s.visible);
 	if (s.direction == ColorMapEnumerateLegendSettingContainer::Direction::Horizontal) {

@@ -11,6 +11,7 @@ public:
 	ImageBuilder(ColorMapEnumerateLegendSettingContainer* setting);
 
 	bool build(QImage* image) override;
+	QSize autoSize() const override;
 
 private:
 	void buildDiscreteVertical(QPainter* painter, int top, int bottom, QImage* image, const ColorMapEnumerateLegendSettingContainer& s);

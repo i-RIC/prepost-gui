@@ -1,5 +1,6 @@
 #include "imagesettingcontainer.h"
 #include "imagesettingwidget.h"
+#include "public/imagesettingcontainer_imagebuilder.h"
 #include "ui_imagesettingwidget.h"
 
 ImageSettingWidget::ImageSettingWidget(QWidget *parent) :
@@ -45,6 +46,7 @@ ImageSettingContainer ImageSettingWidget::setting() const
 
 	ret.horizontalMargin = ui->horizontalMarginSpinBox->value() / 100;
 	ret.verticalMargin = ui->verticalMarginSpinBox->value() / 100;
+	ret.autoSize = ui->autoSizeCheckBox->isChecked();
 	ret.width = ui->widthSpinBox->value();
 	ret.height = ui->heightSpinBox->value();
 
@@ -74,8 +76,16 @@ void ImageSettingWidget::setSetting(const ImageSettingContainer& setting)
 
 	ui->horizontalMarginSpinBox->setValue(setting.horizontalMargin * 100);
 	ui->verticalMarginSpinBox->setValue(setting.verticalMargin * 100);
-	ui->widthSpinBox->setValue(setting.width);
-	ui->heightSpinBox->setValue(setting.height);
+	ui->autoSizeCheckBox->setChecked(setting.autoSize);
+
+	if (setting.autoSize) {
+		auto size = setting.imageBuilder()->autoSize();
+		ui->widthSpinBox->setValue(size.width());
+		ui->heightSpinBox->setValue(size.height());
+	} else {
+		ui->widthSpinBox->setValue(setting.width);
+		ui->heightSpinBox->setValue(setting.height);
+	}
 
 	handlePositionChange();
 }

@@ -3,59 +3,20 @@
 
 #include "../postbase_global.h"
 
+#include "poststringresultengine.h"
+#include "poststringresultsettingcontainer.h"
+
 #include <guicore/datamodel/graphicswindowdataitem.h>
-#include <misc/colorcontainer.h>
-#include <misc/compositecontainer.h>
-#include <misc/boolcontainer.h>
-#include <misc/intcontainer.h>
-#include <misc/qfontcontainer.h>
 
-#include <QFont>
-#include <QImage>
-
-class PostStringResult;
 class PostZoneDataItem;
 
 class vtkActor2D;
-class vtkQImageToImageSource;
-class vtkTextActor;
 
 class POSTBASEDLL_EXPORT PostStringResultDataItem : public GraphicsWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	enum class MouseEventMode {
-		Normal,
-		MovePrepare,
-		Move,
-		ResizeWHPrepare,
-		ResizeWH,
-		ResizeWPrepare,
-		ResizeW,
-		ResizeHPrepare,
-		ResizeH,
-	};
-
-	struct Setting : public CompositeContainer
-	{
-		Setting();
-		Setting(const Setting& s);
-		Setting& operator=(const Setting& s);
-
-		BoolContainer autoSize;
-		IntContainer hMargin;
-		IntContainer vMargin;
-		IntContainer left;
-		IntContainer top;
-		IntContainer width;
-		IntContainer height;
-
-		ColorContainer fontColor;
-		QFontContainer font;
-		ColorContainer backgroundColor;
-	};
-
 	PostStringResultDataItem(GraphicsWindowDataItem* parent);
 	~PostStringResultDataItem() override;
 
@@ -65,33 +26,22 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
+	void showPropertyDialog() override;
+
 private:
 	void setupActors();
-	void updateMouseEventMode(QMouseEvent* event);
-	void updateMouseCursor(VTKGraphicsView* v);
 
 	QDialog* propertyDialog(QWidget* parent) override;
-	void handlePropertyDialogAccepted(QDialog* propDialog) override;
 	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
+	void updateActorSetting() override;
 
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
 	virtual PostZoneDataItem* zoneDataItem() const = 0;
 
-	PostStringResult* m_stringResult;
-	Setting m_setting;
-
-	QImage m_image;
-	vtkQImageToImageSource* m_imageToImage;
+	PostStringResultSettingContainer m_setting;
 	vtkActor2D* m_actor;
-
-	MouseEventMode m_mouseEventMode;
-	QPoint m_oldPosition;
-
-	class SetSettingCommand;
-	class MoveCommand;
-	class ResizeCommand;
 };
 
 #endif // POSTSTRINGRESULTDATAITEM_H

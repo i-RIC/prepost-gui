@@ -10,7 +10,12 @@ ModifyCommandDialog::ModifyCommandDialog(QWidget *parent) :
 	ui(new Ui::ModifyCommandDialog)
 {
 	ui->setupUi(this);
+	ui->importButton->hide();
+	ui->exportButton->hide();
+
 	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &ModifyCommandDialog::handleButtonClick);
+	connect(ui->importButton, &QPushButton::clicked, this, &ModifyCommandDialog::importClicked);
+	connect(ui->exportButton, &QPushButton::clicked, this, &ModifyCommandDialog::exportClicked);
 }
 
 ModifyCommandDialog::~ModifyCommandDialog()
@@ -27,6 +32,16 @@ void ModifyCommandDialog::setWidget(ModifyCommandWidget* widget)
 {
 	m_widget = widget;
 	ui->widget->setWidget(widget);
+}
+
+void ModifyCommandDialog::showImportButton()
+{
+	ui->importButton->show();
+}
+
+void ModifyCommandDialog::showExportButton()
+{
+	ui->exportButton->show();
 }
 
 void ModifyCommandDialog::accept()
