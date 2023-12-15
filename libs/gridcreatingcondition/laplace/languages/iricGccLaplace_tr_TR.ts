@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -86,7 +88,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex'i Kaldır (&amp;R)</translation>
+        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Edit coordinates...</source>
@@ -138,7 +140,7 @@
     </message>
     <message>
         <source>Remove Vertex</source>
-        <translation>Vertex'i Kaldır</translation>
+        <translation>Vertex&apos;i Kaldır</translation>
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>

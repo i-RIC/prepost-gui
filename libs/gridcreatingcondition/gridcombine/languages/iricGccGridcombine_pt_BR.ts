@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
@@ -118,6 +120,10 @@
     <message>
         <source>Elevation of obstacle cells :</source>
         <translation>Altura do leito fluvial pela celula de obstaculos:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

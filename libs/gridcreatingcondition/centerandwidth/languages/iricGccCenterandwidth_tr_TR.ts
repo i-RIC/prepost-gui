@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -7,7 +9,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex'i Kaldır (&amp;R)</translation>
+        <translation>Vertex&apos;i Kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
@@ -107,6 +109,10 @@
     <message>
         <source>nJ should be even. incrementing by one.</source>
         <translation>nJ eşit olmalıdır. bir artırarak.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

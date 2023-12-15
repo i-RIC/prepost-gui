@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -218,8 +220,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Odległość od punktu centralnego</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>„Lewy brzeg” to brzeg, który widzisz po lewej stronie, gdy skręcasz w dół rzeki.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

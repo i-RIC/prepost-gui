@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -142,7 +144,7 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line'ди өзүңүз аныктаңыз.</translation>
+        <translation>Кайчылаш маалыматтар табылган жок. Сураныч, Center Line&apos;ди өзүңүз аныктаңыз.</translation>
     </message>
 </context>
 <context>

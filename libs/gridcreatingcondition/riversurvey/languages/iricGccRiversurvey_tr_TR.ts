@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -107,7 +109,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>When you want to add division points near river center or upper side, please specify value more than 1.</source>
-        <translation>Nehir merkezine veya yukarısına yakın bölme noktaları eklemek istediğinizde, lütfen 1'den büyük bir değer belirtin.</translation>
+        <translation>Nehir merkezine veya yukarısına yakın bölme noktaları eklemek istediğinizde, lütfen 1&apos;den büyük bir değer belirtin.</translation>
     </message>
 </context>
 <context>
@@ -180,7 +182,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>When you want to assign more division points near river center or upper side, please specify value more than 1.</source>
-        <translation>Nehir merkezi veya yukarısı yakınında daha fazla bölünme noktası atamak istediğinizde, lütfen 1'den büyük bir değer belirtin.</translation>
+        <translation>Nehir merkezi veya yukarısı yakınında daha fazla bölünme noktası atamak istediğinizde, lütfen 1&apos;den büyük bir değer belirtin.</translation>
     </message>
 </context>
 <context>
@@ -196,6 +198,10 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     <message>
         <source>End Traversal Line:</source>
         <translation>Geçiş Hattını Sonlandır:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

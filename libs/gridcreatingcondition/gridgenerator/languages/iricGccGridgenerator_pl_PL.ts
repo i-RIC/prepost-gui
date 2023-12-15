@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="pl_PL">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -218,6 +220,10 @@
     <message>
         <source>Width variation [m] :</source>
         <translation>Zmienność szerokości [m] :</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

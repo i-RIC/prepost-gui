@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -31,11 +33,11 @@
     </message>
     <message>
         <source>Generating grid...</source>
-        <translation>S'està generant la graella...</translation>
+        <translation>S&apos;està generant la graella...</translation>
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation>La definició de condició de creació de quadrícula encara no s'ha acabat.</translation>
+        <translation>La definició de condició de creació de quadrícula encara no s&apos;ha acabat.</translation>
     </message>
     <message>
         <source>Grid creating region polygon shape is invalid.</source>
@@ -169,11 +171,15 @@
     </message>
     <message>
         <source>&amp;Number of Iterations:</source>
-        <translation>Nombre d'iteracions: (&amp;N)</translation>
+        <translation>Nombre d&apos;iteracions: (&amp;N)</translation>
     </message>
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
-        <translation>Quan creieu que la graella no està prou optimitzada, proveu d'augmentar aquest valor.</translation>
+        <translation>Quan creieu que la graella no està prou optimitzada, proveu d&apos;augmentar aquest valor.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

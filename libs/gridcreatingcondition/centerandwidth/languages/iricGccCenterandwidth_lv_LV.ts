@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -107,6 +109,10 @@
     <message>
         <source>nJ should be even. incrementing by one.</source>
         <translation>nJ jābūt vienmērīgam. palielinot par vienu.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

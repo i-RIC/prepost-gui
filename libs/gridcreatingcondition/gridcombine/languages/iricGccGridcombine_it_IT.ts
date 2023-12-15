@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
@@ -61,7 +63,7 @@
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation>Indice di inizio direzionale dell'attraversamento Mainstream:</translation>
+        <translation>Indice di inizio direzionale dell&apos;attraversamento Mainstream:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
@@ -77,7 +79,7 @@
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation>Indice di inizio dell'affluente direzionale del flusso principale:</translation>
+        <translation>Indice di inizio dell&apos;affluente direzionale del flusso principale:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
@@ -109,7 +111,7 @@
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation>Valore di correzione per l'impostazione delle celle ostacolo:</translation>
+        <translation>Valore di correzione per l&apos;impostazione delle celle ostacolo:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
@@ -118,6 +120,10 @@
     <message>
         <source>Elevation of obstacle cells :</source>
         <translation>Elevazione delle celle ostacolo:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -204,6 +206,10 @@
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
         <translation>格子の形状の最適化が十分行われていないと感じた時は、この値を大きくして下さい。</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation>格子生成(&amp;C)</translation>
     </message>
 </context>
 <context>

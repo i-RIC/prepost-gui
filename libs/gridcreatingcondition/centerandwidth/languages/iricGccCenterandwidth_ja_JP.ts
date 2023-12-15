@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCenterAndWidth</name>
@@ -126,6 +128,10 @@
     <message>
         <source>Division number in cross-stream direction should be even. incrementing by one.</source>
         <translation type="vanished">横断方向の分割数は、偶数でなくてはなりません。1増やします。</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation>格子生成(&amp;C)</translation>
     </message>
 </context>
 <context>
