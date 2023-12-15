@@ -551,6 +551,8 @@ HEADERS += guicore_global.h \
            scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.h \
            scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog_setting.h \
            scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.h \
+           scalarstocolors/private/colormapsettingeditwidget_changenumcolorsdialog.h \
+           scalarstocolors/private/colormapsettingeditwidget_changenumcolorsdialog_delegate.h \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.h \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.h \
            scalarstocolors/private/colormapsettingeditwidget_importdialog.h \
@@ -752,6 +754,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          pre/geodatabackground/geodatabackgroundeditdialog.ui \
          project/inputcond/inputconditiondialog.ui \
          scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.ui \
+         scalarstocolors/private/colormapsettingeditwidget_changenumcolorsdialog.ui \
          scalarstocolors/private/colormapsettingeditwidget_importdialog.ui \
          scalarstocolors/private/colormapsettingeditwidget_switchtodiscretedialog.ui \
          pre/gridcond/base/gridattributeeditdialog.ui \
@@ -1082,6 +1085,8 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog.cpp \
            scalarstocolors/private/colormapenumeratesettingeditwidget_importdialog_setting.cpp \
            scalarstocolors/private/colormaplegendsettingcontainer_imagebuilder.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_changenumcolorsdialog.cpp \
+           scalarstocolors/private/colormapsettingeditwidget_changenumcolorsdialog_delegate.cpp \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller.cpp \
            scalarstocolors/private/colormapsettingeditwidget_colortablecontroller_delegate.cpp \
            scalarstocolors/private/colormapsettingeditwidget_importdialog.cpp \

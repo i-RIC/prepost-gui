@@ -37,6 +37,7 @@ private slots:
 
 	void reverseColors();
 	void divideEqually();
+	void changeNumColors();
 
 	void switchAutoValueRange(bool automatic);
 	void changeFillLower(bool fill);
@@ -72,6 +73,7 @@ private:
 
 	Ui::ColorMapSettingEditWidget *ui;
 
+	class ChangeNumColorsDialog;
 	class ImportDialog;
 	class SwitchToDiscreteDialog;
 };
