@@ -3,6 +3,7 @@
 #include "gridcreatingconditioncenterandwidthdialog.h"
 
 #include <QMessageBox>
+#include <QPushButton>
 
 GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDialog(QWidget* parent) :
 	QDialog(parent),
@@ -10,15 +11,23 @@ GridCreatingConditionCenterAndWidthDialog::GridCreatingConditionCenterAndWidthDi
 {
 	ui->setupUi(this);
 	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
-	connect(ui->nISpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDI()));
-	connect(ui->nJSpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateDJ()));
-	connect(ui->nJSpinBox, SIGNAL(editingFinished()), this, SLOT(handleNJChange()));
-	connect(ui->widthSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateDJ()));
+	connect<void (QSpinBox::*)(int)> (ui->nISpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionCenterAndWidthDialog::updateDI);
+	connect<void (QSpinBox::*)(int)> (ui->nJSpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionCenterAndWidthDialog::updateDJ);
+	connect(ui->nJSpinBox, &QSpinBox::editingFinished, this, &GridCreatingConditionCenterAndWidthDialog::handleNJChange);
+	connect<void (QDoubleSpinBox::*)(double)>(ui->widthSpinBox, &QDoubleSpinBox::valueChanged, this, &GridCreatingConditionCenterAndWidthDialog::updateDJ);
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionCenterAndWidthDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+	ui->buttonBox->button(QDialogButtonBox::Apply)->setDisabled(readOnly);
 }
 
 int GridCreatingConditionCenterAndWidthDialog::iMax() const

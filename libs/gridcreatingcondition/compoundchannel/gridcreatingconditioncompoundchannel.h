@@ -119,6 +119,8 @@ public:
 	void clear() override;
 	bool ready() const override;
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	void update2Ds() override;
 	void showInitialDialog() override;
 

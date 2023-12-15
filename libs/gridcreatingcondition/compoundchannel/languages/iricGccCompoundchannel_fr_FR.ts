@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
     <message>
         <source>Finish Defining Polygon or Polygonal line</source>
-        <translation>Terminer la définition d'un polygone ou d'une ligne polygonale</translation>
+        <translation>Terminer la définition d&apos;un polygone ou d&apos;une ligne polygonale</translation>
     </message>
     <message>
         <source>Information</source>
@@ -11,7 +13,7 @@
     </message>
     <message>
         <source>Next, please define low water channel region. Water channel can be defined as polygon by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
-        <translation>Ensuite, veuillez définir la région du canal d'étiage. Le canal d'eau peut être défini comme un polygone en cliquant avec la souris. Terminez la définition en double-cliquant ou en appuyant sur la touche retour.</translation>
+        <translation>Ensuite, veuillez définir la région du canal d&apos;étiage. Le canal d&apos;eau peut être défini comme un polygone en cliquant avec la souris. Terminez la définition en double-cliquant ou en appuyant sur la touche retour.</translation>
     </message>
     <message>
         <source>Next, please define grid center line. Grid center line can be defined as polygonal line by mouse-clicking. Finish definining by double clicking, or pressing return key.</source>
@@ -43,7 +45,7 @@
     </message>
     <message>
         <source>Move Polygonal Line Vertex</source>
-        <translation>Déplacer le sommet d'une ligne polygonale</translation>
+        <translation>Déplacer le sommet d&apos;une ligne polygonale</translation>
     </message>
     <message>
         <source>Insert Polygonal Line Vertex</source>
@@ -87,23 +89,23 @@
     </message>
     <message>
         <source>Grid creating condition definition not finished yet.</source>
-        <translation>La définition des conditions de création de la grille n'est pas encore terminée.</translation>
+        <translation>La définition des conditions de création de la grille n&apos;est pas encore terminée.</translation>
     </message>
     <message>
         <source>Grid creating region polygon shape is invalid.</source>
-        <translation>La forme du polygone de la région de création de la grille n'est pas valide.</translation>
+        <translation>La forme du polygone de la région de création de la grille n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Low water channel region polygon shape is invalid.</source>
-        <translation>La forme du polygone de la région du canal d'étiage n'est pas valide.</translation>
+        <translation>La forme du polygone de la région du canal d&apos;étiage n&apos;est pas valide.</translation>
     </message>
     <message>
         <source>Low water channel region have to be inside grid region.</source>
-        <translation>La région du canal d'étiage doit être à l'intérieur de la région de la grille.</translation>
+        <translation>La région du canal d&apos;étiage doit être à l&apos;intérieur de la région de la grille.</translation>
     </message>
     <message>
         <source>Center line have to be inside low water channel region.</source>
-        <translation>La ligne centrale doit être à l'intérieur de la région du canal d'étiage.</translation>
+        <translation>La ligne centrale doit être à l&apos;intérieur de la région du canal d&apos;étiage.</translation>
     </message>
     <message>
         <source>Edit Polygon Coordinates</source>
@@ -142,7 +144,7 @@
     <name>GridCreatingConditionCompoundChannelAbstractPolygon</name>
     <message>
         <source>Please specify a closed polygon!</source>
-        <translation>Veuillez spécifier un polygone fermé !</translation>
+        <translation>Veuillez spécifier un polygone fermé&#xa0;!</translation>
     </message>
 </context>
 <context>
@@ -169,11 +171,15 @@
     </message>
     <message>
         <source>&amp;Number of Iterations:</source>
-        <translation>Nombre d'itérations : (&amp;N)</translation>
+        <translation>Nombre d&apos;itérations&#xa0;: (&amp;N)</translation>
     </message>
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
-        <translation>Lorsque vous pensez que la grille n'est pas suffisamment optimisée, essayez d'augmenter cette valeur.</translation>
+        <translation>Lorsque vous pensez que la grille n&apos;est pas suffisamment optimisée, essayez d&apos;augmenter cette valeur.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -185,7 +191,7 @@
     <message>
         <source>Please define a polygon as the region to create grid, and another polygon as the low water channel region. Then, please add a polygonal line as river center.
 The low water channel region should be included in grid creation region, andRiver center line should be included in the low water channel region.</source>
-        <translation>Veuillez définir un polygone comme région pour créer la grille et un autre polygone comme région du canal d'étiage. Ensuite, veuillez ajouter une ligne polygonale comme centre de la rivière. La région du canal d'étiage doit être incluse dans la région de création du réseau et la ligne médiane de la rivière doit être incluse dans la région du canal d'étiage.</translation>
+        <translation>Veuillez définir un polygone comme région pour créer la grille et un autre polygone comme région du canal d&apos;étiage. Ensuite, veuillez ajouter une ligne polygonale comme centre de la rivière. La région du canal d&apos;étiage doit être incluse dans la région de création du réseau et la ligne médiane de la rivière doit être incluse dans la région du canal d&apos;étiage.</translation>
     </message>
 </context>
 </TS>

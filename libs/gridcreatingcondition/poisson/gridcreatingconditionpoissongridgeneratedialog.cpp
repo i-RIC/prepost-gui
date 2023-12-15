@@ -1,6 +1,8 @@
 #include "gridcreatingconditionpoissongridgeneratedialog.h"
 #include "ui_gridcreatingconditionpoissongridgeneratedialog.h"
 
+#include <QPushButton>
+
 GridCreatingConditionPoissonGridGenerateDialog::GridCreatingConditionPoissonGridGenerateDialog(QWidget *parent) :
 	QDialog(parent),
 	ui(new Ui::GridCreatingConditionPoissonGridGenerateDialog)
@@ -8,11 +10,18 @@ GridCreatingConditionPoissonGridGenerateDialog::GridCreatingConditionPoissonGrid
 	ui->setupUi(this);
 	connect<void (QSpinBox::*)(int)>(ui->nISpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionPoissonGridGenerateDialog::updateDI);
 	connect<void (QSpinBox::*)(int)>(ui->nJSpinBox, &QSpinBox::valueChanged, this, &GridCreatingConditionPoissonGridGenerateDialog::updateDJ);
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionPoissonGridGenerateDialog::~GridCreatingConditionPoissonGridGenerateDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionPoissonGridGenerateDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 int GridCreatingConditionPoissonGridGenerateDialog::iDiv() const

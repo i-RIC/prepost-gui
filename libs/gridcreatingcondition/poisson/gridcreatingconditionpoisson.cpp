@@ -551,7 +551,7 @@ void GridCreatingConditionPoisson::showInitialDialog()
 	}
 }
 
-bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
+bool GridCreatingConditionPoisson::create(QWidget* parent)
 {
 	bool ok = true;
 	ok = ok && impl->m_centerLineController.polyLine().size() >= 2;
@@ -562,7 +562,7 @@ bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 		return false;
 	}
 
-	GridCreatingConditionPoissonGridGenerateDialog dialog(preProcessorWindow());
+	GridCreatingConditionPoissonGridGenerateDialog dialog(parent);
 
 	double iLen = PolyLineUtil::length(impl->m_centerLineController.polyLine());
 	double jLen = 0.5 * (
@@ -578,6 +578,9 @@ bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return false;}
 
+	ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	impl->m_iDiv = dialog.iDiv();
 	impl->m_jDiv = dialog.jDiv();
 	impl->m_maxIterations = dialog.maxIterations();
@@ -585,6 +588,30 @@ bool GridCreatingConditionPoisson::create(QWidget* /*parent*/)
 	v4InputGrid* grid = impl->createGrid();
 	emit gridCreated(grid);
 
+	return true;
+}
+
+void GridCreatingConditionPoisson::showCondition(QWidget* parent)
+{
+	GridCreatingConditionPoissonGridGenerateDialog dialog(parent);
+	dialog.setReadOnly(true);
+
+	double iLen = PolyLineUtil::length(impl->m_centerLineController.polyLine());
+	double jLen = 0.5 * (
+				PolyLineUtil::length(impl->m_upstreamLineController.polyLine()) +
+				PolyLineUtil::length(impl->m_downstreamLineController.polyLine()));
+	dialog.setILength(iLen);
+	dialog.setJLength(jLen);
+
+	dialog.setIDiv(impl->m_iDiv);
+	dialog.setJDiv(impl->m_jDiv);
+	dialog.setMaxIterations(impl->m_maxIterations);
+
+	dialog.exec();
+}
+
+bool GridCreatingConditionPoisson::showConditionAvailable()
+{
 	return true;
 }
 

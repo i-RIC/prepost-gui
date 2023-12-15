@@ -23,6 +23,8 @@ public:
 	~GridCreatingConditionCenterAndWidth();
 
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void setupActors() override;
 	void setupMenu() override;
@@ -46,7 +48,7 @@ public:
 	void definePolyLine();
 	void createSpline(vtkPoints* points, int division);
 	v4InputGrid* createGrid();
-	void showDialog(QWidget* parent);
+	void showDialog(QWidget* parent, bool readOnly = false);
 	void handleDialogAccepted(QDialog* d);
 	void handleDialogRejected(QDialog* d);
 	void setIMax(int i);

@@ -1779,6 +1779,10 @@ This algorithm can be used only for structured grids.</source>
         <source>Select file to export</source>
         <translation>選擇要導出的文件</translation>
     </message>
+    <message>
+        <source>&amp;Show Grid Creating Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>

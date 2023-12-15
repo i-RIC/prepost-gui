@@ -23,6 +23,8 @@ public:
 	~GridCreatingConditionExternalProgram();
 
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void clear() override;
 	void showInitialDialog() override;

@@ -24,6 +24,7 @@ public:
 	GridCreatingConditionExternalProgramSettingDialog(SolverDefinition* def, const QLocale& locale, iRICMainWindowI* mainW, QWidget* parent);
 	~GridCreatingConditionExternalProgramSettingDialog();
 
+	void setReadOnly(bool readOnly);
 	bool load();
 	bool save();
 	/// Reset to store default values.

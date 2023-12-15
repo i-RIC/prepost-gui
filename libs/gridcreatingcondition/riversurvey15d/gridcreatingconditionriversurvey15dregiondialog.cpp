@@ -5,8 +5,10 @@
 
 #include <geodata/riversurvey/geodatariverpathpoint.h>
 #include <geodata/riversurvey/geodatariversurvey.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
 
 #include <QMessageBox>
+#include <QPushButton>
 
 GridCreatingConditionRiverSurvey15DRegionDialog::GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent) :
 	QDialog(parent),
@@ -14,11 +16,12 @@ GridCreatingConditionRiverSurvey15DRegionDialog::GridCreatingConditionRiverSurve
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 
 	m_condition = cond;
-	connect(ui->startComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleStartUpdate()));
-	connect(ui->endComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleEndUpdate()));
-	connect(ui->numberSpinBox, SIGNAL(editingFinished()), this, SLOT(setNumberSpinBox()));
+	connect<void (QComboBox::*)(int)>(ui->startComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurvey15DRegionDialog::handleStartUpdate);
+	connect<void (QComboBox::*)(int)>(ui->endComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurvey15DRegionDialog::handleEndUpdate);
+	connect(ui->numberSpinBox, &QSpinBox::editingFinished, this, &GridCreatingConditionRiverSurvey15DRegionDialog::setNumberSpinBox);
 
 	adjustSize();
 }
@@ -26,6 +29,11 @@ GridCreatingConditionRiverSurvey15DRegionDialog::GridCreatingConditionRiverSurve
 GridCreatingConditionRiverSurvey15DRegionDialog::~GridCreatingConditionRiverSurvey15DRegionDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionRiverSurvey15DRegionDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 void GridCreatingConditionRiverSurvey15DRegionDialog::setData(GeoDataRiverSurvey* rs)
@@ -128,6 +136,9 @@ void GridCreatingConditionRiverSurvey15DRegionDialog::setNumberSpinBox()
 
 void GridCreatingConditionRiverSurvey15DRegionDialog::accept()
 {
+	bool ok = m_condition->gccDataItem()->confirmOverwriteIfNeeded(this);
+	if (! ok) {return;}
+
 	m_condition->createGrid(startPoint(), endPoint(), ui->numberSpinBox->value(), positionMode());
 	QDialog::accept();
 }

@@ -3,6 +3,8 @@
 #include "gridcreatingconditionrectangularregionlonlat.h"
 #include "gridcreatingconditionrectangularregionlonlatsettingdialog.h"
 
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataitemi.h>
+
 #include <QPushButton>
 
 #include <cmath>
@@ -14,23 +16,30 @@ GridCreatingConditionRectangularRegionLonLatSettingDialog::GridCreatingCondition
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
 	m_condition = cond;
-	connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(handleButtonClick(QAbstractButton*)));
+	connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::handleButtonClick);
 
-	connect(ui->xMinSpinBox, SIGNAL(focusOut()), this, SLOT(checkXMax()));
-	connect(ui->xMaxSpinBox, SIGNAL(focusOut()), this, SLOT(checkXMin()));
-	connect(ui->yMinSpinBox, SIGNAL(focusOut()), this, SLOT(checkYMax()));
-	connect(ui->yMaxSpinBox, SIGNAL(focusOut()), this, SLOT(checkYMin()));
+	connect(ui->xMinSpinBox, &QDoubleSpinBoxWithFocusOut::focusOut, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMax);
+	connect(ui->xMaxSpinBox, &QDoubleSpinBoxWithFocusOut::focusOut, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::checkXMin);
+	connect(ui->yMinSpinBox, &QDoubleSpinBoxWithFocusOut::focusOut, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMax);
+	connect(ui->yMaxSpinBox, &QDoubleSpinBoxWithFocusOut::focusOut, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::checkYMin);
 
-	connect(ui->xMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
-	connect(ui->yMinSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
-	connect(ui->xMaxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
-	connect(ui->yMaxSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
-	connect(ui->stepSizeSpinBox, SIGNAL(valueChanged(double)), this, SLOT(updateResultDisplays()));
+	connect<void (QDoubleSpinBoxWithFocusOut::*)(double)>(ui->xMinSpinBox, &QDoubleSpinBoxWithFocusOut::valueChanged, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisplays);
+	connect<void (QDoubleSpinBoxWithFocusOut::*)(double)>(ui->yMinSpinBox, &QDoubleSpinBoxWithFocusOut::valueChanged, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisplays);
+	connect<void (QDoubleSpinBoxWithFocusOut::*)(double)>(ui->xMaxSpinBox, &QDoubleSpinBoxWithFocusOut::valueChanged, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisplays);
+	connect<void (QDoubleSpinBoxWithFocusOut::*)(double)>(ui->yMaxSpinBox, &QDoubleSpinBoxWithFocusOut::valueChanged, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisplays);
+	connect<void (QDoubleSpinBox::*)(double)>(ui->stepSizeSpinBox, &QDoubleSpinBox::valueChanged, this, &GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisplays);
+
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionRectangularRegionLonLatSettingDialog::~GridCreatingConditionRectangularRegionLonLatSettingDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionRectangularRegionLonLatSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::setXMin(double xmin)
@@ -140,6 +149,9 @@ void GridCreatingConditionRectangularRegionLonLatSettingDialog::updateResultDisp
 
 void GridCreatingConditionRectangularRegionLonLatSettingDialog::accept()
 {
+	bool ok = m_condition->m_conditionDataItem->confirmOverwriteIfNeeded(this);
+	if (! ok) {return;}
+
 	bool ret = m_condition->createGrid(
 		ui->xMinSpinBox->value(), ui->xMaxSpinBox->value(),
 		ui->yMinSpinBox->value(), ui->yMaxSpinBox->value(),

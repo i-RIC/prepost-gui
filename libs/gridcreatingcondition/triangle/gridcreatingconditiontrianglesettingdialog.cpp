@@ -7,6 +7,8 @@ GridCreatingConditionTriangleSettingDialog::GridCreatingConditionTriangleSetting
 	ui(new Ui::GridCreatingConditionTriangleSettingDialog)
 {
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
+
 	ui->angleSpinBox->setValue(30);
 	ui->areaEdit->setValue(1000);
 }
@@ -14,6 +16,11 @@ GridCreatingConditionTriangleSettingDialog::GridCreatingConditionTriangleSetting
 GridCreatingConditionTriangleSettingDialog::~GridCreatingConditionTriangleSettingDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionTriangleSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 bool GridCreatingConditionTriangleSettingDialog::angleConstraint()

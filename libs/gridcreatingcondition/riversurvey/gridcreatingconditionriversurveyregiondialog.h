@@ -22,6 +22,7 @@ public:
 	explicit GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurveyRegionDialog();
 
+	void setReadOnly(bool readOnly);
 	void setData(GeoDataRiverSurvey* rs);
 
 	GeoDataRiverPathPoint* startPoint();

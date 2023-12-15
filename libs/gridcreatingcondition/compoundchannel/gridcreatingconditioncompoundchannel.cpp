@@ -947,6 +947,10 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	if (QDialog::Rejected == dialog.exec()) {
 		return false;
 	}
+
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	m_streamWiseDivision = dialog.streamWiseDivision();
 	m_leftDivision = dialog.leftDivision();
 	m_rightDivision = dialog.rightDivision();
@@ -957,6 +961,26 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	auto grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
+	return true;
+}
+
+void GridCreatingConditionCompoundChannel::showCondition(QWidget* parent)
+{
+	GridCreatingConditionCompoundChannelSettingDialog dialog(parent);
+	dialog.setStreamWiseDivision(m_streamWiseDivision);
+	dialog.setLeftDivision(m_leftDivision);
+	dialog.setRightDivision(m_rightDivision);
+	dialog.setCenterDivision(m_centerDivision);
+
+	dialog.setRelaxation(m_relaxation);
+	dialog.setIterations(m_iterations);
+	dialog.setReadOnly(true);
+
+	dialog.exec();
+}
+
+bool GridCreatingConditionCompoundChannel::showConditionAvailable()
+{
 	return true;
 }
 

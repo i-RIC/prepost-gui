@@ -155,14 +155,17 @@ void GridCreatingConditionLaplace::showInitialDialog()
 	renderGraphicsView();
 }
 
-bool GridCreatingConditionLaplace::create(QWidget* /*parent*/)
+bool GridCreatingConditionLaplace::create(QWidget* parent)
 {
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	v4Structured2dGrid* grid = impl->createGrid();
 	if (grid == nullptr) {
 		return false;
 	}
 
-	auto gt = dynamic_cast<PreProcessorGridTypeDataItemI*>(m_conditionDataItem->parent()->parent());
+	auto gt = m_conditionDataItem->gridTypeDataItem();
 	auto ret = new v4InputGrid(gt->gridType(), grid);
 	gt->gridType()->buildGridAttributes(ret);
 
@@ -170,6 +173,14 @@ bool GridCreatingConditionLaplace::create(QWidget* /*parent*/)
 	emit gridCreated(ret);
 
 	return true;
+}
+
+void GridCreatingConditionLaplace::showCondition(QWidget* /*parent*/)
+{}
+
+bool GridCreatingConditionLaplace::showConditionAvailable()
+{
+	return false;
 }
 
 bool GridCreatingConditionLaplace::ready() const

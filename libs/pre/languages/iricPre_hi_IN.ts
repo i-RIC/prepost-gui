@@ -1779,6 +1779,10 @@ This algorithm can be used only for structured grids.</source>
         <source>Select file to export</source>
         <translation>निर्यात करने के लिए फ़ाइल का चयन करें</translation>
     </message>
+    <message>
+        <source>&amp;Show Grid Creating Condition...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>

@@ -1048,6 +1048,10 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	if (QDialog::Rejected == dialog.exec()) {
 		return false;
 	}
+
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	m_angleConstraint = dialog.angleConstraint();
 	m_angle = dialog.angle();
 	m_areaConstraint = dialog.areaConstraint();
@@ -1056,6 +1060,23 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	auto grid = createGrid();
 	if (grid == nullptr) {return false;}
 	emit gridCreated(grid);
+	return true;
+}
+
+
+void GridCreatingConditionTriangle::showCondition(QWidget* parent)
+{
+	GridCreatingConditionTriangleSettingDialog dialog(parent);
+	dialog.setReadOnly(true);
+	dialog.setAngleConstraint(m_angleConstraint);
+	dialog.setAngle(m_angle);
+	dialog.setAreaConstraint(m_areaConstraint);
+	dialog.setArea(m_area);
+	dialog.exec();
+}
+
+bool GridCreatingConditionTriangle::showConditionAvailable()
+{
 	return true;
 }
 

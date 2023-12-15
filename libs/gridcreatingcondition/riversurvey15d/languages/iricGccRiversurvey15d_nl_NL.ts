@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -218,8 +220,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Afstand vanaf middelpunt</translation>
     </message>
     <message>
-        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>"Linkeroever" is de oever die u aan de linkerkant ziet, wanneer u in stroomafwaartse richting draait.</translation>
+        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>&quot;Linkeroever&quot; is de oever die u aan de linkerkant ziet, wanneer u in stroomafwaartse richting draait.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

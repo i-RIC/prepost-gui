@@ -50,7 +50,6 @@ public:
 		meTranslateDialog,
 		meEditVerticesDialog
 	};
-	/// Constructor
 	GridCreatingConditionTriangle(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionTriangle();
 	void setupMenu() override;
@@ -75,6 +74,8 @@ public:
 	void clear() override;
 	bool ready() const override {return true;}
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	void showInitialDialog() override;
 
 private slots:
