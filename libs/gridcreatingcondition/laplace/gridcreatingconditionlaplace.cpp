@@ -167,6 +167,14 @@ bool GridCreatingConditionLaplace::create(QWidget* parent)
 	return true;
 }
 
+void GridCreatingConditionLaplace::showCondition(QWidget* /*parent*/)
+{}
+
+bool GridCreatingConditionLaplace::showConditionAvailable()
+{
+	return false;
+}
+
 bool GridCreatingConditionLaplace::ready() const
 {
 	return true;

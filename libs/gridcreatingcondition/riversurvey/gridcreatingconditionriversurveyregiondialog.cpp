@@ -14,16 +14,21 @@ GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRe
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
+
 	m_condition = cond;
 	connect<void (QComboBox::*)(int)>(ui->startComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurveyRegionDialog::handleStartUpdate);
 	connect<void (QComboBox::*)(int)>(ui->endComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurveyRegionDialog::handleEndUpdate);
-
-	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionRiverSurveyRegionDialog::~GridCreatingConditionRiverSurveyRegionDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionRiverSurveyRegionDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 void GridCreatingConditionRiverSurveyRegionDialog::setData(GeoDataRiverSurvey* rs)

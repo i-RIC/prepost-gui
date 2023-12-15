@@ -66,10 +66,38 @@ bool GridCreatingConditionRectangularRegion::create(QWidget* parent)
 
 	iricMainWindow()->enterModelessDialogMode();
 
-	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
-	connect(dialog, SIGNAL(destroyed()), this, SLOT(hidePreviewGrid()));
+	connect(dialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(dialog, &QObject::destroyed, this, &GridCreatingConditionRectangularRegion::hidePreviewGrid);
 	dialog->show();
 	return false;
+}
+
+void GridCreatingConditionRectangularRegion::showCondition(QWidget* parent)
+{
+	auto off = offset();
+	auto dialog = new GridCreatingConditionRectangularRegionSettingDialog(this, preProcessorWindow());
+	dialog->setReadOnly(true);
+	dialog->setXMin(m_xMin + off.x());
+	dialog->setXMax(m_xMax + off.x());
+	dialog->setYMin(m_yMin + off.y());
+	dialog->setYMax(m_yMax + off.y());
+
+	if (m_stepSize == 0) {
+		m_stepSize = std::min((m_xMax - m_xMin) / 10., (m_yMax - m_yMin) / 10.);
+	}
+	dialog->setStepSize(m_stepSize);
+	m_mouseEventMode = meCreateDialog;
+
+	iricMainWindow()->enterModelessDialogMode();
+
+	connect(dialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowInterface::exitModelessDialogMode);
+	connect(dialog, &QObject::destroyed, this, &GridCreatingConditionRectangularRegion::hidePreviewGrid);
+	dialog->show();
+}
+
+bool GridCreatingConditionRectangularRegion::showConditionAvailable()
+{
+	return true;
 }
 
 bool GridCreatingConditionRectangularRegion::ready() const

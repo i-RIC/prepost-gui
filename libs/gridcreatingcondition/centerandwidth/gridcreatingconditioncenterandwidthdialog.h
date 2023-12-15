@@ -19,6 +19,7 @@ public:
 	GridCreatingConditionCenterAndWidthDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionCenterAndWidthDialog();
 
+	void setReadOnly(bool readOnly);
 	int iMax() const;
 	int jMax() const;
 	double width() const;

@@ -202,6 +202,21 @@ void GridCreatingConditionExternalProgram::showInitialDialog()
 	create(0);
 }
 
+void GridCreatingConditionExternalProgram::showCondition(QWidget* parent)
+{
+	QString fname = filename();
+	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
+	dialog.setFilename(fname);
+	dialog.load();
+	dialog.setReadOnly(true);
+	dialog.exec();
+}
+
+bool GridCreatingConditionExternalProgram::showConditionAvailable()
+{
+	return true;
+}
+
 bool GridCreatingConditionExternalProgram::ready() const
 {
 	return true;

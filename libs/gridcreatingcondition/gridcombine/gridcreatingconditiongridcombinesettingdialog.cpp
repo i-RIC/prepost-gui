@@ -23,6 +23,11 @@ GridCreatingConditionGridCombineSettingDialog::~GridCreatingConditionGridCombine
 	delete ui;
 }
 
+void GridCreatingConditionGridCombineSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 void GridCreatingConditionGridCombineSettingDialog::setType(Type type)
 {
 	switch (type) {

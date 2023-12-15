@@ -19,6 +19,11 @@ GridCreatingConditionGridGeneratorSettingDialog::~GridCreatingConditionGridGener
 	delete ui;
 }
 
+void GridCreatingConditionGridGeneratorSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 void GridCreatingConditionGridGeneratorSettingDialog::setChannelShape(ChannelShape c)
 {
 	switch (c) {

@@ -31,6 +31,11 @@ GridCreatingConditionRiverSurvey15DRegionDialog::~GridCreatingConditionRiverSurv
 	delete ui;
 }
 
+void GridCreatingConditionRiverSurvey15DRegionDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 void GridCreatingConditionRiverSurvey15DRegionDialog::setData(GeoDataRiverSurvey* rs)
 {
 	GeoDataRiverPathPoint* p = rs->headPoint()->nextPoint();

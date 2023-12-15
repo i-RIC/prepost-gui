@@ -596,6 +596,30 @@ bool GridCreatingConditionPoisson::create(QWidget* parent)
 	return true;
 }
 
+void GridCreatingConditionPoisson::showCondition(QWidget* parent)
+{
+	GridCreatingConditionPoissonGridGenerateDialog dialog(parent);
+	dialog.setReadOnly(true);
+
+	double iLen = PolyLineUtil::length(impl->m_centerLineController.polyLine());
+	double jLen = 0.5 * (
+				PolyLineUtil::length(impl->m_upstreamLineController.polyLine()) +
+				PolyLineUtil::length(impl->m_downstreamLineController.polyLine()));
+	dialog.setILength(iLen);
+	dialog.setJLength(jLen);
+
+	dialog.setIDiv(impl->m_iDiv);
+	dialog.setJDiv(impl->m_jDiv);
+	dialog.setMaxIterations(impl->m_maxIterations);
+
+	dialog.exec();
+}
+
+bool GridCreatingConditionPoisson::showConditionAvailable()
+{
+	return true;
+}
+
 bool GridCreatingConditionPoisson::ready() const
 {
 	return true;

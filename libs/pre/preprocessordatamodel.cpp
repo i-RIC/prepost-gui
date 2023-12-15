@@ -496,6 +496,7 @@ void PreProcessorDataModel::setupGridMenu()
 			m_gridMenu->addMenu(bcsMenu);
 		}
 		m_gridMenu->addAction(gcItem->createAction());
+		m_gridMenu->addAction(gcItem->showConditionAction());
 		m_gridMenu->addSeparator();
 
 		// ----------------------------

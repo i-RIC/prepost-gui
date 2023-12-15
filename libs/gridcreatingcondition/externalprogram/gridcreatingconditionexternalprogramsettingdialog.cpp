@@ -76,6 +76,11 @@ void GridCreatingConditionExternalProgramSettingDialog::setup(const SolverDefini
 	}
 }
 
+void GridCreatingConditionExternalProgramSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Save)->setDisabled(readOnly);
+}
+
 bool GridCreatingConditionExternalProgramSettingDialog::load()
 {
 	try {

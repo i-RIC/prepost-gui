@@ -37,6 +37,8 @@ public:
 	~GridCreatingCondition();
 	/// Create a new grid.
 	virtual bool create(QWidget* parent) = 0;
+	virtual void showCondition(QWidget* parent) = 0;
+	virtual bool showConditionAvailable() = 0;
 	/// Ready to create a grid.
 	virtual bool ready() const = 0;
 	GridCreatingConditionCreator* creator() const;

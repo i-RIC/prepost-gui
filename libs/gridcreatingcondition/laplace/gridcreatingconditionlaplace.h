@@ -36,6 +36,8 @@ public:
 	bool init() override;
 	void showInitialDialog() override;
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void clear() override;
 

@@ -37,6 +37,11 @@ GridCreatingConditionRectangularRegionSettingDialog::~GridCreatingConditionRecta
 	delete ui;
 }
 
+void GridCreatingConditionRectangularRegionSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 void GridCreatingConditionRectangularRegionSettingDialog::setXMin(double xmin)
 {
 	ui->xMinSpinBox->setValue(xmin);

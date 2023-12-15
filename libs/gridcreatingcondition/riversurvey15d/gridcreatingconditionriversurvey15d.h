@@ -51,6 +51,8 @@ public:
 	GridCreatingConditionRiverSurvey15D(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionRiverSurvey15D();
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 
 	bool ready() const override;
 	bool init() override;

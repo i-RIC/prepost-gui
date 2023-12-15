@@ -149,6 +149,16 @@ bool GridCreatingConditionCenterAndWidth::create(QWidget* parent)
 	return true;
 }
 
+void GridCreatingConditionCenterAndWidth::showCondition(QWidget* parent)
+{
+	showDialog(parent, true);
+}
+
+bool GridCreatingConditionCenterAndWidth::showConditionAvailable()
+{
+	return true;
+}
+
 Grid* GridCreatingConditionCenterAndWidth::createGrid()
 {
 	if (impl->m_setting.iMax * impl->m_setting.jMax > MAXGRIDSIZE) {
@@ -206,7 +216,7 @@ Grid* GridCreatingConditionCenterAndWidth::createGrid()
 	return grid;
 }
 
-void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
+void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent, bool readOnly)
 {
 	GridCreatingConditionCenterAndWidthDialog* dialog = new GridCreatingConditionCenterAndWidthDialog(parent);
 	connect(dialog, SIGNAL(applied(QDialog*)), this, SLOT(handleDialogApplied(QDialog*)));
@@ -217,6 +227,7 @@ void GridCreatingConditionCenterAndWidth::showDialog(QWidget* parent)
 	impl->m_oldIMax = impl->m_setting.iMax;
 	impl->m_oldJMax = impl->m_setting.jMax;
 	impl->m_oldWidth = impl->m_setting.width;
+	dialog->setReadOnly(readOnly);
 
 	int result = dialog->exec();
 	if (result == QDialog::Accepted) {

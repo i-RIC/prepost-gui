@@ -19,6 +19,11 @@ GridCreatingConditionPoissonGridGenerateDialog::~GridCreatingConditionPoissonGri
 	delete ui;
 }
 
+void GridCreatingConditionPoissonGridGenerateDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 int GridCreatingConditionPoissonGridGenerateDialog::iDiv() const
 {
 	return ui->nISpinBox->value();

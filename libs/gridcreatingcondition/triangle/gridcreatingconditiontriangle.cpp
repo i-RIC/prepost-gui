@@ -1063,6 +1063,23 @@ bool GridCreatingConditionTriangle::create(QWidget* parent)
 	return true;
 }
 
+
+void GridCreatingConditionTriangle::showCondition(QWidget* parent)
+{
+	GridCreatingConditionTriangleSettingDialog dialog(parent);
+	dialog.setReadOnly(true);
+	dialog.setAngleConstraint(m_angleConstraint);
+	dialog.setAngle(m_angle);
+	dialog.setAreaConstraint(m_areaConstraint);
+	dialog.setArea(m_area);
+	dialog.exec();
+}
+
+bool GridCreatingConditionTriangle::showConditionAvailable()
+{
+	return true;
+}
+
 void GridCreatingConditionTriangle::clear()
 {
 	initParams();

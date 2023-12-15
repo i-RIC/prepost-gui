@@ -27,6 +27,8 @@ public:
 	GridCreatingConditionRectangularRegionLonLat(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionRectangularRegionLonLat();
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void setupMenu() override;
 	void setupActors() override;

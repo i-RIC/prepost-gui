@@ -18,6 +18,11 @@ GridCreatingConditionCompoundChannelSettingDialog::~GridCreatingConditionCompoun
 	delete ui;
 }
 
+void GridCreatingConditionCompoundChannelSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 void GridCreatingConditionCompoundChannelSettingDialog::setStreamWiseDivision(int div)
 {
 	ui->streamWiseSpinBox->setValue(div);

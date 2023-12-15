@@ -105,6 +105,16 @@ bool GridCreatingConditionGridCombine::create(QWidget* parent)
 	return true;
 }
 
+void GridCreatingConditionGridCombine::showCondition(QWidget* parent)
+{
+	showDialog(parent, true);
+}
+
+bool GridCreatingConditionGridCombine::showConditionAvailable()
+{
+	return true;
+}
+
 void GridCreatingConditionGridCombine::setupParameters()
 {
 	int jx[4];
@@ -381,9 +391,10 @@ void GridCreatingConditionGridCombine::setupMenu()
 	}
 }
 
-void GridCreatingConditionGridCombine::showDialog(QWidget* parent)
+void GridCreatingConditionGridCombine::showDialog(QWidget* parent, bool readOnly)
 {
 	GridCreatingConditionGridCombineSettingDialog* dialog = new GridCreatingConditionGridCombineSettingDialog(parent);
+	dialog->setReadOnly(readOnly);
 
 	dialog->setType(j_conf);
 	dialog->setObstacleUpstreamX(p1_x);

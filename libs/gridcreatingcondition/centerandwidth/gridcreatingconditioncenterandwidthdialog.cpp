@@ -24,6 +24,12 @@ GridCreatingConditionCenterAndWidthDialog::~GridCreatingConditionCenterAndWidthD
 	delete ui;
 }
 
+void GridCreatingConditionCenterAndWidthDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+	ui->buttonBox->button(QDialogButtonBox::Apply)->setDisabled(readOnly);
+}
+
 int GridCreatingConditionCenterAndWidthDialog::iMax() const
 {
 	return ui->nISpinBox->value() + 1;

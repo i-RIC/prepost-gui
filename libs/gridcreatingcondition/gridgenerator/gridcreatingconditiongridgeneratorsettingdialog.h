@@ -22,6 +22,7 @@ public:
 	enum WidthChange {Constant, Change};
 	enum WidthChangeType {Both, Left, Right};
 
+	void setReadOnly(bool readOnly);
 	void setChannelShape(ChannelShape c);
 	void setFloodChannelProperty(FloodChannel f);
 	void setBedShape(BedShape b);

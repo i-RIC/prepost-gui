@@ -20,6 +20,7 @@ public:
 	GridCreatingConditionRectangularRegionSettingDialog(GridCreatingConditionRectangularRegion* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRectangularRegionSettingDialog();
 
+	void setReadOnly(bool readOnly);
 	void setXMin(double xmin);
 	void setXMax(double xmax);
 	void setYMin(double ymin);

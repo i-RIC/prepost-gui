@@ -20,6 +20,7 @@ public:
 	bool confirmOverwriteIfNeeded(QWidget* parent) override;
 
 	PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const override;
+	PreProcessorGridAndGridCreatingConditionDataItemInterface* gridAndGridCreatingConditionDataItem() const;
 
 	void addCustomMenuItems(QMenu* menu) override;
 	bool addToolBarButtons(QToolBar* /*tb*/) override;
@@ -40,6 +41,7 @@ public:
 	QStringList containedFiles() const override;
 	void moveGrid();
 	QAction* createAction() const override;
+	QAction* showConditionAction() const override;
 	QAction* switchAction() const override;
 	QAction* deleteAction() const;
 	QAction* clearAction() const override;
@@ -57,11 +59,13 @@ protected:
 
 public slots:
 	void silentDeleteCondition();
+	void updateActionStatus();
 
 private slots:
 	void resetCondition();
 	void deleteCondition();
 	void createGrid();
+	void showCondition();
 	void handleNewGrid(Grid* newgrid);
 	void handleTmpGrid(Grid* tmpgrid);
 	void switchAlgorithm();

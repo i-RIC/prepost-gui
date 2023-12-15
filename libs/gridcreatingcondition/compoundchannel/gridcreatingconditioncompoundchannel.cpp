@@ -963,6 +963,26 @@ bool GridCreatingConditionCompoundChannel::create(QWidget* parent)
 	return true;
 }
 
+void GridCreatingConditionCompoundChannel::showCondition(QWidget* parent)
+{
+	GridCreatingConditionCompoundChannelSettingDialog dialog(parent);
+	dialog.setStreamWiseDivision(m_streamWiseDivision);
+	dialog.setLeftDivision(m_leftDivision);
+	dialog.setRightDivision(m_rightDivision);
+	dialog.setCenterDivision(m_centerDivision);
+
+	dialog.setRelaxation(m_relaxation);
+	dialog.setIterations(m_iterations);
+	dialog.setReadOnly(true);
+
+	dialog.exec();
+}
+
+bool GridCreatingConditionCompoundChannel::showConditionAvailable()
+{
+	return true;
+}
+
 void GridCreatingConditionCompoundChannel::clear()
 {
 	initParams();

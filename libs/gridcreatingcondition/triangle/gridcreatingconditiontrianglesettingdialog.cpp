@@ -18,6 +18,11 @@ GridCreatingConditionTriangleSettingDialog::~GridCreatingConditionTriangleSettin
 	delete ui;
 }
 
+void GridCreatingConditionTriangleSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
+}
+
 bool GridCreatingConditionTriangleSettingDialog::angleConstraint()
 {
 	return ui->angleCheckBox->isChecked();
