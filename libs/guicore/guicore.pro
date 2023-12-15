@@ -221,6 +221,9 @@ HEADERS += guicore_global.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
+           misc/targeted/targetedqstringitemi.h \
+           misc/targeted/targetedqstringitemsettargetcommand.h \
+           misc/targeted/targetedqstringitemsettargetcommandtool.h \
            misc/valuerangecontainer.h \
            misc/valuerangecontainerutil.h \
            misc/vtkpointsetandvaluerangeset.h \
@@ -228,6 +231,8 @@ HEADERS += guicore_global.h \
            misc/vtkpointsetvaluerangeset.h \
            named/namedgraphicswindowdataitemtool.h \
            named/namedgraphicwindowdataitem.h \
+           named/namedqstringgraphicswindowdataitemtool.h \
+           named/namedqstringgraphicwindowdataitem.h \
            post/postprocessorwindow.h \
            post/postprocessorwindowfactoryinterface.h \
            post/postprocessorwindowprojectdataitem.h \
@@ -758,12 +763,16 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            misc/iricmetadata.cpp \
            misc/mouseboundingbox.cpp \
            misc/mousepositionwidget.cpp \
+           misc/targeted/targetedqstringitemsettargetcommand.cpp \
+           misc/targeted/targetedqstringitemsettargetcommandtool.cpp \
            misc/valuerangecontainer.cpp \
            misc/valuerangecontainerutil.cpp \
            misc/vtkpointsetandvaluerangeset.cpp \
            misc/vtkpointsetvaluerangeset.cpp \
            named/namedgraphicswindowdataitemtool.cpp \
            named/namedgraphicwindowdataitem.cpp \
+           named/namedqstringgraphicswindowdataitemtool.cpp \
+           named/namedqstringgraphicwindowdataitem.cpp \
            post/postprocessorwindow.cpp \
            post/postprocessorwindowfactoryinterface.cpp \
            post/postprocessorwindowprojectdataitem.cpp \

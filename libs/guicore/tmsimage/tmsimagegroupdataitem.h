@@ -3,11 +3,11 @@
 
 #include "../guicore_global.h"
 #include "../datamodel/graphicswindowdataitem.h"
-#include "../misc/targeted/targeteditemi.h"
+#include "../misc/targeted/targetedqstringitemi.h"
 
-class NamedGraphicWindowDataItem;
+class NamedQStringGraphicWindowDataItem;
 
-class GUICOREDLL_EXPORT TmsImageGroupDataItem : public GraphicsWindowDataItem, public TargetedItemI
+class GUICOREDLL_EXPORT TmsImageGroupDataItem : public GraphicsWindowDataItem, public TargetedQStringItemI
 {
 	Q_OBJECT
 
@@ -15,8 +15,8 @@ public:
 	TmsImageGroupDataItem(GraphicsWindowDataItem* parent);
 	~TmsImageGroupDataItem();
 
-	std::string target() const override;
-	void setTarget(const std::string &target) override;
+	QString target() const override;
+	void setTarget(const QString& target) override;
 
 	void rebuildChildItems();
 
@@ -25,7 +25,7 @@ public:
 	void updateZDepthRangeItemCount() override;
 
 public slots:
-	void handleNamedItemChange(NamedGraphicWindowDataItem* item);
+	void handleNamedItemChange(NamedQStringGraphicWindowDataItem* item);
 
 private slots:
 	void handleImageUpdate(int requestId);

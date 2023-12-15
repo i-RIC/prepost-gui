@@ -2,8 +2,8 @@
 #include "tmsimagedataitem.h"
 #include "private/tmsimagegroupdataitem_impl.h"
 
-#include "../misc/targeted/targeteditemsettargetcommandtool.h"
-#include "../named/namedgraphicswindowdataitemtool.h"
+#include "../misc/targeted/targetedqstringitemsettargetcommandtool.h"
+#include "../named/namedqstringgraphicswindowdataitemtool.h"
 
 #include <cs/coordinatesystem.h>
 #include <cs/webmercatorutil.h>
@@ -191,19 +191,19 @@ TmsImageGroupDataItem::~TmsImageGroupDataItem()
 	delete impl;
 }
 
-std::string TmsImageGroupDataItem::target() const
+QString TmsImageGroupDataItem::target() const
 {
 	return impl->m_target;
 }
 
-void TmsImageGroupDataItem::setTarget(const std::string &target)
+void TmsImageGroupDataItem::setTarget(const QString &target)
 {
 	if (target != "" && projectData()->mainfile()->coordinateSystem() == nullptr) {
 		QMessageBox::warning(mainWindow(), tr("Warning"), tr("To get background image from internet, please specify the coordiyate system of the project, from the following menu.\n File -> Property"));
 		return;
 	}
 
-	bool ok = NamedGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
+	bool ok = NamedQStringGraphicsWindowDataItemTool::checkItemWithName(target, m_childItems);
 	if (ok) {
 		impl->m_target = target;
 	} else {
@@ -231,7 +231,7 @@ void TmsImageGroupDataItem::rebuildChildItems()
 	TmsImageSettingManager manager;
 	for (const auto& s : manager.settings()) {
 		if (! s.isActive()) {continue;}
-		auto item = new TmsImageDataItem(iRIC::toStr(s.setting()), s.caption(), this);
+		auto item = new TmsImageDataItem(s.setting(), s.caption(), this);
 		m_childItems.push_back(item);
 	}
 	updateItemMap();
@@ -252,11 +252,11 @@ void TmsImageGroupDataItem::updateZDepthRangeItemCount()
 	m_zDepthRange.setItemCount(1);
 }
 
-void TmsImageGroupDataItem::handleNamedItemChange(NamedGraphicWindowDataItem* item)
+void TmsImageGroupDataItem::handleNamedItemChange(NamedQStringGraphicWindowDataItem* item)
 {
 	if (m_isCommandExecuting) {return;}
 
-	auto cmd = TargetedItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Background Image change"));
+	auto cmd = TargetedQStringItemSetTargetCommandTool::buildFromNamedItem(item, this, tr("Background Image change"));
 	pushRenderCommand(cmd, this, true);
 }
 
@@ -315,7 +315,7 @@ void TmsImageGroupDataItem::requestImage()
 	calcImageParameters(&center, &size, &scale, &(impl->m_imageLowerLeft), &(impl->m_imageScale), view, *cs, impl->m_offset);
 
 	TmsImageSettingManager manager;
-	auto setting = TmsImageSetting::buildFromString(impl->m_target.c_str());
+	auto setting = TmsImageSetting::buildFromString(impl->m_target);
 	tmsloader::TmsRequest* request = manager.buildRequest(center, size, scale, setting);
 	if (request == nullptr) {return;}
 
@@ -345,13 +345,13 @@ void TmsImageGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	impl->m_offset.setX(offset().x());
 	impl->m_offset.setY(offset().y());
-	auto target = iRIC::toStr(node.toElement().attribute("target"));
+	auto target = node.toElement().attribute("target");
 	setTarget(target);
 }
 
 void TmsImageGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	writer.writeAttribute("target", impl->m_target.c_str());
+	writer.writeAttribute("target", impl->m_target);
 }
 
 void TmsImageGroupDataItem::doApplyOffset(double x_diff, double y_diff)
