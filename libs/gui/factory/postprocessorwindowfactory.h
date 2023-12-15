@@ -16,8 +16,8 @@ class PostProcessorWindowFactory : public QObject, public PostProcessorWindowFac
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PostProcessorWindowFactory(QObject* parent);
+
 	PostProcessorWindowProjectDataItem* factory(const QString& name, ProjectDataItem* parent, QWidget* parentwindow) override;
 	PostProcessorWindowProjectDataItem* restore(const QDomNode& node, ProjectDataItem* parent, QWidget* parentwindow, bool ignoreIndex) override;
 	void loadWindowCounts(const QDomNode& node);

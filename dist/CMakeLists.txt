@@ -463,6 +463,7 @@ set(IRIC_EXE
 set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricAxis2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricAxis3d.dll
+  ${PREPOST_GUI}/libdlls/Release/iricCrosssection.dll
   ${PREPOST_GUI}/libdlls/Release/iricCs.dll
   ${PREPOST_GUI}/libdlls/Release/iricDistancemeasure.dll
   ${PREPOST_GUI}/libdlls/Release/iricGccCenterandwidth.dll
@@ -500,6 +501,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
   ${PREPOST_GUI}/libdlls/Release/iricMiGui.dll
   ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
+  ${PREPOST_GUI}/libdlls/Release/iricPostCrosssection.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2d.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost2dbirdeye.dll
   ${PREPOST_GUI}/libdlls/Release/iricPost3d.dll
@@ -1931,6 +1933,45 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/post/graph2dverification/languages/iricGraph2dverification_vi_VN.qm
   ${PREPOST_GUI}/libs/post/graph2dverification/languages/iricGraph2dverification_zh_CN.qm
   ${PREPOST_GUI}/libs/post/graph2dverification/languages/iricGraph2dverification_zh_TW.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ar_EG.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_bg_BG.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_bs_BA.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ca_ES.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_cs_CZ.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_da_DK.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_de_DE.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_el_GR.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_es_ES.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_et_EE.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_eu_ES.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_fi_FI.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_fr_FR.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_gl_ES.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_hi_IN.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_hu_HU.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_id_ID.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_is_IS.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_it_IT.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ja_JP.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ko_KR.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ky_KG.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_lt_LT.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_lv_LV.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_nb_NO.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_nl_NL.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_pl_PL.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_pt_BR.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_pt_PT.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ro_RO.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_ru_RU.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_sl_SI.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_sv_SE.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_th_TH.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_tr_TR.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_uk_UA.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_vi_VN.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_zh_CN.qm
+  ${PREPOST_GUI}/libs/post/crosssection/languages/iricPostCrosssection_zh_TW.qm
   ${PREPOST_GUI}/libs/post/post2d/languages/iricPost2d_ar_EG.qm
   ${PREPOST_GUI}/libs/post/post2d/languages/iricPost2d_bg_BG.qm
   ${PREPOST_GUI}/libs/post/post2d/languages/iricPost2d_bs_BA.qm

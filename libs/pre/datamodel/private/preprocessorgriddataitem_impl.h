@@ -14,7 +14,7 @@
 
 #include <vector>
 
-class PreProcessorGridCrosssectionWindow2;
+class PreProcessorGridCrosssectionWindow;
 class GridBirdEyeWindowProjectDataItem;
 
 class PreProcessorGridDataItem::Impl
@@ -23,7 +23,7 @@ public:
 	Impl(PreProcessorGridDataItem* item);
 	~Impl();
 
-	PreProcessorGridCrosssectionWindow2* buildCrosssectionWindow();
+	PreProcessorGridCrosssectionWindow* buildCrosssectionWindow();
 
 	v4InputGrid* m_grid;
 
@@ -31,7 +31,7 @@ public:
 	PreProcessorGridAttributeCellDataItem* m_cellDataItem;
 
 	GridBirdEyeWindowProjectDataItem* m_birdEyeWindow;
-	std::vector<PreProcessorGridCrosssectionWindow2*> m_crosssectionWindows;
+	std::vector<PreProcessorGridCrosssectionWindow*> m_crosssectionWindows;
 
 	vtkSmartPointer<vtkPolyData> m_regionPolyData;
 	vtkSmartPointer<vtkPolyDataMapper> m_regionMapper;

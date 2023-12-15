@@ -403,7 +403,7 @@ void PreProcessorGridTypeDataItem::changeValueRange(const std::string& name)
 	double max = 0;
 
 	// check raw data
-	auto  i = m_geoDataTop->groupDataItem(name);
+	auto i = m_geoDataTop->groupDataItem(name);
 	if (i == nullptr) {return;}
 	valueExist = i->getValueRange(&min, &max);
 

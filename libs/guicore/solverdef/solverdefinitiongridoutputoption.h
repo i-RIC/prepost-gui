@@ -11,6 +11,7 @@ public:
 	SolverDefinitionGridOutputOption(const QDomElement& elem, SolverDefinition* solverDef, const SolverDefinitionTranslator& translator);
 
 	QVariant attributeBrowserValue(double value) const override;
+	GridAttributeStringConverter* stringConverter() const override;
 
 private:
 	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;

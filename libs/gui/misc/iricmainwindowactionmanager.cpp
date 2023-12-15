@@ -530,6 +530,11 @@ void iRICMainWindowActionManager::setupCalculationResultMenu()
 
 	m_resultMenu->addSeparator();
 
+	windowCreatePostCrosssectionWindowAction = new QAction(tr("Open new Crosssection Window"), m_resultMenu);
+	windowCreatePostCrosssectionWindowAction->setIcon(QIcon(":/libs/crosssection/images/iconRiverCrosssection.svg"));
+	m_resultMenu->addAction(windowCreatePostCrosssectionWindowAction);
+	connect(windowCreatePostCrosssectionWindowAction, &QAction::triggered, m_parent, &iRICMainWindow::createPostCrosssectionWindow);
+
 	windowCreateNewGraph2dHybridWindowAction = new QAction(tr("Open new Graph Window"), m_resultMenu);
 	windowCreateNewGraph2dHybridWindowAction->setIcon(QIcon(":/images/iconVisGraphHybrid.svg"));
 	m_resultMenu->addAction(windowCreateNewGraph2dHybridWindowAction);
@@ -832,6 +837,7 @@ void iRICMainWindowActionManager::setupMainToolBar()
 	m_mainToolBar->addAction(windowCreateNew2dPostProcessorAction);
 	m_mainToolBar->addAction(windowCreateNew2dBirdEyePostProcessorAction);
 	m_mainToolBar->addAction(windowCreateNew3dPostProcessorAction);
+	m_mainToolBar->addAction(windowCreatePostCrosssectionWindowAction);
 	m_mainToolBar->addAction(windowCreateNewGraph2dHybridWindowAction);
 	m_mainToolBar->addAction(windowCreateNewGraph2dScatteredWindowAction);
 	m_mainToolBar->addAction(windowCreateVerificationDialogAction);

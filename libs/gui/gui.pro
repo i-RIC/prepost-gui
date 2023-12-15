@@ -110,13 +110,19 @@ unix {
 }
 LIBS += -liricGraph2dscattered
 
-
 #iricGraph2dVerification library
 
 unix {
 	LIBS += -L"../post/graph2dverification"
 }
 LIBS += -liricGraph2dVerification
+
+#iricPostCrosssection library
+
+unix {
+	LIBS += -L"../post/crosssection"
+}
+LIBS += -liricPostCrosssection
 
 #iricGdRiversurvey library
 

@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/libs/crosssection">
+        <file>images/iconRiverCrosssection.svg</file>
+    </qresource>
+</RCC>

@@ -18,6 +18,7 @@ public:
 
 	vtkPointSet* data() const;
 	const vtkPointSetValueRangeSet& valueRangeSet() const;
+	vtkPointSetValueRangeSet& valueRangeSet();
 
 	bool pointScalarValueExists() const;
 	bool cellScalarValueExists() const;
@@ -30,6 +31,8 @@ public:
 
 	void updateCellIndex();
 	void updateValueRangeSet();
+	void updatePointValueRange(const std::string& name);
+	void updateCellValueRange(const std::string& name);
 
 protected:
 	class Impl;

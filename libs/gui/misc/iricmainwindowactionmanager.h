@@ -184,6 +184,8 @@ public:
 	QAction* windowCreateNew2dBirdEyePostProcessorAction;
 	/// Action to open new 3D Post Processor Window.
 	QAction* windowCreateNew3dPostProcessorAction;
+	/// Action to open post crosssection window
+	QAction* windowCreatePostCrosssectionWindowAction;
 	/// Action to open new graph window (hybrid).
 	QAction* windowCreateNewGraph2dHybridWindowAction;
 	/// Action to open new scattered chart window

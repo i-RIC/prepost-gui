@@ -47,3 +47,29 @@ void vtkPointSetValueRangeSet::update(vtkPointSet* data)
 		m_cellDataValueRanges.insert({name, range});
 	}
 }
+
+void vtkPointSetValueRangeSet::updatePointDataValueRange(vtkPointSet* data, const std::string& name)
+{
+	auto pd = data->GetPointData();
+	auto array = pd->GetArray(name.c_str());
+	auto range = ValueRangeContainerUtil::build(array);
+	auto it = m_pointDataValueRanges.find(name);
+	if (it != m_pointDataValueRanges.end()) {
+		it->second = range;
+	} else {
+		m_pointDataValueRanges.insert({name, range});
+	}
+}
+
+void vtkPointSetValueRangeSet::updateCellDataValueRange(vtkPointSet* data, const std::string& name)
+{
+	auto pd = data->GetCellData();
+	auto array = pd->GetArray(name.c_str());
+	auto range = ValueRangeContainerUtil::build(array);
+	auto it = m_cellDataValueRanges.find(name);
+	if (it != m_cellDataValueRanges.end()) {
+		it->second = range;
+	} else {
+		m_cellDataValueRanges.insert({name, range});
+	}
+}

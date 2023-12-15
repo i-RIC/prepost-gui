@@ -80,6 +80,11 @@ ColorMapSettingToolBarWidget* v4InputGrid::AttributeDataProvider::createColorMap
 	return attribute(name)->createColorMapSettingToolbarWidget(parent);
 }
 
+GridAttributeStringConverter* v4InputGrid::AttributeDataProvider::createStringConverter(const std::string& name) const
+{
+	return attribute(name)->stringConverter();
+}
+
 SolverDefinitionGridAttribute* v4InputGrid::AttributeDataProvider::attribute(const std::string& name) const
 {
 	auto att = m_gridType->gridAttribute(name);

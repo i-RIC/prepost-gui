@@ -41,6 +41,11 @@ const vtkPointSetValueRangeSet& vtkPointSetExtended::valueRangeSet() const
 	return impl->m_valueRangeSet;
 }
 
+vtkPointSetValueRangeSet& vtkPointSetExtended::valueRangeSet()
+{
+	return impl->m_valueRangeSet;
+}
+
 bool vtkPointSetExtended::pointScalarValueExists() const
 {
 	auto names = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(impl->m_data->GetPointData());
@@ -97,4 +102,14 @@ void vtkPointSetExtended::updateCellIndex()
 void vtkPointSetExtended::updateValueRangeSet()
 {
 	impl->m_valueRangeSet.update(impl->m_data);
+}
+
+void vtkPointSetExtended::updatePointValueRange(const std::string& name)
+{
+	impl->m_valueRangeSet.updatePointDataValueRange(impl->m_data, name);
+}
+
+void vtkPointSetExtended::updateCellValueRange(const std::string& name)
+{
+	impl->m_valueRangeSet.updateCellDataValueRange(impl->m_data, name);
 }

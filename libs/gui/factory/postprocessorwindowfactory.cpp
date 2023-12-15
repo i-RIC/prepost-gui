@@ -1,6 +1,7 @@
 #include "postprocessorwindowfactory.h"
 
 #include <misc/xmlsupport.h>
+#include <post/crosssection/postcrosssectionwindowprojectdataitem.h>
 #include <post/graph2dhybrid/graph2dhybridwindowprojectdataitem.h>
 #include <post/graph2dscattered/graph2dscatteredwindowprojectdataitem.h>
 #include <post/graph2dverification/graph2dverificationwindowprojectdataitem.h>
@@ -11,11 +12,9 @@
 #include <QDomElement>
 #include <QXmlStreamWriter>
 
-PostProcessorWindowFactory::PostProcessorWindowFactory(QObject* parent)
-	: QObject(parent)
-{
-
-}
+PostProcessorWindowFactory::PostProcessorWindowFactory(QObject* parent) :
+	QObject(parent)
+{}
 
 PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QString& name, ProjectDataItem* parent, QWidget* parentwindow)
 {
@@ -81,6 +80,8 @@ PostProcessorWindowProjectDataItem* PostProcessorWindowFactory::factory(const QS
 		return new Graph2dScatteredWindowProjectDataItem(parent, index, parentwindow);
 	} else if (name == "graph2dverificationwindow") {
 		return new Graph2dVerificationWindowProjectDataItem(parent, index, parentwindow);
+	} else if (name == "postcrosssectionwindow") {
+		return new PostCrosssectionWindowProjectDataItem(parent, index, parentwindow);
 	}
 	return nullptr;
 }

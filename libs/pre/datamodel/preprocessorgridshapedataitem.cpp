@@ -1,6 +1,6 @@
 #include "../preprocessordatamodel.h"
 #include "../preprocessorwindow.h"
-#include "../subwindow/gridcrosssectionwindow2/preprocessorgridcrosssectionwindow2.h"
+#include "../subwindow/gridcrosssectionwindow/preprocessorgridcrosssectionwindow.h"
 #include "preprocessorgridattributenodedataitem.h"
 #include "preprocessorgridattributenodegroupdataitem.h"
 #include "preprocessorgriddataitem.h"
@@ -268,7 +268,7 @@ void PreProcessorGridShapeDataItem::openCrossSectionWindow()
 	auto grid = dynamic_cast<v4Structured2dGrid*>(g->grid());
 	grid->getPointIJIndex(index, &i, &j);
 
-	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::I, i);
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction::I, i);
 }
 
 void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
@@ -283,7 +283,7 @@ void PreProcessorGridShapeDataItem::openVerticalCrossSectionWindow()
 	auto grid = dynamic_cast<v4Structured2dGrid*>(g->grid());
 	grid->getPointIJIndex(index, &i, &j);
 
-	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionWindow2::Direction::J, j);
+	gItem->openCrossSectionWindow(PreProcessorGridCrosssectionInternalWindow::Direction::J, j);
 }
 
 void PreProcessorGridShapeDataItem::addCustomMenuItems(QMenu* /*menu*/)

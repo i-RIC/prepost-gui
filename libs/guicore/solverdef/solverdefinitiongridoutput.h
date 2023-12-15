@@ -10,6 +10,7 @@ class ColorMapSettingContainerI;
 class ColorMapSettingEditDialog;
 class ColorMapSettingEditWidgetI;
 class ColorMapSettingToolBarWidget;
+class GridAttributeStringConverter;
 
 class GUICOREDLL_EXPORT SolverDefinitionGridOutput : public SolverDefinitionOutput
 {
@@ -36,6 +37,7 @@ public:
 	ColorMapSettingEditWidgetI* createColorMapSettingEditWidget(QWidget* parent) const;
 	ColorMapSettingEditDialog* createColorMapSettingEditDialog(QWidget* parent) const;
 	ColorMapSettingToolBarWidget* createColorMapSettingToolbarWidget(QWidget* parent) const;
+	virtual GridAttributeStringConverter* stringConverter() const;
 
 protected:
 	void setColorMapFactory(ColorMapFactoryI* factory);

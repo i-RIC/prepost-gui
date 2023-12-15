@@ -13,6 +13,7 @@ public:
 
 	GridAttributeEditWidget* editWidget(QWidget* parent) override;
 	GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) override;
+	GridAttributeStringConverter* stringConverter() const override;
 
 private:
 	void setupColorMapSettingContainer(ColorMapSettingContainerI* c) const override;

@@ -40,6 +40,7 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, SolverDefiniti
 		*ier = att->loadFromCgnsFile(*zone.gridAttributes());
 		if (*ier != IRIC_NO_ERROR) {return nullptr;}
 	}
+	inputGrid->grid()->vtkData()->updateValueRangeSet();
 
 	*ier = IRIC_NO_ERROR;
 	return inputGrid;

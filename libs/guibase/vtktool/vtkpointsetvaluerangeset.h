@@ -22,6 +22,8 @@ public:
 	const std::unordered_map<std::string, ValueRangeContainer>& cellDataValueRanges() const;
 
 	void update(vtkPointSet* data);
+	void updatePointDataValueRange(vtkPointSet* data, const std::string& name);
+	void updateCellDataValueRange(vtkPointSet* data, const std::string& name);
 
 private:
 	std::unordered_map<std::string, ValueRangeContainer> m_pointDataValueRanges;
