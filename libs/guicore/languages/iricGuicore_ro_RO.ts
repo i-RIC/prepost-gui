@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -913,11 +915,23 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation>Culori inversate (&amp;R)</translation>
+        <translation type="vanished">Culori inversate (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation>Împărțire egală (&amp;E)</translation>
+        <translation type="vanished">Împărțire egală (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Reverse Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal Division</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Num. Colors</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -956,6 +970,37 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Export (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
+    <message>
+        <source>Change the Number of Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished">Numar de culori:</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Interval de valori</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Min:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Opțiuni</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished">Valoare zecimale:</translation>
     </message>
 </context>
 <context>
@@ -1577,8 +1622,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Culoare:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notă: puteți utiliza numai caractere ASCII pentru Nume.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1684,12 +1729,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Nodul de definiție nu este stocat</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>ValueType greșit "%1"este setat.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>ValueType greșit &quot;%1&quot;este setat.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Stare greșită Tip "%1"este setat.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Stare greșită Tip &quot;%1&quot;este setat.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1760,7 +1805,7 @@ Do you really want to import this file?</source>
         <translation>Deschiderea fișierului CGNS a eșuat.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
         <translation>atributul nume nu este definit pentru elementul „Articol”.</translation>
     </message>
     <message>
@@ -1972,7 +2017,7 @@ Do you really want to import this file?</source>
         <translation>Fişier %1 este actualizat după import în condiția de calcul %2. Doriți să importați fișierul actualizat?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
         <translation>Puteți copia și lipi valorile, cu comanda rapidă „Ctrl + C” și „Ctrl + V”</translation>
     </message>
     <message>
@@ -2114,7 +2159,7 @@ Do you really want to import this file?</source>
         <translation>A apărut o eroare la deschiderea fișierului.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
         <translation>Primele două coloane trebuie să fie „X” și „Y”.</translation>
     </message>
     <message>
@@ -2276,8 +2321,8 @@ Do you really want to import this file?</source>
         <translation>Definiția variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2355,8 +2400,8 @@ Do you really want to import this file?</source>
         <translation>Jos (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Notă &lt;/span&gt;: Ordinea din listă este importantă. În definiție, puteți utiliza valoarea calculelor operației simple ca variabilă, care apare mai devreme în listă. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2717,8 +2762,8 @@ Do you really want to import this file?</source>
         <translation>Definiția output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3002,8 +3047,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Spațiu de lucru "%1"are %2 foldere de proiect care par să nu mai fie folosite. Doriți să le eliminați?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Spațiu de lucru &quot;%1&quot;are %2 foldere de proiect care par să nu mai fie folosite. Doriți să le eliminați?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3602,8 +3647,8 @@ Do you really want to import this file?</source>
         <translation>Definiţia variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți defini variabila cu limbajul JavaScript. Consultați &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decor: subliniere; culoare:#0000ff;"&gt;aici&lt;/span&gt;&lt;/a&gt; pentru detalii.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Puteți defini variabila cu limbajul JavaScript. Consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decor: subliniere; culoare:#0000ff;&quot;&gt;aici&lt;/span&gt;&lt;/a&gt; pentru detalii.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3693,8 +3738,8 @@ Do you really want to import this file?</source>
         <translation>Jos (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Notă&lt;/span&gt;: ordinea în listă este importantă. În definiție, puteți utiliza valoarea calculelor operaționale simple ca variabilă, care apare mai devreme în listă.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Notă&lt;/span&gt;: ordinea în listă este importantă. În definiție, puteți utiliza valoarea calculelor operaționale simple ca variabilă, care apare mai devreme în listă.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

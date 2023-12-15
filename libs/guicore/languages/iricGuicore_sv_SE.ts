@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -913,11 +915,23 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation>Omvända färger (&amp;R)</translation>
+        <translation type="vanished">Omvända färger (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation>Lika delning (&amp;E)</translation>
+        <translation type="vanished">Lika delning (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Reverse Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal Division</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Num. Colors</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -956,6 +970,37 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exportera (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
+    <message>
+        <source>Change the Number of Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished">Antal färger:</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Värdeintervall</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished">Max:</translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Min:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">alternativ</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished">Värde decimaler:</translation>
     </message>
 </context>
 <context>
@@ -1577,8 +1622,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Färg:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs! Du kan endast använda ASCII-tecken för Namn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs! Du kan endast använda ASCII-tecken för Namn.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1684,12 +1729,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Definitionsnod lagras inte</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Fel valueType "%1"är inställt.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Fel valueType &quot;%1&quot;är inställt.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Fel skickTyp "%1"är inställd.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Fel skickTyp &quot;%1&quot;är inställd.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1760,8 +1805,8 @@ Do you really want to import this file?</source>
         <translation>Det gick inte att öppna CGNS-filen.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>namnattribut är inte definierat för elementet "Artikel".</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>namnattribut är inte definierat för elementet &quot;Artikel&quot;.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -1972,8 +2017,8 @@ Do you really want to import this file?</source>
         <translation>Fil %1 uppdateras efter import till beräkningstillstånd %2. Vill du importera den uppdaterade filen?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Du kan kopiera och klistra in värdena med genvägen "Ctrl + C" och "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Du kan kopiera och klistra in värdena med genvägen &quot;Ctrl + C&quot; och &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2114,8 +2159,8 @@ Do you really want to import this file?</source>
         <translation>Ett fel uppstod när filen öppnades.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>De två första kolumnerna måste vara "X" och "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>De två första kolumnerna måste vara &quot;X&quot; och &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2276,8 +2321,8 @@ Do you really want to import this file?</source>
         <translation>Definition av variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understrykning; färg:#0000ff; "&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understrykning; färg:#0000ff; &quot;&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2355,8 +2400,8 @@ Do you really want to import this file?</source>
         <translation>Ner (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Obs &lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla beräkningar som en variabel som visas tidigare i listan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Obs &lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla beräkningar som en variabel som visas tidigare i listan. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2717,8 +2762,8 @@ Do you really want to import this file?</source>
         <translation>Definition av output</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -dekoration: understrykning; färg:#0000ff; "&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understrykning; färg:#0000ff; &quot;&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3002,8 +3047,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Arbetsyta "%1"har %2 projektmappar som verkar inte användas längre. Vill du ta bort dem?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Arbetsyta &quot;%1&quot;har %2 projektmappar som verkar inte användas längre. Vill du ta bort dem?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3602,8 +3647,8 @@ Do you really want to import this file?</source>
         <translation>Definition av variabel</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definiera variabeln med JavaScript-språk. Se &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoration: underline; color:#0000ff;"&gt;här&lt;/span&gt;&lt;/a&gt; för detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Du kan definiera variabeln med JavaScript-språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;här&lt;/span&gt;&lt;/a&gt; för detaljer.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3693,8 +3738,8 @@ Do you really want to import this file?</source>
         <translation>Ner (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Obs&lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla operationsberäkningar som en variabel, som visas tidigare i listan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Obs&lt;/span&gt;: Ordningen i listan är viktig. I definitionen kan du använda värdet av enkla operationsberäkningar som en variabel, som visas tidigare i listan.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
