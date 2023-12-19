@@ -542,9 +542,14 @@ int ProjectMainFile::loadFromCgnsFile()
 {
 	bool rebuildNeeded = false;
 	try {
+		auto version = m_projectData->mainfile()->iRICVersion();
 		std::string fname;
-		if (impl->m_cgnsManager->inputFileExists()) {
-			fname = impl->m_cgnsManager->inputFileFullName();
+		if ((version.major() == 4 && version.minor() >= 1) || version.major() > 4) {
+			if (impl->m_cgnsManager->inputFileExists()) {
+				fname = impl->m_cgnsManager->inputFileFullName();
+			} else {
+				fname = impl->m_cgnsManager->mainFileFullName();
+			}
 		} else {
 			fname = impl->m_cgnsManager->mainFileFullName();
 		}
