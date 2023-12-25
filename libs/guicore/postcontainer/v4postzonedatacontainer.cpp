@@ -78,13 +78,13 @@ const std::map<std::string, v4SolutionGrid*> v4PostZoneDataContainer::polyDataMa
 	return impl->m_polyDataMap;
 }
 
-int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult)
+int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, bool disableCalculatedResult)
 {
 	impl->clearParticleDataAndPolyData();
 
 	int ier;
-	if (impl->m_inputGridData == nullptr && zone->base()->dimension() == 2) {
-		impl->m_inputGridData = v4InputGridIO::load(*zone, gridType(), offset(), &ier);
+	if (impl->m_inputGridData == nullptr && zone->base()->dimension() == 2 && gtItem != nullptr) {
+		impl->m_inputGridData = v4InputGridIO::load(*zone, gtItem, tmpPath, offset(), &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	}
 
@@ -119,11 +119,11 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool di
 	return IRIC_NO_ERROR;
 }
 
-int v4PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone)
+int v4PostZoneDataContainer::loadIfEmpty(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath)
 {
 	if (impl->m_gridData != nullptr) {return IRIC_NO_ERROR;}
 
-	return loadFromCgnsFile(zone, false);
+	return loadFromCgnsFile(zone, gtItem, tmpPath, false);
 }
 
 void v4PostZoneDataContainer::applyOffset(const QPointF& offset)

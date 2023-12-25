@@ -541,9 +541,9 @@ QString ProjectMainFile::currentCgnsFileName() const
 int ProjectMainFile::loadFromCgnsFile()
 {
 	bool rebuildNeeded = false;
+	std::string fname;
 	try {
 		auto version = m_projectData->mainfile()->iRICVersion();
-		std::string fname;
 		if ((version.major() == 4 && version.minor() >= 1) || version.major() > 4) {
 			if (impl->m_cgnsManager->inputFileExists()) {
 				fname = impl->m_cgnsManager->inputFileFullName();
@@ -558,7 +558,7 @@ int ProjectMainFile::loadFromCgnsFile()
 		int ier = m_projectData->mainWindow()->loadFromCgnsFile();
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} catch (...) {
-		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg(impl->m_cgnsManager->inputFileName().c_str()));
+		QMessageBox::critical(m_projectData->mainWindow(), tr("Error"), tr("Error occured while opening %1.").arg(QDir::toNativeSeparators(fname.c_str())));
 		return IRIC_H5_CALL_ERROR;
 	}
 

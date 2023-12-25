@@ -3,7 +3,7 @@
 
 #include "../../guicore_global.h"
 
-class SolverDefinitionGridType;
+class PreProcessorGridTypeDataItemI;
 class v4InputGrid;
 class v4Grid;
 class v4Structured15dGridWithCrossSection;
@@ -21,7 +21,7 @@ namespace iRICLib {
 class GUICOREDLL_EXPORT v4InputGridIO
 {
 public:
-	static v4InputGrid* load(const iRICLib::H5CgnsZone& zone, SolverDefinitionGridType* gridType, const QPointF& offset, int* ier);
+	static v4InputGrid* load(const iRICLib::H5CgnsZone& zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, const QPointF& offset, int* ier);
 	static v4Structured2dGrid* loadStructured2dGrid(const iRICLib::H5CgnsZone& zone, const QPointF& offset, int* ier);
 	static v4Unstructured2dGrid* loadUnstructured2dGrid(const iRICLib::H5CgnsZone& zone, const QPointF& offset, int* ier);
 	static v4Structured15dGridWithCrossSection* loadStructured15DGridWithCrossSection(const iRICLib::H5CgnsZone& zone, const QPointF& offset, int* ier);

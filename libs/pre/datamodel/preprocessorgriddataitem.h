@@ -161,6 +161,7 @@ private slots:
 	void launchAttributeGenerator();
 
 private:
+	PreProcessorGridAndGridCreatingConditionDataItem* gridAndGridCreatingConditionDataItem() const;
 	vtkPolyData* buildEdges() const;
 	void setupActors();
 	void setupActions();

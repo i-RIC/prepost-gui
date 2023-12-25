@@ -5,6 +5,9 @@
 #include "../../grid/v4structured2dgrid.h"
 #include "../../grid/v4unstructured2dgrid.h"
 #include "../../solverdef/solverdefinitiongridtype.h"
+#include "../base/preprocessorgridtypedataitemi.h"
+#include "../base/preprocessorgeodatagroupdataitemi.h"
+#include "../base/preprocessorgeodatatopdataitemi.h"
 #include "../gridcond/base/gridattributecontainer.h"
 
 #include <iriclib_errorcodes.h>
@@ -17,7 +20,7 @@
 
 #include <QPointF>
 
-v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, SolverDefinitionGridType* gridType, const QPointF& offset, int* ier)
+v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, const QPointF& offset, int* ier)
 {
 	v4Grid* grid = nullptr;
 	if (zone.type() == iRICLib::H5CgnsZone::Type::Unstructured) {
@@ -32,11 +35,17 @@ v4InputGrid* v4InputGridIO::load(const iRICLib::H5CgnsZone& zone, SolverDefiniti
 	}
 	if (*ier != IRIC_NO_ERROR) {return nullptr;}
 
+	auto gridType = gtItem->gridType();
 	auto inputGrid = new v4InputGrid(gridType, grid);
 	gridType->buildGridAttributes(inputGrid);
 	inputGrid->allocateAttributes();
 
+	auto gdTop = gtItem->geoDataTop();
 	for (auto att : inputGrid->attributes()) {
+		auto gItem = gdTop->groupDataItem(att->name());
+		auto dims = gItem->dimensions();
+		att->setDimensions(dims);
+		att->setTemporaryDir(tmpPath);
 		*ier = att->loadFromCgnsFile(*zone.gridAttributes());
 		if (*ier != IRIC_NO_ERROR) {return nullptr;}
 	}

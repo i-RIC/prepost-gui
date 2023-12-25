@@ -5,6 +5,12 @@
 #include "private/geodatanetcdf_impl.h"
 
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
 #include <guicore/solverdef/solverdefinitiongridattributedimensiont.h>
@@ -80,6 +86,19 @@ const QStringList GeoDataNetcdfImporter::acceptableExtensions()
 
 bool GeoDataNetcdfImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* /*count*/, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
+	if (item->geoDatas().size() > 1) {
+		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
+		return false;
+	}
+	// grid attributes cleared
+	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
+	for (auto cond : conds) {
+		auto grid = cond->gridDataItem()->grid();
+		auto att = grid->attribute(condition->name());
+		att->clearTemporaryData();
+		att->setDefaultValue();
+	}
+
 	m_groupDataItem = item;
 
 	char nameBuffer[200];
@@ -343,12 +362,7 @@ bool GeoDataNetcdfImporter::importData(GeoData* data, int /*index*/, QWidget* w)
 				}
 			}
 		}
-		if (c->variantValues().size() == 0) {
-			c->setVariantValues(convertedVals);
-		} else {
-			QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
-			return false;
-		}
+		c->setVariantValues(convertedVals);
 	}
 	// save coordinates and dimensions to the netcdf file.
 	int out_xDimId, out_yDimId, out_lonDimId, out_latDimId;

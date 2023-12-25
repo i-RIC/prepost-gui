@@ -60,6 +60,19 @@ void GridAttributeContainer::setTemporaryDir(const QString& dir)
 	m_temporaryDir = dir;
 }
 
+void GridAttributeContainer::clearTemporaryData()
+{
+	int index = 0;
+	while (true) {
+		auto fname = temporaryExternalFilename(index);
+		QFile f(fname);
+		if (! f.exists()) {return;}
+
+		f.remove();
+		++ index;
+	}
+}
+
 unsigned int GridAttributeContainer::dataCount() const
 {
 	if (gridAttribute()->position() == SolverDefinitionGridAttribute::Position::Node) {

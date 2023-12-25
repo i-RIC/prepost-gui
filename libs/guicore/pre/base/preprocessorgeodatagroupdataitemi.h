@@ -11,6 +11,7 @@ class GeoDataCreator;
 class GeoDataPolygon;
 class GeoDataRiverSurvey;
 class PreProcessorGeoDataDataItemI;
+class PreProcessorGeoDataTopDataItemI;
 class GridAttributeDimensionsContainer;
 class GridAttributeEditWidget;
 class GridAttributeStringConverter;
@@ -23,6 +24,8 @@ public:
 	PreProcessorGeoDataGroupDataItemI(SolverDefinitionGridAttribute* cond, PreProcessorDataItem* parent);
 
 	ProjectData* projectData() const;
+	PreProcessorGeoDataTopDataItemI* geoDataTopDataItem() const;
+
 	virtual SolverDefinitionGridAttribute* condition() = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
 	virtual void applyColorMapSetting() = 0;

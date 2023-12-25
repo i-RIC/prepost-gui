@@ -36,8 +36,10 @@ public:
 
 	QString temporaryDir() const;
 	void setTemporaryDir(const QString& dir);
+	void clearTemporaryData();
 
 	unsigned int dataCount() const;
+	virtual void setDefaultValue() = 0;
 	virtual bool getValueRange(double* min, double* max) = 0;
 
 	bool mapped() const;

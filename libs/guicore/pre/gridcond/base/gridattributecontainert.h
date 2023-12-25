@@ -23,6 +23,7 @@ public:
 
 	DA* dataArray() const;
 	DA* dataArrayCopy() const;
+	void setDefaultValue() override;
 	void allocate() override;
 
 	void setModified() override;

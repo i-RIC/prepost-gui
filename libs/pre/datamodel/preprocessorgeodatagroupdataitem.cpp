@@ -1032,9 +1032,8 @@ void PreProcessorGeoDataGroupDataItem::handleStandardItemChange()
 const QList<PreProcessorGeoDataDataItemI*> PreProcessorGeoDataGroupDataItem::geoDatas() const
 {
 	QList<PreProcessorGeoDataDataItemI*> ret;
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGeoDataDataItemI* item = dynamic_cast<PreProcessorGeoDataDataItemI*>(*it);
-		ret.append(item);
+	for (auto child : m_childItems) {
+		ret.append(dynamic_cast<PreProcessorGeoDataDataItemI*>(child));
 	}
 	return ret;
 }
