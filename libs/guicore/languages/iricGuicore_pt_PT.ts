@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Ocorreu um erro: %1</translation>
+        <translation type="vanished">Ocorreu um erro: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, índice para etiqueta é redefinido porque o tamanho da grade foi alterado.</translation>
+        <translation type="vanished">I, J, K, índice para etiqueta é redefinido porque o tamanho da grade foi alterado.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Editar Argumento de Resultado de String</translation>
+        <translation type="vanished">Editar Argumento de Resultado de String</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posição:</translation>
+        <translation type="vanished">Posição:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Nome do resultado:</translation>
+        <translation type="vanished">Nome do resultado:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Nome variável:</translation>
+        <translation type="vanished">Nome variável:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>EU:</translation>
+        <translation type="vanished">EU:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Índice:</translation>
+        <translation type="vanished">Índice:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Valor para teste</translation>
+        <translation type="vanished">Valor para teste</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nó</translation>
+        <translation type="vanished">Nó</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Célula</translation>
+        <translation type="vanished">Célula</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>O nome da variável está vazio.</translation>
+        <translation type="vanished">O nome da variável está vazio.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultados de cálculo para entrada</translation>
+        <translation type="vanished">Resultados de cálculo para entrada</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Modelo</translation>
+        <translation type="vanished">Modelo</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nome do resultado</translation>
+        <translation type="vanished">Nome do resultado</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nome variável</translation>
+        <translation type="vanished">Nome variável</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Índice</translation>
+        <translation type="vanished">Índice</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Valor para teste</translation>
+        <translation type="vanished">Valor para teste</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Adicionar (&amp;A)...</translation>
+        <translation type="vanished">Adicionar (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editar (&amp;E)...</translation>
+        <translation type="vanished">Editar (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Excluir (&amp;D)...</translation>
+        <translation type="vanished">Excluir (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definição de saída</translation>
+        <translation type="vanished">Definição de saída</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Você pode definir a variável com a linguagem JavaScript. Consulte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aqui &lt;/span&gt; &lt;/a&gt; para detalhes. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Teste</translation>
+        <translation type="vanished">Teste</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Aviso</translation>
+        <translation type="vanished">Aviso</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Tem certeza de que deseja excluir %1 ?</translation>
+        <translation type="vanished">Tem certeza de que deseja excluir %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nó</translation>
+        <translation type="vanished">Nó</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Célula</translation>
+        <translation type="vanished">Célula</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

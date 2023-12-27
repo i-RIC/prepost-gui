@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Virhe</translation>
+        <translation type="vanished">Virhe</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Tapahtui virhe: %1</translation>
+        <translation type="vanished">Tapahtui virhe: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, tarran indeksi nollataan, koska ruudukon kokoa muutetaan.</translation>
+        <translation type="vanished">I, J, K, tarran indeksi nollataan, koska ruudukon kokoa muutetaan.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Muokkaa merkkijonon tuloksen argumenttia</translation>
+        <translation type="vanished">Muokkaa merkkijonon tuloksen argumenttia</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Sijoitus:</translation>
+        <translation type="vanished">Sijoitus:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Tuloksen nimi:</translation>
+        <translation type="vanished">Tuloksen nimi:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Muuttujan nimi:</translation>
+        <translation type="vanished">Muuttujan nimi:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Minä:</translation>
+        <translation type="vanished">Minä:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeksi:</translation>
+        <translation type="vanished">Indeksi:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Arvo testille</translation>
+        <translation type="vanished">Arvo testille</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Maailmanlaajuinen</translation>
+        <translation type="vanished">Maailmanlaajuinen</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Solmu</translation>
+        <translation type="vanished">Solmu</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Solu</translation>
+        <translation type="vanished">Solu</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Muuttujan nimi on tyhjä.</translation>
+        <translation type="vanished">Muuttujan nimi on tyhjä.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Lomake</translation>
+        <translation type="vanished">Lomake</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Syötteen laskentatulokset</translation>
+        <translation type="vanished">Syötteen laskentatulokset</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tyyppi</translation>
+        <translation type="vanished">Tyyppi</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Tuloksen nimi</translation>
+        <translation type="vanished">Tuloksen nimi</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Muuttujan nimi</translation>
+        <translation type="vanished">Muuttujan nimi</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indeksi</translation>
+        <translation type="vanished">Indeksi</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Testausarvo</translation>
+        <translation type="vanished">Testausarvo</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Lisätä (&amp;A)...</translation>
+        <translation type="vanished">Lisätä (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Muokata (&amp;E)...</translation>
+        <translation type="vanished">Muokata (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Poistaa (&amp;D)...</translation>
+        <translation type="vanished">Poistaa (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Tuloksen määritelmä</translation>
+        <translation type="vanished">Tuloksen määritelmä</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Testata</translation>
+        <translation type="vanished">Testata</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varoitus</translation>
+        <translation type="vanished">Varoitus</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Haluatko varmasti poistaa %1 ?</translation>
+        <translation type="vanished">Haluatko varmasti poistaa %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Maailmanlaajuinen</translation>
+        <translation type="vanished">Maailmanlaajuinen</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Solmu</translation>
+        <translation type="vanished">Solmu</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Solu</translation>
+        <translation type="vanished">Solu</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

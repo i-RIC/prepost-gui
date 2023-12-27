@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>पिक्सल</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>त्रुटि</translation>
+        <translation type="vanished">त्रुटि</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>त्रुटि हुई: %1</translation>
+        <translation type="vanished">त्रुटि हुई: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, लेबल के लिए अनुक्रमणिका रीसेट कर दी गई है क्योंकि ग्रिड का आकार बदल गया है।</translation>
+        <translation type="vanished">I, J, K, लेबल के लिए अनुक्रमणिका रीसेट कर दी गई है क्योंकि ग्रिड का आकार बदल गया है।</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>स्ट्रिंग परिणाम तर्क संपादित करें</translation>
+        <translation type="vanished">स्ट्रिंग परिणाम तर्क संपादित करें</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>पद:</translation>
+        <translation type="vanished">पद:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>परिणाम का नाम:</translation>
+        <translation type="vanished">परिणाम का नाम:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>चर का नाम:</translation>
+        <translation type="vanished">चर का नाम:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>मैं:</translation>
+        <translation type="vanished">मैं:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>जे:</translation>
+        <translation type="vanished">जे:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>क:</translation>
+        <translation type="vanished">क:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>अनुक्रमणिका:</translation>
+        <translation type="vanished">अनुक्रमणिका:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>परीक्षण के लिए मूल्य</translation>
+        <translation type="vanished">परीक्षण के लिए मूल्य</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>वैश्विक</translation>
+        <translation type="vanished">वैश्विक</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>नोड</translation>
+        <translation type="vanished">नोड</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>कक्ष</translation>
+        <translation type="vanished">कक्ष</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>धार I</translation>
+        <translation type="vanished">धार I</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>एज जे</translation>
+        <translation type="vanished">एज जे</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>चर नाम खाली है।</translation>
+        <translation type="vanished">चर नाम खाली है।</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>इनपुट के लिए गणना परिणाम</translation>
+        <translation type="vanished">इनपुट के लिए गणना परिणाम</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>प्रकार</translation>
+        <translation type="vanished">प्रकार</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>परिणाम का नाम</translation>
+        <translation type="vanished">परिणाम का नाम</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>चर का नाम</translation>
+        <translation type="vanished">चर का नाम</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>अनुक्रमणिका</translation>
+        <translation type="vanished">अनुक्रमणिका</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>परीक्षण के लिए मूल्य</translation>
+        <translation type="vanished">परीक्षण के लिए मूल्य</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>जोड़ें (&amp;A)...</translation>
+        <translation type="vanished">जोड़ें (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>संपादित करें (&amp;E)...</translation>
+        <translation type="vanished">संपादित करें (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>हटाएं (&amp;D)...</translation>
+        <translation type="vanished">हटाएं (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>आउटपुट की परिभाषा</translation>
+        <translation type="vanished">आउटपुट की परिभाषा</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;आप JavaScript भाषा से वेरिएबल को परिभाषित कर सकते हैं। कृपया देखें &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -डेकोरेशन: अंडरलाइन; कलर:#0000ff;&quot;&gt;यहां&lt;/span&gt;&lt;/a&gt; डिटेल के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>परीक्षण</translation>
+        <translation type="vanished">परीक्षण</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>चेतावनी</translation>
+        <translation type="vanished">चेतावनी</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
+        <translation type="vanished">क्या आप आश्वस्त है कि आपको डिलीट करना है %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>वैश्विक</translation>
+        <translation type="vanished">वैश्विक</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>नोड</translation>
+        <translation type="vanished">नोड</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>कक्ष</translation>
+        <translation type="vanished">कक्ष</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>धार I</translation>
+        <translation type="vanished">धार I</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>एज जे</translation>
+        <translation type="vanished">एज जे</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>एजके</translation>
+        <translation type="vanished">एजके</translation>
     </message>
 </context>
 <context>

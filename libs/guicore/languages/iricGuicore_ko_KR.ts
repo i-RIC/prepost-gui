@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>픽셀</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>문제 발생: %1</translation>
+        <translation type="vanished">문제 발생: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, 레이블의 인덱스는 그리드 크기가 변경되어 재설정됩니다.</translation>
+        <translation type="vanished">I, J, K, 레이블의 인덱스는 그리드 크기가 변경되어 재설정됩니다.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>문자열 결과 인수 편집</translation>
+        <translation type="vanished">문자열 결과 인수 편집</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>위치:</translation>
+        <translation type="vanished">위치:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>결과 이름:</translation>
+        <translation type="vanished">결과 이름:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>변수 이름:</translation>
+        <translation type="vanished">변수 이름:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>NS:</translation>
+        <translation type="vanished">NS:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>제이:</translation>
+        <translation type="vanished">제이:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>케이:</translation>
+        <translation type="vanished">케이:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>색인:</translation>
+        <translation type="vanished">색인:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>테스트 가치</translation>
+        <translation type="vanished">테스트 가치</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>글로벌</translation>
+        <translation type="vanished">글로벌</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>마디</translation>
+        <translation type="vanished">마디</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>셀</translation>
+        <translation type="vanished">셀</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>에지I</translation>
+        <translation type="vanished">에지I</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>에지제이</translation>
+        <translation type="vanished">에지제이</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>변수 이름이 비어 있습니다.</translation>
+        <translation type="vanished">변수 이름이 비어 있습니다.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>형태</translation>
+        <translation type="vanished">형태</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>입력에 대한 계산 결과</translation>
+        <translation type="vanished">입력에 대한 계산 결과</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>유형</translation>
+        <translation type="vanished">유형</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>결과 이름</translation>
+        <translation type="vanished">결과 이름</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>변수 이름</translation>
+        <translation type="vanished">변수 이름</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>색인</translation>
+        <translation type="vanished">색인</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>테스트 가치</translation>
+        <translation type="vanished">테스트 가치</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>추가하다 (&amp;A)...</translation>
+        <translation type="vanished">추가하다 (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>편집하다 (&amp;E)...</translation>
+        <translation type="vanished">편집하다 (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>삭제 (&amp;D)...</translation>
+        <translation type="vanished">삭제 (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>출력의 정의</translation>
+        <translation type="vanished">출력의 정의</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>시험</translation>
+        <translation type="vanished">시험</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>경고</translation>
+        <translation type="vanished">경고</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>삭제 하시겠습니까 %1 ?</translation>
+        <translation type="vanished">삭제 하시겠습니까 %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>글로벌</translation>
+        <translation type="vanished">글로벌</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>마디</translation>
+        <translation type="vanished">마디</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>셀</translation>
+        <translation type="vanished">셀</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>에지I</translation>
+        <translation type="vanished">에지I</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>에지제이</translation>
+        <translation type="vanished">에지제이</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>엣지K</translation>
+        <translation type="vanished">엣지K</translation>
     </message>
 </context>
 <context>

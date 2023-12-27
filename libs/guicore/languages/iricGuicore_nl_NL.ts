@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Fout opgetreden: %1</translation>
+        <translation type="vanished">Fout opgetreden: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, index voor label wordt gereset omdat de rastergrootte is gewijzigd.</translation>
+        <translation type="vanished">I, J, K, index voor label wordt gereset omdat de rastergrootte is gewijzigd.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Stringresultaatargument bewerken</translation>
+        <translation type="vanished">Stringresultaatargument bewerken</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Positie:</translation>
+        <translation type="vanished">Positie:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Resultaat naam:</translation>
+        <translation type="vanished">Resultaat naam:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Variabele naam:</translation>
+        <translation type="vanished">Variabele naam:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>L:</translation>
+        <translation type="vanished">L:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Inhoudsopgave:</translation>
+        <translation type="vanished">Inhoudsopgave:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Waarde voor testen</translation>
+        <translation type="vanished">Waarde voor testen</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globaal</translation>
+        <translation type="vanished">Globaal</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Knooppunt</translation>
+        <translation type="vanished">Knooppunt</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cel</translation>
+        <translation type="vanished">Cel</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Variabelenaam is leeg.</translation>
+        <translation type="vanished">Variabelenaam is leeg.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rekenresultaten voor invoer</translation>
+        <translation type="vanished">Rekenresultaten voor invoer</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="vanished">Type</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultaat naam</translation>
+        <translation type="vanished">Resultaat naam</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabele naam</translation>
+        <translation type="vanished">Variabele naam</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Inhoudsopgave</translation>
+        <translation type="vanished">Inhoudsopgave</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Waarde voor testen</translation>
+        <translation type="vanished">Waarde voor testen</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Toevoegen (&amp;A)...</translation>
+        <translation type="vanished">Toevoegen (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Bewerking (&amp;E)...</translation>
+        <translation type="vanished">Bewerking (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Verwijderen (&amp;D)...</translation>
+        <translation type="vanished">Verwijderen (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definitie van output</translation>
+        <translation type="vanished">Definitie van output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;U kunt de variabele definiëren met JavaScript-taal. Zie &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; tekst -decoratie: onderstrepen; kleur:#0000ff;&quot;&gt;hier&lt;/span&gt;&lt;/a&gt; voor details.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Toets</translation>
+        <translation type="vanished">Toets</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation type="vanished">Waarschuwing</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Weet je zeker dat je wilt verwijderen %1 ?</translation>
+        <translation type="vanished">Weet je zeker dat je wilt verwijderen %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globaal</translation>
+        <translation type="vanished">Globaal</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Knooppunt</translation>
+        <translation type="vanished">Knooppunt</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cel</translation>
+        <translation type="vanished">Cel</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

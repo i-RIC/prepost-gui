@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Hiba lépett fel: %1</translation>
+        <translation type="vanished">Hiba lépett fel: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>Az I, J, K, címkeindex visszaáll, mert a rács mérete megváltozott.</translation>
+        <translation type="vanished">Az I, J, K, címkeindex visszaáll, mert a rács mérete megváltozott.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>String Result argumentum szerkesztése</translation>
+        <translation type="vanished">String Result argumentum szerkesztése</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozíció:</translation>
+        <translation type="vanished">Pozíció:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Eredmény neve:</translation>
+        <translation type="vanished">Eredmény neve:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Változó neve:</translation>
+        <translation type="vanished">Változó neve:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>ÉN:</translation>
+        <translation type="vanished">ÉN:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Index:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Érték a teszteléshez</translation>
+        <translation type="vanished">Érték a teszteléshez</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globális</translation>
+        <translation type="vanished">Globális</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Csomópont</translation>
+        <translation type="vanished">Csomópont</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Sejt</translation>
+        <translation type="vanished">Sejt</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>A változó neve üres.</translation>
+        <translation type="vanished">A változó neve üres.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Számítási eredmények a bemenethez</translation>
+        <translation type="vanished">Számítási eredmények a bemenethez</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>típus</translation>
+        <translation type="vanished">típus</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Eredmény neve</translation>
+        <translation type="vanished">Eredmény neve</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Változó név</translation>
+        <translation type="vanished">Változó név</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Értékelés a teszteléshez</translation>
+        <translation type="vanished">Értékelés a teszteléshez</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Hozzáadás (&amp;A)...</translation>
+        <translation type="vanished">Hozzáadás (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Szerkesztés (&amp;E)...</translation>
+        <translation type="vanished">Szerkesztés (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Töröl (&amp;D)...</translation>
+        <translation type="vanished">Töröl (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>A kimenet meghatározása</translation>
+        <translation type="vanished">A kimenet meghatározása</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;szöveget -dekoráció: aláhúzás; color:#0000ff; &quot;&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; A változót JavaScript nyelvvel határozhatja meg. Kérjük, olvassa el a &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;szöveget -dekoráció: aláhúzás; color:#0000ff; &quot;&gt; itt &lt;/span&gt; &lt;/a&gt; a részletekért. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Teszt</translation>
+        <translation type="vanished">Teszt</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Figyelem</translation>
+        <translation type="vanished">Figyelem</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Biztos vagy benne, hogy törölni akarod %1 ?</translation>
+        <translation type="vanished">Biztos vagy benne, hogy törölni akarod %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globális</translation>
+        <translation type="vanished">Globális</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Csomópont</translation>
+        <translation type="vanished">Csomópont</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Sejt</translation>
+        <translation type="vanished">Sejt</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>пикс.</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Произошла ошибка: %1</translation>
+        <translation type="vanished">Произошла ошибка: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, индекс метки сбрасывается, потому что размер сетки изменен.</translation>
+        <translation type="vanished">I, J, K, индекс метки сбрасывается, потому что размер сетки изменен.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Изменить аргумент результата строки</translation>
+        <translation type="vanished">Изменить аргумент результата строки</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Позиция:</translation>
+        <translation type="vanished">Позиция:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Название результата:</translation>
+        <translation type="vanished">Название результата:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Имя переменной:</translation>
+        <translation type="vanished">Имя переменной:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Я:</translation>
+        <translation type="vanished">Я:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Показатель:</translation>
+        <translation type="vanished">Показатель:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Ценность для тестирования</translation>
+        <translation type="vanished">Ценность для тестирования</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Глобальный</translation>
+        <translation type="vanished">Глобальный</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Узел</translation>
+        <translation type="vanished">Узел</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Клетка</translation>
+        <translation type="vanished">Клетка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Имя переменной пусто.</translation>
+        <translation type="vanished">Имя переменной пусто.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Результаты расчета для ввода</translation>
+        <translation type="vanished">Результаты расчета для ввода</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation type="vanished">Тип</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Название результата</translation>
+        <translation type="vanished">Название результата</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Имя переменной</translation>
+        <translation type="vanished">Имя переменной</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Показатель</translation>
+        <translation type="vanished">Показатель</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Ценность для тестирования</translation>
+        <translation type="vanished">Ценность для тестирования</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Добавлять (&amp;A)...</translation>
+        <translation type="vanished">Добавлять (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Редактировать (&amp;E)...</translation>
+        <translation type="vanished">Редактировать (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Удалить (&amp;D)...</translation>
+        <translation type="vanished">Удалить (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Определение вывода</translation>
+        <translation type="vanished">Определение вывода</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Тестовое задание</translation>
+        <translation type="vanished">Тестовое задание</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Предупреждение</translation>
+        <translation type="vanished">Предупреждение</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Вы уверены, что хотите удалить %1 ?</translation>
+        <translation type="vanished">Вы уверены, что хотите удалить %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Глобальный</translation>
+        <translation type="vanished">Глобальный</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Узел</translation>
+        <translation type="vanished">Узел</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Клетка</translation>
+        <translation type="vanished">Клетка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation type="vanished">Klaida</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Įvyko klaida: %1</translation>
+        <translation type="vanished">Įvyko klaida: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, etiketės indeksas iš naujo nustatomas, nes pakeistas tinklelio dydis.</translation>
+        <translation type="vanished">I, J, K, etiketės indeksas iš naujo nustatomas, nes pakeistas tinklelio dydis.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Redaguoti eilutės rezultato argumentą</translation>
+        <translation type="vanished">Redaguoti eilutės rezultato argumentą</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozicija:</translation>
+        <translation type="vanished">Pozicija:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Rezultato pavadinimas:</translation>
+        <translation type="vanished">Rezultato pavadinimas:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Kintamojo pavadinimas:</translation>
+        <translation type="vanished">Kintamojo pavadinimas:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Aš:</translation>
+        <translation type="vanished">Aš:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeksas:</translation>
+        <translation type="vanished">Indeksas:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vertė bandymams</translation>
+        <translation type="vanished">Vertė bandymams</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Pasaulinis</translation>
+        <translation type="vanished">Pasaulinis</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Mazgas</translation>
+        <translation type="vanished">Mazgas</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Ląstelė</translation>
+        <translation type="vanished">Ląstelė</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Kintamojo pavadinimas tuščias.</translation>
+        <translation type="vanished">Kintamojo pavadinimas tuščias.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Įvesties skaičiavimo rezultatai</translation>
+        <translation type="vanished">Įvesties skaičiavimo rezultatai</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tipas</translation>
+        <translation type="vanished">Tipas</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Rezultato pavadinimas</translation>
+        <translation type="vanished">Rezultato pavadinimas</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Kintamasis pavadinimas</translation>
+        <translation type="vanished">Kintamasis pavadinimas</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indeksas</translation>
+        <translation type="vanished">Indeksas</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Vertė bandymui</translation>
+        <translation type="vanished">Vertė bandymui</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Papildyti (&amp;A)...</translation>
+        <translation type="vanished">Papildyti (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redaguoti (&amp;E)...</translation>
+        <translation type="vanished">Redaguoti (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Ištrinti (&amp;D)...</translation>
+        <translation type="vanished">Ištrinti (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Išvesties apibrėžimas</translation>
+        <translation type="vanished">Išvesties apibrėžimas</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Galite apibrėžti kintamąjį naudodami „JavaScript“ kalbą. Žr. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;tekstą -dekoracija: pabraukta; spalva:#0000ff; &quot;&gt; čia &lt;/span&gt; &lt;/a&gt;, jei reikia išsamios informacijos. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Bandymas</translation>
+        <translation type="vanished">Bandymas</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Įspėjimas</translation>
+        <translation type="vanished">Įspėjimas</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
+        <translation type="vanished">Ar esate įsitikinę, kad norite ištrinti %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Pasaulinis</translation>
+        <translation type="vanished">Pasaulinis</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Mazgas</translation>
+        <translation type="vanished">Mazgas</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Ląstelė</translation>
+        <translation type="vanished">Ląstelė</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>„EdgeK“</translation>
+        <translation type="vanished">„EdgeK“</translation>
     </message>
 </context>
 <context>

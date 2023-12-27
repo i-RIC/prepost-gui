@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>A aparut o eroare: %1</translation>
+        <translation type="vanished">A aparut o eroare: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, indexul pentru etichetă este resetat deoarece dimensiunea grilei este modificată.</translation>
+        <translation type="vanished">I, J, K, indexul pentru etichetă este resetat deoarece dimensiunea grilei este modificată.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Editați argumentul rezultatului șirului</translation>
+        <translation type="vanished">Editați argumentul rezultatului șirului</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Poziţie:</translation>
+        <translation type="vanished">Poziţie:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Nume rezultat:</translation>
+        <translation type="vanished">Nume rezultat:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Numele variabilei:</translation>
+        <translation type="vanished">Numele variabilei:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Eu:</translation>
+        <translation type="vanished">Eu:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Index:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Valoare pentru testare</translation>
+        <translation type="vanished">Valoare pentru testare</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nodul</translation>
+        <translation type="vanished">Nodul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celulă</translation>
+        <translation type="vanished">Celulă</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Numele variabilei este gol.</translation>
+        <translation type="vanished">Numele variabilei este gol.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formă</translation>
+        <translation type="vanished">Formă</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rezultatele calculului pentru intrare</translation>
+        <translation type="vanished">Rezultatele calculului pentru intrare</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tip</translation>
+        <translation type="vanished">Tip</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Numele rezultatului</translation>
+        <translation type="vanished">Numele rezultatului</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Numele variabilei</translation>
+        <translation type="vanished">Numele variabilei</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Valoare pentru testare</translation>
+        <translation type="vanished">Valoare pentru testare</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Adăuga (&amp;A)...</translation>
+        <translation type="vanished">Adăuga (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editați | × (&amp;E)...</translation>
+        <translation type="vanished">Editați | × (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Șterge (&amp;D)...</translation>
+        <translation type="vanished">Șterge (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definiția output</translation>
+        <translation type="vanished">Definiția output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Puteți defini variabila cu un limbaj JavaScript. Vă rugăm să consultați &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aici &lt;/span&gt; &lt;/a&gt; pentru detalii. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Avertizare</translation>
+        <translation type="vanished">Avertizare</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>ești sigur că vrei să ștergi %1 ?</translation>
+        <translation type="vanished">ești sigur că vrei să ștergi %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nodul</translation>
+        <translation type="vanished">Nodul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celulă</translation>
+        <translation type="vanished">Celulă</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

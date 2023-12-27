@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Fel</translation>
+        <translation type="vanished">Fel</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Fel uppstod: %1</translation>
+        <translation type="vanished">Fel uppstod: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, index för etikett återställs eftersom rutnätets storlek ändras.</translation>
+        <translation type="vanished">I, J, K, index för etikett återställs eftersom rutnätets storlek ändras.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Redigera strängresultatargument</translation>
+        <translation type="vanished">Redigera strängresultatargument</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Placera:</translation>
+        <translation type="vanished">Placera:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Resultatnamn:</translation>
+        <translation type="vanished">Resultatnamn:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Variabelnamn:</translation>
+        <translation type="vanished">Variabelnamn:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Jag:</translation>
+        <translation type="vanished">Jag:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Index:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Värde för testning</translation>
+        <translation type="vanished">Värde för testning</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nod</translation>
+        <translation type="vanished">Nod</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cell</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Variabelnamnet är tomt.</translation>
+        <translation type="vanished">Variabelnamnet är tomt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Beräkningsresultat för inmatning</translation>
+        <translation type="vanished">Beräkningsresultat för inmatning</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation type="vanished">Typ</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultatnamn</translation>
+        <translation type="vanished">Resultatnamn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabelnamn</translation>
+        <translation type="vanished">Variabelnamn</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Värde för testning</translation>
+        <translation type="vanished">Värde för testning</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Lägg till (&amp;A)...</translation>
+        <translation type="vanished">Lägg till (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redigera (&amp;E)...</translation>
+        <translation type="vanished">Redigera (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Radera (&amp;D)...</translation>
+        <translation type="vanished">Radera (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definition av output</translation>
+        <translation type="vanished">Definition av output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understrykning; färg:#0000ff; &quot;&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definiera variabeln med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekoration: understrykning; färg:#0000ff; &quot;&gt; här &lt;/span&gt; &lt;/a&gt; för detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Testa</translation>
+        <translation type="vanished">Testa</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varning</translation>
+        <translation type="vanished">Varning</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Är du säker att du vill radera %1 ?</translation>
+        <translation type="vanished">Är du säker att du vill radera %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nod</translation>
+        <translation type="vanished">Nod</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cell</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

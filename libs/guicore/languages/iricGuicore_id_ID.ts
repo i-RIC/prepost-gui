@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Kesalahan</translation>
+        <translation type="vanished">Kesalahan</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Terjadi kesalahan: %1</translation>
+        <translation type="vanished">Terjadi kesalahan: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, indeks untuk label direset karena ukuran grid berubah.</translation>
+        <translation type="vanished">I, J, K, indeks untuk label direset karena ukuran grid berubah.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Edit Argumen Hasil String</translation>
+        <translation type="vanished">Edit Argumen Hasil String</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisi:</translation>
+        <translation type="vanished">Posisi:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Nama Hasil:</translation>
+        <translation type="vanished">Nama Hasil:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Nama Variabel:</translation>
+        <translation type="vanished">Nama Variabel:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>SAYA:</translation>
+        <translation type="vanished">SAYA:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation type="vanished">Indeks:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Nilai untuk pengujian</translation>
+        <translation type="vanished">Nilai untuk pengujian</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>simpul</translation>
+        <translation type="vanished">simpul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Sel</translation>
+        <translation type="vanished">Sel</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>tepiI</translation>
+        <translation type="vanished">tepiI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>tepiJ</translation>
+        <translation type="vanished">tepiJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Nama variabel kosong.</translation>
+        <translation type="vanished">Nama variabel kosong.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Membentuk</translation>
+        <translation type="vanished">Membentuk</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Hasil perhitungan untuk input</translation>
+        <translation type="vanished">Hasil perhitungan untuk input</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Jenis</translation>
+        <translation type="vanished">Jenis</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nama hasil</translation>
+        <translation type="vanished">Nama hasil</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Nama variabel</translation>
+        <translation type="vanished">Nama variabel</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="vanished">Indeks</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Nilai untuk Pengujian</translation>
+        <translation type="vanished">Nilai untuk Pengujian</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Menambahkan (&amp;A)...</translation>
+        <translation type="vanished">Menambahkan (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Sunting (&amp;E)...</translation>
+        <translation type="vanished">Sunting (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Menghapus (&amp;D)...</translation>
+        <translation type="vanished">Menghapus (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definisi keluaran</translation>
+        <translation type="vanished">Definisi keluaran</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Anda dapat mendefinisikan variabel dengan bahasa JavaScript. Silakan lihat &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; teks -decoration: underline; color:#0000ff;&quot;&gt;di sini&lt;/span&gt;&lt;/a&gt; untuk detailnya.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Tes</translation>
+        <translation type="vanished">Tes</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Peringatan</translation>
+        <translation type="vanished">Peringatan</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Anda yakin ingin menghapus %1 ?</translation>
+        <translation type="vanished">Anda yakin ingin menghapus %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>simpul</translation>
+        <translation type="vanished">simpul</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Sel</translation>
+        <translation type="vanished">Sel</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>tepiI</translation>
+        <translation type="vanished">tepiI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>tepiJ</translation>
+        <translation type="vanished">tepiJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>tepiK</translation>
+        <translation type="vanished">tepiK</translation>
     </message>
 </context>
 <context>

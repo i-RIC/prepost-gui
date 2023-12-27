@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Λάθος</translation>
+        <translation type="vanished">Λάθος</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Παρουσιάστηκε σφάλμα: %1</translation>
+        <translation type="vanished">Παρουσιάστηκε σφάλμα: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, index για την ετικέτα επαναφέρεται επειδή το μέγεθος του πλέγματος αλλάζει.</translation>
+        <translation type="vanished">I, J, K, index για την ετικέτα επαναφέρεται επειδή το μέγεθος του πλέγματος αλλάζει.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Επεξεργασία ορίσματος αποτελεσμάτων συμβολοσειράς</translation>
+        <translation type="vanished">Επεξεργασία ορίσματος αποτελεσμάτων συμβολοσειράς</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Θέση:</translation>
+        <translation type="vanished">Θέση:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Όνομα αποτελέσματος:</translation>
+        <translation type="vanished">Όνομα αποτελέσματος:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Όνομα μεταβλητής:</translation>
+        <translation type="vanished">Όνομα μεταβλητής:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>ΕΓΩ:</translation>
+        <translation type="vanished">ΕΓΩ:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>Κ:</translation>
+        <translation type="vanished">Κ:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Δείκτης:</translation>
+        <translation type="vanished">Δείκτης:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Τιμή για δοκιμή</translation>
+        <translation type="vanished">Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Παγκόσμια</translation>
+        <translation type="vanished">Παγκόσμια</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Κόμβος</translation>
+        <translation type="vanished">Κόμβος</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Κύτταρο</translation>
+        <translation type="vanished">Κύτταρο</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Το όνομα της μεταβλητής είναι κενό.</translation>
+        <translation type="vanished">Το όνομα της μεταβλητής είναι κενό.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Μορφή</translation>
+        <translation type="vanished">Μορφή</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Αποτελέσματα υπολογισμού για την είσοδο</translation>
+        <translation type="vanished">Αποτελέσματα υπολογισμού για την είσοδο</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Τύπος</translation>
+        <translation type="vanished">Τύπος</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Όνομα αποτελέσματος</translation>
+        <translation type="vanished">Όνομα αποτελέσματος</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Όνομα μεταβλητής</translation>
+        <translation type="vanished">Όνομα μεταβλητής</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Δείκτης</translation>
+        <translation type="vanished">Δείκτης</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Τιμή για δοκιμή</translation>
+        <translation type="vanished">Τιμή για δοκιμή</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Προσθήκη (&amp;A)...</translation>
+        <translation type="vanished">Προσθήκη (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Επεξεργασία (&amp;E)...</translation>
+        <translation type="vanished">Επεξεργασία (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Διαγράφω (&amp;D)...</translation>
+        <translation type="vanished">Διαγράφω (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Ορισμός εξόδου</translation>
+        <translation type="vanished">Ορισμός εξόδου</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Δοκιμή</translation>
+        <translation type="vanished">Δοκιμή</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Προειδοποίηση</translation>
+        <translation type="vanished">Προειδοποίηση</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
+        <translation type="vanished">Είστε σίγουροι ότι θέλετε να διαγράψετε %1 ;</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Παγκόσμια</translation>
+        <translation type="vanished">Παγκόσμια</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Κόμβος</translation>
+        <translation type="vanished">Κόμβος</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Κύτταρο</translation>
+        <translation type="vanished">Κύτταρο</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Prišlo je do napake: %1</translation>
+        <translation type="vanished">Prišlo je do napake: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, indeks za nalepko se ponastavi, ker se velikost mreže spremeni.</translation>
+        <translation type="vanished">I, J, K, indeks za nalepko se ponastavi, ker se velikost mreže spremeni.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Uredi argument rezultata niza</translation>
+        <translation type="vanished">Uredi argument rezultata niza</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Položaj:</translation>
+        <translation type="vanished">Položaj:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Ime rezultata:</translation>
+        <translation type="vanished">Ime rezultata:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Ime spremenljivke:</translation>
+        <translation type="vanished">Ime spremenljivke:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>JAZ:</translation>
+        <translation type="vanished">JAZ:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation type="vanished">Indeks:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vrednost za testiranje</translation>
+        <translation type="vanished">Vrednost za testiranje</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globalno</translation>
+        <translation type="vanished">Globalno</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Vozlišče</translation>
+        <translation type="vanished">Vozlišče</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celica</translation>
+        <translation type="vanished">Celica</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Ime spremenljivke je prazno.</translation>
+        <translation type="vanished">Ime spremenljivke je prazno.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Rezultati izračuna za vnos</translation>
+        <translation type="vanished">Rezultati izračuna za vnos</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Vrsta</translation>
+        <translation type="vanished">Vrsta</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Ime rezultata</translation>
+        <translation type="vanished">Ime rezultata</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Ime spremenljivke</translation>
+        <translation type="vanished">Ime spremenljivke</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Kazalo</translation>
+        <translation type="vanished">Kazalo</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Vrednost za testiranje</translation>
+        <translation type="vanished">Vrednost za testiranje</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Dodaj (&amp;A)...</translation>
+        <translation type="vanished">Dodaj (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Uredi (&amp;E)...</translation>
+        <translation type="vanished">Uredi (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Izbriši (&amp;D)...</translation>
+        <translation type="vanished">Izbriši (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Opredelitev izhoda</translation>
+        <translation type="vanished">Opredelitev izhoda</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Spremenljivko lahko definirate z jezikom JavaScript. Glejte &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; tukaj &lt;/span&gt; &lt;/a&gt; za podrobnosti. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Opozorilo</translation>
+        <translation type="vanished">Opozorilo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ali ste prepričani, da želite izbrisati %1 ?</translation>
+        <translation type="vanished">Ali ste prepričani, da želite izbrisati %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globalno</translation>
+        <translation type="vanished">Globalno</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Vozlišče</translation>
+        <translation type="vanished">Vozlišče</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celica</translation>
+        <translation type="vanished">Celica</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>
