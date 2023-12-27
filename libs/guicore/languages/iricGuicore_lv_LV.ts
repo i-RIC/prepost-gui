@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Radās kļūda: %1</translation>
+        <translation type="vanished">Radās kļūda: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, etiķetes indekss tiek atiestatīts, jo tiek mainīts režģa izmērs.</translation>
+        <translation type="vanished">I, J, K, etiķetes indekss tiek atiestatīts, jo tiek mainīts režģa izmērs.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Rediģēt virknes rezultātu argumentu</translation>
+        <translation type="vanished">Rediģēt virknes rezultātu argumentu</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozīcija:</translation>
+        <translation type="vanished">Pozīcija:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Rezultāta nosaukums:</translation>
+        <translation type="vanished">Rezultāta nosaukums:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Mainīgā nosaukums:</translation>
+        <translation type="vanished">Mainīgā nosaukums:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Es:</translation>
+        <translation type="vanished">Es:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indekss:</translation>
+        <translation type="vanished">Indekss:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Vērtība testēšanai</translation>
+        <translation type="vanished">Vērtība testēšanai</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globāli</translation>
+        <translation type="vanished">Globāli</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Mezgls</translation>
+        <translation type="vanished">Mezgls</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Šūna</translation>
+        <translation type="vanished">Šūna</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Mainīgā nosaukums ir tukšs.</translation>
+        <translation type="vanished">Mainīgā nosaukums ir tukšs.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Ievades aprēķinu rezultāti</translation>
+        <translation type="vanished">Ievades aprēķinu rezultāti</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tips</translation>
+        <translation type="vanished">Tips</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Rezultāta nosaukums</translation>
+        <translation type="vanished">Rezultāta nosaukums</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Mainīgā nosaukums</translation>
+        <translation type="vanished">Mainīgā nosaukums</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indekss</translation>
+        <translation type="vanished">Indekss</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Pārbaudes vērtība</translation>
+        <translation type="vanished">Pārbaudes vērtība</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Pievienot (&amp;A)...</translation>
+        <translation type="vanished">Pievienot (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Rediģēt (&amp;E)...</translation>
+        <translation type="vanished">Rediģēt (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Dzēst (&amp;D)...</translation>
+        <translation type="vanished">Dzēst (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Izlaides definīcija</translation>
+        <translation type="vanished">Izlaides definīcija</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Mainīgo var definēt ar JavaScript valodu. Lūdzu, skatiet &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; šeit &lt;/span&gt; &lt;/a&gt;, lai iegūtu sīkāku informāciju. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Pārbaude</translation>
+        <translation type="vanished">Pārbaude</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Brīdinājums</translation>
+        <translation type="vanished">Brīdinājums</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Vai tiešām vēlaties dzēst? %1 ?</translation>
+        <translation type="vanished">Vai tiešām vēlaties dzēst? %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globāli</translation>
+        <translation type="vanished">Globāli</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Mezgls</translation>
+        <translation type="vanished">Mezgls</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Šūna</translation>
+        <translation type="vanished">Šūna</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

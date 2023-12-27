@@ -3,6 +3,7 @@
 
 #include "../guicore_global.h"
 
+#include <misc/boolcontainer.h>
 #include <misc/compositecontainer.h>
 #include <misc/doublecontainer.h>
 #include <misc/enumcontainert.h>
@@ -46,6 +47,7 @@ public:
 
 	vtkActor2D* actor() const;
 	void setActor(vtkActor2D* actor);
+	ImageBuilder* imageBuilder() const;
 	void setImageBuilder(ImageBuilder* builder);
 
 	void optimizePosition(VTKGraphicsView* view);
@@ -58,6 +60,7 @@ public:
 	EnumContainerT<Position> position;
 	DoubleContainer horizontalMargin;
 	DoubleContainer verticalMargin;
+	BoolContainer autoSize;
 	IntContainer width;
 	IntContainer height;
 

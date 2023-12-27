@@ -276,10 +276,6 @@ HEADERS += guicore_global.h \
            postcontainer/postiterationsteps.h \
            postcontainer/postseriesdatacontainer.h \
            postcontainer/postsolutioninfo.h \
-           postcontainer/poststringresult.h \
-           postcontainer/poststringresultargument.h \
-           postcontainer/poststringresultargumenteditdialog.h \
-           postcontainer/poststringresulteditwidget.h \
            postcontainer/posttimesteps.h \
            postcontainer/postzonedatacontainer.h \
            postcontainer/postzonepointseriesdatacontainer.h \
@@ -725,8 +721,6 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          postcontainer/postcalculatedresulteditdialog.ui \
          postcontainer/postcalculatedresultlistdialog.ui \
          postcontainer/postdataexportdialog.ui \
-         postcontainer/poststringresultargumenteditdialog.ui \
-         postcontainer/poststringresulteditwidget.ui \
          postcontainer/v4postcalculatedresultargumenteditdialog.ui \
          postcontainer/v4postcalculatedresulteditdialog.ui \
          postcontainer/v4postcalculatedresultlistdialog.ui \
@@ -865,10 +859,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            postcontainer/postiterationsteps.cpp \
            postcontainer/postseriesdatacontainer.cpp \
            postcontainer/postsolutioninfo.cpp \
-           postcontainer/poststringresult.cpp \
-           postcontainer/poststringresultargument.cpp \
-           postcontainer/poststringresultargumenteditdialog.cpp \
-           postcontainer/poststringresulteditwidget.cpp \
            postcontainer/posttimesteps.cpp \
            postcontainer/postzonedatacontainer.cpp \
            postcontainer/postzonepointseriesdatacontainer.cpp \

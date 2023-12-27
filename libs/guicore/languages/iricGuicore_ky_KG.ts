@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Ката кетти: %1</translation>
+        <translation type="vanished">Ката кетти: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, энбелгинин индекси баштапкы абалга келтирилет, анткени тордун өлчөмү өзгөртүлгөн.</translation>
+        <translation type="vanished">I, J, K, энбелгинин индекси баштапкы абалга келтирилет, анткени тордун өлчөмү өзгөртүлгөн.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>String Result аргументин түзөтүү</translation>
+        <translation type="vanished">String Result аргументин түзөтүү</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Позициясы:</translation>
+        <translation type="vanished">Позициясы:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Жыйынтыктын аты:</translation>
+        <translation type="vanished">Жыйынтыктын аты:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Өзгөрмө Аты:</translation>
+        <translation type="vanished">Өзгөрмө Аты:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Мен:</translation>
+        <translation type="vanished">Мен:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>К:</translation>
+        <translation type="vanished">К:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Индекс:</translation>
+        <translation type="vanished">Индекс:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Сыноо үчүн баа</translation>
+        <translation type="vanished">Сыноо үчүн баа</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Түйүн</translation>
+        <translation type="vanished">Түйүн</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Клетка</translation>
+        <translation type="vanished">Клетка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Өзгөрмө аты бош.</translation>
+        <translation type="vanished">Өзгөрмө аты бош.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Киргизүү үчүн эсептөө жыйынтыктары</translation>
+        <translation type="vanished">Киргизүү үчүн эсептөө жыйынтыктары</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Түрү</translation>
+        <translation type="vanished">Түрү</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Жыйынтык аты</translation>
+        <translation type="vanished">Жыйынтык аты</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Өзгөрмө аты</translation>
+        <translation type="vanished">Өзгөрмө аты</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Индекс</translation>
+        <translation type="vanished">Индекс</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Тестирлөөнүн мааниси</translation>
+        <translation type="vanished">Тестирлөөнүн мааниси</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Кошуу (&amp;A)...</translation>
+        <translation type="vanished">Кошуу (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Түзөтүү (&amp;E)...</translation>
+        <translation type="vanished">Түзөтүү (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Жок кылуу (&amp;D)...</translation>
+        <translation type="vanished">Жок кылуу (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Чыгаруунун аныктамасы</translation>
+        <translation type="vanished">Чыгаруунун аныктамасы</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Сиз өзгөрмөнү JavaScript тили менен аныктай аласыз. Сураныч, &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; караңыз &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; бул жерде &lt;/span&gt; &lt;/a&gt; деталдар үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Тест</translation>
+        <translation type="vanished">Тест</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Эскертүү</translation>
+        <translation type="vanished">Эскертүү</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Чын эле жок кылгыңыз келеби? %1 ?</translation>
+        <translation type="vanished">Чын эле жок кылгыңыз келеби? %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Түйүн</translation>
+        <translation type="vanished">Түйүн</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Клетка</translation>
+        <translation type="vanished">Клетка</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

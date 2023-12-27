@@ -71,8 +71,12 @@ HEADERS += autoparticlewindowi.h \
            polydata/polydatasetting.h \
            polydata/polydatasettingeditwidget.h \
            polydata/polydatasettingtoolbarwidget.h \
+           string/poststringresultargumentcontainer.h \
+           string/poststringresultargumentsettingeditdialog.h \
            string/poststringresultdataitem.h \
-           string/poststringresultsettingdialog.h \
+           string/poststringresultengine.h \
+           string/poststringresultsettingcontainer.h \
+           string/poststringresultsettingeditwidget.h \
            time/posttimedataitem.h \
            time/posttimeeditdialog.h \
            title/posttitledataitem.h \
@@ -80,9 +84,9 @@ HEADERS += autoparticlewindowi.h \
            title/posttitlesetting.h \
            particle/private/particledatasettingeditwidget_modifycommand.h \
            polydata/private/polydatasettingeditwidget_modifycommand.h \
-           string/private/poststringresultdataitem_movecommand.h \
-           string/private/poststringresultdataitem_resizecommand.h \
-           string/private/poststringresultdataitem_setsettingcommand.h \
+           string/private/poststringresultengine_argument.h \
+           string/private/poststringresultengine_impl.h \
+           string/public/poststringresultsettingcontainer_imagebuilder.h \
            time/private/posttimedataitem_setsettingcommand.h \
            title/private/posttitledataitem_setsettingcommand.h
 FORMS += postallzoneselectingdialog.ui \
@@ -91,7 +95,8 @@ FORMS += postallzoneselectingdialog.ui \
          particle/particlesettingeditwidget.ui \
          polydata/polydatasettingeditwidget.ui \
          polydata/polydatasettingtoolbarwidget.ui \
-         string/poststringresultsettingdialog.ui \
+         string/poststringresultargumentsettingeditdialog.ui \
+         string/poststringresultsettingeditwidget.ui \
          time/posttimeeditdialog.ui \
          title/posttitleeditdialog.ui
 SOURCES += postallzoneselectingdialog.cpp \
@@ -104,8 +109,12 @@ SOURCES += postallzoneselectingdialog.cpp \
            polydata/polydatasetting.cpp \
            polydata/polydatasettingeditwidget.cpp \
            polydata/polydatasettingtoolbarwidget.cpp \
+           string/poststringresultargumentcontainer.cpp \
+           string/poststringresultargumentsettingeditdialog.cpp \
            string/poststringresultdataitem.cpp \
-           string/poststringresultsettingdialog.cpp \
+           string/poststringresultengine.cpp \
+           string/poststringresultsettingcontainer.cpp \
+           string/poststringresultsettingeditwidget.cpp \
            time/posttimedataitem.cpp \
            time/posttimeeditdialog.cpp \
            title/posttitledataitem.cpp \
@@ -113,9 +122,9 @@ SOURCES += postallzoneselectingdialog.cpp \
            title/posttitlesetting.cpp \
            particle/private/particledatasettingeditwidget_modifycommand.cpp \
            polydata/private/polydatasettingeditwidget_modifycommand.cpp \
-           string/private/poststringresultdataitem_movecommand.cpp \
-           string/private/poststringresultdataitem_resizecommand.cpp \
-           string/private/poststringresultdataitem_setsettingcommand.cpp \
+           string/private/poststringresultengine_argument.cpp \
+           string/private/poststringresultengine_impl.cpp \
+           string/public/poststringresultsettingcontainer_imagebuilder.cpp \
            time/private/posttimedataitem_setsettingcommand.cpp \
            title/private/posttitledataitem_setsettingcommand.cpp
 TRANSLATIONS += languages/iricPostbase_ar_EG.ts \

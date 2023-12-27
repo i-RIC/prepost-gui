@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>พิกเซล</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>ข้อผิดพลาด</translation>
+        <translation type="vanished">ข้อผิดพลาด</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>เกิดข้อผิดพลาด: %1</translation>
+        <translation type="vanished">เกิดข้อผิดพลาด: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, ดัชนีสำหรับป้ายกำกับถูกรีเซ็ตเนื่องจากขนาดกริดเปลี่ยนไป</translation>
+        <translation type="vanished">I, J, K, ดัชนีสำหรับป้ายกำกับถูกรีเซ็ตเนื่องจากขนาดกริดเปลี่ยนไป</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>แก้ไขอาร์กิวเมนต์ผลลัพธ์สตริง</translation>
+        <translation type="vanished">แก้ไขอาร์กิวเมนต์ผลลัพธ์สตริง</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>ตำแหน่ง:</translation>
+        <translation type="vanished">ตำแหน่ง:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>ชื่อผลลัพธ์:</translation>
+        <translation type="vanished">ชื่อผลลัพธ์:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>ชื่อตัวแปร:</translation>
+        <translation type="vanished">ชื่อตัวแปร:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>ผม:</translation>
+        <translation type="vanished">ผม:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>NS:</translation>
+        <translation type="vanished">NS:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>เค:</translation>
+        <translation type="vanished">เค:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>ดัชนี:</translation>
+        <translation type="vanished">ดัชนี:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>คุ้มค่าสำหรับการทดสอบ</translation>
+        <translation type="vanished">คุ้มค่าสำหรับการทดสอบ</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>ทั่วโลก</translation>
+        <translation type="vanished">ทั่วโลก</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>โหนด</translation>
+        <translation type="vanished">โหนด</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>เซลล์</translation>
+        <translation type="vanished">เซลล์</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>ขอบฉัน</translation>
+        <translation type="vanished">ขอบฉัน</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>ชื่อตัวแปรว่างเปล่า</translation>
+        <translation type="vanished">ชื่อตัวแปรว่างเปล่า</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>รูปร่าง</translation>
+        <translation type="vanished">รูปร่าง</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>ผลการคำนวณอินพุต</translation>
+        <translation type="vanished">ผลการคำนวณอินพุต</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>พิมพ์</translation>
+        <translation type="vanished">พิมพ์</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>ชื่อผลลัพธ์</translation>
+        <translation type="vanished">ชื่อผลลัพธ์</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>ชื่อตัวแปร</translation>
+        <translation type="vanished">ชื่อตัวแปร</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>ดัชนี</translation>
+        <translation type="vanished">ดัชนี</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>ค่าสำหรับการทดสอบ</translation>
+        <translation type="vanished">ค่าสำหรับการทดสอบ</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>เพิ่ม (&amp;A)...</translation>
+        <translation type="vanished">เพิ่ม (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>แก้ไข (&amp;E)...</translation>
+        <translation type="vanished">แก้ไข (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>ลบ (&amp;D)...</translation>
+        <translation type="vanished">ลบ (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>ความหมายของผลลัพธ์</translation>
+        <translation type="vanished">ความหมายของผลลัพธ์</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;คุณสามารถกำหนดตัวแปรด้วยภาษา JavaScript โปรดดู &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -การตกแต่ง: ขีดเส้นใต้; color:#0000ff;&quot;&gt;ดูรายละเอียดที่นี่&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>ทดสอบ</translation>
+        <translation type="vanished">ทดสอบ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>คำเตือน</translation>
+        <translation type="vanished">คำเตือน</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
+        <translation type="vanished">คุณแน่ใจหรือว่าต้องการลบ %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>ทั่วโลก</translation>
+        <translation type="vanished">ทั่วโลก</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>โหนด</translation>
+        <translation type="vanished">โหนด</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>เซลล์</translation>
+        <translation type="vanished">เซลล์</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>ขอบฉัน</translation>
+        <translation type="vanished">ขอบฉัน</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

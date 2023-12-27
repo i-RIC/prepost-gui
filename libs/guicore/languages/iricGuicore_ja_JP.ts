@@ -2187,6 +2187,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>ピクセル</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation>自動サイズ</translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -3340,86 +3344,86 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>エラーが発生しました: %1</translation>
+        <translation type="vanished">エラーが発生しました: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>格子のサイズが変更されたため、ラベルの I, J, K はリセットされました。</translation>
+        <translation type="vanished">格子のサイズが変更されたため、ラベルの I, J, K はリセットされました。</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>ラベルの引数の編集</translation>
+        <translation type="vanished">ラベルの引数の編集</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>位置:</translation>
+        <translation type="vanished">位置:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>計算結果名:</translation>
+        <translation type="vanished">計算結果名:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>変数名:</translation>
+        <translation type="vanished">変数名:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>I:</translation>
+        <translation type="vanished">I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>インデックス:</translation>
+        <translation type="vanished">インデックス:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>テスト用の値</translation>
+        <translation type="vanished">テスト用の値</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>グローバル</translation>
+        <translation type="vanished">グローバル</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>格子点</translation>
+        <translation type="vanished">格子点</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>格子セル</translation>
+        <translation type="vanished">格子セル</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>エッジ(I方向)</translation>
+        <translation type="vanished">エッジ(I方向)</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>エッジ(J方向)</translation>
+        <translation type="vanished">エッジ(J方向)</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>変数名が空欄です。</translation>
+        <translation type="vanished">変数名が空欄です。</translation>
     </message>
 </context>
 <context>
@@ -3513,87 +3517,87 @@ Do you really want to import this file?</source>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>入力として使う計算結果</translation>
+        <translation type="vanished">入力として使う計算結果</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>種類</translation>
+        <translation type="vanished">種類</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>計算結果名</translation>
+        <translation type="vanished">計算結果名</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>変数名</translation>
+        <translation type="vanished">変数名</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>インデックス</translation>
+        <translation type="vanished">インデックス</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>テスト用の値</translation>
+        <translation type="vanished">テスト用の値</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>追加 (&amp;A)</translation>
+        <translation type="vanished">追加 (&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>編集 (&amp;E)...</translation>
+        <translation type="vanished">編集 (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>削除(&amp;D)...</translation>
+        <translation type="vanished">削除(&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>出力の定義</translation>
+        <translation type="vanished">出力の定義</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript言語で変数を定義できます。 &lt;a href=&quot;https://iric-gui-user-manual.readthedocs.io/ja/latest/03/07_calc_result.html#m&quot;&gt;&lt;span style=&quot; text -decoration: underline; color:#0000ff;&quot;&gt;詳細はこちら&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>テスト</translation>
+        <translation type="vanished">テスト</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>警告</translation>
+        <translation type="vanished">警告</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>本当に %1 を削除していいですか?</translation>
+        <translation type="vanished">本当に %1 を削除していいですか?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>グローバル</translation>
+        <translation type="vanished">グローバル</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>格子点</translation>
+        <translation type="vanished">格子点</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>格子セル</translation>
+        <translation type="vanished">格子セル</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>エッジ(I方向)</translation>
+        <translation type="vanished">エッジ(I方向)</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>エッジ(J方向)</translation>
+        <translation type="vanished">エッジ(J方向)</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>エッジ(K方向)</translation>
+        <translation type="vanished">エッジ(K方向)</translation>
     </message>
 </context>
 <context>

@@ -10,6 +10,7 @@ public:
 	virtual ~ImageBuilder();
 
 	virtual bool build(QImage* image);
+	virtual QSize autoSize() const = 0;
 };
 
 #endif // IMAGESETTINGCONTAINER_IMAGEBUILDER_H

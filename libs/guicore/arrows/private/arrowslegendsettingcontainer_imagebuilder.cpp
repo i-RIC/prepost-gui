@@ -78,3 +78,26 @@ bool ArrowsLegendSettingContainer::ImageBuilder::build(QImage* image)
 
 	return true;
 }
+
+QSize ArrowsLegendSettingContainer::ImageBuilder::autoSize() const
+{
+	const auto& s = m_setting;
+	const auto& as = s->m_arrowsSetting;
+
+	int arrow_width = as->legendLength;
+
+	QFontMetrics titleMetrics(s->titleFont);
+	int title_width = titleMetrics.width(s->title);
+
+	QFontMetrics legendMetrics(s->lengthFont);
+	auto format = iRIC::toStr(s->lengthFormat);
+	QString val = QString::asprintf(format.c_str(), as->standardValue.value());
+	int legend_width = legendMetrics.width(val);
+
+	int content_width = std::max(arrow_width, std::max(title_width, legend_width));
+
+	int width = OUTER_MARGIN * 2 + content_width;
+	int height = OUTER_MARGIN * 2 + INNER_MARGIN * 2 + titleMetrics.height() + legendMetrics.height() + as->lineWidth;
+
+	return QSize(width, height);
+}

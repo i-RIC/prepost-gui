@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Villa</translation>
+        <translation type="vanished">Villa</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Villa kom upp: %1</translation>
+        <translation type="vanished">Villa kom upp: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, vísitala fyrir merki er endurstillt vegna þess að ristærðinni er breytt.</translation>
+        <translation type="vanished">I, J, K, vísitala fyrir merki er endurstillt vegna þess að ristærðinni er breytt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Breyta Strengjaniðurstöður</translation>
+        <translation type="vanished">Breyta Strengjaniðurstöður</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Staða:</translation>
+        <translation type="vanished">Staða:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Nafn niðurstaðna:</translation>
+        <translation type="vanished">Nafn niðurstaðna:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Breytileikanafn:</translation>
+        <translation type="vanished">Breytileikanafn:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Ég:</translation>
+        <translation type="vanished">Ég:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Vísitala:</translation>
+        <translation type="vanished">Vísitala:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Gildi fyrir próf</translation>
+        <translation type="vanished">Gildi fyrir próf</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Alheims</translation>
+        <translation type="vanished">Alheims</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Hnútur</translation>
+        <translation type="vanished">Hnútur</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cell</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Breytuheiti er tómt.</translation>
+        <translation type="vanished">Breytuheiti er tómt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Eyðublað</translation>
+        <translation type="vanished">Eyðublað</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Útreikningsniðurstöður fyrir inntak</translation>
+        <translation type="vanished">Útreikningsniðurstöður fyrir inntak</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Gerð</translation>
+        <translation type="vanished">Gerð</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Nafn niðurstaðna</translation>
+        <translation type="vanished">Nafn niðurstaðna</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Breytilegt nafn</translation>
+        <translation type="vanished">Breytilegt nafn</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Vísitala</translation>
+        <translation type="vanished">Vísitala</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Gildi fyrir prófun</translation>
+        <translation type="vanished">Gildi fyrir prófun</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Bæta við (&amp;A)...</translation>
+        <translation type="vanished">Bæta við (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Breyta (&amp;E)...</translation>
+        <translation type="vanished">Breyta (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Eyða (&amp;D)...</translation>
+        <translation type="vanished">Eyða (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Skilgreining á afköstum</translation>
+        <translation type="vanished">Skilgreining á afköstum</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Þú getur skilgreint breytuna með JavaScript tungumáli. Sjá &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -skreyting: undirstrikun; litur:#0000ff; &quot;&gt; hér &lt;/span&gt; &lt;/a&gt; fyrir nánari upplýsingar. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Próf</translation>
+        <translation type="vanished">Próf</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Viðvörun</translation>
+        <translation type="vanished">Viðvörun</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ertu viss um að þú viljir eyða %1 ?</translation>
+        <translation type="vanished">Ertu viss um að þú viljir eyða %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Alheims</translation>
+        <translation type="vanished">Alheims</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Hnútur</translation>
+        <translation type="vanished">Hnútur</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Cell</translation>
+        <translation type="vanished">Cell</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

@@ -1,6 +1,8 @@
 #ifndef IMAGESETTINGWIDGET_H
 #define IMAGESETTINGWIDGET_H
 
+#include "../guicore_global.h"
+
 #include <QWidget>
 
 class ImageSettingContainer;
@@ -9,7 +11,7 @@ namespace Ui {
 class ImageSettingWidget;
 }
 
-class ImageSettingWidget : public QWidget
+class GUICOREDLL_EXPORT ImageSettingWidget : public QWidget
 {
 	Q_OBJECT
 

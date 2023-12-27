@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Feil</translation>
+        <translation type="vanished">Feil</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Feil oppstod: %1</translation>
+        <translation type="vanished">Feil oppstod: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, indeks for etikett er tilbakestilt fordi rutenettstørrelsen er endret.</translation>
+        <translation type="vanished">I, J, K, indeks for etikett er tilbakestilt fordi rutenettstørrelsen er endret.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Rediger strengresultatargument</translation>
+        <translation type="vanished">Rediger strengresultatargument</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Posisjon:</translation>
+        <translation type="vanished">Posisjon:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Resultatnavn:</translation>
+        <translation type="vanished">Resultatnavn:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Variabelnavn:</translation>
+        <translation type="vanished">Variabelnavn:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>JEG:</translation>
+        <translation type="vanished">JEG:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Indeks:</translation>
+        <translation type="vanished">Indeks:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Verdi for testing</translation>
+        <translation type="vanished">Verdi for testing</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Node</translation>
+        <translation type="vanished">Node</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celle</translation>
+        <translation type="vanished">Celle</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Variabelnavnet er tomt.</translation>
+        <translation type="vanished">Variabelnavnet er tomt.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Skjema</translation>
+        <translation type="vanished">Skjema</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Beregningsresultater for input</translation>
+        <translation type="vanished">Beregningsresultater for input</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="vanished">Type</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Resultatnavn</translation>
+        <translation type="vanished">Resultatnavn</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Variabelnavn</translation>
+        <translation type="vanished">Variabelnavn</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="vanished">Indeks</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Verdi for testing</translation>
+        <translation type="vanished">Verdi for testing</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Legge til (&amp;A)...</translation>
+        <translation type="vanished">Legge til (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Redigere (&amp;E)...</translation>
+        <translation type="vanished">Redigere (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Slett (&amp;D)...</translation>
+        <translation type="vanished">Slett (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definisjon av output</translation>
+        <translation type="vanished">Definisjon av output</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variabelen med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekorasjon: understreket; farge:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Du kan definere variabelen med JavaScript -språk. Se &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -dekorasjon: understreket; farge:#0000ff; &quot;&gt; her &lt;/span&gt; &lt;/a&gt; for detaljer. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Advarsel</translation>
+        <translation type="vanished">Advarsel</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Er du sikker på at du vil slette %1 ?</translation>
+        <translation type="vanished">Er du sikker på at du vil slette %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Global</translation>
+        <translation type="vanished">Global</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Node</translation>
+        <translation type="vanished">Node</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Celle</translation>
+        <translation type="vanished">Celle</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

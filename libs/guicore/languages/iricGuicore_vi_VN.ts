@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Xuất hiện lỗi: %1</translation>
+        <translation type="vanished">Xuất hiện lỗi: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, chỉ mục cho nhãn được đặt lại vì kích thước lưới bị thay đổi.</translation>
+        <translation type="vanished">I, J, K, chỉ mục cho nhãn được đặt lại vì kích thước lưới bị thay đổi.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Chỉnh sửa đối số kết quả chuỗi</translation>
+        <translation type="vanished">Chỉnh sửa đối số kết quả chuỗi</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Chức vụ:</translation>
+        <translation type="vanished">Chức vụ:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Tên kết quả:</translation>
+        <translation type="vanished">Tên kết quả:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Tên biến:</translation>
+        <translation type="vanished">Tên biến:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>TÔI:</translation>
+        <translation type="vanished">TÔI:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>NS:</translation>
+        <translation type="vanished">NS:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Mục lục:</translation>
+        <translation type="vanished">Mục lục:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Giá trị để thử nghiệm</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Toàn cầu</translation>
+        <translation type="vanished">Toàn cầu</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nút</translation>
+        <translation type="vanished">Nút</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Tủ</translation>
+        <translation type="vanished">Tủ</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Tên biến để trống.</translation>
+        <translation type="vanished">Tên biến để trống.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Mẫu đơn</translation>
+        <translation type="vanished">Mẫu đơn</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Kết quả tính toán cho đầu vào</translation>
+        <translation type="vanished">Kết quả tính toán cho đầu vào</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Kiểu</translation>
+        <translation type="vanished">Kiểu</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Tên kết quả</translation>
+        <translation type="vanished">Tên kết quả</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Tên biến</translation>
+        <translation type="vanished">Tên biến</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Mục lục</translation>
+        <translation type="vanished">Mục lục</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Giá trị để thử nghiệm</translation>
+        <translation type="vanished">Giá trị để thử nghiệm</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Thêm vào (&amp;A)...</translation>
+        <translation type="vanished">Thêm vào (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Chỉnh sửa (&amp;E)...</translation>
+        <translation type="vanished">Chỉnh sửa (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Xóa bỏ (&amp;D)...</translation>
+        <translation type="vanished">Xóa bỏ (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Định nghĩa đầu ra</translation>
+        <translation type="vanished">Định nghĩa đầu ra</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Bạn có thể xác định biến bằng ngôn ngữ JavaScript. Vui lòng xem văn bản của &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/vi/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot; -decoration: underline; color: # 0000ff; &quot;&gt; tại đây &lt;/span&gt; &lt;/a&gt; để biết thêm chi tiết. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Thử nghiệm</translation>
+        <translation type="vanished">Thử nghiệm</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Cảnh báo</translation>
+        <translation type="vanished">Cảnh báo</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Bạn có chắc chắn muốn xóa %1 ?</translation>
+        <translation type="vanished">Bạn có chắc chắn muốn xóa %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Toàn cầu</translation>
+        <translation type="vanished">Toàn cầu</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nút</translation>
+        <translation type="vanished">Nút</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Tủ</translation>
+        <translation type="vanished">Tủ</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

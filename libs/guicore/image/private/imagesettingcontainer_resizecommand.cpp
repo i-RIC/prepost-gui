@@ -1,3 +1,4 @@
+#include "../public/imagesettingcontainer_imagebuilder.h"
 #include "imagesettingcontainer_resizecommand.h"
 
 #include <guicore/datamodel/vtkgraphicsview.h>
@@ -12,6 +13,20 @@ ImageSettingContainer::ResizeCommand::ResizeCommand(bool keyDown, const QPoint& 
 
 	auto resizePos = m_setting->controller()->resizePosition();
 	auto pos = m_setting->position.value();
+
+	int w, h;
+	if (m_setting->autoSize) {
+		auto s = m_setting->imageBuilder()->autoSize();
+		w = s.width();
+		h = s.height();
+	} else {
+		w = m_setting->width;
+		h = m_setting->height;
+	}
+
+	m_newSetting.autoSize = false;
+	m_newSetting.width = w;
+	m_newSetting.height = h;
 
 	// vertical
 	if (resizePos == Position::Top || resizePos == Position::TopLeft || resizePos == Position::TopRight) {

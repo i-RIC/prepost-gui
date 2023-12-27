@@ -1,9 +1,11 @@
 #ifndef POSTBASEITERATIVESTRINGDATACONTAINER_H
 #define POSTBASEITERATIVESTRINGDATACONTAINER_H
 
+#include "../guicore_global.h"
+
 #include "postbaseiterativedatacontainer.h"
 
-class PostBaseIterativeStringDataContainer : public PostBaseIterativeDataContainer
+class GUICOREDLL_EXPORT PostBaseIterativeStringDataContainer : public PostBaseIterativeDataContainer
 {
 public:
 	PostBaseIterativeStringDataContainer(const std::string& name, PostSolutionInfo* parent);

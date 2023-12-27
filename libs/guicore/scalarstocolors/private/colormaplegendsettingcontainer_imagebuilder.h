@@ -13,6 +13,7 @@ public:
 	ImageBuilder(ColorMapLegendSettingContainer* setting);
 
 	bool build(QImage* image) override;
+	QSize autoSize() const override;
 
 private:
 	void buildVertical(QPainter* painter, QImage *image, const ColorMapLegendSettingContainer& s);

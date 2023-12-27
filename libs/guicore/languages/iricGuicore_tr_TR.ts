@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>piksel</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Hata oluştu: %1</translation>
+        <translation type="vanished">Hata oluştu: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>Izgara boyutu değiştiği için I, J, K, etiket dizini sıfırlandı.</translation>
+        <translation type="vanished">Izgara boyutu değiştiği için I, J, K, etiket dizini sıfırlandı.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Dize Sonuç Argümanını Düzenle</translation>
+        <translation type="vanished">Dize Sonuç Argümanını Düzenle</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Konum:</translation>
+        <translation type="vanished">Konum:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Sonuç Adı:</translation>
+        <translation type="vanished">Sonuç Adı:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Değişken ismi:</translation>
+        <translation type="vanished">Değişken ismi:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>BEN:</translation>
+        <translation type="vanished">BEN:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>dizin:</translation>
+        <translation type="vanished">dizin:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Test için değer</translation>
+        <translation type="vanished">Test için değer</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>küresel</translation>
+        <translation type="vanished">küresel</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>düğüm</translation>
+        <translation type="vanished">düğüm</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Hücre</translation>
+        <translation type="vanished">Hücre</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>KenarJ</translation>
+        <translation type="vanished">KenarJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Değişken adı boş.</translation>
+        <translation type="vanished">Değişken adı boş.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation type="vanished">Biçim</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Giriş için hesaplama sonuçları</translation>
+        <translation type="vanished">Giriş için hesaplama sonuçları</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tip</translation>
+        <translation type="vanished">Tip</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Sonuç adı</translation>
+        <translation type="vanished">Sonuç adı</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Değişken ismi</translation>
+        <translation type="vanished">Değişken ismi</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>dizin</translation>
+        <translation type="vanished">dizin</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Test için Değer</translation>
+        <translation type="vanished">Test için Değer</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Ekle (&amp;A)...</translation>
+        <translation type="vanished">Ekle (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Düzenlemek (&amp;E)...</translation>
+        <translation type="vanished">Düzenlemek (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Silmek (&amp;D)...</translation>
+        <translation type="vanished">Silmek (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>çıktının tanımı</translation>
+        <translation type="vanished">çıktının tanımı</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; metnine bakın -decoration: underline; color:#0000ff;&quot;&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; metnine bakın -decoration: underline; color:#0000ff;&quot;&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Ölçek</translation>
+        <translation type="vanished">Ölçek</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Uyarı</translation>
+        <translation type="vanished">Uyarı</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Silmek istediğine emin misin %1 ?</translation>
+        <translation type="vanished">Silmek istediğine emin misin %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>küresel</translation>
+        <translation type="vanished">küresel</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>düğüm</translation>
+        <translation type="vanished">düğüm</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Hücre</translation>
+        <translation type="vanished">Hücre</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>KenarJ</translation>
+        <translation type="vanished">KenarJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>KenarK</translation>
+        <translation type="vanished">KenarK</translation>
     </message>
 </context>
 <context>

@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Errorea gertatu da: %1</translation>
+        <translation type="vanished">Errorea gertatu da: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, etiketaren aurkibidea berrezarri da saretaren tamaina aldatu delako.</translation>
+        <translation type="vanished">I, J, K, etiketaren aurkibidea berrezarri da saretaren tamaina aldatu delako.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Editatu katearen emaitzaren argumentua</translation>
+        <translation type="vanished">Editatu katearen emaitzaren argumentua</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Kargua:</translation>
+        <translation type="vanished">Kargua:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Emaitzaren izena:</translation>
+        <translation type="vanished">Emaitzaren izena:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Aldagaiaren izena:</translation>
+        <translation type="vanished">Aldagaiaren izena:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>I:</translation>
+        <translation type="vanished">I:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Aurkibidea:</translation>
+        <translation type="vanished">Aurkibidea:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Probarako balioa</translation>
+        <translation type="vanished">Probarako balioa</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Mundiala</translation>
+        <translation type="vanished">Mundiala</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nodoa</translation>
+        <translation type="vanished">Nodoa</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Zelula</translation>
+        <translation type="vanished">Zelula</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>ErtzaJ</translation>
+        <translation type="vanished">ErtzaJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Aldagaiaren izena hutsik dago.</translation>
+        <translation type="vanished">Aldagaiaren izena hutsik dago.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Sarrerako kalkuluaren emaitzak</translation>
+        <translation type="vanished">Sarrerako kalkuluaren emaitzak</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Mota</translation>
+        <translation type="vanished">Mota</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Emaitzaren izena</translation>
+        <translation type="vanished">Emaitzaren izena</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Izen aldakorra</translation>
+        <translation type="vanished">Izen aldakorra</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Aurkibidea</translation>
+        <translation type="vanished">Aurkibidea</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Probarako balioa</translation>
+        <translation type="vanished">Probarako balioa</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Gehitu (&amp;A)...</translation>
+        <translation type="vanished">Gehitu (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Editatu (&amp;E)...</translation>
+        <translation type="vanished">Editatu (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Ezabatu (&amp;D)...</translation>
+        <translation type="vanished">Ezabatu (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Irteeraren definizioa</translation>
+        <translation type="vanished">Irteeraren definizioa</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Aldagaia JavaScript hizkuntzarekin defini dezakezu. Mesedez, ikusi &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; xehetasunetarako. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Proba</translation>
+        <translation type="vanished">Proba</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Abisua</translation>
+        <translation type="vanished">Abisua</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Ziur zaude ezabatu nahi duzula %1 ?</translation>
+        <translation type="vanished">Ziur zaude ezabatu nahi duzula %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Mundiala</translation>
+        <translation type="vanished">Mundiala</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Nodoa</translation>
+        <translation type="vanished">Nodoa</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Zelula</translation>
+        <translation type="vanished">Zelula</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>ErtzaJ</translation>
+        <translation type="vanished">ErtzaJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

@@ -7,6 +7,7 @@ int OUTER_MARGIN = 12;
 int INNER_MARGIN = 10;
 int COLOR_VALUE_MARGIN = 10;
 int LABEL_MARGIN = 5;
+int STD_COLOR_WIDTH = 30;
 
 } // namespace
 
@@ -69,6 +70,66 @@ bool ColorMapEnumerateLegendSettingContainer::ImageBuilder::build(QImage* image)
 	}
 
 	return true;
+}
+
+QSize ColorMapEnumerateLegendSettingContainer::ImageBuilder::autoSize() const
+{
+	int width, height;
+
+	ColorMapEnumerateLegendSettingContainer s;
+	if (m_setting->delegateMode()) {
+		s = m_setting->colorMapSetting()->legend;
+		s.visible = m_setting->visible;
+	} else {
+		s = *m_setting;
+	}
+	s.setColorMapSetting(m_setting->colorMapSetting());
+
+	if (s.direction == Direction::Vertical) {
+		QFontMetrics titleMetrics(s.titleFont);
+		int title_width = titleMetrics.width(s.title);
+		int value_width = 0;
+
+		auto cs = s.colorMapSetting();
+		auto cols = cs->colors;
+		QFontMetrics labelMetrics(s.labelFont);
+		for (const auto& c : cols) {
+			auto val = c.value;
+			auto caption = cs->valueCaptions.find(val)->second;
+			value_width = std::max(value_width, labelMetrics.width(caption));
+		}
+		value_width += LABEL_MARGIN + COLOR_VALUE_MARGIN;
+		if (s.barAutoWidth) {
+			value_width += STD_COLOR_WIDTH;
+		} else {
+			value_width += s.barWidth;
+		}
+
+		int content_width = std::max(title_width, value_width);
+		width = content_width + OUTER_MARGIN * 2;
+		height = OUTER_MARGIN * 2 + INNER_MARGIN + titleMetrics.height() + (labelMetrics.height() + 2) * cols.size();
+	} else if (s.direction == Direction::Horizontal) {
+		QFontMetrics titleMetrics(s.titleFont);
+		int title_width = titleMetrics.width(s.title);
+
+		int value_width = 0;
+
+		auto cs = s.colorMapSetting();
+		auto cols = cs->colors;
+		QFontMetrics labelMetrics(s.labelFont);
+		for (const auto& c : cols) {
+			auto val = c.value;
+			auto caption = cs->valueCaptions.find(val)->second;
+			value_width = std::max(value_width, labelMetrics.width(caption));
+		}
+		int value_total_width = (value_width + LABEL_MARGIN) * cols.size();
+
+		int content_width = std::max(title_width, value_total_width);
+		width = content_width + OUTER_MARGIN * 2;
+		height = OUTER_MARGIN * 2 + INNER_MARGIN + titleMetrics.height() + labelMetrics.height() + s.barWidth;
+	}
+
+	return QSize(width, height);
 }
 
 void ColorMapEnumerateLegendSettingContainer::ImageBuilder::buildDiscreteVertical(QPainter* painter, int top, int bottom, QImage* image, const ColorMapEnumerateLegendSettingContainer& s)

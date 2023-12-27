@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>px</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>Vyskytla se chyba: %1</translation>
+        <translation type="vanished">Vyskytla se chyba: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, index štítku se resetuje, protože se změnila velikost mřížky.</translation>
+        <translation type="vanished">I, J, K, index štítku se resetuje, protože se změnila velikost mřížky.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Upravit argument výsledku řetězce</translation>
+        <translation type="vanished">Upravit argument výsledku řetězce</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>Pozice:</translation>
+        <translation type="vanished">Pozice:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>Název výsledku:</translation>
+        <translation type="vanished">Název výsledku:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>Název proměnné:</translation>
+        <translation type="vanished">Název proměnné:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>Já:</translation>
+        <translation type="vanished">Já:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>J:</translation>
+        <translation type="vanished">J:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>K:</translation>
+        <translation type="vanished">K:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>Index:</translation>
+        <translation type="vanished">Index:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>Hodnota pro testování</translation>
+        <translation type="vanished">Hodnota pro testování</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globální</translation>
+        <translation type="vanished">Globální</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Uzel</translation>
+        <translation type="vanished">Uzel</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Buňka</translation>
+        <translation type="vanished">Buňka</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>Název proměnné je prázdný.</translation>
+        <translation type="vanished">Název proměnné je prázdný.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Výsledky výpočtu pro vstup</translation>
+        <translation type="vanished">Výsledky výpočtu pro vstup</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation type="vanished">Typ</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>Název výsledku</translation>
+        <translation type="vanished">Název výsledku</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>Proměnný název</translation>
+        <translation type="vanished">Proměnný název</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>Hodnota pro testování</translation>
+        <translation type="vanished">Hodnota pro testování</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>Přidat (&amp;A)...</translation>
+        <translation type="vanished">Přidat (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>Upravit (&amp;E)...</translation>
+        <translation type="vanished">Upravit (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>Vymazat (&amp;D)...</translation>
+        <translation type="vanished">Vymazat (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>Definice výstupu</translation>
+        <translation type="vanished">Definice výstupu</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Proměnnou můžete definovat v jazyce JavaScript. Viz &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color:#0000ff; &quot;&gt; here &lt;/span&gt; &lt;/a&gt; for details. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>Test</translation>
+        <translation type="vanished">Test</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Varování</translation>
+        <translation type="vanished">Varování</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>Jste si jistí, že to chcete smazat %1 ?</translation>
+        <translation type="vanished">Jste si jistí, že to chcete smazat %1 ?</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>Globální</translation>
+        <translation type="vanished">Globální</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>Uzel</translation>
+        <translation type="vanished">Uzel</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>Buňka</translation>
+        <translation type="vanished">Buňka</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>EdgeI</translation>
+        <translation type="vanished">EdgeI</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>EdgeJ</translation>
+        <translation type="vanished">EdgeJ</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>EdgeK</translation>
+        <translation type="vanished">EdgeK</translation>
     </message>
 </context>
 <context>

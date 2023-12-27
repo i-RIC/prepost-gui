@@ -1694,6 +1694,10 @@ Parse error %2 at %3, column %4</source>
         <source>px</source>
         <translation>مقصف</translation>
     </message>
+    <message>
+        <source>Auto Size</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InputConditionCgnsFileSelectDialog</name>
@@ -2633,173 +2637,173 @@ Do you really want to import this file?</source>
     <name>PostStringResult</name>
     <message>
         <source>Error</source>
-        <translation>خطأ</translation>
+        <translation type="vanished">خطأ</translation>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>حدث خطأ: %1</translation>
+        <translation type="vanished">حدث خطأ: %1</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>يتم إعادة تعيين فهرس I ، J ، K ، للتسمية بسبب تغيير حجم الشبكة.</translation>
+        <translation type="vanished">يتم إعادة تعيين فهرس I ، J ، K ، للتسمية بسبب تغيير حجم الشبكة.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>تحرير وسيطة نتيجة السلسلة</translation>
+        <translation type="vanished">تحرير وسيطة نتيجة السلسلة</translation>
     </message>
     <message>
         <source>Position:</source>
-        <translation>موقع:</translation>
+        <translation type="vanished">موقع:</translation>
     </message>
     <message>
         <source>Result Name:</source>
-        <translation>اسم النتيجة:</translation>
+        <translation type="vanished">اسم النتيجة:</translation>
     </message>
     <message>
         <source>Variable Name:</source>
-        <translation>اسم المتغير:</translation>
+        <translation type="vanished">اسم المتغير:</translation>
     </message>
     <message>
         <source>I:</source>
-        <translation>أنا:</translation>
+        <translation type="vanished">أنا:</translation>
     </message>
     <message>
         <source>J:</source>
-        <translation>ي:</translation>
+        <translation type="vanished">ي:</translation>
     </message>
     <message>
         <source>K:</source>
-        <translation>ك:</translation>
+        <translation type="vanished">ك:</translation>
     </message>
     <message>
         <source>Index:</source>
-        <translation>فهرس:</translation>
+        <translation type="vanished">فهرس:</translation>
     </message>
     <message>
         <source>Value for testing</source>
-        <translation>قيمة للاختبار</translation>
+        <translation type="vanished">قيمة للاختبار</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>عالمي</translation>
+        <translation type="vanished">عالمي</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>العقدة</translation>
+        <translation type="vanished">العقدة</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>زنزانة</translation>
+        <translation type="vanished">زنزانة</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>إيدج</translation>
+        <translation type="vanished">إيدج</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>إيدج</translation>
+        <translation type="vanished">إيدج</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Variable name is empty.</source>
-        <translation>اسم المتغير فارغ.</translation>
+        <translation type="vanished">اسم المتغير فارغ.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultEditWidget</name>
     <message>
         <source>Form</source>
-        <translation>استمارة</translation>
+        <translation type="vanished">استمارة</translation>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>نتائج الحساب للمدخلات</translation>
+        <translation type="vanished">نتائج الحساب للمدخلات</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>نوع</translation>
+        <translation type="vanished">نوع</translation>
     </message>
     <message>
         <source>Result name</source>
-        <translation>اسم النتيجة</translation>
+        <translation type="vanished">اسم النتيجة</translation>
     </message>
     <message>
         <source>Variable name</source>
-        <translation>اسم المتغير</translation>
+        <translation type="vanished">اسم المتغير</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>فهرس</translation>
+        <translation type="vanished">فهرس</translation>
     </message>
     <message>
         <source>Value for Testing</source>
-        <translation>قيمة للاختبار</translation>
+        <translation type="vanished">قيمة للاختبار</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
-        <translation>يضيف (&amp;A)...</translation>
+        <translation type="vanished">يضيف (&amp;A)...</translation>
     </message>
     <message>
         <source>&amp;Edit...</source>
-        <translation>يحرر (&amp;E)...</translation>
+        <translation type="vanished">يحرر (&amp;E)...</translation>
     </message>
     <message>
         <source>&amp;Delete...</source>
-        <translation>حذف (&amp;D)...</translation>
+        <translation type="vanished">حذف (&amp;D)...</translation>
     </message>
     <message>
         <source>Definition of output</source>
-        <translation>تعريف الإخراج</translation>
+        <translation type="vanished">تعريف الإخراج</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; يمكنك تحديد المتغير بلغة JavaScript. الرجاء مراجعة &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/ar/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -الديكور: underline؛ color: # 0000ff؛ &quot;&gt; هنا &lt;/ span&gt; &lt;/a&gt; للتفاصيل. &lt;/ p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
-        <translation>اختبار</translation>
+        <translation type="vanished">اختبار</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>تحذير</translation>
+        <translation type="vanished">تحذير</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
-        <translation>هل أنت متأكد أنك تريد حذف %1 ؟</translation>
+        <translation type="vanished">هل أنت متأكد أنك تريد حذف %1 ؟</translation>
     </message>
     <message>
         <source>Global</source>
-        <translation>عالمي</translation>
+        <translation type="vanished">عالمي</translation>
     </message>
     <message>
         <source>Node</source>
-        <translation>العقدة</translation>
+        <translation type="vanished">العقدة</translation>
     </message>
     <message>
         <source>Cell</source>
-        <translation>زنزانة</translation>
+        <translation type="vanished">زنزانة</translation>
     </message>
     <message>
         <source>EdgeI</source>
-        <translation>إيدج</translation>
+        <translation type="vanished">إيدج</translation>
     </message>
     <message>
         <source>EdgeJ</source>
-        <translation>إيدج</translation>
+        <translation type="vanished">إيدج</translation>
     </message>
     <message>
         <source>EdgeK</source>
-        <translation>إيدج ك</translation>
+        <translation type="vanished">إيدج ك</translation>
     </message>
 </context>
 <context>
