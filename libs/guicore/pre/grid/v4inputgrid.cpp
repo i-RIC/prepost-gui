@@ -1,6 +1,8 @@
 #include "../../solverdef/solverdefinitiongridattribute.h"
 #include "../../solverdef/solverdefinitiongridtype.h"
+#include "../base/preprocessorgriddataitemi.h"
 #include "../gridcond/base/gridattributecontainer.h"
+#include "../../project/projectdata.h"
 
 #include "../../grid/v4structured15dgridwithcrosssection.h"
 #include "../../grid/v4structured2dgrid.h"
@@ -114,4 +116,7 @@ PreProcessorGridDataItemI* v4InputGrid::gridDataItem() const
 void v4InputGrid::setGridDataItem(PreProcessorGridDataItemI* gridDataItem)
 {
 	impl->m_gridDataItem = gridDataItem;
+	for (auto att : attributes()) {
+		att->setTemporaryDir(gridDataItem->subPath());
+	}
 }

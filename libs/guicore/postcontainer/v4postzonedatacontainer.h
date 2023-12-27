@@ -10,6 +10,7 @@ namespace iRICLib {
 
 class v4InputGrid;
 class v4PostCalculatedResult;
+class PreProcessorGridTypeDataItemI;
 class SolverDefinitionGridType;
 class v4SolutionGrid;
 
@@ -35,8 +36,8 @@ public:
 	v4SolutionGrid* polyData(const std::string& name) const;
 	const std::map<std::string, v4SolutionGrid*> polyDataMap() const;
 
-	int loadFromCgnsFile(iRICLib::H5CgnsZone* zone, bool disableCalculatedResult);
-	int loadIfEmpty(iRICLib::H5CgnsZone* zone);
+	int loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath, bool disableCalculatedResult);
+	int loadIfEmpty(iRICLib::H5CgnsZone* zone, PreProcessorGridTypeDataItemI* gtItem, const QString tmpPath);
 
 	void applyOffset(const QPointF& offset);
 

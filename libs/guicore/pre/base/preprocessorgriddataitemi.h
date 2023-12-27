@@ -16,6 +16,8 @@ class GUICOREDLL_EXPORT PreProcessorGridDataItemI : public PreProcessorDataItem
 public:
 	PreProcessorGridDataItemI(PreProcessorDataItem* parent);
 
+	QString subPath() const;
+
 	virtual void updateSimplifiedGrid(VTKGraphicsView* v = nullptr) = 0;
 	virtual void informGridAttributeChange(const std::string& name) = 0;
 	virtual void updateAttributeActorSettings() = 0;

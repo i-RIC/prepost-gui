@@ -70,7 +70,7 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 		}
 	}
 
-	SolverDefinitionGridType* gType = dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->gridType();
+	auto gType = gridTypeDataItem()->gridType();
 
 	m_creatingConditionDataItem = new PreProcessorGridCreatingConditionDataItem(this);
 	m_childItems.push_back(m_creatingConditionDataItem);
@@ -132,7 +132,7 @@ PreProcessorGridAttributeMappingSettingTopDataItem* PreProcessorGridAndGridCreat
 void PreProcessorGridAndGridCreatingConditionDataItem::addCustomMenuItems(QMenu* menu)
 {
 	// add "Add Grid" menu.
-	PreProcessorGridTypeDataItem* gtItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent());
+	auto gtItem = gridTypeDataItem();
 	gtItem->addCustomMenuItems(menu);
 }
 
@@ -144,7 +144,7 @@ PreProcessorGridDataItemI* PreProcessorGridAndGridCreatingConditionDataItem::gri
 bool PreProcessorGridAndGridCreatingConditionDataItem::isDeletable() const
 {
 	// Ask parent whether I am deletable.
-	return dynamic_cast<PreProcessorGridTypeDataItem*>(parent())->isChildDeletable(this);
+	return gridTypeDataItem()->isChildDeletable(this);
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::handleStandardItemChange()
@@ -196,7 +196,7 @@ void PreProcessorGridAndGridCreatingConditionDataItem::setupGridDataItem(v4Input
 	// put the grid data item after grid creating condition
 	m_standardItem->takeRow(gridItem->standardItem()->row());
 
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
+	auto gtItem = gridTypeDataItem();
 	SolverDefinitionGridType* gt = gtItem->gridType();
 	QStandardItem* prevItem = 0;
 	if (gt->boundaryConditions().size() > 0) {
@@ -227,9 +227,9 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 	auto zone = mainFile->cgnsFile()->ccBase()->zone(m_zoneName);
 	if (zone == nullptr) {return IRIC_NO_ERROR;}
 
-	auto gtItem = dynamic_cast<PreProcessorGridTypeDataItem*> (parent());
+	auto gtItem = gridTypeDataItem();
 	int ier;
-	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem->gridType(), offset(), &ier);
+	v4InputGrid* grid = v4InputGridIO::load(*zone, gtItem, subPath(), offset(), &ier);
 	if (grid == nullptr) {return IRIC_INVALID_GRIDTYPE;}
 	setupGridDataItem(grid);
 	delete grid;

@@ -12,6 +12,12 @@
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessorgeodatagroupdataitemi.h>
+#include <guicore/pre/base/preprocessorgeodatatopdataitemi.h>
+#include <guicore/pre/base/preprocessorgridandgridcreatingconditiondataitemi.h>
+#include <guicore/pre/base/preprocessorgriddataitemi.h>
+#include <guicore/pre/base/preprocessorgridtypedataitemi.h>
+#include <guicore/pre/gridcond/base/gridattributecontainer.h>
+#include <guicore/pre/grid/v4inputgrid.h>
 #include <guicore/pre/gridcond/base/gridattributedimensioncontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionrealcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributedimensionscontainer.h>
@@ -160,14 +166,22 @@ bool GeoDataNetcdfGdalImporter::doInitForSingleMode(const QString& filename, con
 	return true;
 }
 
-bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
+bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w)
 {
 	m_timeZone = item->projectData()->mainfile()->timeZone();
 
-	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
-	if (timeContainer->values().size() != 0) {
+	if (item->geoDatas().size() > 1) {
 		QMessageBox::critical(w, tr("Error"), tr("Time series raster data is already imported. If you want to import other data, please delete the data already imported first."));
 		return false;
+	}
+
+	// grid attributes cleared
+	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
+	for (auto cond : conds) {
+			auto grid = cond->gridDataItem()->grid();
+			auto att = grid->attribute(condition->name());
+			att->clearTemporaryData();
+			att->setDefaultValue();
 	}
 
 	if (! iRIC::isAscii(filename)) {
@@ -207,7 +221,7 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 		dt.setTimeZone(m_timeZone);
 		timeVals.push_back(dt.toMSecsSinceEpoch() / 1000.0);
 	}
-
+	auto timeContainer = dynamic_cast<GridAttributeDimensionRealContainer*> (item->dimensions()->containers().at(0));
 	timeContainer->setValues(timeVals);
 
 	return true;

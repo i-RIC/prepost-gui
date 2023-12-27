@@ -7,6 +7,7 @@
 
 class SolverDefinitionGridType;
 class PreProcessorGeoDataGroupDataItemI;
+class PreProcessorGridTypeDataItemI;
 
 class GUICOREDLL_EXPORT PreProcessorGeoDataTopDataItemI : public PreProcessorDataItem
 {
@@ -15,6 +16,7 @@ public:
 	PreProcessorGeoDataTopDataItemI(const QString& itemlabel, const QIcon& icon, GraphicsWindowDataItem* parent);
 	virtual ~PreProcessorGeoDataTopDataItemI();
 
+	PreProcessorGridTypeDataItemI* gridTypeDataItem() const;
 	virtual SolverDefinitionGridType* gridType() const = 0;
 	virtual const QList<PreProcessorGeoDataGroupDataItemI*> groupDataItems() const = 0;
 	virtual PreProcessorGeoDataGroupDataItemI* groupDataItem(const std::string& name) const = 0;

@@ -4,6 +4,7 @@
 #include "../gridattributecontainert.h"
 #include "../gridattributedimensionscontainer.h"
 #include "../../../../project/projectcgnsfile.h"
+#include "../../../../solverdef/solverdefinitiongridattribute.h"
 
 #include <misc/stringtool.h>
 #include <misc/filesystemfunction.h>
@@ -126,6 +127,15 @@ int GridAttributeContainerT<V, DA>::saveToCgnsFileForIndex(iRICLib::H5CgnsGridAt
 	if (ier != 0) {return ier;}
 
 	return IRIC_NO_ERROR;
+}
+
+template <class V, class DA>
+void GridAttributeContainerT<V, DA>::setDefaultValue()
+{
+	V defaultValue = gridAttribute()->variantDefaultValue().value<V>();
+	for (unsigned int i = 0; i < dataCount(); ++i) {
+		setValue(i, defaultValue);
+	}
 }
 
 template <class V, class DA>

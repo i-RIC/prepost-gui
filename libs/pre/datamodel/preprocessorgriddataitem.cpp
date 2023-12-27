@@ -234,9 +234,9 @@ int PreProcessorGridDataItem::loadFromCgnsFile()
 
 int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 {
-	auto gridType = gridTypeDataItem()->gridType();
 	int ier;
-	impl->m_grid = v4InputGridIO::load(zone, gridType, offset(), &ier);
+	auto tmpPath = subPath();
+	impl->m_grid = v4InputGridIO::load(zone, gridTypeDataItem(), tmpPath, offset(), &ier);
 	impl->m_grid->setGridDataItem(this);
 
 	if (m_bcGroupDataItem != nullptr) {
@@ -565,8 +565,8 @@ void PreProcessorGridDataItem::setupActors()
 
 void PreProcessorGridDataItem::setupActions()
 {
-	PreProcessorGridAndGridCreatingConditionDataItem* gagcItem =
-			dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
+	auto gagcItem = gridAndGridCreatingConditionDataItem();
+
 	impl->m_importAction = new QAction(tr("&Import..."), this);
 	impl->m_importAction->setIcon(QIcon(":/libs/guibase/images/iconImport.svg"));
 	connect(impl->m_importAction, &QAction::triggered, gagcItem, &PreProcessorGridAndGridCreatingConditionDataItem::importGrid);
@@ -972,6 +972,11 @@ void PreProcessorGridDataItem::assignActorZValues(const ZDepthRange& range)
 	r.setMax(range.max() * 0.2 + range.min() * 0.8);
 	r.setMin(range.max() * 0.1 + range.min() * 0.9);
 	m_jEdgeGroupDataItem->setZDepthRange(r);
+}
+
+PreProcessorGridAndGridCreatingConditionDataItem* PreProcessorGridDataItem::gridAndGridCreatingConditionDataItem() const
+{
+	return dynamic_cast<PreProcessorGridAndGridCreatingConditionDataItem*> (parent());
 }
 
 vtkPolyData* PreProcessorGridDataItem::buildEdges() const
