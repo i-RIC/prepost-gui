@@ -203,28 +203,28 @@ void ImageSettingContainer::Controller::updateMouseEventMode(bool checked, QMous
 	bool betweenTopBottom = (event->y() >= r.top() && event->y() <= r.bottom());
 	bool betweenLeftRight = (event->x() >= r.left() && event->x() <= r.right());
 
-	if (nearTop && nearLeft) {
+	if (nearTop && nearLeft && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::TopLeft;
-	} else if (nearTop && nearRight) {
+	} else if (nearTop && nearRight && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::TopRight;
-	} else if (nearBottom && nearLeft) {
+	} else if (nearBottom && nearLeft && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::BottomLeft;
-	} else if (nearBottom && nearRight) {
+	} else if (nearBottom && nearRight && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::BottomRight;
-	} else if (betweenTopBottom && nearLeft) {
+	} else if (betweenTopBottom && nearLeft && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::Left;
-	} else if (betweenTopBottom && nearRight) {
+	} else if (betweenTopBottom && nearRight && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::Right;
-	} else if (betweenLeftRight && nearTop) {
+	} else if (betweenLeftRight && nearTop && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::Top;
-	} else if (betweenLeftRight && nearBottom) {
+	} else if (betweenLeftRight && nearBottom && ! m_setting->autoSizeForced()) {
 		m_mouseEventMode = MouseEventMode::ResizePrepare;
 		m_resizePosition = Position::Bottom;
 	} else if (betweenLeftRight && betweenTopBottom) {

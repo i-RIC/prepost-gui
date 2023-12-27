@@ -8,6 +8,7 @@
 #include "gridbirdeyewindowzonedataitem.h"
 
 #include <dataitem/axis3d/axis3ddataitem.h>
+#include <dataitem/logo/logodataitem.h>
 #include <misc/xmlsupport.h>
 
 #include <QXmlStreamWriter>
@@ -17,10 +18,12 @@
 GridBirdEyeWindowRootDataItem::GridBirdEyeWindowRootDataItem(GridBirdEyeWindow* window, ProjectDataItem* parent) :
 	GraphicsWindowRootDataItem {window, parent},
 	m_zoneDataItem {new GridBirdEyeWindowZoneDataItem {this}},
-	m_axesDataItem {new Axis3dDataItem {this}}
+	m_axesDataItem {new Axis3dDataItem {this}},
+	m_logoDataItem {new LogoDataItem {this}}
 {
 	m_childItems.push_back(m_zoneDataItem);
 	m_childItems.push_back(m_axesDataItem);
+	m_childItems.push_back(m_logoDataItem);
 
 	updateZDepthRangeItemCount();
 	// update item map initially.
@@ -31,6 +34,7 @@ GridBirdEyeWindowRootDataItem::~GridBirdEyeWindowRootDataItem()
 {
 	delete m_zoneDataItem;
 	delete m_axesDataItem;
+	delete m_logoDataItem;
 }
 
 void GridBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
@@ -49,12 +53,15 @@ void GridBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* model
 		model->appendRow(m_zoneDataItem->cellScalarGroupTopDataItem()->standardItem());
 	}
 	model->appendRow(m_axesDataItem->standardItem());
+	model->appendRow(m_logoDataItem->standardItem());
 }
 
 void GridBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	QDomNode zoneNode = iRIC::getChildNode(node, "Zone");
 	if (! zoneNode.isNull()) {m_zoneDataItem->loadFromProjectMainFile(zoneNode);}
+	QDomNode logoNode = iRIC::getChildNode(node, "Logo");
+	if (! logoNode.isNull()) {m_logoDataItem->loadFromProjectMainFile(logoNode);}
 
 	updateItemMap();
 }
@@ -62,6 +69,10 @@ void GridBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& wr
 {
 	writer.writeStartElement("Zone");
 	m_zoneDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Logo");
+	m_logoDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

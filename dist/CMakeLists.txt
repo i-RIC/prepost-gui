@@ -498,6 +498,7 @@ set(IRIC_DLLS
   ${PREPOST_GUI}/libdlls/Release/iricGuibase.dll
   ${PREPOST_GUI}/libdlls/Release/iricGuicore.dll
   ${PREPOST_GUI}/libdlls/Release/iricHdRiversurveywaterelevation.dll
+  ${PREPOST_GUI}/libdlls/Release/iricLogo.dll
   ${PREPOST_GUI}/libdlls/Release/iricMeasureddata.dll
   ${PREPOST_GUI}/libdlls/Release/iricMiGui.dll
   ${PREPOST_GUI}/libdlls/Release/iricMisc.dll
@@ -676,6 +677,45 @@ set(IRIC_DICS
   ${PREPOST_GUI}/libs/dataitem/distancemeasure/languages/iricDistancemeasure_vi_VN.qm
   ${PREPOST_GUI}/libs/dataitem/distancemeasure/languages/iricDistancemeasure_zh_CN.qm
   ${PREPOST_GUI}/libs/dataitem/distancemeasure/languages/iricDistancemeasure_zh_TW.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ar_EG.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_bg_BG.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_bs_BA.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ca_ES.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_cs_CZ.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_da_DK.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_de_DE.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_el_GR.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_es_ES.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_et_EE.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_eu_ES.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_fi_FI.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_fr_FR.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_gl_ES.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_hi_IN.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_hu_HU.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_id_ID.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_is_IS.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_it_IT.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ja_JP.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ko_KR.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ky_KG.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_lt_LT.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_lv_LV.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_nb_NO.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_nl_NL.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_pl_PL.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_pt_BR.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_pt_PT.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ro_RO.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_ru_RU.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_sl_SI.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_sv_SE.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_th_TH.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_tr_TR.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_uk_UA.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_vi_VN.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_zh_CN.qm
+  ${PREPOST_GUI}/libs/dataitem/logo/languages/iricLogo_zh_TW.qm
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_ar_EG.qm
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_bg_BG.qm
   ${PREPOST_GUI}/libs/dataitem/measureddata/languages/iricMeasureddata_bs_BA.qm

@@ -27,6 +27,8 @@ ImageSettingContainer::ImageSettingContainer() :
 	m_actor {nullptr},
 	m_imageBuilder {nullptr},
 	m_controller {new Controller {this}},
+	m_negativePositionForbidden {false},
+	m_autoSizeForced {false},
 	m_setting {this}
 {}
 
@@ -44,6 +46,26 @@ ImageSettingContainer::~ImageSettingContainer()
 void ImageSettingContainer::setSetting(ImageSettingContainer* setting)
 {
 	m_setting = setting;
+}
+
+bool ImageSettingContainer::negativePositionForbidden() const
+{
+	return m_negativePositionForbidden;
+}
+
+void ImageSettingContainer::setNegativePositionForbidden(bool forbidden)
+{
+	m_negativePositionForbidden = forbidden;
+}
+
+bool ImageSettingContainer::autoSizeForced() const
+{
+	return m_autoSizeForced;
+}
+
+void ImageSettingContainer::setAutoSizeForced(bool forced)
+{
+	m_autoSizeForced = forced;
 }
 
 ImageSettingContainer& ImageSettingContainer::operator=(const ImageSettingContainer& c)
@@ -263,4 +285,13 @@ QRect ImageSettingContainer::rect(const QSize& size, VTKGraphicsView* view) cons
 	ret.setHeight(h * view->devicePixelRatioF());
 
 	return ret;
+}
+
+void ImageSettingContainer::copyValue(const XmlAttributeContainer& c)
+{
+	CompositeContainer::copyValue(c);
+
+	const auto& c2 = dynamic_cast<const ImageSettingContainer&>(c);
+	m_negativePositionForbidden = c2.m_negativePositionForbidden;
+	m_autoSizeForced = c2.m_autoSizeForced;
 }

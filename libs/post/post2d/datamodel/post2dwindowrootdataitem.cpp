@@ -10,6 +10,7 @@
 
 #include <dataitem/axis2d/axis2ddataitem.h>
 #include <dataitem/distancemeasure/distancemeasuregroupdataitem.h>
+#include <dataitem/logo/logodataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/datamodel/attributebrowsertargetdataitem.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
@@ -87,6 +88,9 @@ Post2dWindowRootDataItem::Post2dWindowRootDataItem(Post2dWindow* window, Project
 	m_distanceMeasureGroupDataItem = new DistanceMeasureGroupDataItem(this);
 	m_childItems.insert(m_childItems.begin(), m_distanceMeasureGroupDataItem);
 
+	m_logoDataItem = new LogoDataItem(this);
+	m_childItems.push_back(m_logoDataItem);
+
 	m_attributeBrowserTargetDataItem = new AttributeBrowserTargetDataItem(this);
 	m_childItems.insert(m_childItems.begin(), m_attributeBrowserTargetDataItem);
 
@@ -111,6 +115,7 @@ Post2dWindowRootDataItem::~Post2dWindowRootDataItem()
 	delete m_timeDataItem;
 	delete m_axesDataItem;
 	delete m_distanceMeasureGroupDataItem;
+	delete m_logoDataItem;
 	delete m_attributeBrowserTargetDataItem;
 }
 
@@ -171,6 +176,8 @@ void Post2dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_axesDataItem->standardItem());
 	// add distance measure
 	model->appendRow(m_distanceMeasureGroupDataItem->standardItem());
+	// logo
+	model->appendRow(m_logoDataItem->standardItem());
 
 	emit standardModelSetuped();
 }
@@ -210,6 +217,8 @@ void Post2dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! dmNode.isNull()) {m_distanceMeasureGroupDataItem->loadFromProjectMainFile(dmNode);}
 	QDomNode tmsNode = iRIC::getChildNode(node, "TmsBackground");
 	if (! tmsNode.isNull()) {m_tmsGroupDataItem->loadFromProjectMainFile(tmsNode);}
+	QDomNode logoNode = iRIC::getChildNode(node, "Logo");
+	if (! logoNode.isNull()) {m_logoDataItem->loadFromProjectMainFile(logoNode);}
 	updateItemMap();
 	updateZDepthRange();
 }
@@ -247,6 +256,10 @@ void Post2dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	writer.writeStartElement("TmsBackground");
 	m_tmsGroupDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Logo");
+	m_logoDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

@@ -10,4 +10,5 @@ SUBDIRS = \
 	axis2d \
 	axis3d \
 	distancemeasure \
+	logo \
 	measureddata

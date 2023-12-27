@@ -381,8 +381,9 @@ QMainWindow* GraphicsWindowDataItem::mainWindow() const
 bool GraphicsWindowDataItem::isChecked() const
 {
 	if (m_standardItem == nullptr) {return true;}
+	if (! m_standardItem->isCheckable()) { return true;}
 
-	return (m_standardItem->isCheckable() && m_standardItem->checkState() == Qt::Checked);
+	return m_standardItem->checkState() == Qt::Checked;
 }
 
 bool GraphicsWindowDataItem::isAncientChecked() const

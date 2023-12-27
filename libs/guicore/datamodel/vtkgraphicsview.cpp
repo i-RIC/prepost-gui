@@ -30,7 +30,6 @@
 #include <QPainter>
 #include <QUndoCommand>
 #include <QVector3D>
-#include <vtkQImageToImageSource.h>
 
 namespace {
 
@@ -46,10 +45,7 @@ VTKGraphicsView::Impl::Impl() :
 	m_rubberBarStyle{vtkInteractorStyleRubberBandZoom::New()},
 	m_styleBackUp {},
 	m_mainRenderer {vtkRenderer::New()},
-	m_logoActor {vtkActor2D::New()},
 	m_camera {vtkCamera::New()},
-
-	m_logoImage {":/libs/guicore/images/logo.png"},
 
 	m_zoomPixmap {":/libs/guibase/images/cursorZoom.png"},
 	m_rotatePixmap {":/libs/guibase/images/cursorRotate.png"},
@@ -70,7 +66,6 @@ VTKGraphicsView::Impl::~Impl()
 {
 	m_rubberBarStyle->Delete();
 	m_mainRenderer->Delete();
-	m_logoActor->Delete();
 	m_renderWindow->Delete();
 }
 
@@ -86,16 +81,6 @@ VTKGraphicsView::VTKGraphicsView(QWidget* parent) :
 	SetRenderWindow(rw);
 	rw->AddRenderer(impl->m_mainRenderer);
 	impl->m_mainRenderer->SetBackground(1.0, 1.0, 1.0);
-	vtkSmartPointer<vtkQImageToImageSource> imgToImg = vtkSmartPointer<vtkQImageToImageSource>::New();
-	imgToImg->SetQImage(&(impl->m_logoImage));
-	vtkSmartPointer<vtkImageMapper> imgMapper = vtkSmartPointer<vtkImageMapper>::New();
-	imgMapper->SetColorWindow(255);
-	imgMapper->SetColorLevel(127.5);
-	imgMapper->SetInputConnection(imgToImg->GetOutputPort());
-
-	// setup logo mapper
-	impl->m_logoActor->SetMapper(imgMapper);
-	impl->m_mainRenderer->AddActor2D(impl->m_logoActor);
 
 	rw->SetMultiSamples(0);
 	rw->SetStereoTypeToDresden();
@@ -572,9 +557,6 @@ void VTKGraphicsView::update2Ds()
 void VTKGraphicsView::resizeEvent(QResizeEvent* event)
 {
 	QVTKOpenGLNativeWidget::resizeEvent(event);
-	int* vtk_size = GetRenderWindow()->GetSize();
-	impl->m_logoActor->SetPosition(*(vtk_size) - impl->m_logoImage.width() - 10, 5);
-	impl->m_logoActor->Modified();
 	impl->m_model->handleResize(event);
 
 	impl->m_resizeTimer.start(RESIZE_RENDER_DELAY_MSEC);

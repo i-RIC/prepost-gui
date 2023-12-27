@@ -42,6 +42,11 @@ public:
 
 	void setSetting(ImageSettingContainer* setting);
 
+	bool negativePositionForbidden() const;
+	void setNegativePositionForbidden(bool forbidden);
+	bool autoSizeForced() const;
+	void setAutoSizeForced(bool forced);
+
 	ImageSettingContainer& operator=(const ImageSettingContainer& c);
 	XmlAttributeContainer& operator=(const XmlAttributeContainer& c) override;
 
@@ -68,9 +73,13 @@ signals:
 	void updated();
 
 private:
+	void copyValue(const XmlAttributeContainer& c) override;
+
 	vtkActor2D* m_actor;
 	ImageBuilder* m_imageBuilder;
 	Controller* m_controller;
+	bool m_negativePositionForbidden;
+	bool m_autoSizeForced;
 
 	ImageSettingContainer* m_setting;
 
