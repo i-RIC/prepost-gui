@@ -86,6 +86,14 @@ void ImageSettingWidget::setSetting(const ImageSettingContainer& setting)
 		ui->widthSpinBox->setValue(setting.width);
 		ui->heightSpinBox->setValue(setting.height);
 	}
+	if (setting.autoSizeForced()) {
+		ui->autoSizeCheckBox->setChecked(true);
+		ui->autoSizeCheckBox->setDisabled(true);
+	}
+	if (setting.negativePositionForbidden()) {
+		ui->horizontalMarginSpinBox->setMinimum(0);
+		ui->verticalMarginSpinBox->setMinimum(0);
+	}
 
 	handlePositionChange();
 }

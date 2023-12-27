@@ -7,6 +7,7 @@
 #include <QMap>
 
 class Axis3dDataItem;
+class LogoDataItem;
 class Post3dWindow;
 class Post3dWindowGridTypeDataItem;
 class Post3dWindowZoneDataItem;
@@ -44,6 +45,7 @@ private:
 	PostTitleDataItem* m_titleDataItem;
 	PostTimeDataItem* m_timeDataItem;
 	Axis3dDataItem* m_axesDataItem;
+	LogoDataItem* m_logoDataItem;
 
 public:
 	friend class Post3dWindowProjectDataItem;

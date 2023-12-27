@@ -6,6 +6,10 @@
 #include <QList>
 #include <QMap>
 
+class AttributeBrowserTargetDataItem;
+class Axis2dDataItem;
+class DistanceMeasureGroupDataItem;
+class LogoDataItem;
 class Post2dWindowBackgroundImagesDataItem;
 class Post2dWindowGridTypeDataItem;
 class Post2dWindowGridDataItem;
@@ -13,11 +17,8 @@ class Post2dWindowMeasuredDataTopDataItem;
 class Post2dWindowDataModel;
 class PostTitleDataItem;
 class PostTimeDataItem;
-class QStandardItemModel;
 class Post2dWindow;
-class Axis2dDataItem;
-class DistanceMeasureGroupDataItem;
-class AttributeBrowserTargetDataItem;
+class QStandardItemModel;
 class TmsImageGroupDataItem;
 
 class Post2dWindowRootDataItem : public GraphicsWindowRootDataItem
@@ -61,6 +62,7 @@ private:
 	Axis2dDataItem* m_axesDataItem;
 	DistanceMeasureGroupDataItem* m_distanceMeasureGroupDataItem;
 	AttributeBrowserTargetDataItem* m_attributeBrowserTargetDataItem;
+	LogoDataItem* m_logoDataItem;
 
 public:
 	friend class Post2dWindowProjectDataItem;

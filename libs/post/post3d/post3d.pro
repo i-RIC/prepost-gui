@@ -50,6 +50,13 @@ unix {
 }
 LIBS += -liricPostbase
 
+# iricLogo
+
+unix {
+	LIBS += -L"../../dataitem/logo"
+}
+LIBS += -liricLogo
+
 ######################
 # External libraries #
 ######################

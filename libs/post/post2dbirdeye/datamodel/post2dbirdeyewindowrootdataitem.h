@@ -6,6 +6,7 @@
 #include <QList>
 
 class Axis3dDataItem;
+class LogoDataItem;
 class Post2dBirdEyeWindow;
 class Post2dBirdEyeWindowGridTypeDataItem;
 class Post2dBirdEyeWindowDataModel;
@@ -43,6 +44,7 @@ private:
 	PostTitleDataItem* m_titleDataItem;
 	PostTimeDataItem* m_timeDataItem;
 	Axis3dDataItem* m_axesDataItem;
+	LogoDataItem* m_logoDataItem;
 
 public:
 	friend class Post2dBirdEyeWindowProjectDataItem;

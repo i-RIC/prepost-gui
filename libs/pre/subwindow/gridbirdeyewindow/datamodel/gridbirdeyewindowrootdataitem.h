@@ -6,6 +6,7 @@
 #include <QList>
 
 class Axis3dDataItem;
+class LogoDataItem;
 class GridBirdEyeWindow;
 class GridBirdEyeWindowZoneDataItem;
 
@@ -31,6 +32,7 @@ private:
 
 	GridBirdEyeWindowZoneDataItem* m_zoneDataItem;
 	Axis3dDataItem* m_axesDataItem;
+	LogoDataItem* m_logoDataItem;
 
 public:
 	friend class GridBirdEyeWindowProjectDataItem;

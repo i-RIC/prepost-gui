@@ -5,7 +5,6 @@
 
 #include <QTimer>
 
-class vtkActor2D;
 class vtkCamera;
 class vtkGenericOpenGLRenderWindow;
 
@@ -22,10 +21,7 @@ public:
 	vtkInteractorObserver* m_rubberBarStyle;
 	vtkSmartPointer<vtkInteractorObserver> m_styleBackUp;
 	vtkRenderer* m_mainRenderer;
-	vtkActor2D* m_logoActor;
 	vtkCamera* m_camera;
-
-	QImage m_logoImage;
 
 	QPixmap m_zoomPixmap;
 	QPixmap m_rotatePixmap;

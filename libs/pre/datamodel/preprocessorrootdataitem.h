@@ -11,14 +11,14 @@
 class QAction;
 class GeoData;
 
+class Axis2dDataItem;
+class LogoDataItem;
 class PreProcessorBackgroundImagesDataItem;
 class PreProcessorGridTypeDataItem;
 class PreProcessorGridDataItem;
 class PreProcessorInputConditionDataItem;
-class Axis2dDataItem;
 class QStandardItemModel;
 class PreProcessorWindow;
-class PreProcessorRootDataItemSetMappingSettingCommand;
 class PreProcessorMeasuredDataTopDataItem;
 class DistanceMeasureGroupDataItem;
 class AttributeBrowserTargetDataItem;
@@ -66,6 +66,7 @@ private:
 	Axis2dDataItem* m_axesDataItem;
 	DistanceMeasureGroupDataItem* m_distanceMeasureGroupDataItem;
 	AttributeBrowserTargetDataItem* m_attributeBrowserTargetDataItem;
+	LogoDataItem* m_logoDataItem;
 	QList<PreProcessorGridTypeDataItem*> m_gridTypeDataItems;
 
 	QAction* m_editGridAttributeMappingSettingAction;

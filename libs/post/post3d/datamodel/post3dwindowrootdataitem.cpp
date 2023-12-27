@@ -7,6 +7,7 @@
 #include "post3dwindowrootdataitem.h"
 
 #include <dataitem/axis3d/axis3ddataitem.h>
+#include <dataitem/logo/logodataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -62,6 +63,9 @@ Post3dWindowRootDataItem::Post3dWindowRootDataItem(Post3dWindow* window, Project
 	m_axesDataItem = new Axis3dDataItem(this);
 	m_childItems.push_back(m_axesDataItem);
 
+	m_logoDataItem = new LogoDataItem(this);
+	m_childItems.push_back(m_logoDataItem);
+
 	updateZDepthRangeItemCount();
 	// update item map initially.
 	updateItemMap();
@@ -78,6 +82,7 @@ Post3dWindowRootDataItem::~Post3dWindowRootDataItem()
 	delete m_titleDataItem;
 	delete m_timeDataItem;
 	delete m_axesDataItem;
+	delete m_logoDataItem;
 }
 
 void Post3dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
@@ -94,6 +99,8 @@ void Post3dWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
 	model->appendRow(m_timeDataItem->standardItem());
 	// add axes item row
 	model->appendRow(m_axesDataItem->standardItem());
+	// logo
+	model->appendRow(m_logoDataItem->standardItem());
 }
 
 const QList<Post3dWindowGridTypeDataItem*>& Post3dWindowRootDataItem::gridTypeDataItems() const
@@ -103,17 +110,16 @@ const QList<Post3dWindowGridTypeDataItem*>& Post3dWindowRootDataItem::gridTypeDa
 
 Post3dWindowGridTypeDataItem* Post3dWindowRootDataItem::gridTypeDataItem(const std::string& name) const
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		if ((*it)->name() == name) {return *it;}
+	for (auto item : m_gridTypeDataItems) {
+		if (item->name() == name) {return item;}
 	}
 	return nullptr;
 }
 
 Post3dWindowZoneDataItem* Post3dWindowRootDataItem::zoneDataItem(const std::string& name)
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		Post3dWindowGridTypeDataItem* gtItem = *it;
-		Post3dWindowZoneDataItem* i = gtItem->zoneData(name);
+	for (auto item : m_gridTypeDataItems) {
+		auto i = item->zoneData(name);
 		if (i != nullptr) {return i;}
 	}
 	return nullptr;
@@ -154,10 +160,11 @@ void Post3dWindowRootDataItem::updateZoneList()
 
 void Post3dWindowRootDataItem::update()
 {
-	for (auto it = m_gridTypeDataItems.begin(); it != m_gridTypeDataItems.end(); ++it) {
-		(*it)->update();
+	for (auto item : m_gridTypeDataItems) {
+		item->update();
 	}
 	m_timeDataItem->update();
+
 	renderGraphicsView();
 }
 
@@ -186,6 +193,8 @@ void Post3dWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
 	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
 	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
+	QDomNode logoNode = iRIC::getChildNode(node, "Logo");
+	if (! logoNode.isNull()) {m_logoDataItem->loadFromProjectMainFile(logoNode);}
 
 	updateItemMap();
 }
@@ -206,6 +215,10 @@ void Post3dWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 
 	writer.writeStartElement("Axes");
 	m_axesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Logo");
+	m_logoDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

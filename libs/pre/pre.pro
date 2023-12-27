@@ -236,6 +236,13 @@ unix {
 }
 LIBS += -liricHdRiversurveywaterelevation
 
+# iricLogo
+
+unix {
+	LIBS += -L"../dataitem/logo"
+}
+LIBS += -liricLogo
+
 ######################
 # External libraries #
 ######################

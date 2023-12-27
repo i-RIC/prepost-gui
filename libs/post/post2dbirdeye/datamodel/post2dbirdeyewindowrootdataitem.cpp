@@ -6,6 +6,7 @@
 #include "post2dbirdeyewindowrootdataitem.h"
 
 #include <dataitem/axis3d/axis3ddataitem.h>
+#include <dataitem/logo/logodataitem.h>
 #include <guibase/objectbrowserview.h>
 #include <guicore/postcontainer/postsolutioninfo.h>
 #include <guicore/postcontainer/postzonedatacontainer.h>
@@ -55,6 +56,9 @@ Post2dBirdEyeWindowRootDataItem::Post2dBirdEyeWindowRootDataItem(Post2dBirdEyeWi
 	m_axesDataItem = new Axis3dDataItem(this);
 	m_childItems.push_back(m_axesDataItem);
 
+	m_logoDataItem = new LogoDataItem(this);
+	m_childItems.push_back(m_logoDataItem);
+
 	updateZDepthRangeItemCount();
 	// update item map initially.
 	updateItemMap();
@@ -71,6 +75,7 @@ Post2dBirdEyeWindowRootDataItem::~Post2dBirdEyeWindowRootDataItem()
 	delete m_titleDataItem;
 	delete m_timeDataItem;
 	delete m_axesDataItem;
+	delete m_logoDataItem;
 }
 
 void Post2dBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* model)
@@ -85,6 +90,7 @@ void Post2dBirdEyeWindowRootDataItem::setupStandardModel(QStandardItemModel* mod
 	model->appendRow(m_titleDataItem->standardItem());
 	model->appendRow(m_timeDataItem->standardItem());
 	model->appendRow(m_axesDataItem->standardItem());
+	model->appendRow(m_logoDataItem->standardItem());
 }
 
 void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -112,7 +118,8 @@ void Post2dBirdEyeWindowRootDataItem::doLoadFromProjectMainFile(const QDomNode& 
 	if (! timeNode.isNull()) {m_timeDataItem->loadFromProjectMainFile(timeNode);}
 	QDomNode axesNode = iRIC::getChildNode(node, "Axes");
 	if (! axesNode.isNull()) {m_axesDataItem->loadFromProjectMainFile(axesNode);}
-
+	QDomNode logoNode = iRIC::getChildNode(node, "Logo");
+	if (! logoNode.isNull()) {m_logoDataItem->loadFromProjectMainFile(logoNode);}
 	updateItemMap();
 }
 void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -132,6 +139,10 @@ void Post2dBirdEyeWindowRootDataItem::doSaveToProjectMainFile(QXmlStreamWriter& 
 
 	writer.writeStartElement("Axes");
 	m_axesDataItem->saveToProjectMainFile(writer);
+	writer.writeEndElement();
+
+	writer.writeStartElement("Logo");
+	m_logoDataItem->saveToProjectMainFile(writer);
 	writer.writeEndElement();
 }
 

@@ -24,6 +24,10 @@ ImageSettingContainer::MoveCommand::MoveCommand(bool keyDown, const QPoint& from
 	} else if (pos == Position::Right || pos == Position::TopRight || pos == Position::BottomRight) {
 		m_newSetting.horizontalMargin -= dx / static_cast<double> (v->width());
 	}
+	if (m_newSetting.negativePositionForbidden()) {
+		if (m_newSetting.verticalMargin < 0) {m_newSetting.verticalMargin = 0;}
+		if (m_newSetting.horizontalMargin < 0) {m_newSetting.horizontalMargin = 0;}
+	}
 
 	m_newSetting.optimizePosition(v);
 }
