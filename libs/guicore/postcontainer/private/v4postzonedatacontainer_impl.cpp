@@ -1,7 +1,10 @@
+#include "../../grid/v4grid.h"
 #include "../../pre/grid/v4inputgrid.h"
 #include "../v4postcalculatedresult.h"
 #include "../v4solutiongrid.h"
 #include "v4postzonedatacontainer_impl.h"
+
+#include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 
 namespace {
 
@@ -44,6 +47,8 @@ void v4PostZoneDataContainer::Impl::addCalculatedResultArrays()
 		vals->Delete();
 		result->updateValues();
 	}
+
+	m_gridData->grid()->updateValueRangeSet();
 }
 
 void v4PostZoneDataContainer::Impl::clearParticleDataAndPolyData()

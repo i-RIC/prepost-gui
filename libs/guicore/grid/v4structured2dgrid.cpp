@@ -19,6 +19,22 @@ v4Structured2dGrid::v4Structured2dGrid() :
 v4Structured2dGrid::~v4Structured2dGrid()
 {}
 
+void v4Structured2dGrid::clear()
+{
+	v4Grid::clear();
+
+	impl->m_vtkIEdgeData.data()->GetCellData()->Initialize();
+	impl->m_vtkJEdgeData.data()->GetCellData()->Initialize();
+}
+
+void v4Structured2dGrid::updateValueRangeSet()
+{
+	v4Grid::updateValueRangeSet();
+
+	impl->m_vtkIEdgeData.updateValueRangeSet();
+	impl->m_vtkJEdgeData.updateValueRangeSet();
+}
+
 void v4Structured2dGrid::setDimensions(vtkIdType dimI, vtkIdType dimJ)
 {
 	impl->m_dimensionI = dimI;

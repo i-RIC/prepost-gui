@@ -33,6 +33,17 @@ vtkIdType v4Grid::cellCount() const
 	return impl->m_vtkData->data()->GetNumberOfCells();
 }
 
+void v4Grid::clear()
+{
+	impl->m_vtkData->data()->GetPointData()->Initialize();
+	impl->m_vtkData->data()->GetCellData()->Initialize();
+}
+
+void v4Grid::updateValueRangeSet()
+{
+	impl->m_vtkData->updateValueRangeSet();
+}
+
 v4Grid::AttributeDataProvider* v4Grid::attributeDataProvider() const
 {
 	return impl->m_attributeDataProvider;

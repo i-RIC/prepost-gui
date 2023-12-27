@@ -15,6 +15,8 @@ public:
 	v4Structured3dGrid();
 	~v4Structured3dGrid();
 
+	void clear() override;
+	void updateValueRangeSet() override;
 	vtkPointSet* vtkIndexData() const override;
 
 	void setDimensions(vtkIdType dimI, vtkIdType dimJ, vtkIdType dimK);

@@ -18,6 +18,8 @@ public:
 	v4Structured2dGrid();
 	~v4Structured2dGrid();
 
+	void clear() override;
+	void updateValueRangeSet() override;
 	void setDimensions(vtkIdType dimI, vtkIdType dimJ);
 	void getDimensions(vtkIdType* dimI, vtkIdType* dimJ) const;
 	vtkIdType dimensionI() const;

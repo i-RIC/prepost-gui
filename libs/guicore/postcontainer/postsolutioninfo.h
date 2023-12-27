@@ -25,6 +25,7 @@ class PostCalculatedResult;
 class PostIterationSteps;
 class PostTimeSteps;
 class PostZoneDataContainer;
+class v4PostCalculatedResult;
 class v4PostZoneDataContainer;
 
 class QDomElement;
@@ -136,7 +137,7 @@ private:
 	void loadCalculatedResult();
 	void clearCalculatedResults(QMap<std::string, std::vector<PostCalculatedResult*> >* results);
 	bool innerSetupZoneDataContainers(int dimension, QList<PostZoneDataContainer*>* containers, QMap<std::string, PostZoneDataContainer*>* containerNameMap, QMap<std::string, std::vector<PostCalculatedResult*> > *results);
-	bool innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<PostCalculatedResult*> > *calculatedResults);
+	bool innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<v4PostCalculatedResult*> > *calculatedResults);
 
 	bool setupBaseIterativeResults();
 	void clearBaseIterativeResults();
@@ -176,6 +177,9 @@ private:
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults1D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults2D;
 	QMap<std::string, std::vector<PostCalculatedResult*> > m_calculatedResults3D;
+	std::map<std::string, std::vector<v4PostCalculatedResult*> > m_v4CalculatedResults1D;
+	std::map<std::string, std::vector<v4PostCalculatedResult*> > m_v4CalculatedResults2D;
+	std::map<std::string, std::vector<v4PostCalculatedResult*> > m_v4CalculatedResults3D;
 
 	std::map<std::string, PostBaseIterativeStringDataContainer*> m_baseIterativeStringResults;
 	std::map<std::string, PostBaseIterativeNumericalDataContainer*> m_baseIterativeNumericalResults;
