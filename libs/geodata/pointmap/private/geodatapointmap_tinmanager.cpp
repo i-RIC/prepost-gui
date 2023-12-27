@@ -134,8 +134,9 @@ bool GeoDataPointmap::TINManager::rebuildTinFromPoints(bool allowCancel)
 	}
 
 	rebuildQTree();
+	iRICUndoStack::instance().clear();
 
-	return succeeded;
+	return true;
 }
 
 void GeoDataPointmap::TINManager::updateBreakLinesActorSettings() const
