@@ -407,9 +407,9 @@ void PreProcessorGridAttributeCellGroupDataItem::updateAttributeBrowser(vtkIdTyp
 	v = points->GetPoint(cell->GetPointIds()->GetId(0));
 	polygon.append(QPointF(*v, *(v + 1)));
 
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
-		Structured2DGrid* g2 = dynamic_cast<Structured2DGrid*>(gitem->grid());
+		auto g2 = dynamic_cast<Structured2DGrid*>(gitem->grid());
 		unsigned int i, j;
 		g2->getCellIJIndex(cellid, &i, &j);
 		pre->propertyBrowser()->view()->setCellAttributes(i, j, polygon, atts);
@@ -422,10 +422,10 @@ vtkIdType PreProcessorGridAttributeCellGroupDataItem::findCell(const QPoint& p, 
 {
 	double x = p.x();
 	double y = p.y();
-	PreProcessorGraphicsView* v2 = dynamic_cast<PreProcessorGraphicsView*>(v);
+	auto v2 = dynamic_cast<PreProcessorGraphicsView*>(v);
 	v2->viewportToWorld(x, y);
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
+	auto gitem = gridDataItem();
 	Grid* grid = gitem->grid();
 	if (grid == nullptr) {
 		return -1;
@@ -482,16 +482,17 @@ void PreProcessorGridAttributeCellGroupDataItem::applyColorMapSetting(const std:
 void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_opacity.load(node);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		std::string name = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name();
+
+	for (auto child : m_childItems) {
+		auto name = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(child)->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "CellAttribute", "name", name.c_str());
-		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
+		if (! childNode.isNull()) {child->loadFromProjectMainFile(childNode);}
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeCellDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it);
-		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeCellDataItem*>(child);
+		if (item->standardItem()->checkState() == Qt::Checked) {
 			// this is the current Condition!
-			setTarget(tmpItem->condition()->name());
+			setTarget(item->condition()->name());
 		}
 	}
 }
@@ -499,10 +500,11 @@ void PreProcessorGridAttributeCellGroupDataItem::doLoadFromProjectMainFile(const
 void PreProcessorGridAttributeCellGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_opacity.save(writer);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+
+	for (auto child : m_childItems) {
 		writer.writeStartElement("CellAttribute");
-		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeCellDataItem*>(*it)->condition()->name().c_str());
-		(*it)->saveToProjectMainFile(writer);
+		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeCellDataItem*>(child)->condition()->name().c_str());
+		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
