@@ -337,9 +337,13 @@ int GridComplexConditionDialog::exec()
 		widget->setGroup(g.get());
 		m_widgets.push_back(widget);
 	}
-	updateList();
-	if (m_widgets.size() > 0) {
-		ui->listWidget->setCurrentRow(0);
+	if (ui->stackedWidget->currentIndex() == 0) {
+		updateList();
+		if (m_widgets.size() > 0) {
+			ui->listWidget->setCurrentRow(0);
+		}
+	} else if (ui->stackedWidget->currentIndex() == 1){
+		updateTable();
 	}
 
 	int ret = QDialog::exec();
