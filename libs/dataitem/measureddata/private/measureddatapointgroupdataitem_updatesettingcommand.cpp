@@ -15,7 +15,7 @@ MeasuredDataPointGroupDataItem::UpdateSettingCommand::UpdateSettingCommand(bool 
 {
 	if (cs != nullptr) {
 		auto oldcs = dynamic_cast<ColorMapSettingContainer*> (item->colorMapSetting(iRIC::toStr(s.value)));
-		m_colormapCommand = new ValueModifyCommmand<ColorMapSettingContainer> ("Modify Colormap", *cs, oldcs);
+		m_colormapCommand = new ValueModifyCommmand<ColorMapSettingContainer> (iRIC::generateCommandId("Modify Colormap"), allowMerge, *cs, oldcs);
 	}
 }
 
