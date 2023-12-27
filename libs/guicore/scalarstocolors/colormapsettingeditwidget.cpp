@@ -1,5 +1,6 @@
 #include "colormapsettingeditwidget.h"
 #include "ui_colormapsettingeditwidget.h"
+#include "private/colormapsettingeditwidget_changenumcolorsdialog.h"
 #include "private/colormapsettingeditwidget_colortablecontroller.h"
 #include "private/colormapsettingeditwidget_switchtodiscretedialog.h"
 #include "private/colormapsettingeditwidget_importdialog.h"
@@ -64,6 +65,7 @@ ColorMapSettingEditWidget::ColorMapSettingEditWidget(QWidget *parent) :
 	connect(ui->removeButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::removeColor);
 	connect(ui->reverseButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::reverseColors);
 	connect(ui->equalDevisionButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::divideEqually);
+	connect(ui->numColorsButton, &QPushButton::clicked, this, &ColorMapSettingEditWidget::changeNumColors);
 	connect(ui->colorModeAutoRadioButton, &QRadioButton::clicked, this, &ColorMapSettingEditWidget::switchToAutoMode);
 	connect(ui->colorModeManualRadioButton, &QRadioButton::clicked, this, &ColorMapSettingEditWidget::switchToManualMode);
 	connect(ui->switchModeButton, &QPushButton::clicked, [=](bool) {this->switchTransitionMode();});
@@ -286,6 +288,26 @@ void ColorMapSettingEditWidget::divideEqually()
 	m_colorTableController->applyToTable();
 }
 
+void ColorMapSettingEditWidget::changeNumColors()
+{
+	ChangeNumColorsDialog dialog(this);
+	dialog.setOriginalColors(m_concreteSetting.colors);
+	dialog.setMinMax(m_concreteSetting.getMinValue(), m_concreteSetting.getMaxValue());
+	int ret = dialog.exec();
+
+	if (ret == QDialog::Rejected) {return;}
+
+	m_concreteSetting.autoValueRange = false;
+	m_concreteSetting.minValue = dialog.minValue();
+	m_concreteSetting.maxValue = dialog.maxValue();
+	m_concreteSetting.colorTableMinValue = 0;
+	m_concreteSetting.colors = dialog.newColors();
+	m_concreteSetting.valueMode = ColorMapSettingContainer::ValueMode::Relative;
+	m_concreteSetting.transitionMode = ColorMapSettingContainer::TransitionMode::Continuous;
+
+	applySettingOtherThanLegend();
+}
+
 void ColorMapSettingEditWidget::switchAutoValueRange(bool automatic)
 {
 	if (m_applying) {return;}
@@ -444,6 +466,8 @@ void ColorMapSettingEditWidget::applySettingOtherThanLegend()
 	ui->fillLowerCheckBox->setChecked(s.fillLower);
 
 	m_colorTableController->applyToTable();
+
+	ui->numColorsButton->setEnabled(s.transitionMode == ColorMapSettingContainer::TransitionMode::Continuous);
 
 	updateSwitchButtonText();
 	updateLegendNumberOfLabels();

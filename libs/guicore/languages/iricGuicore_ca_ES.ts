@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -250,7 +252,7 @@
     </message>
     <message>
         <source>In file %1, x-coordinate increment per pixel and y-coordinate increment per pixel mismatches. It is acceptable, but it may be wrong.</source>
-        <translation type="vanished">Arxivat %1, l'increment de coordenades X per píxel i l'increment de coordenades Y per píxel. És acceptable, però pot estar malament.</translation>
+        <translation type="vanished">Arxivat %1, l&apos;increment de coordenades X per píxel i l&apos;increment de coordenades Y per píxel. És acceptable, però pot estar malament.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -277,7 +279,7 @@
     </message>
     <message>
         <source>Specify bottom-left vertex position, scale, and rotate angle</source>
-        <translation>Especifiqueu la posició, l'escala i l'angle de gir del vèrtex inferior esquerre</translation>
+        <translation>Especifiqueu la posició, l&apos;escala i l&apos;angle de gir del vèrtex inferior esquerre</translation>
     </message>
     <message>
         <source>Specify bottom-left and bottom-right vertex positions</source>
@@ -309,11 +311,11 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the distance in meters that corresponds to the width of one pixel of the image.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu la distància en metres que correspon a l'amplada d'un píxel de la imatge. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu la distància en metres que correspon a l&apos;amplada d&apos;un píxel de la imatge. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specify the angle of image bottom edge against X-axis.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu l'angle de la vora inferior de la imatge contra l'eix X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Especifiqueu l&apos;angle de la vora inferior de la imatge contra l&apos;eix X. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -382,7 +384,7 @@
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Color</source>
@@ -482,7 +484,7 @@
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">S'ha produït un error en carregar %1 Error d'anàlisi %2 a les %3, columna %4</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar %1 Error d&apos;anàlisi %2 a les %3, columna %4</translation>
     </message>
     <message>
         <source>Error</source>
@@ -494,7 +496,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir %1</translation>
+        <translation>S&apos;ha produït un error en obrir %1</translation>
     </message>
     <message>
         <source>Value</source>
@@ -525,7 +527,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>S'ha produït un error en importar la configuració de %1.</translation>
+        <translation>S&apos;ha produït un error en importar la configuració de %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
@@ -580,7 +582,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Color</source>
@@ -674,7 +676,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -714,7 +716,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of labels:</source>
-        <translation>Nombre d'etiquetes:</translation>
+        <translation>Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Auto</source>
@@ -860,7 +862,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while opening %1</source>
-        <translation>S'ha produït un error en obrir %1</translation>
+        <translation>S&apos;ha produït un error en obrir %1</translation>
     </message>
     <message>
         <source>Error</source>
@@ -869,11 +871,11 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Error occured while loading %1
 Parse error %2 at %3, column %4</source>
-        <translation type="vanished">S'ha produït un error en carregar %1 Error d'anàlisi %2 a les %3, columna %4</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar %1 Error d&apos;anàlisi %2 a les %3, columna %4</translation>
     </message>
     <message>
         <source>(Please select item to apply)</source>
-        <translation type="vanished">(Seleccioneu l'element que voleu aplicar)</translation>
+        <translation type="vanished">(Seleccioneu l&apos;element que voleu aplicar)</translation>
     </message>
     <message>
         <source>Switch to Discrete Mode</source>
@@ -909,15 +911,27 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>When switching to Gradation Mode, the values are set to the middle value of each sections.</source>
-        <translation type="vanished">Quan es canvia al mode de gradació, els valors s'estableixen al valor mitjà de cada secció.</translation>
+        <translation type="vanished">Quan es canvia al mode de gradació, els valors s&apos;estableixen al valor mitjà de cada secció.</translation>
     </message>
     <message>
         <source>&amp;Reverse colors</source>
-        <translation>Colors al revés (&amp;R)</translation>
+        <translation type="vanished">Colors al revés (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal division</source>
-        <translation>Divisió igualitària (&amp;E)</translation>
+        <translation type="vanished">Divisió igualitària (&amp;E)</translation>
+    </message>
+    <message>
+        <source>&amp;Reverse Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Equal Division</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change Num. Colors</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -932,7 +946,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Error occured while importing setting from %1.</source>
-        <translation>S'ha produït un error en importar la configuració de %1.</translation>
+        <translation>S&apos;ha produït un error en importar la configuració de %1.</translation>
     </message>
     <message>
         <source>Public (%1)</source>
@@ -956,6 +970,37 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>&amp;Export</source>
         <translation>Exporta (&amp;E)</translation>
+    </message>
+</context>
+<context>
+    <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
+    <message>
+        <source>Change the Number of Colors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of colors:</source>
+        <translation type="unfinished">Nombre de colors:</translation>
+    </message>
+    <message>
+        <source>Value Range</source>
+        <translation type="unfinished">Interval de valors</translation>
+    </message>
+    <message>
+        <source>Max:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Min:</source>
+        <translation type="unfinished">Min:</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Opcions</translation>
+    </message>
+    <message>
+        <source>Value decimal places:</source>
+        <translation type="unfinished">Valor decimals:</translation>
     </message>
 </context>
 <context>
@@ -1002,7 +1047,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation>Visualització d'etiquetes</translation>
+        <translation>Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Format</source>
@@ -1010,7 +1055,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Number of labels</source>
-        <translation>Nombre d'etiquetes</translation>
+        <translation>Nombre d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Color</source>
@@ -1279,7 +1324,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Background edit value</source>
-        <translation>Valor d'edició de fons</translation>
+        <translation>Valor d&apos;edició de fons</translation>
     </message>
 </context>
 <context>
@@ -1316,7 +1361,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>No point is selected.</source>
-        <translation>No s'ha seleccionat cap punt.</translation>
+        <translation>No s&apos;ha seleccionat cap punt.</translation>
     </message>
     <message>
         <source>No point can be further deleted.</source>
@@ -1346,7 +1391,7 @@ Parse error %2 at %3, column %4</source>
     <name>GraphicsWindowDataModel</name>
     <message>
         <source>Operation ToolBar</source>
-        <translation>Barra d'eines d'operació</translation>
+        <translation>Barra d&apos;eines d&apos;operació</translation>
     </message>
 </context>
 <context>
@@ -1577,8 +1622,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Color:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota: només podeu utilitzar caràcters ASCII per al nom.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota: només podeu utilitzar caràcters ASCII per al nom.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1627,7 +1672,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Distance from left</source>
-        <translation>Distància des de l'esquerra</translation>
+        <translation>Distància des de l&apos;esquerra</translation>
     </message>
     <message>
         <source>Distance from right</source>
@@ -1681,20 +1726,20 @@ Parse error %2 at %3, column %4</source>
     <name>InputConditionContainerSet</name>
     <message>
         <source>Definition node is not stored</source>
-        <translation>El node de definició no s'emmagatzema</translation>
+        <translation>El node de definició no s&apos;emmagatzema</translation>
     </message>
     <message>
-        <source>Wrong valueType "%1" is set.</source>
-        <translation>Tipus de valor incorrecte "%1"està definit.</translation>
+        <source>Wrong valueType &quot;%1&quot; is set.</source>
+        <translation>Tipus de valor incorrecte &quot;%1&quot;està definit.</translation>
     </message>
     <message>
-        <source>Wrong conditionType "%1"is set.</source>
-        <translation>Tipus de condició incorrecte "%1"està definit.</translation>
+        <source>Wrong conditionType &quot;%1&quot;is set.</source>
+        <translation>Tipus de condició incorrecte &quot;%1&quot;està definit.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>S'ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
+        <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1753,15 +1798,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while saving.</source>
-        <translation>S'ha produït un error en desar.</translation>
+        <translation>S&apos;ha produït un error en desar.</translation>
     </message>
     <message>
         <source>Opening the CGNS file failed.</source>
-        <translation>No s'ha pogut obrir el fitxer CGNS.</translation>
+        <translation>No s&apos;ha pogut obrir el fitxer CGNS.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for "Item" element</source>
-        <translation>L'atribut name no està definit per a l'element "Item".</translation>
+        <source>name attribute is not defined for &quot;Item&quot; element</source>
+        <translation>L&apos;atribut name no està definit per a l&apos;element &quot;Item&quot;.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -1929,7 +1974,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -1941,7 +1986,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 are values for spans. For example value input at 2nd row is for span between 1st row and 2nd row.</source>
-        <translation>%1 són valors per a abastos. Per exemple, l'entrada de valor a la segona fila és per a un interval entre la primera fila i la segona fila.</translation>
+        <translation>%1 són valors per a abastos. Per exemple, l&apos;entrada de valor a la segona fila és per a un interval entre la primera fila i la segona fila.</translation>
     </message>
     <message>
         <source>Choose a text file</source>
@@ -1969,16 +2014,16 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File %1 is updated after imported to calculation condition %2. Do you want to import the updated file?</source>
-        <translation>Dossier %1 s'actualitza després d'importar-se a la condició de càlcul %2. Voleu importar el fitxer actualitzat?</translation>
+        <translation>Dossier %1 s&apos;actualitza després d&apos;importar-se a la condició de càlcul %2. Voleu importar el fitxer actualitzat?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
-        <translation>Podeu copiar i enganxar els valors amb la drecera "Ctrl + C" i "Ctrl + V"</translation>
+        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <translation>Podeu copiar i enganxar els valors amb la drecera &quot;Ctrl + C&quot; i &quot;Ctrl + V&quot;</translation>
     </message>
     <message>
         <source>The following problems found: 
 </source>
-        <translation>S'han trobat els problemes següents:</translation>
+        <translation>S&apos;han trobat els problemes següents:</translation>
     </message>
     <message>
         <source>
@@ -2002,7 +2047,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Start Date:</source>
-        <translation>Data d'inici:</translation>
+        <translation>Data d&apos;inici:</translation>
     </message>
     <message>
         <source>End Date:</source>
@@ -2026,7 +2071,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Start date not prior to end date.</source>
-        <translation>Data d'inici no anterior a la data de finalització.</translation>
+        <translation>Data d&apos;inici no anterior a la data de finalització.</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -2042,7 +2087,7 @@ Do you really want to import this file?</source>
     <message>
         <source>Error occured while loading solver definition file.
 %1: %2</source>
-        <translation>S'ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
+        <translation>S&apos;ha produït un error en carregar el fitxer de definició del solucionador. %1 : %2</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2061,7 +2106,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The content in the text area is overwritten with the template</source>
-        <translation>El contingut de l'àrea de text es sobreescriu amb la plantilla</translation>
+        <translation>El contingut de l&apos;àrea de text es sobreescriu amb la plantilla</translation>
     </message>
 </context>
 <context>
@@ -2107,15 +2152,15 @@ Do you really want to import this file?</source>
     <name>MeasuredData</name>
     <message>
         <source>Importing Measured Data...</source>
-        <translation>S'estan important dades mesurades...</translation>
+        <translation>S&apos;estan important dades mesurades...</translation>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
-        <source>The first two columns must be "X" and "Y".</source>
-        <translation>Les dues primeres columnes han de ser "X" i "Y".</translation>
+        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <translation>Les dues primeres columnes han de ser &quot;X&quot; i &quot;Y&quot;.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2123,7 +2168,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Wrong data found: %1</source>
-        <translation>S'han trobat dades incorrectes: %1</translation>
+        <translation>S&apos;han trobat dades incorrectes: %1</translation>
     </message>
 </context>
 <context>
@@ -2207,18 +2252,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation>S&apos;ha produït un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>S'està comprovant l'argument de %1 fracassat. Arguments no vàlids: %2.</translation>
+        <translation>S&apos;està comprovant l&apos;argument de %1 fracassat. Arguments no vàlids: %2.</translation>
     </message>
 </context>
 <context>
     <name>PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edita la variable de resultat de l'operació simple</translation>
+        <translation>Edita la variable de resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
@@ -2238,7 +2283,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>El nom de la variable no s'introdueix.</translation>
+        <translation>El nom de la variable no s&apos;introdueix.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
@@ -2249,7 +2294,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edita el resultat de l'operació simple</translation>
+        <translation>Edita el resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2261,7 +2306,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul de l'entrada</translation>
+        <translation>Resultats del càlcul de l&apos;entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2276,8 +2321,8 @@ Do you really want to import this file?</source>
         <translation>Definició de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2285,7 +2330,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d'error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu provar la definició fent clic aquí. Si es produeix un error en analitzar la definició, es mostrarà el missatge d&apos;error. Quan la definició s’analitza correctament, el valor calculat mitjançant el valor &amp; quot; Valor per a testingquot; per a cada entrada es mostra. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2321,7 +2366,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>El nom no s'introdueix.</translation>
+        <translation>El nom no s&apos;introdueix.</translation>
     </message>
     <message>
         <source>This name is already used</source>
@@ -2336,7 +2381,7 @@ Do you really want to import this file?</source>
     <name>PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Llista de resultats d'operacions simples</translation>
+        <translation>Llista de resultats d&apos;operacions simples</translation>
     </message>
     <message>
         <source>Name</source>
@@ -2355,8 +2400,8 @@ Do you really want to import this file?</source>
         <translation>A baix (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Nota &lt;/span&gt;: l'ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Nota &lt;/span&gt;: l&apos;ordre de la llista és important. A la definició, podeu utilitzar el valor dels càlculs d’operacions simples com a variable, que apareix anteriorment a la llista. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2467,7 +2512,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min</source>
-        <translation>M'hi apunto</translation>
+        <translation>M&apos;hi apunto</translation>
     </message>
     <message>
         <source>I Max</source>
@@ -2522,7 +2567,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
 </context>
 <context>
@@ -2533,7 +2578,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation>S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation>S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2541,7 +2586,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Loading calculation result for visualization failed. Please try again later, or wait until end of calculation.</source>
-        <translation>No s'ha pogut carregar el resultat del càlcul de la visualització. Torneu-ho a provar més tard o espereu fins al final del càlcul.</translation>
+        <translation>No s&apos;ha pogut carregar el resultat del càlcul de la visualització. Torneu-ho a provar més tard o espereu fins al final del càlcul.</translation>
     </message>
     <message>
         <source>No calculation result exists.</source>
@@ -2557,23 +2602,23 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving calculation result as VTK files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers VTK...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers VTK...</translation>
     </message>
     <message>
         <source>Saving calculation result as CSV files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers CSV...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers CSV...</translation>
     </message>
     <message>
         <source>Saving calculation result as ESRI Shapefiles...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers de format ESRI...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers de format ESRI...</translation>
     </message>
     <message>
         <source>Error occured while saving %1</source>
-        <translation>S'ha produït un error en desar %1</translation>
+        <translation>S&apos;ha produït un error en desar %1</translation>
     </message>
     <message>
         <source>Saving calculation result as TPO files...</source>
-        <translation>S'està desant el resultat del càlcul com a fitxers TPO...</translation>
+        <translation>S&apos;està desant el resultat del càlcul com a fitxers TPO...</translation>
     </message>
     <message>
         <source>Reading time values...</source>
@@ -2592,7 +2637,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation>S&apos;ha produït un error: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2600,14 +2645,14 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I, J, K, index for label is reset because the grid size is changed.</source>
-        <translation>I, J, K, es restableix l'índex de l'etiqueta perquè s'ha canviat la mida de la quadrícula.</translation>
+        <translation>I, J, K, es restableix l&apos;índex de l&apos;etiqueta perquè s&apos;ha canviat la mida de la quadrícula.</translation>
     </message>
 </context>
 <context>
     <name>PostStringResultArgumentEditDialog</name>
     <message>
         <source>Edit String Result Argument</source>
-        <translation>Edita l'argument del resultat de la cadena</translation>
+        <translation>Edita l&apos;argument del resultat de la cadena</translation>
     </message>
     <message>
         <source>Position:</source>
@@ -2678,7 +2723,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul de l'entrada</translation>
+        <translation>Resultats del càlcul de l&apos;entrada</translation>
     </message>
     <message>
         <source>Type</source>
@@ -2717,8 +2762,8 @@ Do you really want to import this file?</source>
         <translation>Definició de sortida</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Podeu definir la variable amb un llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; aquí &lt;/span&gt; &lt;/a&gt; per obtenir més informació. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2765,7 +2810,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading calculation result.</source>
-        <translation type="vanished">S'ha produït un error en carregar el resultat del càlcul.</translation>
+        <translation type="vanished">S&apos;ha produït un error en carregar el resultat del càlcul.</translation>
     </message>
 </context>
 <context>
@@ -2808,11 +2853,11 @@ Do you really want to import this file?</source>
     <name>ProjectData</name>
     <message>
         <source>Loading project file...</source>
-        <translation>S'està carregant el fitxer del projecte...</translation>
+        <translation>S&apos;està carregant el fitxer del projecte...</translation>
     </message>
     <message>
         <source>Saving project file...</source>
-        <translation>S'està desant el fitxer del projecte...</translation>
+        <translation>S&apos;està desant el fitxer del projecte...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2820,7 +2865,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Could not overwrite %1.</source>
-        <translation>No s'ha pogut sobreescriure %1.</translation>
+        <translation>No s&apos;ha pogut sobreescriure %1.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2828,15 +2873,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Saving project...</source>
-        <translation>S'està desant el projecte...</translation>
+        <translation>S&apos;està desant el projecte...</translation>
     </message>
     <message>
         <source>Opening project...</source>
-        <translation>S'està obrint el projecte...</translation>
+        <translation>S&apos;està obrint el projecte...</translation>
     </message>
     <message>
         <source>Elevation grid attribute is not defined for grid type %1. Grid I/O functions, grid creating functions may not work correctly for these grid types.</source>
-        <translation type="vanished">L'atribut de quadrícula d'elevació no està definit per al tipus de quadrícula %1. Funcions d'E / S de quadrícula, és possible que les funcions de creació de quadrícules no funcionin correctament per a aquests tipus de quadrícules.</translation>
+        <translation type="vanished">L&apos;atribut de quadrícula d&apos;elevació no està definit per al tipus de quadrícula %1. Funcions d&apos;E / S de quadrícula, és possible que les funcions de creació de quadrícules no funcionin correctament per a aquests tipus de quadrícules.</translation>
     </message>
 </context>
 <context>
@@ -2863,11 +2908,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Exporting CGNS file failed. Specified file is locked by other process.</source>
-        <translation type="vanished">No s'ha pogut exportar el fitxer CGNS. Un altre procés bloqueja el fitxer especificat.</translation>
+        <translation type="vanished">No s&apos;ha pogut exportar el fitxer CGNS. Un altre procés bloqueja el fitxer especificat.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : %1</source>
-        <translation type="vanished">S'ha produït un error en obrir el fitxer CGNS al fitxer del projecte: %1</translation>
+        <translation type="vanished">S&apos;ha produït un error en obrir el fitxer CGNS al fitxer del projecte: %1</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -2875,7 +2920,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>%1 Saving project file failed.</source>
-        <translation type="vanished">%1 No s'ha pogut desar el fitxer del projecte.</translation>
+        <translation type="vanished">%1 No s&apos;ha pogut desar el fitxer del projecte.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif)</source>
@@ -2891,11 +2936,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>The background image was not added. Please try again.</source>
-        <translation>La imatge de fons no s'ha afegit. Siusplau torna-ho a provar.</translation>
+        <translation>La imatge de fons no s&apos;ha afegit. Siusplau torna-ho a provar.</translation>
     </message>
     <message>
         <source>Invalid image file is specified.</source>
-        <translation>S'ha especificat un fitxer d'imatge no vàlid.</translation>
+        <translation>S&apos;ha especificat un fitxer d&apos;imatge no vàlid.</translation>
     </message>
     <message>
         <source>This project file cannot be read, because it was created by too old iRIC (version %1).</source>
@@ -2915,11 +2960,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while loading %1.</source>
-        <translation>S'ha produït un error en carregar %1.</translation>
+        <translation>S&apos;ha produït un error en carregar %1.</translation>
     </message>
     <message>
         <source>This file is for solver %1 %2. It is not compatible with the solver you are using, so maybe importing this file will fail. Do you really want to import this file?</source>
-        <translation type="vanished">Aquest fitxer és per al solucionador %1 %2. No és compatible amb el solucionador que utilitzeu, de manera que potser fallarà la importació d'aquest fitxer. Confirmes que vols importar aquest fitxer?</translation>
+        <translation type="vanished">Aquest fitxer és per al solucionador %1 %2. No és compatible amb el solucionador que utilitzeu, de manera que potser fallarà la importació d&apos;aquest fitxer. Confirmes que vols importar aquest fitxer?</translation>
     </message>
     <message>
         <source>There is no visualization/graph windows.</source>
@@ -2927,15 +2972,15 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>File %1 could not be opened.</source>
-        <translation>Dossier %1 no s'ha pogut obrir.</translation>
+        <translation>Dossier %1 no s&apos;ha pogut obrir.</translation>
     </message>
     <message>
         <source>Coordinate system not selected.</source>
-        <translation>No s'ha seleccionat el sistema de coordenades.</translation>
+        <translation>No s&apos;ha seleccionat el sistema de coordenades.</translation>
     </message>
     <message>
         <source>Error occured while opening CGNS file in project file : Case1.cgn</source>
-        <translation>S'ha produït un error en obrir el fitxer CGNS al fitxer del projecte: Case1.cgn</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer CGNS al fitxer del projecte: Case1.cgn</translation>
     </message>
     <message>
         <source>Copying image %1 to %2 failed.</source>
@@ -2943,11 +2988,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured while opening %1. iRIC tries to salvage data from %2.</source>
-        <translation type="vanished">S'ha produït un error en obrir %1. iRIC intenta recuperar dades de %2.</translation>
+        <translation type="vanished">S&apos;ha produït un error en obrir %1. iRIC intenta recuperar dades de %2.</translation>
     </message>
     <message>
         <source>Error occured while opening %1.</source>
-        <translation>S'ha produït un error en obrir %1.</translation>
+        <translation>S&apos;ha produït un error en obrir %1.</translation>
     </message>
     <message>
         <source>All images(*.jpg *.jpeg *.png *.tif *.tiff);;Jpeg images(*.jpg *.jpeg);;PNG images(*.png);;TIFF images(*.tif *.tiff)</source>
@@ -2973,7 +3018,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Select export target windows</source>
-        <translation>Seleccioneu les finestres de destinació d'exportació</translation>
+        <translation>Seleccioneu les finestres de destinació d&apos;exportació</translation>
     </message>
 </context>
 <context>
@@ -3002,8 +3047,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Espai de treball "%1"té %2 carpetes de projectes que sembla que ja no s’utilitzen. Voleu eliminar-los?</translation>
+        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Espai de treball &quot;%1&quot;té %2 carpetes de projectes que sembla que ja no s’utilitzen. Voleu eliminar-los?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3061,7 +3106,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Attribute Name</source>
-        <translation>Nom de l'atribut</translation>
+        <translation>Nom de l&apos;atribut</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3091,7 +3136,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Note: The size you input is for the area saved to screenshots. The area of the Object Browser etc. are not included.</source>
-        <translation>Nota: la mida que introduïu és per a l'àrea desada a les captures de pantalla. L'àrea del navegador d'objectes, etc. no s'inclou.</translation>
+        <translation>Nota: la mida que introduïu és per a l&apos;àrea desada a les captures de pantalla. L&apos;àrea del navegador d&apos;objectes, etc. no s&apos;inclou.</translation>
     </message>
     <message>
         <source>Mode</source>
@@ -3118,11 +3163,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Move down item</source>
-        <translation>Mou l'element cap avall</translation>
+        <translation>Mou l&apos;element cap avall</translation>
     </message>
     <message>
         <source>Move up item</source>
-        <translation>Mou l'element cap amunt</translation>
+        <translation>Mou l&apos;element cap amunt</translation>
     </message>
     <message>
         <source>Arbitrary Move</source>
@@ -3165,7 +3210,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation type="vanished">M'hi apunto:</translation>
+        <translation type="vanished">M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -3188,7 +3233,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation>M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
@@ -3235,11 +3280,11 @@ Do you really want to import this file?</source>
     <name>Structured2DGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation type="vanished">Una línia de vora es creua amb la d'una altra cel·la d'aquesta quadrícula.</translation>
+        <translation type="vanished">Una línia de vora es creua amb la d&apos;una altra cel·la d&apos;aquesta quadrícula.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation type="vanished">La relació d'aspecte de la cel·la de quadrícula supera el valor límit %1 en més d’una cel·la.</translation>
+        <translation type="vanished">La relació d&apos;aspecte de la cel·la de quadrícula supera el valor límit %1 en més d’una cel·la.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
@@ -3259,11 +3304,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation type="vanished">* Cel·les en què la relació d'aspecte de les vores de la cel·la supera %1</translation>
+        <translation type="vanished">* Cel·les en què la relació d&apos;aspecte de les vores de la cel·la supera %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation type="vanished">I, J, Relació d'aspecte</translation>
+        <translation type="vanished">I, J, Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Edge length too small</source>
@@ -3271,7 +3316,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation type="vanished">* Cèl·lules on l'angle del vèrtex cel·lular és inferior %1</translation>
+        <translation type="vanished">* Cèl·lules on l&apos;angle del vèrtex cel·lular és inferior %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>
@@ -3392,7 +3437,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Background Image change</source>
-        <translation>Canvi d'imatge de fons</translation>
+        <translation>Canvi d&apos;imatge de fons</translation>
     </message>
 </context>
 <context>
@@ -3507,7 +3552,7 @@ Do you really want to import this file?</source>
     <name>VtkGraphicsViewScaleWidget_ScaleEditDialog</name>
     <message>
         <source>Edit Scale</source>
-        <translation>Edita l'escala</translation>
+        <translation>Edita l&apos;escala</translation>
     </message>
     <message>
         <source>Please input new scale</source>
@@ -3522,7 +3567,7 @@ Do you really want to import this file?</source>
     <name>iRICMetaData</name>
     <message>
         <source>Build number of the version number is not specified.</source>
-        <translation>No s'especifica el número de compilació del número de versió.</translation>
+        <translation>No s&apos;especifica el número de compilació del número de versió.</translation>
     </message>
 </context>
 <context>
@@ -3533,18 +3578,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Error occured: %1</source>
-        <translation>S'ha produït un error: %1</translation>
+        <translation>S&apos;ha produït un error: %1</translation>
     </message>
     <message>
         <source>Checking argument for %1 failed. Invalid arguments: %2.</source>
-        <translation>Comprovació de l'argument %1 fracassat. Arguments no vàlids: %2.</translation>
+        <translation>Comprovació de l&apos;argument %1 fracassat. Arguments no vàlids: %2.</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultArgumentEditDialog</name>
     <message>
         <source>Edit Simple Operation Result Variable</source>
-        <translation>Edita la variable de resultat de l'operació simple</translation>
+        <translation>Edita la variable de resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Calculation Result:</source>
@@ -3564,18 +3609,18 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Variable name is not input.</source>
-        <translation>No s'introdueix el nom de la variable.</translation>
+        <translation>No s&apos;introdueix el nom de la variable.</translation>
     </message>
     <message>
         <source>This variable name is already used</source>
-        <translation>Aquest nom de variable ja s'utilitza</translation>
+        <translation>Aquest nom de variable ja s&apos;utilitza</translation>
     </message>
 </context>
 <context>
     <name>v4PostCalculatedResultEditDialog</name>
     <message>
         <source>Edit Simple Operation Result</source>
-        <translation>Edita el resultat de l'operació simple</translation>
+        <translation>Edita el resultat de l&apos;operació simple</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3587,7 +3632,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Calculation results for input</source>
-        <translation>Resultats del càlcul per a l'entrada</translation>
+        <translation>Resultats del càlcul per a l&apos;entrada</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -3602,8 +3647,8 @@ Do you really want to import this file?</source>
         <translation>Definició de variable</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu definir la variable amb llenguatge JavaScript. Consulteu &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -decoració: subratllat; color:#0000ff;"&gt;aquí&lt;/span&gt;&lt;/a&gt; per obtenir més detalls.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu definir la variable amb llenguatge JavaScript. Consulteu &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -decoració: subratllat; color:#0000ff;&quot;&gt;aquí&lt;/span&gt;&lt;/a&gt; per obtenir més detalls.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3611,7 +3656,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu provar la definició fent clic a això. Si es produeix un error en analitzar la definició, es mostra el missatge d'error. Quan la definició s'analitza correctament, el valor es calcula mitjançant el &amp;quot;Valor per a la provaquot; per a cada entrada es mostra.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Podeu provar la definició fent clic a això. Si es produeix un error en analitzar la definició, es mostra el missatge d&apos;error. Quan la definició s&apos;analitza correctament, el valor es calcula mitjançant el &amp;quot;Valor per a la provaquot; per a cada entrada es mostra.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3659,11 +3704,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Name is not input.</source>
-        <translation>El nom no s'introdueix.</translation>
+        <translation>El nom no s&apos;introdueix.</translation>
     </message>
     <message>
         <source>This name is already used</source>
-        <translation>Aquest nom ja s'utilitza</translation>
+        <translation>Aquest nom ja s&apos;utilitza</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -3674,7 +3719,7 @@ Do you really want to import this file?</source>
     <name>v4PostCalculatedResultListDialog</name>
     <message>
         <source>Simple Operation Result List</source>
-        <translation>Llista de resultats d'operacions simples</translation>
+        <translation>Llista de resultats d&apos;operacions simples</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3693,8 +3738,8 @@ Do you really want to import this file?</source>
         <translation>Avall (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota&lt;/span&gt;: l'ordre a la llista és important. A la definició, podeu utilitzar el valor dels càlculs d'operacions simples com a variable, que apareix abans a la llista.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota&lt;/span&gt;: l&apos;ordre a la llista és important. A la definició, podeu utilitzar el valor dels càlculs d&apos;operacions simples com a variable, que apareix abans a la llista.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -3760,19 +3805,19 @@ Do you really want to import this file?</source>
     <name>v4Structured2dGrid</name>
     <message>
         <source>An edge line intersects with that of another cell in this grid.</source>
-        <translation>Una línia de vora es talla amb la d'una altra cel·la d'aquesta quadrícula.</translation>
+        <translation>Una línia de vora es talla amb la d&apos;una altra cel·la d&apos;aquesta quadrícula.</translation>
     </message>
     <message>
         <source>Aspect ratio of grid cell exceed limit value %1 in more than one cell.</source>
-        <translation>La relació d'aspecte de la cel·la de la quadrícula supera el valor límit %1 en més d'una cel·la.</translation>
+        <translation>La relació d&apos;aspecte de la cel·la de la quadrícula supera el valor límit %1 en més d&apos;una cel·la.</translation>
     </message>
     <message>
         <source>Variation of grid cell edge lengths exceed limit values (I-direction: %1, J-direction: %2) in more than one cell.</source>
-        <translation>La variació de les longituds de les vores de les cel·les de la quadrícula supera els valors límit (direcció I: %1, direcció J: %2 ) en més d'una cel·la.</translation>
+        <translation>La variació de les longituds de les vores de les cel·les de la quadrícula supera els valors límit (direcció I: %1, direcció J: %2 ) en més d&apos;una cel·la.</translation>
     </message>
     <message>
         <source>Angle of grid cell edge fall below limit value %1 in more than one cell.</source>
-        <translation>L'angle de la vora de la cel·la de la quadrícula cau per sota del valor límit %1 en més d'una cel·la.</translation>
+        <translation>L&apos;angle de la vora de la cel·la de la quadrícula cau per sota del valor límit %1 en més d&apos;una cel·la.</translation>
     </message>
     <message>
         <source>* Cells where edges intersect</source>
@@ -3784,11 +3829,11 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where aspect ratio of cell edges exceed %1</source>
-        <translation>* Cel·les on la relació d'aspecte de les vores de la cel·la supera %1</translation>
+        <translation>* Cel·les on la relació d&apos;aspecte de les vores de la cel·la supera %1</translation>
     </message>
     <message>
         <source>I, J, Aspect ratio</source>
-        <translation>I, J, Relació d'aspecte</translation>
+        <translation>I, J, Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Edge length too small</source>
@@ -3796,7 +3841,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>* Cells where angle of cell vertex is below %1</source>
-        <translation>* Cel·les on l'angle del vèrtex de la cel·la està per sota %1</translation>
+        <translation>* Cel·les on l&apos;angle del vèrtex de la cel·la està per sota %1</translation>
     </message>
     <message>
         <source>I, J, Angle</source>

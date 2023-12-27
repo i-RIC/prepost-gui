@@ -186,14 +186,21 @@
               <item>
                <widget class="QPushButton" name="reverseButton">
                 <property name="text">
-                 <string>&amp;Reverse colors</string>
+                 <string>&amp;Reverse Colors</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QPushButton" name="equalDevisionButton">
                 <property name="text">
-                 <string>&amp;Equal division</string>
+                 <string>&amp;Equal Division</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="numColorsButton">
+                <property name="text">
+                 <string>Change Num. Colors</string>
                 </property>
                </widget>
               </item>
