@@ -57,6 +57,7 @@ public:
 
 	BoolContainer autoNumberOfLabels;
 	IntContainer numberOfLabels;
+	IntContainer labelSkipRate;
 
 	StringContainer labelFormat;
 

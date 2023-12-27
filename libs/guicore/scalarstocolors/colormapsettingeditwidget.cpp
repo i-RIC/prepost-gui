@@ -110,7 +110,7 @@ ColorMapSettingContainer ColorMapSettingEditWidget::concreteSetting() const
 void ColorMapSettingEditWidget::setConcreteSetting(const ColorMapSettingContainer& setting)
 {
 	m_concreteSetting = setting;
-	m_concreteSetting.legend.copyWithColorMap(setting.legend);
+	m_concreteSetting.legend.copyValue(setting.legend);
 
 	applySettingOtherThanLegend();
 	ui->legendWidget->setSetting(m_concreteSetting.legend);
@@ -504,6 +504,7 @@ void ColorMapSettingEditWidget::switchTransitionModeToContinuous()
 	m_concreteSetting.colors = newColors;
 
 	applySettingOtherThanLegend();
+	ui->legendWidget->updateLabelNumberWidgetVisibility();
 }
 
 void ColorMapSettingEditWidget::switchTransitionModeToDiscrete()
@@ -524,6 +525,7 @@ void ColorMapSettingEditWidget::switchTransitionModeToDiscrete()
 	m_concreteSetting.transitionMode = ColorMapSettingContainer::TransitionMode::Discrete;
 
 	applySettingOtherThanLegend();
+	ui->legendWidget->updateLabelNumberWidgetVisibility();
 }
 
 void ColorMapSettingEditWidget::normalizeColors()
