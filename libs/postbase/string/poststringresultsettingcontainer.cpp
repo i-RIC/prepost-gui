@@ -5,7 +5,7 @@
 
 PostStringResultSettingContainer::PostStringResultSettingContainer() :
 	CompositeContainer({&fontColor, &font, &backgroundColor, &imageSetting}),
-	script {"script"},
+	script {"script", "return \"\";"},
 	fontColor {"fontColor", Qt::black},
 	font {"font"},
 	backgroundColor {"backgroundColor", Qt::lightGray},
@@ -18,6 +18,8 @@ PostStringResultSettingContainer::PostStringResultSettingContainer() :
 	f.fromString(settings.value("fontsetting/vis_stringresult", QString("MS UI Gothic,9,-1,5,50,0,0,0,0,0")).toString());
 	font = f;
 
+	imageSetting.autoSize.setDefaultValue(true);
+	imageSetting.autoSize.setValue(true);
 	imageSetting.setImageBuilder(imageBuilder);
 }
 
