@@ -54,6 +54,10 @@ vtkPolyData* DirectionSettingContainer::buildDirectionPolygonData(vtkPointSet* d
 	linesPolyData->SetPoints(linesPoints);
 	int dims[3];
 	auto grid = vtkStructuredGrid::SafeDownCast(data);
+	if (grid == nullptr || dims[0] < 2 || dims[1] < 2) {
+		return vtkPolyData::New();
+	}
+
 	grid->GetDimensions(dims);
 	for (vtkIdType cellId = 0; cellId < data->GetNumberOfCells(); ++cellId) {
 		auto cell = data->GetCell(cellId);
