@@ -4,7 +4,7 @@
 #include "../guicore_global.h"
 #include "colormapfactoryi.h"
 
-class ColorMapEnumerateFactory : public ColorMapFactoryI
+class GUICOREDLL_EXPORT ColorMapEnumerateFactory : public ColorMapFactoryI
 {
 public:
 	ColorMapSettingContainerI* createSettingContainer() override;

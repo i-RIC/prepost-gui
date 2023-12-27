@@ -27,6 +27,7 @@
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
+#include <guicore/solverdef/solverdefinitiongridattribute.h>
 #include <misc/informationdialog.h>
 #include <misc/iricundostack.h>
 #include <misc/keyboardsupport.h>
@@ -155,6 +156,7 @@ GeoDataPolygon::~GeoDataPolygon()
 	}
 	clearHolePolygons();
 
+	actorCollection()->RemoveItem(impl->m_actor);
 	renderer()->RemoveActor(impl->m_actor);
 
 	delete impl;
@@ -1339,9 +1341,17 @@ void GeoDataPolygon::updateScalarValues()
 {
 	auto numPolys = impl->m_polyData->GetNumberOfPolys();
 	impl->m_scalarValues->Reset();
-	double doubleval = variantValue().toDouble();
+
+	double val = 0;
+	auto geoDataGroup = geoDataGroupDataItem();
+	if (geoDataGroup != nullptr) {
+		auto att = geoDataGroup->condition();
+		val = att->colorMapValue(variantValue()).toDouble();
+	} else {
+		val = variantValue().toDouble();
+	}
 	for (int i = 0; i < numPolys; ++i) {
-		impl->m_scalarValues->InsertNextValue(doubleval);
+		impl->m_scalarValues->InsertNextValue(val);
 	}
 	impl->m_scalarValues->Modified();
 	impl->m_regionPolygon->updateScalarValues();
@@ -1433,7 +1443,7 @@ void GeoDataPolygon::updatePolygon(GeoDataPolygon* polygon, vtkPoints* points, v
 
 	if (noDraw) {return;}
 
-	renderGraphics();
+	renderGraphicsView();
 }
 
 GeoDataProxy* GeoDataPolygon::getProxy()
@@ -1597,7 +1607,7 @@ void GeoDataPolygon::setupTriangleThread()
 	if (impl->m_triangleThread != nullptr) {return;}
 
 	impl->m_triangleThread = GeoDataPolygonTriangleThread::instance();
-	connect(impl->m_triangleThread, SIGNAL(shapeUpdated(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)), this, SLOT(updatePolygon(GeoDataPolygon*,vtkPoints*,vtkCellArray*,bool)));
+	connect(impl->m_triangleThread, &GeoDataPolygonTriangleThread::shapeUpdated, this, &GeoDataPolygon::updatePolygon);
 }
 
 GeoDataPolygonRegionPolygon* GeoDataPolygon::regionPolygon() const

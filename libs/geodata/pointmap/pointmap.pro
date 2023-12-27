@@ -187,7 +187,12 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition.h \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.h \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition_stringconverter.h \
+           private/geodatapointmap_polygonsmanager_geodatadataitem.h \
+           private/geodatapointmap_polygonsmanager_geodatagroupdataitem.h \
+           private/geodatapointmap_polygonsmanager_geodatatopdataitem.h \
+           private/geodatapointmap_polygonsmanager_gridtypedataitem.h \
            private/geodatapointmap_polygonsmanager_mappingsetting.h \
+           private/geodatapointmap_polygonsmanager_rootdataitem.h \
            private/geodatapointmap_polygonsnodemapper.h \
            private/geodatapointmap_templatecellmapper.h \
            private/geodatapointmap_templatenodemapper.h \
@@ -281,7 +286,12 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition.cpp \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition_editwidget.cpp \
            private/geodatapointmap_polygonsmanager_attributeformappingcondition_stringconverter.cpp \
+           private/geodatapointmap_polygonsmanager_geodatadataitem.cpp \
+           private/geodatapointmap_polygonsmanager_geodatagroupdataitem.cpp \
+           private/geodatapointmap_polygonsmanager_geodatatopdataitem.cpp \
+           private/geodatapointmap_polygonsmanager_gridtypedataitem.cpp \
            private/geodatapointmap_polygonsmanager_mappingsetting.cpp \
+           private/geodatapointmap_polygonsmanager_rootdataitem.cpp \
            private/geodatapointmap_polygonsnodemapper.cpp \
            private/geodatapointmap_templatecellmapper.cpp \
            private/geodatapointmap_templatenodemapper.cpp \

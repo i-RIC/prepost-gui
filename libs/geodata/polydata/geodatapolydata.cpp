@@ -106,7 +106,7 @@ void GeoDataPolyData::editValue()
 	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
 
 	auto dialog = m_gridAttribute->editDialog(preProcessorWindow());
-	PreProcessorGeoDataGroupDataItemInterface* i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto i = geoDataGroupDataItem();
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setLabel(tr("Please input new value in this %1.").arg(shapeName()));
 	i->setupEditWidget(dialog->widget());
@@ -129,7 +129,7 @@ void GeoDataPolyData::editNameAndValue()
 	if (m_gridAttribute && m_gridAttribute->isReferenceInformation()) {return;}
 
 	auto dialog = m_gridAttribute->editNameAndValueDialog(preProcessorWindow());
-	auto i = dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(parent()->parent());
+	auto i = geoDataGroupDataItem();
 	dialog->setWindowTitle(QString(tr("Edit %1 value")).arg(i->condition()->caption()));
 	dialog->setName(caption());
 	i->setupEditWidget(dialog->widget());

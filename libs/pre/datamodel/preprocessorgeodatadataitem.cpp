@@ -314,6 +314,11 @@ void PreProcessorGeoDataDataItem::doApplyOffset(double x, double y)
 	m_geoData->applyOffset(x, y);
 }
 
+void PreProcessorGeoDataDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
+{
+	m_geoData->handleResize(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+}
+
 void PreProcessorGeoDataDataItem::setDeleteSilently(bool silent)
 {
 	m_deleteSilently = silent;

@@ -49,6 +49,7 @@ public:
 	const std::string& name() const;
 	const std::string& englishCaption() const;
 	const QString& caption() const;
+	void setCaption(const QString& cap);
 	const QVariant& variantDefaultValue() const;
 	const QVariant& variantMaximumValue() const;
 	const QVariant& variantMinimumValue() const;
@@ -79,6 +80,7 @@ public:
 	virtual GridAttributeVariationEditWidget* variationEditWidget(QWidget* parent) = 0;
 
 	virtual GeoData* buildBackgroundGeoData(ProjectDataItem* parent) = 0;
+	virtual QVariant colorMapValue(const QVariant& value) const;
 
 	ColorMapSettingContainerI* createColorMapSettingContainer() const;
 	ColorMapLegendSettingContainerI* createColorMapLegendSettingContainer() const;

@@ -149,6 +149,9 @@ void GeoData::informDeselection(PreProcessorGraphicsViewInterface*)
 void GeoData::viewOperationEnded(PreProcessorGraphicsViewInterface*)
 {}
 
+void GeoData::handleResize(QResizeEvent*, PreProcessorGraphicsViewInterface*)
+{}
+
 void GeoData::keyPressEvent(QKeyEvent*, PreProcessorGraphicsViewInterface*)
 {}
 
@@ -252,7 +255,7 @@ PreProcessorGeoDataTopDataItemInterface* GeoData::geoDataTopDataItem() const
 
 PreProcessorGeoDataGroupDataItemInterface* GeoData::geoDataGroupDataItem() const
 {
-	return dynamic_cast<PreProcessorGeoDataGroupDataItemInterface*>(geoDataDataItem()->parent());
+	return geoDataDataItem()->groupDataItem();
 }
 
 PreProcessorGeoDataDataItemInterface* GeoData::geoDataDataItem() const

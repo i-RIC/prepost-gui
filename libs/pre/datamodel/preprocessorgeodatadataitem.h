@@ -67,6 +67,7 @@ protected:
 	void innerUpdate2Ds() override;
 	void doViewOperationEndedGlobal(VTKGraphicsView* v) override;
 	void doApplyOffset(double x, double y) override;
+	void doHandleResize(QResizeEvent* event, VTKGraphicsView* v) override;
 
 	GeoData* m_geoData;
 
