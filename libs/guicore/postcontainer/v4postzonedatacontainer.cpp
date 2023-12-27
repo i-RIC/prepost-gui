@@ -149,6 +149,27 @@ const std::vector<v4PostCalculatedResult*>& v4PostZoneDataContainer::calculatedR
 	return impl->m_calculatedResults;
 }
 
+std::vector<v4PostCalculatedResult*> v4PostZoneDataContainer::detachCalculatedResult()
+{
+	std::vector<v4PostCalculatedResult*> ret;
+
+	for (auto r : impl->m_calculatedResults) {
+		r->setParent(nullptr);
+		ret.push_back(r);
+	}
+	impl->m_calculatedResults.clear();
+
+	return ret;
+}
+
+void v4PostZoneDataContainer::attachCalculatedResult(std::vector<v4PostCalculatedResult*> results)
+{
+	for (auto r : results) {
+		r->setParent(this);
+		impl->m_calculatedResults.push_back(r);
+	}
+}
+
 void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	for (int i = 0; i < node.childNodes().size(); ++i) {
@@ -163,6 +184,8 @@ void v4PostZoneDataContainer::doLoadFromProjectMainFile(const QDomNode& node)
 
 void v4PostZoneDataContainer::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
+	writer.writeAttribute("name", impl->m_zoneName.c_str());
+
 	for (auto result : impl->m_calculatedResults) {
 		writer.writeStartElement("SimpleOperationResult");
 		result->saveToProjectMainFile(writer);

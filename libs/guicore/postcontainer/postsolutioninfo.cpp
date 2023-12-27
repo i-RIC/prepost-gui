@@ -55,7 +55,7 @@
 
 namespace {
 
-void writeZonesToProjectMainFile(int dim, const QList<PostZoneDataContainer*>& zones, QXmlStreamWriter& writer)
+void writeZonesToProjectMainFile(int dim, const std::vector<v4PostZoneDataContainer*>& zones, QXmlStreamWriter& writer)
 {
 	if (zones.size() == 0) {return;}
 
@@ -341,7 +341,7 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dim, QList<PostZoneDataC
 	return true;
 }
 
-bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<PostCalculatedResult*> > *calculatedResults)
+bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v4PostZoneDataContainer*>* containers, std::map<std::string, v4PostZoneDataContainer*>* containerNameMap, std::map<std::string, std::vector<v4PostCalculatedResult*> > *calculatedResults)
 {
 	auto file = cgnsFile()->solutionReader()->targetFile();
 
@@ -382,12 +382,9 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 	zoneNames = tmpZoneNames;
 
 	// clear the current zone containers first.
-	// @TODO handle calculated results
-	/*
 	for (auto c : *containers) {
-		results->insert(c->zoneName(), c->detachCalculatedResult());
+		calculatedResults->insert({c->zoneName(), c->detachCalculatedResult()});
 	}
-	*/
 
 	clearContainers(containers);
 	containerNameMap->clear();
@@ -427,20 +424,18 @@ bool PostSolutionInfo::innerSetupZoneDataContainers(int dimension, std::vector<v
 			containerNameMap->insert({zoneName, cont});
 		}
 	}
-	// @todo handle calculated result
-	/*
 	std::vector<std::string> namesToRemove;
-	for (auto it = results->begin(); it != results->end(); ++it) {
-		auto c = containerNameMap->value(it.key(), nullptr);
-		if (c != nullptr) {
-			c->attachCalculatedResult(it.value());
-			namesToRemove.push_back(it.key());
+	for (auto it = calculatedResults->begin(); it != calculatedResults->end(); ++it) {
+		auto it2 = containerNameMap->find(it->first);
+		if (it2 == containerNameMap->end()) {
+			it2->second->attachCalculatedResult(it->second);
+			namesToRemove.push_back(it->first);
 		}
 	}
 	for (auto name : namesToRemove) {
-		results->remove(name);
+		auto it = calculatedResults->find(name);
+		calculatedResults->erase(it);
 	}
-	*/
 	return true;
 }
 
@@ -505,15 +500,15 @@ void PostSolutionInfo::setupZoneDataContainers()
 
 	// setup 1D containers.
 	ret = innerSetupZoneDataContainers(1, &m_zoneContainers1D, &m_zoneContainerNameMap1D, &m_calculatedResults1D);
-	ret = innerSetupZoneDataContainers(1, &m_v4ZoneContainers1D, &m_v4ZoneContainerNameMap1D, &dummy);
+	ret = innerSetupZoneDataContainers(1, &m_v4ZoneContainers1D, &m_v4ZoneContainerNameMap1D, &m_v4CalculatedResults1D);
 	if (ret) {emit zoneList1DUpdated();}
 	// setup 2D containers;
 	ret = innerSetupZoneDataContainers(2, &m_zoneContainers2D, &m_zoneContainerNameMap2D, &m_calculatedResults2D);
-	ret = innerSetupZoneDataContainers(2, &m_v4ZoneContainers2D, &m_v4ZoneContainerNameMap2D, &dummy);
+	ret = innerSetupZoneDataContainers(2, &m_v4ZoneContainers2D, &m_v4ZoneContainerNameMap2D, &m_v4CalculatedResults2D);
 	if (ret) {emit zoneList2DUpdated();}
 	// setup 3D containers;
 	ret = innerSetupZoneDataContainers(3, &m_zoneContainers3D, &m_zoneContainerNameMap3D, &m_calculatedResults3D);
-	ret = innerSetupZoneDataContainers(3, &m_v4ZoneContainers3D, &m_v4ZoneContainerNameMap3D, &dummy);
+	ret = innerSetupZoneDataContainers(3, &m_v4ZoneContainers3D, &m_v4ZoneContainerNameMap3D, &m_v4CalculatedResults3D);
 	if (ret) {emit zoneList3DUpdated();}
 }
 
@@ -558,18 +553,19 @@ void PostSolutionInfo::loadCalculatedResult()
 	for (int i = 0; i < m_loadedElement->childNodes().size(); ++i) {
 		auto baseNode = m_loadedElement->childNodes().at(i);
 		int dim = iRIC::getIntAttribute(baseNode, "dimension");
-		QMap<std::string, PostZoneDataContainer*>* conts = nullptr;
-		if (dim == 1) {conts = &m_zoneContainerNameMap1D;}
-		if (dim == 2) {conts = &m_zoneContainerNameMap2D;}
-		if (dim == 3) {conts = &m_zoneContainerNameMap3D;}
+		std::map<std::string, v4PostZoneDataContainer*>* conts = nullptr;
+		if (dim == 1) {conts = &m_v4ZoneContainerNameMap1D;}
+		if (dim == 2) {conts = &m_v4ZoneContainerNameMap2D;}
+		if (dim == 3) {conts = &m_v4ZoneContainerNameMap3D;}
+
 		if (conts == nullptr) {continue;}
 
 		for (int j = 0; j < baseNode.childNodes().size(); ++j) {
 			auto zoneElem = baseNode.childNodes().at(j).toElement();
 			auto zoneName = iRIC::toStr(zoneElem.attribute("name"));
-			auto z = conts->value(zoneName, nullptr);
-			if (z == nullptr) {continue;}
-			z->loadFromProjectMainFile(zoneElem);
+			auto it = conts->find(zoneName);
+			if (it == conts->end()) {continue;}
+			it->second->loadFromProjectMainFile(zoneElem);
 		}
 	}
 
@@ -641,9 +637,9 @@ void PostSolutionInfo::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	cstep.setNum(m_currentStep);
 	writer.writeAttribute("currentStep", cstep);
 
-	writeZonesToProjectMainFile(1, zoneContainers1D(), writer);
-	writeZonesToProjectMainFile(2, zoneContainers2D(), writer);
-	writeZonesToProjectMainFile(3, zoneContainers3D(), writer);
+	writeZonesToProjectMainFile(1, v4ZoneContainers1D(), writer);
+	writeZonesToProjectMainFile(2, v4ZoneContainers2D(), writer);
+	writeZonesToProjectMainFile(3, v4ZoneContainers3D(), writer);
 }
 
 int PostSolutionInfo::loadFromCgnsFile()

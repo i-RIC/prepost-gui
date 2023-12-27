@@ -47,6 +47,7 @@ v4SolutionGrid* v4SolutionGridIO::loadGrid(SolverDefinitionGridType* gridType, i
 void v4SolutionGridIO::loadGrid(v4SolutionGrid* grid, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier)
 {
 	auto grid2 = grid->grid();
+	grid2->clear();
 
 	auto sGrid3d = dynamic_cast<v4Structured3dGrid*> (grid2);
 	if (sGrid3d != nullptr) {loadStructured3dGrid(sGrid3d, zone, offset, ier);}

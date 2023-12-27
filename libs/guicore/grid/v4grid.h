@@ -29,6 +29,8 @@ public:
 	vtkIdType nodeCount() const;
 	vtkIdType cellCount() const;
 
+	virtual void clear();
+	virtual void updateValueRangeSet();
 	AttributeDataProvider* attributeDataProvider() const;
 	void setAttributeDataProvider(AttributeDataProvider* provider);
 

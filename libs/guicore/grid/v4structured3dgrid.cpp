@@ -122,6 +122,24 @@ v4Structured3dGrid::v4Structured3dGrid() :
 v4Structured3dGrid::~v4Structured3dGrid()
 {}
 
+void v4Structured3dGrid::clear()
+{
+	v4Grid::clear();
+
+	impl->m_vtkIFaceData.data()->GetCellData()->Initialize();
+	impl->m_vtkJFaceData.data()->GetCellData()->Initialize();
+	impl->m_vtkKFaceData.data()->GetCellData()->Initialize();
+}
+
+void v4Structured3dGrid::updateValueRangeSet()
+{
+	v4Grid::updateValueRangeSet();
+
+	impl->m_vtkIFaceData.updateValueRangeSet();
+	impl->m_vtkJFaceData.updateValueRangeSet();
+	impl->m_vtkKFaceData.updateValueRangeSet();
+}
+
 vtkPointSet* v4Structured3dGrid::vtkIndexData() const
 {
 	return impl->m_vtkIndexData;

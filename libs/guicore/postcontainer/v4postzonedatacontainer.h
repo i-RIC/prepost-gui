@@ -42,6 +42,8 @@ public:
 
 	std::vector<v4PostCalculatedResult*>& calculatedResults();
 	const std::vector<v4PostCalculatedResult*>& calculatedResults() const;
+	std::vector<v4PostCalculatedResult*> detachCalculatedResult();
+	void attachCalculatedResult(std::vector<v4PostCalculatedResult*> results);
 
 private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
