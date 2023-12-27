@@ -19,6 +19,7 @@
 #include "preprocessorstructured2dgriddataitem.h"
 #include "preprocessorunstructured2dgriddataitem.h"
 
+#include <guibase/objectbrowserview.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorgraphicsviewi.h>
@@ -48,7 +49,8 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	m_zoneName (zoneName),
 	m_bcSettingGroupDataItem {nullptr},
 	m_bcGroupDataItem {nullptr},
-	m_gridDataItem {nullptr}
+	m_gridDataItem {nullptr},
+	m_gridSetting {nullptr}
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
@@ -97,6 +99,11 @@ PreProcessorGridAndGridCreatingConditionDataItem::PreProcessorGridAndGridCreatin
 	connect(dynamic_cast<PreProcessorGridTypeDataItem*>(p)->geoDataTop(), SIGNAL(dataChanged()), m_mappingSettingDataItem, SLOT(informGeoDataChange()));
 
 	setupGridDataItem(gType->emptyGrid());
+}
+
+PreProcessorGridAndGridCreatingConditionDataItem::~PreProcessorGridAndGridCreatingConditionDataItem()
+{
+	delete m_gridSetting;
 }
 
 const QString& PreProcessorGridAndGridCreatingConditionDataItem::caption() const
@@ -234,7 +241,18 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 	setupGridDataItem(grid);
 	delete grid;
 
-	return m_gridDataItem->loadFromCgnsFile();
+	int ret = m_gridDataItem->loadFromCgnsFile();
+
+	if (m_gridSetting != nullptr) {
+		m_gridDataItem->loadFromProjectMainFile(*m_gridSetting);
+		auto view = dataModel()->objectBrowserView();
+		m_gridDataItem->reflectExpandState(view);
+
+		delete m_gridSetting;
+		m_gridSetting = nullptr;
+	}
+
+	return ret;
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile(const QDomNode& node)
@@ -249,7 +267,10 @@ void PreProcessorGridAndGridCreatingConditionDataItem::doLoadFromProjectMainFile
 	if (! bcNode.isNull() && m_bcSettingGroupDataItem != nullptr) {m_bcSettingGroupDataItem->loadFromProjectMainFile(bcNode);}
 	// load grid information.
 	QDomNode gridNode = iRIC::getChildNode(node, "Grid");
-	if (! gridNode.isNull()) {m_gridDataItem->loadFromProjectMainFile(gridNode);}
+	if (! gridNode.isNull()) {
+		m_gridSetting = new QDomElement();
+		*m_gridSetting = gridNode.toElement();
+	}
 }
 
 void PreProcessorGridAndGridCreatingConditionDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)

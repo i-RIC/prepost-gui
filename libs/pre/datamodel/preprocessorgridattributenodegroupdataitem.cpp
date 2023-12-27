@@ -67,7 +67,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	for (auto cond : compconds) {
 		if (cond->position() == SolverDefinitionGridComplexAttribute::Position::Node) {
 			// this is a node condition.
-			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
+			auto item = new PreProcessorGridAttributeNodeDataItem(cond, this);
 			m_childItems.push_back(item);
 			m_nameMap.insert({item->condition()->name(), item});
 		}
