@@ -61,6 +61,7 @@ public:
 	DelegatedColorMapSettingContainer* colorMapSetting(const std::string& name) const;
 	const std::unordered_map<std::string, DelegatedColorMapSettingContainer*>& colorMapSettingContainers() const;
 	void updateColorBarVisibility(const std::string& attName);
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 	void setupZoneDataItems();
 	void update();

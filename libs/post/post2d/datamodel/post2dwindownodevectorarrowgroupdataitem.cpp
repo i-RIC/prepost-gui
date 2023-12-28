@@ -226,6 +226,18 @@ std::string Post2dWindowNodeVectorArrowGroupDataItem::target() const
 	return iRIC::toStr(m_setting.target);
 }
 
+void Post2dWindowNodeVectorArrowGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	if (m_setting.colorMode == ArrowsSettingContainer::ColorMode::Custom) {return;}
+	auto colorTarget = iRIC::toStr(m_setting.colorTarget);
+	auto cs = colorMapSetting(colorTarget);
+	if (cs == nullptr) {return;}
+
+	if (! cs->legendSetting()->getVisible()) {return;}
+
+	legends->push_back(cs->legendSetting());
+}
+
 void Post2dWindowNodeVectorArrowGroupDataItem::innerUpdate2Ds()
 {
 	updateActorSetting();

@@ -9,6 +9,7 @@
 
 #include <vector>
 
+class ColorMapLegendSettingContainerI;
 class GraphicsWindowDataModel;
 class ObjectBrowserView;
 class PostSolutionInfo;
@@ -114,6 +115,7 @@ public:
 	virtual void updateMoveUpDownActions(ObjectBrowserView* view);
 	void setIsCommandExecuting(bool exec);
 	virtual void assignActorZValues(const ZDepthRange& range);
+	virtual void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends);
 	void update2Ds();
 	void updateZScale(double scale);
 	void loadCheckState(const QDomNode& node);
@@ -125,6 +127,7 @@ public:
 	void pushRenderCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 	void pushRenderRedoOnlyCommand(QUndoCommand* com, GraphicsWindowDataItem *item, bool editItem = false);
 	void pushUpdateActorSettingCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem = false);
+	void pushUpdateActorSettingRecursivelyCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem = false);
 
 public slots:
 	virtual void showPropertyDialog();
@@ -141,6 +144,7 @@ protected:
 	/// Initialize itself
 	virtual void init();
 	virtual void updateActorSetting();
+	void updateActorSettingRecursively();
 	virtual void updateVisibility();
 	virtual void updateVisibility(bool visible);
 	virtual void innerUpdate2Ds();
@@ -187,6 +191,7 @@ private:
 	class RenderRedoOnlyCommand;
 	class StandardItemModifyCommand;
 	class UpdateActorSettingCommand;
+	class UpdateActorSettingRecursiveCommand;
 };
 
 #endif // GRAPHICSWINDOWDATAITEM_H

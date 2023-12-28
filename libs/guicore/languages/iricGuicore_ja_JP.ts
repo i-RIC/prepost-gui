@@ -910,6 +910,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation>共通</translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation>向き:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation>横</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation>縦</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation>フォント</translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation>タイトル:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>表示色</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation>ラベル:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation>背景色:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation>枠線を描画</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation>マージン</translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="vanished">水平方向のマージン:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation>%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="vanished">垂直方向のマージン:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>サイズ</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>幅:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation>ピクセル</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>高さ:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation>バーの幅</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation>整列</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation>左寄せ</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation>中央寄せ</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation>右寄せ</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation>水平方向:</translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation>垂直方向:</translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1776,6 +1895,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>操作ツールバー</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation>警告</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation>有効なカラーバーがありません</translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation>カラーバー一括設定</translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -2135,6 +2266,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">コンター設定</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation>フォーム</translation>
     </message>
 </context>
 <context>

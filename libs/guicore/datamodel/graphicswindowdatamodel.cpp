@@ -1,15 +1,19 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#include "graphicswindowdatamodel.h"
-#include <misc/mathsupport.h>
-#include <guibase/irictoolbar.h>
-#include <misc/iricundostack.h>
-#include "graphicswindowrootdataitem.h"
-#include <guibase/objectbrowserview.h>
-#include "vtkgraphicsview.h"
 #include "../base/iricmainwindowi.h"
 #include "../project/projectdata.h"
+#include "../scalarstocolors/colormaplegendbulkeditwidget.h"
+#include "../scalarstocolors/colormaplegendsettingcontaineri.h"
+#include "../datamodel/graphicswindowdataitemupdateactorsettingrecursivelydialog.h"
+#include "graphicswindowdatamodel.h"
+#include "graphicswindowrootdataitem.h"
+#include "vtkgraphicsview.h"
+
+#include <guibase/irictoolbar.h>
+#include <guibase/objectbrowserview.h>
+#include <misc/iricundostack.h>
+#include <misc/mathsupport.h>
 
 #include <vtkRenderWindow.h>
 #include <vtkCamera.h>
@@ -109,6 +113,13 @@ void GraphicsWindowDataModel::viewOperationEndedGlobal()
 void GraphicsWindowDataModel::handleResize(QResizeEvent* event)
 {
 	m_rootDataItem->handleResize(event, graphicsView());
+}
+
+std::vector<ColorMapLegendSettingContainerI*> GraphicsWindowDataModel::activeColorMapLegends() const
+{
+	std::vector<ColorMapLegendSettingContainerI*> legends;
+	m_rootDataItem->gatherActiveColorMapLegends(&legends);
+	return legends;
 }
 
 void GraphicsWindowDataModel::handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos)
@@ -245,6 +256,36 @@ void GraphicsWindowDataModel::updateOperationToolBar(const QModelIndex& index, Q
 	auto dialog = dataItem->propertyDialog(mainWindow());
 	m_objectBrowserView->propertyAction()->setEnabled(dialog != nullptr);
 	delete dialog;
+}
+
+void GraphicsWindowDataModel::editLegendBulkSetting()
+{
+	auto settings = activeColorMapLegends();
+
+	std::vector<ColorMapLegendBulkEditWidget::Setting> settings2;
+	for (auto s : settings) {
+		ColorMapLegendBulkEditWidget::Setting s2;
+		s2.title = s->getTitle();
+		s2.legendSetting = s;
+		settings2.push_back(s2);
+	}
+	if (settings2.size() == 0) {
+		QMessageBox::warning(mainWindow(), tr("Warning"),tr("There is not active Color Bar"));
+		return;
+	}
+
+	auto dialog = new GraphicsWindowDataItemUpdateActorSettingRecursivelyDialog(m_rootDataItem, mainWindow());
+	auto widget = new ColorMapLegendBulkEditWidget(dialog);
+
+	widget->setSettings(settings2);
+	dialog->setWidget(widget);
+	dialog->setWindowTitle(tr("Color Bar Bulk Setting"));
+
+	dialog->setAttribute(Qt::WA_DeleteOnClose);
+	connect(dialog, &QObject::destroyed, iricMainWindow(), &iRICMainWindowI::exitModelessDialogMode);
+
+	iricMainWindow()->enterModelessDialogMode();
+	dialog->show();
 }
 
 void GraphicsWindowDataModel::handleObjectBrowserSelectionChange()

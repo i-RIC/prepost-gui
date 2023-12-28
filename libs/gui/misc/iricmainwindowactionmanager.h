@@ -128,6 +128,8 @@ public:
 
 	/// Action to edit background color
 	QAction* viewBackgroundColorAction;
+	/// Action to edit legend settings
+	QAction* viewEditLegendSettingAction;
 
 	/// Action to fit
 	QAction* cameraFitAction;

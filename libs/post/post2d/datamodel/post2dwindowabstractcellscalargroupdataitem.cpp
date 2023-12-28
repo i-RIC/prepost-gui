@@ -181,6 +181,14 @@ bool Post2dWindowAbstractCellScalarGroupDataItem::hasTransparentPart()
 	return true;
 }
 
+void Post2dWindowAbstractCellScalarGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	if (! (isAncientChecked() && isChecked())) {return;}
+	if (! impl->m_setting.colorMapSetting->legendSetting()->getVisible()) {return;}
+
+	legends->push_back(impl->m_setting.colorMapSetting->legendSetting());
+}
+
 void Post2dWindowAbstractCellScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	topDataItem()->attributeBrowserController()->initialize();

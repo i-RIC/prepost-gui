@@ -70,6 +70,13 @@ void ColorMapEnumerateLegendSettingContainer::setDelegateMode(bool delegateMode)
 	}
 }
 
+ColorMapLegendSettingContainerI* ColorMapEnumerateLegendSettingContainer::copy() const
+{
+	auto ret = new ColorMapEnumerateLegendSettingContainer();
+	ret->copy(*this);
+	return ret;
+}
+
 void ColorMapEnumerateLegendSettingContainer::copy(const ColorMapLegendSettingContainerI& setting)
 {
 	try {
@@ -138,6 +145,106 @@ ColorMapSettingContainerI* ColorMapEnumerateLegendSettingContainer::setting() co
 void ColorMapEnumerateLegendSettingContainer::setSetting(ColorMapSettingContainerI* setting)
 {
 	m_colorMapSetting = dynamic_cast<ColorMapEnumerateSettingContainer*> (setting);
+}
+
+bool ColorMapEnumerateLegendSettingContainer::getBarAutoWidth() const
+{
+	return barAutoWidth;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setBarAutoWidth(bool autoWidth)
+{
+	barAutoWidth = autoWidth;
+}
+
+int ColorMapEnumerateLegendSettingContainer::getBarWidth() const
+{
+	return barWidth;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setBarWidth(int width)
+{
+	barWidth = width;
+}
+
+ColorMapEnumerateLegendSettingContainer::BarAlign ColorMapEnumerateLegendSettingContainer::getBarAlign() const
+{
+	return barAlign;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setBarAlign(BarAlign align)
+{
+	barAlign = align;
+}
+
+QFont ColorMapEnumerateLegendSettingContainer::getTitleFont() const
+{
+	return titleFont;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setTitleFont(const QFont& font)
+{
+	titleFont = font;
+}
+
+QFont ColorMapEnumerateLegendSettingContainer::getLabelFont() const
+{
+	return labelFont;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setLabelFont(const QFont& font)
+{
+	labelFont = font;
+}
+
+QColor ColorMapEnumerateLegendSettingContainer::getTitleColor() const
+{
+	return titleColor;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setTitleColor(const QColor& color)
+{
+	titleColor = color;
+}
+
+QColor ColorMapEnumerateLegendSettingContainer::getLabelColor() const
+{
+	return labelColor;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setLabelColor(const QColor& color)
+{
+	labelColor = color;
+}
+
+QColor ColorMapEnumerateLegendSettingContainer::getBackgroundColor() const
+{
+	return backgroundColor;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setBackgroundColor(const QColor& color)
+{
+	backgroundColor = color;
+}
+
+OpacityContainer ColorMapEnumerateLegendSettingContainer::getBackgroundOpacity() const
+{
+	return backgroundOpacity;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setBackgroundOpacity(const OpacityContainer& opacity)
+{
+	backgroundOpacity = opacity;
+}
+
+bool ColorMapEnumerateLegendSettingContainer::getShowBorder() const
+{
+	return showBorder;
+}
+
+void ColorMapEnumerateLegendSettingContainer::setShowBorder(bool show)
+{
+	showBorder = show;
 }
 
 ImageSettingContainer* ColorMapEnumerateLegendSettingContainer::imgSetting()

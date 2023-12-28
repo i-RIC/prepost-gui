@@ -52,6 +52,7 @@ public:
 	QUndoCommand* createApplyColorMapSettingAndRenderCommand(const std::string& name, QUndoCommand* command, bool apply = false);
 
 	ColorMapSettingToolBarWidgetController* createToolBarWidgetController(const std::string& name, QWidget* parent);
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 public slots:
 	void addNewCondition();

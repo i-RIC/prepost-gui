@@ -1,6 +1,8 @@
 #ifndef POST2DBIRDEYEWINDOW_H
 #define POST2DBIRDEYEWINDOW_H
 
+#include "post2dbirdeyewindowdatamodel.h"
+
 #include <QMainWindow>
 #include <QByteArray>
 #include <QVector2D>
@@ -12,7 +14,6 @@
 class QAction;
 class QToolBar;
 class Post2dBirdEyeObjectBrowser;
-class Post2dBirdEyeWindowDataModel;
 class Post2dBirdEyeWindowProjectDataItem;
 class Post2dBirdEyeWindowActionManager;
 class Post2dBirdEyeWindowGraphicsView;
@@ -40,6 +41,7 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
+	Post2dBirdEyeWindowDataModel* dataModel() const override;
 
 public slots:
 	void cameraFit();

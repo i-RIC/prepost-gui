@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Oblika</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">smer:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vodoravno</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Navpično</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">Naslov:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">Oznaka:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">Ozadje:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">Nariši mejo</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">Vodoravni rob:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">Navpični rob:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Velikost</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Premer:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">px</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">Višina:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">Širina palice</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Avto</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">Poravnava</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">levo</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">Center</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">Prav</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1393,6 +1512,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>Orodjarna orodja</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Opozorilo</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1642,6 +1773,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">Nastavitev konture</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Oblika</translation>
     </message>
 </context>
 <context>

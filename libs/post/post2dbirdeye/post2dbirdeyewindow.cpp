@@ -214,6 +214,11 @@ ObjectBrowser* Post2dBirdEyeWindow::objectBrowser() const
 	return m_objectBrowser;
 }
 
+Post2dBirdEyeWindowDataModel* Post2dBirdEyeWindow::dataModel() const
+{
+	return m_dataModel;
+}
+
 void Post2dBirdEyeWindow::cameraParallelProjection()
 {
 	m_dataModel->graphicsView()->cameraParallelProjection();

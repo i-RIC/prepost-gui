@@ -251,6 +251,14 @@ bool Post2dBirdEyeWindowNodeScalarGroupDataItem::addToolBarButtons(QToolBar* too
 	return true;
 }
 
+void Post2dBirdEyeWindowNodeScalarGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	auto cs = activeColorMapSetting();
+	if (cs != nullptr) {
+		legends->push_back(cs->legendSetting());
+	}
+}
+
 void Post2dBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();

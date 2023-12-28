@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>288</width>
+    <width>278</width>
     <height>148</height>
    </rect>
   </property>
@@ -23,10 +23,10 @@
        </property>
        <layout class="QGridLayout" name="gridLayout">
         <property name="horizontalSpacing">
-         <number>15</number>
+         <number>10</number>
         </property>
         <property name="verticalSpacing">
-         <number>10</number>
+         <number>7</number>
         </property>
         <item row="0" column="0">
          <widget class="QRadioButton" name="topLeftRadioButton">

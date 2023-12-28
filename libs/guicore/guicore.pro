@@ -197,11 +197,13 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowdataitem.h \
            datamodel/graphicswindowdataitemstandarditemchangecommand.h \
            datamodel/graphicswindowdataitemupdateactorsettingdialog.h \
+           datamodel/graphicswindowdataitemupdateactorsettingrecursivelydialog.h \
            datamodel/graphicswindowdatamodel.h \
            datamodel/graphicswindowdrawcommands.h \
            datamodel/graphicswindowrootdataitem.h \
            datamodel/graphicswindowsimpledatamodel.h \
            datamodel/modifycommandandrenderdialog.h \
+           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.h \
            datamodel/propertybrowserattribute.h \
            datamodel/propertybrowserview.h \
            datamodel/vtk2dgraphicsview.h \
@@ -236,6 +238,7 @@ HEADERS += guicore_global.h \
            grid/v4structured2dgrid.h \
            grid/v4structured3dgrid.h \
            grid/v4unstructured2dgrid.h \
+           image/imagepositioneditwidget.h \
            image/imagesettingcontainer.h \
            image/imagesettingwidget.h \
            misc/cgnsutil.h \
@@ -316,9 +319,11 @@ HEADERS += guicore_global.h \
            scalarstocolors/colormapenumeratesettingeditwidget.h \
            scalarstocolors/colormapfactory.h \
            scalarstocolors/colormapfactoryi.h \
+           scalarstocolors/colormaplegendbulkeditwidget.h \
            scalarstocolors/colormaplegendsettingcontainer.h \
            scalarstocolors/colormaplegendsettingcontaineri.h \
            scalarstocolors/colormaplegendsettingeditwidget.h \
+           scalarstocolors/colormaplegendsettingmodifycommand.h \
            scalarstocolors/colormapsettingcontainer.h \
            scalarstocolors/colormapsettingcontaineri.h \
            scalarstocolors/colormapsettingcontainerutil.h \
@@ -710,6 +715,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          filter/structured2dfilteringsettingeditwidget.ui \
          filter/structured3dfilteringsettingeditwidget.ui \
          filter/structuredgridskiporsubdividesettingeditwidget.ui \
+         image/imagepositioneditwidget.ui \
          image/imagesettingwidget.ui \
          misc/cgnszoneselectdialog.ui \
          misc/coordinatesystemdisplaywidget.ui \
@@ -732,6 +738,7 @@ FORMS += arrows/arrowscolorsettingeditsmallwidget.ui \
          region/regionrange2dsettingeditwidget.ui \
          scalarstocolors/colormapenumeratelegendsettingeditwidget.ui \
          scalarstocolors/colormapenumeratesettingeditwidget.ui \
+         scalarstocolors/colormaplegendbulkeditwidget.ui \
          scalarstocolors/colormaplegendsettingeditwidget.ui \
          scalarstocolors/colormapsettingeditdialog.ui \
          scalarstocolors/colormapsettingeditwidget.ui \
@@ -784,11 +791,13 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/graphicswindowdataitem.cpp \
            datamodel/graphicswindowdataitemstandarditemchangecommand.cpp \
            datamodel/graphicswindowdataitemupdateactorsettingdialog.cpp \
+           datamodel/graphicswindowdataitemupdateactorsettingrecursivelydialog.cpp \
            datamodel/graphicswindowdatamodel.cpp \
            datamodel/graphicswindowdrawcommands.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
            datamodel/modifycommandandrenderdialog.cpp \
+           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.cpp \
            datamodel/propertybrowserattribute.cpp \
            datamodel/propertybrowserview.cpp \
            datamodel/vtk2dgraphicsview.cpp \
@@ -820,6 +829,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            grid/v4structured2dgrid.cpp \
            grid/v4structured3dgrid.cpp \
            grid/v4unstructured2dgrid.cpp \
+           image/imagepositioneditwidget.cpp \
            image/imagesettingcontainer.cpp \
            image/imagesettingwidget.cpp \
            misc/cgnsutil.cpp \
@@ -897,8 +907,10 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            scalarstocolors/colormapenumeratesettingcontainer.cpp \
            scalarstocolors/colormapenumeratesettingeditwidget.cpp \
            scalarstocolors/colormapfactory.cpp \
+           scalarstocolors/colormaplegendbulkeditwidget.cpp \
            scalarstocolors/colormaplegendsettingcontainer.cpp \
            scalarstocolors/colormaplegendsettingeditwidget.cpp \
+           scalarstocolors/colormaplegendsettingmodifycommand.cpp \
            scalarstocolors/colormapsettingcontainer.cpp \
            scalarstocolors/colormapsettingcontaineri.cpp \
            scalarstocolors/colormapsettingcontainerutil.cpp \

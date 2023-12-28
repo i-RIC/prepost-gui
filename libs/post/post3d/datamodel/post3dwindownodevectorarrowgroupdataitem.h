@@ -38,6 +38,7 @@ public:
 	void mousePressEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 public slots:
 	void showPropertyDialog() override;

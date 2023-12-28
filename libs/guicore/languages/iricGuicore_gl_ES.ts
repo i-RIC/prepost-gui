@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Dirección:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Horizontal</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Vertical</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">Título:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Cor</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">Etiqueta:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">Antecedentes:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">Debuxa bordo</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">Marxe horizontal:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">Marxe vertical:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Tamaño</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Ancho:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">px</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">Altura:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">Ancho de barra</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Automático</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">Aliñación</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">Esquerda</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">Centro</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">Certo</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1393,6 +1512,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>Barra de operacións</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1642,6 +1773,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">Configuración do contorno</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

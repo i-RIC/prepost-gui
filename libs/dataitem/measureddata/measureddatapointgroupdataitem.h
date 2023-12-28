@@ -43,6 +43,7 @@ public:
 
 	ColorMapSettingContainerI* activeColorMapSetting() const;
 	ColorMapSettingContainerI* activeColorMapSettingWithVisibleLegend() const;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 public slots:
 	void showPropertyDialog() override;

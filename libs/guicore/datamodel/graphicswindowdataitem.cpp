@@ -11,6 +11,7 @@
 #include "private/graphicswindowdataitem_renderredoonlycommand.h"
 #include "private/graphicswindowdataitem_standarditemmodifycommand.h"
 #include "private/graphicswindowdataitem_updateactorsettingcommand.h"
+#include "private/graphicswindowdataitem_updateactorsettingrecursivecommand.h"
 
 #include <guicore/base/iricmainwindowi.h>
 #include <misc/iricundostack.h>
@@ -302,6 +303,15 @@ void GraphicsWindowDataItem::updateItemMap()
 void GraphicsWindowDataItem::updateActorSetting()
 {}
 
+void GraphicsWindowDataItem::updateActorSettingRecursively()
+{
+	updateActorSetting();
+
+	for (auto child : m_childItems) {
+		child->updateActorSettingRecursively();
+	}
+}
+
 void GraphicsWindowDataItem::updateVisibility()
 {
 	bool ancientVisible = isAncientChecked();
@@ -484,6 +494,13 @@ void GraphicsWindowDataItem::updateZDepthRange()
 void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range)
 {
 	assignActorZValues(range, m_childItems);
+}
+
+void GraphicsWindowDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	for (auto child : m_childItems) {
+		child->gatherActiveColorMapLegends(legends);
+	}
 }
 
 void GraphicsWindowDataItem::assignActorZValues(const ZDepthRange& range, const std::vector<GraphicsWindowDataItem*>& items)
@@ -728,6 +745,12 @@ void GraphicsWindowDataItem::pushRenderRedoOnlyCommand(QUndoCommand* com, Graphi
 void GraphicsWindowDataItem::pushUpdateActorSettingCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem)
 {
 	QUndoCommand* com2 = new UpdateActorSettingCommand(com, this);
+	pushRenderCommand(com2, item, editItem);
+}
+
+void GraphicsWindowDataItem::pushUpdateActorSettingRecursivelyCommand(QUndoCommand* com, GraphicsWindowDataItem* item, bool editItem)
+{
+	QUndoCommand* com2 = new UpdateActorSettingRecursiveCommand(com, this);
 	pushRenderCommand(com2, item, editItem);
 }
 

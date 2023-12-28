@@ -30,6 +30,7 @@ public:
 	QDialog* propertyDialog(QWidget* parent) override;
 
 	bool hasTransparentPart() override;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;

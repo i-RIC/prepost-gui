@@ -167,6 +167,11 @@ ObjectBrowser* Post2dWindow::objectBrowser() const
 	return m_objectBrowser;
 }
 
+Post2dWindowDataModel* Post2dWindow::dataModel() const
+{
+	return m_dataModel;
+}
+
 void Post2dWindow::editBackgroundColor()
 {
 	BackgroundColorEditI::editBackgroundColor(this);

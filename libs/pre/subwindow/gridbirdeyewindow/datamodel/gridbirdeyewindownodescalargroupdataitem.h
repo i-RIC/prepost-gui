@@ -30,6 +30,7 @@ public:
 	void mouseReleaseEvent(QMouseEvent* event, VTKGraphicsView* v) override;
 
 	bool addToolBarButtons(QToolBar* toolBar) override;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 private:
 	void innerUpdateZScale(double scale) override;

@@ -243,6 +243,17 @@ bool GridBirdEyeWindowNodeScalarGroupDataItem::addToolBarButtons(QToolBar* toolB
 	return true;
 }
 
+void GridBirdEyeWindowNodeScalarGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	if (! (isAncientChecked() && isChecked())) {return;}
+	if (impl->m_setting.colorMode == Setting::ColorMode::Custom) {return;}
+
+	auto cs = activeColorMapSetting();
+	if (cs == nullptr) {return;}
+
+	legends->push_back(cs->legendSetting());
+}
+
 void GridBirdEyeWindowNodeScalarGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	auto cs = activeColorMapSetting();

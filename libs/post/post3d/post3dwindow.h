@@ -1,6 +1,8 @@
 #ifndef POST3DWINDOW_H
 #define POST3DWINDOW_H
 
+#include "post3dwindowdatamodel.h"
+
 #include <QMainWindow>
 #include <QByteArray>
 #include <guicore/post/postprocessorwindow.h>
@@ -43,6 +45,7 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
+	Post3dWindowDataModel* dataModel() const override;
 	bool exportParticles(const QString& filename, int fileIndex, double time, const QString& zonename) override;
 	QList<QString> particleDrawingZones() override;
 	bool isAutoParticleOutput() const override;

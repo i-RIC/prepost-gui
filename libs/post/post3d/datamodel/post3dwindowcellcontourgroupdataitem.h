@@ -25,6 +25,7 @@ public:
 	void updateColorMapVisibility();
 
 	const std::string& target() const;
+	void gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends) override;
 
 public slots:
 	void showPropertyDialog() override;

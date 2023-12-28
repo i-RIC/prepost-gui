@@ -30,6 +30,7 @@ public:
 	bool delegateMode() const override;
 	void setDelegateMode(bool delegateMode) override;
 
+	ColorMapLegendSettingContainerI* copy() const override;
 	void copy(const ColorMapLegendSettingContainerI& setting) override;
 	void copyOtherThanTitle(const ColorMapLegendSettingContainerI& setting) override;
 	bool getVisible() const override;
@@ -40,6 +41,36 @@ public:
 	void setTitle(const QString& title) override;
 	ColorMapSettingContainerI* setting() const override;
 	void setSetting(ColorMapSettingContainerI* setting) override;
+	bool getBarAutoWidth() const override;
+	void setBarAutoWidth(bool autoWidth) override;
+
+	int getBarWidth() const override;
+	void setBarWidth(int width) override;
+
+	BarAlign getBarAlign() const override;
+	void setBarAlign(BarAlign align) override;
+
+	QFont getTitleFont() const override;
+	void setTitleFont(const QFont& font) override;
+
+	QFont getLabelFont() const override;
+	void setLabelFont(const QFont& font) override;
+
+	QColor getTitleColor() const override;
+	void setTitleColor(const QColor& color) override;
+
+	QColor getLabelColor() const override;
+	void setLabelColor(const QColor& color) override;
+
+	QColor getBackgroundColor() const override;
+	void setBackgroundColor(const QColor& color) override;
+
+	OpacityContainer getBackgroundOpacity() const override;
+	void setBackgroundOpacity(const OpacityContainer& opacity) override;
+
+	bool getShowBorder() const override;
+	void setShowBorder(bool show) override;
+
 	ImageSettingContainer* imgSetting() override;
 
 	void copyValue(const XmlAttributeContainer& c) override;

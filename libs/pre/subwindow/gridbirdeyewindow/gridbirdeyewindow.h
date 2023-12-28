@@ -2,6 +2,7 @@
 #define GRIDBIRDEYEWINDOW_H
 
 #include "../../datamodel/preprocessorgriddataitem.h"
+#include "gridbirdeyewindowdatamodel.h"
 
 #include <guicore/base/additionalmenuwindowi.h>
 #include <guicore/base/qmainwindowwithsnapshot.h>
@@ -12,7 +13,6 @@
 
 class GridBirdEyeObjectBrowser;
 class GridBirdEyeWindowActionManager;
-class GridBirdEyeWindowDataModel;
 class GridBirdEyeWindowProjectDataItem;
 
 class QAction;
@@ -31,6 +31,7 @@ public:
 	~GridBirdEyeWindow();
 
 	ObjectBrowser* objectBrowser() const override;
+	GridBirdEyeWindowDataModel* dataModel() const override;
 
 	QPixmap snapshot() const override;
 	QWidget* snapshotArea() const override;

@@ -77,6 +77,13 @@ void ColorMapLegendSettingContainer::setDelegateMode(bool delegateMode)
 	}
 }
 
+ColorMapLegendSettingContainerI* ColorMapLegendSettingContainer::copy() const
+{
+	auto ret = new ColorMapLegendSettingContainer();
+	ret->copy(*this);
+	return ret;
+}
+
 void ColorMapLegendSettingContainer::copy(const ColorMapLegendSettingContainerI& setting)
 {
 	try {
@@ -145,6 +152,106 @@ ColorMapSettingContainerI* ColorMapLegendSettingContainer::setting() const
 void ColorMapLegendSettingContainer::setSetting(ColorMapSettingContainerI* setting)
 {
 	m_colorMapSetting = dynamic_cast<ColorMapSettingContainer*> (setting);
+}
+
+bool ColorMapLegendSettingContainer::getBarAutoWidth() const
+{
+	return barAutoWidth;
+}
+
+void ColorMapLegendSettingContainer::setBarAutoWidth(bool autoWidth)
+{
+	barAutoWidth = autoWidth;
+}
+
+int ColorMapLegendSettingContainer::getBarWidth() const
+{
+	return barWidth;
+}
+
+void ColorMapLegendSettingContainer::setBarWidth(int width)
+{
+	barWidth = width;
+}
+
+ColorMapLegendSettingContainer::BarAlign ColorMapLegendSettingContainer::getBarAlign() const
+{
+	return barAlign;
+}
+
+void ColorMapLegendSettingContainer::setBarAlign(BarAlign align)
+{
+	barAlign = align;
+}
+
+QFont ColorMapLegendSettingContainer::getTitleFont() const
+{
+	return titleFont;
+}
+
+void ColorMapLegendSettingContainer::setTitleFont(const QFont& font)
+{
+	titleFont = font;
+}
+
+QFont ColorMapLegendSettingContainer::getLabelFont() const
+{
+	return labelFont;
+}
+
+void ColorMapLegendSettingContainer::setLabelFont(const QFont& font)
+{
+	labelFont = font;
+}
+
+QColor ColorMapLegendSettingContainer::getTitleColor() const
+{
+	return titleColor;
+}
+
+void ColorMapLegendSettingContainer::setTitleColor(const QColor& color)
+{
+	titleColor = color;
+}
+
+QColor ColorMapLegendSettingContainer::getLabelColor() const
+{
+	return labelColor;
+}
+
+void ColorMapLegendSettingContainer::setLabelColor(const QColor& color)
+{
+	labelColor = color;
+}
+
+QColor ColorMapLegendSettingContainer::getBackgroundColor() const
+{
+	return backgroundColor;
+}
+
+void ColorMapLegendSettingContainer::setBackgroundColor(const QColor& color)
+{
+	backgroundColor = color;
+}
+
+OpacityContainer ColorMapLegendSettingContainer::getBackgroundOpacity() const
+{
+	return backgroundOpacity;
+}
+
+void ColorMapLegendSettingContainer::setBackgroundOpacity(const OpacityContainer& opacity)
+{
+	backgroundOpacity = opacity;
+}
+
+bool ColorMapLegendSettingContainer::getShowBorder() const
+{
+	return showBorder;
+}
+
+void ColorMapLegendSettingContainer::setShowBorder(bool show)
+{
+	showBorder = show;
 }
 
 ImageSettingContainer* ColorMapLegendSettingContainer::imgSetting()

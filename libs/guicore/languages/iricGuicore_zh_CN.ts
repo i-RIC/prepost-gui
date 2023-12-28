@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">方向：</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">水平的</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">垂直的</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">标题：</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">颜色</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">标签：</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">背景：</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">绘制边框</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">水平边距：</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">垂直边距：</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">尺寸</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">宽度：</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">像素</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">高度：</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">条宽</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">汽车</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">结盟</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">左边</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">中心</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">正确的</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1389,6 +1508,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>操作工具栏</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1638,6 +1769,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">轮廓设置</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">形式</translation>
     </message>
 </context>
 <context>

@@ -543,3 +543,26 @@ ColorMapSettingToolBarWidgetController* PreProcessorGridTypeDataItem::createTool
 	widget->setSetting(m_colorMapSettingContainers.at(name));
 	return new ToolBarWidgetController(name, widget, this);
 }
+
+void PreProcessorGridTypeDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	for (auto pair : m_colorMapSettingContainers) {
+		auto name = pair.first;
+		auto cm = pair.second;
+
+		if (! cm->legendSetting()->getVisible()) {continue;}
+
+		bool visible = false;
+		if (m_geoDataTop != nullptr) {
+			auto gItem = dynamic_cast<PreProcessorGeoDataGroupDataItem*> (m_geoDataTop->groupDataItem(name));
+			visible = visible || gItem->colorBarShouldBeVisible();
+			for (auto cond : m_conditions) {
+				auto gItem = dynamic_cast<PreProcessorGridDataItem*> (cond->gridDataItem());
+				visible = visible || gItem->colorBarShouldBeVisible(name);
+			}
+		}
+		if (visible) {
+			legends->push_back(cm->legendSetting());
+		}
+	}
+}
