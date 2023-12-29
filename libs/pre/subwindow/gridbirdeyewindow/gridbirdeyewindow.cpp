@@ -55,6 +55,11 @@ ObjectBrowser* GridBirdEyeWindow::objectBrowser() const
 	return m_objectBrowser;
 }
 
+GridBirdEyeWindowDataModel* GridBirdEyeWindow::dataModel() const
+{
+	return m_dataModel;
+}
+
 QPixmap GridBirdEyeWindow::snapshot() const
 {
 	QImage img = m_dataModel->graphicsView()->getImage();

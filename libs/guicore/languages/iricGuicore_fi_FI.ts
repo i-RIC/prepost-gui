@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">Suunta:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">Vaakasuora</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">Pystysuora</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">Otsikko:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">Väri</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">Tunniste:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">Tausta:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">Piirrä reuna</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">Vaakamarginaali:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">Pystymarginaali:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Koko</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Leveys:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">px</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">Korkeus:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">Palkin leveys</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">Auto</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">Tasaus</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">Vasen</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">Keskusta</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">Oikein</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1393,6 +1512,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>Käyttö ToolBar</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varoitus</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1642,6 +1773,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">Muotojen asetus</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">Lomake</translation>
     </message>
 </context>
 <context>

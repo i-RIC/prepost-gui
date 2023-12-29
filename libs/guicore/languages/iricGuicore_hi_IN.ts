@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">दिशा:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">क्षैतिज</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">खड़ा</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">शीर्षक:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">रंग</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">लेबल:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">पृष्ठभूमि:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">सीमा रेखा खींचना</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">क्षैतिज मार्जिन:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">लंबवत मार्जिन:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">आकार</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">चौड़ाई:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">पिक्सल</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">ऊंचाई:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">बार की चौड़ाई</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">ऑटो</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">संरेखण</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">बाएं</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">केंद्र</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">सही</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1393,6 +1512,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>ऑपरेशन टूलबार</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">चेतावनी</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1642,6 +1773,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">कंटूर सेटिंग</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

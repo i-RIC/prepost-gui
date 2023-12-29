@@ -284,6 +284,33 @@ void Post2dWindowGridTypeDataItem::updateColorBarVisibility(const std::string& a
 	updateVisibility();
 }
 
+void Post2dWindowGridTypeDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	for (auto pair : m_colorMapSettingContainers) {
+		auto name = pair.first;
+		auto cm = pair.second;
+
+		if (! cm->customSetting->legendSetting()->getVisible()) {continue;}
+
+		bool visible = false;
+		if (m_geoDataItem != nullptr) {
+			auto gItem = dynamic_cast<Post2dWindowGeoDataGroupDataItem*> (m_geoDataItem->groupDataItem(name));
+			visible = visible || gItem->colorBarShouldBeVisible();
+
+			for (auto zone : m_zoneDatas) {
+				auto gItem = zone->inputGridDataItem();
+				if (gItem == nullptr) {continue;}
+				visible = visible || gItem->colorBarShouldBeVisible(name);
+			}
+		}
+		if (visible) {
+			legends->push_back(cm->customSetting->legendSetting());
+		}
+	}
+
+	GraphicsWindowDataItem::gatherActiveColorMapLegends(legends);
+}
+
 void Post2dWindowGridTypeDataItem::setupZoneDataItems()
 {
 	// first, clear the current zonedata.

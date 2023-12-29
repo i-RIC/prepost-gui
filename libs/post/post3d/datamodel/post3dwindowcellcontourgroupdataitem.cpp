@@ -87,6 +87,19 @@ const std::string& Post3dWindowCellContourGroupDataItem::target() const
 	return m_target;
 }
 
+void Post3dWindowCellContourGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	bool visible = false;
+	if (standardItem()->checkState() == Qt::Checked) {
+		for (auto child : m_childItems) {
+			visible = visible || child->standardItem()->checkState() == Qt::Checked;
+		}
+	}
+	if (! visible) {return;}
+
+	legends->push_back(m_colorMapSetting.legendSetting());
+}
+
 void Post3dWindowCellContourGroupDataItem::showPropertyDialog()
 {
 	showPropertyDialogModeless();

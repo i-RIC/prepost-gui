@@ -171,6 +171,14 @@ ColorMapSettingContainerI* MeasuredDataPointGroupDataItem::activeColorMapSetting
 	return cm;
 }
 
+void MeasuredDataPointGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	auto cm = activeColorMapSettingWithVisibleLegend();
+	if (cm != nullptr) {
+		legends->push_back(cm->legendSetting());
+	}
+}
+
 void MeasuredDataPointGroupDataItem::updateZDepthRangeItemCount()
 {
 	m_zDepthRange.setItemCount(2);

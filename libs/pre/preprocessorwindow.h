@@ -9,6 +9,7 @@
 #include <guicore/base/windowwithtmsi.h>
 #include <guicore/base/windowwithzindexi.h>
 #include <guicore/datamodel/windowwithvtkgraphicsviewi.h>
+#include <guicore/pre/base/preprocessordatamodeli.h>
 #include <guicore/pre/base/preprocessorwindowi.h>
 #include <guicore/bgcolor/backgroundcoloreditvtki.h>
 
@@ -24,7 +25,6 @@ class PrePropertyBrowser;
 class ProjectData;
 class ProjectDataItem;
 class PreProcessorWindowProjectDataItem;
-class PreProcessorDataModelI;
 class PreProcessorDataModel;
 class PreProcessorWindowActionManager;
 class PreProcessorGraphicsView;

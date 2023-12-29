@@ -1,6 +1,8 @@
 #ifndef POST2DWINDOW_H
 #define POST2DWINDOW_H
 
+#include "post2dwindowdatamodel.h"
+
 #include <QMainWindow>
 #include <QByteArray>
 #include <QVector2D>
@@ -21,7 +23,6 @@
 class QAction;
 class QToolBar;
 class Post2dObjectBrowser;
-class Post2dWindowDataModel;
 class Post2dWindowProjectDataItem;
 class Post2dWindowActionManager;
 class Post2dWindowGraphicsView;
@@ -55,6 +56,7 @@ public:
 	const std::shared_ptr<QToolBar>& getAdditionalToolBar() const override;
 
 	ObjectBrowser* objectBrowser() const override;
+	Post2dWindowDataModel* dataModel() const override;
 	int index() const {return m_index;}
 
 	QList<QString> particleDrawingZones() override;

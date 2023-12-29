@@ -25,7 +25,7 @@ int GraphicsWindowDataItem::UpdateActorSettingCommand::id() const
 
 bool GraphicsWindowDataItem::UpdateActorSettingCommand::mergeWith(const QUndoCommand *other)
 {
-	const UpdateActorSettingCommand* modc = dynamic_cast<const UpdateActorSettingCommand*> (other);
+	const auto modc = dynamic_cast<const UpdateActorSettingCommand*> (other);
 	if (modc == nullptr) {return false;}
 
 	return m_command.get()->mergeWith(modc->m_command.get());

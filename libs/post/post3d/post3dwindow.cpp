@@ -242,6 +242,11 @@ ObjectBrowser* Post3dWindow::objectBrowser() const
 	return m_objectBrowser;
 }
 
+Post3dWindowDataModel* Post3dWindow::dataModel() const
+{
+	return m_dataModel;
+}
+
 VTKGraphicsView* Post3dWindow::viewForBackgroundColor() const
 {
 	return m_dataModel->graphicsView();

@@ -641,6 +641,125 @@ Parse error %2 at %3, column %4</source>
     </message>
 </context>
 <context>
+    <name>ColorMapLegendBulkEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Direction:</source>
+        <translation type="unfinished">ทิศทาง:</translation>
+    </message>
+    <message>
+        <source>Horizontal</source>
+        <translation type="unfinished">แนวนอน</translation>
+    </message>
+    <message>
+        <source>Vertical</source>
+        <translation type="unfinished">แนวตั้ง</translation>
+    </message>
+    <message>
+        <source>Font</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Title:</source>
+        <translation type="unfinished">ชื่อ:</translation>
+    </message>
+    <message>
+        <source>Labels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished">สี</translation>
+    </message>
+    <message>
+        <source>Label:</source>
+        <translation type="unfinished">ฉลาก:</translation>
+    </message>
+    <message>
+        <source>Background:</source>
+        <translation type="unfinished">พื้นหลัง:</translation>
+    </message>
+    <message>
+        <source>Draw border</source>
+        <translation type="unfinished">วาดเส้นขอบ</translation>
+    </message>
+    <message>
+        <source>Margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Margin:</source>
+        <translation type="obsolete">ระยะขอบแนวนอน:</translation>
+    </message>
+    <message>
+        <source>%</source>
+        <translation type="unfinished">%</translation>
+    </message>
+    <message>
+        <source>Vertical Margin:</source>
+        <translation type="obsolete">ระยะขอบแนวตั้ง:</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">ขนาด</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">ความกว้าง:</translation>
+    </message>
+    <message>
+        <source>px</source>
+        <translation type="unfinished">พิกเซล</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">ความสูง:</translation>
+    </message>
+    <message>
+        <source>Bar Width</source>
+        <translation type="unfinished">ความกว้างของแถบ</translation>
+    </message>
+    <message>
+        <source>Auto</source>
+        <translation type="unfinished">อัตโนมัติ</translation>
+    </message>
+    <message>
+        <source>Alignment</source>
+        <translation type="unfinished">การจัดตำแหน่ง</translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished">ซ้าย</translation>
+    </message>
+    <message>
+        <source>Center</source>
+        <translation type="unfinished">ศูนย์</translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished">ขวา</translation>
+    </message>
+    <message>
+        <source>Positions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ColorMapLegendSettingEditWidget</name>
     <message>
         <source>Form</source>
@@ -1393,6 +1512,18 @@ Parse error %2 at %3, column %4</source>
         <source>Operation ToolBar</source>
         <translation>แถบเครื่องมือการทำงาน</translation>
     </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">คำเตือน</translation>
+    </message>
+    <message>
+        <source>There is not active Color Bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color Bar Bulk Setting</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GridAttributeDimensionComboboxSelectWidget</name>
@@ -1642,6 +1773,13 @@ Parse error %2 at %3, column %4</source>
     <message>
         <source>Contour setting</source>
         <translation type="vanished">การตั้งค่าคอนทัวร์</translation>
+    </message>
+</context>
+<context>
+    <name>ImagePositionEditWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished">รูปร่าง</translation>
     </message>
 </context>
 <context>

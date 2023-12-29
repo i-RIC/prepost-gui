@@ -8,6 +8,7 @@
 
 #include <memory>
 
+class ColorMapLegendSettingContainerI;
 class GraphicsWindowDataItem;
 class GraphicsWindowRootDataItem;
 class ObjectBrowserView;
@@ -49,10 +50,13 @@ public:
 	void viewOperationEndedGlobal() override;
 	void handleResize(QResizeEvent* event) override;
 
+	std::vector<ColorMapLegendSettingContainerI*> activeColorMapLegends() const;
+
 public slots:
 	void handleObjectBrowserPress(const QModelIndex& index, const QPoint& globalPos);
 	void handleObjectBrowserDoubleClick(const QModelIndex& index);
 	void handleObjectBrowserChange(QStandardItem* changeditem);
+	void editLegendBulkSetting();
 
 	virtual void handleObjectBrowserSelectionChange();
 	void handleObjectBrowserSelection(const QModelIndex& current);

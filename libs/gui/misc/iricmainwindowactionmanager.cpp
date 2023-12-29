@@ -113,12 +113,12 @@ void iRICMainWindowActionManager::setupFileMenu()
 	saveAsFileAction = new QAction(tr("Save &As File(*.ipro)..."), m_fileMenu);
 	saveAsFileAction->setDisabled(true);
 	m_fileMenu->addAction(saveAsFileAction);
-	connect(saveAsFileAction, SIGNAL(triggered()), m_parent, SLOT(saveProjectAsFile()));
+	connect(saveAsFileAction, &QAction::triggered, m_parent, &iRICMainWindow::saveProjectAsFile);
 
 	saveAsProjectAction = new QAction(tr("Save As &Project..."), m_fileMenu);
 	saveAsProjectAction->setDisabled(true);
 	m_fileMenu->addAction(saveAsProjectAction);
-	connect(saveAsProjectAction, SIGNAL(triggered()), m_parent, SLOT(saveProjectAsFolder()));
+	connect(saveAsProjectAction, &QAction::triggered, m_parent, &iRICMainWindow::saveProjectAsFolder);
 
 	m_fileMenu->addSeparator();
 
@@ -126,7 +126,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	propertyAction->setIcon(QIcon(":/libs/guibase/images/iconProperty.svg"));
 	propertyAction->setDisabled(true);
 	m_fileMenu->addAction(propertyAction);
-	connect(propertyAction, SIGNAL(triggered()), m_parent, SLOT(showProjectPropertyDialog()));
+	connect(propertyAction, &QAction::triggered, m_parent, &iRICMainWindow::showProjectPropertyDialog);
 
 	m_fileMenu->addSeparator();
 
@@ -135,7 +135,7 @@ void iRICMainWindowActionManager::setupFileMenu()
 	reloadCgnsAction->setStatusTip(tr("Reload CGNS file"));
 
 	m_fileMenu->addAction(reloadCgnsAction);
-	connect(reloadCgnsAction, SIGNAL(triggered()), m_parent, SLOT(reloadCgnsFile()));
+	connect(reloadCgnsAction, &QAction::triggered, m_parent, &iRICMainWindow::reloadCgnsFile);
 
 	m_fileMenu->addSeparator();
 
@@ -143,19 +143,19 @@ void iRICMainWindowActionManager::setupFileMenu()
 	saveSnapshotAction->setIcon(QIcon(":/images/iconSnapshot.svg"));
 	saveSnapshotAction->setDisabled(true);
 	m_fileMenu->addAction(saveSnapshotAction);
-	connect(saveSnapshotAction, SIGNAL(triggered()), m_parent, SLOT(snapshot()));
+	connect(saveSnapshotAction, &QAction::triggered, m_parent, &iRICMainWindow::snapshot);
 
 	copySnapshotAction = new QAction(tr("Copy Snapshot to Clipboard"), m_fileMenu);
 	copySnapshotAction->setIcon(QIcon(":/images/iconCopySnapshot.svg"));
 	copySnapshotAction->setDisabled(true);
 	m_fileMenu->addAction(copySnapshotAction);
-	connect(copySnapshotAction, SIGNAL(triggered()), m_parent, SLOT(copySnapshot()));
+	connect(copySnapshotAction, &QAction::triggered, m_parent, &iRICMainWindow::copySnapshot);
 
 	saveContinuousSnapShotAction = new QAction(tr("Continuous Snapshot / Movie / Google Earth Export..."), m_fileMenu);
 	saveContinuousSnapShotAction->setIcon(QIcon(":/images/iconGoogleEarth.svg"));
 	saveContinuousSnapShotAction->setDisabled(true);
 	m_fileMenu->addAction(saveContinuousSnapShotAction);
-	connect(saveContinuousSnapShotAction, SIGNAL(triggered()), m_parent, SLOT(continuousSnapshot()));
+	connect(saveContinuousSnapShotAction, &QAction::triggered, m_parent, &iRICMainWindow::continuousSnapshot);
 
 	m_fileMenu->addSeparator();
 
@@ -197,13 +197,13 @@ void iRICMainWindowActionManager::setupFileMenu()
 	exportCalcCondAction = new QAction(tr("&Calculation Condition..."), this);
 	connect(exportCalcCondAction, SIGNAL(triggered()), m_parent, SLOT(exportCalcCondition()));
 	calcResultExportActionInFileMenu = new QAction(tr("Calculation &Result..."), this);
-	connect(calcResultExportActionInFileMenu, SIGNAL(triggered()), m_parent, SLOT(exportCalculationResult()));
+	connect(calcResultExportActionInFileMenu, &QAction::triggered, m_parent, &iRICMainWindow::exportCalculationResult);
 	particleExportAction = new QAction(tr("&Particles..."), this);
-	connect(particleExportAction, SIGNAL(triggered()), m_parent, SLOT(exportParticles()));
+	connect(particleExportAction, &QAction::triggered, m_parent, &iRICMainWindow::exportParticles);
 	cfShapeExportAction = new QAction(tr("&Contour Figure as ESRI Shapefiles..."), this);
-	connect(cfShapeExportAction, SIGNAL(triggered()), m_parent, SLOT(exportCfShape()));
+	connect(cfShapeExportAction, &QAction::triggered, m_parent, &iRICMainWindow::exportCfShape);
 	svKmzExportAction = new QAction(tr("&Google Earth KMZ for street view"), this);
-	connect(svKmzExportAction, SIGNAL(triggered()), m_parent, SLOT(exportStKMZ()));
+	connect(svKmzExportAction, &QAction::triggered, m_parent, &iRICMainWindow::exportStKMZ);
 
 	m_fileMenu->addSeparator();
 
@@ -216,20 +216,20 @@ void iRICMainWindowActionManager::setupFileMenu()
 //	m_fileMenu->addSeparator();
 
 	m_recentProjectsMenu = new QMenu(tr("&Recent Projects"), m_fileMenu);
-	connect(m_recentProjectsMenu, SIGNAL(aboutToShow()), m_parent, SLOT(setupRecentProjectsMenu()));
+	connect(m_recentProjectsMenu, &QMenu::aboutToShow, m_parent, &iRICMainWindow::setupRecentProjectsMenu);
 	m_fileMenu->addMenu(m_recentProjectsMenu);
 
 	m_fileMenu->addSeparator();
 
 	showStartDialogAction = new QAction(tr("Show iRIC Start Page..."), this);
 	m_fileMenu->addAction(showStartDialogAction);
-	connect(showStartDialogAction, SIGNAL(triggered()), m_parent, SLOT(openStartDialog()));
+	connect(showStartDialogAction, &QAction::triggered, m_parent, &iRICMainWindow::openStartDialog);
 
 	m_fileMenu->addSeparator();
 
 	exitAction = new QAction(tr("E&xit"), m_fileMenu);
 	m_fileMenu->addAction(exitAction);
-	connect(exitAction, SIGNAL(triggered()), m_parent, SLOT(close()));
+	connect(exitAction, &QAction::triggered, m_parent, &iRICMainWindow::close);
 }
 
 void iRICMainWindowActionManager::setupImportMenu()
@@ -237,13 +237,13 @@ void iRICMainWindowActionManager::setupImportMenu()
 	QMenu* importMenu = dynamic_cast<QMenu*> (sender());
 	importMenu->clear();
 	m_geoDataImportMenu = importMenu->addMenu(tr("G&eographic Data"));
-	connect(m_geoDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportMenu()));
+	connect(m_geoDataImportMenu, &QMenu::aboutToShow, m_parent->preProcessorWindow(), &PreProcessorWindow::setupGeoDataImportMenu);
 
 	m_geoDataImportFromWebMenu = importMenu->addMenu(tr("Geographic Data (Elevation from web)"));
-	connect(m_geoDataImportFromWebMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataImportFromWebMenu()));
+	connect(m_geoDataImportFromWebMenu, &QMenu::aboutToShow, m_parent->preProcessorWindow(), &PreProcessorWindow::setupGeoDataImportFromWebMenu);
 
 	m_hydraulicDataImportMenu = importMenu->addMenu(tr("&Hydraulic Data"));
-	connect(m_hydraulicDataImportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupHydraulicDataImportMenu()));
+	connect(m_hydraulicDataImportMenu, &QMenu::aboutToShow, m_parent->preProcessorWindow(), &PreProcessorWindow::setupHydraulicDataImportMenu);
 
 	addGridCreatingConditionImportMenu(importMenu);
 	addGridImportMenu(importMenu);
@@ -258,7 +258,7 @@ void iRICMainWindowActionManager::setupExportMenu()
 {
 	m_exportMenu->clear();
 	m_geoDataExportMenu = m_exportMenu->addMenu(tr("G&eographic Data"));
-	connect(m_geoDataExportMenu, SIGNAL(aboutToShow()), m_parent->preProcessorWindow(), SLOT(setupGeoDataExportMenu()));
+	connect(m_geoDataExportMenu, &QMenu::aboutToShow, m_parent->preProcessorWindow(), &PreProcessorWindow::setupGeoDataExportMenu);
 	addGridCreatingConditionExportMenu(m_exportMenu);
 	addGridExportMenu(m_exportMenu);
 //	exportCgnsAction = new QAction(tr("&Case (CGNS file)..."), m_exportMenu);
@@ -297,23 +297,23 @@ void iRICMainWindowActionManager::setupEditMenu()
 	cutAction = new QAction(tr("Cu&t"), m_editMenu);
 	cutAction->setIcon(QIcon(":/images/iconCut.png"));
 	m_editMenu->addAction(cutAction);
-	connect(cutAction, SIGNAL(triggered()), m_parent, SLOT(cut()));
+	connect(cutAction, &QAction::triggered, m_parent, &iRICMainWindow::cut);
 
 	copyAction = new QAction(tr("&Copy"), m_editMenu);
 	copyAction->setIcon(QIcon(":/images/iconCopy.png"));
 	m_editMenu->addAction(copyAction);
-	connect(copyAction, SIGNAL(triggered()), m_parent, SLOT(copy()));
+	connect(copyAction, &QAction::triggered, m_parent, &iRICMainWindow::copy);
 
 	pasteAction = new QAction(tr("&Paste"), m_editMenu);
 	pasteAction->setIcon(QIcon(":/images/iconPaste.png"));
 	m_editMenu->addAction(pasteAction);
-	connect(pasteAction, SIGNAL(triggered()), m_parent, SLOT(paste()));
+	connect(pasteAction, &QAction::triggered, m_parent, &iRICMainWindow::paste);
 }
 
 void iRICMainWindowActionManager::setupViewMenu()
 {
 	m_viewMenu = new QMenu(tr("&View"), m_menuBar);
-	connect(m_viewMenu, SIGNAL(aboutToShow()), this, SLOT(updateWindowList()));
+	connect(m_viewMenu, &QMenu::aboutToShow, this, &iRICMainWindowActionManager::updateWindowList);
 
 	QMenu* toolBarMenu = new QMenu(tr("&Toolbar"), m_viewMenu);
 	m_viewMenu->addMenu(toolBarMenu);
@@ -354,6 +354,10 @@ void iRICMainWindowActionManager::setupViewMenu()
 	viewBackgroundColorAction->setIcon(QIcon(":/libs/guibase/images/iconColor.svg"));
 	m_viewMenu->addAction(viewBackgroundColorAction);
 	viewBackgroundColorAction->setDisabled(true);
+
+	viewEditLegendSettingAction = new QAction(tr("Color Bar &Bulk Setting..."), m_viewMenu);
+	m_viewMenu->addAction(viewEditLegendSettingAction);
+	viewEditLegendSettingAction->setDisabled(true);
 
 	viewZDirectionScaleAction = new QAction(tr("&Z-direction Scale..."), m_viewMenu);
 	m_viewMenu->addAction(viewZDirectionScaleAction);
@@ -1042,15 +1046,22 @@ void iRICMainWindowActionManager::updateObjectBrowserMenu(QWidget* w)
 {
 	WindowWithObjectBrowserI* window = dynamic_cast<WindowWithObjectBrowserI*>(w);
 	viewObjectBrowserAction->disconnect();
+	viewEditLegendSettingAction->disconnect();
+
 	if (window == nullptr) {
 		viewObjectBrowserAction->setDisabled(true);
 		viewObjectBrowserAction->setChecked(false);
+
+		viewEditLegendSettingAction->setDisabled(true);
 	} else {
 		viewObjectBrowserAction->setEnabled(true);
 		ObjectBrowser* o = window->objectBrowser();
 		viewObjectBrowserAction->setChecked(o->isVisible());
-		connect(viewObjectBrowserAction, SIGNAL(triggered(bool)), o, SLOT(setVisible(bool)));
-		connect(o, SIGNAL(visibilityChanged(bool)), viewObjectBrowserAction, SLOT(setChecked(bool)));
+		connect(viewObjectBrowserAction, &QAction::triggered, o, &ObjectBrowser::setVisible);
+		connect(o, &ObjectBrowser::visibilityChanged, viewObjectBrowserAction, &QAction::setChecked);
+
+		viewEditLegendSettingAction->setEnabled(true);
+		connect(viewEditLegendSettingAction, &QAction::triggered, window->dataModel(), &GraphicsWindowDataModel::editLegendBulkSetting);
 	}
 }
 

@@ -209,6 +209,14 @@ bool Post2dWindowNodeScalarGroupDataItem::hasTransparentPart()
 	return true;
 }
 
+void Post2dWindowNodeScalarGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	if (! (isAncientChecked() && isChecked())) {return;}
+	if (! impl->m_setting.colorMapSetting->legendSetting()->getVisible()) {return;}
+
+	legends->push_back(impl->m_setting.colorMapSetting->legendSetting());
+}
+
 void Post2dWindowNodeScalarGroupDataItem::informSelection(VTKGraphicsView* /*v*/)
 {
 	topDataItem()->attributeBrowserController()->initialize();

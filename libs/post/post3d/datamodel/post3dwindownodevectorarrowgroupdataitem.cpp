@@ -248,6 +248,13 @@ bool Post3dWindowNodeVectorArrowGroupDataItem::addToolBarButtons(QToolBar* toolB
 	return true;
 }
 
+void Post3dWindowNodeVectorArrowGroupDataItem::gatherActiveColorMapLegends(std::vector<ColorMapLegendSettingContainerI*>* legends)
+{
+	for (auto cm : activeColorMaps()) {
+		legends->push_back(cm->legendSetting());
+	}
+}
+
 void Post3dWindowNodeVectorArrowGroupDataItem::doHandleResize(QResizeEvent* event, VTKGraphicsView* v)
 {
 	if (m_childItems.size() == 0) {return;}
