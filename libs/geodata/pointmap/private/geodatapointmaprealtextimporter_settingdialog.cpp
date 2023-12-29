@@ -42,6 +42,10 @@ GeoDataPointmapRealTextImporter::SettingDialog::SettingDialog(QWidget *parent) :
 	QTextCodec* defaultCodec = QTextCodec::codecForLocale();
 	int index = codecs.indexOf(defaultCodec->name());
 	ui->encodingComboBox->setCurrentIndex(index);
+
+	QList<int> sizes;
+	sizes << 1 << 10000000;
+	ui->splitter->setSizes(sizes);
 }
 
 GeoDataPointmapRealTextImporter::SettingDialog::~SettingDialog()
@@ -102,7 +106,7 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 	comboBoxes.push_back(ui->yFieldComboBox);
 	comboBoxes.push_back(ui->valueFieldComboBox);
 
-	for (QComboBox* c : comboBoxes) {
+	for (auto c : comboBoxes) {
 		c->blockSignals(true);
 		oldSels.push_back(c->currentIndex());
 	}
@@ -122,7 +126,7 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updateComboBoxes()
 	}
 	QStringList fields = getFields(parser.get());
 
-	for (int i = 0; i < comboBoxes.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (comboBoxes.size()); ++i) {
 		QComboBox* c = comboBoxes.at(i);
 		int oldSel = oldSels.at(i);
 		c->clear();
@@ -242,10 +246,12 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 	bool ok;
 	QString error;
 
+	ui->errorsLabel->setText("");
+
 	std::unique_ptr<LineParser> parser(buildParser(&ok, &error));
 	if (! ok) {
-		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
-		ui->errorsLabel->setText(error);
+		showErrorMessageAndDisableOkButton(error);
+		return;
 	}
 
 	auto fields = getFields(parser.get());
@@ -256,16 +262,24 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 
 	ui->tableWidget->setHorizontalHeaderLabels(fields);
 
+	if (fields.size() < 3) {
+		showErrorMessageAndDisableOkButton(GeoDataPointmapRealTextImporter::tr("The number of fields is less than 3."));
+	}
+
+	if (ui->xFieldComboBox->currentIndex() == ui->yFieldComboBox->currentIndex() ||
+			ui->xFieldComboBox->currentIndex() == ui->valueFieldComboBox->currentIndex() ||
+			ui->yFieldComboBox->currentIndex() == ui->valueFieldComboBox->currentIndex()) {
+		showErrorMessageAndDisableOkButton(GeoDataPointmapRealTextImporter::tr("X, Y and Value should refer to different fields."));
+	}
+
 	for (int i = 0; i < lines.size(); ++i) {
 		const auto& line = lines.at(i);
 		QString lineStr = parser->textCodec()->toUnicode(line);
 
 		auto frags = parser->parseToStrs(lineStr, &ok, &error);
 		if (! ok) {
-			ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 			int lineNo = ui->headerLinesSpinBox->value() + i * (1 + ui->skipRateSpinBox->value()) + 1;
-			ui->errorsLabel->setText(GeoDataPointmapRealTextImporter::tr("Line %1: %2").arg(lineNo).arg(error));
-			return;
+			showErrorMessageAndDisableOkButton(GeoDataPointmapRealTextImporter::tr("Line %1: %2").arg(lineNo).arg(error));
 		}
 		int vals = qMin(frags.size(), fields.size());
 		for (int j = 0; j < vals; ++j) {
@@ -274,8 +288,9 @@ void GeoDataPointmapRealTextImporter::SettingDialog::updatePreview()
 		}
 	}
 
-	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
-	ui->errorsLabel->setText("");
+	if (ui->errorsLabel->text().isEmpty()) {
+		ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(true);
+	}
 }
 
 
@@ -359,4 +374,10 @@ std::vector<QByteArray> GeoDataPointmapRealTextImporter::SettingDialog::getDataL
 		++ row;
 	}
 	return ret;
+}
+
+void GeoDataPointmapRealTextImporter::SettingDialog::showErrorMessageAndDisableOkButton(const QString& message)
+{
+	ui->errorsLabel->setText(message);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
 }

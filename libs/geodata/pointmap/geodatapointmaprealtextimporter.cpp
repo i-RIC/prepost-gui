@@ -196,7 +196,6 @@ bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QStr
 	auto projectCs = item->projectData()->mainfile()->coordinateSystem();
 	auto csBuilder = item->projectData()->mainWindow()->coordinateSystemBuilder();
 
-
 	SettingDialog dialog(w);
 	dialog.setFileName(QDir::toNativeSeparators(filename));
 	dialog.setIsCsv(filename.contains(".csv"));
@@ -207,19 +206,19 @@ bool GeoDataPointmapRealTextImporter::doInit(const QString& filename, const QStr
 	auto prjFilename = filename;
 	prjFilename.replace(QRegExp("\\.([a-z]+)$"), ".prj");
 	if (QFile::exists(prjFilename)) {
-			// read and get EPSG code
-			QFile f(prjFilename);
-			f.open(QFile::ReadOnly);
-			auto wkt = f.readAll().toStdString();
-			int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
-			if (epsgCode != 0) {
-				auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
-				dialog.setCoordinateSystem(cs);
-			} else {
-				dialog.setCoordinateSystem(projectCs);
-			}
-	} else {
+		// read and get EPSG code
+		QFile f(prjFilename);
+		f.open(QFile::ReadOnly);
+		auto wkt = f.readAll().toStdString();
+		int epsgCode = GdalUtil::wkt2Epsg(wkt.c_str());
+		if (epsgCode != 0) {
+			auto cs = csBuilder->system(QString("EPSG:%1").arg(epsgCode));
+			dialog.setCoordinateSystem(cs);
+		} else {
 			dialog.setCoordinateSystem(projectCs);
+		}
+	} else {
+		dialog.setCoordinateSystem(projectCs);
 	}
 
 	if (dialog.exec() != QDialog::Accepted) {return false;}
