@@ -569,34 +569,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Ката</translation>
+        <translation type="vanished">Ката</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Файлды ачууда ката кетти %1.</translation>
+        <translation type="vanished">Файлды ачууда ката кетти %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM ж. (*.tpo)</translation>
+        <translation type="vanished">DEM ж. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Топография файлы (*.tpo)</translation>
+        <translation type="vanished">Топография файлы (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Чыпкалоо жөндөөсү</translation>
+        <translation type="vanished">Чыпкалоо жөндөөсү</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Эгерде сиз маалымат топтомун чыпкалоону кааласаңыз, анда 1ден ашык маанини көрсөтүңүз.</translation>
+        <translation type="vanished">Эгерде сиз маалымат топтомун чыпкалоону кааласаңыз, анда 1ден ашык маанини көрсөтүңүз.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Чыпка:</translation>
+        <translation type="vanished">Чыпка:</translation>
     </message>
 </context>
 <context>
@@ -668,6 +668,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>Текст файлы (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

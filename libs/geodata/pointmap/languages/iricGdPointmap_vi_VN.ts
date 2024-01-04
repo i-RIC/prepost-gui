@@ -569,34 +569,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Đã xảy ra lỗi mở tệp khi mở %1.</translation>
+        <translation type="vanished">Đã xảy ra lỗi mở tệp khi mở %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM, v.v. (*.tpo)</translation>
+        <translation type="vanished">DEM, v.v. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Tệp địa hình (*.tpo)</translation>
+        <translation type="vanished">Tệp địa hình (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Cài đặt lọc</translation>
+        <translation type="vanished">Cài đặt lọc</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Nếu bạn muốn lọc tập dữ liệu, hãy chỉ định giá trị lớn hơn 1.</translation>
+        <translation type="vanished">Nếu bạn muốn lọc tập dữ liệu, hãy chỉ định giá trị lớn hơn 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Lọc:</translation>
+        <translation type="vanished">Lọc:</translation>
     </message>
 </context>
 <context>
@@ -668,6 +668,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>tệp văn bản (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -569,34 +569,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Atverot failu, radās kļūda %1.</translation>
+        <translation type="vanished">Atverot failu, radās kļūda %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM utt. (*.tpo)</translation>
+        <translation type="vanished">DEM utt. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topogrāfijas fails (*.tpo)</translation>
+        <translation type="vanished">Topogrāfijas fails (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Filtrēšanas iestatījums</translation>
+        <translation type="vanished">Filtrēšanas iestatījums</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Ja vēlaties filtrēt datu kopu, norādiet vērtību vairāk nekā 1.</translation>
+        <translation type="vanished">Ja vēlaties filtrēt datu kopu, norādiet vērtību vairāk nekā 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Filtrs:</translation>
+        <translation type="vanished">Filtrs:</translation>
     </message>
 </context>
 <context>
@@ -668,6 +668,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>Teksta fails (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
