@@ -567,34 +567,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>오류</translation>
+        <translation type="vanished">오류</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>여는 동안 파일 열기 오류가 발생했습니다. %1.</translation>
+        <translation type="vanished">여는 동안 파일 열기 오류가 발생했습니다. %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>디엠 등 (*.tpo)</translation>
+        <translation type="vanished">디엠 등 (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>지형 파일 (*.tpo)</translation>
+        <translation type="vanished">지형 파일 (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>필터링 설정</translation>
+        <translation type="vanished">필터링 설정</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>데이터 세트를 필터링하려면 1보다 큰 값을 지정하십시오.</translation>
+        <translation type="vanished">데이터 세트를 필터링하려면 1보다 큰 값을 지정하십시오.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>필터:</translation>
+        <translation type="vanished">필터:</translation>
     </message>
 </context>
 <context>
@@ -666,6 +666,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>텍스트 파일 (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

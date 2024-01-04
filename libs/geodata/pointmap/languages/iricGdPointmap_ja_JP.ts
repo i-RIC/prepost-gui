@@ -646,11 +646,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>%1 を開いている時にエラーが発生しました。</translation>
+        <translation type="vanished">%1 を開いている時にエラーが発生しました。</translation>
     </message>
     <message>
         <source>RIC-Nays DEM (*.dat *.txt)</source>
@@ -662,26 +662,26 @@
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM など (*.tpo)</translation>
+        <translation type="vanished">DEM など (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>地勢データ (*.tpo)</translation>
+        <translation type="vanished">地勢データ (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>間引き設定</translation>
+        <translation type="vanished">間引き設定</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>データの間引きを行いたい場合、1より大きい値を指定してください。</translation>
+        <translation type="vanished">データの間引きを行いたい場合、1より大きい値を指定してください。</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
 </context>
 <context>
@@ -781,6 +781,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>テキストファイル (*.tpo *.csv *.txt, *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation>フィールドは最低限3以上ある必要があります。</translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation>X, Y, 値は異なるフィールドを参照する必要があります。</translation>
     </message>
 </context>
 <context>

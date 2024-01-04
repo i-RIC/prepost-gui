@@ -567,34 +567,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Hiba</translation>
+        <translation type="vanished">Hiba</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Fájlmegnyitási hiba történt megnyitáskor %1.</translation>
+        <translation type="vanished">Fájlmegnyitási hiba történt megnyitáskor %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM stb. (*.tpo)</translation>
+        <translation type="vanished">DEM stb. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topográfiai fájl (*.tpo)</translation>
+        <translation type="vanished">Topográfiai fájl (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Szűrési beállítás</translation>
+        <translation type="vanished">Szűrési beállítás</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Ha szűrni szeretné az adatkészletet, adjon meg 1 -nél nagyobb értéket.</translation>
+        <translation type="vanished">Ha szűrni szeretné az adatkészletet, adjon meg 1 -nél nagyobb értéket.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Szűrő:</translation>
+        <translation type="vanished">Szűrő:</translation>
     </message>
 </context>
 <context>
@@ -666,6 +666,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>Szöveges fájl (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

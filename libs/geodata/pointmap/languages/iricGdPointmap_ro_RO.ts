@@ -567,34 +567,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="vanished">Eroare</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Eroare de deschidere a fișierului a apărut în timpul deschiderii %1.</translation>
+        <translation type="vanished">Eroare de deschidere a fișierului a apărut în timpul deschiderii %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM etc. (*.tpo)</translation>
+        <translation type="vanished">DEM etc. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Fișier de topografie (*.tpo)</translation>
+        <translation type="vanished">Fișier de topografie (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Setarea filtrării</translation>
+        <translation type="vanished">Setarea filtrării</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Dacă doriți să filtrați setul de date, specificați valoarea mai mare de 1.</translation>
+        <translation type="vanished">Dacă doriți să filtrați setul de date, specificați valoarea mai mare de 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Filtru:</translation>
+        <translation type="vanished">Filtru:</translation>
     </message>
 </context>
 <context>
@@ -666,6 +666,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>Fisier text (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

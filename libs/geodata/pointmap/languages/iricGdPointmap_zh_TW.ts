@@ -567,34 +567,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>打開時出現文件打開錯誤 %1.</translation>
+        <translation type="vanished">打開時出現文件打開錯誤 %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM 等 (*.tpo)</translation>
+        <translation type="vanished">DEM 等 (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>地形文件 (*.tpo)</translation>
+        <translation type="vanished">地形文件 (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>過濾設置</translation>
+        <translation type="vanished">過濾設置</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>如果要過濾數據集，請指定大於 1 的值。</translation>
+        <translation type="vanished">如果要過濾數據集，請指定大於 1 的值。</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>篩選：</translation>
+        <translation type="vanished">篩選：</translation>
     </message>
 </context>
 <context>
@@ -666,6 +666,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>文本文件 (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
