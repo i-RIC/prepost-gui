@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Số trường ít hơn 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y và Giá trị phải đề cập đến các trường khác nhau.</translation>
     </message>
 </context>
 <context>

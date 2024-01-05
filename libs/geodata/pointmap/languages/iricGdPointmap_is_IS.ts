@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjöldi reita er færri en 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y og Value ættu að vísa til mismunandi sviða.</translation>
     </message>
 </context>
 <context>

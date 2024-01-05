@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>필드 수가 3개 미만입니다.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y 및 값은 서로 다른 필드를 참조해야 합니다.</translation>
     </message>
 </context>
 <context>

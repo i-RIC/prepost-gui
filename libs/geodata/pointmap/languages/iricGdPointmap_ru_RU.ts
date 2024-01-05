@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество полей меньше 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y и Value должны относиться к разным полям.</translation>
     </message>
 </context>
 <context>

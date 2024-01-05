@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="el_GR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -644,55 +642,55 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Κοινός</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Κατεύθυνση:</translation>
+        <translation>Κατεύθυνση:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Οριζόντιος</translation>
+        <translation>Οριζόντιος</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Κατακόρυφος</translation>
+        <translation>Κατακόρυφος</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Γραμματοσειρά</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">Τίτλος:</translation>
+        <translation>Τίτλος:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ετικέτες:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Χρώμα</translation>
+        <translation>Χρώμα</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished">Επιγραφή:</translation>
+        <translation>Επιγραφή:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished">Ιστορικό:</translation>
+        <translation>Ιστορικό:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished">Σχεδιάστε το περίγραμμα</translation>
+        <translation>Σχεδιάστε το περίγραμμα</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιθώριο</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
@@ -700,7 +698,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
@@ -708,55 +706,55 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Μέγεθος</translation>
+        <translation>Μέγεθος</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Πλάτος:</translation>
+        <translation>Πλάτος:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished">px</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished">Υψος:</translation>
+        <translation>Υψος:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished">Πλάτος ράβδου</translation>
+        <translation>Πλάτος ράβδου</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Αυτο</translation>
+        <translation>Αυτο</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished">Ευθυγραμμία</translation>
+        <translation>Ευθυγραμμία</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished">Αριστερά</translation>
+        <translation>Αριστερά</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished">Κέντρο</translation>
+        <translation>Κέντρο</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished">σωστά</translation>
+        <translation>σωστά</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Θέσεις</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Οριζόντιος:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Κατακόρυφος:</translation>
     </message>
 </context>
 <context>
@@ -875,7 +873,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ποσοστό παράβλεψης:</translation>
     </message>
 </context>
 <context>
@@ -1042,15 +1040,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Αντίστροφα χρώματα (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation type="unfinished"></translation>
+        <translation>Ίσα Μεραρχία (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή Αριθμ. Χρωματιστά</translation>
     </message>
 </context>
 <context>
@@ -1095,31 +1093,31 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλάξτε τον αριθμό των χρωμάτων</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation type="unfinished">Αριθμός χρωμάτων:</translation>
+        <translation>Αριθμός χρωμάτων:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished">Εύρος τιμών</translation>
+        <translation>Εύρος τιμών</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Μέγιστη:</translation>
+        <translation>Μέγιστη:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ελάχ.</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">Επιλογές</translation>
+        <translation>Επιλογές</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished">Τιμή δεκαδικών ψηφίων:</translation>
+        <translation>Τιμή δεκαδικών ψηφίων:</translation>
     </message>
 </context>
 <context>
@@ -1514,15 +1512,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Προειδοποίηση</translation>
+        <translation>Προειδοποίηση</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν υπάρχει ενεργή γραμμή χρώματος</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Μαζική ρύθμιση γραμμής χρώματος</translation>
     </message>
 </context>
 <context>
@@ -1753,8 +1751,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Χρώμα:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση: Μπορείτε να χρησιμοποιήσετε μόνο χαρακτήρες ASCII για το όνομα.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση: Μπορείτε να χρησιμοποιήσετε μόνο χαρακτήρες ASCII για το όνομα.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;. /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1779,7 +1777,7 @@ Parse error %2 at %3, column %4</source>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Μορφή</translation>
+        <translation>Μορφή</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1832,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτόματο μέγεθος</translation>
     </message>
 </context>
 <context>
@@ -1871,12 +1869,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Ο κόμβος ορισμού δεν αποθηκεύεται</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Λάθος τιμήType &quot;%1&quot;έχει οριστεί.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Λάθος τιμήType "%1"έχει οριστεί.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Λάθος κατάσταση Τύπος &quot;%1&quot;έχει οριστεί.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Λάθος κατάσταση Τύπος "%1"έχει οριστεί.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1947,8 +1945,8 @@ Do you really want to import this file?</source>
         <translation>Το άνοιγμα του αρχείου CGNS απέτυχε.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>Το χαρακτηριστικό name δεν έχει οριστεί για το στοιχείο &quot;Item&quot;.</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>Το χαρακτηριστικό name δεν έχει οριστεί για το στοιχείο "Item".</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2159,8 +2157,8 @@ Do you really want to import this file?</source>
         <translation>Αρχείο %1 ενημερώνεται μετά την εισαγωγή στην κατάσταση υπολογισμού %2 Το Θέλετε να εισαγάγετε το ενημερωμένο αρχείο;</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Μπορείτε να αντιγράψετε και να επικολλήσετε τις τιμές, με συντόμευση &quot;Ctrl + C&quot; και &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Μπορείτε να αντιγράψετε και να επικολλήσετε τις τιμές, με συντόμευση "Ctrl + C" και "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2301,8 +2299,8 @@ Do you really want to import this file?</source>
         <translation>Παρουσιάστηκε σφάλμα κατά το άνοιγμα του αρχείου.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Οι δύο πρώτες στήλες πρέπει να είναι &quot;X&quot; και &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Οι δύο πρώτες στήλες πρέπει να είναι "X" και "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2463,8 +2461,8 @@ Do you really want to import this file?</source>
         <translation>Ορισμός μεταβλητής</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2542,8 +2540,8 @@ Do you really want to import this file?</source>
         <translation>Κάτω (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Σημείωση &lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2904,8 +2902,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Ορισμός εξόδου</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; &quot;&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/el/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff; "&gt; εδώ &lt;/span&gt; &lt;/a&gt; για λεπτομέρειες. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3189,8 +3187,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Χώρος εργασίας &quot;%1&quot;έχει %2 φακέλους έργου που φαίνεται να μην χρησιμοποιούνται πλέον. Θέλετε να τα αφαιρέσετε;</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Χώρος εργασίας "%1"έχει %2 φακέλους έργου που φαίνεται να μην χρησιμοποιούνται πλέον. Θέλετε να τα αφαιρέσετε;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3789,8 +3787,8 @@ Do you really want to import this file?</source>
         <translation>Ορισμός μεταβλητής</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff;&quot;&gt;εδώ&lt;/span&gt;&lt;/a&gt; για λεπτομέρειες.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Μπορείτε να ορίσετε τη μεταβλητή με γλώσσα JavaScript. Ανατρέξτε στο &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -διακόσμηση: υπογράμμιση; χρώμα:#0000ff;"&gt;εδώ&lt;/span&gt;&lt;/a&gt; για λεπτομέρειες.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3880,8 +3878,8 @@ Do you really want to import this file?</source>
         <translation>Κάτω (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Σημείωση&lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Σημείωση&lt;/span&gt;: Η σειρά στη λίστα είναι σημαντική. Στον ορισμό, μπορείτε να χρησιμοποιήσετε την τιμή των απλών υπολογισμών λειτουργίας ως μεταβλητή, που εμφανίζεται νωρίτερα στη λίστα.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

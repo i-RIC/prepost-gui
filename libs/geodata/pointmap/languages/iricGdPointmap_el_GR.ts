@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο αριθμός των πεδίων είναι μικρότερος από 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα X, Y και Τιμή πρέπει να αναφέρονται σε διαφορετικά πεδία.</translation>
     </message>
 </context>
 <context>

@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>จำนวนฟิลด์น้อยกว่า 3</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y และ Value ควรอ้างอิงถึงฟิลด์ที่แตกต่างกัน</translation>
     </message>
 </context>
 <context>

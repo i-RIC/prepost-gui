@@ -716,11 +716,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>El número de campos es inferior a 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y y Valor deben hacer referencia a campos diferentes.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -644,55 +642,55 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>흔한</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">방향:</translation>
+        <translation>방향:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">수평의</translation>
+        <translation>수평의</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">수직의</translation>
+        <translation>수직의</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>폰트</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">제목:</translation>
+        <translation>제목:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>라벨:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">색상</translation>
+        <translation>색상</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished">상표:</translation>
+        <translation>상표:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished">배경:</translation>
+        <translation>배경:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished">테두리 그리기</translation>
+        <translation>테두리 그리기</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>여유</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
@@ -700,7 +698,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
@@ -708,55 +706,55 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">크기</translation>
+        <translation>크기</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">너비:</translation>
+        <translation>너비:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished">픽셀</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished">키:</translation>
+        <translation>키:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished">막대 너비</translation>
+        <translation>바 너비</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">자동</translation>
+        <translation>자동</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished">조정</translation>
+        <translation>조정</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished">왼쪽</translation>
+        <translation>왼쪽</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished">센터</translation>
+        <translation>센터</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished">오른쪽</translation>
+        <translation>오른쪽</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation type="unfinished"></translation>
+        <translation>직위</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>수평의:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>수직의:</translation>
     </message>
 </context>
 <context>
@@ -875,7 +873,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>건너뛰기 비율:</translation>
     </message>
 </context>
 <context>
@@ -1042,15 +1040,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>색상 반전 (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation type="unfinished"></translation>
+        <translation>균등 분할 (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>번호 변경 그림 물감</translation>
     </message>
 </context>
 <context>
@@ -1095,31 +1093,31 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>색상 수 변경</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation type="unfinished">색상 수:</translation>
+        <translation>색상 수:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished">값 범위</translation>
+        <translation>값 범위</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">최대:</translation>
+        <translation>최대:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">최소:</translation>
+        <translation>최소:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">옵션</translation>
+        <translation>옵션</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished">값 소수 자릿수:</translation>
+        <translation>소수점 자리 값:</translation>
     </message>
 </context>
 <context>
@@ -1514,15 +1512,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">경고</translation>
+        <translation>경고</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>활성화된 컬러바가 없습니다.</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>컬러바 벌크 설정</translation>
     </message>
 </context>
 <context>
@@ -1753,8 +1751,8 @@ Parse error %2 at %3, column %4</source>
         <translation>색상:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고: 이름에는 ASCII 문자만 사용할 수 있습니다.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1779,7 +1777,7 @@ Parse error %2 at %3, column %4</source>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">형태</translation>
+        <translation>형태</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1832,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation type="unfinished"></translation>
+        <translation>자동 크기</translation>
     </message>
 </context>
 <context>
@@ -1871,12 +1869,12 @@ Parse error %2 at %3, column %4</source>
         <translation>정의 노드가 저장되지 않았습니다.</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>잘못된 값 유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>잘못된 값 유형 "%1"가 설정되어 있습니다.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>잘못된 조건유형 &quot;%1&quot;가 설정되어 있습니다.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>잘못된 조건유형 "%1"가 설정되어 있습니다.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1947,8 +1945,8 @@ Do you really want to import this file?</source>
         <translation>CGNS 파일을 열지 못했습니다.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>&quot;Item&quot; 요소에 대해 이름 속성이 정의되지 않았습니다.</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>"Item" 요소에 대해 이름 속성이 정의되지 않았습니다.</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2159,8 +2157,8 @@ Do you really want to import this file?</source>
         <translation>정보</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>단축키 &quot;Ctrl + C&quot; 및 &quot;Ctrl + V&quot;를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>단축키 "Ctrl + C" 및 "Ctrl + V"를 사용하여 값을 복사하여 붙여넣을 수 있습니다.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2297,8 +2295,8 @@ Do you really want to import this file?</source>
         <translation>파일을 여는 동안 오류가 발생했습니다.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>처음 두 열은 &quot;X&quot;와 &quot;Y&quot;여야 합니다.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>처음 두 열은 "X"와 "Y"여야 합니다.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2463,8 +2461,8 @@ Do you really want to import this file?</source>
         <translation>변수의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2472,7 +2470,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 &quot;테스트를 위한 값&quot;을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;이를 클릭하여 정의를 테스트할 수 있습니다. 정의를 파싱하는 동안 오류가 발생하면 오류 메시지가 표시됩니다. 정의가 성공적으로 구문 분석되면 "테스트를 위한 값"을 사용하여 계산된 값이 각 입력에 대해 표시됩니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2542,8 +2540,8 @@ Do you really want to import this file?</source>
         <translation>아래에 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서 단순 연산 계산의 값을 목록의 앞부분에 나타나는 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2904,8 +2902,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">출력의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;JavaScript 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" 텍스트를 참조하십시오. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3189,8 +3187,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>작업 공간 &quot;%1&quot; 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>작업 공간 "%1" 가지다 %2 더 이상 사용하지 않는 것 같은 프로젝트 폴더. 제거하시겠습니까?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3789,8 +3787,8 @@ Do you really want to import this file?</source>
         <translation>변수의 정의</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;자바스크립트 언어로 변수를 정의할 수 있습니다. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m&quot;&gt;&lt;span style=&quot; 텍스트를 참조하세요. -장식: 밑줄, 색상:#0000ff;&quot;&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;자바스크립트 언어로 변수를 정의할 수 있습니다. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-Operation-results-m"&gt;&lt;span style=" 텍스트를 참조하세요. -장식: 밑줄, 색상:#0000ff;"&gt;여기&lt;/span&gt;&lt;/a&gt;에서 자세한 내용을 확인하세요.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3880,8 +3878,8 @@ Do you really want to import this file?</source>
         <translation>아래에 (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서는 목록 앞부분에 나타나는 단순 연산 계산 값을 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;참고&lt;/span&gt;: 목록의 순서가 중요합니다. 정의에서는 목록 앞부분에 나타나는 단순 연산 계산 값을 변수로 사용할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

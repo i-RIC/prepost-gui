@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -644,55 +642,55 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Lomake</translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Yleistä</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Suunta:</translation>
+        <translation>Suunta:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Vaakasuora</translation>
+        <translation>Vaakasuora</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Pystysuora</translation>
+        <translation>Pystysuora</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Fontti</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">Otsikko:</translation>
+        <translation>Otsikko:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tunnisteet:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Väri</translation>
+        <translation>Väri</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished">Tunniste:</translation>
+        <translation>Tunniste:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished">Tausta:</translation>
+        <translation>Tausta:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished">Piirrä reuna</translation>
+        <translation>Piirrä reuna</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Marginaali</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
@@ -700,7 +698,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
@@ -708,55 +706,55 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Koko</translation>
+        <translation>Koko</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Leveys:</translation>
+        <translation>Leveys:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished">px</translation>
+        <translation>px</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished">Korkeus:</translation>
+        <translation>Korkeus:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished">Palkin leveys</translation>
+        <translation>Palkin leveys</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Auto</translation>
+        <translation>Auto</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished">Tasaus</translation>
+        <translation>Tasaus</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished">Vasen</translation>
+        <translation>Vasen</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished">Keskusta</translation>
+        <translation>Keskusta</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished">Oikein</translation>
+        <translation>Oikein</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Asemat</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaaka:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pystysuora:</translation>
     </message>
 </context>
 <context>
@@ -875,7 +873,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohitusprosentti:</translation>
     </message>
 </context>
 <context>
@@ -1042,15 +1040,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Käänteiset värit (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation type="unfinished"></translation>
+        <translation>Tasainen jako (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta Num. värit</translation>
     </message>
 </context>
 <context>
@@ -1095,31 +1093,31 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta värien määrää</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation type="unfinished">Värien määrä:</translation>
+        <translation>Värien määrä:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished">Arvoalue</translation>
+        <translation>Arvoalue</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Max:</translation>
+        <translation>Max:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished">Min:</translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">Vaihtoehdot</translation>
+        <translation>Vaihtoehdot</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished">Arvo desimaalit:</translation>
+        <translation>Arvo desimaalit:</translation>
     </message>
 </context>
 <context>
@@ -1514,15 +1512,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Varoitus</translation>
+        <translation>Varoitus</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiivista väripalkkia ei ole</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Väripalkin joukkoasetus</translation>
     </message>
 </context>
 <context>
@@ -1753,8 +1751,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Väri:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa: Voit käyttää nimessä vain ASCII-merkkejä.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa: Voit käyttää nimessä vain ASCII-merkkejä.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1779,7 +1777,7 @@ Parse error %2 at %3, column %4</source>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Lomake</translation>
+        <translation>Lomake</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1832,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Automaattinen koonmääritys</translation>
     </message>
 </context>
 <context>
@@ -1871,12 +1869,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Määrityssolmu ei ole tallennettu</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Väärä valueType &quot;%1&quot;on asetettu.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Väärä valueType "%1"on asetettu.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Väärä kuntoTyyppi &quot;%1&quot;on asetettu.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Väärä kuntoTyyppi "%1"on asetettu.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1947,8 +1945,8 @@ Do you really want to import this file?</source>
         <translation>CGNS-tiedoston avaaminen epäonnistui.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>name-attribuuttia ei ole määritetty &quot;Item&quot;-elementille</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>name-attribuuttia ei ole määritetty "Item"-elementille</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2159,8 +2157,8 @@ Do you really want to import this file?</source>
         <translation>Tiedosto %1 päivitetään laskutoimintoon tuonnin jälkeen %2. Haluatko tuoda päivitetyn tiedoston?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Voit kopioida ja liittää arvot pikanäppäimillä &quot;Ctrl + C&quot; ja &quot;Ctrl + V&quot;</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Voit kopioida ja liittää arvot pikanäppäimillä "Ctrl + C" ja "Ctrl + V"</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2301,8 +2299,8 @@ Do you really want to import this file?</source>
         <translation>Virhe avattaessa tiedostoa.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>Kahden ensimmäisen sarakkeen on oltava &quot;X&quot; ja &quot;Y&quot;.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>Kahden ensimmäisen sarakkeen on oltava "X" ja "Y".</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2463,8 +2461,8 @@ Do you really want to import this file?</source>
         <translation>Määritelmä muuttuja</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2542,8 +2540,8 @@ Do you really want to import this file?</source>
         <translation>Alas (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Huomautus &lt;/span&gt;: Luettelon järjestys on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2904,8 +2902,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">Tuloksen määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -koristelu: alleviivattu; väri:#0000ff; &quot;&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; Voit määrittää muuttujan JavaScript -kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -koristelu: alleviivattu; väri:#0000ff; "&gt; täällä &lt;/span&gt; &lt;/a&gt;, jos haluat lisätietoja. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3189,8 +3187,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Työtila &quot;%1&quot;on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Työtila "%1"on %2 projektikansiot, joita ei näytä enää käytettävän. Haluatko poistaa ne?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3789,8 +3787,8 @@ Do you really want to import this file?</source>
         <translation>Muuttujan määritelmä</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voit määrittää muuttujan JavaScript-kielellä. Katso &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text -koristelu: alleviivaus; color:#0000ff;&quot;&gt;täältä&lt;/span&gt;&lt;/a&gt; lisätietoja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Voit määrittää muuttujan JavaScript-kielellä. Katso &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text -koristelu: alleviivaus; color:#0000ff;"&gt;täältä&lt;/span&gt;&lt;/a&gt; lisätietoja.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3880,8 +3878,8 @@ Do you really want to import this file?</source>
         <translation>Alas (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Huomaa&lt;/span&gt;: järjestys luettelossa on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Huomaa&lt;/span&gt;: järjestys luettelossa on tärkeä. Määritelmässä voit käyttää muuttujana yksinkertaisten operaatiolaskelmien arvoa, joka näkyy aiemmin luettelossa.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

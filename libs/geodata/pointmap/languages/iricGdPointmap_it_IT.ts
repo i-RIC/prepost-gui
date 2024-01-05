@@ -571,7 +571,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="vanished">Si è verificato un errore di apertura del file durante l&apos;apertura %1.</translation>
+        <translation type="vanished">Si è verificato un errore di apertura del file durante l'apertura %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il numero di campi è inferiore a 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y e Valore dovrebbero fare riferimento a campi diversi.</translation>
     </message>
 </context>
 <context>

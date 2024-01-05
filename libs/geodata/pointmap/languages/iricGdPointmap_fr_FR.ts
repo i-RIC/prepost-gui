@@ -571,7 +571,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="vanished">Une erreur d&apos;ouverture de fichier s&apos;est produite lors de l&apos;ouverture %1.</translation>
+        <translation type="vanished">Une erreur d'ouverture de fichier s'est produite lors de l'ouverture %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -590,7 +590,7 @@
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="vanished">Si vous souhaitez filtrer l&apos;ensemble de données, spécifiez une valeur supérieure à 1.</translation>
+        <translation type="vanished">Si vous souhaitez filtrer l'ensemble de données, spécifiez une valeur supérieure à 1.</translation>
     </message>
     <message>
         <source>Filter:</source>
@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le nombre de champs est inférieur à 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y et Value doivent faire référence à des champs différents.</translation>
     </message>
 </context>
 <context>

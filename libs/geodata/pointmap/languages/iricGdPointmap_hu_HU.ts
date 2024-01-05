@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>A mezők száma kevesebb, mint 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az X, Y és Value különböző mezőkre vonatkozik.</translation>
     </message>
 </context>
 <context>

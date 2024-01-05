@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -644,55 +642,55 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapLegendBulkEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Yaygın</translation>
     </message>
     <message>
         <source>Direction:</source>
-        <translation type="unfinished">Yön:</translation>
+        <translation>Yön:</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation type="unfinished">Yatay</translation>
+        <translation>Yatay</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation type="unfinished">Dikey</translation>
+        <translation>Dikey</translation>
     </message>
     <message>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Yazı tipi</translation>
     </message>
     <message>
         <source>Title:</source>
-        <translation type="unfinished">Başlık:</translation>
+        <translation>Başlık:</translation>
     </message>
     <message>
         <source>Labels:</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketler:</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished">Renk</translation>
+        <translation>Renk</translation>
     </message>
     <message>
         <source>Label:</source>
-        <translation type="unfinished">Etiket:</translation>
+        <translation>Etiket:</translation>
     </message>
     <message>
         <source>Background:</source>
-        <translation type="unfinished">Arka plan:</translation>
+        <translation>Arka plan:</translation>
     </message>
     <message>
         <source>Draw border</source>
-        <translation type="unfinished">Kenarlık çiz</translation>
+        <translation>Kenarlık çiz</translation>
     </message>
     <message>
         <source>Margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Marj</translation>
     </message>
     <message>
         <source>Horizontal Margin:</source>
@@ -700,7 +698,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>%</source>
-        <translation type="unfinished">%</translation>
+        <translation>%</translation>
     </message>
     <message>
         <source>Vertical Margin:</source>
@@ -708,55 +706,55 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Boyut</translation>
+        <translation>Boyut</translation>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">Genişlik:</translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished">piksel</translation>
+        <translation>piksel</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished">Yükseklik:</translation>
+        <translation>Yükseklik:</translation>
     </message>
     <message>
         <source>Bar Width</source>
-        <translation type="unfinished">Çubuk Genişliği</translation>
+        <translation>Çubuk Genişliği</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation type="unfinished">Oto</translation>
+        <translation>Oto</translation>
     </message>
     <message>
         <source>Alignment</source>
-        <translation type="unfinished">Hizalama</translation>
+        <translation>Hizalama</translation>
     </message>
     <message>
         <source>Left</source>
-        <translation type="unfinished">Sol</translation>
+        <translation>Sol</translation>
     </message>
     <message>
         <source>Center</source>
-        <translation type="unfinished">merkez</translation>
+        <translation>Merkez</translation>
     </message>
     <message>
         <source>Right</source>
-        <translation type="unfinished">Sağ</translation>
+        <translation>Sağ</translation>
     </message>
     <message>
         <source>Positions</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozisyonlar</translation>
     </message>
     <message>
         <source>Horizontal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yatay:</translation>
     </message>
     <message>
         <source>Vertical:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dikey:</translation>
     </message>
 </context>
 <context>
@@ -875,7 +873,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Skip rate:</source>
-        <translation type="unfinished"></translation>
+        <translation>Atlama oranı:</translation>
     </message>
 </context>
 <context>
@@ -1042,15 +1040,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>&amp;Reverse Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Ters Renkler (&amp;R)</translation>
     </message>
     <message>
         <source>&amp;Equal Division</source>
-        <translation type="unfinished"></translation>
+        <translation>Eşit Bölme (&amp;E)</translation>
     </message>
     <message>
         <source>Change Num. Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Numarayı Değiştir Renkler</translation>
     </message>
 </context>
 <context>
@@ -1095,31 +1093,31 @@ Parse error %2 at %3, column %4</source>
     <name>ColorMapSettingEditWidget_ChangeNumColorsDialog</name>
     <message>
         <source>Change the Number of Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Sayısını Değiştir</translation>
     </message>
     <message>
         <source>Number of colors:</source>
-        <translation type="unfinished">renk sayısı:</translation>
+        <translation>Renk sayısı:</translation>
     </message>
     <message>
         <source>Value Range</source>
-        <translation type="unfinished">Değer aralığı</translation>
+        <translation>Değer aralığı</translation>
     </message>
     <message>
         <source>Max:</source>
-        <translation type="unfinished">Maks:</translation>
+        <translation>Maksimum:</translation>
     </message>
     <message>
         <source>Min:</source>
-        <translation type="unfinished"></translation>
+        <translation>Min:</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">Seçenekler</translation>
+        <translation>Seçenekler</translation>
     </message>
     <message>
         <source>Value decimal places:</source>
-        <translation type="unfinished">Değer ondalık basamaklar:</translation>
+        <translation>Ondalık basamakların değeri:</translation>
     </message>
 </context>
 <context>
@@ -1514,15 +1512,15 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Uyarı</translation>
+        <translation>Uyarı</translation>
     </message>
     <message>
         <source>There is not active Color Bar</source>
-        <translation type="unfinished"></translation>
+        <translation>Etkin Renk Çubuğu yok</translation>
     </message>
     <message>
         <source>Color Bar Bulk Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Renk Çubuğu Toplu Ayarı</translation>
     </message>
 </context>
 <context>
@@ -1753,8 +1751,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Renk:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not: Ad için yalnızca ASCII karakterleri kullanabilirsiniz.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not: Ad için yalnızca ASCII karakterleri kullanabilirsiniz.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1779,7 +1777,7 @@ Parse error %2 at %3, column %4</source>
     <name>ImagePositionEditWidget</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished">Biçim</translation>
+        <translation>Biçim</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1832,7 @@ Parse error %2 at %3, column %4</source>
     </message>
     <message>
         <source>Auto Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Otomatik Boyut</translation>
     </message>
 </context>
 <context>
@@ -1871,12 +1869,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Tanım düğümü saklanmaz</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Yanlış değerType &quot;%1&quot; ayarlandı.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Yanlış değerType "%1" ayarlandı.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Yanlış koşul Türü &quot;%1&quot; ayarlandı.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Yanlış koşul Türü "%1" ayarlandı.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1892,7 +1890,7 @@ Parse error %2 at %3, column %4</source>
     <name>InputConditionDependency</name>
     <message>
         <source>Unhandled widget in ActionSetValue</source>
-        <translation>ActionSetValue&apos;da işlenmeyen pencere öğesi</translation>
+        <translation>ActionSetValue'da işlenmeyen pencere öğesi</translation>
     </message>
 </context>
 <context>
@@ -1947,8 +1945,8 @@ Do you really want to import this file?</source>
         <translation>CGNS dosyası açılamadı.</translation>
     </message>
     <message>
-        <source>name attribute is not defined for &quot;Item&quot; element</source>
-        <translation>&quot;Öğe&quot; öğesi için ad özelliği tanımlanmadı</translation>
+        <source>name attribute is not defined for "Item" element</source>
+        <translation>"Öğe" öğesi için ad özelliği tanımlanmadı</translation>
     </message>
     <message>
         <source>Edit %1</source>
@@ -2092,7 +2090,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Import Web</source>
-        <translation>Web&apos;i İçe Aktar</translation>
+        <translation>Web'i İçe Aktar</translation>
     </message>
     <message>
         <source>&amp;Export</source>
@@ -2159,8 +2157,8 @@ Do you really want to import this file?</source>
         <translation>Dosya %1 hesaplama koşuluna aktarıldıktan sonra güncellenir %2. Güncellenen dosyayı içe aktarmak istiyor musunuz?</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
-        <translation>Değerleri &quot;Ctrl + C&quot; ve &quot;Ctrl + V&quot; kısayollarıyla kopyalayıp yapıştırabilirsiniz.</translation>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
+        <translation>Değerleri "Ctrl + C" ve "Ctrl + V" kısayollarıyla kopyalayıp yapıştırabilirsiniz.</translation>
     </message>
     <message>
         <source>The following problems found: 
@@ -2301,8 +2299,8 @@ Do you really want to import this file?</source>
         <translation>Dosya açılırken hata oluştu.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
-        <translation>İlk iki sütun &quot;X&quot; ve &quot;Y&quot; olmalıdır.</translation>
+        <source>The first two columns must be "X" and "Y".</source>
+        <translation>İlk iki sütun "X" ve "Y" olmalıdır.</translation>
     </message>
     <message>
         <source>The data file has to consist of only English characters.</source>
@@ -2463,8 +2461,8 @@ Do you really want to import this file?</source>
         <translation>değişken tanımı</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; metnine bakın -decoration: underline; color:#0000ff;&quot;&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" metnine bakın -decoration: underline; color:#0000ff;"&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2472,7 +2470,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarılı bir şekilde ayrıştırıldığında, &quot;Test için değer&quot; kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarılı bir şekilde ayrıştırıldığında, "Test için değer" kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -2542,8 +2540,8 @@ Do you really want to import this file?</source>
         <translation>Aşağı (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listede daha önce görünen basit işlem hesaplamalarının değerini değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listede daha önce görünen basit işlem hesaplamalarının değerini değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2768,7 +2766,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Reading data from result/Solution%1.cgn failed. You can visualize calculation result in Solution1.cgn to Solution%2.cgn.</source>
-        <translation>Sonuç/Çözüm&apos;den veri okuma %1.cgn başarısız oldu. Hesaplama sonucunu Solution1.cgn&apos;de Solution&apos;a görselleştirebilirsiniz %2.cgn.</translation>
+        <translation>Sonuç/Çözüm'den veri okuma %1.cgn başarısız oldu. Hesaplama sonucunu Solution1.cgn'de Solution'a görselleştirebilirsiniz %2.cgn.</translation>
     </message>
 </context>
 <context>
@@ -2904,8 +2902,8 @@ Do you really want to import this file?</source>
         <translation type="vanished">çıktının tanımı</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; metnine bakın -decoration: underline; color:#0000ff;&quot;&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" metnine bakın -decoration: underline; color:#0000ff;"&gt;ayrıntılar için burada&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3189,8 +3187,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>çalışma alanı &quot;%1&quot; vardır %2 artık kullanılmıyor gibi görünen proje klasörleri. Onları kaldırmak istiyor musunuz?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>çalışma alanı "%1" vardır %2 artık kullanılmıyor gibi görünen proje klasörleri. Onları kaldırmak istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3789,8 +3787,8 @@ Do you really want to import this file?</source>
         <translation>değişkenin tanımı</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; metnine bakın -decoration: underline; color:#0000ff;&quot;&gt;ayrıntı için&lt;/span&gt;&lt;/a&gt; burayı tıklayın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Değişkeni JavaScript dili ile tanımlayabilirsiniz. Lütfen &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" metnine bakın -decoration: underline; color:#0000ff;"&gt;ayrıntı için&lt;/span&gt;&lt;/a&gt; burayı tıklayın.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -3798,7 +3796,7 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can test the definition by clicking this. If error occurs while parsing the definition, the error message is shown. When the definition is parsed successfully, the value calculated using the &amp;quot;Value for testing&amp;quot; for each input is shown.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarıyla ayrıştırıldığında &quot;Test değeri&quot; kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Buna tıklayarak tanımı test edebilirsiniz. Tanım ayrıştırılırken hata oluşursa hata mesajı gösterilir. Tanım başarıyla ayrıştırıldığında "Test değeri" kullanılarak hesaplanan değer; her giriş için gösterilir.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>----</source>
@@ -3880,8 +3878,8 @@ Do you really want to import this file?</source>
         <translation>Aşağı (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listenin başında yer alan basit işlem hesaplamalarının değerini bir değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not&lt;/span&gt;: Listedeki sıra önemlidir. Tanımda, listenin başında yer alan basit işlem hesaplamalarının değerini bir değişken olarak kullanabilirsiniz.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>

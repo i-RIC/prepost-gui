@@ -716,11 +716,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>字段数小于3。</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X、Y 和 Value 应引用不同的字段。</translation>
     </message>
 </context>
 <context>

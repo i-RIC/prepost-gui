@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Laukų skaičius yra mažesnis nei 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y ir reikšmė turėtų reikšti skirtingus laukus.</translation>
     </message>
 </context>
 <context>

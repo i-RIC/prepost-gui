@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ील्ड की संख्या 3 से कम है.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स, वाई और वैल्यू को अलग-अलग फ़ील्ड का संदर्भ देना चाहिए।</translation>
     </message>
 </context>
 <context>

@@ -590,7 +590,7 @@
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation type="vanished">Veri kümesini filtrelemek istiyorsanız, 1&apos;den büyük bir değer belirtin.</translation>
+        <translation type="vanished">Veri kümesini filtrelemek istiyorsanız, 1'den büyük bir değer belirtin.</translation>
     </message>
     <message>
         <source>Filter:</source>
@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alan sayısı 3'ten azdır.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y ve Değer farklı alanlara atıfta bulunmalıdır.</translation>
     </message>
 </context>
 <context>

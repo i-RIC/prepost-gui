@@ -571,7 +571,7 @@
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation type="vanished">S&apos;ha produït un error d&apos;obertura del fitxer en obrir-se %1.</translation>
+        <translation type="vanished">S'ha produït un error d'obertura del fitxer en obrir-se %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
@@ -669,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nombre de camps és inferior a 3.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>X, Y i Valor haurien de referir-se a camps diferents.</translation>
     </message>
 </context>
 <context>
