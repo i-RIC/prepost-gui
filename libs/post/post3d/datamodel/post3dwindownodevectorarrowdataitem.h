@@ -36,7 +36,7 @@ public:
 
 	vtkStructuredGrid* faceGrid() const;
 
-	const Setting& setting() const;
+	Setting setting() const;
 	void setSetting(const Setting& setting);
 
 	void update();
