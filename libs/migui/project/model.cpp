@@ -187,9 +187,10 @@ void buildInputBoundaryConditionsForGridType(Model* model, SolverDefinitionGridT
 		auto c = childNodes.at(i);
 		if (c.nodeType() == QDomNode::ElementNode && c.nodeName() == "Region") {
 			auto zoneName = iRIC::toStr(c.toElement().attribute("zoneName"));
-
 			auto base = cgnsFile->base(2);
 			auto zone = base->zone(zoneName);
+			if (zone == nullptr) {continue;}
+
 			buildInputBoundaryConditionsForZone(model, gt, zone, inputs, translator);
 		}
 	}
@@ -409,7 +410,7 @@ void buildGlobalOutputs(Model* model, SolverDefinition* def, std::vector<Connect
 	buildGlobalOutputRecursive(model, goNode, outputs, translator);
 }
 
-void buildOutputBounradyConditionItem(Model* model, SolverDefinitionGridType* gt, SolverDefinitionBoundaryCondition* bc, int bcIndex, const std::string& caption, const QDomNode& node, std::vector<ConnectionOutput*>* outputs, const SolverDefinitionTranslator& translator)
+void buildOutputBoundaryConditionItem(Model* model, SolverDefinitionGridType* gt, SolverDefinitionBoundaryCondition* bc, int bcIndex, const std::string& caption, const QDomNode& node, std::vector<ConnectionOutput*>* outputs, const SolverDefinitionTranslator& translator)
 {
 	auto elem = node.toElement();
 
@@ -431,7 +432,7 @@ void buildOutputBoundaryConditionsForBcRecursive(Model* model, SolverDefinitionG
 	for (int i = 0; i < childNodes.size(); ++i) {
 		auto c = childNodes.at(i);
 		if (c.nodeType() == QDomNode::ElementNode && c.nodeName() == "Output") {
-			buildOutputBounradyConditionItem(model, gt, bc, bcIndex, caption, c, outputs, translator);
+			buildOutputBoundaryConditionItem(model, gt, bc, bcIndex, caption, c, outputs, translator);
 		} else {
 			buildOutputBoundaryConditionsForBcRecursive(model, gt, bc, bcIndex, caption, c, outputs, translator);
 		}
@@ -461,6 +462,8 @@ void buildOutputBoundaryConditionsForGridType(Model* model, SolverDefinitionGrid
 
 			auto base = cgnsFile->base(2);
 			auto zone = base->zone(zoneName);
+			if (zone == nullptr) {continue;}
+
 			buildOutputBoundaryConditionsForZone(model, gt, zone, outputs, translator);
 
 			++ *nextGridId;
