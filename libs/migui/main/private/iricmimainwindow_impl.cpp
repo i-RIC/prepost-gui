@@ -88,6 +88,9 @@ bool iRICMIMainWindow::Impl::newProject()
 			QMessageBox::warning(m_mainWindow, tr("Warning"), tr("%1 already exists. Please select another folder.").arg(QDir::toNativeSeparators(projectFile.fileName())));
 			continue;
 		}
+
+		LastIODirectory::set(dir.absolutePath());
+
 		m_project = new iRICMIProject(dir.absolutePath(), m_mainWindow);
 		updateModelsColumnWidths();
 		updateWindowTitle();
@@ -106,6 +109,8 @@ bool iRICMIMainWindow::Impl::openProject()
 	m_project = new iRICMIProject(finfo.absolutePath(), m_mainWindow);
 	bool ok = m_project->load(m_solverDefinitionList, m_mainWindow);
 	if (!ok) {return false;}
+
+	LastIODirectory::setFromFilename(name);
 
 	updateModelsColumnWidths();
 	updateWindowTitle();

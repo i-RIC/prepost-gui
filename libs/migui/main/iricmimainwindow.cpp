@@ -13,11 +13,13 @@
 #include <guicore/solverdef/solverdefinition.h>
 #include <misc/iricrootpath.h>
 #include <misc/filesystemfunction.h>
+#include <misc/lastiodirectory.h>
 
 #include <QCloseEvent>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QProcess>
+#include <QSettings>
 #include <QStatusBar>
 
 iRICMIMainWindow::iRICMIMainWindow(QWidget *parent) :
@@ -29,10 +31,20 @@ iRICMIMainWindow::iRICMIMainWindow(QWidget *parent) :
 	impl->initViews();
 	impl->resetViews(false);
 	impl->makeConnections();
+
+	QSettings settings;
+	QString lastio = settings.value("general/lastiodir").toString();
+	if (lastio == "" || ! QDir(lastio).exists()) {
+		lastio = QDir::homePath();
+	}
+	LastIODirectory::set(lastio);
 }
 
 iRICMIMainWindow::~iRICMIMainWindow()
 {
+	QSettings settings;
+	settings.setValue("general/lastiodir", LastIODirectory::get());
+
 	delete impl;
 	delete ui;
 }
