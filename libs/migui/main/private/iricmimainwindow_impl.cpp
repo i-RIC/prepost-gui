@@ -104,7 +104,7 @@ bool iRICMIMainWindow::Impl::openProject()
 	QFileInfo finfo(name);
 
 	m_project = new iRICMIProject(finfo.absolutePath(), m_mainWindow);
-	bool ok = m_project->load(m_solverDefinitionList);
+	bool ok = m_project->load(m_solverDefinitionList, m_mainWindow);
 	if (!ok) {return false;}
 
 	updateModelsColumnWidths();

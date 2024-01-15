@@ -23,7 +23,7 @@ public:
 	iRICMIProject(const QString& path, iRICMIMainWindow* window);
 	~iRICMIProject();
 
-	bool load(SolverDefinitionList* solvers);
+	bool load(SolverDefinitionList* solvers, QWidget* w);
 	bool save();
 	bool reload(SolverDefinitionList* solvers);
 

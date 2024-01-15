@@ -15,6 +15,7 @@
 #include <QDomDocument>
 #include <QDomElement>
 #include <QFile>
+#include <QMessageBox>
 #include <QXmlStreamWriter>
 
 iRICMIProject::iRICMIProject(const QString& path, iRICMIMainWindow* window) :
@@ -44,7 +45,7 @@ iRICMIProject::~iRICMIProject()
 	}
 }
 
-bool iRICMIProject::load(SolverDefinitionList* solvers)
+bool iRICMIProject::load(SolverDefinitionList* solvers, QWidget* w)
 {
 	QFile file(fileName());
 	bool ok = file.open(QFile::ReadOnly);
@@ -69,6 +70,11 @@ bool iRICMIProject::load(SolverDefinitionList* solvers)
 			auto folderName = iRIC::toStr(child.attribute("name"));
 
 			auto solverDefAbstract = getSolverDefinitionAbstract(folderName, solvers);
+			if (solverDefAbstract== nullptr) {
+				QMessageBox::critical(w, tr("Error"), tr("The model for the folder %3 was not found in the system.").arg(folderName.c_str()));
+				return false;
+			}
+
 			auto model = new Model(folderName, solverDefAbstract, this);
 			auto solverDef = getSolverDefinition(folderName, &solverDefs, solvers);
 			model->buildConnectionNodes(solverDef);
