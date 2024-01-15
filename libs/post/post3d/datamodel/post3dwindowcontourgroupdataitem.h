@@ -55,9 +55,7 @@ private:
 	class Setting;
 	class SettingEditWidget;
 
-	class PropertyDialog;
 	class SetFacesCommand;
-	class UpdateActorSettingCommand;
 
 public:
 	friend class Post3dWindowContourDataItem;
