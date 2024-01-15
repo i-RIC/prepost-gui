@@ -1,5 +1,6 @@
 #include "iricmimainwindow_impl.h"
 #include "iricmimainwindow_modelstabledelegate.h"
+#include "../../misc/recentprojectsmanager.h"
 #include "../../project/iricmiproject.h"
 #include "ui_iricmimainwindow.h"
 
@@ -68,6 +69,7 @@ void iRICMIMainWindow::Impl::makeConnections()
 	connect(w->ui->removeConnectionButton, &QPushButton::clicked, w, &iRICMIMainWindow::removeConnection);
 
 	connect(w->ui->modelsTableView, &QTableView::clicked, m_mainWindow, &iRICMIMainWindow::handleModelTableClick);
+	connect(w->ui->recentProjectsMenu, &QMenu::aboutToShow, m_mainWindow, &iRICMIMainWindow::setupRecentProjectsMenu);
 }
 
 bool iRICMIMainWindow::Impl::newProject()
@@ -94,6 +96,8 @@ bool iRICMIMainWindow::Impl::newProject()
 		m_project = new iRICMIProject(dir.absolutePath(), m_mainWindow);
 		updateModelsColumnWidths();
 		updateWindowTitle();
+
+		RecentProjectsManager::append(dir.absolutePath());
 		return true;
 	}
 }
@@ -105,12 +109,20 @@ bool iRICMIMainWindow::Impl::openProject()
 	if (name.isEmpty()) {return false;}
 
 	QFileInfo finfo(name);
+	return openProject(finfo.absolutePath());
+}
 
-	m_project = new iRICMIProject(finfo.absolutePath(), m_mainWindow);
+bool iRICMIMainWindow::Impl::openProject(const QString& folderName)
+{
+	m_project = new iRICMIProject(folderName, m_mainWindow);
 	bool ok = m_project->load(m_solverDefinitionList, m_mainWindow);
-	if (!ok) {return false;}
+	if (! ok) {
+		RecentProjectsManager::remove(folderName);
+		return false;
+	}
 
-	LastIODirectory::setFromFilename(name);
+	LastIODirectory::set(folderName);
+	RecentProjectsManager::append(folderName);
 
 	updateModelsColumnWidths();
 	updateWindowTitle();

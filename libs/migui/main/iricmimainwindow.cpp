@@ -5,6 +5,7 @@
 #include "dialogs/modeladddialog.h"
 #include "dialogs/modeldeletedialog.h"
 #include "private/iricmimainwindow_impl.h"
+#include "../misc/recentprojectsmanager.h"
 #include "../project/connection.h"
 #include "../project/iricmiproject.h"
 #include "../project/model.h"
@@ -42,6 +43,8 @@ iRICMIMainWindow::iRICMIMainWindow(QWidget *parent) :
 
 iRICMIMainWindow::~iRICMIMainWindow()
 {
+	closeProject();
+
 	QSettings settings;
 	settings.setValue("general/lastiodir", LastIODirectory::get());
 
@@ -219,6 +222,27 @@ void iRICMIMainWindow::handleModelTableClick(const QModelIndex& index)
 	QStringList args;
 	args << projectFolder;
 	QProcess::startDetached(program, args);
+}
+
+void iRICMIMainWindow::setupRecentProjectsMenu()
+{
+	QMenu* menu = ui->recentProjectsMenu;
+	RecentProjectsManager::setupMenu(menu);
+
+	for (auto action : menu->actions()) {
+		connect(action, &QAction::triggered, this, &iRICMIMainWindow::openRecentProject);
+	}
+}
+
+void iRICMIMainWindow::openRecentProject()
+{
+	auto action = qobject_cast<QAction*>(sender());
+	if (action == nullptr) {return;}
+
+	bool ok = impl->openProject(action->data().toString());
+	if (! ok) {return;}
+
+	impl->resetViews(true);
 }
 
 QStatusBar* iRICMIMainWindow::statusBar() const

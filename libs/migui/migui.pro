@@ -77,6 +77,7 @@ HEADERS += migui_api.h \
            dialogs/modeladddialog.h \
            dialogs/modeldeletedialog.h \
            main/iricmimainwindow.h \
+           misc/recentprojectsmanager.h \
            project/connection.h \
            project/connectioninput.h \
            project/connectionnode.h \
@@ -96,6 +97,7 @@ SOURCES += dialogs/connectionadddialog.cpp \
            dialogs/modeladddialog.cpp \
            dialogs/modeldeletedialog.cpp \
            main/iricmimainwindow.cpp \
+           misc/recentprojectsmanager.cpp \
            project/connection.cpp \
            project/connectioninput.cpp \
            project/connectionnode.cpp \

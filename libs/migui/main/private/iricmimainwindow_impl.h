@@ -21,6 +21,7 @@ public:
 
 	bool newProject();
 	bool openProject();
+	bool openProject(const QString& folderName);
 	bool saveProject();
 	bool closeProject();
 

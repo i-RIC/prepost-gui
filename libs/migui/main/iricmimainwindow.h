@@ -45,6 +45,9 @@ private slots:
 
 	void handleModelTableClick(const QModelIndex& index);
 
+	void setupRecentProjectsMenu();
+	void openRecentProject();
+
 private:
 	QStatusBar* statusBar() const;
 
