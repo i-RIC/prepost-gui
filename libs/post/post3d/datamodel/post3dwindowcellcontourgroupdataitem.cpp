@@ -211,6 +211,12 @@ void Post3dWindowCellContourGroupDataItem::setRanges(const std::vector<Post3dWin
 		item->updateZScale(tItem->zScale());
 		connect(item, &Post3dWindowCellContourDataItem::destroyed, this, &Post3dWindowCellContourGroupDataItem::updateActorSetting);
 
+		Qt::CheckState cs = Qt::Unchecked;
+		if (range.enabled) {
+			cs = Qt::Checked;
+		}
+		item->standardItem()->setCheckState(cs);
+
 		m_childItems.push_back(item);
 		++ idx;
 	}

@@ -233,6 +233,12 @@ void Post3dWindowContourGroupDataItem::setFaces(const std::vector<Post3dWindowFa
 		item->updateZScale(tItem->zScale());
 		connect(item, &Post3dWindowContourDataItem::destroyed, this, &Post3dWindowContourGroupDataItem::updateActorSetting);
 
+		Qt::CheckState cs = Qt::Unchecked;
+		if (face.enabled) {
+			cs = Qt::Checked;
+		}
+		item->standardItem()->setCheckState(cs);
+
 		m_childItems.push_back(item);
 		++ idx;
 	}
