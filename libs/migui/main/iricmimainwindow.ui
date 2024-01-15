@@ -149,7 +149,6 @@
     <addaction name="closeAction"/>
     <addaction name="separator"/>
     <addaction name="reloadAction"/>
-    <addaction name="propertyAction"/>
     <addaction name="separator"/>
     <addaction name="action_Recent_Projects"/>
     <addaction name="separator"/>
