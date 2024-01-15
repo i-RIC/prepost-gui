@@ -1365,6 +1365,10 @@ void GeoDataRiverSurvey::updateBackgroundGrid()
 	if (isVisible() && m_setting.showBackground) {
 		impl->m_backgroundActor->VisibilityOn();
 	}
+
+	delete impl->m_backgroundGridIndex;
+	impl->m_backgroundGridIndex = new vtkPointSetGeos2dIndex(impl->m_backgroundGrid);
+
 	dynamic_cast<PreProcessorGeoDataDataItemInterface*>(parent())->informValueRangeChange();
 }
 
