@@ -807,9 +807,6 @@ void GeoDataRiverSurvey::Impl::updateVtkBackgroundObjects()
 		m_backgroundActor->GetProperty()->SetOpacity(m_rs->m_setting.opacity);
 		m_rs->updateVisibilityWithoutRendering();
 	}
-
-	delete m_backgroundGridIndex;
-	m_backgroundGridIndex = new vtkPointSetGeos2dIndex(m_backgroundGrid);
 }
 
 void GeoDataRiverSurvey::Impl::importLine(PolyLineController* line)
