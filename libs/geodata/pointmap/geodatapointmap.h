@@ -2,6 +2,7 @@
 #define GEODATAPOINTMAP_H
 
 #include <guibase/polyline/polylinecontroller.h>
+#include <guicore/misc/valuepointi.h>
 #include <guicore/pre/geodata/geodata.h>
 #include <misc/zdepthrange.h>
 
@@ -43,7 +44,7 @@ class GeoDataPointmapBreakLine;
 
 #include "gd_pointmap_global.h"
 
-class GD_POINTMAP_EXPORT GeoDataPointmap : public GeoData
+class GD_POINTMAP_EXPORT GeoDataPointmap : public GeoData, public ValuePointI
 {
 	Q_OBJECT
 
@@ -73,8 +74,7 @@ public:
 	void setPoints(vtkPoints* points, vtkDoubleArray* values);
 	void setTin(vtkPolyData* data, vtkDoubleArray* values);
 
-	bool getTinValueAt(double x, double y, double* value);
-	bool getTinValueAt(const QPointF& pos, double* value);
+	bool getValueAt(double x, double y, double* value) override;
 	bool mapWithPolygons(double x, double y, double* value);
 
 	bool needRebuildTin() const;

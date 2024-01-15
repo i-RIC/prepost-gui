@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Map points data</string>
+   <string>Map point cloud data or raster data</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
@@ -56,7 +56,7 @@
      <item row="1" column="0">
       <widget class="QLabel" name="demDataLabel">
        <property name="text">
-        <string>Points data to map:</string>
+        <string>Data to map:</string>
        </property>
       </widget>
      </item>

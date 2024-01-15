@@ -108,7 +108,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_displaySettingAction {new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs)},
 	m_interpolateSplineAction {new QAction(GeoDataRiverSurvey::tr("Spline"), rs)},
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
-	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map point cloud data"), rs)},
+	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map point cloud data or raster data"), rs)},
 	m_generatePointMapAction {new QAction(GeoDataRiverSurvey::tr("Generate point cloud data"), rs)},
 	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
 	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
@@ -220,7 +220,7 @@ void GeoDataRiverSurvey::Impl::setupActions()
 	connect(m_openCrossSectionWindowAction, SIGNAL(triggered()), m_rs, SLOT(openCrossSectionWindow()));
 	connect(m_displaySettingAction, SIGNAL(triggered()), m_rs, SLOT(displaySetting()));
 	connect(m_interpolateSplineAction, SIGNAL(triggered()), m_rs, SLOT(switchInterpolateModeToSpline()));
-	connect(m_mapPointsAction, SIGNAL(triggered()), m_rs, SLOT(mapPointsData()));
+	connect(m_mapPointsAction, &QAction::triggered, m_rs, &GeoDataRiverSurvey::mapPointsData);
 	connect(m_generatePointMapAction, SIGNAL(triggered()), m_rs, SLOT(generatePointMap()));
 	m_interpolateSplineAction->setCheckable(true);
 	m_interpolateSplineAction->setChecked(true);

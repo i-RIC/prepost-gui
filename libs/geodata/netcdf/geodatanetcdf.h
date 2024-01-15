@@ -3,6 +3,7 @@
 
 #include "geodatanetcdfcolorsettingdialog.h"
 
+#include <guicore/misc/valuepointi.h>
 #include <guicore/pre/geodata/geodatawithsinglemapper.h>
 
 #include <vtkSmartPointer.h>
@@ -22,7 +23,7 @@ class GeoDataNetcdfXbandImporter;
 class GeoDataNetcdfGdalImporter;
 class GridAttributeDimensionContainer;
 
-class GeoDataNetcdf : public GeoDataWithSingleMapper
+class GeoDataNetcdf : public GeoDataWithSingleMapper, public ValuePointI
 {
 	Q_OBJECT
 
@@ -94,6 +95,8 @@ public:
 
 	void updateZDepthRangeItemCount(ZDepthRange& range) override;
 	void assignActorZValues(const ZDepthRange& range) override;
+
+	bool getValueAt(double x, double y, double* value) override;
 
 	void showPropertyDialog() override;
 	QDialog* propertyDialog(QWidget* parent) override;

@@ -15,13 +15,28 @@ GeoDataRiverSurveyGenerateDialog::~GeoDataRiverSurveyGenerateDialog()
 	delete ui;
 }
 
-void GeoDataRiverSurveyGenerateDialog::setDEMDatas(std::vector<QString>& dataNames)
+void GeoDataRiverSurveyGenerateDialog::setDEMDatas(std::vector<QString>& pointMapDataNames, std::vector<QString>& netcdfDataNames)
 {
-	ui->demDataComboBox->clear();
-	for (const auto& name : dataNames) {
-		ui->demDataComboBox->addItem(name);
+	ui->pointMapDataComboBox->clear();
+	for (const auto& name : pointMapDataNames) {
+		ui->pointMapDataComboBox->addItem(name);
 	}
-	ui->demDataComboBox->setCurrentIndex(0);
+	if (pointMapDataNames.size() > 0) {
+		ui->pointMapDataComboBox->setCurrentIndex(0);
+	} else {
+		ui->rasterRadioButton->setChecked(true);
+		ui->pointMapRadioButton->setDisabled(true);
+	}
+
+	ui->rasterDataComboBox->clear();
+	for (const auto& name : netcdfDataNames) {
+		ui->rasterDataComboBox->addItem(name);
+	}
+	if (netcdfDataNames.size() > 0) {
+		ui->rasterDataComboBox->setCurrentIndex(0);
+	} else {
+		ui->rasterRadioButton->setDisabled(true);
+	}
 }
 
 void GeoDataRiverSurveyGenerateDialog::setCenterLineLength(double len)
@@ -45,9 +60,27 @@ double GeoDataRiverSurveyGenerateDialog::upstreamName() const
 	return ui->upstreamNameSpinBox->value();
 }
 
-int GeoDataRiverSurveyGenerateDialog::demData() const
+GeoDataRiverSurveyGenerateDialog::MappingTargetData GeoDataRiverSurveyGenerateDialog::mappingTargetData() const
 {
-	return ui->demDataComboBox->currentIndex();
+	if (ui->pointMapRadioButton->isChecked()) {
+		return MappingTargetData::PointCloud;
+	} else if (ui->rasterRadioButton->isChecked()) {
+		return MappingTargetData::Raster;
+	}
+
+	return MappingTargetData::PointCloud;
+}
+
+int GeoDataRiverSurveyGenerateDialog::dataId() const
+{
+	if (ui->pointMapRadioButton->isChecked()) {
+		return ui->pointMapDataComboBox->currentIndex();
+	}
+	if (ui->rasterRadioButton->isChecked()) {
+		return ui->rasterDataComboBox->currentIndex();
+	}
+
+	return 0;
 }
 
 void GeoDataRiverSurveyGenerateDialog::updateCrossSectionDistance()

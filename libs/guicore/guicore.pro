@@ -247,6 +247,7 @@ HEADERS += guicore_global.h \
            misc/iricmetadata.h \
            misc/mouseboundingbox.h \
            misc/mousepositionwidget.h \
+           misc/valuepointi.h \
            misc/vtkpointsetandvaluerangeset.h \
            misc/vtkpointsetandvaluerangesett.h \
            named/namedgraphicswindowdataitemtool.h \

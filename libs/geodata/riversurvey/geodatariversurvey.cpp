@@ -30,6 +30,7 @@
 
 #include <geodata/pointmap/geodatapointmap.h>
 #include <geodata/pointmap/geodatapointmaprealbuilder.h>
+#include <geodata/netcdf/geodatanetcdf.h>
 #include <guibase/polyline/polylineaddvertexcommand.h>
 #include <guibase/polyline/polylinecontrollerutil.h>
 #include <guibase/polyline/polylinemovevertexcommand.h>
@@ -39,6 +40,7 @@
 #include <guibase/vtktool/vtkpointsetgeos2dindex.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/misc/mouseboundingbox.h>
+#include <guicore/misc/valuepointi.h>
 #include <guicore/scalarstocolors/colormapsettingcontaineri.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgeti.h>
 #include <guicore/scalarstocolors/colormapsettingeditwidgetwithimportexportbutton.h>
@@ -110,12 +112,12 @@ QPointF nearestInterSection(const QPointF& p1, const QPointF& p2, std::vector<QP
 	return ret;
 }
 
-bool addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<double, GeoDataRiverCrosssection::Altitude>* alts, GeoDataPointmap* pointMap)
+bool addPointAt(const QPointF& pos, const QPointF& dir, double dist, std::map<double, GeoDataRiverCrosssection::Altitude>* alts, ValuePointI* vp)
 {
 	QPointF p = pos + dir * dist;
 	double val = 0;
 
-	bool ok = pointMap->getTinValueAt(p, &val);
+	bool ok = vp->getValueAt(p, &val);
 
 	alts->insert({dist, GeoDataRiverCrosssection::Altitude(dist, val)});
 	return ok;
@@ -660,25 +662,33 @@ void GeoDataRiverSurvey::generateData()
 	double length = PolyLineUtil::length(impl->m_centerLineSplineController.polyLine());
 	std::vector<GeoDataPointmap*> pointMapDataList;
 	std::vector<QString> pointMapDataNameList;
+	std::vector<GeoDataNetcdf*> netcdfDataList;
+	std::vector<QString> netcdfDataNameList;
 
 	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent())->childItems();
-	for (int i = 0; i < childItems.size(); ++i) {
+	for (int i = 0; i < static_cast<int> (childItems.size()); ++i) {
 		auto c = dynamic_cast<PreProcessorGeoDataDataItemI*> (childItems.at(i));
 		auto geoData = c->geoData();
-		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
-		if (pointMapData == nullptr) {continue;}
 
-		pointMapDataList.push_back(pointMapData);
-		pointMapDataNameList.push_back(pointMapData->caption());
+		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
+		if (pointMapData != nullptr) {
+			pointMapDataList.push_back(pointMapData);
+			pointMapDataNameList.push_back(pointMapData->caption());
+		}
+		auto netcdfData = dynamic_cast<GeoDataNetcdf*> (geoData);
+		if (netcdfData != nullptr) {
+			netcdfDataList.push_back(netcdfData);
+			netcdfDataNameList.push_back(netcdfData->caption());
+		}
 	}
 
-	if (pointMapDataList.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No point cloud data to map is found. Please import point cloud data."));
+	if (pointMapDataList.size() == 0 && netcdfDataList.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No data to map is found. Please import point cloud data or raster data."));
 		return;
 	}
 
 	GeoDataRiverSurveyGenerateDialog dialog(preProcessorWindow());
-	dialog.setDEMDatas(pointMapDataNameList);
+	dialog.setDEMDatas(pointMapDataNameList, netcdfDataNameList);
 	dialog.setCenterLineLength(length);
 
 	int ret = dialog.exec();
@@ -687,7 +697,14 @@ void GeoDataRiverSurvey::generateData()
 	int numPoints = dialog.numberOfCrossSections();
 	double divDist = dialog.divDistance();
 	double upstreamName = dialog.upstreamName();
-	GeoDataPointmap* mapData = pointMapDataList.at(dialog.demData());
+
+	auto mappingTargetData = dialog.mappingTargetData();
+	ValuePointI* mapData = nullptr;
+	if (mappingTargetData == GeoDataRiverSurveyGenerateDialog::MappingTargetData::PointCloud) {
+		mapData = pointMapDataList.at(dialog.dataId());
+	} else if (mappingTargetData == GeoDataRiverSurveyGenerateDialog::MappingTargetData::Raster) {
+		mapData = netcdfDataList.at(dialog.dataId());
+	}
 
 	double nameDistance = std::floor(length / (numPoints - 1) / 100) / 10;
 	if (nameDistance == 0) {nameDistance = 0.1;}
@@ -785,12 +802,12 @@ void GeoDataRiverSurvey::generateData()
 	renderGraphicsView();
 
 	if (allOk) {
-		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
-																																							 "If you want to adjust cross section position and map point cloud data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem");
+		InformationDialog::information(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated.\n"
+																																							 "If you want to adjust cross section position and map again, you can use \"Map point cloud data or raster data\" menu."), "riversurvey_mapping_dem");
 	} else {
-		InformationDialog::warning(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated using point cloud data.\n"
-																																							 "In some region, data did not exists in point cloud data, and value 0 was mapped for those points.\n"
-																																							 "If you want to adjust cross section position and map point cloud data again, you can use \"Map point cloud data\""), "riversurvey_mapping_dem_warning");
+		InformationDialog::warning(preProcessorWindow(), tr("Information"), tr("Cross-section data is generated.\n"
+																																							 "In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.\n"
+																																							 "If you want to adjust cross section position and map again, you can use \"Map point cloud data or raster data\" menu."), "riversurvey_mapping_dem_warning");
 	}
 }
 
@@ -1508,33 +1525,33 @@ void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 
 void GeoDataRiverSurvey::mapPointsData()
 {
-	std::vector<GeoDataPointmap*> pointMapDataList;
-	std::vector<QString> pointMapDataNameList;
+	std::vector<ValuePointI*> dataList;
+	std::vector<QString> dataNameList;
 
 	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent())->childItems();
 	for (int i = 0; i < childItems.size(); ++i) {
 		auto c = dynamic_cast<PreProcessorGeoDataDataItemI*> (childItems.at(i));
 		auto geoData = c->geoData();
-		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
-		if (pointMapData == nullptr) {continue;}
+		auto data = dynamic_cast<ValuePointI*> (geoData);
+		if (data == nullptr) {continue;}
 
-		pointMapDataList.push_back(pointMapData);
-		pointMapDataNameList.push_back(pointMapData->caption());
+		dataList.push_back(data);
+		dataNameList.push_back(geoData->caption());
 	}
 
-	if (pointMapDataList.size() == 0) {
-		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No points data to map is found. Please import points data."));
+	if (dataList.size() == 0) {
+		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No data to map is found. Please import point cloud data or raster data."));
 		return;
 	}
 
 	GeoDataRiverSurveyMapPointsDialog dialog(preProcessorWindow());
-	dialog.setDEMDatas(pointMapDataNameList);
+	dialog.setDEMDatas(dataNameList);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
 	double divDist = dialog.divDistance();
-	GeoDataPointmap* mapData = pointMapDataList.at(dialog.demData());
+	ValuePointI* mapData = dataList.at(dialog.demData());
 
 	auto p = m_headPoint;
 	p = p->nextPoint();
