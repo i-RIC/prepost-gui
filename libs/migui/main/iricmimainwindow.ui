@@ -165,8 +165,6 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="action_Help"/>
-    <addaction name="separator"/>
-    <addaction name="action_About"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Help"/>
