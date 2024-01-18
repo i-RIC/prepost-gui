@@ -1483,7 +1483,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Data to map:</source>
-        <translation>マッピングするデータ:</translation>
+        <translation type="vanished">マッピングするデータ:</translation>
+    </message>
+    <message>
+        <source>Mapping</source>
+        <translation>マッピング</translation>
+    </message>
+    <message>
+        <source>Map Point Cloud Data</source>
+        <translation>点群データ</translation>
+    </message>
+    <message>
+        <source>Map Raster Data</source>
+        <translation>ラスターデータ</translation>
     </message>
 </context>
 <context>

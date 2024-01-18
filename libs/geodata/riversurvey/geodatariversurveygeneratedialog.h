@@ -17,7 +17,7 @@ public:
 		Raster
 	};
 
-	explicit GeoDataRiverSurveyGenerateDialog(QWidget *parent = 0);
+	explicit GeoDataRiverSurveyGenerateDialog(QWidget *parent = nullptr);
 	~GeoDataRiverSurveyGenerateDialog();
 
 	void setDEMDatas(std::vector<QString>& pointMapNames, std::vector<QString>& rasterNames);

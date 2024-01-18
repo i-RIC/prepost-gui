@@ -1525,33 +1525,47 @@ void GeoDataRiverSurvey::switchInterpolateModeToSpline()
 
 void GeoDataRiverSurvey::mapPointsData()
 {
-	std::vector<ValuePointI*> dataList;
-	std::vector<QString> dataNameList;
+	std::vector<GeoDataPointmap*> pointMapDataList;
+	std::vector<QString> pointMapDataNameList;
+	std::vector<GeoDataNetcdf*> netcdfDataList;
+	std::vector<QString> netcdfDataNameList;
 
 	const auto& childItems = dynamic_cast<PreProcessorGeoDataGroupDataItemI*> (parent()->parent())->childItems();
 	for (int i = 0; i < childItems.size(); ++i) {
 		auto c = dynamic_cast<PreProcessorGeoDataDataItemI*> (childItems.at(i));
 		auto geoData = c->geoData();
-		auto data = dynamic_cast<ValuePointI*> (geoData);
-		if (data == nullptr) {continue;}
 
-		dataList.push_back(data);
-		dataNameList.push_back(geoData->caption());
+		auto pointMapData = dynamic_cast<GeoDataPointmap*> (geoData);
+		if (pointMapData != nullptr) {
+			pointMapDataList.push_back(pointMapData);
+			pointMapDataNameList.push_back(pointMapData->caption());
+		}
+		auto netcdfData = dynamic_cast<GeoDataNetcdf*> (geoData);
+		if (netcdfData != nullptr) {
+			netcdfDataList.push_back(netcdfData);
+			netcdfDataNameList.push_back(netcdfData->caption());
+		}
 	}
 
-	if (dataList.size() == 0) {
+	if (pointMapDataList.size() == 0 && netcdfDataList.size() == 0) {
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("No data to map is found. Please import point cloud data or raster data."));
 		return;
 	}
 
 	GeoDataRiverSurveyMapPointsDialog dialog(preProcessorWindow());
-	dialog.setDEMDatas(dataNameList);
+	dialog.setDEMDatas(pointMapDataNameList, netcdfDataNameList);
 
 	int ret = dialog.exec();
 	if (ret == QDialog::Rejected) {return;}
 
+	auto mappingTargetData = dialog.mappingTargetData();
 	double divDist = dialog.divDistance();
-	ValuePointI* mapData = dataList.at(dialog.demData());
+	ValuePointI* mapData = nullptr;
+	if (mappingTargetData == GeoDataRiverSurveyMapPointsDialog::MappingTargetData::PointCloud) {
+		mapData = pointMapDataList.at(dialog.dataId());
+	} else if (mappingTargetData == GeoDataRiverSurveyMapPointsDialog::MappingTargetData::Raster) {
+		mapData = netcdfDataList.at(dialog.dataId());
+	}
 
 	auto p = m_headPoint;
 	p = p->nextPoint();
