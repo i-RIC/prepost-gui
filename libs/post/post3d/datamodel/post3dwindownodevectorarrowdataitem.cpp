@@ -88,9 +88,12 @@ vtkStructuredGrid* Post3dWindowNodeVectorArrowDataItem::faceGrid() const
 	return m_setting.face.extractFace(vtkStructuredGrid::SafeDownCast(data2->data()));
 }
 
-const Post3dWindowNodeVectorArrowDataItem::Setting& Post3dWindowNodeVectorArrowDataItem::setting() const
+Post3dWindowNodeVectorArrowDataItem::Setting Post3dWindowNodeVectorArrowDataItem::setting() const
 {
-	return m_setting;
+	auto s = m_setting;
+	s.face.enabled.setValue(standardItem()->checkState() == Qt::Checked);
+
+	return s;
 }
 
 void Post3dWindowNodeVectorArrowDataItem::setSetting(const Setting& setting)

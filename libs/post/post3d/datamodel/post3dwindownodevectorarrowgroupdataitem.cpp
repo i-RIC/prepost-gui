@@ -182,6 +182,12 @@ void Post3dWindowNodeVectorArrowGroupDataItem::setFaceSettings(const std::vector
 		item->setSetting(s);
 		item->updateZScale(tItem->zScale());
 
+		Qt::CheckState cs = Qt::Unchecked;
+		if (s.face.enabled) {
+			cs = Qt::Checked;
+		}
+		item->standardItem()->setCheckState(cs);
+
 		m_childItems.push_back(item);
 		++ idx;
 	}
