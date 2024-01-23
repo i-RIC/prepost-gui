@@ -1,14 +1,14 @@
 #ifndef TMSIMAGEDATAITEM_H
 #define TMSIMAGEDATAITEM_H
 
-#include "../named/namedgraphicwindowdataitem.h"
+#include "../named/namedqstringgraphicwindowdataitem.h"
 
-class TmsImageDataItem : public NamedGraphicWindowDataItem
+class TmsImageDataItem : public NamedQStringGraphicWindowDataItem
 {
 	Q_OBJECT
 
 public:
-	TmsImageDataItem(const std::string name, const QString& caption, GraphicsWindowDataItem* parent);
+	TmsImageDataItem(const QString& name, const QString& caption, GraphicsWindowDataItem* parent);
 	~TmsImageDataItem();
 };
 
