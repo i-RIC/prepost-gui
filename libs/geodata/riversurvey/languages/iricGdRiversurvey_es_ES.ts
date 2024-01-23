@@ -424,10 +424,6 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Map point cloud data or raster data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cross-section data is generated.
 If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
         <translation type="unfinished"></translation>
@@ -436,6 +432,10 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
 If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1294,10 +1294,6 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation type="vanished">Puntos de datos para mapear:</translation>
     </message>
     <message>
-        <source>Map point cloud data or raster data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mapping</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1307,6 +1303,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Map Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -469,7 +469,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Map point cloud data or raster data</source>
-        <translation>点群データ・ラスターデータのマッピング</translation>
+        <translation type="vanished">点群データ・ラスターデータのマッピング</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
@@ -484,6 +484,10 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>横断測量データが生成されました。
 一部の領域では、マッピングが失敗し、値 0 をマッピングしました。
 横断線の位置や向きを調整して再度マッピングを行いたい場合、「点群データ・ラスターデータのマッピング」メニューを使用してください。</translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
+        <translation>地形データから断面データを抽出</translation>
     </message>
 </context>
 <context>
@@ -1479,7 +1483,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Map point cloud data or raster data</source>
-        <translation>点群データ・ラスターデータのマッピング</translation>
+        <translation type="vanished">点群データ・ラスターデータのマッピング</translation>
     </message>
     <message>
         <source>Data to map:</source>
@@ -1496,6 +1500,10 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <message>
         <source>Map Raster Data</source>
         <translation>ラスターデータ</translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
+        <translation>地形データからの断面データの抽出</translation>
     </message>
 </context>
 <context>

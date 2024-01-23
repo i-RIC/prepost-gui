@@ -108,7 +108,7 @@ GeoDataRiverSurvey::Impl::Impl(GeoDataRiverSurvey* rs) :
 	m_displaySettingAction {new QAction(GeoDataRiverSurvey::tr("Display &Setting"), rs)},
 	m_interpolateSplineAction {new QAction(GeoDataRiverSurvey::tr("Spline"), rs)},
 	m_interpolateLinearAction {new QAction(GeoDataRiverSurvey::tr("Linear Curve"), rs)},
-	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map point cloud data or raster data"), rs)},
+	m_mapPointsAction {new QAction(GeoDataRiverSurvey::tr("Map geographic data to cross sections"), rs)},
 	m_generatePointMapAction {new QAction(GeoDataRiverSurvey::tr("Generate point cloud data"), rs)},
 	m_pixmapAdd {":/libs/guibase/images/cursorAdd.png"},
 	m_pixmapRemove {":/libs/guibase/images/cursorRemove.png"},
