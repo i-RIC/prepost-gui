@@ -22,6 +22,7 @@ LogoSetting LogoSettingEditWidget::setting() const
 {
 	LogoSetting ret;
 	ret.imageSetting = ui->imageSettingWidget->setting();
+	ret.imageSetting.setNegativePositionForbidden(true);
 	return ret;
 }
 
