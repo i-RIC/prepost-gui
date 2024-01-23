@@ -60,6 +60,11 @@ GeoDataPointmap::PolygonsManager::~PolygonsManager()
 	m_polygonsColorMapActor->Delete();
 }
 
+void GeoDataPointmap::PolygonsManager::mergeEditTargetPolygon()
+{
+	polygonGroup()->mergeEditTargetData();
+}
+
 void GeoDataPointmap::PolygonsManager::updatePolygonsActorSettings() const
 {
 	auto pg = polygonGroup();

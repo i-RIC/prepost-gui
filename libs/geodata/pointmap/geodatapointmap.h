@@ -82,6 +82,7 @@ public:
 
 	void rebuildTinFromPointsIfNeeded();
 	bool rebuildTinFromPoints(bool allowCancel);
+	void mergeEditTargetPolygon();
 	void setupActors() override;
 	void setupMenu() override;
 	bool addToolBarButtons(QToolBar* parent) override;

@@ -18,6 +18,7 @@ void GeoDataPointmap::PolygonsNodeMapper::map(bool* boolMap, GeoDataMapperSettin
 
 	auto da = container()->dataArray();
 	pointmap->rebuildTinFromPointsIfNeeded();
+	pointmap->mergeEditTargetPolygon();
 
 	unsigned int count = container()->dataCount();
 	if (container()->gridAttribute()->isOption()) {

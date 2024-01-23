@@ -17,6 +17,7 @@ public:
 	PolygonsManager(PointsManager* pm, TINManager* tm, GeoDataPointmap* pointmap);
 	~PolygonsManager();
 
+	void mergeEditTargetPolygon();
 	void updatePolygonsActorSettings() const;
 	void loadPolygons(const QString& filename);
 	void savePolygons(const QString& filename);
