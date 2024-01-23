@@ -106,7 +106,7 @@ bool GeoDataPointmap::PolygonsManager::map(double x, double y, double* value)
 		MappingSetting ms;
 		ms.fromVariant(polygon->value());
 		if (ms.type == MappingSetting::Type::TIN) {
-			return m_parent->getTinValueAt(x, y, value);
+			return m_parent->getValueAt(x, y, value);
 		} else {
 			auto points = m_pointsManager->points();
 			auto vals = m_pointsManager->values();
@@ -159,7 +159,7 @@ bool GeoDataPointmap::PolygonsManager::map(double x, double y, double* value)
 		}
 	}
 	// map with tin
-	return m_parent->getTinValueAt(x, y, value);
+	return m_parent->getValueAt(x, y, value);
 }
 
 SolverDefinitionGridAttribute* GeoDataPointmap::PolygonsManager::attribute() const

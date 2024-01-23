@@ -13,13 +13,28 @@ GeoDataRiverSurveyMapPointsDialog::~GeoDataRiverSurveyMapPointsDialog()
 	delete ui;
 }
 
-void GeoDataRiverSurveyMapPointsDialog::setDEMDatas(std::vector<QString>& dataNames)
+void GeoDataRiverSurveyMapPointsDialog::setDEMDatas(std::vector<QString>& pointMapDataNames, std::vector<QString>& netcdfDataNames)
 {
-	ui->demDataComboBox->clear();
-	for (const auto& name : dataNames) {
-		ui->demDataComboBox->addItem(name);
+	ui->pointMapDataComboBox->clear();
+	for (const auto& name : pointMapDataNames) {
+		ui->pointMapDataComboBox->addItem(name);
 	}
-	ui->demDataComboBox->setCurrentIndex(0);
+	if (pointMapDataNames.size() > 0) {
+		ui->pointMapDataComboBox->setCurrentIndex(0);
+	} else {
+		ui->rasterRadioButton->setChecked(true);
+		ui->pointMapRadioButton->setDisabled(true);
+	}
+
+	ui->rasterDataComboBox->clear();
+	for (const auto& name : netcdfDataNames) {
+		ui->rasterDataComboBox->addItem(name);
+	}
+	if (netcdfDataNames.size() > 0) {
+		ui->rasterDataComboBox->setCurrentIndex(0);
+	} else {
+		ui->rasterRadioButton->setDisabled(true);
+	}
 }
 
 double GeoDataRiverSurveyMapPointsDialog::divDistance() const
@@ -27,7 +42,25 @@ double GeoDataRiverSurveyMapPointsDialog::divDistance() const
 	return ui->distElevationSpinBox->value();
 }
 
-int GeoDataRiverSurveyMapPointsDialog::demData() const
+GeoDataRiverSurveyMapPointsDialog::MappingTargetData GeoDataRiverSurveyMapPointsDialog::mappingTargetData() const
 {
-	return ui->demDataComboBox->currentIndex();
+	if (ui->pointMapRadioButton->isChecked()) {
+		return MappingTargetData::PointCloud;
+	} else if (ui->rasterRadioButton->isChecked()) {
+		return MappingTargetData::Raster;
+	}
+
+	return MappingTargetData::PointCloud;
+}
+
+int GeoDataRiverSurveyMapPointsDialog::dataId() const
+{
+	if (ui->pointMapRadioButton->isChecked()) {
+		return ui->pointMapDataComboBox->currentIndex();
+	}
+	if (ui->rasterRadioButton->isChecked()) {
+		return ui->rasterDataComboBox->currentIndex();
+	}
+
+	return 0;
 }

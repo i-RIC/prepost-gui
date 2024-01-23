@@ -369,7 +369,7 @@ void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	writer.writeEndElement();
 }
 
-bool GeoDataPointmap::getTinValueAt(double x, double y, double* value)
+bool GeoDataPointmap::getValueAt(double x, double y, double* value)
 {
 	rebuildTinFromPointsIfNeeded();
 
@@ -387,11 +387,6 @@ bool GeoDataPointmap::getTinValueAt(double x, double y, double* value)
 	}
 	*value = v;
 	return true;
-}
-
-bool GeoDataPointmap::getTinValueAt(const QPointF& pos, double* value)
-{
-	return getTinValueAt(pos.x(), pos.y(), value);
 }
 
 bool GeoDataPointmap::mapWithPolygons(double x, double y, double* value)

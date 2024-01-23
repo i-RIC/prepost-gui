@@ -12,16 +12,23 @@ class GeoDataRiverSurveyGenerateDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GeoDataRiverSurveyGenerateDialog(QWidget *parent = 0);
+	enum class MappingTargetData {
+		PointCloud,
+		Raster
+	};
+
+	explicit GeoDataRiverSurveyGenerateDialog(QWidget *parent = nullptr);
 	~GeoDataRiverSurveyGenerateDialog();
 
-	void setDEMDatas(std::vector<QString>& dataNames);
+	void setDEMDatas(std::vector<QString>& pointMapNames, std::vector<QString>& rasterNames);
 	void setCenterLineLength(double len);
 
 	int numberOfCrossSections() const;
 	double divDistance() const;
 	double upstreamName() const;
-	int demData() const;
+
+	MappingTargetData mappingTargetData() const;
+	int dataId() const;
 
 private slots:
 	void updateCrossSectionDistance();

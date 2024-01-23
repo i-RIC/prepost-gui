@@ -12,13 +12,19 @@ class GeoDataRiverSurveyMapPointsDialog : public QDialog
 	Q_OBJECT
 
 public:
-	explicit GeoDataRiverSurveyMapPointsDialog(QWidget *parent = 0);
+	enum class MappingTargetData {
+		PointCloud,
+		Raster
+	};
+
+	explicit GeoDataRiverSurveyMapPointsDialog(QWidget *parent = nullptr);
 	~GeoDataRiverSurveyMapPointsDialog();
 
-	void setDEMDatas(std::vector<QString>& dataNames);
+	void setDEMDatas(std::vector<QString>& pointMapNames, std::vector<QString>& rasterNames);
 
 	double divDistance() const;
-	int demData() const;
+	MappingTargetData mappingTargetData() const;
+	int dataId() const;
 
 private:
 	Ui::GeoDataRiverSurveyMapPointsDialog *ui;

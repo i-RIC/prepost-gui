@@ -959,6 +959,24 @@ void GeoDataNetcdf::assignActorZValues(const ZDepthRange& range)
 	m_regionActor->SetPosition(0, 0, range.min());
 }
 
+bool GeoDataNetcdf::getValueAt(double x, double y, double* value)
+{
+	vtkIdType cellid;
+	double pcoords[4];
+	double weights[4];
+	int subid;
+
+	double point[3] = {x, y, 0};
+
+	cellid = grid()->FindCell(point, 0, 0, 1e-4, subid, pcoords, weights);
+	if (cellid < 0) {return false;}
+
+	vtkDataArray* da = m_grid->GetCellData()->GetArray("values");
+	*value = da->GetTuple1(cellid);
+
+	return true;
+}
+
 void GeoDataNetcdf::showPropertyDialog()
 {
 	showPropertyDialogModeless();

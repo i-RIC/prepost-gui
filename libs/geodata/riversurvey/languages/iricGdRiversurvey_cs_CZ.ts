@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -191,7 +193,7 @@
     </message>
     <message>
         <source>No points data to map is found. Please import points data.</source>
-        <translation>Nebyla nalezena žádná bodová data pro mapu. Importujte prosím údaje o bodech.</translation>
+        <translation type="vanished">Nebyla nalezena žádná bodová data pro mapu. Importujte prosím údaje o bodech.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -375,16 +377,16 @@
     </message>
     <message>
         <source>No point cloud data to map is found. Please import point cloud data.</source>
-        <translation>Nebyla nalezena žádná data mračna bodů k mapování. Importujte data mračna bodů.</translation>
+        <translation type="vanished">Nebyla nalezena žádná data mračna bodů k mapování. Importujte data mračna bodů.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
         <translation type="vanished">Data průřezů jsou generována pomocí dat mračna bodů. Chcete -li znovu upravit polohu příčného řezu a data mapového bodu clouod, můžete použít „Data mračna mapových bodů“</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
-        <translation>Data mračna bodů mapy</translation>
+        <translation type="vanished">Data mračna bodů mapy</translation>
     </message>
     <message>
         <source>Generate point cloud data</source>
@@ -392,14 +394,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Data průřezu jsou generována pomocí dat mračna bodů. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít "Mapovat data mračna bodů"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít &quot;Mapovat data mračna bodů&quot;</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
-        <translation>Data průřezu jsou generována pomocí dat mračna bodů. V některých oblastech data v datech mračna bodů neexistovala a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít "Mapovat data mračna bodů"</translation>
+If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+        <translation type="vanished">Data průřezu jsou generována pomocí dat mračna bodů. V některých oblastech data v datech mračna bodů neexistovala a pro tyto body byla namapována hodnota 0. Pokud chcete znovu upravit polohu příčného řezu a mapovat data mračna bodů, můžete použít &quot;Mapovat data mračna bodů&quot;</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -411,7 +413,26 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation />
+        <translation></translation>
+    </message>
+    <message>
+        <source>No data to map is found. Please import point cloud data or raster data.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated.
+If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross-section data is generated.
+In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
+If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -621,7 +642,7 @@ If you want to adjust cross section position and map point cloud data again, you
         <translation>Nastavení nadmořské výšky a přechodu jsou neplatná.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
         <translation>Když zadáte výšku koncového bodu, nemůže být stejná jako počáteční bod. Pokud chcete nakreslit vodorovnou čáru, vyberte „Zadat vodorovnou vzdálenost“.</translation>
     </message>
 </context>
@@ -852,7 +873,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
         <translation>Upravte průřez kliknutím myši. Dokončete úpravy dvojitým kliknutím nebo stisknutím klávesy Return. Průřez můžete přesně upravit zadáním hodnot z dialogu. Vstupte do režimu úprav dialogu z nabídky „Upravit z dialogu“ v nabídce klepnutím pravým tlačítkem.</translation>
     </message>
     <message>
@@ -957,7 +978,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation>Data bodů k mapování:</translation>
+        <translation type="vanished">Data bodů k mapování:</translation>
+    </message>
+    <message>
+        <source>Mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map Point Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map Raster Data</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1045,40 +1078,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Chyba</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LX value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota LX je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota LX je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": LY value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota LY je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota LY je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RX value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota RX je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota RX je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": RY value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota RY je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota RY je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Point count is invalid</source>
-        <translation>%1 čára %2 "%3": Počet bodů je neplatný."</translation>
+        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Počet bodů je neplatný.&quot;</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Invalid index value</source>
-        <translation>%1 čára %2 "%3": Neplatná hodnota indexu."</translation>
+        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Neplatná hodnota indexu.&quot;</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 čára %2 : data průřezu pro %3 nedostatek</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Distance value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota vzdálenosti je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota vzdálenosti je neplatná</translation>
     </message>
     <message>
-        <source>%1 line %2 "%3": Elevation value is invalid</source>
-        <translation>%1 čára %2 "%3": Hodnota nadmořské výšky je neplatná</translation>
+        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
+        <translation>%1 čára %2 &quot;%3&quot;: Hodnota nadmořské výšky je neplatná</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1117,8 +1150,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Čára %2 : Chyba čtení. Vyžaduje alespoň dvě hodnoty.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value "%3".</source>
-        <translation>%1 Čára %2 : Chyba čtení. Není skutečná hodnota čísla “ %3 ".</translation>
+        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
+        <translation>%1 Čára %2 : Chyba čtení. Není skutečná hodnota čísla “ %3 &quot;.</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1218,7 +1251,7 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyMapPointsDialog</name>
     <message>
         <source>Map points data</source>
-        <translation>Data bodů mapy</translation>
+        <translation type="vanished">Data bodů mapy</translation>
     </message>
     <message>
         <source>Distance between elevation points[m]:</source>
@@ -1226,7 +1259,23 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Points data to map:</source>
-        <translation>Data bodů k mapování:</translation>
+        <translation type="vanished">Data bodů k mapování:</translation>
+    </message>
+    <message>
+        <source>Mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map Point Cloud Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map Raster Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Map geographic data to cross sections</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1244,36 +1293,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Čára %2 : KP není zadán</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LX value is invalid</source>
-        <translation>%1 Čára %2 "%3": Hodnota LX je neplatná</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
+        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota LX je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": LY value is invalid</source>
-        <translation>%1 Čára %2 "%3": Hodnota LY je neplatná</translation>
+        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
+        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota LY je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RX value is invalid</source>
-        <translation>%1 Čára %2 "%3": Hodnota RX je neplatná</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
+        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota RX je neplatná</translation>
     </message>
     <message>
-        <source>%1 Line %2 "%3": RY value is invalid</source>
-        <translation>%1 Čára %2 "%3": Hodnota RY je neplatná</translation>
+        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
+        <translation>%1 Čára %2 &quot;%3&quot;: Hodnota RY je neplatná</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Data značky vzdálenosti nebyla nalezena. Bude ignorováno.</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Flag data is invalid.</source>
-        <translation type="vanished">%1 čára %2 : "%3": Údaje o vlajce jsou neplatné."</translation>
+        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
+        <translation type="vanished">%1 čára %2 : &quot;%3&quot;: Údaje o vlajce jsou neplatné.&quot;</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Distance data is invalid.</source>
-        <translation>%1 čára %2 : "%3": Údaje o vzdálenosti jsou neplatné."</translation>
+        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
+        <translation>%1 čára %2 : &quot;%3&quot;: Údaje o vzdálenosti jsou neplatné.&quot;</translation>
     </message>
     <message>
-        <source>%1 line %2: "%3": Elevation data is invalid.</source>
-        <translation>%1 čára %2 : "%3": Údaje o nadmořské výšce jsou neplatné.</translation>
+        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
+        <translation>%1 čára %2 : &quot;%3&quot;: Údaje o nadmořské výšce jsou neplatné.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1391,8 +1440,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Viditelné</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; Barvu si můžete přizpůsobit pomocí karty Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; Barvu si můžete přizpůsobit pomocí karty Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

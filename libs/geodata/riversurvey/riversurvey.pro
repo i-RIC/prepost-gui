@@ -15,6 +15,13 @@ PRECOMPILED_HEADER = riversurvey_pch.h
 # Internal libraries #
 ######################
 
+# iricGdNetcdf
+
+unix {
+        LIBS += -L"../netcdf"
+}
+LIBS += -liricGdNetcdf
+
 # iricGdPointmap
 
 unix {
