@@ -178,10 +178,12 @@ bool GeoDataNetcdfGdalImporter::doInitForTimeMode(const QString& filename, const
 	// grid attributes cleared
 	auto conds = item->geoDataTopDataItem()->gridTypeDataItem()->conditions();
 	for (auto cond : conds) {
-			auto grid = cond->gridDataItem()->grid();
-			auto att = grid->attribute(condition->name());
-			att->clearTemporaryData();
-			att->setDefaultValue();
+		auto grid = cond->gridDataItem()->grid();
+		if (grid == nullptr) {continue;}
+
+		auto att = grid->attribute(condition->name());
+		att->clearTemporaryData();
+		att->setDefaultValue();
 	}
 
 	if (! iRIC::isAscii(filename)) {
