@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>InformationDialog</name>
@@ -15,6 +17,21 @@
     <message>
         <source>Dialog</source>
         <translation>Dialoog</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OrderedValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished">Valige Väärtus</translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>InformationDialog</name>
@@ -15,6 +17,21 @@
     <message>
         <source>Dialog</source>
         <translation>Dialogo</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OrderedValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation type="unfinished">Seleziona Valore</translation>
     </message>
 </context>
 <context>
@@ -99,7 +116,7 @@
     <name>WindowSizeStandardSettingEditDialog</name>
     <message>
         <source>Edit Window Size Setting</source>
-        <translation>Modifica l'impostazione della dimensione della finestra</translation>
+        <translation>Modifica l&apos;impostazione della dimensione della finestra</translation>
     </message>
     <message>
         <source>Width:</source>

@@ -12,7 +12,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/valueselectdialog.h>
+#include <misc/orderedvalueselectdialog.h>
 
 Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Arrows"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -24,7 +24,7 @@ Post3dWindowNodeVectorArrowTopDataItem::Post3dWindowNodeVectorArrowTopDataItem(P
 	auto gType = cont->gridType();
 
 	for (const auto& val : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
-		auto item = buildItem(val, gType);
+		auto item = buildItem(val);
 		m_childItems.push_back(item);
 	}
 }
@@ -92,13 +92,15 @@ QDialog* Post3dWindowNodeVectorArrowTopDataItem::addDialog(QWidget* p)
 
 	auto gType = cont->gridType();
 
-	auto dialog = new ValueSelectDialog(p);
-	std::unordered_map<std::string, QString> solutions;
-
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
-		solutions.insert({sol, gType->output(sol)->caption()});
+	std::vector<std::string> solutions = vtkDataSetAttributesTool::getArrayNamesWithMultipleComponents(cont->gridData()->grid()->vtkData()->data()->GetPointData());
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& sol : solutions) {
+		auto c = gType->vectorOutputCaption(sol);
+		captions.insert({sol, c});
 	}
-	dialog->setValues(solutions);
+
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(solutions, captions);
 	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
@@ -113,10 +115,10 @@ void Post3dWindowNodeVectorArrowTopDataItem::handleAddDialogAccepted(QDialog* pr
 
 	auto gType = cont->gridType();
 
-	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
-	auto newItem = buildItem(sol, gType);
+	auto newItem = buildItem(sol);
 
 	m_childItems.push_back(newItem);
 	updateItemMap();
@@ -125,10 +127,9 @@ void Post3dWindowNodeVectorArrowTopDataItem::handleAddDialogAccepted(QDialog* pr
 	newItem->showPropertyDialog();
 }
 
-Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowTopDataItem::buildItem(const std::string& name, SolverDefinitionGridType* gtype)
+Post3dWindowNodeVectorArrowGroupDataItem* Post3dWindowNodeVectorArrowTopDataItem::buildItem(const std::string& name)
 {
 	auto newItem = new Post3dWindowNodeVectorArrowGroupDataItem(name, this);
-	newItem->standardItem()->setText(gtype->output(name)->caption());
 	newItem->updateZScale(m_zScale);
 
 	return newItem;

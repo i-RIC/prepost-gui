@@ -12,7 +12,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/valueselectdialog.h>
+#include <misc/orderedvalueselectdialog.h>
 
 Post3dWindowCellContourGroupTopDataItem::Post3dWindowCellContourGroupTopDataItem(Post3dWindowDataItem* p) :
 	Post3dWindowDataItem {tr("Contours (cell center)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -80,14 +80,17 @@ QDialog* Post3dWindowCellContourGroupTopDataItem::addDialog(QWidget* p)
 
 	auto gType = cont->gridType();
 
-	auto dialog = new ValueSelectDialog(p);
-	std::unordered_map<std::string, QString> solutions;
-
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetCellData())) {
-		solutions.insert({sol, gType->output(sol)->caption()});
+	std::vector<std::string> solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetCellData());
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& sol : solutions) {
+		auto c = gType->outputCaption(sol);
+		captions.insert({sol, c});
 	}
-	dialog->setValues(solutions);
+
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(solutions, captions);
 	dialog->setWindowTitle(tr("Select Calculation Result"));
+
 	return dialog;
 }
 
@@ -98,7 +101,7 @@ void Post3dWindowCellContourGroupTopDataItem::handleAddDialogAccepted(QDialog* p
 		return;
 	}
 
-	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post3dWindowCellContourGroupDataItem(sol, this);

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>InformationDialog</name>
@@ -15,6 +17,21 @@
     <message>
         <source>Dialog</source>
         <translation>ダイアログ</translation>
+    </message>
+    <message>
+        <source>&amp;Import...</source>
+        <translation>インポート(&amp;I)...</translation>
+    </message>
+    <message>
+        <source>&amp;Export...</source>
+        <translation>エクスポート(&amp;E)...</translation>
+    </message>
+</context>
+<context>
+    <name>OrderedValueSelectDialog</name>
+    <message>
+        <source>Select Value</source>
+        <translation>値の選択</translation>
     </message>
 </context>
 <context>

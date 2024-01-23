@@ -13,7 +13,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/valueselectdialog.h>
+#include <misc/orderedvalueselectdialog.h>
 
 GridBirdEyeWindowCellScalarGroupTopDataItem::GridBirdEyeWindowCellScalarGroupTopDataItem(GridBirdEyeWindowDataItem* p) :
 	GridBirdEyeWindowDataItem {tr("Scalar (cell)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -57,15 +57,18 @@ QDialog* GridBirdEyeWindowCellScalarGroupTopDataItem::addDialog(QWidget* p)
 	}
 
 	auto model = dynamic_cast<GridBirdEyeWindowDataModel*> (dataModel());
-	auto gridType = model->gridTypeDataItem()->gridType();
-	std::unordered_map<std::string, QString> attributes;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->grid()->grid()->vtkData()->data()->GetCellData())) {
-		attributes.insert({sol, gridType->gridAttributeCaption(sol)});
+	auto gType = model->gridTypeDataItem()->gridType();
+
+	std::vector<std::string> attributes = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->grid()->grid()->vtkData()->data()->GetCellData());
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& att : attributes) {
+		auto c = gType->gridAttributeCaption(att);
+		captions.insert({att, c});
 	}
 
-	auto dialog = new ValueSelectDialog(p);
-	dialog->setValues(attributes);
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(attributes, captions);
 	dialog->setWindowTitle(tr("Select grid attribute to use as Elevation"));
 
 	return dialog;
@@ -78,7 +81,7 @@ void GridBirdEyeWindowCellScalarGroupTopDataItem::handleAddDialogAccepted(QDialo
 		return;
 	}
 
-	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new GridBirdEyeWindowCellScalarGroupDataItem(sol, this);

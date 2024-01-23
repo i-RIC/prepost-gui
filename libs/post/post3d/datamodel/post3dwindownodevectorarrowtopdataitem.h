@@ -34,7 +34,7 @@ private:
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 
-	Post3dWindowNodeVectorArrowGroupDataItem* buildItem(const std::string& name, SolverDefinitionGridType* gtype);
+	Post3dWindowNodeVectorArrowGroupDataItem* buildItem(const std::string& name);
 
 	double m_zScale;
 };

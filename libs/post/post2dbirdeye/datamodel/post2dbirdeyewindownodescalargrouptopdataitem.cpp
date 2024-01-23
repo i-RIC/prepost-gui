@@ -7,13 +7,14 @@
 #include <guibase/vtkpointsetextended/vtkpointsetextended.h>
 #include <guibase/vtkdatasetattributestool.h>
 #include <guibase/graphicsmisc.h>
+#include <guicore/grid/public/v4grid_attributedataprovider.h>
 #include <guicore/grid/v4grid.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/valueselectdialog.h>
+#include <misc/orderedvalueselectdialog.h>
 
 Post2dBirdEyeWindowNodeScalarGroupTopDataItem::Post2dBirdEyeWindowNodeScalarGroupTopDataItem(Post2dBirdEyeWindowDataItem* p) :
 	Post2dBirdEyeWindowDataItem {tr("Scalar (node)"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -54,15 +55,16 @@ QDialog* Post2dBirdEyeWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 		return nullptr;
 	}
 
-	auto gType = zItem->v4DataContainer()->gridType();
-	std::unordered_map<std::string, QString> solutions;
-
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData())) {
-		solutions.insert({sol, gType->outputCaption(sol)});
+	std::vector<std::string> solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData());
+	auto adProvider = zItem->v4DataContainer()->gridData()->grid()->attributeDataProvider();
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& sol : solutions) {
+		auto c = adProvider->caption(sol);
+		captions.insert({sol, c});
 	}
 
-	auto dialog = new ValueSelectDialog(p);
-	dialog->setValues(solutions);
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(solutions, captions);
 	dialog->setWindowTitle(tr("Select calculation result to use as Elevation"));
 
 	return dialog;
@@ -75,7 +77,7 @@ void Post2dBirdEyeWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDia
 		return;
 	}
 
-	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dBirdEyeWindowNodeScalarGroupDataItem(sol, this);

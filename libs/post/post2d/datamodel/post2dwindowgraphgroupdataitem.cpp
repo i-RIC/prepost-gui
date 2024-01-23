@@ -8,6 +8,7 @@
 
 #include <guibase/vtkdatasetattributestool.h>
 #include <guicore/grid/v4structured2dgrid.h>
+#include <guicore/grid/public/v4grid_attributedataprovider.h>
 #include <guicore/named/namedgraphicswindowdataitemtool.h>
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
@@ -199,10 +200,11 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 {
 	setupStandardItem(Checked, NotReorderable, NotDeletable);
 
-	auto cont = zoneDataItem()->v4DataContainer();
-	SolverDefinitionGridType* gt = cont->gridType();
-	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(cont->gridData()->grid()->vtkData()->data()->GetPointData())) {
-		auto item = new Post2dWindowGraphDataItem(name, gt->output(name)->caption(), this);
+	auto grid = zoneDataItem()->v4DataContainer()->gridData();
+	auto adProvider = grid->grid()->attributeDataProvider();
+
+	for (std::string name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid->grid()->vtkData()->data()->GetPointData())) {
+		auto item = new Post2dWindowGraphDataItem(name, adProvider->caption(name), this);
 		m_childItems.push_back(item);
 	}
 
@@ -210,7 +212,7 @@ Post2dWindowGraphGroupDataItem::Post2dWindowGraphGroupDataItem(Post2dWindowDataI
 	r->AddActor(impl->m_baseLinesActor.actor());
 	r->AddActor(impl->m_graphLinesActor.linesActor());
 
-	vtkPoints* basePoints = cont->gridData()->grid()->vtkData()->data()->GetPoints();
+	vtkPoints* basePoints = grid->grid()->vtkData()->data()->GetPoints();
 	impl->m_baseLinesPolyData->SetPoints(basePoints);
 
 	setDefaultSetting();

@@ -18,7 +18,7 @@
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <misc/iricundostack.h>
 #include <misc/stringtool.h>
-#include <misc/valueselectdialog.h>
+#include <misc/orderedvalueselectdialog.h>
 
 Post2dWindowNodeScalarGroupTopDataItem::Post2dWindowNodeScalarGroupTopDataItem(Post2dWindowDataItem* p) :
 	Post2dWindowDataItem {tr("Scalar"), QIcon(":/libs/guibase/images/iconFolder.svg"), p},
@@ -110,14 +110,16 @@ QDialog* Post2dWindowNodeScalarGroupTopDataItem::addDialog(QWidget* p)
 	}
 
 	auto gType = zItem->v4DataContainer()->gridType();
-	std::unordered_map<std::string, QString> solutions;
 
-	for (const auto& sol : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData())) {
-		solutions.insert({sol, gType->outputCaption(sol)});
+	std::vector<std::string> solutions = vtkDataSetAttributesTool::getArrayNamesWithOneComponent(zItem->v4DataContainer()->gridData()->grid()->vtkData()->data()->GetPointData());
+	std::unordered_map<std::string, QString> captions;
+	for (const auto& sol : solutions) {
+		auto c = gType->outputCaption(sol);
+		captions.insert({sol, c});
 	}
 
-	auto dialog = new ValueSelectDialog(p);
-	dialog->setValues(solutions);
+	auto dialog = new OrderedValueSelectDialog(p);
+	dialog->setValues(solutions, captions);
 	dialog->setWindowTitle(tr("Select Calculation Result"));
 
 	return dialog;
@@ -130,13 +132,10 @@ void Post2dWindowNodeScalarGroupTopDataItem::handleAddDialogAccepted(QDialog* pr
 		return;
 	}
 
-	auto gType = zoneData->gridType();
-
-	auto dialog = dynamic_cast<ValueSelectDialog*> (propDialog);
+	auto dialog = dynamic_cast<OrderedValueSelectDialog*> (propDialog);
 	auto sol = dialog->selectedValue();
 
 	auto newItem = new Post2dWindowNodeScalarGroupDataItem(sol, this);
-	newItem->standardItem()->setText(gType->outputCaption(sol));
 
 	m_childItems.push_back(newItem);
 	updateItemMap();
