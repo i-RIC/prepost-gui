@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>InformationDialog</name>
@@ -20,18 +18,18 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>수입 (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>내보내다 (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>OrderedValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished">값 선택</translation>
+        <translation>값 선택</translation>
     </message>
 </context>
 <context>

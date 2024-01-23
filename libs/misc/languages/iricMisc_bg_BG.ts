@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>InformationDialog</name>
@@ -20,18 +18,18 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортиране (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Експортиране (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>OrderedValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished">Изберете Стойност</translation>
+        <translation>Изберете Стойност</translation>
     </message>
 </context>
 <context>

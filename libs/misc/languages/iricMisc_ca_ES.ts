@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>InformationDialog</name>
@@ -20,18 +18,18 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporta (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>OrderedValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished">Seleccioneu Valor</translation>
+        <translation>Seleccioneu Valor</translation>
     </message>
 </context>
 <context>
@@ -64,14 +62,14 @@
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Interval d&apos;animació en segons:</translation>
+        <translation>Interval d'animació en segons:</translation>
     </message>
 </context>
 <context>
     <name>StandardErrorMessages</name>
     <message>
         <source>Opening file %1 failed.</source>
-        <translation>Arxiu d&apos;obertura %1 fracassat.</translation>
+        <translation>Arxiu d'obertura %1 fracassat.</translation>
     </message>
 </context>
 <context>

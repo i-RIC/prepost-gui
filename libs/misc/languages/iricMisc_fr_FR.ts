@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>InformationDialog</name>
@@ -20,18 +18,18 @@
     </message>
     <message>
         <source>&amp;Import...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer (&amp;I)...</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter (&amp;E)...</translation>
     </message>
 </context>
 <context>
     <name>OrderedValueSelectDialog</name>
     <message>
         <source>Select Value</source>
-        <translation type="unfinished">Sélectionnez la valeur</translation>
+        <translation>Sélectionnez une valeur</translation>
     </message>
 </context>
 <context>
@@ -60,11 +58,11 @@
     <name>SlowmotionSpeedEditDialog</name>
     <message>
         <source>Animation Speed Setting</source>
-        <translation>Réglage de la vitesse d&apos;animation</translation>
+        <translation>Réglage de la vitesse d'animation</translation>
     </message>
     <message>
         <source>Animation interval in seconds:</source>
-        <translation>Intervalle d&apos;animation en secondes&#xa0;:</translation>
+        <translation>Intervalle d'animation en secondes :</translation>
     </message>
 </context>
 <context>
