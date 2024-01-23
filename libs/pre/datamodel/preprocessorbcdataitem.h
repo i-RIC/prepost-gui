@@ -90,7 +90,7 @@ private:
 	void updateActorSettings();
 	void updateElements();
 	int buildNumber() const;
-	void setupIndicesAndEdges(const std::vector<int> indices);
+	void setupIndicesAndEdges(const std::vector<int>& indices);
 	void buildIndices(std::vector<int>* indices);
 	PreProcessorBCGroupDataItem* groupDataItem() const;
 

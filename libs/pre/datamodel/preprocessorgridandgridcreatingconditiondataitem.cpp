@@ -241,8 +241,6 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 	setupGridDataItem(grid);
 	delete grid;
 
-	int ret = m_gridDataItem->loadFromCgnsFile();
-
 	if (m_gridSetting != nullptr) {
 		m_gridDataItem->loadFromProjectMainFile(*m_gridSetting);
 		auto view = dataModel()->objectBrowserView();
@@ -251,6 +249,8 @@ int PreProcessorGridAndGridCreatingConditionDataItem::loadFromCgnsFile()
 		delete m_gridSetting;
 		m_gridSetting = nullptr;
 	}
+
+	int ret = m_gridDataItem->loadFromCgnsFile();
 
 	return ret;
 }

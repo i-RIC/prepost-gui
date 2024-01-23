@@ -735,7 +735,7 @@ int PreProcessorBCDataItem::buildNumber() const
 	return gItem->m_projectBuildNumber;
 }
 
-void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int> indices)
+void PreProcessorBCDataItem::setupIndicesAndEdges(const std::vector<int>& indices)
 {
 	auto gitem = dynamic_cast<PreProcessorGridDataItem*>(parent()->parent());
 

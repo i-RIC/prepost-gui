@@ -4,6 +4,7 @@
 #include <guibase/widget/contoursettingwidget.h>
 #include <guicore/named/namedgraphicwindowdataitem.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
+#include <misc/boolcontainer.h>
 
 class ColorMapSettingContainerI;
 class ColorMapSettingToolBarWidgetController;
@@ -69,9 +70,9 @@ private:
 
 	SolverDefinitionGridAttribute* m_condition;
 
+	BoolContainer m_isCustomModified;
+
 	bool m_definingBoundingBox;
-	/// temporarily used when loading from project file.
-	bool m_isCustomModified;
 	QAction* m_editValueAction;
 	QAction* m_exportAction;
 	QAction* m_generatePointMapAction;
