@@ -4,7 +4,8 @@
 #include <QColor>
 
 LogoSetting::LogoSetting() :
-	CompositeContainer({&imageSetting}),
+	CompositeContainer({&imageSize, &imageSetting}),
+	imageSize {"imageSize", ImageSize::Standard},
 	m_imageBuilder {new ImageBuilder {this}}
 {
 	imageSetting.position = ImageSettingContainer::Position::BottomRight;

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/libs/dataitem/logo">
+        <file>images/logo_40.png</file>
+        <file>images/logo_80.png</file>
+        <file>images/logo_160.png</file>
+    </qresource>
+</RCC>
