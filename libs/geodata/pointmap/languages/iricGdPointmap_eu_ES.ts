@@ -569,34 +569,34 @@
     <name>GeoDataPointmapRealImporter</name>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>File open error occured while opening %1.</source>
-        <translation>Fitxategia irekitzean errorea gertatu da irekitzean %1.</translation>
+        <translation type="vanished">Fitxategia irekitzean errorea gertatu da irekitzean %1.</translation>
     </message>
     <message>
         <source>DEM etc. (*.tpo)</source>
-        <translation>DEM etab. (*.tpo)</translation>
+        <translation type="vanished">DEM etab. (*.tpo)</translation>
     </message>
     <message>
         <source>Topography File (*.tpo)</source>
-        <translation>Topografia Fitxategia (*.tpo)</translation>
+        <translation type="vanished">Topografia Fitxategia (*.tpo)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
     <message>
         <source>Filtering Setting</source>
-        <translation>Iragazketa ezarpena</translation>
+        <translation type="vanished">Iragazketa ezarpena</translation>
     </message>
     <message>
         <source>If you want to filter the dataset, specify value more than 1.</source>
-        <translation>Datu multzoa iragazi nahi baduzu, zehaztu 1 baino gehiago balioa.</translation>
+        <translation type="vanished">Datu multzoa iragazi nahi baduzu, zehaztu 1 baino gehiago balioa.</translation>
     </message>
     <message>
         <source>Filter:</source>
-        <translation>Iragazkia:</translation>
+        <translation type="vanished">Iragazkia:</translation>
     </message>
 </context>
 <context>
@@ -668,6 +668,14 @@
     <message>
         <source>Text file (*.tpo *.csv *.txt *.xyz)</source>
         <translation>Testu fitxategia (*.tpo *.csv *.txt *.xyz)</translation>
+    </message>
+    <message>
+        <source>The number of fields is less than 3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

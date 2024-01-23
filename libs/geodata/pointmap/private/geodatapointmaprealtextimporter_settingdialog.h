@@ -48,6 +48,7 @@ private:
 	void autoDetectColumns();
 	QStringList getFields(LineParser* parser) const;
 	std::vector<QByteArray> getDataLinesForPreview() const;
+	void showErrorMessageAndDisableOkButton(const QString& message);
 
 	std::vector<QByteArray> m_previewData;
 
