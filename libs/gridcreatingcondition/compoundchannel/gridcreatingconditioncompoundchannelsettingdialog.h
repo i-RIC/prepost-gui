@@ -19,6 +19,7 @@ public:
 	GridCreatingConditionCompoundChannelSettingDialog(QWidget* parent = 0);
 	~GridCreatingConditionCompoundChannelSettingDialog();
 
+	void setReadOnly(bool readOnly);
 	void setStreamWiseDivision(int div);
 	void setLeftDivision(int div);
 	void setRightDivision(int div);

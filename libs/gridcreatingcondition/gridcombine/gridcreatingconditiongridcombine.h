@@ -14,9 +14,11 @@ public:
 	GridCreatingConditionGridCombine(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionGridCombine();
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void setupMenu() override;
-	void showDialog(QWidget* parent);
+	void showDialog(QWidget* parent, bool readOnly = false);
 	void handleDialogAccepted(QDialog* d);
 	void setupParameters();
 	void clear() override;

@@ -18,7 +18,6 @@ class PreProcessorWindowActionManager : public QObject
 	Q_OBJECT
 
 public:
-	/// Constructor
 	PreProcessorWindowActionManager(PreProcessorWindow* parent);
 
 	QAction* calcCondEditAction;

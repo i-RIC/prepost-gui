@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -174,6 +176,10 @@
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
         <translation>Тор жетиштүү оптималдаштырылган эмес деп ойлосоңуз, бул маанини жогорулатып көрүңүз.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

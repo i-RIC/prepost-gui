@@ -55,7 +55,7 @@ GridCreatingConditionExternalProgram::~GridCreatingConditionExternalProgram()
 	delete m_rightClickingMenu;
 }
 
-bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
+bool GridCreatingConditionExternalProgram::create(QWidget* parent)
 {
 	QString fname = filename();
 	QFile f(filename());
@@ -72,6 +72,9 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 	dialog.load();
 	int ret = dialog.exec();
 	if (ret != QDialog::Accepted) {return false;}
+
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
 
 	// CGNS File OK. exexute the external program.
 	QString externalProgram = m_definition->executableFilename();
@@ -148,7 +151,7 @@ bool GridCreatingConditionExternalProgram::create(QWidget* /*parent*/)
 		return false;
 	}
 
-	PreProcessorGridTypeDataItemInterface* gtItem = dynamic_cast<PreProcessorGridTypeDataItemInterface*>(m_conditionDataItem->parent()->parent());
+	auto gtItem = m_conditionDataItem->gridTypeDataItem();
 	SolverDefinitionGridType* gType = gtItem->gridType();
 	// Create grid.
 	Grid* grid = gType->createEmptyGrid();
@@ -199,6 +202,21 @@ void GridCreatingConditionExternalProgram::showInitialDialog()
 	create(0);
 }
 
+void GridCreatingConditionExternalProgram::showCondition(QWidget* parent)
+{
+	QString fname = filename();
+	GridCreatingConditionExternalProgramSettingDialog dialog(m_definition, m_locale, iricMainWindow(), preProcessorWindow());
+	dialog.setFilename(fname);
+	dialog.load();
+	dialog.setReadOnly(true);
+	dialog.exec();
+}
+
+bool GridCreatingConditionExternalProgram::showConditionAvailable()
+{
+	return true;
+}
+
 bool GridCreatingConditionExternalProgram::ready() const
 {
 	return true;
@@ -215,7 +233,7 @@ void GridCreatingConditionExternalProgram::mousePressEvent(QMouseEvent* event, P
 {
 	if (event->button() == Qt::RightButton) {
 		// right click
-		m_dragStartPoint = QPoint(event->x(), event->y());
+		m_dragStartPoint = event->pos();
 	}
 }
 

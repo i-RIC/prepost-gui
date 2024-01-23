@@ -4,6 +4,9 @@
 #include "gridcreatingconditionriversurveyregiondialog.h"
 
 #include <geodata/riversurvey/geodatariversurvey.h>
+#include <guicore/pre/base/preprocessorgridcreatingconditiondataiteminterface.h>
+
+#include <QPushButton>
 
 GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRegionDialog(GridCreatingConditionRiverSurvey* cond, QWidget* parent) :
 	QDialog(parent),
@@ -11,14 +14,21 @@ GridCreatingConditionRiverSurveyRegionDialog::GridCreatingConditionRiverSurveyRe
 {
 	setAttribute(Qt::WA_DeleteOnClose);
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
+
 	m_condition = cond;
-	connect(ui->startComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleStartUpdate()));
-	connect(ui->endComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleEndUpdate()));
+	connect<void (QComboBox::*)(int)>(ui->startComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurveyRegionDialog::handleStartUpdate);
+	connect<void (QComboBox::*)(int)>(ui->endComboBox, &QComboBox::currentIndexChanged, this, &GridCreatingConditionRiverSurveyRegionDialog::handleEndUpdate);
 }
 
 GridCreatingConditionRiverSurveyRegionDialog::~GridCreatingConditionRiverSurveyRegionDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionRiverSurveyRegionDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 void GridCreatingConditionRiverSurveyRegionDialog::setData(GeoDataRiverSurvey* rs)
@@ -89,6 +99,9 @@ void GridCreatingConditionRiverSurveyRegionDialog::handleEndUpdate()
 
 void GridCreatingConditionRiverSurveyRegionDialog::accept()
 {
+	bool ok = m_condition->gccDataItem()->confirmOverwriteIfNeeded(this);
+	if (! ok) {return;}
+
 	m_condition->createGrid(startPoint(), endPoint());
 	QDialog::accept();
 }

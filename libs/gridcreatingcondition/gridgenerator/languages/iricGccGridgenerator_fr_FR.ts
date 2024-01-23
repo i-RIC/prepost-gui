@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -53,7 +55,7 @@
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation>Lit fixe (uniquement canaux d'inondation)</translation>
+        <translation>Lit fixe (uniquement canaux d&apos;inondation)</translation>
     </message>
     <message>
         <source>Movable bed</source>
@@ -69,7 +71,7 @@
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation>Forme de barre alternative dans le canal d'étiage</translation>
+        <translation>Forme de barre alternative dans le canal d&apos;étiage</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
@@ -93,7 +95,7 @@
     </message>
     <message>
         <source>Lag between channel geometry and bar location [m]</source>
-        <translation>Décalage entre la géométrie du canal et l'emplacement de la barre [m]</translation>
+        <translation>Décalage entre la géométrie du canal et l&apos;emplacement de la barre [m]</translation>
     </message>
     <message>
         <source>Common parameters</source>
@@ -101,7 +103,7 @@
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation>Longueur d'onde de méandre [m] :</translation>
+        <translation>Longueur d&apos;onde de méandre [m] :</translation>
     </message>
     <message>
         <source>Wave number :</source>
@@ -117,7 +119,7 @@
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation>Nombre de grilles pour une longueur d'onde dans le sens longitudinal :</translation>
+        <translation>Nombre de grilles pour une longueur d&apos;onde dans le sens longitudinal :</translation>
     </message>
     <message>
         <source>Channel shape</source>
@@ -145,7 +147,7 @@
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation>Largeur du chenal d'étiage [m] :</translation>
+        <translation>Largeur du chenal d&apos;étiage [m] :</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
@@ -169,7 +171,7 @@
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation>Nombre de grilles pour le canal d'étiage :</translation>
+        <translation>Nombre de grilles pour le canal d&apos;étiage :</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
@@ -177,15 +179,15 @@
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation>Profondeur du chenal d'étiage [m] :</translation>
+        <translation>Profondeur du chenal d&apos;étiage [m] :</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
-        <translation>Pente des berges du chenal d'étiage :</translation>
+        <translation>Pente des berges du chenal d&apos;étiage :</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation>Nombre de grilles pour les berges du canal d'étiage :</translation>
+        <translation>Nombre de grilles pour les berges du canal d&apos;étiage :</translation>
     </message>
     <message>
         <source>Width change</source>
@@ -197,7 +199,7 @@
     </message>
     <message>
         <source>Change in flow direction</source>
-        <translation>Changement de sens d'écoulement</translation>
+        <translation>Changement de sens d&apos;écoulement</translation>
     </message>
     <message>
         <source>Width change type</source>
@@ -218,6 +220,10 @@
     <message>
         <source>Width variation [m] :</source>
         <translation>Variation de largeur [m] :</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

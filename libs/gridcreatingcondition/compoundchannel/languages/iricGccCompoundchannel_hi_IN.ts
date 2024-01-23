@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -174,6 +176,10 @@
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
         <translation>जब आपको लगे कि ग्रिड पर्याप्त रूप से अनुकूलित नहीं है, तो कृपया इस मान को बढ़ाने का प्रयास करें।</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

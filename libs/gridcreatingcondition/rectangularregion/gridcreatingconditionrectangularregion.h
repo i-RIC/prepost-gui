@@ -27,6 +27,8 @@ public:
 	GridCreatingConditionRectangularRegion(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	~GridCreatingConditionRectangularRegion();
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 	bool ready() const override;
 	void setupMenu() override;
 	void setupActors() override;
@@ -79,6 +81,8 @@ private:
 	MouseEventMode m_mouseEventMode;
 	QPoint m_dragStartPoint;
 	QMenu* m_rightClickingMenu;
+
+	friend class GridCreatingConditionRectangularRegionSettingDialog;
 };
 
 #endif // GRIDCREATINGCONDITIONRECTANGULARREGION_H

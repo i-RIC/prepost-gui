@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -53,7 +55,7 @@
     </message>
     <message>
         <source>Fixed bed (only flood channels)</source>
-        <translation>Llit fix (només canals d'inundació)</translation>
+        <translation>Llit fix (només canals d&apos;inundació)</translation>
     </message>
     <message>
         <source>Movable bed</source>
@@ -101,11 +103,11 @@
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation>Longitud d'ona meandre [m]:</translation>
+        <translation>Longitud d&apos;ona meandre [m]:</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation>Número d'ona:</translation>
+        <translation>Número d&apos;ona:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
@@ -117,7 +119,7 @@
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation>Nombre de quadrícules per a una longitud d'ona en direcció longitudinal:</translation>
+        <translation>Nombre de quadrícules per a una longitud d&apos;ona en direcció longitudinal:</translation>
     </message>
     <message>
         <source>Channel shape</source>
@@ -141,15 +143,15 @@
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
-        <translation>Amplada del canal d'inundació esquerre [m]:</translation>
+        <translation>Amplada del canal d&apos;inundació esquerre [m]:</translation>
     </message>
     <message>
         <source>Width of the low water channel [m] :</source>
-        <translation>Amplada del canal d'aigua baixa [m]:</translation>
+        <translation>Amplada del canal d&apos;aigua baixa [m]:</translation>
     </message>
     <message>
         <source>Width of the right flood channel [m] :</source>
-        <translation>Amplada del canal d'inundació dret [m]:</translation>
+        <translation>Amplada del canal d&apos;inundació dret [m]:</translation>
     </message>
     <message>
         <source>Complex compound</source>
@@ -165,19 +167,19 @@
     </message>
     <message>
         <source>Number of grids for the left flood channel :</source>
-        <translation>Nombre de quadrícules per al canal d'inundació esquerre:</translation>
+        <translation>Nombre de quadrícules per al canal d&apos;inundació esquerre:</translation>
     </message>
     <message>
         <source>Number of grids for the low water channel :</source>
-        <translation>Nombre de quadrícules per al canal d'aigua baixa:</translation>
+        <translation>Nombre de quadrícules per al canal d&apos;aigua baixa:</translation>
     </message>
     <message>
         <source>Number of grids for the right flood channel :</source>
-        <translation>Nombre de quadrícules per al canal d'inundació adequat:</translation>
+        <translation>Nombre de quadrícules per al canal d&apos;inundació adequat:</translation>
     </message>
     <message>
         <source>Depth of the low water channel [m] :</source>
-        <translation>Profunditat del canal d'aigua baixa [m]:</translation>
+        <translation>Profunditat del canal d&apos;aigua baixa [m]:</translation>
     </message>
     <message>
         <source>Slope of the low water channel banks :</source>
@@ -189,7 +191,7 @@
     </message>
     <message>
         <source>Width change</source>
-        <translation>Canvi d'amplada</translation>
+        <translation>Canvi d&apos;amplada</translation>
     </message>
     <message>
         <source>Constant</source>
@@ -201,7 +203,7 @@
     </message>
     <message>
         <source>Width change type</source>
-        <translation>Tipus de canvi d'amplada</translation>
+        <translation>Tipus de canvi d&apos;amplada</translation>
     </message>
     <message>
         <source>Left and right banks</source>
@@ -217,7 +219,11 @@
     </message>
     <message>
         <source>Width variation [m] :</source>
-        <translation>Variació d'amplada [m]:</translation>
+        <translation>Variació d&apos;amplada [m]:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

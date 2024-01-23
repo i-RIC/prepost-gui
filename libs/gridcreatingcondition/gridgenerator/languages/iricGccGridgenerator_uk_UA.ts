@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -137,7 +139,7 @@
     </message>
     <message>
         <source>Simple compound</source>
-        <translation>Просте з'єднання</translation>
+        <translation>Просте з&apos;єднання</translation>
     </message>
     <message>
         <source>Width of the left flood channel [m] :</source>
@@ -153,7 +155,7 @@
     </message>
     <message>
         <source>Complex compound</source>
-        <translation>Складне з'єднання</translation>
+        <translation>Складне з&apos;єднання</translation>
     </message>
     <message>
         <source>Total width between banks [m] :</source>
@@ -218,6 +220,10 @@
     <message>
         <source>Width variation [m] :</source>
         <translation>Зміна ширини [м]:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

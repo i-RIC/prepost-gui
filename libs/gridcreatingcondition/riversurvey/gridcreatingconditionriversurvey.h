@@ -61,6 +61,8 @@ public:
 	GridCreatingConditionRiverSurvey(ProjectDataItem* parent, GridCreatingConditionCreator* creator);
 	virtual ~GridCreatingConditionRiverSurvey();
 	bool create(QWidget* parent) override;
+	void showCondition(QWidget* parent) override;
+	bool showConditionAvailable() override;
 
 	bool ready() const override;
 	bool init() override;
@@ -208,6 +210,7 @@ public:
 	friend class GridCreatingConditionRiverSurveyPointAddDialog;
 	friend class GridCreatingConditionRiverSurveyPointRepositionDialog;
 	friend class GridCreatingConditionRiverSurveyPointMoveDialog;
+	friend class GridCreatingConditionRiverSurveyRegionDialog;
 	friend class GridCreatingConditionCreatorRiverSurvey;
 	friend class GridCreatingConditionRiverSurveyPointAddCommand;
 	friend class GridCreatingConditionCtrlPointRepositionCommand;

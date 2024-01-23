@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Abisua</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>Errorea gertatu da sarearen sortzailearen definizio-fitxategia karpetan kargatzean " %1 Sareta sortzailea ez da kontuan hartzen. %2</translation>
+        <translation>Errorea gertatu da sarearen sortzailearen definizio-fitxategia karpetan kargatzean &quot; %1 Sareta sortzailea ez da kontuan hartzen. %2</translation>
     </message>
 </context>
 <context>

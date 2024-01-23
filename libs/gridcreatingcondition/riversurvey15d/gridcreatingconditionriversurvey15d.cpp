@@ -218,7 +218,7 @@ GridCreatingConditionRiverSurvey15D::~GridCreatingConditionRiverSurvey15D()
 
 bool GridCreatingConditionRiverSurvey15D::create(QWidget* /*parent*/)
 {
-	GridCreatingConditionRiverSurvey15DRegionDialog* dialog = new GridCreatingConditionRiverSurvey15DRegionDialog(this, preProcessorWindow());
+	auto dialog = new GridCreatingConditionRiverSurvey15DRegionDialog(this, preProcessorWindow());
 	dialog->setData(m_riverSurvey);
 	dialog->setStartPoint(m_lastStartPoint);
 	dialog->setEndPoint(m_lastEndPoint);
@@ -233,6 +233,30 @@ bool GridCreatingConditionRiverSurvey15D::create(QWidget* /*parent*/)
 	m_createRegionActor->VisibilityOn();
 	dialog->show();
 	return false;
+}
+
+void GridCreatingConditionRiverSurvey15D::showCondition(QWidget* parent)
+{
+	auto dialog = new GridCreatingConditionRiverSurvey15DRegionDialog(this, preProcessorWindow());
+	dialog->setReadOnly(true);
+	dialog->setData(m_riverSurvey);
+	dialog->setStartPoint(m_lastStartPoint);
+	dialog->setEndPoint(m_lastEndPoint);
+	dialog->setPositionMode(m_positionMode);
+	dialog->update();
+	m_mouseEventMode = meCreationDialog;
+	iricMainWindow()->enterModelessDialogMode();
+	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+	connect(dialog, SIGNAL(destroyed()), this, SLOT(hideCreateRegion()));
+	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
+
+	m_createRegionActor->VisibilityOn();
+	dialog->show();
+}
+
+bool GridCreatingConditionRiverSurvey15D::showConditionAvailable()
+{
+	return true;
 }
 
 bool GridCreatingConditionRiverSurvey15D::ready() const

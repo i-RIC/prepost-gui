@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
@@ -231,6 +233,10 @@
     <message>
         <source>Max number of iteration:</source>
         <translation>反復計算の最大数:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation>格子生成(&amp;C)</translation>
     </message>
 </context>
 </TS>

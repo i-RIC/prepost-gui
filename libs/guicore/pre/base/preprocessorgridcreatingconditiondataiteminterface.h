@@ -19,10 +19,12 @@ public:
 
 	virtual GridCreatingCondition* condition() const = 0;
 	virtual void setCondition(GridCreatingCondition* condition) = 0;
+	virtual bool confirmOverwriteIfNeeded(QWidget* parent) = 0;
 
 	virtual PreProcessorGridTypeDataItemInterface* gridTypeDataItem() const = 0;
 
 	virtual QAction* createAction() const = 0;
+	virtual QAction* showConditionAction() const = 0;
 	virtual QAction* clearAction() const = 0;
 	virtual QAction* switchAction() const = 0;
 	virtual QAction* importAction() const = 0;

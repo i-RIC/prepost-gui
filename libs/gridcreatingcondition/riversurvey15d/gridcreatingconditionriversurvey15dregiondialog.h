@@ -23,6 +23,7 @@ public:
 	GridCreatingConditionRiverSurvey15DRegionDialog(GridCreatingConditionRiverSurvey15D* cond, QWidget* parent = nullptr);
 	~GridCreatingConditionRiverSurvey15DRegionDialog();
 
+	void setReadOnly(bool readOnly);
 	void setData(GeoDataRiverSurvey* rs);
 	void setStartPoint(GeoDataRiverPathPoint* p);
 	void setEndPoint(GeoDataRiverPathPoint* p);

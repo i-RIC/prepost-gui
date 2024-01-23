@@ -1809,6 +1809,10 @@ This algorithm can be used only for structured grids.</source>
         <source>Select file to export</source>
         <translation>エクスポートするファイルの選択</translation>
     </message>
+    <message>
+        <source>&amp;Show Grid Creating Condition...</source>
+        <translation>格子生成条件の表示(S)...</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow</name>

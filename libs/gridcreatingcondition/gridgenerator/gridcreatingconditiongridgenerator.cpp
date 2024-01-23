@@ -72,6 +72,9 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 	if (result == QDialog::Rejected) {
 		return false;
 	}
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	j_chn = dialog->channelShape();
 	j_fix = dialog->floodChannel();
 	j_bar = dialog->bedShape();
@@ -163,6 +166,49 @@ bool GridCreatingConditionGridGenerator::create(QWidget* parent)
 
 	emit gridCreated(grid);
 	dataModel()->graphicsView()->cameraFit();
+	return true;
+}
+
+void GridCreatingConditionGridGenerator::showCondition(QWidget* parent)
+{
+	GridCreatingConditionGridGeneratorSettingDialog* dialog = new GridCreatingConditionGridGeneratorSettingDialog(parent);
+	dialog->setReadOnly(true);
+
+	dialog->setChannelShape(j_chn);
+	dialog->setFloodChannelProperty(j_fix);
+	dialog->setBedShape(j_bar);
+	dialog->setAmplitude(amp);
+	dialog->setLag(delta);
+	dialog->setWaveLength(sl);
+	dialog->setWaveNumber(irns);
+	dialog->setAngle(phi0);
+	dialog->setSlope(slope);
+	dialog->setLongitudinalGridNumber(nt);
+	dialog->setSimpleChannelWidth(width);
+	dialog->setSimpleChannelGridNumber(ny);
+	dialog->setSimpleCompoundLeftWidth(wid[5]);
+	dialog->setSimpleCompoundRightWidth(wid[1]);
+	dialog->setSimpleCompoundLowWidth(wid[3]);
+	dialog->setComplexCompoundTotalWidth(width_t);
+	dialog->setComplexCompoundLowWidth(width_ct);
+	dialog->setLeftGridNumber(ndy[5]);
+	dialog->setRightGridNumber(ndy[1]);
+	dialog->setLowGridNumber(ndy[3]);
+	dialog->setLowDepth(height_l);
+	dialog->setLowSlope(alpha_l);
+	dialog->setBankGridNumber(ny_m);
+	dialog->setWidthChange(j_width);
+	dialog->setWidthChangeType(j_width_type);
+	dialog->setWidthVariation(delta_b);
+
+	dialog->setupConnections();
+	dialog->setupDisability();
+
+	dialog->exec();
+}
+
+bool GridCreatingConditionGridGenerator::showConditionAvailable()
+{
 	return true;
 }
 

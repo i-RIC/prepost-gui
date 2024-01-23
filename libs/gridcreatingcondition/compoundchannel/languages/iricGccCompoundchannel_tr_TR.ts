@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCompoundChannel</name>
@@ -127,7 +129,7 @@
     </message>
     <message>
         <source>&amp;Remove Vertex</source>
-        <translation>Vertex'i kaldır (&amp;R)</translation>
+        <translation>Vertex&apos;i kaldır (&amp;R)</translation>
     </message>
     <message>
         <source>Edit C&amp;oordinates...</source>
@@ -174,6 +176,10 @@
     <message>
         <source>When you feel the grid is not optimized enough, please try increasing this value.</source>
         <translation>Izgaranın yeterince optimize edilmediğini düşünüyorsanız, lütfen bu değeri artırmayı deneyin.</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

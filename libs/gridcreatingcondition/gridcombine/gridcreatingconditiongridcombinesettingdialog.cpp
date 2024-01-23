@@ -15,11 +15,17 @@ GridCreatingConditionGridCombineSettingDialog::GridCreatingConditionGridCombineS
 	ui(new Ui::GridCreatingConditionGridCombineSettingDialog)
 {
 	ui->setupUi(this);
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setText(tr("&Create Grid"));
 }
 
 GridCreatingConditionGridCombineSettingDialog::~GridCreatingConditionGridCombineSettingDialog()
 {
 	delete ui;
+}
+
+void GridCreatingConditionGridCombineSettingDialog::setReadOnly(bool readOnly)
+{
+	ui->buttonBox->button(QDialogButtonBox::Ok)->setDisabled(readOnly);
 }
 
 void GridCreatingConditionGridCombineSettingDialog::setType(Type type)

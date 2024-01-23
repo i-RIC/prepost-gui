@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
@@ -61,7 +63,7 @@
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation>Índex d'inici direccional de creuament principal:</translation>
+        <translation>Índex d&apos;inici direccional de creuament principal:</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
@@ -69,7 +71,7 @@
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation>Índex d'inici direccional de creuament tributari:</translation>
+        <translation>Índex d&apos;inici direccional de creuament tributari:</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
@@ -77,7 +79,7 @@
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation>Índex d'inici tributari direccional de flux principal:</translation>
+        <translation>Índex d&apos;inici tributari direccional de flux principal:</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
@@ -85,11 +87,11 @@
     </message>
     <message>
         <source>Obstacle information</source>
-        <translation>Informació d'obstacles</translation>
+        <translation>Informació d&apos;obstacles</translation>
     </message>
     <message>
         <source>Obstacle coordinates</source>
-        <translation>Coordenades d'obstacles</translation>
+        <translation>Coordenades d&apos;obstacles</translation>
     </message>
     <message>
         <source>Upstream</source>
@@ -109,7 +111,7 @@
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation>Valor de correcció per establir cel·les d'obstacle:</translation>
+        <translation>Valor de correcció per establir cel·les d&apos;obstacle:</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
@@ -118,6 +120,10 @@
     <message>
         <source>Elevation of obstacle cells :</source>
         <translation>Elevació de les cèl·lules d’obstacles:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

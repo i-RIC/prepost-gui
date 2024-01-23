@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -6,9 +8,9 @@
         <translation>Uyarı</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
 %2</source>
-        <translation>"Klasöründeki ızgara oluşturucu tanım dosyası yüklenirken hata oluştu %1 ". Bu ızgara oluşturucu yok sayılır. %2</translation>
+        <translation>&quot;Klasöründeki ızgara oluşturucu tanım dosyası yüklenirken hata oluştu %1 &quot;. Bu ızgara oluşturucu yok sayılır. %2</translation>
     </message>
 </context>
 <context>

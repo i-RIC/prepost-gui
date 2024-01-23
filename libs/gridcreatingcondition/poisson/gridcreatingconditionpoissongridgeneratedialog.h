@@ -15,6 +15,8 @@ public:
 	explicit GridCreatingConditionPoissonGridGenerateDialog(QWidget *parent = 0);
 	~GridCreatingConditionPoissonGridGenerateDialog();
 
+	void setReadOnly(bool readOnly);
+
 	int iDiv() const;
 	void setIDiv(int div);
 

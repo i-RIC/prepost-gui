@@ -243,6 +243,30 @@ bool GridCreatingConditionRiverSurvey::create(QWidget* /*parent*/)
 	return false;
 }
 
+void GridCreatingConditionRiverSurvey::showCondition(QWidget* parent)
+{
+	auto dialog = new GridCreatingConditionRiverSurveyRegionDialog(this, preProcessorWindow());
+	dialog->setReadOnly(true);
+	dialog->setData(m_riverSurvey);
+	dialog->setStartPoint(m_lastStartPoint);
+	dialog->setEndPoint(m_lastEndPoint);
+	dialog->update();
+
+	m_mouseEventMode = meCreationDialog;
+	iricMainWindow()->enterModelessDialogMode();
+	connect(dialog, SIGNAL(destroyed()), iricMainWindow(), SLOT(exitModelessDialogMode()));
+	connect(dialog, SIGNAL(destroyed()), this, SLOT(hideCreateRegion()));
+	connect(dialog, SIGNAL(destroyed()), this, SLOT(restoreMouseEventMode()));
+
+	m_createRegionActor->VisibilityOn();
+	dialog->show();
+}
+
+bool GridCreatingConditionRiverSurvey::showConditionAvailable()
+{
+	return true;
+}
+
 bool GridCreatingConditionRiverSurvey::ready() const
 {
 	return true;

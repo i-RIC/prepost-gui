@@ -21,6 +21,7 @@ public:
 	GridCreatingConditionGridCombineSettingDialog(QWidget* parent = nullptr);
 	~GridCreatingConditionGridCombineSettingDialog();
 
+	void setReadOnly(bool readOnly);
 	void setType(Type type);
 	void setMainstreamGridName(const QString& name);
 	void setTributaryGridName(const QString& name);

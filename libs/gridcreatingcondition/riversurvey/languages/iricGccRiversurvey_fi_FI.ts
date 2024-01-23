@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="fi_FI">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -196,6 +198,10 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     <message>
         <source>End Traversal Line:</source>
         <translation>Päättymisviiva:</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

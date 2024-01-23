@@ -9,6 +9,7 @@ public:
 	GridCreatingCondition* m_condition;
 
 	QAction* m_createAction;
+	QAction* m_showConditionAction;
 	QAction* m_switchAlgorithmAction;
 	QAction* m_deleteAction;
 	QAction* m_clearAction;

@@ -154,6 +154,9 @@ void GridCreatingConditionLaplace::showInitialDialog()
 
 bool GridCreatingConditionLaplace::create(QWidget* parent)
 {
+	bool ok = gccDataItem()->confirmOverwriteIfNeeded(parent);
+	if (! ok) {return false;}
+
 	Grid* grid = impl->createGrid();
 	if (grid == nullptr) {
 		return false;
@@ -162,6 +165,14 @@ bool GridCreatingConditionLaplace::create(QWidget* parent)
 	emit gridCreated(grid);
 
 	return true;
+}
+
+void GridCreatingConditionLaplace::showCondition(QWidget* /*parent*/)
+{}
+
+bool GridCreatingConditionLaplace::showConditionAvailable()
+{
+	return false;
 }
 
 bool GridCreatingConditionLaplace::ready() const

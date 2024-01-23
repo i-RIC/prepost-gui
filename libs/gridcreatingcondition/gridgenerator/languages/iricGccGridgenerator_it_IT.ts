@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="it_IT">
 <context>
     <name>GridCreatingConditionCreatorGridGenerator</name>
@@ -69,7 +71,7 @@
     </message>
     <message>
         <source>Alternate bar shape in low water channel</source>
-        <translation>Forma della barra alternativa nel canale dell'acqua bassa</translation>
+        <translation>Forma della barra alternativa nel canale dell&apos;acqua bassa</translation>
     </message>
     <message>
         <source>Parabolic shape cross section</source>
@@ -101,11 +103,11 @@
     </message>
     <message>
         <source>Meander wave length [m] :</source>
-        <translation>Lunghezza d'onda del meandro [m] :</translation>
+        <translation>Lunghezza d&apos;onda del meandro [m] :</translation>
     </message>
     <message>
         <source>Wave number :</source>
-        <translation>Numero d'onda:</translation>
+        <translation>Numero d&apos;onda:</translation>
     </message>
     <message>
         <source>Meander angle (degree, zero for a straight channel) :</source>
@@ -117,7 +119,7 @@
     </message>
     <message>
         <source>Number of grids for one wave length in the longitudinal direction :</source>
-        <translation>Numero di griglie per una lunghezza d'onda in direzione longitudinale:</translation>
+        <translation>Numero di griglie per una lunghezza d&apos;onda in direzione longitudinale:</translation>
     </message>
     <message>
         <source>Channel shape</source>
@@ -185,7 +187,7 @@
     </message>
     <message>
         <source>Number of grids for the low water channel banks :</source>
-        <translation>Numero di griglie per le sponde dei canali d'acqua bassa:</translation>
+        <translation>Numero di griglie per le sponde dei canali d&apos;acqua bassa:</translation>
     </message>
     <message>
         <source>Width change</source>
@@ -218,6 +220,10 @@
     <message>
         <source>Width variation [m] :</source>
         <translation>Variazione larghezza [m] :</translation>
+    </message>
+    <message>
+        <source>&amp;Create Grid</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
