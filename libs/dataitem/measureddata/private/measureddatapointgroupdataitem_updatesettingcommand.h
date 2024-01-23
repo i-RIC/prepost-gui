@@ -5,6 +5,7 @@
 
 #include <QUndoCommand>
 
+class ColorMapSettingContainer;
 class MeasuredDataPointSetting;
 
 class MeasuredDataPointGroupDataItem::UpdateSettingCommand : public QUndoCommand
