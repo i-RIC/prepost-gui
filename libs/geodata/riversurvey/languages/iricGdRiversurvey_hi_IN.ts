@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप &quot;मैप पॉइंट क्लाउड डेटा&quot; का उपयोग कर सकते हैं।</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">क्रॉस-सेक्शन डेटा पॉइंट क्लाउड डेटा का उपयोग करके उत्पन्न होता है। कुछ क्षेत्रों में, बिंदु क्लाउड डेटा में डेटा मौजूद नहीं था, और उन बिंदुओं के लिए मान 0 को मैप किया गया था। यदि आप क्रॉस सेक्शन की स्थिति और मैप पॉइंट क्लाउड डेटा को फिर से समायोजित करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा" का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,26 +411,26 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
-        <translation type="unfinished"></translation>
+        <translation>मैप करने के लिए कोई डेटा नहीं मिला. कृपया पॉइंट क्लाउड डेटा या रैस्टर डेटा आयात करें।</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा" मेनू का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>क्रॉस-सेक्शन डेटा उत्पन्न होता है। कुछ क्षेत्रों में, कुछ बिंदुओं पर मैपिंग सफल नहीं हुई, और उन बिंदुओं के लिए मान 0 मैप किया गया था। यदि आप क्रॉस सेक्शन स्थिति को समायोजित करना चाहते हैं और फिर से मैप करना चाहते हैं, तो आप "मैप पॉइंट क्लाउड डेटा या रैस्टर डेटा" मेनू का उपयोग कर सकते हैं।</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन के लिए भौगोलिक डेटा मैप करें</translation>
     </message>
 </context>
 <context>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>एलिवेशन और ग्रेडिएंट की सेटिंग अमान्य हैं।</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया &quot;क्षैतिज दूरी निर्दिष्ट करें&quot; चुनें।</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>जब आप अंत बिंदु की ऊंचाई निर्दिष्ट करते हैं, तो यह प्रारंभ बिंदु के समान नहीं हो सकता है। यदि आप क्षैतिज रेखा खींचना चाहते हैं, तो कृपया "क्षैतिज दूरी निर्दिष्ट करें" चुनें।</translation>
     </message>
 </context>
 <context>
@@ -873,8 +871,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में &quot;संवाद से संपादित करें&quot; से संवाद संपादन मोड दर्ज करें।</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>माउस-क्लिक करके क्रॉस सेक्शन को संपादित करें। डबल क्लिक करके, या वापसी कुंजी दबाकर संपादन समाप्त करें। आप संवाद से मान इनपुट करके क्रॉस सेक्शन को ठीक से संपादित कर सकते हैं। कृपया राइट-क्लिक मेनू में "संवाद से संपादित करें" से संवाद संपादन मोड दर्ज करें।</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -982,15 +980,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>मानचित्रण</translation>
     </message>
     <message>
         <source>Map Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>मैप प्वाइंट क्लाउड डेटा</translation>
     </message>
     <message>
         <source>Map Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>मानचित्र रेखापुंज डेटा</translation>
     </message>
 </context>
 <context>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>त्रुटि</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: पॉइंट काउंट अमान्य है</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 रेखा %2 "%3": पॉइंट काउंट अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: अमान्य अनुक्रमणिका मान</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 रेखा %2 "%3": अमान्य अनुक्रमणिका मान</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 रेखा %2 : के लिए क्रॉस सेक्शन डेटा %3 पर्याप्त नहीं</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: दूरी मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 रेखा %2 "%3": दूरी मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: ऊंचाई मान अमान्य है</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 रेखा %2 "%3": ऊंचाई मान अमान्य है</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : त्रुटि पढ़ें। कम से कम दो मान चाहिए।</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 रेखा %2 : त्रुटि पढ़ें। वास्तविक संख्या मान नहीं "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1263,19 +1261,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>मानचित्रण</translation>
     </message>
     <message>
         <source>Map Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>मैप प्वाइंट क्लाउड डेटा</translation>
     </message>
     <message>
         <source>Map Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>मानचित्र रेखापुंज डेटा</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>क्रॉस सेक्शन के लिए भौगोलिक डेटा मैप करें</translation>
     </message>
 </context>
 <context>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 रेखा %2 : केपी इनपुट नहीं है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: LY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": LY मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RX मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RX मान अमान्य है</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 रेखा %2 &quot;%3&quot;: RY मान अमान्य है</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 रेखा %2 "%3": RY मान अमान्य है</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>दूरी मार्कर डेटा नहीं मिला। नजरअंदाज किया जाएगा।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 रेखा %2 : &quot;%3&quot;: ध्वज डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 रेखा %2 : "%3": ध्वज डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: दूरी डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": दूरी डेटा अमान्य है।</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 रेखा %2 : &quot;%3&quot;: ऊंचाई डेटा अमान्य है।</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 रेखा %2 : "%3": ऊंचाई डेटा अमान्य है।</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1440,8 +1438,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>दृश्यमान</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; आप Colormap टैब का उपयोग करके रंग को कस्टमाइज़ कर सकते हैं।&lt;/p&gt;&lt;/body&gt;&lt; /एचटीएमएल&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

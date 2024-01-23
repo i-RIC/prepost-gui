@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="et_EE">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Läbilõikeandmed genereeritakse punktpilve andmete abil. Kui soovite ristlõike asukohta ja kaardipunkti klanni andmeid uuesti reguleerida, saate kasutada funktsiooni &quot;Kaardipunkti pilveandmed&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Läbilõikeandmed genereeritakse punktpilve andmete abil. Kui soovite ristlõike asukohta ja kaardipunkti klanni andmeid uuesti reguleerida, saate kasutada funktsiooni "Kaardipunkti pilveandmed"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Läbilõike andmed genereeritakse punktipilveandmete abil. Kui soovite uuesti ristlõike asukohta ja punktipilve andmeid kaardistada, saate kasutada valikut &quot;Kaardi punktipilve andmed&quot;.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Läbilõike andmed genereeritakse punktipilveandmete abil. Kui soovite uuesti ristlõike asukohta ja punktipilve andmeid kaardistada, saate kasutada valikut "Kaardi punktipilve andmed".</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Läbilõike andmed genereeritakse punktipilveandmete abil. Mõnes piirkonnas ei olnud punktipilveandmetes andmeid ja nende punktide jaoks kaardistati väärtus 0. Kui soovite uuesti ristlõike asukohta ja punktipilve andmeid kaardistada, võite kasutada valikut &quot;Kaardi punktipilve andmed&quot;.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Läbilõike andmed genereeritakse punktipilveandmete abil. Mõnes piirkonnas ei olnud punktipilveandmetes andmeid ja nende punktide jaoks kaardistati väärtus 0. Kui soovite uuesti ristlõike asukohta ja punktipilve andmeid kaardistada, võite kasutada valikut "Kaardi punktipilve andmed".</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,26 +411,26 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardistavaid andmeid ei leitud. Importige punktipilveandmed või rasterandmed.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Genereeritakse läbilõikeandmed. Kui soovite ristlõike asukohta ja kaarti uuesti kohandada, võite kasutada menüüd "Kaardipunktide pilvandmed või rasterandmed".</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation type="unfinished"></translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>Genereeritakse läbilõikeandmed. Mõnes piirkonnas kaardistamine mõnes punktis ei õnnestunud ja nende punktide jaoks kaardistati väärtus 0. Kui soovite ristlõike asukohta ja kaarti uuesti kohandada, võite kasutada menüüd "Kaardipunktide pilvandmed või rasterandmed".</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Geograafiliste andmete kaardistamine ristlõigetega</translation>
     </message>
 </context>
 <context>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Kõrguse ja gradiendi seaded on kehtetud.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Kui määrate lõpp -punkti kõrguse, ei saa see olla alguspunktiga sama. Kui soovite joonistada horisontaaljoont, valige &quot;Määra horisontaalne kaugus&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Kui määrate lõpp -punkti kõrguse, ei saa see olla alguspunktiga sama. Kui soovite joonistada horisontaaljoont, valige "Määra horisontaalne kaugus".</translation>
     </message>
 </context>
 <context>
@@ -873,7 +871,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Muutke ristlõiget hiireklõpsuga. Lõpetage redigeerimine topeltklõpsuga või vajutades tagasiklahvi. Saate ristlõiget täpselt muuta, sisestades väärtused dialoogist. Sisestage dialoogi redigeerimisrežiim paremklõpsamenüü menüüst „Muuda dialoogist”.</translation>
     </message>
     <message>
@@ -982,15 +980,15 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardistamine</translation>
     </message>
     <message>
         <source>Map Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardipunkti pilvandmed</translation>
     </message>
     <message>
         <source>Map Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardi rasterandmed</translation>
     </message>
 </context>
 <context>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Viga</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: LX väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 rida %2 "%3": LX väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: LY väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 rida %2 "%3": LY väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: RX väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 rida %2 "%3": RX väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: RY väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 rida %2 "%3": RY väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: Punktide arv on kehtetu</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 rida %2 "%3": Punktide arv on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 rida %2 &quot;%3&quot;: Kehtetu indeksi väärtus</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 rida %2 "%3": Kehtetu indeksi väärtus</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 rida %2 : ristlõike andmed %3 mitte piisavalt</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: Kauguse väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 rida %2 "%3": Kauguse väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 rida %2 &quot;%3&quot;: Kõrguse väärtus on kehtetu</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 rida %2 "%3": Kõrguse väärtus on kehtetu</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Rida %2 : Lugemisviga. Vajab vähemalt kahte väärtust.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Rida %2 : Lugemisviga. Pole reaalse arvu väärtus &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Rida %2 : Lugemisviga. Pole reaalse arvu väärtus "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1263,19 +1261,19 @@ You can precisely edit the cross section by inputting values from dialog. Please
     </message>
     <message>
         <source>Mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardistamine</translation>
     </message>
     <message>
         <source>Map Point Cloud Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardipunkti pilvandmed</translation>
     </message>
     <message>
         <source>Map Raster Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaardi rasterandmed</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
-        <translation type="unfinished"></translation>
+        <translation>Geograafiliste andmete kaardistamine ristlõigetega</translation>
     </message>
 </context>
 <context>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Rida %2 : KP pole sisestatud</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Rida %2 &quot;%3&quot;: LX väärtus on kehtetu</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Rida %2 "%3": LX väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Rida %2 &quot;%3&quot;: LY väärtus on kehtetu</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Rida %2 "%3": LY väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Rida %2 &quot;%3&quot;: RX väärtus on kehtetu</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Rida %2 "%3": RX väärtus on kehtetu</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Rida %2 &quot;%3&quot;: RY väärtus on kehtetu</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Rida %2 "%3": RY väärtus on kehtetu</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Kaugusmärgi andmeid ei leitud. Eiratakse.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 rida %2 : &quot;%3&quot;: Lipu andmed on kehtetud.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 rida %2 : "%3": Lipu andmed on kehtetud.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 rida %2 : &quot;%3&quot;: Vahemaa andmed on kehtetud.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 rida %2 : "%3": Vahemaa andmed on kehtetud.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 rida %2 : &quot;%3&quot;: Kõrgusandmed on kehtetud.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 rida %2 : "%3": Kõrgusandmed on kehtetud.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1440,8 +1438,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Nähtav</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Märkus.&lt;/span&gt; Saate kohandada värvi, kasutades vahekaarti Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Märkus.&lt;/span&gt; Saate kohandada värvi, kasutades vahekaarti Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>
