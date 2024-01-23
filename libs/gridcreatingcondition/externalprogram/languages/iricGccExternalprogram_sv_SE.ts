@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sv_SE">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Varning</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Ett fel uppstod vid laddning av definieringsfilen för nätverksskaparen i mappen &quot;%1&quot;. Denna rutnätskapare ignoreras. %2</translation>
+        <translation>Ett fel uppstod vid laddning av definieringsfilen för nätverksskaparen i mappen "%1". Denna rutnätskapare ignoreras. %2</translation>
     </message>
 </context>
 <context>

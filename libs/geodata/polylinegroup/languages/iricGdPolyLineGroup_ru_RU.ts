@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -75,7 +73,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data. Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Удаление этого элемента также приведет к удалению всех окон графиков, связанных с этими данными. Вы уверены, что хотите удалить этот элемент?</translation>
     </message>
 </context>
 <context>
@@ -124,8 +122,8 @@
         <translation>Произошла ошибка при чтении строки заголовка. В заголовке должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть &quot;%2&quot;, но &quot;%3&quot; дано.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Произошла ошибка при чтении строки заголовка. Столбец %1 должно быть "%2", но "%3" дано.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -148,31 +146,31 @@
         <translation>Произошла ошибка при чтении строки %1. В данных должно быть не менее 6 столбцов.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;крышки&quot; в строке %1. &quot;крышка&quot; должна быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "крышки" в строке %1. "крышка" должна быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения vid в строке %1. &quot;vid&quot; должно быть целым числом, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения vid в строке %1. "vid" должно быть целым числом, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;x&quot; в строке %1. &quot;x&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "x" в строке %1. "x" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;y&quot; в строке %1. &quot;y&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "y" в строке %1. "y" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Произошла ошибка при чтении значения &quot;значение&quot; в строке %1. &quot;значение&quot; должно быть реальным значением, но &quot;%2&quot;указано.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Произошла ошибка при чтении значения "значение" в строке %1. "значение" должно быть реальным значением, но "%2"указано.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
         <translation>Произошла ошибка при чтении строки %1. «name» должно быть одинаковым для строк, в которых значения «lid» совпадают.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
         <translation>Произошла ошибка при чтении строки %1. «value» должно быть одинаковым для строк, где значения «lid» совпадают.</translation>
     </message>
     <message>

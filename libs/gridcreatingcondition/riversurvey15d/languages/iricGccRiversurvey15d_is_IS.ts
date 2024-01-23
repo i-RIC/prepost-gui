@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="is_IS">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,12 +218,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Fjarlægð frá miðpunkti</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
         <translation>„Vinstri bakki“ er bankinn sem þú sérð á vinstri hliðinni, þegar þú snýrð þér að niðurstreymis átt.</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Búðu til rist (&amp;C)</translation>
     </message>
 </context>
 </TS>

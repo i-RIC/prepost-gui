@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -15,11 +13,11 @@
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river center.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation>La forme de la grille est définie automatiquement à l&apos;aide des données de section. Vous pouvez spécifier le numéro de division de la grille en ajoutant des points de contrôle de création de grille au centre de la rivière. Remarque&#xa0;: cet algorithme n&apos;est disponible que lorsque les données de section sont chargées&#xa0;! Veuillez utiliser cet algorithme après avoir importé les données de section.</translation>
+        <translation>La forme de la grille est définie automatiquement à l'aide des données de section. Vous pouvez spécifier le numéro de division de la grille en ajoutant des points de contrôle de création de grille au centre de la rivière. Remarque : cet algorithme n'est disponible que lorsque les données de section sont chargées ! Veuillez utiliser cet algorithme après avoir importé les données de section.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithm is not available.</source>
-        <translation>Aucune donnée transversale n&apos;existe actuellement dans les données géographiques. Cet algorithme n&apos;est pas disponible.</translation>
+        <translation>Aucune donnée transversale n'existe actuellement dans les données géographiques. Cet algorithme n'est pas disponible.</translation>
     </message>
 </context>
 <context>
@@ -58,7 +56,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Are you sure you want to delete these control points?</source>
-        <translation>Voulez-vous vraiment supprimer ces points de contrôle&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer ces points de contrôle ?</translation>
     </message>
     <message>
         <source>point%1</source>
@@ -82,7 +80,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation>Il n&apos;y a pas de données transversales. Cette condition de création de grille n&apos;est pas disponible.</translation>
+        <translation>Il n'y a pas de données transversales. Cette condition de création de grille n'est pas disponible.</translation>
     </message>
 </context>
 <context>
@@ -189,15 +187,15 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Start Traversal Line:</source>
-        <translation>Commencer la ligne de traversée&#xa0;:</translation>
+        <translation>Commencer la ligne de traversée :</translation>
     </message>
     <message>
         <source>End Traversal Line:</source>
-        <translation>Fin de la ligne de traversée&#xa0;:</translation>
+        <translation>Fin de la ligne de traversée :</translation>
     </message>
     <message>
         <source>Number of points in interpolated cross sections:</source>
-        <translation>Nombre de points dans les coupes interpolées&#xa0;:</translation>
+        <translation>Nombre de points dans les coupes interpolées :</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -209,7 +207,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Position value of elevation points:</source>
-        <translation>Valeur de position des points d&apos;élévation&#xa0;:</translation>
+        <translation>Valeur de position des points d'élévation :</translation>
     </message>
     <message>
         <source>Distance from left bank</source>
@@ -220,12 +218,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Distance du point central</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;Rive gauche&quot; est la rive que vous voyez sur le côté gauche, lorsque vous tournez vers l&apos;aval.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"Rive gauche" est la rive que vous voyez sur le côté gauche, lorsque vous tournez vers l'aval.</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une grille (&amp;C)</translation>
     </message>
 </context>
 </TS>

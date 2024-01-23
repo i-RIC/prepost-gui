@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Faila nosaukumā ir rakstzīmes, kas nav ASCII rakstzīmes. Lūdzu, pārvietojiet vai pārdēvējiet failu.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Atvēršana %1 neizdevās.</translation>
     </message>
 </context>
 <context>

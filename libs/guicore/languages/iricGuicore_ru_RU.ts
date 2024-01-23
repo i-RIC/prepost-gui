@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>ArrowsColorSettingEditSmallWidget</name>
@@ -1478,8 +1476,8 @@ Parse error %2 at %3, column %4</source>
         <translation>Цвет:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание. В имени можно использовать только символы ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note: You can use only ASCII characters for Name.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание. В имени можно использовать только символы ASCII.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
 </context>
 <context>
@@ -1585,12 +1583,12 @@ Parse error %2 at %3, column %4</source>
         <translation>Узел определения не сохраняется</translation>
     </message>
     <message>
-        <source>Wrong valueType &quot;%1&quot; is set.</source>
-        <translation>Неверное значение типа &quot;%1&quot;установлено.</translation>
+        <source>Wrong valueType "%1" is set.</source>
+        <translation>Неверное значение типа "%1"установлено.</translation>
     </message>
     <message>
-        <source>Wrong conditionType &quot;%1&quot;is set.</source>
-        <translation>Неверный тип условия &quot;%1&quot;установлено.</translation>
+        <source>Wrong conditionType "%1"is set.</source>
+        <translation>Неверный тип условия "%1"установлено.</translation>
     </message>
     <message>
         <source>Error occured while loading solver definition file.
@@ -1861,7 +1859,7 @@ Do you really want to import this file?</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <source>You can copy and paste the values, with shortcut &quot;Ctrl + C&quot; and &quot;Ctrl + V&quot;</source>
+        <source>You can copy and paste the values, with shortcut "Ctrl + C" and "Ctrl + V"</source>
         <translation>Вы можете копировать и вставлять значения с помощью сочетания клавиш «Ctrl + C» и «Ctrl + V».</translation>
     </message>
     <message>
@@ -1987,7 +1985,7 @@ Do you really want to import this file?</source>
         <translation>Произошла ошибка при открытии файла.</translation>
     </message>
     <message>
-        <source>The first two columns must be &quot;X&quot; and &quot;Y&quot;.</source>
+        <source>The first two columns must be "X" and "Y".</source>
         <translation>Первые два столбца должны быть «X» и «Y».</translation>
     </message>
     <message>
@@ -2153,8 +2151,8 @@ Do you really want to import this file?</source>
         <translation>Определение переменной</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2232,8 +2230,8 @@ Do you really want to import this file?</source>
         <translation>Вниз (&amp;D)</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Примечание &lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простых операций в качестве переменной, которая появляется раньше в списке. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: The order in the list is important. In the definition, you can use the value of simple operation calculations as a variable, that appears earlier in the list.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Примечание &lt;/span&gt;. Порядок в списке важен. В определении вы можете использовать значение вычислений простых операций в качестве переменной, которая появляется раньше в списке. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>&amp;Add...</source>
@@ -2594,8 +2592,8 @@ Do you really want to import this file?</source>
         <translation>Определение вывода</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href=&quot;http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m&quot;&gt; &lt;span style = &quot;text -decoration: underline; color: # 0000ff; &quot;&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;You can define the variable with JavaScript language. Please see &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt;&lt;span style=" text-decoration: underline; color:#0000ff;"&gt;here&lt;/span&gt;&lt;/a&gt; for detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; Вы можете определить переменную с помощью языка JavaScript. См. &lt;a href="http://iric-gui-user-manual.readthedocs.io/en/latest/03/07_calc_result.html#manage-simple-operation-results-m"&gt; &lt;span style = "text -decoration: underline; color: # 0000ff; "&gt; здесь &lt;/span&gt; &lt;/a&gt; для подробностей. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Test</source>
@@ -2861,8 +2859,8 @@ Do you really want to import this file?</source>
 <context>
     <name>ProjectWorkspace</name>
     <message>
-        <source>Workspace &quot;%1&quot; has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
-        <translation>Рабочая среда &quot;%1&quot; имеет %2 папки проекта, которые, похоже, больше не используются. Вы хотите их удалить?</translation>
+        <source>Workspace "%1" has %2 project folders that seems to be not used any more. Do you want to remove them?</source>
+        <translation>Рабочая среда "%1" имеет %2 папки проекта, которые, похоже, больше не используются. Вы хотите их удалить?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -3253,27 +3251,27 @@ Do you really want to import this file?</source>
     </message>
     <message>
         <source>Google Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Карты Гугл</translation>
     </message>
     <message>
         <source>Google Streets</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Улицы</translation>
     </message>
     <message>
         <source>Google Satellite</source>
-        <translation type="unfinished"></translation>
+        <translation>Гугл Спутник</translation>
     </message>
     <message>
         <source>Google Satellite Hybrid</source>
-        <translation type="unfinished"></translation>
+        <translation>Гибридный спутник Google</translation>
     </message>
     <message>
         <source>Google Roads</source>
-        <translation type="unfinished"></translation>
+        <translation>Гугл Дороги</translation>
     </message>
     <message>
         <source>Google Terrain</source>
-        <translation type="unfinished"></translation>
+        <translation>Google Ландшафт</translation>
     </message>
 </context>
 <context>

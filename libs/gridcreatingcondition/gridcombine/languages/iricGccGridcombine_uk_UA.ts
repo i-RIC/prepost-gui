@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
     <message>
         <source>Create grid by combining two grids</source>
-        <translation>Створіть сітку, об&apos;єднавши дві сітки</translation>
+        <translation>Створіть сітку, об'єднавши дві сітки</translation>
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
@@ -35,7 +33,7 @@
     </message>
     <message>
         <source>Bind together (left : tributary, right : mainstream)</source>
-        <translation>Зв&apos;язати разом (ліворуч: притока, праворуч: мейнстрім)</translation>
+        <translation>Зв'язати разом (ліворуч: притока, праворуч: мейнстрім)</translation>
     </message>
     <message>
         <source>Flow into the left bank (left : tributary, right : mainstream)</source>
@@ -123,7 +121,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Створити сітку (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -15,11 +13,11 @@
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation>La forme de la grille est définie automatiquement à l&apos;aide des données de section. Vous pouvez spécifier le numéro de division de la grille en ajoutant des points de contrôle de création de grille sur les sections transversales de la rivière, le centre de la rivière, la rive gauche et la rive droite. Remarque&#xa0;: cet algorithme n&apos;est disponible que lorsque les données de section sont chargées&#xa0;! Veuillez utiliser cet algorithme après avoir importé les données de section.</translation>
+        <translation>La forme de la grille est définie automatiquement à l'aide des données de section. Vous pouvez spécifier le numéro de division de la grille en ajoutant des points de contrôle de création de grille sur les sections transversales de la rivière, le centre de la rivière, la rive gauche et la rive droite. Remarque : cet algorithme n'est disponible que lorsque les données de section sont chargées ! Veuillez utiliser cet algorithme après avoir importé les données de section.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
-        <translation>Aucune donnée transversale n&apos;existe actuellement dans les données géographiques. Cet algorithme n&apos;est pas disponible.</translation>
+        <translation>Aucune donnée transversale n'existe actuellement dans les données géographiques. Cet algorithme n'est pas disponible.</translation>
     </message>
 </context>
 <context>
@@ -58,7 +56,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Are you sure you want to delete these control points?</source>
-        <translation>Voulez-vous vraiment supprimer ces points de contrôle&#xa0;?</translation>
+        <translation>Voulez-vous vraiment supprimer ces points de contrôle ?</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -82,7 +80,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>There is no cross-section data. This grid creating condition is not available.</source>
-        <translation>Il n&apos;y a pas de données transversales. Cette condition de création de grille n&apos;est pas disponible.</translation>
+        <translation>Il n'y a pas de données transversales. Cette condition de création de grille n'est pas disponible.</translation>
     </message>
 </context>
 <context>
@@ -193,15 +191,15 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>Start Traversal Line:</source>
-        <translation>Commencer la ligne de traversée&#xa0;:</translation>
+        <translation>Commencer la ligne de traversée :</translation>
     </message>
     <message>
         <source>End Traversal Line:</source>
-        <translation>Fin de la ligne de traversée&#xa0;:</translation>
+        <translation>Fin de la ligne de traversée :</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une grille (&amp;C)</translation>
     </message>
 </context>
 </TS>

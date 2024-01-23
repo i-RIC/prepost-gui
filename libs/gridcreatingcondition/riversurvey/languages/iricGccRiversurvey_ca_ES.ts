@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey</name>
@@ -15,7 +13,7 @@
         <source>The grid shape is automatically defined using cross-section data. You can specify the grid division number, by adding grid creation control points on river crosssections, river center, left bank, and right bank.
 Note: This algorithm is available only when cross-section data is loaded!Please switch algorithm to this, after importing cross-section data.
 </source>
-        <translation>La forma de la quadrícula es defineix automàticament mitjançant dades de secció transversal. Podeu especificar el número de divisió de quadrícula afegint punts de control de creació de quadrícula a les seccions transversals del riu, al centre del riu, a la riba esquerra i a la riba dreta. Nota: aquest algorisme només està disponible quan es carreguen les dades de la secció transversal. Canvieu-ne l&apos;algorisme després d&apos;importar les dades de la secció transversal.</translation>
+        <translation>La forma de la quadrícula es defineix automàticament mitjançant dades de secció transversal. Podeu especificar el número de divisió de quadrícula afegint punts de control de creació de quadrícula a les seccions transversals del riu, al centre del riu, a la riba esquerra i a la riba dreta. Nota: aquest algorisme només està disponible quan es carreguen les dades de la secció transversal. Canvieu-ne l'algorisme després d'importar les dades de la secció transversal.</translation>
     </message>
     <message>
         <source>No cross-section data exists in geographic data now. This algorithmn is not available.</source>
@@ -201,7 +199,7 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea una graella (&amp;C)</translation>
     </message>
 </context>
 </TS>

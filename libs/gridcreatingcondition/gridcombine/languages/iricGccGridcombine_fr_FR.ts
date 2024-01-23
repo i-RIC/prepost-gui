@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="fr_FR">
 <context>
     <name>GridCreatingConditionCreatorGridCombine</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>Grid with shape of river meeting point can be created using this algorithm. Please create or import two grids first. Selecting the main channel grid and sub channel grid, and specifying some parameters, you can create a river meeting point grid.</source>
-        <translation>Une grille avec la forme du point de rencontre de la rivière peut être créée à l&apos;aide de cet algorithme. Veuillez d&apos;abord créer ou importer deux grilles. En sélectionnant la grille de canal principale et la grille de sous-canal, et en spécifiant certains paramètres, vous pouvez créer une grille de points de rencontre de rivière.</translation>
+        <translation>Une grille avec la forme du point de rencontre de la rivière peut être créée à l'aide de cet algorithme. Veuillez d'abord créer ou importer deux grilles. En sélectionnant la grille de canal principale et la grille de sous-canal, et en spécifiant certains paramètres, vous pouvez créer une grille de points de rencontre de rivière.</translation>
     </message>
 </context>
 <context>
@@ -63,27 +61,27 @@
     </message>
     <message>
         <source>Mainstream crossing directional beginning index :</source>
-        <translation>Indice de début directionnel de croisement principal&#xa0;:</translation>
+        <translation>Indice de début directionnel de croisement principal :</translation>
     </message>
     <message>
         <source>Mainstream crossing directional ending index :</source>
-        <translation>Indice de fin directionnel de croisement principal&#xa0;:</translation>
+        <translation>Indice de fin directionnel de croisement principal :</translation>
     </message>
     <message>
         <source>Tributary crossing directional beginning index :</source>
-        <translation>Indice directionnel de début de traversée d&apos;affluent :</translation>
+        <translation>Indice directionnel de début de traversée d'affluent :</translation>
     </message>
     <message>
         <source>Tributary crossing directional ending index :</source>
-        <translation>Indice directionnel de fin de traversée d&apos;affluent&#xa0;:</translation>
+        <translation>Indice directionnel de fin de traversée d'affluent :</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary beginning index :</source>
-        <translation>Indice de début d&apos;affluent directionnel du débit principal&#xa0;:</translation>
+        <translation>Indice de début d'affluent directionnel du débit principal :</translation>
     </message>
     <message>
         <source>Mainstream flow directional tributary ending index :</source>
-        <translation>Indice de fin d&apos;affluent directionnel du débit principal&#xa0;:</translation>
+        <translation>Indice de fin d'affluent directionnel du débit principal :</translation>
     </message>
     <message>
         <source>Obstacle information</source>
@@ -111,7 +109,7 @@
     </message>
     <message>
         <source>Correction value for setting obstacle cells :</source>
-        <translation>Valeur de correction pour le réglage des cellules d&apos;obstacles :</translation>
+        <translation>Valeur de correction pour le réglage des cellules d'obstacles :</translation>
     </message>
     <message>
         <source>(smaller value for complex channel form)</source>
@@ -119,11 +117,11 @@
     </message>
     <message>
         <source>Elevation of obstacle cells :</source>
-        <translation>Elévation des cellules d&apos;obstacles :</translation>
+        <translation>Elévation des cellules d'obstacles :</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer une grille (&amp;C)</translation>
     </message>
 </context>
 </TS>

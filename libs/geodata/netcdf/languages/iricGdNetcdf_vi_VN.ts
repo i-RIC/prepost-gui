@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tên tệp chứa các ký tự không phải ASCII. Vui lòng di chuyển hoặc đổi tên tập tin.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Khai mạc %1 thất bại.</translation>
     </message>
 </context>
 <context>

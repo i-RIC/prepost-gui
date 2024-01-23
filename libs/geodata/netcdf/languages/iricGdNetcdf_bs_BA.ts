@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ime datoteke sadrži znakove koji nisu ASCII. Premjestite ili preimenujte datoteku.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvaranje %1 nije uspjelo.</translation>
     </message>
 </context>
 <context>

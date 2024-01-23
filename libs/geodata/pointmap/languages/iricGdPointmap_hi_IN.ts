@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -231,8 +229,8 @@
         <translation type="vanished">मर्ज करें...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है&quot;%1&quot; समूह।</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>मर्ज करने के लिए कोई अन्य डेटा नहीं है"%1" समूह।</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -349,23 +347,23 @@
     <name>GeoDataPointmap::PolygonsManager</name>
     <message>
         <source>Mapping Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>मैपिंग सेटिंग</translation>
     </message>
     <message>
         <source>TIN</source>
-        <translation type="unfinished">टिन</translation>
+        <translation>टिन</translation>
     </message>
     <message>
         <source>Maximum</source>
-        <translation type="unfinished"></translation>
+        <translation>अधिकतम</translation>
     </message>
     <message>
         <source>Minimum</source>
-        <translation type="unfinished"></translation>
+        <translation>न्यूनतम</translation>
     </message>
     <message>
         <source>Weighted Average</source>
-        <translation type="unfinished"></translation>
+        <translation>भारित औसत</translation>
     </message>
 </context>
 <context>
@@ -650,12 +648,12 @@
         <translation>कोई सीमांकक निर्दिष्ट नहीं</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं&quot;%1&quot;।&quot;%1&quot;स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>पढ़ने के लिए काफ़ी मान नहीं हैं"%1"।"%1"स्तंभ है %2 लेकिन %3 मान इनपुट।</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>पढ़ते समय त्रुटि हुई &quot;%1&quot; मूल्य। &quot;%1&quot;मान वास्तविक संख्या होना चाहिए, लेकिन&quot;%2&quot;निर्दिष्ट।</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>पढ़ते समय त्रुटि हुई "%1" मूल्य। "%1"मान वास्तविक संख्या होना चाहिए, लेकिन"%2"निर्दिष्ट।</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -671,11 +669,11 @@
     </message>
     <message>
         <source>The number of fields is less than 3.</source>
-        <translation type="unfinished"></translation>
+        <translation>फ़ील्ड की संख्या 3 से कम है.</translation>
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
-        <translation type="unfinished"></translation>
+        <translation>एक्स, वाई और वैल्यू को अलग-अलग फ़ील्ड का संदर्भ देना चाहिए।</translation>
     </message>
 </context>
 <context>
@@ -733,8 +731,8 @@
         <translation>उद्धरण चरित्र:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -1047,8 +1045,8 @@
         <translation>सतह</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1076,11 +1074,11 @@
     </message>
     <message>
         <source>Colormap</source>
-        <translation type="unfinished"></translation>
+        <translation>रंग मैप</translation>
     </message>
     <message>
         <source>Colormap for Mapping setting</source>
-        <translation type="unfinished"></translation>
+        <translation>मैपिंग सेटिंग के लिए कलरमैप</translation>
     </message>
 </context>
 <context>
@@ -1277,8 +1275,8 @@
         <translation>वेटिंग एक्सपोनेंट k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; का उपयोग वजन के रूप में किया जाता है जब मूल्यों के भारित औसत की गणना की जाती है। आर बिंदु से नोड या सेल केंद्र की दूरी है, जिसके लिए मान मैप किया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; का उपयोग वजन के रूप में किया जाता है जब मूल्यों के भारित औसत की गणना की जाती है। आर बिंदु से नोड या सेल केंद्र की दूरी है, जिसके लिए मान मैप किया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1328,8 +1326,8 @@
         <translation type="vanished">सतह</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; &amp;quot;Points Edit Modequot; में, इस सेटिंग को अनदेखा कर दिया जाता है और TIN डेटा हमेशा बिंदुओं के रूप में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1375,8 +1373,8 @@
         <translation>दहलीज किनारे की लंबाई:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot;font-weight:600;&quot;&gt;ध्यान दें&lt;/span&gt;: जब &amp;quot;पूर्वावलोकनquot; बटन पर क्लिक किया जाता है, जो त्रिकोण हटा दिए जाएंगे उन्हें ग्रे रंग में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style="font-weight:600;"&gt;ध्यान दें&lt;/span&gt;: जब &amp;quot;पूर्वावलोकनquot; बटन पर क्लिक किया जाता है, जो त्रिकोण हटा दिए जाएंगे उन्हें ग्रे रंग में दिखाया गया है।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1394,7 +1392,7 @@
         <translation type="vanished">सीमा किनारे की लंबाई:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="vanished">&lt;html&gt; &lt;head/&gt;&lt;body&gt;&lt;p&gt; ग्रे.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>

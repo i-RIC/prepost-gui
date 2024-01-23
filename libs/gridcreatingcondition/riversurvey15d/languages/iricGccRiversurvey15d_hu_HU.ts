@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="hu_HU">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,12 +218,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>Távolság a középponttól</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>A &quot;bal part&quot; az a part, amelyet a bal oldalon lát, amikor lefelé fordul.</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>A "bal part" az a part, amelyet a bal oldalon lát, amikor lefelé fordul.</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Rács létrehozása (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>檔案名稱包含非 ASCII 字元。請移動或重新命名該檔案。</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>開幕 %1 失敗的。</translation>
     </message>
 </context>
 <context>

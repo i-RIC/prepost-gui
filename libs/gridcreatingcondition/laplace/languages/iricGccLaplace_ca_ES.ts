@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>GridCreatingConditionCreatorLaplace</name>
@@ -9,7 +7,7 @@
     </message>
     <message>
         <source>You can create smooth grid shape solving laplace equation.</source>
-        <translation>Podeu crear una forma de quadrícula suau que resolgui l&apos;equació de laplace.</translation>
+        <translation>Podeu crear una forma de quadrícula suau que resolgui l'equació de laplace.</translation>
     </message>
 </context>
 <context>
@@ -108,7 +106,7 @@
     </message>
     <message>
         <source>&amp;Deploying Setting for selected area...</source>
-        <translation>Configuració de desplegament per a l&apos;àrea seleccionada (&amp;D)...</translation>
+        <translation>Configuració de desplegament per a l'àrea seleccionada (&amp;D)...</translation>
     </message>
     <message>
         <source>&amp;Clear Division Setting...</source>
@@ -144,7 +142,7 @@
     </message>
     <message>
         <source>Cross-section data not found. Please define Center Line by yourself.</source>
-        <translation>No s&apos;han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
+        <translation>No s'han trobat dades de la secció transversal. Definiu la línia central per vosaltres mateixos.</translation>
     </message>
 </context>
 <context>
@@ -251,7 +249,7 @@
     </message>
     <message>
         <source>Deploy Setting Target</source>
-        <translation>Desplegueu l&apos;objectiu de configuració</translation>
+        <translation>Desplegueu l'objectiu de configuració</translation>
     </message>
     <message>
         <source>This line only</source>
@@ -263,7 +261,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The deploy setting is applied to all lines in parallel positions.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuració de desplegament s&apos;aplica a totes les línies en posicions paral·leles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; La configuració de desplegament s'aplica a totes les línies en posicions paral·leles. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>GeoDataPolyLineGroup</name>
@@ -75,7 +73,7 @@
     </message>
     <message>
         <source>Deleting this item will also remove any graph windows associated with this data. Are you sure you want to delete this item?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sletning af dette element vil også fjerne alle grafvinduer forbundet med disse data. Er du sikker på, at du vil slette dette element?</translation>
     </message>
 </context>
 <context>
@@ -124,8 +122,8 @@
         <translation>Der opstod en fejl under læsning af overskriftslinje. Header skal mindst have 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading header line. Column %1 should be &quot;%2&quot;, but &quot;%3&quot; is given.</source>
-        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være &quot;%2&quot;, men &quot;%3&quot; er givet.</translation>
+        <source>Error occured while reading header line. Column %1 should be "%2", but "%3" is given.</source>
+        <translation>Der opstod en fejl under læsning af overskriftslinje. Kolonne %1 burde være "%2", men "%3" er givet.</translation>
     </message>
     <message>
         <source>Error occured while reading line %1. There is no data.</source>
@@ -148,32 +146,32 @@
         <translation>Der opstod en fejl under læsning af linjen %1. Data skal have mindst 6 kolonner.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;lid&quot; value in line %1. &quot;lid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af &quot;låg&quot; -værdien på linjen %1. &quot;låg&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
+        <source>Error occured while reading "lid" value in line %1. "lid" should be integer value but "%2" is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af "låg" -værdien på linjen %1. "låg" skal være heltal, men "%2"er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;vid&quot; value in line %1. &quot;vid&quot; should be integer value but &quot;%2&quot; is specified.</source>
-        <translation>Der opstod en fejl under læsning af &quot;vid&quot; -værdien på linjen %1. &quot;vid&quot; skal være heltal, men &quot;%2&quot;er angivet.</translation>
+        <source>Error occured while reading "vid" value in line %1. "vid" should be integer value but "%2" is specified.</source>
+        <translation>Der opstod en fejl under læsning af "vid" -værdien på linjen %1. "vid" skal være heltal, men "%2"er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;x&quot; value in line %1. &quot;x&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Der opstod en fejl under læsning af &quot;x&quot; -værdien på linjen %1. &quot;x&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
+        <source>Error occured while reading "x" value in line %1. "x" should be real value but "%2" is specified.</source>
+        <translation>Der opstod en fejl under læsning af "x" -værdien på linjen %1. "x" skal være reel værdi, men "%2"er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;y&quot; value in line %1. &quot;y&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Der opstod en fejl under læsning af &quot;y&quot; -værdien på linjen %1. &quot;y&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
+        <source>Error occured while reading "y" value in line %1. "y" should be real value but "%2" is specified.</source>
+        <translation>Der opstod en fejl under læsning af "y" -værdien på linjen %1. "y" skal være reel værdi, men "%2"er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;value&quot; value in line %1. &quot;value&quot; should be real value but &quot;%2&quot; is specified.</source>
-        <translation>Der opstod en fejl under aflæsning af værdien &quot;værdi&quot; på linjen %1. &quot;værdi&quot; skal være reel værdi, men &quot;%2&quot;er angivet.</translation>
+        <source>Error occured while reading "value" value in line %1. "value" should be real value but "%2" is specified.</source>
+        <translation>Der opstod en fejl under aflæsning af værdien "værdi" på linjen %1. "værdi" skal være reel værdi, men "%2"er angivet.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;name&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. &quot;navn&quot; skal være det samme for linjer, hvor &quot;låg&quot; -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. "name" should be the same for lines where "lid" values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. "navn" skal være det samme for linjer, hvor "låg" -værdier er de samme.</translation>
     </message>
     <message>
-        <source>Error occured while reading line %1. &quot;value&quot; should be the same for lines where &quot;lid&quot; values are the same.</source>
-        <translation>Der opstod en fejl under læsning af linjen %1. &quot;værdi&quot; skal være den samme for linjer, hvor &quot;låg&quot; -værdier er de samme.</translation>
+        <source>Error occured while reading line %1. "value" should be the same for lines where "lid" values are the same.</source>
+        <translation>Der opstod en fejl under læsning af linjen %1. "værdi" skal være den samme for linjer, hvor "låg" -værdier er de samme.</translation>
     </message>
     <message>
         <source>CSV file (Lines) (*.csv)</source>

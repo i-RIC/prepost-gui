@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="th_TH">
 <context>
     <name>GridCreatingConditionCreatorRiverSurvey15D</name>
@@ -220,12 +218,12 @@ Note: This algorithm is available only when cross-section data is loaded!Please 
         <translation>ระยะทางจากจุดศูนย์กลาง</translation>
     </message>
     <message>
-        <source>&quot;Left bank&quot; is the bank you see on the left side, when you turn to downstream direction.</source>
-        <translation>&quot;ฝั่งซ้าย&quot; คือฝั่งที่คุณเห็นทางด้านซ้าย เมื่อเลี้ยวไปทางปลายน้ำ</translation>
+        <source>"Left bank" is the bank you see on the left side, when you turn to downstream direction.</source>
+        <translation>"ฝั่งซ้าย" คือฝั่งที่คุณเห็นทางด้านซ้าย เมื่อเลี้ยวไปทางปลายน้ำ</translation>
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>สร้างกริด (&amp;C)</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GridCreatingConditionCreatorPoisson</name>
@@ -196,7 +194,7 @@
     </message>
     <message>
         <source>&amp;Create Grid</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar grade (&amp;C)</translation>
     </message>
 </context>
 </TS>

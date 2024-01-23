@@ -201,11 +201,11 @@
     </message>
     <message>
         <source>The file name contains non-ASCII characters. Please move or rename the file.</source>
-        <translation type="unfinished"></translation>
+        <translation>El nom del fitxer conté caràcters no ASCII. Si us plau, mou o canvia el nom del fitxer.</translation>
     </message>
     <message>
         <source>Opening %1 failed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obertura %1 fracassat.</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GridCreatingConditionCreatorExternalProgram</name>
@@ -8,9 +6,9 @@
         <translation>Varování</translation>
     </message>
     <message>
-        <source>Error occured while loading grid creator definition file in folder &quot;%1&quot;. This grid creator is ignored.
+        <source>Error occured while loading grid creator definition file in folder "%1". This grid creator is ignored.
 %2</source>
-        <translation>Při načítání definičního souboru tvůrce mřížky do složky došlo k chybě &quot;%1&quot;. Tento tvůrce mřížky je ignorován.&quot; %2</translation>
+        <translation>Při načítání definičního souboru tvůrce mřížky do složky došlo k chybě "%1". Tento tvůrce mřížky je ignorován." %2</translation>
     </message>
 </context>
 <context>
