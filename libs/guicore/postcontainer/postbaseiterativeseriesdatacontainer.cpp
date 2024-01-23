@@ -27,9 +27,8 @@ int PostBaseIterativeSeriesDataContainer::loadData()
 		if (bcontainer == nullptr) {return false;}
 		auto vcontainer = bcontainer->container(m_baseIterativeName);
 		if (vcontainer == nullptr) {return false;}
-		for (auto v : vcontainer->doubleValues()) {
-			m_data.push_back(v);
-		}
+
+		m_data = vcontainer->doubleValues();
 		return IRIC_NO_ERROR;
 	}
 
