@@ -78,7 +78,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	setupStandardItem(NotChecked, NotReorderable, NotDeletable);
 
 	p->standardItem()->takeRow(m_standardItem->row());
-	PreProcessorGridTypeDataItem* typeItem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
+	auto typeItem = gridDataItem()->gridTypeDataItem();
 	const auto& conds = typeItem->gridType()->gridAttributes();
 	for (auto cond : conds) {
 		if (cond->position() == SolverDefinitionGridAttribute::Node) {
@@ -93,7 +93,7 @@ PreProcessorGridAttributeNodeGroupDataItem::PreProcessorGridAttributeNodeGroupDa
 	for (auto cond : compconds) {
 		if (cond->position() == SolverDefinitionGridComplexAttribute::Node) {
 			// this is a node condition.
-			PreProcessorGridAttributeNodeDataItem* item = new PreProcessorGridAttributeNodeDataItem(cond, this);
+			auto item = new PreProcessorGridAttributeNodeDataItem(cond, this);
 			m_childItems.push_back(item);
 			m_nameMap.insert(item->condition()->name(), item);
 		}
@@ -183,16 +183,17 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateActorSetting()
 void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
 	m_opacity.load(node);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		std::string name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name();
+
+	for (auto child : m_childItems) {
+		std::string name = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(child)->condition()->name();
 		QDomNode childNode = iRIC::getChildNodeWithAttribute(node, "NodeAttribute", "name", name.c_str());
-		if (! childNode.isNull()) {(*it)->loadFromProjectMainFile(childNode);}
+		if (! childNode.isNull()) {child->loadFromProjectMainFile(childNode);}
 	}
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
-		PreProcessorGridAttributeNodeDataItem* tmpItem = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it);
-		if (tmpItem->standardItem()->checkState() == Qt::Checked) {
+	for (auto child : m_childItems) {
+		auto item = dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(child);
+		if (item->standardItem()->checkState() == Qt::Checked) {
 			// this is the current Condition!
-			setTarget(tmpItem->condition()->name());
+			setTarget(item->condition()->name());
 		}
 	}
 }
@@ -200,17 +201,18 @@ void PreProcessorGridAttributeNodeGroupDataItem::doLoadFromProjectMainFile(const
 void PreProcessorGridAttributeNodeGroupDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
 	m_opacity.save(writer);
-	for (auto it = m_childItems.begin(); it != m_childItems.end(); ++it) {
+
+	for (auto child : m_childItems) {
 		writer.writeStartElement("NodeAttribute");
-		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(*it)->condition()->name().c_str());
-		(*it)->saveToProjectMainFile(writer);
+		writer.writeAttribute("name", dynamic_cast<PreProcessorGridAttributeNodeDataItem*>(child)->condition()->name().c_str());
+		child->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::informDataChange(const std::string& name)
 {
-	dynamic_cast<PreProcessorGridDataItem*>(parent())->informGridAttributeChange(name);
+	gridDataItem()->informGridAttributeChange(name);
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateZDepthRangeItemCount()
@@ -335,27 +337,27 @@ QAction* PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowserAction(
 void PreProcessorGridAttributeNodeGroupDataItem::showAttributeBrowser()
 {
 	initAttributeBrowser();
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto gtItem = gridDataItem()->gridTypeDataItem();
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtItem)) {
+		auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->show();
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::addCustomMenuItems(QMenu* menu)
 {
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtitem)) {
+	auto gtItem = gridDataItem()->gridTypeDataItem();
+	if (AttributeBrowserHelper::isAttributeBrowserAvailable(gtItem)) {
 		menu->addAction(m_showAttributeBrowserAction);
 	}
 }
 
 void PreProcessorGridAttributeNodeGroupDataItem::initAttributeBrowser()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
+	auto gtItem = gridDataItem()->gridTypeDataItem();
+	SolverDefinitionGridType::GridType gt = gtItem->gridType()->defaultGridType();
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
 		pb->view()->resetForVertex(true);
 	} else if (gt == SolverDefinitionGridType::gtUnstructured2DGrid) {
@@ -365,7 +367,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::initAttributeBrowser()
 
 void PreProcessorGridAttributeNodeGroupDataItem::clearAttributeBrowser()
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
 	pb->view()->hideAll();
 	m_attributeBrowserFixed = false;
@@ -373,14 +375,13 @@ void PreProcessorGridAttributeNodeGroupDataItem::clearAttributeBrowser()
 
 void PreProcessorGridAttributeNodeGroupDataItem::fixAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
 	if (! pb->isVisible()) {return;}
 
 	vtkIdType vid = findVertex(p, v);
 	m_attributeBrowserFixed = (vid >= 0);
 	if (vid < 0) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->view()->resetAttributes();
 		return;
 	}
@@ -394,14 +395,13 @@ void PreProcessorGridAttributeNodeGroupDataItem::fixAttributeBrowser(const QPoin
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(const QPoint& p, VTKGraphicsView* v)
 {
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	PropertyBrowser* pb = pre->propertyBrowser();
 	if (! pb->isVisible()) {return;}
 	if (m_attributeBrowserFixed) {return;}
 
 	vtkIdType vid = findVertex(p, v);
 	if (vid < 0) {
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->view()->resetAttributes();
 		return;
 	}
@@ -415,12 +415,12 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(const QP
 
 void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdType vid, double x, double y, VTKGraphicsView* /*v*/)
 {
-	PreProcessorGridTypeDataItem* gtitem = dynamic_cast<PreProcessorGridTypeDataItem*>(parent()->parent()->parent());
-	auto geoTopItem = gtitem->geoDataTop();
-	SolverDefinitionGridType::GridType gt = gtitem->gridType()->defaultGridType();
+	auto gtItem = gridDataItem()->gridTypeDataItem();
+	auto geoTopItem = gtItem->geoDataTop();
+	SolverDefinitionGridType::GridType gt = gtItem->gridType()->defaultGridType();
 
-	PreProcessorGridDataItem* gitem = dynamic_cast<PreProcessorGridDataItem*>(parent());
-	Grid* grid = gitem->grid();
+	auto gItem = gridDataItem();
+	Grid* grid = gItem->grid();
 
 	QList<PropertyBrowserAttribute> atts;
 	const QList<GridAttributeContainer*> conds = grid->gridAttributes();
@@ -432,8 +432,7 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdTyp
 
 		if (icond != nullptr) {
 			if (icond->gridAttribute()->isOption()) {
-				SolverDefinitionGridAttributeIntegerOptionNode* optCond =
-					dynamic_cast<SolverDefinitionGridAttributeIntegerOptionNode*>(icond->gridAttribute());
+				auto optCond = dynamic_cast<SolverDefinitionGridAttributeIntegerOptionNode*>(icond->gridAttribute());
 				PropertyBrowserAttribute att(icond->gridAttribute()->caption(), optCond->enumerations().value(icond->value(vid)));
 				atts.append(att);
 			} else {
@@ -454,9 +453,9 @@ void PreProcessorGridAttributeNodeGroupDataItem::updateAttributeBrowser(vtkIdTyp
 			atts.append(att);
 		}
 	}
-	PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+	auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 	if (gt == SolverDefinitionGridType::gtStructured2DGrid) {
-		Structured2DGrid* g2 = dynamic_cast<Structured2DGrid*>(gitem->grid());
+		auto g2 = dynamic_cast<Structured2DGrid*>(gItem->grid());
 		unsigned int i, j;
 		g2->getIJIndex(vid, &i, &j);
 		pre->propertyBrowser()->view()->setVertexAttributes(i, j, x, y, atts);
@@ -492,7 +491,7 @@ vtkIdType PreProcessorGridAttributeNodeGroupDataItem::findVertex(const QPoint& p
 	double limitDist = v2->stdRadius(iRIC::nearRadius());
 	if (distance > limitDist) {
 		// no point is near.
-		PreProcessorWindow* pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
+		auto pre = dynamic_cast<PreProcessorWindow*>(preProcessorWindow());
 		pre->propertyBrowser()->view()->resetAttributes();
 		return -1;
 	}

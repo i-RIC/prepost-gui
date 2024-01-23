@@ -14,6 +14,7 @@ class PreProcessorGridAttributeMappingSettingTopDataItem;
 class PreProcessorGridDataItem;
 
 class QAction;
+class QDomElement;
 
 class PREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItem : public PreProcessorGridAndGridCreatingConditionDataItemInterface
 {
@@ -21,6 +22,7 @@ class PREDLL_EXPORT PreProcessorGridAndGridCreatingConditionDataItem : public Pr
 
 public:
 	PreProcessorGridAndGridCreatingConditionDataItem(const std::string& zonename, const QString& caption, PreProcessorDataItem* parent);
+	~PreProcessorGridAndGridCreatingConditionDataItem();
 
 	const QString& caption() const override;
 	const std::string& zoneName() const override;
@@ -61,6 +63,8 @@ private:
 	PreProcessorBCGroupDataItem* m_bcGroupDataItem;
 	PreProcessorGridAttributeMappingSettingTopDataItem* m_mappingSettingDataItem;
 	PreProcessorGridDataItemInterface* m_gridDataItem;
+
+	QDomElement* m_gridSetting;
 };
 
 #endif // PREPROCESSORGRIDANDGRIDCREATINGCONDITIONDATAITEM_H
