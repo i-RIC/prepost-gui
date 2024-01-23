@@ -44,36 +44,31 @@
 #include <iriclib_errorcodes.h>
 
 PreProcessorGridAttributeNodeDataItem::PreProcessorGridAttributeNodeDataItem(SolverDefinitionGridAttribute* cond, GraphicsWindowDataItem* parent) :
-	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent)
+	NamedGraphicWindowDataItem(cond->name(), cond->caption(), parent),
+	m_condition {cond},
+	m_isCustomModified {"isCustomModified", false},
+	m_definingBoundingBox {false},
+	m_editValueAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this)},
+	m_generatePointMapAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Generate point cloud data"), this)},
+	m_editDifferenceAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying difference..."), this)},
+	m_editRatioAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying ratio..."), this)},
+	m_openXsectionWindowAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Cross Section Window"), this)},
+	m_openVXsectionWindowAction {new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Longitudinal Cross Section Window"), this)}
 {
-	m_definingBoundingBox = false;
-	m_condition = cond;
-
-	m_editValueAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
-	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
-
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg"),PreProcessorGridAttributeNodeDataItem::tr("Export..."), this);
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
-
-	m_generatePointMapAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Generate point cloud data"), this);
-	connect(m_generatePointMapAction, SIGNAL(triggered()), this, SLOT(generatePointMap()));
-
-	m_editDifferenceAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying difference..."), this);
 	m_editDifferenceAction->setDisabled(true);
-	connect(m_editDifferenceAction, SIGNAL(triggered()), this, SLOT(editDifference()));
-
-	m_editRatioAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Edit value by specifying ratio..."), this);
 	m_editRatioAction->setDisabled(true);
-	connect(m_editRatioAction, SIGNAL(triggered()), this, SLOT(editRatio()));
-
-	m_openXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Cross Section Window"), this);
 	m_openXsectionWindowAction->setDisabled(true);
-	connect(m_openXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openCrossSectionWindow()));
-
-	m_openVXsectionWindowAction = new QAction(PreProcessorGridAttributeNodeDataItem::tr("Open &Longitudinal Cross Section Window"), this);
 	m_openVXsectionWindowAction ->setDisabled(true);
-	connect(m_openVXsectionWindowAction, SIGNAL(triggered()), this, SLOT(openVerticalCrossSectionWindow()));
+
+	connect(m_editValueAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::editValue);
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::exportToFile);
+	connect(m_generatePointMapAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::generatePointMap);
+	connect(m_editDifferenceAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::editDifference);
+	connect(m_editRatioAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::editRatio);
+	connect(m_openXsectionWindowAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::openCrossSectionWindow);
+	connect(m_openVXsectionWindowAction, &QAction::triggered, this, &PreProcessorGridAttributeNodeDataItem::openVerticalCrossSectionWindow);
 
 	m_groupEditDialog = new GridComplexConditionGroupEditDialog(mainWindow());
 	m_groupEditDialog->setWindowTitle(QString(tr("Edit %1").arg(m_condition->caption())));
@@ -116,7 +111,7 @@ QDialog* PreProcessorGridAttributeNodeDataItem::propertyDialog(QWidget* p)
 
 void PreProcessorGridAttributeNodeDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
-	m_isCustomModified = static_cast<bool>(node.toElement().attribute("isCustomModified", "0").toInt());
+	m_isCustomModified.load(node);
 }
 
 void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -124,9 +119,8 @@ void PreProcessorGridAttributeNodeDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	v4InputGrid* g = gridDataItem()->grid();
 	if (g != nullptr) {
 		auto cont = g->attribute(m_condition->name());
-		QString mod;
-		mod.setNum(static_cast<int>(cont->isCustomModified()));
-		writer.writeAttribute("isCustomModified", mod);
+		m_isCustomModified = cont->isCustomModified();
+		m_isCustomModified.save(writer);
 	}
 }
 

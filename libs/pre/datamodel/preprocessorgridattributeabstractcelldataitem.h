@@ -5,8 +5,8 @@
 
 #include <guicore/direction/directionsettingcontainer.h>
 #include <guicore/named/namedgraphicwindowdataitem.h>
-#include <misc/boolcontainer.h>
 #include <guicore/pre/gridcond/base/gridattributevariationeditwidget.h>
+#include <misc/boolcontainer.h>
 
 class ColorMapSettingContainerI;
 class ColorMapSettingToolBarWidgetController;

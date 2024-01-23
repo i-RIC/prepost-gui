@@ -53,25 +53,22 @@ PreProcessorGridAttributeAbstractCellDataItem::PreProcessorGridAttributeAbstract
 	m_condition {cond},
 	m_isCustomModified {"isCustomModified", false},
 	m_definingBoundingBox {false},
+	m_editValueAction {new QAction(tr("Edit value..."), this)},
+	m_exportAction {new QAction(QIcon(":/libs/guibase/images/iconExport.svg"), tr("Export..."), this)},
+	m_generatePointMapAction {new QAction(tr("Generate point cloud data"), this)},
+	m_editDifferenceAction {new QAction(tr("Edit value by specifying difference..."), this)},
+	m_editRatioAction {new QAction(tr("Edit value by specifying ratio..."), this)},
 	m_colorMapToolBarWidgetController {nullptr}
 {
-	m_editValueAction = new QAction(PreProcessorGridAttributeAbstractCellDataItem::tr("Edit value..."), this);
 	m_editValueAction->setDisabled(true);
-	connect(m_editValueAction, SIGNAL(triggered()), this, SLOT(editValue()));
-
-	m_exportAction = new QAction(QIcon(":/libs/guibase/images/iconExport.svg") ,PreProcessorGridAttributeAbstractCellDataItem::tr("Export..."), this);
-	connect(m_exportAction, SIGNAL(triggered()), this, SLOT(exportToFile()));
-
-	m_generatePointMapAction = new QAction(PreProcessorGridAttributeAbstractCellDataItem::tr("Generate point cloud data"), this);
-	connect(m_generatePointMapAction, SIGNAL(triggered()), this, SLOT(generatePointMap()));
-
-	m_editDifferenceAction = new QAction(PreProcessorGridAttributeAbstractCellDataItem::tr("Edit value by specifying difference..."), this);
 	m_editDifferenceAction->setDisabled(true);
-	connect(m_editDifferenceAction, SIGNAL(triggered()), this, SLOT(editDifference()));
-
-	m_editRatioAction = new QAction(PreProcessorGridAttributeAbstractCellDataItem::tr("Edit value by specifying ratio..."), this);
 	m_editRatioAction->setDisabled(true);
-	connect(m_editRatioAction, SIGNAL(triggered()), this, SLOT(editRatio()));
+
+	connect(m_editValueAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::editValue);
+	connect(m_exportAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::exportToFile);
+	connect(m_generatePointMapAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::generatePointMap);
+	connect(m_editDifferenceAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::editDifference);
+	connect(m_editRatioAction, &QAction::triggered, this, &PreProcessorGridAttributeAbstractCellDataItem::editRatio);
 
 	auto gItem = geoDataGroupDataItem();
 	GeoDataCreator* creator = gItem->getPointMapCreator();
