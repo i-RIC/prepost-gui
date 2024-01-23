@@ -75,6 +75,7 @@ SOURCES += logodataitem.cpp \
            logosettingeditwidget.cpp \
            private/logodataitem_impl.cpp \
            private/logosetting_imagebuilder.cpp
+RESOURCES += logo.qrc
 TRANSLATIONS += languages/iricLogo_ar_EG.ts \
                 languages/iricLogo_bg_BG.ts \
                 languages/iricLogo_bs_BA.ts \

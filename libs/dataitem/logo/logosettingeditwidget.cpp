@@ -21,7 +21,17 @@ LogoSettingEditWidget::~LogoSettingEditWidget()
 LogoSetting LogoSettingEditWidget::setting() const
 {
 	LogoSetting ret;
+
+	if (ui->smallRadioButton->isChecked()) {
+		ret.imageSize = LogoSetting::ImageSize::Small;
+	} else if (ui->standardRadioButton->isChecked()) {
+		ret.imageSize = LogoSetting::ImageSize::Standard;
+	} else if (ui->largeRadioButton->isChecked()) {
+		ret.imageSize = LogoSetting::ImageSize::Large;
+	}
+
 	ret.imageSetting = ui->imageSettingWidget->setting();
+	ret.imageSetting.setAutoSizeForced(true);
 	ret.imageSetting.setNegativePositionForbidden(true);
 	return ret;
 }
@@ -36,6 +46,14 @@ void LogoSettingEditWidget::setSetting(LogoSetting* setting)
 
 void LogoSettingEditWidget::setSetting(const LogoSetting& setting)
 {
+	if (setting.imageSize == LogoSetting::ImageSize::Small) {
+		ui->smallRadioButton->setChecked(true);
+	} else if (setting.imageSize == LogoSetting::ImageSize::Standard) {
+		ui->standardRadioButton->setChecked(true);
+	} else if (setting.imageSize == LogoSetting::ImageSize::Large) {
+		ui->largeRadioButton->setChecked(true);
+	}
+
 	ui->imageSettingWidget->setSetting(setting.imageSetting);
 }
 

@@ -15,8 +15,10 @@ public:
 	QSize autoSize() const override;
 
 private:
+	QImage image(ImageSize size) const;
+	QString imageFileName(ImageSize size) const;
+
 	LogoSetting* m_setting;
-	QImage m_image;
 };
 
 #endif // LOGOSETTING_IMAGEBUILDER_H
