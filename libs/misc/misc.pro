@@ -53,6 +53,7 @@ HEADERS += anms.h \
            networksetting.h \
            numericvaluecontainert.h \
            opacitycontainer.h \
+           orderedvalueselectdialog.h \
            primitiveview.h \
            pythonutil.h \
            qfontcontainer.h \
@@ -113,6 +114,7 @@ HEADERS += anms.h \
            private/zdepthrange_impl.h
 FORMS += informationdialog.ui \
          modifycommanddialog.ui \
+         orderedvalueselectdialog.ui \
          primitiveview.ui \
          qfonteditwidget.ui \
          slowmotionspeededitdialog.ui \
@@ -150,6 +152,7 @@ SOURCES += anms.cpp \
            multicelloperabletableview.cpp \
            networksetting.cpp \
            opacitycontainer.cpp \
+           orderedvalueselectdialog.cpp \
            primitiveview.cpp \
            pythonutil.cpp \
            qfontcontainer.cpp \
