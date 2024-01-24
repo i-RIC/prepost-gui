@@ -30,6 +30,7 @@ public:
 
 	void informSelection(VTKGraphicsView* v) override;
 	void informDeselection(VTKGraphicsView* v) override;
+	void updateZDepthRangeItemCount() override;
 
 	void update(bool noParticle);
 	v4Grid2d* grid() const override;
@@ -50,6 +51,7 @@ public:
 	Post2dWindowStringResultDataItem* stringDataItem() const;
 
 private:
+	void assignActorZValues(const ZDepthRange& range) override;
 	void doLoadFromProjectMainFile(const QDomNode& node) override;
 	void doSaveToProjectMainFile(QXmlStreamWriter& writer) override;
 

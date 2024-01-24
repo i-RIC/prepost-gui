@@ -95,6 +95,8 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 	addChildItem(impl->m_iEdgeScalarGroupTopDataItem);
 	addChildItem(impl->m_jEdgeScalarGroupTopDataItem);
 	addChildItem(impl->m_stringDataItem);
+
+	updateZDepthRangeItemCount();
 }
 
 Post2dWindowCalculationResultDataItem::~Post2dWindowCalculationResultDataItem()
@@ -108,6 +110,11 @@ void Post2dWindowCalculationResultDataItem::informSelection(VTKGraphicsView* v)
 void Post2dWindowCalculationResultDataItem::informDeselection(VTKGraphicsView* v)
 {
 	impl->m_gridShapeDataItem->informDeselection(v);
+}
+
+void Post2dWindowCalculationResultDataItem::updateZDepthRangeItemCount()
+{
+	m_zDepthRange.setItemCount((unsigned int)m_childItems.size() + 1);
 }
 
 void Post2dWindowCalculationResultDataItem::update(bool noParticle)
@@ -229,6 +236,128 @@ Post2dWindowPolyDataTopDataItem* Post2dWindowCalculationResultDataItem::polyData
 Post2dWindowStringResultDataItem* Post2dWindowCalculationResultDataItem::stringDataItem() const
 {
 	return impl->m_stringDataItem;
+}
+
+void Post2dWindowCalculationResultDataItem::assignActorZValues(const ZDepthRange& range)
+{
+	int itemCount = m_childItems.size();
+	int gapCount = itemCount - 1;
+	float gapRate = .1; // the rate of gap width againt data width.
+
+	double divWidth = range.width() / (itemCount + gapCount * gapRate);
+
+	ZDepthRange r;
+	double max, min;
+
+	auto cont = zoneDataItem()->v4DataContainer();
+
+	// the first is grid shape.
+	max = range.max();
+	min = max - divWidth;
+	r = impl->m_gridShapeDataItem->zDepthRange();
+	r.setRange(min, max);
+	impl->m_gridShapeDataItem->setZDepthRange(r);
+
+	if (cont->particleData() != nullptr) {
+		// Particles (auto)
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (impl->m_particlesDataItem != nullptr) {
+			r = impl->m_particlesDataItem->zDepthRange();
+			r.setRange(min, max);
+			impl->m_particlesDataItem->setZDepthRange(r);
+		}
+	}
+	if (cont->particleGroupMap().size() > 0) {
+		// Particle Group
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (impl->m_particleGroupRootDataItem != nullptr) {
+			r = impl->m_particleGroupRootDataItem->zDepthRange();
+			r.setRange(min, max);
+			impl->m_particleGroupRootDataItem->setZDepthRange(r);
+		}
+	}
+	if (cont->polyDataMap().size() > 0) {
+		// PolyData
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (impl->m_polyDataDataItem != nullptr) {
+			r = impl->m_polyDataDataItem->zDepthRange();
+			r.setRange(min, max);
+			impl->m_polyDataDataItem->setZDepthRange(r);
+		}
+	}
+
+	if (cont->gridData()->vectorValueExists(v4SolutionGrid::Position::Node)) {
+		// Particles
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (impl->m_particleGroupDataItem != nullptr) {
+			r = impl->m_particleGroupDataItem->zDepthRange();
+			r.setRange(min, max);
+			impl->m_particleGroupDataItem->setZDepthRange(r);
+		}
+
+		// Arrows
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_arrowGroupDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_arrowGroupDataItem->setZDepthRange(r);
+
+		// Streamlines
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_streamlineGroupDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_streamlineGroupDataItem->setZDepthRange(r);
+	}
+
+	if (impl->m_graphGroupDataItem != nullptr) {
+		// graphs
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_graphGroupDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_graphGroupDataItem->setZDepthRange(r);
+	}
+
+	// Contour
+	if (cont->gridData()->scalarValueExists(v4SolutionGrid::Position::Node)) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_nodeScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_nodeScalarGroupTopDataItem->setZDepthRange(r);
+	}
+
+	// Cell Contour
+	if (cont->gridData()->scalarValueExists(v4SolutionGrid::Position::CellCenter)) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_cellScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_cellScalarGroupTopDataItem->setZDepthRange(r);
+	}
+
+	// EdgeI Contour
+	if (cont->gridData()->scalarValueExists(v4SolutionGrid::Position::IFace)) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_iEdgeScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_iEdgeScalarGroupTopDataItem->setZDepthRange(r);
+	}
+
+	// EdgeJ Contour
+	if (cont->gridData()->scalarValueExists(v4SolutionGrid::Position::JFace)) {
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		r = impl->m_jEdgeScalarGroupTopDataItem->zDepthRange();
+		r.setRange(min, max);
+		impl->m_jEdgeScalarGroupTopDataItem->setZDepthRange(r);
+	}
 }
 
 void Post2dWindowCalculationResultDataItem::doLoadFromProjectMainFile(const QDomNode& node)
