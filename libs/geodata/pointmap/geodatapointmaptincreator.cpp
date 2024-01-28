@@ -8,6 +8,7 @@
 #include "geodatapointmaptincreator.h"
 #include "geodatapointmap.h"
 #include "geodatapointmaplandxmlexporter.h"
+#include "geodatapointmapriter3dimporter.h"
 #include "geodatapointmapvtkexporter.h"
 #include "geodatapointmapwebimporter.h"
 
@@ -18,6 +19,7 @@ GeoDataPointmapTINCreator::GeoDataPointmapTINCreator() :
 {
 	importers().push_back(new GeoDataPointmapSTLImporter(this));
 	importers().push_back(new GeoDataPointmapLandXmlImporter(this));
+	importers().push_back(new GeoDataPointmapRiter3dImporter(this));
 
 	exporters().push_back(new GeoDataPointmapLandXmlExporter(this));
 	exporters().push_back(new GeoDataPointmapRealExporter(this));

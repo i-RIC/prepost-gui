@@ -107,6 +107,7 @@ public:
 	QVector<vtkIdType> selectedVertices();
 	vtkCell* findTinCell(double x, double y, double* weights);
 	GeoDataProxy* getProxy() override;
+        void setRiter3dProject(const QString& fileName);
 
 	class DisplaySettingWidget;
 
@@ -151,11 +152,10 @@ private:
 
 	class DisplaySetting;
 	class MappingSetting;
+	class Riter3dSetting;
 	class MappingSettingDialog;
-	class PropertyDialog;
 
 	class ModifyCommand;
-	class UpdateActorSettingsCommand;
 
 	// class TrianglesWithLongEdgeRemover;
 	// TrianglesWithLongEdgeRemover* m_longEdgeRemover;

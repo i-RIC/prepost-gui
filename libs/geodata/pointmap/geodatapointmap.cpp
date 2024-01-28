@@ -347,11 +347,14 @@ void GeoDataPointmap::doLoadFromProjectMainFile(const QDomNode& node)
 	impl->m_tinManager.load(node);
 	impl->m_displaySetting.load(node);
 	impl->m_mappingSetting.load(node);
+	impl->m_riter3dSetting.load(node);
 
 	auto mcmNode = iRIC::getChildNode(node, "MappingColorMap");
 	if (! mcmNode.isNull()) {
 		impl->m_polygonsManager.polygonsColorMap()->load(mcmNode);
 	}
+
+	impl->setupRiter3dWatcher();
 }
 
 void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -363,6 +366,7 @@ void GeoDataPointmap::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 	impl->m_tinManager.save(writer);
 	impl->m_displaySetting.save(writer);
 	impl->m_mappingSetting.save(writer);
+	impl->m_riter3dSetting.save(writer);
 
 	writer.writeStartElement("MappingColorMap");
 	impl->m_polygonsManager.polygonsColorMap()->save(writer);
@@ -924,6 +928,14 @@ vtkCell* GeoDataPointmap::findTinCell(double x, double y, double *weights)
 GeoDataProxy* GeoDataPointmap::getProxy()
 {
 	return new GeoDataPointmapProxy(this);
+}
+
+void GeoDataPointmap::setRiter3dProject(const QString& fileName)
+{
+	impl->m_riter3dSetting.enabled = true;
+	impl->m_riter3dSetting.fileName = fileName;
+
+	impl->setupRiter3dWatcher();
 }
 
 void GeoDataPointmap::doApplyOffset(double x, double y)
