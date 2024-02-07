@@ -527,6 +527,10 @@
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished">Dados de terreno  (*.tpo)</translation>
     </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>

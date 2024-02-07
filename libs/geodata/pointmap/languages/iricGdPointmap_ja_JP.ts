@@ -547,6 +547,10 @@
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>このデータの点の数は%1です。点群データは最低限3つの点を持つ必要があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
