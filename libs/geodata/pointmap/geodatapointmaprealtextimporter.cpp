@@ -112,6 +112,11 @@ bool GeoDataPointmapRealTextImporter::importData(GeoData *data, int /*index*/, Q
 		QMessageBox::warning(w, tr("Warning"), tr("%1 duplicate points found. If points with same x and y values found, the first point is imported").arg(duplicatePoints));
 	}
 
+	if (points->GetNumberOfPoints() < 3) {
+		QMessageBox::critical(w, tr("Error"), tr("The data contains only %1 points. Point cloud data must contain 3 points at least.").arg(points->GetNumberOfPoints()));
+		return false;
+	}
+
 	auto pmap = dynamic_cast<GeoDataPointMapT<double, vtkDoubleArray>*>(data);
 	pmap->setPoints(points, values);
 	pmap->doDelaunay();
