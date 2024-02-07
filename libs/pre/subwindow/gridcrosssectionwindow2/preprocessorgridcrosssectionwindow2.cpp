@@ -70,6 +70,8 @@ void PreProcessorGridCrosssectionWindow2::loadFromProjectMainFile(const QDomNode
 			s->load(e);
 		}
 	}
+
+	applyTmpTargetSetting();
 }
 
 void PreProcessorGridCrosssectionWindow2::saveToProjectMainFile(QXmlStreamWriter& writer)

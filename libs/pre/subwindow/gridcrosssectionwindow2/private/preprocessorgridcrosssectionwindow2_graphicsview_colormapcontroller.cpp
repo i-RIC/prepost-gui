@@ -79,17 +79,17 @@ void PreProcessorGridCrosssectionWindow2::GraphicsView::ColorMapController::draw
 		GridAttributeDisplaySettingContainer* setting,
 		const DrawRegionInformation& info, QPainter* painter)
 {
-	if (! setting->colorMapTitleVisible) {return;}
+	if (! setting->colorBarTitleVisible) {return;}
 
-	QFontMetrics metrics(setting->colorMapTitleFont);
+	QFontMetrics metrics(setting->colorBarTitleFont);
 	auto rect = metrics.boundingRect(setting->attribute()->caption());
 
 	painter->save();
-	painter->setPen(setting->colorMapTitleColor);
-	painter->setFont(setting->colorMapTitleFont);
+	painter->setPen(setting->colorBarTitleColor);
+	painter->setFont(setting->colorBarTitleFont);
 
 	QRectF textRect(m_graphicsView->width() - TITLE_HORIZONTAL_OFFSET - rect.width(), info.yMin,
-								rect.width() + 1, setting->colorMapHeight);
+								rect.width() + 1, setting->colorBarHeight);
 
 	painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, setting->attribute()->caption());
 	painter->restore();
