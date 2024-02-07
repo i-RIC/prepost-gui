@@ -644,15 +644,7 @@ void GeoDataPointmap::openMappingSettingDialog()
 
 void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
-	controller->handleMousePressEvent(event, v);
-	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
-		impl->m_activeController->handleMousePressEvent(event, v);
-	} else {
-		std::vector<ImageSettingContainer::Controller*> controllers;
-		controllers.push_back(controller);
-		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
-	}
+	impl->m_activeController->handleMousePressEvent(event, v);
 
 	if (event->button() == Qt::RightButton) {
 		// right click
@@ -661,16 +653,7 @@ void GeoDataPointmap::mousePressEvent(QMouseEvent* event, PreProcessorGraphicsVi
 }
 void GeoDataPointmap::mouseReleaseEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-
-	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
-	controller->handleMouseReleaseEvent(event, v);
-	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
-		impl->m_activeController->handleMouseReleaseEvent(event, v);
-	} else {
-		std::vector<ImageSettingContainer::Controller*> controllers;
-		controllers.push_back(controller);
-		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
-	}
+	impl->m_activeController->handleMouseReleaseEvent(event, v);
 
 	if (event->button() == Qt::RightButton) {
 		if (iRIC::isNear(m_dragStartPoint, event->pos())) {
@@ -692,15 +675,7 @@ QStringList GeoDataPointmap::containedFiles() const
 
 void GeoDataPointmap::mouseMoveEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
 {
-	auto controller = impl->m_polygonsManager.polygonsColorMap()->legendSetting()->imgSetting()->controller();
-	controller->handleMouseMoveEvent(event, v, true);
-	if (controller->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
-		impl->m_activeController->handleMouseMoveEvent(event, v);
-	} else {
-		std::vector<ImageSettingContainer::Controller*> controllers;
-		controllers.push_back(controller);
-		ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
-	}
+	impl->m_activeController->handleMouseMoveEvent(event, v);
 }
 
 void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGraphicsViewInterface* v)
@@ -708,7 +683,7 @@ void GeoDataPointmap::mouseDoubleClickEvent(QMouseEvent* event, PreProcessorGrap
 	impl->m_activeController->handleMouseDoubleClickEvent(event, v);
 }
 
-void GeoDataPointmap::informDeselection(PreProcessorGraphicsViewInterface* v)
+void GeoDataPointmap::informDeselection(PreProcessorGraphicsViewInterface* /*v*/)
 {
 	impl->m_pointsManager.clearSelection();
 }
