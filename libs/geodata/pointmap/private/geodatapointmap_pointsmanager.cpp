@@ -541,6 +541,12 @@ void GeoDataPointmap::PointsManager::deleteSelectedPoints()
 		return;
 	}
 
+	vtkIdType leftPoints = m_points->GetNumberOfPoints() - m_selectedPoints->GetVerts()->GetNumberOfCells();
+	if (leftPoints < 3) {
+		QMessageBox::critical(m_parent->preProcessorWindow(), tr("Error"), tr("After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.").arg(leftPoints));
+		return;
+	}
+
 	auto selected = selectedPointIndicesUnorderedSet();
 	clearSelection();
 	m_parent->pushModifyCommand(new DeletePointsCommand(selected, this));
