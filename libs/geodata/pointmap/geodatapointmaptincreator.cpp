@@ -2,7 +2,6 @@
 #include "geodatapointmaplandxmlimporter.h"
 #include "geodatapointmapnodemapper.h"
 #include "geodatapointmaprealexporter.h"
-#include "geodatapointmaprealimporter.h"
 #include "geodatapointmaprealtextimporter.h"
 #include "geodatapointmapstlexporter.h"
 #include "geodatapointmapstlimporter.h"

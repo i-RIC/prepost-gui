@@ -165,17 +165,7 @@ void PreProcessorGridDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 		}
 	}
 	QDomNode cwNode = iRIC::getChildNode(node, "CrossSectionWindows");
-	if (! cwNode.isNull()) {
-		const auto& clist = cwNode.childNodes();
-		for (int i = 0; i < clist.size(); ++i) {
-			auto c = clist.at(i);
-			auto window = impl->buildCrosssectionWindow();
-			window->internalWindow()->loadFromProjectMainFile(c);
-			auto container = dynamic_cast<QWidget*> (window->parent());
-			container->show();
-			addCrossSectionWindow(window);
-		}
-	}
+	impl->m_crossSectionWindowsSetting = cwNode;
 }
 
 void PreProcessorGridDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
@@ -258,8 +248,16 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	updateActionStatus();
 	updateObjectBrowserTree();
 
-	for (auto w : impl->m_crosssectionWindows) {
-		w->internalWindow()->applyTmpTargetSetting();
+	if (! impl->m_crossSectionWindowsSetting.isNull()) {
+		const auto& clist = impl->m_crossSectionWindowsSetting.childNodes();
+		for (int i = 0; i < clist.size(); ++i) {
+			auto c = clist.at(i);
+			auto window = impl->buildCrosssectionWindow();
+			window->internalWindow()->loadFromProjectMainFile(c);
+			auto container = dynamic_cast<QWidget*> (window->parent());
+			container->show();
+			addCrossSectionWindow(window);
+		}
 	}
 
 	return IRIC_NO_ERROR;

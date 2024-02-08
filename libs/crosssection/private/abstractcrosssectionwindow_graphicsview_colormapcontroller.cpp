@@ -83,19 +83,19 @@ void AbstractCrosssectionWindow::GraphicsView::ColorMapController::drawTitle(
 		GridAttributeDisplaySettingContainer* setting,
 		const DrawRegionInformation& info, QPainter* painter)
 {
-	if (! setting->colorMapTitleVisible) {return;}
+	if (! setting->colorBarTitleVisible) {return;}
 
-	QFontMetrics metrics(setting->colorMapTitleFont);
+	QFontMetrics metrics(setting->colorBarTitleFont);
 	auto attName = setting->attributeName();
 	auto caption = setting->attributeDataProvider()->caption(attName);
 	auto rect = metrics.boundingRect(caption);
 
 	painter->save();
-	painter->setPen(setting->colorMapTitleColor);
-	painter->setFont(setting->colorMapTitleFont);
+	painter->setPen(setting->colorBarTitleColor);
+	painter->setFont(setting->colorBarTitleFont);
 
 	QRectF textRect(m_graphicsView->width() - TITLE_HORIZONTAL_OFFSET - rect.width(), info.yMin,
-								rect.width() + 1, setting->colorMapHeight);
+								rect.width() + 1, setting->colorBarHeight);
 
 	painter->drawText(textRect, Qt::AlignLeft | Qt::AlignVCenter, caption);
 	painter->restore();

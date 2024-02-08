@@ -178,7 +178,7 @@ void AbstractCrosssectionWindow::GraphicsView::cameraFit()
 		if (s.mode == GridAttributeDisplaySettingContainer::Mode::Chart) {
 			height -= s.independentChartHeight;
 		} else if (s.mode == GridAttributeDisplaySettingContainer::Mode::ColorMap) {
-			height -= s.colorMapHeight;
+			height -= s.colorBarHeight;
 		}
 	}
 
@@ -368,9 +368,9 @@ void AbstractCrosssectionWindow::GraphicsView::mouseMoveEvent(QMouseEvent* event
 				}
 			}
 			else if (setting->mode == GridAttributeDisplaySettingContainer::Mode::ColorMap) {
-				setting->colorMapHeight -= diffy;
-				if (setting->colorMapHeight < GridAttributeDisplaySettingContainer::MIN_HEIGHT) {
-					setting->colorMapHeight = GridAttributeDisplaySettingContainer::MIN_HEIGHT;
+				setting->colorBarHeight -= diffy;
+				if (setting->colorBarHeight < GridAttributeDisplaySettingContainer::MIN_HEIGHT) {
+					setting->colorBarHeight = GridAttributeDisplaySettingContainer::MIN_HEIGHT;
 				}
 			}
 			viewport()->update();
@@ -454,9 +454,9 @@ void AbstractCrosssectionWindow::GraphicsView::setupRegions(
 		} else if (setting.mode == GridAttributeDisplaySettingContainer::Mode::ColorMap) {
 			DrawRegionInformation info;
 			info.yMax = height - heightSum;
-			info.yMin = info.yMax - setting.colorMapHeight;
+			info.yMin = info.yMax - setting.colorBarHeight;
 			colorMapRegions->insert({&setting, info});
-			heightSum += setting.colorMapHeight;
+			heightSum += setting.colorBarHeight;
 		}
 	}
 	elevationChartRegion->yMax = height - heightSum;
@@ -472,6 +472,8 @@ std::vector<double> AbstractCrosssectionWindow::GraphicsView::setupNodePositions
 	auto extractGrid = vtkSmartPointer<vtkExtractGrid>::New();
 	extractGrid->SetInputData(grid->vtkConcreteData()->concreteData());
 	auto index = m_impl->m_controller->targetIndex();
+	if (index == -1) {return positions;}
+
 	if (m_impl->m_controller->targetDirection() == Direction::I) {
 		extractGrid->SetVOI(index, index, 0, grid->dimensionJ(), 0, 0);
 	} else if (m_impl->m_controller->targetDirection() == Direction::J) {

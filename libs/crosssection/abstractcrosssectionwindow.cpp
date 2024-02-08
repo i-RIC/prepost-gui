@@ -67,6 +67,8 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 			s->load(e);
 		}
 	}
+
+	applyTmpTargetSetting();
 }
 
 void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)

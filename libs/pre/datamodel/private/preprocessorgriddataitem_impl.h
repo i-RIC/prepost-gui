@@ -9,6 +9,7 @@
 #include <vtkPolyDataMapper.h>
 #include <vtkSmartPointer.h>
 
+#include <QDomNode>
 #include <QPixmap>
 #include <QCursor>
 
@@ -61,6 +62,8 @@ public:
 	QAction* m_cellEditAction;
 	QAction* m_cellDisplaySettingAction;
 	QAction* m_birdEyeWindowAction;
+
+	QDomNode m_crossSectionWindowsSetting;
 
 	bool m_shiftPressed;
 	bool m_gridIsDeleted;

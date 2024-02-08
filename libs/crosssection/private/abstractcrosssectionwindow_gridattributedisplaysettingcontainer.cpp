@@ -6,7 +6,7 @@
 namespace {
 
 const int DEFAULT_CHART_HEIGHT = 80;
-const int DEFAULT_COLORMAP_HEIGHT = 30;
+const int DEFAULT_COLORBAR_HEIGHT = 30;
 
 } // namespace
 
@@ -17,7 +17,7 @@ AbstractCrosssectionWindow::GridAttributeDisplaySettingContainer::GridAttributeD
 										 &elevationChartShowIndex, &elevationChartIndexFont, &elevationChartIndexColor, &elevationChartIndexSkipRate,
 										 &independentChartHeight, &independentChartLineWidth, &independentChartLineColor,
 										 &independentChartTitleVisible, &independentChartTitleFont, &independentChartAxisFont, &independentChartAxisColor,
-										 &colorMapHeight, &usePreColor, &colorMapTitleVisible, &colorMapTitleFont, &colorMapTitleColor}),
+										 &colorBarHeight, &usePreColor, &colorBarTitleVisible, &colorBarTitleFont, &colorBarTitleColor}),
 	visible {"visible", false},
 	mode {"mode", Mode::ColorMap},
 	elevationChartLineWidth {"elevationChartLineWidth", 2},
@@ -35,10 +35,10 @@ AbstractCrosssectionWindow::GridAttributeDisplaySettingContainer::GridAttributeD
 	independentChartTitleFont {"independentChartTitleFont", QFont("MS UI Gothic", 12)},
 	independentChartAxisFont {"independentChartAxisFont", QFont("MS UI Gothic", 10)},
 	independentChartAxisColor{"independentChartAxisColor", Qt::darkGray},
-	colorMapHeight {"colorMapHeight", DEFAULT_COLORMAP_HEIGHT},
-	colorMapTitleVisible {"colorMapTitleVisible", true},
-	colorMapTitleFont {"colorMapTitleFont", QFont("MS UI Gothic", 12)},
-	colorMapTitleColor {"colorMapTitleColor", Qt::black},
+	colorBarHeight {"colorBarHeight", DEFAULT_COLORBAR_HEIGHT},
+	colorBarTitleVisible {"colorBarTitleVisible", true},
+	colorBarTitleFont {"colorBarTitleFont", QFont("MS UI Gothic", 12)},
+	colorBarTitleColor {"colorBarTitleColor", Qt::black},
 	usePreColor {"usePreColor", true},
 	colorMapSetting {nullptr},
 	grid {g},
