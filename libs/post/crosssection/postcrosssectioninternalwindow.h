@@ -14,6 +14,9 @@ public:
 	PostCrosssectionInternalWindow(QWidget* parent);
 	bool setupInitialSetting();
 
+	void loadFromProjectMainFile(const QDomNode& node) override;
+	void saveToProjectMainFile(QXmlStreamWriter& writer) override;
+
 	v4Structured2dGrid* grid() override;
 	v4Structured2dGrid* additionalGrid() override;
 	QString additionalGridPrefix() override;

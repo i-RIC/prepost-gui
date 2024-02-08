@@ -27,8 +27,8 @@ public:
 	AbstractCrosssectionWindow(QWidget *parent);
 	~AbstractCrosssectionWindow();
 
-	void loadFromProjectMainFile(const QDomNode& node);
-	void saveToProjectMainFile(QXmlStreamWriter& writer);
+	virtual void loadFromProjectMainFile(const QDomNode& node);
+	virtual void saveToProjectMainFile(QXmlStreamWriter& writer);
 
 	void setupDisplaySettings();
 	void setTarget(Direction dir, int index);

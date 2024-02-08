@@ -8,8 +8,11 @@
 #include <guicore/postcontainer/v4postzonedatacontainer.h>
 #include <guicore/postcontainer/v4solutiongrid.h>
 #include <guicore/pre/grid/v4inputgrid.h>
+#include <misc/stringtool.h>
+#include <misc/xmlsupport.h>
 
 #include <QMessageBox>
+#include <QXmlStreamWriter>
 
 namespace {
 
@@ -76,6 +79,25 @@ bool PostCrosssectionInternalWindow::setupInitialSetting()
 	setTarget(AbstractCrosssectionWindow::Direction::I, 0);
 
 	return true;
+}
+
+void PostCrosssectionInternalWindow::loadFromProjectMainFile(const QDomNode& node)
+{
+	auto elem = node.toElement();
+	m_dimension = static_cast<PostSolutionInfo::Dimension> (iRIC::getIntAttribute(node, "dimension"));
+	m_zoneName = iRIC::toStr(elem.attribute("zoneName"));
+
+	setupDisplaySettings();
+
+	AbstractCrosssectionWindow::loadFromProjectMainFile(node);
+}
+
+void PostCrosssectionInternalWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
+{
+	iRIC::setIntAttribute(writer, "dimension", static_cast<int> (m_dimension));
+	writer.writeAttribute("zoneName", m_zoneName.c_str());
+
+	AbstractCrosssectionWindow::saveToProjectMainFile(writer);
 }
 
 v4Structured2dGrid* PostCrosssectionInternalWindow::grid()

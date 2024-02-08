@@ -3,6 +3,9 @@
 #include "postcrosssectionwindowprojectdataitem.h"
 
 #include <guicore/post/postprocessorwindow.h>
+#include <misc/xmlsupport.h>
+
+#include <QXmlStreamWriter>
 
 PostCrosssectionWindowProjectDataItem::PostCrosssectionWindowProjectDataItem(ProjectDataItem* parent, int index, QWidget* parentWindow) :
 	PostProcessorWindowProjectDataItem(parent, parentWindow),
@@ -32,6 +35,9 @@ void PostCrosssectionWindowProjectDataItem::doLoadFromProjectMainFile(const QDom
 
 void PostCrosssectionWindowProjectDataItem::doSaveToProjectMainFile(QXmlStreamWriter& writer)
 {
-	auto w = dynamic_cast<PostCrosssectionWindow*> (m_window);
+	writer.writeAttribute("type", "postcrosssectionwindow");
+	auto w = dynamic_cast<PostCrosssectionWindow*>(m_window);
+	iRIC::setIntAttribute(writer, "index", w->index());
+
 	w->internalWindow()->saveToProjectMainFile(writer);
 }

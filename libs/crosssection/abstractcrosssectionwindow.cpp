@@ -47,7 +47,7 @@ void AbstractCrosssectionWindow::loadFromProjectMainFile(const QDomNode& node)
 	geometry.load(node);
 
 	impl->m_tmpDirection = static_cast<Direction> (iRIC::getIntAttribute(node, "direction"));
-	impl->m_tmpIndex = iRIC::getIntAttribute(node, "index");
+	impl->m_tmpIndex = iRIC::getIntAttribute(node, "positionIndex");
 	impl->m_tmpCellSide = static_cast<Controller::CellSide> (iRIC::getIntAttribute(node, "cellside"));
 
 	impl->graphicsView()->loadFromProjectMainFile(node);
@@ -80,7 +80,7 @@ void AbstractCrosssectionWindow::saveToProjectMainFile(QXmlStreamWriter& writer)
 	geometry.save(writer);
 
 	iRIC::setIntAttribute(writer, "direction", static_cast<int>(impl->m_controller->targetDirection()));
-	iRIC::setIntAttribute(writer, "index", impl->m_controller->targetIndex());
+	iRIC::setIntAttribute(writer, "positionIndex", impl->m_controller->targetIndex());
 	iRIC::setIntAttribute(writer, "cellside", static_cast<int>(impl->m_controller->cellSide()));
 
 	impl->graphicsView()->saveToProjectMainFile(writer);
