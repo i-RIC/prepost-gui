@@ -11,6 +11,7 @@
 #include <misc/stringtool.h>
 #include <misc/xmlsupport.h>
 
+#include <QDomNode>
 #include <QMessageBox>
 #include <QXmlStreamWriter>
 
