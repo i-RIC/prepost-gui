@@ -66,10 +66,14 @@ void PreProcessorGridCrosssectionWindow2::loadFromProjectMainFile(const QDomNode
 		for (int i = 0; i < list.size(); ++i) {
 			const auto& e = list.at(i).toElement();
 			auto attName = iRIC::toStr(e.attribute("attribute"));
-			auto s = impl->m_displaySettingMap.at(attName);
-			s->load(e);
+			auto it = impl->m_displaySettingMap.find(attName);
+			if (it != impl->m_displaySettingMap.end()) {
+				it->second->load(e);
+			}
 		}
 	}
+
+	applyTmpTargetSetting();
 }
 
 void PreProcessorGridCrosssectionWindow2::saveToProjectMainFile(QXmlStreamWriter& writer)

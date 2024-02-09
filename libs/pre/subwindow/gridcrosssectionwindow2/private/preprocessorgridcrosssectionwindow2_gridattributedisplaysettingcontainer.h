@@ -55,10 +55,10 @@ public:
 	QFontContainer independentChartAxisFont;
 	ColorContainer independentChartAxisColor;
 
-	IntContainer colorMapHeight;
-	BoolContainer colorMapTitleVisible;
-	QFontContainer colorMapTitleFont;
-	ColorContainer colorMapTitleColor;
+	IntContainer colorBarHeight;
+	BoolContainer colorBarTitleVisible;
+	QFontContainer colorBarTitleFont;
+	ColorContainer colorBarTitleColor;
 
 	BoolContainer usePreColor;
 	ColorMapSettingContainerI* colorMapSetting;

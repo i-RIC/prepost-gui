@@ -94,10 +94,10 @@ PreProcessorGridCrosssectionWindow2::GridAttributeDisplaySettingContainer PrePro
 	ret.independentChartAxisFont = ui->independentChartAxisFontWidget->font();
 	ret.independentChartAxisColor = ui->independentChartAxisFontColorWidget->color();
 
-	ret.colorMapHeight = ui->colorMapHeightSpinBox->value();
-	ret.colorMapTitleVisible = ui->colorMapTitleVisibleCheckBox->isChecked();
-	ret.colorMapTitleFont = ui->colorMapTitleFontWidget->font();
-	ret.colorMapTitleColor = ui->colorMapTitleFontColorWidget->color();
+	ret.colorBarHeight = ui->colorMapHeightSpinBox->value();
+	ret.colorBarTitleVisible = ui->colorMapTitleVisibleCheckBox->isChecked();
+	ret.colorBarTitleFont = ui->colorMapTitleFontWidget->font();
+	ret.colorBarTitleColor = ui->colorMapTitleFontColorWidget->color();
 	ret.usePreColor = ui->usePreCheckBox->isChecked();
 	ret.colorMapSetting = m_setting->colorMapSetting;
 
@@ -133,10 +133,10 @@ void PreProcessorGridCrosssectionWindow2::GridAttributeDisplaySettingEditDialog:
 	ui->independentChartAxisFontWidget->setFont(setting.independentChartAxisFont);
 	ui->independentChartAxisFontColorWidget->setColor(setting.independentChartAxisColor);
 
-	ui->colorMapHeightSpinBox->setValue(setting.colorMapHeight);
-	ui->colorMapTitleVisibleCheckBox->setChecked(setting.colorMapTitleVisible);
-	ui->colorMapTitleFontWidget->setFont(setting.colorMapTitleFont);
-	ui->colorMapTitleFontColorWidget->setColor(setting.colorMapTitleColor);
+	ui->colorMapHeightSpinBox->setValue(setting.colorBarHeight);
+	ui->colorMapTitleVisibleCheckBox->setChecked(setting.colorBarTitleVisible);
+	ui->colorMapTitleFontWidget->setFont(setting.colorBarTitleFont);
+	ui->colorMapTitleFontColorWidget->setColor(setting.colorBarTitleColor);
 	ui->usePreCheckBox->setChecked(setting.usePreColor);
 
 	if (setting.usePreColor) {

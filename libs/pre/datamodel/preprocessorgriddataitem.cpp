@@ -248,10 +248,6 @@ int PreProcessorGridDataItem::loadFromCgnsFile(const iRICLib::H5CgnsZone& zone)
 	updateActionStatus();
 	updateObjectBrowserTree();
 
-	for (auto w : impl->m_crosssectionWindows) {
-		w->applyTmpTargetSetting();
-	}
-
 	return IRIC_NO_ERROR;
 }
 
