@@ -331,6 +331,14 @@
         <source>You can not delete points used for break lines.</source>
         <translation>Ne morete izbrisati točk, ki se uporabljajo za prelomne črte.</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Napaka</translation>
+    </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
@@ -674,6 +682,10 @@
     <message>
         <source>X, Y and Value should refer to different fields.</source>
         <translation>X, Y in vrednost se morajo nanašati na različna polja.</translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

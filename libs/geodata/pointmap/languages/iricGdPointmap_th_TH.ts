@@ -331,6 +331,14 @@
         <source>You can not delete points used for break lines.</source>
         <translation>คุณไม่สามารถลบจุดที่ใช้สำหรับเส้นแบ่ง</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
@@ -674,6 +682,10 @@
     <message>
         <source>X, Y and Value should refer to different fields.</source>
         <translation>X, Y และ Value ควรอ้างอิงถึงฟิลด์ที่แตกต่างกัน</translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
