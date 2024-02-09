@@ -4,13 +4,16 @@
 
 ColorMapSettingToolBarWidget::ColorMapSettingToolBarWidget(QWidget *parent) :
 	QWidget(parent),
+	m_updateWidthAndHeight {false},
 	ui(new Ui::ColorMapSettingToolBarWidget)
 {
 	ui->setupUi(this);
 
 	connect(ui->visibleCheckBox, &QCheckBox::toggled, [=](bool){emit updated();});
-	connect(ui->horizontalRadioButton, &QCheckBox::clicked, [=](bool){emit updated();});
-	connect(ui->verticalRadioButton, &QCheckBox::clicked, [=](bool){emit updated();});
+	connect(ui->horizontalRadioButton, &QRadioButton::clicked, this, &ColorMapSettingToolBarWidget::toggleUpdateWidthAndHeight);
+	connect(ui->horizontalRadioButton, &QRadioButton::clicked, [=](bool){emit updated();});
+	connect(ui->verticalRadioButton, &QRadioButton::clicked, this, &ColorMapSettingToolBarWidget::toggleUpdateWidthAndHeight);
+	connect(ui->verticalRadioButton, &QRadioButton::clicked, [=](bool){emit updated();});
 }
 
 ColorMapSettingToolBarWidget::~ColorMapSettingToolBarWidget()
@@ -32,21 +35,28 @@ ColorMapSettingContainerI* ColorMapSettingToolBarWidget::modifiedSetting()
 
 	setting->legendSetting()->setVisible(ui->visibleCheckBox->isChecked());
 
-	int width = setting->legendSetting()->imgSetting()->width;
-	int height = setting->legendSetting()->imgSetting()->height;
 	if (ui->horizontalRadioButton->isChecked()) {
 		setting->legendSetting()->setDirection(ColorMapLegendSettingContainerI::Direction::Horizontal);
-		if (height > width) {
+	} else if (ui->verticalRadioButton->isChecked()) {
+		setting->legendSetting()->setDirection(ColorMapLegendSettingContainerI::Direction::Vertical);
+	}
+
+	if (m_updateWidthAndHeight) {
+		int width = setting->legendSetting()->imgSetting()->width;
+		int height = setting->legendSetting()->imgSetting()->height;
+
+		if (ui->horizontalRadioButton->isChecked() && height > width) {
 			setting->legendSetting()->imgSetting()->width = height;
 			setting->legendSetting()->imgSetting()->height = width;
 		}
-	} else if (ui->verticalRadioButton->isChecked()) {
-		setting->legendSetting()->setDirection(ColorMapLegendSettingContainerI::Direction::Vertical);
-		if (width > height) {
+
+		if (ui->verticalRadioButton->isChecked() && width > height) {
 			setting->legendSetting()->imgSetting()->width = height;
 			setting->legendSetting()->imgSetting()->height = width;
 		}
 	}
+
+	m_updateWidthAndHeight = false;
 
 	return setting;
 }
@@ -87,4 +97,9 @@ void ColorMapSettingToolBarWidget::applySetting()
 	ui->visibleCheckBox->blockSignals(false);
 	ui->horizontalRadioButton->blockSignals(false);
 	ui->verticalRadioButton->blockSignals(false);
+}
+
+void ColorMapSettingToolBarWidget::toggleUpdateWidthAndHeight()
+{
+	m_updateWidthAndHeight = true;
 }
