@@ -614,9 +614,11 @@ void ColorMapSettingEditWidget::updateImageSetting()
 		} else {
 			newSetting = *ls;
 		}
+		newSetting.setColorMapSetting(ls->colorMapSetting());
 	} else if (m_setting != nullptr) {
 		auto s = dynamic_cast <ColorMapSettingContainer*> (m_setting);
 		newSetting = s->legend;
+		newSetting.setColorMapSetting(s);
 	}
 
 	ui->legendWidget->setImageSetting(newSetting.imageSetting);
