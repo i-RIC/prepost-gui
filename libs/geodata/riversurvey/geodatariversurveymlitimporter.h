@@ -17,6 +17,8 @@ public:
 	const QStringList fileDialogFilters() override;
 	const QStringList acceptableExtensions() override;
 
+	bool importInit(const QString& filename, const QString& csFolder, QWidget* w);
+
 private:
 	bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w) override;
 

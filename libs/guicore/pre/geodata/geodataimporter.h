@@ -38,7 +38,6 @@ protected:
 	QString filename() const;
 	QString selectedFilter() const;
 
-private:
 	virtual bool doInit(const QString& filename, const QString& selectedFilter, int* count, SolverDefinitionGridAttribute* condition, PreProcessorGeoDataGroupDataItemI* item, QWidget* w);
 
 	class Impl;

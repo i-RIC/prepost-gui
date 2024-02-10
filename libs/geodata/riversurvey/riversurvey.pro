@@ -6,7 +6,7 @@ DEFINES += GD_RIVERSURVEY_LIBRARY
 
 include( ../../../paths.pri )
 
-QT += widgets xml
+QT += network widgets xml
 
 # Use Precompiled headers (PCH)
 PRECOMPILED_HEADER = riversurvey_pch.h
@@ -173,6 +173,7 @@ HEADERS += gd_riversurvey_global.h \
            geodatariversurveynodemapper.h \
            geodatariversurveyproxy.h \
            geodatariversurveyvtkexporter.h \
+           geodatariversurveywebimporter.h \
            gridcreatingconditionriversurveyi.h \
            private/geodatariversurvey_addextensioncommand.h \
            private/geodatariversurvey_changeselectioncommand.h \
@@ -205,6 +206,7 @@ HEADERS += gd_riversurvey_global.h \
            private/geodatariversurveyproxy_displaysetting.h \
            private/geodatariversurveyproxy_displaysettingwidget.h \
            private/geodatariversurveyproxy_impl.h \
+           private/geodatariversurveywebimporter_settingdialog.h \
            public/geodatariversurvey_displaysettingwidget.h
 FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          geodatariverpathpointexpanddialog.ui \
@@ -226,6 +228,7 @@ FORMS += geodatarivercrosssectionaltitudemovedialog.ui \
          private/geodatariversurveyimporter_problemsdialog.ui \
          private/geodatariversurveymlitimporter_problemsdialog.ui \
          private/geodatariversurveyproxy_displaysettingwidget.ui \
+         private/geodatariversurveywebimporter_settingdialog.ui \
          public/geodatariversurvey_displaysettingwidget.ui
 SOURCES += geodatarivercrosssection.cpp \
            geodatarivercrosssectionaltitudemovedialog.cpp \
@@ -265,6 +268,7 @@ SOURCES += geodatarivercrosssection.cpp \
            geodatariversurveynodemapper.cpp \
            geodatariversurveyproxy.cpp \
            geodatariversurveyvtkexporter.cpp \
+           geodatariversurveywebimporter.cpp \
            private/geodatariversurvey_addextensioncommand.cpp \
            private/geodatariversurvey_changeselectioncommand.cpp \
            private/geodatariversurvey_deleteriverpathpointcommand.cpp \
@@ -295,6 +299,7 @@ SOURCES += geodatarivercrosssection.cpp \
            private/geodatariversurveyproxy_displaysetting.cpp \
            private/geodatariversurveyproxy_displaysettingwidget.cpp \
            private/geodatariversurveyproxy_impl.cpp \
+           private/geodatariversurveywebimporter_settingdialog.cpp \
            public/geodatariversurvey_displaysettingwidget.cpp
 RESOURCES += riversurvey.qrc
 TRANSLATIONS += languages/iricGdRiversurvey_ar_EG.ts \

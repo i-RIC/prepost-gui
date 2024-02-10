@@ -24,7 +24,7 @@
 #include <vtkDoubleArray.h>
 
 GeoDataPointmapWebImporter::GeoDataPointmapWebImporter(GeoDataCreator* creator) :
-	GeoDataWebImporter("csvtile", tr("Web CSV tile"), creator),
+	GeoDataWebImporter("csvtile", tr("Point cloud data from Elevation CSV tile"), creator),
 	m_webAccessManager {QtTool::networkAccessManager()},
 	m_webReply {nullptr},
 	m_isWaitingHttpResponse {false},

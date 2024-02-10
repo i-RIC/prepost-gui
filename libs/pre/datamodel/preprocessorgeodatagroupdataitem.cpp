@@ -12,6 +12,7 @@
 #include "private/preprocessorgeodatagroupdataitem_variationsettingdialog.h"
 
 #include <guibase/widget/itemmultiselectingdialog.h>
+#include <guibase/widget/itemselectingdialog.h>
 #include <guibase/widget/waitdialog.h>
 #include <guicore/base/iricmainwindowi.h>
 #include <guicore/image/imagesettingcontainer.h>
@@ -267,12 +268,30 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 	}
 	if (importers.size() == 0) {return;}
 
-	auto importer = importers.at(0);
+	QWidget* w = preProcessorWindow();
+
+	GeoDataWebImporter* importer = nullptr;
+	if (importers.size() == 1) {
+		importer = importers.at(0);
+	} else {
+		QStringList importerCaptions;
+		for (auto i : importers) {
+			importerCaptions.push_back(i->caption());
+		}
+		ItemSelectingDialog dialog(w);
+		dialog.setWindowTitle(tr("Select Data Type"));
+		dialog.setMessage(tr("Please select type of data to import"));
+		dialog.setItems(importerCaptions);
+		int ret = dialog.exec();
+		if (ret == QDialog::Rejected) {return;}
+
+		importer = importers.at(dialog.selectedIndex());
+	}
+
 	Q_ASSERT(importer != nullptr);
 
 	// execute import.
 	int dataCount;
-	QWidget* w = preProcessorWindow();
 	bool ret = importer->importInit(&dataCount, m_condition, this, w);
 	if (! ret) {
 		QMessageBox::warning(preProcessorWindow(), tr("Import failed"), tr("Importing data failed."));
@@ -294,7 +313,7 @@ void PreProcessorGeoDataGroupDataItem::importFromWeb()
 		wDialog->setProgress(0);
 		wDialog->setMessage(tr("Importing data..."));
 		wDialog->showProgressBar();
-		connect(wDialog, SIGNAL(canceled()), this, SLOT(cancelImport()));
+		connect(wDialog, &WaitDialog::canceled, this, &PreProcessorGeoDataGroupDataItem::cancelImport);
 		wDialog->show();
 		qApp->processEvents();
 	}
