@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>網格鳥瞰窗口</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 上次編輯後未映射。是否要立即執行映射？</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>邊界條件設置"%1" 上次編輯後沒有映射。現在要執行映射嗎？</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>邊界條件設置&quot;%1&quot; 上次編輯後沒有映射。現在要執行映射嗎？</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>默認</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,13 +1056,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>注意：啟用變體後，將創建名為“默認”的變體，並且所有地理數據都將移至該變體。您可以從“對象瀏覽器”中添加、重命名、刪除變體。您可以在變體之間移動、複製地理數據。從您使用“傳遞給求解器的變化”選擇的變化創建的網格屬性數據被傳遞給求解器。您可以準備多個變體，切換將哪個傳遞給求解器，並確保差異的效果。</translation>
     </message>
 </context>
@@ -1433,7 +1443,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>執行 (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>以下屬性未映射，因為網格生成器為它們輸出值。如果要強制為其映射地理數據，請通過菜單“網格”-&gt;“屬性映射”-&gt;“執行”手動映射。</translation>
     </message>
@@ -1454,11 +1464,11 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>繪製地理數據完成</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>網格屬性“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
         <translation>邊界條件“ %1 ”是手工編輯的。執行映射時，所做的所有修改都將被丟棄。您真的要執行映射嗎？</translation>
     </message>
 </context>
@@ -1477,19 +1487,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>汽車</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta name ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta name =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;創建網格時，詢問是否每次都執行屬性映射。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手動的</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>只有當您手動選擇“執行”菜單時才會執行屬性映射。</translation>
     </message>
     <message>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">網格橫截面 (%1): 我 = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">網格橫截面窗口</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">控制器</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>網格橫截面窗口</translation>
+        <translation type="vanished">網格橫截面窗口</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>查看設置工具欄</translation>
+        <translation type="vanished">查看設置工具欄</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>顯示設置工具欄</translation>
+        <translation type="vanished">顯示設置工具欄</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>環境</translation>
+        <translation type="vanished">環境</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>自動調整</translation>
+        <translation type="vanished">自動調整</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>縱橫比（V/H）：1 /</translation>
+        <translation type="vanished">縱橫比（V/H）：1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>固定縱橫比</translation>
+        <translation type="vanished">固定縱橫比</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>修復區域</translation>
+        <translation type="vanished">修復區域</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>網格</translation>
+        <translation type="vanished">網格</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>規模</translation>
+        <translation type="vanished">規模</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>左/右岸標記</translation>
+        <translation type="vanished">左/右岸標記</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>縱橫比</translation>
+        <translation type="vanished">縱橫比</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>顯示設定</translation>
+        <translation type="vanished">顯示設定</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>控制器</translation>
+        <translation type="vanished">控制器</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>錯誤</translation>
+        <translation type="vanished">錯誤</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>製作時出錯 %1.</translation>
+        <translation type="vanished">製作時出錯 %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>指數</translation>
+        <translation type="vanished">指數</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>距離（米）從 %1</translation>
+        <translation type="vanished">距離（米）從 %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>上游/下游標記</translation>
+        <translation type="vanished">上游/下游標記</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>上游側</translation>
+        <translation type="vanished">上游側</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>下游側</translation>
+        <translation type="vanished">下游側</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>右邊</translation>
+        <translation type="vanished">右邊</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>左邊</translation>
+        <translation type="vanished">左邊</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>導出 CSV 文件</translation>
+        <translation type="vanished">導出 CSV 文件</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>可見的</translation>
+        <translation type="vanished">可見的</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>姓名</translation>
+        <translation type="vanished">姓名</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>環境</translation>
+        <translation type="vanished">環境</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>網格屬性顯示設置（ %1 )</translation>
+        <translation type="vanished">網格屬性顯示設置（ %1 )</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸</translation>
+        <translation type="vanished">左岸</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸</translation>
+        <translation type="vanished">右岸</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>下游</translation>
+        <translation type="vanished">下游</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>上游</translation>
+        <translation type="vanished">上游</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>縱橫比（垂直/水平）：1/ %1</translation>
+        <translation type="vanished">縱橫比（垂直/水平）：1/ %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>保存快照</translation>
+        <translation type="vanished">保存快照</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>形式</translation>
+        <translation type="vanished">形式</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>我</translation>
+        <translation type="vanished">我</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>傑</translation>
+        <translation type="vanished">傑</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>單元格值</translation>
+        <translation type="vanished">單元格值</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>上游側</translation>
+        <translation type="vanished">上游側</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>下游側</translation>
+        <translation type="vanished">下游側</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>快照 (&amp;S)</translation>
+        <translation type="vanished">快照 (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV 導出 (&amp;C)</translation>
+        <translation type="vanished">CSV 導出 (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>網格截面窗口顯示設置</translation>
+        <translation type="vanished">網格截面窗口顯示設置</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>背景網格</translation>
+        <translation type="vanished">背景網格</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>類型</translation>
+        <translation type="vanished">類型</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>線條</translation>
+        <translation type="vanished">線條</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>點</translation>
+        <translation type="vanished">點</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>水平的</translation>
+        <translation type="vanished">水平的</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>汽車</translation>
+        <translation type="vanished">汽車</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>規模</translation>
+        <translation type="vanished">規模</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>分量表</translation>
+        <translation type="vanished">分量表</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>垂直的</translation>
+        <translation type="vanished">垂直的</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>顏色：</translation>
+        <translation type="vanished">顏色：</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>秤</translation>
+        <translation type="vanished">秤</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>字體：</translation>
+        <translation type="vanished">字體：</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>左/右岸標記</translation>
+        <translation type="vanished">左/右岸標記</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>縱橫比</translation>
+        <translation type="vanished">縱橫比</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>導出設置</translation>
+        <translation type="vanished">導出設置</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>文件夾和前綴 (&amp; )</translation>
+        <translation type="vanished">文件夾和前綴 (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>文件夾：</translation>
+        <translation type="vanished">文件夾：</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>字首：</translation>
+        <translation type="vanished">字首：</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>橫截面</translation>
+        <translation type="vanished">橫截面</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>僅限當前</translation>
+        <translation type="vanished">僅限當前</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>全部</translation>
+        <translation type="vanished">全部</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>風俗</translation>
+        <translation type="vanished">風俗</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>算我一個：</translation>
+        <translation type="vanished">算我一個：</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>我最大：</translation>
+        <translation type="vanished">我最大：</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>跳過率：</translation>
+        <translation type="vanished">跳過率：</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>網格屬性顯示設置</translation>
+        <translation type="vanished">網格屬性顯示設置</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>可見的</translation>
+        <translation type="vanished">可見的</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>基本的</translation>
+        <translation type="vanished">基本的</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>模式</translation>
+        <translation type="vanished">模式</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>海拔圖</translation>
+        <translation type="vanished">海拔圖</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>獨立圖表</translation>
+        <translation type="vanished">獨立圖表</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>色圖</translation>
+        <translation type="vanished">色圖</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>海拔圖設置</translation>
+        <translation type="vanished">海拔圖設置</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>線條顏色：</translation>
+        <translation type="vanished">線條顏色：</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>行寬：</translation>
+        <translation type="vanished">行寬：</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>顯示點數</translation>
+        <translation type="vanished">顯示點數</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>磅值</translation>
+        <translation type="vanished">磅值</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>顯示指數</translation>
+        <translation type="vanished">顯示指數</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>字體顏色：</translation>
+        <translation type="vanished">字體顏色：</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>字體：</translation>
+        <translation type="vanished">字體：</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>跳過率：</translation>
+        <translation type="vanished">跳過率：</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>獨立圖表設置</translation>
+        <translation type="vanished">獨立圖表設置</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>圖表高度：</translation>
+        <translation type="vanished">圖表高度：</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[像素]</translation>
+        <translation type="vanished">[像素]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>標題字體：</translation>
+        <translation type="vanished">標題字體：</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>軸顏色：</translation>
+        <translation type="vanished">軸顏色：</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>軸字體：</translation>
+        <translation type="vanished">軸字體：</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>顏色映射設置</translation>
+        <translation type="vanished">顏色映射設置</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;注意：&lt;/span&gt;使用Colormap選項卡編輯顏色設置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意：&lt;/span&gt;使用Colormap選項卡編輯顏色設置&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>預處理窗口的使用設置</translation>
+        <translation type="vanished">預處理窗口的使用設置</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>顯示標題</translation>
+        <translation type="vanished">顯示標題</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>標題顏色</translation>
+        <translation type="vanished">標題顏色</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">設置標量條 (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>打開鳥瞰視窗 (&amp;B)</translation>
     </message>
     <message>

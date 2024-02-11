@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="nl_NL">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Raster Vogelvluchtvenster</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 worden niet toegewezen nadat ze de laatste keer zijn bewerkt. Wilt u de mapping nu uitvoeren?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Grensvoorwaarde instellen "%1" wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Grensvoorwaarde instellen &quot;%1&quot; wordt niet toegewezen nadat het de laatste keer is bewerkt. Wilt u de toewijzing nu uitvoeren?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Standaard</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Opmerking: wanneer variatie is ingeschakeld, wordt variatie met de naam "Standaard" gemaakt en worden alle geografische gegevens daarnaartoe verplaatst. U kunt variaties toevoegen, hernoemen en verwijderen uit "Objectbrowser". U kunt geografische gegevens tussen variaties verplaatsen en kopiëren. De rasterattribuutgegevens die zijn gemaakt op basis van de variatie die u selecteert met "Variatie om door te geven aan oplosser" worden doorgegeven aan oplosser. U kunt meerdere variaties voorbereiden, schakelen welke u wilt doorgeven aan de oplosser en het effect van het verschil controleren.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Opmerking: wanneer variatie is ingeschakeld, wordt variatie met de naam &quot;Standaard&quot; gemaakt en worden alle geografische gegevens daarnaartoe verplaatst. U kunt variaties toevoegen, hernoemen en verwijderen uit &quot;Objectbrowser&quot;. U kunt geografische gegevens tussen variaties verplaatsen en kopiëren. De rasterattribuutgegevens die zijn gemaakt op basis van de variatie die u selecteert met &quot;Variatie om door te geven aan oplosser&quot; worden doorgegeven aan oplosser. U kunt meerdere variaties voorbereiden, schakelen welke u wilt doorgeven aan de oplosser en het effect van het verschil controleren.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>uitvoeren (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu "Raster" -&gt; "Attributentoewijzing" -&gt; "Uitvoeren".</translation>
+        <translation>De volgende attributen zijn niet toegewezen, omdat de uitgangswaarden van de netgenerator ervoor zijn. Als u geografische gegevens voor hen geforceerd in kaart wilt brengen, moet u dit handmatig toewijzen met het menu &quot;Raster&quot; -&gt; &quot;Attributentoewijzing&quot; -&gt; &quot;Uitvoeren&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Geografische gegevens in kaart brengen voltooid</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Het rasterkenmerk "%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Het rasterkenmerk &quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>De randvoorwaarde"%1" wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>De randvoorwaarde&quot;%1&quot; wordt met de hand bewerkt. Wanneer u mapping uitvoert, worden alle wijzigingen die u heeft aangebracht verwijderd. Wilt u de mapping echt uitvoeren?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;metanaam =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { witruimte: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; margin -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Wanneer het raster is gemaakt, wordt u gevraagd of om Attribuut Mapping elke keer uit te voeren.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Handmatig</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu "Uitvoeren" handmatig selecteert.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attribuuttoewijzing wordt alleen uitgevoerd wanneer u het menu &quot;Uitvoeren&quot; handmatig selecteert.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1498,11 +1508,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">In kaart brengen met FIN's</translation>
+        <translation type="vanished">In kaart brengen met FIN&apos;s</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">TIN's die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
+        <translation type="vanished">TIN&apos;s die zijn gemaakt op basis van geografische gegevens, worden gebruikt voor het in kaart brengen. Attribuutwaarden van rasterknooppunten worden berekend als gewogen gemiddelde van de waarden op de TIN-knooppunten.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1822,80 +1832,88 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Raster doorsnede (%1): ik = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Rasterdoorsnedevenster</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">controleur</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Rasterdoorsnedevenster</translation>
+        <translation type="vanished">Rasterdoorsnedevenster</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Bekijk de instellingenwerkbalk</translation>
+        <translation type="vanished">Bekijk de instellingenwerkbalk</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Geef de instellingenwerkbalk weer</translation>
+        <translation type="vanished">Geef de instellingenwerkbalk weer</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="vanished">Fout</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Er is een fout opgetreden tijdens het maken %1.</translation>
+        <translation type="vanished">Er is een fout opgetreden tijdens het maken %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Instelling</translation>
+        <translation type="vanished">Instelling</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Inhoudsopgave</translation>
+        <translation type="vanished">Inhoudsopgave</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Afstand (m) van %1</translation>
+        <translation type="vanished">Afstand (m) van %1</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Automatisch opnieuw schalen</translation>
+        <translation type="vanished">Automatisch opnieuw schalen</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Beeldverhouding (V/H): 1 /</translation>
+        <translation type="vanished">Beeldverhouding (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Beeldverhouding corrigeren</translation>
+        <translation type="vanished">Beeldverhouding corrigeren</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Regio repareren</translation>
+        <translation type="vanished">Regio repareren</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Rooster</translation>
+        <translation type="vanished">Rooster</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Schaal</translation>
+        <translation type="vanished">Schaal</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Linker-/rechteroevermarkeringen</translation>
+        <translation type="vanished">Linker-/rechteroevermarkeringen</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Beeldverhouding</translation>
+        <translation type="vanished">Beeldverhouding</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Beeldscherm instelling</translation>
+        <translation type="vanished">Beeldscherm instelling</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>controleur</translation>
+        <translation type="vanished">controleur</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1919,346 +1937,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Stroomopwaartse/stroomafwaartse markeringen</translation>
+        <translation type="vanished">Stroomopwaartse/stroomafwaartse markeringen</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Stroomopwaartse zijde</translation>
+        <translation type="vanished">Stroomopwaartse zijde</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Stroomafwaartse kant</translation>
+        <translation type="vanished">Stroomafwaartse kant</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Rechter zijde</translation>
+        <translation type="vanished">Rechter zijde</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Linkerkant</translation>
+        <translation type="vanished">Linkerkant</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>CSV-bestanden exporteren</translation>
+        <translation type="vanished">CSV-bestanden exporteren</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Zichtbaar</translation>
+        <translation type="vanished">Zichtbaar</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Naam</translation>
+        <translation type="vanished">Naam</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Instelling</translation>
+        <translation type="vanished">Instelling</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Raster Attribuut Weergave Instelling (%1)</translation>
+        <translation type="vanished">Raster Attribuut Weergave Instelling (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Linkeroeverzijde</translation>
+        <translation type="vanished">Linkeroeverzijde</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Rechteroever</translation>
+        <translation type="vanished">Rechteroever</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Stroomafwaarts</translation>
+        <translation type="vanished">Stroomafwaarts</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Stroomopwaarts</translation>
+        <translation type="vanished">Stroomopwaarts</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Beeldverhouding (V/H): 1 / %1</translation>
+        <translation type="vanished">Beeldverhouding (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Sla momentopnamen op</translation>
+        <translation type="vanished">Sla momentopnamen op</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Formulier</translation>
+        <translation type="vanished">Formulier</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Richting</translation>
+        <translation type="vanished">Richting</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Positie</translation>
+        <translation type="vanished">Positie</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Cel Waarden</translation>
+        <translation type="vanished">Cel Waarden</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Stroomopwaartse kant</translation>
+        <translation type="vanished">Stroomopwaartse kant</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Stroomafwaartse kant</translation>
+        <translation type="vanished">Stroomafwaartse kant</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Momentopname (&amp;S)</translation>
+        <translation type="vanished">Momentopname (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV-export (&amp;C)</translation>
+        <translation type="vanished">CSV-export (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Raster Doorsnede Venster Weergave Instelling</translation>
+        <translation type="vanished">Raster Doorsnede Venster Weergave Instelling</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Achtergrondraster</translation>
+        <translation type="vanished">Achtergrondraster</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="vanished">Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Lijnen</translation>
+        <translation type="vanished">Lijnen</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Stippen</translation>
+        <translation type="vanished">Stippen</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontaal</translation>
+        <translation type="vanished">Horizontaal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Schaal</translation>
+        <translation type="vanished">Schaal</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Sub schaal</translation>
+        <translation type="vanished">Sub schaal</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Verticaal</translation>
+        <translation type="vanished">Verticaal</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kleur:</translation>
+        <translation type="vanished">Kleur:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Schubben</translation>
+        <translation type="vanished">Schubben</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Lettertype:</translation>
+        <translation type="vanished">Lettertype:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Linker-/rechteroevermarkeringen</translation>
+        <translation type="vanished">Linker-/rechteroevermarkeringen</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Beeldverhouding</translation>
+        <translation type="vanished">Beeldverhouding</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Instellingen exporteren</translation>
+        <translation type="vanished">Instellingen exporteren</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Map &amp; voorvoegsel (&amp; )</translation>
+        <translation type="vanished">Map &amp; voorvoegsel (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Map:</translation>
+        <translation type="vanished">Map:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Voorvoegsel:</translation>
+        <translation type="vanished">Voorvoegsel:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Dwarsdoorsnede</translation>
+        <translation type="vanished">Dwarsdoorsnede</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Alleen actueel</translation>
+        <translation type="vanished">Alleen actueel</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Alle</translation>
+        <translation type="vanished">Alle</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Aangepast</translation>
+        <translation type="vanished">Aangepast</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Ik doe mee:</translation>
+        <translation type="vanished">Ik doe mee:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>ik maximaal:</translation>
+        <translation type="vanished">ik maximaal:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Overslaanpercentage:</translation>
+        <translation type="vanished">Overslaanpercentage:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Grid Attribuut Weergave Instelling</translation>
+        <translation type="vanished">Grid Attribuut Weergave Instelling</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Zichtbaar</translation>
+        <translation type="vanished">Zichtbaar</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Eenvoudig</translation>
+        <translation type="vanished">Eenvoudig</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>modus</translation>
+        <translation type="vanished">modus</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Hoogte grafiek</translation>
+        <translation type="vanished">Hoogte grafiek</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Onafhankelijke grafiek</translation>
+        <translation type="vanished">Onafhankelijke grafiek</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kleurenkaart</translation>
+        <translation type="vanished">Kleurenkaart</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Hoogtegrafiek Instelling</translation>
+        <translation type="vanished">Hoogtegrafiek Instelling</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Lijnkleur:</translation>
+        <translation type="vanished">Lijnkleur:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lijnbreedte:</translation>
+        <translation type="vanished">Lijnbreedte:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Toon punten</translation>
+        <translation type="vanished">Toon punten</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Puntgrootte</translation>
+        <translation type="vanished">Puntgrootte</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Toon indexen</translation>
+        <translation type="vanished">Toon indexen</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Letterkleur:</translation>
+        <translation type="vanished">Letterkleur:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Lettertype:</translation>
+        <translation type="vanished">Lettertype:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Overslaanpercentage:</translation>
+        <translation type="vanished">Overslaanpercentage:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Onafhankelijke kaartinstelling</translation>
+        <translation type="vanished">Onafhankelijke kaartinstelling</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Grafiek Hoogte:</translation>
+        <translation type="vanished">Grafiek Hoogte:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pixels]</translation>
+        <translation type="vanished">[pixels]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Laat de titel zien</translation>
+        <translation type="vanished">Laat de titel zien</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Titel lettertype:</translation>
+        <translation type="vanished">Titel lettertype:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Askleur:</translation>
+        <translation type="vanished">Askleur:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>As lettertype:</translation>
+        <translation type="vanished">As lettertype:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Colormap-instelling</translation>
+        <translation type="vanished">Colormap-instelling</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Titel kleur</translation>
+        <translation type="vanished">Titel kleur</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opmerking:&lt;/span&gt; Gebruik het tabblad Colormap om de kleurinstelling te bewerken&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opmerking:&lt;/span&gt; Gebruik het tabblad Colormap om de kleurinstelling te bewerken&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Gebruik de instelling van het voorverwerkingsvenster</translation>
+        <translation type="vanished">Gebruik de instelling van het voorverwerkingsvenster</translation>
     </message>
 </context>
 <context>
@@ -2359,7 +2377,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Scalarbar instellen (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Vogelvluchtvenster openen (&amp;B)</translation>
     </message>
     <message>

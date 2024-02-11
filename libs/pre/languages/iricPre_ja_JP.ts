@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ja_JP">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -129,7 +131,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>格子 鳥瞰図</translation>
     </message>
     <message>
@@ -862,8 +864,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>境界条件設定 "%1" を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>境界条件設定 &quot;%1&quot; を最後に編集した後、マッピングが実行されていません。マッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1116,6 +1118,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>デフォルト</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation>データ種類の選択</translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation>インポートするデータの種類を選択してください</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1149,13 +1159,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>備考:
 
 バリエーションを有効にすると、「デフォルト」という名前のバリエーションが作成され、すべての地理情報がそのバリエーションに移動されます。
@@ -1564,9 +1574,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>実行(&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>以下の属性は、格子生成アルゴリズムが出力した値の上書きを避けるため、マッピングされませんでした。もし強制的に地理情報をマッピングしたい場合、"格子" -&gt; "属性のマッピング" -&gt; "実行" メニューを使ってマッピングして下さい。
+        <translation>以下の属性は、格子生成アルゴリズムが出力した値の上書きを避けるため、マッピングされませんでした。もし強制的に地理情報をマッピングしたい場合、&quot;格子&quot; -&gt; &quot;属性のマッピング&quot; -&gt; &quot;実行&quot; メニューを使ってマッピングして下さい。
 </translation>
     </message>
     <message>
@@ -1578,12 +1588,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation type="vanished">地理情報データ %2 の次元 %1 には値がありません。マッピングを開始できません。</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">格子属性 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
-        <translation type="vanished">境界条件 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarted. Do you really want to execute mapping?</source>
+        <translation type="vanished">境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1598,12 +1608,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>地形データマッピングの完了</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>格子属性 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>格子属性 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>境界条件 "%1" が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>境界条件 &quot;%1&quot; が、手動で編集されています。マッピングを実行すると、手動で行った全ての編集内容は破棄されます。本当にマッピングを実行しますか?</translation>
     </message>
 </context>
 <context>
@@ -1621,24 +1631,24 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>自動</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;格子を生成すると、格子属性のマッピングを実行するか毎回尋ねられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;格子を生成すると、格子属性のマッピングを実行するか毎回尋ねられます。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>手動</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>格子属性のマッピングは、手動で "実行" メニューを選択した時のみ実行されます。</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>格子属性のマッピングは、手動で &quot;実行&quot; メニューを選択した時のみ実行されます。</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -2003,64 +2013,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">格子断面 (%1) I = %2</translation>
     </message>
-</context>
-<context>
-    <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
         <translation>格子断面ウィンドウ</translation>
     </message>
     <message>
+        <source>Controller</source>
+        <translation>コントローラー</translation>
+    </message>
+</context>
+<context>
+    <name>PreProcessorGridCrosssectionWindow2</name>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="vanished">格子断面ウィンドウ</translation>
+    </message>
+    <message>
         <source>View Setting Toolbar</source>
-        <translation>ビュー設定ツールバー</translation>
+        <translation type="vanished">ビュー設定ツールバー</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>表示設定ツールバー</translation>
+        <translation type="vanished">表示設定ツールバー</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>設定</translation>
+        <translation type="vanished">設定</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>自動フィット</translation>
+        <translation type="vanished">自動フィット</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>縦横比 (V/H): 1 / </translation>
+        <translation type="vanished">縦横比 (V/H): 1 / </translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>縦横比を固定</translation>
+        <translation type="vanished">縦横比を固定</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>領域を固定</translation>
+        <translation type="vanished">領域を固定</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>背景格子</translation>
+        <translation type="vanished">背景格子</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>目盛り</translation>
+        <translation type="vanished">目盛り</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>左右岸</translation>
+        <translation type="vanished">左右岸</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>縦横比</translation>
+        <translation type="vanished">縦横比</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>表示設定</translation>
+        <translation type="vanished">表示設定</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>コントローラー</translation>
+        <translation type="vanished">コントローラー</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -2076,15 +2094,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>エラー</translation>
+        <translation type="vanished">エラー</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>%1 の作成でエラーが発生しました。</translation>
+        <translation type="vanished">%1 の作成でエラーが発生しました。</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>インデックス</translation>
+        <translation type="vanished">インデックス</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -2092,7 +2110,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>%1 からの距離(m)</translation>
+        <translation type="vanished">%1 からの距離(m)</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -2104,346 +2122,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>上流/下流</translation>
+        <translation type="vanished">上流/下流</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>上流側</translation>
+        <translation type="vanished">上流側</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>下流側</translation>
+        <translation type="vanished">下流側</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>右岸側</translation>
+        <translation type="vanished">右岸側</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>左岸側</translation>
+        <translation type="vanished">左岸側</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>CSV ファイルのエクスポート</translation>
+        <translation type="vanished">CSV ファイルのエクスポート</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>名前</translation>
+        <translation type="vanished">名前</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>設定</translation>
+        <translation type="vanished">設定</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>格子属性表示設定 (%1)</translation>
+        <translation type="vanished">格子属性表示設定 (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>左岸側</translation>
+        <translation type="vanished">左岸側</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>右岸側</translation>
+        <translation type="vanished">右岸側</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>下流</translation>
+        <translation type="vanished">下流</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>上流</translation>
+        <translation type="vanished">上流</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>縦横比 (V/H): 1 / %1</translation>
+        <translation type="vanished">縦横比 (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>スナップショットの保存</translation>
+        <translation type="vanished">スナップショットの保存</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>フォーム</translation>
+        <translation type="vanished">フォーム</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>方向</translation>
+        <translation type="vanished">方向</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I方向</translation>
+        <translation type="vanished">I方向</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J方向</translation>
+        <translation type="vanished">J方向</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>セル中心の値</translation>
+        <translation type="vanished">セル中心の値</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>上流側</translation>
+        <translation type="vanished">上流側</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>下流側</translation>
+        <translation type="vanished">下流側</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>スナップショット (&amp;S)</translation>
+        <translation type="vanished">スナップショット (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSVエクスポート(&amp;C)</translation>
+        <translation type="vanished">CSVエクスポート(&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>格子横断図ウィンドウ表示設定</translation>
+        <translation type="vanished">格子横断図ウィンドウ表示設定</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>背景格子</translation>
+        <translation type="vanished">背景格子</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>種類</translation>
+        <translation type="vanished">種類</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>線</translation>
+        <translation type="vanished">線</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>ドット</translation>
+        <translation type="vanished">ドット</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>水平方向</translation>
+        <translation type="vanished">水平方向</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>自動</translation>
+        <translation type="vanished">自動</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>主線</translation>
+        <translation type="vanished">主線</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>補助線</translation>
+        <translation type="vanished">補助線</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>垂直方向</translation>
+        <translation type="vanished">垂直方向</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>色:</translation>
+        <translation type="vanished">色:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>目盛り</translation>
+        <translation type="vanished">目盛り</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>フォント:</translation>
+        <translation type="vanished">フォント:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>左右岸</translation>
+        <translation type="vanished">左右岸</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>縦横比</translation>
+        <translation type="vanished">縦横比</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>エクスポート設定</translation>
+        <translation type="vanished">エクスポート設定</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>フォルダとプレフィックス</translation>
+        <translation type="vanished">フォルダとプレフィックス</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>フォルダ:</translation>
+        <translation type="vanished">フォルダ:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>プレフィックス:</translation>
+        <translation type="vanished">プレフィックス:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>断面</translation>
+        <translation type="vanished">断面</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>現在の断面のみ</translation>
+        <translation type="vanished">現在の断面のみ</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>全て</translation>
+        <translation type="vanished">全て</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>カスタム</translation>
+        <translation type="vanished">カスタム</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>I 最小値:</translation>
+        <translation type="vanished">I 最小値:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I 最大値:</translation>
+        <translation type="vanished">I 最大値:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>格子属性表示設定</translation>
+        <translation type="vanished">格子属性表示設定</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>表示</translation>
+        <translation type="vanished">表示</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>基本</translation>
+        <translation type="vanished">基本</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>モード</translation>
+        <translation type="vanished">モード</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>標高のグラフ</translation>
+        <translation type="vanished">標高のグラフ</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>個別のグラフ</translation>
+        <translation type="vanished">個別のグラフ</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>カラーマップ</translation>
+        <translation type="vanished">カラーマップ</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>標高のグラフ 設定</translation>
+        <translation type="vanished">標高のグラフ 設定</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>線の色:</translation>
+        <translation type="vanished">線の色:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>線幅:</translation>
+        <translation type="vanished">線幅:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>点を表示</translation>
+        <translation type="vanished">点を表示</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>点のサイズ</translation>
+        <translation type="vanished">点のサイズ</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>インデックスを表示</translation>
+        <translation type="vanished">インデックスを表示</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>フォントの色:</translation>
+        <translation type="vanished">フォントの色:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>フォント:</translation>
+        <translation type="vanished">フォント:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>間引き:</translation>
+        <translation type="vanished">間引き:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>個別のグラフ 設定</translation>
+        <translation type="vanished">個別のグラフ 設定</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>グラフの高さ:</translation>
+        <translation type="vanished">グラフの高さ:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[ピクセル]</translation>
+        <translation type="vanished">[ピクセル]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>タイトルのフォント:</translation>
+        <translation type="vanished">タイトルのフォント:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>軸の色:</translation>
+        <translation type="vanished">軸の色:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>軸のフォント:</translation>
+        <translation type="vanished">軸のフォント:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>カラーマップ設定</translation>
+        <translation type="vanished">カラーマップ設定</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;備考:&lt;/span&gt; 色の設定は「カラーマップ」タブから行ってください。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>プリプロセッサーでの設定を使う</translation>
+        <translation type="vanished">プリプロセッサーでの設定を使う</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>タイトルを表示</translation>
+        <translation type="vanished">タイトルを表示</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>タイトルの色</translation>
+        <translation type="vanished">タイトルの色</translation>
     </message>
 </context>
 <context>
@@ -2556,7 +2574,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">凡例の設定(&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>鳥瞰図ウィンドウを開く(&amp;B)</translation>
     </message>
     <message>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="tr_TR">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Izgara Kuş Bakışı Penceresi</translation>
     </message>
 </context>
@@ -713,7 +715,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar&apos;ı Ayarla...</translation>
     </message>
     <message>
         <source>Import</source>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 son kez düzenlendikten sonra eşlenmezler. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Sınır Koşul Ayarı "%1" son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Sınır Koşul Ayarı &quot;%1&quot; son kez düzenlendikten sonra eşlenmiyor. Eşlemeyi şimdi yürütmek istiyor musunuz?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -866,7 +868,7 @@ Do you really want to import grid from this file?</source>
     <name>PreProcessorGeoDataGroupDataItem</name>
     <message>
         <source>&amp;Import from web...</source>
-        <translation type="vanished">Web'den içe aktar (&amp;I)...</translation>
+        <translation type="vanished">Web&apos;den içe aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>Delete &amp;All...</source>
@@ -882,7 +884,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Set Up Scalarbar...</source>
-        <translation type="vanished">Skalarbar'ı Ayarla...</translation>
+        <translation type="vanished">Skalarbar&apos;ı Ayarla...</translation>
     </message>
     <message>
         <source>Delete &amp;Selected...</source>
@@ -999,7 +1001,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Web'den Yüksekliği İçe Aktar (&amp;I)...</translation>
+        <translation>Web&apos;den Yüksekliği İçe Aktar (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -1012,6 +1014,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Default</source>
         <translation>Varsayılan</translation>
+    </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Not: Varyasyon etkinleştirildiğinde, "Varsayılan" adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. "Nesne Tarayıcı"dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. "Çözücüye geçmek için varyasyon" ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Not: Varyasyon etkinleştirildiğinde, &quot;Varsayılan&quot; adlı varyasyon oluşturulur ve tüm coğrafi veriler buna taşınır. &quot;Nesne Tarayıcı&quot;dan varyasyonları ekleyebilir, yeniden adlandırabilir, kaldırabilirsiniz. Varyasyonlar arasında coğrafi verileri taşıyabilir, kopyalayabilirsiniz. &quot;Çözücüye geçmek için varyasyon&quot; ile seçtiğiniz varyasyondan oluşturulan ızgara öznitelik verileri çözücüye iletilir. Birden fazla varyasyon hazırlayabilir, çözücüye hangisinin geçeceğini değiştirebilir ve farkın etkisinden emin olabilirsiniz.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Uygulamak (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen "Izgara" -&gt; "Attributes Mapping" -&gt; "Execute" menüsü ile manuel olarak haritalayın.</translation>
+        <translation>Aşağıdaki öznitelikler eşlenmedi, çünkü bunlar için ızgara oluşturucu çıkış değerleri. Onlar için coğrafi verileri zorla haritalamak istiyorsanız, lütfen &quot;Izgara&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; menüsü ile manuel olarak haritalayın.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Coğrafi verilerin eşlenmesi tamamlandı</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ızgara özelliği "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ızgara özelliği &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sınır koşulu "%1" elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sınır koşulu &quot;%1&quot; elle düzenlenir. Eşlemeyi yürüttüğünüzde, yaptığınız tüm değişiklikler atılır. Eşlemeyi gerçekten yürütmek istiyor musunuz?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Oto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML KAMU "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt; &lt;p style=" kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML KAMU &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;meta ad =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { boşluk: ön sarma; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt; &lt;p style=&quot; kenar boşluğu -top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kılavuz oluşturulduğunda size sorulur. Öznitelik Eşlemesini her zaman yürütmek için.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuel</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Nitelik eşleme, yalnızca "Yürüt" menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Nitelik eşleme, yalnızca &quot;Yürüt&quot; menüsünü manuel olarak seçtiğinizde yürütülür.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1498,11 +1508,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">TIN'lerle Eşleme</translation>
+        <translation type="vanished">TIN&apos;lerle Eşleme</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN'ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
+        <translation type="vanished">Haritalama için coğrafi verilerden oluşturulan TIN&apos;ler kullanılır. Izgara düğümleri öznitelik değerleri, TIN düğümlerindeki değerlerin ağırlıklı ortalaması olarak hesaplanır.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1822,80 +1832,88 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Izgara Kesiti (%1): ben = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Izgara Kesit Penceresi</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Denetleyici</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Izgara Kesit Penceresi</translation>
+        <translation type="vanished">Izgara Kesit Penceresi</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Ayar Araç Çubuğunu Görüntüle</translation>
+        <translation type="vanished">Ayar Araç Çubuğunu Görüntüle</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Ekran Ayarı Araç Çubuğu</translation>
+        <translation type="vanished">Ekran Ayarı Araç Çubuğu</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Hata</translation>
+        <translation type="vanished">Hata</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>yapılırken hata oluştu %1.</translation>
+        <translation type="vanished">yapılırken hata oluştu %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Ayar</translation>
+        <translation type="vanished">Ayar</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>dizin</translation>
+        <translation type="vanished">dizin</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Uzaklık(m) %1</translation>
+        <translation type="vanished">Uzaklık(m) %1</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>otomatik yeniden ölçeklendirme</translation>
+        <translation type="vanished">otomatik yeniden ölçeklendirme</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>En-boy oranı (D/H): 1 /</translation>
+        <translation type="vanished">En-boy oranı (D/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>En boy oranını düzelt</translation>
+        <translation type="vanished">En boy oranını düzelt</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Bölgeyi düzelt</translation>
+        <translation type="vanished">Bölgeyi düzelt</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Kafes</translation>
+        <translation type="vanished">Kafes</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Ölçek</translation>
+        <translation type="vanished">Ölçek</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Sol/sağ sıra işaretleri</translation>
+        <translation type="vanished">Sol/sağ sıra işaretleri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>en boy oranı</translation>
+        <translation type="vanished">en boy oranı</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Ekran ayarı</translation>
+        <translation type="vanished">Ekran ayarı</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Denetleyici</translation>
+        <translation type="vanished">Denetleyici</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1919,346 +1937,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Yukarı akış/aşağı akış işaretçileri</translation>
+        <translation type="vanished">Yukarı akış/aşağı akış işaretçileri</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Yukarı Taraf</translation>
+        <translation type="vanished">Yukarı Taraf</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Mansap Tarafı</translation>
+        <translation type="vanished">Mansap Tarafı</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Sağ Taraf</translation>
+        <translation type="vanished">Sağ Taraf</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Sol Taraf</translation>
+        <translation type="vanished">Sol Taraf</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>CSV Dosyalarını Dışa Aktar</translation>
+        <translation type="vanished">CSV Dosyalarını Dışa Aktar</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Görünür</translation>
+        <translation type="vanished">Görünür</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>İsim</translation>
+        <translation type="vanished">İsim</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Ayar</translation>
+        <translation type="vanished">Ayar</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Izgara Niteliği Görüntüleme Ayarı (%1)</translation>
+        <translation type="vanished">Izgara Niteliği Görüntüleme Ayarı (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Sol Banka Tarafı</translation>
+        <translation type="vanished">Sol Banka Tarafı</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Sağ Sahil Tarafı</translation>
+        <translation type="vanished">Sağ Sahil Tarafı</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>akıntı yönünde</translation>
+        <translation type="vanished">akıntı yönünde</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Yukarı akış</translation>
+        <translation type="vanished">Yukarı akış</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>En boy oranı (D/Y): 1 / %1</translation>
+        <translation type="vanished">En boy oranı (D/Y): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Anlık Görüntüleri Kaydet</translation>
+        <translation type="vanished">Anlık Görüntüleri Kaydet</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Biçim</translation>
+        <translation type="vanished">Biçim</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Yön</translation>
+        <translation type="vanished">Yön</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>BEN</translation>
+        <translation type="vanished">BEN</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Konum</translation>
+        <translation type="vanished">Konum</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Hücre Değerleri</translation>
+        <translation type="vanished">Hücre Değerleri</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>yukarı taraf</translation>
+        <translation type="vanished">yukarı taraf</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>mansap tarafı</translation>
+        <translation type="vanished">mansap tarafı</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Enstantane fotoğraf (&amp;S)</translation>
+        <translation type="vanished">Enstantane fotoğraf (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV Dışa Aktarma (&amp;C)</translation>
+        <translation type="vanished">CSV Dışa Aktarma (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Izgara Kesiti Pencere Görüntüleme Ayarı</translation>
+        <translation type="vanished">Izgara Kesiti Pencere Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Arka plan ızgarası</translation>
+        <translation type="vanished">Arka plan ızgarası</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tip</translation>
+        <translation type="vanished">Tip</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>çizgiler</translation>
+        <translation type="vanished">çizgiler</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>noktalar</translation>
+        <translation type="vanished">noktalar</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Yatay</translation>
+        <translation type="vanished">Yatay</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Oto</translation>
+        <translation type="vanished">Oto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Ölçek</translation>
+        <translation type="vanished">Ölçek</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>alt ölçek</translation>
+        <translation type="vanished">alt ölçek</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Dikey</translation>
+        <translation type="vanished">Dikey</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Renk:</translation>
+        <translation type="vanished">Renk:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Terazi</translation>
+        <translation type="vanished">Terazi</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Yazı tipi:</translation>
+        <translation type="vanished">Yazı tipi:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Sol/sağ sıra işaretleri</translation>
+        <translation type="vanished">Sol/sağ sıra işaretleri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>en boy oranı</translation>
+        <translation type="vanished">en boy oranı</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Ayarı Dışa Aktar</translation>
+        <translation type="vanished">Ayarı Dışa Aktar</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Klasör ve Önek (&amp; )</translation>
+        <translation type="vanished">Klasör ve Önek (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Dosya:</translation>
+        <translation type="vanished">Dosya:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Önek:</translation>
+        <translation type="vanished">Önek:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Enine kesit</translation>
+        <translation type="vanished">Enine kesit</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Yalnızca Geçerli</translation>
+        <translation type="vanished">Yalnızca Geçerli</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Tüm</translation>
+        <translation type="vanished">Tüm</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Gelenek</translation>
+        <translation type="vanished">Gelenek</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Varım:</translation>
+        <translation type="vanished">Varım:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Maks:</translation>
+        <translation type="vanished">Maks:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Atlama Oranı:</translation>
+        <translation type="vanished">Atlama Oranı:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Izgara Niteliği Görüntüleme Ayarı</translation>
+        <translation type="vanished">Izgara Niteliği Görüntüleme Ayarı</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Görünür</translation>
+        <translation type="vanished">Görünür</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Temel</translation>
+        <translation type="vanished">Temel</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>mod</translation>
+        <translation type="vanished">mod</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Yükseklik tablosu</translation>
+        <translation type="vanished">Yükseklik tablosu</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Bağımsız grafik</translation>
+        <translation type="vanished">Bağımsız grafik</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>renk haritası</translation>
+        <translation type="vanished">renk haritası</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Yükseklik Tablosu Ayarı</translation>
+        <translation type="vanished">Yükseklik Tablosu Ayarı</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Çizgi rengi:</translation>
+        <translation type="vanished">Çizgi rengi:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Hat genişliği:</translation>
+        <translation type="vanished">Hat genişliği:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Puanları Göster</translation>
+        <translation type="vanished">Puanları Göster</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Nokta Büyüklüğü</translation>
+        <translation type="vanished">Nokta Büyüklüğü</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Endeksleri Göster</translation>
+        <translation type="vanished">Endeksleri Göster</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Yazı rengi:</translation>
+        <translation type="vanished">Yazı rengi:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Yazı tipi:</translation>
+        <translation type="vanished">Yazı tipi:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Atlama Oranı:</translation>
+        <translation type="vanished">Atlama Oranı:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Bağımsız Grafik Ayarı</translation>
+        <translation type="vanished">Bağımsız Grafik Ayarı</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Grafik Yüksekliği:</translation>
+        <translation type="vanished">Grafik Yüksekliği:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[piksel]</translation>
+        <translation type="vanished">[piksel]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Başlığı göster</translation>
+        <translation type="vanished">Başlığı göster</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Başlık Yazı Tipi:</translation>
+        <translation type="vanished">Başlık Yazı Tipi:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Eksen Rengi:</translation>
+        <translation type="vanished">Eksen Rengi:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Eksen Yazı Tipi:</translation>
+        <translation type="vanished">Eksen Yazı Tipi:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Renk Haritası Ayarı</translation>
+        <translation type="vanished">Renk Haritası Ayarı</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Başlık Rengi</translation>
+        <translation type="vanished">Başlık Rengi</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not:&lt;/span&gt; Renk ayarını düzenlemek için Colormap sekmesini kullanın&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Ön işleme penceresinin ayarını kullanın</translation>
+        <translation type="vanished">Ön işleme penceresinin ayarını kullanın</translation>
     </message>
 </context>
 <context>
@@ -2359,7 +2377,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Skalar Çubuğu Ayarla (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Kuşbakışı Görünüm Penceresini Aç (&amp;B)</translation>
     </message>
     <message>

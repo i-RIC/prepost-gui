@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Spletna ploščica CSV</translation>
+        <translation type="vanished">Spletna ploščica CSV</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Napaka</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

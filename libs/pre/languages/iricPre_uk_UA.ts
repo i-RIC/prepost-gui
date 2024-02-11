@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="uk_UA">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -11,7 +13,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ім'я:</translation>
+        <translation>Ім&apos;я:</translation>
     </message>
     <message>
         <source>Setting</source>
@@ -74,7 +76,7 @@
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation type="vanished">Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв'язувачем. Можливо, буде імпортовано лише якусь частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
+        <translation type="vanished">Цей файл CGNS створено для %1 версії %2. Він не сумісний з поточним розв&apos;язувачем. Можливо, буде імпортовано лише якусь частину сітки. Ви дійсно хочете імпортувати сітку з цього файлу?</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -113,13 +115,13 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Браузер об'єктів</translation>
+        <translation>Браузер об&apos;єктів</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Вікно сітки з пташиного ока</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не відображаються після останнього редагування. Ви хочете виконати зіставлення зараз?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Налаштування граничних умов "%1"не відображається після останнього редагування. Виконати відображення зараз?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Налаштування граничних умов &quot;%1&quot;не відображається після останнього редагування. Виконати відображення зараз?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>За замовчуванням</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,13 +1056,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>Примітка. Коли варіант увімкнено, створюється варіант із назвою «За замовчуванням», і до нього переміщуються всі географічні дані. Ви можете додавати, перейменовувати, видаляти варіації з «Оглядача об’єктів». Ви можете переміщувати, копіювати географічні дані між варіантами. Дані атрибутів сітки, створені з варіанту, який ви вибрали за допомогою «Варіант для передачі розв’язувачу», передаються розв’язувачу. Ви можете підготувати кілька варіантів, вибрати, які передати розв’язувачу, і переконатися в ефекті різниці.</translation>
     </message>
 </context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Виконати (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Наведені нижче атрибути не були відображені, оскільки вихідні значення генератора сітки для них. Якщо ви хочете відобразити географічні дані для них примусово, будь ласка, зіставте їх вручну за допомогою меню "Сітка" -&gt; "Зіставлення атрибутів" -&gt; "Виконати".</translation>
+        <translation>Наведені нижче атрибути не були відображені, оскільки вихідні значення генератора сітки для них. Якщо ви хочете відобразити географічні дані для них примусово, будь ласка, зіставте їх вручну за допомогою меню &quot;Сітка&quot; -&gt; &quot;Зіставлення атрибутів&quot; -&gt; &quot;Виконати&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картування географічних даних завершено</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибут сітки "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибут сітки &quot;%1&quot;редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Гранична умова "%1"редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Гранична умова &quot;%1&quot;редагується вручну. Коли ви виконуєте зіставлення, усі внесені вами зміни будуть відкинуті. Ви дійсно хочете виконати відображення?</translation>
     </message>
 </context>
 <context>
@@ -1477,19 +1487,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Коли створюється сітка, вас запитують, чи щоразу виконувати відображення атрибутів. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета назва = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Коли створюється сітка, вас запитують, чи щоразу виконувати відображення атрибутів. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Посібник</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Зіставлення атрибутів виконується лише тоді, коли ви вручну вибираєте меню «Виконати».</translation>
     </message>
     <message>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Перетин сітки (%1): Я = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Вікно перетину сітки</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Контролер</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Вікно перетину сітки</translation>
+        <translation type="vanished">Вікно перетину сітки</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Перегляд панелі налаштувань</translation>
+        <translation type="vanished">Перегляд панелі налаштувань</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Панель інструментів налаштування дисплея</translation>
+        <translation type="vanished">Панель інструментів налаштування дисплея</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Налаштування</translation>
+        <translation type="vanished">Налаштування</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Автоматичне масштабування</translation>
+        <translation type="vanished">Автоматичне масштабування</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Співвідношення сторін (В/Г): 1 /</translation>
+        <translation type="vanished">Співвідношення сторін (В/Г): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Виправте співвідношення сторін</translation>
+        <translation type="vanished">Виправте співвідношення сторін</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Виправити регіон</translation>
+        <translation type="vanished">Виправити регіон</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Сітка</translation>
+        <translation type="vanished">Сітка</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>масштаб</translation>
+        <translation type="vanished">масштаб</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Маркери лівого/правого берега</translation>
+        <translation type="vanished">Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Співвідношення сторін</translation>
+        <translation type="vanished">Співвідношення сторін</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Налаштування дисплея</translation>
+        <translation type="vanished">Налаштування дисплея</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Контролер</translation>
+        <translation type="vanished">Контролер</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Помилка</translation>
+        <translation type="vanished">Помилка</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Під час створення сталася помилка %1.</translation>
+        <translation type="vanished">Під час створення сталася помилка %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Індекс</translation>
+        <translation type="vanished">Індекс</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Відстань (м) від %1</translation>
+        <translation type="vanished">Відстань (м) від %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Маркери вгору/вниз за течією</translation>
+        <translation type="vanished">Маркери вгору/вниз за течією</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Верхня сторона</translation>
+        <translation type="vanished">Верхня сторона</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Нижня сторона</translation>
+        <translation type="vanished">Нижня сторона</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Права сторона</translation>
+        <translation type="vanished">Права сторона</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Ліва сторона</translation>
+        <translation type="vanished">Ліва сторона</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Експорт файлів CSV</translation>
+        <translation type="vanished">Експорт файлів CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Видно</translation>
+        <translation type="vanished">Видно</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Ім'я</translation>
+        <translation type="vanished">Ім&apos;я</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Налаштування</translation>
+        <translation type="vanished">Налаштування</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Налаштування відображення атрибутів сітки (%1)</translation>
+        <translation type="vanished">Налаштування відображення атрибутів сітки (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Лівобережна сторона</translation>
+        <translation type="vanished">Лівобережна сторона</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Правобережна сторона</translation>
+        <translation type="vanished">Правобережна сторона</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>За течією</translation>
+        <translation type="vanished">За течією</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Вгору за течією</translation>
+        <translation type="vanished">Вгору за течією</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Співвідношення сторін (В/Г): 1 / %1</translation>
+        <translation type="vanished">Співвідношення сторін (В/Г): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Зберегти знімки</translation>
+        <translation type="vanished">Зберегти знімки</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Напрямок</translation>
+        <translation type="vanished">Напрямок</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>я</translation>
+        <translation type="vanished">я</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>Дж</translation>
+        <translation type="vanished">Дж</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиція</translation>
+        <translation type="vanished">Позиція</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Значення клітинок</translation>
+        <translation type="vanished">Значення клітинок</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Верхня сторона</translation>
+        <translation type="vanished">Верхня сторона</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Нижня сторона</translation>
+        <translation type="vanished">Нижня сторона</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Знімок (&amp;S)</translation>
+        <translation type="vanished">Знімок (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Експорт CSV (&amp;C)</translation>
+        <translation type="vanished">Експорт CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Налаштування відображення вікна поперечного перерізу сітки</translation>
+        <translation type="vanished">Налаштування відображення вікна поперечного перерізу сітки</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Фонова сітка</translation>
+        <translation type="vanished">Фонова сітка</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation type="vanished">Тип</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Лінії</translation>
+        <translation type="vanished">Лінії</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Крапки</translation>
+        <translation type="vanished">Крапки</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтальний</translation>
+        <translation type="vanished">Горизонтальний</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>масштаб</translation>
+        <translation type="vanished">масштаб</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Підшкала</translation>
+        <translation type="vanished">Підшкала</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикальний</translation>
+        <translation type="vanished">Вертикальний</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>колір:</translation>
+        <translation type="vanished">колір:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Ваги</translation>
+        <translation type="vanished">Ваги</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Шрифт:</translation>
+        <translation type="vanished">Шрифт:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Маркери лівого/правого берега</translation>
+        <translation type="vanished">Маркери лівого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Співвідношення сторін</translation>
+        <translation type="vanished">Співвідношення сторін</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Налаштування експорту</translation>
+        <translation type="vanished">Налаштування експорту</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Папка та префікс (&amp; )</translation>
+        <translation type="vanished">Папка та префікс (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Папка:</translation>
+        <translation type="vanished">Папка:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Префікс:</translation>
+        <translation type="vanished">Префікс:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Поперечний переріз</translation>
+        <translation type="vanished">Поперечний переріз</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Лише поточний</translation>
+        <translation type="vanished">Лише поточний</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>все</translation>
+        <translation type="vanished">все</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Custom</translation>
+        <translation type="vanished">Custom</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Я в:</translation>
+        <translation type="vanished">Я в:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Я Макс:</translation>
+        <translation type="vanished">Я Макс:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Швидкість пропуску:</translation>
+        <translation type="vanished">Швидкість пропуску:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Налаштування відображення атрибутів сітки</translation>
+        <translation type="vanished">Налаштування відображення атрибутів сітки</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Видно</translation>
+        <translation type="vanished">Видно</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Базовий</translation>
+        <translation type="vanished">Базовий</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Режим</translation>
+        <translation type="vanished">Режим</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Діаграма висот</translation>
+        <translation type="vanished">Діаграма висот</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Незалежна діаграма</translation>
+        <translation type="vanished">Незалежна діаграма</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Кольорова карта</translation>
+        <translation type="vanished">Кольорова карта</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Налаштування діаграми висот</translation>
+        <translation type="vanished">Налаштування діаграми висот</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Колір лінії:</translation>
+        <translation type="vanished">Колір лінії:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина лінії:</translation>
+        <translation type="vanished">Ширина лінії:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Показати бали</translation>
+        <translation type="vanished">Показати бали</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Розмір точки</translation>
+        <translation type="vanished">Розмір точки</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Показати індекси</translation>
+        <translation type="vanished">Показати індекси</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Колір шрифту:</translation>
+        <translation type="vanished">Колір шрифту:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Шрифт:</translation>
+        <translation type="vanished">Шрифт:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Швидкість пропуску:</translation>
+        <translation type="vanished">Швидкість пропуску:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Незалежне налаштування діаграми</translation>
+        <translation type="vanished">Незалежне налаштування діаграми</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Висота діаграми:</translation>
+        <translation type="vanished">Висота діаграми:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[пікселі]</translation>
+        <translation type="vanished">[пікселі]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Шрифт заголовка:</translation>
+        <translation type="vanished">Шрифт заголовка:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Колір осі:</translation>
+        <translation type="vanished">Колір осі:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Шрифт Axis:</translation>
+        <translation type="vanished">Шрифт Axis:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Налаштування кольорової карти</translation>
+        <translation type="vanished">Налаштування кольорової карти</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примітка.&lt;/span&gt; Використовуйте вкладку «Колірна карта», щоб редагувати налаштування кольору&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Використовуйте налаштування вікна попередньої обробки</translation>
+        <translation type="vanished">Використовуйте налаштування вікна попередньої обробки</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Показати назву</translation>
+        <translation type="vanished">Показати назву</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Колір заголовка</translation>
+        <translation type="vanished">Колір заголовка</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Налаштуйте Скалярну панель (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Відкрийте вікно перегляду пташиного погляду (&amp;B)</translation>
     </message>
     <message>

@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>ไทล์ CSV ของเว็บ</translation>
+        <translation type="vanished">ไทล์ CSV ของเว็บ</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>ข้อผิดพลาด</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

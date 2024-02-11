@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>CSV -flísar á vefnum</translation>
+        <translation type="vanished">CSV -flísar á vefnum</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Villa</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

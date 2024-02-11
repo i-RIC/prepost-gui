@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="lv_LV">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Režģis-putna lidojuma logs</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 netiek kartēti pēc pēdējās rediģēšanas reizes. Vai vēlaties veikt kartēšanu tagad?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Robežnosacījumu iestatīšana "%1"nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Robežnosacījumu iestatīšana &quot;%1&quot;nav kartēts pēc iepriekšējās rediģēšanas. Vai vēlaties veikt kartēšanu tūlīt?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Noklusējums</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no "Objektu pārlūka". Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Piezīme. Kad variants ir iespējots, tiek izveidots variants ar nosaukumu “Noklusējums” un visi ģeogrāfiskie dati tiek pārvietoti uz to. Varat pievienot, pārdēvēt, noņemt variantus no &quot;Objektu pārlūka&quot;. Varat pārvietot, kopēt ģeogrāfiskos datus starp variantiem. Režģa atribūtu dati, kas izveidoti no varianta, kuru atlasāt ar “Variācija, kas jānodod risinātājam”, tiek nodoti risinātājam. Varat sagatavot vairākas variācijas, pārslēgt tās, kuras nodot risinātājam, un pārliecināties par atšķirības ietekmi.</translation>
     </message>
 </context>
 <context>
@@ -1412,7 +1422,7 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeJEdgeDataItem</name>
     <message>
         <source>Edge (J-direction)</source>
-        <translation>Mala (J virziens)</translation>
+        <translation>Mala (J&#xa0;virziens)</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Izpildīt (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni "Režģis" -&gt; "Atribūtu kartēšana" -&gt; "Izpildīt".</translation>
+        <translation>Tālāk norādītie atribūti netika kartēti, jo tīkla ģeneratora izejas vērtības tiem. Ja vēlaties piespiedu kārtā kartēt to ģeogrāfiskos datus, lūdzu, kartējiet manuāli, izmantojot izvēlni &quot;Režģis&quot; -&gt; &quot;Atribūtu kartēšana&quot; -&gt; &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Ģeogrāfisko datu kartēšana ir pabeigta</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Režģa atribūts "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Režģa atribūts &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Robežas nosacījums "%1"tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Robežas nosacījums &quot;%1&quot;tiek rediģēts ar rokām. Veicot kartēšanu, visas jūsu veiktās izmaiņas tiks atmestas. Vai tiešām vēlaties izpildīt kartēšanu?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automātiski</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // LV" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // LV&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nosaukums = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Kad režģis ir izveidots, jums tiek jautāts, vai lai katru reizi izpildītu atribūtu kartēšanu. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Rokasgrāmata</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni "Izpildīt".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Atribūtu kartēšana tiek veikta tikai tad, ja manuāli izvēlaties izvēlni &quot;Izpildīt&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Režģa šķērsgriezums (%1): Es = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Režģa šķērsgriezuma logs</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Kontrolieris</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Režģa šķērsgriezuma logs</translation>
+        <translation type="vanished">Režģa šķērsgriezuma logs</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Skatīt iestatījumu rīkjoslu</translation>
+        <translation type="vanished">Skatīt iestatījumu rīkjoslu</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Displeja iestatīšanas rīkjosla</translation>
+        <translation type="vanished">Displeja iestatīšanas rīkjosla</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Iestatījums</translation>
+        <translation type="vanished">Iestatījums</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Automātiska mērogošana</translation>
+        <translation type="vanished">Automātiska mērogošana</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Malu attiecība (V/H): 1 /</translation>
+        <translation type="vanished">Malu attiecība (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Labojiet malu attiecību</translation>
+        <translation type="vanished">Labojiet malu attiecību</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Labot reģionu</translation>
+        <translation type="vanished">Labot reģionu</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Režģis</translation>
+        <translation type="vanished">Režģis</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Mērogs</translation>
+        <translation type="vanished">Mērogs</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Kreisā/labā krasta marķieri</translation>
+        <translation type="vanished">Kreisā/labā krasta marķieri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Malu attiecība</translation>
+        <translation type="vanished">Malu attiecība</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Displeja iestatījums</translation>
+        <translation type="vanished">Displeja iestatījums</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Kontrolieris</translation>
+        <translation type="vanished">Kontrolieris</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Kļūda</translation>
+        <translation type="vanished">Kļūda</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Veidojot, radās kļūda %1.</translation>
+        <translation type="vanished">Veidojot, radās kļūda %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Rādītājs</translation>
+        <translation type="vanished">Rādītājs</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Attālums (m) no %1</translation>
+        <translation type="vanished">Attālums (m) no %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Augšējā/lejpus straumes marķieri</translation>
+        <translation type="vanished">Augšējā/lejpus straumes marķieri</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Augšpuse</translation>
+        <translation type="vanished">Augšpuse</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Lejas puse</translation>
+        <translation type="vanished">Lejas puse</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Labā puse</translation>
+        <translation type="vanished">Labā puse</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Kreisā puse</translation>
+        <translation type="vanished">Kreisā puse</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Eksportēt CSV failus</translation>
+        <translation type="vanished">Eksportēt CSV failus</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Redzams</translation>
+        <translation type="vanished">Redzams</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Vārds</translation>
+        <translation type="vanished">Vārds</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Iestatījums</translation>
+        <translation type="vanished">Iestatījums</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Režģa atribūtu attēlojuma iestatījums (%1)</translation>
+        <translation type="vanished">Režģa atribūtu attēlojuma iestatījums (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Kreisā krasta puse</translation>
+        <translation type="vanished">Kreisā krasta puse</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Labā krasta puse</translation>
+        <translation type="vanished">Labā krasta puse</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Lejup pa straumi</translation>
+        <translation type="vanished">Lejup pa straumi</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Augštecē</translation>
+        <translation type="vanished">Augštecē</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Malu attiecība (V/H): 1 / %1</translation>
+        <translation type="vanished">Malu attiecība (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Saglabājiet momentuzņēmumus</translation>
+        <translation type="vanished">Saglabājiet momentuzņēmumus</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Veidlapa</translation>
+        <translation type="vanished">Veidlapa</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Virziens</translation>
+        <translation type="vanished">Virziens</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>es</translation>
+        <translation type="vanished">es</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>Dž</translation>
+        <translation type="vanished">Dž</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozīcija</translation>
+        <translation type="vanished">Pozīcija</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Šūnu vērtības</translation>
+        <translation type="vanished">Šūnu vērtības</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Augšpuse</translation>
+        <translation type="vanished">Augšpuse</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Lejpuse</translation>
+        <translation type="vanished">Lejpuse</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Momentuzņēmums (&amp;S)</translation>
+        <translation type="vanished">Momentuzņēmums (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV eksportēšana (&amp;C)</translation>
+        <translation type="vanished">CSV eksportēšana (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Režģa šķērsgriezuma loga displeja iestatījums</translation>
+        <translation type="vanished">Režģa šķērsgriezuma loga displeja iestatījums</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Fona režģis</translation>
+        <translation type="vanished">Fona režģis</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tips</translation>
+        <translation type="vanished">Tips</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Līnijas</translation>
+        <translation type="vanished">Līnijas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Punkti</translation>
+        <translation type="vanished">Punkti</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontāli</translation>
+        <translation type="vanished">Horizontāli</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Mērogs</translation>
+        <translation type="vanished">Mērogs</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Apakšskala</translation>
+        <translation type="vanished">Apakšskala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikāli</translation>
+        <translation type="vanished">Vertikāli</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Krāsa:</translation>
+        <translation type="vanished">Krāsa:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Svari</translation>
+        <translation type="vanished">Svari</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Fonts:</translation>
+        <translation type="vanished">Fonts:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Kreisā/labā krasta marķieri</translation>
+        <translation type="vanished">Kreisā/labā krasta marķieri</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Malu attiecība</translation>
+        <translation type="vanished">Malu attiecība</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Eksportēšanas iestatījums</translation>
+        <translation type="vanished">Eksportēšanas iestatījums</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Mape un prefikss (&amp; )</translation>
+        <translation type="vanished">Mape un prefikss (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Mape:</translation>
+        <translation type="vanished">Mape:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Priedēklis:</translation>
+        <translation type="vanished">Priedēklis:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Šķērsgriezums</translation>
+        <translation type="vanished">Šķērsgriezums</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Tikai pašreizējais</translation>
+        <translation type="vanished">Tikai pašreizējais</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Visi</translation>
+        <translation type="vanished">Visi</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pielāgots</translation>
+        <translation type="vanished">Pielāgots</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>ES piedalos:</translation>
+        <translation type="vanished">ES piedalos:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Es Max:</translation>
+        <translation type="vanished">Es Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Izlaist likme:</translation>
+        <translation type="vanished">Izlaist likme:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Režģa atribūtu displeja iestatījums</translation>
+        <translation type="vanished">Režģa atribūtu displeja iestatījums</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Redzams</translation>
+        <translation type="vanished">Redzams</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Pamata</translation>
+        <translation type="vanished">Pamata</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Režīms</translation>
+        <translation type="vanished">Režīms</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Augstuma diagramma</translation>
+        <translation type="vanished">Augstuma diagramma</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Neatkarīga diagramma</translation>
+        <translation type="vanished">Neatkarīga diagramma</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Krāsu karte</translation>
+        <translation type="vanished">Krāsu karte</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Pacēluma diagrammas iestatījums</translation>
+        <translation type="vanished">Pacēluma diagrammas iestatījums</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Līnijas krāsa:</translation>
+        <translation type="vanished">Līnijas krāsa:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Līnijas platums:</translation>
+        <translation type="vanished">Līnijas platums:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Rādīt punktus</translation>
+        <translation type="vanished">Rādīt punktus</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Punkta lielums</translation>
+        <translation type="vanished">Punkta lielums</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Rādīt indeksus</translation>
+        <translation type="vanished">Rādīt indeksus</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Fonta krāsa:</translation>
+        <translation type="vanished">Fonta krāsa:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Fonts:</translation>
+        <translation type="vanished">Fonts:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Izlaist likme:</translation>
+        <translation type="vanished">Izlaist likme:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Neatkarīgs diagrammas iestatījums</translation>
+        <translation type="vanished">Neatkarīgs diagrammas iestatījums</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Diagrammas augstums:</translation>
+        <translation type="vanished">Diagrammas augstums:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pikseļi]</translation>
+        <translation type="vanished">[pikseļi]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Virsraksta fonts:</translation>
+        <translation type="vanished">Virsraksta fonts:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Ass krāsa:</translation>
+        <translation type="vanished">Ass krāsa:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Ass fonts:</translation>
+        <translation type="vanished">Ass fonts:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Krāsu kartes iestatījums</translation>
+        <translation type="vanished">Krāsu kartes iestatījums</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Piezīme.&lt;/span&gt; Izmantojiet cilni Colormap, lai rediģētu krāsu iestatījumu.&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Izmantojiet priekšapstrādes loga iestatījumu</translation>
+        <translation type="vanished">Izmantojiet priekšapstrādes loga iestatījumu</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Rādīt virsrakstu</translation>
+        <translation type="vanished">Rādīt virsrakstu</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Virsraksta krāsa</translation>
+        <translation type="vanished">Virsraksta krāsa</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Iestatiet Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Atveriet putna lidojuma logu (&amp;B)</translation>
     </message>
     <message>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="vi_VN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,8 +121,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
-        <translation>Cửa sổ Grid Bird's-Eye View</translation>
+        <source>Grid Bird&apos;s-Eye View Window</source>
+        <translation>Cửa sổ Grid Bird&apos;s-Eye View</translation>
     </message>
 </context>
 <context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 không được ánh xạ sau khi chúng được chỉnh sửa lần cuối. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Cài đặt điều kiện ranh giới "%1"không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Cài đặt điều kiện ranh giới &quot;%1&quot;không được ánh xạ sau khi nó được chỉnh sửa lần trước. Bạn có muốn thực hiện ánh xạ ngay bây giờ không?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Mặc định</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Lưu ý: Khi biến thể được bật, biến thể có tên "Mặc định" sẽ được tạo và tất cả dữ liệu địa lý được chuyển đến đó. Bạn có thể thêm, đổi tên, xóa các biến thể khỏi "Trình duyệt đối tượng". Bạn có thể di chuyển, sao chép dữ liệu địa lý giữa các biến thể. Dữ liệu thuộc tính lưới được tạo từ biến thể mà bạn chọn với "Biến thể để chuyển tới bộ giải" sẽ được chuyển tới bộ giải. Bạn có thể chuẩn bị nhiều biến thể, chuyển đổi biến thể nào để chuyển sang bộ giải và đảm bảo hiệu quả của sự khác biệt.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Lưu ý: Khi biến thể được bật, biến thể có tên &quot;Mặc định&quot; sẽ được tạo và tất cả dữ liệu địa lý được chuyển đến đó. Bạn có thể thêm, đổi tên, xóa các biến thể khỏi &quot;Trình duyệt đối tượng&quot;. Bạn có thể di chuyển, sao chép dữ liệu địa lý giữa các biến thể. Dữ liệu thuộc tính lưới được tạo từ biến thể mà bạn chọn với &quot;Biến thể để chuyển tới bộ giải&quot; sẽ được chuyển tới bộ giải. Bạn có thể chuẩn bị nhiều biến thể, chuyển đổi biến thể nào để chuyển sang bộ giải và đảm bảo hiệu quả của sự khác biệt.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Hành hình (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu "Lưới" -&gt; "Ánh xạ thuộc tính" -&gt; "Thực thi".</translation>
+        <translation>Các thuộc tính sau không được ánh xạ vì giá trị đầu ra của máy phát điện lưới cho chúng. Nếu bạn muốn lập bản đồ dữ liệu địa lý cho chúng một cách cưỡng bức, vui lòng lập bản đồ thủ công với menu &quot;Lưới&quot; -&gt; &quot;Ánh xạ thuộc tính&quot; -&gt; &quot;Thực thi&quot;.</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Lập bản đồ dữ liệu địa lý đã hoàn thành</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Thuộc tính lưới "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Thuộc tính lưới &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Điều kiện biên "%1"được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Điều kiện biên &quot;%1&quot;được chỉnh sửa bằng tay. Khi bạn thực hiện ánh xạ, tất cả các sửa đổi bạn đã thực hiện sẽ bị hủy. Bạn có thực sự muốn thực hiện ánh xạ không?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Tự động</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Khi lưới được tạo, bạn được hỏi liệu để thực hiện Ánh xạ thuộc tính mọi lúc. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Thủ công</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu "Thực thi" theo cách thủ công.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Ánh xạ thuộc tính chỉ được thực thi khi bạn chọn menu &quot;Thực thi&quot; theo cách thủ công.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Giao cắt lưới (%1): Tôi = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Cửa sổ mặt cắt lưới</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Bộ điều khiển</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Cửa sổ mặt cắt lưới</translation>
+        <translation type="vanished">Cửa sổ mặt cắt lưới</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Xem Thanh công cụ Cài đặt</translation>
+        <translation type="vanished">Xem Thanh công cụ Cài đặt</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Thanh công cụ cài đặt hiển thị</translation>
+        <translation type="vanished">Thanh công cụ cài đặt hiển thị</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Cài đặt</translation>
+        <translation type="vanished">Cài đặt</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Tự động thay đổi tỷ lệ</translation>
+        <translation type="vanished">Tự động thay đổi tỷ lệ</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Tỷ lệ khung hình (V/H): 1 /</translation>
+        <translation type="vanished">Tỷ lệ khung hình (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Sửa tỷ lệ khung hình</translation>
+        <translation type="vanished">Sửa tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Sửa vùng</translation>
+        <translation type="vanished">Sửa vùng</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>lưới</translation>
+        <translation type="vanished">lưới</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Tỉ lệ</translation>
+        <translation type="vanished">Tỉ lệ</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Điểm đánh dấu bờ trái/phải</translation>
+        <translation type="vanished">Điểm đánh dấu bờ trái/phải</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>tỷ lệ khung hình</translation>
+        <translation type="vanished">tỷ lệ khung hình</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Thiết lập màn hình</translation>
+        <translation type="vanished">Thiết lập màn hình</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Bộ điều khiển</translation>
+        <translation type="vanished">Bộ điều khiển</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Lỗi</translation>
+        <translation type="vanished">Lỗi</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Đã xảy ra lỗi khi thực hiện %1.</translation>
+        <translation type="vanished">Đã xảy ra lỗi khi thực hiện %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Mục lục</translation>
+        <translation type="vanished">Mục lục</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Khoảng cách (m) từ %1</translation>
+        <translation type="vanished">Khoảng cách (m) từ %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Điểm đánh dấu ngược dòng/hạ lưu</translation>
+        <translation type="vanished">Điểm đánh dấu ngược dòng/hạ lưu</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Phía thượng nguồn</translation>
+        <translation type="vanished">Phía thượng nguồn</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Phía hạ lưu</translation>
+        <translation type="vanished">Phía hạ lưu</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Bên phải</translation>
+        <translation type="vanished">Bên phải</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Bên trái</translation>
+        <translation type="vanished">Bên trái</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Xuất tệp CSV</translation>
+        <translation type="vanished">Xuất tệp CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Dễ thấy</translation>
+        <translation type="vanished">Dễ thấy</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Tên</translation>
+        <translation type="vanished">Tên</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Cài đặt</translation>
+        <translation type="vanished">Cài đặt</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Cài đặt hiển thị thuộc tính lưới (%1)</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính lưới (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Bên bờ trái</translation>
+        <translation type="vanished">Bên bờ trái</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Bên Bờ Phải</translation>
+        <translation type="vanished">Bên Bờ Phải</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Hạ lưu</translation>
+        <translation type="vanished">Hạ lưu</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Thượng nguồn</translation>
+        <translation type="vanished">Thượng nguồn</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Tỷ lệ khung hình (V/H): 1 / %1</translation>
+        <translation type="vanished">Tỷ lệ khung hình (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Lưu ảnh chụp nhanh</translation>
+        <translation type="vanished">Lưu ảnh chụp nhanh</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Hình thức</translation>
+        <translation type="vanished">Hình thức</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Phương hướng</translation>
+        <translation type="vanished">Phương hướng</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>TÔI</translation>
+        <translation type="vanished">TÔI</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Chức vụ</translation>
+        <translation type="vanished">Chức vụ</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Giá trị ô</translation>
+        <translation type="vanished">Giá trị ô</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>phía thượng lưu</translation>
+        <translation type="vanished">phía thượng lưu</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>phía hạ lưu</translation>
+        <translation type="vanished">phía hạ lưu</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Ảnh chụp nhanh (&amp;S)</translation>
+        <translation type="vanished">Ảnh chụp nhanh (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Xuất CSV (&amp;C)</translation>
+        <translation type="vanished">Xuất CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Cài đặt hiển thị cửa sổ giao cắt lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị cửa sổ giao cắt lưới</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>lưới nền</translation>
+        <translation type="vanished">lưới nền</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Kiểu</translation>
+        <translation type="vanished">Kiểu</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>dòng</translation>
+        <translation type="vanished">dòng</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>dấu chấm</translation>
+        <translation type="vanished">dấu chấm</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Nằm ngang</translation>
+        <translation type="vanished">Nằm ngang</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Tự động</translation>
+        <translation type="vanished">Tự động</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Tỉ lệ</translation>
+        <translation type="vanished">Tỉ lệ</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>quy mô phụ</translation>
+        <translation type="vanished">quy mô phụ</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Thẳng đứng</translation>
+        <translation type="vanished">Thẳng đứng</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Màu sắc:</translation>
+        <translation type="vanished">Màu sắc:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Quy mô</translation>
+        <translation type="vanished">Quy mô</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Nét chữ:</translation>
+        <translation type="vanished">Nét chữ:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Điểm đánh dấu bờ trái/phải</translation>
+        <translation type="vanished">Điểm đánh dấu bờ trái/phải</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>tỷ lệ khung hình</translation>
+        <translation type="vanished">tỷ lệ khung hình</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Cài đặt xuất</translation>
+        <translation type="vanished">Cài đặt xuất</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Thư mục &amp; tiền tố (&amp; )</translation>
+        <translation type="vanished">Thư mục &amp; tiền tố (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Thư mục:</translation>
+        <translation type="vanished">Thư mục:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Tiếp đầu ngữ:</translation>
+        <translation type="vanished">Tiếp đầu ngữ:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Mặt cắt ngang</translation>
+        <translation type="vanished">Mặt cắt ngang</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Chỉ hiện tại</translation>
+        <translation type="vanished">Chỉ hiện tại</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Tất cả</translation>
+        <translation type="vanished">Tất cả</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Phong tục</translation>
+        <translation type="vanished">Phong tục</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Tôi Min:</translation>
+        <translation type="vanished">Tôi Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>tôi tối đa:</translation>
+        <translation type="vanished">tôi tối đa:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Tỷ lệ bỏ qua:</translation>
+        <translation type="vanished">Tỷ lệ bỏ qua:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Cài đặt hiển thị thuộc tính lưới</translation>
+        <translation type="vanished">Cài đặt hiển thị thuộc tính lưới</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Dễ thấy</translation>
+        <translation type="vanished">Dễ thấy</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Nền tảng</translation>
+        <translation type="vanished">Nền tảng</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Cách thức</translation>
+        <translation type="vanished">Cách thức</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Biểu đồ độ cao</translation>
+        <translation type="vanished">Biểu đồ độ cao</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>biểu đồ độc lập</translation>
+        <translation type="vanished">biểu đồ độc lập</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>bản đồ màu</translation>
+        <translation type="vanished">bản đồ màu</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Cài đặt biểu đồ độ cao</translation>
+        <translation type="vanished">Cài đặt biểu đồ độ cao</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Màu đường kẻ:</translation>
+        <translation type="vanished">Màu đường kẻ:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Chiều rộng dòng:</translation>
+        <translation type="vanished">Chiều rộng dòng:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Hiển thị điểm</translation>
+        <translation type="vanished">Hiển thị điểm</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Kích thước điểm</translation>
+        <translation type="vanished">Kích thước điểm</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Hiển thị chỉ số</translation>
+        <translation type="vanished">Hiển thị chỉ số</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Màu chữ:</translation>
+        <translation type="vanished">Màu chữ:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Nét chữ:</translation>
+        <translation type="vanished">Nét chữ:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Tỷ lệ bỏ qua:</translation>
+        <translation type="vanished">Tỷ lệ bỏ qua:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Cài đặt biểu đồ độc lập</translation>
+        <translation type="vanished">Cài đặt biểu đồ độc lập</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Chiều cao biểu đồ:</translation>
+        <translation type="vanished">Chiều cao biểu đồ:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[điểm ảnh]</translation>
+        <translation type="vanished">[điểm ảnh]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Phông chữ tiêu đề:</translation>
+        <translation type="vanished">Phông chữ tiêu đề:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Màu trục:</translation>
+        <translation type="vanished">Màu trục:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Phông chữ trục:</translation>
+        <translation type="vanished">Phông chữ trục:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Cài đặt bản đồ màu</translation>
+        <translation type="vanished">Cài đặt bản đồ màu</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Lưu ý:&lt;/span&gt; Sử dụng tab Bản đồ màu để chỉnh sửa cài đặt màu&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Lưu ý:&lt;/span&gt; Sử dụng tab Bản đồ màu để chỉnh sửa cài đặt màu&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Sử dụng cài đặt của cửa sổ Tiền xử lý</translation>
+        <translation type="vanished">Sử dụng cài đặt của cửa sổ Tiền xử lý</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Hiển thị tiêu đề</translation>
+        <translation type="vanished">Hiển thị tiêu đề</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Màu của đề mục</translation>
+        <translation type="vanished">Màu của đề mục</translation>
     </message>
 </context>
 <context>
@@ -2367,8 +2385,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Thiết lập thanh vô hướng (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
-        <translation>Mở cửa sổ Bird's-Eye View (&amp;B)</translation>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <translation>Mở cửa sổ Bird&apos;s-Eye View (&amp;B)</translation>
     </message>
     <message>
         <source>Attributes &amp;Generating</source>
