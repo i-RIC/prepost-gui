@@ -134,7 +134,7 @@ void Post2dWindowNodeVectorArrowGroupTopDataItem::doLoadFromProjectMainFile(cons
 
 	if (node.nodeName() == "ArrowGroupV4") {
 		// old style
-		auto target = iRIC::toStr(node.toElement().attribute("target"));
+		auto target = iRIC::toStr(node.toElement().attribute("attribute"));
 		auto item = createChild(target);
 		item->loadFromProjectMainFile(node);
 		m_childItems.push_back(item);
