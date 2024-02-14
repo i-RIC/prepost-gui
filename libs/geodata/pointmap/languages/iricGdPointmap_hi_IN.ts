@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">त्रुटि</translation>
+        <translation>गलती</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>डिलीट करने के बाद पॉइंट क्लाउड डेटा होगा %1 अंक. पॉइंट क्लाउड डेटा में कम से कम 3 पॉइंट होने चाहिए।</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>डेटा में ही शामिल है %1 अंक. पॉइंट क्लाउड डेटा में कम से कम 3 पॉइंट होने चाहिए।</translation>
     </message>
 </context>
 <context>

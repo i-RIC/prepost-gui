@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Despois de eliminar, os datos da nube de puntos terán %1 puntos. Os datos da nube de puntos deben conter polo menos 3 puntos.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Os datos só contén %1 puntos. Os datos da nube de puntos deben conter polo menos 3 puntos.</translation>
     </message>
 </context>
 <context>

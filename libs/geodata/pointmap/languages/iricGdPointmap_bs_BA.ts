@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Greška</translation>
+        <translation>Greška</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nakon brisanja, podaci oblaka tačaka će imati %1 bodova. Podaci oblaka tačaka moraju sadržavati najmanje 3 tačke.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podaci sadrže samo %1 bodova. Podaci oblaka tačaka moraju sadržavati najmanje 3 tačke.</translation>
     </message>
 </context>
 <context>

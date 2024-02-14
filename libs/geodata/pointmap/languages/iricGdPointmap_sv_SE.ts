@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fel</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Efter radering kommer punktmolnets data att ha %1 poäng. Punktmolndata måste innehålla minst 3 punkter.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppgifterna innehåller endast %1 poäng. Punktmolnsdata måste innehålla minst 3 punkter.</translation>
     </message>
 </context>
 <context>

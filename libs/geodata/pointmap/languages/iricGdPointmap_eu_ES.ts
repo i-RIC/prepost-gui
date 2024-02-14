@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Errorea</translation>
+        <translation>Errorea</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ezabatu ondoren, puntu-hodeiko datuak izango dira %1 puntuak. Puntu-hodeiaren datuek 3 puntu izan behar dituzte gutxienez.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datuek bakarrik daukate %1 puntuak. Puntu-hodeiaren datuek 3 puntu izan behar dituzte gutxienez.</translation>
     </message>
 </context>
 <context>

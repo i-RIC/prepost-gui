@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Fout</translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Na het verwijderen zullen de puntenwolkgegevens behouden blijven %1 punten. Puntenwolkgegevens moeten minimaal 3 punten bevatten.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>De gegevens bevatten alleen %1 punten. Puntenwolkgegevens moeten minimaal 3 punten bevatten.</translation>
     </message>
 </context>
 <context>

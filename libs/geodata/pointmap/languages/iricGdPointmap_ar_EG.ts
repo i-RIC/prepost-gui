@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">خطأ</translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>بعد الحذف، سيكون هناك بيانات سحابة النقطة %1 نقاط. يجب أن تحتوي بيانات سحابة النقاط على 3 نقاط على الأقل.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>البيانات تحتوي فقط %1 نقاط. يجب أن تحتوي بيانات سحابة النقاط على 3 نقاط على الأقل.</translation>
     </message>
 </context>
 <context>

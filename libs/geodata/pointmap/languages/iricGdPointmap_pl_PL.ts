@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po usunięciu dane chmury punktów zostaną zachowane %1 zwrotnica. Dane chmury punktów muszą zawierać co najmniej 3 punkty.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane zawierają tylko %1 zwrotnica. Dane chmury punktów muszą zawierać co najmniej 3 punkty.</translation>
     </message>
 </context>
 <context>

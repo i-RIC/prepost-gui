@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Kļūda</translation>
+        <translation>Kļūda</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pēc dzēšanas punktu mākoņa datiem būs %1 punktus. Punktu mākoņa datos jāsatur vismaz 3 punkti.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati satur tikai %1 punktus. Punktu mākoņa datos jāsatur vismaz 3 punkti.</translation>
     </message>
 </context>
 <context>

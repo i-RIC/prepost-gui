@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>삭제 후 포인트 클라우드 데이터는 %1 포인트들. 포인트 클라우드 데이터에는 최소 3개의 포인트가 포함되어야 합니다.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>데이터에는 다음과 같은 내용만 포함됩니다. %1 포인트들. 포인트 클라우드 데이터에는 최소 3개의 포인트가 포함되어야 합니다.</translation>
     </message>
 </context>
 <context>
