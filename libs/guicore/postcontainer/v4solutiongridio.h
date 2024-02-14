@@ -29,6 +29,7 @@ public:
 
 	static v4SolutionGrid* loadParticles2d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);
 	static std::map<std::string, v4SolutionGrid*> loadParticleGroups2d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);
+	static std::map<std::string, v4SolutionGrid*> loadParticleGroupImage2d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);
 
 	static v4SolutionGrid* loadParticles3d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);
 	static std::map<std::string, v4SolutionGrid*> loadParticleGroups3d(SolverDefinitionGridType* gridType, iRICLib::H5CgnsZone* zone, const QPointF& offset, int* ier);

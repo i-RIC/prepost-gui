@@ -14,6 +14,7 @@ Post2dWindowCalculationResultDataItem::Impl::Impl(Post2dWindowCalculationResultD
 	m_particleGroupDataItem {nullptr},
 	m_particlesDataItem {nullptr},
 	m_particleGroupRootDataItem {nullptr},
+	m_particleImageTopDataItem {nullptr},
 	m_polyDataDataItem {nullptr},
 	m_stringDataItem {nullptr},
 	m_item {item}

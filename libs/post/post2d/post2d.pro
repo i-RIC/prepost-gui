@@ -126,7 +126,8 @@ LIBS += \
 	-lvtkRenderingCore-$${VTK_MAJ_MIN} \
 	-lvtkRenderingFreeType-$${VTK_MAJ_MIN} \
 	-lvtkRenderingLabel-$${VTK_MAJ_MIN} \
-	-lvtkRenderingLOD-$${VTK_MAJ_MIN}
+	-lvtkRenderingLOD-$${VTK_MAJ_MIN} \
+	-lvtkRenderingQt-$${VTK_MAJ_MIN}
 
 win32 {
 	DESTDIR = $(SolutionDir)/libdlls/$(Configuration)
@@ -196,6 +197,8 @@ HEADERS += post2d_global.h \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.h \
            datamodel/post2dwindowparticlegrouprootdataitem.h \
            datamodel/post2dwindowparticlegrouptopdataitem.h \
+           datamodel/post2dwindowparticleimagedataitem.h \
+           datamodel/post2dwindowparticleimagetopdataitem.h \
            datamodel/post2dwindowparticlesbasescalardataitem.h \
            datamodel/post2dwindowparticlesbasescalargroupdataitem.h \
            datamodel/post2dwindowparticlesbasetopdataitem.h \
@@ -254,6 +257,12 @@ HEADERS += post2d_global.h \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_setting.h \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget.h \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget_startpositioneditwidget.h \
+           datamodel/private/post2dwindowparticleimagedataitem_impl.h \
+           datamodel/private/post2dwindowparticleimagedataitem_setting.h \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget.h \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget_valuesizepairtablecontroller.h \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget_valuesizepairtablecontroller_delegate.h \
+           datamodel/private/post2dwindowparticleimagedataitem_valuesizepair.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_settingeditwidget.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.h \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.h \
@@ -285,6 +294,7 @@ FORMS += post2dgridregionselectdialog.ui \
          datamodel/private/post2dwindownodevectorstreamlinegroupstructureddataitem_settingeditwidget_startpositioneditwidget.ui \
          datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget.ui \
          datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget_startpositioneditwidget.ui \
+         datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowparticlesbasescalargroupdataitem_settingeditwidget.ui \
          datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.ui \
          datamodel/private/post2dwindowparticlesbasevectorgroupdataitem_settingeditwidget.ui \
@@ -349,6 +359,8 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/post2dwindownodevectorstreamlinegroupunstructureddataitem.cpp \
            datamodel/post2dwindowparticlegrouprootdataitem.cpp \
            datamodel/post2dwindowparticlegrouptopdataitem.cpp \
+           datamodel/post2dwindowparticleimagedataitem.cpp \
+           datamodel/post2dwindowparticleimagetopdataitem.cpp \
            datamodel/post2dwindowparticlesbasescalardataitem.cpp \
            datamodel/post2dwindowparticlesbasescalargroupdataitem.cpp \
            datamodel/post2dwindowparticlesbasetopdataitem.cpp \
@@ -403,6 +415,12 @@ SOURCES += post2dgridregionselectdialog.cpp \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_setting.cpp \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget.cpp \
            datamodel/private/post2dwindownodevectorstreamlinegroupunstructureddataitem_settingeditwidget_startpositioneditwidget.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_impl.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_setting.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget_valuesizepairtablecontroller.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_settingeditwidget_valuesizepairtablecontroller_delegate.cpp \
+           datamodel/private/post2dwindowparticleimagedataitem_valuesizepair.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_settingeditwidget.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidget.cpp \
            datamodel/private/post2dwindowparticlesbasescalargroupdataitem_toolbarwidgetcontroller.cpp \

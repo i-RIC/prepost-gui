@@ -11,6 +11,7 @@
 #include "post2dwindownodevectorstreamlinegroupstructureddataitem.h"
 #include "post2dwindownodevectorstreamlinegroupunstructureddataitem.h"
 #include "post2dwindowparticlegrouprootdataitem.h"
+#include "post2dwindowparticleimagetopdataitem.h"
 #include "post2dwindowparticlestopdataitem.h"
 #include "post2dwindowpolydatatopdataitem.h"
 #include "post2dwindowstringresultdataitem.h"
@@ -76,6 +77,10 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 		impl->m_particleGroupRootDataItem = new Post2dWindowParticleGroupRootDataItem(this);
 	}
 
+	if (cont->particleGroupImageMap().size() > 0) {
+		impl->m_particleImageTopDataItem = new Post2dWindowParticleImageTopDataItem(this);
+	}
+
 	if (cont->polyDataMap().size() > 0) {
 		impl->m_polyDataDataItem = new Post2dWindowPolyDataTopDataItem(this);
 	}
@@ -87,6 +92,7 @@ Post2dWindowCalculationResultDataItem::Post2dWindowCalculationResultDataItem(Pos
 	addChildItem(impl->m_particleGroupDataItem);
 	addChildItem(impl->m_particlesDataItem);
 	addChildItem(impl->m_particleGroupRootDataItem);
+	addChildItem(impl->m_particleImageTopDataItem);
 	addChildItem(impl->m_polyDataDataItem);
 	addChildItem(impl->m_streamlineGroupDataItem);
 	addChildItem(impl->m_graphGroupDataItem);
@@ -152,6 +158,9 @@ void Post2dWindowCalculationResultDataItem::update(bool noParticle)
 	}
 	if (impl->m_particleGroupRootDataItem != nullptr) {
 		impl->m_particleGroupRootDataItem->update();
+	}
+	if (impl->m_particleImageTopDataItem != nullptr) {
+		impl->m_particleImageTopDataItem->update();
 	}
 	if (impl->m_polyDataDataItem != nullptr) {
 		impl->m_polyDataDataItem->update();
@@ -228,6 +237,11 @@ Post2dWindowParticleGroupRootDataItem* Post2dWindowCalculationResultDataItem::pa
 	return impl->m_particleGroupRootDataItem;
 }
 
+Post2dWindowParticleImageTopDataItem* Post2dWindowCalculationResultDataItem::particleImageTopDataItem() const
+{
+	return impl->m_particleImageTopDataItem;
+}
+
 Post2dWindowPolyDataTopDataItem* Post2dWindowCalculationResultDataItem::polyDataDataItem() const
 {
 	return impl->m_polyDataDataItem;
@@ -278,6 +292,17 @@ void Post2dWindowCalculationResultDataItem::assignActorZValues(const ZDepthRange
 			impl->m_particleGroupRootDataItem->setZDepthRange(r);
 		}
 	}
+	if (cont->particleGroupImageMap().size() > 0) {
+		// Particle Image Group
+		max = min - divWidth * gapRate;
+		min = max - divWidth;
+		if (impl->m_particleImageTopDataItem != nullptr) {
+			r = impl->m_particleImageTopDataItem->zDepthRange();
+			r.setRange(min, max);
+			impl->m_particleImageTopDataItem->setZDepthRange(r);
+		}
+	}
+
 	if (cont->polyDataMap().size() > 0) {
 		// PolyData
 		max = min - divWidth * gapRate;
@@ -422,6 +447,11 @@ void Post2dWindowCalculationResultDataItem::doLoadFromProjectMainFile(const QDom
 		impl->m_particleGroupRootDataItem->loadFromProjectMainFile(particlesGroupRootNode);
 	}
 
+	QDomNode particlesGroupImageRootNode = iRIC::getChildNode(node, "SolverParticlesGroupImageV4");
+	if (! particlesGroupImageRootNode.isNull() && impl->m_particleImageTopDataItem != nullptr) {
+		impl->m_particleImageTopDataItem->loadFromProjectMainFile(particlesGroupImageRootNode);
+	}
+
 	QDomNode polyDataNode = iRIC::getChildNode(node, "SolverPolyDataV4");
 	if (! polyDataNode.isNull() && impl->m_polyDataDataItem != nullptr) {
 		impl->m_polyDataDataItem->loadFromProjectMainFile(polyDataNode);
@@ -496,6 +526,12 @@ void Post2dWindowCalculationResultDataItem::doSaveToProjectMainFile(QXmlStreamWr
 	if (impl->m_particleGroupRootDataItem != nullptr) {
 		writer.writeStartElement("SolverParticlesGroupV4");
 		impl->m_particleGroupRootDataItem->saveToProjectMainFile(writer);
+		writer.writeEndElement();
+	}
+
+	if (impl->m_particleImageTopDataItem != nullptr) {
+		writer.writeStartElement("SolverParticlesGroupImageV4");
+		impl->m_particleImageTopDataItem->saveToProjectMainFile(writer);
 		writer.writeEndElement();
 	}
 

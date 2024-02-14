@@ -60,9 +60,22 @@ v4SolutionGrid* v4PostZoneDataContainer::particleGroup(const std::string& name) 
 	return it->second;
 }
 
-const std::map<std::string, v4SolutionGrid*> v4PostZoneDataContainer::particleGroupMap() const
+const std::map<std::string, v4SolutionGrid*>& v4PostZoneDataContainer::particleGroupMap() const
 {
 	return impl->m_particleGroupMap;
+}
+
+v4SolutionGrid* v4PostZoneDataContainer::particleGroupImage(const std::string& name) const
+{
+	auto it = impl->m_particleGroupImageMap.find(name);
+	if (it == impl->m_particleGroupImageMap.end()) {return nullptr;}
+
+	return it->second;
+}
+
+const std::map<std::string, v4SolutionGrid*>& v4PostZoneDataContainer::particleGroupImageMap() const
+{
+	return impl->m_particleGroupImageMap;
 }
 
 v4SolutionGrid* v4PostZoneDataContainer::polyData(const std::string& name) const
@@ -73,7 +86,7 @@ v4SolutionGrid* v4PostZoneDataContainer::polyData(const std::string& name) const
 	return it->second;
 }
 
-const std::map<std::string, v4SolutionGrid*> v4PostZoneDataContainer::polyDataMap() const
+const std::map<std::string, v4SolutionGrid*>& v4PostZoneDataContainer::polyDataMap() const
 {
 	return impl->m_polyDataMap;
 }
@@ -103,6 +116,8 @@ int v4PostZoneDataContainer::loadFromCgnsFile(iRICLib::H5CgnsZone* zone, PreProc
 		if (ier != IRIC_NO_ERROR) {return ier;}
 		impl->m_particleGroupMap = v4SolutionGridIO::loadParticleGroups2d(gridType(), zone, offset(), &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
+		impl->m_particleGroupImageMap = v4SolutionGridIO::loadParticleGroupImage2d(gridType(), zone, offset(), &ier);
+		if (ier != IRIC_NO_ERROR) {return ier;}
 		impl->m_polyDataMap = v4SolutionGridIO::loadPolyDataGroup2d(gridType(), zone, offset(), &ier);
 		if (ier != IRIC_NO_ERROR) {return ier;}
 	} else if (dim == 3) {
@@ -131,10 +146,13 @@ void v4PostZoneDataContainer::applyOffset(const QPointF& offset)
 	if (impl->m_inputGridData != nullptr) {impl->m_inputGridData->grid()->applyOffset(offset);}
 	if (impl->m_gridData != nullptr) {impl->m_gridData->grid()->applyOffset(offset);}
 	if (impl->m_particleData != nullptr) {impl->m_particleData->grid()->applyOffset(offset);}
-	for (auto pair : impl->m_particleGroupMap) {
+	for (auto& pair : impl->m_particleGroupMap) {
 		pair.second->grid()->applyOffset(offset);
 	}
-	for (auto pair : impl->m_polyDataMap) {
+	for (auto& pair : impl->m_particleGroupImageMap) {
+		pair.second->grid()->applyOffset(offset);
+	}
+	for (auto& pair : impl->m_polyDataMap) {
 		pair.second->grid()->applyOffset(offset);
 	}
 }
@@ -162,7 +180,7 @@ std::vector<v4PostCalculatedResult*> v4PostZoneDataContainer::detachCalculatedRe
 	return ret;
 }
 
-void v4PostZoneDataContainer::attachCalculatedResult(std::vector<v4PostCalculatedResult*> results)
+void v4PostZoneDataContainer::attachCalculatedResult(const std::vector<v4PostCalculatedResult*>& results)
 {
 	for (auto r : results) {
 		r->setParent(this);

@@ -17,7 +17,7 @@ Post2dWindowParticleGroupRootDataItem::Post2dWindowParticleGroupRootDataItem(Pos
 	auto cont = zoneDataItem()->v4DataContainer();
 	const auto& map = cont->particleGroupMap();
 
-	for (auto pair : map) {
+	for (const auto& pair : map) {
 		auto gItem = new Post2dWindowParticleGroupTopDataItem(pair.first, this);
 		gItem->setup();
 		m_childItems.push_back(gItem);

@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/libs/post/post2d">
         <file>images/iconVis2D.svg</file>
+        <file>images/particleImage.png</file>
     </qresource>
 </RCC>

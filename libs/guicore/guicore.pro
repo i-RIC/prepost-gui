@@ -203,7 +203,6 @@ HEADERS += guicore_global.h \
            datamodel/graphicswindowrootdataitem.h \
            datamodel/graphicswindowsimpledatamodel.h \
            datamodel/modifycommandandrenderdialog.h \
-           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.h \
            datamodel/propertybrowserattribute.h \
            datamodel/propertybrowserview.h \
            datamodel/vtk2dgraphicsview.h \
@@ -378,6 +377,7 @@ HEADERS += guicore_global.h \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.h \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.h \
            datamodel/private/graphicswindowdataitem_updateactorsettingcommand.h \
+           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.h \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.h \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.h \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.h \
@@ -798,7 +798,6 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/graphicswindowrootdataitem.cpp \
            datamodel/graphicswindowsimpledatamodel.cpp \
            datamodel/modifycommandandrenderdialog.cpp \
-           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.cpp \
            datamodel/propertybrowserattribute.cpp \
            datamodel/propertybrowserview.cpp \
            datamodel/vtk2dgraphicsview.cpp \
@@ -961,6 +960,7 @@ SOURCES += arrows/arrowscolorsettingeditsmallwidget.cpp \
            datamodel/private/graphicswindowdataitem_renderredoonlycommand.cpp \
            datamodel/private/graphicswindowdataitem_standarditemmodifycommand.cpp \
            datamodel/private/graphicswindowdataitem_updateactorsettingcommand.cpp \
+           datamodel/private/graphicswindowdataitem_updateactorsettingrecursivecommand.cpp \
            datamodel/private/graphicswindowrootdataitem_movedowncommand.cpp \
            datamodel/private/graphicswindowrootdataitem_moveupcommand.cpp \
            datamodel/private/vtk2dgraphicsviewanglewidget_angleeditdialog.cpp \
