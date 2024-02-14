@@ -54,6 +54,8 @@ Post3dWindowZoneDataItem* Post3dWindowNodeVectorArrowTopDataItem::zoneDataItem()
 
 void Post3dWindowNodeVectorArrowTopDataItem::doLoadFromProjectMainFile(const QDomNode& node)
 {
+	clearChildItems();
+
 	QDomNodeList children = node.childNodes();
 	for (int i = 0; i < children.count(); ++i) {
 		QDomElement childElem = children.at(i).toElement();
