@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ката</translation>
+        <translation>Ката</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Жок кылгандан кийин, чекит булут маалыматтары болот %1 упайлар. Почта булутунун маалыматы кеминде 3 упайды камтышы керек.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>маалыматтар гана камтыйт %1 упайлар. Почта булутунун маалыматтары кеминде 3 упайды камтышы керек.</translation>
     </message>
 </context>
 <context>

@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistamisen jälkeen pistepilvitiedot ovat %1 pisteitä. Pistepilvitietojen tulee sisältää vähintään 3 pistettä.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedot sisältävät vain %1 pisteitä. Pistepilvitietojen tulee sisältää vähintään 3 pistettä.</translation>
     </message>
 </context>
 <context>

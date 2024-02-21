@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Ошибка</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>После удаления данные облака точек будут иметь %1 точки. Данные облака точек должны содержать как минимум 3 точки.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Данные содержат только %1 точки. Данные облака точек должны содержать как минимум 3 точки.</translation>
     </message>
 </context>
 <context>

@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Viga</translation>
+        <translation>Viga</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pärast kustutamist on punktipilve andmetel %1 punktid. Punktipilve andmed peavad sisaldama vähemalt 3 punkti.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Andmed sisaldavad ainult %1 punktid. Punktipilve andmed peavad sisaldama vähemalt 3 punkti.</translation>
     </message>
 </context>
 <context>

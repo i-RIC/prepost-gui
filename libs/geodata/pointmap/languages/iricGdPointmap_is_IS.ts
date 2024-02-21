@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Villa</translation>
+        <translation>Villa</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eftir að hafa verið eytt munu punktskýjagögnin hafa %1 stig. Punktskýjagögn verða að innihalda að minnsta kosti 3 punkta.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gögnin innihalda aðeins %1 stig. Punktskýjagögn verða að innihalda að minnsta kosti 3 punkta.</translation>
     </message>
 </context>
 <context>

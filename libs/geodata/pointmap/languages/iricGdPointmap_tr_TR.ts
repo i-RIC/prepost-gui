@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hata</translation>
+        <translation>Hata</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Silme işleminden sonra nokta bulutu verileri %1 puan. Nokta bulutu verileri en az 3 nokta içermelidir.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veriler yalnızca %1 puan. Nokta bulutu verileri en az 3 nokta içermelidir.</translation>
     </message>
 </context>
 <context>

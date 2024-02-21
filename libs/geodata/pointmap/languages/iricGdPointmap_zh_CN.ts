@@ -345,11 +345,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>删除后点云数据会有 %1 点。点云数据必须至少包含 3 个点。</translation>
     </message>
 </context>
 <context>
@@ -732,7 +732,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>数据仅包含 %1 点。点云数据必须至少包含 3 个点。</translation>
     </message>
 </context>
 <context>

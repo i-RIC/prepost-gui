@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Feil</translation>
+        <translation>Feil</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Etter sletting vil punktskydata ha %1 poeng. Punktskydata må inneholde minst 3 punkter.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dataene inneholder kun %1 poeng. Punktskydata må inneholde minst 3 punkter.</translation>
     </message>
 </context>
 <context>

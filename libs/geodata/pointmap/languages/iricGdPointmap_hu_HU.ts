@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hiba</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>A törlés után a pontfelhő adatok rendelkeznek %1 pontokat. A pontfelhő adatoknak legalább 3 pontot kell tartalmazniuk.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Az adatok csak %1 pontokat. A pontfelhő adatoknak legalább 3 pontot kell tartalmazniuk.</translation>
     </message>
 </context>
 <context>

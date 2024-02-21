@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Klaida</translation>
+        <translation>Klaida</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ištrynus taškų debesies duomenys turės %1 taškų. Taškinio debesies duomenyse turi būti bent 3 taškai.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Duomenyse yra tik %1 taškų. Taškinio debesies duomenyse turi būti bent 3 taškai.</translation>
     </message>
 </context>
 <context>

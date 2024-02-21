@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Λάθος</translation>
+        <translation>Λάθος</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετά τη διαγραφή, τα δεδομένα σύννεφο σημείο θα έχουν %1 σημεία. Τα δεδομένα νέφους σημείων πρέπει να περιέχουν τουλάχιστον 3 σημεία.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Τα δεδομένα περιέχουν μόνο %1 σημεία. Τα δεδομένα νέφους σημείων πρέπει να περιέχουν τουλάχιστον 3 σημεία.</translation>
     </message>
 </context>
 <context>

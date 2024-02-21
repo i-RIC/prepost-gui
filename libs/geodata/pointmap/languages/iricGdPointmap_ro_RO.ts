@@ -333,11 +333,11 @@
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Eroare</translation>
+        <translation>Eroare</translation>
     </message>
     <message>
         <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>După ștergere, datele din norul de puncte vor avea %1 puncte. Datele din norul de puncte trebuie să conțină cel puțin 3 puncte.</translation>
     </message>
 </context>
 <context>
@@ -685,7 +685,7 @@
     </message>
     <message>
         <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
-        <translation type="unfinished"></translation>
+        <translation>Datele conțin doar %1 puncte. Datele din norul de puncte trebuie să conțină cel puțin 3 puncte.</translation>
     </message>
 </context>
 <context>
