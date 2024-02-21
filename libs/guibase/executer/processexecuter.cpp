@@ -9,7 +9,7 @@ ProcessExecuter::ProcessExecuter(QProcess* process) :
 	m_exitCode {-1},
 	m_exitStatus {QProcess::NormalExit}
 {
-	connect(m_process, SIGNAL(finished(int)), this, SLOT(handleFinished()));
+	connect<void (QProcess::*)(int)>(m_process, &QProcess::finished, this, &ProcessExecuter::handleFinished);
 }
 
 ProcessExecuter::~ProcessExecuter()

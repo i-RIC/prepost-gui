@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -229,8 +231,8 @@
         <translation type="vanished">Spojit...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in "%1" group.</source>
-        <translation>Nejsou k dispozici žádná další data ke sloučení " %1 „skupina.</translation>
+        <source>There is no other data to merge in &quot;%1&quot; group.</source>
+        <translation>Nejsou k dispozici žádná další data ke sloučení &quot; %1 „skupina.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -656,12 +658,12 @@
         <translation>Nebyl zadán žádný oddělovač</translation>
     </message>
     <message>
-        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
-        <translation>Nedostatek hodnot ke čtení "%1"."%1"sloupec je %2 ale %3 zadávání hodnot.</translation>
+        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
+        <translation>Nedostatek hodnot ke čtení &quot;%1&quot;.&quot;%1&quot;sloupec je %2 ale %3 zadávání hodnot.</translation>
     </message>
     <message>
-        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
-        <translation>Při čtení došlo k chybě " %1 „hodnota“. %1 "hodnota by měla být skutečné číslo, ale" %2 “upřesněno.</translation>
+        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
+        <translation>Při čtení došlo k chybě &quot; %1 „hodnota“. %1 &quot;hodnota by měla být skutečné číslo, ale&quot; %2 “upřesněno.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -743,8 +745,8 @@
         <translation>Znak nabídky:</translation>
     </message>
     <message>
-        <source>"</source>
-        <translation>"</translation>
+        <source>&quot;</source>
+        <translation>&quot;</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -848,6 +850,43 @@
     <message>
         <source>Hide Break Lines</source>
         <translation type="vanished">Skrýt čáry přerušení</translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRiter3dImporter</name>
+    <message>
+        <source>RiTER3D project</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RiTER3D project file (*.ertr)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRiter3dLoader</name>
+    <message>
+        <source>Loading RiTER3D project file...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
+        <source>%1 does not exist in the project file</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>GeoDataPointmapRiter3dProjectWatcher</name>
+    <message>
+        <source>Information</source>
+        <translation type="unfinished">Informace</translation>
+    </message>
+    <message>
+        <source>%1 is updated. Starting importing new TIN to %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1057,8 +1096,8 @@
         <translation>Povrch</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1287,8 +1326,8 @@
         <translation>Váhový exponent k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; se používá jako váha při výpočtu váženého průměru hodnot. r je vzdálenost od bodu k uzlu nebo středu buňky, ke kterému je hodnota mapována.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; se používá jako váha při výpočtu váženého průměru hodnot. r je vzdálenost od bodu k uzlu nebo středu buňky, ke kterému je hodnota mapována.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1338,8 +1377,8 @@
         <translation type="vanished">Povrch</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; V „režimu úprav bodů“ je toto nastavení ignorováno a údaje TIN jsou vždy zobrazeny jako body.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1385,8 +1424,8 @@
         <translation>Délka prahové hrany:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka&lt;/span&gt;: Když &amp;quot;Náhledquot; je kliknutí, trojúhelníky, které budou odstraněny, se zobrazí šedě.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka&lt;/span&gt;: Když &amp;quot;Náhledquot; je kliknutí, trojúhelníky, které budou odstraněny, se zobrazí šedě.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1404,8 +1443,8 @@
         <translation type="vanished">Mezní délka hrany:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600;"&gt; Poznámka &lt;/span&gt;: Když kliknete na tlačítko Použít, trojúhelníky, které budou odstraněny, budou namalovány tmavě šedá. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600;&quot;&gt; Poznámka &lt;/span&gt;: Když kliknete na tlačítko Použít, trojúhelníky, které budou odstraněny, budou namalovány tmavě šedá. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
 </context>
 </TS>

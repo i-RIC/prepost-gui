@@ -37,6 +37,9 @@ CONFIG(debug, debug|release) {
 
 	# libpng
 	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/debug/lib"
+
+	# poco
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/poco-1.9.4/lib"
 }
 else {
 	# gdal
@@ -77,6 +80,9 @@ else {
 
 	# libpng
 	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/release/lib"
+
+	# poco
+	LIBS += -L"D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/poco-1.9.4/lib"
 }
 
 INCLUDEPATH += .
@@ -122,6 +128,9 @@ INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/udunits-2.2.26/re
 
 # libpng
 INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/libpng-1.6.37/release/include"
+
+# poco
+INCLUDEPATH += "D:/iRIC/dev_vc2019_64/iricdev-2019/lib/install/poco-1.9.4/include"
 
 #internal libs
 INCLUDEPATH += "$$PWD/libs"

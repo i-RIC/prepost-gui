@@ -50,7 +50,7 @@ void WaitDialogExecuterWatcher::execute()
 	if (e->isFinished() || e->isCanceled()) {
 		return;
 	}
-	connect(m_waitDialog, SIGNAL(canceled()), this, SLOT(cancel()));
+	connect(m_waitDialog, &WaitDialog::canceled, this, &WaitDialogExecuterWatcher::cancel);
 	int progress = m_initialProgress;
 
 	m_waitDialog->setProgress(progress);

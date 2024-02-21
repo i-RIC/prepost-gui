@@ -120,6 +120,20 @@ unix {
     LIBS += -liriclib
 }
 
+# poco
+
+win32 {
+    CONFIG(debug, debug|release) {
+        LIBS += -lPocoFoundationd
+    } else {
+        LIBS += -lPocoFoundation
+    }
+}
+
+unix {
+    LIBS += -lPocoFoundation
+}
+
 # GDAL
 
 win32 {
@@ -148,6 +162,9 @@ HEADERS += gd_pointmap_global.h \
            geodatapointmaprealcreator.h \
            geodatapointmaprealexporter.h \
            geodatapointmaprealtextimporter.h \
+           geodatapointmapriter3dimporter.h \
+           geodatapointmapriter3dloader.h \
+           geodatapointmapriter3dprojectwatcher.h \
            geodatapointmapstlexporter.h \
            geodatapointmapstlimporter.h \
            geodatapointmaptemplatemappingsetting.h \
@@ -192,6 +209,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmap_polygonsmanager_mappingsetting.h \
            private/geodatapointmap_polygonsmanager_rootdataitem.h \
            private/geodatapointmap_polygonsnodemapper.h \
+           private/geodatapointmap_riter3dsetting.h \
            private/geodatapointmap_templatecellmapper.h \
            private/geodatapointmap_templatenodemapper.h \
            private/geodatapointmap_tincellmapper.h \
@@ -217,6 +235,7 @@ HEADERS += gd_pointmap_global.h \
            private/geodatapointmaprealtextimporter_lineparser.h \
            private/geodatapointmaprealtextimporter_settingdialog.h \
            private/geodatapointmaprealtextimporter_values.h \
+           private/geodatapointmapriter3dloader_tarheaderblock.h \
            private/geodatapointmapwebimportersetting_impl.h \
            public/geodatapointmap_displaysettingwidget.h
 FORMS += geodatapointmapmergesettingdialog.ui \
@@ -244,6 +263,9 @@ SOURCES += geodatapointmap.cpp \
            geodatapointmaprealcreator.cpp \
            geodatapointmaprealexporter.cpp \
            geodatapointmaprealtextimporter.cpp \
+           geodatapointmapriter3dimporter.cpp \
+           geodatapointmapriter3dloader.cpp \
+           geodatapointmapriter3dprojectwatcher.cpp \
            geodatapointmapstlexporter.cpp \
            geodatapointmapstlimporter.cpp \
            geodatapointmaptemplatemappingsetting.cpp \
@@ -288,6 +310,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmap_polygonsmanager_mappingsetting.cpp \
            private/geodatapointmap_polygonsmanager_rootdataitem.cpp \
            private/geodatapointmap_polygonsnodemapper.cpp \
+           private/geodatapointmap_riter3dsetting.cpp \
            private/geodatapointmap_templatecellmapper.cpp \
            private/geodatapointmap_templatenodemapper.cpp \
            private/geodatapointmap_tincellmapper.cpp \
@@ -311,6 +334,7 @@ SOURCES += geodatapointmap.cpp \
            private/geodatapointmapproxy_impl.cpp \
            private/geodatapointmaprealtextimporter_lineparser.cpp \
            private/geodatapointmaprealtextimporter_settingdialog.cpp \
+           private/geodatapointmapriter3dloader_tarheaderblock.cpp \
            public/geodatapointmap_displaysettingwidget.cpp
 RESOURCES += pointmap.qrc
 TRANSLATIONS += languages/iricGdPointmap_ar_EG.ts \

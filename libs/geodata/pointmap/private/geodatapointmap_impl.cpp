@@ -1,3 +1,4 @@
+#include "../geodatapointmapriter3dprojectwatcher.h"
 #include "geodatapointmap_impl.h"
 
 #include <QAction>
@@ -13,6 +14,7 @@ GeoDataPointmap::Impl::Impl(GeoDataPointmap* pointmap) :
 	m_templateCellMapper {pointmap},
 	m_polygonsNodeMapper {pointmap},
 	m_polygonsCellMapper {pointmap},
+	m_riter3dWatcher {nullptr},
 	m_removeTrianglesWithLongEdgeAction {new QAction(GeoDataPointmap::tr("Remove Triangles &with Long edge..."), pointmap)},
 	m_remeshAction {new QAction(GeoDataPointmap::tr("Remesh &TINs"), pointmap)},
 	m_modeMenu {new QMenu(GeoDataPointmap::tr("Switch &Mode"))},
@@ -30,6 +32,7 @@ GeoDataPointmap::Impl::Impl(GeoDataPointmap* pointmap) :
 
 GeoDataPointmap::Impl::~Impl()
 {
+	delete m_riter3dWatcher;
 	delete m_rightClickingMenu;
 }
 
@@ -57,4 +60,16 @@ void GeoDataPointmap::Impl::setupActions()
 	m_tinEditModeAction->setChecked(true);
 
 	GeoDataPointmap::connect(m_mergeAction, SIGNAL(triggered()), m_parent, SLOT(mergePointmaps()));
+}
+
+void GeoDataPointmap::Impl::setupRiter3dWatcher()
+{
+	if (m_riter3dWatcher != nullptr) {
+		delete m_riter3dWatcher;
+		m_riter3dWatcher = nullptr;
+	}
+
+	if (! m_riter3dSetting.enabled) {return;}
+
+	m_riter3dWatcher = new GeoDataPointmapRiter3dProjectWatcher(m_riter3dSetting.fileName, m_parent);
 }
