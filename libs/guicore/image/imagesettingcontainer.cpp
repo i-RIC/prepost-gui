@@ -103,21 +103,28 @@ void ImageSettingContainer::setImageBuilder(ImageBuilder* builder)
 void ImageSettingContainer::optimizePosition(VTKGraphicsView* view)
 {
 	double topMargin = 0, bottomMargin = 0, leftMargin = 0, rightMargin = 0;
+	double w = width;
+	double h = height;
+	if (autoSize) {
+		auto s = m_imageBuilder->autoSize();
+		w = s.width();
+		h = s.height();
+	}
 
 	if (position == Position::TopLeft || position == Position::Left || position == Position::BottomLeft) {
 		leftMargin = horizontalMargin;
-		rightMargin = 1 - leftMargin - width / static_cast<double> (view->width());
+		rightMargin = 1 - leftMargin - w / static_cast<double> (view->width());
 	} else if (position == Position::TopRight || position == Position::Right || position == Position::BottomRight) {
 		rightMargin = horizontalMargin;
-		leftMargin = 1 - horizontalMargin - width / static_cast<double> (view->width());
+		leftMargin = 1 - horizontalMargin - w / static_cast<double> (view->width());
 	}
 
 	if (position == Position::TopLeft || position == Position::Top || position == Position::TopRight) {
 		topMargin = verticalMargin;
-		bottomMargin = 1 - verticalMargin - height / static_cast<double> (view->height());
+		bottomMargin = 1 - verticalMargin - h / static_cast<double> (view->height());
 	} else if (position == Position::BottomLeft || position == Position::Bottom || position == Position::BottomRight) {
 		bottomMargin = verticalMargin;
-		topMargin = 1 - verticalMargin - height / static_cast<double> (view->height());
+		topMargin = 1 - verticalMargin - h / static_cast<double> (view->height());
 	}
 
 	if (position == Position::TopLeft || position == Position::TopRight || position == Position::BottomLeft || position == Position::BottomRight) {
