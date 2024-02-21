@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="pt_BR">
 <context>
     <name>GeoDataPointMapDelPtsLessThanDialog</name>
@@ -176,7 +174,7 @@
     </message>
     <message>
         <source>When you want to remove triangles with long edges, you have to switch Display Method to Wireframe or Surface. If you press OK button, Display Method is switched to Wireframe</source>
-        <translation type="vanished">Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o &quot;Modo de exibicao&quot; para &quot;Wireframe&quot; ou &quot;Face interpolada&quot;. Pressione o botao OK e ai o&quot;Modo de exibicao&quot; sera alterado para &quot;Wireframe&quot;.</translation>
+        <translation type="vanished">Para remover os triangulos com bordas compridas, inicialmente voce devera alterar o "Modo de exibicao" para "Wireframe" ou "Face interpolada". Pressione o botao OK e ai o"Modo de exibicao" sera alterado para "Wireframe".</translation>
     </message>
     <message>
         <source>When you edit points, you have to switch to show points. Do you want to switch to show points now?</source>
@@ -243,8 +241,8 @@
         <translation type="vanished">Unir...</translation>
     </message>
     <message>
-        <source>There is no other data to merge in &quot;%1&quot; group.</source>
-        <translation>Não há outros dados para mesclar &quot;%1&quot; grupo.</translation>
+        <source>There is no other data to merge in "%1" group.</source>
+        <translation>Não há outros dados para mesclar "%1" grupo.</translation>
     </message>
     <message>
         <source>%1 duplicate points were found in merge targets, and omitted.</source>
@@ -725,12 +723,12 @@
         <translation>Nenhum delimitador especificado</translation>
     </message>
     <message>
-        <source>Not enough values to read &quot;%1&quot;. &quot;%1&quot; column is %2 but %3 values input.</source>
-        <translation>Valores insuficientes para ler &quot;%1&quot;.&quot;%1&quot;coluna é %2 mas %3 valores de entrada.</translation>
+        <source>Not enough values to read "%1". "%1" column is %2 but %3 values input.</source>
+        <translation>Valores insuficientes para ler "%1"."%1"coluna é %2 mas %3 valores de entrada.</translation>
     </message>
     <message>
-        <source>Error occured while reading &quot;%1&quot; value. &quot;%1&quot; value should be real number, but &quot;%2&quot; specified.</source>
-        <translation>Ocorreu um erro ao ler &quot;%1&quot; valor. &quot;%1&quot;o valor deve ser um número real, mas&quot;%2&quot; Especificadas.</translation>
+        <source>Error occured while reading "%1" value. "%1" value should be real number, but "%2" specified.</source>
+        <translation>Ocorreu um erro ao ler "%1" valor. "%1"o valor deve ser um número real, mas"%2" Especificadas.</translation>
     </message>
     <message>
         <source>Text files (CSV, TSV, etc.)</source>
@@ -812,8 +810,8 @@
         <translation>Citação de personagem:</translation>
     </message>
     <message>
-        <source>&quot;</source>
-        <translation>&quot;</translation>
+        <source>"</source>
+        <translation>"</translation>
     </message>
     <message>
         <source>When you want to specify multiple quote characters, please just input the characters only, no spaces or commas.</source>
@@ -923,37 +921,37 @@
     <name>GeoDataPointmapRiter3dImporter</name>
     <message>
         <source>RiTER3D project</source>
-        <translation type="unfinished"></translation>
+        <translation>Projeto RiTER3D</translation>
     </message>
     <message>
         <source>RiTER3D project file (*.ertr)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arquivo de projeto RiTER3D (*.ertr)</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRiter3dLoader</name>
     <message>
         <source>Loading RiTER3D project file...</source>
-        <translation type="unfinished"></translation>
+        <translation>Carregando arquivo de projeto RiTER3D...</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <source>%1 does not exist in the project file</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 não existe no arquivo do projeto</translation>
     </message>
 </context>
 <context>
     <name>GeoDataPointmapRiter3dProjectWatcher</name>
     <message>
         <source>Information</source>
-        <translation type="unfinished">Informacao</translation>
+        <translation>Informação</translation>
     </message>
     <message>
         <source>%1 is updated. Starting importing new TIN to %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 é atualizada. Começando a importar novo TIN para %2.</translation>
     </message>
 </context>
 <context>
@@ -1163,8 +1161,8 @@
         <translation>Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1393,8 +1391,8 @@
         <translation>Expoente de ponderação k:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=&quot; vertical-align:super;&quot;&gt;k&lt;/span&gt; é usado como o peso ao calcular a média ponderada dos valores. r é a distância do ponto ao nó ou centro da célula, para o qual o valor é mapeado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; is used as the weight when calulating weighted average of the values. r is the distance from the point to the node or cell center, to which the value is mapped.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;r&lt;span style=" vertical-align:super;"&gt;k&lt;/span&gt; é usado como o peso ao calcular a média ponderada dos valores. r é a distância do ponto ao nó ou centro da célula, para o qual o valor é mapeado.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of circle to search for points:</source>
@@ -1444,8 +1442,8 @@
         <translation type="vanished">Superfície</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; When in &amp;quot;Points Edit Mode&amp;quot;, this setting is ignored and TIN data is always shown as points.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação:&lt;/span&gt; Quando no &amp;quot;Modo de edição de pontosquot;, esta configuração é ignorada e os dados TIN são sempre mostrado como pontos.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>Break Lines</source>
@@ -1491,8 +1489,8 @@
         <translation>Limite de comprimento da borda:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Observação&lt;/span&gt;: Quando &amp;quot;Visualizarquot; botão é clicado, os triângulos que serão removidos são mostrados pintados de cinza.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When &amp;quot;Preview&amp;quot; button is click, the triangles that will be removed are shown painted gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Observação&lt;/span&gt;: Quando &amp;quot;Visualizarquot; botão é clicado, os triângulos que serão removidos são mostrados pintados de cinza.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt; (&amp;Q)</translation>
     </message>
     <message>
         <source>&amp;Preview</source>
@@ -1510,8 +1508,8 @@
         <translation type="vanished">Comprimento lateral do valor de limite :</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt; Observacao &lt;/span&gt;: Quando voce clicar no botao Aplicar, os triangulos a serem removidos serao exibidos como pintados com cinza escura. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note&lt;/span&gt;: When you click on apply button, the triangles that will be removed will be painted with dark gray.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt; Observacao &lt;/span&gt;: Quando voce clicar no botao Aplicar, os triangulos a serem removidos serao exibidos como pintados com cinza escura. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
