@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Ubin CSV web</translation>
+        <translation type="vanished">Ubin CSV web</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Kesalahan</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Mreža s pogledom na ptičje oko</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 po zadnjem urejanju niso preslikani. Ali želite zdaj izvesti preslikavo?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Nastavitev mejnega stanja "%1"ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Nastavitev mejnega stanja &quot;%1&quot;ni preslikano, potem ko je bilo nazadnje urejeno. Ali želite preslikavo izvesti zdaj?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Privzeto</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Opomba: Ko je različica omogočena, se ustvari različica z imenom »Privzeto« in vsi geografski podatki so premaknjeni vanjo. Iz "Brskalnika predmetov" lahko dodajate, preimenujete ali odstranjujete različice. Med različicami lahko premikate, kopirate geografske podatke. Podatki atributa mreže, ustvarjeni iz različice, ki jo izberete z »Različica za prenos v reševalec«, se posredujejo v reševalec. Pripravite lahko več različic, preklopite, katero želite posredovati reševalcu, in zagotovite učinek razlike.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Opomba: Ko je različica omogočena, se ustvari različica z imenom »Privzeto« in vsi geografski podatki so premaknjeni vanjo. Iz &quot;Brskalnika predmetov&quot; lahko dodajate, preimenujete ali odstranjujete različice. Med različicami lahko premikate, kopirate geografske podatke. Podatki atributa mreže, ustvarjeni iz različice, ki jo izberete z »Različica za prenos v reševalec«, se posredujejo v reševalec. Pripravite lahko več različic, preklopite, katero želite posredovati reševalcu, in zagotovite učinek razlike.</translation>
     </message>
 </context>
 <context>
@@ -1433,7 +1443,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Izvedite (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Naslednji atributi niso bili preslikani, ker so zanje izhodne vrednosti generatorja omrežja. Če želite za njih prisilno preslikati geografske podatke, ročno preslikajte z menijem »Mreža« -&gt; »Preslikava atributov« -&gt; »Izvedi«.</translation>
     </message>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kartiranje geografskih podatkov je končano</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mreže "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mreže &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Mejni pogoj "%1"je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Mejni pogoj &quot;%1&quot;je ročno urejeno. Ko izvedete preslikavo, bodo vse vaše spremembe zavržene. Ali res želite preslikavo izvesti?</translation>
     </message>
 </context>
 <context>
@@ -1477,19 +1487,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Samodejno</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta ime = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Ko je mreža ustvarjena, vas vprašamo, ali da vsakič izvedete preslikavo atributov. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Priročnik</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Preslikava atributov se izvede le, če ročno izberete meni »Izvedi«.</translation>
     </message>
     <message>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Mrežni presek (%1): Jaz = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Okno mrežnega prereza</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Krmilnik</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Okno mrežnega prereza</translation>
+        <translation type="vanished">Okno mrežnega prereza</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Ogled orodne vrstice za nastavitve</translation>
+        <translation type="vanished">Ogled orodne vrstice za nastavitve</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Orodna vrstica za nastavitev zaslona</translation>
+        <translation type="vanished">Orodna vrstica za nastavitev zaslona</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Nastavitev</translation>
+        <translation type="vanished">Nastavitev</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Samodejno spreminjanje velikosti</translation>
+        <translation type="vanished">Samodejno spreminjanje velikosti</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Razmerje stranic (V/V): 1 /</translation>
+        <translation type="vanished">Razmerje stranic (V/V): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Popravite razmerje stranic</translation>
+        <translation type="vanished">Popravite razmerje stranic</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Popravi regijo</translation>
+        <translation type="vanished">Popravi regijo</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Mreža</translation>
+        <translation type="vanished">Mreža</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Lestvica</translation>
+        <translation type="vanished">Lestvica</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Oznake za levi/desni breg</translation>
+        <translation type="vanished">Oznake za levi/desni breg</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Razmerje</translation>
+        <translation type="vanished">Razmerje</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavitev zaslona</translation>
+        <translation type="vanished">Nastavitev zaslona</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Krmilnik</translation>
+        <translation type="vanished">Krmilnik</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Napaka</translation>
+        <translation type="vanished">Napaka</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Med izdelavo je prišlo do napake %1.</translation>
+        <translation type="vanished">Med izdelavo je prišlo do napake %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Kazalo</translation>
+        <translation type="vanished">Kazalo</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Razdalja (m) od %1</translation>
+        <translation type="vanished">Razdalja (m) od %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Oznake gorvodno/dolvodno</translation>
+        <translation type="vanished">Oznake gorvodno/dolvodno</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Gorvodna stran</translation>
+        <translation type="vanished">Gorvodna stran</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Dolvodna stran</translation>
+        <translation type="vanished">Dolvodna stran</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Desna stran</translation>
+        <translation type="vanished">Desna stran</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Leva stran</translation>
+        <translation type="vanished">Leva stran</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Izvozi datoteke CSV</translation>
+        <translation type="vanished">Izvozi datoteke CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Vidno</translation>
+        <translation type="vanished">Vidno</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Ime</translation>
+        <translation type="vanished">Ime</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Nastavitev</translation>
+        <translation type="vanished">Nastavitev</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Nastavitev prikaza atributa mreže (%1)</translation>
+        <translation type="vanished">Nastavitev prikaza atributa mreže (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Leva stran brega</translation>
+        <translation type="vanished">Leva stran brega</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Desna stran brega</translation>
+        <translation type="vanished">Desna stran brega</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Dolvodno</translation>
+        <translation type="vanished">Dolvodno</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Gorvodno</translation>
+        <translation type="vanished">Gorvodno</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Razmerje stranic (V/V): 1 / %1</translation>
+        <translation type="vanished">Razmerje stranic (V/V): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Shrani posnetke</translation>
+        <translation type="vanished">Shrani posnetke</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Oblika</translation>
+        <translation type="vanished">Oblika</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Smer</translation>
+        <translation type="vanished">Smer</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>jaz</translation>
+        <translation type="vanished">jaz</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Položaj</translation>
+        <translation type="vanished">Položaj</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Vrednosti celice</translation>
+        <translation type="vanished">Vrednosti celice</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Gorvodna stran</translation>
+        <translation type="vanished">Gorvodna stran</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Dolvodna stran</translation>
+        <translation type="vanished">Dolvodna stran</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Posnetek (&amp;S)</translation>
+        <translation type="vanished">Posnetek (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Izvoz CSV (&amp;C)</translation>
+        <translation type="vanished">Izvoz CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Nastavitev prikaza okna prečnega prereza mreže</translation>
+        <translation type="vanished">Nastavitev prikaza okna prečnega prereza mreže</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Mreža ozadja</translation>
+        <translation type="vanished">Mreža ozadja</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Vrsta</translation>
+        <translation type="vanished">Vrsta</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Črte</translation>
+        <translation type="vanished">Črte</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Pike</translation>
+        <translation type="vanished">Pike</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vodoravno</translation>
+        <translation type="vanished">Vodoravno</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Avto</translation>
+        <translation type="vanished">Avto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Lestvica</translation>
+        <translation type="vanished">Lestvica</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Podlestvica</translation>
+        <translation type="vanished">Podlestvica</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Navpično</translation>
+        <translation type="vanished">Navpično</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>barva:</translation>
+        <translation type="vanished">barva:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Luske</translation>
+        <translation type="vanished">Luske</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Pisava:</translation>
+        <translation type="vanished">Pisava:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Oznake za levi/desni breg</translation>
+        <translation type="vanished">Oznake za levi/desni breg</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Razmerje</translation>
+        <translation type="vanished">Razmerje</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Nastavitev izvoza</translation>
+        <translation type="vanished">Nastavitev izvoza</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Mapa in predpona (&amp; )</translation>
+        <translation type="vanished">Mapa in predpona (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Mapa:</translation>
+        <translation type="vanished">Mapa:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Predpona:</translation>
+        <translation type="vanished">Predpona:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Prečni prerez</translation>
+        <translation type="vanished">Prečni prerez</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Samo trenutno</translation>
+        <translation type="vanished">Samo trenutno</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Vse</translation>
+        <translation type="vanished">Vse</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Po meri</translation>
+        <translation type="vanished">Po meri</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>jaz min:</translation>
+        <translation type="vanished">jaz min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Jaz Max:</translation>
+        <translation type="vanished">Jaz Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Stopnja preskakovanja:</translation>
+        <translation type="vanished">Stopnja preskakovanja:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Nastavitev prikaza atributa mreže</translation>
+        <translation type="vanished">Nastavitev prikaza atributa mreže</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Vidno</translation>
+        <translation type="vanished">Vidno</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Osnovno</translation>
+        <translation type="vanished">Osnovno</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Način</translation>
+        <translation type="vanished">Način</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Nadmorska tabela</translation>
+        <translation type="vanished">Nadmorska tabela</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Neodvisni grafikon</translation>
+        <translation type="vanished">Neodvisni grafikon</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barvni zemljevid</translation>
+        <translation type="vanished">Barvni zemljevid</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Nastavitev višinske karte</translation>
+        <translation type="vanished">Nastavitev višinske karte</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Barva črte:</translation>
+        <translation type="vanished">Barva črte:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Širina črte:</translation>
+        <translation type="vanished">Širina črte:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Prikaži točke</translation>
+        <translation type="vanished">Prikaži točke</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Velikost točke</translation>
+        <translation type="vanished">Velikost točke</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Pokaži indekse</translation>
+        <translation type="vanished">Pokaži indekse</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Barva pisave:</translation>
+        <translation type="vanished">Barva pisave:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Pisava:</translation>
+        <translation type="vanished">Pisava:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Stopnja preskakovanja:</translation>
+        <translation type="vanished">Stopnja preskakovanja:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Neodvisna nastavitev grafikona</translation>
+        <translation type="vanished">Neodvisna nastavitev grafikona</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Višina grafikona:</translation>
+        <translation type="vanished">Višina grafikona:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pikslov]</translation>
+        <translation type="vanished">[pikslov]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Pisava naslova:</translation>
+        <translation type="vanished">Pisava naslova:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Barva osi:</translation>
+        <translation type="vanished">Barva osi:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Pisava osi:</translation>
+        <translation type="vanished">Pisava osi:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavitev barvne karte</translation>
+        <translation type="vanished">Nastavitev barvne karte</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Za urejanje barvnih nastavitev uporabite zavihek Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Za urejanje barvnih nastavitev uporabite zavihek Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Uporabite nastavitev okna Predobdelava</translation>
+        <translation type="vanished">Uporabite nastavitev okna Predobdelava</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Prikaži naslov</translation>
+        <translation type="vanished">Prikaži naslov</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Barva naslova</translation>
+        <translation type="vanished">Barva naslova</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Nastavite Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Odprite okno s pogledom na ptice (&amp;B)</translation>
     </message>
     <message>

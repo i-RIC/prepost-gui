@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Web CSV -ruutu</translation>
+        <translation type="vanished">Web CSV -ruutu</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Virhe</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

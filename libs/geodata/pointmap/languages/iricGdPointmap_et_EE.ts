@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Veebi CSV -paan</translation>
+        <translation type="vanished">Veebi CSV -paan</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Viga</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

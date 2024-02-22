@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="hi_IN">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>ग्रिड बर्ड्स-आई व्यू विंडो</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 पिछली बार संपादित किए जाने के बाद मैप नहीं किया जाता है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>सीमा शर्त सेटिंग "%1" पिछली बार संपादित होने के बाद मैप नहीं किया गया है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>सीमा शर्त सेटिंग &quot;%1&quot; पिछली बार संपादित होने के बाद मैप नहीं किया गया है। क्या आप अभी मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>गलती करना</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>नोट: जब वेरिएशन सक्षम होता है, तो "डिफ़ॉल्ट" नाम का वेरिएशन बनाया जाता है, और सभी भौगोलिक डेटा को उसमें ले जाया जाता है। आप "ऑब्जेक्ट ब्राउज़र" से विविधताएं जोड़ सकते हैं, नाम बदल सकते हैं, हटा सकते हैं। आप विविधताओं के बीच भौगोलिक डेटा को स्थानांतरित, कॉपी कर सकते हैं। आपके द्वारा "सॉल्वर को पास करने के लिए वेरिएशन" के साथ चुने गए वेरिएशन से बनाया गया ग्रिड एट्रिब्यूट डेटा सॉल्वर को दिया जाता है। आप कई विविधताएं तैयार कर सकते हैं, जो सॉल्वर को पास करने के लिए स्विच कर सकते हैं और अंतर के प्रभाव को सुनिश्चित कर सकते हैं।</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>नोट: जब वेरिएशन सक्षम होता है, तो &quot;डिफ़ॉल्ट&quot; नाम का वेरिएशन बनाया जाता है, और सभी भौगोलिक डेटा को उसमें ले जाया जाता है। आप &quot;ऑब्जेक्ट ब्राउज़र&quot; से विविधताएं जोड़ सकते हैं, नाम बदल सकते हैं, हटा सकते हैं। आप विविधताओं के बीच भौगोलिक डेटा को स्थानांतरित, कॉपी कर सकते हैं। आपके द्वारा &quot;सॉल्वर को पास करने के लिए वेरिएशन&quot; के साथ चुने गए वेरिएशन से बनाया गया ग्रिड एट्रिब्यूट डेटा सॉल्वर को दिया जाता है। आप कई विविधताएं तैयार कर सकते हैं, जो सॉल्वर को पास करने के लिए स्विच कर सकते हैं और अंतर के प्रभाव को सुनिश्चित कर सकते हैं।</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>निष्पादित करना (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>निम्नलिखित विशेषताओं को मैप नहीं किया गया था, क्योंकि उनके लिए ग्रिड जनरेटर आउटपुट मान। यदि आप उनके लिए जबरदस्ती भौगोलिक डेटा मैप करना चाहते हैं, तो कृपया मेनू "ग्रिड" -&gt; "एट्रिब्यूट्स मैपिंग" -&gt; "एक्ज़ीक्यूट" के साथ मैन्युअल रूप से मैप करें।</translation>
+        <translation>निम्नलिखित विशेषताओं को मैप नहीं किया गया था, क्योंकि उनके लिए ग्रिड जनरेटर आउटपुट मान। यदि आप उनके लिए जबरदस्ती भौगोलिक डेटा मैप करना चाहते हैं, तो कृपया मेनू &quot;ग्रिड&quot; -&gt; &quot;एट्रिब्यूट्स मैपिंग&quot; -&gt; &quot;एक्ज़ीक्यूट&quot; के साथ मैन्युअल रूप से मैप करें।</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>भौगोलिक डेटा का मानचित्रण समाप्त</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>ग्रिड विशेषता "%1" हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>ग्रिड विशेषता &quot;%1&quot; हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>सीमा की स्थिति "%1" हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>सीमा की स्थिति &quot;%1&quot; हाथ से संपादित किया जाता है। जब आप मैपिंग निष्पादित करते हैं, तो आपके द्वारा किए गए सभी संशोधनों को छोड़ दिया जाएगा। क्या आप वाकई मैपिंग निष्पादित करना चाहते हैं?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>ऑटो</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;!DOCTYPE HTML सार्वजनिक "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम ="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style: normal;"&gt; &lt;p style=" मार्जिन -टॉप: 12 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;"&gt; जब ग्रिड बनाया जाता है, तो आपसे पूछा जाता है कि क्या एट्रिब्यूट मैपिंग को हर बार निष्पादित करने के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;!DOCTYPE HTML सार्वजनिक &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt;&lt;head&gt;&lt;मेटा नाम =&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt; p, li { white-space: pre-wrap; } &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style: normal;&quot;&gt; &lt;p style=&quot; मार्जिन -टॉप: 12 पीएक्स; मार्जिन-बॉटम: 12 पीएक्स; मार्जिन-लेफ्ट: 0 पीएक्स; मार्जिन-राइट: 0 पीएक्स; -क्यूटी-ब्लॉक-इंडेंट: 0; टेक्स्ट-इंडेंट: 0 पीएक्स;&quot;&gt; जब ग्रिड बनाया जाता है, तो आपसे पूछा जाता है कि क्या एट्रिब्यूट मैपिंग को हर बार निष्पादित करने के लिए।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>हाथ से किया हुआ</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>विशेषता मानचित्रण केवल तभी निष्पादित होता है जब आप मैन्युअल रूप से "निष्पादित करें" मेनू का चयन करते हैं।</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>विशेषता मानचित्रण केवल तभी निष्पादित होता है जब आप मैन्युअल रूप से &quot;निष्पादित करें&quot; मेनू का चयन करते हैं।</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">ग्रिड क्रॉससेक्शन (%1): मैं = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">ग्रिड क्रॉससेक्शन विंडो</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">नियंत्रक</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>ग्रिड क्रॉससेक्शन विंडो</translation>
+        <translation type="vanished">ग्रिड क्रॉससेक्शन विंडो</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>सेटिंग टूलबार देखें</translation>
+        <translation type="vanished">सेटिंग टूलबार देखें</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>सेटिंग टूलबार प्रदर्शित करें</translation>
+        <translation type="vanished">सेटिंग टूलबार प्रदर्शित करें</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>सेटिंग</translation>
+        <translation type="vanished">सेटिंग</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>ऑटो पुनर्विक्रय</translation>
+        <translation type="vanished">ऑटो पुनर्विक्रय</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>पहलू अनुपात (वी/एच): 1 /</translation>
+        <translation type="vanished">पहलू अनुपात (वी/एच): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>पहलू अनुपात ठीक करें</translation>
+        <translation type="vanished">पहलू अनुपात ठीक करें</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>क्षेत्र ठीक करें</translation>
+        <translation type="vanished">क्षेत्र ठीक करें</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>जाल</translation>
+        <translation type="vanished">जाल</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>पैमाना</translation>
+        <translation type="vanished">पैमाना</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>बाएँ / दाएँ बैंक मार्कर</translation>
+        <translation type="vanished">बाएँ / दाएँ बैंक मार्कर</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>आस्पेक्ट अनुपात</translation>
+        <translation type="vanished">आस्पेक्ट अनुपात</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>सेटिंग दिखाओ</translation>
+        <translation type="vanished">सेटिंग दिखाओ</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>नियंत्रक</translation>
+        <translation type="vanished">नियंत्रक</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>गलती</translation>
+        <translation type="vanished">गलती</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>बनाते समय त्रुटि हुई %1.</translation>
+        <translation type="vanished">बनाते समय त्रुटि हुई %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>अनुक्रमणिका</translation>
+        <translation type="vanished">अनुक्रमणिका</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>दूरी (एम) से %1</translation>
+        <translation type="vanished">दूरी (एम) से %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>अपस्ट्रीम/डाउनस्ट्रीम मार्कर</translation>
+        <translation type="vanished">अपस्ट्रीम/डाउनस्ट्रीम मार्कर</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>अपस्ट्रीम साइड</translation>
+        <translation type="vanished">अपस्ट्रीम साइड</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>डाउनस्ट्रीम साइड</translation>
+        <translation type="vanished">डाउनस्ट्रीम साइड</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>दाईं ओर</translation>
+        <translation type="vanished">दाईं ओर</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>बाईं तरफ</translation>
+        <translation type="vanished">बाईं तरफ</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>सीएसवी फ़ाइलें निर्यात करें</translation>
+        <translation type="vanished">सीएसवी फ़ाइलें निर्यात करें</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>दृश्यमान</translation>
+        <translation type="vanished">दृश्यमान</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>नाम</translation>
+        <translation type="vanished">नाम</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>सेटिंग</translation>
+        <translation type="vanished">सेटिंग</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>ग्रिड विशेषता प्रदर्शन सेटिंग (%1)</translation>
+        <translation type="vanished">ग्रिड विशेषता प्रदर्शन सेटिंग (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>वाम तट की ओर</translation>
+        <translation type="vanished">वाम तट की ओर</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>दाहिने किनारे की ओर</translation>
+        <translation type="vanished">दाहिने किनारे की ओर</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>डाउनस्ट्रीम</translation>
+        <translation type="vanished">डाउनस्ट्रीम</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>नदी के ऊपर</translation>
+        <translation type="vanished">नदी के ऊपर</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>पहलू अनुपात (वी/एच): 1 / %1</translation>
+        <translation type="vanished">पहलू अनुपात (वी/एच): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>स्नैपशॉट सहेजें</translation>
+        <translation type="vanished">स्नैपशॉट सहेजें</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>प्रपत्र</translation>
+        <translation type="vanished">प्रपत्र</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>दिशा</translation>
+        <translation type="vanished">दिशा</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>मैं</translation>
+        <translation type="vanished">मैं</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>जे</translation>
+        <translation type="vanished">जे</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>पद</translation>
+        <translation type="vanished">पद</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>सेल मान</translation>
+        <translation type="vanished">सेल मान</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>अपस्ट्रीम साइड</translation>
+        <translation type="vanished">अपस्ट्रीम साइड</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>नीचे की ओर</translation>
+        <translation type="vanished">नीचे की ओर</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>स्नैपशॉट (&amp;S)</translation>
+        <translation type="vanished">स्नैपशॉट (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>सीएसवी निर्यात (&amp;C)</translation>
+        <translation type="vanished">सीएसवी निर्यात (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>ग्रिड क्रॉससेक्शन विंडो डिस्प्ले सेटिंग</translation>
+        <translation type="vanished">ग्रिड क्रॉससेक्शन विंडो डिस्प्ले सेटिंग</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>पृष्ठभूमि ग्रिड</translation>
+        <translation type="vanished">पृष्ठभूमि ग्रिड</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>प्रकार</translation>
+        <translation type="vanished">प्रकार</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>पंक्तियां</translation>
+        <translation type="vanished">पंक्तियां</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>डॉट्स</translation>
+        <translation type="vanished">डॉट्स</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>क्षैतिज</translation>
+        <translation type="vanished">क्षैतिज</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>ऑटो</translation>
+        <translation type="vanished">ऑटो</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>पैमाना</translation>
+        <translation type="vanished">पैमाना</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>उप पैमाना</translation>
+        <translation type="vanished">उप पैमाना</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>खड़ा</translation>
+        <translation type="vanished">खड़ा</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>रंग:</translation>
+        <translation type="vanished">रंग:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>तराजू</translation>
+        <translation type="vanished">तराजू</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>फ़ॉन्ट:</translation>
+        <translation type="vanished">फ़ॉन्ट:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>बाएँ / दाएँ बैंक मार्कर</translation>
+        <translation type="vanished">बाएँ / दाएँ बैंक मार्कर</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>आस्पेक्ट अनुपात</translation>
+        <translation type="vanished">आस्पेक्ट अनुपात</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>निर्यात सेटिंग</translation>
+        <translation type="vanished">निर्यात सेटिंग</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>फ़ोल्डर और उपसर्ग (&amp; )</translation>
+        <translation type="vanished">फ़ोल्डर और उपसर्ग (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>फ़ोल्डर:</translation>
+        <translation type="vanished">फ़ोल्डर:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>उपसर्ग:</translation>
+        <translation type="vanished">उपसर्ग:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>क्रॉस सेक्शन</translation>
+        <translation type="vanished">क्रॉस सेक्शन</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>केवल वर्तमान</translation>
+        <translation type="vanished">केवल वर्तमान</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>सभी</translation>
+        <translation type="vanished">सभी</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>रिवाज़</translation>
+        <translation type="vanished">रिवाज़</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>मैं भी शामिल:</translation>
+        <translation type="vanished">मैं भी शामिल:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>मैं मैक्स:</translation>
+        <translation type="vanished">मैं मैक्स:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>छोड़ें दर:</translation>
+        <translation type="vanished">छोड़ें दर:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>ग्रिड विशेषता प्रदर्शन सेटिंग</translation>
+        <translation type="vanished">ग्रिड विशेषता प्रदर्शन सेटिंग</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>दृश्यमान</translation>
+        <translation type="vanished">दृश्यमान</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>बुनियादी</translation>
+        <translation type="vanished">बुनियादी</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>तरीका</translation>
+        <translation type="vanished">तरीका</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>ऊंचाई चार्ट</translation>
+        <translation type="vanished">ऊंचाई चार्ट</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>स्वतंत्र चार्ट</translation>
+        <translation type="vanished">स्वतंत्र चार्ट</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>रंग मैप</translation>
+        <translation type="vanished">रंग मैप</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>ऊंचाई चार्ट सेटिंग</translation>
+        <translation type="vanished">ऊंचाई चार्ट सेटिंग</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>रेखा रंग:</translation>
+        <translation type="vanished">रेखा रंग:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>रेखा की चौडाई:</translation>
+        <translation type="vanished">रेखा की चौडाई:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>अंक दिखाएँ</translation>
+        <translation type="vanished">अंक दिखाएँ</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>बिंदु का आकार</translation>
+        <translation type="vanished">बिंदु का आकार</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>सूचकांक दिखाएं</translation>
+        <translation type="vanished">सूचकांक दिखाएं</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>लिपि का रंग:</translation>
+        <translation type="vanished">लिपि का रंग:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>फ़ॉन्ट:</translation>
+        <translation type="vanished">फ़ॉन्ट:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>छोड़ें दर:</translation>
+        <translation type="vanished">छोड़ें दर:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>स्वतंत्र चार्ट सेटिंग</translation>
+        <translation type="vanished">स्वतंत्र चार्ट सेटिंग</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>चार्ट ऊंचाई:</translation>
+        <translation type="vanished">चार्ट ऊंचाई:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[पिक्सल]</translation>
+        <translation type="vanished">[पिक्सल]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>टाइटल फ़ॉन्ट:</translation>
+        <translation type="vanished">टाइटल फ़ॉन्ट:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>एक्सिस रंग:</translation>
+        <translation type="vanished">एक्सिस रंग:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>एक्सिस फ़ॉन्ट:</translation>
+        <translation type="vanished">एक्सिस फ़ॉन्ट:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>कलरमैप सेटिंग</translation>
+        <translation type="vanished">कलरमैप सेटिंग</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;ध्यान दें:&lt;/span&gt; रंग सेटिंग संपादित करने के लिए Colormap टैब का उपयोग करें&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ध्यान दें:&lt;/span&gt; रंग सेटिंग संपादित करने के लिए Colormap टैब का उपयोग करें&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
+        <translation type="vanished">प्री-प्रोसेसिंग विंडो की सेटिंग का उपयोग करें</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>शीर्षक दिखाओ</translation>
+        <translation type="vanished">शीर्षक दिखाओ</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>शीर्षक रंग</translation>
+        <translation type="vanished">शीर्षक रंग</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">स्केलरबार सेट करें (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>बर्ड्स-आई व्यू विंडो खोलें (&amp;B)</translation>
     </message>
     <message>

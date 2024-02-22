@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Žiniatinklio CSV plytelė</translation>
+        <translation type="vanished">Žiniatinklio CSV plytelė</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Klaida</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

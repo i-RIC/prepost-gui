@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="eu_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Saretako hegazti-begi leihoa</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 ez dira mapatzen azken aldian editatu ondoren. Mapak gauzatu nahi dituzu orain?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Mugaren baldintza ezarpena "%1"ez da mapatzen azken aldian editatu ondoren. Mapaketa exekutatu nahi al duzu orain?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Mugaren baldintza ezarpena &quot;%1&quot;ez da mapatzen azken aldian editatu ondoren. Mapaketa exekutatu nahi al duzu orain?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Lehenetsia</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Oharra: aldakuntza gaituta dagoenean, "Lehenetsia" izeneko aldakuntza sortzen da eta datu geografiko guztiak horretara eramaten dira. "Object Browser"-tik aldakuntzak gehitu, izena aldatu eta kendu ditzakezu. Datu geografikoak aldaketen artean mugitu eta kopiatu ditzakezu. "Aldakuntza konpontzaileari pasatzeko" aukerarekin hautatzen duzun aldakuntzatik sortutako sareta-atributu-datuak konpontzaileari pasatzen zaizkio. Hainbat aldaera prestatu ditzakezu, konpontzaileari zeintzuk pasatu eta diferentziaren eragina ziurtatu.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Oharra: aldakuntza gaituta dagoenean, &quot;Lehenetsia&quot; izeneko aldakuntza sortzen da eta datu geografiko guztiak horretara eramaten dira. &quot;Object Browser&quot;-tik aldakuntzak gehitu, izena aldatu eta kendu ditzakezu. Datu geografikoak aldaketen artean mugitu eta kopiatu ditzakezu. &quot;Aldakuntza konpontzaileari pasatzeko&quot; aukerarekin hautatzen duzun aldakuntzatik sortutako sareta-atributu-datuak konpontzaileari pasatzen zaizkio. Hainbat aldaera prestatu ditzakezu, konpontzaileari zeintzuk pasatu eta diferentziaren eragina ziurtatu.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Exekutatu (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Atributu hauek ez ziren mapatu, sarearen sorgailuaren irteerako balioak direlako. Horiei buruzko datu geografikoak indarrez mapatu nahi badituzu, eskuz mapatu "Sareta" menuarekin -&gt; "Atributuak Kartografia" -&gt; "Exekutatu" menuarekin.</translation>
+        <translation>Atributu hauek ez ziren mapatu, sarearen sorgailuaren irteerako balioak direlako. Horiei buruzko datu geografikoak indarrez mapatu nahi badituzu, eskuz mapatu &quot;Sareta&quot; menuarekin -&gt; &quot;Atributuak Kartografia&quot; -&gt; &quot;Exekutatu&quot; menuarekin.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Datu geografikoak kartografiatzea amaitu da</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Sareta atributua "%1"eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Sareta atributua &quot;%1&quot;eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Muga baldintza "%1"eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Muga baldintza &quot;%1&quot;eskuz editatzen da. Kartografia exekutatzen duzunean, egindako aldaketa guztiak baztertuko dira. Benetan mapak exekutatu nahi dituzu?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automatikoa</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Sareta sortzean, galdetuko zaizu ea Attribute Mapping bakoitzean exekutatzeko. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta izena = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Sareta sortzean, galdetuko zaizu ea Attribute Mapping bakoitzean exekutatzeko. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Eskuzkoa</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Atributuen mapaketa "Exekutatu" menua eskuz aukeratzen duzunean bakarrik gauzatzen da.</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Atributuen mapaketa &quot;Exekutatu&quot; menua eskuz aukeratzen duzunean bakarrik gauzatzen da.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Sareta gurutzatua (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Sare-ebakiduraren leihoa</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Kontrolatzailea</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Sare-ebakiduraren leihoa</translation>
+        <translation type="vanished">Sare-ebakiduraren leihoa</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Ikusi Ezarpen-tresna-barra</translation>
+        <translation type="vanished">Ikusi Ezarpen-tresna-barra</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Bistaratzeko ezarpenen tresna-barra</translation>
+        <translation type="vanished">Bistaratzeko ezarpenen tresna-barra</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Ezarpena</translation>
+        <translation type="vanished">Ezarpena</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Eskalatze automatikoa</translation>
+        <translation type="vanished">Eskalatze automatikoa</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Aspektu-erlazioa (V/H): 1/</translation>
+        <translation type="vanished">Aspektu-erlazioa (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Konpondu aspektu-erlazioa</translation>
+        <translation type="vanished">Konpondu aspektu-erlazioa</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Konpondu eskualdea</translation>
+        <translation type="vanished">Konpondu eskualdea</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Sarea</translation>
+        <translation type="vanished">Sarea</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Eskala</translation>
+        <translation type="vanished">Eskala</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Ezkerreko/eskuineko ertzetako markatzaileak</translation>
+        <translation type="vanished">Ezkerreko/eskuineko ertzetako markatzaileak</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Aspektu-erlazioa</translation>
+        <translation type="vanished">Aspektu-erlazioa</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Bistaratzeko ezarpena</translation>
+        <translation type="vanished">Bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Kontrolatzailea</translation>
+        <translation type="vanished">Kontrolatzailea</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Errorea</translation>
+        <translation type="vanished">Errorea</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Errore bat gertatu da egiterakoan %1.</translation>
+        <translation type="vanished">Errore bat gertatu da egiterakoan %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Aurkibidea</translation>
+        <translation type="vanished">Aurkibidea</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Distantzia(m)-tik %1</translation>
+        <translation type="vanished">Distantzia(m)-tik %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Gora/behera markatzaileak</translation>
+        <translation type="vanished">Gora/behera markatzaileak</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Gora Aldea</translation>
+        <translation type="vanished">Gora Aldea</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Beheko Aldea</translation>
+        <translation type="vanished">Beheko Aldea</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Eskuin aldea</translation>
+        <translation type="vanished">Eskuin aldea</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Ezkerreko Aldea</translation>
+        <translation type="vanished">Ezkerreko Aldea</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Esportatu CSV fitxategiak</translation>
+        <translation type="vanished">Esportatu CSV fitxategiak</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Ikusgai</translation>
+        <translation type="vanished">Ikusgai</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Izena</translation>
+        <translation type="vanished">Izena</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Ezarpena</translation>
+        <translation type="vanished">Ezarpena</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Sare-atributuen bistaratzeko ezarpena (%1)</translation>
+        <translation type="vanished">Sare-atributuen bistaratzeko ezarpena (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Ezkerreko ertzean</translation>
+        <translation type="vanished">Ezkerreko ertzean</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Eskuineko ertzean</translation>
+        <translation type="vanished">Eskuineko ertzean</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Uretan behera</translation>
+        <translation type="vanished">Uretan behera</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Ibai gora</translation>
+        <translation type="vanished">Ibai gora</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Aspektu-erlazioa (V/H): 1/ %1</translation>
+        <translation type="vanished">Aspektu-erlazioa (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Gorde argazkiak</translation>
+        <translation type="vanished">Gorde argazkiak</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Forma</translation>
+        <translation type="vanished">Forma</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Norabidea</translation>
+        <translation type="vanished">Norabidea</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>I</translation>
+        <translation type="vanished">I</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posizioa</translation>
+        <translation type="vanished">Posizioa</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Gelaxka-balioak</translation>
+        <translation type="vanished">Gelaxka-balioak</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Ibai gora aldean</translation>
+        <translation type="vanished">Ibai gora aldean</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Beheko aldean</translation>
+        <translation type="vanished">Beheko aldean</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Argazkia (&amp;S)</translation>
+        <translation type="vanished">Argazkia (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV esportazioa (&amp;C)</translation>
+        <translation type="vanished">CSV esportazioa (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Sarearen ebakiduraren leihoaren bistaratzeko ezarpena</translation>
+        <translation type="vanished">Sarearen ebakiduraren leihoaren bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Atzeko planoko sareta</translation>
+        <translation type="vanished">Atzeko planoko sareta</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Mota</translation>
+        <translation type="vanished">Mota</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Lerroak</translation>
+        <translation type="vanished">Lerroak</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Puntuak</translation>
+        <translation type="vanished">Puntuak</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontala</translation>
+        <translation type="vanished">Horizontala</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Autoa</translation>
+        <translation type="vanished">Autoa</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Eskala</translation>
+        <translation type="vanished">Eskala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Azpi-eskala</translation>
+        <translation type="vanished">Azpi-eskala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Bertikala</translation>
+        <translation type="vanished">Bertikala</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Kolore:</translation>
+        <translation type="vanished">Kolore:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Eskalak</translation>
+        <translation type="vanished">Eskalak</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Letra-tipoa:</translation>
+        <translation type="vanished">Letra-tipoa:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Ezkerreko/eskuineko ertzetako markatzaileak</translation>
+        <translation type="vanished">Ezkerreko/eskuineko ertzetako markatzaileak</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Aspektu-erlazioa</translation>
+        <translation type="vanished">Aspektu-erlazioa</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Esportatu ezarpena</translation>
+        <translation type="vanished">Esportatu ezarpena</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Karpeta eta Aurrizkia (&amp; )</translation>
+        <translation type="vanished">Karpeta eta Aurrizkia (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Karpeta:</translation>
+        <translation type="vanished">Karpeta:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Aurrizkia:</translation>
+        <translation type="vanished">Aurrizkia:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Zehar-Sekzioa</translation>
+        <translation type="vanished">Zehar-Sekzioa</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Oraingo bakarra</translation>
+        <translation type="vanished">Oraingo bakarra</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Denak</translation>
+        <translation type="vanished">Denak</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Pertsonalizatua</translation>
+        <translation type="vanished">Pertsonalizatua</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>I Min:</translation>
+        <translation type="vanished">I Min:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Max:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Saltatze-tasa:</translation>
+        <translation type="vanished">Saltatze-tasa:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Sareta-atributuak bistaratzeko ezarpena</translation>
+        <translation type="vanished">Sareta-atributuak bistaratzeko ezarpena</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Ikusgai</translation>
+        <translation type="vanished">Ikusgai</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Oinarrizkoa</translation>
+        <translation type="vanished">Oinarrizkoa</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Era</translation>
+        <translation type="vanished">Era</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Kota-diagrama</translation>
+        <translation type="vanished">Kota-diagrama</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Grafiko independentea</translation>
+        <translation type="vanished">Grafiko independentea</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Kolore-mapa</translation>
+        <translation type="vanished">Kolore-mapa</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Kota-diagramaren ezarpena</translation>
+        <translation type="vanished">Kota-diagramaren ezarpena</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Lerroaren kolorea:</translation>
+        <translation type="vanished">Lerroaren kolorea:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Lerroaren zabalera:</translation>
+        <translation type="vanished">Lerroaren zabalera:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Erakutsi Puntuak</translation>
+        <translation type="vanished">Erakutsi Puntuak</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Puntuen tamaina</translation>
+        <translation type="vanished">Puntuen tamaina</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Erakutsi indizeak</translation>
+        <translation type="vanished">Erakutsi indizeak</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Letra-tipoaren kolorea:</translation>
+        <translation type="vanished">Letra-tipoaren kolorea:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Letra-tipoa:</translation>
+        <translation type="vanished">Letra-tipoa:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Saltatze-tasa:</translation>
+        <translation type="vanished">Saltatze-tasa:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Grafikoen ezarpen independentea</translation>
+        <translation type="vanished">Grafikoen ezarpen independentea</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Taularen altuera:</translation>
+        <translation type="vanished">Taularen altuera:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pixelak]</translation>
+        <translation type="vanished">[pixelak]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Izenburuaren letra:</translation>
+        <translation type="vanished">Izenburuaren letra:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Ardatzaren kolorea:</translation>
+        <translation type="vanished">Ardatzaren kolorea:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Ardatz letra-tipoa:</translation>
+        <translation type="vanished">Ardatz letra-tipoa:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Kolore maparen ezarpena</translation>
+        <translation type="vanished">Kolore maparen ezarpena</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Oharra:&lt;/span&gt; Erabili Kolore-mapa fitxa kolore-ezarpena editatzeko&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oharra:&lt;/span&gt; Erabili Kolore-mapa fitxa kolore-ezarpena editatzeko&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Erabili Aurreprozesatzeko leihoaren ezarpena</translation>
+        <translation type="vanished">Erabili Aurreprozesatzeko leihoaren ezarpena</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Erakutsi izenburua</translation>
+        <translation type="vanished">Erakutsi izenburua</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Izenburuaren kolorea</translation>
+        <translation type="vanished">Izenburuaren kolorea</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Konfiguratu Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Ireki hegazti-begien leihoa (&amp;B)</translation>
     </message>
     <message>

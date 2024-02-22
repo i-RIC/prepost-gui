@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ru_RU">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Окно обзора сетки с высоты птичьего полета</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 не отображаются после последнего редактирования. Вы хотите выполнить отображение сейчас?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Установка граничных условий » %1 "не отображается после последнего редактирования. Вы хотите выполнить сопоставление сейчас?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Установка граничных условий » %1 &quot;не отображается после последнего редактирования. Вы хотите выполнить сопоставление сейчас?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>По умолчанию</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,13 +1056,13 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
         <translation>Примечание. Когда вариант включен, создается вариант с именем «По умолчанию», и все географические данные перемещаются в него. Вы можете добавлять, переименовывать, удалять варианты из «Обозревателя объектов». Вы можете перемещать, копировать географические данные между вариантами. Данные атрибута сетки, созданные из варианта, выбранного с помощью параметра «Вариант для передачи в решатель», передаются решателю. Вы можете подготовить несколько вариантов, выбрать, какой из них передать решателю, и убедиться в эффекте разницы.</translation>
     </message>
 </context>
@@ -1433,7 +1443,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Выполнять (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Следующие атрибуты не были сопоставлены, потому что для них были выведены значения генератора сетки. Если вы хотите сопоставить географические данные для них принудительно, выполните сопоставление вручную с помощью меню «Сетка» -&gt; «Сопоставление атрибутов» -&gt; «Выполнить».</translation>
     </message>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Картографирование географических данных завершено</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Атрибут сетки "%1"редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Атрибут сетки &quot;%1&quot;редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Граничное условие "%1"редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Граничное условие &quot;%1&quot;редактируется вручную. Когда вы выполняете сопоставление, все сделанные вами изменения будут отменены. Вы действительно хотите выполнить сопоставление?</translation>
     </message>
 </context>
 <context>
@@ -1477,19 +1487,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; При создании сетки вас спрашивают, для выполнения сопоставления атрибутов каждый раз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета-имя = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; При создании сетки вас спрашивают, для выполнения сопоставления атрибутов каждый раз. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Руководство по эксплуатации</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Сопоставление атрибутов выполняется только тогда, когда вы вручную выбираете меню «Выполнить».</translation>
     </message>
     <message>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Поперечное сечение сетки (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Окно сечения сетки</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Контроллер</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Окно сечения сетки</translation>
+        <translation type="vanished">Окно сечения сетки</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Панель инструментов настройки просмотра</translation>
+        <translation type="vanished">Панель инструментов настройки просмотра</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Панель инструментов настройки отображения</translation>
+        <translation type="vanished">Панель инструментов настройки отображения</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Параметр</translation>
+        <translation type="vanished">Параметр</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Автоматическое изменение масштаба</translation>
+        <translation type="vanished">Автоматическое изменение масштаба</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Соотношение сторон (В/Г): 1 /</translation>
+        <translation type="vanished">Соотношение сторон (В/Г): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Исправить соотношение сторон</translation>
+        <translation type="vanished">Исправить соотношение сторон</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Исправить регион</translation>
+        <translation type="vanished">Исправить регион</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Сетка</translation>
+        <translation type="vanished">Сетка</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Шкала</translation>
+        <translation type="vanished">Шкала</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Маркеры левого/правого берега</translation>
+        <translation type="vanished">Маркеры левого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Соотношение сторон</translation>
+        <translation type="vanished">Соотношение сторон</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Настройка экрана</translation>
+        <translation type="vanished">Настройка экрана</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Контроллер</translation>
+        <translation type="vanished">Контроллер</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Ошибка</translation>
+        <translation type="vanished">Ошибка</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Произошла ошибка при создании %1.</translation>
+        <translation type="vanished">Произошла ошибка при создании %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Индекс</translation>
+        <translation type="vanished">Индекс</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Расстояние (м) от %1</translation>
+        <translation type="vanished">Расстояние (м) от %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Маркеры восходящего/нисходящего потока</translation>
+        <translation type="vanished">Маркеры восходящего/нисходящего потока</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Сторона вверх по течению</translation>
+        <translation type="vanished">Сторона вверх по течению</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Нижняя сторона</translation>
+        <translation type="vanished">Нижняя сторона</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Правая сторона</translation>
+        <translation type="vanished">Правая сторона</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Левая сторона</translation>
+        <translation type="vanished">Левая сторона</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Экспорт файлов CSV</translation>
+        <translation type="vanished">Экспорт файлов CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Видимый</translation>
+        <translation type="vanished">Видимый</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Имя</translation>
+        <translation type="vanished">Имя</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Параметр</translation>
+        <translation type="vanished">Параметр</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Настройка отображения атрибутов сетки (%1)</translation>
+        <translation type="vanished">Настройка отображения атрибутов сетки (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Левобережная сторона</translation>
+        <translation type="vanished">Левобережная сторона</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Правобережная сторона</translation>
+        <translation type="vanished">Правобережная сторона</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Ниже по течению</translation>
+        <translation type="vanished">Ниже по течению</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>вверх по течению</translation>
+        <translation type="vanished">вверх по течению</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Соотношение сторон (В/Г): 1/ %1</translation>
+        <translation type="vanished">Соотношение сторон (В/Г): 1/ %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Сохранить снимки</translation>
+        <translation type="vanished">Сохранить снимки</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Форма</translation>
+        <translation type="vanished">Форма</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Направление</translation>
+        <translation type="vanished">Направление</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>я</translation>
+        <translation type="vanished">я</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>Дж</translation>
+        <translation type="vanished">Дж</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Позиция</translation>
+        <translation type="vanished">Позиция</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Значения ячеек</translation>
+        <translation type="vanished">Значения ячеек</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Сторона вверх по течению</translation>
+        <translation type="vanished">Сторона вверх по течению</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Нижняя сторона</translation>
+        <translation type="vanished">Нижняя сторона</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Снимок (&amp;S)</translation>
+        <translation type="vanished">Снимок (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Экспорт CSV (&amp;C)</translation>
+        <translation type="vanished">Экспорт CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Настройка отображения окна поперечного сечения сетки</translation>
+        <translation type="vanished">Настройка отображения окна поперечного сечения сетки</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Фоновая сетка</translation>
+        <translation type="vanished">Фоновая сетка</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation type="vanished">Тип</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Линии</translation>
+        <translation type="vanished">Линии</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Точки</translation>
+        <translation type="vanished">Точки</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Горизонтальный</translation>
+        <translation type="vanished">Горизонтальный</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Авто</translation>
+        <translation type="vanished">Авто</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Шкала</translation>
+        <translation type="vanished">Шкала</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Подшкала</translation>
+        <translation type="vanished">Подшкала</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Вертикальный</translation>
+        <translation type="vanished">Вертикальный</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Цвет:</translation>
+        <translation type="vanished">Цвет:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Весы</translation>
+        <translation type="vanished">Весы</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Шрифт:</translation>
+        <translation type="vanished">Шрифт:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Маркеры левого/правого берега</translation>
+        <translation type="vanished">Маркеры левого/правого берега</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Соотношение сторон</translation>
+        <translation type="vanished">Соотношение сторон</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Настройка экспорта</translation>
+        <translation type="vanished">Настройка экспорта</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Папка и префикс (&amp; )</translation>
+        <translation type="vanished">Папка и префикс (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Папка:</translation>
+        <translation type="vanished">Папка:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Префикс:</translation>
+        <translation type="vanished">Префикс:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Поперечное сечение</translation>
+        <translation type="vanished">Поперечное сечение</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Только текущий</translation>
+        <translation type="vanished">Только текущий</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Все</translation>
+        <translation type="vanished">Все</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Обычай</translation>
+        <translation type="vanished">Обычай</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>я мин:</translation>
+        <translation type="vanished">я мин:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>Я Макс:</translation>
+        <translation type="vanished">Я Макс:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Скорость пропуска:</translation>
+        <translation type="vanished">Скорость пропуска:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Настройка отображения атрибутов сетки</translation>
+        <translation type="vanished">Настройка отображения атрибутов сетки</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Видимый</translation>
+        <translation type="vanished">Видимый</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Базовый</translation>
+        <translation type="vanished">Базовый</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Режим</translation>
+        <translation type="vanished">Режим</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Диаграмма высот</translation>
+        <translation type="vanished">Диаграмма высот</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Независимый график</translation>
+        <translation type="vanished">Независимый график</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Цветовая карта</translation>
+        <translation type="vanished">Цветовая карта</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Настройка диаграммы высот</translation>
+        <translation type="vanished">Настройка диаграммы высот</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Цвет линии:</translation>
+        <translation type="vanished">Цвет линии:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ширина линии:</translation>
+        <translation type="vanished">Ширина линии:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Показать очки</translation>
+        <translation type="vanished">Показать очки</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Размер пункта</translation>
+        <translation type="vanished">Размер пункта</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Показать индексы</translation>
+        <translation type="vanished">Показать индексы</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Цвет шрифта:</translation>
+        <translation type="vanished">Цвет шрифта:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Шрифт:</translation>
+        <translation type="vanished">Шрифт:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Скорость пропуска:</translation>
+        <translation type="vanished">Скорость пропуска:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Независимая настройка диаграммы</translation>
+        <translation type="vanished">Независимая настройка диаграммы</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Высота диаграммы:</translation>
+        <translation type="vanished">Высота диаграммы:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[пикселей]</translation>
+        <translation type="vanished">[пикселей]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Шрифт заголовка:</translation>
+        <translation type="vanished">Шрифт заголовка:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Цвет оси:</translation>
+        <translation type="vanished">Цвет оси:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Шрифт оси:</translation>
+        <translation type="vanished">Шрифт оси:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Настройка цветовой карты</translation>
+        <translation type="vanished">Настройка цветовой карты</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Примечание.&lt;/span&gt; Используйте вкладку "Карта цветов" для редактирования настроек цвета&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Примечание.&lt;/span&gt; Используйте вкладку &quot;Карта цветов&quot; для редактирования настроек цвета&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Использовать настройку окна предварительной обработки</translation>
+        <translation type="vanished">Использовать настройку окна предварительной обработки</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Показать заголовок</translation>
+        <translation type="vanished">Показать заголовок</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Цвет заголовка</translation>
+        <translation type="vanished">Цвет заголовка</translation>
     </message>
 </context>
 <context>
@@ -2367,7 +2385,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Настроить скалярную панель (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Открыть окно обзора с высоты птичьего полета (&amp;B)</translation>
     </message>
     <message>

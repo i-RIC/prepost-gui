@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="ca_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -69,7 +71,7 @@
     </message>
     <message>
         <source>Error occured while importing grid.</source>
-        <translation type="vanished">S'ha produït un error en importar la quadrícula.</translation>
+        <translation type="vanished">S&apos;ha produït un error en importar la quadrícula.</translation>
     </message>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
@@ -113,14 +115,14 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
-        <translation>Finestra de visualització d'ulls de quadrícula</translation>
+        <source>Grid Bird&apos;s-Eye View Window</source>
+        <translation>Finestra de visualització d&apos;ulls de quadrícula</translation>
     </message>
 </context>
 <context>
@@ -203,11 +205,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
+        <translation type="vanished">Seleccioneu l&apos;atribut de quadrícula</translation>
     </message>
     <message>
         <source>Select grid attribute to use as Elevation</source>
-        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
+        <translation>Seleccioneu l&apos;atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
@@ -249,7 +251,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowDataModel</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation type="vanished">Edita l'escala de direcció Z</translation>
+        <translation type="vanished">Edita l&apos;escala de direcció Z</translation>
     </message>
     <message>
         <source>Z-direction Scale</source>
@@ -268,7 +270,7 @@ Do you really want to import grid from this file?</source>
     <name>GridBirdEyeWindowGridDataItem</name>
     <message>
         <source>Edit Z-direction Scale</source>
-        <translation>Edita l'escala de direcció Z</translation>
+        <translation>Edita l&apos;escala de direcció Z</translation>
     </message>
     <message>
         <source>Input new Z-direction scale.</source>
@@ -349,7 +351,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Scalar value for Elevation</source>
-        <translation>Valor escalar per a l'elevació</translation>
+        <translation>Valor escalar per a l&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -398,18 +400,18 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Grid Attribute</source>
-        <translation type="vanished">Seleccioneu l'atribut de quadrícula</translation>
+        <translation type="vanished">Seleccioneu l&apos;atribut de quadrícula</translation>
     </message>
     <message>
         <source>Select grid attribute to use as Elevation</source>
-        <translation>Seleccioneu l'atribut de quadrícula per utilitzar-lo com a elevació</translation>
+        <translation>Seleccioneu l&apos;atribut de quadrícula per utilitzar-lo com a elevació</translation>
     </message>
 </context>
 <context>
     <name>PreObjectBrowser</name>
     <message>
         <source>Object Browser</source>
-        <translation>Navegador d'objectes</translation>
+        <translation>Navegador d&apos;objectes</translation>
     </message>
 </context>
 <context>
@@ -649,11 +651,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from the specified file.</source>
-        <translation>La condició de càlcul s'ha importat amb èxit des del fitxer especificat.</translation>
+        <translation>La condició de càlcul s&apos;ha importat amb èxit des del fitxer especificat.</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully imported from %1.</source>
-        <translation>La condició de càlcul s'ha importat correctament des de %1.</translation>
+        <translation>La condició de càlcul s&apos;ha importat correctament des de %1.</translation>
     </message>
     <message>
         <source>Fail</source>
@@ -661,7 +663,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing calculation condition failed.</source>
-        <translation>No s'ha pogut importar la condició de càlcul.</translation>
+        <translation>No s&apos;ha pogut importar la condició de càlcul.</translation>
     </message>
     <message>
         <source>Select File to Export</source>
@@ -673,15 +675,15 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Exporting calculation condition...</source>
-        <translation>S'està exportant la condició de càlcul...</translation>
+        <translation>S&apos;està exportant la condició de càlcul...</translation>
     </message>
     <message>
         <source>Calculation Condition is successfully exported to %1.</source>
-        <translation>La condició de càlcul s'exporta correctament a %1.</translation>
+        <translation>La condició de càlcul s&apos;exporta correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting calculation condition failed.</source>
-        <translation>No s'ha pogut exportar la condició de càlcul.</translation>
+        <translation>No s&apos;ha pogut exportar la condició de càlcul.</translation>
     </message>
     <message>
         <source>G&amp;eographic Data</source>
@@ -781,7 +783,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>(No algorithm is selected yet)</source>
-        <translation>(Encara no s'ha seleccionat cap algorisme)</translation>
+        <translation>(Encara no s&apos;ha seleccionat cap algorisme)</translation>
     </message>
     <message>
         <source>&amp;Export...</source>
@@ -793,11 +795,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>%1 are not mapped after they are edited last time. Do you want to execute mapping now?</source>
-        <translation>%1 no es mapen després d'editar-se l'última vegada. Voleu executar el mapatge ara?</translation>
+        <translation>%1 no es mapen després d&apos;editar-se l&apos;última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuració de la condició límit "%1"no es mapeja després que s'hagi editat l'última vegada. Voleu executar el mapatge ara?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuració de la condició límit &quot;%1&quot;no es mapeja després que s&apos;hagi editat l&apos;última vegada. Voleu executar el mapatge ara?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -805,7 +807,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Mapping geographic data, boundary condition finished successfully.</source>
-        <translation>Assignació de dades geogràfiques, la condició del límit s'ha acabat correctament.</translation>
+        <translation>Assignació de dades geogràfiques, la condició del límit s&apos;ha acabat correctament.</translation>
     </message>
     <message>
         <source>&amp;Cross-Section Data</source>
@@ -902,11 +904,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select algorithm</source>
-        <translation>Seleccioneu l'algorisme</translation>
+        <translation>Seleccioneu l&apos;algorisme</translation>
     </message>
     <message>
         <source>Please select algorithm to import data</source>
-        <translation>Seleccioneu l'algorisme per importar dades</translation>
+        <translation>Seleccioneu l&apos;algorisme per importar dades</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -914,7 +916,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -930,7 +932,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing data...</source>
-        <translation>S'estan important dades...</translation>
+        <translation>S&apos;estan important dades...</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -938,7 +940,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Importing canceled.</source>
-        <translation>S'ha cancel·lat la importació.</translation>
+        <translation>S&apos;ha cancel·lat la importació.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -999,7 +1001,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>&amp;Import Elevation from web...</source>
-        <translation>Importa l'elevació del web (&amp;I)...</translation>
+        <translation>Importa l&apos;elevació del web (&amp;I)...</translation>
     </message>
     <message>
         <source>To import the geographic data, specify coordinate system for the project first.</source>
@@ -1012,6 +1014,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Default</source>
         <translation>Per defecte</translation>
+    </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: quan la variació està activada, es crea una variació anomenada "Per defecte" i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del "Navegador d'objectes". Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l'atribut de la graella creades a partir de la variació que seleccioneu amb "Variació per passar al solucionador" es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l'efecte de la diferència.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: quan la variació està activada, es crea una variació anomenada &quot;Per defecte&quot; i totes les dades geogràfiques es mouen a aquesta. Podeu afegir, canviar el nom i eliminar variacions del &quot;Navegador d&apos;objectes&quot;. Podeu moure, copiar dades geogràfiques entre variacions. Les dades de l&apos;atribut de la graella creades a partir de la variació que seleccioneu amb &quot;Variació per passar al solucionador&quot; es transmeten al solucionador. Podeu preparar múltiples variacions, canviar-ne per passar al solucionador i assegurar-vos l&apos;efecte de la diferència.</translation>
     </message>
 </context>
 <context>
@@ -1095,7 +1105,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Importing grid failed.</source>
-        <translation>No s'ha pogut importar la quadrícula.</translation>
+        <translation>No s&apos;ha pogut importar la quadrícula.</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1130,7 +1140,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Grid %1 Attribute Display Setting (%2)</source>
-        <translation>Quadrícula %1 Configuració de visualització d'atributs (%2)</translation>
+        <translation>Quadrícula %1 Configuració de visualització d&apos;atributs (%2)</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1166,11 +1176,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de la quadrícula s'ha exportat correctament %1.</translation>
+        <translation>La condició de la quadrícula s&apos;ha exportat correctament %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1197,7 +1207,7 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeAbstractCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs de cel·la de quadrícula</translation>
+        <translation>Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Colormap (This setting is common with Geographic Data)</source>
@@ -1220,11 +1230,11 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeAbstractCellGroupDataItem</name>
     <message>
         <source>Show Attribute Browser</source>
-        <translation>Mostra el navegador d'atributs</translation>
+        <translation>Mostra el navegador d&apos;atributs</translation>
     </message>
     <message>
         <source>Cell Attribute Change</source>
-        <translation>Canvi d'atribut de cel·la</translation>
+        <translation>Canvi d&apos;atribut de cel·la</translation>
     </message>
 </context>
 <context>
@@ -1235,7 +1245,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -1291,11 +1301,11 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation type="vanished">S'ha produït un error en obrir el fitxer.</translation>
+        <translation type="vanished">S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation type="vanished">La condició de quadrícula s'ha exportat correctament a %1.</translation>
+        <translation type="vanished">La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1315,7 +1325,7 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Grid Cell Attribute Display Setting (%1)</source>
-        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula (%1)</translation>
+        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula (%1)</translation>
     </message>
     <message>
         <source>Cell</source>
@@ -1326,7 +1336,7 @@ The grid attribute data created from the variation that you select with "Variati
     <name>PreProcessorGridAttributeCellDataItem_PropertyDialog</name>
     <message>
         <source>Grid Cell Attribute Display Setting</source>
-        <translation type="vanished">Configuració de visualització d'atributs de cel·la de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d&apos;atributs de cel·la de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú "Quadrícula" -&gt; "Assignació d'atributs" -&gt; "Executa".</translation>
+        <translation>Els atributs següents no es van assignar perquè els valors de sortida del generador de quadrícula. Si voleu assignar dades geogràfiques per força, mapeu manualment amb el menú &quot;Quadrícula&quot; -&gt; &quot;Assignació d&apos;atributs&quot; -&gt; &quot;Executa&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1451,22 +1461,22 @@ The grid attribute data created from the variation that you select with "Variati
     </message>
     <message>
         <source>Mapping geographic data finished</source>
-        <translation>S'han acabat les assignacions de dades geogràfiques</translation>
+        <translation>S&apos;han acabat les assignacions de dades geogràfiques</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>L'atribut de la quadrícula "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>L&apos;atribut de la quadrícula &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>La condició límit "%1"s'edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>La condició límit &quot;%1&quot;s&apos;edita manualment. Quan executeu el mapatge, es descartaran totes les modificacions que hàgiu fet. Confirmeu que voleu executar el mapatge?</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeMappingSettingTopEditDialog</name>
     <message>
         <source>Grid Attribute Mapping Setting</source>
-        <translation>Configuració de mapatge d'atributs de quadrícula</translation>
+        <translation>Configuració de mapatge d&apos;atributs de quadrícula</translation>
     </message>
     <message>
         <source>Execute mapping</source>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automàtic</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d'atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Quan es crea la quadrícula, se us demana si per executar el mapatge d&apos;atributs cada vegada. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>El mapatge d'atributs només s'executa quan seleccioneu manualment el menú "Executa".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>El mapatge d&apos;atributs només s&apos;executa quan seleccioneu manualment el menú &quot;Executa&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1578,11 +1588,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error occured while opening the file.</source>
-        <translation>S'ha produït un error en obrir el fitxer.</translation>
+        <translation>S&apos;ha produït un error en obrir el fitxer.</translation>
     </message>
     <message>
         <source>Grid condition successfully exported to %1.</source>
-        <translation>La condició de quadrícula s'ha exportat correctament a %1.</translation>
+        <translation>La condició de quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1622,14 +1632,14 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Node Attribute Display Setting (%1)</source>
-        <translation>Configuració de visualització d'atributs del node de quadrícula (%1)</translation>
+        <translation>Configuració de visualització d&apos;atributs del node de quadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridAttributeNodeDataItem_PropertyDialog</name>
     <message>
         <source>Grid Node Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs del node de quadrícula</translation>
+        <translation>Configuració de visualització d&apos;atributs del node de quadrícula</translation>
     </message>
     <message>
         <source>&amp;Import...</source>
@@ -1687,7 +1697,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Number of Template Expansions:</source>
-        <translation>Nombre d'expansions de plantilla:</translation>
+        <translation>Nombre d&apos;expansions de plantilla:</translation>
     </message>
     <message>
         <source>Weighting Exponent:</source>
@@ -1753,11 +1763,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Are you sure you want to reset the grid creating condition to the default status?</source>
-        <translation>Esteu segur que voleu restablir l'estat predeterminat de la condició de creació de quadrícula?</translation>
+        <translation>Esteu segur que voleu restablir l&apos;estat predeterminat de la condició de creació de quadrícula?</translation>
     </message>
     <message>
         <source>When you switch algorithm to create grid, the grid and the grid creating condition you created will be discarded.</source>
-        <translation>Quan canvieu l'algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
+        <translation>Quan canvieu l&apos;algorisme per crear una quadrícula, es descartaran la quadrícula i la condició de creació de quadrícula que heu creat.</translation>
     </message>
     <message>
         <source>Select file to import</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Secció transversal de quadrícula (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Finestra de secció transversal de la quadrícula</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Controlador</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Finestra de secció transversal de la quadrícula</translation>
+        <translation type="vanished">Finestra de secció transversal de la quadrícula</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Veure la barra d'eines de configuració</translation>
+        <translation type="vanished">Veure la barra d&apos;eines de configuració</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barra d'eines de configuració de la pantalla</translation>
+        <translation type="vanished">Barra d&apos;eines de configuració de la pantalla</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Configuració</translation>
+        <translation type="vanished">Configuració</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Reescala automàtica</translation>
+        <translation type="vanished">Reescala automàtica</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relació d'aspecte (V/H): 1/</translation>
+        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Corregir la relació d'aspecte</translation>
+        <translation type="vanished">Corregir la relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Arregla la regió</translation>
+        <translation type="vanished">Arregla la regió</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Quadrícula</translation>
+        <translation type="vanished">Quadrícula</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Escala</translation>
+        <translation type="vanished">Escala</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Marcadors de marge esquerra/dreta</translation>
+        <translation type="vanished">Marcadors de marge esquerra/dreta</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation type="vanished">Relació d&apos;aspecte</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuració de la pantalla</translation>
+        <translation type="vanished">Configuració de la pantalla</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Controlador</translation>
+        <translation type="vanished">Controlador</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1891,19 +1909,19 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation type="vanished">Relació d'aspecte (V/H): 1/ %1</translation>
+        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation type="vanished">Error</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>S'ha produït un error en fer-ho %1.</translation>
+        <translation type="vanished">S&apos;ha produït un error en fer-ho %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Índex</translation>
+        <translation type="vanished">Índex</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Distància (m) des de %1</translation>
+        <translation type="vanished">Distància (m) des de %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Marcadors aigües amunt/avall</translation>
+        <translation type="vanished">Marcadors aigües amunt/avall</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Costa amunt</translation>
+        <translation type="vanished">Costa amunt</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Costat Avall</translation>
+        <translation type="vanished">Costat Avall</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Costat dret</translation>
+        <translation type="vanished">Costat dret</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Costat esquerre</translation>
+        <translation type="vanished">Costat esquerre</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Exporta fitxers CSV</translation>
+        <translation type="vanished">Exporta fitxers CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Visible</translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation type="vanished">Nom</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Configuració</translation>
+        <translation type="vanished">Configuració</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Configuració de visualització de l'atribut de la quadrícula (%1)</translation>
+        <translation type="vanished">Configuració de visualització de l&apos;atribut de la quadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Ribera Esquerra</translation>
+        <translation type="vanished">Ribera Esquerra</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Ribera dreta</translation>
+        <translation type="vanished">Ribera dreta</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Aigües avall</translation>
+        <translation type="vanished">Aigües avall</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Riu amunt</translation>
+        <translation type="vanished">Riu amunt</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relació d'aspecte (V/H): 1/ %1</translation>
+        <translation type="vanished">Relació d&apos;aspecte (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Desa les instantànies</translation>
+        <translation type="vanished">Desa les instantànies</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Formulari</translation>
+        <translation type="vanished">Formulari</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Direcció</translation>
+        <translation type="vanished">Direcció</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>jo</translation>
+        <translation type="vanished">jo</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posició</translation>
+        <translation type="vanished">Posició</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Valors de les cel·les</translation>
+        <translation type="vanished">Valors de les cel·les</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Costa amunt</translation>
+        <translation type="vanished">Costa amunt</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Costa avall</translation>
+        <translation type="vanished">Costa avall</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Instantània (&amp;S)</translation>
+        <translation type="vanished">Instantània (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Exportació CSV (&amp;C)</translation>
+        <translation type="vanished">Exportació CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Configuració de visualització de la finestra de la secció transversal de la quadrícula</translation>
+        <translation type="vanished">Configuració de visualització de la finestra de la secció transversal de la quadrícula</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Quadrícula de fons</translation>
+        <translation type="vanished">Quadrícula de fons</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tipus</translation>
+        <translation type="vanished">Tipus</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Línies</translation>
+        <translation type="vanished">Línies</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Punts</translation>
+        <translation type="vanished">Punts</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horitzontal</translation>
+        <translation type="vanished">Horitzontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automàtic</translation>
+        <translation type="vanished">Automàtic</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Escala</translation>
+        <translation type="vanished">Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Subescala</translation>
+        <translation type="vanished">Subescala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Color:</translation>
+        <translation type="vanished">Color:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Escales</translation>
+        <translation type="vanished">Escales</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Font:</translation>
+        <translation type="vanished">Font:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Marcadors de marge esquerra/dreta</translation>
+        <translation type="vanished">Marcadors de marge esquerra/dreta</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relació d'aspecte</translation>
+        <translation type="vanished">Relació d&apos;aspecte</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Configuració d'exportació</translation>
+        <translation type="vanished">Configuració d&apos;exportació</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Carpeta i prefix (&amp; )</translation>
+        <translation type="vanished">Carpeta i prefix (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Carpeta:</translation>
+        <translation type="vanished">Carpeta:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Prefix:</translation>
+        <translation type="vanished">Prefix:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Secció transversal</translation>
+        <translation type="vanished">Secció transversal</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Només actual</translation>
+        <translation type="vanished">Només actual</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Tots</translation>
+        <translation type="vanished">Tots</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalitzat</translation>
+        <translation type="vanished">Personalitzat</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>M'hi apunto:</translation>
+        <translation type="vanished">M&apos;hi apunto:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Màxim:</translation>
+        <translation type="vanished">I Màxim:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Percentatge de salts:</translation>
+        <translation type="vanished">Percentatge de salts:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Configuració de visualització d'atributs de quadrícula</translation>
+        <translation type="vanished">Configuració de visualització d&apos;atributs de quadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Visible</translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Bàsic</translation>
+        <translation type="vanished">Bàsic</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation type="vanished">Mode</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Gràfic de cotes</translation>
+        <translation type="vanished">Gràfic de cotes</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Gràfic independent</translation>
+        <translation type="vanished">Gràfic independent</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de colors</translation>
+        <translation type="vanished">Mapa de colors</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Configuració de la carta d'elevació</translation>
+        <translation type="vanished">Configuració de la carta d&apos;elevació</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Color de línia:</translation>
+        <translation type="vanished">Color de línia:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Amplada de línia:</translation>
+        <translation type="vanished">Amplada de línia:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Mostra punts</translation>
+        <translation type="vanished">Mostra punts</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Mida del punt</translation>
+        <translation type="vanished">Mida del punt</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Mostra els índexs</translation>
+        <translation type="vanished">Mostra els índexs</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Color de la lletra:</translation>
+        <translation type="vanished">Color de la lletra:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Font:</translation>
+        <translation type="vanished">Font:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Percentatge de salts:</translation>
+        <translation type="vanished">Percentatge de salts:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Configuració independent del gràfic</translation>
+        <translation type="vanished">Configuració independent del gràfic</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Alçada del gràfic:</translation>
+        <translation type="vanished">Alçada del gràfic:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[píxels]</translation>
+        <translation type="vanished">[píxels]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Tipus de lletra del títol:</translation>
+        <translation type="vanished">Tipus de lletra del títol:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Color de l'eix:</translation>
+        <translation type="vanished">Color de l&apos;eix:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Font de l'eix:</translation>
+        <translation type="vanished">Font de l&apos;eix:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuració del mapa de colors</translation>
+        <translation type="vanished">Configuració del mapa de colors</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; utilitzeu la pestanya Mapa de colors per editar la configuració del color&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Utilitzeu la configuració de la finestra de preprocessament</translation>
+        <translation type="vanished">Utilitzeu la configuració de la finestra de preprocessament</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Mostra el títol</translation>
+        <translation type="vanished">Mostra el títol</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Color del títol</translation>
+        <translation type="vanished">Color del títol</translation>
     </message>
 </context>
 <context>
@@ -2308,7 +2326,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Exporting Grid...</source>
-        <translation>S'està exportant la quadrícula...</translation>
+        <translation>S&apos;està exportant la quadrícula...</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2316,7 +2334,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid successfully exported to %1.</source>
-        <translation>La quadrícula s'ha exportat correctament a %1.</translation>
+        <translation>La quadrícula s&apos;ha exportat correctament a %1.</translation>
     </message>
     <message>
         <source>Exporting grid to %1 failed.</source>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Configureu la barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Obriu la finestra de vista d’ocell (&amp;B)</translation>
     </message>
     <message>
@@ -2393,12 +2411,12 @@ This algorithm can be used only for structured grids.</source>
     <message>
         <source>This CGNS file is created for %1 version %2. It is not compatible with the current solver. Maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Aquest fitxer CGNS està creat per a %1 versió %2. No és compatible amb el solucionador actual. Potser només s'importarà una part de la graella. Realment voleu importar la graella d'aquest fitxer?</translation>
+        <translation>Aquest fitxer CGNS està creat per a %1 versió %2. No és compatible amb el solucionador actual. Potser només s&apos;importarà una part de la graella. Realment voleu importar la graella d&apos;aquest fitxer?</translation>
     </message>
     <message>
         <source>This CGNS file does not have solver information. We can not check whether this CGNS file is compatible with the solver. If it is not compatible, maybe only some part of the grid will be imported.
 Do you really want to import grid from this file?</source>
-        <translation>Aquest fitxer CGNS no té informació del solucionador. No podem comprovar si aquest fitxer CGNS és compatible amb el solucionador. Si no és compatible, potser només s'importarà una part de la graella. Realment voleu importar la graella d'aquest fitxer?</translation>
+        <translation>Aquest fitxer CGNS no té informació del solucionador. No podem comprovar si aquest fitxer CGNS és compatible amb el solucionador. Si no és compatible, potser només s&apos;importarà una part de la graella. Realment voleu importar la graella d&apos;aquest fitxer?</translation>
     </message>
 </context>
 <context>
@@ -2566,7 +2584,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>File type cannot be recognized from the file extension. : %1</source>
-        <translation>El tipus de fitxer no es pot reconèixer a l'extensió de fitxer. : %1</translation>
+        <translation>El tipus de fitxer no es pot reconèixer a l&apos;extensió de fitxer. : %1</translation>
     </message>
     <message>
         <source>Import failed</source>
@@ -2702,7 +2720,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Change Attribute Mapping Setting</source>
-        <translation>Canvia la configuració de mapatge d'atributs</translation>
+        <translation>Canvia la configuració de mapatge d&apos;atributs</translation>
     </message>
 </context>
 <context>
@@ -2783,7 +2801,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Grid is not created or imported yet.</source>
-        <translation>La quadrícula encara no s'ha creat ni importat.</translation>
+        <translation>La quadrícula encara no s&apos;ha creat ni importat.</translation>
     </message>
     <message>
         <source>Checking grid %1 ...</source>
@@ -2845,11 +2863,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Label Display</source>
-        <translation type="vanished">Visualització d'etiquetes</translation>
+        <translation type="vanished">Visualització d&apos;etiquetes</translation>
     </message>
     <message>
         <source>Number of labels :</source>
-        <translation type="vanished">Nombre d'etiquetes:</translation>
+        <translation type="vanished">Nombre d&apos;etiquetes:</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -2881,7 +2899,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>If you specify 1, Color bar width is the same to window width.</source>
-        <translation type="vanished">Si especifiqueu 1, l'amplada de la barra de color és la mateixa que l'amplada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l&apos;amplada de la barra de color és la mateixa que l&apos;amplada de la finestra.</translation>
     </message>
     <message>
         <source>Height :</source>
@@ -2889,7 +2907,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>If you specify 1, Color bar height is the same to window height.</source>
-        <translation type="vanished">Si especifiqueu 1, l'alçada de la barra de color és la mateixa que l'alçada de la finestra.</translation>
+        <translation type="vanished">Si especifiqueu 1, l&apos;alçada de la barra de color és la mateixa que l&apos;alçada de la finestra.</translation>
     </message>
     <message>
         <source>Position</source>
@@ -2974,7 +2992,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Move Elevation Points</source>
-        <translation>Mou els punts d'elevació</translation>
+        <translation>Mou els punts d&apos;elevació</translation>
     </message>
 </context>
 <context>
@@ -3009,7 +3027,7 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Edit Elevation Point</source>
-        <translation>Edita el punt d'elevació</translation>
+        <translation>Edita el punt d&apos;elevació</translation>
     </message>
 </context>
 <context>

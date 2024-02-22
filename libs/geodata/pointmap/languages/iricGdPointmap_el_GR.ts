@@ -953,11 +953,15 @@
     <name>GeoDataPointmapWebImporter</name>
     <message>
         <source>Web CSV tile</source>
-        <translation>Πλακάκι ιστού CSV</translation>
+        <translation type="vanished">Πλακάκι ιστού CSV</translation>
     </message>
     <message>
         <source>Error</source>
         <translation>Λάθος</translation>
+    </message>
+    <message>
+        <source>Point cloud data from Elevation CSV tile</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

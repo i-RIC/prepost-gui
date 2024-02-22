@@ -7,8 +7,7 @@
 #include "geodatariversurveymlitimporter.h"
 #include "geodatariversurveynodemapper.h"
 #include "geodatariversurveyvtkexporter.h"
-
-#include <guibase/irictoolbar.h>
+#include "geodatariversurveywebimporter.h"
 
 #include <QAction>
 #include <QDomElement>
@@ -19,6 +18,8 @@ GeoDataRiverSurveyCreator::GeoDataRiverSurveyCreator() :
 {
 	importers().push_back(new GeoDataRiverSurveyImporter(this));
 	importers().push_back(new GeoDataRiverSurveyMlitImporter(this));
+
+	webImporters().push_back(new GeoDataRiverSurveyWebImporter(this));
 
 	exporters().push_back(new GeoDataRiverSurveyExporter(this));
 	exporters().push_back(new GeoDataRiverSurveyHonryuExporter(this));

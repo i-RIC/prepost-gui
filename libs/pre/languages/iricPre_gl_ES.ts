@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="gl_ES">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Xanela de vista de cuadrícula</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 non se mapean despois de editalos a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Configuración da condición límite "%1"non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Configuración da condición límite &quot;%1&quot;non se mapea despois de que se editase a última vez. ¿Quere executar o mapeo agora?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Por defecto</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Nota: Cando a variación está activada, créase unha variación chamada "Predeterminada" e todos os datos xeográficos móvense a ela. Podes engadir, renomear ou eliminar variacións do "Navegador de obxectos". Pode mover, copiar datos xeográficos entre variacións. Os datos do atributo de grade creados a partir da variación que selecciona con "Variación para pasar ao solucionador" pásanse ao solucionador. Podes preparar varias variacións, cambiar cales pasar ao solucionador e asegurarte de que o efecto da diferenza.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Nota: Cando a variación está activada, créase unha variación chamada &quot;Predeterminada&quot; e todos os datos xeográficos móvense a ela. Podes engadir, renomear ou eliminar variacións do &quot;Navegador de obxectos&quot;. Pode mover, copiar datos xeográficos entre variacións. Os datos do atributo de grade creados a partir da variación que selecciona con &quot;Variación para pasar ao solucionador&quot; pásanse ao solucionador. Podes preparar varias variacións, cambiar cales pasar ao solucionador e asegurarte de que o efecto da diferenza.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Executar (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú "Reixa" -&gt; "Asignación de atributos" -&gt; "Executar".</translation>
+        <translation>Os seguintes atributos non foron mapeados, porque os valores de saída do xerador de rede para eles. Se desexa mapear os datos xeográficos con forza, mapa manualmente co menú &quot;Reixa&quot; -&gt; &quot;Asignación de atributos&quot; -&gt; &quot;Executar&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Rematou o mapeado de datos xeográficos</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>O atributo da grade "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>O atributo da grade &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>A condición límite "%1"edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>A condición límite &quot;%1&quot;edítase a man. Cando execute o mapeo, descartaranse todas as modificacións que fixera. ¿De verdade quere executar o mapeo?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Automático</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "- // W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = "qrichtext" content = "1" /&gt; &lt;style type = "text / css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;- // W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta nome = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text / css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Cando se crea a cuadrícula, preguntaráselle se para executar a asignación de atributos cada vez. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manual</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú "Executar".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>A asignación de atributos só se executa cando selecciona manualmente o menú &quot;Executar&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Sección transversal da cuadrícula (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Ventá de sección transversal da cuadrícula</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Controlador</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Ventá de sección transversal da cuadrícula</translation>
+        <translation type="vanished">Ventá de sección transversal da cuadrícula</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Ver barra de ferramentas de configuración</translation>
+        <translation type="vanished">Ver barra de ferramentas de configuración</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Barra de ferramentas de configuración de visualización</translation>
+        <translation type="vanished">Barra de ferramentas de configuración de visualización</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Configuración</translation>
+        <translation type="vanished">Configuración</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Reescalado automático</translation>
+        <translation type="vanished">Reescalado automático</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Relación de aspecto (V/H): 1/</translation>
+        <translation type="vanished">Relación de aspecto (V/H): 1/</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Corrixir a relación de aspecto</translation>
+        <translation type="vanished">Corrixir a relación de aspecto</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Corrixe a rexión</translation>
+        <translation type="vanished">Corrixe a rexión</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Reixa</translation>
+        <translation type="vanished">Reixa</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Escala</translation>
+        <translation type="vanished">Escala</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Marcadores da marxe esquerda/dereita</translation>
+        <translation type="vanished">Marcadores da marxe esquerda/dereita</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relación de aspecto</translation>
+        <translation type="vanished">Relación de aspecto</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Configuración de visualización</translation>
+        <translation type="vanished">Configuración de visualización</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Controlador</translation>
+        <translation type="vanished">Controlador</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Erro</translation>
+        <translation type="vanished">Erro</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Produciuse un erro ao facer %1.</translation>
+        <translation type="vanished">Produciuse un erro ao facer %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Índice</translation>
+        <translation type="vanished">Índice</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Distancia (m) desde %1</translation>
+        <translation type="vanished">Distancia (m) desde %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Marcadores río arriba/abaixo</translation>
+        <translation type="vanished">Marcadores río arriba/abaixo</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Lado ascendente</translation>
+        <translation type="vanished">Lado ascendente</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Lado Abaixo</translation>
+        <translation type="vanished">Lado Abaixo</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Lado dereito</translation>
+        <translation type="vanished">Lado dereito</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Lado esquerdo</translation>
+        <translation type="vanished">Lado esquerdo</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Exportar ficheiros CSV</translation>
+        <translation type="vanished">Exportar ficheiros CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Visible</translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nome</translation>
+        <translation type="vanished">Nome</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Configuración</translation>
+        <translation type="vanished">Configuración</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Configuración de visualización de atributos de cuadrícula (%1)</translation>
+        <translation type="vanished">Configuración de visualización de atributos de cuadrícula (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Marxe Esquerda</translation>
+        <translation type="vanished">Marxe Esquerda</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Marxe dereita</translation>
+        <translation type="vanished">Marxe dereita</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Río abaixo</translation>
+        <translation type="vanished">Río abaixo</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Río arriba</translation>
+        <translation type="vanished">Río arriba</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Relación de aspecto (V/H): 1/ %1</translation>
+        <translation type="vanished">Relación de aspecto (V/H): 1/ %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Gardar instantáneas</translation>
+        <translation type="vanished">Gardar instantáneas</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Formulario</translation>
+        <translation type="vanished">Formulario</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Dirección</translation>
+        <translation type="vanished">Dirección</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>eu</translation>
+        <translation type="vanished">eu</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Posición</translation>
+        <translation type="vanished">Posición</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Valores das celas</translation>
+        <translation type="vanished">Valores das celas</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Lado río arriba</translation>
+        <translation type="vanished">Lado río arriba</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Lado augas abaixo</translation>
+        <translation type="vanished">Lado augas abaixo</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Instantánea (&amp;S)</translation>
+        <translation type="vanished">Instantánea (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Exportación CSV (&amp;C)</translation>
+        <translation type="vanished">Exportación CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Configuración de visualización da ventá de sección transversal da cuadrícula</translation>
+        <translation type="vanished">Configuración de visualización da ventá de sección transversal da cuadrícula</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Reixa de fondo</translation>
+        <translation type="vanished">Reixa de fondo</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tipo</translation>
+        <translation type="vanished">Tipo</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Liñas</translation>
+        <translation type="vanished">Liñas</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Puntos</translation>
+        <translation type="vanished">Puntos</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontal</translation>
+        <translation type="vanished">Horizontal</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Automático</translation>
+        <translation type="vanished">Automático</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Escala</translation>
+        <translation type="vanished">Escala</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Subescala</translation>
+        <translation type="vanished">Subescala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertical</translation>
+        <translation type="vanished">Vertical</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Cor:</translation>
+        <translation type="vanished">Cor:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Escalas</translation>
+        <translation type="vanished">Escalas</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Tipo de letra:</translation>
+        <translation type="vanished">Tipo de letra:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Marcadores da marxe esquerda/dereita</translation>
+        <translation type="vanished">Marcadores da marxe esquerda/dereita</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Relación de aspecto</translation>
+        <translation type="vanished">Relación de aspecto</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Configuración de exportación</translation>
+        <translation type="vanished">Configuración de exportación</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Cartafol e prefixo (&amp; )</translation>
+        <translation type="vanished">Cartafol e prefixo (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Cartafol:</translation>
+        <translation type="vanished">Cartafol:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Prefixo:</translation>
+        <translation type="vanished">Prefixo:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Sección cruzada</translation>
+        <translation type="vanished">Sección cruzada</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Só actual</translation>
+        <translation type="vanished">Só actual</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Todos</translation>
+        <translation type="vanished">Todos</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Personalizado</translation>
+        <translation type="vanished">Personalizado</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Estou dentro:</translation>
+        <translation type="vanished">Estou dentro:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Max:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Taxa de omisión:</translation>
+        <translation type="vanished">Taxa de omisión:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Configuración de visualización de atributos de cuadrícula</translation>
+        <translation type="vanished">Configuración de visualización de atributos de cuadrícula</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Visible</translation>
+        <translation type="vanished">Visible</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Básico</translation>
+        <translation type="vanished">Básico</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Modo</translation>
+        <translation type="vanished">Modo</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Gráfico de cotas</translation>
+        <translation type="vanished">Gráfico de cotas</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Gráfico independente</translation>
+        <translation type="vanished">Gráfico independente</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Mapa de cores</translation>
+        <translation type="vanished">Mapa de cores</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Configuración da carta de elevación</translation>
+        <translation type="vanished">Configuración da carta de elevación</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Cor da liña:</translation>
+        <translation type="vanished">Cor da liña:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Ancho de liña:</translation>
+        <translation type="vanished">Ancho de liña:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Mostrar puntos</translation>
+        <translation type="vanished">Mostrar puntos</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Tamaño do punto</translation>
+        <translation type="vanished">Tamaño do punto</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Mostrar índices</translation>
+        <translation type="vanished">Mostrar índices</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Cor da fonte:</translation>
+        <translation type="vanished">Cor da fonte:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Tipo de letra:</translation>
+        <translation type="vanished">Tipo de letra:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Taxa de omisión:</translation>
+        <translation type="vanished">Taxa de omisión:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Configuración independente do gráfico</translation>
+        <translation type="vanished">Configuración independente do gráfico</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Altura do gráfico:</translation>
+        <translation type="vanished">Altura do gráfico:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[píxeles]</translation>
+        <translation type="vanished">[píxeles]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Fonte do título:</translation>
+        <translation type="vanished">Fonte do título:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Cor do eixe:</translation>
+        <translation type="vanished">Cor do eixe:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Fonte do eixe:</translation>
+        <translation type="vanished">Fonte do eixe:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Configuración do mapa de cores</translation>
+        <translation type="vanished">Configuración do mapa de cores</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Nota:&lt;/span&gt; Use a pestana Mapa de cores para editar a configuración da cor&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nota:&lt;/span&gt; Use a pestana Mapa de cores para editar a configuración da cor&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Use a configuración da xanela de preprocesamento</translation>
+        <translation type="vanished">Use a configuración da xanela de preprocesamento</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Mostrar título</translation>
+        <translation type="vanished">Mostrar título</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Cor do título</translation>
+        <translation type="vanished">Cor do título</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Configurar a barra escalar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Abre a xanela de vista de paxaro (&amp;B)</translation>
     </message>
     <message>

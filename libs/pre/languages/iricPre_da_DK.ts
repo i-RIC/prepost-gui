@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="da_DK">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Gitteret Fugleperspektiv</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 kortlægges ikke, efter at de blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Indstilling af grænsetilstand "%1"er ikke kortlagt, efter at det blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Indstilling af grænsetilstand &quot;%1&quot;er ikke kortlagt, efter at det blev redigeret sidste gang. Vil du udføre kortlægning nu?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Standard</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Bemærk: Når variation er aktiveret, oprettes variant med navnet "Standard", og alle geografiske data flyttes til den. Du kan tilføje, omdøbe, fjerne variationer fra "Objektbrowser". Du kan flytte, kopiere geografiske data mellem variationer. De gitterattributdata, der er oprettet fra den variant, som du vælger med "Variation, der skal overføres til solver", videregives til solver. Du kan forberede flere variationer, skifte, hvilken der skal overføres til løseren, og sikre dig effekten af forskellen.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Bemærk: Når variation er aktiveret, oprettes variant med navnet &quot;Standard&quot;, og alle geografiske data flyttes til den. Du kan tilføje, omdøbe, fjerne variationer fra &quot;Objektbrowser&quot;. Du kan flytte, kopiere geografiske data mellem variationer. De gitterattributdata, der er oprettet fra den variant, som du vælger med &quot;Variation, der skal overføres til solver&quot;, videregives til solver. Du kan forberede flere variationer, skifte, hvilken der skal overføres til løseren, og sikre dig effekten af forskellen.</translation>
     </message>
 </context>
 <context>
@@ -1433,9 +1443,9 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Udfør (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
-        <translation>Følgende attributter blev ikke kortlagt, fordi netværksgeneratorens outputværdier for dem. Hvis du vil kortlægge geografiske data for dem med magt, bedes du kortlægge manuelt med menuen "Gitter" -&gt; "Attributtilknytning" -&gt; "Udfør".</translation>
+        <translation>Følgende attributter blev ikke kortlagt, fordi netværksgeneratorens outputværdier for dem. Hvis du vil kortlægge geografiske data for dem med magt, bedes du kortlægge manuelt med menuen &quot;Gitter&quot; -&gt; &quot;Attributtilknytning&quot; -&gt; &quot;Udfør&quot;.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Kortlægning af geografiske data færdig</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Gitterattributten "%1"redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Gitterattributten &quot;%1&quot;redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Grænsetilstanden "%1"redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Grænsetilstanden &quot;%1&quot;redigeres i hånden. Når du udfører kortlægning, kasseres alle de ændringer, du har foretaget. Vil du virkelig udføre kortlægning?</translation>
     </message>
 </context>
 <context>
@@ -1477,20 +1487,20 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // DA" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Når gitteret oprettes, bliver du spurgt, om at udføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // DA&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Når gitteret oprettes, bliver du spurgt, om at udføre Attribute Mapping hver gang. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>brugervejledning</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
-        <translation>Attributmapping udføres kun, når du manuelt vælger menuen "Execute".</translation>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
+        <translation>Attributmapping udføres kun, når du manuelt vælger menuen &quot;Execute&quot;.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1498,11 +1508,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Mapping with TINs</source>
-        <translation type="vanished">Kortlægning med TIN'er</translation>
+        <translation type="vanished">Kortlægning med TIN&apos;er</translation>
     </message>
     <message>
         <source>TINs created from geographic data are used for mapping. Grid nodes attribute values are calculated as weighted average of the values at the TIN nodes.</source>
-        <translation type="vanished">TIN'er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
+        <translation type="vanished">TIN&apos;er oprettet ud fra geografiske data bruges til kortlægning. Gitterknude -attributværdier beregnes som vægtet gennemsnit af værdierne ved TIN -noder.</translation>
     </message>
     <message>
         <source>Template mapping</source>
@@ -1822,80 +1832,88 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Gitterkryds (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Gitter tværsnitsvindue</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Controller</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Gitter tværsnitsvindue</translation>
+        <translation type="vanished">Gitter tværsnitsvindue</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Vis indstillingsværktøjslinje</translation>
+        <translation type="vanished">Vis indstillingsværktøjslinje</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Værktøjslinje for displayindstilling</translation>
+        <translation type="vanished">Værktøjslinje for displayindstilling</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Fejl</translation>
+        <translation type="vanished">Fejl</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Der opstod en fejl under fremstillingen %1.</translation>
+        <translation type="vanished">Der opstod en fejl under fremstillingen %1.</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Indstilling</translation>
+        <translation type="vanished">Indstilling</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Indeks</translation>
+        <translation type="vanished">Indeks</translation>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Afstand(m) fra %1</translation>
+        <translation type="vanished">Afstand(m) fra %1</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Automatisk omskalering</translation>
+        <translation type="vanished">Automatisk omskalering</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Størrelsesforhold (V/H): 1 /</translation>
+        <translation type="vanished">Størrelsesforhold (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Ret billedformat</translation>
+        <translation type="vanished">Ret billedformat</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Fix region</translation>
+        <translation type="vanished">Fix region</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Gitter</translation>
+        <translation type="vanished">Gitter</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>vægt</translation>
+        <translation type="vanished">vægt</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Venstre/højre bankmarkører</translation>
+        <translation type="vanished">Venstre/højre bankmarkører</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Størrelsesforhold</translation>
+        <translation type="vanished">Størrelsesforhold</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Displayindstilling</translation>
+        <translation type="vanished">Displayindstilling</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Controller</translation>
+        <translation type="vanished">Controller</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1919,346 +1937,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Opstrøms/nedstrøms markører</translation>
+        <translation type="vanished">Opstrøms/nedstrøms markører</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Opstrøms side</translation>
+        <translation type="vanished">Opstrøms side</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Nedstrøms side</translation>
+        <translation type="vanished">Nedstrøms side</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Højre side</translation>
+        <translation type="vanished">Højre side</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Venstre side</translation>
+        <translation type="vanished">Venstre side</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Eksporter CSV-filer</translation>
+        <translation type="vanished">Eksporter CSV-filer</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Synlig</translation>
+        <translation type="vanished">Synlig</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Navn</translation>
+        <translation type="vanished">Navn</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Indstilling</translation>
+        <translation type="vanished">Indstilling</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Visningsindstilling for gitterattribut (%1)</translation>
+        <translation type="vanished">Visningsindstilling for gitterattribut (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Venstre bredside</translation>
+        <translation type="vanished">Venstre bredside</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Højre bredside</translation>
+        <translation type="vanished">Højre bredside</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Nedstrøms</translation>
+        <translation type="vanished">Nedstrøms</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Opstrøms</translation>
+        <translation type="vanished">Opstrøms</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Størrelsesforhold (V/H): 1 / %1</translation>
+        <translation type="vanished">Størrelsesforhold (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Gem snapshots</translation>
+        <translation type="vanished">Gem snapshots</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation type="vanished">Form</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Retning</translation>
+        <translation type="vanished">Retning</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>jeg</translation>
+        <translation type="vanished">jeg</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Position</translation>
+        <translation type="vanished">Position</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Celleværdier</translation>
+        <translation type="vanished">Celleværdier</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Opstrøms side</translation>
+        <translation type="vanished">Opstrøms side</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Nedstrøms side</translation>
+        <translation type="vanished">Nedstrøms side</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Snapshot (&amp;S)</translation>
+        <translation type="vanished">Snapshot (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>CSV-eksport (&amp;C)</translation>
+        <translation type="vanished">CSV-eksport (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Indstilling for visning af gitter tværsnitsvindue</translation>
+        <translation type="vanished">Indstilling for visning af gitter tværsnitsvindue</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Baggrundsgitter</translation>
+        <translation type="vanished">Baggrundsgitter</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation type="vanished">Type</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Linjer</translation>
+        <translation type="vanished">Linjer</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Prikker</translation>
+        <translation type="vanished">Prikker</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Vandret</translation>
+        <translation type="vanished">Vandret</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>vægt</translation>
+        <translation type="vanished">vægt</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Underskala</translation>
+        <translation type="vanished">Underskala</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Lodret</translation>
+        <translation type="vanished">Lodret</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Farve:</translation>
+        <translation type="vanished">Farve:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Vægt</translation>
+        <translation type="vanished">Vægt</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Skrifttype:</translation>
+        <translation type="vanished">Skrifttype:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Venstre/højre bankmarkører</translation>
+        <translation type="vanished">Venstre/højre bankmarkører</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Størrelsesforhold</translation>
+        <translation type="vanished">Størrelsesforhold</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Eksportindstilling</translation>
+        <translation type="vanished">Eksportindstilling</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Mappe og præfiks (&amp; )</translation>
+        <translation type="vanished">Mappe og præfiks (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Folder:</translation>
+        <translation type="vanished">Folder:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Præfiks:</translation>
+        <translation type="vanished">Præfiks:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Tværsnit</translation>
+        <translation type="vanished">Tværsnit</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Kun nuværende</translation>
+        <translation type="vanished">Kun nuværende</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Alle</translation>
+        <translation type="vanished">Alle</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Brugerdefinerede</translation>
+        <translation type="vanished">Brugerdefinerede</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Jeg er med:</translation>
+        <translation type="vanished">Jeg er med:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Max:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Spring over rate:</translation>
+        <translation type="vanished">Spring over rate:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Visningsindstilling for gitterattribut</translation>
+        <translation type="vanished">Visningsindstilling for gitterattribut</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Synlig</translation>
+        <translation type="vanished">Synlig</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Grundlæggende</translation>
+        <translation type="vanished">Grundlæggende</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Mode</translation>
+        <translation type="vanished">Mode</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Højdediagram</translation>
+        <translation type="vanished">Højdediagram</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Uafhængigt diagram</translation>
+        <translation type="vanished">Uafhængigt diagram</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Farvekort</translation>
+        <translation type="vanished">Farvekort</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Indstilling af højdekort</translation>
+        <translation type="vanished">Indstilling af højdekort</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Linje farve:</translation>
+        <translation type="vanished">Linje farve:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Linjebredde:</translation>
+        <translation type="vanished">Linjebredde:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Vis point</translation>
+        <translation type="vanished">Vis point</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Punktstørrelse</translation>
+        <translation type="vanished">Punktstørrelse</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Vis indekser</translation>
+        <translation type="vanished">Vis indekser</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Skrift farve:</translation>
+        <translation type="vanished">Skrift farve:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>Skrifttype:</translation>
+        <translation type="vanished">Skrifttype:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Spring over rate:</translation>
+        <translation type="vanished">Spring over rate:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Uafhængig diagramindstilling</translation>
+        <translation type="vanished">Uafhængig diagramindstilling</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Korthøjde:</translation>
+        <translation type="vanished">Korthøjde:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pixels]</translation>
+        <translation type="vanished">[pixels]</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Vis titel</translation>
+        <translation type="vanished">Vis titel</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Titelskrifttype:</translation>
+        <translation type="vanished">Titelskrifttype:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Akse farve:</translation>
+        <translation type="vanished">Akse farve:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Axis Font:</translation>
+        <translation type="vanished">Axis Font:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Indstilling af farvekort</translation>
+        <translation type="vanished">Indstilling af farvekort</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Titel farve</translation>
+        <translation type="vanished">Titel farve</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Bemærk:&lt;/span&gt; Brug Colormap-fanen til at redigere farveindstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Bemærk:&lt;/span&gt; Brug Colormap-fanen til at redigere farveindstilling&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Brug indstillingen af vinduet Forbehandling</translation>
+        <translation type="vanished">Brug indstillingen af vinduet Forbehandling</translation>
     </message>
 </context>
 <context>
@@ -2359,7 +2377,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Konfigurer skalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Åbn vinduet med fugleperspektiv (&amp;B)</translation>
     </message>
     <message>

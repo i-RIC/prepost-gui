@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="cs_CZ">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -119,7 +121,7 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird's-Eye View Window</source>
+        <source>Grid Bird&apos;s-Eye View Window</source>
         <translation>Mřížka Pohled z ptačí perspektivy</translation>
     </message>
 </context>
@@ -796,8 +798,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 nejsou mapovány poté, co byly naposledy upraveny. Chcete nyní provést mapování?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Nastavení okrajových podmínek "%1"není mapováno poté, co bylo naposledy upraveno. Chcete nyní provést mapování?"</translation>
+        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Nastavení okrajových podmínek &quot;%1&quot;není mapováno poté, co bylo naposledy upraveno. Chcete nyní provést mapování?&quot;</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1013,6 +1015,14 @@ Do you really want to import grid from this file?</source>
         <source>Default</source>
         <translation>Výchozí</translation>
     </message>
+    <message>
+        <source>Select Data Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please select type of data to import</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGeoDataGroupDataItem_ColorMapSettingEditDialog</name>
@@ -1046,14 +1056,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
+When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from "Object Browser".
+You can add, rename, remove variations from &quot;Object Browser&quot;.
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Poznámka: Když je varianta povolena, vytvoří se varianta s názvem „Výchozí“ a do ní se přesunou všechna geografická data. Můžete přidávat, přejmenovávat a odstraňovat varianty z "Prohlížeče objektů". Mezi variantami můžete přesouvat a kopírovat geografická data. Data atributu mřížky vytvořená z varianty, kterou vyberete pomocí "Variace k předání řešiteli" se předají řešiteli. Můžete připravit více variant, přepnout, které předat řešiteli, a ujistit se, že rozdíl bude mít efekt.</translation>
+The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Poznámka: Když je varianta povolena, vytvoří se varianta s názvem „Výchozí“ a do ní se přesunou všechna geografická data. Můžete přidávat, přejmenovávat a odstraňovat varianty z &quot;Prohlížeče objektů&quot;. Mezi variantami můžete přesouvat a kopírovat geografická data. Data atributu mřížky vytvořená z varianty, kterou vyberete pomocí &quot;Variace k předání řešiteli&quot; se předají řešiteli. Můžete připravit více variant, přepnout, které předat řešiteli, a ujistit se, že rozdíl bude mít efekt.</translation>
     </message>
 </context>
 <context>
@@ -1433,7 +1443,7 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Vykonat (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
 </source>
         <translation>Následující atributy nebyly namapovány, protože pro ně byly výstupní hodnoty generátoru mřížky. Pokud pro ně chcete násilně mapovat geografická data, namapujte je prosím ručně pomocí nabídky „Mřížka“ -&gt; „Mapování atributů“ -&gt; „Spustit“.</translation>
     </message>
@@ -1454,12 +1464,12 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Mapování geografických dat dokončeno</translation>
     </message>
     <message>
-        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Atribut mřížky "%1"je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?"</translation>
+        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Atribut mřížky &quot;%1&quot;je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?&quot;</translation>
     </message>
     <message>
-        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Okrajová podmínka "%1"je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?"</translation>
+        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Okrajová podmínka &quot;%1&quot;je upravováno ručně. Když spustíte mapování, všechny provedené úpravy budou zahozeny. Opravdu chcete provést mapování?&quot;</translation>
     </message>
 </context>
 <context>
@@ -1477,19 +1487,19 @@ The grid attribute data created from the variation that you select with "Variati
         <translation>Auto</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; When the grid is created, you are asked asked whether mapování atributů provádět pokaždé. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;meta name = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; When the grid is created, you are asked asked whether mapování atributů provádět pokaždé. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Manuál</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
         <translation>Mapování atributů se provádí pouze tehdy, když ručně vyberete nabídku „Provést“.</translation>
     </message>
     <message>
@@ -1822,64 +1832,72 @@ This algorithm can be used only for structured grids.</source>
         <source>Grid Crosssection (%1): I = %2</source>
         <translation type="vanished">Mřížkový průřez (%1): I = %2</translation>
     </message>
+    <message>
+        <source>Grid Crosssection Window</source>
+        <translation type="unfinished">Okno průřezu mřížky</translation>
+    </message>
+    <message>
+        <source>Controller</source>
+        <translation type="unfinished">Ovladač</translation>
+    </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2</name>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation>Okno průřezu mřížky</translation>
+        <translation type="vanished">Okno průřezu mřížky</translation>
     </message>
     <message>
         <source>View Setting Toolbar</source>
-        <translation>Zobrazit lištu nastavení</translation>
+        <translation type="vanished">Zobrazit lištu nastavení</translation>
     </message>
     <message>
         <source>Display Setting ToolBar</source>
-        <translation>Panel nástrojů pro nastavení zobrazení</translation>
+        <translation type="vanished">Panel nástrojů pro nastavení zobrazení</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Nastavení</translation>
+        <translation type="vanished">Nastavení</translation>
     </message>
     <message>
         <source>Auto rescale</source>
-        <translation>Automatické přeškálování</translation>
+        <translation type="vanished">Automatické přeškálování</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / </source>
-        <translation>Poměr stran (V/H): 1 /</translation>
+        <translation type="vanished">Poměr stran (V/H): 1 /</translation>
     </message>
     <message>
         <source>Fix aspect ratio</source>
-        <translation>Opravit poměr stran</translation>
+        <translation type="vanished">Opravit poměr stran</translation>
     </message>
     <message>
         <source>Fix region</source>
-        <translation>Opravit oblast</translation>
+        <translation type="vanished">Opravit oblast</translation>
     </message>
     <message>
         <source>Grid</source>
-        <translation>Mřížka</translation>
+        <translation type="vanished">Mřížka</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Měřítko</translation>
+        <translation type="vanished">Měřítko</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Značky levého/pravého břehu</translation>
+        <translation type="vanished">Značky levého/pravého břehu</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Poměr stran</translation>
+        <translation type="vanished">Poměr stran</translation>
     </message>
     <message>
         <source>Display Setting</source>
-        <translation>Nastavení zobrazení</translation>
+        <translation type="vanished">Nastavení zobrazení</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation>Ovladač</translation>
+        <translation type="vanished">Ovladač</translation>
     </message>
     <message>
         <source>Left Bank Side</source>
@@ -1895,15 +1913,15 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Error</source>
-        <translation>Chyba</translation>
+        <translation type="vanished">Chyba</translation>
     </message>
     <message>
         <source>Error occured while making %1.</source>
-        <translation>Při vytváření došlo k chybě %1.</translation>
+        <translation type="vanished">Při vytváření došlo k chybě %1.</translation>
     </message>
     <message>
         <source>Index</source>
-        <translation>Index</translation>
+        <translation type="vanished">Index</translation>
     </message>
     <message>
         <source>Distance(m)</source>
@@ -1911,7 +1929,7 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Distance(m) from %1</source>
-        <translation>Vzdálenost (m) od %1</translation>
+        <translation type="vanished">Vzdálenost (m) od %1</translation>
     </message>
     <message>
         <source>Downstream</source>
@@ -1923,346 +1941,346 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Upstream/downstream markers</source>
-        <translation>Značky proti proudu/po proudu</translation>
+        <translation type="vanished">Značky proti proudu/po proudu</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::Controller</name>
     <message>
         <source>Upstream Side</source>
-        <translation>Strana proti proudu</translation>
+        <translation type="vanished">Strana proti proudu</translation>
     </message>
     <message>
         <source>Downstream Side</source>
-        <translation>Strana po proudu</translation>
+        <translation type="vanished">Strana po proudu</translation>
     </message>
     <message>
         <source>Right Side</source>
-        <translation>Pravá strana</translation>
+        <translation type="vanished">Pravá strana</translation>
     </message>
     <message>
         <source>Left Side</source>
-        <translation>Levá strana</translation>
+        <translation type="vanished">Levá strana</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::CsvExportController</name>
     <message>
         <source>Export CSV Files</source>
-        <translation>Export souborů CSV</translation>
+        <translation type="vanished">Export souborů CSV</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::DisplaySettingTableController</name>
     <message>
         <source>Visible</source>
-        <translation>Viditelné</translation>
+        <translation type="vanished">Viditelné</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>název</translation>
+        <translation type="vanished">název</translation>
     </message>
     <message>
         <source>Setting</source>
-        <translation>Nastavení</translation>
+        <translation type="vanished">Nastavení</translation>
     </message>
     <message>
         <source>Grid Attribute Display Setting (%1)</source>
-        <translation>Nastavení zobrazení atributu mřížky (%1)</translation>
+        <translation type="vanished">Nastavení zobrazení atributu mřížky (%1)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::GraphicsView</name>
     <message>
         <source>Left Bank Side</source>
-        <translation>Levá strana břehu</translation>
+        <translation type="vanished">Levá strana břehu</translation>
     </message>
     <message>
         <source>Right Bank Side</source>
-        <translation>Strana pravého břehu</translation>
+        <translation type="vanished">Strana pravého břehu</translation>
     </message>
     <message>
         <source>Downstream</source>
-        <translation>Po proudu</translation>
+        <translation type="vanished">Po proudu</translation>
     </message>
     <message>
         <source>Upstream</source>
-        <translation>Proti proudu</translation>
+        <translation type="vanished">Proti proudu</translation>
     </message>
     <message>
         <source>Aspect ratio (V/H): 1 / %1</source>
-        <translation>Poměr stran (V/H): 1 / %1</translation>
+        <translation type="vanished">Poměr stran (V/H): 1 / %1</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2::SnapshotSaveController</name>
     <message>
         <source>Save Snapshots</source>
-        <translation>Uložit snímky</translation>
+        <translation type="vanished">Uložit snímky</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_Controller</name>
     <message>
         <source>Form</source>
-        <translation>Formulář</translation>
+        <translation type="vanished">Formulář</translation>
     </message>
     <message>
         <source>Direction</source>
-        <translation>Směr</translation>
+        <translation type="vanished">Směr</translation>
     </message>
     <message>
         <source>I</source>
-        <translation>já</translation>
+        <translation type="vanished">já</translation>
     </message>
     <message>
         <source>J</source>
-        <translation>J</translation>
+        <translation type="vanished">J</translation>
     </message>
     <message>
         <source>Position</source>
-        <translation>Pozice</translation>
+        <translation type="vanished">Pozice</translation>
     </message>
     <message>
         <source>Cell Values</source>
-        <translation>Hodnoty buněk</translation>
+        <translation type="vanished">Hodnoty buněk</translation>
     </message>
     <message>
         <source>Upstream side</source>
-        <translation>Strana proti proudu</translation>
+        <translation type="vanished">Strana proti proudu</translation>
     </message>
     <message>
         <source>Downstream side</source>
-        <translation>Strana po proudu</translation>
+        <translation type="vanished">Strana po proudu</translation>
     </message>
     <message>
         <source>&amp;Snapshot</source>
-        <translation>Momentka (&amp;S)</translation>
+        <translation type="vanished">Momentka (&amp;S)</translation>
     </message>
     <message>
         <source>&amp;CSV Export</source>
-        <translation>Export CSV (&amp;C)</translation>
+        <translation type="vanished">Export CSV (&amp;C)</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_DisplaySettingDialog</name>
     <message>
         <source>Grid Crosssection Window Display Setting</source>
-        <translation>Nastavení zobrazení okna mřížky</translation>
+        <translation type="vanished">Nastavení zobrazení okna mřížky</translation>
     </message>
     <message>
         <source>Background grid</source>
-        <translation>Mřížka na pozadí</translation>
+        <translation type="vanished">Mřížka na pozadí</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation type="vanished">Typ</translation>
     </message>
     <message>
         <source>Lines</source>
-        <translation>Čáry</translation>
+        <translation type="vanished">Čáry</translation>
     </message>
     <message>
         <source>Dots</source>
-        <translation>Tečky</translation>
+        <translation type="vanished">Tečky</translation>
     </message>
     <message>
         <source>Horizontal</source>
-        <translation>Horizontální</translation>
+        <translation type="vanished">Horizontální</translation>
     </message>
     <message>
         <source>Auto</source>
-        <translation>Auto</translation>
+        <translation type="vanished">Auto</translation>
     </message>
     <message>
         <source>Scale</source>
-        <translation>Měřítko</translation>
+        <translation type="vanished">Měřítko</translation>
     </message>
     <message>
         <source>Sub scale</source>
-        <translation>Dílčí stupnice</translation>
+        <translation type="vanished">Dílčí stupnice</translation>
     </message>
     <message>
         <source>Vertical</source>
-        <translation>Vertikální</translation>
+        <translation type="vanished">Vertikální</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation>Barva:</translation>
+        <translation type="vanished">Barva:</translation>
     </message>
     <message>
         <source>Scales</source>
-        <translation>Váhy</translation>
+        <translation type="vanished">Váhy</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>písmo:</translation>
+        <translation type="vanished">písmo:</translation>
     </message>
     <message>
         <source>Left/right bank markers</source>
-        <translation>Značky levého/pravého břehu</translation>
+        <translation type="vanished">Značky levého/pravého břehu</translation>
     </message>
     <message>
         <source>Aspect ratio</source>
-        <translation>Poměr stran</translation>
+        <translation type="vanished">Poměr stran</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_ExportSettingDialog</name>
     <message>
         <source>Export Setting</source>
-        <translation>Nastavení exportu</translation>
+        <translation type="vanished">Nastavení exportu</translation>
     </message>
     <message>
         <source>Folder &amp;&amp; Prefix</source>
-        <translation>Složka a předpona (&amp; )</translation>
+        <translation type="vanished">Složka a předpona (&amp; )</translation>
     </message>
     <message>
         <source>Folder:</source>
-        <translation>Složka:</translation>
+        <translation type="vanished">Složka:</translation>
     </message>
     <message>
         <source>Prefix:</source>
-        <translation>Předpona:</translation>
+        <translation type="vanished">Předpona:</translation>
     </message>
     <message>
         <source>Cross Section</source>
-        <translation>Průřez</translation>
+        <translation type="vanished">Průřez</translation>
     </message>
     <message>
         <source>Current Only</source>
-        <translation>Pouze aktuální</translation>
+        <translation type="vanished">Pouze aktuální</translation>
     </message>
     <message>
         <source>All</source>
-        <translation>Všechno</translation>
+        <translation type="vanished">Všechno</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Zvyk</translation>
+        <translation type="vanished">Zvyk</translation>
     </message>
     <message>
         <source>I Min:</source>
-        <translation>Jdu do toho:</translation>
+        <translation type="vanished">Jdu do toho:</translation>
     </message>
     <message>
         <source>I Max:</source>
-        <translation>I Max:</translation>
+        <translation type="vanished">I Max:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Míra přeskočení:</translation>
+        <translation type="vanished">Míra přeskočení:</translation>
     </message>
 </context>
 <context>
     <name>PreProcessorGridCrosssectionWindow2_GridAttributeDisplaySettingEditDialog</name>
     <message>
         <source>Grid Attribute Display Setting</source>
-        <translation>Nastavení zobrazení atributu mřížky</translation>
+        <translation type="vanished">Nastavení zobrazení atributu mřížky</translation>
     </message>
     <message>
         <source>Visible</source>
-        <translation>Viditelné</translation>
+        <translation type="vanished">Viditelné</translation>
     </message>
     <message>
         <source>Basic</source>
-        <translation>Základní</translation>
+        <translation type="vanished">Základní</translation>
     </message>
     <message>
         <source>Mode</source>
-        <translation>Režim</translation>
+        <translation type="vanished">Režim</translation>
     </message>
     <message>
         <source>Elevation chart</source>
-        <translation>Výškový graf</translation>
+        <translation type="vanished">Výškový graf</translation>
     </message>
     <message>
         <source>Independent chart</source>
-        <translation>Nezávislý graf</translation>
+        <translation type="vanished">Nezávislý graf</translation>
     </message>
     <message>
         <source>Colormap</source>
-        <translation>Barevná mapa</translation>
+        <translation type="vanished">Barevná mapa</translation>
     </message>
     <message>
         <source>Elevation Chart Setting</source>
-        <translation>Nastavení výškového grafu</translation>
+        <translation type="vanished">Nastavení výškového grafu</translation>
     </message>
     <message>
         <source>Line Color:</source>
-        <translation>Barva čáry:</translation>
+        <translation type="vanished">Barva čáry:</translation>
     </message>
     <message>
         <source>Line Width:</source>
-        <translation>Šířka čáry:</translation>
+        <translation type="vanished">Šířka čáry:</translation>
     </message>
     <message>
         <source>Show Points</source>
-        <translation>Zobrazit body</translation>
+        <translation type="vanished">Zobrazit body</translation>
     </message>
     <message>
         <source>Point Size</source>
-        <translation>Velikost bodu</translation>
+        <translation type="vanished">Velikost bodu</translation>
     </message>
     <message>
         <source>Show Indices</source>
-        <translation>Zobrazit indexy</translation>
+        <translation type="vanished">Zobrazit indexy</translation>
     </message>
     <message>
         <source>Font Color:</source>
-        <translation>Barva fontu:</translation>
+        <translation type="vanished">Barva fontu:</translation>
     </message>
     <message>
         <source>Font:</source>
-        <translation>písmo:</translation>
+        <translation type="vanished">písmo:</translation>
     </message>
     <message>
         <source>Skip Rate:</source>
-        <translation>Míra přeskočení:</translation>
+        <translation type="vanished">Míra přeskočení:</translation>
     </message>
     <message>
         <source>Independent Chart Setting</source>
-        <translation>Nezávislé nastavení grafu</translation>
+        <translation type="vanished">Nezávislé nastavení grafu</translation>
     </message>
     <message>
         <source>Chart Height:</source>
-        <translation>Výška grafu:</translation>
+        <translation type="vanished">Výška grafu:</translation>
     </message>
     <message>
         <source>[pixels]</source>
-        <translation>[pixely]</translation>
+        <translation type="vanished">[pixely]</translation>
     </message>
     <message>
         <source>Title Font:</source>
-        <translation>Písmo názvu:</translation>
+        <translation type="vanished">Písmo názvu:</translation>
     </message>
     <message>
         <source>Axis Color:</source>
-        <translation>Barva osy:</translation>
+        <translation type="vanished">Barva osy:</translation>
     </message>
     <message>
         <source>Axis Font:</source>
-        <translation>Písmo osy:</translation>
+        <translation type="vanished">Písmo osy:</translation>
     </message>
     <message>
         <source>Colormap Setting</source>
-        <translation>Nastavení barevné mapy</translation>
+        <translation type="vanished">Nastavení barevné mapy</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Poznámka:&lt;/span&gt; K úpravě nastavení barev použijte kartu Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Poznámka:&lt;/span&gt; K úpravě nastavení barev použijte kartu Colormap&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
-        <translation>Použijte nastavení okna Předzpracování</translation>
+        <translation type="vanished">Použijte nastavení okna Předzpracování</translation>
     </message>
     <message>
         <source>Show Title</source>
-        <translation>Ukázat nadpis</translation>
+        <translation type="vanished">Ukázat nadpis</translation>
     </message>
     <message>
         <source>Title Color</source>
-        <translation>Barva názvu</translation>
+        <translation type="vanished">Barva názvu</translation>
     </message>
 </context>
 <context>
@@ -2363,7 +2381,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Nastavte Scalarbar (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird's-Eye View Window</source>
+        <source>Open &amp;Bird&apos;s-Eye View Window</source>
         <translation>Otevřete okno pohledu z ptačí perspektivy (&amp;B)</translation>
     </message>
     <message>

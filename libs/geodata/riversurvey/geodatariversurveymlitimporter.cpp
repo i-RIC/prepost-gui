@@ -4,6 +4,7 @@
 #include "geodatariversurveymlitimporter.h"
 #include "private/geodatariversurveymlitimporter_problemsdialog.h"
 
+#include <guicore/pre/geodata/private/geodataimporter_impl.h>
 #include <misc/stringtool.h>
 
 #include <QDir>
@@ -165,7 +166,7 @@ bool loadCrossSectionData(const QString& filename, std::vector<GeoDataRiverSurve
 	return true;
 }
 
-bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool *with4Points, QWidget* w)
+bool readMlitRivFile(const QString& filename, const QString& csFolder, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool *with4Points, QWidget* w)
 {
 	GeoDataRiverSurveyImporter::clearPoints(points);
 	bool ok = loadDistanceMarkerData(filename, points, w);
@@ -173,14 +174,7 @@ bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImpo
 
 	QFileInfo finfo(filename);
 
-	QFileDialog dialog(w, GeoDataRiverSurveyMlitImporter::tr("Select folder where cross section data exists"), finfo.absolutePath());
-	dialog.setFileMode(QFileDialog::Directory);
-	dialog.setOption(QFileDialog::ShowDirsOnly);
-	int ret = dialog.exec();
-	if (ret == QDialog::Rejected) {return false;}
-	auto filePaths = dialog.selectedFiles();
-
-	QDir xsDir(filePaths.at(0));
+	QDir xsDir(csFolder);
 	QStringList filters;
 	filters << "*.csv";
 	auto names = xsDir.entryList(filters, QDir::Files, QDir::Name);
@@ -239,6 +233,20 @@ bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImpo
 	return true;
 }
 
+bool readMlitRivFile(const QString& filename, std::vector<GeoDataRiverSurveyImporter::RivPathPoint*>* points, bool *with4Points, QWidget* w)
+{
+	QFileInfo finfo(filename);
+
+	QFileDialog dialog(w, GeoDataRiverSurveyMlitImporter::tr("Select folder where cross section data exists"), finfo.absolutePath());
+	dialog.setFileMode(QFileDialog::Directory);
+	dialog.setOption(QFileDialog::ShowDirsOnly);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {return false;}
+	auto csFolder = dialog.selectedFiles().at(0);
+
+	return readMlitRivFile(filename, csFolder, points, with4Points, w);
+}
+
 } // namespace
 
 GeoDataRiverSurveyMlitImporter::GeoDataRiverSurveyMlitImporter(GeoDataCreator* creator) :
@@ -265,6 +273,28 @@ const QStringList GeoDataRiverSurveyMlitImporter::acceptableExtensions()
 	QStringList ret;
 	ret << "csv";
 	return ret;
+}
+
+bool GeoDataRiverSurveyMlitImporter::importInit(const QString& filename, const QString& csFolder, QWidget* w)
+{
+	impl->m_filename = filename;
+
+	if (! readMlitRivFile(filename, csFolder, &m_points, &m_with4Points, w)) {return false;}
+
+	GeoDataRiverSurveyImporterSettingDialog dialog(w);
+	dialog.setWith4Points(m_with4Points);
+	dialog.setAllNamesAreNumber(true);
+	int ret = dialog.exec();
+	if (ret == QDialog::Rejected) {
+		GeoDataRiverSurveyImporter::clearPoints(&m_points);
+		return false;
+	}
+
+	m_cpSetting = dialog.centerPointSetting();
+	m_csvFilename = dialog.csvFileName();
+
+	GeoDataRiverSurveyImporter::sortByKP(&m_points);
+	return true;
 }
 
 bool GeoDataRiverSurveyMlitImporter::doInit(const QString& filename, const QString& /*selectedFilter*/, int* count, SolverDefinitionGridAttribute* /*condition*/, PreProcessorGeoDataGroupDataItemI* /*item*/, QWidget* w)
