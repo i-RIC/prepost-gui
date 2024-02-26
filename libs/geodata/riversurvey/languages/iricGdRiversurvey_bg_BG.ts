@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="bg_BG">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,7 +379,7 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Данните за напречното сечение се генерират с помощта на данни от облака от точки. Ако искате отново да коригирате позицията на напречното сечение и данните от облака на картата, можете да използвате „Облачни данни от точки на картата“</translation>
     </message>
     <message>
@@ -394,13 +392,13 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Данните за напречното сечение се генерират с помощта на данни от облак от точки. Ако искате да коригирате позицията на напречното сечение и данните за облака от точки на картата отново, можете да използвате „Данни за облака от точки на картата“</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
         <translation type="vanished">Данните за напречното сечение се генерират с помощта на данни от облак от точки. В някои региони данните не съществуват в данни за облака от точки и стойността 0 е картографирана за тези точки. Ако искате да коригирате позицията на напречното сечение и данните за облака от точки на картата отново, можете да използвате „Данни за облака от точки на картата“</translation>
     </message>
     <message>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -421,13 +419,13 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Генерират се данни за напречно сечение. Ако искате да коригирате позицията на напречното сечение и картата отново, можете да използвате менюто „Картиране на данни от облак от точки или растерни данни“.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Генерират се данни за напречно сечение. В някои регион картографирането не е успешно в някои точки и стойността 0 е картографирана за тези точки. Ако искате да коригирате позицията на напречното сечение и картата отново, можете да използвате менюто „Картиране на данни от облак от точки или растерни данни“.</translation>
     </message>
     <message>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Настройките за кота и наклон са невалидни.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Когато посочите кота на крайната точка, тя не може да бъде същата като началната точка. Ако искате да нарисувате хоризонтална линия, моля, изберете &quot;Укажете хоризонтално разстояние&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Когато посочите кота на крайната точка, тя не може да бъде същата като началната точка. Ако искате да нарисувате хоризонтална линия, моля, изберете "Укажете хоризонтално разстояние".</translation>
     </message>
 </context>
 <context>
@@ -873,7 +871,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Редактирайте напречното сечение, като щракнете с мишката. Завършете редактирането, като щракнете двукратно или натиснете клавиша за връщане. Можете точно да редактирате напречното сечение, като въведете стойности от диалоговия прозорец. Моля, влезте в режим за редактиране на диалогов прозорец от „Редактиране от диалогов прозорец“ в менюто с десен бутон.</translation>
     </message>
     <message>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Грешка</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Стойността на LX е невалидна</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 линия %2 "%3": Стойността на LX е невалидна</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: LY стойността е невалидна</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 линия %2 "%3": LY стойността е невалидна</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Стойността на RX е невалидна</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 линия %2 "%3": Стойността на RX е невалидна</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Стойността на RY е невалидна</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 линия %2 "%3": Стойността на RY е невалидна</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Броят точки е невалиден</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 линия %2 "%3": Броят точки е невалиден</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Невалидна стойност на индекса</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 линия %2 "%3": Невалидна стойност на индекса</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 линия %2 : данни за напречно сечение за %3 не достатъчно</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Стойността на разстоянието е невалидна</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 линия %2 "%3": Стойността на разстоянието е невалидна</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 линия %2 &quot;%3&quot;: Стойността на котата е невалидна</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 линия %2 "%3": Стойността на котата е невалидна</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Линия %2 : Грешка при четене. Нужни са поне две стойности.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Линия %2 : Грешка при четене. Не е реална стойност на числото &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Линия %2 : Грешка при четене. Не е реална стойност на числото "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Линия %2 : KP не се въвежда</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Стойността на LX е невалидна</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Линия %2 "%3": Стойността на LX е невалидна</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: LY стойността е невалидна</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Линия %2 "%3": LY стойността е невалидна</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Стойността на RX е невалидна</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Линия %2 "%3": Стойността на RX е невалидна</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Линия %2 &quot;%3&quot;: Стойността на RY е невалидна</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Линия %2 "%3": Стойността на RY е невалидна</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Данните от маркера за разстояние не са намерени. Ще бъде игнориран.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 линия %2 : &quot;%3&quot;: Данните за флага са невалидни.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 линия %2 : "%3": Данните за флага са невалидни.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 линия %2 : &quot;%3&quot;: Данните за разстоянието са невалидни.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 линия %2 : "%3": Данните за разстоянието са невалидни.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 линия %2 : &quot;%3&quot;: Данните за котата са невалидни.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 линия %2 : "%3": Данните за котата са невалидни.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1425,34 +1423,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyWebImporter</name>
     <message>
         <source>Cross-Section Data from Profile of Hokkaido Development</source>
-        <translation type="unfinished"></translation>
+        <translation>Данни за напречно сечение от профил на развитие на Хокайдо</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyWebImporter_SettingDialog</name>
     <message>
         <source>Cross-section Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка за импортиране на данни за напречно сечение</translation>
     </message>
     <message>
         <source>River:</source>
-        <translation type="unfinished"></translation>
+        <translation>река:</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Обхват</translation>
     </message>
     <message>
         <source>Upstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>нагоре по течението:</translation>
     </message>
     <message>
         <source>Downstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>надолу по веригата:</translation>
     </message>
     <message>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>Година:</translation>
     </message>
 </context>
 <context>
@@ -1474,8 +1472,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Видими</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Забележка:&lt;/span&gt; Можете да персонализирате цвета, като използвате раздела Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Забележка:&lt;/span&gt; Можете да персонализирате цвета, като използвате раздела Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ar_EG">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات clouod لنقطة الخريطة مرة أخرى ، يمكنك استخدام &quot;Map point cloud data&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات clouod لنقطة الخريطة مرة أخرى ، يمكنك استخدام "Map point cloud data"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات سحابة نقطة الخريطة مرة أخرى ، يمكنك استخدام &quot;Map point cloud data&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات سحابة نقطة الخريطة مرة أخرى ، يمكنك استخدام "Map point cloud data"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. في بعض المناطق ، لم تكن البيانات موجودة في بيانات سحابة النقاط ، وتم تعيين القيمة 0 لتلك النقاط. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات سحابة نقطة الخريطة مرة أخرى ، يمكنك استخدام &quot;Map point cloud data&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">يتم إنشاء بيانات المقطع العرضي باستخدام بيانات سحابة النقطة. في بعض المناطق ، لم تكن البيانات موجودة في بيانات سحابة النقاط ، وتم تعيين القيمة 0 لتلك النقاط. إذا كنت ترغب في ضبط موضع المقطع العرضي وبيانات سحابة نقطة الخريطة مرة أخرى ، يمكنك استخدام "Map point cloud data"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -421,14 +419,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>يتم إنشاء بيانات المقطع العرضي. إذا كنت تريد ضبط موضع المقطع العرضي والخريطة مرة أخرى، فيمكنك استخدام قائمة &quot;بيانات سحابة نقطة الخريطة أو البيانات النقطية&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>يتم إنشاء بيانات المقطع العرضي. إذا كنت تريد ضبط موضع المقطع العرضي والخريطة مرة أخرى، فيمكنك استخدام قائمة "بيانات سحابة نقطة الخريطة أو البيانات النقطية".</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>يتم إنشاء بيانات المقطع العرضي. في بعض المناطق، لم ينجح التعيين في بعض النقاط، وتم تعيين القيمة 0 لتلك النقاط. إذا كنت تريد ضبط موضع المقطع العرضي والخريطة مرة أخرى، فيمكنك استخدام قائمة &quot;بيانات سحابة نقطة الخريطة أو البيانات النقطية&quot;.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>يتم إنشاء بيانات المقطع العرضي. في بعض المناطق، لم ينجح التعيين في بعض النقاط، وتم تعيين القيمة 0 لتلك النقاط. إذا كنت تريد ضبط موضع المقطع العرضي والخريطة مرة أخرى، فيمكنك استخدام قائمة "بيانات سحابة نقطة الخريطة أو البيانات النقطية".</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>إعدادات الارتفاع والتدرج غير صالحة.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>عند تحديد ارتفاع نقطة النهاية ، لا يمكن أن يكون هو نفسه مع نقطة البداية. إذا كنت تريد رسم خط أفقي ، يرجى تحديد &quot;تحديد المسافة الأفقية&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>عند تحديد ارتفاع نقطة النهاية ، لا يمكن أن يكون هو نفسه مع نقطة البداية. إذا كنت تريد رسم خط أفقي ، يرجى تحديد "تحديد المسافة الأفقية".</translation>
     </message>
 </context>
 <context>
@@ -814,11 +812,11 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Select Water Surface Elevation</source>
-        <translation>حدد &quot;ارتفاع سطح الماء&quot;</translation>
+        <translation>حدد "ارتفاع سطح الماء"</translation>
     </message>
     <message>
         <source>Select Water Surface Elevation to use</source>
-        <translation>حدد &quot;ارتفاع سطح الماء&quot; المطلوب استخدامه</translation>
+        <translation>حدد "ارتفاع سطح الماء" المطلوب استخدامه</translation>
     </message>
     <message>
         <source>Cross-Section Data</source>
@@ -873,8 +871,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>قم بتحرير المقطع العرضي عن طريق النقر بالماوس. قم بإنهاء التحرير بالنقر المزدوج أو الضغط على مفتاح الرجوع. يمكنك تحرير المقطع العرضي بدقة عن طريق إدخال القيم من مربع الحوار. الرجاء إدخال وضع تحرير الحوار من &quot;تحرير من مربع الحوار&quot; في قائمة النقر بزر الماوس الأيمن.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>قم بتحرير المقطع العرضي عن طريق النقر بالماوس. قم بإنهاء التحرير بالنقر المزدوج أو الضغط على مفتاح الرجوع. يمكنك تحرير المقطع العرضي بدقة عن طريق إدخال القيم من مربع الحوار. الرجاء إدخال وضع تحرير الحوار من "تحرير من مربع الحوار" في قائمة النقر بزر الماوس الأيمن.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>خطأ</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة LX غير صالحة</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة LX غير صالحة</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة LY غير صالحة</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة LY غير صالحة</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة RX غير صالحة</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة RX غير صالحة</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة RY غير صالحة</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة RY غير صالحة</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: عدد النقاط غير صالح</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 خط %2 "%3": عدد النقاط غير صالح</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة فهرس غير صالحة</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 خط %2 "%3": قيمة فهرس غير صالحة</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 خط %2 : بيانات المقطع العرضي لـ %3 ليس كافي</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة المسافة غير صالحة</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة المسافة غير صالحة</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة الارتفاع غير صالحة</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة الارتفاع غير صالحة</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 خط %2 : قراءة خطأ. يحتاج إلى قيمتين على الأقل.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 خط %2 : قراءة خطأ. ليست قيمة عدد حقيقية &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 خط %2 : قراءة خطأ. ليست قيمة عدد حقيقية "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 خط %2 : KP ليس المدخلات</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة LX غير صالحة</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة LX غير صالحة</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة LY غير صالحة</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة LY غير صالحة</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة RX غير صالحة</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة RX غير صالحة</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 خط %2 &quot;%3&quot;: قيمة RY غير صالحة</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 خط %2 "%3": قيمة RY غير صالحة</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>لم يتم العثور على بيانات علامة المسافة. سيتم تجاهله.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 خط %2 : &quot;%3&quot;: بيانات العلامة غير صالحة.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 خط %2 : "%3": بيانات العلامة غير صالحة.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 خط %2 : &quot;%3&quot;: بيانات المسافة غير صالحة.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 خط %2 : "%3": بيانات المسافة غير صالحة.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 خط %2 : &quot;%3&quot;: بيانات الارتفاع غير صالحة.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 خط %2 : "%3": بيانات الارتفاع غير صالحة.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1425,34 +1423,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyWebImporter</name>
     <message>
         <source>Cross-Section Data from Profile of Hokkaido Development</source>
-        <translation type="unfinished"></translation>
+        <translation>بيانات مقطعية من ملف تطوير هوكايدو</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyWebImporter_SettingDialog</name>
     <message>
         <source>Cross-section Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>إعداد استيراد بيانات المقطع العرضي</translation>
     </message>
     <message>
         <source>River:</source>
-        <translation type="unfinished"></translation>
+        <translation>نهر:</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>يتراوح</translation>
     </message>
     <message>
         <source>Upstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>المنبع:</translation>
     </message>
     <message>
         <source>Downstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>المصب:</translation>
     </message>
     <message>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>سنة:</translation>
     </message>
 </context>
 <context>
@@ -1474,8 +1472,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>مرئي</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = &quot;font-weight: 600؛&quot;&gt; ملاحظة: &lt;/ span&gt; يمكنك تخصيص اللون باستخدام علامة التبويب Colormap. &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt; &lt;head /&gt; &lt;body&gt; &lt;p&gt; &lt;span style = "font-weight: 600؛"&gt; ملاحظة: &lt;/ span&gt; يمكنك تخصيص اللون باستخدام علامة التبويب Colormap. &lt;/p&gt; &lt;/body&gt; &lt; / html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

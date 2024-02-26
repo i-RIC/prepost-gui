@@ -959,7 +959,7 @@
     </message>
     <message>
         <source>Point cloud data from Elevation CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Arahkan data cloud dari ubin Elevation CSV</translation>
     </message>
 </context>
 <context>

@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="sl_SI">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Podatki o prerezu se ustvarijo s pomočjo podatkov oblaka točk. Če želite znova prilagoditi položaj prereza in podatke o oblačnosti zemljevida, lahko uporabite &quot;Podatki oblaka točk zemljevida&quot;</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Podatki o prerezu se ustvarijo s pomočjo podatkov oblaka točk. Če želite znova prilagoditi položaj prereza in podatke o oblačnosti zemljevida, lahko uporabite "Podatki oblaka točk zemljevida"</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Podatki o prerezu so generirani s pomočjo podatkov oblaka točk. Če želite ponovno prilagoditi položaj prečnega prereza in podatke o oblaku točk zemljevida, lahko uporabite &quot;Podatki o oblaku točk zemljevida&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Podatki o prerezu so generirani s pomočjo podatkov oblaka točk. Če želite ponovno prilagoditi položaj prečnega prereza in podatke o oblaku točk zemljevida, lahko uporabite "Podatki o oblaku točk zemljevida"</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">Podatki o prerezu so generirani s pomočjo podatkov oblaka točk. V nekaterih regijah podatki ne obstajajo v podatkih oblaka točk in vrednost 0 je bila preslikana za te točke. Če želite ponovno prilagoditi položaj prečnega prereza in podatke o oblaku točk zemljevida, lahko uporabite &quot;Podatki o oblaku točk zemljevida&quot;</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">Podatki o prerezu so generirani s pomočjo podatkov oblaka točk. V nekaterih regijah podatki ne obstajajo v podatkih oblaka točk in vrednost 0 je bila preslikana za te točke. Če želite ponovno prilagoditi položaj prečnega prereza in podatke o oblaku točk zemljevida, lahko uporabite "Podatki o oblaku točk zemljevida"</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -421,13 +419,13 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Ustvarjeni so podatki o preseku. Če želite prilagoditi položaj prečnega prereza in znova preslikati, lahko uporabite meni »Preslikaj podatke oblaka točk ali rastrske podatke«.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
         <translation>Ustvarjeni so podatki o preseku. V nekaterih regijah preslikava v nekaterih točkah ni uspela in za te točke je bila preslikana vrednost 0. Če želite prilagoditi položaj prečnega prereza in znova preslikati, lahko uporabite meni »Preslikaj podatke oblaka točk ali rastrske podatke«.</translation>
     </message>
     <message>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>Nastavitve višine in nagiba sta neveljavni.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>Ko določite višino končne točke, ne more biti enaka začetni točki. Če želite narisati vodoravno črto, izberite &quot;Določi vodoravno razdaljo&quot;.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>Ko določite višino končne točke, ne more biti enaka začetni točki. Če želite narisati vodoravno črto, izberite "Določi vodoravno razdaljo".</translation>
     </message>
 </context>
 <context>
@@ -873,7 +871,7 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
         <translation>Uredite prerez s klikom miške. Urejanje zaključite z dvojnim klikom ali pritiskom na tipko za vrnitev. Prerez lahko natančno uredite tako, da vnesete vrednosti iz pogovornega okna. Vnesite način urejanja pogovornega okna iz možnosti »Uredi iz pogovornega okna« v meniju z desnim klikom.</translation>
     </message>
     <message>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Napaka</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Vrednost LX je neveljavna</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Vrednost LX je neveljavna</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Vrednost LY je neveljavna</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Vrednost LY je neveljavna</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Vrednost RX ni veljavna</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Vrednost RX ni veljavna</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Vrednost RY je neveljavna</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Vrednost RY je neveljavna</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Število točk je neveljavno</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 vrstica %2 "%3": Število točk je neveljavno</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Neveljavna vrednost indeksa</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 vrstica %2 "%3": Neveljavna vrednost indeksa</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 vrstica %2 : podatki o prerezu za %3 ne dovolj</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Vrednost razdalje je neveljavna</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Vrednost razdalje je neveljavna</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 vrstica %2 &quot;%3&quot;: Višinska vrednost ni veljavna</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 vrstica %2 "%3": Višinska vrednost ni veljavna</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linija %2 : Napaka pri branju. Potrebuje vsaj dve vrednosti.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 Linija %2 : Napaka pri branju. Ni dejanska vrednost števila &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 Linija %2 : Napaka pri branju. Ni dejanska vrednost števila "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 Linija %2 : KP ni vnos</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 Linija %2 &quot;%3&quot;: Vrednost LX je neveljavna</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 Linija %2 "%3": Vrednost LX je neveljavna</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 Linija %2 &quot;%3&quot;: Vrednost LY je neveljavna</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 Linija %2 "%3": Vrednost LY je neveljavna</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 Linija %2 &quot;%3&quot;: Vrednost RX ni veljavna</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 Linija %2 "%3": Vrednost RX ni veljavna</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 Linija %2 &quot;%3&quot;: Vrednost RY je neveljavna</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 Linija %2 "%3": Vrednost RY je neveljavna</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>Podatkov o označevalcu razdalje ni mogoče najti. Ne bo upoštevano.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 vrstica %2 : &quot;%3&quot;: Podatki o zastavi so neveljavni.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 vrstica %2 : "%3": Podatki o zastavi so neveljavni.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 vrstica %2 : &quot;%3&quot;: Podatki o razdalji so neveljavni.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 vrstica %2 : "%3": Podatki o razdalji so neveljavni.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 vrstica %2 : &quot;%3&quot;: Podatki o višini niso veljavni.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 vrstica %2 : "%3": Podatki o višini niso veljavni.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1425,34 +1423,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyWebImporter</name>
     <message>
         <source>Cross-Section Data from Profile of Hokkaido Development</source>
-        <translation type="unfinished"></translation>
+        <translation>Prečni podatki iz profila razvoja Hokkaida</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyWebImporter_SettingDialog</name>
     <message>
         <source>Cross-section Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitev uvoza podatkov o preseku</translation>
     </message>
     <message>
         <source>River:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reka:</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>Razpon</translation>
     </message>
     <message>
         <source>Upstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>Navzgor:</translation>
     </message>
     <message>
         <source>Downstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dolvodno:</translation>
     </message>
     <message>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>leto:</translation>
     </message>
 </context>
 <context>
@@ -1474,8 +1472,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>Vidno</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Opomba:&lt;/span&gt; Barvo lahko prilagodite z zavihkom Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Opomba:&lt;/span&gt; Barvo lahko prilagodite z zavihkom Colormap.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

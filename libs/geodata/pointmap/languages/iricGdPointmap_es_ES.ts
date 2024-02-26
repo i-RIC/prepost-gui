@@ -1006,7 +1006,7 @@
     </message>
     <message>
         <source>Point cloud data from Elevation CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Datos de nube de puntos del mosaico CSV de elevación</translation>
     </message>
 </context>
 <context>

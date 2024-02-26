@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ky_KG">
 <context>
     <name>BoundaryConditionDialog</name>
@@ -121,8 +119,8 @@ Do you really want to import grid from this file?</source>
 <context>
     <name>GridBirdEyeWindow</name>
     <message>
-        <source>Grid Bird&apos;s-Eye View Window</source>
-        <translation>Grid Bird&apos;s Eye View терезеси</translation>
+        <source>Grid Bird's-Eye View Window</source>
+        <translation>Grid Bird's Eye View терезеси</translation>
     </message>
 </context>
 <context>
@@ -798,8 +796,8 @@ Do you really want to import grid from this file?</source>
         <translation>%1 акыркы жолу оңдолгондон кийин картага түшпөйт. Сиз азыр картаны аткаргыңыз келеби?</translation>
     </message>
     <message>
-        <source>Boundary Condition Setting &quot;%1&quot; is not mapped after it is edited last time. Do you want to execute mapping now?</source>
-        <translation>Чек ара шарттарын коюу &quot;%1&quot;акыркы жолу оңдолгондон кийин картага түшпөйт. Эми картага түшүрүүнү каалайсызбы?</translation>
+        <source>Boundary Condition Setting "%1" is not mapped after it is edited last time. Do you want to execute mapping now?</source>
+        <translation>Чек ара шарттарын коюу "%1"акыркы жолу оңдолгондон кийин картага түшпөйт. Эми картага түшүрүүнү каалайсызбы?</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1017,11 +1015,11 @@ Do you really want to import grid from this file?</source>
     </message>
     <message>
         <source>Select Data Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Маалымат түрүн тандаңыз</translation>
     </message>
     <message>
         <source>Please select type of data to import</source>
-        <translation type="unfinished"></translation>
+        <translation>Сураныч, импорттоо үчүн берилиштердин түрүн тандаңыз</translation>
     </message>
 </context>
 <context>
@@ -1056,14 +1054,14 @@ Do you really want to import grid from this file?</source>
     <message>
         <source>Note:
 
-When variation is enabled, variation named &quot;Default&quot; is created, and all geographic data is moved to that.
+When variation is enabled, variation named "Default" is created, and all geographic data is moved to that.
 
-You can add, rename, remove variations from &quot;Object Browser&quot;.
+You can add, rename, remove variations from "Object Browser".
 
 You can move, copy geographic data between variations.
 
-The grid attribute data created from the variation that you select with &quot;Variation to pass to solver&quot; is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
-        <translation>Эскертүү: Вариация иштетилгенде, &quot;Демейки&quot; деп аталган вариация түзүлөт жана бардык географиялык маалыматтар ошого жылдырылат. Сиз &quot;Объект Браузеринен&quot; вариацияларды кошуп, атын өзгөртүп, жок кыла аласыз. Вариациялар арасында географиялык маалыматтарды көчүрүп, жылдыра аласыз. Сиз &quot;Чечүүчүгө өтүүчү вариация&quot; менен тандаган вариациядан түзүлгөн тор атрибуту дайындары чечүүчүгө өткөрүлөт. Сиз бир нече вариацияларды даярдап, аны чечүүчүгө өткөрүп, айырманын эффектисин текшере аласыз.</translation>
+The grid attribute data created from the variation that you select with "Variation to pass to solver" is passed to solver. You can prepare multiple variations, switch which to pass to the solver, and make sure the effect of the difference.</source>
+        <translation>Эскертүү: Вариация иштетилгенде, "Демейки" деп аталган вариация түзүлөт жана бардык географиялык маалыматтар ошого жылдырылат. Сиз "Объект Браузеринен" вариацияларды кошуп, атын өзгөртүп, жок кыла аласыз. Вариациялар арасында географиялык маалыматтарды көчүрүп, жылдыра аласыз. Сиз "Чечүүчүгө өтүүчү вариация" менен тандаган вариациядан түзүлгөн тор атрибуту дайындары чечүүчүгө өткөрүлөт. Сиз бир нече вариацияларды даярдап, аны чечүүчүгө өткөрүп, айырманын эффектисин текшере аласыз.</translation>
     </message>
 </context>
 <context>
@@ -1443,9 +1441,9 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Аткаруу (&amp;E)...</translation>
     </message>
     <message>
-        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot;.
+        <source>The following attributes were not mapped, because grid generator output values for them. If you want to map geographic data for them forcibly, please map manually with menu "Grid" -&gt; "Attributes Mapping" -&gt; "Execute".
 </source>
-        <translation>Төмөнкү атрибуттар картага түшүрүлгөн жок, анткени алар үчүн сетка генераторунун чыгуучу баалуулуктары. Эгерде сиз географиялык маалыматтарды мажбурлап карта кылгыңыз келсе, &quot;Grid&quot; -&gt; &quot;Attributes Mapping&quot; -&gt; &quot;Execute&quot; менюсу менен кол менен картаңыз.</translation>
+        <translation>Төмөнкү атрибуттар картага түшүрүлгөн жок, анткени алар үчүн сетка генераторунун чыгуучу баалуулуктары. Эгерде сиз географиялык маалыматтарды мажбурлап карта кылгыңыз келсе, "Grid" -&gt; "Attributes Mapping" -&gt; "Execute" менюсу менен кол менен картаңыз.</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1464,12 +1462,12 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Географиялык маалыматтарды картага алуу аяктады</translation>
     </message>
     <message>
-        <source>The grid attribute &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Тор атрибуту &quot;%1&quot;кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
+        <source>The grid attribute "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Тор атрибуту "%1"кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
     </message>
     <message>
-        <source>The boundary condition &quot;%1&quot; is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
-        <translation>Чек ара шарты &quot;%1&quot;кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
+        <source>The boundary condition "%1" is edited by hand. When you execute mapping, all modifications you made will be discarded. Do you really want to execute mapping?</source>
+        <translation>Чек ара шарты "%1"кол менен түзөтүлөт. Сиз карта түзүүнү аткарганда, сиз киргизген бардык өзгөртүүлөр жокко чыгарылат. Чын эле картография кылгыңыз келеби?</translation>
     </message>
 </context>
 <context>
@@ -1487,20 +1485,20 @@ The grid attribute data created from the variation that you select with &quot;Va
         <translation>Авто</translation>
     </message>
     <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+        <source>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS UI Gothic&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;! DOCTYPE HTML PUBLIC &quot;-// W3C // DTD HTML 4.0 // EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = &quot;qrichtext&quot; content = &quot;1&quot; /&gt; &lt;style type = &quot;text /css&quot;&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = &quot;font-family: &apos;MS UI Gothic&apos;; font-size: 9pt; font-weight: 400; font-style: normal;&quot;&gt; &lt;p style = &quot;margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; &quot;&gt; Тор түзүлгөндө сизден: Атрибуттар картасын ар дайым аткаруу үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'MS UI Gothic'; font-size:9pt; font-weight:400; font-style:normal;"&gt;
+&lt;p style=" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;When the grid is created, you are asked whether to execute Attribute Mapping everytime.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;! DOCTYPE HTML PUBLIC "-// W3C // DTD HTML 4.0 // EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt; &lt;html&gt; &lt;head&gt; &lt;мета аты = "qrichtext" content = "1" /&gt; &lt;style type = "text /css"&gt; p, li {white-space: pre-wrap; } &lt;/style&gt; &lt;/head&gt; &lt;body style = "font-family: 'MS UI Gothic'; font-size: 9pt; font-weight: 400; font-style: normal;"&gt; &lt;p style = "margin -top: 12px; margin-bottom: 12px; margin-left: 0px; margin-right: 0px; -qt-block-indent: 0; text-indent: 0px; "&gt; Тор түзүлгөндө сизден: Атрибуттар картасын ар дайым аткаруу үчүн. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <source>Manual</source>
         <translation>Кол менен</translation>
     </message>
     <message>
-        <source>Attribute mapping is executed only when you manually select &quot;Execute&quot; menu.</source>
-        <translation>Атрибуттардын картасы &quot;Execute&quot; менюну кол менен тандап алганда гана аткарылат.</translation>
+        <source>Attribute mapping is executed only when you manually select "Execute" menu.</source>
+        <translation>Атрибуттардын картасы "Execute" менюну кол менен тандап алганда гана аткарылат.</translation>
     </message>
     <message>
         <source>Geographic data mapping</source>
@@ -1834,11 +1832,11 @@ This algorithm can be used only for structured grids.</source>
     </message>
     <message>
         <source>Grid Crosssection Window</source>
-        <translation type="unfinished">Тордун кесилишинин терезеси</translation>
+        <translation>Тордун кесилишинин терезеси</translation>
     </message>
     <message>
         <source>Controller</source>
-        <translation type="unfinished">Controller</translation>
+        <translation>Controller</translation>
     </message>
 </context>
 <context>
@@ -2267,8 +2265,8 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Түс картасынын жөндөөсү</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Эскертүү:&lt;/span&gt; Түс жөндөөлөрүн түзөтүү үчүн Түс картасы өтмөгүн колдонуңуз&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; Use Colormap tab to edit color setting&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Эскертүү:&lt;/span&gt; Түс жөндөөлөрүн түзөтүү үчүн Түс картасы өтмөгүн колдонуңуз&lt;/p&gt;&lt;/body&gt;&lt;/html &gt;</translation>
     </message>
     <message>
         <source>Use setting of Pre-processing window</source>
@@ -2381,7 +2379,7 @@ This algorithm can be used only for structured grids.</source>
         <translation type="vanished">Скаляр тилкесин орнотуу (&amp;U)...</translation>
     </message>
     <message>
-        <source>Open &amp;Bird&apos;s-Eye View Window</source>
+        <source>Open &amp;Bird's-Eye View Window</source>
         <translation>Чымчыктын көзүнүн терезесин ачыңыз (&amp;B)</translation>
     </message>
     <message>

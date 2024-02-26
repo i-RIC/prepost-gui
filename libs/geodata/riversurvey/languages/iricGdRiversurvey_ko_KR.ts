@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="ko_KR">
 <context>
     <name>GeoDataRiverCrosssectionAltitudeMoveDialog</name>
@@ -381,8 +379,8 @@
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point clouod data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point clouod data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Map point cloud data</source>
@@ -394,14 +392,14 @@ If you want to adjust cross section position and map point clouod data again, yo
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Cross-section data is generated using point cloud data.
 In some region, data did not exists in point cloud data, and value 0 was mapped for those points.
-If you want to adjust cross section position and map point cloud data again, you can use &quot;Map point cloud data&quot;</source>
-        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑&quot;을 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map point cloud data again, you can use "Map point cloud data"</source>
+        <translation type="vanished">단면 데이터는 포인트 클라우드 데이터를 사용하여 생성됩니다. 일부 지역에서는 포인트 클라우드 데이터에 데이터가 존재하지 않으며 해당 포인트에 대해 값 0이 매핑되었습니다. 단면 위치를 조정하고 포인트 클라우드 데이터를 다시 매핑하려면 "포인트 클라우드 데이터 매핑"을 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Cross-Section Data Display Setting</source>
@@ -413,7 +411,7 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>  </source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <source>No data to map is found. Please import point cloud data or raster data.</source>
@@ -421,14 +419,14 @@ If you want to adjust cross section position and map point cloud data again, you
     </message>
     <message>
         <source>Cross-section data is generated.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>단면 데이터가 생성됩니다. 단면 위치를 조정하고 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑 또는 래스터 데이터 매핑&quot; 메뉴를 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>단면 데이터가 생성됩니다. 단면 위치를 조정하고 다시 매핑하려면 "포인트 클라우드 데이터 매핑 또는 래스터 데이터 매핑" 메뉴를 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Cross-section data is generated.
 In some region, mapping did not succeeded in some points, and value 0 was mapped for those points.
-If you want to adjust cross section position and map again, you can use &quot;Map point cloud data or raster data&quot; menu.</source>
-        <translation>단면 데이터가 생성됩니다. 일부 지역에서는 일부 포인트에서 매핑이 성공하지 못하여 해당 포인트에 대해 값이 0으로 매핑되었습니다. 단면 위치를 조정하고 다시 매핑하려면 &quot;포인트 클라우드 데이터 매핑 또는 래스터 데이터 매핑&quot; 메뉴를 사용할 수 있습니다.</translation>
+If you want to adjust cross section position and map again, you can use "Map point cloud data or raster data" menu.</source>
+        <translation>단면 데이터가 생성됩니다. 일부 지역에서는 일부 포인트에서 매핑이 성공하지 못하여 해당 포인트에 대해 값이 0으로 매핑되었습니다. 단면 위치를 조정하고 다시 매핑하려면 "포인트 클라우드 데이터 매핑 또는 래스터 데이터 매핑" 메뉴를 사용할 수 있습니다.</translation>
     </message>
     <message>
         <source>Map geographic data to cross sections</source>
@@ -642,8 +640,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
         <translation>고도 및 기울기 설정이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select &quot;Specify horizontal distance&quot;.</source>
-        <translation>끝점의 표고를 지정할 때 시작점과 같을 수 없습니다. 수평선을 그리려면 &quot;수평 거리 지정&quot;을 선택하십시오.</translation>
+        <source>When you specify elevation of end point, it can not be same to the start point. If you want to draw horizontal line, please select "Specify horizontal distance".</source>
+        <translation>끝점의 표고를 지정할 때 시작점과 같을 수 없습니다. 수평선을 그리려면 "수평 거리 지정"을 선택하십시오.</translation>
     </message>
 </context>
 <context>
@@ -869,8 +867,8 @@ If you want to adjust cross section position and map again, you can use &quot;Ma
     </message>
     <message>
         <source>Edit the cross section by mouse-clicking. Finish editing by double clicking, or pressing return key.
-You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from &quot;Edit from Dialog&quot; in the right-clicking menu.</source>
-        <translation>마우스 클릭으로 단면을 편집합니다. 더블 클릭하거나 Return 키를 눌러 편집을 마칩니다. 대화 상자에서 값을 입력하여 단면을 정확하게 편집할 수 있습니다. 오른쪽 클릭 메뉴의 &quot;대화 상자에서 편집&quot;에서 대화 상자 편집 모드로 들어갑니다.</translation>
+You can precisely edit the cross section by inputting values from dialog. Please enter dialog edit mode from "Edit from Dialog" in the right-clicking menu.</source>
+        <translation>마우스 클릭으로 단면을 편집합니다. 더블 클릭하거나 Return 키를 눌러 편집을 마칩니다. 대화 상자에서 값을 입력하여 단면을 정확하게 편집할 수 있습니다. 오른쪽 클릭 메뉴의 "대화 상자에서 편집"에서 대화 상자 편집 모드로 들어갑니다.</translation>
     </message>
     <message>
         <source>Altitude Points Move</source>
@@ -1078,40 +1076,40 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>오류</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LX 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": LX value is invalid</source>
+        <translation>%1 선 %2 "%3": LX 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LY 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": LY value is invalid</source>
+        <translation>%1 선 %2 "%3": LY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 수신 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": RX value is invalid</source>
+        <translation>%1 선 %2 "%3": 수신 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: RY 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": RY value is invalid</source>
+        <translation>%1 선 %2 "%3": RY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Point count is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 포인트 수가 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Point count is invalid</source>
+        <translation>%1 선 %2 "%3": 포인트 수가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Invalid index value</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 잘못된 인덱스 값</translation>
+        <source>%1 line %2 "%3": Invalid index value</source>
+        <translation>%1 선 %2 "%3": 잘못된 인덱스 값</translation>
     </message>
     <message>
         <source>%1 line %2: cross section data for %3 not enough</source>
         <translation>%1 선 %2 : 단면 데이터 %3 충분하지 않은</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Distance value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 거리 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Distance value is invalid</source>
+        <translation>%1 선 %2 "%3": 거리 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2 &quot;%3&quot;: Elevation value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 표고 값이 잘못되었습니다.</translation>
+        <source>%1 line %2 "%3": Elevation value is invalid</source>
+        <translation>%1 선 %2 "%3": 표고 값이 잘못되었습니다.</translation>
     </message>
     <message>
         <source>#survey data is not found. Will be ignored.</source>
@@ -1150,8 +1148,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 선 %2 : 읽기 오류입니다. 두 개 이상의 값이 필요합니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2: Read error. Not real number value &quot;%3&quot;.</source>
-        <translation>%1 선 %2 : 읽기 오류입니다. 실수 값이 아닙니다 &quot;%3&quot;.</translation>
+        <source>%1 Line %2: Read error. Not real number value "%3".</source>
+        <translation>%1 선 %2 : 읽기 오류입니다. 실수 값이 아닙니다 "%3".</translation>
     </message>
     <message>
         <source>Cross section %1 does not cross the center line. Center point is set to be the middle point of low water way.</source>
@@ -1293,36 +1291,36 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>%1 선 %2 : KP가 입력되지 않음</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LX 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": LX value is invalid</source>
+        <translation>%1 선 %2 "%3": LX 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: LY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: LY 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": LY value is invalid</source>
+        <translation>%1 선 %2 "%3": LY 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RX value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: 수신 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": RX value is invalid</source>
+        <translation>%1 선 %2 "%3": 수신 값이 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 Line %2 &quot;%3&quot;: RY value is invalid</source>
-        <translation>%1 선 %2 &quot;%3&quot;: RY 값이 잘못되었습니다.</translation>
+        <source>%1 Line %2 "%3": RY value is invalid</source>
+        <translation>%1 선 %2 "%3": RY 값이 잘못되었습니다.</translation>
     </message>
     <message>
         <source>Distance marker data is not found. Will be ignored.</source>
         <translation>거리 마커 데이터를 찾을 수 없습니다. 무시됩니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Flag data is invalid.</source>
-        <translation type="vanished">%1 선 %2 : &quot;%3&quot;: 플래그 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Flag data is invalid.</source>
+        <translation type="vanished">%1 선 %2 : "%3": 플래그 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Distance data is invalid.</source>
-        <translation>%1 선 %2 : &quot;%3&quot;: 거리 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Distance data is invalid.</source>
+        <translation>%1 선 %2 : "%3": 거리 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
-        <source>%1 line %2: &quot;%3&quot;: Elevation data is invalid.</source>
-        <translation>%1 선 %2 : &quot;%3&quot;: 고도 데이터가 잘못되었습니다.</translation>
+        <source>%1 line %2: "%3": Elevation data is invalid.</source>
+        <translation>%1 선 %2 : "%3": 고도 데이터가 잘못되었습니다.</translation>
     </message>
     <message>
         <source>Select folder where cross section data exists</source>
@@ -1425,34 +1423,34 @@ You can precisely edit the cross section by inputting values from dialog. Please
     <name>GeoDataRiverSurveyWebImporter</name>
     <message>
         <source>Cross-Section Data from Profile of Hokkaido Development</source>
-        <translation type="unfinished"></translation>
+        <translation>홋카이도 개발 프로필의 단면 데이터</translation>
     </message>
 </context>
 <context>
     <name>GeoDataRiverSurveyWebImporter_SettingDialog</name>
     <message>
         <source>Cross-section Data Import Setting</source>
-        <translation type="unfinished"></translation>
+        <translation>단면 데이터 가져오기 설정</translation>
     </message>
     <message>
         <source>River:</source>
-        <translation type="unfinished"></translation>
+        <translation>강:</translation>
     </message>
     <message>
         <source>Range</source>
-        <translation type="unfinished"></translation>
+        <translation>범위</translation>
     </message>
     <message>
         <source>Upstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>업스트림:</translation>
     </message>
     <message>
         <source>Downstream:</source>
-        <translation type="unfinished"></translation>
+        <translation>하류:</translation>
     </message>
     <message>
         <source>Year:</source>
-        <translation type="unfinished"></translation>
+        <translation>년도:</translation>
     </message>
 </context>
 <context>
@@ -1474,8 +1472,8 @@ You can precisely edit the cross section by inputting values from dialog. Please
         <translation>보이는</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;참고:&lt;/span&gt; 색상표 탭을 사용하여 색상을 사용자 지정할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;Note:&lt;/span&gt; You can customize the color using Colormap tab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=" font-weight:600;"&gt;참고:&lt;/span&gt; 색상표 탭을 사용하여 색상을 사용자 지정할 수 있습니다.&lt;/p&gt;&lt;/body&gt;&lt; /html&gt;</translation>
     </message>
     <message>
         <source>Crosssection Lines</source>

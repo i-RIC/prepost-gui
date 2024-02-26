@@ -959,7 +959,7 @@
     </message>
     <message>
         <source>Point cloud data from Elevation CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>來自高程 CSV 切片的點雲數據</translation>
     </message>
 </context>
 <context>

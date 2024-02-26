@@ -959,7 +959,7 @@
     </message>
     <message>
         <source>Point cloud data from Elevation CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>Elevation CSV kutucuğundaki nokta bulutu verileri</translation>
     </message>
 </context>
 <context>

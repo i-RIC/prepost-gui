@@ -1006,7 +1006,7 @@
     </message>
     <message>
         <source>Point cloud data from Elevation CSV tile</source>
-        <translation type="unfinished"></translation>
+        <translation>来自高程 CSV 切片的点云数据</translation>
     </message>
 </context>
 <context>
