@@ -29,9 +29,12 @@ signals:
 
 private slots:
 	void applySetting();
+	void toggleUpdateWidthAndHeight();
 
 private:
 	ColorMapSettingContainerI* m_setting;
+	bool m_updateWidthAndHeight;
+
 	Ui::ColorMapSettingToolBarWidget *ui;
 };
 
