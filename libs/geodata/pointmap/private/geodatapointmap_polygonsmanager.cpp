@@ -224,17 +224,56 @@ void GeoDataPointmap::PolygonsManager::handleMouseDoubleClickEvent(QMouseEvent* 
 
 void GeoDataPointmap::PolygonsManager::handleMouseMoveEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	polygonGroup()->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	auto geoDataDataItem = m_rootDataItem->gridTypeDataItem()->geoDataTopDataItem()->geoDataGroupDataItem()->geoDataDataItem();
+	if (geoDataDataItem->customVisibility()) {
+		auto colorMapController = m_polygonsColorMap->legendSetting()->imgSetting()->controller();
+		colorMapController->handleMouseMoveEvent(event, v, true);
+		if (colorMapController->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			polygonGroup()->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+		} else {
+			std::vector<ImageSettingContainer::Controller*> controllers;
+			controllers.push_back(colorMapController);
+			ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+		}
+	} else {
+		polygonGroup()->mouseMoveEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	}
 }
 
 void GeoDataPointmap::PolygonsManager::handleMousePressEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
-	polygonGroup()->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	auto geoDataDataItem = m_rootDataItem->gridTypeDataItem()->geoDataTopDataItem()->geoDataGroupDataItem()->geoDataDataItem();
+	if (geoDataDataItem->customVisibility()) {
+		auto colorMapController = m_polygonsColorMap->legendSetting()->imgSetting()->controller();
+		colorMapController->handleMousePressEvent(event, v, true);
+		if (colorMapController->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			polygonGroup()->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+		} else {
+			std::vector<ImageSettingContainer::Controller*> controllers;
+			controllers.push_back(colorMapController);
+			ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+		}
+	} else {
+		polygonGroup()->mousePressEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	}
 }
 
 void GeoDataPointmap::PolygonsManager::handleMouseReleaseEvent(QMouseEvent* event, VTK2DGraphicsView* v)
 {
 	if (event->button() == Qt::RightButton) {return;}
 
-	polygonGroup()->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	auto geoDataDataItem = m_rootDataItem->gridTypeDataItem()->geoDataTopDataItem()->geoDataGroupDataItem()->geoDataDataItem();
+	if (geoDataDataItem->customVisibility()) {
+		auto colorMapController = m_polygonsColorMap->legendSetting()->imgSetting()->controller();
+		colorMapController->handleMouseReleaseEvent(event, v, true);
+		if (colorMapController->mouseEventMode() == ImageSettingContainer::Controller::MouseEventMode::Normal) {
+			polygonGroup()->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+		} else {
+			std::vector<ImageSettingContainer::Controller*> controllers;
+			controllers.push_back(colorMapController);
+			ImageSettingContainer::Controller::updateMouseCursor(v, controllers);
+		}
+	}	else {
+		polygonGroup()->mouseReleaseEvent(event, dynamic_cast<PreProcessorGraphicsViewInterface*>(v));
+	}
 }
