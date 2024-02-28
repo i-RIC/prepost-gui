@@ -365,6 +365,14 @@
         <source>You can not delete points used for break lines.</source>
         <translation>分割線に使用されている点は、削除できません。</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation>エラー</translation>
+    </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>削除後、この点群データの点の数は%1になります。点群データは最低限3つの点を持つ必要があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
@@ -398,6 +406,10 @@
     <message>
         <source>Weighted Average</source>
         <translation>重み付け平均</translation>
+    </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="vanished">削除後、この点群データの点の数は%1になります。点群データは最低限3つの点を持つ必要があります。</translation>
     </message>
 </context>
 <context>
@@ -791,6 +803,10 @@
     <message>
         <source>X, Y and Value should refer to different fields.</source>
         <translation>X, Y, 値は異なるフィールドを参照する必要があります。</translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>このデータの点の数は%1です。点群データは最低限3つの点を持つ必要があります。</translation>
     </message>
 </context>
 <context>

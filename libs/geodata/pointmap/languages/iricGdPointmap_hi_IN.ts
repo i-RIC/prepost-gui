@@ -333,6 +333,14 @@
         <source>You can not delete points used for break lines.</source>
         <translation>आप ब्रेक लाइन के लिए उपयोग किए गए बिंदुओं को हटा नहीं सकते।</translation>
     </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">त्रुटि</translation>
+    </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmap::PointsManager::InterpolatePointController::SettingDialog</name>
@@ -675,6 +683,10 @@
     </message>
     <message>
         <source>X, Y and Value should refer to different fields.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
