@@ -270,6 +270,10 @@
         <source>P&amp;oint Cloud Data</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -503,6 +507,10 @@
         <source>Topography File (*.tpo)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
@@ -583,6 +591,10 @@
     </message>
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
