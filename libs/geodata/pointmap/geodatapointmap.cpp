@@ -1901,6 +1901,13 @@ void GeoDataPointmap::editPointsDelete()
 		QMessageBox::warning(preProcessorWindow(), tr("Warning"), tr("You can not delete points used for break lines."));
 		return;
 	}
+
+	vtkIdType leftPoints = m_vtkGrid->GetVerts()->GetNumberOfCells() - m_selectedVerticesGrid->GetVerts()->GetNumberOfCells();
+	if (leftPoints < 3) {
+		QMessageBox::critical(preProcessorWindow(), tr("Error"), tr("After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.").arg(leftPoints));
+		return;
+	}
+
 	pushRenderCommand(new DeletePointsCommand(tr("Delete Points"), selectedVertices(), this));
 	clearPointsSelection();
 }

@@ -85,7 +85,10 @@ bool GeoDataPointmapRealImporter::importData(GeoData* data, int /*index*/, QWidg
 		} while (! in.atEnd());
 		map->clear();
 		delete map;
-		if (points->GetNumberOfPoints() < 3) {return false;}
+		if (points->GetNumberOfPoints() < 3) {
+			QMessageBox::critical(w, tr("Error"), tr("The data contains only %1 points. Point cloud data must contain 3 points at least.").arg(points->GetNumberOfPoints()));
+			return false;
+		}
 		file.close();
 	}
 	pmap->setPoints(points, values);

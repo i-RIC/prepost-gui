@@ -290,6 +290,10 @@
         <source>P&amp;oint Cloud Data</source>
         <translation>点群データ(&amp;O)</translation>
     </message>
+    <message>
+        <source>After deleting, the point cloud data will have %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>削除後、この点群データの点の数は%1になります。点群データは最低限3つの点を持つ必要があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapAddPointDialog</name>
@@ -543,6 +547,10 @@
         <source>Topography File (*.tpo)</source>
         <translation>地勢データ (*.tpo)</translation>
     </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>このデータの点の数は%1です。点群データは最低限3つの点を持つ必要があります。</translation>
+    </message>
 </context>
 <context>
     <name>GeoDataPointmapRealImporterFilterDialog</name>
@@ -652,6 +660,10 @@
     <message>
         <source>Text file (*.csv *.txt *.xyz)</source>
         <translation>テキストファイル (*.csv *.txt, *.xyz)</translation>
+    </message>
+    <message>
+        <source>The data contains only %1 points. Point cloud data must contain 3 points at least.</source>
+        <translation>このデータの点の数は%1です。点群データは最低限3つの点を持つ必要があります。</translation>
     </message>
 </context>
 <context>
