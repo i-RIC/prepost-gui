@@ -23,6 +23,7 @@
 #include <guicore/scalarstocolors/colormapsettingtoolbarwidget.h>
 #include <guicore/solverdef/solverdefinition.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
 #include <misc/iricundostack.h>
@@ -47,8 +48,17 @@ GridBirdEyeWindowNodeScalarGroupDataItem::GridBirdEyeWindowNodeScalarGroupDataIt
 
 	auto gType = model->gridTypeDataItem()->gridType();
 	QString caption;
-	auto att = gType->gridAttribute(elevationTarget);
-	standardItem()->setText(att->caption());
+
+	auto att1 = gType->gridAttribute(elevationTarget);
+	if (att1 != nullptr) {
+		caption = att1->caption();
+	}
+	auto att2 = gType->gridComplexAttribute(elevationTarget);
+	if (att2 != nullptr) {
+		caption = att2->caption();
+	}
+
+	standardItem()->setText(caption);
 
 	for (const auto& pair : model->gridTypeDataItem()->colorMapSettings()) {
 		const auto& name = pair.first;
