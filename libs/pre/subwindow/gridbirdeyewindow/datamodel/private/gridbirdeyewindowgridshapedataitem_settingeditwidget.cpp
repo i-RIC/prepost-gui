@@ -8,6 +8,7 @@
 #include <guicore/postcontainer/postzonedatacontainer.h>
 #include <guicore/pre/grid/grid.h>
 #include <guicore/solverdef/solverdefinitiongridattribute.h>
+#include <guicore/solverdef/solverdefinitiongridcomplexattribute.h>
 #include <guicore/solverdef/solverdefinitiongridtype.h>
 #include <guicore/solverdef/solverdefinitionoutput.h>
 #include <guibase/vtkdatasetattributestool.h>
@@ -37,8 +38,18 @@ GridBirdEyeWindowGridShapeDataItem::SettingEditWidget::SettingEditWidget(GridBir
 	auto model = dynamic_cast<GridBirdEyeWindowDataModel*> (item->dataModel());
 	auto gType = model->gridTypeDataItem()->gridType();
 	for (const auto& name : vtkDataSetAttributesTool::getArrayNamesWithOneComponent(grid2->GetPointData())) {
-		auto cap = gType->gridAttribute(name)->caption();
-		captionMap.insert({cap, name});
+		auto att1 = gType->gridAttribute(name);
+		if (att1 != nullptr) {
+			auto cap = att1->caption();
+			captionMap.insert({cap, name});
+			continue;
+		}
+		auto att2 = gType->gridComplexAttribute(name);
+		if (att2 != nullptr) {
+			auto cap = att2->caption();
+			captionMap.insert({cap, name});
+			continue;
+		}
 	}
 	for (const auto& pair : captionMap) {
 		ui->elevationComboBox->addItem(pair.first);
